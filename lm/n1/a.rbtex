@@ -1,0 +1,120 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Motion in One Dimension") %>
+
+<%
+  chapter(
+    '02',
+    %q{Velocity and Relative Motion},
+    'ch:motion',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n1a)
+__incl(text/n1a_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-traffic',
+    %q{Problem \ref{hw:traffic}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('traffic') %>__incl(hw/traffic)<% end_hw() %>
+
+<% begin_hw('earth') %>__incl(hw/earth)<% end_hw() %>
+
+<% begin_hw('parachute',2) %>__incl(hw/parachute)<% end_hw() %>
+
+<% begin_hw('light-year-to-meters') %>__incl(hw/light-year-to-meters)<% end_hw() %>
+
+<% begin_hw('inside-freight-train') %>__incl(hw/inside-freight-train)<% end_hw() %>
+
+<% begin_hw('honeybeecalculus',nil,{'calc'=>true}) %>__incl(hw/honeybeecalculus)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-cycloid',
+    %q{Problem \ref{hw:cycloid}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('cycloid') %>__incl(hw/cycloid)<% end_hw() %>
+
+<% begin_hw('peanut') %>__incl(hw/peanut)<% end_hw() %>
+
+<% marg(30) %>
+<%
+  fig(
+    'hw-peanut',
+    %q{Problem \ref{hw:peanut}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('eowyn') %>__incl(hw/eowyn)<% end_hw() %>
+
+<% begin_hw('cross-deck') %>__incl(hw/cross-deck)<% end_hw() %>
+
+<% begin_hw('freddifish',nil,{'calc'=>true}) %>__incl(hw/freddifish)<% end_hw() %>
+
+<% begin_hw('decel-accel-frames') %>__incl(hw/decel-accel-frames)<% end_hw() %>
+
+\pagebreak
+
+<%
+  fig(
+    'tuna',
+    %q{Problem \ref{hw:tuna}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('tuna') %>__incl(hw/tuna)<% end_hw() %>
+
+<% begin_hw('door-closer',nil,{'calc'=>true}) %>__incl(hw/door-closer)<% end_hw() %>
+
+<% begin_hw('beer-stability') %>__incl(hw/beer-stability)<% end_hw() %>
+
+<% begin_hw('passing-in-race') %>__incl(hw/passing-in-race)<% end_hw() %>
+
+
+<% marg(300) %>
+<%
+  fig(
+    'passing-in-race',
+    %q{Problem \ref{hw:passing-in-race}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-fizeau-cogwheel',
+    %q{Problem \ref{hw:fizeau-cogwheel}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('fizeau-cogwheel') %>__incl(hw/fizeau-cogwheel)<% end_hw() %>
+
+<% begin_hw('earth-stepwise-equator') %>__incl(hw/earth-stepwise-equator)<% end_hw() %>
+
+<% begin_hw('earth-stepwise-fullerton') %>__incl(hw/earth-stepwise-fullerton)<% end_hw() %>
+
+<% begin_hw('average-velocity-from-halves') %>__incl(hw/average-velocity-from-halves)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

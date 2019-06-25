@@ -1,0 +1,457 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% figure_in_toc("poolskater") %>
+
+<% part_title("Conservation Laws") %>
+
+\addtocontents{toc}{\protect\vspace{-4mm}}
+
+<%
+  chapter(
+    '11',
+    %q{Conservation of Energy},
+    'ch:energy',
+    %q{%
+In July of 1994, Comet Shoemaker-Levy struck the
+planet Jupiter, depositing $7\times10^{22}$ joules of energy, and
+incidentally giving rise to a series of Hollywood movies
+in which our own planet is threatened by an
+impact by a comet or asteroid. There is evidence that
+such an impact caused the extinction of the dinosaurs.
+Left: Jupiter's gravitational force on the near side of
+the comet was greater than on the far side, and this
+difference in force tore up the comet into a string of
+fragments. Two separate telescope images have been
+combined to create the illusion of a point of view just
+behind the comet. (The colored fringes at the edges
+of Jupiter are artifacts of the imaging system.) Top: A
+series of images of the plume of superheated gas
+kicked up by the impact of one of the fragments. The
+plume is about the size of North America. Bottom: An
+image after all the impacts were over, showing the
+damage done.},
+    {'opener'=>'jupiter-comet'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/cla)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<% begin_sec("Massless particles",nil,'ultrarelativistic',{'optional'=>true}) %>
+<% begin_sec("Failure of Newton's laws") %>
+One of the main reasons for preferring conservation laws to Newton's laws as
+a foundation for physics is that conservation laws are more general.
+For example, Newton's laws apply only to matter, whereas conservation
+laws can handle light as well. No experiment in Newton's day had ever
+shown anything but zero for the mass or weight of a ray of light,
+and substituting $m=0$ into $a=F/m$ results in an infinite acceleration,
+which doesn't make sense.
+With hindsight, this is to be expected because of 
+relativity (section \ref{sec:relativity}). Newton's laws are only a good approximation
+for velocities that are small compared to $c$, the maximum speed of
+cause and effect. But light travels at $c$, so Newton's laws are
+not a good approximation to the behavior of light.
+
+For insight into the behavior of things that go at exactly $c$, let's
+consider a case where something goes very close to $c$.
+A typical 22-caliber rifle shoots a bullet with a mass of about 3 g at a speed of about 400 m/s.
+Now consider the firing of such a rifle as seen through an ultra-powerful telescope
+by an alien in a distant galaxy. We happen to be firing in the direction away from the
+alien, who gets a view from over our shoulder. Since the universe is expanding, our two galaxies
+are receding from each other. In the alien's frame, our own galaxy is the one that is
+moving --- let's say at $c-(200\ \munit/\sunit)$. If the two velocities simply added, the
+bullet would be moving at $c+(200\ \munit/\sunit)$. But velocities don't simply add and
+subtract relativistically (p.~\pageref{me-vel-addition-main-text}), and applying the correct
+equation for relativistic combination of velocities, we find that in the alien's frame,
+the bullet flies at only $c-(199.9995\ \munit/\sunit)$. That is, according to the alien,
+the energy in the gunpowder only succeeded in accelerating the bullet by $0.0005\ \munit/\sunit$!
+If we insisted on believing in $KE=(1/2)mv^2$, this would clearly violate conservation of energy in the alien's frame of reference.
+$KE$ must not only get bigger faster than $(1/2)mv^2$ as $v$ approaches $c$, it must blow up to infinity.
+This gives a mechanical explanation for why no material object can
+ever reach or exceed $c$, which is reassuring because speeds greater than $c$ lead to violation of causality.
+<% end_sec() %> % Failure of Newton's laws
+<% begin_sec("Ultrarelativistic motion") %>
+The bullet as seen in the alien's frame of reference is an example of an ultrarelativistic
+particle, meaning one moving very close to $c$. We can fairly easily infer quite a bit about how kinetic
+energy must behave at ultrarelativistic speeds. We know that it must get larger and larger,
+and the question is how large it is when the speed differs from $c$ by some small amount.
+
+A good way of thinking about an ultrarelativistic particle is that it's a particle with a
+very small mass. For example, the subatomic particle called the neutrino has a very small
+mass, thousands of times smaller than that of the electron. Neutrinos are emitted in
+radioactive decay, and because the neutrino's mass is so small, the amount of energy
+available in these decays is always enough to accelerate it to very close to the speed
+of light. Nobody has ever succeeded in observing a neutrino that was \emph{not} ultrarelativistic.
+When a particle's mass is very small, the mass becomes difficult to measure. For almost 70 years after the
+neutrino was discovered, its mass was thought to be zero. Similarly, we currently believe that
+a ray of light has no mass, but it is always possible that its mass will be found to be nonzero
+at some point in the future. A ray of light can be modeled as an ultrarelativistic particle.
+
+Let's compare ultrarelativistic particles with train cars. A single car with kinetic energy $E$ has
+different properties than a train of two cars each with kinetic energy $E/2$. The single car has
+half the mass and a speed that is greater by a factor of $\sqrt{2}$. But the same is not true
+for ultrarelativistic particles. Since an idealized ultrarelativistic particle has a mass too
+small to be detectable in any experiment, we can't detect the difference between $m$ and $2m$.
+Furthermore, ultrarelativistic particles move at close to $c$, so there is no observable
+difference in speed. Thus we expect that a single ultrarelativistic particle with energy $E$
+compared with  two such particles, each with energy $E/2$,
+should have all the same properties as measured by a mechanical detector.
+
+An idealized zero-mass particle also has no frame in which it can be at rest. It
+always travels at $c$, and no matter how fast we chase after it, we can never catch up.
+We can, however, observe it in different frames of reference, and we will find that its
+energy is different. For example, distant galaxies are receding from us at substantial fractions
+of $c$, and when we observe them through a telescope, they appear very dim not just because they are very
+far away but also because their light has less energy in our frame than in a frame at rest
+relative to the source. This effect must be such that changing frames of reference according
+to a specific Lorentz transformation always changes the energy of the particle by a fixed factor,
+regardless of the particle's original energy;
+for if not, then the effect of a Lorentz transformation on a single particle of energy $E$
+would be different from its effect on two particles of energy $E/2$.
+
+How does this energy-shift factor depend on the velocity $v$ of the Lorentz transformation?
+Actually, it is more convenient to express this in terms of a different variable rather than
+$v$. In nonrelativistic
+physics, we change frames of reference simply by adding a constant onto all our velocities,
+but this is only a low-velocity approximation. For this reason, it will be more convenient to
+work with a variable $s$, defined as the factor by which the long diagonal of a
+parallelogram like the ones in section \ref{sec:relativity} stretches under a Lorentz transformation.
+For example, we found in problem \ref{hw:six-tenths-c-twice} on p.~\pageref{hw:six-tenths-c-twice}
+that a velocity of $0.6c$ corresponds to a stretch factor $s=2$. The convenient thing about
+stretch factors is that when we change to a new frame of reference, they simply multiply.
+For example, in problem \ref{hw:six-tenths-c-twice} you found the result of combining
+a velocity of $0.6c$ with another velocity of $0.6c$ by drawing a parallelogram with
+its long axis stretched by a factor of $2\times2=4$.
+The relation between
+$s$ and $v$ is given by $s=\sqrt{(1+v)/(1-v)}$ (in units with $c=1$; see problems \ref{hw:gamma-derivation} on p.~\pageref{hw:gamma-derivation}
+and \ref{hw:me-vel-addition} on p.~\pageref{hw:me-vel-addition}).
+
+\begin{eg}{A low-speed approximation}\label{eg:low-speed-stretch}
+What happens when the  the velocity is small compared
+to $c$? In units where $c=1$, this means that $v$ is small compared
+to 1. The stretch factor $s=\sqrt{(1+v)/(1-v)}$ can then be approximated
+by taking $1/(1-v)\approx 1+v$ and $\sqrt{1+\epsilon}\approx 1+\epsilon/2$,\
+so that $s\approx 1+v$.
+\end{eg}
+
+Let's write $f(s)$ for the energy-shift factor that results from a given Lorentz transformation.
+Since a Lorentz transformation $s_1$ followed by a second transformation $s_2$ is equivalent
+to a single transformation by $s_1s_2$, we must have $f(s_1s_2)=f(s_1)f(s_2)$. This tightly
+constrains the form of the function $f$; it must be something like $f(s)=s^n$, where $n$
+is a constant. The interpretation of $n$ is that under a Lorentz transformation corresponding to 1\%
+of $c$, energies of ultrarelativistic particles change by about $n$\% (making the approximation that $v=.01$ gives $s\approx1.01$).
+We postpone until p.~\pageref{pesky-exponent-proof} the proof that $n=1$, which is also in agreement with experiments with rays of light.\label{pesky-exponent-claim}
+
+Our final result is that the energy of an ultrarelativistic particle is simply proportional
+to its Lorentz ``stretch factor'' $s$. Even in the case where the particle is truly massless,
+so that $s$ doesn't have any finite value, we can still
+find how the energy differs according to different observers by finding the $s$ of the
+Lorentz transformation between the two observers' frames of reference.
+
+\begin{eg}{An astronomical energy shift}
+\egquestion For quantum-mechanical
+reasons, a hydrogen atom can only exist in states with certain specific energies.
+By conservation of energy, the atom can therefore only absorb or emit light that
+has an energy equal to the difference between two such atomic energies.
+The outer atmosphere of a star is mostly made of monoatomic hydrogen, and
+one of the energies that a hydrogen atom can absorb or emit is
+$3.0276\times10^{-19}\ \junit$. When we observe light from stars in the Andromeda
+Galaxy, it has an energy of $3.0306\times10^{-19}\ \junit$. If this is assumed to be
+due entirely to the motion of the Milky Way and Andromeda Galaxy relative to
+one another, along the line connecting them,
+find the direction and magnitude of this velocity.
+
+\eganswer The energy is shifted upward, which means that the Andromeda Galaxy is moving
+toward us. (Galaxies at cosmological distances are always observed to be receding from
+one another, but this doesn't necessarily hold for galaxies as close as these.)
+Relating the energy shift to the velocity, we have
+\begin{equation*}
+  \frac{E'}{E} = s = \sqrt{(1+v)/(1-v)}\eqquad.
+\end{equation*}
+Since the shift is only about one part per thousand, the velocity is small compared
+to $c$ --- or small compared to 1 in units where $c=1$. Therefore we can approximate
+as in example \ref{eg:low-speed-stretch}, $s\approx 1+v$, and we find
+\begin{equation*}
+  v \approx s-1 = \frac{E'}{E}-1 = 1.0\times10^{-3}\eqquad.
+\end{equation*}
+This is in units where $c=1$. Converting to SI units, where $c\ne 1$, we have $v=(1.0\times10^{-3})c=300\ \zu{km}/s$.
+Although the Andromeda Galaxy's tangential motion is not accurately known, it is considered likely that it will
+collide with the Milky Way in a few billion years.
+\end{eg}
+
+\begin{eg}{A symmetry property of the energy shift}\label{eg:doppler-abc}
+Suppose that A and B are at rest relative to one another, but C is moving along the line between A and B. A sends a pulse of laser light
+to C, who then measures its energy and transmits another pulse to B having the same energy.
+The pulse accumulates two energy shifts, and the result is their product $s(v)s(-v)$. But C didn't actually need to absorb the
+original pulse and retransmit it; the results would have been the same if C had just stayed out of the way.
+Therefore this product must equal 1, so we must have $s(-v)s(v)=1$, which can be verified directly from the equation.
+\end{eg}
+
+\begin{eg}{The Ives-Stilwell experiment}\index{Ives-Stilwell experiment}
+The result of example \ref{eg:doppler-abc} was the basis of one of the earliest laboratory tests of special relativity, by Ives and Stilwell in 1938.
+They observed the light emitted by a beam of excited $\zu{H}_2^+$ and $\zu{H}_3^+$ ions with speeds of a few tenths of a percent of $c$.
+Measuring the light from both ahead of and behind the beams, they found that the product $s(v)s(-v)$ was equal to 1,
+as predicted by relativity. If relativity had been false, then one would have expected the product to differ from 1 by an amount that would
+have been detectable in their experiment. In 2003, Saathoff et al.~carried out an extremely precise version of the Ives-Stilwell technique
+with $\zu{Li}^+$ ions moving at 6.4\% of $c$. The energies observed, in units of $10^{-28}\ \junit$, were:
+
+\noindent\begin{tabular}{rl}
+$E_\zu{o}$ &=               $3620927488 \pm 3$ \\
+           & \hfill (unshifted energy)\\
+$E_\zu{o}s(v)$ & =          $3859620256 \pm 0.6$ \\
+           & \hfill (shifted energy, forward)\\
+$E_\zu{o} s(-v)$ & =        $3396996334 \pm 3$ \\
+           & \hfill (shifted energy, backward)\\
+$\sqrt{E_\zu{o}s(v)\cdot E_\zu{o} s(-v)}$ &= $3620927487 \pm 2$ 
+\end{tabular}
+
+\noindent The results show incredibly precise agreement between $E_\zu{o}$ and $\sqrt{E_\zu{o}s(v)\cdot E_\zu{o} s(-v)}$, as expected
+relativistically because $s(v)s(-v)$ is supposed to equal 1. The agreement extends to 9 significant figures, whereas
+if relativity had been false there should have been a relative disagreement of about $v^2=.004$, i.e., a discrepancy in the third significant figure.
+The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+\end{eg}
+
+<% end_sec() %> % Ultrarelativistic motion
+<% end_sec() %> % Massless particles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{energy}{A numerical scale used to measure the heat, motion,
+or other properties that would require fuel or physical
+effort to put into an object; a scalar quantity with
+units of joules (J).}
+
+\vocabitem{power}{The rate of transferring energy; a scalar quantity
+with units of watts (W).}
+
+\vocabitem{kinetic energy}{The energy an object possesses because of its motion.}
+
+\vocabitem{heat}{A form of energy that relates to temperature.
+Heat is different from temperature because an object with
+twice as much mass requires twice as much heat to increase
+its temperature by the same amount. Heat is measured in joules, temperature
+in degrees. (In standard terminology, there
+is another, finer distinction between heat and thermal energy,
+which is discussed below. In this book, I informally refer to both
+as heat.)
+}
+
+\vocabitem{temperature}{What a thermometer measures. Objects left in
+contact with each other tend to reach the same temperature.
+Cf. heat. As discussed in more detail in chapter 2,
+temperature is essentially a measure of the average kinetic
+energy per molecule.}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$E$}{energy}
+
+\notationitem{J}{joules, the SI unit of energy}
+
+\notationitem{$KE$}{kinetic energy}
+
+\notationitem{$P$}{power}
+
+\notationitem{W}{watts, the SI unit of power; equivalent to J/s}
+
+\end{notation}
+
+\begin{othernotation}
+
+\notationitem{$Q$ or $\Delta Q$}{the amount of heat transferred into or out of an object}
+
+\notationitem{$K$ or $T$}{alternative symbols for kinetic energy, used in the
+scientific literature and in most advanced textbooks}
+
+\vocabitem{thermal energy}{Careful writers make a distinction between
+heat and thermal energy, but the distinction is often
+ignored in casual speech, even among physicists. Properly,
+thermal energy is used to mean the total amount of energy
+possessed by an object, while heat indicates the amount of
+thermal energy transferred in or out. The term heat is used
+in this book to include both meanings.}
+\end{othernotation}
+
+\begin{summarytext}
+
+Heating an object, making it move faster, or increasing its
+distance from another object that is attracting it are all
+examples of things that would require fuel or physical
+effort. All these things can be
+quantified using a single scale of measurement, and we describe them all as forms of \emph{energy}. 
+The SI unit of
+energy is the Joule. The reason why energy is a useful and
+important quantity is that it is always conserved. That is,
+it cannot be created or destroyed but only transferred
+between objects or changed from one form to another.
+Conservation of energy is the most important and broadly
+applicable of all the laws of physics, more fundamental and
+general even than Newton's laws of motion.
+
+Heating an object requires a certain amount of energy per
+degree of temperature and per unit mass, which depends on
+the substance of which the object consists. Heat and
+temperature are completely different things. Heat is a form
+of energy, and its SI unit is the joule (J). Temperature is
+not a measure of energy. Heating twice as much of something
+requires twice as much heat, but double the amount of a
+substance does not have double the temperature.
+
+The energy that an object possesses because of its motion is
+called kinetic energy. Kinetic energy is related to the mass
+of the object and the magnitude of its velocity vector by the equation
+\begin{equation*}
+  KE = \frac{1}{2}mv^2\eqquad.
+\end{equation*}
+
+Power is the rate at which energy is transformed from one
+form to another or transferred from one object to another,
+\begin{equation*}
+m4_ifelse(__me,1,[:%
+  P = \frac{\der E}{\der t}
+:],[:%
+ P = \frac{\Delta E}{\Delta t}\eqquad. 
+        \qquad\hfill\shoveright{\text{[only for constant power]}}
+:])%
+\end{equation*}
+The SI unit of power is the watt (W).
+
+The equation $KE=(1/2)mv^2$ is a nonrelativistic approximation, valid at speeds that are small
+compared to $c$. In the opposite limit, of a particle with a speed very
+close to $c$, the energy is proportional
+to the ``stretch factor'' of the Lorentz transformation, $s=\sqrt{(1+v)/(1-v)}$ (in units with $c=1$),
+for $v\rightarrow+c$ and $1/s$ for $v\rightarrow-c$.
+This gives a mechanical explanation for why no material object can
+ever reach or exceed $c$, which is reassuring because speeds greater than $c$ lead to violation of causality.
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('negativeke') %>__incl(hw/negativeke)<% end_hw() %>
+
+\vspace{12mm}
+
+<% begin_hw('sprinter') %>__incl(hw/sprinter)<% end_hw() %>
+
+\vspace{12mm}
+
+<% begin_hw('crash') %>
+\answercheck You are driving your car, and you hit a brick wall head
+on, at full speed. The car has a mass of 1500 kg. The
+kinetic energy released is a measure of how much destruction
+will be done to the car and to your body. Calculate the
+energy released if you are traveling at (a) 40 mi/hr, and
+again (b) if you're going 80 mi/hr. What is counterintuitive
+about this, and what implication does this have for
+driving at high speeds?
+<% end_hw() %>
+
+\vspace{12mm}
+
+<% begin_hw('melt-and-boil') %>__incl(hw/melt-and-boil)<% end_hw() %>
+
+\vspace{12mm}
+
+<% begin_hw('astronaut') %>
+\answercheck A closed system can be a bad thing --- for an astronaut
+sealed inside a space suit, getting rid of body heat can be
+difficult. Suppose a 60-kg astronaut is performing vigorous
+physical activity, expending 200 W of power. If none of
+the heat can escape from her space suit, how long will it
+take before her body temperature rises by 6\degcunit (11\degfunit),
+an amount sufficient to kill her? Assume that the amount
+of heat required to raise her body temperature by $1\degcunit$\ is
+the same as it would be for an equal mass of water. Express
+your answer in units of minutes.
+<% end_hw() %>
+
+\vspace{12mm}
+
+<% begin_hw('bulletthroughbook') %>__incl(hw/bulletthroughbook)<% end_hw() %>
+
+<% begin_hw('boatengine') %>__incl(hw/boatengine)<% end_hw() %>
+
+
+
+<% begin_hw('aronskeratio') %>__incl(hw/aronskeratio)<% end_hw() %>
+
+
+
+<% begin_hw('wind-power') %>__incl(hw/wind-power)<% end_hw() %>
+
+
+
+<% begin_hw('earthmoonke') %>__incl(hw/earthmoonke)<% end_hw() %>
+
+
+
+<% begin_hw('microwave-waste') %>__incl(hw/microwave-waste)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('colliding-balls') %>__incl(hw/colliding-balls)<% end_hw() %>
+
+<%
+  fig(
+    'hw-colliding-balls',
+    %q{Problem \ref{hw:colliding-balls}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('balls') %>__incl(hw/balls)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('columbia') %>__incl(hw/columbia)<% end_hw() %>
+
+\fullpagewidthfignocaption{../../../share/mechanics/figs/hydraulic-ram}\label{fig:hydraulic-ram}
+<% begin_hw('hydraulic-ram') %>__incl(hw/hydraulic-ram)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('melt-antarctic') %>
+All stars, including our sun, show variations in their
+light output to some degree. Some stars vary their
+brightness by a factor of two or even more, but our sun has
+remained relatively steady during the hundred years or so
+that accurate data have been collected. Nevertheless, it is
+possible that climate variations such as ice ages are
+related to long-term irregularities in the sun's light
+output. If the sun was to increase its light output even
+slightly, it could melt enough Antarctic ice to
+flood all the world's coastal cities. The total sunlight
+that falls on Antarctica amounts to about $1\times10^{16}$
+ watts. Presently, this heat input to the poles is balanced
+by the loss of heat via winds, ocean currents, and emission
+of infrared light, so that there is no net melting or
+freezing of ice at the poles from year to year. Suppose that
+the sun changes its light output by some small percentage,
+but there is no change in the rate of heat loss by the polar
+caps. Estimate the percentage by which the sun's light
+output would have to increase in order to melt enough ice to
+raise the level of the oceans by 10 meters over a period of
+10 years. (This would be enough to flood New York, London,
+and many other cities.) Melting 1 kg of ice requires $3\times10^3$ J.
+<% end_hw() %>
+
+<% begin_hw('fly-wing-ke') %>__incl(hw/fly-wing-ke)<% end_hw() %>
+
+<% begin_hw('grass-growing') %>__incl(hw/grass-growing)<% end_hw() %>
+
+<% end_hw_sec %>
+<% end_chapter() %>

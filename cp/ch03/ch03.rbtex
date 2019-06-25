@@ -1,0 +1,509 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '03',
+    %q{Conservation of Angular Momentum},
+    'ch:angular-momentum',
+    %q{A tornado touches down in Spring Hill, Kansas, May 20, 1957.},
+    {'opener'=>'tornado','width'=>'fullpage','anonymous'=>true}
+  )
+%>
+
+<% begin_sec("Angular momentum",0) %>
+
+\index{angular momentum!introduction to}
+
+``Sure, and maybe the sun won't come up tomorrow.'' Of
+course, the sun only appears to go up and down because the
+earth spins, so the cliche should really refer to the
+unlikelihood of the earth's stopping its rotation abruptly
+during the night. Why can't it stop? It wouldn't violate
+conservation of momentum, because the earth's rotation
+doesn't add anything to its momentum. While California spins
+in one direction, some equally massive part of India goes
+the opposite way, canceling its momentum. A halt to Earth's
+rotation would entail a drop in kinetic energy, but that
+energy could simply be converted into some other form, such as heat.
+
+Other examples along these lines are not hard to find. A
+hydrogen atom spins at the same rate for billions of years.
+A high-diver who is rotating when he comes off the board
+does not need to make any physical effort to continue
+rotating, and indeed would be unable to stop rotating
+before he hit the water.
+
+<% marg(0) %>
+<%
+  fig(
+    'figure-skater',
+    %q{%
+      A figure skater pulls in her arms so
+      that she can execute a spin more rapidly.
+    }
+  )
+%>
+<% end_marg %>
+These observations have the hallmarks of a conservation law,
+but what numerical measure of rotational motion is conserved?
+Car engines and old-fashioned LP records have speeds of
+rotation measured in rotations per minute (r.p.m.), but the
+number of rotations per minute (or per second) is not a
+conserved quantity. For example, the twirling figure skater in
+figure \figref{figure-skater}
+can pull her arms in to increase her r.p.m.'s.
+
+The example of the figure skater suggests that this
+conserved quantity depends on distance from the axis of
+rotation. We'll notate this distance as $r$, since, for
+an object moving in a circle around an axis of rotation,
+its distance from the axis equals the radius of the
+circle. 
+
+Once we realize that $r$ is a variable that matters, it
+becomes clear that the examples we've been considering were
+all examples that would be fairly complicated mathematically,
+because different parts of these objects' masses have different
+values of $r$. For example, the figure skater's front teeth
+are farther from the axis than her back teeth. That suggests that
+instead of objects with complicated shapes, we should consider
+the simplest possible example, which is a single particle, of
+mass $m$, traveling in a circle of radius $r$ at speed $v$.
+Experiments show that the conserved quantity in this situation
+is
+\begin{equation*}
+  \pm mvr\eqquad.
+\end{equation*}
+We call this quantity \emph{angular momentum}.\index{angular momentum}
+The symbol $\pm$ indicates that angular momentum has a positive or
+negative sign to represent the direction of rotation; for example,
+in a given problem, we could choose to represent clockwise angular
+momenta as positive numbers, and counterclockwise ones as negative.
+In this equation, the only velocity that matters is velocity that
+is perpendicular to the radius line; motion parallel to the radius line,
+i.e., directly in our out, is neither clockwise nor counterclockwise.
+
+\begin{eg}{A figure skater pulls her arms in}
+When the skater in figure \figref{figure-skater}
+pulls her arms in, she is decreasing $r$ for all the atoms
+in her arms. It would violate conservation of angular
+momentum if she then continued rotating at the same speed,
+i.e., taking the same amount of time for each revolution, because
+her arms would be closer to the axis of rotation and therefore
+have a smaller $r$ (as well as a smaller $v$ because they would
+be completing a smaller circle in the same time).
+This is impossible because it would
+violate conservation of angular momentum. If her total
+angular momentum is to remain constant, the decrease in angular momentum
+for her arms must be compensated for by an overall increase
+in her rate of rotation. That is, by pulling her arms in,
+she substantially reduces the time for each rotation.
+\end{eg}
+
+<%
+  fig(
+    'longjump',
+    %q{Example \ref{eg:longjump}: An early photograph of an old-fashioned long-jump.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{A longjump}\label{eg:longjump}
+In figure \figref{longjump},
+the jumper wants to get his feet out in front of
+him so he can keep from doing a ``face plant'' when he
+lands. Bringing his feet forward would involve a certain
+quantity of counterclockwise rotation, but he didn't start
+out with any rotation when he left the ground. Suppose we
+consider counterclockwise as positive and clockwise as
+negative. The only way his legs can acquire some positive
+rotation is if some other part of his body picks up an equal
+amount of negative rotation. This is why he swings his arms
+up behind him, clockwise.
+\end{eg}
+
+
+<%
+  fig(
+    'viola-at-frog',
+    %q{Example \ref{eg:viola-at-frog}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+\begin{eg}{Changing the axis}\label{eg:viola-at-frog}
+An object's angular momentum can be different depending on
+the axis about which it rotates, because $r$ is defined relative
+to the axis. Figure \ref{fig:viola-at-frog}
+shows two double-exposure photographs
+a viola player tipping the bow in order to cross from one
+string to another. Much more angular momentum is required
+when playing near the bow's handle, called the frog, as
+in the panel on the right; not only are most
+of the atoms in the bow are at greater distances, $r$,
+from the axis of rotation, but the ones in the tip also
+have more velocity, $v$. It is difficult for the player to
+quickly transfer a large angular momentum into the bow, and then
+transfer it back out just as quickly. This is one of the reasons
+that string players tend to stay near the middle of the bow
+as much as possible.
+\end{eg}
+
+<% marg(10) %>
+<%
+  fig(
+    'equal-area-angular-momentum',
+    %q{%
+      Example \ref{eg:equal-area-angular-momentum}.
+    }
+  )
+%>
+<% end_marg %>
+\begin{eg}{Kepler's equal-area law}\label{eg:equal-area-angular-momentum}
+The hypothetical planet in figure \figref{equal-area-angular-momentum} has an orbit
+in which its closest approach to the sun is at half the distance compared to the
+point at which it recedes the farthest. Since angular momentum, $mvr$, is conserved,
+and the planet's mass is constant,
+the quantity $vr$ must be the same at both ends of the orbit. Doubling $r$ therefore
+requires cutting $v$ in half. If the time interval from A to B is the same as that
+from C to D, then the distance from C to D must be half as much.
+But this is exactly what Kepler's equal area law requires, since the triangular pie
+wedge on top needs to have half the width to compensate for its doubled height.
+In other words, the equal area law is a direct consequence of conservation of angular
+momentum.
+\end{eg}
+
+\startdq
+
+\begin{dq}
+Conservation of plain old momentum, $p$, can be thought of
+as the greatly expanded and modified descendant of Galileo's
+original principle of inertia, that no force is required to
+keep an object in motion. The principle of inertia is
+counterintuitive, and there are many situations in which it
+appears superficially that a force \emph{is} needed to
+maintain motion, as maintained by Aristotle. Think of a
+situation in which conservation of angular momentum, $L$,
+also seems to be violated, making it seem incorrectly that
+something external must act on a closed system to keep its
+angular momentum from ``running down.''
+\end{dq}
+
+\begin{dq}\label{dq:conical-pendulum}
+The figure is a strobe photo of a pendulum bob,
+taken from underneath the pendulum looking straight up. The
+black string can't be seen in the photograph. The bob was
+given a slight sideways push when it was released, so it did
+not swing in a plane. The bright spot marks the center, i.e.,
+the position the bob would have if it hung straight down at
+us. Does the bob's angular momentum appear to remain
+constant if we consider the center to be the axis of
+rotation? What if we choose a different axis?
+\end{dq}
+
+<%
+  fig(
+    'conical-pendulum',
+    %q{Discussion question \ref{dq:conical-pendulum}.},
+    {
+      'width'=>'wide',
+      'anonymous'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Torque",3,'torque') %>
+
+Force is the rate of transfer of
+momentum. The equivalent in the case of angular momentum is
+called \emph{torque}\index{torque!defined} (rhymes with
+``fork''):
+\begin{equation*}
+  \text{torque} = \frac{\text{amount of angular momentum transferred}}{\text{time taken to transfer it}}
+\end{equation*}
+ Where force tells us how hard we are pushing or
+pulling on something, torque indicates how hard we are
+twisting on it.
+
+<% marg(0) %>
+<%
+  fig(
+    'tetherball',
+    %q{The boy makes a torque on the tetherball.}
+  )
+%>
+<% end_marg %>
+
+
+Have you ever had the experience of trying to open a door by
+pushing on the wrong side, the side near the hinge? It's
+difficult to do, which apparently indicates that a given
+amount of force produces less torque when it's applied close
+to the axis of rotation. To try to pin down this relationship
+more precisely, let's imagine hitting a tetherball, \figref{tetherball}.
+The boy applies a force $F$ to the ball for a short time $t$, accelerating
+the ball from rest to a velocity $v$. Since force is the rate of transfer of
+momentum, we have
+\begin{align*}
+  F & = \frac{mv}{t}\eqquad, \\
+\intertext{and multiplying both sides by $r$ gives}  
+  Fr & = \frac{mvr}{t}\eqquad. \\
+\end{align*}
+But $\pm mvr$ is simply the amount of angular momentum he's given
+the ball, so $\pm mvr/t$ also equals the amount of torque he applied. The result
+of this example is
+\begin{equation*}
+  \text{torque} = \pm Fr\eqquad,
+\end{equation*}
+where the plus or minus sign indicates whether torque would tend to create
+clockwise or counterclockwise motion.
+This equation applies more generally, with the caveat that $F$ should only
+include the part of the force perpendicular to the radius line.
+
+<% self_check('importance-of-torque-equations',<<-'SELF_CHECK'
+There are four equations on this page. Which ones are important, and likely
+to be useful later?
+  SELF_CHECK
+  ) %>
+
+To summarize, we've learned three conserved quantity, each of which has
+a rate of transfer:
+
+\begin{tabular}{|p{20mm}p{20mm}|p{20mm}p{20mm}|}
+\hline
+\multicolumn{2}{|p{40mm}|}{\textbf{conserved quantity}} &\multicolumn{2}{|p{40mm}|}{\textbf{rate of transfer}} \\
+\hline
+\textbf{name} & \textbf{units} & \textbf{name} & \textbf{units} \\
+energy & joules (J) & power & watts (W) \\
+momentum & $\kgunit\unitdot\munit/\sunit$ & force & newtons (N)\\
+angular momentum   & $\kgunit\unitdot\munit^2/\sunit$ & torque & newton-meters ($\nunit\unitdot\munit$) \\
+\hline
+\end{tabular}
+
+<% begin_sec("Torque distinguished from force") %>
+
+Of course a force is necessary in order to create a torque
+--- you can't twist a screw without pushing on the wrench
+--- but force and torque are two different things. One
+distinction between them is direction. We use positive and
+negative signs to represent forces in the two possible
+directions along a line. The direction of a torque, however,
+is clockwise or counterclockwise, not a linear direction.
+
+The other difference between torque and force is a matter of
+leverage. A given force applied at a door's knob will change
+the door's angular momentum twice as rapidly as the same
+force applied halfway between the knob and the hinge. The
+same amount of force produces different amounts of
+torque in these two cases.
+
+<% marg(70) %>
+<%
+  fig(
+    'airplane',
+    %q{%
+      The plane's four engines produce zero
+      total torque but not zero total force.
+    }
+  )
+%>
+<% end_marg %>
+
+It is possible to have a zero total torque with a nonzero
+total force. An airplane with four jet engines, \figref{airplane}, would be
+designed so that their forces are balanced on the left and
+right. Their forces are all in the same direction, but the
+clockwise torques of two of the engines are canceled by the
+counterclockwise torques of the other two, giving zero total torque.
+
+Conversely, we can have zero total force and nonzero total
+torque. A merry-go-round's engine needs to supply a nonzero
+torque on it to bring it up to speed, but there is zero
+total force on it. If there was not zero total force on it,
+its center of mass would accelerate!
+
+\begin{eg}{A lever}\label{eg:biceps}
+Figure \figref{biceps} shows an example of
+a lever within your arm. Different muscles are used to flex
+and extend the arm, because muscles work only by contraction.
+The biceps flexes it.
+
+<% marg(0) %>
+<%
+  fig(
+    'biceps',
+    %q{Example \ref{eg:biceps}: the biceps muscle flexes the arm.}
+  )
+%>
+<% end_marg %>
+
+There are
+three forces acting on the forearm: the force from the
+biceps, the force at the elbow joint, and the force from
+the load being lifted.
+Because the elbow joint is motionless, it is natural to
+define our torques using the joint as the axis. The
+situation now becomes quite simple, because the upper arm
+bone's force exerted at the elbow has $r=0$, and therefore creates
+no torque. We can ignore it completely. In general, we would
+call this the fulcrum of the lever.
+
+If we restrict ourselves to the case in which the forearm
+rotates with constant angular momentum, then we know that
+the total torque on the forearm is zero, so the torques
+from the muscle and the load must be opposite in sign and
+equal in absolute value:
+\begin{equation*}
+                r_{muscle} F_{muscle}  =  r_{load} F_{load}\eqquad,
+\end{equation*}
+where $r_{muscle}$, the distance from the elbow joint to the
+biceps' point of insertion on the forearm, is only a few cm,
+while $r_{load}$ might be 30 cm or so. The force exerted by
+the muscle must therefore be about ten times the force
+exerted by the load. We thus see that this lever is a force
+reducer. In general, a lever may be used either to increase
+or to reduce a force.
+
+Why did our arms evolve so as to reduce force? In general,
+your body is built for compactness and maximum speed of
+motion rather than maximum force. This is the main
+anatomical difference between us and the \index{Neanderthals}Neanderthals
+(their brains covered the same range of sizes as those of
+modern humans), and it seems to have worked for us.
+
+As with all machines, the lever is incapable of changing the
+amount of mechanical work we can do. A lever that increases
+force will always reduce motion, and vice versa, leaving the
+amount of work unchanged.
+
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-twoarm-ride',
+    %q{Discussion question \ref{dq:twoarm-ride}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+
+\startdqs
+
+\begin{dq}
+You whirl a rock over your head on the end of a string,
+and gradually pull in the string, eventually cutting the
+radius in half. What happens to the rock's angular momentum?
+What changes occur in its speed, the time required for one
+revolution, and its acceleration? Why might the string break?
+\end{dq}
+
+\begin{dq}
+A helicopter has, in addition to the huge fan blades on
+top, a smaller propeller mounted on the tail that rotates in
+a vertical plane. Why?
+\end{dq}
+
+\begin{dq}\label{dq:twoarm-ride}
+The photo shows an amusement park ride whose two cars
+rotate in opposite directions. Why is this a good design?
+\end{dq}
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Noether's theorem for angular momentum",0,'noether-ang-mom') %>\index{Noether's theorem!for angular momentum}
+
+Suppose a sunless planet is sitting all by itself in interstellar space,
+not rotating. Then, one day, it decides to start spinning. This doesn't
+necessarily violate conservation of energy, because it could have energy
+stored up, e.g., the heat in a molten core, which could be converted into
+kinetic energy. It does violate conservation of angular momentum, but even
+if we didn't already know about that law of physics, the story would seem
+odd. How would it decide which axis to spin around? If it was to spontaneously
+start spinning about some axis, then that axis would have to be a special,
+preferred direction in space. That is, space itself would have to have
+some asymmetry to it.
+
+In reality, as I've already mentioned on page \pageref{rotational-symmetry},
+experiments show to a very high degree of precision that the
+laws of physics are completely symmetric with respect to different directions.
+The story of the planet that abruptly starts spinning is an example of Noether's theorem,
+applied to angular momentum. We now have three such examples:
+
+\begin{noethertable}
+time symmetry & \noetherimplies & mass-energy \\
+translation symmetry & \noetherimplies & momentum \\
+rotational symmetry & \noetherimplies & angular momentum \\
+\end{noethertable}
+
+
+<% end_sec() %>
+<% begin_hw_sec %>
+
+<% begin_hw('rv') %>__incl(hw/rv)<% end_hw() %>
+
+<% begin_hw('therapy') %>__incl(hw/therapy)<% end_hw() %>
+
+<% begin_hw('const-l-no-torques') %>__incl(hw/const-l-no-torques)<% end_hw() %>
+
+<% marg(10) %>
+<%
+  fig(
+    'hw-pliers',
+    %q{Problem \ref{hw:pliers}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('pliers') %>
+<% hw_solution %> The figure shows scale drawing of a pair of pliers
+being used to crack a nut, with an appropriately reduced
+centimeter grid. Warning: do not attempt this at home; it is
+bad manners. If the force required to crack the nut is 300
+N, estimate the force required of the person's hand.
+<% end_hw() %>
+
+<% begin_hw('two-branches') %>__incl(hw/two-branches)<% end_hw() %>
+
+<% begin_hw('zero-and-nonzero-p-and-l') %>__incl(hw/zero-and-nonzero-p-and-l)<% end_hw() %>
+
+<% marg(20) %>
+<%
+  fig(
+    'hw-tiptoe',
+    %q{Problem \ref{hw:tiptoe}.}
+  )
+%>
+<% end_marg %>%
+<% begin_hw('tiptoe') %>
+A person of weight $W$ stands on the ball of one foot.
+Find the tension in the calf muscle and the force exerted by
+the shinbones on the bones of the foot, in terms of $W,a$,
+and $b$. (The tension is a measure of how tight the calf muscle has been
+pulled; it has units of newtons, and equals the amount of force applied
+by the muscle where it attaches to the heel.)
+For simplicity, assume that all the forces are at
+90-degree angles to the foot. Suggestion: Write down an equation that says the
+total force on the foot is zero, and another equation saying that the total
+torque on the foot is zero; solve the two equations for the two unknowns.\answercheck
+<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% figure_in_toc("skater") %>
+
+<% end_chapter() %>

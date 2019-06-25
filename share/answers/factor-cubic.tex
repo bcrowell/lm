@@ -1,0 +1,18 @@
+We can think of this as a polynomial in $x$ or a polynomial in $y$ --- 
+their roles are symmetric. Let's call $x$ the variable.  By the
+fundamental theorem of algebra, it must be possible to factor it into
+a product of three linear factors, if the coefficients are allowed to
+be complex. Each of these factors causes the product to be zero for a
+certain value of $x$. But the condition for the expression to be zero
+is $x^3=y^3$, which basically means that the ratio of $x$ to $y$ must
+be a third root of 1.  The problem, then, boils down to finding the
+three third roots of 1, as in problem \ref{hw:cube-roots-of-unity}.
+Using the result of that problem, we find that there are zeroes when
+$x/y$ equals $1$, $e^{2\pi i/3}$, and $e^{4\pi i/3}$. This tells us
+that the factorization is $(x-y)(x-e^{2\pi i/3}y)(x-e^{4\pi i/3}y)$.
+
+The second part of the problem asks us to factorize as much as possible using real coefficients.
+Our only hope of doing this is to multiply out the two factors that involve complex coefficients,
+and see if they produce something real. In fact, we can anticipate that it will work, because
+the coefficients are complex conjugates of one another, and when a quadratic has two complex
+roots, they are conjugates. The result is $(x-y)(x^2+xy+y^2)$.

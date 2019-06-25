@@ -1,0 +1,21 @@
+% meta {"stars":2}
+  (a) Figure \figref{eg-magnetic-shielding-sphere} on page \pageref{fig:eg-magnetic-shielding-sphere} shows a hollow sphere with $\mu/\mu_\zu{o}=x$,
+  inner radius $a$, and outer radius $b$, which has been subjected to an external field $\vc{B}_\zu{o}$. Finding the fields on the exterior, in the
+  shell, and on the interior requires finding a set of fields that satisfies five boundary conditions: (1) far from the sphere, the field
+  must approach the constant $\vc{B}_\zu{o}$; (2) at the outer surface of the sphere, the field must have
+  $\vc{H}_{\parallel,1}=\vc{H}_{\parallel,2}$, as discussed on page  \pageref{fig:permeability-boundary}; (3) the same constraint applies
+  at the inner surface of the sphere; (4) and (5) there is an additional constraint on the fields at the inner and outer surfaces, as found in problem
+  \ref{hw:boundary-eb}. The goal of this problem is to find the solution for the fields, and from it, to prove that the interior field
+  is uniform, and given by
+  \begin{equation*}
+       \vc{B} = \left[\frac{9x}{(2x+1)(x+2)-2\frac{a^3}{b^3}(x-1)^2}\right]\vc{B}_\zu{o}\eqquad.
+  \end{equation*}
+  This is a very difficult problem to solve from first principles, because it's not obvious what form the fields should have, and if you hadn't been
+  told, you probably wouldn't have guessed that the interior field would be uniform. We could, however, guess that once the sphere becomes polarized
+  by the external field, it would become a dipole, and at $r\gg b$, the field would be a uniform field superimposed on the field of a dipole.
+  It turns out that even close to the sphere, the solution has exactly this form. In order to complete the solution, we need to find the field
+  in the shell ($a<r<b$), but the only way this field could match up with the detailed angular variation of the interior and exterior fields
+  would be if it was also a superposition of a uniform field with a dipole field. The final result is that we have four unknowns: the strength
+  of the dipole component of the external field, the strength of the uniform and dipole components of the field within the shell, and the
+  strength of the uniform interior field. These four unknowns are to be determined by imposing constraints (2) through (5) above.\hwendpart
+  (b) Show that the expression from part a has physically reasonable behavior in its dependence on $x$ and $a/b$.  

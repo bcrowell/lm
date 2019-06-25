@@ -1,0 +1,57 @@
+As discussed previously, capacitance, $C$, is defined as
+	\begin{align*}
+		U_C    &=   \frac{1}{2C}q^2   . \\
+	\intertext{Similarly, inductance, $L$, is defined as}
+		U_L    &=    \frac{L}{2}I^2,
+	\end{align*}
+	and measured in units of  henries.
+	The magnitude of the voltage difference across a capacitor or inductor is given by
+	\begin{align*}
+		V_C	&= \frac{q}{C} \\
+	\intertext{or}
+		V_L	&= L\frac{\der I}{\der t}.
+	\end{align*}
+	In the equation for the inductor, the
+	direction of the voltage drop (plus or minus sign) is such
+	that the inductor resists the change in current.
+	
+	A series LRC circuit exhibits \emph{oscillation}, and, if driven
+	by an external voltage, resonates.
+	The $Q$ of the circuit relates to the resistance value. For large
+	$Q$, the resonant frequency is
+	\begin{equation*}
+	  \omega \approx \frac{1}{\sqrt{LC}}.
+	\end{equation*}
+	A series RC or RL circuit exhibits exponential \emph{decay},
+	\begin{align*}
+		q &= q_\zu{o}\exp\left(-\frac{t}{RC}\right) \\
+	\intertext{or}
+		I &= I_\zu{o}\exp\left(-\frac{R}{L}t\right),
+	\end{align*}
+	and the quantity $RC$ or $L/R$ is known as the time constant.
+
+	When driven by a sinusoidal AC voltage with amplitude $\tilde{V}$,
+	a capacitor, resistor, or inductor responds with a current
+	having amplitude
+	\begin{equation*}
+		\tilde{I} = \frac{\tilde{V}}{Z}  ,
+	\end{equation*}
+	where the \emph{impedance\/}, $Z$, is a frequency-dependent quantity
+	having units of ohms.
+	In a capacitor, the current has a phase that is $90\degunit$ ahead of the voltage,
+	while in an inductor the current is $90\degunit$ behind.
+        We can represent these phase relationships by defining the impedances
+	 as complex numbers:
+	 \begin{align*}
+		Z_C &= -\frac{i}{\omega C}\\
+		Z_R	&= R\\
+		Z_L &= i\omega L 
+	\end{align*}
+	The arguments of the complex impedances are to be interpreted as phase relationships between the
+	oscillating voltages and currents.
+	The complex impedances defined in this way combine in series and parallel
+	 according to the same rules as resistances.
+
+	When a voltage source is driving a load through a transmission line, the maximum
+	power is delivered to the load when the impedances of the line and the load
+	are matched.

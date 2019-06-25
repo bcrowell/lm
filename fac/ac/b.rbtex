@@ -1,0 +1,1169 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '12',
+    %q{AC circuits},
+    'ch:ac'
+  )
+%>
+
+<% begin_sec("Capacitance and inductance") %>
+%
+\index{capacitor}\index{capacitor!capacitance}\index{inductor}\index{inductor!inductance}
+In a mechanical oscillation, energy is exchanged repetitively
+between potential and kinetic forms, and may also be
+siphoned off in the form of heat dissipated by friction. In
+an electrical circuit, resistors are the circuit elements
+that dissipate heat. What are the electrical analogs of
+storing and releasing the potential and kinetic energy of a
+vibrating object? When you think of energy storage in an
+electrical circuit, you are likely to imagine a battery, but
+even rechargeable batteries can only go through 10 or 100
+cycles before they wear out. In addition, batteries are not
+able to exchange energy on a short enough time scale for
+most applications. The circuit in a musical synthesizer may
+be called upon to oscillate thousands of times a second, and
+your microwave oven operates at gigahertz frequencies.
+Instead of batteries, we generally use
+capacitors and
+inductors to store energy in oscillating circuits. Capacitors,
+which you've already encountered, store energy in electric fields.
+An inductor does the same with magnetic fields.
+
+<% begin_sec("Capacitors") %>
+
+A capacitor's energy exists in its surrounding electric
+fields. It is proportional to the square of the field
+strength, which is proportional to the charges on the
+plates. If we assume the plates carry charges that are the
+same in magnitude, $+q$ and $-q$, then the energy stored in
+the capacitor must be proportional to $q^2$. For historical
+reasons, we write the constant of proportionality as $1/2C$, 
+\begin{equation*}
+                U_C    =   \frac{1}{2C}q^2\eqquad.
+\end{equation*}
+The constant $C$ is a geometrical property of the
+capacitor, called its capacitance.
+
+<% marg(50) %>
+<%
+  fig(
+    'capsymbol',
+    %q{The symbol for a capacitor.}
+  )
+%>
+
+  \spacebetweenfigs
+
+<%
+  fig(
+    'capacitors-photo',
+    %q{Some capacitors.}
+  )
+%>
+<% end_marg %>
+
+Based on this definition, the units of capacitance must be
+coulombs squared per joule, and this combination is more
+conveniently abbreviated as the farad\index{farad!defined},
+$1\ \zu{F}=1\ \zu{C}^2/\zu{J}$.
+``Condenser'' is a less formal term
+for a capacitor. Note that the labels printed on capacitors
+often use MF to mean $\mu\zu{F}$, even though MF should really
+be the symbol for megafarads, not microfarads. Confusion
+doesn't result from this nonstandard notation, since
+picofarad and microfarad values are the most common, and it
+wasn't until the 1990's that even millifarad and farad
+values became available in practical physical sizes. Figure
+\figref{capsymbol} shows the symbol used in schematics
+to represent a capacitor.
+
+\begin{eg}{A parallel-plate capacitor}\label{eg:capparplate}
+\egquestion
+Suppose a capacitor consists of two parallel metal plates with
+area $A$, and the gap between them is $h$. The gap is small
+compared to the dimensions of the plates. What is the
+capacitance?
+
+\eganswer
+Using the result of problem \ref{hw:capacitor-field},
+$E=4\pi k\sigma=4\pi kq/ A$. 
+The energy stored in the field is $U_{e} = (1/8\pi k) E^2 Ah$. Substituting the
+first expression into the second, we find $U_{e}=2\pi kq^2 h/ A$.
+Comparing this to the definition of capacitance, we end up with $C=A/4\pi kh$. 
+
+\end{eg}
+
+<% marg() %>
+<%
+  fig(
+    'capacitors-not-lumped-circuit',
+    %q{A configuration of capacitors for which the lumped circuit approximation might be bad.}
+  )
+%>
+<% end_marg %>
+If you look at the printed circuit board in a typical piece
+of consumer electronics, there are many capacitors, often placed fairly close together.
+Life is a made a lot simpler by the fact that each capacitor's field tends to be
+concentrated on its own interior.
+If their exterior fields are not so small, then each capacitor interacts
+with its neighbors in a complicated way, and the behavior of the circuit depends
+on the exact physical layout, since the interaction would be stronger or weaker depending
+on distance. The resulting behavior of the circuit then depends in detail on the three-dimensional
+geometry of the circuit, as in figure \figref{capacitors-not-lumped-circuit}.
+In reality, a capacitor does create weak external electric fields, but their
+effects are often negligible, and we can then use the \emph{lumped-circuit approximation},
+\index{lumped-circuit approximation!for capacitors}\label{lumped-circuit-approx}
+which states that each component's behavior depends only on the currents that flow in
+and out of it, not on the interaction of its fields with the other components.
+<% end_sec() %>
+
+<% begin_sec("Inductors") %>
+
+Any current will
+create a magnetic field, so in fact every current-carrying
+wire in a circuit acts as an inductor! 
+However, this type of ``stray'' inductance is typically
+negligible, just as we can usually ignore the stray resistance of
+our wires and only take into account the actual resistors.
+To store any appreciable amount of magnetic energy, one
+usually uses a coil of wire designed specifically to be an inductor.
+All the loops' contribution to the magnetic field add together
+to make a stronger field. Unlike
+capacitors and resistors, practical inductors are easy to make by
+hand. One can for instance spool some wire around a short wooden dowel.
+An inductor like this, in the form cylindrical coil of wire, is called
+a solenoid, \figref{coilshapes}, and a stylized solenoid, \figref{indsymbol}, is the
+symbol used to represent an inductor in a circuit regardless
+of its actual geometry.
+
+How much energy does an inductor store?
+The energy density is proportional
+to the square of the magnetic field strength, which is in
+turn proportional to the current flowing through the
+coiled wire, so the energy stored in the inductor must be
+proportional to $I^2$. We write $L/2$ for the constant of
+proportionality, giving
+\begin{equation*}
+                U_L    =    \frac{L}{2}I^2\eqquad.  
+\end{equation*}
+
+As in the definition of capacitance, we have a
+factor of 1/2, which is purely a matter of definition. The
+quantity $L$ is called the \emph{inductance}\index{inductance!defined} of the
+inductor, and we see that its units must be joules per
+ampere squared. This clumsy combination of units is more
+commonly abbreviated as the henry, 1 henry = 1 $\zu{J}/\zu{A}^2$.
+Rather than memorizing this definition, it makes more sense
+to derive it when needed from the definition of inductance.
+
+<% marg(300) %>
+<%
+  fig(
+    'coilshapes',
+    %q{%
+      Two common geometries for inductors. The cylindrical
+      shape on the left is called a solenoid.\index{solenoid}
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'indsymbol',
+    %q{The symbol for an inductor.}
+  )
+%>
+
+  \spacebetweenfigs
+
+<%
+  fig(
+    'inductors-photo',
+    %q{Some inductors.}
+  )
+%>
+<% end_marg %>
+
+Many people know inductors simply as ``coils,'' or ``chokes,'' and
+will not understand you if you refer to an ``inductor,'' but they will
+still refer to $L$ as the ``inductance,'' not the ``coilance'' or
+``chokeance!'' The term ``choke'' is derived from the fact that, as
+we'll see in sec.~\ref{sec:impedance}, an inductance tends to pass low
+frequencies while ``choking off'' high frequencies.  This is the
+opposite of a capacitor: a capacitor has vacuum or an insulator
+between the plates, and therefore will not pass DC. Therefore
+capacitors and inductors are often used as filters to get rid of
+certain frequencies in a signal (example
+\ref{eg:low-pass-and-high-pass},
+p.~\pageref{eg:low-pass-and-high-pass}). If you're listening to music
+on a pair of stereo speakers while reading this, then there is
+probably a set of filters, called the cross-over filter, that send low
+frequencies to the woofers and highs to the tweeters. 
+
+The type of air-core coil described above is a good one for many applications,
+such as a stereo speaker's cross-over filter. For other applications, however,
+this technology would be too expensive, too bulky to use in miniaturized
+electronics, or too hard to integrate into a printed-circuit board. For
+some applications, this can be remedied by adding an iron core, while
+for others the behavior of an inductor can be achieved using a combination
+of transistors (an op-amp) and a capacitor. When we consider the behavior of
+these things as circuit elements, the same equations apply regardless of 
+the implementation.
+
+There is a lumped circuit approximation for inductors, just like the one
+for capacitors (p. \pageref{lumped-circuit-approx}).
+For a capacitor, this means assuming that
+the electric fields are completely internal, so
+that components only interact via currents that flow through wires,
+not due to the physical overlapping of their fields in space. Similarly
+for an inductor, the lumped circuit approximation is the assumption
+that the magnetic fields are completely internal.
+
+<% marg(0) %>
+<%
+  fig(
+    'indseries',
+    %q{Inductances in series add.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Identical inductances in series}\label{eg:l-series}
+If two inductors are placed in series, any current that
+passes through the combined double inductor must pass
+through both its parts.
+If we assume the lumped circuit approximation, the two inductors' fields
+don't interfere with each other, so the energy is doubled for a given current.
+Thus by the
+definition of inductance, the inductance is doubled as well.
+In general, inductances in series add, just like resistances.
+The same kind of reasoning also shows that the inductance of
+a solenoid is approximately proportional to its length,
+assuming the number of turns per unit length is kept
+constant. (This is only approximately true, because putting
+two solenoids end-to-end causes the fields just outside
+their mouths to overlap and add together in a complicated manner.
+In other words, the lumped-circuit approximation may not be very
+good.)
+\end{eg}
+
+<% marg(5) %>
+<%
+  fig(
+    'capparallel',
+    %q{Capacitances in parallel add.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Identical capacitances in parallel}\label{eg:c-parallel}
+When two identical capacitances are placed in parallel, any
+charge deposited at the terminals of the combined double
+capacitor will divide itself evenly between the two parts.
+The electric fields surrounding each capacitor will be half
+the intensity, and therefore store one quarter the energy.
+Two capacitors, each storing one quarter the energy, give
+half the total energy storage. Since capacitance is
+inversely related to energy storage, this implies that
+identical capacitances in parallel give double the
+capacitance. In general, capacitances in parallel add. This
+is unlike the behavior of inductors and resistors, for which
+series configurations give addition.
+
+This is consistent with the result of example \ref{eg:capparplate},
+which had the capacitance of a single parallel-plate capacitor
+proportional to the area of the plates.
+If we have two
+parallel-plate capacitors, and we combine them in parallel
+and bring them very close together side by side, we have
+produced a single capacitor with plates of double the area, and
+it has approximately double the capacitance, subject to any
+violation of the lumped-circuit approximation due to the interaction
+of the fields where the edges of the capacitors are joined together.
+\end{eg}
+
+Inductances in parallel and capacitances in series are explored
+in sec.~\ref{sec:l-and-c-parallel-and-series}, p.~\pageref{sec:l-and-c-parallel-and-series}.
+
+<% marg(0) %>
+<%
+  fig(
+    'variablecap',
+    %q{A variable capacitor.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A variable capacitor}
+Figure \figref{variablecap}/1 shows the construction of a
+variable capacitor out of two parallel semicircles of metal.
+One plate is fixed, while the other can be rotated about
+their common axis with a knob. The opposite charges on the
+two plates are attracted to one another, and therefore tend
+to gather in the overlapping area. This overlapping area,
+then, is the only area that effectively contributes to the
+capacitance, and turning the knob changes the capacitance.
+The simple design can only provide very small capacitance
+values, so in practice one usually uses a bank of capacitors,
+wired in parallel, with all the moving parts on the same shaft.
+\end{eg}
+ %  
+
+\startdqs
+
+\begin{dq}
+Suppose that two parallel-plate capacitors are wired in parallel, and
+are placed very close together, side by side, so that the lumped circuit
+approximation is not very accurate. Will the resulting capacitance be
+too small, or too big? Could you twist the circuit into a different shape
+and make the effect be the other way around, or make the effect vanish?
+How about the case of two inductors in series?
+\end{dq}
+ % 
+
+<% marg(5) %>
+<%
+  fig(
+    'dielectric',
+    %q{Discussion question \ref{dq:dielectric}.}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:dielectric}
+Most practical capacitors do not have an air gap or vacuum gap between the plates; instead,
+they have an insulating substance called a dielectric. We can think of the molecules in this substance
+as dipoles that are free to rotate (at least a little), but that are not free to move
+around, since it is a solid. The figure shows a highly stylized and unrealistic way of
+visualizing this. We imagine that all the dipoles are intially turned sideways, (1),
+and that as the capacitor is charged, they all respond by turning through a certain angle, (2).
+(In reality, the scene might be much more random, and the alignment effect much weaker.)
+
+For simplicity, imagine inserting just one electric dipole
+into the vacuum gap. For a given amount of charge on
+the plates, how does this affect the amount of
+energy stored in the electric field? How does this affect the capacitance?
+
+Now redo the analysis in terms of the mechanical work needed in order to
+charge up the plates.
+\end{dq}
+
+ % ------------------------------------------ 
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Oscillations",nil,'lrc-oscillations') %>
+
+ % 
+Figure \figref{lrc} shows the simplest possible oscillating circuit.
+For any useful application it would actually need to include
+more components. For example, if it was a radio tuner, it
+would need to be connected to an antenna and an amplifier.
+Nevertheless, all the essential physics is there.
+
+<% marg(0) %>
+<%
+  fig(
+    'lrc',
+    %q{A series LRC circuit.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'lrcanalogy',
+    %q{A mechanical analogy for the LRC circuit.}
+  )
+%>
+<% end_marg %>
+
+We can analyze it without any sweat or tears whatsoever,
+simply by filling in the rest of the system of analogies introduced in sections
+\ref{sec:shm}-\ref{sec:damping}, pp.~\pageref{sec:shm}-\pageref{end-sec-shm}, with a mechanical oscillator.
+In figure \figref{lrcanalogy}, we have two forms of stored energy,
+\begin{align*}
+                U_{spring}         &=            \frac{1}{2}kx^2                &(1)  \\
+                K                         &=     \frac{1}{2}mv^2\eqquad.        \qquad                &(2)  
+\end{align*}
+In the circuit, the dissipation of energy
+into heat occurs via the resistor, with no mechanical force
+involved, so in order to make the analogy, we need to restate
+the role of the friction force in terms of energy. The power
+dissipated by friction equals the mechanical work it does in
+a time interval $\der t$, divided by $\der t$,
+$P=W/\der t=F\der x/\der t=Fv=-bv^2$, so
+\begin{equation*}
+                \text{rate of heat dissipation}  =  -bv^2\eqquad.        \qquad        (3)  
+\end{equation*}
+
+<% self_check('lrcsigns',<<-'SELF_CHECK'
+Equation (1) has $x$ squared, and equations (2) and (3) have
+$v$ squared. Because they're squared, the results don't
+depend on whether these variables are positive or negative.
+Does this make physical sense?
+  SELF_CHECK
+  ) %>
+
+In the circuit, the stored forms of energy are
+\begin{align*}
+                U_C    &=    \frac{1}{2C}q^2                        &(1')  \\
+                U_L    &=    \frac{1}{2}LI^2\eqquad, \qquad                        &(2')  
+\end{align*}
+and the rate of heat dissipation in the resistor is
+\begin{equation*}
+                \text{rate of heat dissipation}  =  -RI^2\eqquad.        \qquad        (3')  
+\end{equation*}
+We've previously discussed the analogies
+$x\leftrightarrow q$ and $v\leftrightarrow I$.
+Next we relate the variables that describe the system's
+permanent characteristics:
+\begin{align*}
+        k        &\leftrightarrow 1/C\\
+        m        &\leftrightarrow L\\
+        b        &\leftrightarrow R
+\end{align*}
+
+Since the mechanical
+system naturally oscillates with a frequency
+$\omega\approx\sqrt{k/m}$ , we can immediately solve the
+electrical version by analogy, giving
+\begin{equation*}
+          \omega \approx \frac{1}{\sqrt{LC}}\eqquad.
+\end{equation*}
+
+Since the resistance $R$ is analogous to $b$ in the mechanical case, we
+find that the $Q$ (quality factor, not charge) of the
+resonance is inversely proportional to $R$, and the width of
+the resonance is directly proportional to $R$.
+
+\begin{eg}{Tuning a radio receiver}
+A radio receiver uses this kind of circuit to pick out the
+desired station. Since the receiver resonates at a
+particular frequency, stations whose frequencies are far off
+will not excite any response in the circuit. The value of
+$R$ has to be small enough so that only one station at a
+time is picked up, but big enough so that the tuner isn't
+too touchy. The resonant frequency can be tuned by adjusting
+either $L$ or $C$, but variable capacitors are easier to
+build than variable inductors.
+\end{eg}
+\begin{eg}{A numerical calculation}
+        The phone company sends more than one conversation at a
+time over the same wire, which is accomplished by shifting
+each voice signal into different range of frequencies during
+transmission. The number of signals per wire can be maximized by making
+each range of frequencies (known as a bandwidth) as small as
+possible. It turns out that only a relatively narrow range
+of frequencies is necessary in order to make a human voice
+intelligible, so the phone company filters out all the
+extreme highs and lows. (This is why your phone voice sounds
+different from your normal voice.)
+
+\egquestion
+If the filter consists of an LRC circuit with a
+broad resonance centered around 1.0 kHz, and the capacitor
+is 1 $\mu\zu{F}$ (microfarad), what inductance value must be used?
+
+\eganswer
+Solving for $L$, we have
+\begin{align*}
+                         L         &=   \frac{1}{ C\omega^2}   \\
+                                 &=    \frac{1}{(10^{-6}\ \zu{F})(2\pi\times10^3\ \zu{s}^{-1})^2}   \\
+                                 &=     2.5\times10^{-3}\ \zu{F}^{-1}\zu{s}^2  
+\end{align*}
+Checking that these really are the same units as henries is
+a little tedious, but it builds character:
+\begin{align*}
+                        \zu{F}^{-1}\zu{s}^2         &=    (\zu{C}^2/\zu{J})^{-1}\zu{s}^2          \\
+                                 &=    \zu{J}\cdot\zu{C}^{-2}\zu{s}^2          \\
+                                 &=    \zu{J}/\zu{A}^2  \\
+                                 &=    \zu{H}          
+\end{align*}
+The result is 25 mH (millihenries).
+(An inductance value this large would probably be imlemented with an op-amp, not a coil.)
+\end{eg}
+
+<% end_sec('lrc-oscillations') %>
+
+<% begin_sec("Voltage and current") %>
+
+What is physically happening in one of these oscillating
+circuits? Let's first look at the mechanical case, and then
+draw the analogy to the circuit. For simplicity, let's
+ignore the existence of damping, so there is no friction in
+the mechanical oscillator, and no resistance in the electrical one.
+
+Suppose we take the mechanical oscillator and pull the mass
+away from equilibrium, then release it. Since friction tends
+to resist the spring's force, we might naively expect that
+having zero friction would allow the mass to leap instantaneously
+to the equilibrium position. This can't happen, however,
+because the mass would have to have infinite velocity in
+order to make such an instantaneous leap. Infinite velocity
+would require infinite kinetic energy, but the only kind of
+energy that is available for conversion to kinetic is the
+ energy stored in the spring, and that is finite,
+not infinite. At each step on its way back to equilibrium,
+the mass's velocity is controlled exactly by the amount of
+the spring's energy that has so far been converted into kinetic energy. After the mass
+reaches equilibrium, it overshoots due to its own momentum.
+It performs identical oscillations on both sides of
+equilibrium, and it never loses amplitude because friction
+is not available to convert mechanical energy into heat.
+
+Now with the electrical oscillator, the analog of position
+is charge. Pulling the mass away from equilibrium is like
+depositing charges $+q$ and $-q$ on the plates of the
+capacitor. Since resistance tends to resist the flow of
+charge, we might imagine that with no friction present, the
+charge would instantly flow through the inductor (which is,
+after all, just a piece of wire), and the capacitor would
+discharge instantly. However, such an instant discharge is
+impossible, because it would require infinite current for
+one instant. Infinite current would create infinite magnetic
+fields surrounding the inductor, and these fields would have
+infinite energy. Instead, the rate of flow of current is
+controlled at each instant by the relationship between the
+amount of energy stored in the magnetic field and the amount
+of current that must exist in order to have that strong a
+field. After the capacitor reaches $q=0$, it overshoots. The
+circuit has its own kind of electrical ``inertia,'' because
+if charge was to stop flowing, there would have to be zero
+current through the inductor. But the current in the
+inductor must be related to the amount of energy stored in
+its magnetic fields. When the capacitor is at $q=0$, all the
+circuit's energy is in the inductor, so it must therefore
+have strong magnetic fields surrounding it and quite a bit
+of current going through it.
+
+The only thing that might seem spooky here is that we used
+to speak as if the current in the inductor caused the
+magnetic field, but now it sounds as if the field causes the
+current. Actually this is symptomatic of the elusive nature
+of cause and effect in physics. It's equally valid to think
+of the cause and effect relationship in either way. This may
+seem unsatisfying, however, and for example does not really
+get at the question of what brings about a voltage
+difference across the resistor (in the case where the
+resistance is finite); there must be such a voltage
+difference, because without one, Ohm's law would predict
+zero current through the resistor.
+
+Voltage, then, is what is really missing from our story so far.
+
+Let's start by studying the voltage across a capacitor.
+Voltage is electrical potential energy per unit charge, so
+the voltage difference between the two plates of the
+capacitor is related to the amount by which its energy would
+increase if we increased the absolute values of the charges on the plates
+ from $q$ to $q+\der q$:
+\begin{align*}
+                V_C         &=    (U_{q+\der q}-U_q)/\der q   \\
+                        &=        \frac{\der U_C}{\der q} \\
+                        &= \frac{\der}{\der q}\left(\frac{1}{2C}q^2\right) \\
+                        &= \frac{q}{C} 
+\end{align*}
+Many books
+use this as the definition of capacitance. This equation, by
+the way, probably explains the historical reason why $C$ was
+defined so that the energy was \emph{inversely} proportional
+to $C$ for a given value of $q$: the people who invented the
+definition were thinking of a capacitor as a device for
+storing charge rather than energy, and the amount of charge
+stored for a fixed voltage (the charge ``capacity'') is
+proportional to $C$.
+
+<% marg(0) %>
+<%
+  fig(
+    'indv',
+    %q{The inductor releases energy and gives it to the black box.}
+  )
+%>
+<% end_marg %>
+
+In the case of an inductor, we know that if there is a
+steady, constant current flowing through it, then the
+magnetic field is constant, and so is the amount of energy
+stored; no energy is being exchanged between the inductor and
+any other circuit element. But what if the current is changing? The magnetic
+field is proportional to the current, so a change in one
+implies a change in the other. For concreteness, let's
+imagine that the magnetic field and the current are both
+decreasing. The energy stored in the magnetic field is
+therefore decreasing, and by conservation of energy, this
+energy can't just go away --- some other circuit element must
+be taking energy from the inductor. The simplest example,
+shown in figure \figref{indv}, is a series circuit consisting
+of the inductor plus one other circuit element. It doesn't matter
+what this other circuit element is, so we just call it a black box,
+but if you like, we can think of it as a resistor, in which case
+the energy lost by the inductor is being turned into heat by
+the resistor. 
+The junction rule tells us that both circuit
+elements have the same current through them, so $I$ could refer
+to either one.
+
+Experience with the loop rule would also lead us to expect that
+$V_{inductor}+V_{black\ box}=0$, so the two voltage drops
+have the same absolute value, which we could then notate simply as $V$.
+In real-world circuits, this is indeed what we would usually find, to a good
+approximation, using an AC voltmeter, although the loop rule can actually
+be violated in an AC circuit (\note{ac-circuit-loop-rule}).
+
+Whatever the black box is, the rate at which it
+is taking energy from the inductor is given by $P=IV$, so (ignoring signs)
+\begin{align*}
+        IV &= \frac{\der U_L}{\der t} \\
+                &= \frac{\der}{\der t}\left( \frac{1}{2}LI^2\right)  \\
+                &= LI\frac{\der I}{\der t}\eqquad,\\
+\intertext{or}
+        V        &= L\frac{\der I}{\der t}, \qquad \text{[See below re sign.]}
+\end{align*}
+which in many books is taken to be the definition of inductance. When applying
+this in a circuit, we insert a sign in front that 
+indicates that the inductor resists the change in current, i.e., that provides
+negative feedback. The choice of
+sign that accomplishes this is partly a matter of arbitrary choice, since
+the real-world measurements that ultimately define $V$ and $I$ depend on how we
+hook up the voltmeter and ammeter.
+
+To someone who knew only about DC circuits, $V=L\der I/\der t$ would be a surprising result. Suppose, for
+concreteness, that the black box in figure \figref{indv} is a resistor,
+and that the inductor's energy is decreasing, and being converted into heat
+in the resistor. The voltage drop across the resistor indicates that
+it has an electric field across it, which is driving the current.
+But where is this electric field coming from? There are no charges anywhere
+that could be creating it! The answer, of course, is that this is an example
+of electromagnetic induction.
+One of Maxwell's equations (sec.~\ref{sec:maxwell-vacuum}, p.~\pageref{sec:maxwell-vacuum})
+is that $\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$, which tells us
+that the change in the magnetic field will cause a curly electric field,
+If we hadn't already known about induction, this example would have forced us
+to invent it.
+
+<%
+  fig(
+    'inductor-voltage',
+    %q{%
+      Electric fields made by charges, 1, and by
+      changing magnetic fields, 2 and 3.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+The cartoons in figure \figref{inductor-voltage} compares electric fields made by charges, 1,
+to electric fields made by changing magnetic fields, 2-3. In \figref{inductor-voltage}/1, two
+physicists are in a room whose ceiling is positively charged and whose floor is negatively
+charged. The physicist on the bottom throws a positively charged bowling ball into the curved
+pipe. The physicist at the top uses a radar gun to measure the speed of the ball as it comes
+out of the pipe. They find that the ball has slowed down by the time it gets to the top. By measuring the change in the
+ball's kinetic energy, the two physicists are acting just like a voltmeter. They conclude that the
+top of the tube is at a higher voltage than the bottom of the pipe. A difference in voltage
+indicates an electric field, and this field is clearly being caused by the charges in the
+floor and ceiling.
+
+In \figref{inductor-voltage}/2, there are no charges anywhere in the room except for the
+charged bowling ball. Moving charges make magnetic fields, so there is a magnetic field
+surrounding the helical pipe while the ball is moving through it. A magnetic field has been
+created where there was none before, and that field has energy. Where could the energy have
+come from? It can only have come from the ball itself, so the ball must be losing kinetic energy.
+The two physicists working together are again acting as a voltmeter, and again they conclude
+that there is a voltage difference between the top and bottom of the pipe. This indicates
+an electric field, but this electric field can't have been created by any charges, because
+there aren't any in the room. This electric field was created by the change in the magnetic field.
+
+The bottom physicist keeps on throwing balls into the pipe, until the pipe is full of balls,
+\figref{inductor-voltage}/3, and finally a steady current is established.
+While the pipe was filling up with balls, the energy in the
+magnetic field was steadily increasing, and that energy was being stolen from the
+balls' kinetic energy. But once a steady current is established, the energy in the magnetic
+field is no longer changing. The balls no longer have to give up energy in order to
+build up the field, and the physicist at the top finds that the balls are exiting the
+pipe at full speed again. There is no voltage difference any more. Although there is
+a current, $\der I/\der t$ is zero.
+
+<% marg(-5) %>
+
+<%
+  fig(
+    'ballasts',
+    'Ballasts for fluorescent lights. Top: a big, heavy inductor used as a ballast in an
+     old-fashioned fluorescent bulb. Bottom: a small solid-state ballast, built into the base
+     of a modern compact fluorescent bulb.'
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Ballasts}\label{eg:ballast}\index{ballast}\index{gas discharge tube}\index{fluorescent light}
+In a gas discharge tube, such as
+a neon sign, enough voltage is applied to a tube full of gas to ionize some of the atoms
+in the gas. Once ions have been created, the voltage accelerates them, and they
+strike other atoms, ionizing them as well and resulting in a chain reaction. This is a spark,
+like a bolt of lightning. But once the spark starts up,
+the device begins to act as though it has no resistance: more and more current flows, without
+the need to apply any more voltage. The power, $P=IV$, would grow without limit, and the tube 
+would burn itself out.
+
+The simplest solution is to connect an inductor, known as the ``ballast,'' in series with the
+tube, and run the whole thing on an AC voltage. During each cycle, as the voltage reaches the
+point where the chain reaction begins, there is a surge of current, but the inductor resists
+such a sudden change of current, and the energy that would otherwise have burned out the bulb
+is instead channeled into building a magnetic field.
+
+A common household fluorescent lightbulb consists of a gas discharge tube in which the 
+glass is coated with a fluorescent material. The gas in the tube emits ultraviolet light,
+which is absorbed by the coating, and the coating then glows in the visible spectrum.
+
+Until recently, it was common for a fluroescent light's ballast to be a simple inductor,
+and for the whole device to be operated at the 60 Hz frequency of the electrical power lines. This caused
+the lights to flicker annoyingly at 120 Hz, and could also cause an audible hum, since
+the magnetic field surrounding the inductor could exert mechanical forces on things.
+Modern compact fluorescent bulbs have ballasts built into their bases that use
+a frequency in the kilohertz range, eliminating the flicker and
+hum.
+\end{eg}
+
+In section \ref{sec:lrc-oscillations} we analyzed the oscillations of a series LRC circuit
+simply by appealing to the mechanical analog, which we had already solved, but it's
+also interesting to write down the actual differential equation for the circuit.
+The loop rule is approximately valid under the lumped circuit approximation
+(\notewithoutbackref{ac-circuit-loop-rule}), so
+\begin{equation*}
+  V_L+V_R+V_C = 0.
+\end{equation*}
+We now want to express this in terms of $q$ and its derivatives, so we use
+$V_C=q/C$, $V_R=IR=Rq'$, and $|V_L|=L\der I/\der t=Lq''$, resulting in
+\begin{equation*}
+  Lq''+Rq'+\frac{1}{C}q = 0.
+\end{equation*}
+If we look for solutions of the form $q=e^{st}$, we find that $Ls^2+Rs+1/C=0$.\label{lrc-roots}
+When $R=0$, the solutions are $s=\pm i/\sqrt{LC}$, or $\omega=\mp\sqrt{LC}$, as expected.
+
+\startdqs
+
+\begin{dq}
+What happens when the physicist at the bottom in figure \figref{inductor-voltage}/3 starts
+getting tired, and decreases the current?
+\end{dq}
+
+<%
+  fig(
+    'dq-gauss-examples-induction',
+    %q{%
+      Discussion questions \ref{dq:gauss-examples-induction1} and \ref{dq:gauss-examples-induction2}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+\begin{dq}\label{dq:gauss-examples-induction1}
+The wire passes in through one side of the cube and out through the other. If the current through the wire is
+increasing, then the wire will act like an inductor, and there will be a voltage difference between its ends.
+(The inductance will be relatively small, since the wire isn't coiled up, and the $\Delta V$ will therefore
+also be fairly small, but still not zero.) The $\Delta V$ implies the
+existence of electric fields, and yet Gauss's law says the flux must be zero, since there is no charge inside
+the cube. Why isn't Gauss's law violated?
+\end{dq}
+
+\begin{dq}\label{dq:gauss-examples-induction2}
+The charge has been loitering near the edge of the cube, but is then suddenly hit with a mallet, causing it to
+fly off toward the left side of the cube. We haven't yet discussed in detail how disturbances in the electric and magnetic fields
+ripple outward through space, but it turns out that they do so at the speed of light. (In fact, that's what light
+is: ripples in the electric and magnetic fields.) Because the charge is closer to the left side of the cube,
+the change in the electric field occurs there before the information reaches the right side. 
+This would seem certain to lead to a violation of Gauss's law. How can the ideas explored in
+discussion question \ref{dq:gauss-examples-induction1} show the resolution to this paradox?
+\end{dq}
+
+<% end_sec() %>
+
+<% begin_sec("Decay") %>
+
+Up until now I've soft-pedaled the fact that by changing the
+characteristics of an oscillator, it is possible to produce
+non-oscillatory behavior. For example, imagine taking the
+mass-on-a-spring system and making the spring weaker and
+weaker. In the limit of small $k$, it's as though there was
+no spring whatsoever, and the behavior of the system is that
+if you kick the mass, it simply starts slowing down. Although the
+limit $k\rightarrow0$ is intuitively easy to imagine in the
+mechanical case, we get the non-oscillatory behavior
+whenever $Q<1/2$ (\note{overdamped-q}).
+In sections \ref{subsec:rc} and \ref{subsec:rl} we will analyze only the
+cases where either the
+capacitor or the inductor is completely absent, giving $Q=0$.
+
+<% begin_sec("The RC circuit",nil,'rc') %>
+\index{RC circuit}
+We first analyze the RC circuit, \figref{rc}. In reality one would
+have to ``kick'' the circuit, for example by briefly
+inserting a battery, in order to get any interesting
+behavior. Setting $L=0$ in our analysis from p.~\pageref{lrc-roots}, we have
+\begin{equation*}
+                        I         =      -\frac{1}{RC}q
+\end{equation*}
+The negative sign tells us that the current tends to reduce
+the charge on the capacitor, i.e., to discharge it. It makes
+sense that the current is proportional to $q$\/:  if $q$ is
+large, then the attractive forces between the $+q$ and $-q$
+charges on the plates of the capacitor are large, and
+charges will flow more quickly through the resistor in order
+to reunite. If there was zero charge on the capacitor
+plates, there would be no reason for current to flow. Since
+amperes, the unit of current, are the same as coulombs per
+second, it appears that the quantity $RC$ must have
+units of seconds, and you can check for yourself that this
+is correct. $RC$ is therefore referred to as the time
+constant of the circuit.\index{RC time constant}\index{time constant!RC}
+
+<% marg(30) %>
+<%
+  fig(
+    'rc',
+    %q{An RC circuit.}
+  )
+%>
+<% end_marg %>
+
+
+How exactly do $I$ and $q$ vary with time? Rewriting $I$ as
+$\der q/\der t$, we have
+\begin{equation*}
+                \frac{\der q}{\der t} = -\frac{1}{RC}q\eqquad.
+\end{equation*}
+We need a function $q(t)$ whose derivative
+equals itself, but multiplied by a negative constant.
+A function of the form $ae^t$, where $e=2.718...$ is the base of natural logarithms,
+is the only one that has its derivative equal to itself, and
+$ae^{bt}$ has its derivative equal to itself multiplied by $b$. Thus
+our solution is
+\begin{equation*}
+                q = q_\zu{o}\exp\left(-\frac{t}{RC}\right)\eqquad.
+\end{equation*}
+
+<% marg(0) %>
+<%
+  fig(
+    'rcdecay',
+    %q{%
+      Over a time interval $RC$, the charge on the capacitor
+      is reduced by a factor of $e$.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'rl',
+    %q{An RL circuit.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('rc') %>
+
+<% begin_sec("The RL circuit",nil,'rl') %>
+\index{RL circuit}\index{time constant!RL}
+The RL circuit, \figref{rl}, can be attacked by similar methods, and
+it can easily be shown that it gives
+\begin{equation*}
+                I = I_\zu{o}\exp\left(-\frac{R}{L}t\right)\eqquad.
+\end{equation*}
+The RL time constant equals $L/R$.
+
+\begin{eg}{Death by solenoid; spark plugs}\index{spark plug}
+When we suddenly break an RL circuit, what will happen?
+It might seem that we're faced with a paradox, since we only
+have two forms of energy, magnetic energy and heat, and if the
+current stops suddenly, the magnetic field must collapse suddenly.
+But where does the lost magnetic energy go? It can't go into
+resistive heating of the resistor, because the circuit has now
+been broken, and current can't flow!
+
+The way out of this conundrum is to recognize that the open gap
+in the circuit has a resistance which is large, but not infinite.
+This large resistance causes the RL time constant $L/ R$ to be very
+small. The current thus continues to flow for a very brief time, and
+flows straight across the air gap where the circuit has been opened.
+In other words, there is a spark!
+
+We can determine based on several different lines of
+reasoning that the voltage drop from one end of the spark to the other must be
+very large. First, the air's resistance is large, so $V= IR$ requires a large
+voltage. We can also reason that all the energy in the magnetic field is
+being dissipated in a short time, so the power dissipated in the spark, $P= IV$,
+is large, and this requires a large value of $V$. ($I$ isn't large --- it is
+decreasing from its initial value.) Yet a third way to reach the same result
+is to consider the equation $V_{L}=\der I/\der t$\/: since the time constant
+is short, the time derivative $\der I/\der t$ is large.
+
+This is exactly how a car's spark plugs work. Another application is to
+electrical safety: it can be dangerous to break an inductive circuit
+suddenly, because so much energy is released in a short time. There is
+also no guarantee that the spark will discharge across the air gap; it
+might go through your body instead, since your body might have a lower
+resistance.
+\end{eg}
+
+<% marg(-10) %>
+
+<%
+  fig(
+    'spark-gap-transmitter',
+    'Example \ref{eg:spark-gap-transmitter}.'
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A spark-gap radio transmitter}\label{eg:spark-gap-transmitter}\index{spark gap transmitter}
+Figure \figref{spark-gap-transmitter} shows a primitive type of radio transmitter, called
+a spark gap transmitter, used to send Morse code around the turn of the twentieth century. The high voltage
+source, V, is typically about 10,000 volts. When the telegraph
+switch, S, is closed, the RC
+circuit on the left starts charging up. An increasing voltage difference develops between the electrodes of the spark gap, G.
+When this voltage difference gets large enough, the electric field in the air between the electrodes
+causes a spark, partially discharging the RC circuit, but charging the LC circuit on the right.
+The LC circuit then oscillates at its resonant frequency (typically about 1 MHz), but the energy of these oscillations is
+rapidly radiated away by the antenna, A, which sends out radio waves.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+Carry out the analysis of the RL circuit explicitly.
+\end{dq}
+
+\begin{dq}
+A gopher gnaws through one of the wires in the DC lighting system in
+your front yard, and the lights turn off. At the instant when the circuit becomes open, we can
+consider the bare ends of the wire to be like the plates of a capacitor,
+with an air gap (or gopher gap) between them. What kind of capacitance
+value are we talking about here? What would this tell you about the
+$RC$ time constant?
+\end{dq}
+ %  
+
+ % ------------------------------------------ 
+
+<% end_sec('rl') %>
+
+<% end_sec() %>
+
+<% begin_notes %>
+
+\notetext{ac-circuit-loop-rule}{The loop rule in an AC circuit}\index{loop rule!in AC circuits}
+\notesummary{Why does the loop rule work at all in AC circuits?}
+
+When we take measurements with an AC voltmeter, we find in practice that the
+loop rule often holds for AC circuits.
+But this is a little bit like
+the story of the centipede who is asked how he keeps all his legs coordinated
+and replies, ``You know, I never thought about that before,'' after which he
+is no longer able to walk. The loop rule is essentially a statement that
+the electric field has $\curl\vc{E}=0$, but this is false when we have
+induction. One of Maxwell's equations (sec.~\ref{sec:maxwell-vacuum}, p.~\pageref{sec:maxwell-vacuum})
+is that $\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$, which tells us
+that the change in the magnetic field will cause a curly electric field.
+There is thus no well-defined electric potential, and the loop rule should
+be invalid. So why does it seem to work here when it shouldn't? The answer is that
+when the lumped circuit approximation is valid, the external magnetic fields of
+circuit elements like inductors are negligible, and therefore it is approximately
+true, in the empty space surrounding the circuit where we place our voltmeters, that
+$\curl\vc{E}=0$. Because of these issues, many writers will define a symbol
+such as $\mathcal{E}$, referred to as ``emf,''\footnote{standing for ``electromotive force,''
+a horrifically bad piece of
+terminology, since it doesn't even have units of force} which is minus the work done by an electric field between
+one point in space and another. This is essentially the same as the definition of
+a voltage difference, but without the connotation that there is a well-defined
+electric potential.
+
+\notetext{overdamped-q}{Overdamping}\index{overdamping}
+\notesummary{Overdamping occurs for $Q<1/2$.}
+As shown on p.~\pageref{lrc-roots}, the solutions to the equation of
+motion for a series LRC circuit are of the form $q=e^{st}$, where
+$Ls^2+Rs+1/C=0$. The roots of this polynomial equation are given by
+the quadratic formula, which contains the square root of the
+discriminant $R^2-4L/C$. By analogy with the mechanical case
+(p.~\pageref{q-mechanical}), $Q=C^{-1/2}L^{1/2}R^{-1}$,\index{$Q$ (quality factor)!LRC circuit}%
+\index{quality factor ($Q$)!LRC circuit}
+so the discriminant is positive when $Q<1/2$, which is referred to as
+the case of overdamping.  
+
+\notetext{fourier}{Fourier analysis}
+\notesummary{Any linear circuit element's behavior can be fully characterized by its behavior on sine waves.}
+
+The idea is that according to a set of
+related mathematical results called Fourier's theorem and the Fourier inversion theorem, we expect to
+be able to write any sufficiently well-behaved function as a sum of sine waves. For periodic functions,
+the sum is in general an infinite series. For example, a square wave can be written as
+$<% eqn_image("eqn-wave1","../share/quantum/figs") %>
+   +\frac{1}{3}<% eqn_image("eqn-wave3","../share/quantum/figs") %>+\frac{1}{5}<% eqn_image("eqn-wave5","../share/quantum/figs") %>+\ldots$
+For nonperiodic functions, the sum will usually have to be an integral, i.e., a continuous sum.
+Although the mathematical theorems require the functions to have certain properties, physicists and
+engineers normally don't worry about them, or if necessary we generalize the notion of a function
+to try to make them work. An example of such a generalization is the Dirac delta function.
+
+
+
+<% end_notes %>
+
+
+
+<% begin_hw_sec %>
+
+<% end_hw_sec %>
+
+<% begin_lab('Energy in electric and magnetic fields') %>
+
+\begin{labapparatus}
+coil ($\sim1\ \zu{H}$)\\
+0.01 $\mu\zu{F}$ capacitor\\
+oscilloscope\\
+sine wave generator
+\end{labapparatus}
+
+\begin{labgoal}
+Observe how the energy content of the electric and magnetic fields relates
+to the fields' magnitudes.
+\end{labgoal}
+
+<%
+  fig(
+    'energy-in-fields-lab-supersimplified',
+    %q{A simplified version of the circuit.},
+    {'width'=>'column','float'=>true}
+  )
+%>
+
+The basic idea of this lab is to observe a circuit like the one shown in
+figure \figref{energy-in-fields-lab-supersimplified}, consisting of a capacitor and an inductor.
+Imagine that we first deposit positive and negative
+charges on the plates of the capacitor. If we imagined that the universe was
+purely mechanical, obeying Newton's laws of motion,
+we would expect that the attractive force between these charges
+would cause them to come back together and reestablish a stable equilibrium
+in which there was zero net charge everywhere in the circuit.
+
+However, the capacitor in its initial, charged, state has an electric 
+field between its plates, and this field possesses energy. This energy
+can't just go away, because energy is conserved. What really happens is
+that as charge starts to flow off of the capacitor plates, a current is
+established in the coil. This current creates a magnetic field in the space
+inside and around the coil. The electric energy doesn't just evaporate;
+it turns into magnetic energy. We end up with an oscillation in which the
+capacitor and the coil trade energy back and forth. Your goal is to
+monitor this energy exchange, and to use it to deduce a power-law
+relationship between each field and its energy.
+
+
+<%
+  fig(
+    'energy-in-fields-lab-simplified',
+    %q{The actual circuit.},
+    {'width'=>'column','float'=>true}
+  )
+%>
+
+The practical realization of the circuit involves some further
+complications, as shown in figure \figref{energy-in-fields-lab-simplified}.
+
+The wires are not superconductors, so the circuit
+has some nonzero resistance, and the oscillations would therefore
+gradually die out, as the electric and magnetic energies were
+converted to heat. The sine wave generator serves both to
+initiate the oscillations and to maintain them, replacing, in each cycle, the
+energy that was lost to heat. 
+
+Furthermore, the circuit has a resonant frequency at which it
+prefers to oscillate, and when the resistance is very small,
+the width of the resonance is very narrow. To make the
+resonance wider and less finicky, we intentionally insert
+a 10 $\zu{k}\Omega$ resistor. The inductance of the coil is about a henry,
+giving a resonant frequency in the low kilohertz range.
+
+\labsection{Observations}
+
+Let $E$ be the magnitude of the electric field between the capacitor plates, and
+ let $\mytilde{E}$ be the maximum value of this quantity. It is then
+ convenient to define
+ $x=E/\mytilde{E}$, a unitless quantity ranging from $-1$ to 1.
+ Similarly, let $y=B/\mytilde{B}$ for the corresponding magnetic quantities.
+ The electric field is proportional to the voltage difference across
+ the capacitor plates, which is something we can measure directly using
+ the oscilloscope:
+ \begin{equation*}
+ 	x = \frac{E}{\mytilde{E}} = \frac{V_C}{\mytilde{V_C}} 
+ \end{equation*}
+
+ The magnetic field in the coil is proportional to the current.
+ Unfortunately, an oscilloscope doesn't measure current, so there's
+ no equally direct way to get a handle on the magnetic field. However,
+ all the current that goes through the coil must also go through the
+ resistor, and Ohm's law relates the current through the resistor to
+ the voltage drop across it. This voltage drop is something we can
+ measure with the oscilloscope, so we have
+ \begin{equation*}
+ 	y = \frac{B}{\mytilde{B}} = \frac{I}{\mytilde{I}}= \frac{V_R}{\mytilde{V_R}} 
+ \end{equation*}
+ 
+ To measure $x$ and $y$, you need to connect channels 1 and 2 of the
+ oscilloscope across the resistor and the capacitor. Since both channels
+ of the scope are grounded on one side (the side with the ground tab
+ on the banana-to-bnc connector), you need to make sure that their
+ grounded sides both go to the piece of wire between the resistor and
+ the capacitor. Furthermore, one output of the sine wave generator is
+ normally grounded, which would mess everything up: two different points
+ in the circuit would be grounded, which would mean that there would be
+ a short across some of the circuit elements. To avoid this, loosen the
+ banana plug connectors on the sine wave generator, and swing away the
+ piece of metal that normally connects one of the output plugs to the
+ ground.
+ 
+ Tune the sine wave generator's frequency to resonance, and take the
+ data you'll need in order to determine $x$ and $y$ at a whole
+ bunch of different places over one cycle.
+
+The quality of the results can depend a lot on the quality of the connections.
+If the display on the scope changes noticeably when you wiggle the wires,
+you have a problem.
+
+\labsection{Analysis}
+
+ Plot $y$ versus $x$ on a piece of graph paper. Let's assume that
+ the energy in a field depends on the field's strength raised to
+ some power $p$. Conservation of energy then gives
+ \begin{equation*}
+ 	|x|^p+|y|^p = 1 \qquad .
+ \end{equation*}
+ Use your graph to determine $p$, and interpret your result.
+
+\labsection{Prelab}
+
+P1.~Sketch what your graph would look like for $p=0.1$, $p=1$, $p=2$, and $p=10$.
+ (You should be able to do $p=1$ and $p=2$ without any computations. For
+ $p=0.1$ and $p=10$, you can either run some numbers on your calculator or
+ use your mathematical knowledge to sketch what they would turn out like.)
+
+<% end_lab %>
+
+<% end_chapter() %>
+

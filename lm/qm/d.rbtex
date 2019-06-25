@@ -1,0 +1,876 @@
+<%
+  $last_chapter = true
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '36',
+    %q{The Atom},
+    'ch:qm-atom',
+    %q{A wavefunction of an electron in a hydrogen atom.},
+    {'opener'=>'big-hydrogen-wavefunction','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+
+You can learn a lot by taking a car engine apart, but you
+will have learned a lot more if you can put it all back
+together again and make it run. Half the job of reductionism
+is to break nature down into its smallest parts and
+understand the rules those parts obey. The second half is to
+show how those parts go together, and that is our goal in
+this chapter. We have seen how certain features of all atoms
+can be explained on a generic basis in terms of the
+properties of bound states, but this kind of argument
+clearly cannot tell us any details of the behavior of an
+atom or explain why one atom acts differently from another.
+
+The biggest embarrassment for reductionists is that the job
+of putting things back together is usually much harder
+than the taking them apart. Seventy years after the
+fundamentals of atomic physics were solved, it is only
+beginning to be possible to calculate accurately the
+properties of atoms that have many electrons. Systems
+consisting of many atoms are even harder. Supercomputer
+manufacturers point to the folding of large \index{protein
+molecules}protein molecules as a process whose calculation
+is just barely feasible with their fastest machines. The
+goal of this chapter is to give a gentle and visually
+oriented guide to some of the simpler results about atoms.
+
+<% begin_sec("Classifying states",3) %>
+
+We'll focus our attention first on the simplest atom,
+\index{hydrogen atom!classification of states}hydrogen, with
+one proton and one electron. We know in advance a little of
+what we should expect for the structure of this atom. Since
+the electron is bound to the proton by electrical forces, it
+should display a set of discrete energy states, each
+corresponding to a certain standing wave pattern. We need to
+understand what states there are and what their properties are.
+
+What properties should we use to classify the states? The
+most sensible approach is to used conserved quantities.
+\index{hydrogen atom!energy in}Energy is one conserved
+quantity, and we already know to expect each state to have a
+specific energy. It turns out, however, that energy alone is
+not sufficient. Different standing wave patterns of the atom
+can have the same energy.
+
+\index{hydrogen atom!momentum in}Momentum is also a
+conserved quantity, but it is not particularly appropriate
+for classifying the states of the electron in a hydrogen
+atom. The reason is that the force between the electron and
+the proton results in the continual exchange of momentum
+between them. (Why wasn't this a problem for energy as well?
+Kinetic energy and momentum are related by $KE=p^2/2m$,
+so the much more massive proton never has very much kinetic
+energy. We are making an approximation by assuming all the
+kinetic energy is in the electron, but it is quite a
+good approximation.)
+
+<% marg(0) %>
+<%
+  fig(
+    'wrapping-wave',
+    %q{Eight wavelengths fit around this circle: $\ell=8$.}
+  )
+%>
+<% end_marg %>
+\index{hydrogen atom!angular momentum in}Angular momentum
+does help with classification. There is no transfer of
+angular momentum between the proton and the electron, since
+the force between them is a center-to-center force,
+producing no torque.
+
+Like energy, angular momentum is quantized in quantum
+physics. As an example, consider a quantum wave-particle
+confined to a circle, like a wave in a circular moat
+surrounding a castle. A sine wave in such a ``\index{angular
+momentum!quantization of}\index{quantum moat}quantum moat''
+cannot have any old wavelength, because an integer number of
+wavelengths must fit around the circumference, $C$, of the
+moat. The larger this integer is, the shorter the wavelength,
+and a shorter wavelength relates to greater momentum and
+angular momentum. Since this integer is related to angular
+momentum, we use the symbol $\ell$ for it:
+\begin{equation*}
+        \lambda      =   \frac{C}{\ell}
+\end{equation*}
+The angular momentum is
+\begin{equation*}
+        L     =    rp\eqquad.
+\end{equation*}
+Here, $r=C/2\pi $, and $p=h/\lambda=h\ell/C$, so
+\begin{align*}
+        L     &=   \frac{C}{2\pi}\cdot\frac{h\ell}{C}   \\
+             &= \frac{h}{2\pi}\ell
+\end{align*}
+
+In the example of the quantum moat, angular momentum is
+quantized in units of $h/2\pi$, and this turns out to be a completely
+general fact about quantum physics.
+That makes $h/2\pi$ a
+pretty important number, so we define the abbreviation
+$\hbar=h/2\pi$. This symbol is read ``h-bar.''
+
+\begin{important}[quantization of angular momentum]
+The angular momentum of a particle due to its motion through
+space is quantized in units of $\hbar$.
+\end{important}
+
+<% self_check('find-l-from-picture',<<-'SELF_CHECK'
+What is the angular momentum of the wavefunction shown
+on page \pageref{ch:qm-atom}?
+  SELF_CHECK
+  ) %>
+
+\index{angular momentum!and the uncertainty principle}\index{angular
+momentum!in three dimensions}
+<% end_sec() %>
+<% begin_sec("Angular momentum in three dimensions",0) %>
+
+Up until now we've only worked with angular momentum in the
+context of rotation in a plane, for which we could simply
+use positive and negative signs to indicate clockwise and
+counterclockwise directions of rotation. A hydrogen atom,
+however, is unavoidably three-dimensional. Let's first
+consider the generalization of angular momentum to three
+dimensions in the classical case, and then consider how it
+carries over into quantum physics.
+
+
+<% begin_sec("Three-dimensional angular momentum in classical physics") %>
+
+<% marg(0) %>
+<%
+  fig(
+    'top',
+    %q{The angular momentum vector of a spinning top.}
+  )
+%>
+<% end_marg %>
+If we are to completely specify the angular momentum of a
+classical object like a top, \figref{top}, in three dimensions, it's
+not enough to say whether the rotation is clockwise or
+counterclockwise. We must also give the orientation of the
+plane of rotation or, equivalently, the direction of the
+top's axis. The convention is to specify the direction of
+the axis. There are two possible directions along the axis,
+and as a matter of convention we use the direction such that
+if we sight along it, the rotation appears clockwise.
+
+Angular momentum can, in fact, be defined as a vector
+pointing along this direction. This might seem like a
+strange definition, since nothing actually moves in that
+direction, but it wouldn't make sense to define the angular
+momentum vector as being in the direction of motion, because
+every part of the top has a different direction of motion.
+Ultimately it's not just a matter of picking a definition
+that is convenient and unambiguous: the definition we're
+using is the only one that makes the total angular momentum
+of a system a conserved quantity if we let ``total''
+mean the vector sum.
+
+As with rotation in one dimension, we cannot define what we
+mean by angular momentum in a particular situation unless we
+pick a point as an axis. This is really a different use of
+the word ``axis'' than the one in the previous paragraphs.
+Here we simply mean a point from which we measure the
+distance $r$. In the hydrogen atom, the nearly immobile
+proton provides a natural choice of axis.
+
+<% end_sec() %>
+<% begin_sec("Three-dimensional angular momentum in quantum physics") %>
+
+Once we start to think more carefully about the role of
+angular momentum in quantum physics, it may seem that there
+is a basic problem: the angular momentum of the electron in
+a hydrogen atom depends on both its distance from the proton
+and its momentum, so in order to know its angular momentum
+precisely it would seem we would need to know both its
+position and its momentum simultaneously with good accuracy.
+This, however, might seem to be forbidden by the Heisenberg
+uncertainty principle.
+
+Actually the uncertainty principle does place limits on what
+can be known about a particle's angular momentum vector, but
+it does not prevent us from knowing its magnitude as an
+exact integer multiple of $\hbar$. The reason is that in three
+dimensions, there are really three separate \index{Heisenberg
+uncertainty principle!in three dimensions}\index{uncertainty
+principle!in three dimensions}uncertainty principles:
+
+\begin{align*}
+    \Delta p_x\Delta x & \gtrsim h \\
+    \Delta p_y\Delta y & \gtrsim h \\
+    \Delta p_z\Delta z & \gtrsim h 
+\end{align*}
+
+<% marg(55) %>
+<%
+  fig(
+    'particle-a-m-examples',
+    %q{%
+      1. This particle is moving directly away from
+      the axis, and has no angular momentum. 2. This particle has angular momentum.
+    }
+  )
+%>
+<% end_marg %>
+Now consider a particle, \subfigref{particle-a-m-examples}{1}, that is moving along the $x$
+axis at position $x$ and with momentum $p_x$. We may not be
+able to know both $x$ and $p_x$ with unlimited accuracy,
+but we can still know the particle's angular momentum about
+the origin exactly. Classically, it is zero, because the particle is
+moving directly away from the origin: if it was to be nonzero, we would need
+both a nonzero $x$ and a nonzero $p_y$. In quantum terms, the uncertainty
+principle does not place any constraint on $\Delta x \Delta p_y$.
+
+Suppose, on the other hand, a particle finds itself, as in figure
+\subfigref{particle-a-m-examples}{2}, at
+a position $x$ along the $x$ axis, and it is moving parallel
+to the $y$ axis with momentum $p_y$. It has angular momentum
+$xp_y$ about the $z$ axis, and again we can know its angular
+momentum with unlimited accuracy, because the uncertainty
+principle only relates $x$ to $p_x$ and $y$ to $p_y$. It does
+not relate $x$ to $p_y$.
+
+As shown by these examples, the uncertainty principle does
+not restrict the accuracy of our knowledge of angular
+momenta as severely as might be imagined. However, it does
+prevent us from knowing all three components of an angular
+momentum vector simultaneously. The most general statement
+about this is the following theorem, which we present without proof:
+
+\begin{important}[the angular momentum vector in quantum physics]
+The most that can be known about an angular momentum vector
+is its magnitude and one of its three vector components.
+Both are quantized in units of $\hbar$.
+\end{important}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("The hydrogen atom",nil,'hydrogen') %>
+\index{hydrogen atom}\index{hydrogen atom!L quantum number}\index{hydrogen atom!n quantum number}
+
+Deriving the wavefunctions of the states of the hydrogen
+atom from first principles would be mathematically too
+complex for this book, but it's not hard to understand the
+logic behind such a wavefunction in visual terms. Consider
+the wavefunction from the beginning of the chapter, which is
+reproduced below. Although the graph looks three-dimensional,
+it is really only a representation of the part of the
+wavefunction lying within a two-dimensional plane. The third
+(up-down) dimension of the plot represents the value of the
+wavefunction at a given point, not the third dimension of
+space. The plane chosen for the graph is the one perpendicular
+to the angular momentum vector.
+
+<%
+  fig(
+    'big-hydrogen-wavefunction',
+    %q{A wavefunction of a hydrogen atom.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'suffix'=>2
+    }
+  )
+%>
+
+<% marg(0) %>
+<%
+  fig(
+    'hydrogen-energy-levels',
+    %q{%
+      The energy of a state in the hydrogen atom depends only on its
+      $n$ quantum number.
+    }
+  )
+%>
+<% end_marg %>
+Each ring of peaks and valleys has eight wavelengths going
+around in a circle, so this state has $L=8\hbar$, i.e., we label
+it $\ell=8$. The wavelength is shorter near the center, and this
+makes sense because when the electron is close to the
+nucleus it has a lower PE, a higher KE,
+and a higher momentum.
+
+Between each ring of peaks in this wavefunction is a nodal
+circle, i.e., a circle on which the wavefunction is zero. The
+full three-dimensional wavefunction has nodal spheres: a
+series of nested spherical surfaces on which it is zero. The
+number of radii at which nodes occur, including $r=\infty$,
+is called $n$, and $n$ turns out to be closely related to
+energy. The ground state has $n=1$ (a single node only at
+$r=\infty$), and higher-energy states have higher $n$
+values. There is a simple equation relating $n$ to energy,
+which we will discuss in section \ref{sec:hydrogen-energies}.
+
+The numbers $n$ and $\ell$, which identify the state, are called
+its \index{quantum numbers}\index{quantum numbers!$n$}\index{quantum numbers!$\ell$}\index{quantum numbers!$\ell_z$}
+quantum numbers. A state of a
+given $n$ and $\ell$ can be oriented in a variety of directions in
+space. We might try to indicate the orientation using the
+three quantum numbers $\ell_x=L_x/\hbar$, $\ell_y=L_y/\hbar$, and $\ell_z=L_z/\hbar$.
+ But we have already seen
+that it is impossible to know all three of these simultaneously.
+To give the most complete possible description of a state,
+we choose an arbitrary axis, say the $z$ axis, and label the
+state according to $n$, $\ell$, and $\ell_z$.
+
+<%
+  fig(
+    'hydrogen-three-states',
+    %q{The three lowest-energy states of hydrogen.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Angular momentum requires motion, and motion implies kinetic
+energy. Thus it is not possible to have a given amount of
+angular momentum without having a certain amount of kinetic
+energy as well. Since energy relates to the $n$ quantum
+number, this means that for a given $n$ value there will be
+a maximum possible $\ell$. It turns out that this maximum
+value of $\ell$ equals $n-1$.
+
+In general, we can list the possible combinations of
+quantum numbers as follows:
+
+
+\begin{tabular}{|l|}
+\hline
+  $n$ can equal 1, 2, 3, \ldots \\
+  $\ell$ can range from 0 to $n-1$, in steps of 1\\
+  $\ell_z$ can range from $-\ell$ to $\ell$, in steps of 1 \\
+\hline
+\end{tabular}
+
+Applying these rules, we have the following list of states:
+
+\begin{tabular}{|lll|l|}
+\hline
+$n=1$, & $\ell=0$, & $\ell_z=0$        & one state \\
+$n=2$, & $\ell=0$, & $\ell_z=0$        & one state \\
+$n=2$, & $\ell=1$, & $\ell_z=-1$, 0, or 1 &        three states\\
+\ldots & & & \ldots \\
+\hline
+\end{tabular}
+
+<% self_check('tabulate-hydrogen',<<-'SELF_CHECK'
+Continue the list for $n=3$.
+  SELF_CHECK
+  ) %>
+
+Figure \figref{hydrogen-three-states} shows
+the lowest-energy states
+of the hydrogen atom. The left-hand column of graphs
+displays the wavefunctions in the $x-y$ plane, and the
+right-hand column shows the probability distribution in a
+three-dimensional representation.
+
+\startdqs
+
+\begin{dq}
+The quantum number $n$ is defined as the number of radii
+at which the wavefunction is zero, including $r=\infty$.
+Relate this to the features of the figures on the facing page.
+\end{dq}
+
+\begin{dq}
+Based on the definition of $n$, why can't there be any
+such thing as an $n=0$ state?
+\end{dq}
+
+\begin{dq}
+Relate the features of the wavefunction plots in figure \figref{hydrogen-three-states}
+to the corresponding features of the probability distribution pictures.
+\end{dq}
+
+\begin{dq}
+How can you tell from the wavefunction plots in figure \figref{hydrogen-three-states}
+which ones have which angular momenta?
+\end{dq}
+
+\begin{dq}
+Criticize the following incorrect statement: ``The $\ell=8$
+wavefunction in figure \figref{big-hydrogen-wavefunction2} has a shorter wavelength
+in the center because in the center the electron is in a
+higher energy level.''
+\end{dq}
+
+\begin{dq}
+Discuss the implications of the fact that the probability
+cloud in of the $n=2$, $\ell=1$ state is split into two parts.
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Energies of states in hydrogen",4,'hydrogen-energies',{'optional'=>true}) %>
+__incl(text/h-energy)
+
+<% end_sec() %>
+<% begin_sec("Electron spin",3) %>
+\index{spin}\index{electron!spin of}\index{spin!electron's}
+
+It's disconcerting to the novice ping-pong player to
+encounter for the first time a more skilled player who can
+put spin on the ball. Even though you can't see that the
+ball is spinning, you can tell something is going on by the
+way it interacts with other objects in its environment. In
+the same way, we can tell from the way electrons interact
+with other things that they have an intrinsic spin of their
+own. Experiments show that even when an
+electron is not moving through
+space, it still has angular momentum amounting to $\hbar/2$.
+
+This may seem paradoxical because the quantum moat, for
+instance, gave only angular momenta that were integer
+multiples of $\hbar$, not half-units, and I claimed that angular
+momentum was always quantized in units of $\hbar$, not just in the
+case of the quantum moat. That whole discussion, however,
+assumed that the angular momentum would come from the motion
+of a particle through space. The $\hbar/2$ angular momentum of the
+electron is simply a property of the particle, like its
+charge or its mass. It has nothing to do with whether the
+electron is moving or not, and it does not come from any
+internal motion within the electron. Nobody has ever
+succeeded in finding any internal structure inside the
+electron, and even if there was internal structure, it would
+be mathematically impossible for it to result in a half-unit
+of angular momentum.
+<% marg(300) %>
+<%
+  fig(
+    'spin-vs-orbital',
+    %q{%
+      The top has angular momentum both because of the motion of its
+      center of mass through space and due to its internal rotation.
+      Electron spin is roughly analogous to the intrinsic spin of the top.
+    }
+  )
+%>
+<% end_marg %>
+
+We simply have to accept this $\hbar/2$ angular momentum, called the
+``spin'' of the electron --- Mother Nature rubs our noses in it as
+an observed fact.
+\index{spin!proton's}\index{proton!spin of}
+\index{spin!neutron's}\index{neutron!spin of}
+\index{spin!photon's}\index{photon!spin of}
+Protons and neutrons have
+the same $\hbar/2$ spin, while photons have an intrinsic spin of $\hbar$.
+In general, half-integer spins are typical of material particles.
+Integral values are found for the particles that carry forces: photons,
+which embody the electric and magnetic fields of force, as well as the
+more exotic messengers of the nuclear and gravitational forces.
+The photon is particularly important: it has spin 1.
+
+\index{quantum numbers!$s$}
+\index{quantum numbers!$s_z$}
+As was the case with ordinary angular momentum, we can
+describe spin angular momentum in terms of its magnitude,
+and its component along a given axis. We notate
+these quantities, in units of $\hbar$, as $s$ and $s_z$, so an
+electron has $s=1/2$ and $s_z=+1/2$ or -1/2.
+
+Taking electron spin into account, we need a total of four
+quantum numbers to label a state of an electron in the
+hydrogen atom: $n$, $\ell$, $\ell_z$, and $s_z$. (We omit $s$ because it
+always has the same value.) The symbols $\ell$  and $\ell_z$  include only
+the angular momentum the electron has because it is moving
+through space, not its spin angular momentum. The availability
+of two possible spin states of the electron leads to a
+doubling of the numbers of states:
+
+\noindent\begin{tabular}{|llll|l|}
+\hline
+  $n=1$, & $\ell=0$, & $\ell_z=0$, & $s_z=+1/2$ or $-1/2$ &        two states \\
+  $n=2$, & $\ell=0$, & $\ell_z=0$, & $s_z=+1/2$ or $-1/2$ &        two states\\
+  $n=2$, & $\ell=1$, & $\ell_z=-1$, 0, or 1, & $s_z=+1/2$ or $-1/2$ &        six states\\
+        \ldots & & & & \ldots\\
+\hline
+\end{tabular}
+
+<% end_sec() %>
+<% begin_sec("Atoms with more than one electron",3) %>
+\index{atoms!with many electrons}
+
+What about other atoms besides hydrogen? It would seem that
+things would get much more complex with the addition of a
+second electron. A hydrogen atom only has one particle that
+moves around much, since the nucleus is so heavy and nearly
+immobile. \index{atoms!helium}\index{helium}Helium, with
+two, would be a mess. Instead of a wavefunction whose square
+tells us the probability of finding a single electron at any
+given location in space, a helium atom would need to have a
+wavefunction whose square would tell us the probability of
+finding two electrons at any given combination of points.
+Ouch! In addition, we would have the extra complication of
+the electrical interaction between the two electrons, rather
+than being able to imagine everything in terms of an
+electron moving in a static field of force created
+by the nucleus alone.
+
+Despite all this, it turns out that we can get a surprisingly
+good description of many-electron atoms simply by assuming
+the electrons can occupy the same standing-wave patterns
+that exist in a hydrogen atom. The ground state of helium,
+for example, would have both electrons in states that are
+very similar to the $n=1$ states of hydrogen.  The
+second-lowest-energy state of helium would have one electron
+in an $n=1$ state, and the other in an $n=2$ states. The
+relatively complex spectra of elements heavier than hydrogen
+can be understood as arising from the great number of
+possible combinations of states for the electrons.
+
+A surprising thing happens, however, with \index{atoms!lithium}lithium,
+the three-electron atom. We would expect the ground state of
+this atom to be one in which all three electrons settle down
+into $n=1$ states. What really happens is that two electrons
+go into $n=1$ states, but the third stays up in an $n=2$
+state. This is a consequence of a new principle of physics:
+
+\begin{important}[the Pauli exclusion principle]
+\index{exclusion principle}\index{Pauli exclusion principle}
+Only one electron can ever occupy a given state.
+\end{important}
+
+There are two $n=1$ states, one with $s_z=+1/2$ and one with
+$s_z=-1/2$, but there is no third $n=1$ state for lithium's
+third electron to occupy, so it is forced to go into an $n=2$ state.
+
+It can be proved mathematically that the Pauli exclusion
+principle applies to any type of particle that has
+half-integer spin. Thus two neutrons can never occupy the
+same state, and likewise for two protons. Photons, however,
+are immune to the exclusion principle because their spin is an integer.
+Material objects can't pass through each other, but beams of light can.
+With a little oversimplification, we can say that
+the basic reason is that the exclusion principle applies to
+one but not to the other.\footnote{There are also electrical forces
+between atoms, but as argued on page \pageref{no-molecules}, the
+attractions and repulsions tend to cancel out.}
+
+Photons are made out electric and magnetic fields, which are directly measurable,
+but the wavefunction of a spin-1/2 particle is not observable (p.~\pageref{psi-unobservable}).
+The exclusion principle offers a more fundamental explanation of this difference between
+light and matter. We saw in example \ref{eg:am-radio-photon-density} on
+p.~\pageref{eg:am-radio-photon-density} that in a typical light wave, a huge number of
+photons overlap one another within a volume of one cubic wavelength, and this is what
+allows us to measure the amplitude and phase of the wave with a device like an antenna.
+But for electrons, the exclusion principle prevents us from having more than
+\emph{one} particle in such a volume, so we can't perform this type of classical measurement
+of the wave.
+
+<% begin_sec("Deriving the periodic table",nil,'deriving-periodic-table') %>\index{periodic table}
+
+<% marg(0) %>
+<%
+  fig(
+    'small-periodic-table',
+    %q{The beginning of the periodic table.}
+  )
+%>
+<% end_marg %>
+We can now account for the structure of the periodic table,
+which seemed so mysterious even to its inventor Mendeleev.
+The first row consists of atoms with electrons only
+in the $n=1$ states:
+
+
+\noindent\begin{tabular}{rp{98mm}}
+                H &        1 electron in an $n = 1$ state  \\
+                He &        2 electrons in the two $n = 1$ states  
+\end{tabular}
+
+\noindent The next row is built by filling the $n=2$ energy levels:
+
+\noindent\begin{tabular}{rp{98mm}}
+        Li &        2 electrons in $n=1$ states, 1 electron in an $n=2$ state\\
+        Be &        2 electrons in $n=1$ states, 2 electrons in $n=2$ states\\
+        \ldots\\
+        O &        2 electrons in $n=1$ states, 6 electrons in $n=2$ states\\
+        F &        2 electrons in $n=1$ states, 7 electrons in $n=2$ states\\
+        Ne &        2 electrons in $n=1$ states, 8 electrons in $n=2$ states
+\end{tabular}
+
+\noindent In the third row we start in on the $n=3$ levels:
+
+\noindent\begin{tabular}{rp{98mm}}
+        Na        & 2 electrons in $n=1$ states, 8 electrons in $n=2$ 
+                        states, 1 electron in an $n=3$ state \\
+        ...
+\end{tabular}
+
+\noindent We can now see a logical link between the filling of the
+energy levels and the structure of the periodic table.
+Column 0, for example, consists of atoms with the right
+number of electrons to fill all the available states up to a
+certain value of $n$. Column I contains atoms like lithium
+that have just one electron more than that.
+
+<% marg(0) %>
+<%
+  fig(
+    'hindenburg',
+    %q{Hydrogen is highly reactive.}
+  )
+%>
+<% end_marg %>\index{Hindenburg}
+This shows that the columns relate to the filling of energy
+levels, but why does that have anything to do with
+chemistry? Why, for example, are the elements in columns I
+and VII dangerously reactive? Consider, for example, the
+element \index{atoms!sodium}\index{sodium}sodium (Na), which
+is so reactive that it may burst into flames when exposed to
+air. The electron in the $n=3$ state has an unusually high
+energy. If we let a sodium atom come in contact with an
+oxygen atom, energy can be released by transferring the
+$n=3$ electron from the sodium to one of the vacant
+lower-energy $n=2$ states in the oxygen. This energy is
+transformed into heat. Any atom in column I is highly
+reactive for the same reason: it can release energy by
+giving away the electron that has an unusually high energy.
+
+Column VII is spectacularly reactive for the opposite
+reason: these atoms have a single vacancy in a low-energy
+state, so energy is released when these atoms steal an
+electron from another atom.
+
+It might seem as though these arguments would only explain
+reactions of atoms that are in different rows of the
+periodic table, because only in these reactions can a
+transferred electron move from a higher-$n$ state to a
+lower-$n$ state. This is incorrect. An $n=2$ electron in
+fluorine (F), for example, would have a different energy
+than an $n=2$ electron in lithium (Li), due to the different
+number of protons and electrons with which it is interacting.
+Roughly speaking, the $n=2$ electron in fluorine is more
+tightly bound (lower in energy) because of the larger number
+of protons attracting it. The effect of the increased number
+of attracting protons is only partly counteracted by the
+increase in the number of repelling electrons, because the
+forces exerted on an electron by the other electrons are in
+many different directions and cancel out partially.
+
+\begin{eg}{Neutron stars}\index{neutron stars}
+Here's an exotic example that doesn't even involve atoms. When a
+star runs out of fuel for its
+nuclear reactions, it begins to collapse under its own weight.
+Since Newton's law of gravity depends on the inverse square of the
+distance, the gravitational forces become stronger as the star
+collapses, which encourages it to collapse even further. 
+The final result depends on the mass of the star, but 
+let's consider a star that's only a little more massive
+than our own sun. Such a star will collapse to the point where
+the gravitational energy being released is sufficient to
+cause the reaction $\zu{p}+\zu{e}^{-}\rightarrow \zu{n}+\nu$ to occur. (As you found
+in homework problem \ref{hw:freeneutron} on page \pageref{hw:freeneutron},
+this reaction can only occur when there is some source of energy, because
+the mass-energy of the products is greater than the mass-energy of the
+things being consumed.) The neutrinos fly off and are never heard from
+again, so we're left with a star consisting only of neutrons!
+
+Now the exclusion principle comes into play. The collapse can't continue
+indefinitely. The situation is in fact closely analogous to that of an atom.
+A lead atom's cloud of 82 electrons can't shrink down to the size of a hydrogen atom, because
+only two electrons can have the lowest-energy wave pattern. The same
+happens with the neutron star. No physical repulsion keeps the neutrons
+apart. They're electrically neutral, so they don't repel or attract one another
+electrically. The gravitational force is attractive, and as the collapse proceeds
+to the point where the neutrons come within range of the strong nuclear
+force ($\sim10^{-15}\ \munit$), we even start getting nuclear attraction.
+The only thing that stops the whole process is the exclusion principle.
+The star ends up being only a few kilometers across, and has the same billion-ton-per-teaspoon
+density as an atomic nucleus. Indeed, we can think of it as one big nucleus (with atomic
+number zero, because there are no protons).
+
+As with a spinning figure skater pulling her arms in, conservation of angular
+momentum makes the star spin faster and faster. The whole object may end
+up with a rotational period of a fraction of a second! Such a star
+sends out radio pulses with each revolution, like a sort of lighthouse.
+The first time such a signal was detected, radio astronomers thought that
+it was a signal from aliens.
+\end{eg}
+
+<% end_sec() %>
+<% end_sec() %>\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{quantum number}{a numerical label used to classify a quantum state}
+
+\vocabitem{spin}{the built-in angular momentum possessed by a particle even when at rest}
+
+\end{vocab}
+
+\begin{notation}
+\notationitem{$n$}{the number of radial nodes in the wavefunction, including the one at $r = \infty$}
+\notationitem{$\hbar$}{$h/2\pi$}
+\notationitem{$\vc{L}$}{the angular momentum vector of a particle, not including its spin}
+\notationitem{$\ell$}{the magnitude of the $L$ vector, divided by $\hbar$}
+\notationitem{$\ell_z$}{the $z$ component of the $L$ vector, divided by $\hbar$; this is
+the standard notation in nuclear physics, but not in atomic physics}
+\notationitem{$s$}{the magnitude of the spin angular momentum vector, divided by $\hbar$}
+\notationitem{$s_z$}{the $z$ component of the spin angular momentum vector, divided by $\hbar$; this is the standard notation in nuclear physics, but not in atomic physics}
+\end{notation}
+
+\begin{othernotation}
+\notationitem{$m_\ell$}{a less obvious notation for $\ell_z$, standard in atomic physics}
+\notationitem{$m_s$}{a less obvious notation for $s_z$, standard in atomic physics}
+\index{quantum numbers!$m_\ell$}
+\index{quantum numbers!$m_s$}
+\end{othernotation}
+
+\begin{summarytext}
+
+Hydrogen, with one proton and one electron, is the simplest
+atom, and more complex atoms can often be analyzed to a
+reasonably good approximation by assuming their electrons
+occupy states that have the same structure as the hydrogen
+atom's. The electron in a hydrogen atom exchanges very
+little energy or angular momentum with the proton, so its
+energy and angular momentum are nearly constant, and can be
+used to classify its states. The energy of a hydrogen state
+depends only on its $n$ quantum number.
+
+In quantum physics, the angular momentum of a particle
+moving in a plane is quantized in units of $\hbar$. Atoms are
+three-dimensional, however, so the question naturally arises
+of how to deal with angular momentum in three dimensions. In
+three dimensions, angular momentum is a vector in the
+direction perpendicular to the plane of motion, such that
+the motion appears clockwise if viewed along the direction
+of the vector. Since angular momentum depends on both
+position and momentum, the Heisenberg uncertainty principle
+limits the accuracy with which one can know it. The most that
+can be known about an angular momentum vector is its
+magnitude and one of its three vector components, both of
+which are quantized in units of $\hbar$.
+
+In addition to the angular momentum that an electron carries
+by virtue of its motion through space, it possesses an
+intrinsic angular momentum with a magnitude of $\hbar/2$. Protons
+and neutrons also have spins of $\hbar/2$, while the photon
+has a spin equal to $\hbar$.
+
+Particles with half-integer spin obey the Pauli exclusion
+principle: only one such particle can exist in a given
+state, i.e., with a given combination of quantum numbers.
+
+We can enumerate the lowest-energy states of hydrogen as follows:
+
+\noindent\begin{tabular}{|llll|l|}
+\hline
+  $n=1$, & $\ell=0$, & $\ell_z=0$, & $s_z=+1/2$ or $-1/2$ &        two states \\
+  $n=2$, & $\ell=0$, & $\ell_z=0$, & $s_z=+1/2$ or $-1/2$ &        two states\\
+  $n=2$, & $\ell=1$, & $\ell_z=-1$, 0, or 1, & $s_z=+1/2$ or $-1/2$ &        six states\\
+        \ldots & & & & \ldots\\
+\hline
+\end{tabular}
+
+\noindent The periodic table can be understood in terms of the filling
+of these states. The nonreactive noble gases are those atoms
+in which the electrons are exactly sufficient to fill all
+the states up to a given $n$ value. The most reactive
+elements are those with one more electron than a noble gas
+element, which can release a great deal of energy by giving
+away their high-energy electron, and those with one electron
+fewer than a noble gas, which release energy by accepting an electron.
+
+\end{summarytext}
+
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('hydrogenscale') %>__incl(hw/hydrogenscale)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-h-transitions',
+    %q{Problem \ref{hw:hydrogenlevels}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('hydrogenlevels') %>__incl(hw/hydrogenlevels)<% end_hw() %>
+
+<% begin_hw('energysum') %>__incl(hw/energysum)<% end_hw() %>
+
+<% begin_hw('hydrogenphoton') %>
+ Find an equation for the wavelength of the photon emitted
+when the electron in a hydrogen atom makes a transition from
+energy level $n_1$ to level $n_2$. [You will need to have
+read optional section \ref{sec:hydrogen-energies}.]\answercheck\hwendpart
+<% end_hw() %>
+
+<% begin_hw('basketball') %>__incl(hw/basketball)<% end_hw() %>
+
+<% begin_hw('hydrogennonrelativistic') %>
+ Assume that the kinetic energy of an electron in the
+$n=1$ state of a hydrogen atom is on the same order of
+magnitude as the absolute value of its total energy, and
+estimate a typical speed at which it would be moving. (It
+cannot really have a single, definite speed, because its
+kinetic and potential energy trade off at different
+distances from the proton, but this is just a rough estimate
+of a typical speed.) Based on this speed, were we justified
+in assuming that the electron could be described nonrelativistically?
+<% end_hw() %>
+
+<% begin_hw('electroninproton') %>__incl(hw/electroninproton)<% end_hw() %>
+
+<% begin_hw('hydrogenlike',2) %>__incl(hw/hydrogenlike)<% end_hw() %>
+
+<% begin_hw('muonic-spectrum') %>
+ This question requires that you read optional section
+\ref{sec:hydrogen-energies}. A muon is a subatomic particle that acts exactly like
+an electron except that its mass is 207 times greater. Muons
+can be created by cosmic rays, and it can happen that one of
+an atom's electrons is displaced by a muon, forming a muonic
+atom. If this happens to a hydrogen atom, the resulting
+system consists simply of a proton plus a muon.\\
+ (a) How
+would the size of a muonic hydrogen atom in its ground state
+compare with the size of the normal atom?\hwendpart
+ (b) If you were
+searching for muonic atoms in the sun or in the earth's
+atmosphere by spectroscopy, in what part of the electromagnetic
+spectrum would you expect to find the absorption lines?\hwendpart
+<% end_hw() %>
+
+<% begin_hw('hydrogen-dipole') %>__incl(hw/hydrogen-dipole)<% end_hw() %>
+
+<% begin_hw('hydrogen-ratio') %>__incl(hw/hydrogen-ratio)<% end_hw() %>
+
+<% end_hw_sec %>
+
+
+<% begin_ex("Quantum versus classical randomness") %>
+
+\noindent 1. Imagine the classical version of the particle in a one-dimensional box. Suppose you insert the particle in the
+ box and give it a known, predetermined energy, but a random initial position and a
+ random direction of motion. You then pick a random later moment in time to see where it is.
+ Sketch the resulting probability distribution by shading on top of a line segment. Does the probability distribution depend on energy?
+
+\noindent 2. Do similar sketches for the first few energy levels of the quantum mechanical particle in a box, and compare with 1. 
+
+\noindent 3. Do the same thing as in 1, but for a classical hydrogen atom in two dimensions, which acts just like a miniature solar
+ system. Assume you're always starting out with the same fixed values of energy and angular momentum, but a position
+ and direction of motion that are otherwise random. Do this for $L=0$, and compare with a real $L=0$ probability distribution for the hydrogen atom.
+
+\noindent 4. Repeat 3 for a nonzero value of $L$, say L=$\hbar$.
+
+\noindent 5. Summarize: Are the classical probability distributions 
+accurate? What qualitative features are possessed by the classical diagrams but not by the quantum mechanical ones, or vice-versa?
+
+<% end_ex %>
+
+
+<% end_chapter() %>

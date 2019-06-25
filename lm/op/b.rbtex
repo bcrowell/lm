@@ -1,0 +1,219 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '29',
+    %q{Images by Reflection},
+    'ch:images-1',
+    %q{Narcissus, by Michelangelo Caravaggio, ca. 1598.},
+    {'opener'=>'narcissus','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/2_images_by_reflection)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak[4]
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{real image}{a place where an object appears to be, because
+the rays diffusely reflected from any given point on the
+object have been bent so that they come back together and
+then spread out again from the new point}
+
+\vocabitem{virtual image}{like a real image, but the rays don't actually
+cross again; they only appear to have come from the point on the image}
+
+\vocabitem{converging}{describes an optical device that brings light
+rays closer to the optical axis}
+
+\index{diverging}
+\vocabitem{diverging}{bends light rays farther from the optical axis}
+
+\vocabitem{magnification}{the factor by which an image's linear size is
+increased (or decreased)}
+
+\vocabitem{angular magnification}{the factor by which an image's
+apparent angular size is increased (or decreased)}
+
+\vocabitem{concave}{describes a surface that is
+hollowed out like a cave}
+
+\index{concave!defined}
+\index{convex!defined}
+
+\vocabitem{convex}{describes a surface that bulges outward}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$M$}{the magnification of an image}
+
+\notationitem{$M_a$}{the angular magnification of an image}
+
+\end{notation}
+
+\begin{summarytext}
+
+A large class of optical devices, including lenses and flat
+and curved mirrors, operates by bending light rays to form
+an image. A real image is one for which the rays actually
+cross at each point of the image. A virtual image, such as
+the one formed behind a flat mirror, is one for which the
+rays only appear to have crossed at a point on the image. A
+real image can be projected onto a screen; a virtual one cannot.
+
+Mirrors and lenses will generally make an image that is
+either smaller than or larger than the original object. The
+scaling factor is called the magnification. In many
+situations, the angular magnification is more important than
+the actual magnification.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('mirrorspeed') %>__incl(hw/mirrorspeed)<% end_hw() %>
+
+<% begin_hw('belowthebelt') %>__incl(hw/belowthebelt)<% end_hw() %>
+
+<% begin_hw('convexraytracing') %>
+In this chapter we've only done examples of mirrors with
+hollowed-out shapes (called concave mirrors). Now draw a ray
+diagram for a curved mirror that has a bulging outward shape
+(called a convex mirror). (a) How does the image's distance
+from the mirror compare with the actual object's distance
+from the mirror? From this comparison, determine whether the
+magnification is greater than or less than one. (b) Is the
+image real, or virtual? Could this mirror ever make the
+other type of image?
+<% end_hw() %>
+
+<% begin_hw('listmirrorimages') %>__incl(hw/listmirrorimages)<% end_hw() %>
+
+<% begin_hw('telescopemovehead') %>__incl(hw/telescopemovehead)<% end_hw() %>
+
+<% begin_hw('invertedforehead') %>__incl(hw/invertedforehead)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-rays-cross-but-no-image',
+    %q{Problem \ref{hw:rays-cross-but-no-image}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'illuminable',
+    %q{Problem \ref{hw:illuminable}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('rays-cross-but-no-image') %>__incl(hw/rays-cross-but-no-image)<% end_hw() %>
+
+<% begin_hw('moose') %>__incl(hw/moose)<% end_hw() %>
+
+<% begin_hw('illuminable',2) %>__incl(hw/illuminable)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Exploring images with a curved mirror") %>
+\noindent Equipment:
+
+\begin{indentedblock}
+	concave mirrors with deep curvature
+
+	concave mirrors with gentle curvature
+
+	convex mirrors
+\end{indentedblock}
+
+1. Obtain a curved mirror from your instructor. If it is
+silvered on both sides, make sure you're working with the
+concave side, which bends light rays inward. Look at
+your own face in the mirror. Now change the distance between
+your face and the mirror, and see what happens. Explore the full range
+of possible distances between your face and the mirror.
+
+In these observations you've been changing two variables at once:
+the distance between the object (your face) and the mirror, and the
+distance from the mirror to your eye. In general, scientific experiments
+become easier to interpret if we practice isolation of variables,
+i.e., only change one variable while keeping all the others constant.
+In parts 2 and 3 you'll form an image of an object that's not your face,
+so that you can have independent control of the object distance and
+the point of view.
+
+2. With the mirror held far away from you, observe the image
+of something behind you, over your shoulder. Now bring your
+eye closer and closer to the mirror. Can you see the image
+with your eye very close to the mirror? See if you can explain your
+observation by drawing a ray diagram.
+
+\vfill
+
+\hfill --------------------$>$ \emph{turn page}
+
+\pagebreak[4]
+
+3. Now imagine the following new situation, but \emph{don't
+actually do it yet}. Suppose you lay the mirror face-up on a
+piece of tissue paper, put your finger a few cm above the
+mirror, and look at the image of your finger. As in part 2,
+you can bring your eye closer and closer to the mirror.
+
+Will you be
+able to see the image with your eye very close to the mirror?
+Draw a ray diagram to help you predict what you will observe.
+
+\vspace{85mm}
+
+Prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now test your prediction. If your prediction was incorrect,
+see if you can figure out what went wrong, or ask your instructor for help.
+
+4. For parts 4 and 5, it's more convenient to use concave mirrors that are
+more gently curved; obtain one from your instructor.
+Lay the mirror on the tissue paper, and use it to create
+an image of the overhead lights on a piece of paper above it
+and a little off to the side. What do you have to do in
+order to make the image clear? Can you explain this observation using a ray diagram?
+
+\vfill
+
+\hfill --------------------$>$ \emph{turn page}
+
+\pagebreak[4]
+
+5. Now imagine the following experiment, but \emph{don't do
+it yet}. What will happen to the image on the paper if you
+cover half of the mirror with your hand?
+
+Prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Test your prediction. If your prediction was incorrect, can
+you explain what happened?
+
+6. Now imagine forming an image with a convex mirror (one that
+bulges outward), and that therefore bends light rays away
+from the central axis (i.e., is diverging). Draw a typical ray diagram.
+
+\vspace{90mm}
+
+Is the
+image real, or virtual? Will there be more than one type of image?
+
+Prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Test your prediction.
+<% end_ex %>
+<% end_chapter() %>

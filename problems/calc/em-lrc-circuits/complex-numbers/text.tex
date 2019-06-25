@@ -1,0 +1,112 @@
+For a more detailed treatment of complex numbers, see ch. 3 of
+James Nearing's free book at \\
+physics.miami.edu/nearing/mathmethods/.
+
+% fig {"name":"complex-numbers","caption":"Visualizing complex numbers as points in a plane."}
+
+We assume there is a number, $i$, such that $i^2=-1$.
+The square roots of $-1$ are then $i$ and $-i$. (In electrical engineering work,
+where $i$ stands for current, $j$ is sometimes used instead.) This gives rise
+to a number system, called the complex numbers, containing the real numbers as a subset.
+Any complex number $z$ can be written in the form $z=a+bi$, where $a$ and $b$ are
+real, and $a$ and $b$ are then referred to as the real and imaginary parts of $z$.
+A number with a zero real part is called an imaginary number.
+The complex numbers can be visualized as a plane, with the real number line placed
+horizontally like the $x$ axis of the familiar $x-y$ plane, and the imaginary numbers running
+along the $y$ axis. The complex numbers are complete in a way that the real numbers
+aren't: every nonzero complex number has two square roots. For example, 1 is
+a real number, so it is also a member of the complex numbers, and its square roots
+are $-1$ and 1. Likewise, $-1$ has square roots $i$ and $-i$, and the number $i$
+has square roots $1/\sqrt{2}+i/\sqrt{2}$ and $-1/\sqrt{2}-i/\sqrt{2}$.
+
+% fig {"name":"complex-addition","caption":"Addition of complex numbers is just like addition of vectors,
+%      although the real and imaginary axes don't actually represent directions in space."}
+
+Complex numbers can be added and subtracted by adding or subtracting their real
+and imaginary parts. Geometrically, this is the same as vector addition.
+
+% fig {"name":"complex-conjugate","caption":"A complex number and its conjugate."}
+
+The complex numbers $a+bi$ and $a-bi$, lying at equal distances above and below the
+real axis, are called complex conjugates. The results of the quadratic formula
+are either both real, or complex conjugates of each other.
+The complex conjugate of a number $z$ is notated as $\bar{z}$ or
+$z^*$.
+
+The complex numbers obey all the same rules of arithmetic as the reals, except that
+they can't be ordered along a single line. That is, it's not possible to say whether
+one complex number is greater than another. We can compare them in terms of their
+magnitudes (their distances from the origin), but two distinct complex numbers may
+have the same magnitude, so, for example, we can't say whether $1$ is greater than
+$i$ or $i$ is greater than $1$.
+
+% fig {"name":"complex-polar","caption":"A complex number can be described in terms of its magnitude and argument."}
+
+There is a nice interpretation of complex multiplication.
+We define the argument of a complex number as its angle in the complex plane, measured
+counterclockwise from the positive real axis.
+Multiplying two complex numbers then corresponds to multiplying their magnitudes,
+and adding their arguments.
+
+% fig {"name":"complex-multiplication","caption":"The argument of $uv$ is the sum of the arguments of $u$ and $v$."}
+
+Having expanded our horizons to include the complex numbers, it's natural to want to extend
+functions we knew and loved from the world of real numbers so that they can also operate on
+complex numbers. The only really natural way to do this in general is to use Taylor series.
+A particularly beautiful thing happens with the functions $e^x$, $\sin x$, and $\cos x$:
+\begin{align*}
+  e^x    &= 1 + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \ldots \\
+  \cos x &= 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 - \ldots \\
+  \sin x &= x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 - \ldots 
+\end{align*}
+If $x=i\phi$ is an imaginary number, we have
+\begin{equation*}
+  e^{i\phi} = \cos \phi + i \sin \phi\eqquad,
+\end{equation*}
+a result known as Euler's formula.\index{Euler's formula}
+The geometrical interpretation in the complex
+plane is shown in figure \figref{euler}.
+
+
+Although the result may seem like something out of a freak show at first,
+applying the definition of the exponential function
+makes it clear how natural it is:
+\begin{align*}
+  e^x = \lim_{n\rightarrow \infty} \left(1+\frac{x}{n}\right)^n\eqquad.
+\end{align*}
+When $x=i\phi$ is imaginary, the quantity $(1+i\phi/n)$ represents a number
+lying just above 1 in the complex plane. For large $n$, $(1+i\phi/n)$
+becomes very close to the unit circle, and its argument is the small
+angle $\phi/n$. Raising this number to the nth power multiplies its
+argument by $n$, giving a number with an argument of $\phi$.
+
+% fig {"name":"euler","caption":"The complex number $e^{i\\phi}$ lies on the unit circle."}
+
+Sinusoidal functions have a remarkable property, which is that if you
+add two different sinusoidal functions having the same frequency, the result
+is also a sinusoid with that frequency.
+For example, $\cos\omega t+\sin\omega t=\sqrt{2}\sin(\omega t+\pi/4)$, which can be proved
+using trig identities. The trig identities can get very cumbersome, however, and there is
+a much easier technique involving complex numbers.
+
+Figure \ref{fig:polar} shows a useful way to visualize what's going on.
+When a circuit is oscillating at a frequency $\omega$, we use points in
+the plane to represent sinusoidal functions with various phases and
+amplitudes.
+
+% fig {"name":"polar","caption":"Representing functions with points in polar coordinates."}
+
+% fig {"name":"sinpluscos","caption":"Adding two sinusoidal functions."}
+
+The simplest examples of how to
+visualize this in polar coordinates are ones like $\cos \omega t+\cos \omega t=2\cos \omega t$,
+where everything has the same phase, so all the points
+lie along a single line in the polar plot, and addition is just like adding numbers
+on the number line.
+The less trivial example $\cos\omega t+\sin\omega t=\sqrt{2}\sin(\omega t+\pi/4)$,
+can be visualized as in figure \ref{fig:sinpluscos}.
+
+Figure  \ref{fig:sinpluscos} suggests that
+all of this can be tied together nicely if we identify our plane with the plane
+of complex numbers. For example, the complex numbers 1 and $i$ represent the
+functions $\sin\omega t$ and $\cos\omega t$.

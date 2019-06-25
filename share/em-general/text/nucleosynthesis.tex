@@ -1,0 +1,104 @@
+<% begin_sec("The creation of the elements",nil,'nucleosynthesis',{'optional'=>true}) %>
+  <% begin_sec("Creation of hydrogen and helium in the Big Bang",nil,'bbn') %>
+
+ Did all
+        the chemical elements we're made of come into being in the
+        big bang?\footnote{The evidence for
+        the big bang theory of the origin of the universe was discussed 
+        m4_ifelse(__sn,1,[:on p.~\pageref{subsubsec:hubble}:],[:in subsection \ref{subsec:hubble}:])%
+        .} Temperatures
+        in the first microseconds after the big bang were so high
+        that atoms and nuclei could not hold together at all. 
+        After things had cooled down enough for nuclei and atoms to
+        exist, there was a period of about three minutes during which the
+temperature and density were high enough for fusion to occur, but not so
+high that atoms could hold together. We have a good, detailed understanding
+of the laws of physics that apply under these conditions, so theorists are
+able to say with confidence that the only element heavier than hydrogen that
+was created in significant quantities was helium.
+
+
+  <% end_sec('bbn') %>
+<% marg(200) %>
+<%
+  fig(
+    'crab-nebula',
+    %q{%
+      The Crab Nebula is a remnant of a supernova explosion. Almost all the elements
+      our planet is made of originated in such explosions.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'unilac',
+    %q{%
+      Construction of the UNILAC accelerator in Germany,
+              one of whose uses is for experiments to create very heavy artificial
+              elements. In such an experiment, fusion products recoil through
+              a device called SHIP (not shown) that separates them based on their charge-to-mass ratios ---
+              it is essentially just a scaled-up version of Thomson's apparatus.
+              A typical experiment
+              runs for several months, and out of the billions of fusion reactions
+              induced during this time, only one or two may result in the production
+              of superheavy atoms. In all the rest, the fused nucleus breaks up
+              immediately. SHIP is used to identify the small number of
+              ``good'' reactions and separate them from this intense
+              background.
+    }
+  )
+%>
+<% end_marg %>
+
+  <% begin_sec("We are stardust",nil,'stardust') %>
+
+        In that case, where did all the other elements come from?
+        Astronomers came up with the answer. By studying the
+        combinations of wavelengths of light, called spectra,
+        emitted by various stars, they had been able to determine
+        what kinds of atoms they contained. (We will have more to
+        say about spectra at the end of this book.) They found that the stars fell
+        into two groups. One type was nearly 100\% hydrogen and
+        helium, while the other contained 99\% hydrogen and helium
+        and 1\% other elements. They interpreted these as two
+        generations of stars. The first generation had formed out of
+        clouds of gas that came fresh from the big bang, and their
+        composition reflected that of the early universe. The
+        nuclear fusion reactions by which they shine have mainly
+        just increased the proportion of helium relative to
+        hydrogen, without making any heavier elements.
+        The members of the first generation that we see today,
+        however, are only those that lived a long time. Small stars
+        are more miserly with their fuel than large stars, which
+        have short lives. The large stars of the first generation
+        have already finished their lives. Near the end of its
+        lifetime, a star runs out of hydrogen fuel and undergoes a
+        series of violent and spectacular   reorganizations as it
+        fuses heavier and heavier elements. Very large stars finish
+        this sequence of events by undergoing supernova explosions,
+        in which some of their material is flung off into the void
+        while the rest collapses into an exotic object such as a
+        black hole or neutron star.
+
+        The second generation of stars, of which our own sun is an
+        example, condensed out of clouds of gas that had been
+        enriched in heavy elements due to supernova explosions. It
+        is those heavy elements that make up our planet and our bodies.
+
+  <% end_sec('stardust') %>
+
+\startdqs
+        
+\begin{dq}
+        Should the quality factor for neutrinos be very small,  
+        because they mostly don't interact with your body?
+\end{dq}
+ %
+\begin{dq}
+        Would an alpha source be likely to cause different types
+        of cancer depending on whether the source was external to
+        the body or swallowed in contaminated food? What about a gamma source?
+\end{dq}
+
+<% end_sec('nucleosynthesis') %>

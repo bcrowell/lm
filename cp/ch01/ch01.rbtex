@@ -1,0 +1,1601 @@
+<%
+  require "../eruby_util.rb"
+%>
+<% figure_in_toc("poolskater") %>
+<%
+  chapter(
+    '01',
+    %q{Conservation of Mass and Energy},
+    'ch:energy',
+    ''
+  )
+%>
+
+
+<% begin_sec("Symmetry and conservation laws",0) %>
+
+<% marg(0) %>
+
+<%
+  fig(
+    'startrails',
+    %q{%
+        Due to the rotation of the earth, everything in the sky appears to spin in circles.
+        In this time-exposure photograph, each star appears as a streak.
+    }
+  )
+%>
+<% end_marg %>
+
+Even before history began, people must already have noticed certain facts
+about the sky. The sun and moon both rise in
+the east and set in the west. Another fact that can be settled to a
+fair degree of accuracy using the naked eye is that the apparent
+sizes of the sun and moon don't change noticeably. (There is an
+optical illusion that makes the moon appear bigger when it's near
+the horizon, but you can easily verify that it's nothing more
+than an illusion by checking its angular size against some standard,
+such as your pinkie held at arm's length.) If the sun and moon were
+varying their distances from us, they would appear to get bigger and
+smaller, and since they don't appear to change in size,
+it appears, at least approximately, that they always stay
+at the same distance from us.
+
+From observations like these, the ancients constructed a scientific
+\emph{model},\index{model} in which the sun and moon traveled around
+the earth in perfect circles. Of course, we now know that the earth isn't
+the center of the universe, but that doesn't mean the model wasn't
+useful. That's the way science always works. Science never aims to
+reveal the ultimate reality. Science only tries to make models of
+reality that have predictive power.
+
+Our modern approach to understanding physics revolves around the
+concepts of \emph{symmetry}\index{symmetry} and \emph{conservation laws}, both
+of which are demonstrated by this example.
+
+The sun and moon were believed to move in circles, and a circle
+is a very symmetric shape. If you rotate a circle about its center,
+like a spinning wheel, it doesn't change. Therefore, we say that
+the circle is \emph{symmetric} with respect to rotation about its
+center. The ancients thought it was beautiful that the universe
+seemed to have this type of symmetry built in, and they became very
+attached to the idea.
+
+A \emph{conservation law}\index{conservation law} is a statement that some number stays the
+same with the passage of time. In our example, the distance between
+the sun and the earth is conserved, and so is the distance between
+the moon and the earth. (The ancient Greeks were even able to determine
+that earth-moon distance.)
+
+<%
+  fig(
+    'noether',
+    %q{%
+Emmy Noether (1882-1935). The daughter of a prominent German mathematician, she did not show
+any early precocity at mathematics --- as a teenager she was more interested in music and dancing.
+She received her doctorate in 1907 and rapidly built a world-wide reputation, but the University
+of G\"{o}ttingen refused to let her teach, and her colleague Hilbert had to advertise her courses in the
+university's catalog under his own name. A long controversy ensued, with her opponents asking
+what the country's soldiers would think when they returned home and were expected to learn
+at the feet of a woman. Allowing her on the faculty would also mean letting her vote
+in the academic senate. Said Hilbert, ``I do not see that the sex of the candidate is against
+her admission as a privatdozent [instructor]. After all, the university senate is not a bathhouse.''
+She was finally admitted to the faculty in 1919. A Jew, Noether fled Germany in 1933 and
+joined the faculty at Bryn Mawr in the U.S.
+    },
+    {
+      'width'=>'wide',
+      'narrowfigwidecaption'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+In our example, the symmetry and the conservation law both give the
+same information. Either statement can be satisfied only by a circular
+orbit. That isn't a coincidence. Physicist
+Emmy Noether\index{Noether, Emmy} showed on very general mathematical grounds that for
+physical theories of a certain type, every symmetry leads to
+a corresponding conservation law. Although the precise
+formulation of Noether's theorem,\index{Noether's theorem} and its proof, are too mathematical for this
+book, we'll see many examples like this one, in which the physical
+content of the theorem is fairly straightforward.
+
+The idea of perfect circular orbits seems very beautiful and intuitively appealing. It came as a great disappointment, therefore, when
+the astronomer Johannes Kepler\index{Kepler, Johannes} discovered, by the painstaking analysis of
+precise observations, that orbits such as the moon's were actually
+ellipses, not circles. This is the sort of thing that led the biologist
+Huxley to say, ``The great tragedy of science is the slaying of a beautiful theory by an ugly fact.''
+The lesson of the story, then, is that symmetries are important and beautiful,
+but we can't decide which symmetries are right based only on common sense or
+aesthetics; their validity has to be determined based on observations and
+experiments.
+
+<% marg(0) %>
+<% fig(
+     'swan-lake-symmetry',
+     %q{In this scene from Swan Lake, the choreography has a symmetry with respect to left and right.}
+   )
+%>
+\spacebetweenfigs
+<% fig(
+     'c-s-wu-with-beamline',
+     %q{C.S.~Wu at Columbia University in 1963.}
+   )
+%>
+<% end_marg %>
+
+As a more modern example, consider the symmetry between right and left. For example,
+we observe that a top spinning clockwise has exactly the same behavior as a top
+spinning counterclockwise. This kind of observation led physicists to believe,
+for hundreds of years, that the laws of physics were perfectly symmetric with
+respect to right and left. This mirror symmetry appealed to physicists' common sense.
+However, experiments by Chien-Shiung Wu\index{Wu, Chien-Shiung} et al. in 1957 showed that right-left
+symmetry was violated in certain types of nuclear reactions.
+Physicists were thus forced to change their opinions about what constituted
+common sense.
+
+<% end_sec() %>
+<% begin_sec("Conservation of mass",0) %>\index{mass!conservation of}\index{conservation!of mass}
+We intuitively feel that matter shouldn't appear or disappear out of nowhere: that
+the amount of matter should be a conserved quantity.
+If that was to happen, then it seems as though atoms would have to be created or destroyed,
+which doesn't happen in any physical processes that are familiar from everyday life, such
+as chemical reactions. On the other hand, I've already cautioned you against believing that
+a law of physics must be true just because it seems appealing. The laws of physics have
+to be found by experiment, and there seem to be experiments that are exceptions
+to the conservation of matter. A log weighs more than its
+ashes. Did some matter simply disappear when the log was burned?
+
+The French chemist Antoine-Laurent Lavoisier was the first scientist to realize\index{Lavoisier!Antoine-Laurent}
+that there were no such exceptions. Lavoisier hypothesized that
+when wood burns, for example, the supposed loss of weight is actually accounted for by the
+escaping hot gases that the flames are made of.
+Before Lavoisier, chemists had almost never
+weighed their chemicals to quantify the amount of each substance that was undergoing
+reactions.
+They also didn't completely understand that gases were just another
+state of matter, and hadn't tried performing reactions in sealed chambers to determine
+whether gases were being consumed from or released into the air. For this they had at least one
+practical excuse, which is that if you perform a gas-releasing reaction in a sealed chamber
+with no room for expansion, you get an explosion! Lavoisier invented a balance that was capable
+of measuring milligram masses, and figured out how to do reactions in an upside-down
+bowl in a basin of water, so that the gases could expand by pushing out some of the water.
+In one crucial experiment, Lavoisier heated a red mercury compound, which we would now
+describe as mercury oxide (HgO), in such a sealed chamber.
+A gas was produced (Lavoisier later named
+it ``oxygen''), driving out some of the water, and the red compound was transformed into
+silvery liquid mercury metal. The crucial point was that the total mass of the entire
+apparatus was exactly the same before and after the reaction. Based on many observations
+of this type, Lavoisier proposed a general law of nature, that matter is always conserved.
+
+<% self_check('conservation',<<-'SELF_CHECK'
+In ordinary speech, we say that you should ``conserve'' something, because if
+you don't, pretty soon it will all be gone. How is this different from the meaning of
+the term ``conservation'' in physics?
+  SELF_CHECK
+  ) %>
+
+<% marg(150) %>
+
+<%
+  fig(
+    'lavoisier',
+    %q{%
+        Portrait of Monsieur Lavoisier and His Wife,
+        by Jacques-Louis David, 1788. Lavoisier invented the
+        concept of conservation of mass. The husband is depicted with his scientific apparatus,
+        while in the background
+        on the left is the portfolio belonging to Madame Lavoisier, who is thought to have
+        been a student of David's.
+    }
+  )
+%>
+<% end_marg %>
+
+Although Lavoisier was an honest and energetic public official, he was caught up
+in the Terror and sentenced to death in 1794. 
+He requested a fifteen-day
+delay of his execution so that he could complete some experiments that he thought might
+be of value to the Republic. 
+The judge, Coffinhal, infamously replied that ``the state has no need of scientists.''
+As a scientific
+experiment, Lavoisier decided to try to determine how long his consciousness would continue
+after he was guillotined, by blinking his eyes for as long as possible. He blinked twelve times
+after his head was chopped off. Ironically, Judge Coffinhal 
+was himself executed only three months later, falling victim to the same chaos.
+
+
+\begin{eg}{A stream of water}\label{eg:faucet}
+The stream of water is fatter near the mouth of the faucet, and skinnier lower down. This can be understood
+using conservation of mass. Since water is being neither created nor destroyed, the mass of the
+water that leaves the faucet in one second must be the same as the amount that flows past a lower
+point in the same time interval. The water speeds up as it falls, so the two quantities of water can
+only be equal if the stream is narrower at the bottom.
+\end{eg}
+<% marg(100) %>
+<%
+  fig(
+    'faucet',
+    %q{%
+      Example \ref{eg:faucet}.
+    }
+  )
+%>
+<% end_marg %>
+
+Physicists are no different than plumbers or ballerinas in that they have a technical vocabulary
+that allows them to make precise distinctions. A pipe isn't
+just a pipe, it's a PVC pipe. A jump isn't just a jump, it's a grand jet\'{e}.
+We need to be more precise now about what we really mean by ``the amount of matter,'' which is
+what we're saying is conserved.
+Since physics is a mathematical science, definitions in physics are usually definitions
+of numbers, and we define these numbers \emph{operationally}. An operational definition
+is one that spells out the steps  required in order to \emph{measure}
+that quantity. For example, one way that an electrician knows that current and voltage are two different
+things is that she knows she has to do completely different things in order to measure them
+with a meter.
+
+<% marg(0) %>
+<%
+  fig(
+    'mass_on_spring',
+    %q{%
+      The time for one cycle of vibration is related to the object's 
+                       mass.
+    }
+  )
+%>%
+                \spacebetweenfigs%
+                %
+<%
+  fig(
+    'bodymass',
+    %q{%
+      Astronaut Tam\-ara Jer\-nigan measures her mass
+                      aboard the Space Shuttle. She is strapped into a chair attached to a spring,
+                like the mass in figure \figref{mass_on_spring}. \photocredit{NASA}
+    }
+  )
+%>%
+        
+<% end_marg %>%
+
+If you ask a room full of  ordinary people to define what is meant by mass, they'll probably
+propose a bunch of different, fuzzy ideas, and speak as if they all pretty much meant the same
+thing: ``how much space it takes up,'' ``how much it weighs,'' ``how much matter is in it.''
+Of these, the first two can be disposed of easily. If we were to define mass as a measure of how
+much space an object occupied, then mass wouldn't be conserved when we squished a piece of foam
+rubber. Although Lavoisier did use weight in his experiments, weight also won't quite work as
+the ultimate, rigorous definition, because weight is a measure of how hard gravity pulls on
+an object, and gravity varies in strength from place to place. Gravity is measurably weaker on the top
+of a mountain that at sea level, and much weaker on the moon. The reason this didn't matter to
+Lavoisier was that he was doing all his experiments in one location. The third proposal
+is better, but how exactly should we define ``how much matter?'' To make it into an operational
+definition, we could do something like figure \figref{mass_on_spring}. 
+A larger mass is harder to
+whip back and forth --- it's harder to set into motion, and harder to stop once it's started.
+For this reason, the vibration of the mass on the spring will take a longer time if the mass is
+greater. If we put two different masses on the spring, and they both take the same time to complete
+one oscillation, we can define them as having the same mass.
+
+Since I started this chapter by highlighting the relationship between conservation laws and
+symmetries, you're probably wondering what symmetry is related to conservation of mass. I'll
+come back to that at the end of the chapter.
+
+When you learn about a new physical quantity, such as mass, you need to know what units are used
+to measure it. This will lead us to a brief digression on the metric system, after which we'll
+come back to physics.
+
+<% end_sec() %>
+<% begin_sec("Review of the metric system and conversions",0) %>
+
+<% begin_sec("The metric system") %>
+
+Every country in the world besides the U.S. has adopted a
+system of units known colloquially as the ``metric system.''
+Even in the U.S., the system is used universally by scientists, and also by many engineers.
+This system is entirely decimal, thanks to the same
+eminently logical people who brought about the \index{French
+Revolution}French Revolution. In deference to France, the
+system's official name is the Syst\`{e}me International, or SI,
+meaning International System. (The phrase ``SI system'' is
+therefore redundant.)\index{Syst\`{e}me International}
+
+The metric system works with a
+single, consistent set of \index{metric system!prefixes}\index{mega-
+(metric prefix)}\index{kilo- (metric prefix)}\index{centi-
+(metric prefix)}\index{milli- (metric prefix)}\index{micro-
+(metric prefix)}\index{nano- (metric prefix)}prefixes
+(derived from Greek) that modify the basic units. Each
+prefix stands for a power of ten, and has an abbreviation
+that can be combined with the symbol for the unit. For
+instance, the meter is a unit of distance. The prefix kilo-
+stands for $1000$, so a kilometer, 1 km, is a thousand meters.
+
+In this book, we'll be using a flavor of the metric system, the SI, in which there are three basic units,
+measuring distance, time, and mass. The basic unit of distance is the meter (m), the one for time
+is the second (s), and for mass the kilogram (kg). Based on these units, we can define others,
+e.g., m/s (meters per second) for the speed of a car, or kg/s for the rate at which water flows
+through a pipe. It might seem odd that we consider the basic
+unit of mass to be the kilogram, rather than the gram. The reason for doing this is that when we
+start defining other units starting from the basic three, some of them come out to be a more
+convenient size for use in everyday life. For example, there is a metric unit of force, the newton (N),
+which is defined as the push or pull that would be able to change a 1-kg object's velocity by 1 m/s,
+if it acted on it for 1 s. A newton turns out to be about the amount of force you'd use to pick up
+your keys. If the system had been based on the gram instead of the kilogram, then the newton would
+have been a thousand times smaller, something like the amount of force required in order to pick
+up a breadcrumb.
+
+The following are the most common metric prefixes. You
+should memorize them.
+
+\begin{tabular}{llllp{60mm}}
+    \multicolumn{2}{c}{prefix} & meaning & \multicolumn{2}{c}{example} \\
+    kilo-  &   k   & $1000$     &   60 kg     & =  a person's mass  \\
+    centi- &   c   & $1/100$  &   28 cm     & =  height of a piece of paper  \\
+    milli- &   m   & $1/1000$  &   1 ms     & =  time for one vibration of a guitar string playing the note D
+\end{tabular}
+
+The prefix centi-, meaning $1/100$, is only used in the
+centimeter; a hundredth of a gram would not be written as 1
+cg but as 10 mg. The centi- prefix can be easily remembered
+because a cent is $1/100$ of a  dollar. The official SI
+abbreviation for seconds is ``s'' (not ``sec'') and grams
+are ``g'' (not ``gm'').
+
+You may also encounter the prefixes mega- (a million) and
+micro- (one millionth).
+
+<% end_sec() %>
+<% begin_sec("Scientific notation",nil,'scientific-notation') %>\index{scientific notation}
+
+Most of the interesting phenomena in our universe
+are not on the human scale. It would take about 1,000,000,000,000,000,000,000
+bacteria to equal the mass of a human body. When the
+physicist Thomas Young discovered that light was a wave, scientific
+notation hadn't been invented, and
+he was obliged to write that the time required for one
+vibration of the wave was 1/500 of a millionth of a
+millionth of a second. Scientific notation is a less awkward
+way to write very large and very small numbers such as
+these.  Here's a quick review.
+
+Scientific notation means writing a number in terms of a
+product of something from 1 to 10 and something else that is
+a power of ten. For instance,
+\begin{align*}
+& 32 = 3.2 \times 10^1\\
+& 320 =  3.2 \times 10^2\\
+& 3200 = 3.2 \times 10^3  \quad\ldots
+\end{align*}
+Each number is ten times bigger than the last.
+
+Since $10^1$  is ten times smaller than $10^2$ , it makes
+sense to use the notation $10^0$  to stand for one, the
+number that is in turn ten times smaller than $10^1$ .
+Continuing on, we can write $10^{-1}$  to stand for 0.1, the
+number ten times smaller than $10^0$ . Negative exponents
+are used for small numbers:
+
+\begin{align*}
+&3.2 =  3.2 \times 10^0\\
+&0.32 = 3.2 \times 10^{-1}\\
+&0.032 = 3.2 \times 10^{-2} \quad\ldots
+\end{align*}
+
+A common source of confusion is the notation used on the
+displays of many calculators. Examples:
+
+\vspace{8mm}
+
+\hspace{10mm}\begin{tabular}{ll}
+$3.2 \times 10^6$  &     (written notation)\\
+3.2E+6             &     (notation on some calculators)\\
+$3.2^6$            &     (notation on some other calculators)
+\end{tabular}
+
+\vspace{8mm}
+
+\noindent The last example is particularly unfortunate, because
+$3.2^6$ really stands for the number 
+$3.2 \times 3.2 \times 3.2 \times 3.2 \times 3.2 \times 3.2= 1074$, a totally different number from $3.2 \times 10^6=3200000$.
+The calculator notation should never be used in writing.
+It's just a way for the manufacturer to save money by
+making a simpler display.
+
+<% self_check('bacteria-queue',<<-'SELF_CHECK'
+A student learns that $10^4$  bacteria, standing in line to
+register for classes at Paramecium Community College, would
+form a queue of this size:
+
+\anonymousinlinefig{sc-bacteria-queue-1}
+
+\noindent The student concludes that $10^2$  bacteria would form a
+line of this length:
+
+\anonymousinlinefig{sc-bacteria-queue-2}
+
+\noindent Why is the student incorrect?
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Conversions") %>\index{conversions of units}\index{units, conversion of}
+
+I suggest you avoid memorizing lots of conversion factors
+between SI units and U.S. units. Suppose the United Nations
+sends its black helicopters to invade California (after all
+who wouldn't rather live here than in New York City?), and
+institutes water fluoridation and the SI, making the use of
+inches and pounds into a crime punishable by death. I think
+you could get by with only two mental conversion factors:
+
+\begin{indentedblock}
+\noindent{}1 inch =  2.54 cm
+
+\noindent An object with a weight on Earth of 2.2 pounds-force has a mass of 1 kg.
+\end{indentedblock}
+
+\noindent The first one is the present definition of the inch, so it's
+exact. The second one is not exact, but is good enough for
+most purposes. (U.S. units of force and mass are confusing,
+so it's a good thing they're not used in science. In U.S.
+units, the unit of force is the pound-force, and the best
+unit to use for mass is the slug, which is about 14.6 kg.)
+
+More important than memorizing conversion factors is
+understanding the right method for doing conversions. Even
+within the SI, you may need to convert, say, from grams to
+kilograms. Different people have different ways of thinking
+about conversions, but the method I'll describe here is
+systematic and easy to understand. The idea is that if 1 kg
+and 1000 g represent the same mass, then we can consider a fraction like
+\begin{equation*}
+  \frac{10^3\ \gunit}{1\ \kgunit}
+\end{equation*}
+to be a way of expressing the number one. This may bother
+you. For instance, if you type 1000/1 into your calculator,
+you will get 1000, not one. Again, different people have
+different ways of thinking about it, but the justification
+is that it helps us to do conversions, and it works! Now if
+we want to convert 0.7 kg to units of grams, we can multiply
+kg by the number one:
+\begin{equation*}
+  0.7\ \kgunit \times \frac{10^3\ \gunit}{1\ \kgunit}
+\end{equation*}
+If you're willing to treat symbols such as ``kg'' as if they
+were variables as used in algebra (which they're really
+not), you can then cancel the kg on top with the kg on the
+bottom, resulting in
+\begin{equation*}
+  0.7\ \cancel{\kgunit} \times \frac{10^3\ \gunit}{1\ \cancel{\kgunit}}  = 700\ \gunit\eqquad.
+\end{equation*}
+To convert grams to kilograms, you would simply flip the
+fraction upside down.
+
+One advantage of this method is that it can easily be
+applied to a series of conversions. For instance, to convert
+one year to units of seconds,
+
+\begin{multline*}
+1\ \cancel{\text{year}} \times
+\frac{365\ \cancel{\text{days}}}{1\ \cancel{\text{year}}} \times
+\frac{24\ \cancel{\text{hours}}}{1\ \cancel{\text{day}}} \times
+\frac{60\ \cancel{\text{min}}}{1\ \cancel{\text{hour}}} \times
+\frac{60\ \sunit}{1\ \cancel{\text{min}}} = \\
+= 3.15 \times 10^7\ \sunit\eqquad.
+\end{multline*}
+
+<% begin_sec("Should that exponent be positive or negative?") %>
+
+A common mistake is to write the conversion fraction
+incorrectly. For instance the fraction
+\begin{equation*}
+  \frac{10^3\ \kgunit}{1\ \gunit} \qquad \text{(incorrect)}
+\end{equation*}
+does not equal one, because $10^3$  kg is the mass of a car,
+and 1 g is the mass of a raisin. One correct way of
+setting up the conversion factor would be
+\begin{equation*}
+  \frac{10^{-3}\ \kgunit}{1\ \gunit} \qquad \text{(correct)}\eqquad.
+\end{equation*}
+You can usually detect such a mistake if you take the time
+to check your answer and see if it is reasonable.
+
+If common sense doesn't rule out either a positive or a
+negative exponent, here's another way to make sure you get
+it right. There are big prefixes, like kilo-, and small ones,
+like milli-.
+In the example above, we want the
+top of the fraction to be the same as the bottom. Since $k$
+is a big prefix, we need to \emph{compensate} by putting a
+small number like $10^{-3}$  in front of it, not a big
+number like $10^3$.
+
+\startdq
+
+\begin{dq}
+Each of the following conversions contains an error.  In
+each case, explain what the error is.
+
+(a) $1000\ \kgunit \times \frac{1\ \kgunit}{1000\ \gunit}  = 1\ \gunit$
+
+(b) $50\ \munit \times \frac{1\ \zu{cm}}{100\ \munit}    =  0.5\ \zu{cm}$
+
+\end{dq}
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% end_sec %>
+<% begin_sec("Conservation of energy",0) %>
+
+<% begin_sec("Energy") %>
+
+<% marg(10) %>
+<%
+  fig(
+    'hockey-puck',
+    %q{%
+       A hockey puck is released at rest. If it spontaneously scooted off in some
+       direction, that would violate the symmetry of all directions in space.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'joule',
+    %q{%
+       James Joule (1818-1889) discovered the law of conservation of energy.
+    }
+  )
+%>
+<% end_marg %>%
+
+\label{rotational-symmetry}\index{symmetry!rotational}\index{rotational symmetry}
+Consider the hockey puck in figure \figref{hockey-puck}. If we release it at rest, we expect
+it to remain at rest. If it did start moving all by itself, that would be strange: it would
+have to pick some direction in which to move, and why would it pick that direction rather
+than some other one? If we observed such a phenomenon, we would have to conclude that that
+direction in space was somehow special. It would be the favored direction in which hockey
+pucks (and presumably other objects as well) preferred to move. That would violate our
+intuition about the symmetry of space, and this is a case where our intuition is right:
+a vast number of experiments have all shown that that symmetry is a correct one. In other
+words, if you secretly pick up the physics laboratory with a crane, and spin it around
+gently with all the physicists inside, all their experiments will still come out the same,
+regardless of the lab's new orientation. If they don't have windows they can look out of,
+or any other external cues (like the Earth's magnetic field), then they won't notice anything
+until they hang up their lab coats for the evening and walk out into the parking lot.
+
+Another way of thinking about it is that a moving hockey puck would have some
+\emph{energy}, whereas a stationary one has none. I haven't given you an operational
+definition of energy yet, but we'll gradually start to build one up, and it will
+end up fitting in pretty well with your general idea of what energy means from
+everyday life. Regardless of the mathematical details of how you would actually
+calculate the energy of a moving hockey puck, it makes sense that a puck
+at rest has zero energy. It starts to look like energy is conserved. A puck that
+initially has zero energy must continue to have zero energy, so it can't start
+moving all by itself.
+
+You might conclude from this discussion that we have a new example of Noether's
+theorem: that the symmetry of space with respect to different directions must be
+equivalent, in some mysterious way, to conservation of energy. Actually that's not
+quite right, and the possible confusion is related to the fact that we're not
+going to deal with the full, precise mathematical statement of Noether's theorem.
+In fact, we'll see soon that conservation of energy is really more closely related
+to a different symmetry, which is symmetry with respect to the passage of time.
+
+<% end_sec() %>
+<% begin_sec("The principle of inertia",nil,'principle-of-inertia') %>\index{inertia, principle of}
+
+Now there's one very subtle thing about the example of the hockey puck, which wouldn't
+occur to most people. If we stand on the ice and watch the puck, and we don't see it
+moving, does that mean that it really is at rest in some absolute sense? Remember,
+the planet earth spins once on its axis every 24 hours. At the latitude where I live,
+this results in a speed of about 800 miles per hour, or something like 400 meters per
+second. We could say, then that the puck wasn't really staying at rest. We could
+say that it was really in motion at a speed of 400 m/s, and remained in motion at that
+same speed. This may be inconsistent with our earlier description, but it is still
+consistent with the same description of the laws of physics. Again, we don't need to
+know the relevant formula for energy in order to believe that if the puck keeps the same
+speed (and its mass also stays the same), it's maintaining the same energy.
+
+In other words, we have two different \emph{frames of reference}, both equally valid.
+The person standing on the ice measures all velocities relative to the ice, finds
+that the puck maintained a velocity of zero, and says that energy was conserved.
+The astronaut watching the scene from deep space might measure the velocities
+relative to her own space station; in her frame of reference, the puck is moving
+at 400 m/s, but energy is still conserved.
+
+<% marg(50) %>
+<%
+  fig(
+    'aristotle',
+    %q{%
+      Why does Aristotle look so sad? Is it because he's realized that his entire
+      system of physics is wrong?
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'jets-in-formation-over-ny',
+    %q{The jets are at rest. The Empire State Building is moving.}
+  )
+%>
+<% end_marg %>
+
+This probably seems like common sense, but it wasn't common sense to one of the
+smartest people ever to live, the ancient Greek philosopher Aristotle.\index{Aristotle}
+He came up with an entire system of physics based on the premise that
+there is one frame of reference that is special: the frame of reference defined
+by the dirt under our feet. He believed that all motion had a tendency to slow
+down unless a force was present to maintain it. Today, we know that Aristotle
+was wrong. One thing he was missing was that he didn't understand the concept
+of friction as a force. If you kick a soccer ball, the reason it eventually comes
+to rest on the grass isn't that it ``naturally'' wants to stop moving. The reason
+is that there's a frictional force from the grass that is slowing it down. (The energy
+of the ball's motion is transformed into other forms, such as heat and sound.)
+Modern people may also have an easier time seeing his mistake, because we
+have experience with smooth motion at high speeds. For instance, consider a passenger
+on a jet plane who stands up in the aisle and inadvertently drops his bag of peanuts.
+According to Aristotle, the bag would naturally slow to a stop, so it would become
+a life-threatening projectile in the cabin! From the modern point of view,
+the cabin can just as well be considered to be at rest.\index{Galileo Galilei}
+<%
+  fig(
+    'galileo-trial',
+    %q{Galileo Galilei was the first physicist to state the principle of inertia (in a somewhat different formulation than the one given here).
+       His contradiction of Aristotle had serious consequences. He was interrogated by the Church authorities and
+       convicted of teaching that the earth went around the sun as a matter of fact and not, as he had promised previously,
+       as a mere mathematical hypothesis. He was placed under permanent house arrest, and forbidden to write about or
+       teach his theories. Immediately after being forced to recant his claim that the earth revolved around the sun, the old
+       man is said to have muttered defiantly ``and yet it does move.''},
+    {
+      'width'=>'wide',
+      'narrowfigwidecaption'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+The \emph{principle of inertia} says, roughly, that
+all frames of reference are equally valid:
+
+\begin{important}[The principle of inertia]
+The results of experiments don't depend on the straight-line,
+constant-speed motion of the apparatus. 
+\end{important}
+
+\noindent Speaking slightly more precisely, the
+principle of inertia says that if frame B moves at constant speed, in a straight line,
+relative to frame A, then frame B is just as valid as frame A, and in fact an observer
+in frame B will consider B to be at rest, and A to be moving. The laws of physics
+will be valid in both frames. The necessity for the
+more precise formulation becomes evident if you think about examples in which the
+motion changes its speed or direction. For instance, if you're in a car that's
+accelerating from rest, you feel yourself being pressed back into your seat.
+That's very different from the experience of being in a car cruising at constant
+speed, which produces no physical sensation at all. A more extreme example of this
+is shown in figure \figref{rocket-sled} on page  \pageref{fig:rocket-sled}.
+
+A frame of reference moving at constant speed in a straight line is known as an
+inertial frame of reference. A frame that changes its speed or direction of motion
+is called noninertial. The principle of inertia applies only to inertial frames.
+The frame of reference defined by an accelerating car is noninertial, but the one
+defined by a car cruising at constant speed in a straight line is inertial.\index{frame of reference}\index{frame of reference!inertial}\index{frame of reference!noninertial}
+
+<%
+  fig(
+    'rocket-sled',
+    %q{%
+      This Air Force doctor volunteered to ride a rocket sled as 
+      a medical experiment. The obvious effects on
+      his head and face are not because of the sled's speed but because of its rapid changes in speed: increasing
+      in 2 and 3, and decreasing in 5 and 6.
+      In 4 his speed is greatest, but because his speed is not
+      increasing or decreasing very much at this moment, there is little effect on him.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% marg(0) %>
+<%
+  fig(
+    'foucault',
+    %q{%
+      Foucault demonstrates his pendulum to an audience at
+                      a lecture in 1851.
+    }
+  )
+%>
+<% end_marg %>
+
+
+
+\begin{eg}{Foucault's pendulum}
+        Earlier, I spoke as if a frame of reference attached to the surface of the rotating earth was
+        just as good as any other frame of reference. Now, with the more exact formulation of the
+        principle of inertia, we can see that that isn't quite true. A point on the earth's surface
+        moves in a circle, whereas the principle of inertia refers only to motion in a straight line.
+        However, the curve of the motion is so gentle that under
+        ordinary conditions we don't notice that the local dirt's frame of reference isn't
+        quite inertial. The first demonstration of the noninertial nature of the earth-fixed
+        frame of reference was by L\'{e}on Foucault\index{Foucault, L\'{e}on}
+         using a very massive pendulum (figure \figref{foucault}) whose oscillations
+        would persist for many hours without becoming imperceptible. Although Foucault did
+        his demonstration in Paris, it's easier to imagine what would happen at the north pole:
+        the pendulum would keep swinging in the same plane, but the earth would spin underneath
+        it once every 24 hours. To someone standing in the snow, it would appear that the
+        pendulum's plane of motion was twisting. The effect at latitudes less than 90
+        degrees turns out to be slower, but otherwise similar. The Foucault pendulum was
+        the first definitive experimental proof that the earth really did spin on its axis,
+        although scientists had been convinced of its rotation for a century based on more
+        indirect evidence about the structure of the solar system.
+\end{eg}
+
+People have a strong intuitive belief that there is a state of absolute rest,\index{Copernicus}
+and that the earth's surface defines it. But Copernicus proposed as a mathematical
+assumption, and Galileo argued as a matter of physical reality, that the earth spins
+on its axis, and also circles the sun. Galileo's opponents objected that this was
+impossible, because we would observe the effects of the motion. They said, for example,
+that if the earth was moving, then you would never be able to jump up in the air and
+land in the same place again --- the earth would have moved out from under you.
+Galileo realized that this wasn't really an argument about the earth's motion but
+about physics. In one of his books, which were written in the form of dialogues, he has
+the three characters debate what would happen if a ship was cruising smoothly across
+a calm harbor and a sailor climbed up to the top of its mast and dropped a rock.
+Would it hit the deck at the base of the mast, or behind it because the ship had moved out from
+under it? This is the kind of experiment referred to in the principle of
+inertia, and Galileo knew that it would come out the same regardless of the ship's
+motion. His opponents' reasoning, as represented by the dialog's stupid character
+Simplicio, was based on the assumption that once the rock lost contact with the sailor's
+hand, it would naturally start to lose its forward motion. In other words, they didn't
+even believe in the idea that motion naturally continues unless a force acts to stop it.
+
+But the principle of inertia says more than that. It says that motion isn't even real:
+to a sailor standing on the deck of the ship, the deck and the masts and the rigging are not even
+moving. People on the shore can tell him that the ship and his own body are moving in a straight
+line at constant speed. He can reply, ``No, that's an illusion. I'm at rest. The only reason you think I'm moving is
+because you and the sand and the water are moving in the opposite direction.''
+The principle of inertia says that straight-line, constant-speed motion is a matter of opinion.
+Thus things can't ``naturally'' slow down and stop moving, because we can't even agree on which things
+are moving and which are at rest.
+
+If observers in different frames of reference disagree on velocities, it's natural to
+want to be able to convert back and forth. For motion in one dimension, this can be
+done by simple addition.\index{velocity!addition of}
+
+\begin{eg}{A sailor running on the deck}\label{eg:runtobow}
+\egquestion
+A sailor is running toward the front of a ship, and the other sailors say that in
+their frame of reference, fixed to the deck, his velocity is $7.0$ m/s. The ship
+is moving at $1.3$ m/s relative to the shore. How fast does an observer on the beach
+say the sailor is moving?
+
+\eganswer
+They see the ship moving at $7.0$ m/s, and the sailor moving even faster than that because
+he's running from the stern to the bow. In one second, the ship moves $1.3$ meters,
+but he moves $1.3+7.0$ m, so his velocity relative to the beach is $8.3$ m/s. 
+\end{eg}
+
+The only way to make this rule give consistent results is if we define velocities in
+one direction as positive, and velocities in the opposite direction as negative.
+
+\begin{eg}{Running back toward the stern}
+\egquestion
+The sailor of example \ref{eg:runtobow} turns around and runs back toward the stern
+at the same speed relative to the deck. How do the other sailors describe this
+velocity mathematically, and what do observers on the beach say?
+
+\eganswer
+Since the other sailors described his original velocity as positive, they have to call
+this negative. They say his velocity is now $-7.0$ m/s. A person on the shore says
+his velocity is $1.3+(-7.0)=-5.7$ m/s.
+\end{eg}
+
+
+
+<% end_sec() %>
+<% begin_sec("Kinetic and gravitational energy") %>\index{energy!kinetic}\index{energy!gravitational}\index{kinetic energy}\index{gravitational energy}
+
+Now suppose we drop a rock. The rock is initially at rest, but then begins moving.
+This seems to be a violation of conservation of energy, because a moving rock
+would have more energy. But actually this is a little like the example of the
+burning log that seems to violate conservation of mass. Lavoisier realized that
+there was a second form of mass, the mass of the smoke, that wasn't being accounted
+for, and proved by experiments that mass \emph{was}, after all, conserved once the
+second form had been taken into account. In the case of the falling rock, we have two
+forms of energy. The first is the energy it has because it's moving, known as
+\emph{kinetic energy}. The second form is a kind of energy that it has because it's
+interacting with the planet earth via gravity. This is known as \emph{gravitational
+energy}.\footnote{You may also see this referred to in some books as gravitational potential energy.}
+The earth and the rock attract each other gravitationally, and the greater the distance
+between them, the greater the gravitational energy --- it's a little like stretching a spring.
+
+<% marg(70) %>
+<%
+  fig(
+    'pool-skater',
+    %q{%
+      The skater has converted all his kinetic
+      energy into gravitational energy on the
+      way up the side of the pool.
+      Photo by J.D. Rogge,\linebreak[4]www.sonic.net/$\sim$shawn.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'pool-skater-line-art',
+    %q{%
+      As the skater free-falls, his gravitational energy is
+      converted into kinetic energy.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'seesaw',
+    %q{Example \ref{eg:lever}.}
+  )
+%>
+<% end_marg %>
+
+The SI unit of energy is the joule (J),\index{joule (unit)} and in those units, we find that lifting a 1-kg
+mass through a height of 1 m requires 9.8 J of energy. This number, 9.8 joules per meter
+per kilogram, is a measure of the strength of the earth's gravity near its surface.
+We notate this number, known as the gravitational field, as $g$, and often round it off to 10 for convenience in rough calculations.
+If you lift a 1-kg rock to a height of 1 m above the ground, you're giving up 9.8 J of the energy you got from eating
+food, and changing it into gravitational energy stored in the rock. If you then release
+the rock, it starts transforming the energy into kinetic energy, until finally when the
+rock is just about to hit the ground, all of that energy is in the form of kinetic energy. That
+kinetic energy is then transformed into heat and sound when the rock hits the ground.\label{gravitational-field}\label{gravitational field}\index{field!gravitational}
+
+Stated in the language of algebra, the formula for gravitational energy is
+\begin{equation*}
+  GE = mgh\eqquad,
+\end{equation*}
+where $m$ is the mass of an object, $g$ is the gravitational field, and $h$ is the
+object's height.
+
+\begin{eg}{A lever}\label{eg:lever}\index{lever}
+Figure \figref{seesaw} shows two sisters on a seesaw. The one on the left has twice as
+much mass, but she's at half the distance from the center. No energy input is needed in
+order to tip the seesaw. If the girl on the left goes up a certain distance, her gravitational
+energy will increase. At the same time, her sister on the right will drop twice the distance,
+which results in an equal decrease in energy, since her mass is half as much. In symbols, we have
+\begin{equation*}
+  (2m)gh
+\end{equation*}
+for the gravitational energy gained by the girl on the left, and
+\begin{equation*}
+  mg(2h)
+\end{equation*}
+for the energy lost by the one on the right. Both of these equal $2mgh$, so the amounts gained and
+lost are the same, and energy is conserved.
+
+Looking at it another way, this can be thought of as an example of the kind of experiment that
+you'd have to do in order to arrive at the equation $GE=mgh$ in the first place. If we didn't
+already know the equation, this experiment would make us suspect that it involved the product
+$mh$, since that's what's the same for both girls.
+\end{eg}
+
+Once we have an equation for one form of energy, we can establish equations for other forms of
+energy. For example, if we drop a rock and measure its final velocity, $v$, when it hits the ground,
+we know how much GE it lost, so we know that's how much KE it must have had when it was at that
+final speed. Here are some imaginary results from such an experiment.
+
+\begin{tabular}{|c|c|c|} \hline
+\textbf{m} (kg) & \textbf{v} (m/s) & \textbf{energy} (J) \\ \hline
+1.00 & 1.00 & 0.50 \\ \hline
+1.00 & 2.00 & 2.00 \\ \hline
+2.00 & 1.00 & 1.00 \\ \hline
+\end{tabular}
+
+Comparing the first line with the second, we see that
+doubling the object's velocity doesn't just double its
+energy, it quadruples it. If we compare the first and third
+lines, however, we find that doubling the mass only doubles
+the energy. This suggests that kinetic energy is proportional
+to mass times the square of velocity, $mv^2$, and further
+experiments of this type would indeed establish such a
+general rule. The proportionality factor equals 0.5 because
+of the design of the metric system, so the kinetic energy of
+a moving object is given by
+\begin{equation*}
+                KE    =    \frac{1}{2}mv^2\eqquad.
+\end{equation*}
+
+<%
+  fig(
+    'can-imploding',
+    %q{%
+      A vivid demonstration that heat is a form of
+      motion. A small amount of boiling water is poured
+      into the empty can, which rapidly fills up with
+      hot steam. The can is then sealed tightly, and
+      soon crumples. This can be explained as
+      follows. The high temperature of the steam is
+      interpreted as a high average speed of random
+      motions of its molecules. Before the lid was put
+      on the can, the rapidly moving steam molecules
+      pushed their way out of the can, forcing the
+      slower air molecules out of the way. As the steam
+      inside the can thinned out, a stable situation was
+      soon achieved, in which the force from the less
+      dense steam molecules moving at high speed
+      balanced against the force from the more dense
+      but slower air molecules outside. The cap was
+      put on, and after a while the steam inside the
+      can reached the same temperature as the air outside.
+      The force from the cool,
+      thin steam no longer matched the force from the
+      cool, dense air outside, and the imbalance of
+      forces crushed the can.
+    },
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Energy in general") %>
+
+<% marg(0) %>
+  % not sure why the special label is necessary in the following, but it is; if I just do "coin," I get a different ref
+<%
+  fig(
+    'coin',
+    %q{%
+      The spinning coin slows down. It looks like conservation of energy is violated, but it isn't.\label{fig:coin-duh}
+    }
+  )
+%>
+<% end_marg %>
+
+By this point, I've casually mentioned several forms of energy: kinetic, gravitational, heat, and
+sound. This might be disconcerting, since we can get thoroughly messed up if we don't realize that
+a certain form of energy is important in a particular situation. For instance, the spinning coin in figure
+\figref{coin-duh} gradually loses its kinetic energy, and we might think that conservation of energy was
+therefore being violated. However, whenever two surfaces rub together, friction acts to create heat.
+The correct analysis is that the coin's kinetic energy is gradually converted into heat.\index{energy!heat}\index{energy!sound}\index{heat}\index{sound!energy}
+
+
+One way of
+making the proliferation of forms of energy seem less scary is to realize that many forms of energy
+that seem different on the surface are in fact the same. One important example is that heat is actually
+the kinetic energy of molecules in random motion, so where we thought we had two forms of energy, in fact
+there is only one.
+Sound is also a form of kinetic energy: it's the vibration of air molecules.
+
+ This kind of unification of different types of energy has been a process that has
+been going on in physics for a long time, and at this point we've gotten it down the point where there
+really only appear to be four forms of energy:
+\begin{enumerate}
+\item kinetic energy
+\item gravitational energy
+\item electrical energy
+\item nuclear energy
+\end{enumerate}
+We don't even encounter  nuclear energy in everyday life (except in the sense that sunlight
+originates as nuclear energy), so really for most purposes the list only has three items on it. Of these
+three, electrical energy is the only form that we haven't talked about yet. The interactions
+between atoms are all electrical, so this form of energy is what's responsible for all of chemistry. The
+energy in the food you eat, or in a tank of gasoline, are forms of electrical energy.\index{energy!electrical}\index{energy!nuclear}\index{electrical energy}\index{nuclear energy}
+
+\begin{eg}{You take the high road and I'll take the low road.}\label{eg:high-road-low-road}
+\egquestion Figure \figref{high-road-low-road} shows two ramps which two balls will
+roll down. Compare their final speeds, when they reach point
+B. Assume friction is negligible.
+
+\eganswer Each ball loses some gravitational energy because of its
+decreasing height above the earth, and conservation of
+energy says that it must gain an equal amount of kinetic energy
+(minus a little heat created by friction). The balls
+lose the same amount of height, so their final speeds must be equal.
+\end{eg}
+
+\vspace{8mm}
+
+<% marg(20) %>
+<%
+  fig(
+    'high-road-low-road',
+    %q{Example \ref{eg:high-road-low-road}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'orionnebula',
+    %q{Example \ref{eg:birthofstars}.}
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{The birth of stars}\label{eg:birthofstars}\index{Orion Nebula}
+Orion is the easiest constellation to find. You can see it in the winter, even if you live
+under the light-polluted skies of a big city. Figure \figref{orionnebula} shows an interesting
+feature of this part of the sky that you can easily pick out with an ordinary camera (that's how
+I took the picture) or a pair of binoculars. The three stars at the top are Orion's belt, and the
+stuff near the lower left corner of the picture is known as his sword --- to the naked eye, it
+just looks like three more stars that aren't as bright as the stars in the belt. The middle ``star''
+of the sword, however, isn't a star at all. It's a cloud of gas, known as the Orion Nebula,
+that's in the process of collapsing
+due to gravity. Like the pool skater on his way down, the gas is losing gravitational energy.
+The results are very different, however. The skateboard is designed to be a low-friction device,
+so nearly all  of the lost gravitational energy is converted to kinetic energy, and very little
+to heat. The gases in the nebula flow and rub against each other, however, so most of the gravitational
+energy is converted to heat. This is the process by which stars are born: eventually the core of
+the gas cloud gets hot enough to ignite nuclear reactions.
+\end{eg}
+
+\vspace{8mm}
+
+\begin{eg}{Lifting a weight}
+\egquestion At the gym, you lift a mass of 40 kg through a height of 0.5 m. How much gravitational
+energy is required? Where does this energy come from?
+
+\eganswer 
+The strength of the gravitational field is 10 joules per kilogram per meter, so after you lift the weight,
+its gravitational energy will be greater by $10\times40\times0.5=200$ joules.
+
+Energy is conserved, so
+if the weight gains gravitational energy, something else somewhere in the universe must have lost some.
+The energy that was used up was the energy in your body, which came from the food you'd eaten. This is what we refer to
+as ``burning calories,'' since calories are the units normally used to describe the energy in food,
+rather than metric units of joules.
+
+In fact, your body uses up even more than 200 J of food energy, because it's not very efficient. The rest
+of the energy goes into heat, which is why you'll need a shower after you work out. We can summarize this
+as
+\begin{equation*}
+\text{food energy} \rightarrow \text{gravitational energy} + \text{heat}\eqquad.
+\end{equation*}
+\end{eg}
+
+\begin{eg}{Lowering a weight}
+\egquestion After lifting the weight, you need to lower it again. What's happening in terms of energy?
+
+\eganswer 
+Your body isn't capable of accepting the energy and putting it back into storage. The gravitational
+energy all goes into heat. (There's nothing
+fundamental in the laws of physics that forbids this.
+Electric cars can do it --- when you stop at a stop sign, the car's kinetic energy is absorbed
+back into the battery, through a generator.) 
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'welding',
+    %q{%
+      Example \ref{eg:absorb-and-emit-light}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'irbike',
+    %q{%
+      Example \ref{eg:absorb-and-emit-light}.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Absorption and emission of light}\label{eg:absorb-and-emit-light}
+  Light has energy. Light can be absorbed by matter and transformed into heat, but the
+  reverse is also possible: an object can glow, transforming some of its heat energy into
+  light. Very hot objects, like a candle flame or a welding torch, will glow in the visible
+  part of the spectrum, as in figure \figref{welding}.
+
+  Objects at lower temperatures
+  will also emit light, but in the infrared part of the spectrum, i.e., the part of the
+  rainbow lying beyond the red end, which humans can't see.
+  The photos in figure \figref{irbike} were taken using a camera that is sensitive to infrared light.
+  The cyclist locked his rear brakes suddenly, and skidded to a stop. The kinetic energy of the bike
+  and his body are rapidly transformed into heat by the friction between the tire and the floor.
+  In the first panel, you can see the glow of the heated strip on the floor, and in the second panel,
+  the heated part of the tire.
+\end{eg}
+
+\begin{eg}{Heavy objects don't fall faster}\index{free fall}
+Stand up now, take off your shoe, and drop it alongside a much less massive object
+such as a coin or the cap from your pen.
+
+Did that surprise you? You found that they both hit the ground at the same time.
+Aristotle wrote that heavier objects fall faster than
+lighter\index{Aristotle}\index{Catholic Church}\index{Church!Catholic}
+ones. He was wrong, but Europeans believed him for thousands of years, partly because
+experiments weren't an accepted way of learning the truth, and partly because the
+Catholic Church gave him its posthumous seal of approval as its official
+philosopher.
+
+Heavy objects and light objects have to fall the same way, because conservation
+laws are additive --- we find the total energy of an object by adding up the energies
+of all its atoms. If a single atom falls through a height of one meter, it loses a certain
+amount of gravitational energy and gains a corresponding amount of kinetic energy.
+Kinetic energy relates to speed, so that determines how fast it's moving at the end
+of its one-meter drop. (The same reasoning could be applied to any point along the
+way between zero meters and one.)
+
+Now what if we stick two atoms together? The pair has double the mass, so the amount
+of gravitational energy transformed into kinetic energy is twice as much. But twice
+as much kinetic energy is exactly what we need if the pair of atoms is to have the same
+speed as the single atom did. Continuing this train of thought, it doesn't matter how many
+atoms an object contains; it will have the same speed as any other object after dropping
+through the same height.
+\end{eg}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Newton's law of gravity",0) %>\index{gravity!Newton's law of}
+Why does the gravitational field on our planet have the particular value it does? 
+For insight, let's compare with the strength of gravity elsewhere in the
+universe:\index{Newton, Isaac!law of gravity}\index{gravitational field!Newton's law of gravity}
+\index{field!gravitational!Newton's law of gravity}
+
+\begin{tabular}{|p{50mm}|p{45mm}|}
+\hline
+location      & $g$ (joules per kg per m) \\
+\hline
+asteroid Vesta (surface) & 0.3 \\
+earth's moon (surface)   & 1.6 \\
+Mars (surface)           & 3.7 \\
+earth (surface)          & 9.8 \\
+Jupiter (cloud-tops)     & 26 \\
+sun (visible surface)    & 270 \\
+typical neutron star (surface) & $10^{12}$ \\
+black hole (center)      & infinite according to some theories, on the
+   order of $10^{52}$ according to others \\
+\hline
+\end{tabular}
+
+A good comparison is Vesta versus a neutron star. They're roughly the same size, but they have
+vastly different masses --- a teaspoonful of neutron star matter would weigh a million tons!
+The different mass must be the reason for the vastly different gravitational fields. (The notation
+$10^{12}$ means 1 followed by 12 zeroes.)
+This makes sense, because gravity is an attraction between things that have mass.
+
+The mass of an object, however, isn't the only thing that determines the strength of its
+gravitational field, as demonstrated by the difference between the fields of the
+sun and a neutron star, despite their similar masses.  The other variable that matters is
+distance. Because a neutron star's mass is compressed into such a small space (comparable
+to the size of a city), a point on its surface is within a fairly short distance from every
+part of the star. If you visited the surface of the sun, however, you'd be millions of miles
+away from most of its atoms.
+
+As a less exotic example, if you travel from the seaport of
+Gua\-ya\-quil, Ecuador, to the top of nearby Mt. Cotopaxi, you'll experience
+a slight reduction in gravity, from 9.7806 to 9.7624 J/kg/m. This is because
+you've gotten a little farther from the planet's mass. Such differences in the
+strength of gravity between one location and another on the earth's surface were
+first discovered because pendulum clocks that were correctly calibrated in one country
+were found to run too fast or too slow when they were shipped to another location.
+
+The general equation for an object's gravitational field was discovered by
+Isaac Newton, by working backwards
+from the observed motion of the planets:\footnote{Example \ref{eg:moonorbit} on page \pageref{eg:moonorbit} shows
+the type of reasoning that Newton had to go through.}
+\begin{equation*}
+        g = \frac{GM}{d^2}\eqquad,
+\end{equation*}
+where $M$ is the mass of the object, $d$ is the distance from the object, and $G$ is
+a constant that is the same everywhere in the universe. This is known as Newton's
+law of gravity.\footnote{This is not the form
+in which Newton originally wrote the equation.}
+This type of relationship, in which an effect is inversely proportional to the
+square of the distance from the object creating the effect, is known as an
+inverse square law.\index{inverse-square law} For example, the intensity of the
+light from a candle obeys an inverse square law, as discussed in subsection
+\ref{subsec:inverse-square} on page \pageref{subsec:inverse-square}.
+
+<% marg(0) %>
+<%
+  fig(
+    'newton',
+    'Isaac Newton (1642-1727)'
+  )
+%>
+<% end_marg %>
+
+<% self_check('mars-and-venus',<<-'SELF_CHECK'
+Mars is about twice as far from the sun as Venus. Compare the strength of the sun's
+gravitational field as experienced by Mars with the strength of the field
+felt by Venus.
+  SELF_CHECK
+  ) %>
+
+Newton's law of gravity really gives the field of an individual atom, and
+the field of a many-atom object is the sum of the fields of the atoms.
+Newton was able to prove mathematically that this scary sum has an unexpectedly
+simple result in the case of a spherical object such as a planet: the result is
+the same as if all the object's mass had been concentrated at its center.\index{gravitational constant, $G$}
+
+Newton showed that his theory of gravity could explain the orbits of the planets, and
+also finished the project begun by Galileo of driving a stake through the heart of
+Aristotelian physics. His book on the motion of material objects, the \emph{Mathematical
+Principles of Natural Philosophy},\index{Mathematical Principles of Natural Philosophy}\index{Principia Mathematica}
+was uncontradicted by experiment for 200 years,
+but his other main work, \emph{Optics},\index{Optics}
+ was on the wrong track due to his conviction
+that light was composed of particles rather than waves. He was an avid alchemist,
+an embarrassing fact that modern scientists would like to forget. Newton was
+on the winning side of the revolution that replaced King James II with William and Mary
+of Orange, which led to a lucrative post running the English royal mint; he worked hard at
+what could have been a sinecure, and took great
+satisfaction from catching and executing counterfeiters. Newton's personal life was less
+happy, as we'll see in chapter \ref{ch:electricity}.
+
+\begin{eg}{Newton's apple}\label{eg:newtonsapple}\index{moon!gravitational field experienced by}\index{Newton, Isaac!apple myth}
+A charming legend attested to by Newton's niece is that he first conceived of
+gravity as a universal attraction after seeing an apple fall from a tree. He
+wondered whether the force that made the apple fall was the same one that made the
+moon circle the earth rather than flying off straight. Newton had astronomical data
+that allowed him to calculate
+that the gravitational field the moon experienced
+from the earth was 1/3600 as strong as the field on the surface of the earth.\footnote{See example
+\ref{eg:moonorbit} on page \pageref{eg:moonorbit}.}
+(The moon has its own gravitational field, but that's not what we're talking about.)
+The moon's distance from the earth is 60 times greater than the earth's radius,
+so this fit perfectly with an inverse-square law: $60\times60=3600$.
+\end{eg}
+
+<% marg(40) %>
+<%
+  fig(
+    'earth-moon-apple',
+    'Example \ref{eg:newtonsapple}.'
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("Noether's theorem for energy",0,'noether-energy') %>
+\index{Noether's theorem!for energy}\index{energy!Noether's theorem}
+Now we're ready for our first full-fledged example of Noether's theorem.
+Conservation of energy is a law of physics, and Noether's theorem
+says that the laws of physics come from symmetry. Specifically, Noether's
+theorem says that every symmetry implies a conservation law. Conservation
+of energy comes from a symmetry that we haven't even discussed yet, but one that
+is simple and intuitively appealing: as time goes by, the universe doesn't
+change the way it works. We'll call this time symmetry.\index{symmetry!time}\index{time symmetry}
+
+We have strong evidence for time symmetry, because when
+we see a distant galaxy through a telescope, we're seeing light that has taken
+billions of years to get here. A telescope, then, is like a time machine. For all
+we know, alien astronomers with advanced technology may be observing our planet
+right now,\footnote{Our present technology isn't good enough to let us pick
+the planets of other solar systems out from the glare of their suns, except in a few
+exceptional cases.}
+but if so, they're seeing it not as it is now but as it
+was in the distant past, perhaps in the age of the dinosaurs, or before life
+even evolved here. As we observe a particularly distant, and therefore ancient,
+supernova, we see that its explosion plays out in exactly the same way as
+those that are closer, and therefore more recent.
+
+Now suppose physics really does change from year to year, like politics, pop music,
+and hemlines. Imagine, for example, that the ``constant'' $G$ in Newton's
+law of gravity isn't quite so constant. One day you might wake up and find that you've
+lost a lot of weight without dieting or exercise, simply because gravity has gotten
+weaker since the day before. 
+
+If you know about such changes in $G$ over time, it's the ultimate insider
+information. You can use it to get as rich as Croesus, or even Bill Gates.\index{Gates, Bill}
+On a day when $G$ is low, you pay for the energy needed to lift
+a large mass up high. Then, on a day when gravity is stronger,
+you lower the mass back down, extracting its gravitational energy.
+The key is that the energy you get back out is greater than what you
+originally had to put in. You can run the cycle over and over again, always
+raising the weight when gravity is weak, and lowering it when gravity is strong.
+Each time, you make a profit in energy. Everyone else thinks energy is conserved,
+but your secret technique allows you to keep on increasing and increasing the amount
+of energy in the universe (and the amount of money in your bank account).
+
+The scheme can be made to work if anything about physics changes over time, not
+just gravity. For instance, suppose that the mass of an electron had one value
+today, and a slightly different value tomorrow. Electrons are one of the basic
+particles from which atoms are built, so on a day when the mass of electrons is low, every
+physical object has a slightly lower mass. In problem \ref{hw:changing-electron-mass}
+on page \pageref{hw:changing-electron-mass}, you'll work out a way that this could
+be used to manufacture energy out of nowhere.\label{text:changing-electron-mass}
+
+Sorry, but it won't work. Experiments show that $G$ doesn't change measurably over
+time, nor does there seem to be any time variation in any of the other rules by which the universe
+works.\footnote{In 2002, there have been some reports that the properties of atoms
+as observed in distant galaxies are slightly different than those of atoms here and
+now. If so, then time symmetry is weakly violated, and so is conservation
+of energy. However, this is a revolutionary claim, and it needs to be examined carefully.
+The change being claimed is large enough that, if it's real, it should be detectable
+from one year to the next in ultra-high-precision laboratory experiments here on earth.}
+If archaeologists find a
+copy of this book thousands of years from now, they'll be able to reproduce all the
+experiments you're doing in this course.
+
+I've probably convinced you that if time symmetry was violated, then
+conservation of energy wouldn't hold. But does it work the other way around? If time
+symmetry is valid, must there be a law of conservation of energy? 
+Logically, that's a different question. We may be able to
+prove that if A is false, then B must be false, but that doesn't mean that if A is
+true, B must be true as well.
+For instance, if you're not a criminal, then you're presumably not in jail, but just
+because someone is a criminal, that doesn't mean he is in jail
+--- some criminals never get caught.
+
+Noether's theorem does work the other way around as well: if physics has a certain
+symmetry, then there must be a certain corresponding conservation law. This is
+a stronger statement. The full-strength version of Noether's theorem can't
+be proved without a  model of light and matter more detailed than the one
+currently at our disposal.
+
+<% end_sec() %>
+<% begin_sec("Equivalence of mass and energy",0,'massenergy') %>
+
+<% begin_sec("Mass-energy") %>\index{mass-energy}\index{mass!equivalence to energy}\index{energy!equivalence to mass}
+You've encountered two conservation laws so far: conservation of mass and conservation
+of energy. If conservation of energy is a consequence of symmetry, is there a
+deeper reason for conservation of mass?
+
+Actually they're not even separate conservation laws. Albert Einstein found,\index{Einstein, Albert}
+as a consequence of his theory of relativity, that mass and energy are equivalent, and
+are not separately conserved --- one can be converted into the other. Imagine that
+a magician waves his wand, and changes a bowl of dirt into a bowl of lettuce. You'd be
+impressed, because you were expecting that both dirt and lettuce would be conserved
+quantities. Neither one can be made to vanish, or to appear out of thin air. However,
+there are processes that can change one into the other. A farmer changes dirt into
+lettuce, and a compost heap changes lettuce into dirt. At the most fundamental
+level, lettuce and dirt aren't really different things at all; they're just collections
+of the same kinds of atoms --- carbon, hydrogen, and so on.
+
+We won't examine relativity in detail in this book, but mass-energy
+equivalence is an inevitable implication of the theory, and it's the only part of the
+theory that most people have heard of, via the famous equation $E=mc^2$. This equation
+tells us how much energy is equivalent to how much mass: the conversion factor is the square
+of the speed of light, $c$. Since $c$ is a big number, you get a really really big number
+when you multiply it by itself to get $c^2$. This means that even a small amount of mass
+is equivalent to a very large amount of energy. 
+
+<%
+  fig(
+    'eclipse',
+    'Example \ref{eg:eclipse}.',
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+\label{fig:eclipse}
+
+\pagebreak
+
+\begin{eg}{Gravity bending light}\label{eg:eclipse}
+Gravity is a universal attraction between things that have mass, and since the energy
+in a beam of light is equivalent to some very small amount of mass, we expect that
+light will be affected by gravity, although the effect should be very small.
+The first experimental confirmation of relativity
+came in 1919 when stars next to the sun during a solar eclipse were
+observed to have shifted a little from their ordinary
+position. (If there was no eclipse, the glare of the sun
+would prevent the stars from being observed.) Starlight had
+been deflected by the sun's gravity. Figure \figref{eclipse} is a
+photographic negative, so the circle that appears bright is actually the
+dark face of the moon, and the dark area is really the bright corona of
+the sun. The stars, marked by lines above and below them, appeared at
+positions slightly different than their normal ones.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'newspaper-eclipse',
+    'A New York Times headline from November 10, 1919, describing the observations discussed in example \ref{eg:eclipse}.'
+  )
+%>
+\label{fig:newspaper-eclipse}
+<% end_marg %>
+
+\begin{eg}{Black holes}\index{black hole}
+A star with sufficiently strong gravity can prevent light
+from leaving. Quite a few black holes have been detected via
+their gravitational forces on neighboring stars or clouds of gas and dust.
+\end{eg}
+
+
+Because mass and energy are like two different sides of the same coin, we may speak of
+mass-energy, a single conserved quantity, found by adding up all the mass and energy,
+with the appropriate conversion factor: $E+mc^2$.
+
+\pagebreak
+
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 500,000 joules. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 500,000 joules. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light in metric units is
+$c=3\times10^8$ meters per second (scientific notation for
+3 followed by 8 zeroes), so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{500,000}{\left(3\times10^8\right)^2} \\
+                         &=    0.000000000006\  \text{kilograms}\eqquad.
+\end{align*}
+(The design of the metric system is based on the meter, the kilogram, and the
+second. The joule is designed to fit into this system, so the result comes
+out in units of kilograms.)
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number in metric units.
+\end{eg}
+%
+<% end_sec() %>
+<% begin_sec("The correspondence principle",nil,'correspondence-principle') %>\index{correspondence principle!defined}
+The realization that mass and energy are not separately conserved is our first example
+of a general idea called the correspondence principle. When Einstein came up with
+relativity, conservation of energy had been accepted by physicists for decades, and
+conservation of mass for
+over a hundred years.\index{correspondence principle!for mass-energy equivalence}
+
+Does an example like this mean that physicists don't know what they're talking about?
+There is a recent tendency among social scientists to 
+deny that the scientific method even exists, claiming that
+science is no more than a social system that
+determines what ideas to accept based on an in-group's
+criteria. If science is an
+arbitrary social ritual, it would seem difficult to explain
+its effectiveness in building such useful items as
+airplanes, CD players and sewers. If voodoo
+and astrology were no less scientific in
+their methods than chemistry and physics, what was it that
+kept them from producing anything useful?
+This silly attitude was effectively skewered in a famous hoax
+carried out in 1996 by New York University physicist Alan Sokal.\index{Sokal, Alan} Sokal wrote
+an article titled ``Transgressing the Boundaries: Toward a Transformative 
+Hermeneutics of Quantum Gravity,'' and got it accepted by a cultural studies
+journal called \emph{Social Text}.\footnote{The paper
+appeared in \emph{Social Text} \#46/47 (1996) pp. 217-252. The full text
+is available on Professor Sokal's web page at www.physics.nyu.edu/faculty/sokal/.}
+The scientific content of the paper is a carefully constructed soup of
+mumbo jumbo, using technical terms to create maximum confusion; I can't make
+heads or tails of it, and I assume the editors and peer reviewers at
+\emph{Social Text} understood even less. The physics, however, is mixed
+in with cultural relativist statements designed to appeal to them ---
+``\ldots the truth claims of science are inherently theory-laden and self-referential'' ---
+and footnoted references to academic articles such as 
+``Irigaray's and Hayles' exegeses of gender encoding in fluid mechanics \ldots
+and \ldots Harding's comprehensive critique of the gender ideology underlying
+the natural sciences in general and physics in particular\ldots''
+On the day the article came out, Sokal published a letter explaining that
+the whole thing had been a parody --- one that apparently went over the heads
+of the editors of \emph{Social Text}.
+
+What keeps physics from being merely a matter of fashion is that it has to agree
+with experiments and observations. If a theory such as conservation of mass or
+conservation of energy became accepted in physics, it was because it was supported
+by a vast number of experiments. It's just that experiments never have perfect
+accuracy, so a discrepancy such as the tiny change in the mass of the rusting nail
+in example \ref{eg:rustingnail} was undetectable. The old experiments weren't all
+wrong. They were right, within their limitations. If someone comes along with a
+new theory he claims is better, it must still be consistent with all the same
+experiments. In computer jargon, it must be backward-compatible. This is called
+the correspondence principle: new theories must be compatible with old ones in
+situations where they are both applicable. The correspondence principle tells us
+that we can still use an old theory within the realm where it works, so for instance
+I'll typically refer to conservation of mass and conservation of energy in this
+book rather than conservation of mass-energy, except in cases where the new theory
+is actually necessary.
+
+Ironically, the extreme cultural relativists want to attack what they see
+as physical scientists' arrogant claims to absolute truth, but what they
+fail to understand is that science only claims to be able to find partial, provisional truth.
+The correspondence principle tells us that each of today's scientific truths can be superseded
+tomorrow by another truth that is more accurate and more broadly applicable. It also
+tells us that today's truth will not lose any value when that happens.
+<% end_sec() %>
+<% end_sec() %>
+ %===============================================================================
+ %===============================================================================
+
+<% begin_hw_sec %>
+
+<% begin_hw('mg-to-kg') %>__incl(hw/mg-to-kg)<% end_hw() %>
+
+<% begin_hw('units') %>__incl(hw/units)<% end_hw() %>
+
+<% begin_hw('backyard') %>__incl(hw/backyard)<% end_hw() %>
+
+<% begin_hw('furlongs') %> The speed of light is $3.0\times10^8$  m/s. Convert
+this to furlongs per fortnight.  A furlong is 220 yards, and
+a fortnight is 14 days.  An inch is 2.54 cm.\answercheck
+<% end_hw() %>
+
+<% begin_hw('micrograms') %> Express each of the following quantities in micrograms:\\
+(a) 10 mg, (b) $10^4$ g, (c) 10 kg, (d) $100\times10^3$ g, (e) 1000 ng. \answercheck
+<% end_hw() %>
+
+<% begin_hw('estrogen') %>__incl(hw/estrogen)<% end_hw() %>
+
+<% begin_hw('jumpkeandpe') %>__incl(hw/jumpkeandpe)<% end_hw() %>
+
+<% begin_hw('throw-down-and-up') %>__incl(hw/throw-down-and-up)<% end_hw() %>
+
+<% begin_hw('pulley') %>
+(a) If weight B moves down by a certain amount, how much does weight A
+move up or down?\hwendpart
+(b) What should the ratio of the two weights be if they are to balance?
+Explain in terms of conservation of energy.
+<% end_hw() %>
+<% marg(50) %>
+<% fig('hw-pulley','Problem \ref{hw:pulley}.') %>
+<% end_marg %>
+
+
+<% begin_hw('slidingmagnets') %>
+        (a) You release a magnet on a tabletop near a big piece
+        of iron, and the magnet leaps across the table to the iron.
+        Does the magnetic energy increase, or decrease?
+        Explain.\hwendpart
+        (b) Suppose instead that you have two repelling
+        magnets. You give them an initial push towards each other,
+        so they decelerate while approaching each other. Does the
+        magnetic energy increase, or decrease? Explain.
+<% end_hw() %>
+
+<% begin_hw('spacesuit') %>__incl(hw/spacesuit)<% end_hw() %>
+
+
+<%
+  fig('hw-colliding-balls','Problem \ref{hw:colliding-balls}.',
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+<% begin_hw('colliding-balls') %>
+        The multiflash photograph below shows a collision
+        between two pool balls. The ball that was initially at rest
+        shows up as a dark image in its initial position, because
+        its image was exposed several times before it was struck and
+        began moving. By making measurements on the figure,
+        determine whether or not energy appears to have been
+        conserved in the collision. What systematic effects would
+        limit the accuracy of your test? (From an example in PSSC
+        Physics.)
+<% end_hw() %>
+
+<% begin_hw('rocketweight') %>
+How high above the surface of the earth should a rocket be in order to
+have 1/100 of its normal weight? Express your answer in units of earth radii.\answercheck
+<% end_hw() %>
+
+<% begin_hw('changing-electron-mass') %>__incl(hw/changing-electron-mass)<% end_hw() %>
+
+<% begin_hw('rustingnailsmallc') %>__incl(hw/rustingnailsmallc)<% end_hw() %>
+
+<% begin_hw('freeneutron') %>__incl(hw/freeneutron)<% end_hw() %>
+
+<% begin_hw('drop-rock') %>__incl(hw/drop-rock)<% end_hw() %>
+
+<% end_hw_sec %>
+<% end_chapter() %>

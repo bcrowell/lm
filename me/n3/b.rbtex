@@ -1,0 +1,68 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '07',
+    %q{Vectors},
+    'ch:vectors',
+    %q{Vectors are used in aerial navigation.},
+    {'opener'=>'mondavi','sidecaption'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n3b)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('tiptotail') %>__incl(hw/tiptotail)<% end_hw() %>
+<% marg(13) %>
+<%
+  fig(
+    'hw-tiptotail',
+    %q{Problem \ref{hw:tiptotail}.}
+  )
+%>
+<% end_marg %>
+
+\vspace{15mm}
+
+<% begin_hw('bangkok') %>__incl(hw/bangkok)<% end_hw() %>
+
+\vspace{15mm}
+
+<% begin_hw('walking') %>__incl(hw/walking)<% end_hw() %>
+
+\vspace{15mm}
+
+<% begin_hw('drill') %>__incl(hw/drill)<% end_hw() %>
+<% marg(35) %>
+<%
+  fig(
+    'hw-drill',
+    %q{Problem \ref{hw:drill}.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<% begin_hw('vector-plus-scalar') %>__incl(hw/vector-plus-scalar)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('baseballrangeair') %>__incl(hw/baseballrangeair)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('sine-of-vector') %>__incl(hw/sine-of-vector)<% end_hw() %>
+
+
+\pagebreak
+
+
+<% end_hw_sec %>
+<% end_chapter() %>

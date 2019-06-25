@@ -1,0 +1,89 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '14',
+    'Conservation of Momentum',
+    'ch:momentum',
+    'Pool balls exchange momentum.',
+    {'opener'=>'pool','special_width'=>'117mm'}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/cld)
+__incl(text/momentum_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('keintermsofp') %>__incl(hw/keintermsofp)<% end_hw() %>
+
+<% begin_hw('rowboat') %>__incl(hw/rowboat)<% end_hw() %>
+
+<% begin_hw('planes') %>__incl(hw/planes)<% end_hw() %>
+
+<% begin_hw('gun') %>__incl(hw/gun)<% end_hw() %>
+
+
+<%
+  fig(
+    'hw-rocket',
+    %q{Problem \ref{hw:rocket}},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('rocket') %>__incl(hw/rocket)<% end_hw() %>
+
+
+<% begin_hw('cosmicray') %>__incl(hw/cosmicray)<% end_hw() %>
+
+<% begin_hw('cmaverage') %>__incl(hw/cmaverage)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-hockey-pucks',
+    %q{Problem \ref{hw:hockey-pucks}}
+  )
+%>
+<% end_marg %>
+<% begin_hw('hockey-pucks') %>__incl(hw/hockey-pucks)<% end_hw() %>
+
+<% begin_hw('rope-over-edge',2,{'calc'=>true}) %>__incl(hw/rope-over-edge)<% end_hw() %>
+
+<% begin_hw('recoil-double-speed') %>__incl(hw/recoil-double-speed)<% end_hw() %>
+
+<% begin_hw('fridge-recoil') %>__incl(hw/fridge-recoil)<% end_hw() %>
+
+<% begin_hw('bowling-collision') %>__incl(hw/bowling-collision)<% end_hw() %>
+
+<% begin_hw('exhaust',2,{'calc'=>true}) %>__incl(hw/exhaust)<% end_hw() %>
+
+<% begin_hw('firework') %>__incl(hw/firework)<% end_hw() %>
+
+<% begin_hw('energy-frames',2) %>__incl(hw/energy-frames)<% end_hw() %>
+
+<% begin_hw('funkosity') %>__incl(hw/funkosity)<% end_hw() %>
+
+<% begin_hw('max-heat-released-in-collision') %>__incl(hw/max-heat-released-in-collision)<% end_hw() %>
+
+<% begin_hw('colliding-putty') %>__incl(hw/colliding-putty)<% end_hw() %>
+
+<% begin_hw('force-to-momentum-2',nil,{'calc'=>true,'credit'=>'B.~Shotwell'}) %>__incl(hw/force-to-momentum-2)<% end_hw() %>
+
+<% begin_hw('ballistic-pendulum',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/ballistic-pendulum)<% end_hw() %>
+
+<% begin_hw('car-truck-crash',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/car-truck-crash)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% if false then figure_in_toc('pool',{'noresize'=>true}) end %>
+<% end_chapter() %>

@@ -1,0 +1,740 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '34',
+    %q{Light as a Particle},
+    'ch:light-as-a-particle',
+    %q{In recent decades, a huge hole in the ozone layer has spread
+out from Antarctica.},
+    {'opener'=>'ozone'}
+  )
+%>
+
+
+\epigraphlong{The only thing that interferes with my learning is my education.}%
+{Albert Einstein}\index{Einstein, Albert}
+
+\noindent Radioactivity is random, but do the laws of physics exhibit
+randomness in other contexts besides radioactivity? Yes.
+Radioactive decay was just a good playpen to get us started
+with concepts of randomness, because all atoms of a given
+isotope are identical. By stocking the playpen with an
+unlimited supply of identical atom-toys, nature helped us to
+realize that their future behavior could be different
+regardless of their original identicality. We are now ready
+to leave the playpen, and see how randomness fits into the
+structure of physics at the most fundamental level.
+
+The laws of physics describe light and matter, and the
+quantum revolution rewrote both descriptions. Radioactivity
+was a good example of matter's behaving in a way that was
+inconsistent with classical physics, but if we want to get
+under the hood and understand how nonclassical things
+happen, it will be easier to focus on light rather than
+matter. A radioactive atom such as uranium-235 is after all
+an extremely complex system, consisting of 92 protons, 143
+neutrons, and 92 electrons. Light, however, can be a simple sine wave.
+
+However successful the classical wave theory of light had
+been --- allowing the creation of \index{radio}radio and
+\index{radar}radar, for example --- it still failed to
+describe many important phenomena. An example that is
+currently of great interest is the way the \index{ozone
+layer}ozone layer protects us from the dangerous short-wavelength
+\index{ultraviolet light}ultraviolet part of the sun's
+spectrum. In the classical description, light is a wave.
+When a wave passes into and back out of a medium, its
+frequency is unchanged, and although its wavelength is
+altered while it is in the medium, it returns to its
+original value when the wave reemerges. Luckily for us, this
+is not at all what ultraviolet light does when it passes
+through the ozone layer, or the layer would offer no protection at all!
+
+
+<% begin_sec("Evidence for light as a particle",0,'photon-evidence') %>
+
+<%
+  fig(
+    'ccd-spot',
+    %q{Images made by a digital camera. In each successive image, the dim spot of light has been made even dimmer.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+For a long time, physicists tried to explain away the
+problems with the classical theory of light as arising from
+an imperfect understanding of atoms and the interaction of
+light with individual atoms and molecules. The ozone
+paradox, for example, could have been attributed to the
+incorrect assumption that  the ozone layer
+was a smooth, continuous substance, when in reality it was
+made of individual ozone molecules. It wasn't until 1905
+that Albert Einstein threw down the gauntlet, proposing that
+the problem had nothing to do with the details of light's
+interaction with atoms and everything to do with the
+fundamental nature of light itself.
+
+
+In those days the data were sketchy, the ideas vague, and
+the experiments difficult to interpret; it took a genius
+like Einstein to cut through the thicket of confusion and
+find a simple solution. Today, however, we can get right to
+the heart of the matter with a piece of ordinary consumer
+electronics, the \index{digital camera}digital camera.
+Instead of film, a digital camera has a computer chip with
+its surface divided up into a grid of light-sensitive
+squares, called ``pixels.'' Compared to a grain of the
+silver compound used to make regular photographic film, a
+digital camera pixel is activated by an amount of light
+energy orders of magnitude smaller. We can learn something
+new about light by using a digital camera to detect smaller
+and smaller amounts of light, as shown in figures \subfigref{ccd-spot}{1}
+through \subfigref{ccd-spot}{3}. Figure 1 is fake, but 2 and 3 are
+real digital-camera images made by Prof. Lyman Page of
+Princeton University as a classroom demonstration.\label{lymanpage} Figure
+1 is what we would see if we used the digital camera to
+take a picture of a fairly dim source of light. In figures
+2 and 3, the intensity of the light was  drastically
+reduced by inserting semitransparent absorbers like the
+tinted plastic used in sunglasses. Going from 1 to 2 to
+3, more and more light energy is being thrown away by the absorbers.
+
+<% marg(23) %>
+<%
+  fig(
+    'attenuation-wave',
+    %q{A water wave is partially absorbed.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'attenuation-bullets',
+    %q{A stream of bullets is partially absorbed.}
+  )
+%>
+
+<% end_marg %>
+The results are dramatically different from what we would
+expect based on the wave theory of light. If light was a
+wave and nothing but a wave, \figref{attenuation-wave}, then the absorbers would
+simply cut down the wave's amplitude across the whole
+wavefront. The digital camera's entire chip would be
+illuminated uniformly, and weakening the wave with an
+absorber would just mean that every pixel would take a long
+time to soak up enough energy to register a signal.
+
+But figures \subfigref{ccd-spot}{2} and \subfigref{ccd-spot}{3} show that some pixels take strong
+hits while others pick up no energy at all. Instead of the
+wave picture, the image that is naturally evoked by the data
+is something more like a hail of bullets from a machine gun,
+\figref{attenuation-bullets}. Each ``bullet'' of light apparently carries only a tiny
+amount of energy, which is why detecting them individually
+requires a sensitive digital camera rather than an
+eye or a piece of film.
+
+Although Einstein was interpreting different observations,
+this is the conclusion he reached in his 1905 paper: that
+the pure wave theory of light is an oversimplification, and
+that the energy of a beam of light comes in finite chunks
+rather than being spread smoothly throughout a region of space.
+
+<%
+  fig(
+    'seurat',
+    %q{Einstein and Seurat: twins separated at birth? Detail from \emph{Seine Grande Jatte} by Georges Seurat, 1886.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+We now think of these chunks as particles of light, and call
+them ``\index{photon!Einstein's early theory}photons,''
+although Einstein avoided the word ``particle,'' and the
+word ``photon'' was invented later. Regardless of words, the
+trouble was that waves and particles seemed like inconsistent
+categories. The reaction to Einstein's paper could be kindly
+described as vigorously skeptical. Even twenty years later,
+Einstein wrote, ``There are therefore now two theories of
+light, both indispensable, and --- as one must admit today
+despite twenty years of tremendous effort on the part of
+theoretical physicists --- without any logical connection.''
+In the remainder of this chapter we will learn how the
+seeming paradox was eventually resolved.
+
+\startdqs
+
+\begin{dq}
+Suppose someone rebuts the digital camera data in figure \figref{ccd-spot}, claiming
+that the random pattern of dots occurs not because of
+anything fundamental about the nature of light but simply
+because the camera's pixels are not all exactly the same --- some are just more sensitive
+than others.
+How could we test this interpretation?
+\end{dq}
+
+\begin{dq}
+Discuss how the correspondence principle applies to the
+observations and concepts discussed in this section.
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("How much light is one photon?",3,'how-much-light-is-one-photon') %>
+
+<% begin_sec("The photoelectric effect") %>\index{photoelectric effect}
+
+We have seen evidence that light energy comes in little
+chunks, so the next question to be asked is naturally how
+much energy is in one chunk. The most straightforward
+experimental avenue for addressing this question is a
+phenomenon known as the photoelectric effect. The photoelectric
+effect occurs when a photon strikes the surface of a solid
+object and knocks out an electron. It occurs continually all
+around you. It is happening right now at the surface of your
+skin and on the paper or computer screen from which you are
+reading these words. It does not ordinarily lead to any
+observable electrical effect, however, because on the
+average, free electrons are wandering back in just as
+frequently as they are being ejected. (If an object did
+somehow lose a significant number of electrons, its growing
+net positive charge would begin attracting the electrons
+back more and more strongly.)
+
+
+<% marg(0) %>
+<%
+  fig(
+    'photoelectric-apparatus-a',
+    %q{%
+      Apparatus for observing the photoelectric effect. A beam of
+      light strikes a capacitor plate inside a vacuum tube, and electrons
+      are ejected (black arrows).
+    }
+  )
+%>
+<% end_marg %>
+Figure \figref{photoelectric-apparatus-a} shows a practical method for detecting the
+photoelectric effect. Two very clean parallel metal plates
+(the electrodes of a capacitor) are sealed inside a vacuum
+tube, and only one plate is exposed to light. Because there
+is a good vacuum between the plates, any ejected electron
+that happens to be headed in the right direction will almost
+certainly reach the other capacitor plate without colliding
+with any air molecules.
+
+The illuminated (bottom) plate is left with a net positive
+charge, and the unilluminated (top) plate acquires a
+negative charge from the electrons deposited on it. There is
+thus an electric field between the plates, and it is because
+of this field that the electrons' paths are curved, as shown
+in the diagram. However, since vacuum is a good insulator,
+any electrons that reach the top plate are prevented from
+responding to the electrical attraction by jumping back
+across the gap. Instead they are forced to make their way
+around the circuit, passing through an ammeter. The ammeter
+measures the strength of the photoelectric effect.
+
+<% end_sec() %>
+<% begin_sec("An unexpected dependence on frequency") %>
+
+The photoelectric effect was discovered serendipitously by
+Heinrich \index{Hertz, Heinrich}Hertz in 1887, as he was
+experimenting with radio waves. He was not particularly
+interested in the phenomenon, but he did notice that the
+effect was produced strongly by ultraviolet light and more
+weakly by lower frequencies. Light whose frequency was lower
+than a certain critical value did not eject any electrons at
+all.\footnote{In fact this was all prior to Thomson's discovery of
+the electron, so Hertz would not have described the effect
+in terms of electrons --- we are discussing everything with
+the benefit of hindsight.} This dependence on frequency
+didn't make any sense in terms of the classical wave theory
+of light. A light wave consists of electric and magnetic
+fields. The stronger the fields, i.e., the greater the wave's
+amplitude, the greater the forces that would be exerted on
+electrons that found themselves bathed in the light. It
+should have been amplitude (brightness) that was relevant,
+not frequency. The dependence on frequency not only proves
+that the wave model of light needs modifying, but with the
+proper interpretation it allows us to determine how much
+energy is in one photon, and it also leads to a connection
+between the wave and particle models that we need in
+order to reconcile them.
+
+<% marg(0) %>
+<%
+  fig(
+    'photoelectric-hamster',
+    %q{%
+      The hamster in her hamster ball
+      is like an electron emerging from the metal (tiled kitchen floor)
+      into the surrounding vacuum (wood floor). The wood floor is higher
+      than the tiled floor, so as she rolls up the step, the hamster will
+      lose a certain amount of kinetic energy, analogous to $E_s$. If her
+      kinetic energy is too small, she won't even make it up the step.
+    }
+  )
+%>
+<% end_marg %>
+ %
+To make any progress, we need to consider the physical
+process by which a photon would eject an electron from the
+metal electrode. A metal contains electrons that are free to
+move around. Ordinarily, in the interior of the metal, such
+an electron feels attractive forces from atoms in every
+direction around it. The forces cancel out. But if the
+electron happens to find itself at the surface of the metal,
+the attraction from the interior side is not balanced out by
+any attraction from outside.
+In popping out through the surface the electron therefore loses
+some amount of energy $E_s$, which depends on the type of metal used.
+
+Suppose a photon strikes an electron, annihilating itself
+and giving up all its energy to the electron.\footnote{We now know
+that this is what always happens in the photoelectric
+effect, although it had not yet been established in 1905
+whether or not the photon was completely annihilated.} The
+electron will (1) lose kinetic energy through collisions
+with other electrons as it plows through the metal on its
+way to the surface; (2) lose an amount of kinetic energy
+equal to $E_s$ as it emerges through the surface; and (3) lose
+more energy on its way across the gap between the plates,
+due to the electric field between the plates. Even if the
+electron happens to be right at the surface of the metal
+when it absorbs the photon, and even if the electric field
+between the plates has not yet built up very much, $E_s$ is
+the bare minimum amount of energy that the electron must receive from
+the photon if it is to contribute to a measurable current.
+The reason for using very clean electrodes is to minimize
+$E_s$ and make it have a definite value characteristic of the
+metal surface, not a mixture of values due to the various
+types of dirt and crud that are present in tiny amounts on
+all surfaces in everyday life.
+
+We can now interpret the frequency dependence of the
+photoelectric effect in a simple way: apparently the amount
+of energy possessed by a photon is related to its frequency.
+A low-frequency red or infrared photon has an energy less
+than $E_s$, so a beam of them will not produce any current.  A
+high-frequency blue or violet photon, on the other hand,
+packs enough of a punch to allow an electron to get out of the electrode.
+At frequencies higher than the minimum, the
+photoelectric current continues to increase with the
+frequency of the light because of effects (1) and (3).
+
+<% end_sec() %>
+<% begin_sec("Numerical relationship between energy and frequency") %>
+Figure \figref{photoelectric-apparatus-b} shows an experiment that is used sometimes in
+college laboratory courses to probe the relationship between the energy and frequency
+of a photon. The idea is simply to illuminate
+one plate of the vacuum tube with light of a single
+wavelength and monitor the voltage difference between the
+two plates as they charge up. Since the resistance of a
+voltmeter is very high (much higher than the resistance of
+an ammeter), we can assume to a good approximation that
+electrons reaching the top plate are stuck there permanently,
+so the voltage will keep on increasing for as long as
+electrons are making it across the vacuum tube.
+
+<% marg(30) %>
+<%
+  fig(
+    'photoelectric-apparatus-b',
+    %q{A different way of studying the photoelectric effect.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'photoelectric-graph',
+    %q{%
+      The quantity $E_s+e\Delta V$ indicates the energy of one photon. It
+      is found to be proportional to the frequency of the light.
+    }
+  )
+%>
+
+<% end_marg %>
+At a moment when the voltage difference has reached a
+value $\Delta V$, the minimum energy required by an electron
+to make it out of the bottom plate and across the gap to the
+other plate is $E_s+e\Delta $V. As $\Delta V$ increases, we
+eventually reach a point at which $E_s+e\Delta V$ equals the
+energy of one photon. No more electrons can cross the gap,
+and the reading on the voltmeter stops rising. The quantity
+$E_s+e\Delta V$ now tells us the energy of one photon. If we
+determine this energy for a variety of frequencies, \figref{photoelectric-graph}, we
+find the following simple relationship between the energy of
+a \index{photon!energy of}photon and the frequency of the light:
+\begin{equation*}
+        E  =  hf\eqquad,
+\end{equation*}
+where $h$ is a constant with a numerical value of
+$6.63\times10^{-34}\ \junit\unitdot\sunit$.\linebreak[4]
+Note how the equation brings the
+wave and particle models of light under the same roof: the
+left side is the energy of one \emph{particle} of light,
+while the right side is the frequency of the same light,
+interpreted as a \emph{wave}. The constant $h$ is known as
+\index{Planck, Max}\index{Planck's constant}Planck's constant,\label{planck-constant}
+after theorist Max Planck.
+
+<% self_check('extract-planck-from-graph',<<-'SELF_CHECK'
+How would you extract $h$ from the graph in figure \figref{photoelectric-graph}?
+What if you didn't even know $E_s$ in advance, and could only graph
+$e\Delta V$ versus $f$?
+  SELF_CHECK
+  ) %>
+
+Since the energy of a photon is $hf$, a beam of light
+can only have energies of $hf$, $2hf$, $3hf$,
+etc. Its energy is quantized --- there is no such thing as a
+fraction of a photon. Quantum physics gets its name from the
+fact that it quantizes things like energy, momentum, and
+angular momentum that had previously been thought to be
+smooth, continuous and infinitely divisible.
+
+\begin{eg}{Number of photons emitted by a lightbulb per second}\label{eg:photons-from-lightbulb}
+\egquestion Roughly how many photons are emitted by a 100-W
+lightbulb in 1 second?
+
+\eganswer People tend to remember wavelengths rather than
+frequencies for visible light. The bulb emits photons with a
+range of frequencies and wavelengths, but let's take 600 nm
+as a typical wavelength for purposes of estimation. The
+energy of a single photon is
+\begin{align*}
+        E_{photon}     &=  hf\\
+             &=    \frac{hc}{\lambda}
+\end{align*}
+A power of 100 W means 100 joules per second, so the
+number of photons is
+\begin{equation*}
+    \frac{100\ \junit}{E_{photon}}
+             =    \frac{100\ \junit}{hc/\lambda}
+        \approx 3\times10^{20}\eqquad.
+\end{equation*}
+This hugeness of this number is consistent with the correspondence principle.
+The experiments that established the classical theory of optics
+weren't wrong. They were right, within their domain of applicability, in which
+the number of photons was so large as to be indistinguishable from a continuous beam.
+\end{eg}
+
+\begin{eg}{Measuring the wave}\label{eg:am-radio-photon-density}
+When surfers are out on the water waiting for their chance to catch a wave, they're interested
+in both the height of the waves and when the waves are going to arrive. In other words, they
+observe both the amplitude and phase of the waves, and it doesn't matter to them that
+the water is granular at the molecular level. The correspondence principle requires that we
+be able to do the same thing for electromagnetic waves, since the classical theory of electricity
+and magnetism was all stated and verified experimentally in terms of the fields $\vc{E}$ and $\vc{B}$,
+which are the amplitude of an electromagnetic wave. The phase is also necessary, since the laws of
+induction predict different results depending on whether an oscillating field is on its way up or
+on its way back down.
+
+This is a more demanding application of the correspondence principle than the one in 
+example \ref{eg:photons-from-lightbulb}, since amplitudes and phases constitute more detailed
+information than the over-all intensity of a beam of light. Eyeball measurements can't detect
+this type of information, since the eye is much bigger than a wavelength,
+but for example an AM radio receiver can do it with radio waves, since
+the wavelength for a station at 1000 kHz is about 300 meters, which is much larger than the antenna.
+The correspondence principle demands that we be able to explain this in terms of the photon
+theory, and this requires not just that we have a large number of photons emitted by the transmitter
+per second, as in example \ref{eg:photons-from-lightbulb}, but that even by the time they spread out
+and reach the receiving antenna, there should be many photons overlapping each other within a space
+of one cubic wavelength. Problem \ref{hw:am-radio-photon-density} on p.~\pageref{hw:am-radio-photon-density}
+verifies that the number is in fact extremely large.
+\end{eg}
+
+\begin{eg}{Momentum of a photon}\label{eg:photon-momentum}
+\egquestion According to the theory of relativity, the
+momentum of a beam of light is given by $p=E/c$ (see homework problem \ref{hw:ultrarelativistic}
+on page \pageref{hw:ultrarelativistic}). Apply this to find the momentum of a
+single photon in terms of its frequency, and in terms of its wavelength.
+
+\eganswer Combining the equations $p=E/c$ and $E=hf$, we find
+\begin{align*}
+        p     &=    \frac{E}{c}  \\
+             &=   \frac{hf}{c}\eqquad.
+\end{align*}
+To reexpress this in terms of wavelength, we use $c=f\lambda $:
+\begin{align*}
+        p     &=  \frac{hf}{f\lambda}   \\
+             &=\frac{h}{\lambda}
+\end{align*}
+The second form turns out to be simpler.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+The photoelectric effect only ever ejects a
+very tiny percentage of the electrons available
+near the surface of an object.
+How well does this agree with the wave
+model of light, and how well with the particle model?
+Consider the two different distance scales involved:
+the wavelength of the light, and the size of an atom,
+which is on the order of $10^{-10}$ or $10^{-9}$ m.
+\end{dq}
+
+\begin{dq}
+What is the significance of the fact that Planck's
+constant is numerically very small? How would our everyday
+experience of light be different if it was not so small?
+\end{dq}
+
+\begin{dq}
+How would the experiments described above be affected if
+a single electron was likely to get hit by more than one photon?
+\end{dq}
+
+\begin{dq}
+Draw some representative trajectories of electrons for
+$\Delta V=0$, $\Delta V$ less than the maximum value, and
+$\Delta V$ greater than the maximum value.
+\end{dq}
+
+\begin{dq}
+Does $E=hf$ imply that a photon changes its energy
+when it passes from one transparent material into another
+substance with a different index of refraction?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+
+<% begin_sec("Wave-particle duality",3,'wave-particle-duality') %>
+__incl(text/wave-particle-duality)
+<% end_sec('wave-particle-duality') %>
+
+__incl(text/nonlocality)          
+
+
+<% begin_sec("Photons in three dimensions",3) %>\index{photon!in three dimensions}
+
+Up until now I've been sneaky and avoided a full discussion
+of the three-dimensional aspects of the probability
+interpretation. The example of the carrot in the microwave
+oven, for example, reduced to a one-dimensional situation
+because we were considering three points along the same line
+and because we were only comparing ratios of probabilities.
+
+A typical example of a probability distribution in section \ref{sec:prob-dist}
+was the distribution of heights of human beings. The thing
+that varied randomly, height, $h$, had units of meters, and
+the probability distribution was a graph of a function
+$D(h)$. The units of the probability distribution had to be
+$\zu{m}^{-1}$ (inverse meters) so that areas under the curve,
+interpreted as probabilities, would be unitless:
+$(\text{area})=(\text{height})(\text{width})=\zu{m}^{-1}\cdot\zu{m}$.
+
+<% marg(0) %>
+<%
+  fig(
+    'volume-under-surface',
+    %q{The volume under a surface.}
+  )
+%>
+<% end_marg %>
+Now suppose we have a two-dimensional problem, e.g., the
+probability distribution for the place on the surface of a
+digital camera chip where a photon will be detected. The
+point where it is detected would be described with two
+variables, $x$ and $y$, each having units of meters. The
+probability distribution will be a function of both
+variables, $D(x,y)$. A probability is now visualized as the
+volume under the surface described by the function $D(x,y)$,
+as shown in figure \figref{volume-under-surface}. The units of $D$ must be $\munit^{-2}$ so
+that probabilities will be unitless:
+$(\text{probability})=(\text{depth})(\text{length})(\text{width})
+=\zu{m}^{-2}\cdot\zu{m}\cdot\zu{m}$.
+
+Generalizing finally to three dimensions, we find by analogy
+that the probability distribution will be a function of all
+three coordinates, $D(x,y,z)$, and will have units of $\munit^{-3}$.
+It is, unfortunately, impossible to visualize the graph
+unless you are a mutant with a natural feel for life in four
+dimensions. If the probability distribution is nearly
+constant within a certain volume of space $v$, the
+probability that the photon is in that volume is simply
+$vD$. If you know enough calculus, it should be clear
+that this can be generalized to $P=\int D \der x \der y \der z$ if $D$ is not constant.
+
+<% end_sec() %>
+
+\begin{summary}
+
+\begin{vocabw}{45mm}{62mm}
+
+\vocabitem{photon}{a particle of light}
+
+\vocabitem{photoelectric effect}{the ejection, by a photon, of an
+electron from the surface of an object}
+
+\vocabitem{wave-particle duality}{the idea that light is both a wave and a particle}
+\end{vocabw}
+
+\begin{summarytext}
+
+Around the turn of the twentieth century, experiments began
+to show problems with the classical wave theory of light. In
+any experiment sensitive enough to detect very small amounts
+of light energy, it becomes clear that light energy cannot
+be divided into chunks smaller than a certain amount.
+Measurements involving the photoelectric effect demonstrate
+that this smallest unit of light energy equals $hf$,
+where $f$ is the frequency of the light and $h$ is a number
+known as Planck's constant. We say that light energy is
+quantized in units of $hf$, and we interpret this
+quantization as evidence that light has particle properties
+as well as wave properties. Particles of light are called photons.
+
+The only method of reconciling the wave and particle natures
+of light that has stood the test of experiment is the
+probability interpretation: the probability
+that the particle is at a given location is proportional to
+the square of the amplitude of the wave at that location.
+
+One important consequence of wave-particle duality is that
+we must abandon the concept of the path the particle takes
+through space. To hold on to this concept, we would have to
+contradict the well established wave nature of light, since
+a wave can spread out in every direction simultaneously.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+
+\noindent \emph{For some of these homework problems, you may find it convenient
+to refer to the diagram of the electromagnetic spectrum shown on p.~\pageref{fig:em-spectrum}.}
+
+<% begin_hw('compare-photons') %>__incl(hw/compare-photons)<% end_hw() %>
+
+<% begin_hw('compare-flashes') %>__incl(hw/compare-flashes)<% end_hw() %>
+
+<% begin_hw('mirrorphotons') %>
+ When light is reflected from a mirror, perhaps only 80\%
+of the energy comes back. The rest is converted to heat.
+One could try to explain this in
+two different ways: (1) 80\% of the photons are reflected,
+or (2) all the photons are reflected, but each loses 20\% of
+its energy. Based on your everyday knowledge about mirrors,
+how can you tell which interpretation is correct? [Based on
+a problem from PSSC Physics.]
+<% end_hw() %>
+
+<% begin_hw('pelightsensor') %>__incl(hw/pelightsensor)<% end_hw() %>
+
+<% begin_hw('cancer') %> The photoelectric effect can occur not just for metal
+cathodes but for any substance, including living tissue.
+Ionization of DNA molecules can cause cancer or birth
+defects. If the energy required to ionize DNA is on the same
+order of magnitude as the energy required to produce the
+photoelectric effect in a metal, which of these types of
+electromagnetic waves might pose such a hazard? Explain.
+
+        60 Hz waves from power lines
+
+        100 MHz FM radio
+
+	1900 MHz radio waves from a cellular phone
+
+        2450 MHz microwaves from a microwave oven
+
+        visible light
+
+        ultraviolet light
+
+        x-rays
+<% end_hw() %>
+
+<% begin_hw('projector') %> The beam of a 100-W overhead projector covers an area of
+$1\ \munit\times1\ \munit$ when it hits the screen 3 m away. Estimate
+the number of photons that are in flight at any given time.
+(Since this is only an estimate, we can ignore the fact that
+the beam is not parallel.)
+<% end_hw() %>
+
+
+<% marg(5) %>
+<%
+  fig(
+    'hw-compare-diffraction',
+    %q{Problem \ref{hw:compare-diffraction}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-photons-normalization',
+    %q{Problem \ref{hw:photons-normalization}.}
+  )
+%>
+
+<% end_marg %>
+<% begin_hw('compare-diffraction') %>__incl(hw/compare-diffraction)<% end_hw() %>
+
+<% begin_hw('photons-normalization') %>__incl(hw/photons-normalization)<% end_hw() %>
+
+<% begin_hw('compare-photon-specs') %>__incl(hw/compare-photon-specs)<% end_hw() %>
+
+<% begin_hw('disprove-zigzag-photon') %>__incl(hw/disprove-zigzag-photon)<% end_hw() %>
+
+<% begin_hw('pe') %> In the photoelectric effect, electrons are observed with
+virtually no time delay ($\sim10\ \zu{ns}$), even when the light
+source is very weak. (A weak light source does however only
+produce a small number of ejected electrons.) The purpose of
+this problem is to show that the lack of a significant time
+delay contradicted the classical wave theory of light, so
+throughout this problem you should put yourself in the shoes
+of a classical physicist and pretend you don't know about
+photons at all. At that time, it was thought that the
+electron might have a radius on the order of $10^{-15}$ m.
+(Recent experiments have shown that if the electron has any
+finite size at all, it is far smaller.)\hwendpart
+(a) Estimate the power that would be soaked up by a single
+electron in a beam of light with an intensity of $1\ \zu{mW}/\munit^2$.\answercheck\hwendpart
+(b) The energy, $E_s$, required for the electron to escape
+through the surface of the cathode is on the order of
+$10^{-19}\ \junit$. Find how long it would take the electron to
+absorb this amount of energy, and explain why your result
+constitutes strong evidence that there is something wrong
+with the classical theory.\answercheck\hwendpart
+<% end_hw() %>
+
+<% begin_hw('directional-antenna-photon') %>
+Many radio antennas are designed so that they preferentially emit or receive
+electromagnetic waves in a certain direction. However, no antenna is perfectly
+directional.
+The wave shown in the figure represents a single photon being emitted by
+an antenna at the center. The antenna is directional, so there is a stronger
+wave on
+the right than on the left. What is the probability that the photon will be
+observed on the right?
+<% end_hw() %>
+<% marg(50) %>
+<%
+  fig(
+    'hw-directional-antenna-photon',
+    %q{Problem \ref{hw:directional-antenna-photon}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('am-radio-photon-density') %>__incl(hw/am-radio-photon-density)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% if false then figure_in_toc("melting-witch") end %>
+<% end_chapter() %>

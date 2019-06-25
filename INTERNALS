@@ -1,0 +1,247 @@
+=================================================================
+how it works
+=================================================================
+The books are written in LaTeX. There are two things that make the
+setup more complex than just compiling a normal LaTeX file:
+- I've written some software to make it easier to do the type of
+  visual layout I want, with figures positioned in the margins.
+  The software makes sure the figures don't go off the top or
+  bottom of the page, and also produces a warning if figures
+  overlap.
+- I've also written some software to produce html output. Although
+  this software makes use of tex4ht for certain functionality
+  (tables), it's mainly bespoke. The math is converted using
+  a script I wrote called footex, which is basically a wrapper
+  for blahtex and texvc, with some extra functionality added on
+  top.
+- I also use the m4 macro preprocessor to handle certain things,
+  especially to avoid duplication between books by including content
+  from the shared directory 9share. Although LaTeX is also a macro
+  engine, the point of doing this is that LaTeX isn't my only output
+  format.
+
+=================================================================
+makefiles
+=================================================================
+To build a book in pdf format from scratch, do:
+  make book
+The default target only recompiles the book once, which won't get the
+indexing, table of contents, etc. right:
+  make
+This is only for doing further iterations once an initial "make book"
+has been done.
+
+Options for pdf output:
+  POPT='only01' make
+      Only processes chapter 1 of the book in pdftex. Uses the latex
+      includeonly mechanism, so page numbers are not mesed up.
+
+The software for generating html output has various options that
+can be used on the command line. Example:
+  WOPT='--test' make web 
+Options:
+  --test
+      Generates html output in test mode, for local viewing
+     (no ads, refers to local copy of css file).
+  --no_write
+      Don't actually write output.
+  --redo_all_equations
+      Don't used cached copies of equations. For use after
+      modifying the software for translation of math.
+  --redo_all_tables
+      Similar, for tables.
+
+=================================================================
+sectioning
+=================================================================
+Sections, subsections, etc., are created like this
+  <% begin_sec("Rules of Randomness") %>
+  <% end_sec() %>
+If the same text is going to be included in two different books,
+then this may end up being a section in one book, and a subsection
+in the other. If you give the title in titlecase, then it will
+automatically be converted to non-titlecase in the book where it's
+the title of a subsection.
+There are two optional arguments to begin_sec. The first is an integer
+from 0 to 4 that controls the likelihood of a page break, as with the
+latex \pagebreak[n] command. The second optional argument is a latex
+label, e.g., giving an argument 'foo' would make a label like 'sec:foo'
+or 'subsec:foo'.
+
+=================================================================
+m4
+=================================================================
+Every chapter gets a bunch of m4 files prepended to it:
+  lm.m4 (applies to all books, not just LM series)
+  sn.m4 or lmseries.m4
+  book.m4
+  chapter.m4
+These are in appropriate locations in the directory hierarchy.
+It's OK if one of these files doesn't actually exist.
+M4 is invoked with the -P option, so all built-in m4 macros have
+to have the prefix m4_ on the front. By convention, my own m4 macros
+have __ on the front. In lm.m4, the quoting characters for m4 are
+defined to be [: and :], and comments are defined as //%, extending
+to the end of the line, so //%% makes something that's guaranteed to
+be a LaTeX comment, and //%# is a ruby comment.
+Macros I define:
+  macro        example             defined in
+  __web        0,1                 run_eruby.pl
+  __share      ../share/optics/    run_eruby.pl
+  __incl                           lm.m4
+  __sincl                          lm.m4
+  __calc       1,0                 sn.m4, lmseries.m4
+  __lm_series  0,1                 sn.m4, lmseries.m4
+  __sn         0,1
+  __cp         0,1
+  __me         0,1
+  __problems   0,1
+  __pe         U,PE                sn.m4, lmseries.m4
+Conditionals:
+  m4_ifelse(__calc,1,[:calculus:],[:no, calculus is scary:])
+  m4_ifelse(__pe,PE,[:magnetic potential energy:],[:magnetic energy:])
+  I have a separate mechanism for doing conditional includes, described below.
+Includes:
+  __incl(eg/steam_engine) ... includes eg/steam_engine.tex
+  __sincl(maybe) ... no error if it doesn't exist
+  m4_include(../share/optics/lens.tex) ... include from a directory that's not the standard one for this chapter
+Conditional includes:
+  See my m4 notes for why this is so hard to get right.
+  Can use __share/text here, which, e.g., may be defined as ../share/optics.
+  <% begin_if(__me) %>m4_include(__share/text/foo.tex)<% end_if %>
+    foo.tex can contain eruby and m4, and everybody plays nicely together
+    foo.tex gets included and processed through m4 and eruby no matter what; but if the conditional fails, then
+           latex doesn't actually produce output for the included material;
+    because of current implementation using LaTeX comment package, I force line breaks at begin and end;
+    argument of begin_if can be 0, 1, true, false; in ruby, !0 is false, so don't do stuff like !__me
+References to sections and chapters:
+  Typically a section in SN is a chapter in LM. 
+  __section_or_chapter(foo) expands to "section \ref{sec:foo}" in SN, "chapter \ref{ch:foo}" in LM
+  __uc_section_or_chapter(foo) expands to "Section \ref{sec:foo}" in SN, "Chapter \ref{ch:foo}" in LM
+  __bare_section_or_chapter(foo) expands to "\ref{sec:foo}" in SN, "\ref{ch:foo}" in LM
+  __pageref_subsection_or_section(foo) expands to a pageref
+  __subsection_or_section(foo)
+  __uc_subsection_or_section(foo)
+  __bare_subsection_or_section(foo)
+  *** Names are all little_or_big; think of little things growing big.
+
+=================================================================
+figures, fonts, rendering figures
+=================================================================
+The main font in the figures is 10-point Bitstream Vera Sans or its drop-in
+replacement Deja Vu Sans. Figures should be rendered to PDF or JPG format
+using the script render_one_figure.pl, which makes sure that there aren't
+problems with RIP associated with transparency or with fonts that aren't
+embedded.
+
+=================================================================
+figure positioning
+=================================================================
+Figures are positioned using a feedback loop. We run pdftex, and use pdflatex commands (\pdfsavepos,
+\recordpos) to record the location on the page where each figure actually ended up.
+The next time through the loop, eruby_util.rb uses this information to reposition the
+figure in case, e.g., it ended up falling off the bottom of the page.
+scripts
+  process_geom_file.pl
+    filters geom.pos, converting points to millimeters
+  check_for_colliding_figures.rb
+    reads chNN.pos, prints warnings
+  eruby_util.rb
+    height_of_marg() reads marg.pos, chNN.pos
+files:
+  geom.pos:
+      11.40  63.40 154.40 206.40  28.00 258.00
+      written by tex, filtered by process_geom_file.pl
+  marg.pos:
+    fig:guitar-harmonic,nmarg=10,ch=4
+    fig:fourier,nmarg=10,ch=4
+    fig:fourier-spectra,nmarg=11,ch=4
+    Written by fig(). Used to record what figures are associated with what margin blocks.
+    Read by height_of_marg().
+    It might seem weird to write this and then just read it back myself, but it tells me about
+    figures that I haven't yet enountered in this margin block on this run.
+    Grows every time you run an iteration, but that's necessary, and we always take the most recent record.
+  chNN.pos:
+    fig,label=fig:lowest-modes-of-air-column,page=94,x=11822068,y=48015505,at=begin
+    fig,label=fig:lowest-modes-of-air-column,page=94,x=11822068,y=33727285,at=endgraphic
+    fig,label=fig:lowest-modes-of-air-column,page=94,x=11530797,y=29008693,at=endcaption
+    Renamed from all.pos by latex code generated by end_chapter() in eruby_util.rb.
+    Read by height_of_marg() in eruby_util.rb
+    Read by process_pos_file.pl, to give warnings. (script doesn't exist?)
+    In cases where the figure mysteriously ends up on a different page than the one where it was invoked, this file
+    gives the page number where they really ended up.
+  all.pos
+    Written by \recordpos in lmfigs.sty, based on \pdfsavepos and code emitted by ruby. Later gets renamed to chNN.pos by latex code in book.tex.
+  figfeedbackNN:
+     10,page=90,refx=13500281,refy=37922604,deltay=40
+     11,page=91,refx=6041561,refy=41061462,deltay=40
+     Written by \begin{margin}, read by marg() the next time around.
+     Purpose is to find out where the user is asking to have the margin block placed vertically,
+        and to figure out whether the page number is odd or even, so we can do horizontal placement as well.
+    In cases where the figure mysteriously ends up on a different page than the one where it was invoked, this file
+    gives the page number on which it was invoked.
+
+=================================================================
+data about problems
+=================================================================
+When you compile a book, it makes a CSV file for each chapter,
+chNN_problems.csv (generated by eruby), which looks like this:
+  cl,4,3,planes,0
+The fields are book, chapter, problem number, name, and a flag that
+equals 1 if there's a solution in the back of the book. These can be
+compiled into one big file, data/problems.csv.
+
+*** the remainder of this is out of date; see merge_problems_data.rb ***
+
+ To compile the big file,
+build all the books, and then do a "make problems". The names are supposed
+to correlate with the names of the files in which the solutions are
+stored. It also makes problems.m4, with lines like this:
+  m4_define(__hw_cl_4_planes,3)m4_dnl
+The m4 file makes it possible to refer to problems across books, or from one
+solution to another problem, but I'm
+not actually using this mechanism yet, and I'd prefer to refine it
+to avoid having such a huge m4 symbol table; should make it so that an
+m4 definition is written only if I somehow flag that one as being necessary.
+
+Problems have symbolic names in three different places:
+  1) book's source code (and CSV generated from it)
+  2) name of file containing the solution
+  3) spotter file
+If 1 and 2 are inconsistent, it's an error. The same homework problem may
+also occur in more than one book, and should then preferably have the same name.
+If 3 is inconsistent with 1 and 2, it can be fixed by doing a howdy --rename.
+
+Renaming a problem:
+  - change name in book's source code
+  - change name of file containing solution
+  - check for references like \ref{hw:foo} and \pageref{hw:foo}
+  - optionally, change name in spotter file
+
+Renumbering a problem:
+  - reorder it in book's source code
+  - change it in spotter file (or run howdy --renumber)
+  - change syllabi
+
+=============
+problems book
+=============
+
+The problems book, in the subdirectory problems, has its own, different software
+setup. See problems/README for an explanation of how it works.
+
+==================================================================
+solutions, hints, answers, and self-checks in the back of the book
+==================================================================
+
+Let the name of the problem be foo.
+Put a file foo.tex or hint-foo.tex containing the answer in share/answers.
+Put an appropriate line, such as <% answer("foo") %>, in hwans.rbtex.
+In the problem itself, put a line like this:
+  <% hw_solution %>
+  <% hw_hint("foo") %>
+  <% hw_answer %>
+Figures should be made using anonymousinlinefig, and should be in
+directories such as ch99/figs or end2/figs. Currently they need
+to be duplicated if they appear in more than one book.
+

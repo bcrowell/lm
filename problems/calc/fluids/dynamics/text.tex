@@ -1,0 +1,32 @@
+\subsection{Continuity}
+
+We now turn to fluid dynamics, eliminating the restriction to cases in which the fluid is
+at rest and in equilibrium. Mass is conserved, and this constrains the ways in which a
+fluid can flow. For example, it is not possible to have a piece of pipe with water flowing
+\emph{out} of it at each end indefinitely. The principle of continuity states that when
+a fluid flows steadily (so that the velocity at any given point is constant over time),
+mass enters and leaves a region of space at equal rates. 
+
+% fig {"name":"faucet","caption":"Due to conservation of mass, the stream of water narrows."}
+
+Liquids are highly incompressible,
+so that it is often a good approximation to assume that the density is the same everywhere.
+In the case of incompressible flow, we can frequently relate the rate of steady flow to
+the cross-sectional area, as in figure \ref{fig:faucet}. Because the water is incompressible,
+the rate at which mass flows through a perpendicular cross-section depends only on the
+product of the velocity and the cross-sectional area. Therefore as the water falls and
+accelerates, the cross-sectional area goes down.
+
+\subsection{Bernoulli's equation}
+
+Consider a parcel of fluid as it flows from one place to another. If it accelerates
+or decelerates, then its kinetic energy changes. If it rises or falls, its potential
+energy changes as well. If there is a net change in $KE+PE$, then this must be
+accomplished through forces from the surrounding fluid. For example, if water is
+to move uphill at constant speed, then there must be a pressure difference, such
+as one produced by a pump. Based on these considerations, one can show that along
+a streamline of the flow,
+\begin{equation}
+  \rho g y + \frac{1}{2}\rho v^2 + P = \text{constant},
+\end{equation}
+which is \intro{Bernoulli's principle}.\index{Bernoulli's principle}

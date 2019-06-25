@@ -1,0 +1,908 @@
+<% begin_sec("Conceptual framework",0) %>\index{circular motion}
+
+I now live fifteen minutes from Disneyland, so my friends
+and family in my native Northern California think it's a
+little strange that I've never visited the Magic Kingdom
+again since a childhood trip to the south. The truth is that
+for me as a preschooler, Disneyland was not the Happiest
+Place on Earth. My mother took me on a ride in which little
+cars shaped like rocket ships circled rapidly  around a
+central pillar. I knew I was going to die. There was a force
+trying to throw me outward, and the safety features of the
+ride would surely have been inadequate if I hadn't screamed
+the whole time to make sure Mom would hold on to me.
+Afterward, she seemed surprisingly indifferent to the
+extreme danger we had experienced.
+
+<% begin_sec("Circular motion does not produce an outward force") %>
+
+My younger self's understanding of circular motion was
+partly right and partly wrong. I was wrong in believing that
+there was a force pulling me outward, away from the center
+of the circle. The easiest way to understand this is to
+bring back the parable of the bowling ball in the pickup
+truck from chapter 4. As the truck makes a left turn, the
+driver looks in the rearview mirror and thinks that some
+mysterious force is pulling the ball outward, but the truck
+is accelerating, so the driver's frame of reference is not
+an inertial frame. Newton's laws are violated in a
+noninertial frame, so the ball appears to accelerate without
+any actual force acting on it. Because we are used to
+inertial frames, in which accelerations are caused by
+forces, the ball's acceleration creates a vivid illusion
+that there must be an outward force.\index{frame of reference!rotating}
+
+<%
+  fig(
+    'pickup-truck-circular',
+    %q{%
+      %
+      1. In the turning truck's frame of reference, the
+      ball appears to violate Newton's laws, displaying
+      a sideways acceleration that is not the result
+      of a force-interaction with any other object.
+      %
+      2. In an inertial frame of reference, such as the
+      frame fixed to the earth's surface, the ball obeys
+      Newton's first law. No forces are acting on it, and
+      it continues moving in a straight line. It is the
+      truck that is participating in an interaction with
+      the asphalt, the truck that accelerates as it should
+      according to Newton's second law.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+In an inertial frame everything makes more sense. The ball
+has no force on it, and goes straight as required by
+Newton's first law. The truck has a force on it from the
+asphalt, and responds to it by accelerating (changing the
+direction of its velocity vector) as Newton's second law says it should.
+
+\vspace{15mm}
+
+\begin{eg}{The halteres}
+Another interesting example is an insect organ called the halteres,
+a pair of small knobbed limbs behind the wings, which vibrate up and down
+and help the insect to maintain its orientation in flight. The halteres
+evolved from a second pair of wings possessed by earlier insects. Suppose, for
+example, that the halteres are on their upward stroke, and at that moment
+an air current causes the fly to pitch its nose down. The halteres
+follow Newton's first law, continuing to rise vertically, but in the fly's
+rotating frame of reference, it seems as though they have been subjected to
+a backward force. The fly has special sensory organs that perceive this twist,
+and help it to correct itself by raising its nose.
+\end{eg}
+<% marg(50) %>
+<%
+  fig(
+    'halteres',
+    %q{%
+      This crane fly's halteres help
+      it to maintain its orientation in flight.
+    }
+  )
+%>
+<% end_marg %>
+
+\vspace{15mm}
+
+<% end_sec() %>
+<% begin_sec("Circular motion does not persist without a force") %>
+
+<%
+  fig(
+    'swing-rock',
+    %q{%
+      1. An overhead view of a person
+      swinging a rock on a rope. A force from
+      the string is required to make the rock's
+      velocity vector keep changing direction.
+      2. If the string breaks, the rock will
+      follow Newton's first law and go
+      straight instead of continuing around
+      the circle.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>%
+I was correct, however, on a different point about the Disneyland ride. To make me curve
+around with the car, I really did need some force such as a
+force from my mother, friction from the seat, or a normal
+force from the side of the car. (In fact, all three forces
+were probably adding together.) One of the reasons why
+Galileo failed to refine the principle of inertia into a
+quantitative statement like Newton's first law is that he
+was not sure whether motion without a force would naturally
+be circular or linear. In fact, the most impressive examples
+he knew of the persistence of motion were mostly circular:
+the spinning of a top or the rotation of the earth, for
+example. Newton realized that in examples such as these,
+there really were forces at work. Atoms on the surface of
+the top are prevented from flying off straight by the
+ordinary force that keeps atoms stuck together in solid
+matter. The earth is nearly all liquid, but gravitational
+forces pull all its parts inward.
+<% marg(42) %>
+<%
+  fig(
+    'sparks-fly-on-tangent',
+    %q{%
+      Sparks fly away along tangents to a grinding wheel.
+    }
+  )
+%>
+<% end_marg %>
+
+\index{circular motion!uniform}
+\index{circular motion!nonuniform}
+<% end_sec() %>
+<% begin_sec("Uniform and nonuniform circular motion") %>
+
+Circular motion always involves a change in the direction of
+the velocity vector, but it is also possible for the
+magnitude of the velocity to change at the same time.
+Circular motion is referred to as \emph{uniform} if $|\vc{v}|$ is
+constant, and \emph{nonuniform} if it is changing.
+
+Your speedometer tells you the magnitude of your car's
+velocity vector, so when you go around a curve while keeping
+your speedometer needle steady, you are executing uniform
+circular motion. If your speedometer reading is changing as
+you turn, your circular motion is nonuniform. Uniform
+circular motion is simpler to analyze mathematically, so we
+will attack it first and then pass to the nonuniform case.
+
+<% self_check('uniform-or-nonuniform',<<-'SELF_CHECK'
+Which of these are examples of uniform circular motion and
+which are nonuniform?
+
+    (1) the clothes in a clothes dryer (assuming they remain
+against the inside of the drum, even at the top)
+
+    (2) a rock on the end of a string being whirled in a vertical circle
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Only an inward force is required for uniform circular motion.",4) %>
+
+<% marg(0) %>
+<%
+  fig(
+    'brick-on-a-rope',
+    %q{%
+      To make the brick go in a circle, I had
+      to exert an inward force on the rope.
+    }
+  )
+%>
+<% end_marg %>
+Figure \figref{swing-rock} showed the string pulling
+in straight along a radius of the circle, but many people
+believe that when they are doing this they must be
+``leading'' the rock a little to keep it moving along. That
+is, they believe that the force required to produce uniform
+circular motion is not directly inward but at a slight angle
+to the radius of the circle. This intuition is incorrect,
+which you can easily verify for yourself now if you have
+some string handy. It is only while you are getting the
+object going that your force needs to be at an angle to the
+radius. During this initial period of speeding up, the
+motion is not uniform. Once you settle down into uniform
+circular motion, you only apply an inward force.
+
+If you have not done the experiment for yourself, here is a
+theoretical argument to convince you of this fact. We have
+discussed in chapter 6 the principle that forces have no
+perpendicular effects. To keep the rock from speeding up or
+slowing down, we only need to make sure that our force is
+perpendicular to its direction of motion. We are then
+guaranteed that its forward motion will remain unaffected:
+our force can have no perpendicular effect, and there is no
+other force acting on the rock which could slow it down. The
+rock requires no forward force to maintain its forward
+motion, any more than a projectile needs a horizontal force
+to ``help it over the top'' of its arc.
+
+<%
+  fig(
+    'hammer-polygons',
+    %q{%
+      A series of three hammer taps makes
+      the rolling ball trace a triangle, seven
+      hammers a heptagon. If the number
+      of hammers was large enough, the ball
+      would essentially be experiencing a
+      steady inward force, and it would go
+      in a circle. In no case is any forward
+      force necessary.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+<% marg(70) %>
+<%
+  fig(
+    'car-in-circle',
+    %q{%
+      When a car is going straight at 
+      constant speed, the forward and backward
+      forces on it are canceling out, producing
+      a total force of zero. When it moves
+      in a circle at constant speed, there are
+      three forces on it, but the forward and
+      backward forces cancel out, so the
+      vector sum is an inward force.
+    }
+  )
+%>
+<% end_marg %>
+
+\pagebreak[4]
+
+Why, then, does a car driving in circles in a parking lot
+stop executing uniform circular motion if you take your foot
+off the gas? The source of confusion here is that Newton's
+laws predict an object's motion based on the \emph{total}
+force acting on it. A car driving in circles has three forces on it
+
+(1) an inward force from the asphalt, controlled with the steering wheel;
+
+(2) a forward force from the asphalt, controlled with the gas pedal; and
+
+(3) backward forces from air resistance and rolling resistance.
+
+You need to make sure there is a forward force on the car so
+that the backward forces will be exactly canceled out,
+creating a vector sum that points directly inward.
+
+\begin{eg}{A motorcycle making a turn}\label{eg:motorcycle}
+The motorcyclist in figure \figref{motorcyclist} is moving along an
+arc of a circle. It looks like he's chosen to ride the slanted surface
+of the dirt at a place where it makes just the angle he wants, allowing
+him to get the force he needs on the tires as a normal force, without
+needing any frictional force. The dirt's normal force on the tires
+points up and to our left. The vertical component of that force is
+canceled by gravity, while its horizontal component causes him to
+curve.
+\end{eg}
+<% marg(100) %>
+<%
+  fig(
+    'motorcyclist',
+    %q{Example \ref{eg:motorcycle}.}
+  )
+%>
+
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("In uniform circular motion, the acceleration vector is inward.") %>
+
+Since experiments show that the force vector points directly
+inward, Newton's second law implies that the acceleration
+vector points inward as well. This fact can also be proven
+on purely kinematical grounds, and we will do so in the next section.
+
+\begin{eg}{Clock-comparison tests of Newton's first law}\label{eg:clock-comparison-inertia}
+Immediately after his original statement of the first 
+law in the \emph{Principia Mathematica},\index{Newton's laws of motion!first law!test of}
+Newton offers the supporting example of a spinning top, which only slows down because of
+friction. He describes the different parts of the top as being held together by ``cohesion,''
+i.e., internal forces. Because these forces act toward the center, they don't speed up
+or slow down the motion. The applicability of the first law, which only describes linear motion,
+may be more clear if we simply take figure \figref{hammer-polygons} as a model of rotation.
+Between hammer taps, the ball experiences no force, so by the first law it doesn't speed
+up or slow down.
+
+Suppose that we want to subject the first law to 
+a stringent experimental test.\footnote{Page \pageref{first-law-evidence} lists places in this
+book where we describe experimental tests of Newton's first law.} The law predicts that
+if we use a clock to measure the rate of rotation of an object spinning frictionlessly, it won't
+``naturally'' slow down as Aristotle would have expected. But what is a clock but something with hands
+that rotate at a fixed rate? In other words, we are comparing one clock with another. This is called
+a clock-comparison experiment. Suppose that the laws of
+physics weren't purely Newtonian, and there really was a very slight Aristotelian tendency for
+motion to slow down in the absence of friction. If we compare two clocks, they should both slow
+down, but if they aren't the same type of clock,
+then it seems unlikely that they would slow down at exactly the same rate, and over time they should
+drift further and further apart.
+
+High-precision clock-comparison experiments have been done using a variety of clocks. In atomic clocks,
+the thing spinning is an atom. Astronomers can observe the rotation of collapsed stars called pulars,
+which, unlike the earth, can rotate with almost no disturbance due to geological activity or friction
+induced by the tides. In these experiments, the pulsars are observed to match the rates of the atomic
+clocks with a drift of less than about $10^{-6}$ seconds over a 
+period of 10 years.\footnote{Matsakis \emph{et al.}, Astronomy and Astrophysics 326 (1997) 924.
+Freely available online at \url{adsabs.harvard.edu}.}
+Atomic clocks using atoms of different elements drift relative to one another by no more than 
+about $10^{-16}$ per year.\footnote{Gu\'{e}na \emph{et al.}, \url{arxiv.org/abs/1205.4235}}
+
+It is not presently possible to do experiments with a similar level of precision using human-scale rotating
+objects. However, a set of
+gyroscopes aboard the Gravity Probe B satellite were allowed to spin weightlessly in a vacuum, without any
+physical contact that would have caused kinetic friction. Their rotation was extremely accurately
+monitored for the purposes of another experiment (a test of Einstein's theory of general relativity,
+which was the purpose of the mission), and they were found to be spinning down so gradually
+that they would have taken about 10,000 years to slow down by a factor of two. This rate was
+consistent with estimates of the amount of friction to be expected from the small amount of residual
+gas present in the vacuum chambers.
+
+A subtle point in the interpretation of these experiments is that if there was a slight tendency
+for motion to slow down, we would have to decide what it was supposed to slow down relative to.
+A straight-line motion that is slowing down in some frame of reference can always
+be described as \emph{speeding up} in some other appropriately chosen frame (problem \ref{hw:decel-accel-frames},
+p.~\pageref{hw:decel-accel-frames}). If the laws of physics did have this slight Aristotelianism
+mixed in, we could wait for the anomalous acceleration or deceleration to stop. The object we were
+observing would then define a special or ``preferred'' frame of reference. Standard theories of
+physics do not have such a preferred frame, and clock-comparison experiments can be viewed as
+tests of the existence of such a frame.\index{frame of reference!preferred}
+Another test for the existence of a 
+preferred frame m4_ifelse(__lm_series,1,[:is described on p.~\pageref{sec:battat}.:],[:was described on p.~\pageref{battat}.:])
+\end{eg}
+
+\pagebreak[4]
+
+<% marg(13) %>
+<%
+  fig(
+    'crack-the-whip',
+    %q{Discussion questions \ref{dq:crack-the-whip-1}-\ref{dq:crack-the-whip-4}},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-tilt-a-whirl',
+    %q{Discussion question \ref{dq:tilt-a-whirl}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+\startdqs
+
+\begin{dq}\label{dq:crack-the-whip-1}
+In the game of crack the whip, a line of people stand
+holding hands, and then they start sweeping out a circle.
+One person is at the center, and rotates without changing
+location.  At the opposite end is the person who is running
+the fastest, in a wide circle.  In this game, someone always
+ends up losing their grip and flying off.  Suppose the
+person on the end loses her grip.  What path does she follow
+as she goes flying off? Draw an overhead view.  (Assume she is going so fast that
+she is really just trying to put one foot in front of the
+other fast enough to keep from falling; she is not able to
+get any significant horizontal force between her feet and the ground.)
+\end{dq}
+
+\begin{dq}
+Suppose the person on the outside is still holding on,
+but feels that she may loose her grip at any moment.  What
+force or forces are acting on her, and in what directions
+are they?  (We are not interested in the vertical forces,
+which are the earth's gravitational force pulling down, and
+the ground's normal force pushing up.)
+Make a table in the format shown in __subsection_or_section(analysis-of-forces).
+\end{dq}
+
+\begin{dq}
+Suppose the person on the outside is still holding on,
+but feels that she may loose her grip at any moment.  What
+is wrong with the following analysis of the situation?
+``The person whose hand she's holding exerts an inward force
+on her, and because of Newton's third law, there's an equal
+and opposite force acting outward.  That outward force is
+the one she feels throwing her outward, and the outward
+force is what might make her go flying off, if it's strong enough.''
+\end{dq}
+
+\begin{dq}\label{dq:crack-the-whip-4}
+If the only force felt by the person on the outside is an
+inward force, why doesn't she go straight in?
+\end{dq}
+
+\begin{dq}\label{dq:tilt-a-whirl}
+In the amusement park ride shown in the figure, the
+cylinder spins faster and faster until the customer can pick
+her feet up off the floor without falling. In the old Coney
+Island version of the ride, the floor actually dropped out
+like a trap door, showing the ocean below. (There is also a
+version in which the whole thing tilts up diagonally, but
+we're discussing the version that stays flat.) If there is
+no outward force acting on her, why does she stick to the
+wall? Analyze all the forces on her.
+\end{dq}
+
+\begin{dq}
+What is an example of circular motion where the inward
+force is a normal force?  What is an example of circular
+motion where the inward force is friction?  What is an
+example of circular motion where the inward force is the sum
+of more than one force?
+\end{dq}
+
+\begin{dq}
+Does the acceleration vector always change continuously
+in circular motion? The velocity vector?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Uniform circular motion",4,'uniform-circular-motion') %>
+m4_ifelse(__me,1,[:%
+\label{eg:circularaccel}% Not really an example, but rigid-body text, shared with SN, refers to it that way.
+In this section I derive some convenient results, which you will use frequently, for
+the acceleration of an object performing uniform circular motion.
+
+        An object moving in a circle of radius $r$ in the $x$-$y$ plane has
+        \begin{align*}
+                 x        &=  r\ \zu{cos}\ \omega t \qquad \text{and}\\
+                 y        &=  r\ \zu{sin}\ \omega t\eqquad,
+        \end{align*} 
+        where $\omega$ is the number of radians traveled per second, and the positive or negative
+        sign indicates whether the motion is clockwise or counterclockwise.
+
+        Differentiating, we find that the components of the velocity are
+        \begin{align*}
+                 v_{x}        &= -\omega r\ \zu{sin}\ \omega t \qquad \text{and}\\
+                 v_{y}        &= \ \ \ \omega r\ \zu{cos}\ \omega t\eqquad,
+        \end{align*} 
+        and for the acceleration we have
+        \begin{align*}
+                 a_{x}        &= -\omega^2 r\ \zu{cos}\ \omega t \qquad \text{and}\\
+                 a_{y}        &= -\omega^2 r\ \zu{sin}\ \omega t\eqquad.
+        \end{align*} 
+        The acceleration vector has cosines and sines in the same places as the
+        \vc{r} vector, but with minus signs in front, so it points in the opposite direction,
+        i.e., toward the center of the circle. By Newton's second law, \vc{a}=\vc{F}/$m$,
+        this shows that the force must be inward as well; without this force, the object
+        would fly off straight.
+<% marg(m4_ifelse(__me,1,70,30)) %>
+<%
+  fig(
+    'hammer',
+    %q{%
+      This figure shows an intuitive justification for the fact proved mathematically in this section,
+      that the direction of the force and acceleration in circular motion is inward.
+      The heptagon, 2, is a better approximation to a circle than the
+              triangle, 1. To make an infinitely good approximation to circular motion,
+              we would need to use an infinitely large number of infinitesimal taps, which
+              would amount to a steady inward force.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'carcircleforces',
+    %q{%
+      The
+                       total force in the forward-backward direction is zero in both
+              cases.
+    }
+  )
+%>
+<% end_marg %>
+
+        The magnitude of the acceleration is
+        \begin{align*}
+                |\vc{a}|        &= \sqrt{ a_x^2+ a_{y}^2}\\
+                                &= \omega^2 r\eqquad.
+        \end{align*}
+        It makes sense that $\omega$ is squared, since reversing the sign of $\omega$
+        corresponds to reversing the direction of motion, but the acceleration is toward the
+        center of the circle, regardless of whether the motion is clockwise or counterclockwise.
+        This result can also be rewritten in the form
+        \begin{equation*}
+                |\vc{a}|        = \frac{|\vc{v}|^2}{r}\eqquad.
+        \end{equation*}
+
+        \index{circular motion!inward force}
+        \index{circular motion!no forward force}
+        These results are
+        counterintuitive. Until Newton, physicists and laypeople alike had assumed
+        that the planets would need a force to push them \emph{forward} in their orbits.
+        Figure \figref{hammer} may help to make it more plausible that only an inward force
+        is required. A forward force might be needed in order to cancel out a backward
+        force such as friction, \figref{carcircleforces}, but the total force in the forward-backward
+        direction needs to be exactly zero for constant-speed motion.
+        \index{circular motion!no outward force}
+        When you are in a car undergoing circular motion, there is also a strong illusion of an
+        \emph{outward} force. But what object could be making such a force? The car's seat
+        makes an inward force on you, not an outward one. There is no object that could be
+        exerting an outward force on your body. In reality, this force is an illusion that comes
+        from our brain's intuitive efforts to interpret the situation within a noninertial frame of
+        reference. As shown in figure \figref{truckcircular}, we can describe everything perfectly
+        well in an inertial frame of reference, such as the frame attached to the sidewalk.
+        In such a frame, the bowling ball goes straight because there is \emph{no} force
+        on it. The wall of the truck's bed hits the ball, not the other way around.
+<% marg(m4_ifelse(__me,1,70,100)) %>
+<%
+  fig(
+    'truckcircular',
+    %q{%
+      There is no outward force on the bowling ball, but in the noninertial
+                      frame it seems like one exists.
+    }
+  )
+%>
+<% end_marg %>
+:],[:
+
+<% marg(5) %>
+<%
+  fig(
+    'law-of-sines',
+    %q{The law of sines.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'v2-r-derivation',
+    %q{%
+      Deriving $|\vc{a}|=|\vc{v}|^2/r$ for uniform
+      circular motion.
+    }
+  )
+%>
+
+<% end_marg %>
+In this section I derive a simple and very useful equation
+for the magnitude of the acceleration of an object
+undergoing constant acceleration. The law of sines is
+involved, so I've recapped it in figure \figref{law-of-sines}.
+
+The derivation is brief, but the method requires some
+explanation and justification. The idea is to calculate a
+$\Delta\vc{v}$ vector describing the change in the velocity
+vector as the object passes through an angle $\theta $. We
+then calculate the acceleration, $\vc{a}=\Delta\vc{v}/\Delta t$. The
+astute reader will recall, however, that this equation is
+only valid for motion with constant acceleration. Although
+the magnitude of the acceleration is constant for uniform
+circular motion, the acceleration vector changes its
+direction, so it is not a constant vector, and the equation
+$\vc{a}=\Delta\vc{v}/\Delta t$ does not apply. The justification for
+using it is that we will then examine its behavior when we
+make the time interval very short, which means making the
+angle $\theta $ very small. For smaller and smaller time
+intervals, the $\Delta\vc{v}/\Delta t$ expression becomes a
+better and better approximation, so that the final result of
+the derivation is exact.
+
+In figure \figref{v2-r-derivation}/1, the object sweeps out an angle $\theta $. Its
+direction of motion also twists around by an angle $\theta$,
+from the vertical dashed line to the tilted one. Figure
+\figref{v2-r-derivation}/2
+shows the initial and final velocity vectors, which have
+equal magnitude, but directions differing by $\theta $. In
+\figref{v2-r-derivation}/3,
+I've reassembled the vectors in the proper
+positions for vector subtraction. They form an isosceles
+triangle with interior angles $\theta$, $\eta$, and $\eta$.
+(Eta, $\eta$, is my favorite Greek letter.) The law of sines gives
+\begin{equation*}
+  \frac{|\Delta\vc{v}|}{\sin\theta} = \frac{|\vc{v}|}{\sin\eta}\eqquad.
+\end{equation*}
+This tells us the magnitude of $\Delta \vc{v}$, which is one of
+the two ingredients we need for calculating the magnitude of
+$\vc{a}=\Delta\vc{v}/\Delta t$. The other ingredient is $\Delta t$.
+The time required for the object to move through the angle $\theta $ is
+\begin{equation*}
+  \Delta t = \frac{\text{length of arc}}{|\vc{v}|}\eqquad.
+\end{equation*}
+Now if we measure our angles in radians we can use the
+definition of radian measure, which is 
+$(\text{angle})=(\text{length of arc})/(\text{radius})$,
+ giving $\Delta t=\theta r/|\vc{v}|$. Combining this
+with the first expression involving $|\Delta v|$ gives
+\begin{align*}
+        |\vc{a}|     &=  |\Delta \vc{v}|/\Delta t  \\
+             &=   \frac{|\vc{v}|^2}{r} \: \cdot \: \frac{\sin\theta}{\theta} \: \cdot \: \frac{1}{\sin\eta}\eqquad.
+\end{align*}
+When $\theta $ becomes very small, the small-angle
+approximation $\sin \theta\approx \theta$ applies, and also $\eta $ becomes
+close to 90\degunit, so $\sin  \eta \approx 1$, and we have an equation for $|\vc{a}|$:
+\begin{equation*}
+                |\vc{a}|  =  \frac{|\vc{v}|^2}{r}\eqquad. \qquad \shoveright{\text{[uniform circular motion]}}
+\end{equation*}
+:])
+
+\begin{eg}{Force required to turn on a bike}
+\egquestion A bicyclist is making a turn along an arc of a
+circle with radius 20 m, at a speed of 5 m/s. If the
+combined mass of the cyclist plus the bike is 60 kg, how
+great a static friction force must the road be able
+to exert on the tires?
+
+\eganswer Taking the magnitudes of both sides of Newton's second law gives
+\begin{align*}
+        |\vc{F}|     &=  |m\vc{a}|  \\
+             &=  m|\vc{a}|\eqquad.
+\end{align*}
+Substituting $|\vc{a}|=|\vc{v}|^2/r$ gives
+\begin{align*}
+        |\vc{F}|     &= m|\vc{v}|^2/r \\
+                     &\approx 80\ \nunit
+\end{align*}
+(rounded off to one sig fig).
+\end{eg}
+
+
+\begin{eg}{Don't hug the center line on a curve!}
+\egquestion You're driving on a mountain road with a steep
+drop on your right. When making a left turn, is it safer to
+hug the center line or to stay closer to the outside of the road?
+
+\eganswer You want whichever choice involves the least
+acceleration, because that will require the least force and
+entail the least risk of exceeding the maximum force of
+static friction. Assuming the curve is an arc of a circle
+and your speed is constant, your car is performing uniform
+circular motion, with $|\vc{a}|=|\vc{v}|^2/r$. The dependence on the
+square of the speed shows that driving slowly is the main
+safety measure you can take, but for any given speed you
+also want to have the largest possible value of $r$. Even
+though your instinct is to keep away from that scary
+precipice, you are actually less likely to skid if you keep
+toward the outside, because then you are describing a larger circle.
+\end{eg}
+
+\begin{eg}{Acceleration related to radius and period of rotation}\label{eg:accel-rt}
+\egquestion How can the equation for the acceleration in
+uniform circular motion be rewritten in terms of the radius
+of the circle and the \index{period!of uniform circular
+motion}period, $T$, of the motion, i.e., the time required to go around once?
+
+\eganswer The period can be related to the speed as follows:
+\begin{align*}
+        |\vc{v}|     &=  \frac{\text{circumference}}{T}  \\
+             &=  2\pi r/T\eqquad.
+\end{align*}
+Substituting into the equation $|\vc{a}|=|\vc{v}|^2/r$ gives
+\begin{equation*}
+        |\vc{a}|     =    \frac{4\pi^2r}{T^2}\eqquad.
+\end{equation*}
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'clothes-dryer',
+    %q{Example \ref{eg:clothes-dryer}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A clothes dryer}\label{eg:clothes-dryer}
+\egquestion My clothes dryer has a drum with an inside radius
+of 35 cm, and it spins at 48 revolutions per minute. What is
+the acceleration of the clothes inside?
+
+\eganswer We can solve this by finding the period and
+plugging in to the result of the previous example. If it
+makes 48 revolutions in one minute, then the period is 1/48
+of a minute, or 1.25 s. To get an acceleration in mks
+units, we must convert the radius to 0.35 m. Plugging in,
+the result is 8.8 $\munit/\sunit^2$.
+\end{eg}
+
+\begin{eg}{More about clothes dryers!}
+\egquestion In a discussion question in the previous section,
+we made the assumption that the clothes remain against the
+inside of the drum as they go over the top. In light of the
+previous example, is this a correct assumption?
+
+\eganswer No. We know that there must be some minimum speed
+at which the motor can run that will result in the clothes
+just barely staying against the inside of the drum as they
+go over the top. If the clothes dryer ran at just this
+minimum speed, then there would be no normal force on the
+clothes at the top: they would be on the verge of losing
+contact. The only force acting on them at the top would be
+the force of gravity, which would give them an acceleration
+of $g=9.8\ \munit/\sunit^2$. The actual dryer must be running slower
+than this minimum speed, because it produces an acceleration
+of only $8.8\ \munit/\sunit^2$. My theory is that this is done
+intentionally, to make the clothes mix and tumble.
+\end{eg}
+
+\worked{tilt-a-whirl}{The tilt-a-whirl}
+
+\worked{off-ramp}{An off-ramp}
+
+\startdqs
+
+\begin{dq}
+A certain amount of force is needed to provide the
+acceleration of circular motion. What if we are exerting a
+force perpendicular to the direction of motion in an attempt
+to make an object trace a circle of radius $r$, but the
+force isn't as big as $m|\vc{v}|^2/r$?
+\end{dq}
+
+\begin{dq}\label{dq:space-colony}
+Suppose a rotating space station, as in figure
+\figref{space-colony} on page \pageref{fig:space-colony}, is built. It
+gives its
+occupants the illusion of ordinary gravity. What happens
+when a person in the station lets go of a ball? What happens
+when she throws a ball straight ``up'' in the air (i.e.,
+towards the center)?
+\end{dq}
+
+<%
+  fig(
+    'space-colony',
+    %q{%
+      Discussion question
+      \ref{dq:space-colony}. An artist's conception of a rotating space
+      colony in the form of a giant wheel. A
+      person living in this noninertial frame of
+      reference has an illusion of a force pulling
+       her outward, toward the deck, for the
+      same reason that a person in the pickup
+      truck has the illusion of a force pulling
+      the bowling ball. By adjusting the speed
+      of rotation,  the designers can make an
+      acceleration $|\vc{v}|^2/r$ equal to the usual 
+      acceleration of gravity on earth. On earth,
+      your acceleration standing on the ground
+      is zero, and a falling rock heads for your
+      feet with an acceleration of 9.8 $\munit/\sunit^2$. A
+      person standing on the deck of the space
+      colony has an \emph{upward} acceleration of 9.8
+      $\munit/\sunit^2$, and when she lets go of a rock,
+      her feet head \emph{up} at the nonaccelerating
+      rock. To her, it seems the same as true
+      gravity.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'narrowfigwidecaption'=>true,
+      'float'=>false,
+      'anonymous'=>false
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Nonuniform circular motion",3) %>
+
+<% marg(5) %>
+<%
+  fig(
+    'nonuniform',
+    %q{%
+      1. Moving in a circle while speeding up.
+      2. Uniform circular motion. 3. Slowing down.
+    }
+  )
+%>
+<% end_marg %>
+
+What about nonuniform circular motion? Although so far we
+have been discussing components of vectors along fixed $x$
+and $y$ axes, it now becomes convenient to discuss
+components of the acceleration vector along the radial line
+(in-out) and the tangential line (along the direction of
+motion). For nonuniform circular motion, the \index{radial
+component!defined}radial component of the acceleration obeys
+the same equation as for uniform circular motion,
+\begin{equation*}
+        a_r     =  v^2/r\eqquad,
+\end{equation*}
+where $v=|\vc{v}|$, but the acceleration vector also has a tangential component,
+\begin{equation*}
+m4_ifelse(__me,1,[:%
+            a_t     =  \frac{\der v}{\der t}\eqquad.
+:],[:%
+            a_t     =  \text{slope of the graph of $v$ versus $t$}\eqquad.
+:])%
+\end{equation*}
+The latter quantity has a simple interpretation. If you are
+going around a curve in your car, and the speedometer needle
+is moving, the tangential component of the acceleration
+vector is simply what you would have thought the acceleration
+was if you saw the speedometer and didn't know you were
+going around a curve.
+
+\begin{eg}{Slow down before a turn, not during it.}
+\egquestion When you're making a turn in your car and you're
+afraid you may skid, isn't  it a good idea to slow down?
+
+\eganswer If the turn is an arc of a circle, and you've
+already completed part of the turn at constant speed without
+skidding, then the road and tires are apparently capable of
+enough static friction to supply an acceleration of
+$|\vc{v}|^2/r$. There is no reason why you would skid out now if
+you haven't already. If you get nervous and brake, however,
+then you need to have a tangential acceleration component in
+addition to the radial one you were already able to
+produce successfully. This would require an acceleration
+vector with a greater magnitude, which in turn would require
+a larger force. Static friction might not be able to supply
+that much force, and you might skid out. The safer thing to do is to
+approach the turn at a comfortably low speed.
+\end{eg}
+
+\enlargethispage{\baselineskip}
+
+
+\worked{cyclists}{A bike race}
+
+<% end_sec() %>\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{uniform circular motion}{circular motion in which the
+magnitude of the velocity vector remains constant}
+
+\vocabitem{nonuniform circular motion}{circular motion in which the
+magnitude of the velocity vector changes}
+
+\vocabitem{radial}{parallel to the radius of a circle; the in-out direction}
+
+\vocabitem{tangential}{tangent to the circle, perpendicular to
+the radial direction}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$a_r$}{radial acceleration; the component of the acceleration
+vector along the in-out direction}
+
+\notationitem{$a_t$}{tangential acceleration; the component of the
+acceleration vector tangent to the circle}
+\end{notation}
+
+\begin{summarytext}
+
+If an object is to have circular motion, a force must be
+exerted on it toward the center of the circle. There is no
+outward force on the object; the illusion of an outward
+force comes from our experiences in which our point of view
+was rotating, so that we were viewing things in a noninertial frame.
+
+An object undergoing uniform circular motion has an inward
+acceleration vector of magnitude
+\begin{equation*}
+        |\vc{a}|  =  v^2/r\eqquad,
+\end{equation*}
+where $v=|\vc{v}|$.
+In nonuniform circular motion, the radial and tangential
+components of the acceleration vector are
+\begin{align*}
+        a_r     &=  v^2/r   \\
+        a_t     &=  %
+m4_ifelse(__me,1,[:%
+                   \frac{\der v}{\der t}\eqquad.
+:],[:%
+                   \text{slope of the graph of $v$ versus $t$}\eqquad.
+:])%
+\end{align*}
+
+\end{summarytext}
+
+\end{summary}

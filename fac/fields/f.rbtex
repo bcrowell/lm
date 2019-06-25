@@ -1,0 +1,645 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '06',
+    %q{More about relativity (optional)},
+    'ch:relativity',
+    nil,
+    {'optional'=>true}
+  )
+%>
+<% begin_sec("Einstein's motorcycle: the resolution",nil,'einstein-motorcycle2') %>
+When we left our youthful protagonist at the end of
+chapter \ref{ch:radiation}, he was asking himself what he would observe if he
+rode a motorcycle inside an electromagnetic wave, chasing the wave at nearly the speed of light.
+And what if he rode \emph{at} the speed of light?\index{Einstein, Albert}
+
+It would seem that in the case where he rode at $c$, he should be at
+rest with respect to the wave, so that in his frame of reference the
+fields would don't change with time. But this violates Maxwell's
+equations.  With the benefit of hindsight, let's untangle this paradox
+that Einstein only finally resolved five years later, with the
+publication of his special theory of relativity. 
+
+We'll approach this by examining how the mix of electric and magnetic
+fields in one frame of reference compares with what is measured by an observer
+in a different frame of reference. In case this is all a little too abstract,
+let's start with some practice in visualizing this kind of thing using a graph.
+An avocado has about twice as many grams of fat as carbohydrates, whereas
+if you eat a half-bagel slice with a thin shmear of cream cheese, the ratio
+is the other way around. Figure \figref{bagels} shows a way of converting
+back and forth between $(\text{avocado},\text{bagel})$ coordinates and
+$(\text{fat},\text{carbs})$. The dot represents the two halves of a bagel,
+with half an avocado split between them to make avocado toast. The result
+is that we get about 30 g of fat and 45 g of carbs.
+
+Now let's get back to Einstein's motorcycle paradox.
+The field that we observe, as we move in the $z$ direction with
+velocity $v$, has nonzero components $E_x$ and $B_y$. On a graph with
+$E_x$ and $cB_y$ on its axes, figure \figref{lorentz-1}, a particular
+spot in the field pattern of an electromagnetic wave is represented by
+a point on the diagonal that runs through the origin with a slope of
+1. (The factors of $c$ that occur in this discussion are only because
+of the inconvenience of the SI. Ignore them as you read. I'll say
+things like ``the $E$ field and the $B$ field are equal,'' with the
+understanding that this is really only true if the factors of $c$ are
+filled in.) A pure electric field is a point on the horizontal axis,
+and pure magnetic field is a point on the vertical axis. 
+
+<% marg() %>
+<%
+  fig(
+    'bagels',
+    %q{A graphical method for visualizing the conversion between
+       $(\text{avocado},\text{bagel})$ and $(\text{fat},\text{carbs})$ coordinates.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'lorentz-1',
+    %q{Two electromagnetic field configurations represented as dots on a graph of $B_y$ versus $E_x$.
+       (To avoid clutter, factors of $c$ are suppressed; the vertical axis should really be $cB_y$ in
+       SI units.)}
+  )
+%>
+<% end_marg %>
+We already know that if we change our frame of reference, a particular
+combination of electric and magnetic fields looks like some other set
+of fields. We know that these transformations are linear, and we also
+know from examples like figure \figref{field-transformation-cartoon}
+on p.~\pageref{fig:field-transformation-cartoon}, involving a line of
+charges, what happens to a point on the horizontal axis. We could
+represent this kind of information by drawing pictures of how the
+points move around on a fixed graph-paper grid, but it turns out to be
+much easier to keep the points fixed and move the axes, as in figure
+\figref{lorentz-2}. The slope of the new $E_x'$ axis turns out to be $v/c$, where
+$v$ is the velocity of the new frame relative to the old one as it
+moves in the $z$ direction. We'll justify this claim in more detail later, but
+for now we note that clearly this makes sense when $v=0$, since then there is
+no change in our frame of reference, and the axis shouldn't tilt at all.
+
+For practice, let's interpret the two points in figure \figref{lorentz-2}. The bottom point is a purely
+electric field in the original frame of reference. For an observer moving in the positive $z$ direction
+at velocity $v$, we use the $(E_x',B_y')$ axes to determine the fields. Although we haven't yet marked
+in tick marks, so we can't tell whether $E_x'$ is bigger or smaller than $E_x$, we can
+see that the dot is below the new ``horizontal'' axis, so $B_y'<0$, and this is consistent with
+our earlier analysis of figure \figref{field-transformation-cartoon}
+on p.~\pageref{fig:field-transformation-cartoon}.
+
+The other point lies on the diagonal, so it's a combination of fields that we could have in
+a plane wave propagating in the $z$ direction. An electromagnetic wave that obeys the laws of
+physics in one frame should also obey the laws of physics in another frame, and therefore
+it makes sense that in the tilted axes representing $(E_x',B_y')$, it again lies on the diagonal.
+To make this part of the example come out right, we are forced to make the two axes tilt by equal
+angles, like the blades of a pair of scissors as they close in from both sides.
+
+<% marg(300) %>
+<%
+  fig(
+    'lorentz-2',
+    %q{Changing between two frames of reference.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'boost',
+    %q{How a square on the $(E_x,B_y)$ graph paper changes as we change frames of reference.
+       The area stays the same.}
+  )
+%>
+<% end_marg %>
+
+We still haven't specified how much the axes stretch or shrink, i.e., how far apart the tick marks
+should be. It's fairly straightforward to prove that the area of a square on the original
+graph paper must keep the same area as we distort it into a parallelogram on the new graph paper.
+The form of the transformation is now completely determined, and algebra shows it to be\label{transformation-e-b}
+\begin{align*}
+  E_x' &=  \quad \mygamma E_x - \frac{v}{c}\mygamma cB_y  \\
+  cB_y' &= -\frac{v}{c}\mygamma E_x + \mygamma cB_y ,
+\end{align*}
+where $\mygamma$ (Greek letter gamma, which gakes the `g' sound) is shorthand for
+$1/\sqrt{1-(v/c)^2}$. The form of these equations is pretty rather simple if you
+ignore all the factors of $c$ and realize that there is just an over-all factor of $\gamma$.
+The factors of $c$ occur in front of every magnetic field, and also under every $v$, so
+that all velocities are being measured as a fraction of the speed of 
+light.\index{electric field!transformation between frames of reference}\index{magnetic field!transformation between frames of reference}
+
+\begin{eg}{The trivial transformation}\label{eg:trivial-e-b-trans}
+In the case where $v=0$, we have $\gamma=1$, and the transformations become
+$E_x'=E_x$ and $B_y'=B_y$, i.e., nothing changes. This makes sense, because we haven't actually
+changed our frame of reference.
+\end{eg}
+
+\begin{eg}{The motorcycle at 3\% of $c$}\label{eg:motorcycle-3-percent-of-c}
+Suppose that Einstein rides his motorcycle through an electromagnetic plane wave
+at 3\% of $c$. (He'd better not hit anything at
+this speed, because he has more kinetic energy than is released in a nuclear explosion.)
+Because $v/c$ is small, we have $\mygamma=1.0004$, which means that to an excellent approximation
+we can ignore all the factors of $\mygamma$. This is an electromagnetic wave he's riding
+through, so $E_x=cB_y$, i.e., the electric and magnetic fields are ``the same'' when we
+ignore factors of $c$.
+
+The result of the transformation of the fields is straightforward:
+each field is reduced by almost exactly 3\%. This makes sense intuitively by comparison with
+material objects. For example, running in the same direction as the wind makes the wind feel
+less intense.
+
+The fact that both fields are reduced by the same 3\% is important. They need to
+obey the laws of physics in the new frame as well as the old one, and the laws of
+physics require the electric and magnetic fields to be equal to each other in a plane wave.
+
+<% marg(300) %>
+<%
+  fig(
+    'boost-em-wave',
+    %q{The dot represents the fields in an electromagnetic plane wave. Changing to a frame
+       of reference moving at 60\% of $c$ cuts the fields in half, but they are still equal
+       to one another, as required for a plane wave. This is similar to, but easier to see,
+       than the 3\% velocity of example \ref{eg:motorcycle-3-percent-of-c}.}
+  )
+%>
+<% end_marg %>
+
+We can also see that this makes sense graphically. A velocity this small is hard to draw
+clearly, but figure \figref{boost-em-wave} shows what happens with a somewhat higher speed.
+\end{eg}
+
+\begin{eg}{The motorcycle at 99\% of $c$}
+The velocity in example \ref{eg:motorcycle-3-percent-of-c} was
+small compared to $c$, but by extrapolating
+to higher speeds, we can imagine that this example helps to solve the mystery of the motorcycle
+in the case where we let the velocity approach $c$. We expect the strength of the fields to
+keep going down, and we can guess that they will approach zero and become undetectable,
+nullifying the paradox.
+
+To check this, let's redo the calculation of example \ref{eg:motorcycle-3-percent-of-c},
+but now with $v/c=0.99$. It's no longer a good approximation to take $\mygamma\approx1$;
+we now have $\mygamma\approx 7$. The reduction in the intensity of each field is a factor
+of $(1-v/c)\gamma=0.07$, which checks out with our guess (and one can indeed prove 
+that $\lim_{x\rightarrow1}(1-x)(1-x^2)^{-1/2}=0$.)
+\end{eg}
+
+Earlier I claimed that we could think of $v/c$ as being the same thing as the
+slope of the tilted horizontal axis on the graph, and again we see that this
+makes sense in the case of the trivial transformation, example \ref{eg:trivial-e-b-trans}.
+This claim is justified in more detail in note \note{slope-is-v}.
+
+
+<% end_sec('einstein-motorcycle2') %>
+
+<% begin_sec("Implications for the structure of space and time",nil,'spacetime') %>
+<% begin_sec("Combination of velocities",nil,'v-addition') %>
+These apparently innocuous ideas now lead us to some extremely subversive conclusions
+about time and space. We are now led back, full circle, to the starting point of this
+book, in which we began by considering the nature of time.
+
+<% marg(-10) %>
+<%
+  fig(
+    'two-boosts',
+    %q{Transforming twice in a row by $3/5$ of $c$. The slope of the bottom edge of each
+       parallelogram is its velocity, in units of $c$.}
+  )
+%>
+<% end_marg %>
+Figure \figref{two-boosts} shows the result of doing two transformations in a row,
+each represented by its effect on a square of the original graph paper.
+For covenience, each of these is chosen to be a transformation that lengthens
+one diagonal by a factor of two, while cutting the other in half. With a little
+arithmetic, it can be shown that each of these corresponds to a velocity change $v$ equal to $3/5$ of
+$c$. That is, we have our original frame A, a frame B that moves at $v$ relative to A
+and another frame C that moves at $v$ relative to B. According to the conception of
+space and time created by Galileo and Newton, velocities should add, so the result should
+be $3/5+3/5=6/5$, i.e., a speed 20\% greater than the speed of light. But this isn't
+what we actually see in the diagram. In each of the three parallelograms, the slope
+of the bottom edge represents that frame's velocity in units of $c$. The first slope
+is 0, and the second is $3/5$, but the third is clearly less than 1.
+
+Einstein
+recalled that this was the point that had prevented him from putting together the
+special theory of relativity for several years. He had been assuming that velocities
+had to add. It turns out that they don't. Addition is just an approximation, which happens
+to work at velocities that are small compared to $c$.
+
+This was also the resolution of the motorcycle paradox that had been
+bothering him for years. Any continuous process of acceleration acts
+like figure \figref{two-boosts}.  The motorcycle can speed up and
+speed up, but it will never reach the speed of light.  Let's not
+detour into a detailed description right now, but the rider sees the
+wave reduced in amplitude, as in example
+\ref{eg:motorcycle-3-percent-of-c},
+p.~\pageref{eg:motorcycle-3-percent-of-c}. He also sees the wave's
+oscillations slowed down in time, an effect called the Doppler shift
+(example \ref{eg:doppler}). 
+
+Slopes on these diagrams represent velocities, in units of $c$, but the only slopes that
+stay the same when we change frames of reference are the $\pm 1$ slopes of the diagonals.
+We therefore find that all observers agree on $c$. Since we've already shown on
+p.~\pageref{em-waves-fixed-v} that electromagnetic waves travel at a fixed speed, it follows
+that this speed must be $c$, and this is why $c$ is often referred to as the speed 
+of light.\label{em-waves-propagate-at-c}
+
+<% marg %>
+<%
+  fig(
+    'electrons-limiting-speed',
+    %q{Example \ref{eg:bertozzi-graph}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Accelerating electrons}\label{eg:bertozzi-graph}
+Figure \figref{electrons-limiting-speed} shows the results of a 1964 experiment by Bertozzi in which
+electrons were accelerated by the static electric field $E$ of an accelerator of
+length $\ell_1$. They were then allowed to fly down a beamline of length $\ell_2=8.4\ \munit$
+without being acted on by any force. The time of flight $t_2$ was used to find the final
+velocity $v=\ell_2/t_2$ to which they had been accelerated. (To make the
+low-energy portion of the graph legible, Bertozzi's highest-energy
+data point is omitted.)
+
+If we believed in Newton's laws, then the electrons would have an
+acceleration $a_N=Ee/m$, which would be constant if, as we pretend for
+the moment, the field $E$ were uniform. (The electric field inside
+this type of accelerator is not really quite uniform, but this will
+turn out not to matter.) The Newtonian prediction for the time over
+which this acceleration occurs is $t_N=\sqrt{2m\ell_1/eE}$.  An
+acceleration $a_N$ acting for a time $t_N$ should produce a final
+velocity $a_N t_N=\sqrt{2e\Delta\phi/m}$, where $\Delta\phi=E\ell_1$ is the potential
+difference. (By conservation of energy, this equation holds even if
+the field is not constant.) The solid line in the graph shows the
+prediction of Newton's laws, which is that a constant force exerted
+steadily over time will produce a velocity that rises linearly and
+without limit. 
+
+The experimental data, shown as black dots, clearly tell a different story. The velocity asymptotically
+approaches a limit, which we identify as $c$. The dashed line shows the predictions of special relativity,
+which we are not yet ready to calculate because we haven't yet seen how kinetic energy depends on
+velocity at speeds comparable to $c$.
+\end{eg}
+
+<% marg(3) %>
+<%
+  fig(
+    'doppler',
+    %q{%
+      The pattern of waves made by a point source moving to the right
+      across the water. Because the wave crests on the right side are closer together, they
+      pass over a fixed point more frequently than if the source had been at rest. This
+      increase in frequency is the Doppler effect.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'ives-stilwell',
+    %q{A schematic drawing of the experiment in example \ref{eg:doppler}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{An ultra-high-precision test of relativity}\label{eg:doppler}
+I briefly mentioned above that an observer chasing an electromagnetic wave observes an
+increase in the wave's period, which is called the Doppler effect. Let's notate the factor
+by which the period increases as $D$. 
+The Doppler effect also occurs for other waves such as water waves (figure \figref{doppler}) and sound waves, but
+the math in these cases actually works out to be more complicated because there are two
+velocities involved: the wave's velocity relative to the medium and the observer's velocity
+relative to the medium. Because electromagnetic waves are not vibrations of a medium,
+their Doppler shifts can depend on only a single parameter $v$, which is the velocity of
+one observer relative to another observer. The Doppler shift factor $D$ turns out to be
+exactly the factor by which the long diagonal is stretched in figures like \figref{boost}
+and \figref{two-boosts}. When we change frames of reference more than once, as in
+figure \figref{two-boosts}, the stretch factors just multiply, so it is a firm prediction
+of relativity that Doppler shifts must multiply in this way, and this is different from
+the predictions of nonrelativistic theories such as ones in which light is a vibration of
+the ether.
+
+
+This has led to one of the most high-precision tests to which a scientific theory has
+ever been subjected. Suppose that a source, moving at velocity
+$v$ to the right relative to the laboratory, emits electromagnetic waves in both the forward
+and backward directions. Relativity predicts that the forward and backward Doppler shifts must
+be such that $D_1D_2=1$. The first test of this type was carried out by Ives and Stilwell
+in 1938, and a particularly exquisite higher-precision update was carried out
+in 2003 by Saat\-hoff \emph{et al.} The electromagnetic waves were provided by positively
+charged lithium ions accelerated to $v/c=0.064$ in a circular accelerator.
+The result was $D_1D_2=0.999999999$, with error bars of about $\pm 1$ in the final decimal place.
+The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+
+Ether theories predict, in the case where the lab is at rest relative
+to the ether, that $D_1D_2$ differs from one. This is easiest to see conceptually
+in the case where the source moves at $c$, which is not prohibited in ether
+theories. In this situation, the forward-going wave crests are all superimposed
+on top of each other, giving $D_1=\infty$, while $D_2$ is finite. For smaller
+velocities, such as the ones used in the Saathoff experiment, a calculation shows that
+$D_1D_2$ differs from 1 by $-(v/c)^2$, which is grossly inconsistent with the data.
+\end{eg}
+
+<% end_sec('v-addition') %>
+
+<% begin_sec("Length contraction",nil,'length-contraction') %>\index{length contraction}
+<% marg(-5) %>
+<%
+  fig(
+    'boost-line-of-charge',
+    %q{A line of charge creates an electric field.}
+  )
+%>
+<% end_marg %>
+The nonlinear way that velocities combine is not compatible with our ordinary assumptions
+about how space and time work, but a more direct and obvious violation of our intuition arises
+if we consider figure \figref{boost-line-of-charge}. A line of charges parallel to the $z$ axis
+creates an electric field pattern. We pick a point on the right side of the line, where the
+electric field $E_x$ has some positive value. If we now change to a frame of reference moving at velocity
+$v$ in the positive $z$ direction, then the equations for the transformation of the fields give
+us $E_x'=\mygamma E_x$ and $B_y'=-(v\mygamma/c^2)E_x$. The magnetic field is no surprise ---
+a current exists in the new frame, and it makes a magnetic field (see example \ref{eg:e-line-of-charge} below).
+
+But the electric field has been intensified by a factor $\mygamma$,
+which is greater than 1. What is going on here? Based on Gauss's law,
+this is the field that we expect if the line of charge had a greater number of coulombs per meter.
+But charge is invariant when we change frames
+of reference (sec.~\ref{subsec:charge-invariant}, p.~\pageref{subsec:charge-invariant}).
+The only possible conclusion is that to the observer who is moving relative to the line of charges,
+the distances along the line have all been contracted by a factor of $\mygamma$.
+
+\begin{lessimportant}[Length contraction]
+A measuring stick has the greatest length according to an observer at rest relative to
+the stick. An observer in motion relative to the stick, in the direction parallel to it,
+finds its length to be reduced by a factor of $\mygamma$.
+\end{lessimportant}
+
+Figure \figref{gamma-graph-small} shows how $\mygamma$ depends on $v/c$. Because it is a smooth,
+even function of $v$, its derivative vanishes at $v=0$, and the lowest-order varying term in its Taylor
+series is one proportional to $(v/c)^2$. This explains why we don't normally notice length contraction
+in everyday life. The velocities we normally experience are small compared to $c$, so $v/c$ is small,
+and $(v/c)^2$ is even smaller.
+<% marg(40) %>
+<%
+  fig(
+    'gamma-graph-small',
+    %q{A graph of $\mygamma$ as a function of $v/c$.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Magnetic field of a straight wire}\label{eg:b-wire}
+Although it's not our main topic right now, we now know enough physics to determine a fairly
+useful result for the magnetic field of a long, straight wire. In 
+example \ref{eg:e-line-of-charge} on p.~\pageref{eg:e-line-of-charge}, we worked out the \emph{electric} field
+of a long line of charge with a density of $\lambda$ in units of Coulombs per meter. The
+result was $E=2k\lambda/r$ in the radial direction. In example \ref{eg:field-of-wire} on
+p.~\pageref{eg:field-of-wire}, we discussed such a line of charge in a frame of reference moving
+along its length. In this frame there is an electric current, which makes a magnetic field.
+In that example we inferred that since $E\propto 1/r$ for the line of charge, $B\propto 1/r$ for
+the magnetic field of a current-carrying wire, and we also found the geometry of the magnetic field,
+which is recapitulated in figure \figref{field-lines-of-wire2}.
+
+<% marg(20) %>
+<%
+  fig(
+    'field-lines-of-wire',
+    %q{Example \ref{eg:b-wire}, the magnetic field of a current-carrying wire, with the current coming out
+       of the page.
+       The field pattern is shown in the plane perpendicular
+       to the wire.
+       The white circle at the center is the cross-section of the wire. The orientation differs
+       by 90 degrees from that in figure \figref{boost-line-of-charge}.},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+
+We can now find the full equation for the magnetic field of the current-carrying wire, which
+we model as a moving line of charge.
+In the frame moving relative to the charges  at velocity $v$ into the page, they are length-contracted,
+so their density becomes $\mygamma\lambda$. In a time interval $\der t$, the charges move
+a distance $v\der t$, and the charge contained in this length is $\der q = \mygamma\lambda v \der t$.
+The current is therefore $I=\der q/\der t=\mygamma\lambda v$.
+
+The magnitude of the magnetic field, as discussed at the beginning of this section, is 
+$B=(v/c^2)\mygamma E$, which works out to be $B=(v/c^2)\mygamma(2k\lambda/r)=(2k/c^2)I/r$.
+All of the factors except for the 2 have to be there because of units. The fact that no $\mygamma$
+occurs in the result is an example of a more general fact that when moving charges create a magnetic
+field, the field depends only on the current, not on any other details of the motion of the charges.
+
+Real wires in electric circuits are not moving lines of charge. They are electrically neutral over
+all. In a copper wire, for example, there are positively charged copper nuclei, each with charge
+$+29e$, and also 29 electrons per atom, giving a charge of $-29e$. We could worry about whether
+this means that our calculation above is wrong, but again, it never ends up mattering how
+a current is created when we calculate a magnetic field. The \emph{electric} field discussed
+above is wrong for a real wire --- it should be zero --- but the \emph{magnetic} field is
+still right. If we wished, we could redo the calculation of $B$ using \emph{two} superposed
+lines of charge, a positive one and a negative one, but $B$ would be the same.
+\end{eg}
+
+<% end_sec('length-contraction') %>
+
+<% begin_sec("Time dilation",nil,'time-dilation') %>\index{time dilation}
+Alice stays on earth while her twin Betty
+heads off in a spaceship for Tau Ceti, a nearby star. Tau Ceti is 12 light-years
+away, so even though Betty travels at 87\% of the speed of light, it will take
+her a long time to get there: 14 years, according to Alice.
+
+<%
+  fig('interstellar-road-trip',
+    %q{Betty's interstellar road trip.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Betty is moving relative to the stars, so in her frame of reference, the length
+of the trip is length-contracted. At this speed, her $\mygamma$ is 2.0, so that the voyage will
+seem half as long, and to her it will only last 7 years. 
+
+This example shows that the relativistic effect on length must be accompanied by
+a similar effect on time.
+
+\begin{lessimportant}[Time dilation]
+A clock seems to run fastest according to an observer at rest relative to
+the clock. An observer in motion relative to the clock
+finds its speed to be reduced by a factor of $\mygamma$.
+\end{lessimportant}
+
+We began this book with evidence that time was not absolute, and then used this
+as evidence that electromagnetism should be a theory of fields, not instantaneous
+interaction at a distance. We have now circled back and used our understanding of
+fields to infer a more detailed and quantitative description of the relative nature
+of time.
+
+Before passing to a description of two laboratory tests of time dilation in examples
+\ref{eg:chou} and \ref{eg:cern-muons}, we note that relativistic time dilation is
+these days a part of everyday life. The GPS system used in phones would not work at
+all if it didn't take into account the time dilation of the GPS satellites, which
+are moving at $v/c\sim10^{-10}$. GPS was originally a military system, and legend has it that
+the general in charge of the project in the 1980's demanded that the scientists include an
+``off'' switch for the relativistic effects, just in case Einstein was wrong.
+
+<% marg(-20) %>
+<%
+  fig(
+    'atomic-clock-gamma',
+    %q{Example \ref{eg:chou}, time dilation measured with an atomic clock at low speeds. The theoretical curve, shown with a dashed line,
+       is calculated from $\mygamma=1/\sqrt{1-(v/c)^2}$. This graph corresponds to an extreme close-up view of the lower left corner of 
+       figure \figref{gamma-graph-small}.  The error bars on the experimental points are about the same size as the dots.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A moving atomic clock}\label{eg:chou}
+When
+$v$ is small, relativistic effects are approximately proportional to $v^2$, so it is very
+difficult to observe them at low speeds. For example, a car on
+the freeway travels at about 1/10 the speed of a passenger jet, so the resulting
+time dilation is only 1/100 as much. For this reason, it was not until four decades after Hafele and Keating
+that anyone did a conceptually simple atomic clock experiment
+in which the only effect was motion, not gravity; it is difficult to
+move a clock at a high enough velocity without putting it in some kind of aircraft, which then has to fly at some
+altitude. In 2010, however, Chou \emph{et al.}\footnote{Science 329 (2010) 1630} succeeded in building an atomic
+clock accurate enough to detect time dilation at speeds as low
+as 10 m/s. Figure \figref{atomic-clock-gamma} shows their results.
+Since it was not practical to move the entire clock, the experimenters only moved the aluminum atoms inside the
+clock that actually made it ``tick.''
+\end{eg}
+
+\begin{eg}{Large time dilation}\label{eg:cern-muons}
+The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
+effect, we can't do it with something the size of the atomic clocks they used; the kinetic energy would be
+greater than the total megatonnage of all the world's nuclear arsenals. We can, however, accelerate subatomic particles
+to speeds at which $\mygamma$ is large. For experimental particle physicists, relativity is something you do all day
+before heading home and stopping off at the store for milk. An early, low-precision experiment of this kind was
+performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. 
+
+<%
+  fig(
+    'cern-muon-storage-ring',
+    %q{Apparatus used for the test of relativistic time dilation described in example \ref{eg:cern-muons}. 
+       The prominent black and white blocks are large magnets surrounding a circular pipe
+       with a vacuum inside. \linebreak (c) 1974 by CERN.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'t'
+    }
+  )
+%>
+
+
+<% marg(-20) %>
+<%
+  fig(
+    'cern-muon-graph',
+    %q{Example \ref{eg:cern-muons}: Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
+       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
+       to large systematic errors.},
+    {
+      'anaonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+Figure \figref{cern-muon-storage-ring} shows a 1974
+experiment\footnote{Bailey at al., Nucl. Phys. B150(1979) 1} of a
+similar type which verified the time dilation predicted by relativity
+to a precision of about one part per thousand.  Particles called muons
+(named after the Greek letter $\mu$, ``myoo'') were produced by an
+accelerator at CERN, near Geneva. A muon is essentially a heavier
+version of the electron. Muons undergo radioactive decay, lasting an
+average of only 2.197 $\mu\sunit$ before they evaporate into an
+electron and two neutrinos.  The 1974 experiment was actually built in
+order to measure the magnetic properties of muons, but it produced a
+high-precision test of time dilation as a byproduct. Because muons
+have the same electric charge as electrons, they can be trapped using
+magnetic fields. Muons were injected into the ring shown in figure
+\figref{cern-muon-storage-ring}, circling around it until they
+underwent radioactive decay.  At the speed at which these muons were
+traveling, they had $\mygamma=29.33$, so on the average they lasted
+29.33 times longer than the normal lifetime. In other words, they were
+like tiny alarm clocks that self-destructed at a randomly selected
+time. Figure \figref{cern-muon-graph} shows the number of radioactive
+decays counted, as a function of the time elapsed after a given stream
+of muons was injected into the storage ring. The two dashed lines show
+the rates of decay predicted with and without relativity. The
+relativistic line is the one that agrees with experiment. 
+\end{eg}
+
+<% end_sec('time-dilation') %>
+
+
+
+<% end_sec('spacetime') %>
+
+
+<% begin_notes %>
+
+\notetext{slope-is-v}{Slope on $(E_x,B_y)$ plot related to $v/c$}
+\notesummary{When we change frames of reference, the horizontal axis on a graph of $B_y$ versus $E_x$ is
+to give it a slope equal to $v/c$, where $v$ is the velocity with which the new frame moves in the $z$ direction.}
+Let's call the slope $u$ and the velocity $v$. Our goal is to prove that $u=v/c$. Clearly this equation holds
+when $v=0$, because there is then no difference between the two frames of reference, so the axis shouldn't
+tilt, which means $u=0$.
+
+We can also tell several things from the example of figure
+\figref{field-transformation-cartoon} on
+p.~\pageref{fig:field-transformation-cartoon}: (1) If $v\ne0$, then
+$u\ne0$, i.e., if we change to a frame of reference that really is
+different, then we really do see a different combination of fields.
+(2) By symmetry, $u$ should be an odd function of $v$. (3) For small
+velocities, the current in this example is proportional to $v$, and
+therefore $u$ must be proportional to $v$, or at least approximately
+so for small velocities. The smallness of the velocities matters at
+this point because at larger velocities, $\mygamma$ could differ
+significantly from 1, and this would make all of our arguments quite a
+bit more complicated. Although $u=v/c$ is really exactly true at all
+velocities, we'll content ourselves here with proving it in the
+low-velocity approximation.  (4) Based on units, the constant of
+proportionality between $u$ and $v$ has to be $1/c$ multiplied by a
+unitless constant. We want to show that this unitless constant is 1. 
+
+Having figured out roughly what we expect, we now proceed to fix the
+relationship between $u$ and $v$ by requiring that if Maxwell's
+equations held in the original frame, they hold as well in the new
+frame. It's sufficient just to consider the equation
+$\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$. 
+
+Suppose Einstein is chasing the electromagnetic wave at a $v$ that is
+small, e.g., 3\% of the speed of light, as in example \ref{eg:motorcycle-3-percent-of-c}
+on p.~\pageref{eg:motorcycle-3-percent-of-c}. Then
+$\partial\vc{B}/\partial t$ will be multiplied by approximately $1-v/c$, i.e., reduced by
+just about 3\% in this example, because the amount of the wave
+that is passing over him in a given time is reduced by that amount. (If he could
+travel at $v=c$, then this factor would be $1-v/c=0$, i.e., none of the wave would
+pass over him.)
+
+At the same time, the electric field is reduced according to 
+$E_x' = \mygamma E_x - (u/c)\mygamma cB_y$, which becomes
+$E_x' \approx E_x-(u/c)cB_y$ for small velocities. But this is
+an electromagnetic wave, so $E_x=cB_y$, and therefore $E_x$ is
+multiplied by the factor $1-u$. This means that $\operatorname{curl}\vc{E}$
+is also cut down by this amount.
+
+If Maxwell's equation $\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$ is
+to hold in the new frame, then the factors by which the two sides are reduced
+must be the same, giving $1-u=1-v/c$, which is the desired result.
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+field that is purely B in one frame, purely E in another
+
+<% end_hw_sec() %>
+
+
+<% end_chapter() %>

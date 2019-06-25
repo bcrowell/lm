@@ -1,0 +1,137 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Optics") %>
+
+<% if false then figure_in_toc("hand-x-ray") end %>
+
+<%
+  chapter(
+    '28',
+    %q{The Ray Model of Light},
+    'ch:ray-model',
+    '',
+    {'opener'=>'crepuscular-rays','width'=>'fullpage'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/1_ray_model)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak[4]
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{absorption}{what happens when light hits matter and gives
+up some of its energy}
+
+\vocabitem{reflection}{what happens when light hits matter and bounces
+off, retaining at least some of its energy}
+
+\vocabitem{specular reflection}{reflection from a smooth surface, in
+which the light ray leaves at the same angle at which it came in}
+
+\vocabitem{diffuse reflection}{reflection from a rough surface, in which
+a single ray of light is divided up into many weaker
+reflected rays going in many directions}
+
+\vocabitem{normal}{the line perpendicular to a surface at a given point}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$c$}{the speed of light}
+
+\end{notation}
+
+\begin{summarytext}
+
+We can understand many phenomena involving light without
+having to use sophisticated models such as the wave model or
+the particle model. Instead, we simply describe light
+according to the path it takes, which we call a ray. The ray
+model of light is useful when light is interacting with
+material objects that are much larger than a wavelength of
+light. Since a wavelength of visible light is so short
+compared to the human scale of existence, the ray model is
+useful in many practical cases.
+
+We see things because light comes from them to our eyes.
+Objects that glow may send light directly to our eyes, but
+we see an object that doesn't glow via light from another
+source that has been reflected by the object.
+
+Many of the interactions of light and matter can be
+understood by considering what happens when light reaches
+the boundary between two different substances. In this
+situation, part of the light is reflected (bounces back) and
+part passes on into the new medium. This is not surprising
+--- it is typical behavior for a wave, and light is a wave.
+Light energy can also be absorbed by matter, i.e., converted into heat.
+
+A smooth surface produces specular reflection, in which the
+reflected ray exits at the same angle with respect to the
+normal as that of the incoming ray. A rough surface gives
+diffuse reflection, where a single ray of light is divided
+up into many weaker reflected rays going in many directions.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('diffuse') %>__incl(hw/diffuse)<% end_hw() %>
+
+<% begin_hw('gps') %>
+A Global Positioning System (GPS) receiver is a device
+that lets you figure out where you are by receiving timed radio
+signals from satellites. It works by measuring the
+travel time for the signals, which is related to the
+distance between you and the satellite. By finding the
+ranges to several different satellites in this way, it can
+pin down your location in three dimensions to within a few
+meters. How accurate does the measurement of the time delay
+have to be to determine your position to this accuracy?
+<% end_hw() %>
+
+<% begin_hw('lightwithatomwavelength') %>__incl(hw/lightwithatomwavelength)<% end_hw() %>
+
+<% begin_hw('stealth') %>__incl(hw/stealth)<% end_hw() %>
+
+<% begin_hw('parabolic') %>__incl(hw/parabolic)<% end_hw() %>
+
+<%
+  fig(
+    'hw-parabolic-mirror',
+    %q{Problem \ref{hw:parabolic}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% begin_hw('alien-pool') %>__incl(hw/alien-pool)<% end_hw() %>
+
+<%
+  fig(
+    'hw-alien-pool',
+    %q{Problem \ref{hw:alien-pool}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+
+<% end_hw_sec %>
+
+ %%----------------------------------------------------------
+
+<% if false then figure_in_toc("insect-eye") end %>
+<% end_chapter() %>

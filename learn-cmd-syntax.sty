@@ -1,0 +1,106 @@
+\usepackage{xparse}
+\ExplSyntaxOn
+% By egreg, http://tex.stackexchange.com/questions/40404/parsing-latex-to-output-number-of-arguments-for-each-command-defined
+%
+% Defining commands like this
+%   \newcommand{\xaa}{abc}
+%   \newcommand*{\xab}[1]{abc}
+%   \newcommand{\xac}[2][cccc]{abc}
+%   \renewcommand{\phi}{\varphi}
+%   \newenvironment{xad}{}{}
+%   \newenvironment{xae}[1]{}{}
+%   \newenvironment{xaf}[2][sss]{}{}
+% results in this output in myfile.cmd:
+%   command,\xaa ,0,0,
+%   command,\xab *,1,0,
+%   command,\xac ,1,1,cccc
+%   command,\phi ,0,0,
+%   environment,xad,0,0,
+%   environment,xae,1,0,
+%   environment,xaf,1,1,sss
+% The fields in the output are:
+%   (command|environment),name,n-required-args,n-optional-args,default
+% Extraneous whitespace occurs in <name> and should be filtered out.
+%
+% Define the command that will start the working; we'll redefine \newcommand
+% so that \newcommand{\xac}[2][cccc]{abc} will execute
+%
+%    \command_check:w { \command_check_newcommand:w }{ command } {\xab} 
+%
+% #1 = \newcommand|\renewcommand|\newenvironment|\renewenvironment (in new form)
+% #2 = command|environment
+% #3 = the possible *
+% #4 = the argument to \newcommand
+% #5 = the number of arguments
+% #6 = the possible optional argument
+% 
+% We check if the last argument is missing and take the appropriate action 
+\NewDocumentCommand{ \command_check:w }{m m s m O{0} o}
+  {
+   \IfBooleanTF{#3}
+     { \tl_gset:Nn \g_command_check_star_tl { * } \bool_gset_true:N \g_command_check_star_bool }
+     { \tl_gset:Nn \g_command_check_star_tl { } \bool_gset_false:N \g_command_check_star_bool }
+   \IfNoValueTF{#6}
+     { \command_check_noopt:nnnn {#1} {#2} {#4} {#5} }
+     { \command_check_opt:nnnnn {#1} {#2} {#4} {#5} {#6} }
+  }
+% \StartSaveCommands sets up the checks, first by creating aliases for the kernel commands
+% and then redefining them as explained above
+\NewDocumentCommand{\StartSaveCommands}{}
+  {
+   \cs_set_eq:NN \command_check_newcommand:w \newcommand
+   \cs_set_eq:NN \command_check_renewcommand:w \renewcommand
+   \cs_set_eq:NN \command_check_newenvironment:w \newenvironment
+   \cs_set_eq:NN \command_check_renewenvironment:w \renewenvironment
+   \cs_set:Npn \newcommand { \command_check:w {\command_check_newcommand:w}{command} }
+   \cs_set:Npn \renewcommand { \command_check:w {\command_check_renewcommand:w}{command} }
+   \cs_set:Npn \newenvironment { \command_check:w {\command_check_newenvironment:w}{environment} }
+   \cs_set:Npn \renewenvironment { \command_check:w {\command_check_renewenvironment:w}{environment} }
+  }
+% \StopSaveCommands restores the kernel commands
+\NewDocumentCommand{\StopSaveCommands}{}
+  {
+   \cs_set_eq:NN \newcommand \command_check_newcommand:w
+   \cs_set_eq:NN \renewcommand \command_check_renewcommand:w
+   \cs_set_eq:NN \newenvironment \command_check_newenvironment:w 
+   \cs_set_eq:NN \renewenvironment \command_check_renewenvironment:w
+  }
+% \WriteSaveCommands will take care of writing out the list of commands
+% with their number of arguments
+\NewDocumentCommand{\WriteSaveCommands}{}
+  {
+   \iow_open:Nn \g_command_check_write { \jobname.cmd }
+   \seq_map_inline:Nn \g_command_check_seq {\iow_now:Nx \g_command_check_write { ##1 } }
+  }
+% Allocate a write stream
+\iow_new:N \g_command_check_write
+% If there's no optional argument, say \newcommand{\xab}[1]{aaa},
+% we want to write out "command,\xab ,1,0", so we store that
+% string into an item appended to the sequence \g_command_check_seq
+\cs_new:Npn \command_check_noopt:nnnn #1 #2 #3 #4
+  {
+   \seq_gput_right:Nx \g_command_check_seq
+     {
+      #2 , 
+      \tl_to_str:n{#3}\bool_if:NT\g_command_check_star_bool{*}
+      , #4, 0,
+     }
+   \exp_after:wN #1 \g_command_check_star_tl {#3} [#4]
+  }
+% If there's an optional argument, say \newcommand{\xac}[2][cccc]{abc},
+% we want to write out "command,\xac,1,1[cccc]; everything as before,
+% but we decrease by 1 the number of stated arguments
+\cs_new:Npn \command_check_opt:nnnnn #1 #2 #3 #4 #5
+  { 
+   \seq_gput_right:Nx \g_command_check_seq
+     {
+      #2 \bool_if:NT \g_command_check_star_bool {*}, \tl_to_str:n {#3} , 
+      \int_to_arabic:n {#4-1} , 1,\tl_to_str:n{#5}
+     }
+   \exp_after:wN #1 \g_command_check_star_tl {#3}[#4][#5]
+  }
+% Allocate the sequence, the token list variable and the boolean
+\seq_new:N \g_command_check_seq
+\tl_new:N \g_command_check_star_tl
+\bool_new:N \g_command_check_star_bool
+\ExplSyntaxOff

@@ -1,0 +1,2813 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '14',
+    %q{Additional Topics in Quantum Physics},
+    'ch:more-quantum',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+<% begin_sec("The Stern-Gerlach experiment",nil,'stern-gerlach') %>
+
+In 1921, Otto Stern proposed an experiment about angular momentum, shown in figure \figref{stern-gerlach}
+on p.~\pageref{fig:stern-gerlach}, that his
+boss at the University of Frankfurt
+and many of his colleagues were certain wouldn't work. At this time, quantization of
+angular momentum had been proposed by Niels Bohr, but most physicists, if they had heard of
+it at all, thought of the idea as a philosophical metaphor or a mathematical trick that
+just happened to give correct results. World War I was over, hyperinflation was getting
+under way in Germany (a paper mark was worth a few percent of its prewar value), and
+the Nazi coup was still in the future, so that Stern, a Jew, had not yet been forced to flee to America.
+Because of the difficult economic situation, Stern and his colleague Walther Gerlach scraped
+up some of the funds to carry out the experiment from US banker Henry Goldman, cofounder of the
+investment house Goldman-Sachs.
+
+\pagebreak
+
+<% marg(300) %>
+<%
+  fig(
+    'stern-gerlach',
+    %q{%
+      Bottom: A schematic diagram of the Stern-Gerlach experiment. The $z$ direction is out of the page.
+      The entire apparatus is about 10 cm long.
+      Top: A portion of Gerlach's celebratory 1922 postcard to Niels Bohr, with a photo showing the results.
+      A coordinate system is superimposed. The orientation is flipped downward by 90 degrees compared to the
+      schematic. The photo was taken through a microscope, and Gerlach drew the 1.0 mm scale on after the 
+      magnified photo had been printed.
+    }
+  )
+%>
+<% end_marg %>
+
+The entire apparatus was sealed inside a vacuum chamber with the best vacuum obtainable
+at the time. A sample of silver was heated to $1000\degcunit$, evaporating it.
+The atoms leaving the oven encountered two narrow slits, so that what emerged was a beam with
+a width of only $0.03\ \zu{mm}$, or about a third of the width of a human hair. The atoms then
+encountered a magnetic field. Because the atoms were electrically neutral, we would normally
+expect them to be unaffected by a magnetic field. But in the planetary model of the atom, we
+imagine the electrons as orbiting in circles like little current loops, which would give
+the atom a magnetic dipole moment $\vc{m}$. Even if we are sophisticated enough about quantum mechanics not to
+believe in the circular orbits, it is reasonable to imagine that such a dipole moment would exist.
+When a dipole encounters a \emph{nonuniform}
+field, it experiences a force
+(example \ref{eg:dipole-in-nonuniform-field-fancy}, p.~\pageref{eg:dipole-in-nonuniform-field-fancy}).
+In this example, the forces in the $x$ and $z$ directions would be
+$F_x=\vc{m}\cdot(\partial\vc{B}/\partial x)$
+and $F_z=\vc{m}\cdot(\partial\vc{B}/\partial z)$. (Because of Gauss's law for magnetism,
+these two derivatives are not independent --- 
+we have $\partial B_x/\partial x+\partial B_z/\partial z=0$.) 
+The rapidly varying magnetic field for this experiment
+was provided by a pair of specially shaped magnet poles, described in
+example \ref{eg:sharp-magnet-poles}, p.~\pageref{eg:sharp-magnet-poles}.
+
+Because electrons have charge, we expect the motion of an electron to give it a magnetic dipole moment $\vc{m}$.
+But they also have mass, so for exactly the same reasons, we expect there to be some angular momentum $\vc{L}$ as well.
+The analogy is in fact mathematically exact, as discussed in sec.~\ref{subsec:g-factor}, p.~\pageref{subsec:g-factor}.
+Therefore this experiment with dipoles and magnetic fields is actually
+a probe of the behavior of angular momentum at the atomic level.
+
+Luckily for Stern and Gerlach, who had no modern knowledge of atomic structure, the silver atoms that
+they chose to use do happen
+to have nonzero total $\vc{L}$, and therefore nonzero $\vc{m}$.
+The atoms come out of the oven with random orientations. 
+
+Classically, we would expect the following.
+Each atom has an energy $\vc{m}\cdot\vc{B}$ due to its interaction with the magnetic field, and
+this energy is conserved, so that the component $m_x$ stays constant. However, there is a
+torque $\vc{m}\times\vc{B}$, and this causes the direction of the atom's angular momentum to
+precess, i.e., wobble like a top, with its angular momentum forming a cone centered on the $x$ axis
+(example \ref{eg:precession}, p.~\pageref{eg:precession}). This precession is extremely fast, carrying
+out about $10^{10}$ wobbles per second, so that the atom precesses about $10^6$ times while traveling the
+3.5 cm length of the spectrometer. So even though the forces $F_x$ and $F_z$ are typically about
+the same size, the rapid precession causes $F_z$ to average out to nearly zero, and only a deflection
+in the $x$ direction is expected. Because the orientations of the atoms are random as they enter the
+magnetic field, they will have every possible value of $L_x$ ranging from $-|\vc{L}|$
+to $+|\vc{L}|$, and therefore we expect that when the magnetic field is turned on, the effect should
+be to smear out the image on the glass plate from a vertical line to a somewhat wider oval. The atoms
+are dispersed from left to right along a certain scale of measurement according to their random
+value of $L_x$. The spectrometer is a device for determining $L_x$,
+a continuously varying number.
+
+But that's all the classical theory. Quantum mechanically, $L_x$ is
+quantized, so that only certain very specific values of $F_x$ can
+occur. Although the discussion of precession above is really classical
+rather than quantum-mechanical, the result of $F_z$ averaging out to
+zero turns out to be approximately right if the field is strong.
+Therefore we expect to see well separated vertical bands on the glass
+plate corresponding to the quantized values of $L_x$.  This is
+approximately what is seen in figure \figref{stern-gerlach},
+although the field rapidly weakens outside the $x$-$y$ plane, so we get the slightly
+more complicated pattern like a sideways lipstick kiss. Since we
+observe two values of $L_x$ (the two ``lips''), we conclude from these
+results that a silver atom has spin $1/2$, so that $L_x$ takes on the
+values $-\hbar/2$ and $+\hbar/2$. Although it took about five years for
+the experiment to be interpreted completely correctly, we now understand
+the Stern-Gerlach experiment to be not just a confirmation of the quantization
+of angular momentum along any given axis but also the first experimental
+evidence that the electron has an intrinsic spin of 1/2.
+
+\startdqs
+
+\begin{dq}
+Could the Stern-Gerlach experiment be carried out with a beam of electrons?
+\end{dq}
+
+\begin{dq}
+A few weeks after the Stern-Gerlach experiment's results became
+public, Einstein and Ehrenfest carried out the following reasoning,
+which seemed to them to make the results inexplicable.
+Before a particular silver atom enters the magnetic
+field, its magnetic moment $\vc{m}$ is randomly oriented. Once it
+enters the magnetic field, it has an energy $\vc{m}\cdot\vc{B}$.
+Unless there is a mechanism for the transfer of energy in or out of
+the atom, this energy can't change, and therefore the magnetic moment
+can only precess about the $\vc{B}$ vector, but the angle between
+$\vc{m}$ and $\vc{B}$ must remain the same. Therefore the atom cannot
+align itself with the field. (They considered various mechanisms of
+energy loss, such as collisions and radiation, and concluded that all
+of them were too slow by orders of magnitude to have an effect during
+the atom's time of flight.) It seemed to them that as soon as the atom left
+the oven, it was somehow required
+to have anticipated the direction of the field and picked one of two orientations
+with respect to it. How can this paradox be resolved?
+\end{dq}
+
+\begin{dq}\label{dq:stern-gerlach-twice-qualitative}
+Suppose we send a beam of oxygen molecules, with $L=\hbar$, through a Stern-Gerlach spectrometer,
+throwing away the emerging parts with $\ell_x=-1$ and $+1$ to make a beam of the pure $\ell_x=0$ state.
+Now we let this beam pass through a second spectrometer that is identical
+but oriented along the $z$ axis. Can we produce a beam in which
+every molecule has both $\ell_x=0$ and $\ell_z=+1$? 
+Hint: See the example in fig.~\figref{completeness-ylm}, p.~\pageref{fig:completeness-ylm}.
+\end{dq}
+
+<% end_sec() %>
+
+<% begin_sec("Rotation and vibration",4,'qm-rot-and-vib') %>
+
+<% begin_sec("Types of excitations",nil,'types-of-excitations') %>
+
+Figure \figref{n2-spectrum} shows the visible-light spectrum of the molecule $\zu{N}_2$.
+Because this particular chemical bond is unusually strong, the molecule does not break apart, even at the high
+temperature of a gas discharge tube, so we see the spectrum of the molecule, not of monoatomic nitrogen.
+This spectrum is more complex than the spectrum of the hydrogen atom, and that's not surprising,
+because the number of different states grows exponentially with the number of particles (here, 14 electrons
+plus 2 nuclei).
+
+<%
+  fig(
+    'n2-spectrum',
+    %q{%
+      Visible spectrum of $\zu{N}_2$. Violet is on the left, red on the right.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+What is more surprising is that there are some clear, simple patterns in this spectrum --- patterns
+simpler than any that we would see in the spectrum of a monoatomic gas with the same number of particles.
+To start to understand this, we note that $\zu{N}_2$ lacks the spherical symmetry of an individual
+atom, but it does have an axis of symmetry, \subfigref{axial-symmetry}{1}. These properties are also possessed
+by many nuclei, e.g., \subfigref{axial-symmetry}{2}. We now consider three different ways in which an excited
+energy state could occur in $\zu{N}_2$:
+
+\begin{itemize}
+\item Individual \emph{particles} (electrons) can be raised to a higher energy level.
+\item The molecule can \emph{vibrate} along its long axis, so that the nuclei (which have nearly all the inertia)
+       move back and forth, elongating and compressing the system.
+\item The molecule can \emph{rotate}.
+\end{itemize}
+
+<% marg(50) %>
+<%
+  fig(
+    'axial-symmetry',
+    %q{%
+      1.~The molecule $\zu{N}_2$. 2.~The nucleus ${}^{178}\zu{Hf}$. 
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec('types-of-excitations') %>
+
+<% begin_sec("Vibration",nil,'qm-vibration') %>
+
+Particle excitations would produce the type of very complex, disorganized spectrum that we normally see in atoms
+that have many electrons, so that isn't what we're seeing in figure \figref{n2-spectrum}. What about vibrations?
+For a classical harmonic oscillator, we know that the frequency of vibration is independent of the amplitude.
+If a classical oscillator contains electric charge, it will emit electromagnetic radiation at this frequency,
+smoothly and continuously draining itself of energy. As the energy is lost, the frequency stays the same. 
+By the correspondence principle, we expect that when the quantum mechanical version of such a system is highly
+excited, it should emit a large number of photons of this frequency $f$, so that the discrete quantum jumps
+are undetectable and the radiation appears as a classical wave. We can thus infer that for a quantum vibrator,
+the excited states should show an \emph{evenly spaced} ladder of energy levels.
+
+Figure \figref{n2-level-scheme} shows how the series of red lines in figure \figref{n2-spectrum} arises.
+For an excitation consisting only of vibrational motion, we
+expect based on the correspondence principle to see the evenly spaced ladder of states shown in a stack
+built above the ground state, with all of the photons having the same energy. These states and transitions
+do exist, but the light lies in the infrared spectrum and so is not seen in figure \figref{n2-spectrum}.
+The red visible-light lines arise as shown in the second box, from states that involve both a certain
+particle excitation and some vibration. Because the spacing of the two ladders is slightly unequal, the
+red lines all have slightly different wavelengths.
+
+<% marg(300) %>
+<%
+  fig(
+    'n2-level-scheme',
+    %q{%
+      Energy levels of the $\zu{N}_2$ molecule. 
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec('qm-vibration') %>
+
+<% begin_sec("Rotation",nil,'qm-rotation') %>
+
+What about rotation? An interesting thing happens here due to the structure of quantum mechanics. Quantum
+mechanics can describe motion only as a wave, with the value of the wave oscillating from one place to another.
+But this implies that according to quantum mechanics, no object can rotate about one
+of its axes of symmetry, for the rotated version of a state would then be the same state.
+This is why rotational excitations are never seen in individual atoms, or in nuclei
+that have spherical shapes. In examples like the ones in figure \figref{axial-symmetry}, which have a single
+axis of symmetry, we can therefore have end-over-end rotation, but never rotation about the symmetry axis.
+Such end-over-end rotational states are observed in $\zu{N}_2$, for example, but because this involves
+large motions by the high-mass nuclei, the moment of inertia $I$ is quite large, and therefore the rotational
+energies --- classically, $K=L^2/2I$ --- are very small, and infrared rather than visible photons are emitted.
+If rotation about the symmetry axis were possible, then the moment of inertia would be thousands of times smaller,
+because in such a rotation the nuclei would not move. The energies involved would be thousands of times higher,
+and the photons would lie approximately in the visible region of the spectrum. No such visible lines are actually observed.
+
+<% marg(-300) %>
+
+<%
+  fig(
+    'hf-rotation',
+    %q{%
+      Excited states of the nucleus ${}^{178}\zu{Hf}$. Black squares represent states that are interpreted
+      as end-over-end rotation, while white diamonds show particle excitations. For each angular momentum,
+      the graph shows the lowest-energy state of each type, where known. 
+    }
+  )
+%>
+<% end_marg %>
+
+Perhaps more vivid evidence for the nonexistence of rotation about a symmetry axis is shown in figure
+\figref{hf-rotation}. The states involving end-over-end rotation of the nucleus as a whole (``collective'' rotation)
+are approximately a parabola on this graph, which is reasonable given the classical relation $K=L^2/2I$.
+But angular momentum cannot be generated along the symmetry axis through collective rotation. Instead,
+we see an irregular set of energy levels in which first one particle (for $L\le8\hbar$) and then two
+(14 and $16\hbar$) are excited.
+
+Note that only even multiples of $\hbar$ are observed in collective rotation in figure \figref{hf-rotation}.
+This is because the nucleus's shape has an additional mirror symmetry, so that it is unaffected by
+a 180-degree rotation. This means that the wavefunction describing the collective rotation
+must oscillate twice as we pass through a full rotation.
+
+<% end_sec('qm-rotation') %>
+
+<% begin_sec("Corrections to semiclassical energies",nil,'qm-corrections') %>
+
+So far we've been using the correspondence principle to make educated guesses about quantum-mechanical
+expressions for the energies of vibrators and rotors. This style of reasoning is called semiclassical,
+because it combines ideas from classical and quantum physics. These expressions are guaranteed to be good approximations 
+in the classical limit obtained when
+the quantum numbers are large, but figure \figref{rot-and-vib-corrections} shows that the approximations
+can be poorer when the quantum numbers are small.
+
+<%
+  fig(
+    'rot-and-vib-corrections',
+    %q{%
+      Quantum-mechanical corrections to the semiclassical results for the energy of a vibrator and a rotor.
+      The rotational levels are shown for the case of a rotor with mirror symmetry, so that only even values of
+      $\ell$ occur.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+In the case of the $n$th excited state of a vibrator, the energy is $(n+1/2)\hbar\omega$, where the $+1/2$ term represents
+a quantum correction to the semiclassical approximation. This shifts the entire ladder upward in energy by half
+a step. In particular, the energy of the ground state is not zero but rather $(1/2)\hbar\omega$. This can be verified
+quantitatively by calculating the energy for the solution to the Schr\"odinger discussed using the guess-and-check method
+in problem \ref{hw:quantumho}, p.~\pageref{hw:quantumho}. It is easy to see why the answer cannot be zero, for
+if it were, then the particle in the ground state would have zero kinetic energy and zero potential energy.
+To have zero kinetic energy, it would have to have a momentum of exactly zero, so $\Delta p=0$, but to have
+zero potential energy it would also have to sit still at exactly the equilibrium position, so $\Delta x=0$. But
+this would violate the Heisenberg uncertainty principle and so is impossible.
+
+The inevitable motion that
+is present even in the ground state is known as zero-point motion,\index{zero-point motion}\label{zpm}
+and its energy is the zero-point energy.
+Relativity tells us that $E=mc^2$, so the zero-point energy of particles is equivalent to a certain amount of
+mass. In fact, nearly all the mass of ordinary matter arises from the zero-point energy of the quarks inside
+the neutrons and protons. Another interesting application is to spontaneous nuclear fission, which is the basis
+for nuclear energy, providing the kick-off for a chain reaction. Spontaneous fission requires that a
+nucleus become more and more elongated until it breaks apart into two pieces. The very elongated shapes have
+a high potential energy, so that spontaneous fission requires quantum-mechanical tunneling. If it were not for
+the zero-point vibrational energy associated with this motion, the tunneling probability for uranium and
+plutonium isotopes would be extremely small. These isotopes would decay only by alpha emission, and nuclear
+reactors and bombs would not work.
+
+<%
+  fig(
+    'j-jplus1-visual',
+    %q{%
+      Each panel of the figure shows a standing wave on a sphere, with the convention that gray is zero, white is a
+      positive real number, and black is a negative real number. (These could instead have been drawn as traveling
+      waves, but then we would have needed to represent complex numbers using color, as in figure \figref{spherical-harmonic}
+      on p.~\pageref{fig:spherical-harmonic}.) 
+      Only 2 is a solution of the Schr\"odinger equation.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \figref{j-jplus1-visual} shows visually the reason for the correction of $\ell^2$ to $\ell(\ell+1)$.
+Each of these standing waves has $|\ell_z|=16$, where $z$ is the vertical
+axis. But only \subfigref{j-jplus1-visual}{2} is a solution of the Schr\"odinger equation for a state of definite
+$\ell$.
+To be a solution of the Schr\"odinger equation, such a wave must have the same kinetic energy everywhere. 
+Each of these three has the same kinetic energy associated
+with its wavelength in the ``east-west,'' or azimuthal, direction.
+Wave
+\subfigref{j-jplus1-visual}{1} is not a solution, because near the equator, it has an extremely short wavelength
+in the ``north-south,'' or longitudinal, direction, and this gives it a greater kinetic energy near the equator than
+elsewhere. The opposite problem occurs in \subfigref{j-jplus1-visual}{3}, where the wave is constant in the longitudinal
+direction; at the poles, the wavefunction varies infinitely rapidly,
+and therefore the kinetic energy blows up to infinity there. The only valid solution is
+\subfigref{j-jplus1-visual}{2}, which has a Goldilocks-style just-right wavelength in the longitudinal direction.
+The kinetic energy associated with this wavelength is the difference between the semiclassical
+$\ell^2$ and the correct quantum mechanical $\ell(\ell+1)$. 
+
+A different example that is particularly easy
+to reason about is the wavefunction $\Psi_{10}$ shown in figure \figref{completeness-ylm}
+on p.~\pageref{fig:completeness-ylm}, for $\ell=1$ and $\ell_z=0$. (The odd value of $\ell$ is possible for
+a rotor that doesn't have mirror symmetry, e.g., the carbon monoxide molecule CO.) The ratio of the
+correct quantum mechanical energy to the semiclassical one is $\ell(\ell+1)/\ell^2=2$, and the factor of
+two  makes sense because at the poles, the wave has equal contributions to its kinetic energy due to
+oscillations in the two perpendicular directions that occur in the Laplacian $\partial^2/\partial x^2+\partial^2/\partial y^2$.
+
+\startdq
+
+\begin{dq}
+The correction of the semiclassical proportionality for the energy of a rotor from $\ell^2$ to $\ell(\ell+1)$
+is effectively the addition of a correction equal to $\ell$. What if someone tells you that there is 
+an additional correction term that depends only on $\ell_z$ (for a fixed $\ell$)? Is this plausible?
+\end{dq}
+
+\begin{dq}
+Can the correction $\ell^2\rightarrow\ell(\ell+1)$ be tested experimentally by measuring the energy
+of a spinning steel ring in the laboratory? Can the correction $n\rightarrow n+1/2$ be tested
+using a cart on an air track that vibrates back and forth between two springs?
+\end{dq}
+
+<% end_sec('qm-corrections') %>
+
+<% end_sec() %>
+
+<% begin_sec("A tiny bit of linear algebra",nil,'linear-algebra',{'optional'=>true}) %>
+
+This optional section is a self-contained presentation of a very small amount of
+linear algebra. None of the later physics requires this material, but reading it
+may be helpful as review for the reader who has already had an entire linear algebra
+course, or to help make connections for the one who is taking such a course concurrently
+or will take it in the future.
+
+A \emph{vector space} is a set of objects, which we refer to as vectors,\index{vector space}\label{lin-alg-vector-space}
+along with operations of addition and scalar multiplication
+defined on the vectors. The scalars may be the real numbers or the complex numbers.
+We require that the addition and scalar multiplication operations have the properties
+that addition is commutative ($\vc{u}+\vc{v}=\vc{v}+\vc{u}$), that we have an additive
+identity $\vc{0}$ and additive inverses ($\vc{v}+(-\vc{v})=\vc{0}$), and that both operations
+are associative and distributive in the ways that we would expect from the notation.
+The prototypical example of a vector space is vectors in three-dimensional space, with
+the scalars being the real numbers.
+
+\begin{eg}{The vector space of polynomials}
+Consider the set of all polynomials.
+If we define addition of polynomials and multiplication of a polynomial by a real
+number in the obvious ways, then these functions are a vector space. Note that
+there is no well-defined division operation, since dividing
+a polynomial by a polynomial typically does not give a polynomial.
+\end{eg}
+
+In quantum mechanics, we are interested in the vector space of wavefunctions, with the
+scalars being the complex numbers.
+
+A set of vectors is said to be \emph{linearly independent} if it is not possible to form
+the zero vector as a linear combination of them. 
+For vectors in three-dimensional
+space, a set of three vectors is not linearly independent if they lie in the same plane.
+The set of polynomials $\{1,x\}$ is
+linearly independent, but the set $\{P,Q,R\}$, where $P=1$, $Q=1-x$, and $R=1+x$,
+is not, because $-2P+Q+R=0$.\index{linear independence} 
+
+A \emph{basis}\index{basis for a vector space}\label{lin-alg-basis}
+for a vector space is a linearly independent set of
+vectors, called basis vectors, such that any vector can be formed as a
+linear combination of basis vectors. The standard basis for vectors in
+two-dimensional space is $\{\hat{x},\hat{y}\}$, while a possible basis
+for the polynomials is the infinite set $\{1,x,x^2,x^3,\ldots\}$.  
+A basis exists for any vector space, and in fact there are normally
+many different bases to choose from, with none being preferred. In the
+plane, for example, we can choose to rotate the standard $\{\hat{x},\hat{y}\}$ basis by any angle we like.
+Every basis for a given vector space has the same number of elements, and this number is
+called the \emph{dimension} of the vector space. The plane is a two-dimensional
+vector space. The polynomials are an infinite-dimensional 
+vector space.\index{basis of a vector space}\index{dimension of a vector space}
+
+A \emph{linear operator} is a function $\mathcal{O}$ that takes a vector as an
+input and gives a vector as an output, with the properties
+$\mathcal{O}(\vc{u}+\vc{v})=\mathcal{O}(\vc{u})+\mathcal{O}(\vc{v})$ and
+$\mathcal{O}(\alpha\vc{u})=\alpha\mathcal{O}(\vc{u})$.\index{linear operator}\label{lin-alg-linear-operator}
+A rotation in the plane is a linear operator.
+
+\begin{eg}{Differentiation as a linear operator}
+Consider the set of all differentiable functions, taken as a vector space over either
+the real numbers or the complex numbers. Then the derivative is a linear operator,
+as is the second derivative.
+The kinetic energy term in the Schr\"odinger equation is built out of second derivatives,
+so it is a linear operator.
+\end{eg}
+
+For vectors in three-dimensional space, we have a dot product, which is a function
+that takes two vectors as inputs and gives a scalar as its output. A vector space
+may or may not come equipped with such an operation. If it does, we call the
+operation an \emph{inner product}. The inner product on wavefunctions is introduced
+in section \ref{subsec:qm-inner-product}, p.~\pageref{subsec:qm-inner-product}.
+In quantum mechanics, the inner product is a basic tool used to define probabilities,
+and for example normalization becomes the requirement that a wavefunction have an
+inner product with itself that equals 1. That is, a normalized wavefunction is a kind
+of unit vector.\index{inner product!on a general vector space}
+
+When a vector space is finite-dimensional and a basis has been chosen, then if we wish we can represent
+vectors in column vector notation. For example, in the space of first-order polynomials
+with the basis $\{1,x\}$, the polynomial $3+5x$ can be represented by
+$\left(\begin{smallmatrix} 3 \\ 5 \end{smallmatrix}\right)$. Linear operators can
+similarly be represented by matrices, but we will seldom find this possible or useful in this
+book. For example, we can't represent the derivative as a matrix, because the vector space
+is infinite-dimensional.\label{lin-alg-column-vec-notation}
+
+<% end_sec('linear-algebra') %>
+
+<% begin_sec("The underlying structure of quantum mechanics, part 1",nil,'qm-structure-1') %>
+
+So far we have been building up the structure of quantum mechanics by casually laying
+one brick on top of another, but at this point it will be advantageous to pause and
+consider the broader blueprint.
+
+<% begin_sec("The time-dependent Schr\\\"odinger equation",nil,'time-dependent-s-eqn') %>
+
+For simplicity, our discussion of the Schr\"odinger equation in section
+\ref{subsec:schrodinger}, p.~\pageref{s-eqn-simplest-initial-statement}, was limited to standing waves, allowing us to avoid
+explicitly discussing how the wavefunction changed with passing time. Let's consider
+the generalization to the full time-dependent case.
+
+Classically, suppose I show you a picture of a baseball next to a tree, and I ask you how
+long it will take to hit the ground. You can't tell, because you also need information about the ball's initial
+velocity. That is, the future time-evolution of the system $x(t)$ depends not just on the initial position $x(0)$
+but also on its initial time derivative $x'(0)$.
+
+But if I show you a uranium atom in its lowest energy state, you don't
+need to know any other information to predict everything that can be
+predicted about its future decay. Whereas the baseball could be thrown downward
+in order to make it reach the ground more quickly, nobody knows of any way to
+prepare the uranium nucleus in such a way that it is any more likely to decay
+sooner. Knowing the initial wavefunction $\Psi(0)$ to be that of the ground state
+lets us say as much as can be said about the future time-evolution $\Psi(t)$, and it's
+neither necessary nor helpful to know the time derivative $\Psi'(t)$.
+
+This is an example of a more general idea about the interpretation of
+quantum mechanics, which is that the wavefunction is a complete
+description of any system. There isn't more information that can be
+known about the system.  This principle seems to be widely agreed upon
+by physicists, but doesn't seem to have a standard name.  (The phase
+and normalization of the wavefunction are not considered to
+give\index{phase in quantum mechanics!not observable} any information,
+since the phase is unobservable, and the normalization can be
+standardized so that the total probability is 1. See the sidebar for more detail.)
+
+<% marg() %>
+
+<% fig(
+  'phase-and-norm-not-observable','',{'anonymous'=>true,'title'=>"Unobservability of phase and normalization",
+  'text'=>
+    %q{%
+When we say that phase and normalization don't count as knowledge of a system, we're
+saying something very mathematically specific: that $\Psi$ and $c\Psi$ represent
+the same state, where $c\ne0$ is a complex number; the magnitude of $c$ would only affect
+the normalization, and its argument would only affect the phase. We do not mean, for example,
+that wavefunctions like $\sin x$ and $\cos x$ are indistinguishable. The sine and cosine give different
+probability distributions, so they are distinguishable. For example, the $\sin x$ wavefunction
+gives zero probability of detection at $x=0$. See also
+problem \ref{hw:moat-orthogonal-standing-waves}, p.~\pageref{hw:moat-orthogonal-standing-waves}
+and example \ref{eg:phase-not-observable}, p.~\pageref{eg:phase-not-observable}.
+    }
+  })
+%>
+
+\spacebetweenfigs
+
+<% fig(
+  'vec-app-v-space','',{'anonymous'=>true,'title'=>"Linear algebra application",
+  'text'=>
+    %q{%
+      Wavefunctions can be described by vectors in a vector space (p.~\pageref{lin-alg-vector-space}).
+      A state is a one-dimensional subspace of the vector space, i.e., the set of all wavefunctions
+      of the form $c\Psi$ for some fixed $\Psi$.
+    }
+  })
+%>
+<% end_marg %>
+
+\begin{important}[Wavefunction fundamentalism]
+All knowable information about a system is encoded in its wavefunction (ignoring phase
+and normalization).
+\end{important}
+
+\noindent An example of an idea that would violate this principle is
+the pilot wave\index{pilot wave theory} theory proposed by de Broglie
+around 1927, and improved by Bohm in the 1950's. In this theory, an electron-particle
+is a separate object from an electron-wave, with the particle surfing
+the wave along a deterministic trajectory.
+
+Another example that shows the contrast with the classical description is that
+if I show you a snapshot of a wave on a string, you can't tell which
+direction it's going --- as with the baseball, you need to know its
+initial velocity in addition. But
+if I show you a snapshot of a quantum-mechanical traveling wave, you \emph{can} tell which
+direction it's going, because of the complex phase, as shown in figures
+\subfigref{rainbow}{2} and \subfigref{rainbow}{3} on page \pageref{fig:rainbow}.
+Note that this mechanism wouldn't work if wavefunctions were always real numbers,
+so wavefunction fundamentalism implies complex wavefunctions.
+
+Given the wavefunction at some initial time, we can predict its evolution into the future
+by making use of the principle that $E=hf$. Suppose for example that we have a sinusoidal plane wave
+traveling to the right. Then we expect the value of the wavefunction at a particular point in space
+to rotate clockwise about the origin in the complex plane at the appropriate frequency $f$, showing
+a time dependence $e^{-i\omega t}$ (where, as usual, $\omega=2\pi f$). Thus the time derivative
+of the wavefunction is $\Psi'=-i\omega\Psi=-i(E/\hbar)\Psi$, so that $E\Psi=i\hbar\Psi'$. Then to
+generalize the time-independent Schr\"odinger equation to its time-dependent version, the most
+obvious thing to try is simply to substitute $i\hbar\partial\Psi/\partial t$ for $E\Psi$, which gives
+\begin{equation*}\index{Schr\"odinger equation!time-dependent}\label{s-eqn-time-dep}
+  i\hbar\frac{\partial\Psi}{\partial t} = 
+              -\frac{\hbar^2}{2m}\nabla^2 \Psi  +   U \Psi   .
+\end{equation*}
+(In section \ref{subsec:s-eqn-general}, p.~\pageref{subsec:s-eqn-general}, we will generalize this to cases where
+the wavefunction is not expressed in terms of the spatial coordinates $x$, $y$, and $z$.)
+Unlike Newton's laws of motion, which refer to a second derivative with respect to time, the Schr\"odinger equation
+involves only a first time derivative. This is why we don't need initial data on $\partial\Psi/\partial t$, but only
+$\Psi$: if we know $\Psi$, then the right-hand side of the Schr\"odinger equation is what \emph{gives}
+us $\partial\Psi/\partial t$. But the Schr\"odinger equation has some other properties
+that match up with those of Newton's laws. 
+
+\begin{eg}{A plane wave}\label{eg:t-dep-s-eqn-plane-wave}
+Consider a free particle of mass $m$ in one dimension, with the wavefunction
+\begin{equation*}
+  \Psi=e^{i(kx-\omega t)},
+\end{equation*}
+where $k=2\pi/\lambda=p/\hbar$ is called the wavenumber.
+If $k$ and $\omega$ are both positive, we can tell that the particle is moving to the right, because the signs
+inside the exponential are such that $x$ could increase as $t$ increases while
+keeping the phase the same. This would happen for $k\Delta x-\omega\Delta t=0$,
+or $v=\omega/k$, which is the phase velocity (not the same as the group
+velocity, sec.~\ref{subsec:dispersive-waves}, p.~\pageref{subsec:dispersive-waves}).
+
+Suppose that the particle is in free space, so that $U$ is constant,
+and for convenience take $U=0$. Application of the Schr\"odinger
+equation, $i\hbar\partial\Psi/\partial t=-(\hbar^2/2m)\partial^2\Psi/\partial x^2$, gives
+$
+  \hbar\omega e^{(\ldots)} = \frac{\hbar^2k^2}{2m} e^{(\ldots)},
+$
+and if this is to hold true for all values of $x$ and $t$, then we must have
+$
+  \hbar\omega = \frac{\hbar^2k^2}{2m},
+$
+which is simply an expression of the Newtonian relation $K=p^2/2m$, since $k\lambda=2\pi$ and $p=h/\lambda$.
+Flipping the sign of $k$ results in an equally valid solution, and a negative $k$ is how
+we would represent a wave traveling to the left.
+
+We have two solutions to the Schr\"odinger equation corresponding to the two signs of $k$, and because
+the Schr\"odinger equation is linear, it follows that we can make a more general solution of
+the form
+\begin{equation*}
+  Ae^{i(kx-\omega t)}+Be^{i(-kx-\omega t)},
+\end{equation*}
+where $A$ and $B$ are any two complex
+numbers. (We could also try to elaborate on this
+theme by allowing for an arbitrary phase angle $\delta$ inside the complex exponentials, e.g.,
+changing the argument of the first exponential to $i(kx-\omega t+\delta)$. However, this would
+be equivalent to changing $A$ to $Ae^{i\delta}$, which is just a change in $A$'s phase angle, not
+a new solution.)
+\end{eg}
+
+\begin{eg}{Dispersion of a wave packet}\label{eg:dispersion-of-wave-packet}
+An annoying feature of example \ref{eg:t-dep-s-eqn-plane-wave} is that the wavefunction cannot be normalized
+because it extends in all directions to infinity. This type of infinite plane wave
+is at best an idealization of the wavefunction for a realistic example such an electron launched by a cathode
+ray tube, or an alpha particle emitted by a nucleus. As a more realistic example, we might try something
+like a wave packet, such as a pulse with a certain shape, traveling in a certain direction.
+This works for waves on a string or for electromagnetic waves: the pulse or packet simply glides along
+while rigidly maintaining its shape. To investigate this idea using the time-dependent Schr\"odinger equation,
+it will be convenient to adopt the frame of reference in which the particle is at rest. In this frame,
+we would expect the wave to look frozen, just as an ocean wave looks frozen in place to a surfer who is
+riding it. It must therefore be of the form
+\begin{equation*}
+  \Psi = e^{-i\omega t}f(x),
+\end{equation*}
+where $f$ is some function specifying the shape of the wave packet.
+But this $\Psi$ is not a solution to the Schr\"odinger equation. On the left-hand side
+of the Schr\"odinger equation, evaluating the time derivative gives
+$\hbar\omega\Psi$, which is just the original wavefunction multiplied by a constant.
+If we are to satisfy the Schr\"odinger equation, then the right-hand side, which is the second derivative
+with respect to $x$, must also
+be equal to the original wavefunction multiplied by a constant. But the only functions for which
+$(\der^2/\der x^2)(\ldots)=(\text{constant})(\ldots)$ are exponentials and sine waves. An exponential shape
+obviously isn't a physical realization of a wave packet. A sine wave
+works, but it just describes an infinite plane wave like the one in example \ref{eg:t-dep-s-eqn-plane-wave}, not
+a wave packet that can be localized and normalized.
+
+The underlying reason for this result is that the Schr\"odinger equation is dispersive: waves with different wavelengths
+travel at different speeds (because they correspond to different momenta). Suppose a pulse has the
+shape $f(x)$ at $t=0$. Since a pulse is not a sine wave, it doesn't have a single well-defined wavelength, and therefore
+it doesn't have a definite momentum or velocity. In fact, the spread in momentum must be at least a certain
+size due to the Heisenberg uncertainty principle $\Delta p\Delta x\gtrsim h$. This causes the pulse to spread out over time.
+
+This leads to a strange thought experiment. Suppose that a uranium atom in the Andromeda galaxy emits an alpha particle,
+which then travels thousands of light years and eventually flies past the earth. Its wave packet may initially have
+been as narrow as the diameter of an atomic nucleus, $\sim 10^{-15}\ \munit$, but by the time it arrives perhaps it
+is the size of an aircraft carrier. Will an observer see a gigantic alpha particle flying by? No, because observing
+it constitutes a measurement of its position, and by the probability interpretation of the wavefunction this
+measurement simply has a certain probability of giving a result that is anywhere within some region the size of
+an aircraft carrier.
+\end{eg}
+
+<% end_sec('time-dependent-s-eqn') %>
+
+<% begin_sec("Unitarity",nil,'s-eqn-unitarity') %>
+
+The Schr\"odinger equation is completely deterministic, so that if we know
+$\Psi$ initially, we can always predict it in the future. We can also ``predict'' backward in time,
+so that the system's history can always be recovered
+from knowledge of its present state. Thus there is never any loss of information over time. Furthermore,
+it can be shown that probability is always conserved, in the sense that if the wavefunction is initially
+normalized, it will also be normalized at all later times. 
+
+<% marg() %>
+
+<% fig(
+  'vec-app-time-evol-linear','',{'anonymous'=>true,'title'=>"Linear algebra application",
+  'text'=>
+    %q{%
+      Time evolution is represented by a linear operator (p.~\pageref{lin-alg-linear-operator}).
+      Unitarity is an additional requirement for this linear operator.
+    }
+  })
+%>
+<% end_marg %>
+
+\begin{important}[Unitary
+         evolution of the wavefunction]\index{unitary evolution of the wavefunction}\label{unitarity-postulate}
+The wavefunction evolves over time, according to the Schr\"odinger equation, in a deterministic
+and \emph{unitary} manner,
+meaning that probability is conserved and information is never lost.
+\end{important}
+\noindent(Unitarity is 
+defined more rigorously on p.~\pageref{unitary-operator}.)
+
+Since we think of quantum mechanics as being all about randomness, this determinism may seem surprising.
+But determinism in the time-evolution of the wavefunction isn't the same as determinism in the results
+of experiments as perceived and recorded by a human brain. Suppose that you prepare a uranium atom in
+its ground state, then wait one half-life and observe whether or not it has decayed, as in the thought
+experiment of Schr\"odinger's cat (p.~\pageref{schrodingers-cat}). There is no uncertainty or randomness about the wavefunction of the
+whole system (atom plus you) at the end. We know for sure what it looks like.
+It consists of an equal superposition of two states,
+one in which the atom has decayed and your brain has observed that fact, and one in which the atom has
+not yet decayed and that fact is instead recorded in your brain. 
+
+To get more of a feeling for what is meant by unitarity, it may be helpful to consider some examples of
+how it could be violated. One is the mythical ``collapse'' of the wavefunction in naive
+interpretations of the
+Copenhagen approximation (p.~\pageref{copenhagen-introduced}).\index{Copenhagen approximation!nonunitary}
+Another example of nonunitarity is
+given in example \ref{eg:non-hermitian-energy} on p.~\pageref{eg:non-hermitian-energy}.
+
+A more exotic example is the disappearance of matter into a black hole.
+If I throw my secret teenage diary into a black hole, then it contributes a little bit to the black
+hole's mass, but the embarrassing information on the pages is lost forever. This loss of information
+seems to imply nonunitarity. This is one of several arguments suggesting that quantum mechanics cannot
+fully handle the gravitational force. Thus although physicists currently seem to possess a completely successful
+theory of gravity (Einstein's theory of general relativity) and a completely successful theory of
+the microscopic world (quantum mechanics), the two theories are irreconcilable, and
+we can only make educated guesses, for example, about the behavior of a hypothetical microscopic black hole.
+
+<% end_sec('s-eqn-unitarity') %>
+
+<% end_sec('qm-structure-1') %>
+
+<% begin_sec("Methods for solving the Schr\\\"odinger equation",nil,'solving-s-eqn') %>
+
+<% begin_sec("Cut-and-paste solutions",nil,'s-eqn-cut-and-paste') %>
+
+Quite a few of the interesting phenomena of quantum mechanics can be demonstrated by
+finding solutions to the one-dimensional Schr\"odinger equation using the following ``cut and paste''
+method. We break up the $x$ axis into pieces, where the potential $U(x)$ does different things,
+and such that we already know the solutions of the Schr\"odinger equation for each piece.
+We then splice together the different parts of the solution, requiring that no discontinuities
+occur in the wavefunction $\Psi$ or its derivative $\partial\Psi/\partial x$. (If the momentum
+and kinetic energy are to be finite, and $U$ is finite, then we need all derivatives up to the second to be
+defined.)
+
+<% begin_sec("Partial reflection at a step",nil,'s-eqn-partial-refl') %>
+
+The simplest example of this kind is a potential step,
+\begin{equation*}
+  U(x) = \begin{cases}
+    U_1, & x< 0 \\
+    U_2, & x> 0,
+  \end{cases}
+\end{equation*}
+where $U_1$ and $U_2$ are constants, and
+the energy of the particle is such that both sides are classically allowed.
+We have discussed this example \ref{eg:step-correspondence} on p.~\pageref{eg:step-correspondence},
+where we cheated by drawing real-valued wavefunctions, and simply assumed that we could
+still use our previous results for classical wave reflection (p.~\pageref{reflected-wave-amplitude}).
+It is not actually obvious that we should be able to get away with recycling that result,
+both because our quantum-mechanical wavefunctions are complex and because the
+Schr\"odinger equation is dispersive, so we can no longer assume, as we did there,
+that a wave packet simply glides along rigidly (example \ref{eg:dispersion-of-wave-packet}, p.~\pageref{eg:dispersion-of-wave-packet}).
+
+<% marg(0) %>
+<%
+  fig(
+    's-eqn-partial-refl',
+    %q{%
+      An incident wave is partially reflected and partially transmitted at a step in the potential $U$. 
+      The complex wavefunctions are represented using a complex plane perpendicular to the direction
+      of propagation, so that they look like corkscrews. The incident and reflected wavefunctions actually
+      superposed, but are drawn as separate entities and offset for purposes of visualization.
+    }
+  )
+%>
+<% end_marg %>
+
+To sidestep the problem of dispersion, we will carry out our analysis using an
+infinitely long wave-train with a definite wavelength. Let the incident wave have unit amplitude
+and travel to the right,
+\begin{equation*}
+  \Psi_\zu{I} = e^{i(kx-\omega t)} \qquad \text{($x< 0$)},
+\end{equation*}
+as in example \ref{eg:t-dep-s-eqn-plane-wave}, p.~\pageref{eg:t-dep-s-eqn-plane-wave}.
+Recall that the wavenumber $k$ is basically just momentum, $p=\hbar k$.
+
+For the reflected and transmitted parts of the wave, we take
+\begin{equation*}
+  \Psi_\zu{R} = Re^{i(-kx-\omega t)} \qquad \text{($x< 0$)},  
+\end{equation*}
+and
+\begin{equation*}
+  \Psi_\zu{T} = Te^{i(k'x-\omega t)} \qquad \text{($x> 0$)},
+\end{equation*}
+where the reflected and transmitted amplitudes $R$ and $T$ are unknown, and our goal
+is to find them.
+The different sign inside the exponential for $\Psi_\zu{R}$ corresponds to the opposite direction of motion
+at the same speed $v$, while in the expression for $\Psi_\zu{T}$ we have motion to the
+right, but with a different momentum $p'=\hbar k'$ as required by conservation of energy.
+
+Demanding continuity of $\Psi$ gives
+\begin{equation*}
+  1+R = T.
+\end{equation*}
+The derivatives are 
+$\partial\Psi_\zu{I}/\partial x=ik\Psi_\zu{I}$,
+$\partial\Psi_\zu{R}/\partial x=-ik\Psi_\zu{R}$, and
+$\partial\Psi_\zu{T}/\partial x=ik'\Psi_\zu{T}$, and evaluating these at
+$x=0$, $t=0$ gives $ik$, $-ikR$, and $ik'T$. If the derivative is to be the same for $x\rightarrow0^-$
+and for $x\rightarrow0^+$, we need to have $ik-Rik=iTk'$, or
+\begin{equation*}
+  1-R=\frac{k'}{k}T,
+\end{equation*}
+But these two equations are exactly the same as the ones found on p.~\pageref{reflected-wave-amplitude}
+for a classical, nondispersive wave, the only difference being the replacement of
+$v/v'$ with $k'/k$. To keep the writing simple, let $\alpha=k'/k$.
+With this replacement, the solutions are the same as before,
+$R=(1-\alpha)/(1+\alpha)$ and $T=2/(1+\alpha)$.
+For a particle of energy
+$E$, we can find the momentum ratio $\alpha$ using conservation of energy,
+$\alpha=\sqrt{(E-U_2)/(E-U_1)}$.
+There is partial reflection not just in the
+case of a sudden rise in the potential, but also at a sudden drop
+($U_2<U_1$), which is surprising and seems to violate the
+correspondence principle, but actually does not, as discussed in
+example \ref{eg:step-correspondence} on p.~\pageref{eg:step-correspondence}.
+
+One of our principles of quantum mechanics is unitarity (p.~\pageref{unitarity-postulate}),
+which says, in part, that probability is conserved. Normally we would interpret this to mean
+that a wavefunction stays normalized if it was originally normalized. In this example, the wavefunctions
+are not normalizable, but we still expect the fluxes of particles balance out.
+We have
+\begin{align*}
+  \text{flux} &= (\text{probability density})(\text{group velocity}) \\
+              &= \Psi^2\cdot \frac{p}{m} \\
+              &= \frac{\hbar}{m} k \Psi^2,
+\end{align*}
+so that if we want
+the total incident flux to equal the total outgoing flux, we need
+\begin{equation*}
+  k = k R^2 +k' T^2,
+\end{equation*}
+which is straightforward to verify.
+
+<% end_sec('s-eqn-partial-refl') %>
+
+<% begin_sec("Infinite potential well",nil,'s-eqn-inf-well') %>
+
+In sec.~\ref{subsec:qm-bound-states}, p.~\pageref{subsec:qm-bound-states}, we analyzed the one-dimensional
+particle in a box. There was nothing wrong with those results, but it is of interest to see how
+they fit into the framework of the time-dependent Schr\"odinger equation. If we want the walls of the box
+to be completely impenetrable, then we should describe it using a potential such as
+\begin{equation*}
+  U(x) = \begin{cases}
+    \infty, & x< 0 \\
+    0, & 0<x<L,\\
+    \infty, & x> L, 
+  \end{cases}
+\end{equation*}
+shown in figure \subfigref{infinite-potential-well}{1}. Because the potential is infinite outside the box,
+we expect that there is no tunneling, and zero probability of finding the particle outside.
+
+<% marg(-30) %>
+
+<%
+  fig(
+    'infinite-potential-well',
+    %q{%
+      A particle in a box.
+    }
+  )
+%>
+<% end_marg %>
+
+In general when we do the cut-and-paste technique, we expect both the wavefunction and its
+first derivative to be continuous where the pieces are joined together. But because we 
+have already solved this problem by more elementary methods, we know that there will be kinks
+in the wavefunction at the walls of the box, $x=0$ and $L$. The kink is a point where the
+second derivative $\partial^2\Psi/\partial x^2$ is undefined, and it's undefined because it's
+infinite. The second derivative is essentially the kinetic energy operator, and normally it
+would not be possible to have the kinetic energy be $\pm\infty$. But in this problem, it \emph{is}
+reasonable to have a kinetic energy of $-\infty$, because the potential energy is $+\infty$.
+
+Within the box, for a fixed energy $E=\hbar\omega$, the possible wavefunctions will be those
+of a free particle, which we have already found. There are two possibilities, of the form
+\begin{align*}
+  \Psi_1 &= e^{i(kx-\omega t)} \\
+  \Psi_2 &= e^{i(-kx-\omega t)},
+\end{align*}
+figure \subfigref{infinite-potential-well}{2},
+where $k$ is a positive real number satisfying $k=p/\hbar=\sqrt{2mE}/\hbar$. $\Psi_1$ is
+a wave traveling to the right, and $\Psi_2$ is a wave traveling to the left. The most
+general solution will be a superposition of these,
+\begin{equation*}
+  \Psi = A\Psi_1+B\Psi_2.
+\end{equation*}
+Because the wavefunction has to be continuous at $x=0$, where $\Psi_1=\Psi_2$, we must have
+$A+B=0$. Since $e^{iz}-e^{-iz}=2\sin z$, we end up with
+\begin{equation*}
+  \Psi = 2A\sin kx e^{-i\omega t}.
+\end{equation*}
+Throwing out the time-dependent phase, we get the sinusoidal solutions to the time-independent
+Schr\"odinger equation that we have already found, e.g.,
+figure \subfigref{infinite-potential-well}{3}. Imposing the additional constraint that
+$\Psi$ be continuous at $x=L$, we get the condition $kL=n\pi$, where $n$ is an integer, and this makes the
+energies quantized, as we found before.
+
+<% end_sec('s-eqn-inf-well') %>
+
+<% end_sec('s-eqn-cut-and-paste') %>
+
+<% begin_sec("Separability",nil,'s-eqn-separability') %>
+\index{separability!Schr\"odinger equation}
+When we first generalized the Schr\"odinger equations from one dimension to two and three dimensions,
+a trick for finding solutions was to take solutions to the one-dimensional equation and
+multiply them. For example, we knew that in the case of a constant potential (a free particle), the
+one-dimensional time-independent equation had solutions of the form $\sin ax$ and $e^{ax}$.
+We then saw in problem \ref{hw:three-d-forbidden}, p.~\pageref{hw:three-d-forbidden},
+that $e^{by}\sin ax$ was a solution to the two-dimensional equation. This is because
+the two-dimensional time-independent Schr\"odinger equation for a free particle, which has the form
+\begin{equation*}
+  \nabla^2\Psi = c\Psi,
+\end{equation*}
+has a property called \emph{separability}. What this means is that if functions $X$
+and $Y$ are both solutions of the one-dimensional version of the equation, then
+$\Psi(x,y)=X(x)Y(y)$ is a solution of the two-dimensional one. To see this, we calculate
+\begin{align*}
+  \nabla^2\Psi &= \nabla^2[X(x)Y(y)] \\
+               &= \left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)[X(x)Y(y)] \\
+               &= Y(y)X''(x)+X(x)Y''(y).
+\end{align*}
+We're looking for functions $X$ and $Y$ such that
+this is a solution to the two-dimensional equation, so that
+\begin{equation*}
+  Y(y)X''(x)+X(x)Y''(y) = cX(x)Y(y).
+\end{equation*}
+Dividing both sides by $X(x)Y(y)$ simplifies this equation to
+\begin{equation*}
+  \frac{X''(x)}{X(x)}+\frac{Y''(y)}{Y(y)} = c.
+\end{equation*}
+But if $X$ and $Y$ are solutions of the one-dimensional equation, then both terms on the left are
+constants, so we have a valid solution to the two-dimensional equation.
+
+As an example, we know that $\sin kx$ is a solution to the one-dimensional Schr\"odinger equation,
+so the function $\sin kx \sin ky$ is also a solution. The result, shown in figure
+\figref{separable-s-eqn}, can be chopped off and made into a solution of the two-dimensional
+particle in a box. Solutions similar to this one are found in real-life examples such as
+microwave photons in a microwave oven. For more about separability, and how it compares with
+entanglement, see sec.~\ref{sec:more-entanglement}, p.~\pageref{sec:more-entanglement}.
+
+<% marg(300) %>
+<%
+  fig(
+    'separable-s-eqn',
+    %q{%
+      A solution to the Schr\"odinger equation found by separability. Positive values are shown
+      as light colors, negative ones as dark colors.
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec('s-eqn-separability') %>
+
+<% end_sec('solving-s-eqn') %>
+
+<% begin_sec("The underlying structure of quantum mechanics, part 2",nil,'qm-structure-2') %>
+
+<% begin_sec("Observables",nil,'qm-observables') %>
+
+By the time my first-year mechanics students have been in class for a week, they know how to answer
+when I ask them the velocity of the tape dispenser at the front of the classroom: ``We don't know, it
+depends on your frame of reference.'' The \emph{absolute} velocity of an object is a meaningless concept,
+part of the mythical dungeons-and-dragons cosmology of Aristotelian physics. Quantum mechanics is as great
+a break from Newton as Newton was from Aristotle, and similar care is required in redefining what concepts
+are \emph{observables} --- meaningful things to talk about measuring.
+
+\newcommand{\eqnimage}[1]{\raisebox{-.2\height}{\includegraphics{../share/quantum/figs/#1}}}
+% duplicated in FAC, ac/b.rbtex
+% used to have \includegraphics[resolution=300], but that now causes an error:
+%       https://tex.stackexchange.com/questions/301494/how-to-use-includegraphics
+
+Classically, we describe the state of the system as a point in phase
+space (sec.~\ref{subsec:phase-space}, p.~\pageref{subsec:phase-space}) --- which is just a fancy way of
+saying that we specify all the positions and momenta of its particles ---
+and an observable is defined as a function that takes that
+point as an input and produces a real number as an output. (By the way, the word ``phase'' in ``phase space''
+doesn't refer directly to the phase of a wave, which we'll also be discussing below.)
+For example, kinetic energy is a classical observable, and 
+$K(<% eqn_image("eqn-tennis-ball") %>)=0$, where the picture represents
+a tennis ball at rest. For a moving tennis ball with one unit of energy, 
+$K(<% eqn_image("eqn-tennis-ball-moving") %>)=1$.
+For a vibrating violin string, we could have 
+$U(<% eqn_image("eqn-wave2-small-amp") %>)=1$, and $U(<% eqn_image("eqn-wave2") %>)=4$ (where doubling the amplitude gives
+four times the energy).
+
+Quantum-mechanically, the Heisenberg uncertainty principle tells us that we can't
+independently dial in the desired values of a particle's position and momentum. They aren't
+two variables that are independent of one another. Therefore we don't have a phase space, so an observable
+has to be represented by a function whose input is a wavefunction.
+Furthermore, we expect that:
+\begin{itemize}\label{operator-criteria}\index{phase in quantum mechanics!not observable}
+\item The output shouldn't depend on the phase\footnote{``Phase'' as in the phase of a wave, not as in ``phase space.''} of the wavefunction.
+\item The output shouldn't depend on amplitude (because a different amplitude might just mean an incorrectly normalized state).
+\item The output should be well defined when we superpose any two states.
+\end{itemize}
+\noindent These requirements are hard to reconcile with the idea that
+the output of the observable is just a real number representing the
+result of the measurement. We could decree that the input wavefunction is just
+required to be have the standard normalization, but there's no obvious
+way to define a standardization of phase. And suppose we have a
+particle in a one-dimensional box, with the two lowest energies being
+$E(<% eqn_image("eqn-wave1") %>)=1$ and $E(<% eqn_image("eqn-wave2") %>)=4$.
+Then what should we define
+for the superposition $E(<% eqn_image("eqn-wave1") %>+<% eqn_image("eqn-wave2") %>)$?
+We could define it to be the average, 2.5, but
+that isn't even a possible value of the measurement; in reality, the
+result of the measurement would be either 1 or 4, with equal
+probability.
+
+For a clue as to a better way to proceed, note the structure of the
+time-independent Schr\"odinger equation for a free particle, omitting all constant
+factors like $m$, 2, and $\hbar$. It isn't $(\der^2/\der x^2)\Psi=E$, it's
+$(\der^2/\der x^2)\Psi=E\Psi$. This fixes all the problems. For example,
+if we change the phase of the wavefunction by flipping its sign, the equation
+still holds with the same value of $E$. This equation is a specific example
+of a more general type of equation that looks like
+\begin{equation*}
+  \text{operator}(\text{input}) = \text{number}\times\text{input}.
+\end{equation*}
+Another, simpler example is $(\der/\der x)f=3f$, which is satisfied if $f=Ae^{3x}$, where
+$A$ is any constant.
+Such an equation says that applying the operator to the input just gives back the
+\emph{input itself}, multiplied by some constant. For this reason, this type of
+equation is called an \emph{eigenvalue equation}, because ``\emph{eigen}'' is the
+German word for ``self.'' We say that 3 is the eigenvalue of 
+the eigenvalue equation $(\der/\der x)f=3f$.
+In the time-independent Schr\"odinger equation, the eigenvalue is the energy,
+and a solution $\Psi$ is called a state of definite energy (or
+``eigenstate''). 
+
+All observables in quantum mechanics are described by operators such as derivatives.
+The second derivative (with the appropriate factor
+of $-h^2/2m$) is the kinetic energy operator in quantum mechanics.
+Given an operator $\mathcal{O}$ that describes a certain observable,
+a state $\Psi$ with a definite value $c$ of that observable is one for which
+$\mathcal{O}(\Psi)=c\Psi$. Although it's common to use parentheses when notating functions,
+as in $\cos(\pi)=-1$, they are optional, and we can write $\cos\pi=-1$, so we will often
+use notations like $\mathcal{O}\Psi$ instead of $\mathcal{O}(\Psi)$, but keep in mind
+that this not multiplication, just as $\cos\pi$ doesn't mean multiplying $\cos$ by $\pi$.
+
+When we carried over the classical kinetic energy observable to quantum mechanics, we weren't
+going blind. For example, the factor of $-h^2/2m$ in front is tightly
+constrained by requirements like units and the need for a traveling
+sine wave to have positive energy. But for the superposition of two
+states, classical mechanics will never give us any guidance. For
+example, what is the body temperature of Schr\"odinger's cat? For the
+energy operators appearing in the Schr\"odinger equation, we used linear operators.
+The
+result was that our law of physics was perfectly linear, and this is a
+hard requirement, for the reasons described on p.~\pageref{subsubsec:linearity-of-schrodinger}.
+It therefore seems natural to require that \emph{all} observables be represented by
+linear operators,
+\begin{equation*}
+  \mathcal{O}(\Psi_1+\Psi_2)=\mathcal{O}\Psi_1+\mathcal{O}\Psi_2.
+\end{equation*}
+Indeed, if they were not linear, then quantum mechanics would lack
+self-consistency, for the act of measurement can be described by applying the Schr\"odinger equation
+to a big system consisting of the
+system being observed interacting with the measuring device.
+
+Finally, we have one more requirement, which is that the linear
+operator representing an observable should have eigenvalues that are
+real.\label{qm-why-hermitian-observables}
+This isn't because the results of a measurement must logically
+be real --- e.g., we can measure complex impedances. But in any
+real-world application of the complex number system, we must always
+choose some arbitrary phase conventions, such as that an inductor has a
+positive imaginary impedance to represent the fact that the voltage
+leads the current by 90 degrees. (Such phase conventions are always
+arbitrary because we
+define $i$ as $\sqrt{-1}$, but this doesn't distinguish $i$ from $-i$.)
+These phase conventions are all independent of one another, and the
+classical ones are independent of the convention used for
+wavefunctions in quantum mechanics, which is that a state with positive
+energy twirls clockwise in the complex plane. (See also example \ref{eg:non-hermitian-energy}, p.~\pageref{eg:non-hermitian-energy}.)
+
+<% marg() %>
+
+<% fig(
+  'vec-app-lin-observables','',{'anonymous'=>true,'title'=>"Linear algebra application",
+  'text'=>
+    %q{%
+      Observables are represented a linear operators (p.~\pageref{lin-alg-linear-operator}).
+      We also require that this operator have real eigenvalues.
+    }
+  })
+%>
+<% end_marg %>
+
+\begin{important}[Observables]
+In quantum mechanics, any observable is represented by a linear operator that takes
+a wavefunction as an input and has real eigenvalues.
+\end{important}
+
+\noindent Some important examples of observables are momentum (example \ref{eg:momentum-operator} below),
+position (example \ref{eg:x-is-observable}),
+energy, and angular momentum. These are represented by linear operators $\mathcal{O}_x$,
+$\mathcal{O}_p$, $\mathcal{O}_E$, and $\mathcal{O}_L$, respectively.
+
+\begin{eg}{The momentum operator}\label{eg:momentum-operator}
+Quantum mechanics represents motion as a dependence of the wavefunction on
+position, so that a constant wavefunction has no motion.
+This suggests defining
+the momentum operator as the derivative with respect to position.
+This almost works, but needs to be tweaked a little.
+We expect that a state of
+definite momentum is a sine wave of the form $\Psi=e^{ikx}$. We have $k\lambda=2\pi$
+and $p=h/\lambda=\hbar k$, and the sign is a matter of convention. Taking the
+derivative of $\Psi$ gives an eigenvalue $ik$, which has the wrong units
+(easily fixed by tacking on a factor of $\hbar$), but more
+importantly is not real. This suggests defining the momentum operator
+as 
+\begin{equation*}
+  \mathcal{O}_p=-i\hbar\frac{\der}{\der x}.
+\end{equation*}
+A further note about the momentum operator is example \ref{eg:imaginary-momentum} on
+p.~\pageref{eg:imaginary-momentum}.
+\end{eg}
+
+\begin{eg}{A nonexample}\label{eg:not-an-observable}
+Consider the one-dimensional particle in a box, and restrict our attention to
+the two lowest-energy states and their superpositions.
+Define an operator $\mathcal{O}$ by the rule
+\begin{align*}
+  \mathcal{O}(<% eqn_image("eqn-wave1") %>) &= <% eqn_image("eqn-wave2") %> \\
+  \mathcal{O}(<% eqn_image("eqn-wave2") %>) &= -(<% eqn_image("eqn-wave1") %>) .
+\end{align*}
+Since $\mathcal{O}$ is linear, defining its action on $<% eqn_image("eqn-wave1") %>$ and
+$<% eqn_image("eqn-wave2") %>$ suffices to define its action on the superpositions of these
+states as well.
+This operator
+has eigenvalues, one of which is $i$, corresponding to the state
+$<% eqn_image("eqn-wave1") %>-i<% eqn_image("eqn-wave2") %>$.
+(It also has a second eigenvalue, which is imaginary as well.)
+Because this operator doesn't have real eigenvalues, it is not a valid
+observable.
+\end{eg}
+
+Note that in examples \ref{eg:momentum-operator} and
+\ref{eg:not-an-observable}, it doesn't matter whether the operator is
+\emph{defined} using complex numbers. Our definition of the momentum
+operator was stated using an equation that had an $i$ in it, but its
+eigenvalues are real, so that's OK. The operator $\mathcal{O}$ in
+example \ref{eg:not-an-observable} was defined using only real
+numbers, but its eigenvalues are not real. 
+
+\begin{eg}{Position is an observable}\label{eg:x-is-observable}
+If we have a wavefunction $\Psi(x)$ expressed as a function of position $x$, then
+we simply take the operator for position $\mathcal{O}_x$ to be multiplication by the number $x$,
+\begin{equation*}
+  \mathcal{O}_x(\Psi)=x\Psi .
+\end{equation*}
+For example, if $\Psi=e^{ix}$ (ignoring units), then $\mathcal{O}_x(\Psi)=xe^{ix}$.
+This operator is definitely linear, because multiplication by a number is linear, e.g.,
+$7(a+b)=7a+7b$. The only question is whether it has eigenvalues, and whether those are
+real. A state of definite $x$, say a state with $x=0$, would have to be represented by a wavefunction $\Psi(x)$
+for which there was zero probability of having $x\ne0$, and this requires us to have
+$\Psi(x)=0$ for nonzero $x$.
+But what would be the value of $\Psi(0)$? It has to be \emph{infinite} if $\Psi$ is to be properly
+normalized. With this motivation, the physicist P.A.M.~Dirac defined
+the Dirac delta function,\index{Dirac delta function}\index{delta function (Dirac)}
+\begin{equation*}
+  \delta(x)=\begin{cases}
+    0 & \text{for $x\ne0$} \\
+    +\infty & \text{for $x=0$}
+  \end{cases}
+\end{equation*}
+Its graph is an infinitely narrow, infinitely tall spike at $x=0$, and it has
+$\int_{-\infty}^{+\infty}\delta(x)\der x=1$.
+Mathematicians will shake their heads and say that this is not a definition of a function, but
+it's very useful to pretend that it is, and the delta ``function'' is widely used in a variety of
+fields such as electrical engineering. Because it was useful, mathematicians felt obliged to
+define a theory in which functions are generalized to things called distributions or generalized functions.
+\end{eg}
+
+Because we represent an observable as an operator that changes a wavefunction into a new wavefunction,
+a common misconception is that this change represents the effect of measurement on the system.
+Although it is often true that microscopic systems are delicate, so that the act of measurement may have a
+significant effect on them, that action of the operator on the wavefunction does not represent
+that effect. For example, the position operator $\mathcal{O}_x$ from example \ref{eg:x-is-observable} consists simply
+of multiplication of the wavefunction by $x$. Suppose we have a particle in a box with a wavefunction
+given by $\Psi=\sin x$, where we ignore units and normalization, and the box is defined by
+$0\le x\le \pi$. Then $\mathcal{O}_x\Psi$ eats the
+input wavefunction $\sin x$ and poops out the new function $x\sin x$. But the act of measuring the
+particle's position clearly can't do anything like this --- for one thing, the function $x\sin x$ 
+has larger values on the right side of the box than on the left, but there is nothing to create
+such an asymmetry in either the original state or the measuring process. The real-world effect of
+the measurement would probably be to knock the particle out of the box completely, since a high-resolution
+measurement will have a small uncertainty $\Delta x$, which by the Heisenberg uncertainty principle
+means creating a large $\Delta p$.
+
+Nor is it always true that measuring a system disturbs it. For example, suppose that we prepare a
+beam of silver atoms, as in the Stern-Gerlach experiment, in such a way that every atom is guaranteed
+to be in either a state of definite $L_x=+1/2$ or $L_x=-1/2$. That is, the beam may be a mixture of
+both of these possibilities, but each atom is guaranteed have its spin either exactly aligned with
+the magnetic field or exactly antiparallel to it. Then the effect of the magnetic field is simply
+to sort out the two types of atoms according to spin, without having the slightest effect on those spins.
+
+\begin{eg}{Phase is not an observable}\label{eg:phase-not-observable}\index{phase in quantum mechanics!not observable}
+On p.~\pageref{operator-criteria} we listed three criteria for implementing the concept
+of an observable in quantum mechanics, and one of these was that since wavefunctions that differ
+only by a phase describe the same state, the result of an observation should not depend on phase.
+For this reason, it should not be a surprise that the mathematical definition of an observable
+that we came up with does not allow for the creation of an observable to describe measurement of
+a phase.
+
+By way of rigorous proof, suppose to the contrary that we did have such an observable
+$\mathcal{O}_\zu{ph}$. By our definition of an observable, it would have to have some set of
+eigenvalues that were real numbers. Consider such an eigenvalue $\varphi$, which might perhaps be
+the argument of the wavefunction in the complex plane, although we will not need to assume that.
+Let $\Psi$ be the state of definite phase having the phase $\varphi$, so that 
+\begin{equation}\label{eqn:phase-not-observable-1}
+  \mathcal{O}_\zu{ph}\Psi = \varphi\Psi.
+\end{equation}
+We can change the phase of $\Psi$ to create a new wavefunction. Let's retard its
+phase by 90 degrees, creating $i\Psi$. Since $\Psi$ was a state of definite phase, clearly
+$i\Psi$ is as well, and and it must have some different eigenvalue $\varphi'$.
+Perhaps $\varphi'=\varphi+\pi/2$, but in any case we must have $\varphi'\ne\varphi$. Then
+\begin{equation}\label{eqn:phase-not-observable-2}
+  \mathcal{O}_\zu{ph}(i\Psi) = \varphi'(i\Psi).
+\end{equation}
+But by linearity equation \eqref{eqn:phase-not-observable-2} is equivalent to $i\mathcal{O}_\zu{ph}\Psi=i\varphi'\Psi$, or
+$\mathcal{O}_\zu{ph}\Psi=\varphi'\Psi$, and therefore by comparison with
+equation \eqref{eqn:phase-not-observable-1}, $\varphi=\varphi'$, which is a contradiction, so
+we conclude that there cannot be an observable representing phase.
+\end{eg}
+
+The result of example \ref{eg:phase-not-observable} was a bit of a
+foregone conclusion, since we specifically designed our notion of an
+observable to be insensitive to phase. Therefore this argument is
+subject to the objection that perhaps there is some way to measure a
+quantum-mechanical phase, but our definition of an observable is just
+too restrictive to describe it.  However, we will see on p.~\pageref{measurement-randomizes-phase} that there
+are more concrete reasons why phase cannot be measured. 
+
+\begin{eg}{Time is not an observable}\label{eg:t-not-observable}
+We do not expect to have a time operator in quantum mechanics. This
+follows simply because an operator is supposed to be a function that takes a
+wavefunction as an input, but we typically can't tell what time it is by looking at the
+wavefunction. For example, if the electron in a hydrogen atom is in its ground state, then we
+could say its energy is zero, so its frequency is zero, the period is infinite,
+and the wavefunction doesn't vary at all with time. (We can choose our
+reference level for the electrical energy $U_\zu{elec}$ to be anything we like.
+Even if we choose it such that the energy of the ground state
+is nonzero, the only change in the electron's wavefunction over time will be
+a phase rotation, which by example \ref{eg:phase-not-observable} is not observable.)
+
+Of course this doesn't mean that quantum mechanics forbids us from building clocks.
+It just tells us that many
+quantum mechanical systems are too simple to function as clocks. In particular,
+we would be misled if we pictured a hydrogen atom classically in terms of an
+electron traveling in a circular orbit around a proton, in which case it really
+could act like the hand on a tiny clock. For further discussion of this idea, see
+p.~\pageref{et-too-simple-to-be-a-clock}
+\end{eg}
+
+Since you've already studied relativity, you've had  carefully inculcated in you the
+idea that space and time are to be treated symmetrically, as parts of a more general
+thing called spacetime. The differing results of examples \ref{eg:x-is-observable} and \ref{eg:t-not-observable}
+are clearly not consistent with relativity. This is to be expected because
+the Schr\"odinger equation is nonrelativistic
+(cf.~self-check \ref{sc:schrodingerassumptions}, p.~\pageref{sc:schrodingerassumptions}), and
+the principles laid out in this section are the principles of \emph{nonrelativistic} quantum mechanics.
+
+\begin{eg}{Parity}\label{eg:parity}
+In freshman calculus you will have encountered the notion of even and odd functions. In quantum
+mechanics, we can have even and odd wavefunctions, and they can be distinguished from one another
+using the parity operator $\mathcal{P}$.\index{parity!operator in quantum mechanics}
+If $\Psi(x)$ is a wavefunction, then $\mathcal{P}\Psi$ is a new wavefunction, call it $\Psi'$,
+such that $\Psi'(x)=\Psi(-x)$. In other words, the parity operator flips the wavefunction
+across the origin. (In three dimensions, we negate all three coordinates.) States of definite
+parity are represented by wavefunctions that are even (eigenvalue $+1$) or odd ($-1$).
+\end{eg}
+
+\begin{eg}{States of definite angular momentum}
+In section \ref{subsec:qm-corrections}, p.~\pageref{subsec:qm-corrections}, we saw that the kinetic
+energy of a quantum mechanical rotor is proportional not to $\ell^2$ but instead to 
+$\ell(\ell+1)$. This was justified qualitatively in terms of the solutions of the 
+Schr\"odinger equation for a particle on a sphere, but in fact there is a deeper reason, which is
+that the eigenvalues of the orbital angular momentum operator turn out to be $\ell(\ell+1)$.
+The parity of such a state is $(-1)^\ell$, which can be seen in figure \figref{hydrogen-three-states}
+on p.~\pageref{fig:hydrogen-three-states}.
+\end{eg}
+
+If we have two observables, it may or may not be possible to measure them both on the same state
+and get exact and meaningful results. Position and momentum $p$ and $x$ are incompatible observables, as expressed
+by the Heisenberg uncertainty principle. No state is simultaneously a state of definite $p$ and of definite
+$x$. The magnitude of an angular momentum $L$ and its component along
+some axis $L_z$ are compatible. It is common to have a state that is simultaneously a state of definite
+$L$ and of definite $L_z$. Another example of \emph{incompatible} observables is $L_z$ and $L_x$, as proved
+on p.~\pageref{proof-lx-and-lz-incompatible}.
+
+<% end_sec('qm-observables') %>
+
+<% begin_sec("The inner product",nil,'qm-inner-product') %>
+
+We've defined the normalization of a wavefunction as the requirement $\int_{-\infty}^{+\infty}\Psi^*\Psi\der x=1$,
+which means that the total probability that the particle is \emph{somewhere} equals 1.
+(Another way of writing $\Psi^*\Psi$ would be $|\Psi|^2$.) This assumes that the wavefunction is written as
+a function of the position $x$. But it is also possible to have a wavefunction that depends on some other
+variable, such as spin or momentum, or on some combination of variables, e.g., both the spin $s$ and the position $x$
+of an electron, $\Psi(x,s)$. We can also use a wavefunction to describe a correlation between
+multiple particles, in which case the wavefunction might look like $\Psi(x_1,x_2)$. The variables that the wavefunction
+depends on may be either continuous, like position and momentum, or discrete, like spin or angular momentum.
+Given all of these possibilities, we need to figure out an appropriate generalization of the integral over $x$
+that we originally used to define our normalization condition. To provide for flexibility and generality, we
+will start by simply defining a new notation that looks like this:
+\begin{equation*}
+  \langle \Psi | \Psi \rangle = 1.
+\end{equation*}
+In the case where $\Psi$ is a function of $x$ alone, the angle brackets $\langle\ldots|\ldots\rangle$ basically
+mean just an integral over $x$, and we think of the $\langle\ldots|$ part as automatically implying the complex
+conjugation of the thing inside it. The operation $\langle\ldots|\ldots\rangle$ is called the
+\emph{inner product}.\index{inner product!in quantum mechanics}
+
+<% marg() %>
+
+<% fig(
+  'vec-app-bra-ket','',{'anonymous'=>true,'title'=>"Linear algebra application",
+  'text'=>
+    %q{%
+      The vectors notated with right-hand angle brackets like $|\ldots\rangle$ are the ones that
+      we could represent as column vectors (p.~\pageref{lin-alg-column-vec-notation}) if the vector space is finite-dimensional.
+      Left-hand angle brackets are like row vectors. A row vector multiplied by a column vector
+      is a way of notating an inner product,
+      which is the same idea as a notation like $\langle\ldots|\ldots\rangle$. To turn a column vector
+      into a row vector, we transpose it and take complex conjugates of its elements. This is analogous
+      to the rule of taking complex conjugates when converting back and forth between left-hand angle
+      brackets (``bras'') and right-hand ones (``kets''). In both contexts, the basic reason for the
+      complex conjugation is that we want the inner product of a vector with itself to be a positive real number.
+    }
+  })
+%>
+<% end_marg %>
+
+Because negative probabilities don't make sense, we require that the inner product of a wavefunction with itself
+always be positive,
+\begin{equation*}
+  \langle u | u \rangle \ge 0.
+\end{equation*}
+This makes it similar to the dot product used with vectors in Euclidean geometry.
+
+In the case of Euclidean geometry, the ability to add vectors and measure their lengths automatically
+gives us a way to judge the similarity of two vectors. For example, if $|u|=1$, $|v|=1$, and $|u+v|=2$,
+then we conclude that $u$ and $v$ are in the same direction. On the other hand, if
+$|u|=1$, $|v|=1$, and $|u+v|=\sqrt{2}$, then we can tell that $u$ and $v$ are perpendicular, which makes
+them as different as two unit-length vectors can be. More generally, $(u+v)\cdot(u+v)=|u|^2+|v|^2+2u\cdot v$,
+because the dot product is linear, so we can see that the information about how similar $u$ and $v$ are
+is all contained in their dot product $u\cdot v$. Making the analogy with quantum mechanics, we expect that
+since we can define normalization of wavefunctions, we should automatically get, ``for free,'' a way of
+measuring how similar two states are.
+
+With this motivation, we assume that there is an inner product on wavefunctions that has properties
+analogous to those of the dot product. We assume linearity, so that if $u$, $v$, and $w$ are wavefunctions,
+then
+\begin{align*}
+  \langle u | \alpha v+\beta w \rangle = \alpha\langle u | v \rangle + \beta\langle u | w \rangle \\
+\intertext{and}
+  \langle \alpha u+\beta v | w \rangle = \alpha^*\langle u | w \rangle + \beta^*\langle v | w \rangle .
+\end{align*}
+In the second equation, we need to take the complex conjugates $\alpha^*$ and $\beta^*$, for if we omitted the
+conjugation, then when $\langle u | u \rangle=1$ we would have $\langle iu | iu \rangle=-1$, describing a negative
+probability. For similar reasons, we require that
+\begin{equation*}
+  \langle u | v \rangle = \langle v | u \rangle^*
+\end{equation*}
+rather than the more familiar property of the Euclidean dot product $u\cdot v=v\cdot u$.
+
+\begin{important}[Inner product]
+Wavefunctions come equipped with an inner product that has the properties described above.
+\end{important}
+
+<% marg(20) %>
+<% fig(
+  'vec-app-inner-product','',{'anonymous'=>true,'title'=>"Linear algebra application",
+  'text'=>
+    %q{%
+      The properties listed here for inner products in quantum mechanics are just standard rules
+      for inner products in linear algebra.
+    }
+  })
+%>
+<% end_marg %>
+
+If we're dealing with wavefunctions that are expressed as functions of position, then it's pretty clear
+how to define an appropriate inner product: $\langle u | v \rangle = \int u^*v \der x$.
+The inner product axiom stated above then requires that this (possibly improper) integral converge in all cases, which
+means, for example, that we have to exclude infinite plane waves from consideration. However, because it's
+so convenient sometimes to talk about plane waves, we may break this rule when nobody is looking.
+Note the similarity between the expression $\int u^*v \der x$ and the expression
+$u_xv_x+u_yv_y+u_zv_z$ for a dot product: the integral is a continuous sum, and the dot product is
+a discrete sum.
+
+Two wavefunctions have a zero inner product if and only if they are completely distinguishable from each other
+by the measurement of some observable. By analogy with vectors in Euclidean space, we say that
+the two wavefunctions are orthogonal.\label{orthogonal-wavefunctions}
+For example, $\langle <% eqn_image("eqn-wave1") %> | <% eqn_image("eqn-wave2") %> \rangle=0$, as can be verified
+from the integral $\int_0^\pi \sin x \sin 2x \der x=0$. These states are also distinguishable by measuring
+either their momentum or their energy.
+
+Let's consider more carefully the general justification for this
+assertion that perfect distinguishability is logically equivalent to a zero inner product.
+We have described valid observables in quantum mechanics as being represented by operators that have
+real eigenvalues. An alternative description of such
+an operator $\mathcal{O}$,
+called a hermitian operator\footnote{The mathematician's standard definition of a hermitian
+operator adds an additional technical condition, which is that all of the operator's eigenvalues should
+have magnitudes below a certain fixed bound. This is much too restrictive for our purposes, since, for
+example, an alpha particle in free space can have an arbitrarily large kinetic energy. In fact, nothing
+really bad happens if we relax our requirement for quantum-mechanical operators to be that they
+merely need a property called being 
+\emph{normal}.\index{normal operator}}  after 
+Charles Hermite,\index{hermitian operator}\label{hermitian}
+is that it is one such that for any $u$ and $v$, the equation
+$\langle \mathcal{O} u|v\rangle = \langle  u|\mathcal{O} v\rangle$ holds.\footnote{Proof
+that a hermitian operator has real eigenvalues:
+Let $e$ be an eigenvalue, $\mathcal{O}u=eu$ for $u\ne0$. Then
+$\langle \mathcal{O} u|u\rangle = \langle  u|\mathcal{O} u\rangle$, so
+$\langle e u|u\rangle = \langle  u|e u\rangle$, and
+$e^*\langle u|u\rangle = e\langle  u| u\rangle$,                   
+so $e^*=e$, meaning that $e$ is real.}
+Being hermitian is, for an operator, analogous to being real for a number.
+(Cf.~problem \ref{hw:trivial-nonhermitian}, p.~\pageref{hw:trivial-nonhermitian}.) Just as a randomly chosen
+complex number is unlikely to be real, a randomly chosen linear operator will almost never be hermitian.
+Like love, patriotism, or beauty, a nonhermitian operator fails to translate into anything a physicist
+can measure.
+
+Using this alternative characterization of what makes a valid observable, we can prove, as claimed above,
+that if two states are distinguishable because they have definite, different values of
+some observable, then they are orthogonal.\footnote{Proof:
+Consider states $u$ and $v$ with $\mathcal{O} u=e_1 u$
+and $\mathcal{O} v=e_2 v$. If $\mathcal{O}$ is Hermitian, we have
+$\langle \mathcal{O} u|v\rangle = \langle u|\mathcal{O}v\rangle$, so
+$e_1^*\langle u|v\rangle=e_2 \langle u|v\rangle$. But since $e_1$ and $e_2$ are real and unequal, we must have
+$\langle u|v\rangle=0$.}
+
+<%
+  fig(
+    'inner-product-interpretation',
+    %q{%
+      Some examples of interpretation of the inner product. The first three examples
+      are explained immediately below. The fourth, about averages, is justified on
+      p.~\pageref{subsubsec:qm-inner-product-averages}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+% The 0.81 is 8/pi^2, because a triangle wave is \Sum (1/n^2)\cos(nx), for n odd.
+
+Suppose that $u$ and $v$ are both properly normalized wavefunctions. If $|\langle u|v \rangle|=1$, then the
+states are identical.\footnote{If the inner product is, for example, $-1$, then the wavefunctions differ only by
+an unobservable difference in phase, so they really describe the same state.}
+If $\langle u|v \rangle=0$, then $u$ and $v$ are completely distinguishable from one another. There is
+also the intermediate case where $\langle u|v \rangle$ has a magnitude greater than 0 but less than 1.
+In this case, we could say that $u$ is a mixture of $v$ plus some other state $w$ that is distinguishable
+from $v$, i.e., that
+\begin{equation*}
+  |u \rangle = \alpha |v \rangle + \beta |w \rangle.
+\end{equation*}
+where $\langle v|w \rangle=0$. We then have
+\begin{equation*}
+  \langle u|v \rangle = (\alpha \langle v | + \beta \langle w |)|v \rangle = \alpha.
+\end{equation*}
+Now suppose that we make measurements capable of determining whether or not the system
+is in the state $v$. If the system is prepared in state $u$, and we make these measurements on it, then
+by the linearity of the Schr\"odinger equation, the result is that the measuring apparatus or observer ends up in
+a Schr\"odinger's-cat state that looks like
+\begin{equation*}
+  \alpha |\text{observed $v$} \rangle + \beta |\text{observed $w$} \rangle.
+\end{equation*}
+We interpret squares of amplitudes as probabilities, so
+\begin{equation*}
+  P=|\alpha|^2=|\langle u|v \rangle|^2
+\end{equation*}
+gives us the probability that we will have observed the state to be $v$. This final leap in the logic,
+to a probability interpretation, has felt mysterious to several generations of physicists, but recent
+work has clarified the situation somewhat.
+
+On p.~\pageref{exclusion-principle-nonrigorous} we stated the Pauli exclusion principle
+by saying that two particles with half-integer spins
+could never occupy the same state.\index{exclusion principle}\index{Pauli exclusion principle}\label{exclusion-principle-rigorous}
+This was not a completely rigorous definition of the principle, since 
+we didn't really define ``same state.'' A more mathematically precise statement is that
+if one electron's wavefunction is $u$ and another's is $v$, then $\langle u|v\rangle=0$.
+In other words, we are ruling out not just the case where $u$ and $v$ are the same wavefunction,
+$\langle u|v\rangle=1$, but also the intermediate case where $\langle u|v\rangle$ is greater than 0 but less than 1.
+
+A unitary transformation\index{unitary operator}\label{unitary-operator}
+is one that preserves inner products. That is,
+$\langle\mathcal{O}u|\mathcal{O}v\rangle=\langle u|v\rangle$. This is similar to the way in which
+rotations preserve dot products in Euclidean geometry. This provides a more rigorous definition
+of what we meant by postulating the unitary evolution of the wavefunction
+(p.~\pageref{unitarity-postulate}).\index{unitary evolution of the wavefunction}
+It can be shown that if the Hamiltonian is hermitian, then the evolution of the wavefunction
+over time is a unitary operation. This protects us from bad scenarios like the one described
+in example \ref{eg:non-hermitian-energy}, p.~\pageref{eg:non-hermitian-energy}.
+
+\begin{eg}{Traveling waves in the quantum moat}\label{eg:moat-orthogonal-traveling-waves}
+On p.~\pageref{subsubsec:degeneracy} we discussed the ``quantum moat,'' in which
+a particle is constrained to a circle like the moat around a castle. For the $\ell=1$
+state, the two degenerate traveling wave solutions to the Schr\"odinger equation
+are (ignoring normalization) the counterclockwise $|\text{ccw}\rangle=e^{i\theta}$
+and the clockwise $|\text{cw}\rangle=e^{-i\theta}$. These states are distinguishable
+by their angular momenta $\ell_z=\pm 1$, so we expect them to be orthogonal. Let's
+check that directly.
+\begin{align*}
+  \langle \text{ccw} | \text{cw} \rangle &= \int_0^{2\pi} \left[(e^{i\theta})^*\right]e^{-i\theta} \der \theta \\
+            &= \int_0^{2\pi} e^{-i\theta}e^{-i\theta} \der \theta \\
+            &= \int_0^{2\pi} e^{-2i\theta} \der \theta \\
+\end{align*}
+This is easily seen to be zero without an explicit calculation,
+because when we take the antiderivative of $e^{-2i\theta}$, we will get the same
+type of exponential, whose values when we plug in the upper and lower
+limits of integration will cancel each other out.
+\end{eg}
+
+\begin{eg}{Imaginary momentum?}\label{eg:imaginary-momentum}
+Here's a paradox. If we take a wavefunction $e^{rx}$, where $r$ is a constant, then applying
+the momentum operator $\mathcal{O}_p=-i\der/\der x$ (example \ref{eg:momentum-operator}, p.~\pageref{eg:momentum-operator}) gives
+\begin{equation*}
+  \mathcal{O}_p e^{rx} = -ir e^{rx}.
+\end{equation*}
+For a state of definite momentum, we normally have in mind, as in examples \ref{eg:momentum-operator}
+and \ref{eg:moat-orthogonal-traveling-waves},
+an oscillating wave where $r=ik$ is purely imaginary. But what if $r$ is real, say $r=1$ (ignoring units)? Then
+our wavefunction is $e^x$, and it's a state of definite momentum --- \emph{imaginary} momentum.
+Oh no, what's going on? Nice polite observables like momentum aren't supposed to have imaginary eigenvalues.
+
+The resolution to this paradox lies in the fundamental principles of quantum mechanics that we've learned.
+Wavefunctions are supposed to belong to a vector space in
+which we have a well-defined inner product. A wavefunction like $\Psi=e^x$ is ruled out by this requirement,
+because $\langle \Psi|\Psi\rangle$ is infinite, and therefore undefined.
+
+Of course we could raise the same objection to a wavefunction like $\Phi=e^{ikx}$ defined for all real values
+of $x$. But when we work with wavefunctions like $\Phi$, we usually just have in mind a computational
+shortcut, with the actual wavefunction being some kind of wavepacket or wave train consisting of a finite
+number of wavelengths. (Or we could be talking about rotation, as in the quantum moat
+of example \ref{eg:moat-orthogonal-traveling-waves}. Note that in such an example, oscillating functions
+can be made to join smoothly to themselves as they wrap around, but this doesn't work with
+functions like $e^x$.)
+\end{eg}
+
+<% begin_sec("Averages",nil,'qm-inner-product-averages') %>
+
+The average family lives down the street from me. Their family income in 2014 was \$72,641,
+and they have 2.5 kids. This joke depends on the fact that you can't superpose families to
+make a single family --- but we \emph{can} do this for wavefunctions. Suppose that the
+particle-in-a-box wavefunction $<% eqn_image("eqn-wave1") %>$ has a definite energy of 1 unit,
+$\mathcal{O}_E<% eqn_image("eqn-wave1") %>=1<% eqn_image("eqn-wave1") %>$. This says that $<% eqn_image("eqn-wave1") %>$
+is a state of definite energy 1, so that when we act on it with the energy operator
+$\mathcal{O}_E$, the result is just to multiply the wave by 1 (the eigenvalue).
+
+If this is true, then shortening the wavelength by a factor of
+2 means increasing the momentum by a factor of 2, and increasing the energy by a factor
+of 4. Therefore the wavefunction $<% eqn_image("eqn-wave2") %>$ has 4 units of energy
+$\mathcal{O}_E<% eqn_image("eqn-wave2") %>=4<% eqn_image("eqn-wave2") %>$.
+
+Now there is nothing wrong with mixing these together to get a state 
+$\Psi=c<% eqn_image("eqn-wave1") %>+c'<% eqn_image("eqn-wave2") %>$. If both $c$ and $c'$ are nonzero,
+then we expect to get a state with properties in between those of
+$<% eqn_image("eqn-wave1") %>$ and $<% eqn_image("eqn-wave2") %>$.  If we measure the energy
+of such a state, then our wavefunction becomes entangled with that of the
+particle, and we look like this:
+\begin{equation*}
+ c\fbox{\parbox{30mm}{We measured the energy to be 1.}}
++c'\fbox{\parbox{30mm}{We measured the energy to be 4.}}.
+\end{equation*}
+Suppose we make the mixture an equal one, $c=c'$. Then the average should be $(1+4)/2=2.5$.
+This turns out to be easily expressible using an inner product:
+\begin{equation*}
+  \langle \Psi|\mathcal{O}_E \Psi \rangle = 2.5.
+\end{equation*}
+It's a good exercise to work this out for yourself 
+(problem \ref{hw:two-point-five-kids}, p.~\pageref{hw:two-point-five-kids}).\label{two-point-five-kids}
+The key point is that
+$\Psi$ can be expressed as a superposition of states of definite energy
+$\Psi=c<% eqn_image("eqn-wave1") %>+c'<% eqn_image("eqn-wave2") %>$, and when
+the operator $\mathcal{O}_E$ works on $\Psi$, it gives
+$\mathcal{O}_E\Psi=c<% eqn_image("eqn-wave1") %>+4c'<% eqn_image("eqn-wave2") %>$. (And remember
+that by normalization, $|c|=|c'|=1/\sqrt{2}$.)
+
+This is a general rule for calculating averages: for a state $\Psi$, the
+average value for an observable $\mathcal{O}$ is $\langle \Psi|\mathcal{O} \Psi \rangle $.
+Because observables are hermitian, this is the same as $\langle \mathcal{O}\Psi| \Psi \rangle $.
+
+<% end_sec('qm-inner-product-averages') %>
+
+\startdqs
+
+\begin{dq}\label{dq:naughty-dot-product}
+Suppose that by rotating vectors we could change the results of dot products. Explain why this would
+be very naughty, first by using an example in which $\vc{u}\cdot\vc{u}=1$, and then, just to make
+it naughtier, one where $\vc{u}\cdot\vc{v}=0$.
+\end{dq}
+
+\begin{dq}
+Suppose that as a system evolved over time, inner products of wavefunctions could change.
+As in discussion question \ref{dq:naughty-dot-product}, give shockingly naughty examples
+where initially we have $\langle \Psi|\Psi \rangle=1$ and $\langle \Psi|\Phi \rangle=0$,
+but later these inner products change.
+\end{dq}
+
+<% end_sec('qm-inner-product') %>
+
+<% begin_sec("Completeness",nil,'qm-completeness') %>
+
+We have used math to back up our claim that distinguishable states are orthogonal.
+Going in the opposite direction, suppose that $\langle u|v\rangle=0$. How can we then conclude that
+there exists some observable $\mathcal{O}$ that can distinguish them? There is no straightforward
+mathematical reason why
+this must be true, but it would not make sense physically to talk about two states that were utterly distinct
+and yet indistinguishable by any experiment. We therefore take this as a postulate.\footnote{Our statement
+of the completeness principle refers to taking a sum of wavefunctions.
+Because the physical motivation for the completeness postulate is so appealing, physicists are willing to
+stretch the definition of the word ``sum'' in order to make it true. The sum can be an infinite sum,
+and in certain cases we may even need to make it an integral, which is a kind of continuous sum.
+For example, consider a one-dimensional particle in a box.
+A complete set of observables for this
+system can be found by picking the energy operator alone. Now
+suppose we throw a particle in the box, in such a way that its
+position is equally likely to be anywhere in the box, i.e., its wavefunction is supposed to
+be constant throughout the box. Ignoring normalization, this constant wavefunction can be expressed as an infinite
+series in terms of the states of definite energy as
+$<% eqn_image("eqn-wave1") %>+\frac{1}{3}<% eqn_image("eqn-wave3") %>+\frac{1}{5}<% eqn_image("eqn-wave5") %>+\ldots$
+This kind of representation of a function as an infinite sum of sine waves is called a Fourier series.}
+
+\begin{important}[Completeness]\label{qm-completeness-stated}
+For any system of interest, there
+exists a set of compatible observables, called a complete set, such that
+any state of the system can be expressed as a sum of wavefunctions having definite values of these 
+observables. 
+\end{important}
+
+\noindent The completeness postulate was discussed at a more elementary level in section \ref{subsec:quantum-numbers}, p.~\pageref{subsec:quantum-numbers}.
+
+<% marg(30) %>
+<% fig(
+  'vec-app-basis','',{'anonymous'=>true,'title'=>"Linear algebra application",
+  'text'=>
+    %q{%
+      A basis is one of the most fundamental concepts in linear algebra (p.~\pageref{lin-alg-basis}).
+      We don't always need to choose a basis, and if we do, the choice is ours to make.
+    }
+  })
+%>
+<% end_marg %>
+
+The set of wavefunctions referred to above is called a basis. (The terminology
+comes from linear algebra.) If we
+require normalization and ignore the undetectable phase, then choosing
+a complete set of observables is equivalent to choosing a basis.
+Therefore ``choice of basis'' and ``choice of a complete set of
+observables'' are nearly synonyms, so we will usually use the shorter
+phrase.  Normally there is more than one possible choice of basis.
+The choice from among these possibilities is arbitrary, and nature doesn't
+care which one we pick. That is, there is \emph{no preferred basis}.\label{no-preferred-basis}
+An example of this principle is the fact that we habitually talk about ``up'' and
+``down'' for the spin of an electron, which we are free to do, although it would
+be equally permissible to talk about left and right. Another good example
+is the discussion of the double degeneracy of the quantum moat on p.~\pageref{subsubsec:degeneracy},
+where we were free to talk about a basis consisting of either two standing waves or two traveling waves.
+
+As an example of the completeness principle, we have seen in the
+example in fig.~\figref{completeness-ylm},
+p.~\pageref{fig:completeness-ylm}, that for a rotor, the state with
+$\ell=1$ and $\ell_x=0$ can be written as a sum of the states with
+$\ell_z=-1$ and $\ell_z=1$. In the language of the completeness
+postulate, we can express this as follows. Let our system be the set
+of possible states of a rotor. The observables $L$ and $L_z$ are
+compatible, and they turn out (although we will not prove it here) to
+be a complete set of observables for this system.  The completeness
+postulate is satisfied in this example because the state
+with $\ell_x=0$ can be expressed as
+$|\ell_z=-1\rangle/\sqrt{2}+|\ell_z=1\rangle/\sqrt{2}$.
+
+<% marg(0) %>
+<%
+  fig(
+    'stern-gerlach-twice',
+    %q{%
+      A beam of oxygen molecules, with $\ell=1$, is filtered through two Stern-Gerlach spectrometers.
+    }
+  )
+%>
+<% end_marg %>
+
+Translating this scenario into a hypothetical real-world experiment, suppose that, as in
+figure \figref{stern-gerlach-twice}, we pass a beam of randomly oriented oxygen molecules
+(referred to as an unpolarized beam)
+through a Stern-Gerlach spectrometer that disperses them into beams with $\ell_x=-1$, 0, and $+1$.
+All three states are present, and in fact the beam is split into three beams of equal intensity, $1/3$
+that of the original beam.\footnote{The equality of these three intensities is not obvious geometrically,
+but becomes more plausible if you consider the randomness of the unpolarized beam as being defined by
+its having maximum entropy.}
+Then we throw away all but the molecules having $\ell_x=0$,
+and pass these through a second spectrometer, this one selecting states according to their
+$\ell_z$. You can simulate experiments like this using an app
+at \url{physics.weber.edu/schroeder/software/Spins.html}.
+We have already found that the wavefunction of the
+intermediate beam is equal to the sum
+$|\ell_z=-1\rangle/\sqrt{2}+|\ell_z=1\rangle/\sqrt{2}$,
+so interpreting squares of amplitudes as probabilities we predict a probability $(1/\sqrt{2})^2=1/2$
+that each particle will be measured to have $\ell_z=-1$, the same probability for $-1$, and
+zero probability for 0.
+As explored in discussion question \ref{dq:stern-gerlach-twice-qualitative} on 
+p.~\pageref{dq:stern-gerlach-twice-qualitative}, this does \emph{not} mean that
+the two beams that emerge from the second spectrometer have definite values of
+both $\ell_x$ and $\ell_z$; those two observables are not compatible.
+
+In most of the examples we've encountered so far, it has been possible
+to think of the ``wavefunction'' as exactly what the word implies: a
+mathematical function of $x$ (and possibly also of $y$, and $z$),
+whose shape we visualize as a wave. The completeness principle,
+however, does not assign any special role to the position operator,
+nor does quantum mechanics in general. And there are cases where we do
+not even have the option of resorting to the picture of a wave that
+exists in space. For example, the intrinsic angular momentum $\hbar/2$
+of an electron is not a possible amount of angular momentum for a
+particle to generate by moving through space. In section
+\ref{subsec:qm-proton-in-b}, p.~\pageref{subsec:qm-proton-in-b},
+we will discuss a very simple quantum-mechanical system consisting of
+an electron, at rest, surrounded by a uniform magnetic field.  In this
+example, the motion of the electron through space is not even of
+interest, and a complete set of observables simply consists of $L$ and
+$L_z$ (or $s$ and $s_z$, in notation that emphasizes that we're
+talking about intrinsic spin).
+
+<% end_sec('qm-completeness') %>
+
+<% begin_sec("The Schr\\\"odinger equation in general",nil,'s-eqn-general') %>
+\index{Schr\"odinger equation!time-dependent}
+This raises the question of what we mean by ``the Schr\"odinger equation'' in cases where nothing is being expressed as a function
+of $x$. The basic idea of the Schr\"odinger equation is that a particle's energy is related to its frequency by $E=hf$, or $E=\hbar\omega$.
+In the form of the time-dependent Schr\"odinger equation that we have discussed on p.~\pageref{s-eqn-time-dep},
+$i\hbar\partial\Psi/\partial t=-(\hbar^2/2m)\nabla^2 \Psi+U\Psi$, the quantity on the right-hand side of the equation is just
+the energy operator acting on the wavefunction. So to generalize this to cases where the wavefunction isn't expressed in terms of $x$,
+we just make that substitution:
+\begin{equation*}
+  i\hbar\frac{\partial\Psi}{\partial t} = \mathcal{O}_E \Psi.
+\end{equation*}
+This is as good a point as any to introduce a not-very-memorable
+piece of terminology, which is that the energy operator in quantum mechanics
+is called the \emph{Hamiltonian},\index{Hamiltonian} after W.R.~Hamilton. There is a classical
+version of the Hamiltonian, which is usually a synonym for the energy of
+a system, although it turns out that there are cases where it is not the same, e.g.,
+when we adopt a rotating frame of reference. In both classical and quantum mechanics,
+the Hamiltonian is what determines the time-evolution of a system; in quantum mechanics,
+this is because it is the Hamiltonian that occurs in the Schr\"odinger equation.
+Because the Hamiltonian occurs so frequently, we will notate it as $\hat{H}$ rather than
+the more cumbersome $\mathcal{O}_E$, where the hat is to remind us that it is an operator.
+A similar notation can be used for other operators when it is easier to write, e.g.,
+$\hat{s}_z$ rather than the clumsy $\mathcal{O}_{s_z}$. In the hat notation,
+the time-dependent Schr\"odinger equation looks like this:
+\begin{equation*}
+  i\hbar\frac{\partial\Psi}{\partial t} = \hat{H} \Psi.
+\end{equation*}
+
+\begin{eg}{An illegal energy operator}\label{eg:non-hermitian-energy}
+We have pointed out on p.~\pageref{qm-why-hermitian-observables} some reasons to think that
+it would be bad to have a quantum-mechanical observable whose eigenvalues were not real, i.e.,
+one represented by a non-hermitian operator (p.~\pageref{hermitian}). Even worse things happen
+if we try to use a non-hermitian operator for our energy operator, the Hamiltonian.
+As the simplest possible example, consider a system consisting of a particle at rest, and
+the Hamiltonian defined by
+\begin{equation*}
+  \hat{H}\Psi = ik\Psi,
+\end{equation*}
+where $k$ is a nonzero real constant with units of energy.
+That is, the energy of the system is a constant value, which is the imaginary number $ik$.
+This operator has a single eigenvalue, $ik$, which is not real. The fact that it has a non-real
+eigenvalue is equivalent to a statement that it is non-hermitian (problem \ref{hw:trivial-nonhermitian},
+p.~\pageref{hw:trivial-nonhermitian}). If we plug this in to the Schr\"odinger equation, we get 
+$i\hbar\partial\Psi/\partial t=ik\Psi$, or
+\begin{equation*}
+  \frac{\partial\Psi}{\partial t} = \frac{k}{\hbar}\Psi.
+\end{equation*}
+This differential equation is not hard to solve by the guess-and-check method. A function whose
+derivative is itself (except for a multiplicative constant) is an exponential. The solution is
+\begin{equation*}
+  \Psi = Ae^{(k/\hbar)t},
+\end{equation*}
+where $A$ is a constant. This is bad. Very bad. If $\Psi$ is properly normalized at $t=0$, then
+it will not be normalized at other times. If $k$ is positive, then the total probability will
+become greater than 1 for $t>0$, which we could perhaps interpret as meaning that the particle
+is spawning more copies of itself. Almost as bad is the case of $k<0$, for which the particle
+exponentially vanishes into nothingness like the Cheshire cat. Either behavior would violate
+the principle of the unitary evolution of the wavefunction (p.~\pageref{unitarity-postulate}).
+\end{eg}
+
+<% end_sec('s-eqn-general') %>
+
+<% begin_sec("Summary of the structure of quantum mechanics",nil,'qm-summary') %>
+
+We can now summarize the logical structure of quantum mechanics using the following five
+principles.
+
+\begin{enumerate}
+
+\item \emph{Wavefunction fundamentalism:} All knowable information
+about a system is encoded in its wavefunction (ignoring phase and
+normalization). 
+
+\item \emph{Inner product:} Wavefunctions come equipped with an inner product that has the properties
+$\langle u | \alpha v+\beta w \rangle = \alpha\langle u | v \rangle + \beta\langle u | w \rangle$
+and $\langle u | v \rangle = \langle v | u \rangle^*$.
+
+\item \emph{Observables:} In quantum mechanics, any observable is
+represented by a linear operator $\mathcal{O}$ that takes a wavefunction as an input
+and is hermitian, $\langle \mathcal{O} u|v\rangle = \langle  u|\mathcal{O} v\rangle$.
+
+\item \emph{Unitary evolution of the wavefunction:} The wavefunction
+evolves over time, according to the Schr\"odinger equation 
+$i\hbar \partial\Psi/\partial t=\hat{H}\Psi$, in a
+deterministic manner.
+Because $\hat{H}$ is an observable, the Schr\"odinger equation is
+\emph{linear} and also \emph{unitary}. Unitarity means that
+$\langle u(t)|v(t) \rangle = \langle u(t')|v(t') \rangle$,
+so that probability is conserved and information is never lost.
+
+\item \emph{Completeness:} For any system of interest, there
+exists a set of compatible observables, called a complete set, such that
+any state of the system can be expressed as a sum of wavefunctions having definite values of these 
+observables.
+
+\end{enumerate}
+
+<% end_sec('qm-summary') %>
+
+<% end_sec('qm-structure-2') %>
+
+<% begin_sec("Applications to the two-state system",nil,'qm-2-state') %>
+
+<% begin_sec("A proton in a magnetic field",nil,'qm-proton-in-b') %>
+
+As an application of the ideas discussed in section \ref{sec:qm-structure-2}, let us consider the example
+of a proton at rest in a uniform magnetic field. We will find that this very simple example
+has surprising properties, and also that it throws light on much more general ideas than
+would be expected, given how specific the situation is. We discuss the proton because the
+physics is then the physics of nuclear magnetic resonance (NMR), which is the technology used
+for, among other things, medical MRI scans.
+\index{NMR (nuclear magnetic resonance)}\index{MRI (magnetic resonance imaging)|see {NMR}}
+
+% SN doesn't have the semiclassical description that LM has as eg:nmr.
+
+Classically, the proton feels no magnetic force because it is at rest, and also because the
+field is uniform (unlike the one in the Stern-Gerlach experiment). Therefore we expect it to stay
+at rest. Its energy is $-\vc{m}\cdot\vc{B}$, and for the reasons discussed 
+in sec.~\ref{subsec:g-factor}, p.~\pageref{subsec:g-factor},
+the magnetic dipole moment $\vc{m}$ is proportional
+to the spin angular momentum vector $\vc{s}$, so that the energy can be broken up into a sum of
+three terms as $ks_xB_x+ks_yB_y+ks_zB_z$, where $k$ is $-1/g$ times the proton's charge-to-mass ratio.
+
+Quantum-mechanically, the components of the magnetic field will act
+like ordinary numbers (since the field is static, and we aren't trying
+to describe its dynamics quantum-mechanically), but the components of
+the angular momentum are observable properties of the proton, to be
+represented by operators.  There is not always a foolproof procedure
+for translating a classical expression into something
+quantum-mechanical, but in this example it seems sensible to imagine
+that the classical expression for the energy can be made into a
+quantum-mechanical energy operator that is obtained simply by
+substituting the components of the angular momentum operator into the
+expression.
+
+What we have determined so far is that the Hamiltonian $\hat{H}$
+will simply be a weighted sum of $\hat{s}_x$, $\hat{s}_y$, and $\hat{s}_z$,
+with the weighting determined by the components of the
+magnetic field.
+
+\newcommand{\emat}{\varepsilon}
+\newcommand{\fmat}{\mathcal{f}} % lowercase script, requires package dutchcal, see simple.cls
+
+From our previous study of angular momentum in quantum mechanics, we
+know that a full description of our proton's angular momentum can be given by
+specifying the magnitude of the angular momentum, which is a fixed $\hbar/2$,
+and its component along some arbitrarily chosen axis, say $z$. We have a state
+$|\uparrow\rangle$ which has eigenvalue $s_z=+\hbar/2$, and
+a $|\downarrow\rangle$ with $-\hbar/2$. If the magnetic field
+is parallel to the $z$ axis, then the action of the Hamiltonian is easy to define
+in terms of these two states,
+\begin{align*}
+  \hat{H} |\uparrow\rangle = \quad &\emat|\uparrow\rangle \qquad \text{and} \\
+  \hat{H} |\downarrow\rangle = -&\emat|\downarrow\rangle,
+\end{align*}
+where to keep the notation compact we write $\emat=k\hbar/2$, which is an energy.
+The interpretation is that if there is no external magnetic field ($k=0$), then
+the energies of these two states are the same (and set to zero because we choose that
+as an arbitrary definition), while in the presence of a $B_z$ the two energies
+become unequal. The pair of states is ``split'' in energy by the field. Note that
+the above two equations are sufficient to define
+the Hamiltonian for \emph{all} states, not just for states in which $s_z$ has a definite
+value. This follows from the completeness principle --- a state having a definite
+value of, say, $s_x$ can be written as some kind of linear combination of the form
+$\alpha|\uparrow\rangle+\beta|\downarrow\rangle$, and we then have
+$\hat{H}=\alpha\emat |\uparrow\rangle-\beta\emat|\downarrow\rangle$.
+
+<% marg() %>
+
+<% fig(
+  'nmr-applications','',{'anonymous'=>true,'title'=>"Application to MRI scans",
+  'text'=>
+    %q{%
+      In nuclear magnetic resonance (NMR), which is the technological basis for medical MRI scans,
+      a very large DC magnetic field, $\sim 3\ \zu{T}$, is applied to the sample using a superconducting magnet.
+      Protons in hydrogen atoms have their spin states split in energy by 
+      by $\Delta E=2\emat=k\hbar$. After $\sim1\ \sunit$, the protons reach a new thermal equilibrium state in which
+      the probability of $|\downarrow\rangle$ and $|\uparrow\rangle$ differ by $\sim10^{-5}$.
+
+      A brief radio-frequency pulse
+      is then applied at the frequency $\omega$ such that $\Delta E=\hbar\omega$, so that a radio photon
+      has the correct energy to cause a transition between the two spin states. Since there is a large
+      number of protons, and they interact with one another, their response can be described semiclassically.
+      The magnetization vector of the sample precesses in a complicated manner, which can be affected
+      by the polarization and duration of the pulse.
+
+      After the radio pulse has stopped, the protons return to equilibrium again, and this changing magnetic
+      field causes induced electric fields in a coil, which picks up a signal at the frequency $\omega$.
+      Spatial resolution for imaging is accomplished by adding a gradient to the magnetic field, amounting
+      to a few percent over a distance of one meter, so that $\omega$ has different values for different
+      points in space.
+    }
+  })
+%>
+<% end_marg %>
+
+Now suppose that the magnetic field is not parallel to the $z$ axis. One way to handle
+this situation would be simply to redefine the coordinate system so that the $z$ axis
+was back in alignment with the direction of the field. But suppose that's not convenient.
+Then the Hamiltonian will have a different form. But because the Hamiltonian must be Hermitian
+(see p.~\pageref{hermitian}), there is not much freedom in choosing this form. It must
+look something like this:
+\begin{align*}
+  \hat{H} |\uparrow\rangle =    &\emat|\uparrow\rangle + \fmat|\downarrow\rangle \\
+  \hat{H} |\downarrow\rangle =  &\fmat^*|\uparrow\rangle-\emat|\downarrow\rangle.
+\end{align*}
+Here the constant $\fmat$ is a complex number with units of energy. The interpretation is
+that $\emat$ tells us how much energy splitting we would have had if the magnetic field
+had not had any $x$ or $y$ components, while $\fmat$ brings in the effect of those components.
+We could go ahead and work out the eigenvalues of this operator by writing down the eigenvalue
+equation and solving it by brute force, but the result is likely to seem less mysterious if
+we instead apply the following physical argument.
+
+Although $\fmat$ lies at some point in the complex plane with some
+phase angle $\operatorname{arg}\fmat$, such phase angles in quantum
+mechanics are not directly observable.  Since energies \emph{are}
+observable, it follows that the two eigenvalues of energy can only
+depend on the magnitude of $\fmat$, not on its phase. By rotational
+invariance (sec.~\ref{subsec:rotationalinvariance},
+p.~\pageref{subsec:rotationalinvariance}), we also know that these
+energies can only depend on $|\vc{B}|=\sqrt{B_x^2+B_y^2+B_z^2}$, and
+in fact when the direction of the field is fixed they must be
+proportional to $|\vc{B}|$ (not to, e.g., the cube of the field). We
+have already interpreted $\emat$ as being essentially $B_z$, except
+for a constant of proportionality, so it follows from units that the
+energies must be of the form
+$E=\pm\sqrt{\emat^2+(\ldots)|\fmat|^2}=\pm\sqrt{\emat^2+(\ldots)\fmat^*\fmat}$,
+where $(\ldots)$ represents a universal unitless constant, which turns
+out to be 1. We therefore have for the energies the result
+\begin{equation*}
+  E=\pm\sqrt{\emat^2+\fmat^*\fmat}.
+\end{equation*}
+Note that our earlier result of $E=\pm \emat$ is recovered when $\fmat=0$.
+
+<% end_sec('qm-proton-in-b') %>
+
+<% begin_sec("The ammonia molecule",nil,'qm-ammonia') %>
+
+I chose the example of the proton in a magnetic field in the preceding section for ease
+of computation, but the treatment of the general case where $\fmat\ne0$ may not have seemed
+especially compelling, since we would always have the freedom to align our $z$ axis with the
+field, giving $\fmat=0$. But our results from that analysis are of much greater generality.
+They do not depend on any facts about the system other than the fact that it is a system
+with two states. To see the full power and generality of this approach, we will apply it to the ammonia
+molecule, $\zu{NH}_3$, shown in figure \figref{ammonia}.
+
+<% marg() %>
+
+<%
+  fig(
+    'ammonia',
+    %q{%
+      The ammonia molecule, in states that are inverted relative to one another.
+    }
+  )
+%>
+<% end_marg %>
+
+At ordinary temperatures, this molecule is likely to be rotating, and
+its angular momentum will have some component about its symmetry axis
+(the left-right axis in the diagram). Let's say, for example, that the
+angular momentum vector points to the right, which we'll say is the positive
+$x$ direction.  Then the two
+orientations of the molecule shown in figure \figref{ammonia} are
+distinguishable.  In one, the electric dipole vector (example
+\ref{eg:molecular-dipoles}, p.~\pageref{eg:molecular-dipoles}) points
+in the same direction as the angular momentum vector, and in the other
+they point in opposite directions.\footnote{This argument shows that when $L_z\ne0$
+we have two distinguishable states, but it does not necessarily tell us anything
+about the converse. When $L_z=0$, are there two states, or only one? The analysis
+in this case is rather intricate, and depends on the Pauli exclusion principle and
+the fact that the hydrogen atoms are all identical, that there are three of them,
+and that their nuclei are fermions. See Townes and Schawlow, Microwave 
+Spectroscopy, 1955, pp.~69-71.} For a fixed angular momentum, we
+have a two-state system, as in section \ref{subsec:qm-proton-in-b}. 
+
+Classically, the molecule's moment of inertia is the same for
+orientations \subfigref{ammonia}{1} and \subfigref{ammonia}{2}, so we
+would expect there to be two states with the same energy.  We can
+always add an arbitrary constant to the energies, so if they're the
+same, we can just say they're both zero.  Does this mean that
+quantum-mechanically, we simply have $\hat{H}=0$? That would be
+boring. But this cannot be true, for the following reason. According
+to the Schr\"odinger equation, a state of definite energy is a state
+that has a definite frequency, so it lasts forever, just twirling its
+phase angle around in the complex plane at a rate $\omega=E/\hbar$. So
+if state 1 were a state of definite energy, then according to the
+Schr\"odinger equation if we initially put the molecule in state 1 it
+would stay in that state forever. But this cannot be the case, because
+we know it is possible for the molecule to switch from state 1 to
+state 2 by turning itself inside out like an umbrella caught by a gust
+of wind. The possibility of this type of inversion is not just an
+optional thing. Vibrations that flex the shape will exist due to
+zero-point motion (p.~\pageref{zpm}). Even if inversion requires a lot
+of energy, and the molecule doesn't have that much energy, there is at
+least some probability of having quantum-mechanical tunneling from 1
+to 2. If we prepare the molecule in state 1, and then observe it at
+some later time, there is some nonzero probability of finding it in
+state 2. This is a contradiction, so our assumption of $\hat{H}=0$
+must have been false.
+
+So the Hamiltonian is not zero, but we already know the full variety of forms that
+the Hamiltonian of a two-state system can have. We only have a couple of parameters
+to play with, the numbers $\emat$ and $\fmat$. 
+We have $\emat=0$
+by symmetry, so the only possible form for the Hamiltonian is this:
+\begin{align*}
+  \hat{H}|1\rangle &= \fmat |2\rangle \\
+  \hat{H}|2\rangle &= \fmat^* |1\rangle.
+\end{align*}
+Because
+we can define the states $|1\rangle$ and $|2\rangle$ with any phases we like, we
+are free to take $\fmat$ to be real, $\fmat^*=\fmat$, although this implies a certain relationship \emph{between} the phases of $|1\rangle$ and $|2\rangle$.
+If we visualize these states as bell-shaped functions of an $x$ coordinate describing the position of the nitrogen relative to the plane of the hydrogens,
+then it would be nice to have a phase convention such that where the tails of the wavefunctions overlap, inside the barrier, they have the
+same phase. This turns out to be the case when $\fmat$ is real and negative, so we will assume that from now on.
+Recycling our previous result for the energies, we have $E=\pm\sqrt{\emat^2+\fmat^2}=\pm\fmat$.
+If the tunneling probability approaches zero, then we expect $\fmat$ to go to zero,
+and the energy splitting approaches zero, as we had expected classically. Experimentally,
+we do observe these two states in ammonia. The difference in energy is extremely small ---
+e.g., for the state with angular momentum $1\hbar$ it is about $9.8\times10^{-5}\ e\zu{V}$, so that if a photon is emitted or absorbed in a transition between the
+states, it lies in the microwave spectrum.
+% calc -x -e "f=23.69448 10^9 Hz; E=hf; E/(e(1 V))"
+%     9.7992486739923*10^-5
+This energy difference equals $2|\fmat|$, and its smallness indicates that the tunneling probability is small.
+
+Let's find the states of definite energy for this system. For the ground state, whose energy is $-|\fmat|$,
+we need to look for a state of the form $|\text{g.s.}\rangle=(\ldots)|1\rangle+(\ldots)|2\rangle$
+such that $\hat{H}|\text{g.s.}\rangle=-|\fmat||\text{g.s.}\rangle=\fmat|\text{g.s.}\rangle$. If we don't worry about normalization
+or an over-all phase, we are free to take the first $(\ldots)$ equal to 1, so that
+$|\text{g.s.}\rangle=|1\rangle+\alpha|2\rangle$, for some complex number $\alpha$. We then
+have
+\begin{align*}
+  \hat{H} |\text{g.s.}\rangle &= \hat{H}(|1\rangle+\alpha|2\rangle) \\
+       &= \fmat |2\rangle+\alpha \fmat |1\rangle,
+\end{align*}
+and setting this equal to $\fmat|\text{g.s.}\rangle$ gives $\alpha=1$, so that
+\begin{equation*}
+  |\text{g.s.}\rangle = |1\rangle+|2\rangle.
+\end{equation*}
+The coefficients $(\ldots)$ that we set out to find are both equal to $+1$.
+Their equal magnitudes tell us that the ground state is one in which the molecule has an \emph{equal} probability
+of existing in either inversion. Since the two coefficients are both positive, and we have defined
+$|1\rangle$ and $|2\rangle$ such that their phases agree when they overlap inside the barrier, this is
+a state of positive parity. The determination of the excited state is left as an exercise, problem
+\ref{hw:ammonia2} on p.~\pageref{hw:ammonia2}.
+
+From a classical point of view, we would think of the set of states
+\begin{equation*}
+  \{\ |1\rangle,\ |2\rangle\ \}
+\end{equation*}
+as the natural way of describing the possible states of the system. These two states
+are the ones that we can draw pictures of, \subfigref{ammonia}{1} and \subfigref{ammonia}{2}.
+But part of the structure of quantum mechanics is that there is \emph{no preferred basis}
+(p.~\pageref{no-preferred-basis}), and there is nothing wrong with using the ground state and first
+excited state to form the basis
+\begin{equation*}
+  \{\ |\text{g.s.}\rangle,\ |\text{ex.s.}\rangle\ \}
+\end{equation*}
+instead. In the language of the completeness principle (p.~\pageref{qm-completeness-stated}),
+one possible choice of a complete set of compatible observables for this molecule is
+the set consisting of a single observable, the energy. The
+\{ground-state,excited-state\} basis just happens to be the one associated with this
+particular observable. If the ammonia molecule had just broken off from some larger molecule,
+then it would be oriented in a specific direction, and we would probably find it more
+convenient to describe it in the \{1,2\} basis.
+
+<% end_sec('qm-ammonia') %>
+
+<% end_sec('qm-2-state') %>
+
+<% begin_sec("Energy-time uncertainty",nil,'et-uncertainty') %>
+
+<% begin_sec("Classical uncertainty relations",nil,'classical-uncertainty') %>
+
+Consider the following classical system of analogies.
+
+\begin{tabular}{llll}
+space & $x$ & $k$      & $\Delta x\Delta k \gtrsim 1$ \\
+time  & $t$ & $\omega$ & $\Delta t\Delta \omega \gtrsim 1$ 
+\end{tabular}
+
+\noindent Here the quantity $k=2\pi/\lambda$ is called the wavenumber.\index{wavenumber}
+The inequality $\Delta x\Delta k \gtrsim 1$ is a kind of classical uncertainty
+relation that is closely related to the Heisenberg uncertainty principle.
+Its classical nature is immediately apparent because it doesn't involve Planck's constant.
+If you look back at the argument given on p.~\pageref{heisenberg-argument}
+to justify the Heisenberg uncertainty principle, you will see that it carries
+through equally well if we simply omit the quantum-mechanical ingredients and
+use it to put a bound on $\Delta x\Delta k$ instead of $\Delta x\Delta p$. Once
+we've established the bound on $\Delta x\Delta k$, the one on $\Delta x\Delta p$
+follows immediately because $p=h/\lambda=\hbar k$.
+
+The second line of the table is in strict analogy to the first line.
+A good practical example is the high-speed transmission of digital
+data over transmission lines such as fiber-optic cables. Suppose that
+we wish to send a string of 0's and 1's, and a 1 is to be represented
+by a square pulse. If we want to transmit the data at high speed, then
+we need the duration $\Delta t$ of this pulse to be short, perhaps in
+the microsecond or even nanosecond range. This cannot be done if the
+signal consists only of a single frequency. A signal that only
+contains a single, pure frequency is just a sinusoidal wave that has
+existed infinitely far back in the past and will exist infinitely far
+into the future. Such a wave carries no information at all. Out
+frequency-time uncertainty relation tells us that if the duration of a
+pulse is to be, say, a microsecond, then the signal's spread in
+frequency much be at least on the order of 1 MHz. This is why we use
+the term ``bandwidth'' to describe the speed of a communication
+channel. 
+
+<% end_sec('classical-uncertainty') %>
+
+<% begin_sec("Energy-time uncertainty",nil,'et-uncertainty-subsubsec') %>
+
+In a quantum-mechanical context, we have $E=\hbar\omega$, so there is
+an energy-time uncertainty relation,
+\begin{equation*}
+  \Delta E\Delta t \gtrsim \hbar.
+\end{equation*}
+As with the Heisenberg uncertainty principle for momentum and position,
+the symbol $\gtrsim$ means that we leave out a numerical factor, which can
+only be precisely defined if we fix some specific statistical definition of
+$\Delta$, e.g., a standard deviation.
+
+The interpretation of the energy-time uncertainty relation is a little
+tricky, because although the classical analogy between space and time
+is exact, the quantum-mechanical analogy breaks down. This is because
+time in nonrelativistic quantum mechanics, unlike position, is not an
+observable (example \ref{eg:t-not-observable}).  Time in this theory
+is just a universal parameter. The physicist Lev Landau liked to tell
+his students that there was no energy-time uncertainty relation,
+because ``I can measure the energy, and look at my watch; then I know
+both energy and time!'' One good way of interpreting it is that if
+there is a transfer of energy between two systems, then it relates
+the uncertainty $\Delta E$ in the amount of energy transferred during the
+duration $\Delta t$ of the interaction.
+
+For example, suppose we wish to bounce a photon off of a hydrogen atom
+in order to determine whether the atom is in its ground state. This is
+not necessarily an easy thing to do by extracting whatever information
+we get from the reflected photon, but the ground state is orthogonal
+to the other states, so we are at least encouraged to believe that it
+is not theoretically impossible. But there is a hard theoretical limit
+on how \emph{quickly} we can make such a determination. The difference
+in energy between the ground state and the first excited state is
+$1.6\times10^{-18}\ \junit$, so we must use a photon with an energy
+less than this amount, or else the act of observing the atom may in
+fact destroy the property we were hoping to measure. By the
+energy-time uncertainty relation, this implies that the measurement
+process cannot be done in less than about $10^{-15}$ seconds.  This
+example may seem impractical, but in fact computer memories are
+starting to reach the level of speed and miniaturization at which such
+fundamental constraints become relevant.
+
+% calc -x -e "A=2.2 10^-18 J; E=A(1-1/4); t=h/E"
+
+\begin{eg}{Mortality for hydrogen}
+In atomic physics, when a photon is emitted or absorbed it is almost always
+in a wave pattern with angular momentum 1 (i.e., $1\hbar$) and negative parity (example \ref{eg:parity}).
+Classically, this is the type of radiation pattern that we would get from an electric dipole spinning
+end over end, so we call it an electric dipole transition.
+Because the electromagnetic interaction has a symmetry between left- and right-handedness
+(section \ref{subsec:em-parity}, p.~\pageref{subsec:em-parity}), this means that
+an electric dipole transition can never cause a transition from one state of an atom to another
+state with the same parity.
+
+Now the ground state of the hydrogen atom has $\ell=0$ and is therefore a state of positive parity.
+One of the first excited states, referred to as the 2s state, also has these properties, and therefore
+it is impossible for the 2s state to decay to the ground state by emitting an electric dipole photon.
+The happy atom probably believes that once it's in the exalted 2s state, it can stay that way forever.
+One way for it to be cheated of immortality is if it undergoes a collision with another atom, but
+in some so-called planetary nebulae (hot clouds of gas cast off by dying stars), the density
+can be so low that collisions are very infrequent. In this situation, the dominant process for
+decay of the 2s state can be the simultaneous emission of \emph{two} photons. An exact and rigorous
+calculation of the rate of decay for this process is quite technical, but a fairly reasonable estimate
+can be obtained by the following semiclassical argument based on the energy-time uncertainty relation.
+
+The typical rate of emission for a photon, when not forbidden by
+parity, is $R\sim10^9\ \sunit^{-1}$, i.e., it takes about a nanosecond.
+We can think of the two-photon decay as an energy-nonconserving jump
+up to some \emph{higher}-energy state, with the emission of a photon,
+followed by the emission of a second photon leading down to the ground
+state. The first jump can happen because of the energy-time
+uncertainty relation, which allows the electron to stay in the
+intermediate state for a time $t\sim h/E$, which is on the order of
+$10^{-15}\ \sunit$.  The probability for the second photon to be
+emitted within this time is $Rt$, so the rate for the whole two-photon
+process is $R^2t\sim 10\ \sunit^{-1}$.  Considering the extremely
+crude nature of this calculation, the result is in good agreement with
+the observed rate of about $0.1\ \sunit^{-1}$. The process is actually
+observed, and contributes a continuous background spectrum in addition to
+the discrete line spectrum when such nebulae are observed with a spectrometer
+through a telescope.
+\end{eg}
+
+<% marg(-25) %>
+
+<%
+  fig(
+    'lissajous-figure',
+    %q{%
+      The Lissajous figure $x=\cos t$, $y=\sin 2t$.
+    }
+  )
+%>
+<% end_marg %>
+
+A fundamental application of the energy-time uncertainty relation is to the explication of
+what it means to measure time in quantum mechanics. In example \ref{eg:t-not-observable}
+on p.~\pageref{eg:t-not-observable} we argued that time is not an observable in quantum mechanics
+because time cannot in general be measured by looking at a quantum-mechanical system:
+many quantum-mechanical systems are too simple to function as clocks.\label{et-too-simple-to-be-a-clock}
+We can now see in more detail what ``too simple'' might mean here. Microscopic systems, unlike
+macroscopic ones, are often encountered in a definite state of energy, such as the ground state.
+Such a state has $\Delta E=0$ and therefore by the energy-time uncertainty relation it has
+$\Delta t=\infty$. In other words, the only time evolution in such a system consists of the system's
+over-all phase twirling in the complex plane at a steady rate, but phase isn't measurable, so we
+can't use this rotation like the hand on a clock. To make a clock, we need, at a bare minimum, a
+system that is in a superposition of \emph{two} different energy levels. We then have two independent
+phases. Although absolute phases are not measurable, relative ones are, and for example when we measure
+a double-slit interference pattern, that is exactly what we are doing: observing (statistically) the
+difference between two phases. As a loose conceptual analogy, this is like the idea that a figure-eight
+Lissajous pattern has an identifiable feature where it crosses itself, the crossing being like the tick
+of a clock.
+
+<% end_sec('et-uncertainty-subsubsec') %>
+
+<% end_sec('et-uncertainty') %>
+
+<% begin_sec("Randomization of phase",nil,'et-phase-randomization') %>
+
+<% begin_sec("Randomization of phase in a measurement",nil,'et-phase-randomization-meas') %>
+
+The energy-time uncertainty relation can help us to understand one of the most
+puzzling issues in quantum mechanics, which is the problem of measurement.\index{quantum mechanics!measurement problem}
+What happens
+when we use a macroscopic measuring device, which is well described by classical physics,
+to observe a microscopic system, which is quantum-mechanical? How do we reconcile these two seemingly
+incompatible descriptions of reality when both appear to be in play simultaneously?
+
+Consider an electron passing through a double-slit apparatus. We have already considered
+the possibility of covering one slit (discussion question \ref{dq:cover-one-slit}, p.~\pageref{dq:cover-one-slit}).
+Suppose instead that we carefully watch one slit through a microscope, and see whether or not the electron
+passed through it. If we could perform this observation without disturbing the electron, then
+a paradox would arise. For if we haven't disturbed the electron, then there should still be
+a double-slit interference pattern. But if we watch one slit, then half of the time we should
+see that the electron did not go through it, and therefore the slit's existence is of no importance,
+and we can't possibly get a double-slit interference pattern.
+
+<% marg(30) %>
+<%
+  fig(
+    'double-slit-spying-on-one-slit',
+    %q{%
+      Spying on one slit in the double-slit experiment.
+    }
+  )
+%>
+<% end_marg %>
+
+To avoid this contradiction, it appears that nature must conspire\label{measurement-randomizes-phase}
+against us in such a way that observing the slit inevitably
+\emph{does} disturb the electron. The energy-time uncertainty relation
+explains why this is so. Our observation of the electron is an
+interaction between the electron and our macroscopic measuring device.
+This interaction will presumably transfer some amount of energy $E$
+into or out of the electron, and if our goal was to avoid disturbing
+the electron, we would imagine that it would be best to make $E$ very
+small. But the energy-time uncertainty $\Delta E\Delta t\gtrsim h$
+relation tells us that if this energy is to have a value that is
+confined to some small range $\Delta E$, then the time $\Delta t$ it
+takes for the interaction to occur must be at least $\sim h/\Delta E$.
+While the electron is being subjected to this interaction, its
+phase is rotating around the complex plane like $e^{i\omega t}=e^{i
+Et/\hbar}$.  The total change in the phase angle $\phi=E\Delta
+t/\hbar$ is uncertain because $E$ is uncertain, so our observation
+will inevitably change the phase by some random amount, which is
+uncertain by an amount $\Delta\phi=\Delta E \Delta t/\hbar$, so
+$\Delta\phi \gtrsim 1$.
+
+Thus is won't actually help us if we make the
+interaction very gentle, because the lengthening of the time has a
+compensating effect. Any slight alteration in the frequency will have more
+time to accumulate into a big phase difference, and we still end up with a phase uncertainty that
+is at least on the order of 1. Although we haven't stated our
+uncertainty relations with enough mathematical precision to state this
+lower bound with all the right factors of 2 and $\pi$, it turns out
+that $\Delta\phi \ge 2\pi$. That is, any such observation will have
+the effect of \emph{completely} randomizing the phase of the thing
+being observed. In fact, macroscopic measuring devices normally exceed
+the bounds set by the uncertainty relations by many orders of
+magnitude, so there will typically be a vast amount of overkill in
+this randomization. This is a general rule for reasoning about quantum-mechanical
+measurements: they always completely randomize the quantum-mechanical phase of the thing being
+measured. This provides a more physical justification for our more abstract mathematical proof
+in example \ref{eg:phase-not-observable} on p.~\pageref{eg:phase-not-observable} that phase is
+not an observable.
+
+In our example of the double slit, what will be the effect of this randomization of the electron's
+phase? In our usual description of the double slit, we assume that the circular waves emerging
+from one slit are in phase with those that come out through the other one,
+so that the double-slit interference pattern has a maximum in the
+center. But if, for example, one of the waves has its phase inverted, then all the maxima of our
+interference pattern will become minima and vice versa. If the phase is randomized, then the positions
+of the maxima and minima are randomized as well, and thus if we try to collect data on enough electrons
+to see an interference pattern, we will not see maxima and minima at all.
+
+One subtle question about this description is the following. The randomization of the phase
+by the measurement appears to have erased the information about the phase relationship between
+the parts of the wave in the two slits. But how can this be, since one of our principles of quantum mechanics
+(p.~\pageref{subsec:qm-summary}) is that time evolution is always unitary, so no information
+is ever supposed to be lost? The resolution of this paradox is that the phase information still
+exists, but it has been taken away from the electron and flowed out into the observer and the
+environment. This is similar to the classical paradox of what happens to the (classical) information
+written on a piece of paper when we burn the paper: the information still exists, and could in
+principle be reconstructed by observing all the molecules and tracing their trajectories back
+in time using Newton's laws.\label{unitarity-phase-randomization}
+
+<% end_sec('et-phase-randomization-meas') %>
+
+<% begin_sec("Decoherence",nil,'decoherence') %>
+\index{decoherence}
+Starting around 1970, physicists began to realize that ideas involving a loss of coherence,
+or ``decoherence,'' could help to explain some things about quantum mechanics that
+had previously seemed mysterious.  The classical notions of coherence and coherence length
+were described in sec.~\ref{subsec:coherence}, p.~\pageref{subsec:coherence}, and quantum-mechanical
+decoherence was briefly introduced on p.~\pageref{decoherence-brief}.
+
+One mystery was the fact that it is difficult to
+demonstrate wave interference effects with large objects. This is partly because
+the wavelength $\lambda=h/p=h/mv$ tends to be small for an object with a large mass.
+But even taking this into account, we do not seem to have much luck observing,
+for example, double-slit diffraction of very large molecules, even
+when we use slits with appropriate dimensions and a detector with a good enough angular
+resolution.
+
+In the early days of quantum mechanics, people like Bohr and Heisenberg imagined that
+there was simply a clear division between the macroscopic and microscopic worlds.
+Big things and small things just had different rules: Newton's laws in one case, quantum
+mechanics in the other. But this is no longer a tenable position,
+because we now know that there is no limit on the distance scales over which quantum-mechanical
+behavior can occur. For example, a communication satellite carried out a demonstration
+in 2017 in which a coherence length of 1200 km was demonstrated using 
+photons.\footnote{Yin \emph{et al.}, \url{arxiv.org/abs/1707.01339}}
+
+The insight about decoherence was the following. Consider the most massive material
+object that has so far been successfully dif\-fracted through a grating,
+which was a molecule consisting of about 810 atoms in an experiment by
+Eibenberger \emph{et al.} in 2013.\footnote{\url{arxiv.org/abs/1310.8343}}
+While this molecule was propagating through the apparatus as a wave, the experimenters
+needed to keep it from simply being stopped by a collision with an air molecule.
+For this reason, they had to do the experiment inside a vacuum chamber, with an extremely
+good vacuum. But even then, the molecule was being bombarded by photons of infrared light
+emitted from the walls of the chamber. The effect of this bombardment is to disrupt the
+molecule's wavefunction and reduce its coherence length (p.~\pageref{fig:coherence}).
+
+<%
+  fig(
+    'decohering-wave-packet',
+    %q{%
+      A large molecule such as the one in the Eibenberger experiment is represented by its
+      wavepacket. 
+      As the molecule starts out, its coherence length, shown by the arrows, is quite long.
+      As it flies to the right, it is bombarded by infrared photons, which
+      randomize its phase, causing its coherence length to shorten exponentially: by a factor
+      of two in the second panel, and by a further factor of two in the final one. When the
+      packet enters the double slit, its coherence length is on the same order of magnitude
+      as the slits' spacing $d$, which will worsen but not entirely eliminate the observability
+      of interference fringes.
+      (This is only a schematic representation, with the wavepacket shown as being
+      many orders of magnitude bigger than its actual size in relation to the vacuum chamber.
+      Also, the real experiment used a reflecting grating, not a transmitting double slit.)
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+This causes an effect similar to the one in the situation illustrated in
+figure \figref{double-slit-spying-on-one-slit}, where we spy on one slit of a double-slit
+apparatus. The microscope would operate by bouncing photons off of the electron, and the result
+is to disrupt the coherence of the electron's wavefunction, so that the coherence length is
+no longer as large as the distance between the slits. The infrared photons in the Eibenberger
+experiment were not introduced intentionally, but they were still bouncing off of the molecules
+and producing a similar decrease in the coherence length. This decoherence effect was the reason
+that the experiment was limited to molecules of the size they used. Even though the molecules
+took only about 400 nanoseconds to fly through the apparatus, there was a significant amount of
+decoherence. A larger molecule would have been a bigger target for photons and would have undergone
+decoherence more quickly, making interference unobservable.
+
+As in the example of spying on one slit of a double-slit experiment, the question arises of
+what has happened to the phase information that appears to have been erased by decoherence,
+violating unitarity. The resolution is the same (p.~\pageref{unitarity-phase-randomization}):
+the information has flowed out into the environment, but is no longer in a form in which it
+is practical to recover it.
+
+<% end_sec('decoherence') %>
+
+<% end_sec('et-phase-randomization') %>
+
+<% begin_sec("Quantum computing and the no-cloning theorem",nil,'no-cloning') %>
+
+Computers and information transmission systems such as the internet are currently implemented
+as classical devices. For example, the wavelengths of the electrons that carry signals in a computer
+chip are currently orders of magnitude shorter than the size of the logic gates, so that
+wave effects such as diffraction and interference are not important (problem \ref{hw:chip-qm},
+p.~\pageref{hw:chip-qm}). Even if the current devices such as silicon chips and fiber-optic
+cables could simply be scaled down to sizes comparable to the electrons' wavelengths, quantum
+effects would at some point simply make them start breaking down or behaving unreliably.
+
+It is possible, however, to design qualitatively different devices in which information and
+signals are intentionally manipulated in an explicitly quantum-mechanical fashion. This is
+the frontier known as quantum computing. In a quantum computer, the basic unit of information is
+not the classical bit but the quantum bit or \emph{qubit}. A qubit can exist in a superposition
+of the 0 and 1 states, with a well defined phase, e.g., $\Psi_0+\Psi_1$ is a different state
+than $\Psi_0-\Psi_1$ or $\Psi_0+i\Psi_1$. Furthermore, one qubit can have its state entangled
+with another's. For example, $\Psi_{01}+\Psi_{10}$ describes a state in which we have two bits,
+neither in a definite 0 or 1 state, but which are guaranteed to add up to 1. That is, if one is
+true, then the other is guaranteed to be false. It has been shown that some problems that are
+hard for classical computers are more tractable for a quantum computer. For example, there is a
+known quantum computing algorithm that is capable of efficiently factoring large integers, and when
+this is eventually implemented in a practical device, it will have the effect of breaking the
+cryptographic algorithms that you currently use for online privacy and security, since the security of those
+algorithms is predicated on the assumption that factorization is hard. This would be a disaster for
+online economic activity and could have effects such as unmasking political dissidents.
+
+A different application, and one that is easier to explain, is that quantum computing
+makes it possible in theory to make copy-proof information. This would not be useful
+to Hollywood studios trying to prevent copying of their movies, since the images have
+to pass through classical devices anyway in order to be displayed, but it means that one might
+be able to send private information through a quantum internet in such a way that it could not be copied
+by snoops, even in theory. In contrast, current classical methods of encryption are designed to allow
+eavesdropping on an information packet as it hops across the internet, but to make the copy
+useless to prying eyes because it cannot be decoded.
+
+The theoretical key to this application of quantum computing is the
+counterintuitive \emph{no-cloning theorem},\index{no-cloning theorem}\label{no-cloning-original}
+which states that it is
+not possible to make a copy of an unknown quantum state.\footnote{The prohibition actually
+only applies to making a copy that can be separated from the original. For the complete
+statement of this, see p.~\pageref{no-cloning-separable}.}  To see why
+this works, suppose that we implement a qubit using the spin 1/2 of a
+silver atom, with the convention that the 0 state is represented by
+$s_x=-1/2$ and 1 by $s_x=+1/2$.  If you provide me with an atom that
+you have prepared, then it might seem straightforward, at least in
+principle, for me to copy its state. I can shoot it through a magnetic
+spectrometer, as in the Stern-Gerlach experiment, and measure its
+$s_x$. Then I prepare another silver atom in the same state. What's
+the problem? 
+
+The problem is that if the state of the atom is truly unknown to me, then I have no way of knowing
+that it is actually in one of the two states $s_x=-1/2$ and $s_x=+1/2$. It could instead be
+in some superposition of these, such as $\Psi_{s_x=-1/2}/\sqrt{2}+i\Psi_{s_x=+1/2}/\sqrt{2}$, with
+a 90-degree phase angle between the two components.
+Then when I send your atom through the spectrometer, the world becomes one in which both the spectrometer
+and my brain are in a superposition of the two states. In one of these worlds, I then go ahead and
+prepare my copy-atom in the $s_x=-1/2$ state, and in the other one I set it up as a $+1/2$.
+You could say that my copy-atom is, like the original, in a superposition of the two $s_x$ states, but
+there is no reason to think that it will be the \emph{same} superposition, with the same 90-degree
+phase angle. In fact, by the argument on p.~\pageref{sec:et-phase-randomization} we know
+that it is not possible by \emph{any} measurement to extract this phase information and convert it
+into classical information. Furthermore, our final result is not really as simple as a copy-atom
+in some unknown superposition of the two $s_x$ states. It is a silver atom whose spin is correlated
+with the state of the original, but also correlated with the state of the spectrometer and the state
+of my brain.
+
+The impossibility of copying an unknown quantum state is enforced by nature in full generality, not
+just by the specific mechanisms described in the artificial scenario described above. To see why, consider what
+would happen to the state of the ``blank'' atom on which we had hoped to impose the copied state.
+Its state would have been overwritten, but this would imply a loss of information, which is forbidden
+by the unitarity postulate of quantum mechanics (p.~\pageref{unitarity-postulate}).
+
+The no-cloning theorem would seem to severely limit the practicability of quantum computing.
+When you run a program on a classical computer, the very first step to be performed by the operating
+system is to copy the program's code and data from storage into random-access memory. If a quantum
+computer can't copy anything, then how do we perform this initial step? But the no-cloning theorem doesn't
+actually forbid copying \emph{any} quantum state --- it forbids copying an \emph{unknown} state.
+Going back to the example of the silver atom, imagine that rather than presenting me with a silver
+atom in a completely unknown quantum state, you give me a solemn promise that it will be either
+in the state $s_x=-1/2$ or the state $s_x=+1/2$ --- not some superposition of these. Then if you
+trace back through the logic of the scenario, you will find that there is absolutely nothing preventing
+me from making an accurate copy.
+
+Once the software on a quantum computer starts running, its qubits
+will certainly start going into superpositions of the 0 state and the
+1 state. By the no-cloning theorem, these cannot be copied from one
+memory location to another, overwriting the previous contents of the
+target location. But that simply isn't how quantum computing works.
+Rather than attempting to copy, erase, and overwrite bits as in a
+classical computer, the software is designed to create complicated
+correlations between the different bits. This model of computing is
+not necessarily better or worse over all than classical digital
+computing, but it differs from it as much as an iPhone's model of
+computing differs from that of a slide rule.
+
+When a classical computer such as a cash register or phone is done
+with its computation, we have to find out the result through an output
+such as a paper tape or LCD screen.  These are classical devices. If a
+quantum computer is to produce a result for use by humans, then it
+will also need to send its output through a classical device.  We
+might hope to be able to convert the quantum information faithfully
+into classical information. But we can prove based on the no-cloning
+theorem that such a conversion will always be ``lossy'' --- will
+always involve a degradation of the information. A lossless
+conversion, such as a unit conversion, is one that can be done as a
+round-trip, e.g., $1\ \munit\rightarrow100\ \zu{cm}\rightarrow1\
+\munit$, with the final result being identical to the original.  If we
+could completely encode qbits into bits, then we could make a second
+copy of the bits and violate no-cloning by converting back to qbits.
+This is a contradiction, so we conclude that lossless conversion of
+classical information to quantum information is impossible. 
+
+<% end_sec('no-cloning') %>
+
+<% begin_sec("More about entanglement",nil,'more-entanglement') %>
+\index{entanglement}\index{separability!of a quantum state}
+
+A basic difference between classical computing and quantum computing
+is that qubits can be entangled with each other. We've only discussed
+entanglement briefly in sec.~\ref{subsec:nonlocality-and-entanglement},
+p.~\pageref{subsubsec:entanglement}, where the basic idea was that
+either Alice or Bob could detect a certain photon, but not both. Alice
+and Bob's states were entangled, as were the macroscopic diamonds in
+the 2012 real-world experiment described on
+p.~\pageref{macroscopic-entanglement}. More generally, what is
+entanglement? 
+
+Entanglement is the opposite of separability (sec.~\ref{subsec:s-eqn-separability}).
+To see what is meant by this statement, consider figure \figref{separable}. In
+\subfigref{separable}{1}, we have the function $\Psi_1=\sin x\sin 4y$. This could be a two-dimensional
+particle in a box, with a certain amount of momentum in the $x$ direction, and four times
+that momentum in the $y$ direction. It is because the Schr\"odinger equation for the particle
+in a box is separable in $x$ and $y$ that we can write down this wavefunction
+by multiplying two different one-dimensional wavefunctions. In figure
+\subfigref{separable}{2}, $\Psi_2$ is like $\Psi_1$ but
+with $x$ and $y$ interchanged, while \subfigref{separable}{3} shows the superposition
+$\Psi_3=(\Psi_1+\Psi_2)/\sqrt2$.
+
+<%
+  fig(
+    'separable',
+    %q{%
+      States of a particle in a box that are separable in terms of $p_x$ and $p_y$ (1 and 2)
+      and entangled (3, a superposition of 1 and 2).
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+From a fancier theoretical point of view, we could say that this
+system, which seems like a single thing (the particle), is actually
+built out of two subsystems. One subsystem is the motion in the $x$
+direction, and the other is the $y$. The fact that the Schr\"odinger
+equation is separable can be interpreted as being because the $x$ and
+$y$ motion are independent of one another. Exactly the same thing
+would happen if this were a classical pool ball on a square table. Its
+$x$ and $y$ motion don't affect each other, and, e.g., if the ball
+hits the right-hand cushion and has its $x$ momentum reflected, that
+doesn't change its $y$ momentum. It's as if the pool ball in two
+dimensions were really two different beads, one sliding along a wire
+parallel to the $x$ axis and the other sliding up and down. In either
+the classical case or the quantum-mechanical case, we have built a
+composite system out of two independent subsystems.
+
+In an example like $\Psi_1$, it is possible to assign a definite state to the subsystems:
+continuing to ignore units, we can write $p_x=\pm 1$ and $p_y=\pm 4$. The state
+with wavefunction $\Psi_2$ has the same energy as $\Psi_1$, and again the subsystems
+have a definite state, $p_x=\pm 4$ and $p_y=\pm 1$.
+
+But for the superposition $\Psi_3$, this is no longer true. If we
+measure either $p_x$ or $p_y$ for this state, we may get either $\pm1$
+or $\pm4$, with equal probability. We say that this state is entangled in the same
+way that Alice and Bob were entangled on p.~\pageref{bob-alice-entangled}.
+Neither Bob nor Alice is in a definite state of I-saw-a-photon or I-never-saw-a-photon.
+However, if we \emph{ask} Bob whether he saw a photon, and he says yes, then
+we gain information about Alice: that she didn't see a photon. Similarly, if we
+measure $p_x$ for the particle in state $\Psi_3$ and get $-4$, then we gain information
+about $p_y$: we know that it is $\pm1$.
+
+Because separable states are the simplest things we can make by putting together subsystems
+like legos, it's convenient to have a notation for them. In the angle-bracket notation, 
+all of the following are possible ways that people might notate a state like $\Psi_1$:
+\begin{equation*}
+  |1,4\rangle \qquad\text{or}\qquad
+  |1\rangle |4\rangle  \qquad\text{or}\qquad
+  |1\rangle \otimes |4\rangle
+\end{equation*}
+The cross with a circle around it, $\otimes$, doesn't really indicate multiplication. It's more
+like a punctuation mark or a conjunction, meaning ``and also,'' as in, ``I'll have the eggplant, and
+also a beer.'' It's called a tensor product, which makes it sound scary.\index{tensor product!of quantum states}
+
+To show the generality of the idea of entanglement, let's consider an example from particle physics.
+The $\pi^0$ is a particle that participates in strong nuclear interactions, and therefore
+can be created in nuclear reactions. It's known as a pion. There are other types of pions.
+The $\pi^0$ is the only electrically neutral one, hence the superscript 0. All pions are
+unstable, which is why we need to create them in  reactions rather than looking for them
+in rocks and trees. The $\pi^0$ has a half-life of only $10^{-16}\ \sunit$, and one of the
+ways in which it can decay is into an electron and a positron (antielectron),
+\begin{equation*}
+  \pi^0 \rightarrow e^- + e^+.
+\end{equation*}
+You can verify that charge is conserved in this reaction. In the frame of reference where
+the pion is initially at rest, the speeds of the electron and positron are fixed by
+conservation of energy and momentum, so there is not much that is interesting to measure
+about them other than their spins. The pion has zero spin, which makes it somewhat unusual
+in the world of particle physics. If we assume as well, for simplicity, that
+the electron and positron don't have any orbital angular momentum, then
+by conservation of angular momentum, the spin-1/2 of the electron must be in the opposite
+direction compared to that of the positron. 
+
+The electron and positron fly off in opposite directions due to
+conservation of momentum, and they could be detected by two different
+particle detectors lying at macroscopic distances from the place where
+the decay happened, as in figure \figref{pion-decay-entanglement}.
+Although separated, they are entangled. Suppose each of the detectors is
+capable of detecting the component of the spin along a $z$ axis that
+is defined by the orientation of the detector itself. For example, the
+detector could in principle be a Stern-Gerlach spectrometer
+(sec.~\ref{sec:stern-gerlach}, p.~\pageref{sec:stern-gerlach}),
+although in practice some other, more efficient method would be used.
+If one detector measures $s_z=+1/2$, then the other is guaranteed to see $s_z=-1/2$,
+because anything else would violate conservation of angular momentum. That is, the
+wavefunction of the system is of the form
+\begin{equation*}
+  \Psi = c|\uparrow\downarrow\rangle + c'|\downarrow\uparrow\rangle,
+\end{equation*}
+where normalization requires that $c^2+c'^2=1$. If we had some way to point the
+pion in a certain direction before it decayed, or produce it so that it was pointed
+in a certain direction, then perhaps we could have arranged things so that
+one of the two possibilities, say $|\uparrow\downarrow\rangle$, was more likely.
+But the pion has spin 0, and a spinless particle is like a perfectly smooth and featureless
+ping-pong ball; there is no way to impose, define, or measure an orientation for it.
+Therefore by symmetry we have $c^2=c'^2$. For example, we could have
+$c$ and $c'$ both equal to $1/\sqrt{2}$, or $c=i/\sqrt{2}$ and $c'=-1/\sqrt{2}$.
+The states $|\uparrow\downarrow\rangle$ and $|\downarrow\uparrow\rangle$ are separable
+in terms of the two spins, but $\Psi$ is entangled. In the state $\Psi$, neither spin
+has a definite value, but measuring one spin determines the other spin.
+
+<% marg(80) %>
+<%
+  fig(
+    'pion-decay-entanglement',
+    %q{%
+      The decay of a neutral pion is detected through its decay products.
+    }
+  )
+%>
+<% end_marg %>
+
+In quantum computing, once a quantum computer has started running, all of its qbits will
+in general be entangled with one another. That means that if we read out one qbit,
+then later read-outs of other qbits will have results that are correlated with what
+we got when we read out the first one. With classical information, we can always
+do things like splitting a book up into chapters, or distributing a long movie on
+two DVDs. That doesn't always work for a quantum computer. It \emph{might} work if
+part of the data was separable from another part, but we would need a computer
+program to scan through the data and figure out whether this was in fact possible.
+This is called the separability problem, and unfortunately it is known to be intractable.
+
+<% marg(-10) %>
+
+<%
+  fig(
+    'pion-decay-paradox',
+    %q{%
+      An attempt to measure $L_x$ and $L_z$ simultaneously.
+    }
+  )
+%>
+<% end_marg %>
+
+The no-cloning theorem\index{no-cloning theorem}\label{no-cloning-separable}
+described on p.~\pageref{no-cloning-original} is only a prohibition on making
+a \emph{separable} copy of an unknown state. To see why, consider an experiment
+like the one in figure \figref{pion-decay-paradox}, in which we set up the detectors
+so that their spin-detecting axes are in perpendicular orientations. Say one detector
+measures the spin of the electron along the $x$ axis, while the other measures the
+positron's $z$ spin. Now it seems that we can infer simultaneous values of both $L_x$ and $L_z$
+for each particle, but that is impossible because
+$L_x$ and $L_z$ are incompatible observables (p.~\pageref{proof-lx-and-lz-incompatible}).
+Well, suppose that we measure the electron's $L_x$ first, and then the positron's $L_z$.
+This is actually equivalent to measuring $-L_x$ for the the \emph{positron}, and then
+$L_z$ for the positron. No paradox arises, because one of the measurements will inevitably
+have changed the positron's spin. Going back to the version of the experiment using the entangled
+electron and positron, the same thing happens. For example, measuring the electron's spin
+has the ability to change the \emph{positron's} spin, because they're entangled.
+The no-cloning theorem cannot possibly prohibit making
+\emph{entangled} copies, because then it would forbid entanglement itself. 
+Only making \emph{separable} copies inevitably leads to paradoxes.
+
+<% end_sec('more-entanglement') %>
+
+<% begin_hw_sec %>
+
+<% begin_hw('oxygen-22-predict-spin-4') %>__incl(hw/oxygen-22-predict-spin-4)<% end_hw() %>
+
+<% begin_hw('lin-alg-basis-or-not') %>__incl(hw/lin-alg-basis-or-not)<% end_hw() %>
+
+<% begin_hw('lin-alg-vector-space-or-not') %>__incl(hw/lin-alg-vector-space-or-not)<% end_hw() %>
+
+<% begin_hw('lin-alg-units',2) %>__incl(hw/lin-alg-units)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ho-orthogonal') %>__incl(hw/ho-orthogonal)<% end_hw() %>
+
+<% begin_hw('nucleus-et-uncertainty') %>__incl(hw/nucleus-et-uncertainty)<% end_hw() %>
+
+<% begin_hw('ho-orthogonal2') %>__incl(hw/ho-orthogonal2)<% end_hw() %>
+
+<% begin_hw('trivial-nonhermitian') %>__incl(hw/trivial-nonhermitian)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ammonia') %>__incl(hw/ammonia)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('ammonia2') %>__incl(hw/ammonia2)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('particle-in-a-box-superpos') %>__incl(hw/particle-in-a-box-superpos)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('electrons-in-a-box') %>__incl(hw/electrons-in-a-box)<% end_hw() %>
+
+<% begin_hw('nucleus-separable') %>__incl(hw/nucleus-separable)<% end_hw() %>
+
+<% begin_hw('three-entangled-spins') %>__incl(hw/three-entangled-spins)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('funky-norm') %>__incl(hw/funky-norm)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('moat-normalize-traveling-waves') %>__incl(hw/moat-normalize-traveling-waves)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('moat-orthogonal-standing-waves') %>__incl(hw/moat-orthogonal-standing-waves)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('sinusoidal-no-preferred-basis') %>__incl(hw/sinusoidal-no-preferred-basis)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('reflection-from-impenetrable-wall') %>__incl(hw/reflection-from-impenetrable-wall)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('two-point-five-kids') %>__incl(hw/two-point-five-kids)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('nonunitary') %>__incl(hw/nonunitary)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ic-time-dependent-s-eqn') %>__incl(hw/ic-time-dependent-s-eqn)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

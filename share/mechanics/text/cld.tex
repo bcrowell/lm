@@ -1,0 +1,1602 @@
+In many subfields of physics these days, it is possible to
+read an entire issue of a journal without ever encountering
+an equation involving force or a reference to Newton's laws
+of motion. In the last hundred and fifty years, an entirely
+different framework has been developed for physics, based
+on conservation laws.
+
+The new approach is not just preferred because it is in
+fashion. It applies inside an atom or near a black hole,
+where Newton's laws do not. Even in everyday situations the
+new approach can be superior. We have already seen how
+perpetual motion machines could be designed that were too
+complex to be easily debunked by Newton's laws. The beauty
+of conservation laws is that they tell us something must
+remain the same, regardless of the complexity of the process.
+
+So far we have discussed only two conservation laws, the
+laws of conservation of mass and energy. Is there any reason
+to believe that further conservation laws are needed in
+order to replace Newton's laws as a complete description of
+nature? Yes. Conservation of mass and energy do not relate
+in any way to the three dimensions of space, because both
+are scalars. Conservation of energy, for instance, does not
+prevent the planet earth from abruptly making a 90-degree
+turn and heading straight into the sun, because kinetic
+energy does not depend on direction. In this chapter, we
+develop a new conserved quantity, called momentum, which is a vector.
+
+<% begin_sec("Momentum",0,'momentum') %>
+
+  <% begin_sec("A conserved quantity of motion") %>
+
+Your first encounter with conservation of momentum may have
+come as a small child unjustly confined to a shopping cart.
+You spot something interesting to play with, like the
+display case of imported wine down at the end of the aisle,
+and decide to push the cart over there. But being imprisoned
+by Dad in the cart was not the only injustice that day.
+There was a far greater conspiracy to thwart your young id,
+one that originated in the laws of nature. Pushing forward
+did nudge the cart forward, but it pushed you backward. If
+the wheels of the cart were well lubricated, it wouldn't
+matter how you jerked, yanked, or kicked off from the back
+of the cart. You could not cause any overall forward motion
+of the entire system consisting of the cart with you inside.
+
+\enlargethispage{-4\baselineskip}
+
+In the Newtonian framework, we describe this as arising from
+Newton's third law. The cart made a force on you that was
+equal and opposite to your force on it. In the framework of
+conservation laws, we cannot attribute your frustration to
+conservation of energy. It would have been perfectly
+possible for you to transform some of the internal chemical
+energy stored in your body to kinetic energy of the cart and your body.
+
+The following characteristics of the situation suggest that
+there may be a new conservation law involved:
+
+\oneofaseriesofpoints{A closed system is involved.}{All conservation laws deal with
+closed systems. You and the cart are a closed system, since
+the well-oiled wheels prevent the floor from making any
+forward force on you.}
+
+\oneofaseriesofpoints{Something remains unchanged.}{The overall velocity of the
+system started out being zero, and you cannot change it.
+This vague reference to ``overall velocity'' can be made
+more precise: it is the velocity of the system's center of
+mass that cannot be changed.}
+
+\oneofaseriesofpoints{Something can be transferred back and forth without changing
+the total amount.}{If we define forward as positive and
+backward as negative, then one part of the system can gain
+positive motion if another part acquires negative motion. If
+we don't want to worry about positive and negative signs, we
+can imagine that the whole cart was initially gliding
+forward on its well-oiled wheels. By kicking off from the
+back of the cart, you could increase your own velocity, but
+this inevitably causes the cart to slow down.}
+
+\noindent It thus appears that there is some numerical measure of an
+object's quantity of motion that is conserved when you add
+up all the objects within a system.
+
+<% end_sec() %>
+<% begin_sec("Momentum") %>
+
+Although velocity has been referred to, it is not the total
+velocity of a closed system that remains constant. If it
+was, then firing a gun would cause the gun to recoil at the
+same velocity as the bullet! The gun does recoil, but at a
+much lower velocity than the bullet. Newton's third law tells us
+\begin{equation*}
+                F_{gun\ on\ bullet}    =    - F_{bullet\ on\ gun}\eqquad,
+\end{equation*}
+and assuming a constant force for simplicity, Newton's
+second law allows us to change this to
+\begin{equation*}
+        m_{bullet}\frac{\Delta v_{bullet}}{\Delta t}
+            =    -m_{gun}\frac{\Delta v_{gun}}{\Delta t}\eqquad.
+\end{equation*}
+Thus if the gun has 100 times more mass than the bullet, it
+will recoil at a velocity that is 100 times smaller and in
+the opposite direction, represented by the opposite sign.
+The quantity $mv$ is therefore apparently a useful
+measure of motion, and we give it a name, $\index{momentum!defined}momentum$,
+and a symbol, $p$. (As far as I know, the letter ``p'' was
+just chosen at random, since ``m'' was already being used
+for mass.) The situations discussed so far have been
+one-dimensional, but in three-dimensional situations it is
+treated as a vector.
+
+\begin{important}[definition of momentum for material objects]
+The momentum of a material object, i.e., a piece of
+matter, is defined as
+\begin{equation*}
+                \vc{p}    =    m\vc{v}\eqquad,
+\end{equation*}
+the product of the object's mass and its velocity vector.
+\end{important}
+\noindent The units of momentum are $\kgunit\unitdot\munit/\sunit$, and there is unfortunately
+no abbreviation for this clumsy combination of units.
+
+The reasoning leading up to the definition of momentum was
+all based on the search for a conservation law, and the only
+reason why we bother to define such a quantity is that
+experiments show it is conserved:
+
+\begin{important}[the law of conservation of momentum]
+In any closed system, the vector sum of all the momenta remains constant,
+\begin{equation*}
+                \vc{p}_{1i}+ \vc{p}_{2i}+ \ldots    =    \vc{p}_{1f} + \vc{p}_{2f} + \ldots\eqquad,
+\end{equation*}
+where $i$ labels the initial and $f$ the final momenta. (A
+closed system is one on which no external forces act.)
+\end{important}
+\noindent This chapter first addresses the one-dimensional case, in
+which the direction of the momentum can be taken into
+account by using plus and minus signs. We then pass to three
+dimensions, necessitating the use of vector addition.
+
+\enlargethispage{-4\baselineskip}
+
+A subtle point about conservation laws is that they all
+refer to ``closed systems,'' but ``closed'' means different
+things in different cases. When discussing conservation of
+mass, ``closed'' means a system that doesn't have matter
+moving in or out of it. With energy, we mean that there is
+no work or heat transfer occurring across the boundary of
+the system. For momentum conservation, ``closed'' means
+there are no external \emph{forces} reaching into the system.
+
+\begin{eg}{A cannon}
+\egquestion A cannon of mass 1000 kg fires a 10-kg shell at a
+velocity of 200 m/s. At what speed does the cannon recoil?
+
+\eganswer The law of conservation of momentum tells us that
+\begin{equation*}
+                p_{cannon,i} + p_{shell,i}  =  p_{cannon,f} + p_{shell,f}\eqquad.
+\end{equation*}
+Choosing a coordinate system in which the cannon points in
+the positive direction, the given information is
+\begin{align*}
+ p_{cannon,i} &= 0 \\
+ p_{shell,i} &= 0 \\
+ p_{shell,f} &= 2000\ \kgunit\unitdot\munit/\sunit\eqquad.
+\end{align*}
+We must have $p_{cannon,f}=-2000\ \kgunit\unitdot\munit/\sunit$, so the recoil
+velocity of the cannon is $-2$ m/s.
+\end{eg}
+
+<%
+  fig(
+    'ion-drive',
+    %q{%
+      The ion drive engine of the NASA Deep Space 1 probe, shown under construction (left) and being tested in a vacuum
+      chamber (right) prior to its October 1998 launch. Intended mainly as a test vehicle for new technologies, the craft nevertheless
+      carried out a successful scientific program that included a flyby of a comet.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\begin{eg}{Ion drive for propelling spacecraft}\label{eg:ion-drive}
+\egquestion The experimental solar-powered ion drive of the
+Deep Space 1 space probe expels its xenon gas exhaust at a
+speed of 30,000 m/s, ten times faster than the exhaust
+velocity for a typical chem\-ical-fuel rocket engine. Roughly
+how many times greater is the maximum speed this spacecraft
+can reach, compared with a chem\-ical-fueled probe with the
+same mass of fuel (``reaction mass'') available for pushing
+out the back as exhaust?
+
+\eganswer Momentum equals mass multiplied by velocity. Both
+spacecraft are assumed to have the same amount of reaction
+mass, and the ion drive's exhaust has a velocity ten times
+greater, so the momentum of its exhaust is ten times
+greater. Before the engine starts firing, neither the probe
+nor the exhaust has any momentum, so the total momentum of
+the system is zero. By conservation of momentum, the total
+momentum must also be zero after all the exhaust has been
+expelled. If we define the positive direction as the
+direction the spacecraft is going, then the negative
+momentum of the exhaust is canceled by the positive momentum
+of the spacecraft. The ion drive allows a final speed that
+is ten times greater. (This simplified analysis ignores the
+fact that the reaction mass expelled later in the burn is
+not moving backward as fast, because of the forward speed of
+the already-moving spacecraft.)
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Generalization of the momentum concept") %>
+
+As with all the conservation laws, the law of conservation
+of momentum has evolved over time. In the 1800's it was
+found that a beam of light striking an object would give it
+some momentum, even though light has no mass, and would
+therefore have no momentum according to the above definition.
+Rather than discarding the principle of conservation of
+momentum, the physicists of the time decided to see if the
+definition of momentum could be extended to include momentum
+carried by light. The process is analogous to the process
+outlined on page
+\pageref{subsec:new-forms-of-energy} for identifying new forms of energy.
+The first step was the discovery that light could impart
+momentum to matter, and the second step was to show that the
+momentum possessed by light could be related in a definite
+way to observable properties of the light. They found that
+conservation of momentum could be successfully generalized
+by attributing to a beam of light a momentum vector in the
+direction of the light's motion and having a magnitude
+proportional to the amount of energy the light possessed.
+The momentum of \index{momentum!of light}light is negligible
+under ordinary circumstances, e.g., a flashlight left on for
+an hour would only absorb about $10^{-5}\ \kgunit\unitdot\munit/\sunit$ of
+momentum as it recoiled.
+<% marg(5) %>
+
+<%
+  fig(
+    'halley-nucleus',
+    %q{%
+      Steam and other gases boiling off of the nucleus of Halley's comet.
+      This close-up photo was taken by the European Giotto space probe, which
+      passed within 596 km of the nucleus on March 13, 1986. 
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'halley',
+    %q{Halley's comet, in a much less magnified view from a ground-based telescope.}
+  )
+%>
+
+<% end_marg %>
+
+\begin{eg}{The tail of a comet}\label{eg:halley}
+Momentum is not always equal to $mv$.
+Like many comets, Halley's
+comet has a very elongated elliptical orbit.
+ About once per century, its orbit
+brings it close to the sun. The comet's head,
+or nucleus, is composed of dirty ice, so the
+energy deposited by the intense sunlight boils
+off steam and dust, \figref{halley-nucleus}.
+The sunlight does not
+just carry energy, however --- it also carries
+momentum. The momentum of the sunlight impacting on the smaller dust particles pushes
+them away from the sun, forming a tail, \figref{halley}. By analogy with matter, for
+which momentum equals $mv$, you would expect that massless light would have zero
+momentum, but the equation $p=mv$ is not the
+correct one for light, and light does have
+momentum. (The gases typically form a second, distinct tail whose motion
+is controlled by the sun's magnetic field.)
+\end{eg}
+
+The reason for bringing this up is not so that you can plug
+numbers into a formulas in these exotic situations. The
+point is that the conservation laws have proven so sturdy
+exactly because they can easily be amended to fit new
+circumstances. Newton's laws are no longer at the center of
+the stage of physics because they did not have the same
+adaptability. More generally, the moral of this story is the
+provisional nature of scientific truth.
+
+It should also be noted that conservation of momentum is not
+a consequence of Newton's laws, as is often asserted in
+textbooks. Newton's laws do not apply to light, and
+therefore could not possibly be used to prove anything about
+a concept as general as the conservation of momentum in its modern form.
+
+<% end_sec() %>
+<% begin_sec("Momentum compared to kinetic energy") %>
+\index{kinetic energy!compared to momentum}\index{momentum!compared to kinetic energy}
+
+Momentum and kinetic energy are both measures of the
+quantity of motion, and a sideshow in the Newton-Leibnitz
+controversy over who invented calculus was an argument over
+whether \emph{mv} (i.e., momentum) or $mv^2$ (i.e., kinetic
+energy without the 1/2 in front) was the ``true'' measure of
+motion. The modern student can certainly be excused for
+wondering why we need both quantities, when their complementary
+nature was not evident to the greatest minds of the 1700's.
+The following table highlights their differences.
+
+\vfill
+
+\noindent\begin{tabular}{|p{60mm}|p{60mm}|}\hline
+\textbf{kinetic energy \ldots} & \textbf{momentum \ldots} \\ \hline
+is a scalar. &
+                               is a vector. \\ \hline
+ %
+is not changed by a force perpendicular to the motion, which changes only the direction of the velocity vector. &
+is changed by any force, since a change in either the magnitude or the direction of the velocity vector will
+result in a change in the momentum vector. \\ \hline
+ %
+is always positive, and cannot cancel out. &
+cancels with momentum in the opposite direction. \\ \hline
+ %
+can be traded for other forms of energy that do not involve motion. KE is not a conserved quantity by itself. &
+is always conserved in a closed system. \\ \hline
+is quadrupled if the velocity is doubled. & is doubled if the velocity is doubled. \\ \hline
+\end{tabular}
+
+\vfill
+
+\begin{eg}{A spinning top}\label{eg:spinning-top}
+A spinning top has zero total momentum, because for every
+moving point, there is another point on the opposite side
+that cancels its momentum. It does, however, have kinetic energy.
+\end{eg}
+
+<% marg(5) %>
+
+<%
+  fig(
+    'eg-top-and-tuning-fork',
+    %q{%
+      Examples \ref{eg:spinning-top} and \ref{eg:tuning-fork}. The momenta cancel, but the energies don't.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Why a tuning fork has two prongs}\label{eg:tuning-fork}
+A tuning fork is made with two prongs so that they can vibrate in opposite directions,
+canceling their momenta. In a hypothetical version with only one prong, the momentum
+would have to oscillate, and this momentum would have to come from somewhere, such as
+the hand holding the fork. The result would be that vibrations would be transmitted
+to the hand and rapidly die out. In a two-prong fork, the two momenta cancel, but the
+energies don't.
+\end{eg}
+
+\begin{eg}{Momentum and kinetic energy in firing a rifle}
+The rifle and bullet have zero momentum and zero kinetic
+energy to start with. When the trigger is pulled, the bullet
+gains some momentum in the forward direction, but this is
+canceled by the rifle's backward momentum, so the total
+momentum is still zero. The kinetic energies of the gun and
+bullet are both positive scalars, however, and do not
+cancel. The total kinetic energy is allowed to increase,
+because kinetic energy is being traded for other forms of
+energy. Initially there is chemical energy in the gunpowder.
+This chemical energy is converted into heat, sound, and
+kinetic energy. The gun's ``backward'' kinetic energy does
+not refrigerate the shooter's shoulder!
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{The wobbly earth}
+As the moon completes half a circle around the earth, its
+motion reverses direction. This does not involve any change
+in kinetic energy, and the earth's gravitational force does
+not do any work on the moon. The reversed velocity vector
+does, however, imply a reversed momentum vector, so
+conservation of momentum in the closed earth-moon system
+tells us that the earth must also change its momentum. In
+fact, the earth wobbles in a little ``orbit'' about a point
+below its surface on the line connecting it and the moon.
+The two bodies' momentum vectors always point in opposite
+directions and cancel each other out.
+\end{eg}
+
+\begin{eg}{The earth and moon get a divorce}
+Why can't the moon suddenly decide to fly off one way and
+the earth the other way? It is not forbidden by conservation
+of momentum, because the moon's newly acquired momentum in
+one direction could be canceled out by the change in the
+momentum of the earth, supposing the earth headed the
+opposite direction at the appropriate, slower speed. The
+catastrophe is forbidden by conservation of energy, because
+both their energies would have to increase greatly.
+\end{eg}
+
+\begin{eg}{Momentum and kinetic energy of a glacier}
+A cubic-kilometer glacier would have a mass of about
+$10^{12}$ kg. If it moves at a speed of $10^{-5}$ m/s,
+then its momentum is $10^7\ \kgunit\unitdot\munit/\sunit$. This is the kind of
+heroic-scale result we expect, perhaps the equivalent of the
+space shuttle taking off, or all the cars in LA driving in
+the same direction at freeway speed. Its kinetic energy,
+however, is only 50 J, the equivalent of the calories
+contained in a poppy seed or the energy in a drop of
+gasoline too small to be seen without a microscope. The
+surprisingly small kinetic energy is because kinetic energy
+is proportional to the square of the velocity, and the
+square of a small number is an even smaller number.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+If all the air molecules in the room settled down in a thin film on the floor,
+would that violate conservation of momentum? Conservation of energy?
+\end{dq}
+
+\begin{dq}
+A refrigerator has coils in the back that get hot, and heat
+is molecular motion. These moving molecules have both energy
+and momentum. Why doesn't the refrigerator need to be tied
+to the wall to keep it from recoiling from the momentum it loses out the
+back?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec('momentum') %>
+<% begin_sec("Collisions in one dimension",4,'collisions-1d') %>
+
+<% marg(4) %>
+<%
+  fig(
+    'colliding-galaxies',
+    %q{%
+      This Hubble Space Telescope photo
+      shows a small galaxy (yellow blob in
+      the lower right) that has collided with
+      a larger galaxy (spiral near the center), producing a wave of star formation (blue track) due to the shock
+      waves passing through the galaxies'
+      clouds of gas. This is considered a
+      collision in the physics sense, even
+      though it is statistically certain that no
+      star in either galaxy ever struck a star
+      in the other. (This is because the stars
+      are very small compared to the distances between them.)
+    }
+  )
+%>
+<% end_marg %>%
+Physicists employ the term ``\index{collision!defined}collision''
+in a broader sense than ordinary usage, applying it to any
+situation where objects interact for a certain period of
+time. A bat hitting a baseball, a radioactively emitted
+particle damaging DNA, and a gun and a bullet going their
+separate ways are all examples of collisions in this sense.
+Physical contact is not even required. A comet swinging past
+the sun on a hyperbolic orbit is considered to undergo a
+collision, even though it never touches the sun. All that
+matters is that the comet and the sun exerted gravitational
+forces on each other.
+
+The reason for broadening the term ``collision'' in this way
+is that all of these situations can be attacked mathematically
+using the same conservation laws in similar ways. In the
+first example, conservation of momentum is all that is required.
+
+\begin{eg}{Getting rear-ended}\label{eg:rear-ended}
+\egquestion Ms. Chang is rear-ended at a stop light by Mr.
+Nelson, and sues to make him pay her medical bills. He
+testifies that he was only going 35 miles per hour when he
+hit Ms. Chang. She thinks he was going much faster than
+that. The cars skidded together after the impact, and
+measurements of the length of the skid marks and the
+coefficient of friction show that their joint velocity
+immediately after the impact was 19 miles per hour. Mr.
+Nelson's Nissan weighs 3100 pounds, and Ms. Chang 's
+Cadillac weighs 5200 pounds. Is Mr. Nelson telling the truth?
+
+\eganswer Since the cars skidded together, we can write down
+the equation for conservation of momentum using only two
+velocities, $v$ for Mr. Nelson's velocity before the crash,
+and $v'$ for their joint velocity afterward:
+\begin{equation*}
+                m_N v  =  m_N v' + m_C v'\eqquad.
+\end{equation*}
+Solving for the unknown, $v$, we find
+\begin{equation*}
+                v  =   \left(1+\frac{m_C}{m_N}\right)v'\eqquad.
+\end{equation*}
+Although we are given the weights in pounds, a unit of
+force, the ratio of the masses is the same as the ratio of
+the weights, and we find $v=51$ miles per hour. He is lying.
+\end{eg}
+
+The above example was simple because both cars had the same
+velocity afterward. In many one-dimensional collisions,
+however, the two objects do not stick. If we wish to predict
+the result of such a collision, conservation of momentum
+does not suffice, because both velocities after the
+collision are unknown, so we have one equation in two unknowns.
+
+Conservation of energy can provide a second equation, but
+its application is not as straightforward, because kinetic
+energy is only the particular form of energy that has to do
+with motion. In many collisions, part of the kinetic energy
+that was present before the collision is used to create heat
+or sound, or to break the objects or permanently bend them.
+Cars, in fact, are carefully designed to crumple in a
+collision. Crumpling the car uses up energy, and that's good
+because the goal is to get rid of all that kinetic energy in
+a relatively safe and controlled way. At the opposite
+extreme, a superball is ``super'' because it emerges from a
+collision with almost all its original kinetic energy,
+having only stored it briefly as potential energy while it
+was being squashed by the impact.
+
+Collisions of the superball type, in which almost no kinetic
+energy is converted to other forms of energy, can thus be
+analyzed more thoroughly, because they have $KE_f=KE_i$, as
+opposed to the less useful inequality $KE_f<KE_i$ for a
+case like a tennis ball bouncing on grass.\label{elastic-and-inelastic}
+m4_ifelse(__me,1,[:These two types of collisions are referred to, respectively, as elastic
+and inelastic.\index{collision!elastic}\index{collision!inelastic}
+The extreme inelastic case is discussed further on p.~\pageref{subsubsec:totally-inelastic}.:])
+
+\begin{eg}{Pool balls colliding head-on}\label{eg:pool-balls}
+\egquestion Two pool balls collide head-on, so that the
+collision is restricted to one dimension. Pool balls are
+constructed so as to lose as little kinetic energy as
+possible in a collision, so under the assumption that no
+kinetic energy is converted to any other form of energy,
+what can we predict about the results of such a collision?
+
+\eganswer Pool balls have identical masses, so we use the
+same symbol $m$ for both. Conservation of momentum and no loss
+of kinetic energy give us the two equations
+\begin{align*}
+  mv_{1i}+mv_{2i} &=  mv_{1f}+mv_{2f} \\
+  \frac{1}{2}mv_{1i}^2+\frac{1}{2}mv_{2i}^2 &=  \frac{1}{2}mv_{1f}^2+\frac{1}{2}mv_{2f}^2
+\end{align*}
+The masses and the factors of 1/2 can be divided out, and we
+eliminate the cumbersome subscripts by replacing the symbols
+$v_{1i}$,... with the symbols $A,B,C$, and $D$:
+\begin{align*}
+ A+B &= C+D \\
+ A^2+B^2 &= C^2+D^2\eqquad.
+\end{align*}
+A little experimentation with numbers shows that given
+values of $A$ and $B$, it is impossible to find $C$ and $D$
+that satisfy these equations unless $C$ and $D$ equal $A$
+and $B$, or $C$ and $D$ are the same as $A$ and $B$ but
+swapped around. A formal proof of this fact is given in the
+sidebar.
+In the special case where ball 2 is initially at
+rest, this tells us that ball 1 is stopped dead by the
+collision, and ball 2 heads off at the velocity originally
+possessed by ball 1. This behavior will be familiar to players of pool.
+\end{eg}
+<% marg(100) %>
+\formatlikecaption{%
+\begin{flushleft}\textit{Gory details of the proof in example \ref{eg:pool-balls}}\end{flushleft}
+The equation $A+B = C+D$ says that
+the change in one ball's velocity is
+equal and opposite to the change
+in the other's. We invent a symbol
+$x=C-A$ for the change in ball 1's velocity. The second equation can
+then be rewritten as
+$A^2+B^2 = (A+x)^2+(B-x)^2$.
+Squaring out the quantities in parentheses and then simplifying, we get
+$0 = Ax-Bx+x^2$.
+The equation has the trivial solution $x=0$, i.e., neither ball's velocity
+is changed, but this is physically
+impossible because the balls can't travel through each other like
+ghosts. Assuming $x\ne 0$, we can divide by $x$ and solve for $x=B-A$. This
+means that ball 1 has gained an
+amount of velocity exactly right to match ball 2's
+initial velocity, and vice-versa. The
+balls must have swap\-ped velocities.}%
+<% end_marg %>
+
+Often, as in the example above, the details of the algebra
+are the least interesting part of the problem, and
+considerable physical insight can be gained simply by
+counting the number of unknowns and comparing to the number
+of equations. Suppose a beginner at pool notices a case
+where her cue ball hits an initially stationary ball and
+stops dead. ``Wow, what a good trick,'' she thinks. ``I bet
+I could never do that again in a million years.'' But she
+tries again, and finds that she can't help doing it even if
+she doesn't want to. Luckily she has just learned about
+collisions in her physics course. Once she has written down
+the equations for conservation of energy and no loss of
+kinetic energy, she really doesn't have to complete the
+algebra. She knows that she has two equations in two
+unknowns, so there must be a well-defined solution. Once she
+has seen the result of one such collision, she knows that
+the same thing must happen every time. The same thing would
+happen with colliding marbles or croquet balls. It doesn't
+matter if the masses or velocities are different, because
+that just multiplies both equations by some constant factor.
+
+<% begin_sec("The discovery of the neutron") %>
+
+This was the type of reasoning employed by James \index{Chadwick,
+James!discovery of neutron}Chadwick in his 1932 discovery of
+the \index{neutron!discovery of}neutron. At the time, the
+atom was imagined to be made out of two types of fundamental
+particles, \index{proton}protons and \index{electron}electrons.
+The protons were far more massive, and clustered together in
+the atom's core, or \index{nucleus}nucleus. Attractive
+\index{electrical force!in atoms}electrical forces caused
+the electrons to orbit the nucleus in circles, in much the
+same way that gravitational forces kept the planets from
+cruising out of the solar system. Experiments showed that
+the helium nucleus, for instance, exerted exactly twice as
+much electrical force on an electron as a nucleus of
+hydrogen, the smallest atom, and this was explained by
+saying that helium had two protons to hydrogen's one. The
+trouble was that according to this model, helium would have
+two electrons and two protons, giving it precisely twice the
+mass of a hydrogen atom with one of each. In fact, helium
+has about four times the mass of hydrogen.
+
+Chadwick suspected that the helium nucleus possessed two
+additional particles of a new type, which did not participate
+in electrical forces at all, i.e., were electrically neutral.
+If these particles had very nearly the same mass as protons,
+then the four-to-one mass ratio of helium and hydrogen could
+be explained. In 1930, a new type of radiation was
+discovered that seemed to fit this description. It was
+electrically neutral, and seemed to be coming from the
+nuclei of light elements that had been exposed to other
+types of radiation. At this time, however, reports of new
+types of particles were a dime a dozen, and most of them
+turned out to be either clusters made of previously known
+particles or else previously known particles with higher
+energies. Many physicists believed that the ``new'' particle
+that had attracted Chadwick's interest was really a
+previously known particle called a \index{gamma ray}gamma
+ray, which was electrically neutral. Since gamma rays have
+no mass, Chadwick decided to try to determine the new
+particle's mass and see if it was nonzero and approximately
+equal to the mass of a proton.
+
+Unfortunately a subatomic particle is not something you can
+just put on a scale and weigh. Chadwick came up with an
+ingenious solution. The masses of the nuclei of the various
+chemical elements were already known, and techniques had
+already been developed for measuring the speed of a rapidly
+moving nucleus. He therefore set out to bombard samples of
+selected elements with the mysterious new particles. When a
+direct, head-on collision occurred between a mystery
+particle and the nucleus of one of the target atoms, the
+nucleus would be knocked out of the atom, and he would
+measure its velocity.
+<%
+  fig(
+    'chadwick',
+    %q{%
+      %
+      Chadwick's subatomic pool table. A disk of the naturally occurring metal polonium provides a source 
+      of radiation capable of kicking neutrons out of the beryllium nuclei. The
+      type of radiation emitted by the polonium is easily absorbed
+      by a few mm of air, so the air has to be pumped out of the
+      left-hand chamber. The neutrons, Chadwick's mystery particles, penetrate matter far more readily, and fly out through
+      the wall and into the chamber on the right, which is filled with
+      nitrogen or hydrogen gas. When a neutron collides with a
+      nitrogen or hydrogen nucleus, it kicks it out of its atom at
+      high speed, and this recoiling nucleus then rips apart thousands of other atoms of the gas. The result is an electrical
+      pulse that can be detected in the wire on the right. Physicists
+      had already calibrated this type of apparatus so that they
+      could translate the strength of the electrical pulse into the
+      velocity of the recoiling nucleus. The whole apparatus shown
+      in the figure would fit in the palm of your hand, in dramatic
+      contrast to today's giant particle accelerators.%
+      
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Suppose, for instance, that we bombard a sample of hydrogen
+atoms with the mystery particles. Since the participants in
+the collision are fundamental particles, there is no way for
+kinetic energy to be converted into heat or any other form
+of energy, and Chadwick thus had two equations in three unknowns:
+
+equation \#1: conservation of momentum
+
+equation \#2: no loss of kinetic energy
+
+unknown \#1: mass of the mystery particle
+
+unknown \#2: initial velocity of the mystery particle
+
+unknown \#3: final velocity of the mystery particle
+
+The number of unknowns is greater than the number of
+equations, so there is no unique solution. But by creating
+collisions with nuclei of another element, nitrogen, he
+gained two more equations at the expense of only one more unknown:
+
+equation \#3: conservation of momentum in the new collision
+
+equation \#4: no loss of kinetic energy in the new collision
+
+unknown \#4: final velocity of the mystery particle
+in the new collision
+
+He was thus able to solve for all the unknowns, including
+the mass of the mystery particle, which was indeed within
+1\% of the mass of a proton. He named the new particle the
+neutron, since it is electrically neutral.
+
+\startdq
+
+\begin{dq}
+Good pool players learn to make the cue ball spin, which can
+cause it not to stop dead in a head-on collision with a
+stationary ball. If this does not violate the laws of
+physics, what hidden assumption was there in the example above?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec('collisions-1d') %>
+<% begin_sec("Relationship of momentum to the center of mass",nil,'p-and-cm',{'optional'=>true}) %>
+\index{momentum!related to center of mass}\index{center of mass!related to momentum}
+
+<%
+  fig(
+    'wrench',
+    %q{%
+      In this multiple-flash photograph, we
+      see the wrench from above as it flies
+      through the air, rotating as it goes. Its
+      center of mass, marked with the black
+      cross, travels along a straight line,
+      unlike the other points on the wrench,
+      which execute loops.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We have already discussed the idea of the center of mass on p.~\pageref{subsec:cm-qualitative},
+but using the concept of
+momentum we can now find a mathematical method for defining
+the center of mass, explain why the motion of an object's
+center of mass usually exhibits simpler motion than any
+other point, and gain a very simple and powerful way of
+understanding collisions.
+
+The first step is to realize that the center of mass concept
+can be applied to systems containing more than one object.
+Even something like a wrench, which we think of as one
+object, is really made of many atoms. The center of mass is
+particularly easy to visualize in the case shown on the
+left, where two identical hockey pucks collide. It is clear
+on grounds of symmetry that their center of mass must be at
+the midpoint between them. After all, we previously defined
+the center of mass as the balance point, and if the two
+hockey pucks were joined with a very lightweight rod whose
+own mass was negligible, they would obviously balance at the
+midpoint. It doesn't matter that the hockey pucks are two
+separate objects. It is still true that the motion of their
+center of mass is exceptionally simple, just like that of
+the wrench's center of mass.
+
+<% marg(80) %>
+<%
+  fig(
+    'hockey-pucks-lab-frame',
+    %q{%
+      Two hockey pucks collide. Their
+      mutual center of mass traces the straight
+      path shown by the dashed line.
+    }
+  )
+%>
+<% end_marg %>
+The $x$ coordinate of the hockey pucks' center of mass is
+thus given by $x_{cm}=(x_1+x_2)/2$, i.e., the arithmetic
+average of their $x$ coordinates. Why is its motion so
+simple? It has to do with conservation of momentum. Since
+the hockey pucks are not being acted on by any net external
+force, they constitute a closed system, and their total
+momentum is conserved. Their total momentum is
+\begin{align*}
+ mv_1+mv_2 &= m(v_1+v_2) \\
+ &= m \left(\frac{\Delta x_1}{\Delta t}+\frac{\Delta x_2}{\Delta t}\right)\\
+ &= \frac{m}{\Delta t}\Delta\left(x_1+x_2\right)\\
+ &= m\frac{2\Delta x_{cm}}{\Delta t}\\
+ &= m_{total}v_{cm}
+\end{align*}
+In other words, the total momentum of the system is the same
+as if all its mass was concentrated at the center of mass
+point. Since the total momentum is conserved, the $x$
+component of the center of mass's velocity vector cannot
+change. The same is also true for the other components, so
+the center of mass must move along a straight line at constant speed.
+
+The above relationship between the total momentum and the
+motion of the center of mass applies to any system, even
+if it is not closed.
+
+\begin{lessimportant}[total momentum related to center of mass motion]
+The total momentum of any system is related to its total mass and the
+velocity of its center of mass by the equation
+\begin{equation*}
+  \vc{p}_{total} = m_{total}\vc{v}_{cm}\eqquad.
+\end{equation*}
+\end{lessimportant}
+
+What about a system containing objects with unequal masses,
+or containing more than two objects? The reasoning above can
+be generalized to a weighted average\label{cm-equation}
+\begin{equation*}
+                x_{cm}  =   \frac{m_1x_1+m_2x_2+\ldots}{m_1+m_2+\ldots}\eqquad,
+\end{equation*}
+with similar equations for the $y$ and $z$ coordinates.
+
+<% begin_sec("Momentum in different frames of reference") %>
+
+Absolute motion is supposed to be undetectable, i.e., the
+laws of physics are supposed to be equally valid in all
+inertial frames of reference. If we first calculate some
+momenta in one frame of reference and find that momentum is
+conserved, and then rework the whole problem in some other
+frame of reference that is moving with respect to the first,
+the numerical values of the momenta will all be different.
+Even so, momentum will still be conserved. All that matters
+is that we work a single problem in one consistent frame of reference.
+
+One way of proving this is to apply the equation $\vc{p}_{total}=$\linebreak[4] % Splitting the equation in two fixes an unfortunate line break.
+$m_{total}\vc{v}_{cm}$.
+If the velocity of frame B relative to frame A is
+$\vc{v}_{BA}$, then the only effect of changing frames of
+reference is to change $\vc{v}_{cm}$ from its original value to
+$\vc{v}_{cm}+\vc{v}_{BA}$. This adds a constant onto the momentum
+vector, which has no effect on conservation of momentum.
+
+<% end_sec() %>
+<% begin_sec("The center of mass frame of reference") %>
+\index{center of mass!frame of reference}
+
+<% marg(5) %>
+<%
+  fig(
+    'hockey-pucks-cm-frame',
+    %q{%
+      %
+      Moving your head so that you are always
+      looking down from right above the center of mass, you observe the collision
+      of the two hockey pucks in the center
+      of mass frame.
+    }
+  )
+%>
+<% end_marg %>
+A particularly useful frame of reference in many cases is
+the frame that moves along with the center of mass, called
+the center of mass (c.m.) frame. In this frame, the total
+momentum is zero. The following examples show how the center
+of mass frame can be a powerful tool for simplifying our
+understanding of collisions.
+
+\begin{eg}{A collision of pool balls viewed in the c.m. frame}
+If you move your head so that your eye is always above the
+point halfway in between the two pool balls, you are viewing
+things in the center of mass frame. In this frame, the balls
+come toward the center of mass at equal speeds. By symmetry,
+they must therefore recoil at equal speeds along the lines
+on which they entered. Since the balls have essentially
+swapped paths in the center of mass frame, the same must
+also be true in any other frame. This is the same result
+that required laborious algebra to prove previously without
+the concept of the center of mass frame.
+\end{eg}
+
+\begin{eg}{The slingshot effect}\index{slingshot effect}
+It is a counterintuitive fact that a spacecraft can pick up
+speed by swinging around a planet, if it arrives in the
+opposite direction compared to the planet's motion. Although
+there is no physical contact, we treat the encounter as a
+one-dimensional collision, and analyze it in the center of
+mass frame. Figure \figref{slingshot-sun-frame} shows such a
+``collision,'' with a space probe whipping around Jupiter.
+In the sun's frame of reference, Jupiter is moving.
+
+<% marg(25) %>
+<%
+  fig(
+    'slingshot-sun-frame',
+    %q{%
+      The slingshot effect viewed in the
+      sun's frame of reference. Jupiter is
+      moving to the left, and the collision is
+      head-on.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'slingshot-cm-frame',
+    %q{%
+      The slingshot viewed in the frame
+      of the center of mass of the Jupiter-spacecraft system.
+    }
+  )
+%>
+
+<% end_marg %>%
+
+What about the center of mass frame?
+Since Jupiter is so much more massive than the
+spacecraft, the center of mass is essentially fixed at
+Jupiter's center, and Jupiter has zero velocity in the
+center of mass frame, as shown in figure \figref{slingshot-cm-frame}. The c.m. frame
+is moving to the left compared to the sun-fixed frame used
+in \figref{slingshot-sun-frame}, so the spacecraft's initial velocity is greater in this frame.
+
+Things are simpler in the center of mass frame, because it
+is more symmetric. In the complicated sun-fixed frame, the incoming leg
+of the encounter is rapid, because the two bodies are
+rushing toward each other, while their separation on the
+outbound leg is more gradual, because Jupiter is trying to
+catch up. In the c.m. frame, Jupiter is sitting still, and
+there is perfect symmetry between the incoming and outgoing
+legs, so by symmetry we have $v_{1f}=-v_{1i}$. Going
+back to the sun-fixed frame, the spacecraft's final velocity
+is increased by the frames' motion relative to each other.
+In the sun-fixed frame, the spacecraft's velocity has increased greatly.
+
+The result can also be understood in terms of work and
+energy. In Jupiter's frame, Jupiter is not doing any work on
+the spacecraft as it rounds the back of the planet, because
+the motion is perpendicular to the force. But in the sun's
+frame, the spacecraft's velocity vector at the same moment
+has a large component to the left, so Jupiter is doing work on it.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+Make up a numerical example of two unequal masses moving
+in one dimension at constant velocity, and verify the
+equation $p_{total}=m_{total}v_{cm}$ over a time
+interval of one second.
+\end{dq}
+
+\begin{dq}
+A more massive tennis racquet or baseball bat makes the
+ball fly off faster. Explain why this is true, using the
+center of mass frame. For simplicity, assume that the
+racquet or bat is simply sitting still before the collision,
+and that the hitter's hands do not make any force large
+enough to have a significant effect over the short
+duration of the impact.
+\end{dq}
+
+<% end_sec() %>
+
+m4_ifelse(__me,1,[:
+<% begin_sec("Totally inelastic collisions",0,'totally-inelastic') %>
+On p.~\pageref{elastic-and-inelastic} we discussed collisions that were totally elastic (no
+conversion of KE into other types of energy). A useful application of the
+center of mass frame of reference is to the description of the opposite extreme,
+a totally \emph{inelastic} collision.
+
+A totally inelastic collision cannot just be defined
+as one in which all the KE is converted into other forms, both because the definition
+would depend on our frame of reference and because
+there is a constraint imposed by conservation of momentum. Let's say that
+a golfer hits a ball. In the frame of reference of the grass,
+it would violate conservation of momentum if
+the ball were to stay put while the club simply stopped moving. If such a complete
+cessation of motion is to happen, then it must occur in the center of mass frame
+of reference. In the c.m.~frame, there is zero total momentum both before and after
+the collision. Thus if we observe no motion at all after the collision, we must be in the
+c.m.~frame. 
+
+Therefore we define a totally inelastic collision as one in which there is no
+motion in the c.m.~frame in the final state.\index{collision!totally inelastic}
+An observer watching such a collision, in any frame, will see that
+the amount of KE transformed into other forms of energy is
+as great as possible subject to conservation of momentum.
+
+When objects touch physically (possibly crumpling or changing shape during
+the collision) in a totally elastic collision, the final state in the c.m.~frame
+is one in which the two objects are at rest and touching. In other frames of reference,
+we see the objects stick to each other and travel away together after the collision.
+An example of this type was example \ref{eg:rear-ended}
+on p.~\pageref{eg:rear-ended}, in which one car rear-ended another, and they stuck
+together as a unit after the crash.
+<% end_sec() %>
+:])
+
+<% end_sec('p-and-cm') %>
+<% begin_sec("Momentum transfer",0,'momentum-transfer') %>
+\index{momentum!rate of change of}\index{momentum!transfer of}
+
+  <% begin_sec("The rate of change of momentum",nil,'dp-dt') %>
+
+As with conservation of energy, we need a way to measure and
+calculate the transfer of momentum into or out of a system
+when the system is not closed. In the case of energy, the
+answer was rather complicated, and entirely different
+techniques had to be used for measuring the transfer of
+mechanical energy (work) and the transfer of heat by
+conduction. For momentum, the situation is far simpler.
+
+In the simplest case, the system consists of a single object
+acted on by a constant external force. Since it is only the
+object's velocity that can change, not its mass, the
+momentum transferred is
+\begin{equation*}
+                \Delta\vc{p}         =    m\Delta\vc{v}\eqquad,
+\end{equation*}
+which with the help of $\vc{a}=\vc{F}/m$ and the constant-acceleration
+equation $\vc{a}=\Delta\vc{v}/\Delta t$ becomes
+\begin{align*}
+ \Delta\vc{p} &= m\vc{a}\Delta t \\
+ &= \vc{F}\Delta t\eqquad.
+\end{align*}
+Thus the rate of transfer of momentum, i.e., the number of
+$\kgunit\unitdot\munit/\sunit$ absorbed per second, is simply the external force,
+\begin{equation*}
+        \vc{F}         =    \frac{\Delta\vc{p}}{\Delta t}\eqquad.
+\end{equation*}
+\begin{longnoteafterequation}
+[relationship between the force on an object and the rate
+of change of its momentum; valid only if the force is constant]
+\end{longnoteafterequation}
+\noindent This is just a restatement of Newton's
+second law, and in fact Newton originally stated it this
+way. As shown in figure \figref{e-and-p-transfer}, the relationship between force
+and momentum is directly analogous to that between power and energy.
+
+<% marg(50) %>
+<%
+  fig(
+    'e-and-p-transfer',
+    %q{%
+      Power and force are the rates at which
+      energy and momentum are transferred.
+    }
+  )
+%>
+<% end_marg %>
+The situation is not materially altered for a system
+composed of many objects. There may be forces between the
+objects, but the internal forces cannot change the system's
+momentum. (If they did, then removing the external forces would result in
+a closed system that could change its
+own momentum,  like the mythical man
+who could pull himself up by his own bootstraps. That would violate conservation of momentum.) The
+equation above becomes
+\begin{equation*}
+                \vc{F}_{total}         =    \frac{\Delta\vc{p}_{total}}{\Delta t}\eqquad.
+\end{equation*}
+\begin{longnoteafterequation}
+[relationship between the total external force on a system
+and the rate of change of its total momentum; valid only if
+the force is constant]
+\end{longnoteafterequation}
+
+
+\begin{eg}{Walking into a lamppost}
+\egquestion Starting from rest, you begin walking, bringing
+your momentum up to $100\ \kgunit\unitdot\munit/\sunit$. You walk straight into a
+lamppost. Why is the momentum change of $-100\ \kgunit\unitdot\munit/\sunit$ caused
+by the lamppost so much
+more painful than the change of $+100\ \kgunit\unitdot\munit/\sunit$ when you started walking?
+
+\eganswer The situation is one-dimensional, so we can
+dispense with the vector notation. It probably takes you
+about 1 s to speed up initially, so the ground's force on
+you is $F=\Delta p/\Delta t\approx 100\ \nunit$. Your impact with the
+lamppost, however, is over in the blink of an eye, say 1/10
+s or less. Dividing by this much smaller $\Delta t$ gives
+a much larger force, perhaps thousands of newtons. (The
+negative sign simply indicates that the force is in the
+opposite direction.)
+\end{eg}
+
+This is also the principle of airbags in cars. The time
+required for the airbag to decelerate your head is fairly
+long, the time required for your face to travel 20 or 30 cm.
+Without an airbag, your face would hit the
+dashboard, and the time interval would be the much
+shorter time taken by your skull to move a couple of
+centimeters while your face compressed. Note that either
+way, the same amount of mechanical work has to be done on
+your head: enough to eliminate all its kinetic energy.
+<% marg(100) %>
+<%
+  fig(
+    'airbag',
+    %q{%
+      The airbag increases $\Delta t$ so as to reduce $F=\Delta p/\Delta t$.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Ion drive for spacecraft}
+\egquestion The ion drive of the Deep Space 1 spacecraft,
+pictured on page \pageref{fig:ion-drive} and discussed in example
+\ref{eg:ion-drive}, produces a thrust of 90 mN
+(millinewtons). It carries about 80 kg of reaction mass,
+which it ejects at a speed of 30,000 m/s. For how long can
+the engine continue supplying this amount of thrust before
+running out of reaction mass to shove out the back?
+
+\eganswer Solving the equation $F=\Delta p/\Delta t$ for
+the unknown $\Delta t$, and treating force and momentum as
+scalars since the problem is one-dimensional, we find
+\begin{align*}
+ \Delta t &= \frac{\Delta p}{F} \\
+ &= \frac{m_{exhaust}\Delta v_{exhaust}}{F} \\
+ &= \frac{(80\ \kgunit)(30,000\ \munit/\sunit)}{0.090\ \nunit}\\
+ &= 2.7\times10^7\ \sunit \\
+ &= 300\ \zu{days}
+\end{align*}
+\end{eg}
+
+<% marg(65) %>
+<%
+  fig(
+    'toppling-box',
+    %q{Example \ref{eg:toppling-box}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A toppling box}\label{eg:toppling-box}
+If you place a box on a frictionless surface, it will fall
+over with a very complicated motion that is hard to predict
+in detail. We know, however, that its center of mass moves
+in the same direction as its momentum vector points. There
+are two forces, a normal force and a gravitational force,
+both of which are vertical. (The gravitational force is
+actually many gravitational forces acting on all the atoms
+in the box.) The total force must be vertical, so the
+momentum vector must be purely vertical too, and the center
+of mass travels vertically. This is true even if the box
+bounces and tumbles. [Based on an example by Kleppner and Kolenkow.]
+\end{eg}
+
+  <% end_sec('dp-dt') %>
+% -------- LM has area stuff here, then a later, optional calc-based section. Me has only the later calc-based section.
+m4_ifelse(__me,1,[::],[:
+  <% begin_sec("The area under the force-time graph",nil,'integral-of-f-dt') %>
+
+Few real collisions involve a constant force. For example,
+when a tennis ball hits a racquet, the strings stretch and
+the ball flattens dramatically. They are both acting like
+springs that obey Hooke's law, which says that the force is
+proportional to the amount of stretching or flattening. The
+force is therefore small at first, ramps up to a maximum
+when the ball is about to reverse directions, and ramps back
+down again as the ball is on its way back out. The equation
+$F=\Delta p/\Delta t$, derived under the assumption of
+constant acceleration, does not apply here, and the force
+does not even have a single well-defined numerical value
+that could be plugged in to the equation.
+
+As with similar-looking equations such as
+$v=\Delta p/\Delta t$, the equation $F=\Delta p/\Delta t$ is
+correctly generalized by saying that the force is the
+slope of the $p-t$ graph.
+<% marg(0) %>
+<%
+  fig(
+    'tennis-f-t',
+    %q{%
+      The $F-t$ graph for a tennis racquet hitting a ball
+      might look like this. The amount of momentum transferred equals the area under
+      the curve.
+    }
+  )
+%>
+<% end_marg %>
+
+Conversely, if we wish to find $\Delta p$ from a graph such
+as the one in figure \figref{tennis-f-t}, one approach would be to
+divide the force by the mass of the ball, rescaling the $F$
+axis to create a graph of acceleration versus time. The area
+under the acceleration-versus-time graph gives the change in
+velocity, which can then be multiplied by the mass to find
+the change in momentum. An unnecessary complication was
+introduced, however, because we began by dividing by the
+mass and ended by multiplying by it. It would have made just
+as much sense to find the area under the original $F-t$
+graph, which would have given us the momentum change directly.
+
+  <% end_sec('integral-of-f-dt') %>
+:])
+
+\startdq
+
+\begin{dq}
+Many collisions, like the collision of a bat with a
+baseball, appear to be instantaneous. Most people also would
+not imagine the bat and ball as bending or being compressed
+during the collision. Consider the following possibilities:
+
+\begin{enumerate}
+\item The collision is instantaneous.
+
+\item The collision takes a finite amount of time, during
+which the ball and bat retain their shapes and remain in contact.
+
+\item The collision takes a finite amount of time, during
+which the ball and bat are bending or being compressed.
+\end{enumerate}
+
+\noindent How can two of these be ruled out based on energy or
+momentum considerations?
+\end{dq}
+
+<% end_sec('momentum-transfer') %>
+<% begin_sec("Momentum in three dimensions",m4_ifelse(__me,1,4,nil),'momentum-in-3d') %>\index{momentum!examples in three dimensions}
+
+In this section we discuss how the concepts applied
+previously to one-dimensional situations can be used as well
+in three dimensions. Often vector addition is all that is
+needed to solve a problem:
+
+<% marg(0) %>
+<%
+  fig(
+    'kaboom',
+    %q{Example \ref{eg:kaboom}.}
+  )
+%>
+<% end_marg %>%
+
+\begin{eg}{An explosion}\label{eg:kaboom}
+\egquestion Astronomers observe the planet Mars as the
+Martians fight a nuclear war. The Martian bombs are so
+powerful that they rip the planet into three separate pieces
+of liquified rock, all having the same mass. If one fragment
+flies off with velocity components
+\begin{align*}
+  v_{1x}&=0  \\
+  v_{1y}&=1.0\times10^4\ \zu{km}/\zu{hr}\eqquad,
+\intertext{and the second with}
+  v_{2x}&=1.0\times10^4\ \zu{km}/\zu{hr}\\
+  v_{2y}&=0\eqquad,
+\end{align*}
+(all in the center of mass frame)
+what is the magnitude of the third one's velocity?
+
+\eganswer In the center of mass frame,
+the planet initially had zero momentum. After the
+explosion, the vector sum of the momenta must still be zero.
+Vector addition can be done by adding components, so
+\begin{align*}
+ mv_{1x}+ mv_{2x}+ mv_{3x} &= 0\eqquad, \quad \text{and} \\
+ mv_{1y}+ mv_{2y}+ mv_{3y} &= 0\eqquad,
+\end{align*}
+where we have used the same symbol $m$ for all the terms,
+because the fragments all have the same mass. The masses can
+be eliminated by dividing each equation by $m$, and we find
+\begin{align*}
+ v_{3x} &= -1.0\times10^4\ \zu{km}/\zu{hr} \\
+ v_{3y} &= -1.0\times10^4\ \zu{km}/\zu{hr}
+\end{align*}
+which gives a magnitude of
+\begin{align*}
+ |\vc{v}_3| &= \sqrt{v_{3x}^2+v_{3y}^2}\\
+ &= 1.4\times10^4\ \zu{km}/\zu{hr}
+\end{align*}
+\end{eg}
+
+<% begin_sec("The center of mass") %>
+
+In three dimensions, we have the vector equations
+\begin{align*}
+                \vc{F}_{total}  &=  \frac{\Delta\vc{p}_{total}}{\Delta t} \\
+\intertext{and}
+                \vc{p}_{total}  &=  m_{total}\vc{v}_{cm}\eqquad.
+\end{align*}
+The following is an example of their use.
+
+\begin{eg}{The bola}\label{eg:bola}
+The bola, similar to the North American lasso, is used by
+South American gauchos to catch small animals by tangling up
+their legs in the three leather thongs. The motion of the
+whirling bola through the air is extremely complicated, and
+would be a challenge to analyze mathematically. The motion
+of its center of mass, however, is much simpler. The only
+forces on it are gravitational, so
+\begin{equation*}
+                \vc{F}_{total} =  m_{total}\vc{g}\eqquad.
+\end{equation*}
+Using the equation $\vc{F}_{total}  =  \Delta\vc{p}_{total}/\Delta t$, we find
+\begin{equation*}
+                \Delta \vc{p}_{total}/\Delta t   =  m_{total}\vc{g}\eqquad,
+\end{equation*}
+and since the mass is constant, the equation $\vc{p}_{total}=m_{total}\vc{v}_{cm}$
+allows us to change this to
+\begin{equation*}
+                m_{total}\Delta \vc{v}_{cm}/\Delta t  =  m_{total}\vc{g}\eqquad.
+\end{equation*}
+The mass cancels, and $\Delta \vc{v}_{cm}/\Delta t$ is simply
+the acceleration of the center of mass, so
+\begin{equation*}
+                \vc{a}_{cm}  =  \vc{g}\eqquad.
+\end{equation*}
+In other words, the motion of the system is the same as if
+all its mass was concentrated at and moving with the center
+of mass. The bola has a constant downward acceleration equal
+to $g$, and flies along the same parabola as any other
+projectile thrown with the same initial center of mass
+velocity. Throwing a bola with the correct rotation is
+presumably a difficult skill, but making it hit its target
+is no harder than it is with a ball or a single rock.
+
+\noindent [Based on an example by Kleppner and Kolenkow.]
+\end{eg}
+
+<% marg(100) %>
+<%
+  fig(
+    'bola',
+    %q{Example \ref{eg:bola}.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("Counting equations and unknowns") %>
+Counting equations and unknowns is just as useful as in one
+dimension, but every object's momentum vector has three
+components, so an unknown momentum vector counts as three
+unknowns. Conservation of momentum is a single vector
+equation, but it says that all three components of the total
+momentum vector stay constant, so we count it as three
+equations. Of course if the motion happens to be confined to
+two dimensions, then we need only count vectors as
+having two components.
+
+\begin{eg}{A two-car crash with sticking}
+Suppose two cars collide, stick together, and skid off
+together. If we know the cars' initial momentum vectors, we
+can count equations and unknowns as follows:
+
+unknown \#1: $x$ component of cars' final, total momentum
+
+unknown \#2: $y$ component of cars' final, total momentum
+
+equation \#1: conservation of the total $p_x$
+
+equation \#2: conservation of the total $p_y$
+
+\noindent Since the number of equations equals the number of unknowns,
+there must be one unique solution for their total momentum
+vector after the crash. In other words, the speed and
+direction at which their common center of mass moves off
+together is unaffected by factors such as whether the cars
+collide center-to-center or catch each other a little off-center.
+\end{eg}
+
+m4_ifelse(__me,1,[:\vfill:])
+
+\begin{eg}{Shooting pool}
+Two pool balls collide, and as before we assume there is no
+decrease in the total kinetic energy, i.e., no energy
+converted from KE into other forms. As in the previous
+example, we assume we are given the initial velocities and
+want to find the final velocities. The equations and unknowns are:
+
+unknown \#1: $x$ component of ball \#1's final momentum
+
+unknown \#2: $y$ component of ball \#1's final momentum
+
+unknown \#3: $x$ component of ball \#2's final momentum
+
+unknown \#4: $y$ component of ball \#2's final momentum
+
+equation \#1: conservation of the total $p_x$
+
+equation \#2: conservation of the total $p_y$
+
+equation \#3: no decrease in total KE
+
+Note that we do not count the balls' final kinetic energies
+as unknowns, because knowing the momentum vector, one can
+always find the velocity and thus the kinetic energy. The
+number of equations is less than the number of unknowns, so
+no unique result is guaranteed. This is what makes pool an
+interesting game. By aiming the cue ball to one side of the
+target ball you can have some control over the balls' speeds
+and directions of motion after the collision.
+
+It is not possible, however, to choose any combination of
+final speeds and directions. For instance, a certain shot
+may give the correct direction of motion for the target
+ball, making it go into a pocket, but may also have the
+undesired side-effect of making the cue ball go in a pocket.
+\end{eg}
+
+m4_ifelse(__me,1,[:\vfill:])
+
+<% end_sec() %>
+<% begin_sec("Calculations with the momentum vector") %>
+
+The following example illustrates how a force is required in order to
+change the direction of the momentum vector, just as one
+would be required to change its magnitude.
+
+m4_ifelse(__me,1,[:\pagebreak:])
+
+<% marg(0) %>
+<%
+  fig(
+    'turbine',
+    %q{Example \ref{eg:turbine}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A turbine}\label{eg:turbine}
+\egquestion In a hydroelectric plant, water flowing over a dam
+drives a turbine, which runs a generator to make electric
+power. The figure shows a simplified physical model of the
+water hitting the turbine, in which it is assumed that the
+stream of water comes in at a 45\degunit angle with respect to
+the turbine blade, and bounces off at a 90\degunit angle at
+nearly the same speed. The water flows at a rate $R$, in
+units of kg/s, and the speed of the water is $v$. What are
+the magnitude and direction of the water's force on the turbine?
+
+\eganswer In a time interval $\Delta $t, the mass of water
+that strikes the blade is $R\Delta $t, and the magnitude of
+its initial momentum is $mv=vR\Delta t$. The
+water's final momentum vector is of the same magnitude, but
+in the perpendicular direction. By Newton's third law, the
+water's force on the blade is equal and opposite to the
+blade's force on the water. Since the force is constant, we
+can use the equation
+\begin{equation*}
+                F_{\text{blade on water}}         =    \frac{\Delta \vc{p}_{water}}{\Delta t}\eqquad.
+\end{equation*}
+Choosing the $x$ axis to be to the right and the $y$ axis to
+be up, this can be broken down into components as
+\begin{align*}
+ F_{\text{blade on water},x} &= \frac{\Delta p_{\text{water},x}}{\Delta t} \\
+ &= \frac{-vR\Delta t-0}{\Delta t} \\
+ &= -vR
+\end{align*}
+and
+\begin{align*}
+ F_{\text{blade on water},y} &= \frac{\Delta p_{\text{water},y}}{\Delta t} \\
+ &= \frac{0-(-vR\Delta t)}{\Delta t} \\
+ &= vR\eqquad.
+\end{align*}
+The water's force on the blade thus has components
+\begin{align*}
+ F_{\text{water on blade},x} &= vR \\
+ F_{\text{water on blade},y} &= -vR\eqquad.
+\end{align*}
+In situations like this, it is always a good idea to check
+that the result makes sense physically. The $x$ component of
+the water's force on the blade is positive, which is correct
+since we know the blade will be pushed to the right. The $y$
+component is negative, which also makes sense because the
+water must push the blade down. The magnitude of the water's
+force on the blade is
+\begin{equation*}
+                |F_{\text{water on blade}}|    =    \sqrt{2}vR
+\end{equation*}
+and its direction is at a 45-degree angle down and to the right.
+\end{eg}
+
+\startdqs
+\begin{dq}
+The figures show a jet of water striking two different
+objects. How does the total downward force compare in the
+two cases? How could this fact be used to create a better
+waterwheel? (Such a waterwheel is known as a Pelton wheel.)\label{dq:pelton}
+\end{dq}
+
+<%
+  fig(
+    'dq-pelton',
+    %q{Discussion question \ref{dq:pelton}.},
+    {
+      'width'=>'wide',
+      'anonymous'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+<% end_sec('momentum-in-3d') %>
+<% begin_sec("Applications of calculus",3,'momentum-calc-applications',{'calc'=>true}) %>
+% -------- LM has area stuff earlier, and now this optional calc-based section. Me has only the this calc-based section.
+m4_ifelse(__me,1,[:
+Few real collisions involve a constant force. For example,
+when a tennis ball hits a racquet, the strings stretch and
+the ball flattens dramatically. They are both acting like
+springs that obey Hooke's law, which says that the force is
+proportional to the amount of stretching or flattening. The
+force is therefore small at first, ramps up to a maximum
+when the ball is about to reverse directions, and ramps back
+down again as the ball is on its way back out. The equation
+$F=\Delta p/\Delta t$, derived under the assumption of
+constant acceleration, does not apply here, and the force
+does not even have a single well-defined numerical value
+that could be plugged in to the equation.
+
+This is like every other situation where an equation of the form
+$foo=\Delta bar/\Delta baz$ has to be generalized to the case
+where the rate of change isn't constant. We have
+$F=\der p/\der t$ and, by the fundamental theorem of calculus,
+$\Delta p = \int F\der t$, which can be interpreted as the area
+under the $F-t$ graph,  figure \figref{tennis-f-t}.
+<% marg(0) %>
+<%
+  fig(
+    'tennis-f-t',
+    %q{%
+      The $F-t$ graph for a tennis racquet hitting a ball
+      might look like this. The amount of momentum transferred equals the area under
+      the curve.
+    }
+  )
+%>
+<% end_marg %>
+:],[:
+By now you will have learned to recognize the circumlocutions
+I use in the sections without calculus in order to introduce
+calculus-like concepts without using the notation,
+terminology, or techniques of calculus. It will therefore
+come as no surprise to you that the rate of change of
+momentum can be represented with a derivative,
+\begin{equation*}
+ \vc{F}_{total} = \frac{\der \vc{p}_{total}}{\der t}\eqquad.
+\end{equation*}
+And of course the business about the area under the $F-t$
+curve is really an integral, $\Delta p_{total}=\int F_{total}\der t$, which can be made
+into an integral of a vector in the more general three-dimensional case:
+\begin{equation*}
+ \Delta \vc{p}_{total} = \int \vc{F}_{total}\der t\eqquad.
+\end{equation*}
+In the case of a material object that is neither losing nor
+picking up mass, these are just trivially rearranged
+versions of familiar equations, e.g., $F=m\der v/\der t$ rewritten as $F=\der(mv)/\der t$. The
+following is a less trivial example, where $F=ma$
+alone would not have been very easy to work with.
+:])
+
+\begin{eg}{Rain falling into a moving cart}
+\egquestion If 1 kg/s of rain falls vertically into a 10-kg
+cart that is rolling without friction at an initial speed of
+1.0 m/s, what is the effect on the speed of the cart when
+the rain first starts falling?
+
+\eganswer The rain and the cart make horizontal forces on
+each other, but there is no external horizontal force on the
+rain-plus-cart system, so the horizontal motion obeys
+\begin{equation*}
+        F = \frac{\der(mv)}{\der t}         =  0
+\end{equation*}
+We use the product rule to find
+\begin{equation*}
+ 0 = \frac{\der m}{\der t}v + m\frac{\der v}{\der t}\eqquad.
+\end{equation*}
+We are trying to find how $v$ changes, so we solve for $dv/dt$,
+\begin{align*}
+ \frac{\der v}{\der t}&= -\frac{v}{m}\frac{\der m}{\der t} \\
+ &= -\left(\frac{1\ \munit/\sunit}{10\ \kgunit}\right)\left(1\ \kgunit/\sunit\right)\\
+ &= -0.1\ \munit/\sunit^2\eqquad.
+\end{align*}
+(This is only at the moment when the rain starts to fall.)
+\end{eg}
+
+Finally we note that there are cases where $F=ma$ is
+not just less convenient than $F=\der p/\der t$ but in fact
+$F=ma$ is wrong and $F=\der p/\der t$ is right. A good
+example is the formation of a comet's tail by sunlight. We
+cannot use $F=ma$ to describe this process, since we
+are dealing with a collision of light with matter, whereas
+Newton's laws only apply to matter. The equation $F=\der p/\der t$,
+on the other hand, allows us to find the force experienced
+by an atom of gas in the comet's tail if we know the rate at
+which the momentum vectors of light rays are being turned
+around by reflection from the atom.
+
+<% end_sec('momentum-calc-applications') %>

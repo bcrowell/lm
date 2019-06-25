@@ -1,0 +1,2587 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '05',
+    %q{Thermodynamics},
+    'ch:thermo',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+\epigraphlong{$S=k \log W$}{Inscription on the tomb of Ludwig Boltzmann, 1844-1906.
+Boltzmann originated the microscopic theory of thermodynamics.}
+
+In a developing country like China, a refrigerator is the
+mark of a family that has arrived in the middle class, and a
+car is the ultimate symbol of wealth. Both of these
+are \emph{heat engines}: devices for 
+converting between heat and other
+forms of energy.\index{heat engine}\index{engine!heat}
+Unfortunately for the Chinese, neither is a very efficient
+device. Burning fossil fuels has made China's big cities the
+most polluted on the planet, and the country's total energy
+supply isn't sufficient to support American levels of energy
+consumption by more than a small fraction of China's
+population. Could we somehow manipulate
+energy in a more efficient way?
+
+Conservation of energy is a statement that the total amount of
+energy is constant at all times, which encourages us to
+believe that any energy transformation can be undone ---
+indeed, the laws of physics you've learned so far don't even
+distinguish the past from the future.
+If you get in a car and drive around the block,
+the net effect is to consume some of the energy you paid
+for at the gas station,  using it to heat the neighborhood.
+There would not seem to be any fundamental physical principle
+to prevent you from recapturing all that heat and using it again
+the next time you want to go for a drive. More modestly,
+why don't engineers design a car engine so that
+it recaptures the heat
+energy that would otherwise be wasted via
+the radiator and the exhaust?
+
+Hard experience, however, has shown that designers of more
+and more efficient engines run into a brick wall at a
+certain point. The generators that the electric company uses
+to produce energy at an oil-fueled plant are indeed much
+more efficient than a car engine, but even if one is willing
+to accept a device that is very large, expensive, and
+complex, it turns out to be impossible to make a perfectly
+efficient heat engine --- not just impossible with present-day
+technology, but impossible due to a set of fundamental physical
+principles known as the science of \emph{thermodynamics}.\index{thermodynamics}
+And thermodynamics isn't just a pesky set of constraints on 
+heat engines. Without thermodynamics, there is no way to explain
+the direction of time's arrow --- why we can remember the past
+but not the future, and why it's easier to break Humpty Dumpty than
+to put him back together again.
+
+<% begin_sec("Pressure, temperature, and heat",0) %>
+\index{pressure}\index{temperature}\index{heat}
+When we heat an object, we speed up the mind-bogglingly
+complex random motion of its molecules. One method for
+taming complexity is the conservation laws, since they tell
+us that certain things must remain constant regardless of
+what process is going on. Indeed, the law of conservation of
+energy is also known as the first law of thermodynamics.\index{thermodynamics!first law of}\label{first-law-of-thermodynamics}
+
+But as alluded to in the introduction to this chapter,
+conservation of energy by itself is not powerful enough to
+explain certain empirical facts about heat. A second way to
+sidestep the complexity of heat is to ignore heat's
+atomic nature and concentrate on quantities like
+temperature and pressure that tell us about a system's
+properties as a whole. This approach is called
+macroscopic in contrast to the microscopic method of attack.
+Pressure and temperature were fairly well understood in the
+age of Newton and Galileo, hundreds of years before there
+was any firm evidence that atoms and molecules even existed.
+
+Unlike the conserved quantities such as mass, energy, momentum,
+and angular momentum, neither pressure nor temperature is
+additive. Two cups of coffee have twice the heat
+energy of a single cup, but they do not have twice the
+temperature. Likewise, the painful pressure on your eardrums
+at the bottom of a pool is not affected if you insert or
+remove a partition between the two halves of the pool.
+
+We restrict ourselves to a discussion of pressure in fluids
+at rest and in equilibrium. In physics, the term ``fluid''
+is used to mean either a gas or a liquid. The important
+feature of a fluid can be demonstrated by comparing with a
+cube of jello on a plate. The jello is a solid. If you shake
+the plate from side to side, the jello will respond by
+shearing, i.e., by slanting its sides, but it will tend to
+spring back into its original shape. A solid can sustain
+shear forces, but a fluid cannot. A fluid does not resist a
+change in shape unless it involves a change in volume.
+
+<% begin_sec("Pressure") %>
+
+If you're at the bottom of a pool, you can't relieve the
+pain in your ears by turning your head. The water's
+force on your eardrum is always the same, and is always
+perpendicular to the surface where the eardrum contacts the water. If your
+ear is on the east side of your head, the water's force is
+to the west. If you keep your ear in the same spot while turning
+around so your ear is on the north, the force will still be the same in
+magnitude, and it will change its direction so that it is
+still perpendicular to the eardrum: south. This shows that
+pressure has no direction in space, i.e., it is a scalar. The direction
+of the force is determined by the orientation of the surface on which
+the pressure acts, not by the pressure itself. A fluid flowing over a surface can also
+exert frictional forces, which are parallel to the surface, but the present
+discussion is restricted to fluids at rest.
+
+Experiments also show that a fluid's force on a surface is
+proportional to the surface area. The vast force of the water
+behind a dam, for example, in proportion to the
+dam's great surface area. (The bottom of the dam experiences
+a higher proportion of its force.)
+
+Based on these experimental results, it appears that the
+useful way to define pressure is as follows.
+The pressure of a fluid at a given point is defined as $F_\perp/A$,
+where $A$ is the area of a small surface inserted in the fluid
+at that point, and $F_\perp$ is the component of the fluid's force on
+the surface which is perpendicular to the surface.
+(In the case of a moving fluid,
+fluid friction forces can act parallel to the
+surface, but we're only dealing with stationary fluids, so there is
+only an $F_\perp$.)
+
+<% marg(30) %>
+<%
+  fig(
+    'pressuregauge',
+    %q{%
+      A simple pressure gauge consists of a cylinder open at one
+      end, with a piston and a spring inside. The depth to which
+      the spring is depressed is a measure of the pressure. To
+      determine the absolute pressure, the air needs to be pumped
+      out of the interior of the gauge, so that there is no air
+      pressure acting outward on the piston. In many practical
+      gauges, the back of the piston is open to the atmosphere, so
+      the pressure the gauge registers equals the pressure of the
+      fluid minus the pressure of the atmosphere.
+    }
+  )
+%>
+<% end_marg %>
+
+This is essentially how a pressure gauge works. The reason
+that the surface must be small is so that there will not be
+any significant difference in pressure between one part of it
+and another part.  The SI units
+of pressure are evidently $\nunit/\munit^2$, and this combination
+can be abbreviated as the pascal, 1 Pa=1 $\nunit/\munit^2$.\index{pascal!unit} The
+pascal turns out to be an inconveniently small unit, so car
+tires, for example, normally have pressures imprinted on
+them in units of kilopascals.
+
+\begin{eg}{Pressure in U.S. units}
+In U.S. units, the unit of force is the pound, and the unit
+of distance is the inch. The unit of pressure is therefore
+pounds per square inch, or p.s.i. (Note that the pound is
+not a unit of mass.)
+\end{eg}
+
+\begin{eg}{Atmospheric pressure in U.S. and metric units}
+\egquestion
+A figure that many people in the U.S. remember is
+that atmospheric pressure is about 15 pounds per square
+inch. What is this in metric units?
+
+\eganswer
+\begin{align*}
+        (\text{15 lb})/(\text{1 in}^2)
+                &= \frac{68\ \nunit}{(0.0254\ \munit)^2}\\
+                 &=   1.0\times10^5\ \nunit/\munit^2 \\
+                 &=  100\ \zu{kPa}
+\end{align*}
+\end{eg}
+
+<% begin_sec("Only pressure differences are normally significant.") %>
+
+If you spend enough time on an airplane,
+the pain in your ears subsides. This is because your body
+has gradually been able to admit more air into the cavity
+behind the eardrum. Once the pressure inside is equalized
+with the pressure outside, the inward and outward forces on
+your eardrums cancel out, and there is no physical sensation
+to tell you that anything unusual is going on. For this
+reason, it is normally only pressure differences that have
+any physical significance. Thus deep-sea fish are perfectly
+healthy in their habitat because their bodies have enough
+internal pressure to cancel the pressure from the water in
+which they live; if they are caught in a net and brought to
+the surface rapidly, they explode because their internal
+pressure is so much greater than the low pressure outside.
+
+\begin{eg}{Getting killed by a pool pump}
+\egquestion
+My house has a pool, which I maintain myself. A
+pool always needs to have its water circulated through a
+filter for several hours a day in order to keep it clean.
+The filter is a large barrel with a strong clamp that holds
+the top and bottom halves together. My filter has a
+prominent warning label that warns me not to try to open the
+clamps while the pump is on, and it shows a cartoon of a
+person being struck by the top half of the pump. The
+cross-sectional area of the filter barrel is 0.25 $\zu{m}^2$. Like
+most pressure gauges, the one on my pool pump actually reads
+the difference in pressure between the pressure inside the
+pump and atmospheric pressure. The gauge reads 90 kPa. What
+is the force that is trying to pop open the filter?
+
+\eganswer
+If the gauge told us the absolute pressure of the
+water inside, we'd have to find the force of the water
+pushing outward and the force of the air pushing inward, and
+subtract in order to find the total force. Since air
+surrounds us all the time, we would have to do such a
+subtraction every time we wanted to calculate anything
+useful based on the gauge's reading. The manufacturers of
+the gauge decided to save us from all this work by making it
+read the difference in pressure between inside and outside,
+so all we have to do is multiply the gauge reading by the
+cross-sectional area of the filter:
+\begin{align*}
+         F         &=  PA\\
+                        &=  (90\times10^3\ \nunit/\munit^2)( 0.25\ \munit^2)\\                        &= 22000\ \nunit
+\end{align*}
+That's a lot of force!
+\end{eg}
+
+The word ``suction'' and other related words contain a
+hidden misunderstanding related to this point about pressure
+differences. When you suck
+water up through a straw, there is nothing in your mouth
+that is attracting the water upward. The force that lifts
+the water is from the pressure of the water in the cup. By
+creating a partial vacuum in your mouth, you decreased the
+air's downward force on the water so that it no longer
+exactly canceled the upward force.
+
+<% end_sec() %>
+
+<% begin_sec("Variation of pressure with depth") %>
+
+The pressure within a fluid in equilibrium can only depend
+on depth, due to gravity. If the pressure could vary from
+side to side, then a piece of the fluid in between, \figref{sidetoside},
+would be subject to unequal forces from the parts of the
+fluid on its two sides. Since fluids do not exhibit shear
+forces, there would be no other force that could keep this
+piece of fluid from accelerating. This contradicts the
+assumption that the fluid was in equilibrium.
+
+<% marg(0) %>
+<%
+  fig(
+    'sidetoside',
+    %q{%
+      This doesn't happen. If pressure could vary horizontally
+      in equilibrium, the cube of water would accelerate
+      horizontally. This is a contradiction, since we assumed the
+      fluid was in equilibrium.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'funkycontainer',
+    %q{%
+      The pressure is the same at all the points marked with
+      dots.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'toptobottom',
+    %q{%
+      This does happen. The sum of the forces from the
+      surrounding parts of the fluid is upward, canceling the
+      downward force of gravity.
+    }
+  )
+%>
+<% end_marg %>
+
+<% self_check('solidspressureside',<<-'SELF_CHECK'
+How does this proof fail for solids?
+  SELF_CHECK
+  ) %>
+
+To find the variation with depth, we consider the vertical
+forces acting on a tiny, imaginary cube of the fluid having infinitesimal
+height $\der y$ and areas $\der A$ on the top and bottom. Using positive
+numbers for upward forces, we have
+\begin{align*}
+        P_{bottom}\der A - P_{top}\der A - F_g  =  0\eqquad.
+\end{align*}
+The weight of the fluid is $F_g = mg = \rho Vg = \rho\der A\der y\:g$, where $\rho$ is
+the density of the fluid, so the difference in pressure is
+\begin{multline*}
+        \der P  =  -\rho g \der y\eqquad. 
+\hfill\shoveright{\text{[variation in pressure with depth for}}\\
+\hfill\shoveright{\text{a fluid of density $\rho$ in equilibrium;}}\\
+\hfill\shoveright{\text{positive $y$ is up.]}}
+\end{multline*}
+A more elegant way of writing this is in terms
+of a dot product, $\der P = \rho\vc{g}\cdot\der\vc{y}$, which automatically
+takes care of the plus or minus sign, depending on the relative
+directions of the \vc{g} and $\der\vc{y}$ vectors, and avoids
+any requirements about the coordinate system.
+
+The factor of $\rho$ explains why we notice the difference in
+pressure when diving 3 m down in a pool, but not when going
+down 3 m of stairs. The equation only tells us the
+difference in pressure, not the absolute pressure. The
+pressure at the surface of a swimming pool equals the
+atmospheric pressure, not zero, even though the depth is
+zero at the surface. The blood in your body does not even
+have an upper surface.
+
+In cases where $g$ and $\rho$ are independent of depth, we can
+integrate both sides of the equation to get everything in terms of
+finite differences rather than differentials: $\Delta P  =  -\rho g \Delta y$.
+
+<% self_check('pressureconst',<<-'SELF_CHECK'
+In which of the following situations is the equation 
+$\Delta  P  =  -\rho  g \Delta  y$ valid? Why?\\
+(1) difference in pressure between a tabletop and the feet
+(i.e., predicting the pressure of the feet on the floor)\\
+(2) difference in air pressure between the top and bottom of
+a tall building\\
+(3) difference in air pressure between the top and bottom of
+Mt. Everest\\
+(4) difference in pressure between the top of the earth's
+mantle and the center of the earth\\
+(5) difference in pressure between the top and bottom of an
+airplane's wing
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Pressure of lava underneath a volcano}
+\egquestion
+A volcano has just finished erupting, and a pool
+of molten lava is lying at rest in the crater. The lava has
+come up through an opening inside the volcano that connects
+to the earth's molten mantle. The density of the lava is 4.1
+$\zu{g}/\zu{cm}^3$. What is the pressure in the lava underneath the base
+of the volcano, 3000 m below the surface of the pool?
+
+\eganswer
+\begin{align*}
+        \Delta P         &=  \rho g\Delta y\\
+                        &= ( 4.1\times10^3\ \zu{kg}/\zu{m}^3)
+                                        ( 9.8\ \munit/\sunit^2)(3000\ \zu{m})\\
+                        &= 1.2\times10^8\ \zu{Pa}
+\end{align*}
+This is the difference between the pressure we want to find and
+atmospheric pressure at the surface. The latter, however, is tiny compared
+to the $\Delta P$ we just calculated, so what we've found is essentially the
+pressure, $P$.
+\end{eg}
+
+\begin{eg}{Atmospheric pressure}
+Gases, unlike liquids, are quite compressible, and at a given temperature, the
+density of a gas is approximately proportional to the pressure. The proportionality
+constant is discussed on page \pageref{subsec:pvnrt}, but for now let's just
+call it $k$, $\rho= kP$. Using this fact, we can find the variation of
+atmospheric pressure with altitude, assuming constant temperature:
+\begin{align*}
+        \der P &= -\rho g\der y = - kPg\der y\\
+        \frac{\der P}{ P} &= - kg\der y\\
+        \zu{ln}\: P &= - kgy+\text{constant} \qquad \text{[integrating both sides]}\\
+         P &= (\text{constant}) e^{- kgy} \qquad \text{[exponentiating both sides]}
+\end{align*}
+Pressure falls off exponentially with height. There is no sharp cutoff to the
+atmosphere, but the exponential factor gets extremely small by the time you're
+ten or a hundred miles up.
+\end{eg}
+
+ % 
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% marg(10) %>
+<%
+  fig(
+    'fever',
+    %q{%
+      We have to wait for the thermometer to equilibrate its
+      temperature with the temperature of Irene's armpit.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Temperature",0,'temperature') %>
+
+<% begin_sec("Thermal equilibrium") %>
+
+We use the term temperature casually, but what is it
+exactly? Roughly speaking, temperature is a measure of how
+concentrated the heat energy is in an object. A large,
+massive object with very little heat energy in it has a low
+temperature.
+
+But physics deals with operational definitions, i.e.,
+definitions of how to measure the thing in question. How do
+we measure temperature? One common feature of all
+temperature-measuring devices is that they must be left for
+a while in contact with the thing whose temperature is being
+measured. When you take your temperature with a fever
+thermometer, you are waiting for the mercury inside to come
+up to the same temperature as your body. The thermometer
+actually tells you the temperature of its own working fluid
+(in this case the mercury). In general, the idea of
+temperature depends on the concept of thermal equilibrium.
+When you mix cold eggs from the refrigerator with flour that
+has been at room temperature, they rapidly reach a
+compromise temperature. What determines this compromise
+temperature is conservation of energy, and the amount of
+energy required to heat or cool each substance by one
+degree. But without even having constructed a temperature
+scale, we can see that the important point is the phenomenon
+of thermal equilibrium itself: two objects left in contact
+will approach the same temperature. We also assume that if
+object A is at the same temperature as object B, and B is at
+the same temperature as C, then A is at the same temperature
+as C. This statement is sometimes known as the zeroth law of
+thermodynamics,\index{thermodynamics!zeroth law of}\label{zeroth-law-of-thermodynamics}
+so called because after the first, second, and third
+laws had been developed, it was realized that there was
+another law that was even more fundamental.
+
+<% marg(10) %>
+<%
+  fig(
+    'otters',
+    %q{%
+      Thermal equilibrium can be prevented. Otters
+      have a coat of fur that traps air bubbles for insulation.
+      If a swimming otter was in thermal equilibrium with cold water, it would be dead.
+      Heat is still conducted from the otter's body to the water, but much more slowly than
+      it would be in a warm-blooded animal that didn't have this special adaptation.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'hot-air-balloon',
+    %q{%
+      A hot air balloon is inflated. Because of thermal
+      expansion, the hot air is less dense than the surrounding cold air, and
+      therefore floats as the cold air drops underneath it and pushes it up
+      out of the way.
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% begin_sec("Thermal expansion") %>
+
+The familiar mercury thermometer operates on the principle
+that the mercury, its working fluid, expands when heated and
+contracts when cooled. In general, all substances expand and
+contract with changes in temperature. The zeroth law of
+thermodynamics guarantees that we can construct a
+comparative scale of temperatures that is independent of
+what type of thermometer we use. If a thermometer gives a
+certain reading when it's in thermal equilibrium with
+object A, and also gives the same reading for object B, then
+A and B must be the same temperature, regardless of the
+details of how the thermometers works.
+
+What about constructing a temperature scale in which every
+degree represents an equal step in temperature? The Celsius
+scale has 0 as the freezing point of water and 100 as its
+boiling point. The hidden assumption behind all this is that
+since two points define a line, any two thermometers that
+agree at two points must agree at all other points. In
+reality if we calibrate a mercury thermometer and an alcohol
+thermometer in this way, we will find that a graph of one
+thermometer's reading versus the other is not a perfectly
+straight $y=x$ line. The subtle inconsistency becomes a
+drastic one when we try to extend the temperature scale
+through the points where mercury and alcohol boil or freeze.
+Gases, however, are much more consistent among themselves in
+their thermal expansion than solids or liquids, and the
+noble gases like helium and neon are more consistent with
+each other than gases in general. Continuing to search for
+consistency, we find that noble gases are more consistent
+with each other when their pressure is very low.
+
+As an idealization, we imagine a gas in which the atoms interact only
+with the sides of the container, not with each other. Such a gas is perfectly
+nonreactive (as the noble gases very nearly are), and never
+condenses to a liquid (as the noble gases do only at
+extremely low temperatures). Its atoms take up a negligible
+fraction of the available volume. Any gas can be made to behave very much
+like this if the pressure is extremely low, so that the atoms hardly ever
+encounter each other. Such a gas is called an ideal gas, and we define
+the Celsius scale in terms of the volume of the gas in a thermometer
+whose working substance is an ideal gas maintained at a
+fixed (very low) pressure, and which is calibrated at 0 and
+100 degrees according to the melting and boiling points of
+water. The Celsius scale is not just a comparative scale but
+an additive one as well: every step in temperature is equal,
+and it makes sense to say that the difference in temperature
+between 18 and $28\degcunit$ is the same as the difference between 48
+and 58.
+
+<% marg(90) %>
+<%
+  fig(
+    'gasthermometer',
+    %q{%
+      A simplified version of an ideal gas thermometer. The
+      whole instrument is allowed to come into thermal equilibrium
+      with the substance whose temperature is to be measured, and
+      the mouth of the cylinder is left open to standard pressure.
+      The volume of the noble gas gives an indication of
+      temperature.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'abszeroextrap',
+    %q{%
+      The volume of 1 kg of neon gas as a function of
+      temperature (at standard pressure). Although neon would
+      actually condense into a liquid at some point, extrapolating
+      the graph gives to zero volume gives the same temperature as
+      for any other gas: absolute zero.
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% begin_sec("Absolute zero and the kelvin scale") %>
+
+We find that if we extrapolate a graph of volume versus
+temperature, the volume becomes zero at nearly the same
+temperature for all gases: $-273\degcunit$. Real gases will all
+condense into liquids at some temperature above this, but an
+ideal gas would achieve zero volume at this temperature,
+known as absolute zero. The most useful temperature scale in
+scientific work is one whose zero is defined by absolute
+zero, rather than by some arbitrary standard like the
+melting point of water. The temperature scale used
+universally in scientific work, called the Kelvin scale, is
+the same as the Celsius scale, but shifted by 273 degrees to
+make its zero coincide with absolute zero. Scientists use
+the Celsius scale only for comparisons or when a change in
+temperature is all that is required for a calculation. Only
+on the Kelvin scale does it make sense to discuss ratios of
+temperatures, e.g., to say that one temperature is twice as
+hot as another.\index{temperature!macroscopic definition}
+\index{temperature!Celsius}\index{temperature!Kelvin}\index{temperature!absolute zero}
+\index{thermometer}\index{Celsius (unit)}\index{kelvin (unit)}
+
+\begin{eg}{Which temperature scale to use}
+\egquestion
+You open an astronomy book and encounter the
+equation
+\begin{equation*}
+        (\text{light emitted}) = (\text{constant}) \times  T^ 4
+\end{equation*}
+for the light emitted by a star as a function of its surface
+temperature. What temperature scale is implied?
+
+\eganswer
+The equation tells us that doubling the
+temperature results in the emission of 16 times as much
+light. Such a ratio only makes sense if the Kelvin scale is
+used.
+\end{eg}
+
+Although we can achieve as good an approximation to an ideal
+gas as we wish by making the pressure very low, it seems
+nevertheless that there should be some more fundamental way
+to define temperature. We will construct a more fundamental
+scale of temperature in section \ref{sec:mic-entropy}.
+
+<% end_sec() %>
+
+<% end_sec('temperature') %>
+
+<% begin_sec("Heat",0,'heat') %>
+\index{heat}
+``Heat,'' notated $Q$, is used in thermodynamics as a term for an
+amount of thermal energy that is transferred. When you put a bite of food in your mouth that is too hot,
+the pain is caused by the heat transferred from the food to your
+mouth. People discussing the weather may say ``What about this heat
+today?'' or ``What about this temperature today?'' as if the words
+were synonyms, but to a physicist they are distinct. Temperature is
+not additive, but heat is: two sips of hot coffee have the same
+temperature as one, but two sips will transfer twice the heat to your
+mouth. Temperature is measured in degrees, heat in joules. 
+
+If I give you an object, you can measure its temperature ---
+physicists call temperature a ``property of state,'' i.e., you can
+tell what it is from the current state of the object. Heat is a
+description of a \emph{process} of energy transfer, not a property of
+state. 
+
+It's relatively easy to detect and measure a \emph{transfer} of thermal energy
+(the hot bite of food), but to say how much thermal energy an object
+\emph{has} is much harder --- sometimes even impossible in principle.
+
+Heat is distinguished from mechanical work (\ref{subsec:work},
+p.~\pageref{subsec:work}) because work is the transfer of energy by a
+macroscopically measurable force, e.g., the force of a baseball bat on
+the ball. No such force is needed in order to melt an ice cube; the
+forces are in microscopic collisions of water molecules with ice molecules.
+
+Heat, like the flow of money or water, is a signed quantity, but the
+sign is a matter of definition. The bank's debit 
+is the customer's withdrawal. It is an arbitrary choice whether to
+call $Q$ positive when it flows from object A to object B or from B to
+A, and likewise for the work $W$.  Similar choices arise in the
+description of flowing fluids (example \ref{eg:faucet},
+p.~\pageref{eg:faucet}) or electric currents
+(sec.~\ref{subsec:electric-current},
+p.~\pageref{subsec:electric-current}). We will usually adopt
+definitions such that as many heats and works as possible are
+positive. So by our definition, a cute 19th-century steam locomotive takes
+in positive heat from its boiler, does positive work to pull the cars,
+and spews out positive heat through its smokestack.
+When only a single object is being discussed, such as a cylinder of
+compressed air, we define a heat input as positive and a work output
+as positive, which is again in accord with the picture of the cute steam engine.
+No universally consistent convention is possible, since, e.g., if objects A, B,
+and C all interact, we will always have opposite signs for A's work on B and B's
+work on A, etc.\label{thermo-sign-conventions}
+
+<% end_sec('heat') %>
+
+\startdqs
+
+\begin{dq}\label{dq:heat-cond-propto}
+Figure \subfigref{dq-heat-cond-propto}{1} shows objects 1 and 2, each with a certain temperature $T$
+and a certain amount of thermal energy $E$. They are connected by a
+thin rod, so that eventually they will reach thermal equilibrium.
+We expect that the rate at which heat is transferred into object 1
+will be given by some equation $\der E_1/\der t=k(\ldots)$, where
+$k$ is a positive constant of proportionality and ``$\ldots$'' is some expression that depends
+on the temperatures. Suppose that the following six forms are
+proposed for the ``\ldots'' in $\der E_1/\der t=k(\ldots)$.
+\begin{enumerate}
+\item $T_1$
+\item $T_2$
+\item $T_1-T_2$
+\item $T_2-T_1$
+\item $T_1/T_2$
+\item $T_2/T_1$
+\end{enumerate}
+Give physical reasons why five of these are not possible.
+\end{dq}
+
+<% marg(100) %>
+<%
+  fig(
+    'dq-heat-cond-propto',
+    %q{%
+      Discussion questions \ref{dq:heat-cond-propto}-\ref{dq:heat-cond-series}.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{dq}
+How should the rate of heat conduction in \subfigref{dq-heat-cond-propto}{2} compare with
+the rate in \subfigref{dq-heat-cond-propto}{1}?
+\end{dq}
+
+\begin{dq}\label{dq:heat-cond-series}
+The example in \subfigref{dq-heat-cond-propto}{3} is different from the preceding ones
+because when we add the third object in the middle, we don't necessarily know the intermediate temperature. We could
+in fact set up this third object with any desired initial temperature.
+Suppose, however, that the flow of heat is \emph{steady}. For example, the $36\degunit$ object could
+be a human body, the $0\degunit$ object could be the air on a cold day, and the object in between could
+be a simplified physical model of the insulation provided by clothing or
+body fat. Under this assumption, what is the intermediate temperature?
+How does the rate of heat conduction compare in the two cases?
+\end{dq}
+
+\begin{dq}
+Based on the conclusions of questions \ref{dq:heat-cond-propto}-\ref{dq:heat-cond-series}, how should the rate
+of heat conduction through an object depend on its length and cross-sectional area? If all the linear dimensions
+of the object are doubled, what happens to the rate of heat conduction through it? How would this apply if we
+compare an elephant to a shrew?
+\end{dq}
+
+<% end_sec %>
+
+<% begin_sec("Microscopic description of an ideal gas",nil,'microscopicidealgas') %>
+
+<% begin_sec("Evidence for the kinetic theory") %>
+
+Why does matter have the thermal properties it does? The
+basic answer must come from the fact that matter is made of
+atoms.
+How, then, do the atoms give rise to the bulk properties we
+observe? Gases, whose thermal properties are simple,
+offer the best opportunity for us to construct a simple
+connection between the microscopic and macroscopic worlds.
+
+A crucial observation is that although solids and liquids
+are nearly incompressible, gases can be compressed, as when
+we increase the amount of air in a car's tire while hardly
+increasing its volume at all. This makes us suspect that the
+atoms in a solid are packed shoulder to shoulder, while a
+gas is mostly vacuum, with large spaces between molecules.
+Most liquids and solids have densities about 1000 times
+greater than most gases, so evidently each molecule in a gas
+is separated from its nearest neighbors by a space something
+like 10 times the size of the molecules themselves.
+
+If gas molecules have nothing but empty space between them,
+why don't the molecules in the room around you just fall to
+the floor? The only possible answer is that they are in
+rapid motion, continually rebounding from the walls, floor
+and ceiling. In section \ref{atomicphenomenasection}
+ I have already given some of the evidence for
+the kinetic theory of heat, which states that heat is the kinetic energy of
+randomly moving molecules. This theory was proposed by
+Daniel Bernoulli in 1738, and met with considerable
+opposition because it seemed as though the molecules in a
+gas would eventually calm down and settle into a thin film
+on the floor. There was no precedent for this kind of
+perpetual motion. No rubber ball, however elastic, rebounds
+from a wall with exactly as much energy as it originally
+had, nor do we ever observe a collision between balls in
+which none of the kinetic energy at all is converted to heat
+and sound. The analogy is a false one, however. A rubber
+ball consists of atoms, and when it is heated in a
+collision, the heat is a form of motion of those atoms. An
+individual molecule, however, cannot possess heat. Likewise
+sound is a form of bulk motion of molecules, so colliding
+molecules in a gas cannot convert their kinetic energy to
+sound. Molecules can indeed induce vibrations such as sound
+waves when they strike the walls of a container, but the
+vibrations of the walls are just as likely to impart energy
+to a gas molecule as to take energy from it. Indeed, this
+kind of exchange of energy is the mechanism by which the
+temperatures of the gas and its container become
+equilibrated.
+
+ % 
+
+<% end_sec() %>
+
+<% begin_sec("Pressure, volume, and temperature",nil,'pvnrt') %>
+
+A gas exerts pressure on the walls of its container, and in
+the kinetic theory we interpret this apparently constant
+pressure as the averaged-out result of vast numbers of
+collisions occurring every second between the gas molecules
+and the walls. The empirical facts about gases can be
+summarized by the relation
+\begin{equation*}
+        PV \propto nT   , \qquad \text{[ideal gas]}
+\end{equation*}
+which really only holds exactly for an ideal gas. Here $n$ is
+the number of molecules in the sample of gas.
+
+\begin{eg}{Volume related to temperature}
+The proportionality of volume to temperature at fixed
+pressure was the basis for our definition of temperature.
+\end{eg}
+
+\begin{eg}{Pressure related to temperature}
+Pressure is proportional to temperature when volume is held
+constant. An example is the increase in pressure in a car's
+tires when the car has been driven on the freeway for a
+while and the tires and air have become hot.
+\end{eg}
+
+We now connect these empirical facts to the kinetic theory
+of a classical ideal gas. For simplicity, we assume that the gas is
+monoatomic (i.e., each molecule has only one atom), and that
+it is confined to a cubical box of volume $V$, with $L$ being
+the length of each edge and $A$ the area of any wall. An atom
+whose velocity has an $x$ component $v_x$ will collide regularly
+with the left-hand wall, traveling a distance $2L$ parallel to
+the $x$ axis between collisions with that wall. The time between collisions
+is $\Delta t=2L/v_x$, and in each collision the $x$ component of
+the atom's momentum is reversed from $-mv_x$  to $mv_x$. The total
+force on the wall is
+\begin{equation*}
+        F =  \sum \frac{\Delta p_{x,i}}{\Delta t_i}  \qquad \text{[monoatomic ideal gas]}\eqquad,
+\end{equation*}
+where the index $i$ refers to the individual atoms.
+Substituting $\Delta p_{x,i}=2mv_{x,i}$ and $\Delta t_i=2L/v_{x,i}$, we
+have
+\begin{equation*}
+                F        =  \frac{1}{L} \sum mv_{x,i}^2 \qquad \text{[monoatomic ideal gas]}\eqquad.
+\end{equation*}
+The quantity $mv_{x,i}^2$ is twice the contribution to the
+kinetic energy from the part of the atoms' center of mass
+motion that is parallel to the $x$ axis. Since we're assuming
+a monoatomic gas, center of mass motion is the only type of
+motion that gives rise to kinetic energy. (A more complex
+molecule could rotate and vibrate as well.) If the quantity
+inside the sum included the $y$ and $z$ components, the sum would be
+twice the total kinetic energy of all the molecules. Since we expect
+the energy to be equally shared among $x$, $y$, and $z$ motion,\footnote{This equal sharing will be justified more
+rigorously on page \pageref{equipartition}.} the quantity
+inside the sum must therefore equal 2/3 of the total kinetic
+energy, so
+\begin{equation*}
+        F        =   \frac{2K_{total}}{3L} \qquad \text{[monoatomic ideal gas]}\eqquad.
+\end{equation*}
+Dividing by $A$ and using $AL=V$, we have
+\begin{equation*}
+        P        =   \frac{2K_{total}}{3V} \qquad \text{[monoatomic ideal gas]}\eqquad.
+\end{equation*}
+This can be connected to the empirical relation $PV \propto nT$ if we
+multiply by $V$ on both sides and rewrite $K_{total}$ as $n\bar{K}$,
+where $\bar{K}$ is the average kinetic energy per
+molecule:
+\begin{equation*}
+        PV        =          \frac{2}{3}n\bar{K} \qquad \text{[monoatomic ideal gas]}\eqquad.
+\end{equation*}
+For the first time we have an interpretation of
+temperature based on a microscopic description of matter: in
+a monoatomic ideal gas, the temperature is a measure of the
+average kinetic energy per molecule. The proportionality
+between the two is $\bar{K}=(3/2)kT$, where the constant of
+proportionality $k$, known as Boltzmann's constant, has a
+numerical value of $1.38\times10^{-23}\ \junit/\kunit$.
+
+The Boltzmann constant has the value it does because the celsius and kelvin scales were 
+defined before the microscopic picture of thermodynamics had been discovered. For some
+calculations, it is more convenient to work in more natural units where $k=1$ by definition, and then
+the units of temperature and energy are the same.\index{Boltzmann's constant}
+The Boltzmann constant is small because our energy scale of joules is a macroscopic scale,
+so that when we express the thermal energy of a single atom in joules, the number is very small.
+
+Summarizing, we have the following two important facts.
+
+\begin{important}[Microscopic model of an ideal gas]
+For an ideal gas,
+\begin{equation*}
+        PV        =  nkT,
+\end{equation*}
+which is known as the ideal gas law.\index{ideal gas law}
+The temperature of the gas is a measure of the average kinetic energy
+per atom,
+\begin{equation*}
+        \bar{K}   =  \frac{3}{2}kT.
+\end{equation*}
+\end{important}
+
+Although I won't prove it here, the ideal gas law applies to all ideal gases, even
+though the derivation assumed a monoatomic ideal gas in a cubical box.
+ (You may have seen it
+written elsewhere as $PV=NRT$, where $N=n/N_A$ is the number of
+moles of atoms, $R=kN_A$, and $N_A=6.0\times10^{23}$, called
+Avogadro's number, is essentially the number of hydrogen
+atoms in 1 g of hydrogen.)\index{Avogadro's number}
+
+\begin{eg}{Pressure in a car tire}
+\egquestion
+After driving on the freeway for a while, the air
+in your car's tires heats up from $10\degcunit$ to $35\degcunit$. How much
+does the pressure increase?
+
+\eganswer
+The tires may expand a little, but we assume this
+effect is small, so the volume is nearly constant. From the
+ideal gas law, the ratio of the pressures is the same as the
+ratio of the absolute temperatures,
+\begin{align*}
+          P_2/ P_1
+                &= T_2/ T_1\\
+                &=(308\ \kunit)/(283\ \kunit)\\
+                &= 1.09\eqquad,\\
+\end{align*}
+or a 9\% increase.
+\end{eg}
+
+\startdqs
+
+\begin{dq}\label{dq:he-xe}
+Compare the amount of energy needed to heat 1 liter of helium by 1 degree with the energy needed
+to heat 1 liter of xenon. In both cases, the heating is carried out in a sealed vessel that doesn't
+allow the gas to expand. (The vessel is also well insulated.)
+\end{dq}
+ % 
+\begin{dq}
+Repeat  discussion question \ref{dq:he-xe} if the comparison is 1 kg of helium versus 1 kg of xenon (equal
+masses, rather than equal volumes).
+\end{dq}
+ % 
+\begin{dq}
+Repeat  discussion question \ref{dq:he-xe}, but now compare 1 liter of helium in a vessel of
+constant volume with the same amount of helium in a vessel that allows expansion beyond the initial
+volume of 1 liter. (This could be a piston, or a balloon.)
+\end{dq}
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+\pagebreak
+
+<% begin_sec("Entropy as a macroscopic quantity") %>
+
+<% begin_sec("Efficiency and grades of energy",0) %>
+
+Some forms of energy are more convenient than others in
+certain situations. You can't run a spring-powered
+mechanical clock on a battery, and you can't run a
+battery-powered clock with mechanical energy. However, there
+is no fundamental physical principle that prevents you from
+converting 100\% of the electrical energy in a battery into
+mechanical energy or vice-versa. More efficient motors and
+generators are being designed every year. In general, the
+laws of physics permit perfectly efficient conversion within
+a broad class of forms of energy.
+
+Heat is different. Friction tends to convert other forms of
+energy into heat even in the best lubricated machines. When
+we slide a book on a table, friction brings it to a stop and
+converts all its kinetic energy into heat, but we never
+observe the opposite process, in which a book spontaneously
+converts heat energy into mechanical energy and starts
+moving! Roughly speaking, heat is different because it is
+disorganized. Scrambling an egg is easy. Unscrambling it is
+harder.
+
+We summarize these observations by saying that heat is a
+lower grade of energy than other forms such as mechanical
+energy.
+
+Of course it is possible to convert heat into other forms of
+energy such as mechanical energy, and that is what a gasoline car's
+engine does with the heat created by exploding the air-gas
+mixture. But a car engine is a tremendously inefficient
+device, and a great deal of the heat is simply wasted
+through the radiator and the exhaust. Engineers have never
+succeeded in creating a perfectly efficient device for
+converting heat energy into mechanical energy, and we now
+know that this is because of a deeper physical principle
+that is far more basic than the design of an engine.
+
+<%
+  fig(
+    'turbine',
+    %q{%
+      1. The temperature difference between the hot and cold
+      parts of the air can be used to extract mechanical energy,
+      for example with a fan blade that spins because of the
+      rising hot air currents.
+      2. If the temperature of the air is first allowed to become
+      uniform, then no mechanical energy can be extracted. The
+      same amount of heat energy is present, but it is no longer
+      accessible for doing mechanical work.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+
+<% begin_sec("Heat engines") %>
+
+Heat may be more useful in some forms than in others, i.e.,
+there are different grades of heat energy. In figure \figref{turbine}/1,
+the difference in temperature can be used to extract
+mechanical work with a fan blade. This principle is used in
+power plants, where steam is heated by burning oil or by
+nuclear reactions, and then allowed to expand through a
+turbine which has cooler steam on the other side. On a
+smaller scale, there is a Christmas toy, \figref{angel-chimes}, that consists of a
+small propeller spun by the hot air rising from a set of
+candles, very much like the setup shown in figure \figref{turbine}.
+
+<% marg(43) %>
+<%
+  fig(
+    'angel-chimes',
+    %q{%
+      A heat engine. Hot air from the candles rises through the fan blades and makes
+      the angels spin.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'carnot',
+    %q{Sadi Carnot (1796-1832)}
+  )
+%>
+<% end_marg %>
+
+In figure \figref{turbine}/2, however, no mechanical work can be extracted
+because there is no difference in temperature. Although the
+air in \figref{turbine}/2 has the same total amount of energy as the air in
+\figref{turbine}/1, the heat in \figref{turbine}/2 is a lower grade of energy, since
+none of it is accessible for doing mechanical work.
+
+In general, we define a heat engine as any device that takes
+heat from a reservoir of hot matter, extracts some of the
+heat energy to do mechanical work, and expels a lesser
+amount of heat into a reservoir of cold matter. The
+efficiency of a heat engine equals the amount of useful work
+extracted, $W$, divided by the amount of energy we had to pay
+for in order to heat the hot reservoir. This latter amount
+of heat is the same as the amount of heat the engine
+extracts from the high-temperature reservoir, $Q_H$.
+By conservation of energy, we have $Q_H=W+Q_L$, where $Q_L$ is the
+amount of heat expelled into the low-temperature reservoir,
+so the efficiency of a heat engine, $W/Q_H$, can be rewritten
+as
+\begin{equation*}
+        \text{efficiency}        =  1-\frac{Q_L}{Q_H}\eqquad. \qquad \text{[efficiency of any heat
+engine]}
+\end{equation*}
+(As described on p.~\pageref{thermo-sign-conventions}, we take $Q_L$, $Q_H$, and $W$ all to be positive.)
+
+It turns out that there is a particular type of heat engine,
+the Carnot engine,\index{Carnot engine}\index{engine!Carnot} which, although not 100\% efficient, is
+more efficient than any other. The grade of heat energy in a
+system can thus be unambiguously defined in terms of the
+amount of heat energy in it that cannot be extracted even by
+a Carnot engine.
+
+How can we build the most efficient possible engine? Let's
+start with an unnecessarily inefficient engine like a car
+engine and see how it could be improved. The radiator and
+exhaust expel hot gases, which is a waste of heat energy.
+These gases are cooler than the exploded air-gas mixture
+inside the cylinder, but hotter than the air that surrounds
+the car. We could thus improve the engine's efficiency
+by adding an auxiliary heat engine to it, which would
+operate with the first engine's exhaust as its hot reservoir and the air as
+its cold reservoir. In general, any heat engine that expels
+heat at an intermediate temperature can be made more
+efficient by changing it so that it expels heat only at the
+temperature of the cold reservoir.
+
+Similarly, any heat engine that absorbs some energy at an
+intermediate temperature can be made more efficient by
+adding an auxiliary heat engine to it which will operate
+between the hot reservoir and this intermediate temperature.
+
+<% marg(100) %>
+<%
+  fig(
+    'carnota',
+    %q{%
+       The beginning of the first expansion stroke, in which
+      the working gas is kept in thermal equilibrium with the hot
+      reservoir.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'carnotb',
+    %q{%
+      The beginning of the second expansion stroke, in which
+      the working gas is thermally insulated. The working gas
+      cools because it is doing work on the piston and thus losing
+      energy.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'carnotc',
+    %q{%
+      The beginning of the first compression stroke. The
+      working gas begins the stroke at the same temperature as the
+      cold reservoir, and remains in thermal contact with it the
+      whole time. The engine does negative work.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'carnotd',
+    %q{%
+      The beginning of the second compression stroke, in which
+      mechanical work is absorbed, heating the working gas back up
+      to $T_H$.
+    }
+  )
+%>
+<% end_marg %>
+
+Based on these arguments, we define a Carnot engine as a
+heat engine that absorbs heat only from the hot reservoir
+and expels it only into the cold reservoir. Figures \figref{carnota}-\figref{carnotd}
+show a realization of a Carnot engine using a piston in a
+cylinder filled with a monoatomic ideal gas. This gas, known
+as the working fluid, is separate from, but exchanges energy
+with, the hot and cold reservoirs. 
+As proved on page \pageref{eg:carnot-efficiency},
+this particular Carnot engine has an
+efficiency given by
+\begin{equation*}
+        \text{efficiency}        =  1 - \frac{T_L}{T_H}\eqquad, \qquad \text{[efficiency of a Carnot engine]} 
+\end{equation*}
+where $T_L$ is the temperature of the cold reservoir and $T_H$ is
+the temperature of the hot reservoir.
+
+Even if you do not wish to dig into the details of the
+proof, the basic reason for the temperature dependence is
+not so hard to understand. Useful mechanical work is done on
+strokes \figref{carnota} and \figref{carnotb}, in which the gas expands. The motion of
+the piston is in the same direction as the gas's force on
+the piston, so positive work is done on the piston. In
+strokes \figref{carnotc} and \figref{carnotd}, however, the gas does negative work on
+the piston. We would like to avoid this negative work, but
+we must design the engine to perform a complete cycle.
+Luckily the pressures during the compression strokes are
+lower than the ones during the expansion strokes, so the
+engine doesn't undo all its work with every cycle. The
+ratios of the pressures are in proportion to the ratios of
+the temperatures, so if $T_L$ is 20\% of $T_H$, the engine is 80\%
+efficient.
+
+We have already proved that any engine that is not a Carnot
+engine is less than optimally efficient, and it is also true
+that all Carnot engines operating between a given pair of
+temperatures $T_H$ and $T_L$ have the same efficiency. (This can be
+proved by the methods of section \ref{sec:mic-entropy}.) Thus a Carnot engine
+is the most efficient possible heat engine.
+
+<% end_sec() %>
+
+<% begin_sec("Entropy") %>
+
+We would like to have some numerical way of measuring the
+grade of energy in a system. We want this quantity, called
+entropy, to have the following two properties:
+
+(1) Entropy is additive. When we combine two systems and
+consider them as one, the entropy of the combined system
+equals the sum of the entropies of the two original systems.
+(Quantities like mass and energy also have this property.)
+
+(2) The entropy of a system is not changed by operating a
+Carnot engine within it.
+
+It turns out to be simpler and more useful to define changes
+in entropy than absolute entropies. Suppose as an example
+that a system contains some hot matter and some cold matter.
+It has a relatively high grade of energy because a heat
+engine could be used to extract mechanical work from it. But
+if we allow the hot and cold parts to equilibrate at some
+lukewarm temperature, the grade of energy has gotten worse.
+Thus putting heat into a hotter area is more useful than
+putting it into a cold area. Motivated by these
+considerations, we define a change in entropy as
+follows:\index{entropy!macroscopic definition}
+\begin{multline*}
+        \Delta S  =  \frac{Q}{T}        \qquad \shoveright{\text{[change in entropy when adding}}\\                                                \shoveright{\text{heat $Q$ to matter at temperature $T$;}}\\
+                                                {\text{$\Delta S$ is negative if heat is taken out]}}
+\end{multline*}
+A system with a higher grade of energy has a lower entropy.
+
+<% marg(300) %>
+<%
+  fig(
+    'waterwheel',
+    %q{%
+      Entropy can be understood using the metaphor of a water
+      wheel. Letting the water levels equalize is like letting the
+      entropy maximize. Taking water from the high side and
+      putting it into the low side increases the entropy. Water levels in this
+      metaphor correspond to temperatures in the actual definition of entropy.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Entropy is additive.}
+Since changes in entropy are defined by an additive quantity
+(heat) divided by a non-additive one (temperature), entropy
+is additive.
+\end{eg}
+
+\begin{eg}{Entropy isn't changed by a Carnot engine.}\label{eg:carnotnoentropychange}
+The efficiency of a heat engine is defined by
+\begin{equation*}
+        \text{efficiency}  =  1 -  Q_L/ Q_H\eqquad,
+\end{equation*}
+and the efficiency of a Carnot engine is
+\begin{equation*}
+        \text{efficiency}  =  1 -  T_L/ T_H\eqquad,
+\end{equation*}
+so for a Carnot engine we have $Q_L/ Q_H =  T_L/ T_H$,
+which can be rewritten as
+$Q_L/ T_{L} =  Q_{H}/ T_H$.
+The entropy lost by the hot reservoir is therefore
+the same as the entropy gained by the cold one.
+\end{eg}
+
+\begin{eg}{Entropy increases in heat conduction.}
+When a hot object gives up energy to a cold one,
+conservation of energy tells us that the amount of heat lost
+by the hot object is the same as the amount of heat gained
+by the cold one. The change in entropy is $- Q/ T_{H}+ Q/ T_L$, which
+is positive because $ T_L< T_H$.
+\end{eg}
+
+\begin{eg}{Entropy is increased by a non-Carnot engine.}
+The efficiency of a non-Carnot engine is less than 1 -
+$ T_L/ T_H$, so $Q_L/ Q_{H} >  T_{L}/ T_H$
+ and $Q_L/ T_{L} >  Q_{H}/ T_H$. This means that
+the entropy increase in the cold reservoir is greater than
+the entropy decrease in the hot reservoir.
+\end{eg}
+
+\begin{eg}{A book sliding to a stop}
+A book slides across a table and comes to a stop. Once it stops, all its
+kinetic energy has been transformed into heat. As the book and
+table heat up, their entropies both increase, so the total entropy increases
+as well.
+\end{eg}
+
+All of these examples involved closed systems, and in all of
+them the total entropy either increased or stayed the same. It
+never decreased. Here are two examples of schemes for
+decreasing the entropy of a closed system, with explanations
+of why they don't work.
+
+\begin{eg}{Using a refrigerator to decrease entropy?}
+\egquestion
+A refrigerator takes heat from a cold area and
+dumps it into a hot area. (1) Does this lead to a net
+decrease in the entropy of a closed system? (2) Could you
+make a Carnot engine more efficient by running a
+refrigerator to cool its low-temperature reservoir and
+eject heat into its high-temperature reservoir?
+
+\eganswer
+(1) No. The heat that comes off of the radiator
+coils is a great deal more than the heat the fridge removes from
+inside; the difference is what it costs to run your fridge.
+The heat radiated from the coils is so much more than the
+heat removed from the inside that the increase in the
+entropy of the air in the room is greater than the decrease
+of the entropy inside the fridge. The most efficient
+refrigerator is actually a Carnot engine running in reverse,
+which leads to neither an increase
+nor a decrease in entropy.
+
+(2) No. The most efficient refrigerator is a reversed Carnot
+engine. You will not achieve anything by running one Carnot
+engine in reverse and another forward. They will just cancel
+each other out.
+\end{eg}
+
+\begin{eg}{Maxwell's demon}
+\egquestion
+Maxwell imagined a pair of rooms, their air being initially in
+thermal equilibrium, having a partition across the middle
+with a tiny door. A miniscule demon is posted at the door
+with a little ping-pong paddle, and his duty is to try to
+build up faster-moving air molecules in room B and slower
+moving ones in room A. For instance, when a fast molecule is
+headed through the door, going from A to B, he lets it by,
+but when a slower than average molecule tries the same
+thing, he hits it back into room A. Would this decrease the
+total entropy of the pair of rooms?
+
+\eganswer
+No. The demon needs to eat, and we can think of his body as
+a little heat engine, and his metabolism is less efficient
+than a Carnot engine, so he ends up increasing the entropy
+rather than decreasing it.
+\end{eg}
+
+Observations such as these lead to the following hypothesis,
+known as the second law of thermodynamics:\index{thermodynamics!second law of}\label{second-law-of-thermodynamics}
+
+\begin{important}
+The entropy of a closed system always increases, or at best
+stays the same: $\Delta S\ge0$.
+\end{important}
+
+At present our arguments to support this statement may seem
+less than convincing, since they have so much to do with
+obscure facts about heat engines. In
+the following section we will find a more satisfying
+and fundamental explanation for the continual increase in entropy. 
+To emphasize the fundamental and universal nature of the second law,
+here are a few exotic examples.
+
+\begin{eg}{Entropy and evolution}
+A favorite argument of many creationists who don't believe
+in evolution is that evolution would violate the second law
+of thermodynamics: the death and decay of a living thing
+releases heat (as when a compost heap gets hot) and lessens
+the amount of energy available for doing useful work, while
+the reverse process, the emergence of life from nonliving
+matter, would require a decrease in entropy. Their argument
+is faulty, since the second law only applies to closed
+systems, and the earth is not a closed system. The earth is
+continuously receiving energy from the sun.
+\end{eg}
+
+\begin{eg}{The heat death of the universe}
+Living things have low entropy: to demonstrate this fact,
+observe how a compost pile releases heat, which then
+equilibrates with the cooler environment. We never observe
+dead things to leap back to life after sucking some heat
+energy out of their environments! The only reason life was
+able to evolve on earth was that the earth was not a closed
+system: it got energy from the sun, which presumably gained
+more entropy than the earth lost.
+
+\enlargethispage{-\baselineskip}
+
+Victorian philosophers spent a lot of time worrying about
+the heat death of the universe: eventually the universe
+would have to become a high-entropy, lukewarm soup, with no
+life or organized motion of any kind. Fortunately (?), we
+now know a great many other things that will make the
+universe inhospitable to life long before its entropy is
+maximized. Life on earth, for instance, will end when the
+sun evolves into a hotter state and boils away our oceans.
+\end{eg}
+
+\begin{eg}{Hawking radiation}\index{black hole}\index{Hawking radiation}
+Any process that could destroy heat (or convert it into
+nothing but mechanical work) would lead to a reduction in
+entropy. Black holes are supermassive stars whose gravity is
+so strong that nothing, not even light, can escape from them
+once it gets within a boundary known as the event horizon.
+Black holes are commonly observed to suck hot gas into them.
+Does this lead to a reduction in the entropy of the
+universe? Of course one could argue that the entropy is
+still there inside the black hole, but being able to
+``hide'' entropy there amounts to the same thing as being
+able to destroy entropy.
+
+The physicist Steven Hawking was bothered by this,
+and finally realized that although the actual stuff that
+enters a black hole is lost forever, the black hole will
+gradually lose energy  in the form of light emitted from
+just outside the event horizon. This light ends up
+reintroducing the original entropy back into the universe.
+\end{eg}
+
+\enlargethispage{-\baselineskip}
+
+\startdqs
+
+\begin{dq}
+In this discussion question, you'll think about a car engine in terms
+of thermodynamics. Note that an internal combustion engine doesn't fit
+very well into the theoretical straightjacket of a heat engine. For
+instance, a heat engine has a high-temperature heat reservoir
+at a single well-defined temperature, $T_H$. In a typical car engine,
+however, there are several very different temperatures you could
+imagine using for $T_H$: the temperature of the engine block
+($\sim100\degcunit$), the walls of the cylinder ($\sim250\degcunit$), or
+the temperature of the exploding air-gas mixture ($\sim1000\degcunit$,
+with significant changes over a four-stroke cycle). Let's use
+$T_H\sim1000\degcunit$.
+
+Burning gas supplies heat energy $Q_H$ to your car's engine. The
+engine does mechanical work $W$, but also expels heat $Q_L$
+into the environment through the radiator and the exhaust. Conservation
+of energy gives
+\begin{equation*}
+        Q_H = Q_L+W\eqquad,
+\end{equation*}
+and the relative proportions of $Q_L$ and $W$ are usually about
+90\% to 10\%. (Actually it depends quite a bit on the type of car, the
+driving conditions, etc.) Here, $Q_H$, $Q_L$, and $W$ are all positive
+according to the sign convention defined on p.~\pageref{thermo-sign-conventions}.
+
+(1) A gallon of gas releases about 140 MJ of heat $Q_H$ when burned.
+Estimate the change in entropy of the universe due to running a typical
+car engine and burning one gallon of gas. Note that you'll have to introduce
+appropriate plus and minus signs, as defined in the relation $\Delta S=Q/T$,
+in which heat input raises an object's entropy and heat output lowers it.
+(You'll have to estimate how
+hot the environment is. For the sake of argument, assume that the work
+done by the engine, $W$, remains in the form of mechanical energy,
+although in reality it probably ends up being changed into heat when you step
+on the brakes.) Is your result consistent with the second law of
+thermodynamics?
+
+(2) $Q_L$ is obviously undesirable: you pay for it, but all it does is
+heat the neighborhood. Suppose that engineers do a really good job
+of getting rid of the effects that create $Q_L$, such as friction. Could
+$Q_L$ ever be reduced to zero, at least theoretically?
+What would happen if you redid the calculation in \#1, but assumed
+$Q_L=0$?
+\end{dq}
+
+\begin{dq}
+When we run the Carnot engine in figures \figref{carnota}-\figref{carnotd}, there are four parts
+of the universe that undergo changes in their physical states: the hot reservoir, the cold reservoir,
+the working gas, and the outside world to which the shaft is connected in order to do physical work.
+Over one full cycle, discuss which of these parts gain entropy, which ones lose entropy, and
+which ones keep the same entropy. During which of the four strokes do these changes occur?
+\end{dq}
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Entropy as a microscopic quantity",nil,'mic-entropy') %>
+
+<% begin_sec("A microscopic view of entropy") %>
+
+To understand why the second law of thermodynamics is always true, we need
+to see what entropy really means at the microscopic level. An example that is
+easy to visualize is the free expansion of a monoatomic
+gas. Figure \figref{freeexpansion}/1 shows a box
+in which all the atoms of the gas are confined on one side. We very quickly remove
+the barrier between the two sides, \figref{freeexpansion}/2, and some time later, the
+system has reached an equilibrium, \figref{freeexpansion}/3. Each snapshot
+shows both the positions and the momenta of the atoms, which is enough
+information to allow us in theory to extrapolate the behavior of the system into the future,
+or the past. However, with a realistic number of atoms, rather than just six, this
+would be beyond the computational power of any computer.\footnote{Even with smaller
+numbers of atoms, there is a problem with this kind of brute-force computation, because
+the tiniest measurement errors in the initial state would end up having large effects
+later on.}
+
+<% marg(79) %>
+<%
+  fig(
+    'freeexpansion',
+    %q{A gas expands freely, doubling its volume.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'fluctuation',
+    %q{%
+      An unusual fluctuation in the distribution of the atoms
+      between the two sides of the box. There has been no external manipulation
+      as in figure \figref{freeexpansion}/1.
+    }
+  )
+%>
+<% end_marg %>
+
+But suppose
+we show figure \figref{freeexpansion}/2 to a friend without any further information,
+and ask her what she can say about the system's behavior in the future. She doesn't
+know how the system was prepared. Perhaps, she thinks, it was just a strange
+coincidence that all the atoms happened to be in the right half of the box
+at this particular moment. In any case, she knows that this unusual situation
+won't last for long. She can predict that after the passage of any significant amount of time,
+a surprise inspection is likely to show roughly
+half the atoms on each side. The same is true if you ask her to say what
+happened in the past. She doesn't know about the barrier, so as far as she's concerned,
+extrapolation into the past is exactly the same kind of problem as extrapolation into
+the future. We just have to imagine reversing all the momentum vectors, and then
+all our reasoning works equally well for backwards extrapolation. She would conclude,
+then, that the gas in the box underwent an unusual fluctuation, \figref{fluctuation},
+and she knows that
+the fluctuation is very unlikely to exist very far into the future, or to have existed very
+far into the past.
+
+What does this have to do with entropy? Well, state \figref{freeexpansion}/3
+has a greater entropy than state \figref{freeexpansion}/2. It would be easy to
+extract mechanical work from \figref{freeexpansion}/2, for instance by letting
+the gas expand while pressing on a piston rather than simply releasing it suddenly
+into the void. There is no way to extract mechanical work from state \figref{freeexpansion}/3.
+Roughly speaking, our microscopic description of entropy relates to the \emph{number
+of possible states}. There are a lot more states like \figref{freeexpansion}/3 than there
+are states like \figref{freeexpansion}/2. Over long enough periods of time --- long
+enough for equilibration to occur --- the system gets mixed up, and is about equally
+likely to be in any of its possible states, regardless of what state it was initially in.
+We define some number that describes an interesting property of the whole system,
+say the number of atoms in the right half of the box, $R$.
+A high-entropy value of $R$ is one like $R=3$, which allows many possible states.
+We are far more likely to encounter $R=3$ than 
+a low-entropy value like $R=0$ or $R=6$. 
+
+<%
+  fig(
+    'space-junk',
+    %q{%
+      Earth orbit is becoming cluttered with space junk, and the pieces can be thought of as the ``molecules'' comprising an exotic kind
+      of gas. These images show the evolution of a cloud of debris arising from a 2007 Chinese test of an anti-satellite
+      rocket. Panels 1-4 show the cloud five minutes, one hour, one day, and one month after the impact. The entropy
+      seems to have maximized by panel 4.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'floatpos'=>'t'
+    }
+  )
+%>
+
+ % 
+
+<% end_sec() %>
+
+<% begin_sec("Phase space",nil,'phase-space') %>
+
+There is a problem with making this description of entropy into a mathematical
+definition. The problem is that it refers to the number of possible states, but that number
+is theoretically infinite. To get around the problem, we coarsen our description of the
+system. For the atoms in figure \figref{freeexpansion}, we don't really care exactly where
+each atom is. We only care whether it is in the right side or the left side. If a particular atom's
+left-right position is described by a coordinate $x$, then the set of all possible values
+of $x$ is a line segment along the $x$ axis, containing an infinite number of points.
+We break this line segment down into two halves, each of width $\Delta x$, and we
+consider two different values of $x$ to be variations on the same state if they both
+lie in the same half. For our present purposes, we can also ignore completely the
+$y$ and $z$ coordinates, and all three momentum components, $p_x$, $p_y$, and
+$p_z$.
+
+<% marg(40) %>
+<%
+  fig(
+    'twobytwo',
+    %q{The phase space for two atoms in a box.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'threedimphasespace',
+    %q{The phase space for three atoms in a box.}
+  )
+%>
+<% end_marg %>
+
+Now let's do a real calculation. Suppose there are only two atoms in the box,
+with coordinates $x_1$ and $x_2$. We can give all the relevant information
+about the state of the system by specifying one of the cells in the grid
+shown in figure \figref{twobytwo}. This grid is known as the 
+ \emph{phase space} of the system.\footnote{The term is a little obscure. Basically the
+idea is the same as in ``my toddler is going through a phase where he always says no.''
+The ``phase'' is a stage in the evolution of the system, a snapshot of its state at a moment
+in time. The usage is also related to the concept of Lissajous figures, in which a particular
+point on the trajectory is defined by the phases of the oscillations along the $x$ and $y$ axes.} The lower right cell, for instance,
+describes a state in which atom number 1 is in the right side of the box
+and atom number 2 in the left. Since there are two possible states with
+$R=1$ and only one state with $R=2$, we are twice as likely to observe
+$R=1$, and $R=1$ has higher entropy than $R=2$.
+
+Figure \figref{threedimphasespace} shows a corresponding calculation
+for three atoms, which makes the phase space three-dimensional. Here,
+the $R=1$ and 2 states 
+are three times more likely than $R=0$ and 3.
+Four atoms would require a four-dimensional phase space, which
+exceeds our ability to visualize.
+Although our present example doesn't require it, a phase space
+can describe momentum as well as position, as shown in figure
+\figref{phasespace}.
+ In general, a phase space for a monoatomic gas
+has six dimensions per atom (one for each coordinate
+and one for each momentum component).
+
+ % 
+
+<% end_sec('phase-space') %>
+
+<% begin_sec("Microscopic definitions of entropy and temperature",nil,'microscopic-entropy') %>
+
+Two more issues need to be resolved in order to make a microscopic
+definition of entropy.
+
+First, if we defined entropy as the number of
+possible states, it would be a multiplicative quantity, not an additive one:
+if an ice cube in a glass of water has $M_1$ states available to it,
+and the number of states available to the water is $M_2$, then the
+number of possible states of the whole system is the product 
+$M_1 M_2$. To get around this problem, we take the natural logarithm
+of the number of states, which makes the entropy additive
+because of the property of the logarithm $\ln (M_1 M_2) = \ln M_1 + \ln M_2$.
+
+<% marg(90) %>
+<%
+  fig(
+    'phasespace',
+    %q{%
+      A phase space for a single atom in one dimension,
+      taking momentum into account.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'boltzmann-tomb',
+    %q{Ludwig Boltzmann's tomb, inscribed with his equation for entropy.}
+  )
+%>
+<% end_marg %>
+
+The second issue is a more trivial one. The concept of entropy was
+originally invented as a purely macroscopic quantity, and the
+macroscopic definition $\Delta S = Q/T$, which has units of
+J/K, has a different calibration than would result from defining
+$S=\ln M$. The calibration constant we need turns out to be
+simply the Boltzmann constant, $k$.
+
+\mythmhdr{Microscopic definition of entropy}
+The entropy of a system is $S = k \ln M$, where $M$ is the number
+of available states.\footnote{This is the same relation as the one on
+Boltzmann's tomb, just in a slightly different notation.}\index{entropy!microscopic definition}
+
+This also leads to a more fundamental definition of
+temperature. Two systems are in thermal equilibrium when
+they have maximized their combined entropy through the
+exchange of energy. Here the energy possessed by one part of the
+system, $E_1$ or $E_2$, plays the same role as the variable
+$R$ in the examples of free expansion above.
+A maximum of a function occurs when the
+derivative is zero, so the maximum entropy occurs when
+\begin{equation*}
+         \frac{\der\left(S_1+S_2\right)}{\der E_1} = 0\eqquad.
+\end{equation*}
+We assume the systems are only able to exchange heat
+energy with each other, $\der E_1=-\der E_2$, so
+\begin{equation*}
+        \frac{\der S_1}{\der E_1} = \frac{\der S_2}{\der E_2}\eqquad,
+\end{equation*}
+and since the energy is being exchanged in the form of heat
+we can make the equations look more familiar if we write $\der Q$
+for an amount of heat to be transferred into either
+system:
+\begin{equation*}
+        \frac{\der S_1}{\der Q_1} = \frac{\der S_2}{\der Q_2}\eqquad.
+\end{equation*}
+In terms of our previous definition of entropy, this is
+equivalent to $1/T_1=1/T_2$, which makes perfect sense since the
+systems are in thermal equilibrium. According to our new
+approach, entropy has already been defined in a fundamental
+manner, so we can take this as a definition of temperature:
+\begin{equation*}
+   \frac{1}{T} = \frac{\der S}{\der Q}\eqquad,
+\end{equation*}
+where $\der S$ represents the increase in the system's entropy
+from adding heat $\der Q$ to it.\index{temperature!microscopic definition}
+
+<% begin_sec("Examples with small numbers of atoms") %>
+
+Let's see how this applies to an ideal, monoatomic gas with a small
+number of atoms. To start with, consider the phase space available
+to one atom.
+Since we assume the atoms in an ideal gas are noninteracting, 
+their positions relative to each other are really
+irrelevant. We can therefore
+enumerate the number of states available to each atom just
+by considering the number of momentum vectors it can have,
+without considering its possible locations. The relationship
+between momentum and kinetic energy is $E=(p_x^2+p_y^2+p_z^2)/2m$,
+so if for a fixed value of its energy, we arrange all of an
+atom's possible momentum vectors with their tails at the
+origin, their tips all lie on the surface of a sphere in phase space with
+radius $|\vc{p}|=\sqrt{2mE}$. The number of possible
+states for that atom is proportional to the sphere's surface area,
+which in turn is proportional to the square of the sphere's radius,
+$|\vc{p}|^2=2mE$.  
+
+Now consider two atoms. For any given way of sharing the energy between the
+atoms, $E=E_1+E_2$, the number of possible combinations of
+states is proportional to $E_1E_2$. The result is shown in figure
+\figref{entropygrapha}. The greatest number of combinations occurs when
+we divide the energy equally, so an equal division gives maximum entropy.
+
+<% marg(123) %>
+<%
+  fig(
+    'entropygrapha',
+    %q{%
+      A two-atom system has the highest number of available
+      states when the energy is equally divided. Equal energy
+      division is therefore the most likely possibility at any
+      given moment in time.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'entropygraphb',
+    %q{%
+      When two systems of 10 atoms each interact, the graph of
+      the number of possible states is narrower than with only one
+      atom in each system.
+    }
+  )
+%>
+<% end_marg %>
+
+By increasing the number of atoms, we get a graph whose peak
+is narrower, \figref{entropygraphb}. With more than one atom in each system,
+the total energy is
+$E=(p_{x,1}^2+p_{y,1}^2+p_{z,1}^2+p_{x,2}^2+p_{y,2}^2+p_{z,2}^2+...)/2m$. With $n$ atoms, a
+total of $3n$ momentum coordinates are needed in order to
+specify their state, and such a set of numbers is like a
+single point in a $3n$-dimensional space (which is impossible
+to visualize). For a given total energy $E$, the possible
+states are like the surface of a $3n$-dimensional sphere, with
+a surface area proportional to $p^{3n-1}$, or $E^{(3n-1)/2}$. The graph in
+figure \figref{entropygraphb}, for example, was calculated according to the
+formula $E_1^{29/2}E_2^{29/2}=E_1^{29/2}(E-E_1)^{29/2}$.  
+
+Since graph \figref{entropygraphb} is narrower than graph
+\figref{entropygrapha}, the fluctuations in energy sharing are
+smaller. If we inspect the system at a random moment in time,
+the energy sharing is very unlikely to be more lopsided than
+a 40-60 split. Now suppose that, instead of 10 atoms interacting
+with 10 atoms, we had a $10^{23}$ atoms interacting with
+$10^{23}$ atoms. The graph would be extremely narrow, and
+it would be a statistical certainty that the energy sharing would
+be nearly perfectly equal. This is why we never observe a cold
+glass of water to change itself into an ice cube sitting in some
+warm water!
+
+By the way, note that although we've redefined
+temperature, these examples show that things are coming out consistent
+with the old definition, since we saw that the old definition of
+temperature could be described in terms of the average energy per
+atom, and here we're finding that equilibration results in each subset of the atoms
+having an equal share of the energy.
+
+<% end_sec() %>
+
+<% begin_sec("Entropy of a monoatomic ideal gas") %>
+
+Let's calculate the entropy of a monoatomic ideal gas of $n$ atoms. 
+This is an important example because it allows us to show that
+our present microscopic treatment of thermodynamics is
+consistent with our previous macroscopic approach, in which
+temperature was defined in terms of an ideal gas thermometer.
+
+The number of possible locations for each atom is $V/\Delta x^3$,
+where $\Delta x$  is the size of the space cells in phase space. The
+number of possible combinations of  locations for the atoms
+is therefore $(V/\Delta x^3)^n$.
+
+The possible momenta cover the
+surface of a $3n$-dimensional sphere, whose radius is $\sqrt{2mE}$, and whose surface
+area is therefore proportional to $E^{(3n-1)/2}$. In terms of
+phase-space cells, this area corresponds to
+$E^{(3n-1)/2} / \Delta p^{3n}$ possible combinations of momenta,
+multiplied by some constant of proportionality which depends
+on $m$, the atomic mass, and $n$, the number of atoms.
+To avoid having to calculate this constant of
+proportionality, we limit ourselves to calculating the part
+of the entropy that does not depend on $n$, so the resulting
+formula will not be useful for comparing entropies of ideal
+gas samples with different numbers of atoms.
+
+The final result for the number of available states
+is
+\begin{equation*}
+        M  =  \left(\frac{V}{\Delta x^3}\right)^n\:\frac{E^{(3n-1)/2}}{\Delta p^{3n-1}}
+\eqquad, \qquad \text{[function of $n$]}
+\end{equation*}
+so the entropy is
+\begin{equation*}
+        S  =  nk \ln V + \frac{3}{2}nk\ln E 
+                + \text{(function of $\Delta x$, $\Delta p$, and $n$)}\eqquad,
+\end{equation*}
+where the distinction between $n$ and $n-1$ has been ignored.
+Using $PV=nkT$ and $E=(3/2)nkT$, we can also rewrite this as
+\begin{equation*}
+        S  =  \frac{5}{2} nk \ln T - nk \ln P + \ldots   ,        \qquad \text{[entropy of a monoatomic ideal gas]}
+\end{equation*}
+where ``$\ldots$'' indicates terms that may depend on $\Delta x$, $\Delta p$, $m$, and
+$n$, but that have no effect on comparisons of gas samples
+with the same number of atoms.
+
+<% self_check('idealgasentropy',<<-'SELF_CHECK'
+Why does it make sense that the temperature term has a
+positive sign in the above example, while the pressure term
+is negative? Why does it make sense that the whole thing is
+proportional to $n$?
+  SELF_CHECK
+  ) %>
+
+To show consistency with the macroscopic approach to thermodynamics,
+we need to show that these results are consistent with the behavior of
+an ideal-gas thermometer. Using the new definition $1/T=\der S/\der Q$,
+we have $1/T=\der S/\der E$, since transferring an amount of heat $\der Q$
+into the gas increases its energy by a corresponding amount. Evaluating
+the derivative, we find $1/T=(3/2)nk/E$, or $E=(3/2)nkT$, which is the
+correct relation for a monoatomic ideal gas.
+
+\begin{eg}{A mixture of molecules}\label{eg:mix-two-gases}
+\egquestion Suppose we have a mixture of two different monoatomic gases, say helium and argon.
+How would we find the entropy of such a mixture (say, in terms of $V$ and $E$)?
+How would the energy be shared between the two types of molecules, i.e., would a more massive argon atom have
+more energy on the average than a less massive helium atom, the same, or less?
+
+\eganswer
+Since entropy
+is additive, we simply need to add the entropies of the two types of atom. However,
+the expression derived above for the entropy omitted the dependence on the mass $m$ of the atom,
+which is different for the two constituents of the gas, so we need to go back and figure out how
+to put that $m$-dependence back in. The only place where we threw away $m$'s was when we
+identified the radius of the sphere in momentum space with $\sqrt{2mE}$, but then threw away
+the constant factor of $m$. In other words, the final result can be generalized merely by
+replacing $E$ everywhere with the product $mE$. Since the log of a product is the sum of the logs,
+the dependence of the final result on $m$ and $E$ can be broken apart into two different terms,
+and we find 
+\begin{equation*}
+  S=nk \ln V +\frac{3}{2}nk\ln m+\frac{3}{2}nk\ln E+\ldots
+\end{equation*}
+The total entropy of the mixture
+can then be written as 
+\begin{multline*}
+  S =n_1k\ln V +n_2k \ln V +\frac{3}{2}n_1k\ln m_1+\frac{3}{2}n_2k\ln m_2 \\
+    +\frac{3}{2}n_1k\ln E_1+\frac{3}{2}n_2k\ln E_2+\ldots
+\end{multline*}
+
+Now what about the energy sharing? If the total energy is $E=E_1+E_2$, then the most ovewhelmingly probable
+sharing of energy will the the one that maximizes the entropy. Notice that the dependence of the entropy on
+the masses $m_1$ and $m_2$ occurs in terms that are entirely separate from the energy terms. If we want to maximize
+$S$ with respect to $E_1$ (with $E_2=E-E_1$ by conservation of energy), then we differentiate $S$ with respect to
+$E_1$ and set it equal to zero. The terms that contain the masses don't have any dependence on $E_1$, so their
+derivatives are zero, and we find that the molecular masses can have no effect on the energy sharing. Setting the
+derivative equal to zero, we have
+\begin{align*}
+  0 &= \frac{\partial}{\partial E_1} \left(n_1k\ln V +n_2k \ln V +\frac{3}{2}n_1k\ln m_1+\frac{3}{2}n_2k\ln m_2\right. \\
+    &  \qquad \qquad  +\left.\frac{3}{2}n_1k\ln E_1+\frac{3}{2}n_2k\ln (E-E_1)+\ldots\right) \\
+    &= \frac{3}{2}k \left( \frac{n_1}{E_1} -  \frac{n_2}{E-E_1}  \right) \\
+  0 &= \frac{n_1}{E_1} -  \frac{n_2}{E-E_1} \\
+   \frac{n_1}{E_1} &=  \frac{n_2}{E_2}\eqquad.
+\end{align*}
+In other words, each gas gets a share of the energy in proportion to the number of its atoms,
+and therefore every atom gets, on average, the same amount of energy, regardless of its mass.
+The result for the average energy per atom is exactly the same as for an unmixed gas, $\bar{K}=(3/2)kT$.
+\end{eg}
+
+<% end_sec() %>
+<% end_sec('microscopic-entropy') %>
+
+<% begin_sec("Equipartition",nil,'equipartition') %>\label{equipartition}
+Betsy Salazar of Redwood Cove, California, has 37 pet raccoons, which
+is theoretically illegal. She admits that she has trouble telling them
+apart, but she tries to give them all plenty of care and affection
+(which they reciprocate). There are only so many hours in a day, so
+there is a fixed total amount of love. The raccoons share this love
+unequally on any given day, but \emph{on the average} they all get the
+same amount. This kind of
+equal-sharing-on-the-average-out-of-some-total-amount is more
+concisely described using the term \emph{equipartition}, meaning equal
+partitioning, or equal sharing. If Betsy did keep track of how much
+love she lavished on each animal, using some numerical scale, we would
+have 37 numbers to keep track of. We say that the love is partitioned
+among 37 \emph{degrees of freedom}.
+
+For a monoatomic ideal gas, the analysis in section
+\ref{subsec:pvnrt}, p.~\pageref{subsec:pvnrt}, leads to the following
+simple and useful fact about how kinetic energy is shared among all
+the atoms' $x$, $y$, and $z$ degrees of freedom:
+
+\begin{lessimportant}[Equipartition theorem: restricted form]
+For a monoatomic ideal gas containing $n$ atoms, each of the $3n$ degrees of freedom contains, on the average,
+a kinetic energy $\frac{1}{2}kT$.
+\end{lessimportant}
+
+\noindent As applications of this fact, we can easily find the amount
+of heat needed to raise the temperature of the gas by one unit (its
+specific heat), or estimate the typical thermal velocities of the
+atoms given the temperature.\index{specific heat!monoatomic ideal gas}  Equipartition gives us a more rigorous
+and quantitative statement of the idea that temperature is a measure
+of how concentrated the heat is, or of how much energy there is per
+particle.
+
+We would now like to generalize this theorem. Example
+\ref{eg:mix-two-gases}, p.~\pageref{eg:mix-two-gases}, tells us
+that it doesn't matter whether the gas is a mixture of two
+different types of atoms --- Betsy doesn't give a raccoon more love
+just because it's big and fat. Equal energy sharing might seem obvious
+by symmetry if all the atoms are identical, but we see that it still
+holds when they are not identical. Symmetry was not a necessary
+assumption.
+
+<% marg() %>
+<%
+  fig(
+    'dulong-petit',
+    %q{%
+      Heat capacities of solids cluster around $3kT$ per atom. The elemental solids plotted are the ones originally
+      used by Dulong and Petit to infer empirically that the heat capacity of solids per atom was constant.
+      (Modern data.)\index{Dulong-Petit law}
+    }
+  )
+%>
+<% end_marg %>
+
+
+To generalize even further, let's look at what the necessary
+assumptions really were in example \ref{eg:mix-two-gases}.  For
+simplicity, suppose we have only one argon atom, named Alice, and one
+helium atom, named Harry.  Their total kinetic energy is
+$E=p_x^2/2m+p_y^2/2m+p_z^2/2m+{p'}_x^2/2m'+{p'}_y^2/2m'+{p'}_z^2/2m'$,
+where the primes indicate Harry.  The system consisting of Alice and
+Harry has six degrees of freedom (the six momenta), and the six terms
+in the energy all look alike. The only difference among them is that
+the constant factors attached to the squares of the momenta have
+different values, but we've just proved that those differences don't
+matter.  In other words, if we have any system at all whose energy is
+of the form $E=(\ldots)p_1^2+(\ldots)p_2^2+\ldots$, with any number of
+terms, then each term holds, on average, the same amount of energy,
+$\frac{1}{2}kT$.
+
+It doesn't even matter whether the things being
+squared are momenta: if you look back over the logical steps that went
+into the argument, you'll see that none of them depended on that. In a
+solid, for example, the atoms aren't free to wander around, but they
+can vibrate from side to side. If an atom moves away from its
+equilibrium position at $x=0$ to some other value of $x$, then its
+electrical energy is $(1/2)\kappa x^2$, where $\kappa$ is the spring
+constant (written as the Greek letter kappa to distinguish it from the
+Boltzmann constant $k$). We can conclude that each atom in the solid,
+on average, has $\frac{1}{2}kT$ of energy in the electrical energy due
+to its $x$ displacement along the $x$ axis, and equal amounts for $y$
+and $z$. Thus for a solid, we expect there to be a total of \emph{six}
+energies per atom (three kinetic energies and six interaction energies),
+each of which carries an average energy $\frac{1}{2}kT$, for a total
+of $3kT$. In other words, a solid should have twice the heat capacity
+of a monoatomic gas. This was discovered empirically by Dulong and Petit
+in 1819, as shown in figure \figref{dulong-petit}.\index{specific heat!solids}
+
+\begin{lessimportant}[Equipartition theorem: general form]\index{equipartition theorem}
+For a system whose energy can be written as the sum of the squares of $n$ variables,
+the average value of each term in the energy is $\frac{1}{2}kT$.
+\end{lessimportant}
+
+
+<% begin_sec("An unexpected glimpse of the microcosm") %>
+
+These ideas about equipartition now lead us to some surprising insights into how
+the microscopic world manifests itself on the human scale.
+You may have the feeling at this point that of course Boltzmann was right about the literal
+existence of atoms, but only very sophisticated experiments could vindicate him definitively.
+After all, the microscopic and macroscopic definitions of entropy are equivalent, so it might
+seem as though there was no real advantage to the microscopic approach. Surprisingly, very
+simple experiments are capable of revealing a picture of the microscopic world, and there is
+no possible macroscopic explanation for their results.
+
+<% marg(30) %>
+<%
+  fig(
+    'clement-desormes',
+    %q{%
+      An experiment for determining the shapes of molecules.
+    }
+  )
+%>
+<% end_marg %>
+
+In 1819, before Boltzmann was born, Cl\'{e}ment and Desormes did an experiment like the one shown in
+figure \figref{clement-desormes}. The gas in the flask is pressurized using the syringe. This heats
+it slightly, so it is then allowed to cool back down to room temperature. Its pressure is measured
+using the manometer. The stopper on the flask is popped and then immediately reinserted. Its pressure
+is now equalized with that in the room, and the gas's expansion has cooled it a little, because it
+did mechanical work on its way out of the flask, causing it to lose some of its internal energy $E$.
+The expansion is carried out quickly enough so that there is not enough time for any significant amount of
+heat to flow in through the walls of the flask before the stopper is reinserted.
+The gas is now allowed to come back up to room temperature (which takes a much longer time),
+and as a result regains a fraction $b$ of its original overpressure.
+ During this constant-volume reheating,
+we have $PV=nkT$, so the amount of pressure regained is a direct indication of how much the gas cooled down
+when it lost an amount of energy $\Delta E$. 
+
+<%
+  fig(
+    'molecular-shapes',
+    %q{% 
+         The differing shapes of a helium atom (1), a nitrogen molecule (2), and a difluoroethane molecule (3) have surprising
+         macroscopic effects.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+If the gas is monoatomic, then we know what to expect for this relationship between energy and temperature: $\Delta E=(3/2)nk\Delta T$,
+where the factor of 3 came ultimately from the fact that the gas was in a
+three-dimensional space, \subfigref{molecular-shapes}{1}. Moving in this space, each molecule can have momentum in the x, y, and
+z directions. It has three degrees of freedom.
+What if the gas is not monoatomic? Air, for example, is made of diatomic molecules,
+\subfigref{molecular-shapes}{2}. There is a subtle difference between the two cases. An individual atom of
+a monoatomic gas is a perfect sphere, so it is exactly the same no matter how it is oriented. Because of this perfect symmetry, there is
+thus no way to tell whether it is spinning or not, and in fact we find that it can't rotate. The diatomic gas, on the other hand,
+can rotate end over end about the x or y axis, but cannot rotate about the z axis, which is its axis of symmetry.
+It has a total of five degrees of freedom. A polyatomic molecule with a more complicated, asymmetric shape,
+\subfigref{molecular-shapes}{3}, can rotate about all three axis, so it has a total of six degrees of freedom.
+
+Because a polyatomic molecule has more degrees of freedom than a monoatomic one, it has more possible states for
+a given amount of energy. That is, its entropy is higher for the same energy. From the definition of temperature,
+$1/T=\der S/\der E$, we conclude that it has a lower temperature for the same energy. In other words, it is
+more difficult to heat $n$ molecules of difluoroethane than it is to heat $n$ atoms of helium. When the
+Cl\'{e}ment-Desormes experiment is carried out, the result $b$ therefore depends on the shape of the molecule!
+Who would have dreamed that such simple observations, correctly interpreted, could give us this kind of
+glimpse of the microcosm?
+
+Lets go ahead and calculate how this works.\label{pt-insulated-expansion}
+Suppose a gas is allowed
+to expand without being able to exchange heat with the rest
+of the universe. 
+The loss of thermal energy from the gas equals the work it
+does as it expands, and
+using the result of homework problem \ref{hw:work-pdv} on
+page \pageref{hw:work-pdv}, the work done
+in an infinitesimal expansion equals $P\der V$, so
+\begin{equation*}
+        \der E + P \der V = 0\eqquad.
+\end{equation*}
+(If the gas had not been insulated, then there would have
+been a third term for the heat gained or lost by heat
+conduction.) 
+
+From section \ref{sec:microscopicidealgas} we have $E=(3/2)PV$ for a
+monoatomic ideal gas. More generally, the equipartition theorem tells us that the 3 simply needs to be replaced with the
+number of degrees of freedom $\alpha$, so $\der E=(\alpha/2)P\der V+(\alpha/2)V\der P$, and the
+equation above becomes
+\begin{equation*}
+        0	=  \frac{\alpha+2}{2}P\der V+\frac{\alpha}{2}V\der P\eqquad.
+\end{equation*}
+Rearranging, we have
+\begin{equation*}
+        (\alpha+2)\frac{\der V}{V}	=  -\alpha\frac{\der P}{P}\eqquad.
+\end{equation*}
+Integrating both sides gives
+\begin{equation*}
+        (\alpha+2) \ln V 	=  -\alpha \ln P + \text{constant}   ,
+\end{equation*}
+and taking exponentials on both sides yields
+\begin{equation*}
+        V^{\alpha+2} \propto P^{-\alpha}\eqquad.
+\end{equation*}
+
+We now wish to reexpress this in terms of pressure and
+temperature. Eliminating $V\propto(T/P)$ gives
+\begin{equation*}
+        T \propto   P^b   ,
+\end{equation*}
+where $b=2/(\alpha+2)$ is equal to 2/5, 2/7, or 1/4, respectively, for
+a monoatomic, diatomic, or polyatomic gas.
+
+\begin{eg}{Efficiency of the Carnot engine}\label{eg:carnot-efficiency}
+As an application, we now prove the result claimed earlier for the efficiency
+of a Carnot engine. First consider the work done during the constant-temperature
+strokes. Integrating the equation $\der W=P\der V$,
+ we have $W = \int P \der V$. Since the thermal energy of
+an ideal gas depends only on its temperature, there is no
+change in the thermal energy of the gas during this
+constant-temperature process. Conservation of energy
+therefore tells us that work done by the gas must be exactly
+balanced by the amount of heat transferred in from the
+reservoir.
+\begin{align*}
+        Q	&=  W \\
+        	&=   \int P \der V
+\end{align*}
+For our proof of the efficiency of the Carnot engine, we
+need only the ratio of $Q_H$ to $Q_L$, so we neglect constants of
+proportionality, and simply subsitutde $P\propto T/V$, giving
+\begin{equation*}
+        Q \propto \int \frac{T}{V} \der V 
+         \propto T  \ln \frac{V_2}{V_1} 
+         \propto T \ln \frac{P_1}{P_2}\eqquad.
+\end{equation*}
+
+The efficiency of a heat engine is
+\begin{equation*}
+        \text{efficiency}	=  1 - \frac{Q_L}{Q_H}\eqquad.
+\end{equation*}
+Making use of the result from the previous proof for a
+Carnot engine with a monoatomic ideal
+gas as its working gas, we have
+\begin{equation*}
+        \text{efficiency}	=   1-\frac{T_L\:\ln(P_4/P_3)}{T_H\:\ln(P_1/P_2)}  ,
+\end{equation*}
+where the subscripts 1, 2, 3, and 4 refer to figures \ref{fig:carnota}--\ref{fig:carnotd} on
+page \pageref{fig:carnota}. We have shown above
+that the temperature is proportional to $P^b$ on the insulated
+strokes 2-3 and 4-1, the pressures must be related by
+$P_2/P_3=P_1/P_4$, which can be rearranged as $P_4/P_3=P_1/P_2$, and we
+therefore have
+\begin{equation*}
+        \text{efficiency}	=  1 - \frac{T_L}{T_H}\eqquad.
+\end{equation*}
+\end{eg}
+
+<% end_sec() %>
+
+<% end_sec('equipartition') %>
+
+<% begin_sec("The arrow of time, or ``this way to the Big Bang''") %>
+\index{Big Bang!and the arrow of time}
+Now that we have a microscopic understanding of entropy, what does that tell us about
+the second law of thermodynamics? The second law
+defines a forward direction to time, ``time's arrow.'' The microscopic
+treatment of entropy, however, seems to have mysteriously sidestepped
+that whole issue. A graph like figure \figref{fluctuation} on page
+\pageref{fig:fluctuation}, showing a fluctuation
+away from equilibrium, would look just as natural if we flipped it over to
+reverse the direction of time. After all, the basic laws of physics are
+conservation laws, which don't distinguish between past and future.
+Our present picture of entropy suggests that we restate the second
+law of thermodynamics as follows: low-entropy states are short-lived.
+An ice cube can't exist forever in warm water. We no longer have to
+distinguish past from future.\index{thermodynamics!second law of}\index{time!arrow of}
+
+But how do we reconcile this with our strong psychological sense of
+the direction of time, including our ability to remember the past but
+not the future? Why do we observe ice cubes melting in water, but
+not the time-reversed version of the same process?
+
+The answer is that there is no past-future asymmetry in the laws
+of physics, but there is a past-future asymmetry in the universe.
+The universe started out with the Big Bang.  (Some of the evidence for
+the Big Bang theory is given on page \pageref{bigbang}.) The early
+universe had a very low entropy, and low-entropy states are short-lived.
+What does ``short-lived'' mean here, however? Hot coffee left in a paper
+cup will equilibrate with the air within ten minutes or so. Hot coffee in a
+thermos bottle maintains its low-entropy state for much longer,
+because the coffee is insulated by a vacuum between the inner and outer
+walls of the thermos. The universe has been mostly vacuum for a long time,
+so it's well insulated. Also, it takes billions of years for a low-entropy
+normal star like our sun to evolve into the high-entropy cinder known
+as a white dwarf.
+
+The universe, then, is still in the process of equilibrating,
+and all the ways we have of telling the past from the future are really just
+ways of determining which direction in time points toward the Big Bang,
+i.e., which direction points to lower entropy. The psychological arrow of
+time, for instance, is ultimately based on the thermodynamic arrow. In some
+general sense, your brain is like a computer, and computation has
+thermodynamic effects. In even the most efficient possible computer, for example,
+erasing one bit of memory
+decreases its entropy from $k \ln 2$ (two possible states) to $k \ln 1$
+(one state), for a drop of about $10^{-23}$ J/K. One way of determining the
+direction of the psychological arrow of time is that forward in psychological
+time is the direction in which, billions of years from now, all consciousness
+will have ceased; if consciousness was to exist forever in the universe, then
+there would have to be a never-ending
+decrease in the universe's entropy. This can't happen, because low-entropy states
+are short-lived.
+
+Relating the direction of the thermodynamic arrow of time to the existence of
+the Big Bang is a satisfying way to avoid the paradox of how the second law
+can come from basic laws of physics that don't distinguish past from future.
+There is a remaining mystery, however: why did our universe have a Big Bang
+that was low in entropy? It could just as easily have been a maximum-entropy
+state, and in fact the number of possible high-entropy Big Bangs is vastly greater
+than the number of possible low-entropy ones. The question, however, is probably
+not one that can be answered using the methods of science. All we can say is that
+if the universe had started with a maximum-entropy Big Bang, then we wouldn't be
+here to wonder about it. A longer, less mathematical discussion of these concepts,
+along with some speculative ideas, is given in ``The Cosmic Origins of Time's
+Arrow,'' Sean M. Carroll, Scientific American, June 2008, p. 48.
+
+ % 
+
+<% end_sec() %>
+
+<% begin_sec("Quantum mechanics and zero entropy") %>
+
+The previous discussion would seem to imply that absolute
+entropies are never well defined, since any calculation of
+entropy will always end up having terms that depend on $\Delta p$
+and $\Delta x$. For instance, we might think that cooling an ideal
+gas to absolute zero would give zero entropy, since there is
+then only one available momentum state, but there would
+still be many possible position states. We'll see later in this book,
+however, that the quantum mechanical
+uncertainty principle makes it impossible to know the
+location and position of a particle simultaneously with perfect accuracy.
+The best we can do is to determine them with an accuracy such that
+the product $\Delta p\Delta x$ is equal to a constant called
+Planck's constant. According to quantum physics, then, there
+is a natural minimum size for rectangles in phase space, and
+entropy can be defined in absolute terms. Another way of
+looking at it is that according to quantum physics, the gas
+as a whole has some well-defined ground state, which is its
+state of minimum energy. When the gas is cooled to absolute
+zero, the scene is not at all like what we would picture in
+classical physics, with a lot of atoms lying around
+motionless. It might, for instance, be a strange
+quantum-mechanical state called the Bose-Einstein
+condensate, which was achieved for the first time recently
+with macroscopic amounts of atoms. Classically, the gas has many
+possible states available to it at zero temperature, since the
+positions of the atoms can be chosen in a variety of ways.
+The classical picture is a bad approximation under these
+circumstances, however.
+Quantum mechanically there is only one ground state,
+in which each atom is spread out over the available
+volume in a cloud of probability. The entropy is therefore
+zero at zero temperature. This fact, which cannot be understood
+in terms of classical physics, is known as the third law of
+thermodynamics.\index{thermodynamics!third law of}\label{third-law-of-thermodynamics}
+
+<% end_sec() %>
+
+<% begin_sec("Summary of the laws of thermodynamics") %>
+
+Here is a summary of the laws of thermodynamics:
+\index{thermodynamics!laws of!summarized}
+\index{thermodynamics!zeroth law of}
+\index{thermodynamics!first law of}
+\index{thermodynamics!second law of}
+\index{thermodynamics!third law of}
+
+\begin{description}
+\item[The zeroth law of thermodynamics (page \pageref{zeroth-law-of-thermodynamics})] If
+object A is at the same temperature as object B, and B is at
+the same temperature as C, then A is at the same temperature
+as C.
+\item[The first law of thermodynamics (page \pageref{first-law-of-thermodynamics})] Energy is \linebreak[4] con\-served.
+\item[The second law of thermodynamics (page \pageref{second-law-of-thermodynamics})] The entropy of a closed system always increases, or at best
+stays the same: $\Delta S\ge0$.
+\item[The third law of thermodynamics (page \pageref{third-law-of-thermodynamics})] The entropy of a system approaches zero as its temperature approaches
+absolute zero.
+\end{description}
+
+\noindent From a modern point of view, only the first law deserves to be called a fundamental law of physics.
+Once Boltmann discovered the microscopic nature of entropy,
+the zeroth and second laws could be understood as statements about probability: a system containing a large
+number of particles is overwhelmingly likely to do a certain thing, simply because the number of possible ways
+to do it is extremely large compared to the other possibilities. The third law is also now understood to be
+a consequence of more basic physical principles, but to explain the third law, it's not sufficient simply to know
+that matter is made of atoms: we also need to understand the quantum-mechanical nature of those atoms,
+discussed in chapter \ref{ch:quantum}.
+Historically, however, the laws of thermodynamics were discovered in the eighteenth century, when the
+atomic theory of matter was generally considered to be a hypothesis that couldn't be tested experimentally.
+Ideally, with the publication of Boltzmann's work on entropy in 1877, the zeroth and second laws would
+have been immediately demoted from the status of physical laws, and likewise the development of quantum
+mechanics in the 1920's would have done the same for the third law.
+
+<%
+  fig(
+    'otto-cycle',
+    %q{%
+      The Otto cycle. 1. In the exhaust stroke, the piston expels the burned air-gas
+      mixture left over from the preceding cycle. 
+      2. In the intake stroke, the piston sucks in fresh air-gas mixture. 3. In the compression stroke, the
+      piston compresses the mixture, and heats it. 4. At the beginning of the power stroke, the spark plug fires,
+      causing the air-gas mixture to burn explosively and heat up much more. The heated mixture expands, and does
+      a large amount of positive mechanical work on the piston. An animated version can be viewed in the
+      Wikipedia article ``Four-stroke engine.''
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("More about heat engines",0) %>
+
+So far, the only heat engine we've discussed in any detail has been a fictitious Carnot engine,
+with a monoatomic ideal gas as its working gas. As a more realistic example,
+figure \figref{otto-cycle} shows one full cycle of a cylinder in a standard gas-burning automobile engine.
+This four-stroke cycle is called the Otto cycle,\index{Otto cycle}\index{engine!Otto cycle}\index{engine!automobile}
+after its inventor, German engineer Nikolaus Otto.\index{Otto, Nikolaus}
+The Otto cycle is more complicated than a Carnot cycle, in a number of ways:
+
+\begin{itemize}
+\item The working gas is physically pumped in and out of the cylinder through valves, rather than being
+sealed and reused indefinitely as in the Carnot engine.
+\item The cylinders are not perfectly insulated from the engine block, so heat energy is lost from
+each cylinder by conduction. This makes the engine less efficient that a Carnot engine, because heat
+is being discharged at a temperature that is not as cool as the environment.
+\item Rather than being heated by contact with an external heat reservoir, the air-gas mixture inside
+each cylinder is heated by internal combusion: a spark from a spark plug burns the gasoline, releasing heat.
+\item The working gas is not monoatomic. Air consists of diatomic molecules ($\zu{N}_2$ and $\zu{O}_2$),
+and gasoline of polyatomic molecules such as octane ($\zu{C}_8\zu{H}_{18}$).
+\item The working gas is not ideal. An ideal gas is one in which the molecules never interact with one
+another, but only with the walls of the vessel, when they collide with it. In a car engine, the molecules
+are interacting very dramatically with one another when the air-gas mixture explodes (and less dramatically
+at other times as well, since, for example, the gasoline may be in the form of microscopic droplets rather
+than individual molecules).
+\end{itemize}
+
+This is all extremely complicated, and it would be nice to have some way of understanding and visualizing
+the important properties of such a heat engine without trying to handle every detail at once. A good method
+of doing this is a type of graph known as a P-V diagram. As proved in homework problem \ref{hw:work-pdv}, the equation $\der W=F\der x$ for mechanical work
+can be rewritten as $\der W=P\der V$ in the case of work done by a piston. Here $P$ represents the pressure of the working gas,
+and $V$ its volume. Thus, on a graph of $P$ versus $V$, the area under the curve represents the work done. When the gas
+expands, $\der x$ is positive, and the gas does positive work. When the gas is being compressed, $\der x$ is negative, and
+the gas does negative work, i.e., it absorbs energy. Notice how, in the diagram of the Carnot engine in the top panel of
+figure \figref{pv-for-carnot-and-otto}, the cycle goes clockwise around the curve, and therefore
+the part of the curve in which negative work is being done (arrowheads pointing to the left) are below the ones in which
+positive work is being done. This means that over all, the engine does a positive amount of work. This net work equals the area under
+the top part of the curve, minus the area under the bottom part of the curve, which is simply the area enclosed by the curve.
+Although the diagram for the Otto engine is more complicated, we can at least compare it on the same footing with the Carnot
+engine. The curve forms a figure-eight, because it cuts across itself. The top loop goes clockwise, so as in the case of the Carnot
+engine, it represents positive work. The bottom loop goes counterclockwise, so it represents a net negative contribution to the work.
+This is because more work is expended in forcing out the exhaust than is generated in the intake stroke.
+
+<% marg(0) %>
+<%
+  fig(
+    'pv-for-carnot-and-otto',
+    %q{P-V diagrams for a Carnot engine and an Otto engine.}
+  )
+%>
+<% end_marg %>
+
+To make an engine as efficient as possible, we would like to make the loop have as much area as possible. What is it that
+determines the actual shape of the curve? First let's consider the constant-temperature expansion stroke that forms the
+top of the Carnot engine's P-V plot. This is analogous to the power stroke of an Otto engine. Heat is being sucked in
+from the hot reservoir, and since the working gas is always in thermal equilibrium with the hot reservoir, its temperature
+is constant. Regardless of the type of gas, we therefore have $PV=nkT$ with $T$ held constant, and thus $P\propto V^{-1}$
+is the mathematical shape of this curve --- a $y=1/x$ graph, which is a hyperbola. This is all true regardless of whether
+the working gas is monoatomic, diatomic, or polyatomic.
+(The bottom of the loop is likewise of the form $P\propto V^{-1}$, but with a smaller constant of proportionality due
+to the lower temperature.)
+
+Now consider the insulated expansion stroke that forms the right side of the curve for the Carnot engine.
+As shown on page \pageref{pt-insulated-expansion}, the relationship between pressure and temperature in an
+insulated compression or expansion is  $T \propto   P^b$,
+with $b=2/5$, 2/7, or 1/4, respectively, for
+a monoatomic, diatomic, or polyatomic gas. For $P$ as a function of $V$ at constant $T$, the ideal gas law gives
+$P\propto T/V$, so $P\propto V^{-\gamma}$, where $\gamma=1/(1-b)$ takes on the values
+5/3, 7/5, and 4/3. The number $\gamma$ can be interpreted as the ratio $C_P/C_V$,
+where $C_P$, the heat capacity at constant pressure, is the amount of heat required to raise the temperature
+of the gas by one degree while keeping its pressure constant, and $C_V$ is the corresponding quantity under
+conditions of constant volume.\index{heat capacity!at constant pressure}\index{heat capacity!at constant volume}
+
+\begin{eg}{The compression ratio}\label{eg:compression-ratio}
+Operating along a constant-temperature stroke, the amount of mechanical work done by a heat engine can be calculated
+as follows:
+\begin{align*}
+  PV &= nkT \\
+\intertext{Setting $c=nkT$ to simplify the writing,}
+  P &= cV^{-1} \\
+  W &= \int_{V_i}^{V_f} P \der V \\
+    &= c \int_{V_i}^{V_f} V^{-1} \der V \\
+    &= c \ln V_f - c \ln V_i \\
+    &= c \ln (V_f/V_i)
+\end{align*}
+The ratio $V_f/V_i$ is called the \emph{compression ratio} of the engine, and higher values result in more
+power along this stroke. Along an insulated stroke, we have $P\propto V^{-\gamma}$, with $\gamma\ne1$,
+so the result for the
+work no longer has this perfect mathematical property of depending only on the ratio $V_f/V_i$. Nevertheless,
+the compression ratio is still a good figure of merit for predicting the performance of any heat engine,
+including an internal combustion engine. High compression ratios tend to make the working gas of an
+internal combustion engine heat up so much that it spontaneously explodes. When this happens in an Otto-cycle
+engine, it can cause ignition before the sparkplug fires, an undesirable effect known as pinging. For this
+reason, the compression ratio of an Otto-cycle automobile engine cannot normally exceed about 10. In a diesel
+engine, however, this effect is used intentionally, as an alternative to sparkplugs, and compression ratios
+can be 20 or more.
+\end{eg}
+
+\hspace{0mm plus 20mm}
+
+<% marg(0) %>
+<%
+  fig(
+    'pv-for-sound',
+    %q{Example \ref{eg:pv-for-sound},}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Sound}\label{eg:pv-for-sound}
+Figure \figref{pv-for-sound} shows a P-V plot for a sound wave. As the pressure oscillates up and down,
+the air is heated and cooled by its compression and expansion. Heat conduction is a relatively slow
+process, so typically there is not enough time over each cycle for any significant amount of heat to
+flow from the hot areas to the cold areas. (This is analogous to insulated compression or expansion of
+a heat engine; in general, a compression or expansion of this type, with no transfer of heat, is called
+\emph{adiabatic}.\index{adiabatic}) The pressure and volume of a particular little piece of
+the air are therefore related according to $P\propto V^{-\gamma}$. The cycle of oscillation consists
+of motion back and forth along a single curve in the P-V plane, and since this curve encloses zero
+volume, no mechanical work is being done: the wave (under the assumed ideal conditions) propagates
+without any loss of energy due to friction.
+
+The speed of sound is also related to $\gamma$. See example \ref{eg:speed-of-sound}
+on p.~\pageref{eg:speed-of-sound}.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'gamma-spring-of-air',
+    %q{Example \ref{eg:gamma-spring-of-air}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Measuring $\gamma$ using the ``spring of air''}\label{eg:gamma-spring-of-air}
+Figure \figref{gamma-spring-of-air} shows an experiment that can be used to measure the $\gamma$ of a gas.
+When the mass $m$ is inserted into bottle's neck, which has cross-sectional area $A$, the mass
+drops until it compresses the air enough so that the pressure is enough to support its weight.
+The observed frequency $\omega$ of oscillations about this equilibrium position $y_\zu{o}$ can be used to extract the
+$\gamma$ of the gas.
+\begin{align*}
+  \omega^2 &= \frac{k}{m} \\
+         &= \left.-\frac{1}{m}\:\frac{\der F}{\der y}\right|_{y_\zu{o}} \\
+         &= \left.-\frac{A}{m}\:\frac{\der P}{\der y}\right|_{y_\zu{o}} \\
+         &= \left.-\frac{A^2}{m}\:\frac{\der P}{\der V}\right|_{V_\zu{o}} 
+\end{align*}
+We make the bottle big enough so that its large surface-to-volume ratio prevents the
+conduction of any significant amount of heat through its walls during one cycle, so $P\propto V^{-\gamma}$,
+and $\der P/\der V=-\gamma P/V$. Thus,
+\begin{align*}
+  \omega^2 &= \gamma\frac{A^2}{m}\:\frac{P_\zu{o}}{V_\zu{o}}
+\end{align*}
+\end{eg}
+
+\begin{eg}{The Helmholtz resonator}\label{eg:helmholtz-resonator}\index{Helmholtz resonator}
+When you blow over the top of a beer bottle, you produce a pure tone.
+As you drink more of the beer, the pitch goes down. This is similar to
+example \ref{eg:gamma-spring-of-air}, except that instead of a solid mass
+$m$ sitting inside the neck of the bottle, the moving mass is the air itself.
+As air rushes in and out of the bottle, its velocity is highest at the bottleneck,
+and since kinetic energy is proportional to the square of the velocity, essentially
+all of the kinetic energy is that of the air that's in the neck. In other words,
+we can replace $m$ with $AL\rho$, where $L$ is the length of the neck, and $\rho$ is
+the density of the air. Substituting into the earlier result, we find that the
+resonant frequency is
+\begin{align*}
+  \omega^2 &= \gamma\frac{P_\zu{o}}{\rho}\:\frac{A}{LV_\zu{o}}\eqquad.
+\end{align*}
+This is known as a Helmholtz resonator.
+As shown in figure \figref{stradivarius}, a violin or an acoustic guitar has a Helmholtz resonance,
+since air can move in and out through the f-holes. Problem \ref{hw:violin-helmholtz} is a more
+quantitative exploration of this.
+\end{eg}
+
+<%
+  fig(
+    'stradivarius',
+    'The resonance curve of a 1713 Stradivarius violin, measured by
+     Carleen Hutchins. There are a number of different resonance peaks, some strong and some weak;
+     the ones near 200 and 400 Hz are vibrations of the wood, but the one near 300 Hz is a resonance
+     of the air moving in and out through those holes shaped like the letter F.
+     The white lines show the frequencies of the four strings.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We have already seen, based on the microscopic nature of entropy, that any Carnot engine has the same
+efficiency, and the argument only employed the assumption that the engine met the definition of a Carnot
+cycle: two insulated strokes, and two constant-temperature strokes. Since we didn't have to make any
+assumptions about the nature of the working gas being used, the result is evidently true for diatomic
+or polyatomic molecules, or for a gas that is not ideal. This result is surprisingly simple and general,
+and a little mysterious --- it even applies to possibilities that we have not even considered, such as
+a Carnot engine designed so that the working ``gas'' actually consists of a mixture of liquid droplets and vapor,
+as in a steam engine. How can it always turn out so simple, given the kind of mathematical complications that
+were swept under the rug in example \ref{eg:compression-ratio}? A better way to understand this result
+is by switching from P-V diagrams to a diagram of temperature versus entropy, as shown in figure 
+\figref{ts-for-carnot}. An infinitesimal transfer of heat $\der Q$ gives rise to a change in entropy
+$\der S=\der Q/T$, so the area under the curve on a T-S plot gives the amount of heat transferred.
+The area under the top edge of the box in figure \figref{ts-for-carnot}, extending all the way down to the
+axis, represents the amount of heat absorbed from the hot reservoir, while the smaller area under the
+bottom edge represents the heat wasted into the cold reservoir. By conservation of energy, the area enclosed
+by the box therefore represents the amount of mechanical work being done, as for a P-V diagram.
+We can now see why the efficiency of a Carnot engine is independent of any of the physical details:
+the definition of a Carnot engine guarantees that the T-S diagram will be a rectangular box, and the efficiency
+depends only on the relative heights of the top and bottom of the box.
+
+<% marg(0) %>
+<%
+  fig(
+    'ts-for-carnot',
+    %q{A T-S diagram for a Carnot engine.}
+  )
+%>
+<% end_marg %>
+
+\backofchapterboilerplate{thermo}
+ % 
+ % ============================= homework ==============================  
+
+<% end_sec() %>
+
+<% begin_hw_sec %>
+
+<% begin_hw('stpvol',0) %>__incl(hw/stpvol)<% end_hw() %>
+
+<% begin_hw('work-pdv') %>__incl(hw/work-pdv)<% end_hw() %>
+
+<% begin_hw('he',0) %>__incl(hw/he)<% end_hw() %>
+
+<% begin_hw('cracking-gas-molecules') %>__incl(hw/cracking-gas-molecules)<% end_hw() %>
+
+<% begin_hw('igm') %>__incl(hw/igm)<% end_hw() %>
+
+<% begin_hw('centerofearth') %>__incl(hw/centerofearth)<% end_hw() %>
+
+<% begin_hw('fluorocarbon') %>__incl(hw/fluorocarbon)<% end_hw() %>
+
+<% begin_hw('airconditioner') %>__incl(hw/airconditioner)<% end_hw() %>
+
+<% begin_hw('heart-efficiency') %>__incl(hw/heart-efficiency)<% end_hw() %>
+
+<% begin_hw('violin-helmholtz') %>__incl(hw/violin-helmholtz)<% end_hw() %>
+
+<% begin_hw('challenger-deep') %>__incl(hw/challenger-deep)<% end_hw() %>
+
+<% begin_hw('fusion') %>__incl(hw/fusion)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('half-brick') %>__incl(hw/half-brick)<% end_hw() %>
+
+<% begin_hw('inversion-layer') %>__incl(hw/inversion-layer)<% end_hw() %>
+
+<% begin_hw('photon-gas-equipartition') %>__incl(hw/photon-gas-equipartition)<% end_hw() %>
+
+<% begin_hw('entropy-stirring-coffee') %>__incl(hw/entropy-stirring-coffee)<% end_hw() %>
+
+<% begin_hw('sun-heating',0) %>__incl(hw/sun-heating)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('electron-speed-in-metal') %>__incl(hw/electron-speed-in-metal)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

@@ -1,0 +1,215 @@
+\documentclass{lmseries}
+% \let\ifpdf\relax % http://tex.stackexchange.com/questions/11414/package-ifpdf-error
+% --------> this fails with TeX Live 2013, conflicts with xparse
+%\selectlanguage{english}
+\usepackage{lmlanguage}
+%\includeonly{em/atemp,em/btemp,em/ctemp,em/dtemp,em/etemp,em/ftemp,em/gtemp,end1/hwanstemp,end2/hwanstemp}
+%\includeonly{n1/dtemp}
+\inputprotcode
+\makeindex
+\pdfmapfile{=fullembed.map} % created by the script create_fullembed_file
+\begin{document}
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+% 
+% The following is all related to margin kerning.
+% This is activated in dp.cls using the boolean wantmarginkerning.
+% The constant 1 is to allow margin kerning, but to keep it from affecting
+% line breaks.
+\ifthenelse{\boolean{wantmarginkerning}}{
+ \setprotcode\font
+ {\it \setprotcode \font}
+ {\bf \setprotcode \font}
+ {\bf \it \setprotcode \font}
+ \pdfprotrudechars=1
+}{}
+%========================= frontmatter =========================
+\formatchtoc{\Large}{}{4mm}
+\frontmatter
+\yesiwantarabic
+\renewcommand{\chapdir}{front}
+\include{front/title}
+\yesiwantarabic
+\nomarginlayout
+\twocolumn[\vspace{10mm}\begin{center}\bfseries\sffamily{}\noindent{}{\huge Brief Contents}\end{center}\vspace{10mm}]
+
+\newcommand{\brieftocpartstyle}{\large\sffamily{}}
+\newcommand{\brieftocchstyle}{\normalsize\sffamily{}}
+\newcommand{\brieftocleftvert}{7mm}
+\newcommand{\brieftocrightvert}{8.5mm}
+
+\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+\brieftocentry[\hfill]{ch:intro}{Introduction and review} \\
+\brieftocentry[\hfill]{ch:scaling}{Scaling and estimation} 
+\end{tabular}
+
+\vspace{\brieftocleftvert}\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+
+
+& \textit{\brieftocpartstyle Motion in}\\
+& \textit{\brieftocpartstyle one dimension}\\
+\brieftocentry[\hfill]{ch:motion}{Velocity and relative motion} \\
+\brieftocentry[\hfill]{ch:acceleration}{Acceleration and free fall} \\
+\brieftocentry[\hfill]{ch:newton}{Force and motion} \\
+\brieftocentry[\hfill]{ch:forces}{Analysis of forces} 
+\end{tabular}
+
+\vspace{\brieftocleftvert}\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+
+
+& \textit{\brieftocpartstyle Motion in}\\
+& \textit{\brieftocpartstyle three dimensions}\\
+\ref{ch:three-d} & Newton's laws in\\
+                 & \hfill three dimensions  \qquad \pageref{ch:three-d}\\
+\brieftocentry[\hfill]{ch:vectors}{Vectors} \\
+\brieftocentry[\hfill]{ch:vectors-and-motion}{Vectors and motion} \\
+\brieftocentry[\hfill]{ch:circular-motion}{Circular motion} \\
+\brieftocentry[\hfill]{ch:gravity}{Gravity} 
+\end{tabular}
+
+\vspace{\brieftocleftvert}\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+& \textit{\brieftocpartstyle Conservation laws}\\
+\brieftocentry[\hfill]{ch:energy}{Conservation of energy} \\
+\brieftocentry[\hfill]{ch:energy-zoo}{Simplifying the energy zoo} \\
+\ref{ch:work} & Work: the transfer of \\
+              & \hfill mechanical energy \qquad \pageref{ch:work}\\
+\brieftocentry[\hfill]{ch:momentum}{Conservation of momentum} \\
+\ref{ch:angular-momentum} & Conservation of \\
+                          & \hfill angular momentum \qquad \pageref{ch:angular-momentum}\\
+\brieftocentry[\hfill]{ch:thermo}{Thermodynamics}
+\end{tabular}
+
+\vfill\pagebreak
+\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+
+& \textit{\brieftocpartstyle Vibrations and waves}\\
+\brieftocentry[\hfill]{ch:vibrations}{Vibrations} \\
+\brieftocentry[\hfill]{ch:resonance}{Resonance} \\
+\brieftocentry[\hfill]{ch:free-waves}{Free waves} \\   
+\brieftocentry[\hfill]{ch:bounded-waves}{Bounded waves}
+\end{tabular}
+
+\vspace{\brieftocrightvert}\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+
+& \textit{\brieftocpartstyle Relativity and}\\
+& \textit{\brieftocpartstyle electromagnetism}\\
+\brieftocentry[\hfill]{ch:circuits}{Electricity and circuits} \\
+\brieftocentry[\hfill]{ch:fields}{The nonmechanical universe} \\
+\brieftocentry[\hfill]{ch:relativity}{Relativity and magnetism} \\
+\brieftocentry[\hfill]{ch:em}{Electromagnetism} \\
+\brieftocentry[\hfill]{ch:lrc}{Capacitance and inductance} \\
+\brieftocentry[\hfill]{ch:atom}{The atom and E=mc$^2$} \\
+\brieftocentry[\hfill]{ch:genrel}{General relativity} 
+\end{tabular}
+
+\vspace{\brieftocrightvert}\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+
+& \textit{\brieftocpartstyle Optics}\\
+\brieftocentry[\hfill]{ch:ray-model}{The ray model of light} \\
+\brieftocentry[\hfill]{ch:images-1}{Images by reflection} \\
+\brieftocentry[\hfill]{ch:images-2}{Images, quantitatively} \\
+\brieftocentry[\hfill]{ch:refraction}{Refraction} \\
+\brieftocentry[\hfill]{ch:wave-optics}{Wave optics} 
+\end{tabular}
+
+\vspace{\brieftocrightvert}\noindent\brieftocchstyle\begin{tabular}{rp{60mm}}
+
+& \textit{\brieftocpartstyle The modern revolution}\\
+& \textit{\brieftocpartstyle in physics}\\
+\brieftocentry[\hfill]{ch:randomness}{Rules of randomness} \\
+\brieftocentry[\hfill]{ch:light-as-a-particle}{Light as a particle} \\
+\brieftocentry[\hfill]{ch:matter-as-a-wave}{Matter as a wave} \\
+\brieftocentry[\hfill]{ch:qm-atom}{The atom}
+\end{tabular}
+
+
+
+
+\onecolumn\vfill
+\mynormaltype
+
+\pagebreak[4]
+
+\vspace{0mm}
+\begin{center}
+\noindent\huge\bfseries\sffamily{}Contents\mynormaltype
+\end{center}
+\vspace{0mm}
+\begin{multicols}{2}
+  \tableofcontents
+  \setcounter{unbalance}{0}
+\end{multicols}
+\normallayout\onecolumn
+
+%========================= main matter =========================
+\mainmatter
+%-- I want the whole book numbered sequentially, arabic:
+  \pagenumbering{arabic} 
+  \addtocounter{page}{14}
+\parafmt
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+%========================= chapters =========================
+\setcounter{chapter}{-1}
+\wugga%used to be needed after preface
+    \renewcommand{\chapdir}{pr}\include{pr/atemp}
+    \renewcommand{\chapdir}{pr}\include{pr/btemp}
+    \renewcommand{\chapdir}{n1}\include{n1/atemp}
+    \renewcommand{\chapdir}{n1}\include{n1/btemp}
+    \renewcommand{\chapdir}{n1}\include{n1/ctemp}
+    \renewcommand{\chapdir}{n1}\include{n1/dtemp}
+    \renewcommand{\chapdir}{n3}\include{n3/atemp}
+    \renewcommand{\chapdir}{n3}\include{n3/btemp}
+    \renewcommand{\chapdir}{n3}\include{n3/ctemp}
+    \renewcommand{\chapdir}{n3}\include{n3/dtemp}
+    \renewcommand{\chapdir}{n3}\include{n3/etemp}
+    \renewcommand{\chapdir}{cl}\include{cl/atemp}
+    \renewcommand{\chapdir}{cl}\include{cl/btemp}
+    \renewcommand{\chapdir}{cl}\include{cl/ctemp}
+    \renewcommand{\chapdir}{cl}\include{cl/dtemp}
+    \renewcommand{\chapdir}{cl}\include{cl/etemp}
+    \renewcommand{\chapdir}{cl}\include{cl/ftemp}
+    \renewcommand{\chapdir}{vw}\include{vw/atemp}
+    \renewcommand{\chapdir}{vw}\include{vw/btemp}
+    \renewcommand{\chapdir}{vw}\include{vw/ctemp}
+        \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
+    \renewcommand{\chapdir}{vw}\include{vw/dtemp}
+%
+    \newcounter{savech}\setcounter{savech}{\value{chapter}}
+    \widelayout
+%
+    \renewcommand{\chapdir}{end1}\include{end1/skillstemp}
+    \renewcommand{\chapdir}{end1}\include{end1/hwanstemp}
+    \renewcommand{\chapdir}{end1}\include{end1/photocreditstemp}
+%
+    \normalchapters\setcounter{chapter}{\value{savech}}
+    \normallayout
+    \onecolumn
+%
+    \renewcommand{\chapdir}{em}\include{em/atemp}
+    \renewcommand{\chapdir}{em}\include{em/btemp}
+    \renewcommand{\chapdir}{em}\include{em/ctemp}
+    \renewcommand{\chapdir}{em}\include{em/dtemp}
+    \renewcommand{\chapdir}{em}\include{em/etemp}
+    \renewcommand{\chapdir}{em}\include{em/ftemp}
+    \renewcommand{\chapdir}{em}\include{em/gtemp}
+    \renewcommand{\chapdir}{op}\include{op/atemp}
+    \renewcommand{\chapdir}{op}\include{op/btemp}
+    \renewcommand{\chapdir}{op}\include{op/ctemp}
+    \renewcommand{\chapdir}{op}\include{op/dtemp}
+    \renewcommand{\chapdir}{op}\include{op/etemp}
+    \renewcommand{\chapdir}{qm}\include{qm/atemp}
+    \renewcommand{\chapdir}{qm}\include{qm/btemp}
+    \renewcommand{\chapdir}{qm}\include{qm/ctemp}
+    \renewcommand{\chapdir}{qm}\include{qm/dtemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+    \renewcommand{\chapdir}{qm}\include{qm/etemp}
+%
+    \widelayout
+    \renewcommand{\chapdir}{end2}\include{end2/hwanstemp}
+    \renewcommand{\chapdir}{end2}\include{end2/photocreditstemp}
+%========================= index =========================
+\label{splits:index}\printindex
+%========================= data tables, etc. =========================
+        \blankchaptermarks\label{splits:data}
+	\input{end2/math}\pagebreak[4]
+        \input{end2/data}
+\end{document}

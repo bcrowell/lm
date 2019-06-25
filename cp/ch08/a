@@ -1,0 +1,718 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '01',
+    %q{Vibrations},
+    'ch:vibrations',
+    %q{The vibrations of this electric bass string are converted to electrical
+vibrations, then to sound vibrations, and finally to vibrations of our eardrums.},
+    {'opener'=>'bass-SHARED','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+
+Dandelion. Cello. Read those two words, and your brain
+instantly conjures a stream of associations, the most
+prominent of which have to do with vibrations. Our mental
+category of ``dandelion-ness'' is strongly linked to the
+color of light waves that vibrate about half a million
+billion times a second: yellow. The velvety throb of a cello
+has as its most obvious characteristic a relatively low
+musical pitch --- the note you are spontaneously imagining
+right now might be one whose sound vibrations repeat at a
+rate of a hundred times a second.
+
+Evolution has designed our two most important senses around
+the assumption that not only will our environment be
+drenched with information-bearing vibrations, but in
+addition those vibrations will often be repetitive, so that
+we can judge colors and pitches by the rate of repetition.
+Granting that we do sometimes encounter non-repeating waves
+such as the consonant ``sh,'' which has no recognizable
+\index{pitch}pitch, why was Nature's assumption of
+repetition nevertheless so right in general?
+
+Repeating phenomena occur throughout nature, from the orbits
+of electrons in atoms to the reappearance of Halley's
+\index{comet}\index{Halley's Comet}Comet every 75 years.
+Ancient cultures tended to attribute repetitious phenomena
+like the seasons to the cyclical nature of time itself, but
+we now have a less mystical explanation. Suppose that
+instead of Halley's Comet's true, repeating elliptical orbit
+that closes seamlessly upon itself with each revolution, we
+decide to take a pen and draw a whimsical alternative path
+that never repeats. We will not be able to draw for very
+long without having the path cross itself. But at such a
+crossing point, the comet has returned to a place it visited
+once before, and since its potential energy is the same as
+it was on the last visit, conservation of energy proves that
+it must again have the same kinetic energy and therefore the
+same speed. Not only that, but the comet's direction of
+motion cannot be randomly chosen, because angular momentum
+must be conserved as well. Although this falls short of
+being an ironclad proof that the comet's orbit must repeat,
+it no longer seems surprising that it does.
+
+<% marg(70) %>
+<%
+  fig(
+    'comet-goofy-orbit',
+    %q{If we try to draw a non-repeating orbit for Halley's Comet, it will inevitably end up crossing itself.}
+  )
+%>
+<% end_marg %>
+Conservation laws, then, provide us with a good reason why
+repetitive motion is so prevalent in the universe. But it
+goes deeper than that. Up to this point in your study of
+physics, I have been indoctrinating you with a mechanistic
+vision of the universe as a giant piece of clockwork.
+Breaking the clockwork down into smaller and smaller bits,
+we end up at the atomic level, where the electrons circling
+the nucleus resemble --- well, little clocks! From this
+point of view, particles of matter are the fundamental
+building blocks of everything, and vibrations and waves are
+just a couple of the tricks that groups of particles can do.
+But at the beginning of the 20th century, the tabled were
+turned. A chain of discoveries initiated by Albert
+\index{Einstein, Albert}Einstein led to the realization that
+the so-called subatomic ``particles'' were in fact waves. In
+this new world-view, it is vibrations and waves that are
+fundamental, and the formation of matter is just one of the
+tricks that waves can do.
+
+\mysection{Period, Frequency, and Amplitude}\index{work!done by a varying force}
+
+<% marg(0) %>
+<%
+  fig(
+    'mass-on-spring-SHARED',
+    %q{%
+      A spring has an equilibrium length, 1, and
+      can be stretched, 2, or compressed, 3. A mass attached to the spring can be
+      set into motion initially, 4, and will then vibrate, 4-13.
+    }
+  )
+%>
+<% end_marg %>
+Figure \figref{mass-on-spring} shows our most basic example of a vibration. With
+no forces on it, the spring assumes its equilibrium length,
+\figref{mass-on-spring}/1. It can be stretched, 2, or compressed, 3. We attach
+the spring to a wall on the left and to a mass on the right.
+If we now hit the mass with a hammer, 4, it oscillates as
+shown in the series of snapshots, 4-13. If we assume that
+the mass slides back and forth without friction and that the
+motion is one-dimensional, then conservation of energy
+proves that the motion must be repetitive. When the block
+comes back to its initial position again, 7, its potential
+energy is the same again, so it must have the same kinetic
+energy again. The motion is in the opposite direction,
+however. Finally, at 10, it returns to its initial position
+with the same kinetic energy and the same direction of
+motion. The motion has gone through one complete cycle, and
+will now repeat forever in the absence of friction.
+
+The usual physics terminology for motion that repeats itself
+over and over is \index{motion!periodic}periodic motion, and
+the time required for one repetition is called the
+\index{period!defined}period, $T$. (The symbol $P$ is not
+used because of the possible confusion with momentum.) One
+complete repetition of the motion is called a cycle.
+
+We are used to referring to short-period sound vibrations as
+``high'' in pitch, and it sounds odd to have to say that
+high pitches have low periods. It is therefore more common
+to discuss the rapidity of a vibration in terms of the
+number of vibrations per second, a quantity called the
+\index{frequency!defined}frequency, $f$. Since the period is
+the number of seconds per cycle and the frequency is the
+number of cycles per second, they are reciprocals of each other,
+\begin{equation*}
+		f  =  1/T   \qquad   .
+\end{equation*}
+
+<% marg(0) %>
+<%
+  fig(
+    'carnival-game',
+    %q{Example \ref{eg:carnival-game}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A carnival game}\label{eg:carnival-game}
+In the carnival game shown in figure \figref{carnival-game}, the rube is
+supposed to push the bowling ball on the track just hard
+enough so that it goes over the hump and into the valley,
+but does not come back out again. If the only types of
+energy involved are kinetic and potential, this is
+impossible. Suppose you expect the ball to come back to a
+point such as the one shown with the dashed outline, then
+stop and turn around. It would already have passed through
+this point once before, going to the left on its way into
+the valley. It was moving then, so conservation of energy
+tells us that it cannot be at rest when it comes back to the
+same point. The motion that the customer hopes for is
+physically impossible. There is a physically possible
+periodic motion in which the ball rolls back and forth,
+staying confined within the valley, but there is no way to
+get the ball into that motion beginning from the place where
+we start. There is a way to beat the game, though. If you
+put enough spin on the ball, you can create enough kinetic
+friction so that a significant amount of heat is generated.
+Conservation of energy then allows the ball to be at rest
+when it comes back to a point like the outlined one, because
+kinetic energy has been converted into heat.
+\end{eg}
+
+\begin{eg}{Period and frequency of a fly's wing-beats}
+A Victorian parlor trick was to listen to the pitch of a
+fly's buzz, reproduce the musical note on the piano, and
+announce how many times the fly's wings had flapped in one
+second. If the fly's wings flap, say, 200 times in one
+second, then the frequency of their motion is $f=200/1\ \sunit=200\ \sunit^{-1}$.
+The period is one 200th of a second, $T=1/f=(1/200)\ \sunit=0.005\ \sunit$.
+\end{eg}
+
+Units of inverse second, $\sunit^{-1}$, are awkward in speech, so an
+abbreviation has been created. One Hertz, named in honor of
+a pioneer of radio technology, is one cycle per second. In
+abbreviated form, $1\ \zu{Hz}=1\ \sunit^{-1}$. This is the familiar unit
+used for the frequencies on the radio dial.
+
+\begin{eg}{Frequency of a radio station}
+\egquestion KKJZ's frequency is 88.1 MHz. What does this mean,
+and what period does this correspond to?
+
+\eganswer The metric prefix M- is mega-, i.e., millions. The
+radio waves emitted by KKJZ's transmitting antenna vibrate
+88.1 million times per second. This corresponds to a period of
+\begin{equation*}
+ T = 1/f= 1.14\times10^{-8}\ \sunit \qquad .
+\end{equation*}
+
+This example shows a second reason why we normally speak in
+terms of frequency rather than period: it would be painful
+to have to refer to such small time intervals routinely. I
+could abbreviate by telling people that KKJZ's period was
+11.4 nanoseconds, but most people are more familiar with the
+big metric prefixes than with the small ones.
+\end{eg}
+
+Units of frequency are also commonly used to specify the
+speeds of computers. The idea is that all the little
+circuits on a computer chip are synchronized by the very
+fast ticks of an electronic clock, so that the circuits can
+all cooperate on a task without getting ahead or behind.
+Adding two numbers might require, say, 30 clock cycles.
+Microcomputers these days operate at clock frequencies
+of about a gigahertz.
+
+<% marg(18) %>
+<%
+  fig(
+    'amplitude-examples',
+    %q{%
+      1. The amplitude of the vibrations of the mass on a spring could be defined in two different ways. It would
+      have units of distance. 2. The amplitude of a swinging pendulum would more naturally be defined as an angle.
+    }
+  )
+%>
+<% end_marg %>
+We have discussed how to measure how fast something
+vibrates, but not how big the vibrations are. The general
+term for this is \index{amplitude!defined}amplitude, $A$. The
+definition of amplitude depends on the system being
+discussed, and two people discussing the same system may not
+even use the same definition. In the example of the block on
+the end of the spring, \figref{amplitude-examples}/1, the amplitude will be measured in
+distance units such as cm. One could work in terms of the
+distance traveled by the block from the extreme left to the
+extreme right, but it would be somewhat more common in
+physics to use the distance from the center to one extreme.
+The former is usually referred to as the \index{amplitude!peak-to-peak}peak-to-peak
+amplitude, since the extremes of the motion look like
+mountain peaks or upside-down mountain peaks on a graph of
+position versus time.
+
+In other situations we would not even use the same units for
+amplitude. The amplitude of a child on a swing, or a pendulum, \figref{amplitude-examples}/2, would most
+conveniently be measured as an angle, not a distance, since
+her feet will move a greater distance than her head. The
+electrical vibrations in a radio receiver would be measured
+in electrical units such as volts or amperes.
+
+\mysection[0]{Simple Harmonic Motion}\index{work!done by a varying force}
+
+\mysubsection[0]{Why are sine-wave vibrations so common?}
+
+<% marg(0) %>
+<%
+  fig(
+    'sinusoidal-x-t',
+    %q{Sinusoidal and non-sinusoidal vibrations.}
+  )
+%>
+<% end_marg %>
+If we actually construct the mass-on-a-spring system
+discussed in the previous section and measure its motion
+accurately, we will find that its $x-t$ graph is nearly a
+perfect sine-wave shape, as shown in figure \figref{sinusoidal-x-t}/1. (We call it
+a ``sine wave'' or ``sinusoidal'' even if it is a cosine, or
+a sine or cosine shifted by some arbitrary horizontal
+amount.) It may not be surprising that it is a wiggle of
+this general sort, but why is it a specific mathematically
+perfect shape? Why is it not a sawtooth shape like 2 or
+some other shape like 3? The mystery deepens as we find
+that a vast number of apparently unrelated vibrating systems
+show the same mathematical feature. A \index{tuning fork}tuning fork,
+a sapling pulled to one side and released,
+a car bouncing on its shock absorbers, all these systems
+will exhibit sine-wave motion under one condition: the
+amplitude of the motion must be small.
+
+It is not hard to see intuitively why extremes of amplitude
+would act differently. For example, a car that is bouncing
+lightly on its shock absorbers may behave smoothly, but if
+we try to double the amplitude of the vibrations the bottom
+of the car may begin hitting the ground, \figref{sinusoidal-x-t}/4. (Although we
+are assuming for simplicity in this chapter that energy is
+never dissipated, this is clearly not a very realistic
+assumption in this example. Each time the car hits the
+ground it will convert quite a bit of its potential and
+kinetic energy into heat and sound, so the vibrations would
+actually die out quite quickly, rather than repeating for
+many cycles as shown in the figure.)
+
+The key to understanding how an object vibrates is to know
+how the force on the object depends on the object's
+position. If an object is vibrating to the right and left,
+then it must have a leftward force on it when it is on the
+right side, and a rightward force when it is on the left
+side. In one dimension, we can represent the direction of
+the force using a positive or negative sign, and since the
+force changes from positive to negative there must be a
+point in the middle where the force is zero. This is the
+equilibrium point, where the object would stay at rest if it
+was released at rest. For convenience of notation throughout
+this chapter, we will define the origin of our coordinate
+system so that $x$ equals zero at equilibrium.
+
+\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'force-curve-1',
+    %q{The force exerted by an ideal spring, which behaves exactly according to Hooke's law.}
+  )
+%>
+<% end_marg %>
+The simplest example is the mass on a spring, for which
+force on the mass is given by \index{Hooke's law}Hooke's law,
+\begin{equation*}
+		F    =    -kx   \qquad   .
+\end{equation*}
+We can visualize the behavior of this force using a graph of
+$F$ versus $x$, as shown in figure \figref{force-curve-1}. The graph is a line, and the
+spring constant, $k$, is equal to minus its slope. A stiffer
+spring has a larger value of $k$ and a steeper slope.
+Hooke's law is only an approximation, but it works very well
+for most springs in real life, as long as the spring isn't
+compressed or stretched so much that it is permanently bent or damaged.
+
+The following important theorem, whose proof is given in
+optional section \ref{sec:proofs}, relates the motion graph to the force graph.
+
+\index{simple harmonic motion!period of}
+\begin{lessimportant}{Theorem: A linear
+force graph makes a sinusoidal motion graph.}
+
+\noindent If the total force on a vibrating object depends only on the
+object's position, and is related to the objects displacement
+from equilibrium by an equation of the form $F=-kx$,
+then the object's motion displays a sinusoidal graph with period $T=2\pi\sqrt{m/k}$.
+\end{lessimportant}
+
+Even if you do not read the proof, it is not too hard to
+understand why the equation for the period makes sense. A
+greater mass causes a greater period, since the force will
+not be able to whip a massive object back and forth very
+rapidly. A larger value of $k$ causes a shorter period,
+because a stronger force can whip the object back and forth more rapidly.
+
+<% marg(23) %>
+<%
+  fig(
+    'force-curve-2',
+    %q{Seen from close up, any $F-x$ curve looks like a line.}
+  )
+%>
+<% end_marg %>
+This may seem like only an obscure theorem about the
+mass-on-a-spring system, but figure \figref{force-curve-2} shows it to
+be far more general than that. Figure \figref{force-curve-2}/1 depicts a force
+curve that is not a straight line. A system with this $F-x$
+curve would have large-amplitude vibrations that were
+complex and not sinusoidal. But the same system would
+exhibit sinusoidal small-amplitude vibrations. This is
+because any curve looks linear from very close up. If we
+magnify the $F-x$ graph as shown in figure \figref{force-curve-2}/2, it becomes very
+difficult to tell that the graph is not a straight line. If
+the vibrations were confined to the region shown in \figref{force-curve-2}/2,
+they would be very nearly sinusoidal. This is the reason why
+sinusoidal vibrations are a universal feature of all
+vibrating systems, if we restrict ourselves to small
+amplitudes. The theorem is therefore of great general
+significance. It applies throughout the universe, to objects
+ranging from vibrating stars to vibrating nuclei. A
+sinusoidal vibration is known as \index{simple harmonic
+motion!defined}simple harmonic motion.
+
+\mysubsection[0]{Period is approximately independent of amplitude, if the amplitude is small.}
+
+Until now we have not even mentioned the most counterintuitive
+aspect of the equation  $T=2\pi\sqrt{m/k}$: it does not depend on amplitude at
+all. Intuitively, most people would expect the mass-on-a-spring
+system to take longer to complete a cycle if the amplitude
+was larger. (We are comparing amplitudes that are different
+from each other, but both small enough that the theorem
+applies.) In fact the larger-amplitude vibrations take the
+same amount of time as the small-amplitude ones. This is because
+at large amplitudes, the force is greater, and therefore accelerates
+the object to higher speeds.
+
+ Legend has it that this fact was first noticed by
+\index{Galileo}Galileo during what was apparently a less
+than enthralling church service. A gust of wind would now
+and then start one of the chandeliers in the cathedral
+swaying back and forth, and he noticed that regardless of
+the amplitude of the vibrations, the period of oscillation
+seemed to be the same. Up until that time, he had been
+carrying out his physics experiments with such crude
+time-measuring techniques as feeling his own pulse or
+singing a tune to keep a musical beat. But after going home
+and testing a pendulum, he convinced himself that he had
+found a superior method of measuring time. Even without a
+fancy system of pulleys to keep the pendulum's vibrations
+from dying down, he could get very accurate time measurements,
+because the gradual decrease in amplitude due to friction
+would have no effect on the pendulum's period. (Galileo
+never produced a modern-style pendulum clock with pulleys, a
+minute hand, and a second hand, but within a generation the
+device had taken on the form that persisted for hundreds of years after.)
+
+\begin{eg}{The pendulum}
+\egquestion Compare the periods of pendula having bobs
+with different masses.
+
+\eganswer From the equation  $T=2\pi\sqrt{m/k}$, we might expect that a larger
+mass would lead to a longer period. However, increasing the
+mass also increases the forces that act on the pendulum:
+gravity and the tension in the string. This increases $k$ as
+well as $m$, so the period of a pendulum is independent of $m$.
+\end{eg}
+
+\myoptionalsection{Proofs}\label{sec:proofs}\index{work!done by a varying force}
+
+<% marg(0) %>
+<%
+  fig(
+    'shm-proof',
+    %q{%
+      The object moves along the circle at constant speed, but even though its overall speed is constant,
+      the $x$ and $y$ components of its velocity are continuously changing, as shown by the unequal spacing of the points when projected
+      onto the line below. Projected onto the line, its motion is the same as that of an object experiencing a force $F=-kx$.
+    }
+  )
+%>
+<% end_marg %>
+In this section we prove (1) that a linear $F-x$ graph gives
+sinusoidal motion, (2) that the period of the motion is $2\pi\sqrt{m/k}$,
+and (3) that the period is independent of the amplitude. You
+may omit this section without losing the continuity of the chapter.
+
+The basic idea of the proof can be understood by imagining
+that you are watching a child on a merry-go-round from far
+away. Because you are in the same horizontal plane as her
+motion, she appears to be moving from side to side along a
+line. Circular motion viewed edge-on doesn't just look like
+any kind of back-and-forth motion, it looks like motion with
+a sinusoidal $x-t$ graph, because the sine and cosine
+functions can be defined as the $x$ and $y$ coordinates of a
+point at angle $\theta $ on the unit circle. The idea of the
+proof, then, is to show that an object acted on by a force
+that varies as $F=-kx$ has motion that is identical
+to circular motion projected down to one dimension. The
+equation will also fall out nicely at the end.
+
+For an object performing uniform circular motion, we have
+\begin{equation*}
+		|\vc{a}|	 =    \frac{v^2}{r}   \qquad   .
+\end{equation*}
+The $x$ component of the acceleration is therefore
+\begin{equation*}
+			a_x	 =    \frac{v^2}{r}\cos\theta   \qquad   ,
+\end{equation*}
+where $\theta $ is the angle measured counterclockwise from
+the $x$ axis. Applying Newton's second law,
+\begin{align*}
+ \frac{F_x}{m} &= -\frac{v^2}{r}\cos\theta \qquad , \qquad \text{so} \\
+ F_x &= -m\frac{v^2}{r}\cos\theta \qquad .
+\end{align*}
+Since our goal is an equation involving the period, it is
+natural to eliminate the variable $v = \text{circumference}/T=2\pi r/T$, giving
+\begin{equation*}
+			F_x	 =    -\frac{4\pi^2 mr}{T^2}\cos\theta   \qquad   .
+\end{equation*}
+The quantity $r \cos \theta $ is the same as $x$, so we have
+\begin{equation*}
+			F_x	 =    -\frac{4\pi^2 m}{T^2}\: x    \qquad   .
+\end{equation*}
+Since everything is constant in this equation except for
+$x$, we have proved that motion with force proportional to
+$x$ is the same as circular motion projected onto a line,
+and therefore that a force proportional to $x$ gives
+sinusoidal motion. Finally, we identify the constant factor
+of $4\pi^2m/T^2$ with $k$, and solving for $T$ gives the desired
+equation for the period,
+\begin{equation*}
+			T	 =     2\pi\sqrt{\frac{m}{k}}  \qquad   .
+\end{equation*}
+Since this equation is independent of $r$, $T$ is independent of the amplitude,
+subject to the initial assumption of perfect $F=-kx$ behavior, which in reality
+will only hold approximately for small $x$.
+
+\begin{eg}{The moons of Jupiter.}\label{eg:jovian-moons}
+The idea behind this proof is aptly illustrated by the moons
+of Jupiter. Their discovery by Galileo was an epochal event
+in astronomy, because it proved that not everything in the
+universe had to revolve around the earth as had been
+believed. Galileo's telescope was of poor quality by modern
+standards, but figure \figref{jovian-moons} shows a simulation of how
+Jupiter and its moons might appear at intervals of three
+hours through a large present-day instrument. Because we see
+the moons' circular orbits edge-on, they appear to perform
+sinusoidal vibrations. Over this time period, the innermost
+moon, Io, completes half a cycle.
+\end{eg}
+
+<%
+  fig(
+    'jovian-moons',
+    %q{Example \ref{eg:jovian-moons}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{periodic motion}{motion that repeats itself over and over}
+
+\vocabitem{period}{the time required for one cycle of a periodic motion}
+
+\vocabitem{frequency}{the number of cycles per second, the inverse of the period}
+
+\vocabitem{amplitude}{the amount of vibration, often measured from the
+center to one side; may have different units depending on
+the nature of the vibration}
+
+\vocabitem{simple harmonic motion}{motion whose $x-t$ graph is a sine wave}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$T$}{period}
+
+\notationitem{$f$}{frequency}
+
+\notationitem{$A$}{amplitude}
+
+\notationitem{$k$}{the slope of the graph of $F$ versus $x$, where $F$ is the
+total force acting on an object and $x$ is the object's
+position; For a spring, this is known as the spring constant.}
+
+\end{notation}
+
+
+\begin{othernotation}
+
+\notationitem{$\nu$}{The Greek letter $\nu $, nu, is used in many books for frequency.}
+
+\notationitem{$\omega$}{The Greek letter $\omega $, omega, is often used as an
+abbreviation for $2\pi f$.}
+
+\end{othernotation}
+
+\begin{summarytext}
+
+Periodic motion is common in the world around us because of
+conservation laws. An important example is one-dimensional
+motion in which the only two forms of energy involved are
+potential and kinetic; in such a situation, conservation of
+energy requires that an object repeat its motion, because
+otherwise when it came back to the same point, it would have
+to have a different kinetic energy and therefore a
+different total energy.
+
+Not only are periodic vibrations very common, but small-amplitude
+vibrations are always sinusoidal as well. That is, the $x-t$
+graph is a sine wave. This is because the graph of force
+versus position will always look like a straight line on a
+sufficiently small scale. This type of vibration is called
+simple harmonic motion. In simple harmonic motion, the
+period is independent of the amplitude, and is given by
+\begin{equation*}
+T=2\pi\sqrt{m/k} \qquad .
+\end{equation*}
+
+\end{summarytext}
+
+\end{summary}
+
+\begin{hwsection}
+
+\begin{hw}{shmfreq}
+Find an equation for the frequency of simple harmonic
+motion in terms of $k$ and $m$.
+\end{hw}
+
+\begin{hw}{sperm}
+Many single-celled organisms propel themselves through
+water with long tails, which they wiggle back and forth.
+(The most obvious example is the sperm cell.) The frequency
+of the tail's vibration is typically about 10-15 Hz. To what
+range of periods does this range of frequencies correspond?
+\end{hw}
+
+\begin{hw}{pendulum}
+(a) Pendulum 2 has a string twice as long as pendulum 1.
+If we define $x$ as the distance traveled by the bob along a
+circle away from the bottom, how does the $k$ of pendulum 2
+compare with the $k$ of pendulum 1? Give a numerical ratio.
+[Hint: the total force on the bob is the same if the angles
+away from the bottom are the same, but equal angles do not
+correspond to equal values of $x$.]
+
+(b) Based on your answer from part (a), how does the period
+of pendulum 2 compare with the period of pendulum 1?
+Give a numerical ratio.
+\end{hw}
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-pneumatic-spring',
+    %q{Problem \ref{hw:piston}.}
+  )
+%>
+<% end_marg %>
+\begin{hw}{piston}
+ A pneumatic spring consists of a piston riding on top
+of the air in a cylinder. The upward force of the air on
+the piston is given by $F_{air}=ax^{-1.4}$, where $a$ is a
+constant with funny units of $\nunit\unitdot\munit^{1.4}$. For simplicity,
+assume the air only supports the weight, $F_W$, of the
+piston itself, although in practice this device is used to
+support some other object. The equilibrium position, $x_0$,
+is where $F_W$ equals $-F_{air}$. (Note that in the main
+text I have assumed the equilibrium position to be at $x=0$,
+but that is not the natural choice here.) Assume friction
+is negligible, and consider a case where the amplitude of
+the vibrations is very small. Let $a=1\ \nunit\unitdot\munit^{1.4}$, 
+$x_0=1.00\ \munit$, and $F_W=-1.00\ \nunit$. The piston is released from
+$x=1.01\ \munit$. Draw a neat, accurate graph of the total
+force, $F$, as a function of $x$, on graph paper, covering
+the range from $x=0.98\ \munit$ to 1.02 $\munit$. Over this small
+range, you will find that the force is very nearly
+proportional to $x-x_0$. Approximate the curve with a
+straight line, find its slope, and derive the approximate
+period of oscillation. \answercheck
+\end{hw}
+
+\begin{hw}{pistonxt}
+Consider the same pneumatic piston described in problem \ref{hw:piston},
+but now imagine that the oscillations are
+not small. Sketch a graph of the total force on the piston
+as it would appear over this wider range of motion. For a
+wider range of motion, explain why the vibration of the
+piston about equilibrium is not simple harmonic motion, and
+sketch a graph of $x$ vs $t$, showing roughly how the curve
+is different from a sine wave. [Hint: Acceleration
+corresponds to the curvature of the $x-t$ graph, so if the
+force is greater, the graph should curve around more quickly.]
+\end{hw}
+
+\begin{hw}{bobbing}
+Archimedes' principle states that an object partly or
+wholly immersed in fluid experiences a buoyant force equal
+to the weight of the fluid it displaces. For instance, if a
+boat is floating in water, the upward pressure of the water
+(vector sum of all the forces of the water pressing inward
+and upward on every square inch of its hull) must be equal
+to the weight of the water displaced, because if the boat
+was instantly removed and the hole in the water filled back
+in, the force of the surrounding water would be just the
+right amount to hold up this new ``chunk'' of water. (a)
+Show that a cube of mass $m$ with edges of length $b$
+floating upright (not tilted) in a fluid of density $\rho $
+will have a draft (depth to which it sinks below the
+waterline) $h$ given at equilibrium by $h_0=m/b^2\rho$. (b) Find the total
+force on the cube when its draft is $h$, and verify that
+plugging in $h-h_0$ gives a total force of zero. (c) Find the
+cube's period of oscillation as it bobs up and down in the
+water, and show that can be expressed in terms of and $g$ only.
+\end{hw}
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-codornices',
+    %q{Problem \ref{hw:codornices}.}
+  )
+%>
+<% end_marg %>
+\begin{hw}[2]{}\label{hw:codornices}
+The figure shows a see-saw with two springs at
+Codornices Park in Berkeley, California. Each spring has
+spring constant $k$, and a kid of mass $m$ sits on each
+seat. (a) Find the period of vibration in terms of the
+variables $k$, $m$, $a$, and $b$. (b) Discuss the special case
+where $a=b$, rather than $a>b$ as in the real see-saw. (c)
+Show that your answer to part a also makes sense in the case of $b=0$.
+\end{hw}
+
+\begin{hw}{}
+Show that the equation $T=2\pi\sqrt{m/k}$ has units that make sense.
+\end{hw}
+
+\begin{hw}{}
+A hot scientific question of the 18th century was the shape
+of the earth: whether its radius was greater at the equator than at the poles, or the
+other way around. One method used to attack this question was to measure gravity
+accurately in different locations on the earth using pendula. If the highest
+and lowest latitudes accessible to explorers were 0 and 70 degrees, then
+the the strength of gravity would in reality be observed to vary over a range from
+about 9.780 to 9.826 $\munit/\sunit^2$. This change, amounting to 0.046 $\munit/\sunit^2$,
+is greater than the 0.022 $\munit/\sunit^2$ effect to be expected if the earth had been spherical.
+The greater effect occurs because the equator feels a reduction due not just to the
+acceleration of the spinning earth out from under it, but also to the greater radius of
+the earth at the equator. What is the accuracy with which the period
+of a one-second pendulum would have to be measured in order to prove that the earth
+was not a sphere, and that it bulged at the equator?
+\end{hw}
+
+\end{hwsection}
+
+ %%---------------------------------------------------------
+
+\addtocontents{toc}{\protect\figureintoc{toc-bass}}
+
+
+

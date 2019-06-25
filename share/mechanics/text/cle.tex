@@ -1,0 +1,1606 @@
+\index{angular momentum!introduction to}
+
+``Sure, and maybe the sun won't come up tomorrow.'' Of
+course, the sun only appears to go up and down because the
+earth spins, so the cliche should really refer to the
+unlikelihood of the earth's stopping its rotation abruptly
+during the night. Why can't it stop? It wouldn't violate
+conservation of momentum, because the earth's rotation
+doesn't add anything to its momentum. While California spins
+in one direction, some equally massive part of India goes
+the opposite way, canceling its momentum. A halt to Earth's
+rotation would entail a drop in kinetic energy, but that
+energy could simply be converted into some other form, such as heat.
+
+Other examples along these lines are not hard to find. A
+hydrogen atom spins at the same rate for billions of years.
+A high-diver who is rotating when he comes off the board
+does not need to make any physical effort to continue
+rotating, and indeed would be unable to stop rotating
+before he hit the water.
+
+These observations have the hallmarks of a conservation law:
+
+\oneofaseriesofpoints{A closed system is involved.}{Nothing is making an effort to
+twist the earth, the hydrogen atom, or the high-diver. They
+are isolated from rotation-changing influences, i.e.,
+they are closed systems.}
+
+\oneofaseriesofpoints{Something remains unchanged.}{There appears to be a numerical
+quantity for measuring rotational motion such that the total
+amount of that quantity remains constant in a closed system.}
+
+\oneofaseriesofpoints{Something can be transferred back and forth without changing
+the total amount.}{In figure \figref{longjump},
+the jumper wants to get his feet out in front of
+him so he can keep from doing a ``face plant'' when he
+lands. Bringing his feet forward would involve a certain
+quantity of counterclockwise rotation, but he didn't start
+out with any rotation when he left the ground. Suppose we
+consider counterclockwise as positive and clockwise as
+negative. The only way his legs can acquire some positive
+rotation is if some other part of his body picks up an equal
+amount of negative rotation. This is why he swings his arms
+up behind him, clockwise.}
+
+<%
+  fig(
+    'longjump',
+    %q{An early photograph of an old-fashioned long-jump.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+What numerical measure of rotational motion is conserved?
+Car engines and old-fashioned LP records have speeds of
+rotation measured in rotations per minute (r.p.m.), but the
+number of rotations per minute (or per second) is not a
+conserved quantity. A twirling figure skater, for instance,
+can pull her arms in to increase her r.p.m.'s. The first
+section of this chapter deals with the numerical definition
+of the quantity of rotation that results in a valid conservation law.
+
+<% begin_sec("Conservation of angular momentum",0) %>
+
+When most people think of rotation, they think of a solid
+object like a wheel rotating in a circle around a fixed
+point. Examples of this type of rotation, called \index{rigid
+rotation!defined}rigid rotation or rigid-body rotation,
+include a spinning top, a seated child's swinging leg, and a
+helicopter's spinning propeller. Rotation, however, is a
+much more general phenomenon, and includes noncircular
+examples such as a comet in an elliptical orbit around the
+sun, or a cyclone, in which the core completes a circle more
+quickly than the outer parts.
+
+If there is a numerical measure of rotational motion that is
+a conserved quantity, then it must include nonrigid cases
+like these, since nonrigid rotation can be traded back and
+forth with rigid rotation. For instance, there is a trick
+for finding out if an egg is raw or hardboiled. If you spin
+a hardboiled egg and then stop it briefly with your finger,
+it stops dead. But if you do the same with a raw egg, it
+springs back into rotation because the soft interior was
+still swirling around within the momentarily motionless
+shell. The pattern of flow of the liquid part is presumably
+very complex and nonuniform due to the asymmetric shape of
+the egg and the different consistencies of the yolk and the
+white, but there is apparently some way to describe the
+liquid's total amount of rotation with a single number, of
+which some percentage is given back to the shell when you release it.
+
+The best strategy is to devise a way of defining the amount
+of rotation of a single small part of a system. The amount
+of rotation of a system such as a cyclone will then be
+defined as the total of all the contributions from
+its many small parts.
+
+<% marg(70) %>
+<%
+  fig(
+    'putty-door',
+    %q{%
+      An overhead view of a piece of putty being
+      thrown at a door. Even though the putty is neither spinning
+      nor traveling along a curve, we must define it as having some
+      kind of ``rotation'' because it is able to make the door rotate.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'putty-angular',
+    %q{%
+      As seen by someone standing at the axis, the
+      putty changes its angular position. We therefore define it as having
+      angular momentum.
+    }
+  )
+%>
+
+<% end_marg %>
+The quest for a conserved quantity of rotation even requires
+us to broaden the rotation concept to include cases where
+the motion doesn't repeat or even curve around. If you throw
+a piece of putty at a door, the door will recoil and start
+rotating. The putty was traveling straight, not in a circle,
+but if there is to be a general conservation law that can
+cover this situation, it appears that we must describe the
+putty as having had some ``rotation,'' which it then gave up
+to the door. The best way of thinking about it is to
+attribute rotation to any moving object or part of an object
+that changes its angle in relation to the axis of rotation.
+In the putty-and-door example, the hinge of the door is the
+natural point to think of as an axis, and the putty changes
+its angle as seen by someone standing at the hinge. For this
+reason, the conserved quantity we are investigating is
+called \index{angular momentum!defined}\emph{angular\/} momentum.
+The symbol for angular momentum can't be $a$ or $m$,
+since those are used for acceleration and mass, so the
+symbol $L$ is arbitrarily chosen instead.
+
+Imagine a 1-kg blob of putty, thrown at the door at a speed
+of 1 m/s, which hits the door at a distance of 1 m from
+the hinge. We define this blob to have 1 unit of angular
+momentum. When it hits the door, the door
+will recoil and start rotating.
+ We can use the speed at which the door recoils as a measure
+of the angular momentum the blob brought in.\footnote{We assume that the door is much
+ more massive than the blob. Under this assumption, the speed at which the
+ door recoils is much less than the original speed of the blob, so the blob
+ has lost essentially all its angular momentum, and given it to the door.}
+
+Experiments show, not surprisingly, that a 2-kg blob thrown
+in the same way makes the door rotate twice as fast, so the
+angular momentum of the putty blob must be proportional to mass,
+\begin{equation*}
+ L\propto m\eqquad.
+\end{equation*}
+
+Similarly, experiments show that doubling the velocity of
+the blob will have a doubling effect on the result, so its
+angular momentum must be proportional to its velocity as well,
+
+\begin{equation*}
+ L\propto mv\eqquad.
+\end{equation*}
+
+You have undoubtedly had the experience of approaching a
+closed door with one of those bar-shaped handles on it and
+pushing on the wrong side, the side close to the hinges. You
+feel like an idiot, because you have so little leverage that
+you can hardly budge the door. The same would be true with
+the putty blob. Experiments would show that the amount of
+rotation the blob can give to the door is proportional to
+the distance, $r$, from the axis of rotation, so angular
+momentum must also be proportional to $r$,
+\begin{equation*}
+ L\propto mvr\eqquad.
+\end{equation*}
+
+<% marg(100) %>
+<%
+  fig(
+    'putty-radial',
+    %q{%
+      A putty blob thrown directly at the axis has no
+      angular motion, and therefore no angular momentum. It will not cause the
+      door to rotate.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'putty-vperp',
+    %q{%
+      Only the component of the velocity vector
+      perpendicular to the dashed line
+      should be counted into the definition of angular momentum.
+    }
+  )
+%>
+
+<% end_marg %>
+We are almost done, but there is one missing ingredient. We
+know on grounds of symmetry that a putty ball thrown
+directly inward toward the hinge will have no angular
+momentum to give to the door. After all, there would not
+even be any way to decide whether the ball's rotation was
+clockwise or counterclockwise in this situation. It is
+therefore only the component of the blob's velocity vector
+perpendicular to the door that should be counted in
+its angular momentum,
+                \index{angular momentum!definition}
+
+\begin{equation*}
+L = m v_{\perp}r\eqquad.
+\end{equation*}
+More generally, $v_{\perp}$ should be thought of as the component of
+the object's velocity vector that is perpendicular to the
+line joining the object to the axis of rotation.
+
+We find that this equation agrees with the definition of the
+original putty blob as having one unit of angular momentum,
+and we can now see that the units of angular momentum are
+$(\kgunit\unitdot\munit/\sunit)\unitdot\munit$, i.e., $\kgunit\unitdot\munit^2/\sunit$.
+This gives us a way of
+calculating the angular momentum of any material object or
+any system consisting of material objects:
+
+\begin{important}[angular momentum of a material object]
+The angular momentum of a moving particle is
+\begin{equation*}
+L = mv_{\perp}r\eqquad,
+\end{equation*}
+where $m$ is its mass, $v_{\perp}$ is the component of its velocity
+vector perpendicular to the line joining it to the axis of
+rotation, and $r$ is its distance from the axis.
+Positive and negative signs are used to describe opposite directions
+of rotation.
+
+\quad The angular momentum of a finite-sized object or a system of
+many objects is found by dividing it up into many small parts,
+applying the equation to each part, and adding to find the total
+amount of angular momentum.
+\end{important}
+Note that $r$ is not necessarily the radius of a circle. (As
+implied by the qualifiers, matter isn't the only thing that
+can have angular momentum. Light can also have angular
+momentum, and the above equation would not apply to light.)
+
+<% marg(0) %>
+<%
+  fig(
+    'figure-skater',
+    %q{%
+      A figure skater pulls in her arms so
+      that she can execute a spin more rapidly.
+    }
+  )
+%>
+<% end_marg %>
+Conservation of angular momentum has been verified over and
+over again by experiment, and is now believed to be one of
+the three most fundamental principles of physics, along with
+conservation of energy and momentum.
+
+\begin{eg}{A figure skater pulls her arms in}
+When a figure skater is twirling, there is very little
+friction between her and the ice, so she is essentially a
+closed system, and her angular momentum is conserved. If she
+pulls her arms in, she is decreasing $r$ for all the atoms
+in her arms. It would violate conservation of angular
+momentum if she then continued rotating at the same speed,
+i.e., taking the same amount of time for each revolution, because her
+arms' contributions to her angular momentum would have
+decreased, and no other part of her would have increased its
+angular momentum. This is impossible because it would
+violate conservation of angular momentum. If her total
+angular momentum is to remain constant, the decrease in $r$
+for her arms must be compensated for by an overall increase
+in her rate of rotation. That is, by pulling her arms in,
+she substantially reduces the time for each rotation.
+\end{eg}
+
+\vfill\pagebreak[4]
+
+<%
+  fig(
+    'viola-at-frog',
+    %q{Example \ref{eg:viola-at-frog}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\begin{eg}{Changing the axis}\label{eg:viola-at-frog}
+An object's angular momentum can be different depending on
+the axis about which it rotates. Figure \ref{fig:viola-at-frog}
+shows two double-exposure photographs
+a viola player tipping the bow in order to cross from one
+string to another. Much more angular momentum is required
+when playing near the bow's handle, called the frog, as
+in the panel on the right; not only are most
+of the atoms in the bow at greater distances, $r$,
+from the axis of rotation, but the ones in the tip also
+have more momentum, $p$. It is difficult for the player to
+quickly transfer a large angular momentum into the bow, and then
+transfer it back out just as quickly. (In the language of section
+\ref{sec:torque}, large torques are required.) This is one of the reasons
+that string players tend to stay near the middle of the bow
+as much as possible.
+\end{eg}
+
+<% marg(57) %>
+<%
+  fig(
+    'tidal-slowdown',
+    %q{%
+      Example \ref{eg:tidal-slowdown}. A view of the earth-moon system from
+      above the north pole. All distances
+      have been highly distorted for legibility. The earth's rotation is
+      counterclockwise from this point of view (arrow).
+      The moon's gravity creates a bulge on
+      the side near it, because its gravitational pull is stronger there, and an
+      ``anti-bulge'' on the far side, since its
+      gravity there is weaker. For simplicity,
+      let's focus on the tidal bulge closer to
+      the moon. Its frictional force is trying
+      to slow down the earth's rotation, so
+      its force on the earth's solid crust is
+      toward the bottom of the figure. By
+      Newton's third law, the crust must thus
+      make a force on the bulge which is
+      toward the top of the figure. This
+      causes the bulge to be pulled forward
+      at a slight angle, and the bulge's gravity therefore pulls the moon forward,
+      accelerating its orbital motion about
+      the earth and flinging it outward.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Earth's slowing rotation and the receding moon}\label{eg:tidal-slowdown}
+As noted in chapter 1, the earth's rotation is actually
+slowing down very gradually, with the kinetic energy being
+dissipated as heat by friction between the land and the
+tidal bulges raised in the seas by the earth's gravity. Does
+this mean that angular momentum is not really perfectly
+conserved? No, it just means that the earth is not quite a
+closed system by itself. If we consider the earth and moon
+as a system, then the angular momentum lost by the earth
+must be gained by the moon somehow. In fact very precise
+measurements of the distance between the earth and the moon
+have been carried out by bouncing laser beams off of a
+mirror left there by astronauts, and these measurements show
+that the moon is receding from the earth at a rate of 4
+centimeters per year! The moon's greater value of $r$ means
+that it has a greater angular momentum, and the increase
+turns out to be exactly the amount lost by the earth. In the
+days of the dinosaurs, the days were significantly shorter,
+and the moon was closer and appeared bigger in the sky.
+
+But what force is causing the moon to speed up, drawing it
+out into a larger orbit? It is the gravitational forces of
+the earth's tidal bulges. The effect is described qualitatively
+in the caption of the figure. The result would obviously be
+extremely difficult to calculate directly, and this is one
+of those situations where a conservation law allows us to
+make precise quantitative statements about the outcome of a
+process when the calculation of the process itself would be
+prohibitively complex.
+\end{eg}
+
+<% begin_sec("Restriction to rotation in a plane") %>
+
+Is angular momentum a vector, or is it a scalar?  On
+p.~\pageref{define-vector}, we defined the distinction between a
+vector and a scalar in terms of the quantity's behavior when rotated.
+If rotation doesn't change it, it's a scalar. If rotation affects it
+in the same way that it would affect an arrow, then it's a vector.
+Using these definitions, figure \figref{man-on-bike-flipping} shows
+that angular momentum cannot be a scalar. 
+
+<%
+  fig(
+    'man-on-bike-flipping',
+    %q{Angular momentum is not a scalar. If we turn the picture around, the angular momentum does change:
+       the counterclockwise motion of the wheels becomes clockwise from our new point of view.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+It turns out that there is a way of
+defining angular momentum as a vector, but 
+m4_ifelse(__lm_series,1,[:in this book:],[:until section \ref{sec:amthreed}:])
+the examples will be confined to a single plane of rotation, i.e.,
+effectively two-dimensional situations. In this special case, we can
+choose to visualize the plane of rotation from one side or the other,
+and to define clockwise and counterclockwise rotation as having
+opposite signs of angular momentum. 
+
+Figure \figref{can-rolling-with-axis} shows a can rolling down a board.
+Although the can is three-dimensional, we can view it from the side and project out
+the third dimension, reducing the motion to rotation in a plane.
+This means that the axis is a \emph{point}, even though the word ``axis''
+often connotes a line in students' minds, as in an $x$ or $y$ axis.
+
+<%
+  fig(
+    'can-rolling-with-axis',
+    %q{We reduce the motion to rotation in a plane, and the axis is then a point.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\startdq
+
+\begin{dq}
+Conservation of plain old momentum, $p$, can be thought of
+as the greatly expanded and modified descendant of Galileo's
+original principle of inertia, that no force is required to
+keep an object in motion. The principle of inertia is
+counterintuitive, and there are many situations in which it
+appears superficially that a force \emph{is} needed to
+maintain motion, as maintained by Aristotle. Think of a
+situation in which conservation of angular momentum, $L$,
+also seems to be violated, making it seem incorrectly that
+something external must act on a closed system to keep its
+angular momentum from ``running down.''
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Angular momentum in planetary motion",3) %>
+\index{angular momentum!related to area swept out}
+
+We now discuss the application of conservation of angular
+momentum to planetary motion, both because of its intrinsic
+importance and because it is a good way to develop a visual
+intuition for angular momentum.
+
+\index{Kepler!law of equal areas}Kepler's law of equal areas
+states that the area swept out by a planet in a certain
+length of time is always the same. Angular momentum had not
+been invented in Kepler's time, and he did not even know the
+most basic physical facts about the forces at work. He
+thought of this law as an entirely empirical and unexpectedly
+simple way of summarizing his data, a rule that succeeded in
+describing and predicting how the planets sped up and slowed
+down in their elliptical paths. It is now fairly simple,
+however, to show that the equal area law amounts to a
+statement that the planet's angular momentum stays constant.
+
+<% marg(50) %>
+<%
+  fig(
+    'area-swept-out',
+    %q{%
+      The planet's angular momentum is related to the
+      rate at which it sweeps out area.
+    }
+  )
+%>
+<% end_marg %>
+There is no simple geometrical rule for the area of a pie
+wedge cut out of an ellipse, but if we consider a very short
+time interval, as shown in figure \figref{area-swept-out}, the shaded shape
+swept out by the planet is very nearly a triangle. We do
+know how to compute the area of a triangle. It is one half
+the product of the base and the height:
+\begin{equation*}
+                \text{area}         =    \frac{1}{2}bh\eqquad.
+\end{equation*}
+
+We wish to relate this to angular momentum, which contains
+the variables $r$ and $v_{\perp}$ . If we consider the sun to be the
+axis of rotation, then the variable $r$ is identical to the
+base of the triangle, $r=b$. Referring to the magnified
+portion of the figure, $v_{\perp}$ can be related to $h$, because
+the two right triangles are similar:
+\begin{equation*}
+  \frac{h}{\text{distance traveled}} = \frac{v_\perp}{|\vc{v}|}
+\end{equation*}
+The area can thus be rewritten as
+\begin{equation*}
+                \text{area}         =    \frac{1}{2}r\frac{v_\perp(\text{distance traveled})}{|\vc{v}|}\eqquad.
+\end{equation*}
+The distance traveled equals $|\vc{v}|\Delta t$, so this simplifies to
+\begin{equation*}
+                \text{area}         =   \frac{1}{2}rv_\perp \Delta t\eqquad.
+\end{equation*}
+We have found the following relationship between angular
+momentum and the rate at which area is swept out:
+\begin{equation*}
+                L         =     2m\frac{\text{area}}{\Delta t}\eqquad.
+\end{equation*}
+The factor of 2 in front is simply a matter of convention,
+since any conserved quantity would be an equally valid
+conserved quantity if you multiplied it by a constant. The
+factor of $m$ was not relevant to Kepler, who did not know
+the planets' masses, and who was only describing the motion
+of one planet at a time.
+
+We thus find that Kepler's equal-area law is equivalent to a
+statement that the planet's angular momentum remains
+constant. But wait, why should it remain constant? --- the
+planet is not a closed system, since it is being acted on by
+the sun's gravitational force. There are two valid answers.
+The first is that it is actually the total angular momentum
+of the sun plus the planet that is conserved. The sun,
+however, is millions of times more massive than the typical
+planet, so it accelerates very little in response to the
+planet's gravitational force. It is thus a good approximation
+to say that the sun doesn't move at all, so that no angular
+momentum is transferred between it and the planet.
+
+The second answer is that to change the planet's angular
+momentum requires not just a force but a force applied in a
+certain way. In section \ref{sec:torque} we discuss the transfer of
+angular momentum by a force, but the basic idea here is that
+a force directly in toward the axis does not change
+the angular momentum.
+
+\startdqs
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-sweep-out-triangles',
+    %q{Discussion question \ref{dq:sweep-out-triangles}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:sweep-out-triangles}
+Suppose an object is simply traveling in a straight line
+at constant speed. If we pick some point not on the line and
+call it the axis of rotation, is area swept out by the
+object at a constant rate? Would it matter if we chose a different axis?
+\end{dq}
+
+\begin{dq}\label{dq:conical-pendulum}
+The figure is a strobe photo of a pendulum bob,
+taken from underneath the pendulum looking straight up. The
+black string can't be seen in the photograph. The bob was
+given a slight sideways push when it was released, so it did
+not swing in a plane. The bright spot marks the center, i.e.,
+the position the bob would have if it hung straight down at
+us. Does the bob's angular momentum appear to remain
+constant if we consider the center to be the axis of
+rotation? What if we choose a different axis?
+\end{dq}
+
+<%
+  fig(
+    'conical-pendulum',
+    %q{Discussion question \ref{dq:conical-pendulum}.},
+    {
+      'width'=>'wide',
+      'anonymous'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Two theorems about angular momentum",3,'am-theorems-stated') %>
+
+With plain old momentum, $p$, we had the freedom to work in
+any inertial frame of reference we liked. The same object
+could have different values of momentum in two different
+frames, if the frames were not at rest with respect to each
+other. Conservation of momentum, however, would be true in
+either frame. As long as we employed a single frame
+consistently throughout a calculation, everything would work.
+
+The same is true for angular momentum, and in addition there
+is an ambiguity that arises from the definition of an axis
+of rotation. For a wheel, the natural choice of an axis of
+rotation is obviously the axle, but what about an egg
+rotating on its side? The egg has an asymmetric shape, and
+thus no clearly defined geometric center. A similar issue
+arises for a cyclone, which does not even have a sharply
+defined shape, or for a complicated machine with many gears.
+The following theorem, the first of two presented in this
+section without proof, explains how to deal with this issue.
+Although I have put descriptive titles above both theorems,
+they have no generally accepted names.\index{choice of axis
+theorem}\index{angular momentum!choice of axis theorem}
+
+\begin{lessimportant}[the choice of axis theorem]
+It is entirely arbitrary what point one defines as the axis for
+purposes of calculating angular momentum. If a closed system's
+angular momentum is conserved when calculated with one choice of
+axis, then it will also be conserved for any other choice.
+Likewise, any inertial frame of reference may be used.
+\end{lessimportant}
+
+\pagebreak
+
+<% marg(20) %>
+<%
+  fig(
+    'asteroids-colliding',
+    %q{Example \ref{eg:asteroids-colliding}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'diver',
+    %q{%
+      Everyone has a strong tendency to
+      think of the diver as rotating about his
+      own center of mass. However, he is
+      flying in an arc, and he also has angular momentum because of this motion.
+      
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'spin-theorem',
+    %q{%
+      This rigid object has angular momentum both because it is spinning about
+      its center of mass and because it is
+      moving through space.
+    }
+  )
+%>
+
+<% end_marg %>
+
+\begin{eg}{Colliding asteroids described with different axes}\label{eg:asteroids-colliding}
+Observers on planets A and $B$ both see the two asteroids
+colliding. The asteroids are of equal mass and their impact
+speeds are the same. Astronomers on each planet decide to
+define their own planet as the axis of rotation. Planet A is
+twice as far from the collision as planet $B$. The asteroids
+collide and stick. For simplicity, assume planets A and
+$B$ are both at rest.
+
+With planet A as the axis, the two asteroids have the same
+amount of angular momentum, but one has positive angular
+momentum and the other has negative. Before the collision,
+the total angular momentum is therefore zero. After the
+collision, the two asteroids will have stopped moving, and
+again the total angular momentum is zero. The total angular
+momentum both before and after the collision is zero, so
+angular momentum is conserved if you choose planet A as the axis.
+
+The only difference with planet B as axis is that $r$ is
+smaller by a factor of two, so all the angular momenta are
+halved. Even though the angular momenta are different than
+the ones calculated by planet A, angular momentum is still conserved.
+\end{eg}
+
+The earth spins on its own axis once a day, but simultaneously
+travels in its circular one-year orbit around the sun, so
+any given part of it traces out a complicated loopy path. It
+would seem difficult to calculate the earth's angular
+momentum, but it turns out that there is an intuitively
+appealing shortcut: we can simply add up the angular
+momentum due to its spin plus that arising from its center
+of mass's circular motion around the sun. This is a special
+case of the following general theorem:
+
+\index{spin theorem}\index{angular momentum!spin theorem}\index{spin theorem}
+\begin{lessimportant}[the spin theorem]
+An object's angular momentum with respect to some outside
+axis A can be found by adding up two parts:\\
+(1) The first part is the object's angular momentum
+found by using its own center of mass as the axis, i.e., the
+angular momentum the object has because it is spinning.\\
+(2) The other part equals the angular momentum that the object
+would have with respect to the axis A if it had all its mass
+concentrated at and moving with its center of mass.
+\end{lessimportant}
+
+
+\begin{eg}{A system with its center of mass at rest}
+In the special case of an object whose center of mass is at
+rest, the spin theorem implies that the object's angular
+momentum is the same regardless of what axis we choose.
+(This is an even stronger statement than the choice of axis
+theorem, which only guarantees that angular momentum is
+conserved for any given choice of axis, without specifying
+that it is the same for all such choices.)
+\end{eg}
+
+
+
+m4_ifelse(__lm_series,1,[:
+\pagebreak
+\begin{eg}{Angular momentum of a rigid object}
+\egquestion A motorcycle wheel has almost all its mass
+concentrated at the outside. If the wheel has mass $m$ and
+radius $r$, and the time required for one revolution is $T$,
+what is the spin part of its angular momentum?
+
+\eganswer This is an example of the commonly encountered
+special case of rigid motion, as opposed to the rotation of
+a system like a hurricane in which the different parts take
+different amounts of time to go around. We don't really have
+to go through a laborious process of adding up contributions
+from all the many parts of a wheel, because they are all at
+about the same distance from the axis, and are all moving
+around the axis at about the same speed. The velocity is all
+perpendicular to the spokes,
+\begin{align*}
+ v_\perp &= v \\
+ &= (\text{circumference})/T \\
+ &= 2\pi r/T\eqquad,
+\end{align*}
+and the angular momentum of the wheel about its center is
+\begin{align*}
+ L &= mv_{\perp}r \\
+ &= m(2\pi r/T)r \\
+ &= 2\pi mr^2/T\eqquad.
+\end{align*}
+\end{eg}
+
+Note that although the factors of $2\pi $ in this expression
+is peculiar to a wheel with its mass concentrated on the
+rim, the proportionality to $m/T$ would have been the same
+for any other rigidly rotating object. Although an object
+with a noncircular shape does not have a radius, it is also
+true in general that angular momentum is proportional to the
+square of the object's size for fixed values of $m$ and $T$.
+For instance doubling an object's size doubles both the $v_{\perp}$
+and $r$ factors in the contribution of each of its parts to
+the total angular momentum, resulting in an overall
+factor of four increase.
+
+The figure shows some examples of angular momenta of
+various shapes rotating about their centers of mass. The
+equations for their angular momenta were derived using
+calculus, as described in my calculus-based book Simple
+Nature. Do not memorize these equations!
+
+<%
+  fig(
+    'angular-momenta-of-objects',
+    '',
+    {'width'=>'fullpage'}
+  )
+%>
+
+%--- In Mechanics, these two examples are in the section on rigid-body rotation:
+__incl(eg/hammer-throw)
+
+__incl(eg/toppling-rod)
+:])
+
+\startdq
+
+\begin{dq}
+In the example of the colliding asteroids, suppose planet A
+was moving toward the top of the page, at the same speed as
+the bottom asteroid. How would planet A's astronomers
+describe the angular momenta of the asteroids? Would angular
+momentum still be conserved?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Torque: the rate of transfer of angular momentum",nil,'torque') %>
+
+Force can be interpreted as the rate of transfer of
+momentum. The equivalent in the case of angular momentum is
+called \emph{torque}\index{torque!defined} (rhymes with
+``fork''). Where force tells us how hard we are pushing or
+pulling on something, torque indicates how hard we are
+twisting on it. Torque is represented by the Greek letter
+tau, $\tau $, and the rate of change of an object's angular
+momentum equals the total torque acting on it,
+m4_ifelse(__calc,1,[:%
+\begin{equation*}
+                \tau_{total}  =  \frac{\der L}{\der t}\eqquad.
+\end{equation*}
+:],[:%
+\begin{equation*}
+                \tau_{total}  =  \frac{\Delta L}{\Delta t}\eqquad.
+\end{equation*}
+(If the angular momentum does not change at a constant rate,
+the total torque equals the slope of the tangent line on a
+graph of $L$ versus $t$.)
+:])
+
+<% marg(10) %>
+<%
+  fig(
+    'transfer-e-p-l',
+    %q{%
+      Energy, momentum, and angular momentum can be transferred. The rates
+      of transfer are called power, force, and torque.
+    }
+  )
+%>
+<% end_marg %>
+As with force and momentum, it often happens that angular
+momentum recedes into the background and we focus our
+interest on the torques. The torque-focused point of view is
+exemplified by the fact that many scientifically untrained
+but mechanically apt people know all about torque, but none
+of them have heard of angular momentum. Car enthusiasts
+eagerly compare engines' torques, and there is a tool called
+a torque wrench which allows one to apply a desired amount
+of torque to a screw and avoid overtightening it.
+
+<% begin_sec("Torque distinguished from force") %>
+
+Of course a force is necessary in order to create a torque
+--- you can't twist a screw without pushing on the wrench
+--- but force and torque are two different things. One
+distinction between them is direction. We use positive and
+negative signs to represent forces in the two possible
+directions along a line. The direction of a torque, however,
+is clockwise or counterclockwise, not a linear direction.
+
+The other difference between torque and force is a matter of
+leverage. A given force applied at a door's knob will change
+the door's angular momentum twice as rapidly as the same
+force applied halfway between the knob and the hinge. The
+same amount of force produces different amounts of
+torque in these two cases.
+
+It is possible to have a zero total torque with a nonzero
+total force. An airplane with four jet engines, \figref{airplane}, would be
+designed so that their forces are balanced on the left and
+right. Their forces are all in the same direction, but the
+clockwise torques of two of the engines are canceled by the
+counterclockwise torques of the other two, giving zero total torque.
+<% marg(m4_ifelse(__me,1,-90,10)) %>
+<%
+  fig(
+    'airplane',
+    %q{%
+      The plane's four engines produce zero
+      total torque but not zero total force.
+    }
+  )
+%>
+<% end_marg %>
+
+
+Conversely we can have zero total force and nonzero total
+torque. A merry-go-round's engine needs to supply a nonzero
+torque on it to bring it up to speed, but there is zero
+total force on it. If there was not zero total force on it,
+its center of mass would accelerate!
+
+<% end_sec() %>
+
+m4_ifelse(__lm_series,1,[:\pagebreak:],[::])
+
+<% begin_sec("Relationship between force and torque") %>\index{torque!relationship to force}
+
+How do we calculate the amount of torque produced by a given
+force? Since it depends on leverage, we should expect it to
+depend on the distance between the axis and the point of
+application of the force. We'll derive an equation relating
+torque to force for a particular very simple situation, and
+state without proof that the equation actually applies to all situations.
+
+<% marg(0) %>
+<%
+  fig(
+    'tetherball',
+    %q{%
+      The boy makes a torque on the tetherball.
+    }
+  )
+%>
+<% end_marg %>
+To try to pin down this relationship
+more precisely, let's imagine hitting a tetherball, figure \figref{tetherball}.
+The boy applies a force $F$ to the ball for a short time $\Delta t$, accelerating
+the ball from rest to a velocity $v$. Since force is the rate of transfer of
+momentum, we have
+\begin{align*}
+  F & = \frac{m\Delta v}{\Delta t}\eqquad. \\
+\intertext{Since the initial velocity is zero, $\Delta v$ is the same as the final
+velocity $v$. Multiplying both sides by $r$ gives}
+  Fr & = \frac{mvr}{\Delta t}\eqquad. \\
+\end{align*}
+But $mvr$ is simply the amount of angular momentum he's given
+the ball, so $mvr/\Delta t$ also equals the amount of torque he applied. The result
+of this example is
+\begin{equation*}
+  \tau = Fr\eqquad.
+\end{equation*}
+
+Figure \figref{tetherball} was drawn so that the force $F$ was in the direction
+tangent to the circle, i.e., perpendicular to the radius $r$.
+If the boy had applied a force \emph{parallel} to the radius line, either directly
+inward or outward, then the ball would not have picked up any clockwise or counterclockwise
+angular momentum.
+
+If a force acts at an angle other than 0 or 90\degunit with
+respect to the line joining the object and the axis, it
+would be only the component of the force perpendicular to
+the line that would produce a torque,
+\begin{equation*}
+                \tau   =  F_{\perp}r\eqquad.
+\end{equation*}
+Although this result was proved under a simplified set of
+circumstances, it is more generally valid:
+
+<% marg(0) %>
+<%
+  fig(
+    'wrench-geometry',
+    %q{%
+      The geometric relationships referred to
+      in the relationship between force and torque.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{lessimportant}[relationship between force and torque]
+The rate at which a force transfers angular momentum to an object,
+i.e., the torque produced by the force, is given by
+\begin{equation*}
+|\btau| = r|F_\perp|\eqquad,
+\end{equation*}
+where $r$ is the distance from the axis to the point of
+application of the force, and $F_\perp$ is the component of
+the force that is perpendicular to the line joining the axis
+to the point of application.
+\end{lessimportant}
+
+The equation is stated with absolute value signs because the
+positive and negative signs of force and torque indicate
+different things, so there is no useful relationship between
+them. The sign of the torque must be found by physical
+inspection of the case at hand.
+
+From the equation, we see that the units of torque can be
+written as newtons multiplied by meters. Metric torque
+wrenches are calibrated in $\nunit\unitdot\munit$, but American ones use
+foot-pounds, which is also a unit of distance multiplied by
+a unit of force. We know from our study of mechanical work
+that newtons multiplied by meters equal joules, but torque
+is a completely different quantity from work, and nobody
+writes torques with units of joules, even though it would be
+technically correct.
+
+<% self_check('compare-torques',<<-'SELF_CHECK'
+Compare the magnitudes and signs of the four torques shown
+in the figure.
+  SELF_CHECK
+  ) %>
+
+<%
+  fig(
+    'wrench-sc',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\begin{eg}{How torque depends on the direction of the force}
+\egquestion How can the torque applied to the wrench in the
+figure be expressed in terms of $r$, $|F|$, and the angle $\theta $
+between these two vectors?
+
+\eganswer The force vector and its $F_{\perp}$ component form the
+hypotenuse and one leg of a right triangle,
+
+<%
+  fig(
+    'wrench-sin-theta',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\noindent and the interior angle opposite to $F_{\perp}$ equals $\theta $.
+The absolute value of $F_{\perp}$ can thus be expressed as
+\begin{equation*}
+                F_{\perp}    =    |\vc{F}| \sin  \theta\eqquad,
+\end{equation*}
+leading to
+\begin{equation*}
+                |\btau|    =    r |\vc{F}| \sin   \theta\eqquad.
+\end{equation*}
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'wrench-rperp',
+    %q{The quantity $r_\perp$.}
+  )
+%>
+<% end_marg %>
+Sometimes torque can be more neatly visualized in terms of
+the quantity $r_{\perp}$ shown in figure \figref{wrench-rperp}, which
+gives us a third way of expressing the relationship
+between torque and force:
+\begin{equation*}
+                |\btau |    =    r_{\perp} |\vc{F}|\eqquad.
+\end{equation*}
+
+Of course you would not want to go and memorize all three
+equations for torque. Starting from any one of them you
+could easily derive the other two using trigonometry.
+Familiarizing yourself with them can however clue you in to
+easier avenues of attack on certain problems.
+
+<% end_sec() %>
+<% begin_sec("The torque due to gravity") %>\index{torque!due to gravity}
+
+Up until now we've been thinking in terms of a force that
+acts at a single point on an object, such as the force of
+your hand on the wrench. This is of course an approximation,
+and for an extremely realistic calculation of your hand's
+torque on the wrench you might need to add up the torques
+exerted by each square millimeter where your skin touches
+the wrench. This is seldom necessary. But in the case of a
+gravitational force, there is never any single point at
+which the force is applied. Our planet is exerting a
+separate tug on every brick in the Leaning Tower of Pisa,
+and the total gravitational torque on the tower is the sum
+of the torques contributed by all the little forces. Luckily
+there is a trick that allows us to avoid such a massive
+calculation. It turns out that for purposes of computing the
+total gravitational torque on an object, you can get the
+right answer by just pretending that the whole gravitational
+force acts at the object's center of mass.
+
+\begin{eg}{Gravitational torque on an outstretched arm}\label{eg:arm-outstretched}
+\egquestion Your arm has a mass of 3.0 kg, and its center of
+mass is 30 cm from your shoulder. What is the gravitational
+torque on your arm when it is stretched out horizontally to
+one side, taking the shoulder to be the axis?
+<% marg(40) %>
+<%
+  fig(
+    'arm-outstretched',
+    %q{Example \ref{eg:arm-outstretched}.}
+  )
+%>
+<% end_marg %>
+
+\eganswer The total gravitational force acting on your arm is
+\begin{equation*} 
+|F|= (3.0\ \kgunit)(9.8\ \munit/\sunit^2)= 29\ \nunit\eqquad.
+\end{equation*}
+For the purpose of calculating the gravitational torque, we
+can treat the force as if it acted at the arm's center of
+mass. The force is straight down, which is perpendicular to
+the line connecting the shoulder to the center of mass, so
+\begin{equation*}
+ F_{\perp} =|F|= 29\ \nunit\eqquad.
+\end{equation*}
+Continuing to pretend that the force acts at the center of
+the arm, $r$ equals 30 cm = 0.30 m, so the torque is
+\begin{equation*}
+ \tau =r F_{\perp} = 9\ \nunit\unitdot\munit\eqquad.
+\end{equation*}
+\end{eg}
+
+\begin{eg}{Cow tipping}\label{eg:cow-tipping}
+In 2005, Dr. Margo Lillie and her graduate student Tracy Boechler
+published a study claiming to debunk cow tipping. Their claim
+was based on an analysis of the torques that would be required
+to tip a cow, which showed that one person wouldn't be able to
+make enough torque to do it. A lively discussion ensued on the
+popular web site slashdot.org (``news for nerds, stuff that
+matters'') concerning the validity of the study. Personally, I
+had always assumed that cow-tipping was a group sport anyway,
+but as a physicist, I also had some quibbles with their calculation.
+Here's my own analysis.
+
+<% marg(0) %>
+<%
+  fig(
+    'cow-tipping',
+    %q{Example \ref{eg:cow-tipping}.}
+  )
+%>
+<% end_marg %>
+
+There are three forces on the cow: the force of gravity $\vc{F}_W$, 
+the ground's normal force $\vc{F}_N$, and the tippers' force $\vc{F}_A$.
+
+As soon as the cow's left hooves (on the right from
+our point of view) break contact with
+the ground, the ground's force is being applied only to hooves on the other side.
+We don't know the ground's force, and we don't want to find it. Therefore
+we take the axis to be at its point of application, so that its torque
+is zero.
+
+For the purpose of computing torques, we can pretend that gravity acts at
+the cow's center of mass, which I've placed a little lower than the center of
+its torso, since its legs and head also have some mass, and the legs are more
+massive than the head and stick out farther, so they lower the c.m. more than
+the head raises it. The angle $\theta_W$ between the vertical gravitational force and
+the line $r_{W}$ is about $14\degunit$. (An estimate by Matt Semke at 
+the University of Nebraska-Lincoln gives $20\degunit$, which is in the same ballpark.)
+
+To generate the maximum possible torque with the least possible force,
+the tippers want to push at a point as far as possible from the axis, which will
+be the shoulder on the other side, and they want to push at a 90 degree angle
+with respect to the radius line $r_{A}$.
+
+When the tippers are just barely applying enough force to raise the cow's hooves
+on one side, the total torque has to be
+just slightly more than zero. (In reality, they want to push a lot harder than this ---
+hard enough to impart a lot of angular momentum to the cow fair in a short time,
+before it gets mad and hurts them. We're just trying to calculate the bare
+minimum force they can possibly use, which is the question that science can answer.)
+Setting the total torque equal to zero,
+\begin{gather*}
+  \tau_{N}+\tau_{W}+\tau_{A} = 0\eqquad, \\
+\intertext{and letting counterclockwise torques be positive, we have}
+  0-mgr_W\sin\theta_W+F_Ar_A\sin 90\degunit = 0 \\
+\end{gather*}
+\begin{align*}
+  F_A &= \frac{r_W}{r_A} mg \sin\theta_W \\
+      &\approx \frac{1}{1.5} (680\ \kgunit)(9.8\ \munit/\sunit^2) \sin 14\degunit \\
+      &=1100\ \nunit\eqquad.
+\end{align*}
+The 680 kg figure for the typical mass of a cow is due to Lillie and Boechler, who
+are veterinarians, so I assume it's fairly accurate. My estimate of 1100 N comes out
+significantly lower than their 1400 N figure, mainly because their incorrect
+placement of the center of mass gives $\theta_W=24\degunit$. I don't think 1100 N is an impossible amount of force
+to require of one big, strong person (it's equivalent to lifting about 110 kg, or 240 pounds),
+but given that the tippers need to impart a large angular momentum fairly quickly,
+it's probably true that several people would be required.
+
+The main practical issue with cow tipping is that cows generally sleep lying down.
+Falling on its side can also seriously injure a cow.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+This series of discussion questions deals with past
+students' incorrect reasoning about the following problem.
+
+\begin{indentedblock}
+Suppose a comet is at the point in its orbit shown in the
+figure. The only force on the comet is the sun's gravitational force.
+
+\noindent\anonymousinlinefig{../../../share/mechanics/figs/dq-comet}
+
+\noindent Throughout the question, define all torques and angular
+momenta using the sun as the axis.
+
+\noindent (1) Is the sun producing a nonzero torque on the comet? Explain.\\
+(2) Is the comet's angular momentum increasing, decreasing,
+or staying the same? Explain.
+\end{indentedblock}
+
+\noindent Explain what is wrong with the following answers. In some
+cases, the answer is correct, but the reasoning leading up to it is wrong.
+(a) Incorrect answer to part (1): ``Yes, because the sun is
+exerting a force on the comet, and the comet is a certain
+distance from the sun.''\\
+(b) Incorrect answer to part (1): ``No, because the
+torques cancel out.''\\
+(c) Incorrect answer to part (2): ``Increasing, because the
+comet is speeding up.''
+\end{dq}
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-claw-hammer',
+    %q{Discussion question \ref{dq:claw-hammer}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:claw-hammer}
+Which claw hammer would make it easier to get the nail
+out of the wood if the same force was applied in the same direction?
+\end{dq}
+
+\begin{dq}
+You whirl a rock over your head on the end of a string,
+and gradually pull in the string, eventually cutting the
+radius in half. What happens to the rock's angular momentum?
+What changes occur in its speed, the time required for one
+revolution, and its acceleration? Why might the string break?
+\end{dq}
+
+
+\begin{dq}
+A helicopter has, in addition to the huge fan blades on
+top, a smaller propeller mounted on the tail that rotates in
+a vertical plane. Why?
+\end{dq}
+
+\begin{dq}\label{dq:twoarm-ride}
+The photo shows an amusement park ride whose two cars
+rotate in opposite directions. Why is this a good design?
+\end{dq}
+
+<% marg(300) %>
+<%
+  fig(
+    'dq-twoarm-ride',
+    %q{Discussion question \ref{dq:twoarm-ride}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% end_sec() %>
+\vfill
+<% begin_sec("Statics",4) %>
+
+<% begin_sec("Equilibrium") %>\label{equilibrium}
+
+There are many cases where a system is not closed but
+maintains constant angular momentum. When a merry-go-round
+is running at constant angular momentum, the engine's torque
+is being canceled by the torque due to friction.
+
+<% marg(80) %>
+<%
+  fig(
+    'windmills',
+    %q{%
+      The windmills are not closed systems,
+      but angular momentum is being transferred out of them at the
+      same rate it is transferred in, resulting in constant angular momentum.
+      To get an idea of the huge scale of
+      the modern windmill farm, note the
+      sizes of the trucks and trailers.
+    }
+  )
+%>
+<% end_marg %>
+When an object has constant momentum and constant angular
+momentum, we say that it is in \index{equilibrium!defined}equilibrium.
+m4_ifelse(__calc,1,[:In symbols,
+\begin{equation*}
+  \frac{\der\vc{p}}{\der t} = 0 \ \text{and}\ \frac{\der L}{\der t} = 0 \qquad \text{[conditions for equilibrium]}
+\end{equation*}
+(or equivalently, zero total force and zero total torque).
+%:],
+[:%:])
+This is a scientific redefinition of the common English
+word, since in ordinary speech nobody would describe a car
+spinning out on an icy road as being in equilibrium.
+
+Very commonly, however, we are interested in cases where an
+object is not only in equilibrium but also at rest, and this
+corresponds more closely to the usual meaning of the word.
+Trees and bridges have been designed by evolution and
+engineers to stay at rest, and to do so they must have not
+just zero total force acting on them but zero total torque.
+It is not enough that they don't fall down, they also must
+not tip over. \index{statics}Statics is the branch of
+physics concerned with problems such as these.
+
+Solving statics problems is now simply a matter of applying
+and combining some things you already know:
+
+\begin{itemize}
+
+\item You know the behaviors of the various types of forces, for
+example that a frictional force is always parallel to
+the surface of contact.
+
+\item You know about vector addition of forces. It is the vector
+sum of the forces that must equal zero to produce equilibrium.
+
+\item You know about torque. The total torque acting on an
+object must be zero if it is to be in equilibrium.
+
+\item You know that the choice of axis is arbitrary, so you can
+make a choice of axis that makes the problem easy to solve.
+
+\end{itemize}
+
+\noindent In general, this type of problem could involve four
+equations in four unknowns: three equations that say the
+force components add up to zero, and one equation that says
+the total torque is zero. Most cases you'll encounter will
+not be this complicated. In the following example, only the
+equation for zero total torque is required in order to get an answer.
+
+\vfill\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'modern-art',
+    %q{Example \ref{eg:modern-art}.}
+  )
+%>
+<% end_marg %>
+
+__incl(eg/modern-art)
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-flagpole',
+    %q{Example \ref{eg:flagpole}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A flagpole}\label{eg:flagpole}
+\egquestion A 10-kg flagpole is being held up by a lightweight
+horizontal cable, and is propped against the foot of a wall
+as shown in the figure. If the cable is only capable of
+supporting a tension of 70 N, how great can the angle
+$\alpha $ be without breaking the cable?
+
+\eganswer All three objects in the figure are supposed to be
+in equilibrium: the pole, the cable, and the wall. Whichever
+of the three objects we pick to investigate, all the forces
+and torques on it have to cancel out. It is not particularly
+helpful to analyze the forces and torques on the wall, since
+it has forces on it from the ground that are not given and
+that we don't want to find. We could study the forces and
+torques on the cable, but that doesn't let us use the given
+information about the pole. The object we need to analyze is the pole.
+
+The pole has three forces on it, each of which may also
+result in a torque: (1) the gravitational force, (2) the
+cable's force, and (3) the wall's force.
+
+We are free to define an axis of rotation at any point we
+wish, and it is helpful to define it to lie at the bottom
+end of the pole, since by that definition the wall's force
+on the pole is applied at $r=0$ and thus makes no torque on
+the pole. This is good, because we don't know what the
+wall's force on the pole is, and we are not trying to find it.
+
+With this choice of axis, there are two nonzero torques on
+the pole, a counterclockwise torque from the cable and a
+clockwise torque from gravity. Choosing to represent
+counterclockwise torques as positive numbers, and using the equation
+$|\btau| =r|F| \sin \theta$, we have
+\begin{equation*}
+                r_{cable} |F_{cable}| \sin   \theta_{cable} - r_{grav}|F_{grav}|\sin  \theta_{grav}  =  0\eqquad.
+\end{equation*}
+A little geometry gives $\theta_{cable}=90\degunit-\alpha$ and $\theta_{grav}=\alpha$, so
+\begin{equation*}
+                r_{cable} |F_{cable}| \sin   (90\degunit-\alpha) - r_{grav}|F_{grav}| \sin   \alpha  =  0\eqquad.
+\end{equation*}
+The gravitational force can be considered as acting at the
+pole's center of mass, i.e., at its geometrical center, so
+$r_{cable}$ is twice $r_{grav}$, and we can simplify
+the equation to read
+\begin{equation*}
+                2 |F_{cable}| \sin   (90\degunit-\alpha) - |F_{grav}| \sin   \alpha =  0\eqquad.
+\end{equation*}
+These are all quantities we were given, except for $\alpha$,
+which is the angle we want to find. To solve for $\alpha$
+we need to use the trig identity
+$\sin (90\degunit-x)= \cos x$,
+\begin{equation*}
+                2 |F_{cable}| \cos  \alpha - |F_{grav}| \sin   \alpha  =  0\eqquad,
+\end{equation*}
+which allows us to find
+\begin{align*}
+ \tan\alpha  &= 2\frac{|\vc{F}_{cable}|}{|\vc{F}_{grav}|}\\
+ \alpha &= \tan^{-1}\left(2\frac{|\vc{F}_{cable}|}{|\vc{F}_{grav}|}\right)\\
+        &= \tan^{-1}\left(2\times\frac{70\ \nunit}{98\ \nunit}\right)\\
+        &= 55\degunit\eqquad.
+\end{align*}
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Stable and unstable equilibria",4) %>\index{equilibrium!stable versus unstable}
+
+A pencil balanced upright on its tip could theoretically be
+in equilibrium, but even if it was initially perfectly
+balanced, it would topple in response to the first air
+current or vibration from a passing truck. The pencil can be
+put in equilibrium, but not in stable equilibrium. The
+things around us that we really do see staying still are all
+in stable equilibrium.
+
+Why is one equilibrium stable and another unstable? Try
+pushing your own nose to the left or the right. If you push
+it a millimeter to the left, your head responds with a gentle force
+to the right, which keeps your nose from flying off of your face.
+If you push your nose a centimeter to the left, your face's force
+on your nose becomes much stronger. The defining
+characteristic of a stable equilibrium is that the farther
+the object is moved away from equilibrium, the stronger the
+force is that tries to bring it back.
+
+<% marg(100) %>
+<%
+  fig(
+    'stable-and-unstable',
+    %q{Stable and unstable equilibria.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'swan-lake',
+    %q{%
+      The dancer's equilibrium is unstable. If she
+      didn't constantly make tiny adjustments, she would tip over.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'nancy-neutron',
+    %q{Example \ref{eg:nancy-neutron}.}
+  )
+%>
+<% end_marg %>
+The opposite is true for an unstable equilibrium. In the top
+figure, the ball resting on the round hill theoretically has
+zero total force on it when it is exactly at the top. But in
+reality the total force will not be exactly zero, and the
+ball will begin to move off to one side. Once it has moved,
+the net force on the ball is greater than it was, and it
+accelerates more rapidly. In an unstable equilibrium, the
+farther the object gets from equilibrium, the stronger the
+force that pushes it farther from equilibrium.
+
+This idea can be rephrased in terms of energy. The difference
+between the stable and unstable equilibria shown in figure
+\ref{fig:stable-and-unstable} is that in the stable
+equilibrium, the potential energy is at a minimum, and moving
+to either side of equilibrium will increase it, whereas
+the unstable equilibrium represents a maximum.
+
+Note that we are using the term ``stable'' in a weaker sense
+than in ordinary speech. A domino standing upright is stable
+in the sense we are using, since it will not spontaneously
+fall over in response to a sneeze from across the room or
+the vibration from a passing truck. We would only call it
+unstable in the technical sense if it could be toppled by
+\emph{any} force, no matter how small. In everyday usage, of
+course, it would be considered unstable, since the force
+required to topple it is so small.
+
+\begin{eg}{An application of calculus}\label{eg:nancy-neutron}
+\egquestion Nancy Neutron is living in a uranium nucleus that
+is undergoing fission. Nancy's potential energy as a function of
+position can be approximated by $PE=x^4-x^2$, where all the
+units and numerical constants have been suppressed for simplicity.
+Use calculus to
+locate the equilibrium points, and determine whether they are
+stable or unstable.
+
+\eganswer The equilibrium points occur where the PE is at a minimum
+or maximum, and minima and maxima occur where the derivative (which equals
+minus the force on Nancy) is zero.
+This derivative is $\der PE/\der x=4x^3-2x$, and setting it equal to
+zero, we have $x=0, \pm1/\sqrt{2}$. Minima occur where the second derivative
+is positive, and maxima where it is negative. The second derivative is
+$12x^2-2$, which is negative at $x=0$ (unstable)
+and positive at $x=\pm1/\sqrt{2}$ (stable).
+Interpretation: the graph of the PE is shaped like a rounded letter `W,'
+with the two troughs representing the two halves of the splitting nucleus.
+Nancy is going to have to decide which half she wants to go with.
+\end{eg}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Simple Machines: the lever",3) %>\index{lever}
+
+Although we have discussed some simple machines such as the
+pulley, without the concept of torque we were not yet ready
+to address the lever, which is the machine nature used in
+designing living things, almost to the exclusion of all
+others. (We can speculate what life on our planet might have
+been like if living things had evolved wheels, gears,
+pulleys, and screws.) The figures show two examples of
+levers within your arm. Different muscles are used to flex
+and extend the arm, because muscles work only by contraction.
+
+<% marg(0) %>
+<%
+  fig(
+    'biceps',
+    %q{The biceps muscle flexes the arm.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'triceps',
+    %q{The triceps extends the arm.}
+  )
+%>
+
+<% end_marg %>
+Analyzing example \figref{biceps} physically, there are two forces that
+do work. When we lift a load with our biceps muscle, the
+muscle does positive work, because it brings the bone in the
+forearm in the direction it is moving. The load's force on
+the arm does negative work, because the arm moves in the
+direction opposite to the load's force. This makes sense,
+because we expect our arm to do positive work on the load,
+so the load must do an equal amount of negative work on the
+arm. (If the biceps was lowering a load, the signs of the
+works would be reversed. Any muscle is capable of doing
+either positive or negative work.)
+
+There is also a third force on the forearm: the force of the
+upper arm's bone exerted on the forearm at the elbow joint
+(not shown with an arrow in the figure). This force does no
+work, because the elbow joint is not moving.
+
+Because the elbow joint is motionless, it is natural to
+define our torques using the joint as the axis. The
+situation now becomes quite simple, because the upper arm
+bone's force exerted at the elbow neither does work nor
+creates a torque. We can ignore it completely. In any lever
+there is such a point, called the \index{fulcrum}fulcrum.
+
+If we restrict ourselves to the case in which the forearm
+rotates with constant angular momentum, then we know that
+the total torque on the forearm is zero,
+\begin{equation*}
+                \tau_\text{muscle} + \tau_\text{load}  =  0\eqquad.
+\end{equation*}
+ If we choose to represent counterclockwise torques as
+positive, then the muscle's torque is positive, and the
+load's is negative. In terms of their absolute values,
+\begin{equation*}
+                |\tau_\text{muscle}|  =  |\tau_\text{load}|\eqquad.
+\end{equation*}
+Assuming for simplicity that both forces act at angles of
+90\degunit with respect to the lines connecting the axis to the
+points at which they act, the absolute values of the torques are
+\begin{equation*}
+                r_\text{muscle} F_\text{muscle}  =  r_\text{load} F_\text{arm}\eqquad,
+\end{equation*}
+where $r_\text{muscle}$, the distance from the elbow joint to the
+biceps' point of insertion on the forearm, is only a few cm,
+while $r_\text{load}$ might be 30 cm or so. The force exerted by
+the muscle must therefore be about ten times the force
+exerted by the load. We thus see that this lever is a force
+reducer. In general, a lever may be used either to increase
+or to reduce a force.
+
+Why did our arms evolve so as to reduce force? In general,
+your body is built for compactness and maximum speed of
+motion rather than maximum force. This is the main
+anatomical difference between us and the \index{Neanderthals}Neanderthals
+(their brains covered the same range of sizes as those of
+modern humans), and it seems to have worked for us.
+
+As with all machines, the lever is incapable of changing the
+amount of mechanical work we can do. A lever that increases
+force will always reduce motion, and vice versa, leaving the
+amount of work unchanged.
+
+It is worth noting how simple and yet how powerful this
+analysis was. It was simple because we were well prepared
+with the concepts of torque and mechanical work. In anatomy
+textbooks, whose readers are assumed not to know physics,
+there is usually a long and complicated discussion of the
+different types of levers. For example, the biceps lever,
+\figref{biceps}, would be classified as a class III lever, since it has
+the fulcrum and load on the ends and the muscle's force
+acting in the middle. The triceps, \figref{triceps}, is called a class I
+lever, because the load and muscle's force are on the ends
+and the fulcrum is in the middle. How tiresome! With a firm
+grasp of the concept of torque, we realize that all such
+examples can be analyzed in much the same way. Physics is at
+its best when it lets us understand many apparently
+complicated phenomena in terms of a few simple yet powerful concepts.
+
+\vfill
+
+<% end_sec() %>

@@ -1,0 +1,414 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '15',
+    %q{Conservation of Angular Momentum},
+    'ch:angular-momentum',
+    %q{A tornado touches down in Spring Hill, Kansas, May 20, 1957.},
+    {'opener'=>'tornado','width'=>'fullpage','anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/cle)
+__incl(text/rigid_body_rotation)
+__incl(text/am_three_d)
+__incl(text/elliptical_orbits)
+__incl(text/am_theorems)
+__incl(text/angular_momentum_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('motorcycle-jump') %>__incl(hw/motorcycle-jump)<% end_hw() %>
+
+<% begin_hw('equilibrium-top-of-arc') %>__incl(hw/equilibrium-top-of-arc)<% end_hw() %>
+
+<% begin_hw('const-l-no-torques') %>__incl(hw/const-l-no-torques)<% end_hw() %>
+
+<% marg(-15) %>
+<%
+  fig(
+    'hw-whitedwarf',
+    %q{Problem \ref{hw:whitedwarf}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('whitedwarf') %>__incl(hw/whitedwarf)<% end_hw() %>
+
+<% begin_hw('zero-and-nonzero-p-and-l') %>__incl(hw/zero-and-nonzero-p-and-l)<% end_hw() %>
+
+<% begin_hw('pandl') %>__incl(hw/pandl)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('rv') %>__incl(hw/rv)<% end_hw() %>
+
+\vspace{5mm}
+
+<% begin_hw('pliers') %>__incl(hw/pliers)<% end_hw() %>
+
+\vspace{5mm}
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-pliers',
+    %q{Problem \ref{hw:pliers}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'corkscrew',
+    %q{Problem \ref{hw:corkscrew}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-tiptoe',
+    %q{Problem \ref{hw:tiptoe}.}
+  )
+%>
+<% end_marg %>%
+<% begin_hw('corkscrew') %>__incl(hw/corkscrew)<% end_hw() %>
+
+\vspace{3mm}
+
+
+<% begin_hw('therapy') %>__incl(hw/therapy)<% end_hw() %>
+
+\vspace{3mm}
+
+<% begin_hw('two-branches') %>__incl(hw/two-branches)<% end_hw() %>
+
+\vspace{3mm}
+
+<% begin_hw('tetherball') %>__incl(hw/tetherball)<% end_hw() %>
+
+\vspace{3mm}
+
+<% begin_hw('tiptoe') %>__incl(hw/tiptoe)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('rod-finger-string') %>__incl(hw/rod-finger-string)<% end_hw() %>
+
+<% marg(60) %>
+<%
+  fig(
+    'hw-rod-finger-string',
+    %q{Problem \ref{hw:rod-finger-string}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-ladder',
+    %q{Problems \ref{hw:ladderwarmup} and \ref{hw:ladder}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-wheel-over-step',
+    %q{Problem \ref{hw:wheel-over-step}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('ladderwarmup') %>__incl(hw/ladderwarmup)<% end_hw() %>
+
+<% begin_hw('ladder',2) %>__incl(hw/ladder)<% end_hw() %>
+
+<% begin_hw('wheel-over-step') %>__incl(hw/wheel-over-step)<% end_hw() %>
+
+<% begin_hw('orbital-bomb') %>__incl(hw/orbital-bomb)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ship-in-bottle',2) %>__incl(hw/ship-in-bottle)<% end_hw() %>
+<% marg(50) %>
+<%
+  fig(
+    'hw-ship-in-bottle',
+    %q{Problem \ref{hw:ship-in-bottle}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('lennardjones',nil,{'calc'=>true}) %>
+Two atoms will interact via electrical forces between
+their protons and electrons. One fairly good approximation
+to the potential energy is the Lennard-Jones potential,
+\begin{equation*}
+  PE(r) = k\left[\left(\frac{a}{r}\right)^{12}-2\left(\frac{a}{r}\right)^6\right]\eqquad,
+\end{equation*}
+where $r$ is the center-to-center distance between the atoms.
+
+Show that (a) there is an equilibrium point at $r=a$, (b)
+the equilibrium is stable, and (c) the energy required to
+bring the atoms from their equilibrium separation to
+infinity is $k$. [Hints: The first two parts can be done
+more easily by setting $a=1$, since the value of $a$ only
+changes the distance scale. One way to do part b is by graphing.]
+<% end_hw() %>
+
+<% begin_hw('alternate-universe') %>__incl(hw/alternate-universe)<% end_hw() %>
+
+<% begin_hw('rolling-ratio') %>__incl(hw/rolling-ratio)<% end_hw() %>
+
+<% begin_hw('bowling') %>__incl(hw/bowling)<% end_hw() %>
+
+
+<% begin_hw('surfin-tux') %>__incl(hw/surfin-tux)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('check-mg-at-cm') %>__incl(hw/check-mg-at-cm)<% end_hw() %>
+
+<% begin_hw('anganalogies',0) %>__incl(hw/anganalogies)<% end_hw() %>
+
+<% begin_hw('parallel-axis-theorem') %>
+Prove the parallel axis theorem stated on page
+\pageref{parallel-axis-theorem-statement}.\index{parallel axis theorem}
+<% end_hw() %>
+
+<% marg(50) %>
+<%
+  fig(
+    'hwtipbox',
+    %q{Problem \ref{hw:tipbox}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'barandrope',
+    %q{Problem \ref{hw:barandrope}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hangingbars',
+    %q{Problem \ref{hw:hangingbars}.}
+  )
+%>
+\pagebreak
+<%
+  fig(
+    'hwmolecules',
+    %q{Problem \ref{hw:molecules}}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('tipbox') %>__incl(hw/tipbox)<% end_hw() %>
+
+<% begin_hw('barandrope') %>__incl(hw/barandrope)<% end_hw() %>
+
+<% begin_hw('hangingbars') %>__incl(hw/hangingbars)<% end_hw() %>
+
+<% begin_hw('earthangkinematics',0) %>__incl(hw/earthangkinematics)<% end_hw() %>
+
+<% begin_hw('molecules') %>__incl(hw/molecules)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('amcrossprodplugin',0) %>__incl(hw/amcrossprodplugin)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('findperp',0) %>__incl(hw/findperp)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('uniquexproof') %>__incl(hw/uniquexproof)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('proveanticommutative',0) %>__incl(hw/proveanticommutative)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('xnotassociative') %>__incl(hw/xnotassociative)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('xnonsense',0) %>__incl(hw/xnonsense)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('conemoi') %>__incl(hw/conemoi)<% end_hw() %>
+<% marg(30) %>
+<%
+  fig(
+    'da-polar',
+    %q{Problem \ref{hw:conemoi}}
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+<% begin_hw('boxmoi') %>__incl(hw/boxmoi)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('erbium') %>__incl(hw/erbium)<% end_hw() %>
+
+<% begin_hw('ellipsoidmoi',2) %>__incl(hw/ellipsoidmoi)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('centrifuge') %>__incl(hw/centrifuge)<% end_hw() %>
+
+<% marg(-10) %>
+<%
+  fig(
+    'hw-hinge-on-cylinder',
+    %q{Problem \ref{hw:hinge-on-cylinder}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('hinge-on-cylinder',2) %>__incl(hw/hinge-on-cylinder)<% end_hw() %>
+
+<% begin_hw('triangle-moment-of-inertia',2) %>__incl(hw/triangle-moment-of-inertia)<% end_hw() %>
+
+<% begin_hw('toppling-rod',2) %>
+<% hw_solution %> In example \ref{eg:toppling-rod} on page \pageref{eg:toppling-rod}, prove that if the rod is sufficiently thin, it can
+be toppled without scraping on the floor.
+<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('yoyo',2) %>__incl(hw/yoyo)<% end_hw() %>
+
+<% begin_hw('books-at-edge-of-table',2) %>__incl(hw/books-at-edge-of-table)<% end_hw() %>
+
+<% begin_hw('complex-cross-product',2) %>__incl(hw/complex-cross-product)<% end_hw() %>
+
+<% begin_hw('toppling-square-omega',2) %>__incl(hw/toppling-square-omega)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('cd-constant-linear-velocity',2) %>__incl(hw/cd-constant-linear-velocity)<% end_hw() %>
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-cd-constant-linear-velocity',
+    %q{Problem \ref{hw:cd-constant-linear-velocity}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('pulsar-deceleration') %>__incl(hw/pulsar-deceleration)<% end_hw() %>
+
+<% begin_hw('disk-slow-easy-1') %>__incl(hw/disk-slow-easy-1)<% end_hw() %>
+
+<% begin_hw('tilden-merry-go-round') %>__incl(hw/tilden-merry-go-round)<% end_hw() %>
+
+<% begin_hw('flywheel-stopping') %>__incl(hw/flywheel-stopping)<% end_hw() %>
+
+<% begin_hw('theta-as-a-function-of-time') %>__incl(hw/theta-as-a-function-of-time)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    'hw-bug-turntable',
+    %q{Problems \ref{hw:bug-turntable} and \ref{hw:bug-turntable-accelerating}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('bug-turntable') %>__incl(hw/bug-turntable)<% end_hw() %>
+
+<% begin_hw('bug-turntable-accelerating',2) %>__incl(hw/bug-turntable-accelerating)<% end_hw() %>
+
+\pagebreak
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-moment-of-inertia-lab',
+    %q{Problem \ref{hw:moment-of-inertia-lab}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-cube-statics',
+    %q{Problem \ref{hw:cube-statics}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-rollers-on-inclined-plane',
+    %q{Problem \ref{hw:rollers-on-inclined-plane}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('moment-of-inertia-lab') %>__incl(hw/moment-of-inertia-lab)<% end_hw() %>
+
+<% begin_hw('cube-statics') %>__incl(hw/cube-statics)<% end_hw() %>
+
+<% begin_hw('division-by-a-vector',2) %>__incl(hw/division-by-a-vector)<% end_hw() %>
+
+<% begin_hw('rollers-on-inclined-plane',2) %>__incl(hw/rollers-on-inclined-plane)<% end_hw() %>
+
+<% begin_hw('vector-computations',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/vector-computations)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('work-done-by-torque-in-second-revolution',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/work-done-by-torque-in-second-revolution)<% end_hw() %>
+
+<% begin_hw('ring-moi-about-diameter') %>__incl(hw/ring-moi-about-diameter)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    'hw-bug-drop',
+    %q{Problem \ref{hw:bug-drop}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-bug-trap-door',
+    %q{Problem \ref{hw:bug-trap-door}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('bug-drop') %>__incl(hw/bug-drop)<% end_hw() %>
+
+<% begin_hw('bug-trap-door') %>__incl(hw/bug-trap-door)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Torque") %>
+
+\noindent Equipment:
+\begin{itemize}
+\item rulers with holes in them
+\item spring scales (two per group)
+\end{itemize}
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-torque}
+
+\noindent While one person holds the pencil which forms the axle for the ruler,
+the other members of the group pull on the scale and take readings.
+In each case, calculate the total torque on the ruler, and find out
+whether it equals zero to roughly within the accuracy of the experiment.
+Finish the calculations for each part before moving on to the next one.
+<% end_ex %>
+ %%========================================== toc decoration ===============================================
+
+<% if false then figure_in_toc("engine") end %>
+<% end_chapter() %>

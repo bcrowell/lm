@@ -1,0 +1,165 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% figure_in_toc("motorcyclist") %>
+
+<%
+  chapter(
+    '04',
+    %q{Force and Motion},
+    'ch:newton',
+    %q{Isaac Newton},
+    {'opener'=>'newton'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n1c)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('noforces') %>__incl(hw/noforces)<% end_hw() %>
+
+<% begin_hw('trailer',0) %>__incl(hw/trailer)<% end_hw() %>
+
+<% begin_hw('elevatortension') %> 
+__incl(hw/elevatortension)
+<% end_hw() %>
+
+<% begin_hw('copter') %>__incl(hw/copter)<% end_hw() %>
+
+<% begin_hw('highjump',2) %>__incl(hw/highjump)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-blimp',
+    %q{Problem \ref{hw:blimp}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('blimp',nil,{'calc'=>true}) %>__incl(hw/blimp)<% end_hw() %>
+
+<% begin_hw('time-to-brake') %>__incl(hw/time-to-brake)<% end_hw() %>
+
+<% begin_hw('anvilshears') %>__incl(hw/anvilshears)<% end_hw() %>
+
+<% begin_hw('alphastopping') %>__incl(hw/alphastopping)<% end_hw() %>
+
+\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-mass-or-weight',
+    %q{Problem \ref{hw:mass-or-weight}, part c.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('mass-or-weight') %>__incl(hw/mass-or-weight)<% end_hw() %>
+
+<% begin_hw('sally-spacehound') %>__incl(hw/sally-spacehound)<% end_hw() %>
+
+<% begin_hw('rice-sticks') %>__incl(hw/rice-sticks)<% end_hw() %>
+
+<% marg(-30) %>
+<%
+  fig(
+    'hw-langley-catapult',
+    %q{Problem \ref{hw:langley-catapult}. The rear wings of the plane collapse under the stress of
+    the catapult launch.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('langley-catapult') %>__incl(hw/langley-catapult)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('formula-one-tires') %>__incl(hw/formula-one-tires)<% end_hw() %>
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-lowering-climber',
+    %q{Problem \ref{hw:lowering-climber}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('lowering-climber') %>__incl(hw/lowering-climber)<% end_hw() %>
+
+<% begin_hw('force-on-bullet-symbolic',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/force-on-bullet-symbolic)<% end_hw() %>
+
+<% begin_hw('three-blocks-stacked-symbolic',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/three-blocks-stacked-symbolic)<% end_hw() %>
+<% marg(30) %>
+<%
+  fig(
+    'hw-three-blocks-stacked-symbolic',
+    %q{Problem \ref{hw:three-blocks-stacked-symbolic}.}
+  )
+%>
+<% end_marg %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Force and motion") %>
+
+Equipment:
+
+\begin{indentedblock}
+    1-meter pieces of butcher paper
+
+    wood blocks with hooks
+
+    string
+
+    masses to put on top of the blocks to increase friction
+
+    spring scales (preferably calibrated in Newtons)
+\end{indentedblock}
+
+Suppose a person pushes a crate, sliding it across the floor
+at a certain speed, and then repeats the same thing but at a
+higher speed. This is essentially the situation you will act
+out in this exercise. What do you think is different about
+her force on the crate in the two situations? Discuss this
+with your group and write down your hypothesis:
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+1. First you will measure the amount of friction between the
+wood block and the butcher paper when the wood and paper
+surfaces are slipping over each other. The idea is to attach
+a spring scale to the block and then slide the butcher paper
+under the block while using the scale to keep the block from
+moving with it. Depending on the amount of force your spring
+scale was designed to measure, you may need to put an extra
+mass on top of the block in order to increase the amount of
+friction. It is a good idea to use long piece of string to
+attach the block to the spring scale, since otherwise one
+tends to pull at an angle instead of directly horizontally.
+
+First measure the amount of friction force when sliding the
+butcher paper as slowly as possible:\_\_\_\_\_\_\_\_\_
+
+Now measure the amount of friction force at a significantly
+higher speed, say 1 meter per second. (If you try to go too
+fast, the motion is jerky, and it is impossible to get an
+accurate reading.) \_\_\_\_\_\_\_\_\_
+
+Discuss your results. Why are we justified in assuming that
+the string's force on the block (i.e., the scale reading) is
+the same amount as the paper's frictional force on the block?
+
+2. Now try the same thing but with the block moving and the
+paper standing still. Try two different speeds.
+
+Do your results agree with your original hypothesis? If not,
+discuss what's going on. How does the block ``know'' how fast to go?
+<% end_ex %>
+
+<% end_chapter() %>
+\addtocontents{toc}{\protect\pagebreak[4]}

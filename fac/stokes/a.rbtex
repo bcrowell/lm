@@ -1,0 +1,534 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Stokes's theorem") %>
+
+<%
+  chapter(
+    '14',
+    %q{Stokes's theorem},
+    'ch:stokes'
+  )
+%>
+
+<% begin_sec("A round-up of vector calculus",nil,'vector-calc-roundup') %>
+
+The table below is a round-up of the basics of vector calculus from this book.
+All of this has been presented earlier, with the exception of the full statement of Stokes's theorem,
+which was given in sec.~\ref{sec:something-is-missing}, p.~\pageref{sec:something-is-missing},
+only for the special case of a ``conservative'' field, i.e., one whose curl is zero. If you're
+a science or engineering major in the US, then most likely you are now at the end of a semester
+in which you're taking this electricity and magnetism course concurrently with a vector calculus
+course, in which this material has been presented in more 
+depth.\index{gradient!fundamental theorem of calculus}
+\index{fundamental theorem of calculus!for div, grad, and curl}
+
+\noindent\label{vector-calc-roundup-table}\begin{minipagefullpagewidth}
+\noindent\begin{tabular}{p{38mm}p{38mm}p{44mm}p{44mm}}
+  & \multicolumn{3}{l}{
+    \noindent\includegraphics[width=128mm]{stokes/figs/vector-calculus-roundup}
+  }\\
+  \emph{region} & 1-dimensional & 2-dimensional  & 3-dimensional \\
+                &               & (oriented surface) & \\[2mm]
+  \emph{boundary} & 0-dimensional  & 1-dimensional  & 2-dimensional  \\
+                  &  (two points) &  (oriented curve) &  (closed surface) \\[2mm]
+  \emph{derivative operator} & grad & curl & div \\[2mm]
+  \emph{linearity} &
+     $\operatorname{grad}(\phi_1+\phi_2)$ &
+     $\operatorname{curl}(\vc{F}+\vc{G})$ &
+     $\operatorname{div}(\vc{F}+\vc{G})$ \\
+   &
+     \hspace{3mm}$=\operatorname{grad}\phi_1+\operatorname{grad}\phi_2$ &
+     \hspace{3mm}$=\operatorname{curl}\vc{F}+\operatorname{curl}\vc{G}$ &
+     \hspace{3mm}$=\operatorname{div}\vc{F}+\operatorname{div}\vc{G}$ \\[2mm]
+  \multicolumn{2}{l}{\emph{fundamental theorem:}}\\
+  \emph{\hspace{3mm}integral over interior} &
+        $\int \operatorname{grad}\phi\cdot\der\bell$ & 
+        $\int \operatorname{curl}\vc{F}\cdot\der\vc{A}$ &
+        $\int \operatorname{div}\vc{F}\:\der v$ \\
+  \emph{\hspace{3mm}$=$stuff on boundary} &
+        \hspace{3mm}$=\phi_B-\phi_A$ &
+        \hspace{3mm}$=\int\vc{F}\cdot\der\bell$ &
+        \hspace{3mm}$=\int\vc{F}\cdot\der\vc{A}$\\
+  & & (Stokes's theorem) & (Gauss's theorem) \\
+\end{tabular}
+\end{minipagefullpagewidth}
+
+The big picture is that we have three different derivative operators, which take
+as input either a scalar-valued function or a vector-valued one, and similarly
+for their outputs. For each of these, there is a theorem that has the same structure
+as the fundamental theorem of calculus. The familiar version of the fundamental theorem, from
+a first-semester calculus course, says that if you integrate a function over some
+interval, the result is related to the function's properties on the end-points of
+that interval (it equals the difference between the values of the antiderivative
+at the end-points). These two end-points constitute the \emph{boundary} of the line segment
+representing this interval on the real-number line, i.e., if an ant stands on the
+$x$ axis at some point inside this interval, and it wants to get out, it is going to
+have to walk past one of the end-points. For each of the three operators of vector
+calculus, we have a fundamental theorem with a similar structure: the integral over
+a region is related to what's going on at the boundary of the region.
+
+In the following three examples we demonstrate how this works for each of the three
+operators when applied to Maxwell's equations, which are recapitulated in the side-bar
+for convenient reference.
+
+<% marg() %>
+<%
+  fig(
+    'maxwell-recap',
+    '',
+    {
+      'text'=>%q{
+        $\operatorname{div}\vc{E} =  4\pi k\rho $
+
+        $\operatorname{div}\vc{B} =  0 $
+
+        $\operatorname{curl}\vc{E} =  -\frac{\partial\vc{B}}{\partial t} $
+
+        $\operatorname{curl}\vc{B} =  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}+\frac{4\pi k}{c^2}\vc{j}$
+      },
+      'title'=>%q{Maxwell's equations}
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The potential and the electric field}
+The fundamental theorem of calculus for the gradient is
+\begin{equation*}
+  \int \operatorname{grad}\phi\cdot\der\bell = \phi_B-\phi_A,
+\end{equation*}
+where the integral is along a path from A to B.
+If we let $\phi$ be an electric potential, then the corresponding
+electric field is $\vc{E}=-\operatorname{grad}\phi$. We then have
+\begin{equation*}
+  -\int \vc{E}\cdot\der\bell = \phi_B-\phi_A,
+\end{equation*}
+which is a statement that the difference in potential read by a voltmeter
+equals the work per unit charge that would have to be done to
+move the charge from A to B, against the field. The field on the
+interior of the path is related to the potential on the boundary (end-points A and B).
+\end{eg}
+
+\begin{eg}{A static electric field}
+The fundamental theorem of calculus for the curl, i.e., Stokes's theorem, is
+\begin{equation*}
+  \int \operatorname{curl}\vc{F}\cdot\der\vc{A} = \int\vc{F}\cdot\der\bell,
+\end{equation*}
+where the integral on the left is over a surface, and the one on the right is taken as we travel
+around the boundary, i.e., the edge of the surface.
+One of Maxwell's equations states that $\operatorname{curl}\vc{E} =  -\partial\vc{B}/\partial t$.
+For a static field, there is no time variation, so $\operatorname{curl}\vc{E}=0$. We then have
+\begin{equation*}
+  0 = \int\vc{E}\cdot\der\bell.
+\end{equation*}
+This is a statement that for static fields, the work done by the electric field around a closed
+loop is always zero, as required by conservation of energy.
+\end{eg}
+
+\begin{eg}{Electric field and charge density}
+The fundamental theorem of calculus for the divergence, i.e., Gauss's theorem, is
+\begin{equation*}
+  \int \operatorname{div}\vc{F}\:\der v =\int\vc{F}\cdot\der\vc{A},
+\end{equation*}
+where the left-hand integral is over a volume of space, and the one on the right is over the surface
+that constitutes the boundary of that volume. One of Maxwell's equations is 
+$\operatorname{div}\vc{E} =  4\pi k\rho$, so we have
+\begin{equation*}
+  4\pi k \int \rho\:\der v =\int\vc{E}\cdot\der\vc{A}.
+\end{equation*}
+This is just Gauss's law, which relates the total charge inside the region to the flux out through
+its boundary.
+\end{eg}
+
+<% marg() %>
+<%
+  fig(
+    'stokes-handedness',
+    %q{1.~The right-hand relationships used in Stokes's theorem. 
+       2.~A reminder of the right-hand relationship used to define the direction of the curl.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('vector-calc-roundup') %>
+
+<% begin_sec("Stokes's theorem",nil,'stokes') %>\index{Stokes's theorem!general form}
+
+The only new thing here is Stokes's theorem for the case where the curl is not zero,
+\begin{equation*}
+  \int \operatorname{curl}\vc{F}\cdot\der\vc{A} = \int\vc{F}\cdot\der\bell
+\end{equation*}
+The integral on the right is cometimes referred to as the circulation of the field $\vc{F}$
+around a certain closed loop, and in order to define the sign of this circulation, we have
+to set an orientation for the loop. For example,  in figure
+\subfigref{stokes-handedness}{1}, the arrowhead on the edge of the potato-chip shape
+says that we're defining counterclockwise to be the positive direction.
+
+In the integral on the left-hand side, the vector $\der\vc{A}$ is perpendicular to the
+surface, as before. This is ambiguous, since there are two opposite directions, each of
+which is perpendicular to the surface. In our previous applications of this type of surface integral,
+to Gauss's law, we were using a closed surface, so we resolved this ambiguity just by
+making our area vectors point outward. Now we're dealing with an open surface, i.e., one
+with an edge, which doesn't enclose a volume, so there is no longer an ``outward'' direction.
+We therefore define the direction of $\der\vc{A}$ using the right-hand rule shown in 
+figure \subfigref{stokes-handedness}{1}. This is the same as the right-hand relationship
+we previously used to define the direction of the curl, figure \subfigref{stokes-handedness}{2};
+the relationship has to be the same, because we want Stokes's theorem to work in the limit of
+infinitely small curves.
+<% end_sec('stokes') %>
+
+<% begin_sec("Amp\\`ere's law",4,'amperes-law') %>
+If we apply Stokes's theorem to the static magnetic field made by a
+current, Maxwell's equation $\operatorname{curl}\vc{B}=(4\pi k/c^2)\vc{j}$
+gives
+\begin{equation*}
+  \frac{4\pi k}{c^2}\int \vc{j}\cdot\der\vc{A} = \int\vc{B}\cdot\der\bell.
+\end{equation*}
+The integral on the left is just the amount of current passing through the loop, so
+\begin{equation*}
+  \frac{4\pi k}{c^2}I_\text{through} = \int\vc{B}\cdot\der\bell.
+\end{equation*}
+This result is known as Amp\`ere's law.\index{Amp\`ere's law}
+
+<% marg() %>
+<%
+  fig(
+    'amperesolenoid',
+    %q{Example \ref{eg:amperesolenoid}: a cutaway view of a solenoid.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A solenoid}\label{eg:amperesolenoid}\index{solenoid!magnetic field}\index{magnetic field!solenoid}
+\egquestion
+What is the field inside a long, straight solenoid of length $\ell$ and radius $a$,
+and having $N$ loops of wire evenly wound along it, which carry a current $I$\/?
+
+\eganswer
+This is an interesting example, because it allows us to get a very good approximation
+to the field, but without some experimental input it wouldn't be obvious what approximation
+to use. Figure \figref{amperesolenoid}/1 shows what we'd observe by measuring the field
+of a real solenoid. The field is nearly constant inside the tube, as long as we stay far
+away from the mouths. The field outside is much weaker. For the sake of an approximate
+calculation, we can idealize this field as shown in figure \figref{amperesolenoid}/2.
+Of the edges of the Amp\`{e}rian surface shown in \figref{amperesolenoid}/3, only AB
+contributes to the flux --- there is zero field along CD, and the field is perpendicular
+to edges BC and DA. Amp\`{e}re's law gives
+\begin{align*}
+        &\int\vc{B}\cdot\der\bell = \frac{4\pi k}{ c^2}\, I_{ through} \\
+        &(B)(\text{length of AB}) = \frac{4\pi k}{ c^2}\,NI \left(\frac{\text{length of AB}}{\ell}\right)\\
+        &B = \frac{4\pi k NI}{ c^2 \ell}\\
+\end{align*}
+
+\end{eg}
+
+        
+<% self_check('solenoiddirection',<<-'SELF_CHECK'
+What direction is the current in figure \figref{amperesolenoid}?
+  SELF_CHECK
+  ) %>
+
+
+<% end_sec('amperes-law') %>
+
+<% begin_sec("Faraday's law",4,'faradays-law') %>\index{Faraday's law}
+One of Maxwell's equations is $\operatorname{curl}\vc{E} =  -\partial\vc{B}/\partial t$.
+This states that a varying magnetic field induces a curly electric field (sec.~\ref{sec:maxwell-vacuum},
+p.~\pageref{sec:maxwell-vacuum}), and we've used it in the analysis of electromagnetic waves
+as well as in the qualitative description of an electric generator.
+Application of Stokes's theorem to this equation gives
+\begin{equation*}
+  - \int \frac{\partial\vc{B}}{\partial t}\cdot\der\vc{A} = \int\vc{E}\cdot\der\bell.
+\end{equation*}
+We're now going to rewrite the left-hand side to put it in a form where it
+talks about the magnetic flux through the surface. The idea here is that we can
+interchange the order of the integral and the time derivative, like
+$\int \frac{\partial}{\partial t}=\frac{\partial}{\partial t}\int$. This is a valid step
+because an integral is a kind of sum, and the integral of a sum is the sum of the integrals.
+This makes the left-hand side into $-\frac{\partial}{\partial t}\int \vc{B}\cdot\der\vc{A}$,
+but $\int \vc{B}\cdot\der\vc{A}$ is just the magnetic flux $\Phi_B$ through the surface. We therefore
+have
+\begin{equation*}
+  - \frac{\partial\Phi_B}{\partial t} = \int\vc{E}\cdot\der\bell.
+\end{equation*}
+That is, when a changing magnetic field induces a curly electric field, the circulation
+of the electric field around a closed loop equals minus the rate at which the
+magnetic flux through the loop is changing. This is called Faraday's law.
+
+Michael Faraday, whom we met on p.~\pageref{faraday-intro-bio},\index{Faraday, Michael}
+worked before Maxwell's, so he didn't derive his result from Maxwell's equations --- it
+was the other way around, with Maxwell putting together Faraday's work on induction along with some
+other known ingredients to create Maxwell's equations. Faraday never learned calculus, trigonometry,
+or any math beyond the most basic algebra, so he probably visualized what we now call Faraday's
+law as shown in figure \figref{flux-linkage}. 
+
+<% marg(20) %>
+<%
+  fig(
+    'flux-linkage',
+    %q{%
+      The bar magnet makes some magnetic flux through an imaginary disk (white).
+    }
+  )
+%>
+<% end_marg %>
+
+As the magnet moves from 1 to 2, the flux through the imaginary disk increases. Faraday's law predicts that
+a curly electric field will be produced, and it predicts its circulation
+$\int\vc{E}\cdot\der\bell$ around the edge of the disk to be equal to
+minus the rate of change of the flux. This electric field exists regardless of whether there is
+anything physically present at our imaginary disk, but if we happen to have placed a circular loop
+of wire there, and we connect it to a voltmeter or an oscilloscope, we will measure
+a voltage, given by the integral defining the circulation
+of the electric field. The figure only shows a two-dimensional picture of a small
+number of magnetic field lines, but subject to this crude approximation, we could say that
+the number of field lines passing through the disk has doubled, from 2 to 4. This tells us
+how much the magnetic flux has increased.
+
+The only way for this number of field lines to change is if the
+field lines and the loop cut through each other, as in the stage magic trick where a magician
+passes one steel ring through another, linking them like a chain. For this reason, the flux
+passing through the disk can be referred to as the \emph{flux linkage}. The induction effect
+predicted by Faraday's law is proportional to the rate at which the field lines are cutting through
+the loop.
+
+For ease of visualization, I drew the surface in figure \figref{flux-linkage} as
+a simple disk, whose boundary is a circle. If we were to form this circle from a loop
+of wire and connect it to an oscilloscope, as in figure \figref{practical-faraday},
+the signal would probably be easily detectable. But as an electric generator, this
+is still somewhat impractical. The strength
+of the effect can be increased greatly by replacing the single loop with a coil.
+In example \ref{eg:amperesolenoid} on p.~\pageref{eg:amperesolenoid}, we saw that when we
+use a current in a coil of wire to \emph{create} a magnetic field, the effect was proportional
+to the number of turns of wire per unit length. Something similar is true when we \emph{expose} a coil of wire
+to a \emph{changing} magnetic field, in order to produce a voltage. The effect is again proportional to
+the number of turns of wire.
+
+The easy way to visualize this is in terms of flux linkage and
+the cutting of the magnetic field lines across the wire. In figure \figref{finger-two-loops},
+the finger represents the magnetic field, and the cord represents the boundary of the
+imaginary surface used in Faraday's law. In applications, the cord could be a piece of wire.
+It is obvious that if the finger (magnetic field line) is to pass through the cord like a ghost, it will
+have to make twice as many cuts through in the case where the cord is wrapped in two loops.
+Since the induction effect is proportional to the number of cuts, it is doubled.
+
+<% marg(300) %>
+<%
+  fig(
+    'practical-faraday',
+    %q{%
+      A real-world setup for measuring the scenario from figure \figref{flux-linkage}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'finger-two-loops',
+    %q{%
+      Doubling the flux linkage.
+    }
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'bear-paws',
+    %q{Transforming a single loop into a double loop.},
+    {'width'=>'fullpage','floatpos'=>'b'}
+  )
+%>
+
+The proportionality to the number of loops is not an exception or modification to Faraday's
+law, and we don't have to appeal to the ``cutting'' interpretation to explain it if we don't
+want to. Figure \figref{bear-paws} shows the transformation of a single loop to a double one.
+During this process, the surface is like a soap
+bubble suspended across the wire that forms the boundary. The surface is never torn or glued together.
+Although I find it a little difficult to visualize the final ``soap bubble'' surface, it is clearly
+true that each field line will pass through the surface twice, producing twice the flux compared to
+a single circular loop with the same circumference.
+
+When we obtained Faraday's law from Maxwell's equations and Stokes's theorem, we assumed
+implicitly that once we picked a surface, it stayed the same. The only change over time
+was the change in the magnetic field. But clearly if we viewed the situation in another frame
+of reference, the surface would be moving, and we expect our laws of physics to be valid
+regardless of the frame of reference. It is OK for the surface to move, and it can even
+change size or shape. This is intuitively appealing if we think of the ``cutting'' interpretation.
+
+Faraday arrived at what we now call Faraday's law completely empirically. It's
+fascinating to read about the original trail of evidence that he followed.
+Figure \figref{faraday} is a simplified drawing of a crucial experiment,
+as described in his original paper:
+``Two hundred and three feet of copper wire \ldots were passed round a large block
+of wood; [another] two hundred and three feet of similar wire were interposed
+as a spiral between the turns of the first, and metallic contact everywhere
+prevented by twine [insulation]. One of these [coils] was connected
+with a galvanometer [voltmeter], and the other with a battery\ldots When the
+contact was made, there was a sudden and very slight effect at the galvanometer,
+and there was also a similar slight effect when the contact with the battery
+was broken. But whilst the \ldots current was continuing to pass through the one
+[coil], no  \ldots effect \ldots upon the other [coil] could be perceived,
+although the active power of the battery was proved to be great, by its heating
+the whole of its own coil [through ordinary resistive heating] \ldots''
+
+<% marg(-300) %>
+<%
+  fig(
+    'faraday',
+    %q{%
+      Faraday's experiment, simplified and shown with
+              modern equipment.
+    }
+  )
+%>
+<% end_marg %>
+
+
+From Faraday's notes and publications, it appears that the situation in figure
+\figref{faraday}/3 was a surprise to him, and he probably thought it would be
+a surprise to his readers, as well. That's why he offered evidence that the
+current was still flowing: to show that the battery hadn't just died.
+The induction effect occurred during the short time it took for the black coil's
+magnetic field to be established, \figref{faraday}/2. Even more counterintuitively,
+we get an effect, equally strong but in the opposite direction, when the circuit
+is \emph{broken}, \figref{faraday}/4. The effect occurs only when the magnetic field
+is changing, and it appears to be proportional to the derivative
+\emph{rate of change} of the magnetic flux through the block (or actually through
+the corkscrew-shaped surface formed by the white wire), which has
+one sign when the field is
+being established, and in the opposite direction when it collapses.
+
+Although Faraday's discovery was empirical, Faraday's law has close logical
+interrelationships with other principles of physics. In example \ref{eg:short-inductor}
+we see that induction is necessary based on conservation of energy, and in example
+\ref{eg:inductionrel} that it is necessary based on the fact that motion is relative.
+
+\pagebreak
+
+\begin{eg}{Conservation of energy}\label{eg:short-inductor}
+Figure \subfigref{short-inductor}{1} shows a solenoid with a current being driven through it
+by a battery. The wire that the solenoid is made of has some finite resistance, so this
+is not a short circuit, but current is flowing. There is a magnetic field in and around the
+solenoid. The magnetic compass near the mouth of the solenoid is nearly aligned with the
+solenoid's axis, showing that this field is much stronger than
+any ambient field such as the earth's. 
+
+So far there has been no obvious reason for having the two variable resistors. The one
+set to $R=0$ might as well be a piece of wire, and the one set to $R=\infty$ could just be
+air. But now suppose that we rapidly change the resistors so that they have the values
+shown in \subfigref{short-inductor}{2}. In fact, I have a power supply in my lab that
+seems to do essentially this when I flip its switch to the ``off'' position.
+
+If our intuition is based solely
+on experience with DC circuits, then we would expect that the current would instantly cease.
+The resistance that is now infinite is an open circuit, which means that the power supply
+is disconnected from the circuit. We have shorted across the inductor, and we know that if
+we short across a lightbulb, it just winks out.
+
+But that is not at all what happens. The compass stays aligned with the solenoid, showing
+that the field still exists. Only very slowly does it relax to alignment with the direction
+of the ambient field.
+
+Although this is a little surprising, it becomes easier to understand when we consider that
+the field in circuit 1 had energy. Therefore the field can't just go poof.
+It has to have some mechanism for transforming that energy into some other form. The only
+mechanism available for doing that is resistive heating in the coil. But this
+will take some time, as measured by the RL time constant of circuit 2. During this time,
+the field and the current just gradually die out.
+
+To push this current through the circuit, which has some resistance, we will need an
+electric field, even though the battery has been taken out of action. This electric field
+exists due to Faraday's law, and the minus sign in Faraday's law is interpreted as saying
+that the field is in the direction that tends to resist the change in the magnetic field.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'short-inductor',
+    %q{Shorting across an inductor, example \ref{eg:short-inductor}. Panel 2 shows what is
+       observed immediately after the resistances are changed.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Frames of reference}\label{eg:inductionrel}
+In figure \figref{inductionrel}, flea 1 doesn't believe in this
+modern foolishness about induction. She's sitting on the bar magnet, which to her is
+obviously at rest. As the square wire loop is dragged away from her and the magnet,
+its protons experience a force out of the page, because the cross product
+$\vc{F}=q\vc{v}\times\vc{B}$ is out of the page. The electrons, which are negatively
+charged, feel a force into the page. The conduction electrons are free to move, but the
+protons aren't. In the front and back sides of the loop, this force is perpendicular
+to the wire. In the right and left sides, however, the electrons are free to respond to the force.
+Note that the magnetic field is weaker on the right side. It's as though we had
+two pumps in a loop of pipe, with the weaker pump trying to push in the opposite direction; the
+weaker pump loses the argument.\footnote{If the pump analogy makes you uneasy, consider what would happen if all the electrons
+moved into the page on both sides of the loop. We'd end up with a net negative charge at the
+back side, and a net positive charge on the front. This actually would happen in the first
+nanosecond after the loop was set in motion. This buildup of charge would start to quench
+both currents due to electrical forces,
+but the current in the right side of the wire, which is driven by the weaker
+magnetic field, would be the first to stop. Eventually, an equilibrium will be reached
+in which the same amount of current is flowing at every point around the loop, and no more
+charge is being piled up.}
+We get a current that circulates around the 
+loop.\footnote{The wire is not a perfect conductor, so this current produces
+heat. The energy required to produce this heat comes from the hands, which are doing
+mechanical work as they separate the magnet from the loop.} There
+is no induction going on in this frame of reference; the forces that cause the current are
+just the ordinary magnetic forces experienced by any charged particle moving through
+a magnetic field. 
+
+<% marg(80) %>
+<%
+  fig(
+    'inductionrel',
+    %q{A generator that works with linear motion.}
+  )
+%>
+<% end_marg %>
+
+Flea 2 is sitting on the loop, which she considers to be at rest.
+In her frame of reference, it's the bar magnet that is moving. Like flea 1, she
+observes a current circulating around the loop, but unlike flea 1, she
+cannot use magnetic forces to explain this current. As far as she is concerned, the
+electrons were initially at rest. Magnetic forces are forces between moving charges
+and other moving charges, so a magnetic field can never accelerate a charged particle
+starting from rest. A force that accelerates a charge from rest can only be an
+\emph{electric} force, so she is forced to conclude that there is an electric field
+in her region of space. This field drives electrons
+around and around in circles, so it is apparently violating the loop rule --- it is
+a curly field. What reason can flea 2
+offer for the existence of this electric field pattern? Well, she's been noticing that
+the magnetic field in her region of space has been changing, possibly because that bar
+magnet over there has been getting farther away. She observes that a changing magnetic
+field creates a curly electric field.
+
+We therefore conclude that induction effects \emph{must} exist based on the fact that
+motion is relative. If we didn't want to admit induction effects, we would have to
+outlaw flea 2's frame of reference, but the whole idea of relative motion is that
+all frames of reference are created equal, 
+and there is no way to determine which one is really at rest. 
+\end{eg}
+
+<% end_sec('faradays-law') %>
+
+<% begin_notes %>
+
+
+<% end_notes %>
+
+
+
+<% begin_hw_sec %>
+
+find field of straight wire using ampere's law and compare with previous result
+
+<% end_hw_sec %>
+
+<% end_chapter() %>
+

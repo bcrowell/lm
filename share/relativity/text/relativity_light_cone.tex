@@ -1,0 +1,465 @@
+<% begin_sec("The light cone") %>
+
+Given an event P, we can now classify all the causal relationships in which P can participate.
+In Newtonian physics, these relationships fell into two classes: P could potentially cause any event
+that lay in its future, and could have been caused by any event in its past.
+In relativity, we have a three-way distinction rather than a two-way one. There is a third class
+of events that are too far away from P in space, and too close in time, to allow any cause and effect
+relationship, since causality's maximum velocity is $c$. Since we're working in units in which $c=1$,
+the boundary of this set is formed by the lines with slope $\pm1$ on a $(t,x)$ plot. This is referred
+to as the light cone,\index{light cone} for reasons that become more visually obvious when we consider
+more than one spatial dimension, figure \figref{lightcone}.
+<% marg(50) %>
+<%
+  fig(
+    'lightcone',
+    %q{The light cone.}
+  )
+%>
+<% end_marg %>
+
+Events lying inside one another's light cones are said to have a timelike relationship. Events outside each
+other's light cones are spacelike in relation to one another, and in the case where they lie on the surfaces
+of each other's light cones the term is lightlike.\index{spacelike}\index{timelike}\index{lightlike}
+<% end_sec %> % The light cone
+<% begin_sec("The spacetime interval",nil,'',{'optional'=>true}) %>
+The light cone is an object of central importance in both special and general relativity. It relates
+the \emph{geometry} of spacetime to possible \emph{cause-and-effect} relationships between events. This
+is fundamentally how relativity works: it's a geometrical theory of causality. 
+
+These ideas naturally lead
+us to ask what fruitful analogies we can form between the bizarre geometry of spacetime and the
+more familiar geometry of the Euclidean plane. The light cone cuts spacetime into different regions according
+to certain measurements of relationships between points (events). Similarly, a circle in Euclidean geometry
+cuts the plane into two parts, an interior and an exterior, according to the measurement of the distance from
+the circle's center. A circle stays the same when we rotate the plane. A light cone stays the same when we
+change frames of reference. Let's build up the analogy more explicitly.
+
+\begin{lessimportant}[Measurement in Euclidean geometry]
+We say that two line segments are congruent, $\zu{AB}\cong \zu{CD}$, if the distance between points A and B is the same
+as the distance between C and D, as measured by a rigid ruler.
+\end{lessimportant}
+
+\begin{lessimportant}[Measurement in spacetime]
+We define $\zu{AB}\cong \zu{CD}$ if:
+\begin{enumerate}
+\item AB and CD are both spacelike, and the two distances are equal as measured by a rigid ruler, in a frame
+where the two events touch the ruler simultaneously.
+\item AB and CD are both timelike, and the two time intervals are equal as measured by clocks moving inertially.
+\item AB and CD are both lightlike.
+\end{enumerate}
+\end{lessimportant}
+
+The three parts of the relativistic version each require some justification.
+
+Case 1 has to be the way it is because
+space is part of spacetime. In special relativity, this space is Euclidean, so the definition of congruence has
+to agree with the Euclidean definition, in the case where it is possible to apply the Euclidean definition.
+The spacelike relation between the points is both necessary and sufficient to make this possible.
+If points A and B are spacelike in relation to one another, then a frame of reference exists in which
+they are simultaneous, so we can use a ruler that is at rest in that frame to measure their distance.
+If they are lightlike or timelike, then no such frame of reference exists. For example, there is no frame
+of reference in which Charles VII's restoration to the throne is simultaneous with Joan of Arc's execution,
+so we can't arrange for both of these events to touch the same ruler at the same time.
+
+The definition in case 2 is the only sensible way to proceed if we are to respect the symmetric treatment of
+time and space in relativity. The timelike relation between the events is necessary and sufficient to
+make it possible for a clock to move from one to the other.
+It makes a difference that the clocks move inertially, because the twins
+in example \ref{eg:interstellar-road-trip} on p.~\pageref{eg:interstellar-road-trip} disagree on the clock time between the
+traveling twin's departure and return.
+
+Case 3 may seem strange, since it says that \emph{any} two lightlike intervals are congruent. But this is the only
+possible definition, because this case can be obtained as a limit of the timelike one. Suppose that AB is a timelike interval,
+but in the planet earth's frame of reference it would be necessary to travel at almost the speed of light in order
+to reach B from A. The required speed is less than $c$ (i.e., less than 1) by some tiny amount $\epsilon$.
+In the earth's frame, the clock referred to in the definition suffers extreme time dilation. The time elapsed
+on the clock is very small. As $\epsilon$ approaches zero, and the relationship between A and B approaches a lightlike
+one, this clock time approaches zero. In this sense, the relativistic notion of ``distance'' is very different from
+the Euclidean one. In Euclidean geometry, the distance between two points can only be zero if they are the same
+point.
+
+The case splitting involved in the relativistic definition is a little ugly. Having worked out the physical
+interpretation, we can now consolidate the definition in a nicer way by appealing to Cartesian coordinates.
+
+\begin{lessimportant}[Cartesian definition of distance in Euclidean geometry]
+Given a vector $(\Delta x,\Delta y)$ from point A to point B, the square of the distance between them is defined as 
+$\overline{\zu{AB}}^2=\Delta x^2+\Delta y^2$.
+\end{lessimportant}
+
+\begin{lessimportant}[Definition of the interval in relativity]
+Given points separated by coordinate differences $\Delta x$, $\Delta y$, $\Delta z$, and $\Delta t$,
+the spacetime interval $\interval$ (cursive letter ``I'') between them
+is defined as $\interval = \Delta t^2-\Delta x^2-\Delta y^2-\Delta z^2$.
+\end{lessimportant}
+
+This is stated in natural units, so all four terms on the right-hand side have the same units;
+in metric units with $c \ne 1$, appropriate factors of $c$ should be inserted in order to make the units of
+the terms agree.
+The interval $\interval$ is positive if AB is timelike (regardless of which event comes first),
+zero if lightlike, and negative if spacelike. Since $\interval$ can be negative, we can't in general take its
+square root and define a real number $\overline{\zu{AB}}$ as in the Euclidean case. When the interval
+is timelike, we can interpret $\sqrt{\interval}$ as a time, and when it's spacelike we can take
+$\sqrt{-\interval}$ to be a distance.
+
+The Euclidean
+definition of distance (i.e., the Pythagorean theorem) is useful because it gives the same answer
+regardless of how we rotate the plane. Although it is stated in terms of a certain coordinate system,
+its result is unambiguously defined because it is
+the same regardless of what coordinate system we arbitrarily pick. Similarly, $\interval$
+is useful because, as proved in example \ref{eg:interval-invariance} below, it is the same regardless of our frame of reference, i.e., regardless of our choice
+of coordinates.
+
+\begin{eg}{Pioneer 10}\label{eg:pioneer-interval}
+\egquestion The Pioneer 10 space probe was launched in 1972, and in 1973 was the first craft to
+fly by the planet Jupiter. It crossed the orbit of the planet Neptune in 1983, after which telemetry
+data were received until 2002. The following table gives the spacecraft's position relative to the
+sun at exactly midnight on January 1, 1983 and January 1, 1995. The 1983 date is taken to be $t=0$.
+
+\begin{tabular}{lllll}
+$t$ (s) & $x$ & $y$ & $z$ \\
+\hline
+0       & $1.784\times10^{12}\ \munit$  &  $3.951\times10^{12}\ \munit$  & $0.237\times10^{12}\ \munit$ \\
+$3.7869120000\times10^{8}\ \sunit$ 
+               & $2.420\times10^{12}\ \munit$  &  $8.827\times10^{12}\ \munit$  & $0.488\times10^{12}\ \munit$ \\
+\end{tabular}
+
+% http://nssdc.gsfc.nasa.gov/nmc/datasetDisplay.do?id=SPHE-00818
+%  SCID   YYDDD       NSEC        RSC   ANGL1   ANGL2        XSC        YSC        ZSC       VXSC       VYSC       VZSC        V$
+% P10  83001.0        0.0 0.4342E+10   66.15    3.13 0.1784E+10 0.3951E+10 0.2370E+09 0.1969E+01 0.1359E+02 0.7048E+00 0.1377E+$
+%
+% SCID   YYDDD       NSEC        RSC   ANGL1   ANGL2        XSC        YSC        ZSC       VXSC       VYSC       VZSC        V$
+% P10  95001.0        0.0 0.9166E+10    0.00    0.00 0.2420E+10 0.8827E+10 0.4880E+09 0.1525E+01 0.1243E+02 0.6374E+00 0.0000E+$
+% ftp://nssdcftp.gsfc.nasa.gov/spacecraft_data/pioneer/pioneer10/plasma/version31/v31_traj_ascii/p10platr_1983.asc
+% ftp://nssdcftp.gsfc.nasa.gov/spacecraft_data/pioneer/pioneer10/plasma/version31/v31_traj_ascii/p10platr_1995.asc
+% ftp://nssdcftp.gsfc.nasa.gov/spacecraft_data/pioneer/pioneer10/plasma/version31/v31_traj_ascii/formattr.sfdu
+%  ... states RSC to be r of spacecraft in km, so presumably x, y, and z are in km
+%
+% when j --now="1983 jan 1" ; when j --now="1995 jan 1" ; calc -e "(49719-45336)*24*3600"
+%     3.786912*10^8
+
+Compare the time elapsed on the spacecraft to the time in a frame of reference tied to the sun.
+
+\eganswer
+We can convert these data into natural units, with the distance unit being the second (i.e., a light-second,
+the distance light travels in one second) and the time unit being seconds. Converting and carrying out this
+subtraction, we have:
+
+% calc -x -e "k=10^12 m; (2.420-1.784)k/c; (8.827-3.951)k/c; (0.488-0.237)k/c"
+%     2.12146764546025*10^3 s
+%     1.62645852818619*10^4 s
+%     837.245878947364 s
+
+\begin{tabular}{llll}
+$\Delta t$ (s) & $\Delta x$ & $\Delta y$ & $\Delta z$ \\
+\hline
+$3.7869120000\times10^{8}\ \sunit$ 
+               & $0.2121\times10^{4}\ \sunit$  &  $1.626\times10^{4}\ \sunit$  & $0.084\times10^{4}\ \sunit$ \\
+\end{tabular}
+
+Comparing the exponents of the temporal and spatial numbers, we can see that the spacecraft was moving at
+a velocity on the order of $10^{-4}$ of the speed of light, so relativistic effects should be small but
+not completely negligible.
+
+Since the interval is timelike, we can take its square root and interpret it as the time elapsed on the spacecraft.
+The result is $\sqrt{\interval}=3.786911996\times 10^8\ \sunit$. This is 0.4 s less than the time elapsed in the
+sun's frame of reference.
+
+% calc -e "sqrt[(3.78691200 10^8)^2-(.2121^2+1.626^2+.084^2)*10^8]; ~-3.7869120000 10^8"    
+%   3.7869119964405*10^8
+
+
+\end{eg}
+
+<%
+  fig('light-rectangles',
+    %q{Light-rectangles, example \ref{eg:interval-invariance}.\\\\
+       1.~The gray light-rectangle represents the set of all events such as P that could be visited after A and before B.\\\\
+       2.~The rectangle becomes a square in the frame in which A and B occur at the same location in space.\\\\
+       3.~The area of the dashed square is $\tau^2$, so the area of the gray square is $\tau^2/2$.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\enlargethispage{-\baselineskip}
+
+\begin{eg}{Invariance of the interval}\label{eg:interval-invariance}
+In this example we prove that the interval is the same regardless of what frame of reference we compute it in.
+This is called ``Lorentz invariance.''\index{Lorentz invariance}
+The proof is limited to the timelike case.
+Given events A and B, construct the light-rectangle as defined in
+figure \subfigref{light-rectangles}{1}.
+On p.~\pageref{fig:area-proof} we proved that the Lorentz 
+transformation doesn't change the area of a shape in the $x$-$t$ plane.
+Therefore the area of this rectangle is unchanged if we switch to the frame of reference \subfigref{light-rectangles}{2},
+in which A and B occurred at the same location and were separated by a time interval $\tau$. This area equals
+half the interval $\interval$ between A and B. But a straightforward calculation shows that the rectangle
+in \subfigref{light-rectangles}{1} also has an area equal to half the interval calculated in \emph{that} frame.
+Since the area in any frame equals half the interval, and the area is the same in all frames, the interval is equal in
+all frames as well.
+\end{eg}
+
+<%
+  fig(
+    'eg-interval-graphs',
+    %q{%
+      Example \ref{eg:interval-graphs}.
+    },
+    {
+      'sidecaption'=>true,
+      'width'=>'wide'
+    }
+  )
+%>
+
+\begin{eg}{A numerical example of invariance}\label{eg:interval-graphs}
+Figure \figref{eg-interval-graphs} shows two frames of reference in motion relative to one another
+at $v=3/5$. (For this velocity, the stretching and squishing of the main diagonals are both by a factor of
+2.) Events are marked at coordinates that in the frame represented by the square are
+\begin{align*}
+  (t,x) & = (0,0) \qquad \text{and} \\
+  (t,x) &=  (13,11)\eqquad.
+\end{align*}
+The interval between these events is $13^2-11^2=48$. In the frame represented by the parallelogram, the same
+two events lie at coordinates
+\begin{align*}
+  (t',x') & = (0,0) \qquad \text{and} \\
+  (t',x') &=  (8,4)\eqquad.
+\end{align*}
+Calculating the interval using these values, the result is \linebreak[4]
+$8^2-4^2=48$, which comes out the same as in the other frame.
+\end{eg}
+<% end_sec %> % The spacetime interval
+
+m4_ifelse(__fac,1,,\pagebreak)
+
+<% begin_sec("Four-vectors and the inner product",nil,'',m4_ifelse(__fac,1,,{'optional'=>true})) %>
+Example \ref{eg:pioneer-interval} makes it natural that we define a type of vector with four components,
+the first one relating to time and the others being spatial. These are known as four-vectors.\index{four-vector}\index{vector!four-vector}
+It's clear how we should define the equivalent of a dot product in
+relativity:\index{dot product!relativistic}
+\begin{equation*}
+  \vc{A}\cdot\vc{B} = A_t B_t - A_xB_x - A_yB_y - A_zB_z
+\end{equation*}
+The term ``dot product'' has connotations of referring only to 
+three-vectors, so the operation of taking the scalar product of two four-vectors is usually referred to
+instead as the ``inner product.''
+The spacetime interval can then be thought of as the inner product of a four-vector with itself.\index{inner product}
+We care about the relativistic inner product for exactly the same reason we care about its Euclidean
+version; both are scalars, so they have a fixed value regardless of what coordinate system we choose.
+
+\vspace{10mm}
+
+\begin{eg}{The twin paradox}\label{eg:dot-twin-paradox}\index{triangle inequality}\index{twin paradox}
+Alice and Betty are identical twins. Betty goes on a space voyage at relativistic speeds, traveling away from the
+earth and then turning around and coming back. Meanwhile, Alice stays on earth. When Betty returns, she is younger
+than Alice because of relativistic time dilation 
+(example \ref{eg:interstellar-road-trip}, p.~\pageref{eg:interstellar-road-trip}). 
+
+But
+isn't it valid to say that Betty's spaceship is standing still
+and the earth moving? In that description, wouldn't Alice end up younger and Betty older?
+This is referred to as the
+``twin paradox.'' It can't really be a paradox, since it's exactly what was observed in the
+Hafele-Keating experiment (p. \pageref{hafele-keating-discussed}).
+
+Betty's track in the $x$-$t$ plane
+(her ``world-line'' in relativistic jargon\index{world-line})
+consists of vectors $\vc{b}$ and $\vc{c}$ strung end-to-end
+(figure \figref{dot-twin-paradox}).
+We could adopt a frame of reference in which Betty was at rest during $\vc{b}$ (i.e., $b_x=0$), but there
+is no frame in which $\vc{b}$ and $\vc{c}$ are parallel, so there is no frame in which Betty was at rest
+during \emph{both} $\vc{b}$ and $\vc{c}$. This resolves the paradox.
+<% marg(79) %>
+<%
+  fig(
+    'dot-twin-paradox',
+    %q{Example \ref{eg:dot-twin-paradox}.}
+  )
+%>
+<% end_marg %>
+
+We have already established by other methods that Betty ages less that Alice, but let's see how this plays
+out in a simple numerical example. Omitting units and making up simple numbers, let's say that the vectors
+in figure \figref{dot-twin-paradox} are
+\begin{align*}
+  \vc{a} &= (6,1) \\
+  \vc{b} &= (3,2) \\
+  \vc{c} &= (3,-1)\eqquad,
+\end{align*}
+where the components are given in the order $(t,x)$. The time experienced by Alice is then
+\begin{equation*}
+  |\vc{a}| = \sqrt{6^2-1^2} =5.9\eqquad,
+\end{equation*}
+which is greater than the Betty's elapsed time
+\begin{equation*}
+  |\vc{b}|+|\vc{c}| = \sqrt{3^2-2^2}+\sqrt{3^2-(-1)^2} = 5.1\eqquad.
+\end{equation*}
+
+
+\end{eg}
+
+\begin{eg}{Simultaneity using inner products}\label{eg:dot-simultaneity}
+Suppose that an observer O moves inertially along a vector $\vc{o}$, and let the vector separating
+two events P and Q be $\vc{s}$. O judges these events to be simultaneous if $\vc{o}\cdot\vc{s}=0$.
+To see why this is true, suppose we pick a coordinate system as defined by O. In this coordinate system,
+O considers herself to be at rest, so she says her vector has only a time component, 
+$\vc{o}=(\Delta t,0,0,0)$. If she considers P and Q to be simultaneous, then the vector from P to Q is
+of the form $(0,\Delta x,\Delta y,\Delta z)$. The inner product is then zero, since each of the four terms
+vanishes. Since the inner product is independent of the choice of coordinate system, it doesn't matter that we
+chose one tied to O herself. Any other observer $\zu{O}'$ can look at O's motion, note that $\vc{o}\cdot\vc{s}=0$,
+and infer that O must consider P and Q to be simultaneous, even if $\zu{O}'$ says they weren't.
+\end{eg}
+<% marg(65) %>
+<%
+  fig(
+    'dot-simultaneity',
+    %q{Example \ref{eg:dot-simultaneity}.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec %> % Four-vectors and the inner product
+
+m4_ifelse(__fac,1,,[:
+<% begin_sec("Doppler shifts of light and addition of velocities",nil,'doppler-light',{'optional'=>true}) %>\index{light!Doppler shift for}\index{Doppler shift!for light}
+When Doppler shifts happen to ripples on a pond or the sound waves from an airplane, they can depend on the relative motion of three
+different objects: the source, the receiver, and the medium. But light waves don't have a medium. Therefore Doppler shifts of
+light can only depend on the relative motion of the source and observer.
+
+<% marg(0) %>
+<%
+  fig(
+    'doppler',
+    %q{%
+      The pattern of waves made by a point source moving to the right
+      across the water. Note the shorter wavelength of the forward-emitted waves and the longer
+      wavelength of the backward-going ones.
+    },
+    {'suffix'=>'2'} # doesn't work, gets labeled by subsec number ... why?
+  )
+%>
+<% end_marg %>
+
+One simple case is the one in which the relative motion of the source and the receiver is perpendicular to the line connecting them.
+That is, the motion is transverse.
+Nonrelativistic Doppler shifts happen because the distance between the source and receiver is changing, so in nonrelativistic
+physics we don't expect any Doppler shift at all when the motion is transverse, and this is what is in fact observed to high precision.
+For example, the photo
+% Can't get it to label correctly, so can't do figref.
+shows shortened and lengthened wavelengths to the right and left, along the source's line of motion,
+but an observer above or below the source measures just the normal, unshifted wavelength and frequency. But relativistically, we have
+a time dilation effect, so for light waves emitted transversely, there is a Doppler shift of $1/\mygamma$ in frequency (or $\mygamma$ in wavelength).
+
+The other simple case is the one in which the relative motion of the source and receiver is longitudinal, i.e., they are either approaching or
+receding from one another. For example, distant galaxies are receding from our galaxy due to the expansion of the universe, and this expansion was
+originally detected because Doppler shifts toward the red (low-frequency) end of the spectrum were observed. 
+
+Nonrelativistically, we would expect
+the light from such a galaxy to be Doppler shifted down in frequency by some factor, which would depend on the relative velocities of three different
+objects: the source, the wave's medium, and the receiver. Relativistically, things get simpler, because light isn't a vibration of a physical medium,
+so the Doppler shift can only depend on a single velocity $v$, which is the rate at which the separation between the source and the receiver is
+increasing.
+
+The square in figure \figref{doppler-geometry} is the ``graph paper'' used by someone who considers the source to be at rest, while
+the parallelogram plays a similar role for the receiver. The figure is drawn for the case where $v=3/5$ (in units where $c=1$),
+and in this case the stretch factor of the long diagonal is 2. To keep the area the same, the short diagonal has to be squished to half its
+original size. But now it's a matter of simple geometry to show that OP equals half the width of the square, and this tells us that the Doppler
+shift is a factor of 1/2 in frequency. That is, the squish factor of the short diagonal is interpreted as the Doppler shift.
+To get this as a general equation for velocities other than 3/5, one can show by straightforward fiddling with the result of
+part c of problem \ref{hw:gamma-derivation} on p.~\pageref{hw:gamma-derivation} that
+the Doppler shift is
+\begin{equation*}
+  D(v) = \sqrt{\frac{1-v}{1+v}}\eqquad.
+\end{equation*}
+Here $v>0$ is the case where the source and receiver are getting farther apart, $v<0$ the case where they are approaching.
+m4_ifelse(__fac,1,[::],[:%
+  % FAC never does an equation for Doppler shift before the relativity chapter.
+  (This is the opposite of the sign convention used in __subsection_or_section(doppler). It is convenient to change conventions here so that we can
+  use positive values of $v$ in the case of cosmological red-shifts, which are the most important application.)%
+:])
+<% marg(100) %>
+<%
+  fig(
+    'six-tenths-c',
+    %q{%
+      A graphical representation of the Lorentz transformation for a velocity of $(3/5)c$. The long diagonal is stretched by a factor of two, the
+         short one is half its former length, and the area is the same as before.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'doppler-geometry',
+    %q{%
+      At event O, the source and the receiver are on top of each other, so as the source emits a wave crest, it is received without any time delay.
+      At P, the source emits another wave crest, and at Q the receiver receives it.
+    }
+  )
+%>
+<% end_marg %>
+
+Suppose that Alice stays at home on earth while her twin Betty takes off in her rocket ship at 3/5 of the speed of light.
+When I first learned relativity, the thing that caused me the most pain was understanding how each observer could say that the
+other was the one whose time was slow. It seemed to me that if I could take a pill that would speed up my mind and my body,
+then naturally I would see everybody \emph{else} as being \emph{slow}. Shouldn't the same apply to relativity? But suppose Alice and Betty
+get on the radio and try to settle who is the fast one and who is the slow one. Each twin's voice sounds slooooowed doooowwwwn
+to the other. If Alice claps her hands twice, at a time interval of one second by her clock, Betty hears the hand-claps coming
+over the radio two seconds apart, but the situation is exactly symmetric, and Alice hears the same thing if Betty claps.
+Each twin analyzes the situation using a diagram identical to \figref{doppler-geometry}, and attributes her sister's
+observations to a complicated combination of time distortion, the time taken by the radio signals to propagate, and
+the motion of her twin relative to her.
+
+\pagebreak
+
+<% self_check('doppler-approaching',<<-'SELF_CHECK'
+Turn your book upside-down and reinterpret figure \figref{doppler-geometry}.
+  SELF_CHECK
+  ) %>
+
+
+\begin{eg}{A symmetry property of the Doppler effect}\label{eg:doppler-abc}
+Suppose that A and B are at rest relative to one another, but C is moving along the line between A and B. A transmits a signal
+to C, who then retransmits it to B. The signal accumulates two Doppler shifts, and the result is their product $D(v)D(-v)$. But
+this product must equal 1, so we must have $D(-v)D(v)=1$, which can be verified directly from the equation.
+\end{eg}
+
+\begin{eg}{The Ives-Stilwell experiment}\index{Ives-Stilwell experiment}
+The result of example \ref{eg:doppler-abc} was the basis of one of the earliest laboratory tests of special relativity, by Ives and Stilwell in 1938.
+They observed the light emitted by excited by a beam of $\zu{H}_2^+$ and $\zu{H}_3^+$ ions with speeds of a few tenths of a percent of $c$.
+Measuring the light from both ahead of and behind the beams, they found that the product of the Doppler shifts $D(v)D(-v)$ was equal to 1,
+as predicted by relativity. If relativity had been false, then one would have expected the product to differ from 1 by an amount that would
+have been detectable in their experiment. In 2003, Saathoff et al.~carried out an extremely precise version of the Ives-Stilwell technique
+with $\zu{Li}^+$ ions moving at 6.4\% of $c$. The frequencies observed, in units of MHz, were:
+
+\noindent\begin{tabular}{rl}
+$f_\zu{o}$ &=      $546466918.8  \pm 0.4$ \\
+           & \hfill (unshifted frequency)\\
+$f_\zu{o}D(-v)$ & =          $582490203.44 \pm .09$ \\
+           & \hfill (shifted frequency, forward)\\
+$f_\zu{o} D(v)$ & =          $512671442.9  \pm 0.5$ \\
+           & \hfill (shifted frequency, backward)\\
+$\sqrt{f_\zu{o}D(-v)\cdot f_\zu{o} D(v)}$ &= $546466918.6  \pm 0.3$ 
+\end{tabular}
+
+\noindent The results show incredibly precise agreement between $f_\zu{o}$ and $\sqrt{f_\zu{o}D(-v)\cdot f_\zu{o} D(v)}$, as expected
+relativistically because $D(v)D(-v)$ is supposed to equal 1. The agreement extends to 9 significant figures, whereas
+if relativity had been false there should have been a relative disagreement of about $v^2=.004$, i.e., a discrepancy in the third significant figure.
+The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+\end{eg}
+
+We saw on p.~\pageref{relativistic-combination-of-vel} that relativistic velocities should not be expected to be exactly additive,
+and problem \ref{hw:six-tenths-c-twice} on p.~\pageref{hw:six-tenths-c-twice} verifies this in the special case where A moves relative to B
+at $0.6c$ and B relative to C at $0.6c$ --- the result \emph{not} being $1.2c$.\index{velocity!addition of!relativistic}
+The relativistic Doppler shift provides a simple way of deriving a general equation for the relativistic combination 
+of velocities;
+problem \ref{hw:rel-vel-addition} on p.~\pageref{hw:rel-vel-addition} guides you through the steps of this derivation,
+and the result is given on p.~\pageref{soln:rel-vel-addition}.\index{velocity!addition of!relativistic}
+<% end_sec %> % Doppler shifts of light
+:])

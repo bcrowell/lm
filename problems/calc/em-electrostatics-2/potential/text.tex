@@ -1,0 +1,36 @@
+When a test charge $q$ is at a particular position in a static electric field, it has an electrical
+potential energy $U$. The electrical potential energy per unit charge, $U/q$, is
+called the electric potential, notated $V$, $\varphi$, or $\Phi$, and measured
+in units of volts, V. Because it is defined in terms of a potential energy, the
+electric potential is only defined up to an additive constant. In the context of
+an electric circuit, we often use the synonym ``voltage'' for the electric potential.
+Voltage differences are measured by a voltmeter, which reads the difference in
+potential between its two probes. A voltmeter is wired in parallel with a circuit,
+and an ideal voltmeter acts like a perfect insulator, so that no charge ever flows through it.
+
+In one dimension, the electric field and electric potential are related by
+\begin{equation*}
+  E = -\frac{\der V}{\der x},
+\end{equation*}
+or equivalently, via the fundamental theorem of calculus,
+\begin{equation*}
+  V(x_2)-V(x_1) = -\int_{x_1}^{x_2} E \der x.
+\end{equation*}
+Generalizing to three dimensions,
+\begin{equation*}
+  \vc{E} = -\nabla V
+\end{equation*}
+(involving the gradient operator $\nabla$) and
+\begin{equation*}
+  \Delta V = -\int \vc{E}\cdot\der\vc{x}
+\end{equation*}
+(in terms of a path integral).
+In electrostatics, the path integral in the latter equation is independent
+of the path taken.
+
+Since the field of a charge distribution depends additively upon the
+charges, the same is true of the potential. Given a continuous charge distribution,
+it is sometimes easier to find the potential by integration than the field, since
+the potential is a scalar. Having found the potential, one can always take the
+gradient to find the field.
+

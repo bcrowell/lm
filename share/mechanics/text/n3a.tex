@@ -1,0 +1,490 @@
+<% begin_sec("Forces have no perpendicular effects",0) %>
+
+Suppose you could shoot a rifle and arrange for a second
+bullet to be dropped from the same height at the exact
+moment when the first left the barrel. Which would hit the
+ground first? Nearly everyone expects that the dropped
+bullet will reach the dirt first, and Aristotle would have
+agreed. Aristotle would have described it like this. The
+shot bullet receives some forced motion from the gun. It
+travels forward for a split second, slowing down rapidly
+because there is no longer any force to make it continue in
+motion. Once it is done with its forced motion, it changes
+to natural motion, i.e. falling straight down. While the
+shot bullet is slowing down, the dropped bullet gets on with
+the business of falling, so according to Aristotle  it will
+hit the ground first.
+
+<%
+  fig(
+    'bullets',
+    %q{%
+      A bullet is shot from a gun,
+      and another bullet is simultaneously dropped from the same
+      height. 1. Aristotelian physics says that the horizontal motion
+      of the shot bullet delays the onset of falling, so the dropped
+      bullet hits the ground first. 2. Newtonian physics says the
+      two bullets have the same vertical motion, regardless of
+      their different horizontal motions.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+Luckily, nature isn't as complicated as Aristotle thought!
+To convince yourself that Aristotle's ideas were wrong and
+needlessly complex, stand up now and try this experiment.
+Take your keys out of your pocket, and begin walking briskly
+forward. Without speeding up or slowing down, release your
+keys and let them fall while you continue walking at the same pace.
+
+\enlargethispage{-\baselineskip}
+
+You have found that your keys hit the ground right next to
+your feet. Their horizontal motion never slowed down at all,
+and the whole time they were dropping, they were right next
+to you. The horizontal motion and the vertical motion happen
+at the same time, and they are independent of each other.
+Your experiment proves that the horizontal motion is
+unaffected by the vertical motion, but it's also true that
+the vertical motion is not changed in any way by the
+horizontal motion. The keys take exactly the same amount of
+time to get to the ground as they would have if you simply
+dropped them, and the same is true of the bullets: both
+bullets hit the ground simultaneously.
+
+These have been our first examples of motion in more than
+one dimension, and they illustrate the most important new
+idea that is required to understand the three-dimensional
+generalization of Newtonian physics:
+
+\begin{important}[Forces have no perpendicular effects.]
+When a force acts on an object, it has no effect on the part
+of the object's motion that is perpendicular to the force.
+\end{important}
+
+\noindent In the examples above, the vertical force of gravity had no
+effect on the horizontal motions of the objects. These were
+examples of projectile motion, which interested people like
+Galileo because of its military applications. The principle
+is more general than that, however. For instance, if a
+rolling ball is initially heading straight for a wall, but a
+steady wind begins blowing from the side, the ball does not
+take any longer to get to the wall. In the case of
+projectile motion, the force involved is gravity, so we can
+say more specifically that the vertical acceleration is 9.8
+$\munit/\sunit^2$, regardless of the horizontal motion.
+
+<% self_check('blown-sideways',<<-'SELF_CHECK'
+In the example of the ball being blown sideways, why doesn't
+the ball take longer to get there, since it has to
+travel a greater distance?
+  SELF_CHECK
+  ) %>
+
+\enlargethispage{-\baselineskip}
+
+
+<% begin_sec("Relationship to relative motion") %>
+
+These concepts are directly related to the idea that motion
+is relative. Galileo's opponents argued that the earth could
+not possibly be rotating as he claimed, because then if you
+jumped straight up in the air you wouldn't be able to come
+down in the same place. Their argument was based on their
+incorrect Aristotelian assumption that once the force of
+gravity began to act on you and bring you back down, your
+horizontal motion would stop. In the correct Newtonian
+theory, the earth's downward gravitational force is acting
+before, during, and after your jump, but has no effect on
+your motion in the perpendicular (horizontal) direction.
+
+If Aristotle had been correct, then we would have a handy
+way to determine absolute motion and absolute rest: jump
+straight up in the air, and if you land back where you
+started, the surface from which you jumped must have been in
+a state of rest. In reality, this test gives the same result
+as long as the surface under you is an inertial frame. If
+you try this in a jet plane, you land back on the same spot
+on the deck from which you started, regardless of whether
+the plane is flying at 500 miles per hour or parked on the
+runway. The method would in fact only be good for detecting
+whether the plane was accelerating.
+
+\startdqs
+
+\begin{dq}
+The following is an incorrect explanation of a fact
+about target shooting:
+
+``Shooting a high-powered rifle with a high muzzle velocity
+is different from shooting a less powerful gun. With a less
+powerful gun, you have to aim quite a bit above your target,
+but with a more powerful one you don't have to aim so high
+because the bullet doesn't drop as fast.''
+
+Explain why it's incorrect. What is the correct explanation?
+\end{dq}
+
+<%
+  fig(
+    'dq-target-shooting',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\begin{dq}
+You have thrown a rock, and it is flying through the air
+in an arc.  If the earth's gravitational force on it is
+always straight down, why doesn't it just go straight down
+once it leaves your hand?
+\end{dq}
+
+\begin{dq}
+Consider the example of the bullet that is dropped at the
+same moment another bullet is fired from a gun. What would
+the motion of the two bullets look like to a jet pilot
+flying alongside in the same direction as the shot bullet
+and at the same horizontal speed?
+\end{dq}
+
+<%
+  fig(
+    'projectile-on-grid',
+    %q{%
+      This object experiences a force that pulls it
+      down toward the bottom of the page. In each
+      equal time interval, it moves three units to
+      the right. At the same time, its vertical motion is
+       making a simple pattern of $+1$, 0, $-1$,
+      $-2$, $-3$, $-4$, \ldots units. Its motion can be 
+      described by an $x$ coordinate that has
+       zero acceleration and a $y$ coordinate with constant
+      acceleration. The arrows labeled $x$ and $y$
+      serve to explain that we are defining increasing
+      $x$ to the right and increasing $y$ as upward.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Coordinates and components",0) %> % no page break because of figure above heading
+
+\epigraphlong{'Cause we're all\\
+Bold as love,\\
+Just ask the axis.}{Jimi Hendrix}
+
+How do we convert these ideas into mathematics? Figure \figref{projectile-on-grid}
+shows a good way of connecting the intuitive ideas to
+the numbers. In one dimension, we impose a number line with
+an $x$ coordinate on a certain stretch of space. In two
+dimensions, we imagine a grid of squares which we label with
+$x$ and $y$ values, as shown in figure \figref{projectile-on-grid}.
+
+<% marg(55) %>
+<%
+  fig(
+    'shadows',
+    %q{%
+      The shadow on the wall shows the ball's $y$
+      motion, the shadow on the floor its $x$ motion.
+    }
+  )
+%>
+<% end_marg %>
+But of course motion doesn't really occur in a series of
+discrete hops like in chess or checkers. Figure \figref{shadows}
+shows a way of conceptualizing the smooth variation of
+the $x$ and $y$ coordinates. The ball's shadow on the wall
+moves along a line, and we describe its position with a
+single coordinate, $y$, its height above the floor. The wall
+shadow has a constant acceleration of -9.8 $\munit/\sunit^2$. A shadow
+on the floor, made by a second light source, also moves
+along a line, and we describe its motion with an $x$
+coordinate, measured from the wall.
+
+The velocity of the floor shadow is referred to as the
+$x$ component of\index{component!defined} the velocity,
+written $v_x$. Similarly we can notate the acceleration of
+the floor shadow as $a_x$. Since $v_x$ is constant, $a_x$ is zero.
+
+Similarly, the velocity of the wall shadow is called $v_y$,
+its acceleration $a_y$. This example has $a_y=-9.8\ \munit/\sunit^2$.
+
+Because the earth's gravitational force on the ball is
+acting along the $y$ axis, we say that the force has a
+negative $y$ component, $F_y$, but $F_x=F_z=0$.
+
+The general idea is that we imagine two observers, each of
+whom perceives the entire universe as if it was flattened
+down to a single line. The $y$-observer, for instance,
+perceives $y$, $v_y$, and $a_y$, and will infer that there
+is a force, $F_y$, acting downward on the ball. That is, a
+$y$ component means the aspect of a physical phenomenon,
+such as velocity, acceleration, or force, that is observable
+to someone who can only see motion along the $y$ axis.
+
+All of this can easily be generalized to three dimensions.
+In the example above, there could be a $z$-observer who only
+sees motion toward or away from the back wall of the room.
+
+\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-car-crash',
+    %q{Example \ref{eg:car-crash}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A car going over a cliff}\label{eg:car-crash}
+\egquestion The police find a car at a distance $w=20\ \munit$ from
+the base of a cliff of height $h=100\ \munit$. How fast was the car
+going when it went over the edge? Solve the problem
+symbolically first, then plug in the numbers.
+
+\eganswer Let's choose $y$ pointing up and $x$ pointing away
+from the cliff. The car's vertical motion was independent of
+its horizontal motion, so we know it had a constant vertical
+acceleration of $a=-g=-9.8\ \munit/s^2$. The time it spent in
+the air is therefore related to the vertical distance it
+fell by the constant-acceleration equation
+\begin{align*}
+  \Delta y &= \frac{1}{2}a_y \Delta t^2\eqquad, \\
+\intertext{or}
+  -h &= \frac{1}{2}(-g)\Delta t^2\eqquad.
+\end{align*}
+Solving for $\Delta t$ gives
+\begin{equation*}
+  \Delta t = \sqrt{\frac{2h}{g}}\eqquad.
+\end{equation*}
+Since the vertical force had no effect on the car's
+horizontal motion, it had $a_x=0$, i.e., constant horizontal
+velocity. We can apply the constant-velocity equation
+\begin{align*}
+       v_x &= \frac{\Delta x}{\Delta t}\eqquad, \\
+\intertext{i.e.,}
+       v_x &= \frac{w}{\Delta t}\eqquad.
+\end{align*}
+We now substitute for $\Delta t$ to find
+\begin{equation*}
+      v_x = w / \sqrt{\frac{2h}{g}}\eqquad,
+\end{equation*}
+which simplifies to
+\begin{equation*}
+      v_x = w \sqrt{\frac{g}{2h}}\eqquad.
+\end{equation*}
+Plugging in numbers, we find that the car's speed when it
+went over the edge was 4 m/s, or about 10 mi/hr.
+\end{eg}
+
+\index{projectiles}\index{parabola!motion of projectile on}
+<% begin_sec("Projectiles move along parabolas.") %>
+
+What type of mathematical curve does a projectile follow
+through space? To find out, we must relate $x$ to $y$,
+eliminating $t$. The reasoning is very similar to that used
+in the example above. Arbitrarily choosing $x=y=t=0$ to be
+at the top of the arc, we conveniently have 
+$x=\Delta x$, $y=\Delta y$, and $t=\Delta t$, so
+\begin{align*}
+  y &= \frac{1}{2}a_y t^2 \qquad (a_y<0)\\
+  x &= v_x t
+\end{align*}
+We solve the second equation for $t=x/v_x$  and eliminate
+$t$ in the first equation:
+\begin{equation*}
+  y = \frac{1}{2}a_y\left(\frac{x}{v_x}\right)^2 .
+\end{equation*}
+Since everything in this equation is a constant except for
+$x$ and $y$, we conclude that $y$ is proportional to the
+square of $x$. As you may or may not recall from a math
+class, $y\propto x^2$ describes a parabola.
+
+<% marg(75) %>
+<%
+  fig(
+    'parabola',
+    %q{%
+      A parabola can be defined as the
+      shape made by cutting a cone parallel to its side. A parabola is also the
+      graph of an equation of the form
+      $y\propto x^2$.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hose',
+    %q{%
+      Each water droplet follows a parabola. The faster drops' parabolas
+      are bigger.
+    }
+  )
+%>
+<% end_marg %>
+
+m4_ifelse(__me,1,[::],\worked{cannon-range}{A cannon})
+
+\startdq
+
+\begin{dq}
+At the beginning of this section I represented the motion
+of a projectile on graph paper, breaking its motion into
+equal time intervals. Suppose instead that there is no force
+on the object at all. It obeys Newton's first law and
+continues without changing its state of motion. What would
+the corresponding graph-paper diagram look like? If the time
+interval represented by each arrow was 1 second, how would
+you relate the graph-paper diagram to the velocity
+components $v_x$ and $v_y?$
+\end{dq}
+
+\begin{dq}
+Make up several different coordinate systems oriented in
+different ways, and describe the $a_x$ and $a_y$ of a
+falling object in each one.
+\end{dq}
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Newton's laws in three dimensions",0) %>\index{Newton's laws of motion!in three dimensions}
+
+It is now fairly straightforward to extend Newton's laws
+to three dimensions:
+
+\begin{lessimportant}[Newton's first law]
+  If all three components of the total force on an object are
+  zero, then it will continue in the same state of motion.
+\end{lessimportant}
+
+\begin{lessimportant}[Newton's second law]
+The components of an object's acceleration are predicted by the equations
+\begin{align*}
+        a_x  &=  F_{x,total}/m\eqquad,  \\
+        a_y  &=  F_{y,total}/m\eqquad, \qquad \text{and}  \\
+        a_z  &=  F_{z,total}/m\eqquad.
+\end{align*}
+\end{lessimportant}
+
+\begin{lessimportant}[Newton's third law]
+If two objects A and B interact via forces, then the
+components of their forces on each other are equal and opposite:
+\begin{align*}
+        F_{\text{A on B},x}  &=  -F_{\text{B on A},x}\eqquad,  \\
+        F_{\text{A on B},y}  &=  -F_{\text{B on A},y}\eqquad, \qquad \text{and}  \\
+        F_{\text{A on B},z}  &=  -F_{\text{B on A},z}\eqquad.
+\end{align*}
+\end{lessimportant}
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-two-forces-on-object',
+    %q{Example \ref{eg:two-forces-on-object}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Forces in perpendicular directions on the same object}\label{eg:two-forces-on-object}
+\egquestion An object is initially at rest. Two constant
+forces begin acting on it, and continue acting on it for a
+while. As suggested by the two arrows, the forces are
+perpendicular, and the rightward force is stronger. What happens?
+
+\eganswer
+ Aristotle believed, and many students still do, that
+only one force can ``give orders'' to an object at one time.
+They therefore think that the object will begin speeding up
+and moving in the direction of the stronger force. In fact
+the object will move along a diagonal. In the example shown
+in the figure, the object will respond to the large
+rightward force with a large acceleration component to the
+right, and the small upward force will give it a small
+acceleration component upward. The stronger force does not
+overwhelm the weaker force, or have any effect on the upward
+motion at all. The force components simply add together:
+\begin{align*}
+  F_{x,total} &= F_{1,x} + \cancelto{0}{F_{2,x}} \\
+  F_{y,total} &= \cancelto{0}{F_{1,y}} + F_{2,y} 
+\end{align*}
+\end{eg}
+
+\startdq
+
+\begin{dq}
+The figure shows two trajectories, made by splicing together
+lines and circular arcs, which are unphysical for an object
+that is only being acted on by gravity. Prove that they are
+impossible based on Newton's laws.
+\end{dq}
+<% raw_fig('dq-unphysical-trajectories') %>
+
+<% end_sec() %>\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{component}{the part of a velocity, acceleration, or force
+that would be perceptible to an observer who could only see
+the universe projected along a certain one-dimensional axis}
+
+\vocabitem{parabola}{the mathematical curve whose graph has $y$
+proportional to $x^2$}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$x$, $y$, $z$}{an object's positions along the $x$, $y$, and $z$ axes}
+
+\notationitem{$v_x$, $v_y$, $v_z$}{the $x$, $y$, and $z$  components of an
+object's velocity; the rates of change of the object's
+$x$, $y$, and $z$ coordinates}
+
+\notationitem{$a_x$, $a_y$, $a_z$}{the $x$, $y$, and $z$  components of an
+object's acceleration; the rates of change of $v_x$, $v_y$, and $v_z$}
+
+\end{notation}
+
+\begin{summarytext}
+
+A force does not produce any effect on the motion of an
+object in a perpendicular direction. The most important
+application of this principle is that the horizontal motion
+of a projectile has zero acceleration, while the vertical
+motion has an acceleration equal to $g$. That is, an
+object's horizontal and vertical motions are independent.
+The arc of a projectile is a parabola.
+
+Motion in three dimensions is measured using three
+coordinates, $x$, $y$, and $z$. Each of these coordinates has
+its own corresponding velocity and acceleration. We say that
+the velocity and acceleration both have $x$, $y$, and $z$ components
+
+Newton's second law is readily extended to three dimensions
+by rewriting it as three equations predicting the three
+components of the acceleration,
+\begin{align*}
+a_x=F_{x,total}/m\eqquad, \\
+a_y=F_{y,total}/m\eqquad, \\
+a_z=F_{z,total}/m\eqquad,
+\end{align*}
+and likewise for the first and third laws.
+
+\end{summarytext}
+
+\end{summary}

@@ -1,0 +1,149 @@
+\twocolumn[\begin{center}\huge{\bfseries{\sffamily{Mathematical Review}}}\end{center}]\normalsize\normalfont
+
+\newcommand{\mathsummaryfont}{\normalsize\normalfont\small}
+\newenvironment{ind}
+	{%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{10mm}%
+                \noindent%
+	}
+	{%
+		\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+                \indentedcorrend%
+	}
+\newcommand{\hdr}[1]{\noindent\bfseries{\small\sffamily{#1}}\normalsize\mathsummaryfont}
+
+\mathsummaryfont
+
+\hdr{Algebra}
+
+\noindent Quadratic equation:
+
+\begin{ind}
+  The solutions of $ax^2+bx+c=0$ \\
+  are $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ \quad .
+\end{ind}
+
+\noindent Logarithms and exponentials:
+
+\begin{ind}
+  \begin{equation*}   \ln(ab)=\ln a + \ln b    \end{equation*}
+  \begin{equation*}   e^{a+b} = e^ae^b    \end{equation*}
+  \begin{equation*}   \ln e^x = e^{\ln x} = x    \end{equation*}
+  \begin{equation*}   \ln(a^b) = b \ln a    \end{equation*}
+\end{ind}
+
+\hdr{Geometry, area, and volume}
+
+\noindent\begin{tabular}{ll}
+  area of a triangle of base $b$ and height $h$     & = $\frac{1}{2}bh$ \\
+  circumference of a circle of radius $r$           &= $2\pi r$ \\
+  area of a circle of radius $r$                    &= $\pi r^2$ \\
+  surface area of a sphere of radius $r$            &= $4\pi r^2$ \\
+  volume of a sphere of radius $r$                  &= $\frac{4}{3}\pi r^3$
+\end{tabular}
+
+\hdr{Trigonometry with a right triangle}
+
+\noindent\anonymousinlinefig{trig}\\
+  \begin{equation*}
+ \sin\theta  = o/h \quad
+ \cos\theta = a/h \quad
+ \tan\theta = o/a
+ \end{equation*}
+
+Pythagorean theorem: $h^2=a^2+o^2$
+
+\hdr{Trigonometry with any triangle}
+
+\anonymousinlinefig{trig-any-triangle}\\
+Law of Sines:
+  \begin{equation*} \frac{\sin\alpha}{A}=\frac{\sin\beta}{B}=\frac{\sin\gamma}{C} \end{equation*}
+
+\noindent Law of Cosines:
+  \begin{equation*} C^2 = A^2 + B^2 - 2AB \cos \gamma \end{equation*}
+
+%--------------------------------------------------------------
+
+\pagebreak[4]
+
+\hdr{Properties of the derivative and integral}
+
+\noindent Let $f$ and $g$ be functions of $x$, and let $c$ be a constant.
+
+\noindent Linearity of the derivative:
+
+\begin{equation*} \frac{\der}{\der x}(cf)=c \frac{\der f}{\der x} \end{equation*}
+
+\begin{equation*} \frac{\der}{\der x}(f+g)=\frac{\der f}{\der x} + \frac{\der g}{\der x} \end{equation*}
+
+\noindent The chain rule:
+
+\begin{equation*} \frac{\der}{\der x}f(g(x)) = f'(g(x))g'(x) \end{equation*}
+
+\noindent Derivatives of products and quotients:
+
+\begin{equation*} \frac{\der}{\der x} (fg) = \frac{\der f}{\der x} g + \frac{\der g}{\der x} f\end{equation*}
+
+\begin{equation*} \frac{\der}{\der x}\left(\frac{f}{g}\right) = \frac{f'}{g}-\frac{fg'}{g^2}\end{equation*}
+
+\noindent Some derivatives:
+
+
+\begin{tabular}{ll}
+\multicolumn{2}{c}{$\frac{\der}{\der x} x^m = mx^{m-1},\ \text{except for $m=0$}$}\\
+$\frac{\der}{\der x}\sin x = \cos x$ &
+$\frac{\der}{\der x}\cos x = -\sin x$ \\
+$\frac{\der}{\der x}e^x = e^x$ &
+$\frac{\der}{\der x}\ln x = \frac{1}{x} $
+\end{tabular}
+
+\noindent Linearity of the integral:
+\begin{equation*} \int cf(x)\der x = c\int f(x)\der x\end{equation*}
+\begin{equation*} \int\left[f(x)+g(x)\right] = \int f(x) \der x + \int g(x) \der x \end{equation*}
+
+\noindent The fundamental theorem of calculus:\\
+The derivative and the integral undo each other, in the following sense:
+\begin{equation*} \int_a^b f'(x)\der x = f(b)-f(a) \end{equation*}
+
+
+\normalsize\normalfont
+
+\twocolumn[\begin{center}\huge{\bfseries{\sffamily{Approximations to Exponents and Logarithms}}}\end{center}]\normalsize\normalfont
+\label{math-approx-exp-and-log}
+
+It is often useful to have certain approximations involving exponents and logarithms.
+As a simple numerical example, suppose that your bank balance grows by 1\% for two
+years in a row. Then the result of compound interest is growth by a factor of $1.01^2=1.0201$,
+but the compounding effect is quite small, and the result is essentially 2\% growth.
+That is, $1.01^2\approx1.02$. This is a special case of the more general approximation
+\begin{equation*}
+  (1+\epsilon)^p\approx 1+p\epsilon,
+\end{equation*}
+which holds for small values of $\epsilon$ and is used in example \ref{eg:gamma-for-low-v}
+on p.~\pageref{eg:gamma-for-low-v} relating to relativity.
+Proof: Any real exponent $p$ can be
+approximated to the desired precision as $p=a/b$, where $a$ and $b$ are integers.
+Let $(1+\epsilon)^p=1+x$.
+Then $(1+\epsilon)^a=(1+x)^b$. Multiplying out both sides gives
+$1+a\epsilon+\ldots= 1+bx+\ldots$, where $\ldots$ indicates higher powers. Neglecting
+these higher powers gives $x\approx(a/b)\epsilon\approx p\epsilon$.
+
+We have considered an approximation that can be found by restricting the \emph{base} of
+an exponential to be close to 1. It is often of interest as well to consider the case
+where the \emph{exponent} is restricted to be small. Consider the base-$e$ case. One
+way of defining $e$ is that when we use it as a base, the rate of growth of the function
+$e^x$, for small $x$, equals 1. That is,
+\begin{equation*}
+  e^x \approx 1+x
+\end{equation*}
+for small $x$. This can easily be generalized to other bases, since $a^x=e^{\ln(a^x)}=e^{x\ln a}$,
+giving
+\begin{equation*}
+  a^x \approx 1+x\ln a.
+\end{equation*}
+
+Finally, since $e^x \approx 1+x$, we also have
+\begin{equation*}
+  \ln(1+x) \approx x.
+\end{equation*}

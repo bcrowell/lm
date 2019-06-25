@@ -1,0 +1,1016 @@
+<%
+  require "../eruby_util.rb"
+%>
+<% figure_in_toc("sunspots") %>
+<%
+  chapter(
+    '06',
+    %q{Fields},
+    'ch:fields',
+    %q{This sunspot is a product of the sun's magnetic fields. The darkest region in the center is about the size of our planet.},
+    {'opener'=>'sunspot'}
+  )
+%>
+\label{sunspotphoto}
+
+<% begin_sec("Farewell to the mechanical universe",0) %>\index{field}
+
+As late as 1900, physicists generally conceived of the universe in mechanical terms.
+Newton had revealed the solar system as a collection of material objects interacting
+through forces that acted at a distance. By 1900, evidence began to accumulate for the
+existence of atoms as real things, and not just as imaginary models of reality.
+In this microscopic realm, the same (successful) Newtonian picture tended to be transferred over
+to the microscopic world. Now the actors on the stage were atoms rather than planets,
+and the forces were electrical rather than gravitational, but it seemed to be a
+variation on the same theme. Some physicists, however, began to realize that the old
+mechanical picture wouldn't quite work. At a deeper level, the operation of the universe
+came to be understood in terms of \emph{fields}, the general idea being embodied fairly
+well in ``The Force'' from the Star Wars movies: ``... an energy field created by all
+living things. It surrounds us, penetrates us, and binds the galaxy together.''
+Substitute ``massive'' for ``living,'' and you have a fairly good description of the
+gravitational field, which I first casually mentioned on page \pageref{gravitational-field}.
+Substitute ``charged'' instead, and it's a depiction of the electric field.
+
+<% begin_sec("Time delays in forces exerted at a distance") %>
+
+        What convinced physicists that they needed this new concept
+        of a field of force? Although we have been dealing mostly
+        with electrical forces, let's start with a magnetic example.
+        (In fact the main reason I've delayed a detailed discussion
+        of magnetism for so long is that mathematical calculations
+        of magnetic effects are handled much more easily with the
+        concept of a field of force.) First a little background
+        leading up to our example. A bar magnet, \ref{fig:baratoms}, has an axis
+        about which many of the electrons' orbits are oriented. The
+        earth itself is also a magnet, although not a bar-shaped
+        one. The interaction between the earth-magnet and the bar
+        magnet, \ref{fig:barhang}, makes them want to line up their axes in
+        opposing directions (in other words such that their
+        electrons rotate in parallel planes, but with one set
+        rotating clockwise and the other counterclockwise as seen
+        looking along the axes). On a smaller scale, any two bar
+        magnets placed near each other will try to align themselves head-to-tail, \ref{fig:barns}.
+
+<% marg(0) %>
+<%
+  fig(
+    'baratoms',
+    %q{A bar magnet's atoms are (partially) aligned.}
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'barhang',
+    %q{A bar magnet interacts with our magnetic planet.}
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'barns',
+    %q{Magnets aligned north-south.}
+  )
+%>
+        
+<% end_marg %>
+        Now we get to the relevant example. It is clear that two
+        people separated by a paper-thin wall could use a pair of
+        bar magnets to signal to each other. Each person would feel
+        her own magnet trying to twist around in response to any
+        rotation performed by the other person's magnet. The
+        practical range of communication would be very short for
+        this setup, but a sensitive electrical apparatus could pick
+        up magnetic signals from much farther away. In fact, this is
+        not so different from what a radio does: the electrons
+        racing up and down the transmitting antenna create forces on
+        the electrons in the distant receiving antenna. (Both
+        magnetic and electric forces are involved in real radio
+        signals, but we don't need to worry about that yet.)
+
+        A question now naturally arises as to whether there is any
+        time delay in this kind of communication via magnetic (and
+        electric) forces. Newton would have thought not, since he
+        conceived of physics in terms of instantaneous action at a
+        distance. We now know, however, that there is such a time
+        delay. If you make a long-distance phone call that is routed
+        through a communications satellite, you should easily be
+        able to detect a delay of about half a second over the
+        signal's round trip of 50,000 miles. Modern measurements
+        have shown that electric, magnetic, and gravitational forces
+        all travel at the speed of light, $3\times10^8$  m/s.\footnote{As discussed in
+        chapter \ref{ch:relativity}, one consequence of Einstein's theory of
+        relativity is that material objects can never move faster than
+        the speed of light. It can also be shown that
+        signals or information are subject to the same limit.} (In
+        fact, we will soon discuss how light itself is made of
+        electricity and magnetism.)
+
+        If it takes some time for forces to be transmitted through
+        space, then apparently there is some \emph{thing} that
+        travels \emph{through} space. The fact that the phenomenon
+        travels outward at the same speed in all directions strongly
+        evokes wave metaphors such as ripples on a pond.
+
+<% end_sec() %>
+<% begin_sec("More evidence that fields of force are real: they carry energy.") %>\label{fieldenergy}
+
+        The smoking-gun argument for this strange notion of
+        traveling force ripples comes from the fact that they carry energy.
+
+        First suppose that the person holding the bar magnet on the
+        right decides to reverse hers, resulting in configuration
+        \ref{fig:barnn}. She had to do mechanical work to twist it, and if she
+        releases the magnet, energy will be released as it flips
+        back to \ref{fig:barns}. She has apparently stored energy by going from
+        \ref{fig:barns} to \ref{fig:barnn}. So far everything is easily explained without
+        the concept of a field of force.
+
+        <% marg(39) %>
+        %
+<%
+  fig(
+    'barnn',
+    %q{The second magnet is reversed.}
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'barsn',
+    %q{Both magnets are reversed.}
+  )
+%>
+        
+<% end_marg %>
+        But now imagine that the two people start in position \ref{fig:barns}
+        and then simultaneously flip their magnets extremely quickly
+        to position \ref{fig:barsn}, keeping them lined up with each other the
+        whole time. Imagine, for the sake of argument, that they can
+        do this so quickly that each magnet is reversed while the
+        force signal from the other is still in transit. (For a more
+        realistic example, we'd have to have two radio antennas, not
+        two magnets, but the magnets are easier to visualize.)
+        During the flipping, each magnet is still feeling the forces
+        arising from the way the other magnet \emph{used} to be
+        oriented. Even though the two magnets stay aligned during
+        the flip, the time delay causes each person to feel
+        resistance as she twists her magnet around. How can this be?
+        Both of them are apparently doing mechanical work, so they
+        must be storing magnetic energy somehow. But in the
+        traditional Newtonian conception of matter interacting via
+        instantaneous forces at a distance, interaction energy arises
+        from the relative positions of objects that are interacting
+        via forces. If the magnets never changed their orientations
+        relative to each other, how can any magnetic energy have been stored?
+
+        The only possible answer is that the energy must have gone
+        into the magnetic force ripples crisscrossing the space
+        between the magnets. Fields of force apparently carry energy
+        across space, which is strong evidence that they are real things.
+
+        This is perhaps not as radical an idea to us as it was to
+        our ancestors. We are used to the idea that a radio
+        transmitting antenna consumes a great deal of power, and
+        somehow spews it out into the universe. A person working
+        around such an antenna needs to be careful not to get too
+        close to it, since all that energy can easily cook flesh (a
+        painful phenomenon known as an ``RF burn'').
+
+<% end_sec() %>
+<% begin_sec("The gravitational field") %>\index{gravitational field}\index{field!gravitational}
+
+        <% marg(50) %>
+<%
+  fig(
+    'seaofarrows',
+    %q{%
+      The wind patterns in a certain area of the ocean could be
+              charted in a ``sea of arrows'' representation like this. Each
+              arrow represents both the wind's strength and its direction at a
+              certain location.
+    }
+  )
+%>
+<% end_marg %>        
+Given that fields of force are real, how do we define,
+measure, and calculate them? A fruitful metaphor will be the
+wind patterns experienced by a sailing ship. Wherever the
+ship goes, it will feel a certain amount of force from the
+wind, and that force will be in a certain direction. The
+weather is ever-changing, of course, but for now let's just
+imagine steady wind patterns. Definitions in physics are
+operational, i.e., they describe how to measure the thing
+being defined. The ship's captain can measure the wind's
+``field of force'' by going to the location of interest and
+determining both the direction of the wind and the strength
+with which it is blowing. Charting all these measurements on
+a map leads to a depiction of the field of wind force like
+the one shown in the figure. This is known as the ``sea of
+arrows'' method of visualizing a field.
+
+Now let's see how these concepts are applied to the
+fundamental force fields of the universe. We'll start with
+the gravitational field, which is the easiest to understand.
+We've already encountered the gravitational field, $g$,
+which we defined in terms of energy. Essentially, $g$ was
+defined as the number that would make the equation
+$GE=mgh$ give the right answer. However, we intuitively
+feel that the gravitational field has a direction associated with it: down!
+This can be more easily expressed via the following definition:
+
+\begin{lessimportant}[definition of the gravitational field]
+The gravitational field, $g$, at any location in space
+is found by placing a test mass $m$ at that point. The field
+is then given by $g=F/m$, where $F$ is the gravitational
+force on the test mass.
+\end{lessimportant}
+
+With this new definition, we get units of N/kg, rather then
+J/kg/m. These are in fact equivalent units.
+
+The most subtle point about all this is that the gravitational
+field tells us about what forces \emph{would} be exerted on
+a test mass by the earth, sun, moon, and the rest of the
+universe, \emph{if} we inserted a test mass at the point in
+question. The field still exists at all the places where
+we didn't measure it.
+
+<% end_sec() %>
+<% begin_sec("Sources and sinks") %>\index{sinks in fields}\index{sources of fields}
+
+        <% marg(0) %>
+        %
+<%
+  fig(
+    'sink',
+    %q{%
+      The gravitational field surrounding a clump of mass such as
+              the earth.
+    }
+  )
+%>
+<% end_marg %>
+        If we make a \index{sea-of-arrows representation}sea-of-arrows
+        picture of the gravitational fields surrounding the earth,
+        \ref{fig:sink}, the result is evocative of water going down a drain.
+        For this reason, anything that creates an inward-pointing
+        field around itself is called a sink. The earth is a
+        gravitational sink. The term ``source'' can refer specifically
+        to things that make outward fields, or it can be used as a
+        more general term for both ``outies'' and ``innies.''
+        However confusing the terminology, we know that gravitational
+        fields are only attractive, so we will never find a region
+        of space with an outward-pointing field pattern.
+
+        Knowledge of the field is interchangeable with knowledge of
+        its sources (at least in the case of a static, unchanging
+        field). If aliens saw the earth's gravitational field
+        pattern they could immediately infer the existence of the
+        planet, and conversely if they knew the mass of the earth
+        they could predict its influence on the surrounding
+        gravitational field.
+
+<% end_sec() %>
+<% begin_sec("The electric field") %>\index{electric field}\index{field!electric}
+
+        The definition of the electric field is directly analogous
+        to, and has the same motivation as, the definition of the
+        gravitational field:
+
+\begin{lessimportant}[definition of the electric field]
+        The electric field, $E$, at any location in space is
+        found by placing a test charge $q$ at that point. The electric
+        field vector is then given by $E=F/q$, where
+        $F$ is the electric force on the test charge.        
+\end{lessimportant}
+
+        Charges are what create electric fields. Unlike gravity,
+        which is always attractive, electricity displays both
+        attraction and repulsion. A positive charge is a source of
+        electric fields, and a negative one is a sink.
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Electromagnetism",0) %>
+        \epigraph{Think not that I am come to destroy the law, or the prophets:
+        I am not come to destroy, but to fulfill.}{Matthew 5:17}
+<% begin_sec("Magnetic interactions") %>
+At this stage, you understand roughly as much about the classification of interactions as physicists
+understood around the year 1800. There appear to be three fundamentally different types
+of interactions: gravitational, electrical, and magnetic. Many types of interactions that appear superficially to be
+distinct --- stickiness, chemical interactions, the energy an archer stores in a bow --- are
+really the same: they're manifestations of electrical interactions between atoms.
+Is there any way to shorten the list any further? The prospects seem dim at first. For instance,
+we find that if we rub a piece of fur on a rubber rod, the fur does not attract or repel a magnet.
+The fur has an electric field, and the magnet has a magnetic field. The two are completely separate,
+and don't seem to affect one another. Likewise we can test whether magnetizing a piece of iron
+changes its weight. The weight doesn't seem to change by any measurable amount, so magnetism and
+gravity seem to be unrelated.
+
+<% marg(0) %>
+<%
+  fig(
+    'oersted',
+    %q{1. When the circuit is incomplete, no current flows through the wire, and the magnet is
+unaffected. It points in the direction of the Earth's magnetic field. 2. The circuit is completed, and
+current flows through the wire. The wire has a strong effect on the magnet, which turns almost perpendicular
+to it. If the earth's field could be removed entirely, the compass would point exactly perpendicular to the
+wire; this is the direction of the wire's field.}
+  )
+%>
+<% end_marg %>
+
+That was where things stood until 1820, when the Danish physicist Hans Christian\index{Oersted, Hans Christian}
+Oersted was delivering a lecture at the University of Copenhagen, and he wanted to give his
+students a demonstration that would illustrate the cutting edge of research. He generated
+a current in a wire by making a short circuit across a battery, and held the wire near a
+magnetic compass. The ideas was to give an example of how one could search for a previously undiscovered
+link between electricity (the electric current in the wire) and magnetism. One never knows how much
+to believe from these dramatic legends, but the story is\footnote{Oersted's paper
+describing the phenomenon says that ``The first experiments on the subject \ldots
+were set on foot in the classes for electricity, galvanism, and magnetism, which were
+held by me in the winter just past,'' but that doesn't tell us whether the result was
+really a surprise that occurred in front of his students.} that the experiment he'd expected to turn out
+negative instead turned out positive: when he held the wire near the
+compass, the current in the wire caused the compass to twist!
+
+<% marg(0) %>
+<%
+  fig(
+    'magnetized',
+    %q{A schematic representation of an unmagnetized material, 1, and a magnetized one, 2.}
+  )
+%>
+
+<% end_marg %>
+
+People had tried similar experiments before, but only with static electricity, not with
+a moving electric current. For instance, they had hung batteries so that they were free to
+rotate in the earth's magnetic field, and found no effect; since the battery was not connected
+to a complete circuit, there was no current flowing. With Oersted's own setup, \figref{oersted},
+the effect was only produced when the ``circuit was closed, but not
+when open, as certain very celebrated physicists in vain attempted several years ago.''\footnote{All
+quotes are from the 1876 translation by J.E. Kempe.}
+
+Oersted was eventually
+led to the conclusion that magnetism was an interaction between moving charges and
+other moving charges, i.e., between one current and another.  \index{magnetism!caused by moving charges}
+A permanent magnet, he inferred, contained currents on a microscopic
+scale that simply weren't practical to measure with an ammeter. Today this seems natural
+to us, since we're accustomed to picturing an atom as a tiny solar system, with the electrons
+whizzing around the nucleus in circles. As shown in figure \figref{magnetized},
+a magnetized piece of iron is different from an
+unmagnetized piece because the atoms in the unmagnetized piece are jumbled in random
+orientations, whereas the atoms in the magnetized piece are at least partially organized
+to face in a certain direction.
+
+<% marg(0) %>
+<%
+  fig(
+    'magdeflects',
+    %q{Magnetism is an interaction between moving charges and moving charges. The moving
+charges in the wire attract the moving charges in the beam of charged particles in the vacuum tube.}
+  )
+%>
+<% end_marg %>
+
+
+Figure \figref{magdeflects} shows an example that is conceptually
+simple, but not very practical. If you try this with a typical vacuum tube, like a TV
+or computer monitor, the current in the wire probably won't be enough to produce a visible
+effect. A more practical method is to hold a magnet near the screen. We still have
+an interaction between moving charges and moving charges, but the swirling electrons
+in the atoms in the magnet are now playing the role played by the moving charges in the wire
+in figure \figref{magdeflects}. Warning: if you do this, make sure your monitor has a
+demagnetizing button! If not, then your monitor may be permanently ruined.
+
+%
+<% end_sec() %>
+<% begin_sec("Relativity requires magnetism") %>\index{magnetism!and relativity}\index{relativity!and magnetism}
+So magnetism is an interaction between moving charges and moving charges. But how
+can that be?
+Relativity tells us that
+motion is a matter of opinion. Consider figure \figref{fulfill}. In this figure and in figure
+\figref{magrelativity}, the dark and light coloring of the particles represents the fact that
+one particle has one type of charge and the other particle has the other type.
+Observer \figref{fulfill}/2 sees the two particles as flying through space side by side, so they
+would interact both electrically (simply because they're charged) and magnetically
+(because they're charges in motion). But an observer moving along with them,  \figref{fulfill}/1, would
+say they were both at rest, and would expect only an electrical interaction. This seems
+like a paradox.
+Magnetism, however, comes not to destroy relativity but to fulfill it. Magnetic interactions
+        \emph{must} exist according to the theory of relativity. To understand how this can be,
+        consider how time and space behave in relativity. Observers in different frames of reference
+        disagree about the lengths of measuring sticks and the speeds of clocks, but the laws
+        of physics are valid and self-consistent in either frame of reference.
+        Similarly, observers in different frames of reference disagree about what electric and magnetic
+        fields there are, but they agree about concrete physical events.
+        An observer in frame of reference \figref{fulfill}/1
+        says there are electric fields around the particles, and predicts that as time goes on, the
+        particles will begin to accelerate towards one another, eventually colliding. She explains the
+        collision as being due to the electrical attraction between the particles.
+        A different observer, \figref{fulfill}/2, says the particles are moving. This observer
+        also predicts that the particles will collide, but explains their motion in terms of both
+        an electric field and a magnetic field. As we'll see shortly, the
+        magnetic field is \emph{required} in order to maintain consistency between the predictions made
+        in the two frames of reference.
+        
+<% marg(100) %>
+<%
+  fig(
+    'fulfill',
+    %q{One observer sees an electric field, while the other sees both an electric field and a magnetic one.}
+  )
+%>
+\spacebetweenfigs
+<% fig(
+    'magrelativity',
+     %q{A model of a charged particle and a current-carrying wire, seen in
+        two different frames of reference. The relativistic length contraction is highly
+        exaggerated. The force on the lone particle is purely
+        magnetic in 1, and purely electric in 2.}
+   )
+%>
+<% end_marg %>
+        To see how this really works out, we need to find a nice simple example.
+        An example like figure \figref{fulfill} is \emph{not} easy
+        to handle, because in the second frame of reference, the moving charges
+        create fields that change over time at any given location, like when the V-shaped wake of a speedboat
+        washes over a buoy. Examples like
+        figure \figref{magdeflects} are easier, because there is a steady flow of charges, and
+        all the fields stay the same over time.
+        Figure \figref{magrelativity}/1 shows a simplified and idealized model of figure \figref{magdeflects}.
+        The charge by itself is like one of the charged particles
+        in the vacuum tube beam of figure \figref{magdeflects}, and instead of the wire, we have
+        two long lines of charges moving in opposite directions. Note that,
+        as discussed in discussion question \ref{dq:signsofcurrent} on page \pageref{dq:signsofcurrent},
+        the currents of the two lines of charges do not cancel out. The dark balls represent particles with
+        one type of charge, and the light balls have the other type. Because of this, the total current in
+        the ``wire'' is double what it would be if we took away one line.
+
+        As a model of figure \figref{magdeflects}, figure \figref{magrelativity}/1 is partly realistic and
+        partly unrealistic. In a real piece of copper wire, there are indeed charged particles of both types,
+        but it turns out that the particles of one type (the protons) are locked in place, while only some 
+        of the other type (the electrons) are free to move. The model also shows the particles moving in
+        a simple and orderly way, like cars on a two-lane road, whereas in reality most of the particles are
+        organized into copper atoms, and there is also a great deal of random thermal motion.
+        The model's unrealistic features aren't a
+        problem, because the point of this exercise is only to find one particular situation that shows
+        magnetic effects must exist based on relativity.
+
+        What electrical force does the lone particle in figure \figref{magrelativity}/1 feel? Since the
+        density of ``traffic'' on the two sides of the ``road'' is equal, there is zero overall
+        electrical force on the lone particle. Each ``car'' that attracts the lone particle is paired with a partner on the other
+        side of the road that repels it. If we didn't know about magnetism, we'd think this
+        was the whole story: the lone particle feels no force at all from the wire.
+
+        Figure \figref{magrelativity}/2
+        shows what we'd see if we were observing all this from a frame of reference moving
+        along with the lone charge.
+        Here's where the relativity comes in. Relativity tells us that moving objects
+        appear contracted to an observer who is not moving along with them.
+        Both lines of charge are in motion in both frames of reference, but in frame 1
+        they were moving at equal speeds, so their contractions were equal.
+        In frame 2, however, their speeds are unequal. The dark
+        charges are moving more slowly than in frame 1, so in frame 2 they are less contracted.
+        The light-colored charges are moving more quickly, so their contraction is greater now.
+        The ``cars'' on the two sides of the ``road'' are no longer paired off, so the electrical
+        forces on the lone particle no longer cancel out as they did in \figref{magrelativity}/1.
+        The lone particle is attracted to the wire, because the particles attracting it are more
+        dense than the ones repelling it. Furthermore, the attraction felt
+        by the lone charge must be purely electrical, since the lone charge is at rest in this
+        frame of reference, and magnetic effects occur only between moving charges and other
+        moving charges.
+
+        Now observers in frames 1 and 2 disagree about many things, but they do agree on
+        concrete events. Observer 2 is going to see the lone particle drift toward the wire
+        due to the wire's electrical attraction, gradually speeding up, and eventually hit
+        the wire. If 2 sees this collision, then 1 must as well. But 1 knows that the total
+        electrical force on the lone particle is exactly zero. There must be some new type
+        of force. She invents a name for this new type of force: magnetism. This was a particularly
+        simple example, because the force was purely magnetic in one frame of reference, and
+        purely electrical in another. In general, an observer in a certain frame of reference
+        will measure a mixture of electric and magnetic fields, while an observer in another
+        frame, in motion with respect to the first, says that the same volume of space contains a different mixture.
+
+<% marg(30) %>
+<% fig(
+   'magtwobody',
+   %q{Magnetic interactions involving only two particles at a time. In these figures, unlike figure
+    \figref{magrelativity}/1, there are electrical forces as well as magnetic ones. The electrical forces are
+    not shown here. Don't memorize these rules!}
+   )
+%>
+<% end_marg %>
+
+We therefore arrive at the conclusion that electric and magnetic phenomena aren't
+separate. They're different sides of the same coin. We refer to electric and magnetic interactions
+collectively as electromagnetic interactions. Our list of the fundamental interactions
+of nature now has two items on it instead of three: gravity and electromagnetism.\index{magnetism!related to electricity}\index{electromagnetism}
+
+The basic rules for magnetic attractions and repulsions, shown in figure \figref{magtwobody}, aren't
+quite as simple as the ones for gravity and electricity. Rules \figref{magtwobody}/1 and
+\figref{magtwobody}/2 follow directly from our previous analysis of figure \figref{magrelativity}.
+Rules 3 and 4 are obtained by flipping the type of charge
+that the bottom particle has. For instance, rule 3 is like rule 1, except that the bottom charge
+is now the opposite type. This turns the attraction into a repulsion. (We know that flipping the charge
+reverses the interaction, because that's the way it works for electric forces, and magnetic forces
+are just electric forces viewed in a different frame of reference.)
+
+\begin{eg}{A magnetic weathervane placed near a current.}\label{eg:weathervane}
+Figure \figref{weathervane} shows a magnetic weathervane, consisting of two charges that spin
+in circles around the axis of the arrow. (The magnetic field doesn't cause them to spin; a motor
+is needed to get them to spin in the first place.) Just like the magnetic compass in figure \figref{oersted},
+the weathervane's arrow tends to align itself in the direction perpendicular to the wire. This
+is its preferred orientation because the charge close to the wire is attracted to the
+wire, while the charge far from the wire is repelled by it.
+\end{eg}
+
+<% marg(80) %>
+<% fig(
+   'weathervane',
+   %q{Example \ref{eg:weathervane}}
+   )
+%>
+<% end_marg %>
+
+
+
+<% end_sec() %>
+<% begin_sec("Magnetic fields") %>\index{magnetism!magnetic field}\index{field!magnetic}\index{magnetic field}
+How should we define the magnetic field? When two objects attract each other gravitationally, their
+gravitational energy depends only on the distance between them, and it seems intuitively reasonable
+that we define the gravitational field arrows like a street sign that says ``this way to lower
+gravitational energy.'' The same idea works fine for the electric field. But what if two charged
+particles are interacting magnetically? Their interaction doesn't just depend on the distance, but
+also on their motions.
+
+<% marg(0) %>
+<% fig(
+     'swirly',
+     %q{The magnetic field curls around the wire in circles. At each point in space, the magnetic
+       compass shows the direction of the field.}
+     )
+%>
+<% end_marg %>
+
+We need some way to pick out some direction in space, so we can say, ``this is the direction
+of the magnetic field around here.'' A natural and simple method is to define the magnetic field's
+direction according to the direction a compass points. Starting from this definition we can, for example,
+do experiments to show that the magnetic field of a current-carrying wire forms a circular pattern,
+\figref{swirly}.
+
+But is this the right definition? Unlike the
+definitions of the gravitational and electric fields' directions, it involves a particular human-constructed
+tool. However, compare figure \figref{oersted} on page \pageref{fig:oersted} with figure
+\figref{weathervane} on page \pageref{fig:weathervane}. Note that both of these tools line themselves
+up along a line that's perpendicular to the wire. In fact, no matter how hard you try, you will never
+be able to invent any other electromagnetic device that will align itself with any other line. All you
+can do is make one that points in exactly the opposite direction, but along the same line. For instance,
+you could use paint to reverse the colors that label the ends of the magnetic compass needle, or you
+could build a weathervane just like figure \figref{weathervane}, but spinning like a left-handed screw
+instead of a right-handed one. The weathervane and the compass aren't even as different as they appear.
+Figure \figref{barmagnethanging} shows their hidden similarities.\label{arbitrarydirectionofmag}
+
+<% fig(
+   'barmagnethanging',
+   %q{1. The needle of a magnetic compass is nothing more than a bar magnet that is free to rotate in response to the earth's magnetic field.
+    2. A cartoon of the bar magnet's structure at the atomic level. Each atom is very much like the
+    weathervane of figure \figref{weathervane}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Nature is trying to tell us something: there really is something special
+about the direction the compass points. Defining the direction of the magnetic field in terms of this
+particular device isn't as arbitrary as it seems. The only arbitrariness is that we could have
+built up a whole self-consistent set of definitions that started by defining the magnetic field
+as being in the opposite direction.
+
+\begin{eg}{Head-to-tail alignment of bar magnets}\label{eg:headtotail}
+\egquestion
+If you let two bar magnets like the one in figure \figref{barmagnethanging} interact, which way do
+they want to line up, head-to-head or head-to-tail?
+
+\eganswer
+Each bar magnet contains a huge number of atoms, but that won't matter for our result; we can imagine
+this as an interaction between two individual atoms. For that matter, let's model the atoms as weathervanes
+like the one in figure \figref{weathervane}. Suppose we put two such weather vanes side by side, with their
+arrows both pointing away from us. From our point of view, they're both spinning clockwise. As one of the
+charges in the left-hand weather vane comes down on the right side, one of the charges in the right-hand
+vane comes up on the left side. These two charges are close together, so their magnetic interaction is
+very strong at this moment. Their interaction is repulsive, so this is an unstable arrangement of the two
+weathervanes.
+
+On the other hand, suppose the left-hand weathervane is pointing away from is, while its partner on the
+right is pointing toward us. From our point of view, we see the one on the right spinning counterclockwise.
+At the moment when their charges come as close as possible, they're both on the way up. Their interaction
+is attractive, so this is a stable arrangement.
+
+Translating back from our model to the original question about bar magnets, we find that bar magnets
+will tend to align themselves head-to-tail. This is easily verified by experiment.
+\end{eg}
+
+<% fig(
+   'righthandrule',
+   %q{The force on a charged particle moving through a magnetic field is
+perpendicular to both the field and its direction of motion. The relationship is right-handed for
+one type of charge, and left-handed for the other type.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+If you go back and apply this definition to all the examples we've encountered so far, you'll find
+that there's a general rule: the force on a charged particle moving through a magnetic field is
+perpendicular to both the field and its direction of motion. A force perpendicular to the direction
+of motion is exactly what is required for circular motion, so we find that a charged particle in a
+vacuum will go in a circle around the magnetic field arrows (or perhaps a corkscrew pattern, if it
+also has some motion along the direction of the field). That means that magnetic fields tend to trap
+charged particles.
+
+
+Figure \figref{circularorbit} shows this principle in action. A beam of electrons is
+created in a vacuum tube, in which a small amount of hydrogen gas has been left.
+A few of the electrons strike hydrogen molecules, creating light and letting us see
+the path of the beam. A magnetic
+field is produced by passing a current (meter) through the circular
+coils of wire in front of and behind the tube. In the bottom figure,
+with the magnetic field turned on, the force perpendicular to the
+electrons' direction of motion causes them to move in a circle.
+        
+
+<% marg(30) %>
+<%
+  fig(
+    'circularorbit','A beam of electrons circles around the magnetic field arrows.'
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Sunspots}\index{sunspots}
+Sunspots, like the one shown in the photo on page \pageref{sunspotphoto}, are places where the sun's
+magnetic field is unusually strong. Charged particles are trapped there for months at a time. This
+is enough time for the sunspot to cool down significantly, and it doesn't get heated back up because
+the hotter surrounding material is kept out by the same magnetic forces.
+\end{eg}
+
+\begin{eg}{The aurora and life on earth's surface}\index{aurora}\index{Mars!life on}
+A strong magnetic field seems to be one of the prerequisites for the existence of life on the surface
+of a planet. Energetic charged particles from the sun are trapped by our planet's
+magnetic field, and harmlessly spiral down to the earth's surface at the poles. In addition to protecting us,
+this creates the aurora, or ``northern lights.''
+
+ The astronauts who went to the moon
+were outside of the earth's protective field for about a week, and suffered significant doses of radiation
+during that time. The problem would be much more serious for astronauts on a voyage to Mars, which would
+take at least a couple of years. They would be subjected to intense radiation while in interplanetary space,
+and also while on Mars's surface, since Mars lacks a strong magnetic field.
+
+Features in one Martian rock have been interpreted by some scientists as fossilized bacteria.
+If single-celled life evolved on Mars, it has presumably been forced to stay below the surface.
+(Life on Earth probably evolved deep in the oceans, and most of the Earth's biomass consists of
+single-celled organisms in the oceans and deep underground.)
+\end{eg}
+%
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Induction",0) %>\index{induction}
+
+We've already seen that the electric and magnetic fields are closely related, since
+what one observer sees as one type of field, another observer in a different frame of
+reference sees as a mixture of both. The relationship goes even deeper than that,
+however. Figure \figref{faraday} shows an example that doesn't even involve two different
+frames of reference.
+This phenomenon of induced electric fields --- fields that are not due to
+        charges --- was a purely experimental accomplishment by Michael Faraday (1791-1867),\index{Faraday, Michael} the son of a
+        blacksmith who had to struggle against the rigid class structure of 19th century England.
+        Faraday, working in 1831, had only a vague and general idea that electricity and magnetism
+        were related to each other, based on Oersted's demonstration, a decade before,
+        that magnetic fields were caused by electric currents. 
+        
+        <% marg(83) %>
+<%
+  fig(
+    'faraday-portrait',
+    %q{Faraday on a British banknote.}
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'faraday',
+    %q{%
+      Faraday's experiment, simplified and shown with
+              modern equipment.
+    }
+  )
+%>
+<% end_marg %>
+        Figure \figref{faraday} is a simplified drawing of the experiment,
+        as described in Faraday's original paper:
+        ``Two hundred and three feet of copper wire \ldots were passed round a large block
+        of wood; [another] two hundred and three feet of similar wire were interposed
+        as a spiral between the turns of the first, and metallic contact everywhere
+        prevented by twine [insulation]. One of these [coils] was connected
+        with a galvanometer [voltmeter], and the other with a battery\ldots When the
+        contact was made, there was a sudden and very slight effect at the galvanometer,
+        and there was also a similar slight effect when the contact with the battery
+        was broken. But whilst the \ldots current was continuing to pass through the one
+        [coil], no  \ldots effect \ldots upon the other [coil] could be perceived,
+        although the active power of the battery was proved to be great, by its heating
+        the whole of its own coil [through ordinary resistive heating] \ldots''
+        
+        From Faraday's notes and publications, it appears that the situation in figure
+        \figref{faraday}/3 was a surprise to him, and he probably thought it would be
+        a surprise to his readers, as well. That's why he offered evidence that the
+        current was still flowing: to show that the battery hadn't just died.
+        The induction effect occurred during the short time it took for the black coil's
+        magnetic field to be established, \figref{faraday}/2. Even more counterintuitively,
+        we get an effect, equally strong but in the opposite direction, when the circuit
+        is \emph{broken}, \figref{faraday}/4. The effect occurs only when the magnetic field
+        is changing: either ramping up or ramping down.
+        
+        What are we really measuring here with the voltmeter? A voltmeter is nothing more than a resistor with an attachment for
+        measuring the current through it. A current will not flow through a resistor unless
+        there is some electric field pushing the electrons, so we conclude that the
+        changing \emph{magnetic field} has produced an \emph{electric field} in the
+        surrounding space. Since the white wire is not a perfect conductor, there must
+        be electric fields in it as well. The remarkable thing about the circuit formed
+        by the white wire is that as the electrons travel around and around, they are
+        always being pushed forward by electric fields. That is, the electric field seems to
+        form a curly pattern, like a whirlpool.
+
+<% marg(0) %>
+<%
+  fig(
+    'induced-field-geometry',
+    %q{%
+      The geometry of induced fields. The induced field tends to
+              form a whirlpool pattern around the change in the field producing it.
+        The notation $\Delta$ (Greek letter delta) stands for ``change in.''
+              Note how the induced fields circulate in opposite directions.
+    }
+  )
+%>
+
+<% end_marg %>
+
+What Faraday observed was an example of the following principle:
+
+\begin{important}[the principle of induction]
+Any magnetic field that changes over time will create an electric field. The induced
+electric field is perpendicular to the magnetic field, and forms a curly pattern around
+it.\\
+Any electric field that changes over time will create a magnetic field.
+The induced
+magnetic field is perpendicular to the electric field, and forms a curly pattern around
+it.
+\end{important}
+
+\noindent The first part was the one Faraday had seen in his experiment.
+The geometrical relationships are illustrated in figure \figref{induced-field-geometry}. In
+Faraday's setup, the magnetic field was pointing along the axis of the coil of wire,
+so the induced electric field made a curly pattern that circled around the circumference
+of the block.
+
+\begin{eg}{The \index{generator}generator}
+        A  basic generator, \figref{generator}, consists of a permanent magnet that
+        rotates within a coil of wire. The magnet is turned by a
+        motor or crank, (not shown). As it spins, the nearby
+        magnetic field changes. This changing magnetic field results in an
+        electric field, which has a curly pattern. This electric
+        field pattern creates a current that whips around the coils
+        of wire, and we can tap this current to light the lightbulb.
+        
+<% marg(0) %>
+<%
+  fig(
+    'generator',
+    %q{A generator.}
+  )
+%>
+<% end_marg %>
+
+        If the magnet was on a frictionless bearing, could we light the bulb
+        for free indefinitely, thus violating conservation of energy? No.
+        It's hard work to crank the magnet, and that's where
+        the energy comes from. If we break the light-bulb circuit, it suddenly
+        gets easier to crank the magnet! This is because the current in the coil
+        sets up its own magnetic field, and that field exerts a torque on the magnet.
+        If we stopped cranking, this torque would quickly make the magnet stop turning.
+\end{eg}
+
+        <% self_check('alternator',<<-'SELF_CHECK'
+        When you're driving your car, the engine recharges the
+        battery continuously using a device called an alternator,
+        which is really just a generator. Why can't you use the
+        alternator to start the engine if your car's battery is dead?
+          SELF_CHECK
+  ) %>
+
+\begin{eg}{The transformer\index{transformer}}
+        It's more efficient for the electric company to transmit
+        power over electrical lines using high voltages and low
+        currents. However, we don't want our wall sockets to operate
+        at 10000 volts! For this reason, the electric company uses a
+        device called a transformer, \figref{transformer}, to
+        convert everything to lower voltages and higher currents inside your
+        house. The coil on the input side creates a magnetic field.
+        Transformers work with alternating current (currents that reverses its
+        direction many times a second), so the magnetic
+        field surrounding the input coil is always changing. This
+        induces an electric field, which drives a current around the output coil.
+<% marg(0) %>
+<%
+  fig(
+    'transformer',
+    %q{A transformer.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'relativity-particle-in-field',
+    %q{%
+      Observer A sees a positively charged particle moves through
+              a region of upward magnetic field, which we assume to be uniform,
+              between the poles of two magnets. The resulting force along the $z$ axis
+              causes the particle's path to curve toward us.
+    }
+  )
+%>
+<% end_marg %>
+        
+        Since the electric field is curly, an electron can keep gaining more
+        and more energy by circling through it again and again. 
+        Thus the
+        output voltage can be controlled by changing the number of turns
+        of wire on the output side. 
+        In any case, conservation of energy guarantees
+        that the amount of power on the output side must equal the
+        amount  put in originally, 
+        \begin{equation*}
+          (\text{input current})\times(\text{input voltage}) = 
+          (\text{output current})\times(\text{output voltage}) 
+        \end{equation*}
+        so no matter what factor the voltage is reduced by, the current is
+        increased by the same factor.  This is analogous to a lever. A crowbar allows
+        you to lift a heavy boulder, but to move the boulder a centimeter, you may have
+        to move your end of the lever a meter. The advantage in force comes with a
+        disadvantage in distance. It's as though you were allowed to lift a small weight
+        through a large height rather than a large weight through a small height. Either way,
+        the energy you expend is the same.
+\end{eg}
+
+\begin{eg}{Fun with sparks}
+Unplug a lamp while it's turned on, and watch the area around the wall outlet. You should see
+a blue spark in the air at the moment when the prongs of the plug lose contact with the electrical
+contacts inside the socket.
+
+This is evidence that, as discussed on page \pageref{fieldenergy}, fields contain energy.
+Somewhere on your street is a transformer, one side of which is connected to the lamp's circuit.
+When the lamp is plugged in and turned on, there's a complete circuit, and current flows.
+As current flows through the coils in the transformer, a magnetic field is formed --- remember,
+any time there's moving charge, there will be magnetic fields. Because there is a large number turns
+in the coils, these fields are fairly strong, and store quite a bit of energy.
+
+When you pull the plug, the circuit is no longer complete, and the current stops. Once the current
+has disappeared, there's no more magnetic field, which means that some energy has disappeared.
+Conservation of energy tells us that if a certain amount of energy disappears, an equal amount
+must reappear somewhere else. That energy goes into making the spark. (Once the spark is gone,
+its energy remains in the form of heat in the air.)
+\end{eg}
+
+We now have two connections between electric and magnetic fields. One is the principle of 
+induction, and the other is the idea that according to relativity, observers in different frames
+of reference must perceive different mixtures of magnetic and electric fields.
+At the time Faraday was working, relativity was still 70 years in the future, so the relativistic
+concepts weren't available  --- to him, his observations were just
+surprising empirical facts. But in fact, the relativistic idea about frames of reference
+has a logical connection to the idea of induction. 
+
+Figure \figref{relativity-particle-in-field} is a nice example that can be interpreted either
+way. Observer A is at rest with respect
+to the bar magnets, and sees the particle swerving off in
+the $z$ direction, as it should according to the right-hand rule.
+Suppose observer B, on the other hand, is moving
+to the right along the $x$ axis, initially at the same speed
+as the particle. B sees the bar magnets moving to the left
+and the particle initially at rest but then accelerating
+along the $z$ axis in a straight line. It is not possible
+for a magnetic field to start a particle moving if it is
+initially at rest, since magnetism is an interaction of
+moving charges with moving charges. B is thus led to the
+inescapable conclusion that there is an electric field in
+this region of space, which points along the $z$ axis. In
+other words, what A perceives as a pure magnetic field, B sees
+as a mixture of electric and magnetic fields. This is what we
+expect based on the relativistic arguments, but it's also
+what's required by the principle of induction. In B's frame of reference,
+there's initially no magnetic field, but then a couple of bar magnets
+come barging in and create one. This is a change in the magnetic field,
+so the principle of induction predicts that there must be an electric
+field as well.
+
+<% marg(0) %>
+<%
+  fig(
+    'young-maxwell',
+    %q{James Clerk Maxwell (1831-1879)}
+  )
+%>
+<% end_marg %>
+<% begin_sec("Electromagnetic waves") %>\index{electromagnetism!waves}\index{Maxwell, James Clerk}
+        Theorist James Clerk Maxwell was the first to work out the principle of induction (including
+        the detailed numerical and geometric relationships, which we won't go into here).
+        Legend has it that
+         it was on a starry night that he first realized the most important implication of his equations:
+        light itself is an electromagnetic wave, a ripple spreading outward from a disturbance
+        in the electric and magnetic fields.
+         He went for a walk with his wife, and told her she was the only other person in
+         the world who really knew what starlight
+        was.\index{Maxwell, James Clerk}\index{wave!electromagnetic}\index{light!as an electromagnetic wave}
+
+
+        The principle of induction tells us that there can be no such thing as a purely electric or
+        purely magnetic wave. As an electric wave washes over you, you feel an electric field that
+        changes over time. By the principle of induction, there must also be a magnetic field
+        accompanying it. It works the other way, too. It may seem a little spooky that the electric
+        field causes the magnetic field while the magnetic field causes the electric field, but the
+        waves themselves don't seem to worry about it.
+
+         The distance from one ripple to the next
+        is called the wavelength of the light.\index{wavelength} Light with a certain wavelength
+        (about quarter a millionth of a meter) is at the violet end of the rainbow spectrum, while
+        light with a somewhat longer wavelength (about twice as long) is red.
+        Figure \subfigref{em-spectrum}{1} shows the complete spectrum of light waves.
+        Maxwell's equations predict that all light waves have the same structure,
+        regardless of wavelength and frequency, so even though radio and x-rays, for example,
+        hadn't been discovered, Maxwell predicted that such waves would have to exist.
+        Maxwell's 1865 prediction passed an important test in 1888, when
+        Heinrich Hertz\index{Hertz, Heinrich} published the results of experiments in which he showed
+        that radio waves could be manipulated in the same ways as visible light waves. Hertz
+        showed, for example, that radio waves could be reflected from a flat surface, and
+        that the directions of the reflected and incoming waves were related in the same
+        way as with light waves, forming equal angles with the normal. Likewise,
+        light waves can be focused with a curved, dish-shaped mirror, and Hertz demonstrated
+        the same thing with radio waves using a metal dish.
+
+<% fig(
+      'em-spectrum',
+      %q{     Panel \textbf{1} shows the electromagnetic spectrum.
+           \qquad Panel \textbf{2} shows how an electromagnetic wave is put together.
+           Imagine that this is a radio wave, with a wavelength of a few meters. If you were standing inside
+           the wave as it passed through you, you could theoretically hold a compass in your hand, and it would wiggle back
+           and forth as the magnetic field pattern (white arrows) washed over you. 
+           (The vibration would actually be much to rapid to detect this way.) Similarly, you'd experience
+           an electric field alternating between up and down.
+           \qquad Panel \textbf{3} shows how this relates to the principle of induction. The changing electric field (black arrows) should
+           create a curly magnetic field (white). Is it really curly? Yes, because if we inserted a paddlewheel that
+           responded to electric fields, the field would make the paddlewheel spin counterclockwise as seen from above. Similarly, the
+           changing magnetic field (white) makes an electric field (black) that curls in the clockwise direction as seen from the front.%
+        },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+\index{electromagnetism!spectrum}
+
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_hw_sec %>
+
+<% begin_hw('magtimereversal') %>__incl(hw/magtimereversal)<% end_hw() %>
+
+<% begin_hw('forcebetweencurrents') %>__incl(hw/forcebetweencurrents)<% end_hw() %>
+
+<% begin_hw('feynmanantimatterbackintime') %>__incl(hw/feynmanantimatterbackintime)<% end_hw() %>
+
+<% begin_hw('analyzecircularorbit') %>__incl(hw/analyzecircularorbit)<% end_hw() %>
+
+<% begin_hw('microscopy') %>__incl(hw/microscopy)<% end_hw() %>
+
+<% marg(0) %>
+<% fig('standing-waves','Stationary wave patterns on a clothesline (problem \ref{hw:microwave-oven}).') %>
+<% end_marg %>
+<% begin_hw('microwave-oven') %>__incl(hw/microwave-oven)<% end_hw() %>
+
+<% begin_hw('correspondence-principle-with-light') %>__incl(hw/correspondence-principle-with-light)<% end_hw() %>
+<% end_hw_sec %>
+<% end_chapter() %>

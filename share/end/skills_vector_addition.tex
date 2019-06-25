@@ -1,0 +1,39 @@
+__subsection_or_section(vector-addition), p.~__pageref_subsection_or_section(vector-addition)
+
+Example:
+The $\Delta\vc{r}$ vector from San Diego to Los Angeles has magnitude 190 km and direction 129\degunit counterclockwise from east.
+The one from LA to Las Vegas is 370 km at 38\degunit counterclockwise from east. Find the distance and direction from
+San Diego to Las Vegas.
+
+\eganswer
+Graphical addition is discussed on p.~\pageref{subsec:vector-addition-graphical}. Here we concentrate on analytic addition,
+which involves adding the $x$ components to find the total $x$ component, and similarly for $y$. The trig needed in order
+to find the components of the second leg (LA to Vegas) is laid out in figure \figref{eg-la-vegas} on p.~\pageref{fig:eg-la-vegas} and explained in detail
+in example \ref{eg:la-vegas-components} on p.~\pageref{eg:la-vegas-components}:
+\begin{align*}
+  \Delta x_2 &= (370\ \zu{km})\cos 38\degunit = 292\ \zu{km} \\
+  \Delta y_2 &= (370\ \zu{km})\sin 38\degunit = 228\ \zu{km} 
+\end{align*}
+(Since these are intermediate results, we keep an extra sig fig to avoid accumulating too much rounding error.)
+Once we understand the trig for one example, we don't need to reinvent the wheel every time. The pattern is completely universal,
+provided that we first make sure to get the angle expressed according to the usual trig convention, counterclockwise from the $x$ axis.
+Applying the pattern to the first leg, we have:
+\begin{align*}
+  \Delta x_1 &= (190\ \zu{km})\cos 129\degunit = -120\ \zu{km} \\
+  \Delta y_1 &= (190\ \zu{km})\sin 129\degunit = 148\ \zu{km} 
+\end{align*}
+For the vector directly from San Diego to Las Vegas, we have
+\begin{align*}
+  \Delta x &= \Delta x_1 +  \Delta x_2 = 172\ \zu{km}\\
+  \Delta y &= \Delta y_1 +  \Delta y_2 = 376\ \zu{km}\eqquad.
+\end{align*}
+The distance from San Diego to Las Vegas is found using the Pythagorean theorem,
+\begin{equation*}
+  \sqrt{(172\ \zu{km})^2+(376\ \zu{km})^2} = 410\ \zu{km}
+\end{equation*}
+(rounded to two sig figs because it's one of our final results). The direction
+is one of the two possible values of the inverse tangent
+\begin{equation*}
+  \tan^{-1} (\Delta y/\Delta x) = \{65\degunit,245\degunit\}\eqquad.
+\end{equation*}
+Consulting a sketch shows that the first of these values is the correct one.\label{end-skills}

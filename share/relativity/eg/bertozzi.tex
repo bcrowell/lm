@@ -1,0 +1,39 @@
+<% marg(m4_ifelse(__sn,1,[:300:],m4_ifelse(__fac,1,[:300:],[:-6:]))) %>
+<%
+  fig(
+    'electrons-limiting-speed',
+    %q{Example \ref{eg:bertozzi-graph}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Push as hard as you like \ldots}\label{eg:bertozzi-graph}
+We don't have to depend on our imaginations to see what would happen if we kept on applying
+a force to an object indefinitely and tried to accelerate it past $c$.
+A nice experiment of this type was done by Bertozzi in 1964.
+In this experiment, electrons were accelerated by an electric field $E$ through a distance
+$\ell_1$.
+Applying Newton's laws
+gives Newtonian predictions $a_N$ for the acceleration and $t_N$ for the time 
+required.\footnote{Newton's second law gives
+$a_N=F/m=eE/m$. The constant-acceleration
+equation $\Delta x=(1/2)at^2$ then gives $t_N=\sqrt{2m\ell_1/eE}$.}
+
+The electrons were then allowed to fly down a pipe for a further distance $\ell_2=8.4\ \munit$
+without being acted on by any force. The time of flight $t_2$ for this second distance
+was used to find the final
+velocity $v=\ell_2/t_2$ to which they had actually been accelerated.
+
+Figure \figref{electrons-limiting-speed} shows the results.\footnote{To make the
+low-energy portion of the graph legible, Bertozzi's highest-energy
+data point is omitted.}
+According to Newton, an acceleration $a_N$ acting for a time $t_N$ should produce a final velocity
+$a_N t_N$. The solid line in the
+graph shows the prediction of Newton's laws, which is that a constant force exerted steadily over
+time will produce a velocity that rises linearly and without limit.
+
+The experimental data, shown as black dots, clearly tell a different story. The velocity never goes
+above a certain maximum value,
+which we identify as $c$. The dashed line shows the predictions of special relativity, which
+are in good agreement with the experimental results.
+\end{eg}

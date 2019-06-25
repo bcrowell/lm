@@ -1,0 +1,1040 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '01',
+    %q{Conservation of Mass},
+    'ch:1',
+    %q{The universe has been recycling its contents ever since the Big Bang, 13.7 billion years ago.},
+    {'opener'=>'galaxies','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+\renewcommand{\mygamma}{\gamma} % For mysterious reasons, defining it as \textup{\textgamma}, as I do in other books, doesn't work.
+
+\epigraphlong{It took just a moment for that head to fall, but a hundred years might
+not produce another like it.}{Joseph-Louis Lagrange, referring to the execution of
+La\-voi\-si\-er on May 8, 1794}
+\index{Lagrange, Joseph-Louis}\index{Lavoisier, Pierre-Andr\'e!execution}
+
+ % ========================= 1.1 ============================== 
+
+<% begin_sec("Mass",0) %>
+
+        Change is impossible, claimed the ancient Greek philosopher 
+        Parmenides.\index{Parmenides} 
+        His work was nonscientific, since he didn't state his ideas in a form that
+        would allow them to be tested experimentally, but modern science nevertheless
+        has a strong Parmenidean flavor. His main argument that change is an illusion
+        was that something can't be turned into nothing, and likewise if you have nothing, you can't
+        turn it into something. To make this into a scientific theory, we have to decide on
+        a way to measure what ``something'' is, and we can then check by measurements
+        whether the total amount of ``something'' in the universe really stays constant.
+        How much ``something'' is there in a rock? Does a sunbeam count as ``something?''
+        Does heat count? Motion? Thoughts and feelings?
+%---------------------------------------- lavoisier & wife
+
+<% marg(100) %>
+<%
+  fig(
+    'lavoisier',
+    %q{%
+      Portrait of Monsieur Lavoisier and His Wife,
+              by Jacques-Louis David, 1788.
+              Lavoisier invented the 
+              concept of conservation of mass.
+              The husband is depicted with his scientific apparatus, while in the background
+              on the left is the portfolio belonging to Madame Lavoisier, who is thought to have
+              been a student of David's.  
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'gravitational-mass',
+    %q{%
+      A measurement of gravitational mass: the sphere has a gravitational mass of five kilograms.
+    }
+  )
+%>
+<% end_marg %>
+
+If you look at the table of contents of this book, you'll see that the first
+four chapters have the word ``conservation'' in them.
+In physics, a conservation law\index{conservation law} 
+is a statement that the total amount of a certain physical quantity always stays the
+same. This chapter is about conservation of mass.\index{mass!conservation of} 
+ The metric system\index{metric system} is designed around a unit of distance,
+the meter,\index{meter (unit)} a unit of mass, the kilogram,\index{kilogram}  and a time unit, the
+second.\index{second (unit)} Numerical measurement of distance and time probably date back almost
+as far into prehistory as counting money, but mass is a more modern concept. Until
+scientists figured out that mass was conserved, it wasn't obvious that there could be
+a single, consistent way of measuring an amount of matter, hence jiggers of whiskey
+and cords of wood. You may wonder why conservation of mass wasn't discovered
+until relatively modern times, but it wasn't obvious, for example, that gases had
+mass, and that the apparent loss of mass when wood was burned was exactly
+matched by the mass of the escaping gases.
+
+Once scientists were on the track of
+the conservation of mass concept, they began looking for a way to define mass
+in terms of a definite measuring procedure. If they tried such a procedure, and the
+result was that it led to nonconservation of mass, then they would throw it out and
+try a different procedure. For instance, we might be tempted to define mass using
+kitchen measuring cups, i.e., as a measure of volume. Mass would then be perfectly
+conserved for a process like mixing marbles with peanut butter, but there would be
+processes like freezing water that led to a net increase in mass, and others like soaking
+up water with a sponge that caused a decrease. If, with the benefit of hindsight, it seems
+like the measuring cup definition was just plain silly, then here's a more subtle example
+of a wrong definition of mass. Suppose we define it using a bathroom scale, or a more
+precise device such as a postal scale that works on the same principle of using
+gravity to compress or twist a spring. The trouble
+is that gravity is not equally strong all over the surface of the earth, so 
+for instance there would
+be nonconservation of mass when you brought an object up to the top of a mountain,
+where gravity is a little weaker.
+
+Although some of the obvious possibilities have problems, there do turn out to be at least two approaches to defining mass that lead to its being
+a conserved quantity, so we consider these definitions to be ``right'' in the pragmatic
+sense that what's correct is what's useful.
+
+One definition that works is to use balances, but compensate for the local strength of gravity.
+This is the method that is used by scientists
+who actually specialize in ultraprecise measurements. A standard
+kilogram,\index{kilogram!standard} in the form
+of a platinum-iridium cylinder, is kept in a special shrine in Paris. Copies are made that
+balance against the standard kilogram in Parisian gravity, and they are
+then transported to laboratories in
+other parts of the world, where they are compared with other masses in the local
+gravity. The quantity defined in this way is
+called \emph{gravitational mass}.\index{mass!gravitational}
+
+\enlargethispage{-\baselineskip}
+
+A second and completely different approach is to measure how hard it is to
+change an object's state of motion. This
+tells us its \emph{inertial mass}.\index{mass!inertial}
+For example, I'd be more willing to stand in the way of an oncoming poodle
+than in the path of a freight train,
+because my body will have a harder time convincing the freight train to stop.
+This is a dictionary-style conceptual definition,\index{definitions!conceptual}
+but in physics we need to back
+up a conceptual definition with an operational definition,\index{definitions!operational}
+which is one that spells
+out the operations required in order to measure the quantity being defined.
+We can operationalize our definition of inertial mass by
+throwing a standard kilogram at an object
+at a speed of 1 m/s (one meter per second) and measuring the recoiling object's
+velocity. Suppose we want to measure the mass of a particular
+block of cement. We put the block in a toy wagon on the sidewalk, and throw
+a standard kilogram at it. Suppose the standard kilogram hits the wagon,
+and then drops straight
+down to the sidewalk, having lost all its velocity, and the wagon and the block inside
+recoil at a velocity of 0.23 m/s. We then repeat the experiment with the block
+replaced by various numbers of standard kilograms, and find that we can reproduce
+the recoil velocity of 0.23 m/s with four standard kilograms in the wagon. We have
+determined the mass of the block to be four kilograms.\footnote{You might think intuitively
+that the recoil velocity should be exactly one fourth of a meter per second, and
+you'd be right except that the wagon has some mass as well. Our present approach, however,
+only requires that we give a way to test for equality of masses. To predict the recoil
+velocity from scratch, we'd need to use conservation of momentum, which is discussed
+in a later chapter.} Although this
+definition of inertial mass has an appealing conceptual simplicity, it is obviously
+not very practical, at least in this crude form. Nevertheless, this method of collision is very
+much like the methods used for measuring the masses of
+subatomic particles, which, after all, can't be put on little postal scales!
+
+<% marg(140) %>
+<%
+  fig(
+    'inertial-mass',
+    %q{%
+      A measurement of inertial mass: the wagon recoils with the same velocity in experiments 1 and 2, establishing that the
+      inertial mass of the cement block is four kilograms.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'mass_on_spring',
+    %q{%
+      The time for one cycle of vibration is related to the object's 
+                      inertial mass.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'bodymass',
+    %q{%
+      Astronaut Tam\-ara Jer\-nigan measures her inertial mass
+                      aboard the Space Shuttle.
+    }
+  )
+%>
+%
+
+<% end_marg %>
+
+Astronauts spending long periods
+of time in space need to monitor their loss of bone and muscle mass, and here as well,
+it's impossible to measure gravitational mass. Since they don't want to have standard
+kilograms thrown at them, they use a slightly different technique 
+(figures \figref{mass_on_spring} and \figref{bodymass}).
+They strap themselves
+to a chair which is attached to a large spring, and measure the time it takes for one
+cycle of vibration. 
+
+\enlargethispage{-\baselineskip}
+
+<% begin_sec("Problem-solving techniques") %>
+
+How do we use a conservation law, such as conservation of mass, to solve problems?
+There are two basic techniques.
+
+As an analogy, consider conservation of money,
+which makes it illegal for you to create dollar bills using your
+own inkjet printer. (Most people don't intentionally destroy their dollar bills, either!)
+Suppose the police notice that a particular store doesn't seem to have any customers,
+but the owner wears lots of gold jewelry and drives a BMW. They suspect that the store
+is a front for some kind of crime, perhaps counterfeiting. With intensive surveillance,
+there are two basic approaches they could use in their investigation. One method would
+be to have undercover agents try to find out how much money goes in the door, and how
+much money comes back out at the end of the day, perhaps by arranging through some
+trick to get access to the owner's briefcase in the morning and evening. If the amount
+of money that comes out every day is greater than the amount that went in, and if
+they're convinced there is no safe on the premises holding a large reservoir of money,
+then the owner must be counterfeiting.
+This inflow-equals-outflow technique is useful if we are sure that there is a region of
+space within which there is no supply of mass that is being built up or depleted.
+
+<% marg(0) %>
+<%
+  fig(
+    'faucet',
+    %q{Example \ref{eg:faucet}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A stream of water}\label{eg:faucet}
+If you watch water flowing out of the end of a hose,
+you'll see that the stream
+of water is fatter near the mouth of the hose, and skinnier lower down. This is because the
+water speeds up as it falls. If the cross-sectional area of the stream was equal all along
+its length, then the rate of flow (kilograms per second) through a lower cross-section
+would be greater than the rate of flow through a cross-section higher up. Since the flow
+is steady, the amount of water between the two cross-sections stays constant. Conservation
+of mass therefore requires that the cross-sectional area of the stream shrink in inverse
+proportion to the increasing speed of the falling water.
+\end{eg}
+
+        
+<% self_check('hoseup',<<-'SELF_CHECK'
+Suppose the you point the hose straight up, so that the water is rising
+        rather than falling. What happens as the velocity gets smaller?
+        What happens when the velocity becomes zero?
+  SELF_CHECK
+  ) %>
+
+How can we apply a conservation law, such as conservation of mass, 
+in a situation where mass might be stored up somewhere?
+To use a crime analogy again, a prison could contain a certain number of prisoners,
+who are not allowed to flow in or out at will. In physics, this is known
+as a \emph{closed system}\index{system!closed}\index{closed system}.
+A guard might notice that a certain
+prisoner's cell is empty, but that doesn't mean he's escaped. He could be sick
+in the infirmary, or hard at work in the shop 
+earning cigarette money. What prisons actually do
+is to count all their prisoners every day, and make sure today's total is the same
+as yesterday's. One way of stating a conservation law is that for a closed system,
+the total amount of stuff (mass, in this chapter) stays constant.
+
+\begin{eg}{Lavoisier and chemical reactions in a closed system}
+The French chemist
+Antoine-Laurent Lavoisier\index{Lavoisier, Pierre-Andr\'e!conservation of mass}
+is considered the inventor of
+the concept of conservation of mass. Before Lavoisier, chemists had never systematically
+weighed their chemicals to quantify the amount of each substance that was undergoing
+reactions. They also didn't completely understand that gases were just another
+state of matter, and hadn't tried performing reactions in sealed chambers to determine
+whether gases were being consumed from or released into the air. For this they had at least one
+practical excuse, which is that if you perform a gas-releasing reaction in a sealed chamber
+with no room for expansion, you get an explosion! Lavoisier invented a balance that was capable
+of measuring milligram masses, and figured out how to do reactions in an upside-down
+bowl in a basin of water, so that the gases could expand by pushing out some of the water.
+In a crucial experiment, Lavoisier heated a red mercury compound, which we would now
+describe as mercury oxide (HgO), in such a sealed chamber.
+A gas was produced (Lavoisier later named
+it ``oxygen''), driving out some of the water, and the red compound was transformed into
+silvery liquid mercury metal. The crucial point was that the total mass of the entire
+apparatus was exactly the same before and after the reaction. Based on many observations
+of this type, Lavoisier proposed a general law of nature, that mass is always conserved.
+(In earlier experiments, in which closed systems were not used, chemists had become
+convinced that there was a mysterious substance, phlogiston, involved in
+combustion and oxidation
+reactions, and that phlogiston's mass could be positive, negative, or zero depending on
+the situation!)
+\end{eg}
+
+
+
+<% end_sec() %>
+
+<% begin_sec("Delta notation") %>
+
+A convenient notation used throughout physics is $\Delta$, the uppercase Greek
+letter delta, which indicates ``change in'' or ``after minus before.'' For example,
+if $b$ represents how much money you have in the bank, then a deposit of
+\$100 could be represented as $\Delta{}b=\$100$. That is, the change in your
+balance was \$100, or the balance after the transaction minus the balance before
+the transaction equals \$100. A withdrawal would be indicated by $\Delta{}b<0$.
+We represent ``before'' and ``after'' using the subscripts $i$ (initial) and
+$f$ (final), e.g., $\Delta{}b=b_f-b_i$. Often the delta notation allows more precision
+than English words. For instance, ``time'' can be used to mean a point in time
+(``now's the time''), $t$, or it could mean a period of time
+(``the whole time, he had spit on his chin''), $\Delta{}t$.
+
+This notation is particularly convenient for discussing conserved quantities.
+The law of conservation of mass can be stated simply as $\Delta{}m=0$,
+where $m$ is the total mass of any closed system.
+
+<% self_check('dxsign',<<-'SELF_CHECK'
+If $x$ represents the location of an object moving in one
+        dimension, then how would positive and negative signs of $\Delta{}x$
+        be interpreted?
+  SELF_CHECK
+  ) %>
+
+\startdqs
+
+\begin{dq}
+ If an object had a straight-line $x-t$ graph with
+$\Delta x=0$ and $\Delta t\ne0$, what would be true about its
+velocity?  What would this look like on a graph? What about
+$\Delta t=0$ and $\Delta x\ne0$?
+\end{dq}
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Equivalence of gravitational and inertial mass") %>
+\label{gravinersection}
+        We find experimentally that both gravitational and inertial mass are conserved to a
+        high degree of precision for a great number of processes, including chemical
+        reactions, melting, boiling, soaking up water with a sponge, and rotting of meat
+        and vegetables.  Now it's logically possible that both gravitational and inertial mass
+        are conserved, but that there is no particular relationship between them, in which case
+        we would say that they are separately conserved. On the other hand, the two
+        conservation laws may be redundant,
+        like having one law against murder and another law against killing people!
+
+<% marg(100) %>
+<%
+  fig(
+    'pendula',
+    %q{%
+      The two pendulum bobs are constructed with equal
+                      gravitational masses. If their inertial masses are also equal, then
+                      each pendulum should take exactly the same amount of time per swing.
+    }
+  )
+%>
+
+        \spacebetweenfigs
+        %
+
+<%
+  fig(
+    'roll',
+    %q{%
+      If the cylinders have slightly unequal ratios of inertial to gravitational mass,
+                      their trajectories will be a little different.
+    }
+  )
+%>
+
+        \spacebetweenfigs
+         %
+
+<%
+  fig(
+    'eotvos',
+    %q{%
+      A simplified drawing of an E\"otv\"os-style experiment.
+                       If the two masses, made out of two different substances, have slightly
+                      different ratios of inertial to gravitational mass, then the apparatus
+                      will twist slightly as the earth spins.
+    }
+  )
+%>
+<% end_marg %>
+
+Here's an experiment that gets at the issue: stand up now and
+drop a coin and one of your shoes side by
+side. I used a 400-gram shoe and a 2-gram penny, and they hit the floor at
+the same time as far as I could tell by eye. This is an interesting result, but
+a physicist and an ordinary person will find it interesting for different
+reasons.
+
+The layperson is surprised, since it would seem logical that heaver objects
+would always fall faster than light ones. However,
+it's fairly easy to prove that if air friction is negligible, any two objects
+made of the same substance must have identical motion when they fall. For
+instance, a 2-kg copper mass must exhibit the same falling motion as a 1-kg
+copper mass, because nothing would be changed by physically joining
+together two 1-kg copper masses to make a single 2-kg copper mass. Suppose,
+for example, that they are joined with a dab of glue; the glue isn't under any
+strain, because the two masses are doing the same thing side by side. Since the
+glue isn't really doing anything, it makes no difference whether the masses fall
+separately or side by side.\footnote{The argument only fails for objects light enough to
+be affected appreciably by air friction: a bunch of feathers falls differently if
+you wad them up because the pattern of air flow is altered by putting them
+together.}
+
+What a physicist finds remarkable about the shoe-and-penny experiment is that 
+it came out the way it did even though the shoe and the penny are made of
+\emph{different} substances. There is absolutely no theoretical reason why this
+should be true. We could say that it happens because the greater gravitational
+mass of the shoe is exactly counteracted by its greater inertial mass, which
+makes it harder for gravity to get it moving, but that just leaves us wondering
+why inertial mass and gravitational mass are always in proportion to each
+other. It's possible that they are
+only approximately equivalent. Most of the mass of ordinary matter comes
+from neutrons and protons, and we could imagine, for instance,
+that neutrons and protons do not
+have exactly the same ratio of gravitational to inertial mass. This would show
+up as a different ratio of gravitational to inertial mass for substances containing
+different proportions of neutrons and protons.
+
+Galileo\index{Galileo!inertial and gravitational mass} did the first numerical
+experiments on this issue in the seventeenth century by rolling balls down
+inclined planes, although he didn't think about his results in these terms. A fairly
+easy way to improve on Galileo's accuracy is to use pendulums with bobs
+made of different materials. Suppose, for example, that we construct an
+aluminum bob and a brass bob, and use a double-pan balance to verify to
+good precision that their gravitational masses are equal. If we then measure
+the time required for each pendulum to perform a hundred cycles, we can
+check whether the results are the same. If their inertial masses are unequal,
+then the one with a smaller inertial mass will go through each cycle faster,
+since gravity has an easier time accelerating and decelerating it. With this
+type of experiment, one can easily verify that gravitational and inertial mass
+are proportional to each other to an accuracy of $10^{-3}$ or $10^{-4}$.
+
+<% marg(70) %>
+<%
+  fig(
+    'braginskii',
+    %q{%
+      A more realistic drawing of Braginskii and Panov's experiment.
+                      The whole thing was encased in a tall vacuum tube, which was placed in a
+                      sealed basement whose temperature was controlled to within 0.02\degcunit.
+                      The total mass of the platinum and aluminum test masses, plus the tungsten
+                      wire and the balance arms, was only 4.4 g. To detect tiny motions, a laser
+                      beam was bounced off of a mirror attached to the wire. There was so little
+                      friction that the balance would have taken on the order of several years
+                      to calm down completely after being put in place; to stop these vibrations,
+                      static electrical forces were applied through the two circular plates to provide
+                      very gentle twists on the ellipsoidal mass between them. After Braginskii
+                      and Panov.
+
+    }
+  )
+%>
+<% end_marg %>
+
+In 1889, the Hungarian physicist Roland E\"otv\"os\index{E\"otv\"os, Roland}
+used a slightly different approach to verify the equivalence        of gravitational and inertial mass for various
+substances to an accuracy of about $10^{-8}$, and the best such
+experiment, figure \figref{braginskii},
+improved on even this phenomenal accuracy, bringing it to the $10^{-12}$         level.\footnote{V.B. Braginskii and V.I. Panov, Soviet Physics JETP 34, 463 (1972).}
+In all the experiments described so far, the two objects move along similar
+trajectories: straight lines in the penny-and-shoe and inclined plane
+experiments, and circular arcs in the pendulum version. The
+E\"otv\"os-style experiment looks for differences in the objects' trajectories.
+The concept can be understood by imagining
+the following simplified version. Suppose, as in figure \figref{roll},
+ we roll a brass cylinder off of a tabletop
+and measure where it hits the floor, and then do the same with an aluminum
+cylinder, making sure that both of them go over the edge with precisely the
+same velocity. An object with zero gravitational mass would fly off straight
+and hit the wall, while an object with zero inertial mass would make a sudden
+90-degree turn and drop straight to the floor. If the aluminum and brass cylinders
+have ordinary, but slightly unequal, ratios of gravitational to inertial mass, then
+they will follow trajectories that are just slightly different. In other words, if
+inertial and gravitational mass are not exactly proportional to each other for
+all substances, then objects made of different substances will have different
+trajectories in the presence of gravity.
+
+A simplified drawing of a practical, high-precision experiment is shown in figure
+\figref{eotvos}. Two objects made of different substances are
+balanced on the ends of a bar, which is suspended at the
+center from a thin fiber. The whole apparatus moves
+through space on a complicated, looping trajectory arising from the rotation of the earth
+superimposed on the earth's orbital motion around the sun. Both the earth's gravity
+and the sun's gravity act on the two objects. If their inertial masses are
+not exactly in proportion to their gravitational masses, then they will follow slightly
+different trajectories through space, which will result in a very slight twisting
+of the fiber between the daytime, when the sun's gravity is pulling upward,
+and the night, when the sun's gravity is downward. Figure \figref{braginskii}
+shows a more realistic picture of the apparatus.
+
+This type of experiment, in which one expects a null result, is a tough way to
+make a career as a scientist. If your measurement comes out as expected, but with
+better accuracy than other people had previously achieved, your result is publishable,
+but won't be considered earthshattering. On the other hand, if you build the most
+sensitive experiment ever, and the result comes out contrary to expectations, you're
+in a scary situation. You could be right, and earn a place in history, but if the result
+turns out to be due to a defect in your experiment, then you've made a fool of yourself.
+
+<% end_sec() %>
+
+<% begin_sec("Galilean relativity",nil,'galileanrelativity') %>
+
+<% marg() %>
+
+<%
+  fig(
+    'galileo',
+    %q{Galileo Galilei (1564-1642).}
+  )
+%>
+<% end_marg %>
+
+\index{Galileo!Galilean relativity}\index{relativity!Galilean}
+I defined inertial mass conceptually as a measure of how hard it is to
+\emph{change} an object's state of motion, the implication being that if you
+don't interfere, the object's motion won't change. Most people, however, believe
+that objects in motion have a natural tendency to slow down. Suppose I push my
+refrigerator to the west for a while at 0.1 m/s, and then stop pushing. The average
+person would say fridge just naturally stopped moving, but let's imagine how
+someone in China would describe the fridge experiment carried out in my house here
+in California. Due to the rotation of the earth, California is moving to the east
+at about 400 m/s. A point in China at the same latitude has the same speed,
+but since China is on the other side of the planet, China's east is my west. (If you're
+finding the three-dimensional visualization difficult, just think of China and
+California
+as two freight trains that go past each other, each traveling at 400 m/s.)
+If I insist on thinking of my dirt as being stationary, then China and its dirt are moving
+at 800 m/s to my west. From China's point of view, however, it's California that is
+moving 800 m/s in the opposite direction (my east). When I'm pushing the fridge
+to the west at 0.1 m/s, the observer in China describes its speed as 799.9 m/s.
+Once I stop pushing, the fridge speeds back up to 800 m/s. From my point of view,
+the fridge ``naturally'' slowed down when I stopped
+pushing, but according to the
+observer in China, it ``naturally'' sped up!
+
+What's really happening here is that there's a tendency, due to friction,
+for the fridge to stop moving \emph{relative to the floor}.
+In general, only relative motion has physical
+significance in physics, not absolute motion. It's not even possible to define
+absolute motion, since there is no special reference point in the universe that
+everyone can agree is at rest. Of course if we want to measure motion, we do have
+to pick some arbitrary reference point which we will say is standing still, and we
+can then define $x$, $y$, and $z$ coordinates extending out from that point,
+which we can define as having $x=0$, $y=0$, $z=0$. Setting up such a system
+is known as choosing a
+\emph{frame of reference}.\index{frame of reference} The local dirt
+is a natural frame of reference for describing a game of basketball, but if the game
+was taking place on the deck of a moving ocean liner, we would probably pick a frame
+of reference in which the deck was at rest, and the land was moving.
+
+<% marg() %>
+
+<%
+  fig(
+    'shanghai-and-anaheim',
+    %q{%
+      The earth spins. People in Shanghai say they're at rest and
+      people in Los Angeles are moving. Angelenos say the same about the Shanghainese.
+    }
+  )
+%>
+<% end_marg %>
+
+Galileo was the first scientist to reason along these lines, and we now use
+the term Galilean relativity to refer to a somewhat modernized
+version of his principle. Roughly speaking, the principle of Galilean relativity states that the
+same laws of physics apply in any frame of reference that is moving in a straight
+line at constant speed. We need to refine this statement, however, since it is
+not necessarily obvious which frames of reference are going in a straight line at
+constant speed. A person in a pickup truck pulling away from a stoplight could admit that the
+car's velocity is changing, or she could insist that the truck is at rest, and the
+meter on the dashboard is going up because the asphalt picked that moment to start
+moving faster and faster backward! Frames of reference are not all created equal,
+however, and the accelerating truck's frame of reference is not as good as the
+asphalt's. We can tell, because a bowling ball in the back of the truck, as in figure \figref{truck}, appears to
+behave strangely in the driver's frame of reference: in her rear-view mirror, she
+sees the ball, initially at rest, start moving faster and faster toward the back of
+the truck. This goofy behavior is evidence that there is something wrong with her
+frame of reference. A person on the sidewalk, however, sees the ball as standing still.
+In the sidewalk's frame of reference, the truck pulls away from the ball, and this
+makes sense, because the truck is burning gas and using up energy to change its state
+of motion.
+
+We therefore define an \emph{inertial frame of
+reference}\index{frame of reference!inertial}\index{inertial frame of reference}
+as one in which we never see objects change their state of
+motion without any apparent reason. The sidewalk is a pretty good inertial frame, and
+a car moving relative to the sidewalk at constant speed in a straight line defines
+a pretty good inertial frame, but a car that is accelerating or turning is not
+a inertial frame. 
+
+<%
+  fig(
+    'truck',
+    %q{%
+      %
+                      Left: In a frame of reference that speeds up with
+                      the truck, the bowling ball appears to change its state
+                      of motion for no reason.
+                      Right: In an inertial frame of reference, which the surface of the earth
+                      approximately is, the bowling ball stands still, which makes sense 
+                      because there is nothing that would cause it to change
+                      its state of motion.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The principle of Galilean relativity states that inertial frames exist, and that
+the same laws of physics apply in all inertial frames of reference, regardless
+of one frame's straight-line, constant-speed motion relative to another.\footnote{The
+principle of Galilean relativity is extended on
+page \pageref{subsec:rotationalinvariance}.}
+
+Another way of putting it is that all inertial frames are created equal. We can
+say whether one inertial frame is in motion or at rest relative to another, but there is
+no privileged ``rest frame.'' There is no experiment that comes out any different
+in laboratories in different inertial frames, so there is no experiment that
+could tell us which inertial frame is really, truly at rest.
+
+\begin{eg}{The speed of sound}
+\egquestion
+The speed of sound in air is only 340 m/s, so unless you live
+at a near-polar latitude, you're moving at greater than the speed of sound right now
+due to the Earth's rotation. In that case, why don't we experience exciting phenomena
+like sonic booms all the time?
+\eganswer
+It might seem as though you're unprepared to deal with this question
+right now, since the only law of physics you know is conservation of mass, and
+conservation of mass doesn't tell you anything obviously useful about the speed of
+sound or sonic booms. Galilean relativity, however, is a blanket statement about
+all the laws of physics, so in a situation like this, it may let you predict the
+results of the laws of physics without actually knowing what all the laws are!
+If the laws of physics predict a certain value for the speed of sound, then they
+had better predict the speed of the sound relative to the air, not their speed
+relative to some special ``rest frame.'' Since the air is moving along with the
+rotation of the earth, we don't detect any special phenomena. To get a sonic
+boom, the source of the sound would have to be moving relative to the air.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'foucault',
+    %q{%
+      Foucault demonstrates his pendulum to an audience at
+                      a lecture in 1851.\label{foucaultfig}
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The Foucault pendulum}
+Note that in the example of the bowling ball in the truck, I didn't claim the
+sidewalk was \emph{exactly} a Galilean frame
+of reference. This is because the sidewalk is moving in a circle due to the rotation
+of the Earth, and is therefore changing the direction of its motion continuously
+on a 24-hour cycle. However, the curve of the motion is so gentle that under
+ordinary conditions we don't notice that the local dirt's frame of reference isn't
+quite inertial. The first demonstration of the noninertial nature of the earth-fixed
+frame of reference was by Foucault\index{Foucault}
+ using a very massive pendulum (figure \figref{foucault}) whose oscillations
+would persist for many hours without becoming imperceptible. Although Foucault did
+his demonstration in Paris, it's easier to imagine what would happen at the north pole:
+the pendulum would keep swinging in the same plane, but the earth would spin underneath
+it once every 24 hours. To someone standing in the snow, it would appear that the
+pendulum's plane of motion was twisting. The effect at latitudes less than 90
+degrees turns out to be slower, but otherwise similar. The Foucault pendulum was
+the first definitive experimental proof that the earth really did spin on its axis,
+although scientists had been convinced of its rotation for a century based on more
+indirect evidence about the structure of the solar system.
+\end{eg}
+
+<% marg() %>
+
+<%
+  fig(
+    'galileo-trial',
+    %q{Galileo's trial.}
+  )
+%>
+<% end_marg %>
+
+Although popular belief has Galileo being prosecuted
+by the Catholic Church for saying the earth rotated on its axis and also orbited the sun,
+Foucault's pendulum was still centuries in the future, so Galileo had no hard
+proof; Galileo's insights into relative versus absolute motion simply made it
+more plausible that the world could be spinning without producing dramatic effects,
+but didn't disprove the contrary hypothesis that the sun, moon, and
+stars went around the earth every 24 hours. Furthermore, the Church was much more
+liberal and enlightened than most people believe. It didn't (and still doesn't)
+require a literal interpretation of the Bible, and one of the Church officials
+involved in the Galileo affair wrote that ``the Bible tells us how to go to heaven,
+not how the heavens go.'' In other words, religion and science should be separate.
+The actual reason Galileo got in trouble is shrouded in mystery, since Italy in the
+age of the Medicis was a secretive place where unscrupulous people might settle a score
+with poison or a false accusation of heresy. What is certain is that Galileo's
+satirical style of scientific writing made many enemies among the powerful Jesuit scholars
+who were his intellectual opponents --- he compared one to a snake that doesn't know
+its own back is broken. It's also possible that the Church was far less upset by his
+astronomical work than by his support for atomism\index{atoms}
+ (discussed further in the next section). Some theologians perceived atomism
+as contradicting transubstantiation, the Church's doctrine that
+the holy bread and wine were literally transformed into the flesh and blood of
+Christ by the priest's blessing.
+
+<% self_check('inertia-counterexamples',<<-'SELF_CHECK'
+What is incorrect about the following supposed counterexamples
+to the principle of inertia?
+
+(1) When astronauts blast off in a rocket, their huge
+velocity does cause a physical effect on their bodies ---
+they get pressed back into their seats, the flesh on their
+faces gets distorted, and they have a hard time lifting their arms.
+
+(2) When you're driving in a convertible with the top down,
+the wind in your face is an observable physical effect of
+your absolute motion.
+  SELF_CHECK
+  ) %>
+
+\worked{cycloid}{a bug on a wheel}
+
+<% marg(50) %>
+<%
+  fig(
+    'dq-cruise-ship',
+    %q{Discussion question \ref{dq:cruiseship}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'balloon',
+    %q{Discussion question \ref{dq:balloon}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'dq-corndog',
+    %q{Discussion question \ref{dq:corndog}.}
+  )
+%>
+<% end_marg %>
+
+\startdqs
+
+\begin{dq}\label{dq:cruiseship}
+A passenger on a cruise ship finds, while the ship is
+docked, that he can leap off of the upper deck and just
+barely make it into the pool on the lower deck.  If the ship
+leaves dock and is cruising rapidly, will this adrenaline
+junkie still be able to make it?
+\end{dq}
+
+\begin{dq}\label{dq:balloon}
+You are a passenger in the open basket hanging under a
+helium balloon. The balloon is being carried along by the
+wind at a constant velocity. If you are holding a flag in
+your hand, will the flag wave? If so, which way? [Based on a
+question from PSSC Physics.]
+\end{dq}
+
+\begin{dq}
+Aristotle stated that all objects naturally wanted to
+come to rest, with the unspoken implication that ``rest''
+would be interpreted relative to the surface of the earth.
+Suppose we could transport Aristotle to the moon, put him in
+a space suit, and kick him out the door of the spaceship and
+into the lunar landscape. What would he expect his fate to
+be in this situation? If intelligent creatures inhabited the
+moon, and one of them independently came up with the
+equivalent of Aristotelian physics, what would they think
+about objects coming to rest?
+\end{dq}
+
+\begin{dq}\label{dq:corndog}
+Sally is on an amusement park ride which begins with her
+chair being hoisted straight up a tower at a constant speed
+of 60 miles/hour. Despite stern warnings from her father
+that he'll take her home the next time she misbehaves, she
+decides that as a scientific experiment she really needs to
+release her corndog over the side as she's on the way up.
+She does not throw it. She simply sticks it out of the car,
+lets it go, and watches it against the background of the
+sky, with no trees or buildings as reference points. What
+does the corndog's motion look like as observed by Sally?
+Does its speed ever appear to her to be zero? What
+acceleration does she observe it to have: is it ever
+positive? negative? zero? What would her enraged father
+answer if asked for a similar description of its motion as
+it appears to him, standing on the ground?
+\end{dq}
+
+<% begin_sec("Applications of calculus") %>
+
+Let's see how this relates to calculus. If an object is moving in one dimension,
+we can describe its position with a function $x(t)$. The derivative
+$v=\der{}x/\der{}t$ is called the velocity, and the second derivative
+$a=\der{}v/\der{}t=\der{}^2x/\der{}t^2$ is the acceleration.\index{acceleration} Galilean relativity
+tells us that there is no detectable effect due to an object's absolute
+velocity, since in some other frame of reference, the object's velocity might be
+zero. However, an acceleration does have physical consequences.
+
+<%
+  fig(
+    'sled200dpi',
+    %q{%
+      This Air Force doctor volunteered to ride a rocket sled as a medical 
+              experiment. The obvious effects on his head and face are not because of the sled's speed 
+              but because of its rapid \emph{changes} in speed: increasing in (ii) and (iii), and decreasing in
+              (v) and (vi). In (iv) his speed is greatest, but because his speed is not increasing or
+              decreasing very much at this moment, there is little effect on him.
+              \photocredit{U.S. Air Force}
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'float'=>true
+    }
+  )
+%>
+%
+        % Due to software bug in pdflatex, couldn't do the usual AI->EPS->PDF, so instead
+        %had to save as a 200 dpi bitmap.
+
+Observers in different inertial frames of reference will disagree on velocities, but
+agree on accelerations. Let's keep it simple by continuing to work in one dimension.
+One frame of reference uses a coordinate system $x_1$, and the other we label
+$x_2$. If the positive $x_1$ and $x_2$ axes point in the same direction, then in
+general two inertial frames could be related by an equation of the form
+$x_2=x_1+b+ut$, where $u$ is the constant velocity of one frame relative to the
+other, and the constant $b$ tells us how far apart the origins of the two coordinate
+systems were at $t=0$. The velocities are different in the two frames of reference:
+\begin{equation*}
+     \frac{\der x_2}{\der t} = \frac{\der x_1}{\der t} + u\eqquad,
+\end{equation*}
+Suppose, for example, frame 1 is defined from the sidewalk, and frame 2 
+is fixed to a float in a parade that is moving to our left at a velocity
+$u=1\ \munit/\sunit$. A dog that is moving to the right with a velocity
+$v_1=\der{}x_1/\der{}t=3\ \munit/\sunit$ in the sidewalk's frame will appear to be moving
+at a velocity of $v_2=\der x_2/\der t=\der x_1/\der t+u=4\ \munit/\sunit$ in the float's frame.
+
+For acceleration, however, we have
+\begin{equation*}
+     \frac{\der^2 x_2}{\der t^2} = \frac{\der^2 x_1}{\der t^2}\eqquad,
+\end{equation*}
+since the derivative of the constant $u$ is zero. Thus an acceleration, unlike
+a velocity, can have
+a definite physical significance to all
+observers in all frames of reference. If this
+wasn't true, then there would be no particular reason to define a quantity
+called acceleration in the first place.
+
+<% self_check('beer',<<-'SELF_CHECK'
+The figure shows a bottle of beer sitting on a table in
+        the dining car of a
+        train. Does the tilting of the surface tell us about the
+        train's velocity, or its acceleration? What would a person in the train
+        say about the bottle's velocity? What about a person standing in a field outside and
+        looking in through the window? What about the acceleration?
+  SELF_CHECK
+  ) %>
+
+<% marg(100) %>
+<%
+  fig(
+    'beer',
+    %q{Self-check \ref{sc:beer}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("A preview of some modern physics",0,'modernmasspreview') %>
+
+``Mommy, why do you and Daddy have to go to work?'' ``To make money, sweetie-pie.''
+``Why do we need money?'' ``To buy food.'' ``Why does food cost money?''
+When small children ask a chain of ``why'' questions like this, it usually isn't
+too long before their parents end up saying something like, ``Because that's
+just the way it is,'' or, more honestly, ``I don't know the answer.''
+
+The same happens in physics. We may gradually learn to explain things more and more
+deeply, but there's always the possibility that a certain observed fact, such as
+conservation of mass, will never be understood on any deeper level. Science,
+after all, uses limited methods to achieve limited goals, so the ultimate
+reason for all existence will always be the province of religion. There is,
+however, an appealing explanation for conservation of mass, which is atomism,\index{atoms}
+the theory that matter is made of tiny, unchanging particles. The atomic
+hypothesis dates back to ancient Greece, but the first solid evidence to support
+it didn't come until around the eighteenth century, and individual atoms were never
+detected until about 1900. The atomic theory implies not only conservation of mass,
+but a couple of other things as well.
+
+First, it implies that the total mass of one particular
+element is conserved. For instance, lead and gold are both elements, and if we
+assume that lead atoms can't be turned into gold atoms, then the total mass of
+lead and the total mass of gold are separately conserved. It's as though there was
+not just a law against pickpocketing, but also a law against surreptitiously
+moving money from one of the victim's pockets to the other. It turns out, however,
+that although chemical reactions\index{chemical reactions}\index{reactions!chemical}
+ never change one type of atom into another,
+transmutation can happen in nuclear reactions,\index{nuclear reactions}\index{reactions!nuclear}
+ such as the ones that created most
+of the elements in your body out of the primordial hydrogen and helium that
+condensed out of the aftermath of the Big Bang.\index{Big Bang}
+
+Second, atomism implies that mass is \emph{quantized}, meaning that only certain values
+of mass are possible and the ones in between can't
+exist.\index{quantization!of mass}\index{mass!quantization of} 
+We can have three atoms of gold or four atoms of gold, but not three an a half.
+Although quantization of mass is a natural
+consequence of any theory in which matter is made up of tiny particles, it
+was discovered in the twentieth century that other quantities, such as energy,
+are quantized as well, which had previously not been suspected.
+
+        
+<% self_check('moneyquantum',<<-'SELF_CHECK'
+Is money quantized?
+  SELF_CHECK
+  ) %>
+
+If atomism is starting to make conservation of mass seem inevitable to you,
+then it may disturb you to know that Einstein discovered it isn't really
+conserved. If you put a 50-gram iron nail in some water, seal the whole
+thing up, and let it sit on a fantastically precise balance while the nail
+rusts, you'll find that the system loses about $6\times10^{-12}$ kg of mass
+by the time the nail has turned completely to rust. This has to do with
+Einstein's famous equation $E=mc^2$. Rusting releases heat energy, which
+then escapes out into the room. Einstein's equation states that this amount
+of heat, $E$, is equivalent to a certain amount of mass, $m$. The $c$ in the
+$c^2$ is the speed of light, which is a large number, and a large amount of
+energy is therefore equivalent to a very small amount of mass, so you don't
+notice nonconservation of mass under ordinary conditions. What is really
+conserved is not the mass, $m$, but the mass-plus-energy, $E+mc^2$. The point
+of this discussion is not to get you to do numerical exercises with
+$E=mc^2$ (at this point you don't even know what units are used to
+measure energy),
+but simply to point out to you the empirical nature of the laws
+of physics. If a previously accepted theory is contradicted by
+an experiment, then the theory needs to be changed. This is also a good
+example of something called the
+\emph{correspondence principle}\index{correspondence principle},
+which is a historical observation about how scientific theories change:
+when a new scientific theory
+replaces an old one, the old theory is always contained within the new
+one as an approximation that works within a certain restricted range of
+situations. Conservation of mass is an extremely good approximation for
+all chemical reactions, since chemical reactions never release or consume
+enough energy to change the total mass by a large percentage. Conservation
+of mass would not have been accepted for 110 years as a fundamental principle
+of physics if it hadn't been verified over and over again by a huge number
+of accurate experiments.                
+
+\backofchapterboilerplate{1}
+
+<% end_sec() %>
+
+<% begin_hw_sec %>
+
+<% begin_hw('thermometer-m-conservation',0) %>__incl(hw/thermometer-m-conservation)<% end_hw() %>
+
+<% begin_hw('atomic-mass-ratio') %>__incl(hw/atomic-mass-ratio)<% end_hw() %>
+
+<% begin_hw('alpha-decay-m-conservation') %>__incl(hw/alpha-decay-m-conservation)<% end_hw() %>
+
+<% begin_hw('combine-drops') %>__incl(hw/combine-drops)<% end_hw() %>
+
+<% begin_hw('metabolism-m-conservation') %>__incl(hw/metabolism-m-conservation)<% end_hw() %>
+
+<% begin_hw('hydraulic') %>__incl(hw/hydraulic)<% end_hw() %>
+
+<% marg(20) %>
+<%
+  fig(
+    'hydraulic',
+    %q{Problem \ref{hw:hydraulic}.}
+  )
+%>
+
+  \spacebetweenfigs
+
+<%
+  fig(
+    'riverfork',
+    %q{Problem \ref{hw:riverfork}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('pipe-cavitation') %>__incl(hw/pipe-cavitation)<% end_hw() %>
+
+<% begin_hw('riverfork') %>__incl(hw/riverfork)<% end_hw() %>
+
+<% begin_hw('wind-tunnel') %>__incl(hw/wind-tunnel)<% end_hw() %>
+
+<% begin_hw('wave-superpos-m-conservation') %>__incl(hw/wave-superpos-m-conservation)<% end_hw() %>
+
+<% marg(30) %>
+<%
+  fig(
+    'ball',
+    %q{Problem \ref{hw:ball}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'hw-cycloid',
+    %q{Problem \ref{hw:cycloid}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('ball') %>__incl(hw/ball)<% end_hw() %>
+
+<% begin_hw('cycloid') %>__incl(hw/cycloid)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

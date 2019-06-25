@@ -1,0 +1,1290 @@
+Cruise your radio dial today and try to find any popular
+song that would have been imaginable without Louis
+Armstrong. By introducing solo improvisation into jazz,
+Armstrong took apart the jigsaw puzzle of popular music and
+fit the pieces back together in a different way. In the same
+way, Newton reassembled our view of the universe. Consider
+the titles of some recent physics books written for the
+general reader: The God Particle, Dreams of a Final Theory.
+Without Newton, such attempts at
+universal understanding would not merely have seemed a
+little pretentious, they simply would not have occurred to anyone.
+
+<% marg(100) %>
+<%
+  fig(
+    'kepler',
+    %q{%
+      Johannes Kepler found a mathematical
+      description of the motion of the planets, which led to Newton's
+      theory of gravity.
+    }
+  )
+%>
+<% end_marg %>
+This chapter is about Newton's theory of gravity, which he
+used to explain the motion of the planets as they orbited
+the sun. Whereas this book has concentrated on Newton's laws
+of motion, leaving gravity as a dessert, Newton tosses off
+the laws of motion in the first 20 pages of the Principia
+Mathematica and then spends the next 130 discussing the
+motion of the planets. Clearly he saw this as the crucial
+scientific focus of his work. Why? Because in it he showed
+that the same laws of motion applied to the heavens as to
+the earth, and that the gravitational force that made an
+apple fall was the same as the force that kept the earth's
+motion from carrying it away from the sun. What was radical
+about Newton was not his laws of motion but his concept of a
+universal science of physics.
+
+<% begin_sec("Kepler's laws",0) %>\index{Kepler's laws}
+
+<% marg(65) %>
+<%
+  fig(
+    'tycho-brahe',
+    %q{%
+      Tycho Brahe made his name as an
+      astronomer by showing that the bright
+      new star, today called a supernova,
+      that appeared in the skies in 1572 was
+      far beyond the Earth's atmosphere.
+      This, along with Galileo's discovery of
+      sunspots, showed that contrary to Aristotle, the heavens were not perfect
+      and unchanging. Brahe's fame as an
+      astronomer brought him patronage
+      from King Frederick II, allowing him to
+      carry out his historic high-precision
+      measurements of the planets' motions.
+      A contradictory character, Brahe enjoyed lecturing other nobles about the
+      evils of dueling, but had lost his own
+      nose in a youthful duel and had it replaced with a prosthesis made of an
+      alloy of gold and silver. Willing to 
+      endure scandal in order to marry a peasant, he nevertheless used the feudal
+      powers given to him by the king to
+      impose harsh forced labor on the inhabitants of his parishes. The result
+      of their work, an Italian-style palace
+      with an observatory on top, surely
+      ranks as one of the most luxurious
+      science labs ever built. Kepler described Brahe as dying
+      of a ruptured bladder after falling from a wagon on the way
+      home from a party, but other contemporary accounts and modern medical
+      analysis suggest mercury poisoning, possibly as a result of court intrigue.
+    }
+  )
+%>
+<% end_marg %>
+Newton wouldn't have been able to figure out \emph{why} the
+planets move the way they do if it hadn't been for the
+astronomer Tycho Brahe\index{Brahe, Tycho} (1546-1601) and his protege Johannes
+Kepler\index{Kepler, Johannes} (1571-1630), who together came up with
+the first simple and accurate description of \emph{how} the
+planets actually do move. The difficulty of their task is
+suggested by figure \figref{retrograde}, which shows how the
+relatively simple orbital motions of the earth and Mars
+combine so that as seen from earth Mars appears to be
+staggering in loops like a drunken sailor.
+
+<%
+  fig(
+    'retrograde',
+    %q{%
+      As the Earth and Mars revolve around the
+      sun at different rates, the combined effect of their motions makes
+      Mars appear to trace a strange, looped path across the background
+      of the distant stars.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Brahe, the last of the great naked-eye astronomers,
+collected extensive data on the motions of the planets over
+a period of many years, taking the giant step from the
+previous observations' accuracy of about 10 minutes of arc
+(10/60 of a degree) to an unprecedented 1 minute. The
+quality of his work is all the more remarkable considering
+that his observatory consisted of four giant brass
+protractors mounted upright in his castle in Denmark. Four
+different observers would simultaneously measure the
+position of a planet in order to check for mistakes and
+reduce random errors.
+
+With Brahe's death, it fell to his former assistant Kepler
+to try to make some sense out of the volumes of data.
+Kepler, in contradiction to his late boss, had formed a
+prejudice, a correct one as it turned out, in favor of the
+theory that the earth and planets revolved around the sun,
+rather than the earth staying fixed and everything rotating
+about it. Although motion is relative, it is not just a
+matter of opinion what circles what. The earth's rotation
+and revolution about the sun make it a noninertial reference
+frame, which causes detectable violations of Newton's laws
+when one attempts to describe sufficiently precise
+experiments in the earth-fixed frame. Although such direct
+experiments were not carried out until the 19th century,
+what convinced everyone of the sun-centered system in the
+17th century was that Kepler was able to come up with a
+surprisingly simple set of mathematical and geometrical
+rules for describing the planets' motion using the
+sun-centered assumption. After 900 pages of calculations and
+many false starts and dead-end ideas, Kepler finally
+synthesized the data into the following \index{Kepler's laws}three laws:
+
+
+\index{Kepler's laws!elliptical orbit law}
+\begin{lessimportant}[Kepler's elliptical orbit law]
+The planets orbit the sun in
+elliptical orbits with the sun at one focus.
+\end{lessimportant}
+
+\index{Kepler's laws!equal-area law}
+\begin{lessimportant}[Kepler's equal-area law]
+The line connecting a planet to the sun sweeps out equal
+areas in equal amounts of time.
+\end{lessimportant}
+
+\index{Kepler's laws!law of periods}
+\begin{lessimportant}[Kepler's law of periods]
+The time required for a planet to orbit the sun, called its
+period, is proportional to the long axis of the ellipse
+raised to the 3/2 power. The constant of proportionality is
+the same for all the planets.
+\end{lessimportant}
+
+Although the planets' orbits are ellipses rather than
+circles, most are very close to being circular.  The earth's
+orbit, for instance, is only flattened by 1.7\% relative to
+a circle.  In the special case of a planet in a circular
+orbit, the two foci (plural of ``focus'') coincide at the
+center of the circle, and Kepler's elliptical orbit law thus
+says that the circle is centered on the sun. The equal-area
+law implies that a planet in a circular orbit moves around
+the sun with constant speed.  For a circular orbit, the law
+of periods then amounts to a statement that the time for one
+orbit is proportional to $r^{3/2}$, where $r$ is the radius. If
+all the planets were moving in their orbits at the same
+speed, then the time for one orbit would simply depend on
+the circumference of the circle, so it would only be
+proportional to $r$ to the first power. The more drastic
+dependence on $r^{3/2}$ means that the outer planets must be
+moving more slowly than the inner planets.
+
+<% end_sec() %>
+<% begin_sec("Newton's law of gravity",0,'newton-gravity') %>\index{Newton, Isaac!law of gravity}
+
+<% begin_sec("The sun's force on the planets obeys an inverse square law.") %>
+
+<% marg(55) %>
+<%
+  fig(
+    'kepler-ellipse-stretch',
+    %q{%
+      An ellipse is a circle that has been
+      distorted by shrinking and stretching
+      along perpendicular axes.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'kepler-ellipse-foci',
+    %q{%
+      An ellipse can be constructed by tying
+      a string to two pins and drawing like
+      this with the pencil stretching the string
+      taut.  Each pin constitutes one focus
+      of the ellipse.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'kepler-equal-area',
+    %q{%
+      If the time interval taken by the planet to move from P to Q is equal to the time
+      interval from R to S, then according to Kepler's equal-area law, the two shaded
+      areas are equal. The planet is moving faster during interval RS than it did during
+      PQ, which Newton later determined was due to the sun's gravitational force 
+      accelerating it. The equal-area law predicts exactly how much it will speed up.
+    }
+  )
+%>
+
+<% end_marg %>
+Kepler's laws were a beautifully simple explanation of what
+the planets did, but they didn't address why they moved as
+they did. Did the sun exert a force that pulled a planet
+toward the center of its orbit, or, as suggested by
+Descartes, were the planets circulating in a whirlpool of
+some unknown liquid? Kepler, working in the Aristotelian
+tradition, hypothesized not just an inward force exerted by
+the sun on the planet, but also a second force in the
+direction of motion to keep the planet from slowing down.
+Some speculated that the sun attracted the planets magnetically.
+
+Once Newton had formulated his laws of motion and taught
+them to some of his friends, they began trying to connect
+them to Kepler's laws. It was clear now that an inward force
+would be needed to bend the planets' paths. This force was
+presumably an attraction between the sun and each planet.
+(Although the sun does accelerate in response to the
+attractions of the planets, its mass is so great that the
+effect had never been detected by the prenewtonian
+astronomers.) Since the outer planets were moving slowly
+along more gently curving paths than the inner planets,
+their accelerations were apparently less. This could be
+explained if the sun's force was determined by distance,
+becoming weaker for the farther planets. Physicists were
+also familiar with the noncontact forces of electricity and
+magnetism, and knew that they fell off rapidly with
+distance, so this made sense.
+
+In the approximation of a circular orbit, the magnitude of
+the sun's force on the planet would have to be
+\begin{equation}
+    F=   ma=      mv^2/r\eqquad.
+\end{equation}
+Now although this equation has the magnitude, $v$, of the
+velocity vector in it, what Newton expected was that there
+would be a more fundamental underlying equation for the
+force of the sun on a planet, and that that equation would
+involve the distance, $r$, from the sun to the object, but
+not the object's speed, $v$ --- motion doesn't make
+objects lighter or heavier.
+
+<% self_check('gravity-independent-of-v',<<-'SELF_CHECK'
+If eq. [1] really was generally applicable, what would
+happen to an object released at rest in some empty region
+of the solar system?
+  SELF_CHECK
+  ) %>
+
+Equation [1] was thus a useful piece of information which
+could be related to the data on the planets simply because
+the planets happened to be going in nearly circular orbits,
+but Newton wanted to combine it with other equations and
+eliminate $v$ algebraically in order to find a deeper truth.
+
+To eliminate $v$, Newton used the equation
+\begin{equation}
+        v    =   \frac{\text{circumference}}{T} =    \frac{2\pi r}{T}\eqquad.
+\end{equation}
+Of course this equation would also only be valid for planets
+in nearly circular orbits. Plugging this into eq. [1]
+to eliminate $v$ gives
+\begin{equation}
+        F     =  \frac{4\pi^2mr}{T^2}\eqquad.    
+\end{equation}
+This unfortunately has the side-effect of bringing in the
+period, $T$, which we expect on similar physical grounds
+will not occur in the final answer. That's where the
+circular-orbit case, $T \propto r^{3/2}$,  of \index{Kepler's
+laws!law of periods}Kepler's law of periods comes in. Using
+it to eliminate $T$ gives a result that depends only on the
+mass of the planet and its distance from the sun:
+\begin{multline*}
+    F\propto m/r^2\eqquad. \hfill \shoveright{\text{[force of the sun on a planet of mass}}\\
+                                       \shoveright{\text{$m$ at a distance $r$ from the sun; same}}\\
+                                       \text{proportionality constant for all the planets]}
+\end{multline*}
+(Since Kepler's law of periods is only a proportionality,
+the final result is a proportionality rather than an
+equation, so there is no point in hanging on to the
+factor of $4\pi ^2$.)
+
+As an example, the ``twin planets'' Uranus and Neptune have
+nearly the same mass, but Neptune is about twice as far from
+the sun as Uranus, so the sun's gravitational force on
+Neptune is about four times smaller.
+
+<% self_check('fill-in-inverse-square',<<-'SELF_CHECK'
+Fill in the steps leading from equation [3] to $F\\propto m/r^2$.
+  SELF_CHECK
+  ) %>
+
+<% marg(150) %>
+<%
+  fig(
+    'earth-moon-apple',
+    %q{%
+      The moon's acceleration is
+      $60^2=3600$ times smaller than the apple's.
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("The forces between heavenly bodies are the same type of force as terrestrial gravity.") %>
+
+OK, but what kind of force was it? It probably wasn't
+magnetic, since magnetic forces have nothing to do with
+mass. Then came Newton's great insight. Lying under an apple
+tree and looking up at the moon in the sky,  he saw an apple
+fall. Might not the earth also attract the moon with the
+same kind of gravitational force? The moon orbits the earth
+in the same way that the planets orbit the sun, so maybe the
+earth's force on the falling apple, the earth's force on the
+moon, and the sun's force on a planet were all the
+same type of force.
+
+There was an easy way to test this hypothesis numerically.
+If it was true, then we would expect the gravitational
+forces exerted by the earth to follow the same $F\propto m/r^2$
+rule as the forces exerted by the sun, but with a different
+constant of proportionality appropriate to the earth's
+gravitational strength.  The issue arises now of how to
+define the distance, $r$, between the earth and the apple.
+An apple in England is closer to some parts of the earth
+than to others, but suppose we take $r$ to be the distance
+from the center of the earth to the apple, i.e., the radius
+of the earth.  (The issue of how to measure $r$ did not
+arise in the analysis of the planets' motions because the
+sun and planets are so small compared to the distances
+separating them.)  Calling the proportionality constant $k$, we have
+\begin{align*}
+        F_\text{earth on apple}    &=     k \: m_\text{apple} / r_\text{earth}^2  \\
+        F_\text{earth on moon}     &=     k \: m_\text{moon}  / d_\text{earth-moon}^2\eqquad.
+\end{align*}
+Newton's second law says $a=F/m$, so
+\begin{align*}
+        a_\text{apple}  &=  k \: / \: r_{earth}^2  \\
+        a_\text{moon}   &=  k \: / \: d_\text{earth-moon}^2\eqquad.
+\end{align*}
+The Greek astronomer Hipparchus had already found 2000 years
+before that the distance from the earth to the moon was
+about 60 times the radius of the earth, so if Newton's
+hypothesis was right, the acceleration of the moon would
+have to be $60^2=3600$ times less than the acceleration
+of the falling apple.
+
+Applying $a=v^2/r$ to the acceleration of the moon yielded
+an acceleration that was indeed 3600 times smaller than 
+$9.8\ \munit/\sunit^2$, and Newton was convinced he had unlocked the secret
+of the mysterious force that kept the moon and planets in their orbits.
+
+<% end_sec() %>
+<% begin_sec("Newton's law of gravity") %>
+
+The proportionality $F\propto  m/r^2$ for the gravitational
+force on an object of mass $m$ only has a consistent
+proportionality constant for various objects if they are
+being acted on by the gravity of the same object. Clearly
+the sun's gravitational strength is far greater than the
+earth's, since the planets all orbit the sun and do not
+exhibit any very large accelerations caused by the earth (or
+by one another). What property of the sun gives it its great
+gravitational strength? Its great volume?  Its great mass?
+Its great temperature? Newton reasoned that if the force was
+proportional to the mass of the object being acted on, then
+it would also make sense if the determining factor in the
+gravitational strength of the object exerting the force was
+its own mass. Assuming there were no other factors affecting
+the gravitational force, then the only other thing needed to
+make quantitative predictions of gravitational forces would
+be a proportionality constant. Newton called that proportionality
+constant $G$, so here is the complete form of the law of gravity he hypothesized.
+\begin{important}[Newton's law of gravity]
+\begin{multline*}
+        F  =  \frac{Gm_1m_2}{r^2}    \hfill  \shoveright{\text{[gravitational force between objects of mass}}\\
+                                                  \shoveright{\text{ $m_1$ and $m_2$, separated by a distance $r$; $r$ is not}}\\
+                                                   \text{the radius of anything ]}
+\end{multline*}
+\end{important}
+
+<% marg(50) %>
+<%
+  fig(
+    'what-g-is',
+    %q{%
+      Students often have a hard time understanding
+      the physical meaning of $G$. It's just a proportionality constant that tells you
+      how strong gravitational forces are. If you could change it, all the gravitational
+      forces all over the universe would get stronger or weaker.
+      Numerically, the gravitational attraction between
+      two 1-kg masses separated by a distance of 1 m is $6.67\times10^{-11}\ \nunit$,
+      and this is what $G$ is in SI units.
+    }
+  )
+%>
+<% end_marg %>
+Newton conceived of gravity as an attraction between any two
+masses in the universe. The constant $G$ tells us how
+many newtons the attractive force is for two 1-kg masses
+separated by a distance of 1 m. The experimental
+determination of $G$ in ordinary units (as opposed to the
+special, nonmetric, units used in astronomy) is described in
+section \ref{sec:weighing-the-earth}. This difficult measurement was not accomplished
+until long after Newton's death.
+
+\begin{eg}{The units of $G$}
+\egquestion What are the units of $G$?
+
+\eganswer Solving for $G$ in Newton's law of gravity gives
+\begin{equation*}
+     G = \frac{Fr^2}{m_1m_2}\eqquad,
+\end{equation*}
+so the units of $G$ must be $\nunit\unitdot\munit^2/\kgunit^2$. Fully
+adorned with units, the value of $G$ is $6.67\times10^{-11}\ \nunit\unitdot\munit^2/\kgunit^2$.
+\end{eg}
+
+\begin{eg}{Newton's third law}
+\egquestion Is Newton's law of gravity consistent with Newton's third law?
+
+\eganswer The third law requires two things. First, $m_1$'s
+force on $m_2$ should be the same as $m_2$'s force on $m_1$.
+This works out, because the product $m_1m_2$ gives the
+same result if we interchange the labels 1 and 2. Second,
+the forces should be in opposite directions. This condition
+is also satisfied, because Newton's law of gravity refers to
+an attraction: each mass pulls the other toward itself.
+\end{eg}
+
+<% marg(10) %>
+<%
+  fig(
+    'pluto',
+    %q{%
+      Example \ref{eg:pluto}.
+      Computer-enhanced images of Pluto
+      and Charon, taken by the Hubble
+      Space Telescope.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Pluto and Charon}\label{eg:pluto}
+\egquestion Pluto's moon Charon is unusually large considering
+Pluto's size, giving them the character of a double planet.
+Their masses are $1.25\times10^{22}$  and $1.9x10^{21}$ kg,
+and their average distance from one another is $1.96\times10^4$
+ km. What is the gravitational force between them?
+
+\eganswer If we want to use the value of $G$ expressed in SI
+(meter-kilogram-second) units, we first have to convert the
+distance to $1.96\times10^7\ \munit$. The force is
+\begin{multline*}
+    \frac{
+      \left(6.67\times10^{-11}\ \nunit\unitdot\munit^2/\kgunit^2\right)
+      \left(1.25\times10^{22}\ \kgunit\right)
+      \left(1.9 \times10^{21}\ \kgunit\right)
+    }{\left(1.96\times10^7\ \munit\right)^2}    \\
+    =  4.1\times10^{18}\  \nunit
+\end{multline*}
+\end{eg}
+
+
+The proportionality to $1/r^2$ in Newton's law of gravity
+was not entirely unexpected.  Proportionalities to $1/r^2$
+are found in many other phenomena in which some effect
+spreads out from a point. For instance, the intensity of the
+light from a candle is proportional to $1/r^2$, because at a
+distance $r$ from the candle, the light has to be spread out
+over the surface of an imaginary sphere of area $4\pi r^2$.
+The same is true for the intensity of sound from a
+firecracker, or the intensity of gamma radiation emitted by
+the Chernobyl reactor. It's important, however, to realize
+that this is only an analogy. Force does not travel through
+space as sound or light does, and force is not a substance
+that can be spread thicker or thinner like butter on toast.
+
+Although several of Newton's contemporaries had speculated
+that the force of gravity might be proportional to $1/r^2$,
+none of them, even the ones who had learned Newton's laws of
+motion, had had any luck proving that the resulting orbits
+would be ellipses, as Kepler had found empirically.  Newton
+did succeed in proving that elliptical orbits would result
+from a $1/r^2$ force, but we postpone the proof until the
+chapter \ref{ch:angular-momentum} because it can be
+accomplished much more easily using the concepts of energy
+and angular momentum.
+
+<% marg(60) %>
+<%
+  fig(
+    'conic-sections',
+    %q{%
+      The conic sections are the curves
+      made by cutting the surface of an infinite cone with a plane.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'cannon',
+    %q{%
+      An imaginary cannon able to shoot
+      cannonballs at very high speeds is
+      placed on top of an imaginary, very
+      tall mountain that reaches up above
+      the atmosphere. Depending on the
+      speed at which the ball is fired, it may
+      end up in a tightly curved elliptical orbit, 1, a 
+      circular orbit, 2, a bigger elliptical orbit,
+      3, or a nearly straight hyperbolic orbit, 4.
+    }
+  )
+%>
+
+<% end_marg %>
+
+Newton also predicted that orbits in the shape of hyperbolas\index{hyperbolic orbit}\index{orbit!hyperbolic}\index{elliptical orbit}\index{orbit!elliptical}\index{orbit!circular}
+should be possible, and he was right.  Some comets, for
+instance, orbit the sun in very elongated ellipses, but
+others pass through the solar system on hyperbolic paths,
+never to return. Just as the trajectory of a faster baseball
+pitch is flatter than that of a more slowly thrown ball, so
+the curvature of a planet's orbit depends on its speed. A
+spacecraft can be launched at relatively low speed,
+resulting in a circular orbit about the earth, or it can be
+launched at a higher speed, giving a more gently curved
+ellipse that reaches farther from the earth, or it can be
+launched at a very high speed which puts it in an even less
+curved hyperbolic orbit. As you go very far out on a
+hyperbola, it approaches a straight line, i.e., its curvature
+eventually becomes nearly zero.
+
+Newton also was able to prove that Kepler's second law
+(sweeping out equal areas in equal time intervals) was a
+logical consequence of his law of gravity.  Newton's version
+of the proof is moderately complicated, but the proof
+becomes trivial once you understand the concept of angular
+momentum, which will be covered later in the course. The
+proof will therefore be deferred until section \ref{sec:elliptical-orbits}.
+
+<% self_check('kepler-hyperbolic',<<-'SELF_CHECK'
+Which of Kepler's laws would it make sense to apply
+to hyperbolic orbits?
+  SELF_CHECK
+  ) %>
+
+\worked{ceres}{Visiting Ceres}
+m4_ifelse(__me,1,[:%:],[:\worked{geosynchronous}{Geosynchronous orbit}:])
+\worked{prove-a-equals-g}{Why $a$ equals $g$}
+\worked{ida}{Ida and Dactyl}
+\worked{upsilon-andromedae}{Another solar system}
+\worked{alien-gangster}{Weight loss}
+\worked{receding-moon}{The receding moon}
+
+\startdqs
+
+\begin{dq}
+How could Newton find the speed of the moon to plug in to $a=v^2/r?$
+\end{dq}
+
+\begin{dq}
+Two projectiles of different mass shot out of guns on the
+surface of the earth at the same speed and angle will follow
+the same trajectories, assuming that air friction is
+negligible.  (You can verify this by throwing two objects
+together from your hand and seeing if they separate or stay
+side by side.)  What corresponding fact would be true for
+satellites of the earth having different masses?
+\end{dq}
+
+\begin{dq}
+What is wrong with the following statement?  ``A comet in
+an elliptical orbit speeds up as it approaches the sun,
+because the sun's force on it is increasing.''
+\end{dq}
+
+\begin{dq}
+Why would it not make sense to expect the earth's
+gravitational force on a bowling ball to be inversely
+proportional to the square of the distance between their
+surfaces rather than their centers?
+\end{dq}
+
+\begin{dq}
+Does the earth accelerate as a result of the moon's
+gravitational force on it?  Suppose two planets were bound
+to each other gravitationally the way the earth and moon
+are, but the two planets had equal masses.  What would
+their motion be like?
+\end{dq}
+
+\begin{dq}
+Spacecraft normally operate by firing their engines only
+for a few minutes at a time, and an interplanetary probe
+will spend months or years on its way to its destination
+without thrust. Suppose a spacecraft is in a circular orbit
+around Mars, and it then briefly fires its engines in
+reverse, causing a sudden decrease in speed. What will this
+do to its orbit? What about a forward thrust?
+\end{dq}
+
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Apparent weightlessness",4,'apparent-weightlessness') %>
+
+If you ask somebody at the bus stop why astronauts are
+weightless, you'll probably get one of the following
+two incorrect answers:
+
+(1) They're weightless because they're so far from the earth.
+
+(2) They're weightless because they're moving so fast.
+
+The first answer is wrong, because the vast majority of
+astronauts never get more than a thousand miles from the
+earth's surface. The reduction in gravity caused by their
+altitude is significant, but not 100\%. The second answer is
+wrong because Newton's law of gravity only depends on
+distance, not speed.
+
+The correct answer is that astronauts in orbit around the
+earth are not really weightless at all. Their weightlessness
+is only apparent. If there was no gravitational force on the
+spaceship, it would obey Newton's first law and move off on
+a straight line, rather than orbiting the earth. Likewise,
+the astronauts inside the spaceship are in orbit just like
+the spaceship itself, with the earth's gravitational force
+continually twisting their velocity vectors around. The
+reason they appear to be weightless is that they are in the
+same orbit as the spaceship, so although the earth's gravity
+curves their trajectory down toward the deck, the deck drops
+out from under them at the same rate.
+
+Apparent weightlessness can also be experienced on earth.
+Any time you jump up in the air, you experience the same
+kind of apparent weightlessness that the astronauts do.
+While in the air, you can lift your arms more easily than
+normal, because gravity does not make them fall any faster
+than the rest of your body, which is falling out from under
+them. The Russian air force now takes rich foreign tourists
+up in a big cargo plane and gives them the feeling of
+weightlessness for a short period of time while the plane is
+nose-down and dropping like a rock.
+
+<% end_sec() %>
+<% begin_sec("Vector addition of gravitational forces",0) %>
+
+\epigraphlong{Pick a flower on earth and you move the farthest star.}{Paul Dirac}
+
+When you stand on the ground, which part of the earth is
+pulling down on you with its gravitational force? Most
+people are tempted to say that the effect only comes from
+the part directly under you, since gravity always pulls
+straight down. Here are three observations that might help
+to change your mind:
+
+\begin{itemize}
+
+\item  If you jump up in the air, gravity does not stop affecting
+you just because you are not touching the earth: gravity is
+a noncontact force.  That means you are not immune from the
+gravity of distant parts of our planet just because you
+are not touching them.
+
+\item  Gravitational effects are not blocked by intervening
+matter.  For instance, in an eclipse of the moon, the earth
+is lined up directly between the sun and the moon, but only
+the sun's light is blocked from reaching the moon, not its
+gravitational force --- if the sun's gravitational force on
+the moon was blocked in this situation, astronomers would be
+able to tell because the moon's acceleration would change
+suddenly.  A more subtle but more easily observable example
+is that the tides are caused by the moon's gravity, and
+tidal effects can occur on the side of the earth facing away
+from the moon.  Thus, far-off parts of the earth are not
+prevented from attracting you with their gravity just
+because there is other stuff between you and them.
+
+\item  Prospectors sometimes search for underground deposits of
+dense minerals by measuring the direction of the local
+gravitational forces, i.e., the direction things fall or the
+direction a plumb bob hangs.  For instance, the gravitational
+forces in the region to the west of such a deposit would
+point along a line slightly to the east of the earth's
+center.  Just because the total gravitational force on you
+points down, that doesn't mean that only the parts of the
+earth directly below you are attracting you.  It's just that
+the sideways components of all the force vectors acting on
+you come very close to canceling out.
+
+\end{itemize}
+<% marg(0) %>
+<%
+  fig(
+    'mineral-deposit',
+    %q{%
+      Gravity only appears to pull straight
+      down because the near perfect symmetry of the earth makes the sideways
+      components of the total force on an
+      object cancel almost exactly. If the
+      symmetry is broken, e.g., by a dense
+      mineral deposit, the total force is a little
+      off to the side.
+    }
+  )
+%>
+<% end_marg %>
+
+A cubic centimeter of lava in the earth's mantle, a grain of
+silica inside Mt. Kilimanjaro, and a flea on a cat in Paris
+are all attracting you with their gravity. What you feel is
+the vector sum of all the gravitational forces exerted by
+all the atoms of our planet, and for that matter by all the
+atoms in the universe.
+
+When Newton tested his theory of gravity by comparing the
+orbital acceleration of the moon to the acceleration of a
+falling apple on earth, he assumed he could compute the
+earth's force on the apple using the distance from the apple
+to the earth's center. Was he wrong? After all, it isn't
+just the earth's center attracting the apple, it's the whole
+earth. A kilogram of dirt a few feet under his backyard in
+England would have a much greater force on the apple than a
+kilogram of molten rock deep under Australia, thousands of
+miles away. There's really no obvious reason why the force
+should come out right if you just pretend that the earth's
+whole mass is concentrated at its center. Also, we know that
+the earth has some parts that are more dense, and some parts
+that are less dense. The solid crust, on which we live, is
+considerably less dense than the molten rock on which it
+floats. By all rights, the computation of the vector sum of
+all the forces exerted by all the earth's parts should
+be a horrendous mess.
+
+Actually, Newton had sound reasons for treating
+the earth's mass as if it was concentrated at its center.
+First, although Newton no doubt suspected the earth's
+density was nonuniform, he knew that the direction of its
+total gravitational force was very nearly toward the earth's
+center. That was strong evidence that the distribution of
+mass was very symmetric, so that we can think of the earth
+as being made of layers, like an onion, with each layer
+having constant density throughout. (Today there is further
+evidence for symmetry based on measurements of how the
+vibrations from earthquakes and nuclear explosions travel
+through the earth.) He then considered the
+gravitational forces exerted by a single such thin shell,
+and proved the following theorem, known
+as the shell theorem:
+
+\begin{lessimportant}\index{shell theorem}
+If an object lies outside a thin, spherical shell of mass,
+then the vector sum of all the gravitational forces exerted
+by all the parts of the shell is the same as if the shell's
+mass had been concentrated at its center.  If the object
+lies inside the shell, then all the gravitational forces cancel out exactly.
+\end{lessimportant}
+
+\noindent For terrestrial gravity, each shell acts as though its mass
+was at the center, so the result
+is the same as if the whole mass was
+there. m4_ifelse(__lm_series,1,[::],[:The shell theorem is proved on p.~\pageref{sec:shell-theorem-proof}.:])
+<% marg(110) %>
+<%
+  fig(
+    'shell-theorem',
+    %q{%
+      Cut-away view of a spherical shell of
+      mass. A, who is outside the shell, feels gravitational forces from
+      every part of the shell --- stronger
+      forces from the closer parts, and
+      weaker ones from the parts farther
+      away. The shell theorem states that
+      the vector sum of all the forces is the
+      same as if all the mass had been concentrated at the center of the shell.
+      B, at the center, is clearly weightless, because the shell's gravitational forces cancel out.
+      Surprisingly, C also feels exactly zero gravitational force.
+    }
+  )
+%>
+<% end_marg %>
+
+
+The second part of the shell theorem, about the gravitational
+forces canceling inside the shell, is a little surprising.
+Obviously the forces would all cancel out if you were at the
+exact center of a shell, but it's not at all obvious that they should still cancel
+out perfectly if you are inside the shell but off-center.
+The whole idea might seem academic, since we don't know of
+any hollow planets in our solar system that astronauts could
+hope to visit, but actually it's a useful result for
+understanding gravity within the earth, which is an
+important issue in geology.  It doesn't matter that the
+earth is not actually hollow.  In a mine shaft at a depth
+of, say, 2 km, we can use the shell theorem to tell us that
+the outermost 2 km of the earth has no net gravitational
+effect, and the gravitational force is the same as what
+would be produced if the remaining, deeper, parts of the
+earth were all concentrated at its center.
+<% marg(-60) %>
+<%
+  fig(
+    'toutatis',
+    %q{%
+      The asteroid Toutatis, imaged by the space probe Chang'e-2 in 2012, is shaped like a bowling pin.
+    }
+  )
+%>
+<% end_marg %>
+
+      The shell theorem doesn't apply to things that aren't spherical. 
+At the point marked with a dot in figure \figref{toutatis},
+      we might imagine that gravity was in the direction shown by the dashed arrow, pointing
+      toward the asteroid's center of mass, so that
+      the surface would be a vertical cliff almost a kilometer tall. In reality, calculations based
+      on the assumption of uniform density show that the direction of the gravitational field is approximately
+      as shown by the solid arrow, making the slope only about $60\degunit$.\footnote{Hudson \emph{et al.},
+      Icarus 161 (2003) 346} This happens because gravity
+at this location is more strongly affected by the nearby ``neck'' than by the more distant ``belly.''
+      This slope is still believed to be too steep to keep dirt and rocks from sliding off (see problem
+      \ref{hw:angle-of-repose}, p.~\pageref{hw:angle-of-repose}).
+
+\pagebreak
+
+<% self_check('mineshaft',<<-'SELF_CHECK'
+Suppose you're at the bottom of a deep mineshaft, which
+means you're still quite far from the center of the earth.
+The shell theorem says that the shell of mass you've gone
+inside exerts zero total force on you. Discuss which parts
+of the shell are attracting you in which directions, and how
+strong these forces are. Explain why it's at least plausible
+that they cancel.
+  SELF_CHECK
+  ) %>
+
+\startdqs
+
+\begin{dq}
+If you hold an apple, does the apple exert a gravitational
+force on the earth?  Is it much weaker than the earth's
+gravitational force on the apple?  Why doesn't the earth
+seem to accelerate upward when you drop the apple?
+\end{dq}
+
+\begin{dq}
+When astronauts travel from the earth to the moon, how
+does the gravitational force on them change as they progress?
+\end{dq}
+
+\begin{dq}
+How would the gravity in the first-floor lobby of a
+massive skyscraper compare with the gravity in an open field
+outside of the city?
+\end{dq}
+
+\begin{dq}
+In a few billion years, the sun will start undergoing
+changes that will eventually result in its puffing up into a
+red giant star. (Near the beginning of this process, the
+earth's oceans will boil off, and by the end, the sun will
+probably swallow the earth completely.) As the sun's surface
+starts to get closer and closer to the earth, how will the
+earth's orbit be affected?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Weighing the earth",0,'weighing-the-earth') %>
+
+\enlargethispage{-4\baselineskip}
+
+Let's look more closely at the application of Newton's law
+of gravity to objects on the earth's surface.  Since the
+earth's gravitational force is the same as if its mass was
+all concentrated at its center,  the force on a falling
+object of mass $m$ is given by
+\begin{equation*}
+            F    =    G \: M_\text{earth} \: m \: / \: r_\text{earth}^2\eqquad.
+\end{equation*}
+The object's acceleration equals $F/m$, so the object's mass
+cancels out and we get the same acceleration for all falling
+objects, as we knew we should:
+\begin{equation*}
+            g  =  G \: M_\text{earth} \: / \: r_\text{earth}^2\eqquad.
+\end{equation*}
+<%
+  fig(
+    'cavendish',
+    %q{%
+      Cavendish's apparatus. The two large balls
+      are fixed in place, but the rod from
+      which the two small balls hang is free
+      to twist under the influence of the
+      gravitational forces.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Newton  knew neither the mass of the earth nor a numerical
+value for the constant $G$.  But if someone could measure
+$G$, then it would be possible for the first time in history
+to determine the mass of the earth!  The only way to measure
+$G$ is to measure the gravitational force between two
+objects of known mass, but that's an exceedingly difficult
+task, because the force between any two objects of ordinary
+size is extremely small.  The English physicist Henry
+Cavendish was the first to succeed, using the apparatus
+shown in figures \figref{cavendish} and \figref{cavendish-simplified}.
+  The two larger balls were lead
+spheres 8 inches in diameter, and each one attracted the
+small ball near it.  The two small balls hung from the ends
+of a horizontal rod, which itself hung by a thin thread.
+The frame from which the larger balls hung could be rotated
+by hand about a vertical axis, so that for instance the
+large ball on the right would pull its neighboring small
+ball toward us and while the small ball on the left would be
+pulled away from us.  The thread from which the small balls
+hung would thus be twisted through a small angle, and by
+calibrating the twist of the thread with known forces, the
+actual gravitational force could be determined.  Cavendish
+set up the whole apparatus in a room of his house, nailing
+all the doors shut to keep air currents from disturbing the
+delicate apparatus.  The results had to be observed through
+telescopes stuck through holes drilled in the walls.
+Cavendish's experiment provided the first numerical values
+for $G$ and for the mass of the earth.  The presently
+accepted value of $G$ is
+$6.67\times10^{-11}\ \nunit\unitdot\munit^2/\kgunit^2$.
+<% marg(80) %>
+<%
+  fig(
+    'cavendish-simplified',
+    %q{%
+      A simplified version of Cavendish's
+      apparatus.
+    }
+  )
+%>
+<% end_marg %>
+
+Knowing $G$ not only allowed the determination of the
+earth's mass but also those of the sun and the other
+planets. For instance, by observing the acceleration of one
+of Jupiter's moons, we can infer the mass of Jupiter. The
+following table gives the distances of the planets from the
+sun and the masses of the sun and planets. (Other data are
+given in the back of the book.)
+
+\begin{tabular}{|l|p{40mm}|p{40mm}|}
+\hline
+  &
+  average distance from the sun, in units of the earth's average distance from the sun &
+  mass, in units of the earth's mass \\
+\hline
+sun & --- & 330,000 \\
+\hline
+Mercury & 0.38 & 0.056 \\
+\hline
+Venus & 0.72 & 0.82 \\
+\hline
+earth & 1 & 1 \\
+\hline
+Mars & 1.5 & 0.11 \\
+\hline
+Jupiter & 5.2 & 320 \\
+\hline
+Saturn & 9.5 & 95 \\
+\hline
+Uranus & 19 & 14 \\
+\hline
+Neptune & 30 & 17 \\
+\hline
+Pluto & 39 & 0.002 \\
+\hline
+\end{tabular}
+
+m4_ifelse(__me,1,[:
+        The following example applies the numerical techniques of section
+        \ref{numsection}.
+
+        \begin{eg}{From the earth to the moon}
+        The Apollo 11 mission landed the first humans on the moon in 1969.
+        In this example, we'll estimate the time it took to get to the moon, and compare
+        our estimate with the actual time, which was 73.0708 hours from the engine
+        burn that took the ship out of earth orbit to the engine burn that inserted it into
+        lunar orbit. During this time, the ship was coasting with the engines off, except
+        for a small course-correction burn, which we neglect. More importantly, we
+        do the calculation for a straight-line trajectory rather than the real S-shaped one,
+        so the result can only be expected to agree roughly with what really happened.
+        The following data come from the original press kit, which NASA has scanned and
+        posted on the Web:\\
+        \begin{tabular}{ll}
+                \qquad initial altitude & $ 3.363\times10^5\ \zu{m}$\\
+                \qquad initial velocity & $ 1.083\times10^4\ \zu{m/s}$\\
+        \end{tabular}\\
+        The endpoint of the the straight-line trajectory is a free-fall impact on
+        the lunar surface, which is also unrealistic (luckily for the astronauts).
+
+        The force acting on the ship is
+        \begin{align*}
+                 F        &= -\frac{ GM_{e} m}{ r^2}
+                                        +\frac{ GM_{m} m}{ (r_{m}- r)^2}\eqquad,
+        \intertext{but since everything is proportional to the mass of the ship,  m,
+                we can divide it out}
+                 \frac{F}{m}        &= -\frac{ GM_{e} }{ r^2}
+                                        +\frac{ GM_{m} }{ (r_{m}- r)^2}\eqquad,
+        \end{align*}
+        and the variables \verb-F- in the program
+        is actually the force per unit mass $F/m$. The program is a straightforward
+        modification of the function
+        \verb-meteor- on page \pageref{meteorlisting}.
+\begin{listing}{1}<%code_listing('apollo.py',%q{
+import math
+def apollo(vi,n):
+  bigg=6.67e-11     # gravitational constant, SI
+  me=5.97e24        # mass of earth, kg
+  mm=7.35e22        # mass of moon, kg
+  em=3.84e8         # earth-moon distance, m
+  re=6.378e6        # radius of earth, m
+  rm=1.74e6         # radius of moon, m
+  v=vi
+  x=re+3.363e5      # re+initial altitude
+  xf=em-rm          # surface of moon
+  dt = 360000./n    # split 100 hours into n parts
+  t = 0.
+  for i in range(n):
+    dx = v*dt
+    x = x+dx                # Change x.
+    if x>xf:
+      return t/3600.
+    a = -bigg*me/x**2+bigg*mm/(em-x)**2
+    t = t + dt
+    dv = a*dt
+    v = v+dv
+})%>\end{listing}
+\begin{verbatim}
+>>> print apollo(1.083e4,1000000)
+59.7488999991
+>>> vi=1.083e4
+\end{verbatim}
+        This is pretty decent agreement with the real-world time of 73 hours, considering the wildly inaccurate trajectory
+        assumed. It's interesting to see how much the duration of the trip changes if
+        we increase the initial velocity by only ten percent:
+\begin{verbatim}
+>>> print apollo(1.2e4,1000000)
+18.3682
+\end{verbatim}
+        \noindent{}The most important
+        reason for using the lower speed was that if something had gone wrong,
+        the ship would have been able to whip around the moon and take a ``free return''
+        trajectory back to the earth, without having to do any further burns. At a higher speed,
+        the ship would have had so much kinetic energy that in the absence of any further
+        engine burns, it would have escaped from the earth-moon system. The Apollo 13
+        mission had to take a free return trajectory after an explosion crippled the spacecraft.
+        \end{eg}
+:])
+
+\startdqs
+
+\begin{dq}
+It would have been difficult for Cavendish to start
+designing an experiment without at least some idea of the
+order of magnitude of $G$.  How could he estimate it in
+advance to within a factor of 10?
+\end{dq}
+
+\begin{dq}
+Fill in the details of how one would determine Jupiter's
+mass by observing the acceleration of one of its moons. Why
+is it only necessary to know the acceleration of the moon,
+not the actual force acting on it? Why don't we need to know
+the mass of the moon? What about a planet that has no moons,
+such as Venus --- how could its mass be found?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Dark energy",nil,'dark-energy',{'optional'=>true}) %>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/dark_energy)
+
+\enlargethispage{\baselineskip}
+
+m4_ifelse(__lm_series,1,[:
+Dark energy is discussed in more detail on p.~\pageref{subsec:dark-stuff-gr}.
+:])
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<% end_sec() %>
+
+m4_ifelse(__me,0,[:%
+<% begin_sec("A gravitational test of Newton's first law",nil,'battat',{'optional'=>true}) %>
+% -------- ME has this earlier.
+
+This section describes a high-precision test of Newton's first law.\index{Newton's laws of motion!first law!test of}
+The left panel of figure \figref{battat} shows a mirror on the moon.
+By reflecting laser pulses from the mirror, the distance from the earth to
+the moon has been measured to the phenomenal precision of a few centimeters, or about one part in $10^{10}$. This distance
+changes for a variety of known reasons. The biggest effect is that the moon's orbit is not a circle but an ellipse,
+with its long axis about 11\% longer than its short one. A variety of other effects can also be accounted for, including such
+exotic phenomena as the slightly nonspherical shape of the earth, and the gravitational forces of bodies as small and distant as Pluto.
+Suppose for simplicity that all these effects had never existed, so that the moon was initially placed in a perfectly circular orbit around
+the earth, and the earth in a perfectly circular orbit around the sun. 
+
+<%
+  fig(
+    'battat',
+    %q{%
+      Left: The Apollo 11 mission left behind a mirror, which in this photo shows the reflection of the black sky. 
+      Right: A highly exaggerated example of an observation that would disprove Newton's first law. The radius of the
+      moon's orbit gets bigger and smaller over the course of a year.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )                   
+%>
+
+If we then observed something like what is shown in the right panel of
+figure \figref{battat}, Newton's first law would be disproved. If space itself is symmetrical in all directions, then there is no reason for
+the moon's orbit to poof up near the top of the diagram and contract near the bottom. The only possible explanation would be that there was
+some preferred frame of reference\index{frame of reference!preferred}
+of the type envisioned by Aristotle, and that our solar system was moving relative to it.
+Another test for a preferred frame was described in example \ref{eg:clock-comparison-inertia}
+on p.~\pageref{eg:clock-comparison-inertia}.
+
+One could then imagine that the gravitational force of the earth on the moon could be affected by the moon's motion relative to this frame.
+The lunar laser ranging data\footnote{Battat, Chandler, and Stubbs, \url{http://arxiv.org/abs/0710.0702}} contain no measurable effect of the type shown
+in figure \figref{battat}, so that if the moon's orbit is distorted in this way (or in a variety of other ways), the distortion must be less than
+a few centimeters. This constitutes a very strict upper limit on violation of Newton's first law by gravitational forces.
+If the first law is violated, and the violation causes a fractional change in gravity that is proportional to the velocity relative to the
+hypothetical preferred frame, then the change is no more than about one part in $10^7$, even if the velocity is comparable to the speed of
+light.
+<% end_sec() %>
+:])
+
+m4_ifelse(__lm_series,1,[::],[:
+<% begin_sec("Proof of the shell theorem",nil,'shell-theorem-proof',{'optional'=>true}) %>\index{shell theorem!proof}
+<% marg(-10) %>
+<%
+  fig(
+    'shell-theorem-proof-force',
+    %q{%
+      A spherical shell of mass $M$ interacts with a pointlike mass $m$.
+    }
+  )
+%>
+<% end_marg %>
+
+Referring to figure \figref{shell-theorem-proof-force}, let $b$ be the radius of the shell, $h$ its thickness, and $\rho$
+its density.
+Its volume is then $V$=(area)(thickness)=$4\pi{}b^2h$, and
+its mass is $M=\rho{}V=4\pi{}\rho{}b^2h$. The strategy is to divide the shell
+up into rings as shown, with each ring
+extending from $\theta$ to $\theta+\der{}\theta$. Since the ring is infinitesimally
+skinny, its entire mass lies at the same distance, $r$, from mass $m$.
+The width of such a ring is
+found by the definition of radian measure to be $w=b\der{}\theta$, and its mass
+is $\der{}M=(\rho)$(circumference)(thickness)(width)=
+$(\rho)(2\pi{}b \sin{} \theta)(h)(b\der{}\theta)$=$2\pi\rho b^2h\sin{}\theta\der{}\theta$.
+To save writing, we define $A=GMm/s^2$. For the case where $m$ is outside the shell, our goal is to prove that the force $F$ acting on
+$m$ equals $A$. Let the axis of symmetry be $x$, and let the contribution of this ring to the total force be $\der F_x$.
+\begin{align*}
+  F &= \int \der F_x \\
+    &= \int \frac{Gm \der M }{r^2}\cos\alpha \\
+    &= \int \frac{Gm \cdot 2\pi\rho b^2h\sin\theta\der\theta}{r^2}\cos\alpha \\
+    &= \left(\frac{s^2}{2}\right)A\int \frac{\sin\theta\der\theta}{r^2}\cos\alpha 
+\end{align*}
+From the law of cosines we find
+\begin{align*}
+  r^2 &= b^2 + s^2 - 2bs\cos\theta\eqquad,\\
+  b^2 &= r^2 + s^2 -2rs\cos\alpha\eqquad,\\
+\intertext{and differentiation of the former gives}  
+  2r\der r & =        2bs\sin\theta\der\theta\eqquad.
+\end{align*}
+We can now write the integrand entirely in terms of the single variable of integration $r$.
+\begin{align*}
+  F &= \left(\frac{s}{2b}\right)A \int_{s-b}^{s+b} \frac{r\der r}{r^2}\cos\alpha \\
+    &= \left(\frac{1}{4b}\right)A \int_{s-b}^{s+b} \frac{\der r}{r}\left(r+\frac{s^2-b^2}{r}\right) \\
+    &= \left(\frac{1}{4b}\right)A (2b+2b) \\
+    &= A
+\end{align*}
+This is what we wanted to prove for the case where $m$ is on the outside. The inside case is problem
+\ref{hw:shell-theorem-inside}. A more elegant method of proof is to use Gauss's theorem, which is usually
+introduced in a class on electricity and magnetism or vector calculus; the concept is that the gravitational
+field can be visualized in terms of lines of gravitational force spreading out from a mass, and the number
+of lines coming out through a surface is independent of the exact geometry of the surface and the mass
+distribution.
+It is interesting to note that the result depends on both the fact that
+the exponent of $r$ in Newton's law of gravity is $-2$ (problem \ref{hw:shell-theorem-exponent}) and on the fact that space has three dimensions.
+<% end_sec() %>
+:])
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{ellipse}{a flattened circle; one of the conic sections}
+
+\vocabitem{conic section}{a curve formed by the intersection of a plane
+and an infinite cone}
+
+\vocabitem{hyperbola}{another conic section; it does not close back on itself}
+
+\vocabitem{period}{the time required for a planet to complete one orbit;
+more generally, the time for one repetition of some repeating motion}
+
+\vocabitem{focus}{one of two special points inside an ellipse: the
+ellipse consists of all points such that the sum of the
+distances to the two foci equals a certain number; a
+hyperbola also has a focus}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$G$}{the constant of proportionality in Newton's law of
+gravity; the gravitational force of attraction between two
+1-kg spheres at a center-to-center distance of 1 m}
+
+\end{notation}
+
+\begin{summarytext}
+
+Kepler deduced three empirical laws from data on the
+motion of the planets:
+\begin{description}
+  \item[Kepler's elliptical orbit law:] The planets orbit the sun in
+  elliptical orbits with the sun at one focus.
+  %
+  \item[Kepler's equal-area law:] The line connecting a planet to the
+  sun sweeps out equal areas in equal amounts of time.
+  %
+  \item[Kepler's law of periods:] The time required for a planet to
+  orbit the sun is proportional to the long axis of the
+  ellipse raised to the 3/2 power. The constant of proportionality
+  is the same for all the planets.
+\end{description}
+Newton was able to find a more fundamental explanation for
+these laws. Newton's law of gravity states that the
+magnitude of the attractive force between any two objects in
+the universe is given by
+\begin{equation*}
+F=Gm_1m_2/r^2\eqquad.
+\end{equation*}
+Weightlessness of objects in orbit around the earth is only
+apparent. An astronaut inside a spaceship is simply falling
+along with the spaceship. Since the spaceship is falling out
+from under the astronaut, it appears as though there was no
+gravity accelerating the astronaut down toward the deck.
+
+Gravitational forces, like all other forces, add like
+vectors. A gravitational force such as we ordinarily feel is
+the vector sum of all the forces exerted by all the parts of
+the earth. As a consequence of this, Newton proved the
+\emph{shell theorem} for gravitational forces:
+
+If an object lies outside a thin, uniform shell of mass,
+then the vector sum of all the gravitational forces exerted
+by all the parts of the shell is the same as if all the
+shell's mass was concentrated at its center.  If the object
+lies inside the shell, then all the gravitational forces cancel out exactly.
+
+\end{summarytext}
+
+\end{summary}

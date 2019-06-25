@@ -1,0 +1,864 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '08',
+    %q{Waves},
+    'ch:waves',
+    %q{\hspace{1.5mm}``The Great Wave Off Kanagawa,'' by Katsushika Hokusai (1760-1849).},
+    {'opener'=>'hokusai'}
+  )
+%>
+
+<% marg(0) %>
+<%
+  fig(
+    'mass-on-spring',
+    %q{%
+      A spring has an equilibrium length, 1, and
+      can be stretched, 2, or compressed, 3. A mass attached to the spring can be
+      set into motion initially, 4, and will then vibrate, 4-13.
+    }
+  )
+%>
+\label{fig:mass-on-spring}
+<% end_marg %>
+
+If you've read chapter \ref{ch:fields}, you've been introduced to the
+idea that the universe isn't really mechanical in nature. It's made of
+fields of force. When a radio antenna makes a disturbance in the electric
+and magnetic fields, those disturbances travel outward like ripples on
+a pond. In other words, waves are fundamental to the way the universe
+works.
+
+<% begin_sec("Vibrations",0) %>
+
+
+Your radio dial is calibrated in units of \emph{frequency},\index{frequency}
+the simplest example of this concept is provided not by a wave but
+by a vibrating physical object such as a mass on the end of a spring, \figref{mass-on-spring}.
+With no forces on it, the spring assumes its equilibrium length,
+\figref{mass-on-spring}/1. It can be stretched, 2, or compressed, 3. We attach
+the spring to a wall on the left and to a mass on the right.
+If we now hit the mass with a hammer, 4, it oscillates as
+shown in the series of snapshots, 4-13. If we assume that
+the mass slides back and forth without friction and that the
+motion is one-dimensional, then conservation of energy
+proves that the motion must be repetitive. When the block
+comes back to its initial position again, 7, its potential
+energy is the same again, so it must have the same kinetic
+energy again. The motion is in the opposite direction,
+however. Finally, at 10, it returns to its initial position
+with the same kinetic energy and the same direction of
+motion. The motion has gone through one complete cycle, and
+will now repeat forever in the absence of friction.
+
+The usual physics terminology for motion that repeats itself
+over and over is \index{motion!periodic}periodic motion, and
+the time required for one repetition is called the
+\index{period!defined}period, $T$. One
+complete repetition of the motion is called a cycle.
+
+We are used to referring to short-period sound vibrations as
+``high'' in pitch, and it sounds odd to have to say that
+high pitches have low periods. It is therefore more common
+to discuss the rapidity of a vibration in terms of the
+number of vibrations per second, a quantity called the
+\index{frequency!defined}frequency, $f$. Since the period is
+the number of seconds per cycle and the frequency is the
+number of cycles per second, they are reciprocals of each other,
+\begin{equation*}
+                f  =  1/T\eqquad.
+\end{equation*}
+
+Units of inverse second, $\sunit^{-1}$, are awkward in speech, so an
+abbreviation has been created. One Hertz, named in honor of
+a pioneer of radio technology, is one cycle per second. In
+abbreviated form, $1\ \zu{Hz}=1\ \sunit^{-1}$. This is the familiar unit
+used for the frequencies on the radio dial.
+
+\begin{eg}{Frequency of a radio station}
+\egquestion KMHD's frequency is 89.1 MHz. What does this mean,
+and what period does this correspond to?
+
+\eganswer The metric prefix M- is mega-, i.e., millions. The
+radio waves emitted by KMHD's transmitting antenna vibrate
+89.1 million times per second. This corresponds to a period of
+\begin{equation*}
+ T = 1/f= 1.12\times10^{-8}\ \sunit\eqquad.
+\end{equation*}
+
+This example shows a second reason why we normally speak in
+terms of frequency rather than period: it would be painful
+to have to refer to such small time intervals routinely. I
+could abbreviate by telling people that KMHD's period was
+11.2 nanoseconds, but most people are more familiar with the
+big metric prefixes than with the small ones.
+\end{eg}
+
+Units of frequency are also commonly used to specify the
+speeds of computers. The idea is that all the little
+circuits on a computer chip are synchronized by the very
+fast ticks of an electronic clock, so that the circuits can
+all cooperate on a task without getting ahead or behind.
+Adding two numbers might require, say, 30 clock cycles.
+Microcomputers these days operate at clock frequencies
+of about a gigahertz.
+
+<% marg(60) %>
+<%
+  fig(
+    '../../../share/mechanics/figs/amplitude-examples',
+    %q{%
+      1. The amplitude of the vibrations of the mass on a spring could be defined in two different ways. It would
+      have units of distance. 2. The amplitude of a swinging pendulum would more naturally be defined as an angle.
+    }
+  )
+%>
+\label{fig:amplitude-examples}
+<% end_marg %>
+We have discussed how to measure how fast something
+vibrates, but not how big the vibrations are. The general
+term for this is \index{amplitude!defined}amplitude, $A$. The
+definition of amplitude depends on the system being
+discussed, and two people discussing the same system may not
+even use the same definition. In the example of the block on
+the end of the spring, \figref{amplitude-examples}/1, the amplitude will be measured in
+distance units such as cm. One could work in terms of the
+distance traveled by the block from the extreme left to the
+extreme right, but it would be somewhat more common in
+physics to use the distance from the center to one extreme.
+The former is usually referred to as the \index{amplitude!peak-to-peak}peak-to-peak
+amplitude, since the extremes of the motion look like
+mountain peaks or upside-down mountain peaks on a graph of
+position versus time.
+
+In other situations we would not even use the same units for
+amplitude. The amplitude of a child on a swing, or a pendulum, \figref{amplitude-examples}/2, would most
+conveniently be measured as an angle, not a distance, since
+her feet will move a greater distance than her head. The
+electrical vibrations in a radio receiver would be measured
+in electrical units such as volts or amperes.
+
+<% marg(0) %>
+<%
+  fig('john-hancock-tower','The John Hancock Tower in Boston vibrates naturally at a frequency of 0.14 Hz. Surprisingly, this frequency is the same regardless of the amplitude of the vibrations')
+%>
+<% end_marg %>
+In many physical examples of vibrations, the force that brings
+the vibrating object back to equilibrium gets stronger and
+stronger as the object gets father and farther from equilibrium,
+and the force is directly proportional to the distance from
+equilibrium. Most springs behave this way, for example, so
+for example we'd expect that the spring in figure \figref{mass-on-spring}
+would make very nearly twice the force when stretched twice as much.
+We then define a spring constant,\index{spring constant}, which
+tells us how many newtons of force we get per meter of stretching.
+For example, the John Hancock Tower has a spring constant of about
+200 MN/m (meganewtons per meter), meaning that the wind must exert a force of about
+200 MN in order to make the tower sway by one meter. To make it sway by two meters,
+the force would have to be 400 MN.
+
+ % Published data are f=0.14 Hz, ht=241 m. I estimated mass by scaling Empire State's mass of 3.65 10^8 kg linearly with height.
+
+When the force has this type of mathematical behavior, the resulting
+motion is known as \emph{simple harmonic motion}. One surprising and
+useful fact about simple harmonic motion is that its frequency is independent
+of amplitude. Intuitively, we would expect that vibrations with a greater
+amplitude would take more time, i.e., have a lower frequency. However,
+when the amplitude is greater, the force accelerating the mass back toward
+the equilibrium position is also greater, and this turns out to compensate
+exactly for the need to travel a greater distance. Legend has it that
+Galileo first noticed this fact when he watched a chandelier swinging during
+a church service, and timed it against his pulse.
+Mathematically, the frequency of vibration is given by $f=(1/2\pi)\sqrt{k/m}$,
+where $k$ is the spring constant, and $m$ is the mass that is vibrating.
+
+\pagebreak[4]
+
+<%
+  fig(
+    'toes-in-pool',
+    %q{%
+      The two circular patterns of ripples pass
+      through each other. Unlike material objects, wave patterns can overlap in space, and when
+      this happens they combine by addition.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Wave motion",0) %>
+
+There are three main ways in which wave motion differs from
+the motion of objects made of matter.
+
+<% begin_sec("1. Superposition") %>
+
+The first, and most profound, difference between wave motion
+and the motion of objects is that waves do not display any
+repulsion of each other analogous to the normal forces
+between objects that come in contact. Two wave patterns can
+therefore overlap in the same region of space, as shown in
+the figure at the top of the page. Where the two waves
+coincide, they add together. For instance, suppose that at a
+certain location in at a certain moment in time, each wave
+would have had a crest 3 cm above the normal water level.
+The waves combine at this point to make a 6-cm crest. We use
+negative numbers to represent depressions in the water. If
+both waves would have had a troughs measuring -3 cm, then
+they combine to make an extra-deep -6 cm trough. A +3 cm
+crest and a -3 cm trough result in a height of zero, i.e.,
+the waves momentarily cancel each other out at that point.
+This additive rule is referred to as the 
+\index{principle of superposition}principle of superposition, ``superposition''
+being merely a fancy word for ``adding.''
+
+Superposition can occur not just with sinusoidal waves like
+the ones in the figure above but with waves of any shape.
+The figures on the following page show superposition of wave
+\index{pulse!defined}\emph{pulses}. A pulse is simply a wave of
+very short duration. These pulses consist only of a single
+hump or trough. If you hit a clothesline sharply, you will
+observe pulses heading off in both directions. This is
+analogous to the way ripples spread out in all directions
+when you make a disturbance at one point on water. The same
+occurs when the hammer on a piano comes up and hits a string.
+
+\startdq
+
+\begin{dq}
+In figure \figref{coil-spring-superposition}, the fifth frame shows the spring
+just about perfectly flat. If the two pulses have essentially
+canceled each other out perfectly, then why does the motion
+pick up again? Why doesn't the spring just stay flat?
+\end{dq}
+
+<%
+  fig(
+    'coil-spring-superposition',
+    %q{%
+      These pictures show the motion of wave pulses along a spring.
+      To make a pulse, one end of the spring was shaken by hand. Movies were filmed, and a series of frame chosen
+      to show the motion.\\
+      1. A pulse travels to the left.\\
+      2. Superposition of two colliding positive pulses.\\
+      3. Superposition of two colliding pulses, one positive and one negative.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+<%
+  fig(
+    'pete',
+    %q{%
+      As the wave pattern passes the rubber duck, the duck stays put. The water isn't
+      moving forward with the wave.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("2. The medium is not transported with the wave.",4) %>
+
+Figure \figref{pete} shows a series of water
+waves before it has reached a rubber duck (left), having
+just passed the duck (middle) and having progressed about a
+meter beyond the duck (right). The duck bobs around its
+initial position, but is not carried along with the wave.
+This shows that the water itself does not flow outward with
+the wave. If it did, we could empty one end of a swimming
+pool simply by kicking up waves! We must distinguish between
+the motion of the medium (water in this case) and the motion
+of the wave pattern through the medium. The medium vibrates;
+the wave progresses through space.
+
+<% marg(60) %>
+<%
+  fig(
+    'ribbon-on-spring',
+    %q{%
+      As the wave pulse goes
+      by, the ribbon tied to the spring is not carried along. The motion
+      of the wave pattern is to the right, but the medium (spring) is
+      moving up and down, not to the right.
+    }
+  )
+%>
+<% end_marg %>
+
+<% self_check('ribbon-on-spring',<<-'SELF_CHECK'
+In figure \figref{ribbon-on-spring}, you can detect the side-to-side
+motion of the spring because the spring appears blurry. At a
+certain instant, represented by a single photo, how would
+you describe the motion of the different parts of the
+spring? Other than the flat parts, do any parts of the
+spring have zero velocity?
+  SELF_CHECK
+  ) %>
+
+\enlargethispage{-2\baselineskip}
+
+\begin{eg}{A worm}\label{eg:worm}
+The worm in the figure is moving to the right.
+The wave pattern, a pulse consisting of a compressed area of
+its body, moves to the left. In other words, the motion of the
+wave pattern is in the opposite direction compared to the motion
+of the medium.
+\end{eg}
+
+<%
+  fig(
+    'worm',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\enlargethispage{-2\baselineskip}
+
+\begin{eg}{Surfing}\label{eg:surfing}
+The incorrect belief that the medium moves with the wave is
+often reinforced by garbled secondhand knowledge of surfing.
+Anyone who has actually surfed knows that the front of the
+board pushes the water to the sides, creating a wake --- the
+surfer can even drag his hand through the water, as in in figure
+\figref{surfing-hand-drag}. If the
+water was moving along with the wave and the surfer, this
+wouldn't happen. The surfer is carried forward because
+forward is downhill, not because of any forward flow of the
+water. If the water was flowing forward, then a person
+floating in the water up to her neck would be carried along
+just as quickly as someone on a surfboard. In fact, it is
+even possible to surf down the back side of a wave, although
+the ride wouldn't last very long because the surfer and the
+wave would quickly part company.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("3. A wave's velocity depends on the medium.") %>
+
+<% marg(70) %>
+<%
+  fig(
+    'surfing-hand-drag',
+    %q{%
+      Example \ref{eg:surfing}. The
+      surfer is dragging his hand in the water.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'breaking-wave',
+    %q{Example \ref{eg:breaking-wave}: a breaking wave.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hull-speed',
+    %q{%
+      Example \ref{eg:hull-speed}. The boat has run up against
+      a limit on its speed because it can't climb over its own wave. Dolphins get around the
+      problem by leaping out of the water.
+    }
+  )
+%>
+<% end_marg %>
+
+A material object can move with any velocity, and can be
+sped up or slowed down by a force that increases or
+decreases its kinetic energy. Not so with waves. The
+magnitude of a wave's velocity depends on the properties of
+the medium (and perhaps also on the shape of the wave, for
+certain types of waves). Sound waves travel at about 340 m/s
+in air, 1000 m/s in helium.\index{sound!speed of} If you kick up water waves in a
+pool, you will find that kicking harder makes waves that are
+taller (and therefore carry more energy), not faster. The
+sound waves from an exploding stick of dynamite carry a lot
+of energy, but are no faster than any other waves. In the
+following section we will give an example of the physical
+relationship between the wave speed and the properties of the medium.
+
+\begin{eg}{Breaking waves}\label{eg:breaking-wave}
+The velocity of water waves
+increases with depth. The crest of a wave
+travels faster than the trough, and this can cause
+the wave to break.
+\end{eg}
+
+Once a wave is created, the only reason its speed will
+change is if it enters a different medium or if the
+properties of the medium change. It is not so surprising
+that a change in medium can slow down a wave, but the
+reverse can also happen. A sound wave traveling through a
+helium balloon will slow down when it emerges into the air,
+but if it enters another balloon it will speed back up
+again! Similarly, water waves travel more quickly over
+deeper water, so a wave will slow down as it passes over an
+underwater ridge, but speed up again as it emerges into deeper water.
+
+\begin{eg}{Hull speed}\label{eg:hull-speed}
+ The speeds of most boats, and of some surface-swimming
+animals, are limited by the fact that they make a wave due
+to their motion through the water. The boat in figure \figref{hull-speed}
+is going at the same speed as its own waves, and can't go any faster.
+No matter how hard the boat pushes
+against the water, it can't make the wave move ahead faster and get out of the
+way. The wave's speed depends only on the medium. Adding energy to the wave
+doesn't speed it up, it just increases its amplitude.
+
+A water wave, unlike many other types of wave, has a speed
+that depends on its shape: a broader wave moves faster. The
+shape of the wave made by a boat tends to mold itself to
+the shape of the boat's hull, so a boat with a longer hull
+makes a broader wave that moves faster. The maximum speed of
+a boat whose speed is limited by this effect is therefore
+closely related to the length of its hull, and the maximum
+speed is called the hull speed. Sailboats designed for racing are
+not just long and skinny to make
+them more streamlined --- they are also long so that their
+hull speeds will be high.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Wave patterns") %>
+
+<% marg(35) %>
+<%
+  fig(
+    'wave-patterns',
+    %q{Circular and linear wave patterns.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'wave-patterns-three-d',
+    %q{Plane and spherical wave patterns.}
+  )
+%>
+
+<% end_marg %>
+If the magnitude of a wave's velocity vector is preordained,
+what about its direction? Waves spread out in all directions
+from every point on the disturbance that created them. If
+the disturbance is small, we may consider it as a single
+point, and in the case of water waves the resulting wave
+pattern is the familiar circular ripple, \figref{wave-patterns}/1. If, on the other
+hand, we lay a pole on the surface of the water and wiggle
+it up and down, we create a linear wave pattern, \figref{wave-patterns}/2. For a
+three-dimensional wave such as a sound wave, the analogous
+patterns would be spherical waves and plane waves,
+\figref{wave-patterns-three-d}.
+
+Infinitely many patterns are possible, but linear or plane
+waves are often the simplest to analyze, because the
+velocity vector is in the same direction no matter what part
+of the wave we look at. Since all the velocity vectors are
+parallel to one another, the problem is effectively
+one-dimensional. Throughout this chapter and the next, we
+will restrict ourselves mainly to wave motion in one
+dimension, while not hesitating to broaden our horizons when
+it can be done without too much complication.
+
+\startdqs
+
+\begin{dq}
+[see above]
+\end{dq}
+
+\begin{dq}
+Sketch two positive wave pulses on a string that are
+overlapping but not right on top of each other, and draw
+their superposition. Do the same for a positive pulse
+running into a negative pulse.
+\end{dq}
+
+\begin{dq}
+A traveling wave pulse is moving to the right on a
+string. Sketch the velocity vectors of the various parts of
+the string. Now do the same for a pulse moving to the left.
+\end{dq}
+
+\begin{dq}
+In a spherical sound wave spreading out from a point, how
+would the energy of the wave fall off with distance?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Sound and light waves",3) %>\index{sound}\index{light}
+
+<% begin_sec("Sound waves") %>
+
+The phenomenon of sound is easily found to have all the
+characteristics we expect from a wave phenomenon:
+
+\begin{itemize}
+\item Sound waves obey superposition. Sounds do not knock other
+sounds out of the way when they collide, and we can hear
+more than one sound at once if they both reach our ear simultaneously.
+
+\item The medium does not move with the sound. Even standing in
+front of a titanic speaker playing earsplitting music, we do
+not feel the slightest breeze.
+
+\item The velocity of sound depends on the medium. Sound travels
+faster in helium than in air, and faster in water than in
+helium. Putting more energy into the wave makes it more
+intense, not faster. For example, you can easily detect an
+echo when you clap your hands a short distance from a large,
+flat wall, and the delay of the echo is no shorter for a louder clap.
+\end{itemize}
+
+Although not all waves have a speed that is independent of
+the shape of the wave, and this property therefore is
+irrelevant to our collection of evidence that sound is a
+wave phenomenon, sound does nevertheless have this property.
+For instance, the music in a large concert hall or stadium
+may take on the order of a second to reach someone seated in
+the nosebleed section, but we do not notice or care, because
+the delay is the same for every sound. Bass, drums, and
+vocals all head outward from the stage at 340 m/s,
+regardless of their differing wave shapes.
+
+If sound has all the properties we expect from a wave, then
+what type of wave is it? It must be a vibration of a
+physical medium such as air, since the speed of sound is
+different in different media, such as helium or water.
+Further evidence is that we don't receive sound signals that
+have come to our planet through outer space. The roars and
+whooshes of Hollywood's space ships are fun, but scientifically wrong.\footnote{Outer
+space is not a perfect vacuum, so it is possible for sounds waves to travel through
+it. However, if we want to create a sound wave, we typically do it by creating
+vibrations of a physical object, such as the sounding board of a guitar,
+the reed of a saxophone, or a speaker cone. The lower the density of the surrounding
+medium, the less efficiently the energy can be converted into sound and
+carried away. An isolated tuning fork, left to vibrate in interstellar space,
+would dissipate the energy of its vibration into internal heat at a rate
+many orders of magnitude greater than the rate of sound emission into the
+nearly perfect vacuum around it.}
+
+We can also tell that sound waves consist of compressions
+and expansions, rather than sideways vibrations like the
+shimmying of a snake. Only compressional vibrations would be
+able to cause your eardrums to vibrate in and out. Even for
+a very loud sound, the compression is extremely weak; the
+increase or decrease compared to normal atmospheric pressure
+is no more than a part per million. Our ears are apparently
+very sensitive receivers!
+
+<% end_sec() %>
+<% begin_sec("Light waves") %>
+
+Entirely similar observations lead us to believe that light
+is a wave, although the concept of light as a wave had a
+long and tortuous history. It is interesting to note that
+Isaac Newton very influentially advocated a contrary idea
+about light. The belief that matter was made of atoms was
+stylish at the time among radical thinkers (although there
+was no experimental evidence for their existence), and it
+seemed logical to Newton that light as well should be made
+of tiny particles, which he called corpuscles (Latin for
+``small objects''). Newton's triumphs in the science of
+mechanics, i.e., the study of matter, brought him such great
+prestige that nobody bothered to question his incorrect
+theory of light for 150 years. One persuasive proof that
+light is a wave is that according to Newton's theory, two
+intersecting beams of light should experience at least some
+disruption because of collisions between their corpuscles.
+Even if the corpuscles were extremely small, and collisions
+therefore very infrequent, at least some dimming should have
+been measurable. In fact, very delicate experiments have
+shown that there is no dimming.
+
+The wave theory of light was entirely successful up until
+the 20th century, when it was discovered that not all the
+phenomena of light could be explained with a pure wave
+theory. It is now believed that both light and matter are
+made out of tiny chunks which have \emph{both} wave and
+particle properties. For now, we will content ourselves with
+the wave theory of light, which is capable of explaining a
+great many things, from cameras to rainbows.
+
+If light is a wave, what is waving? What is the medium that
+wiggles when a light wave goes by? It isn't air. A vacuum is
+impenetrable to sound, but light from the stars travels
+happily through zillions of miles of empty space. Light
+bulbs have no air inside them, but that doesn't prevent the
+light waves from leaving the filament. For a long time,
+physicists assumed that there must be a mysterious medium
+for light waves, and they called it the aether (not to be
+confused with the chemical). Supposedly the aether existed
+everywhere in space, and was immune to vacuum pumps. 
+We now know that, as discussed in chapter \ref{ch:fields}, light can instead be
+explained as a wave pattern made up of electrical and magnetic fields.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Periodic waves",3) %>
+
+<% begin_sec("Period and frequency of a periodic wave") %>
+
+You choose a radio station by selecting a certain frequency.
+We have already defined period and frequency for vibrations,
+but what do they signify in the case of a wave? We can
+recycle our previous definition simply by stating it in
+terms of the vibrations that the wave causes as it passes a
+receiving instrument at a certain point in space. For a
+sound wave, this receiver could be an eardrum or a
+microphone. If the vibrations of the eardrum repeat
+themselves over and over, i.e., are periodic, then we
+describe the sound wave that caused them as periodic.
+Likewise we can define the period and frequency of a wave in
+terms of the period and frequency of the vibrations it
+causes. As another example, a periodic water wave would be
+one that caused a rubber duck to bob in a periodic manner
+as they passed by it.
+<% marg(80) %>
+<%
+  fig(
+    'aaah',
+    %q{%
+      A graph of pressure versus time for a periodic sound
+      wave, the vowel ``ah.''
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'shhhh',
+    %q{A similar graph for a non-periodic wave, ``sh.''}
+  )
+%>
+<% end_marg %>
+
+The period of a sound wave correlates with our sensory
+impression of musical pitch. A high frequency (short period)
+is a high note. The sounds that really define the musical
+notes of a song are only the ones that are periodic. It is
+not possible to sing a non-periodic sound like ``sh''
+with a definite pitch.
+
+The frequency of a light wave corresponds to color. Violet
+is the high-frequency end of the rainbow, red the low-frequency
+end. A color like brown that does not occur in a rainbow is
+not a periodic light wave. Many phenomena that we do not
+normally think of as light are actually just forms of light
+that are invisible because they fall outside the range of
+frequencies our eyes can detect. Beyond the red end of the
+visible rainbow, there are infrared and radio waves. Past
+the violet end, we have ultraviolet, x-rays, and gamma rays.
+
+<% end_sec() %>
+<% begin_sec("Graphs of waves as a function of position") %>
+
+<% marg(0) %>
+<%
+  fig(
+    'strip-chart-recorder',
+    %q{A strip chart recorder.}
+  )
+%>
+<% end_marg %>
+Some waves, like sound waves, are easy to study by placing
+a detector at a certain location in space and studying the
+motion as a function of time. The result is a graph whose
+horizontal axis is time. With a water wave, on the other
+hand, it is simpler just to look at the wave directly. This
+visual snapshot amounts to a graph of the height of the
+water wave as a function of \emph{position}. Any wave can be
+represented in either way.
+
+An easy way to visualize this is in terms of a strip chart
+recorder, an obsolescing device consisting of a pen that
+wiggles back and forth as a roll of paper is fed under it.
+It can be used to record a person's electrocardiogram, or
+seismic waves too small to be felt as a noticeable
+earthquake but detectable by a seismometer. Taking the
+seismometer as an example, the chart is essentially a record
+of the ground's wave motion as a function of time, but if
+the paper was set to feed at the same velocity as the motion
+of an earthquake wave, it would also be a full-scale
+representation of the profile of the actual wave pattern
+itself. Assuming, as is usually the case, that the wave
+velocity is a constant number regardless of the wave's
+shape, knowing the wave motion as a function of time is
+equivalent to knowing it as a function of position.
+
+<% end_sec() %>
+<% begin_sec("Wavelength") %>
+
+Any wave that is periodic will also display a repeating
+pattern when graphed as a function of position. The distance
+spanned by one repetition is referred to as one \emph{wavelength}.
+The usual notation for wavelength is $\lambda $, the Greek
+letter lambda. Wavelength is to space as period is to time.
+<% marg(50) %>
+<%
+  fig(
+    'wavelength',
+    %q{A water wave profile created by a series of repeating pulses.}
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'circular-and-linear-wavelengths',
+    %q{Wavelengths of linear and circular water waves.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Wave velocity related to frequency and wavelength") %>
+
+Suppose that we create a repetitive disturbance by kicking
+the surface of a swimming pool. We are essentially making a
+series of wave pulses. The wavelength is simply the distance
+a pulse is able to travel before we make the next pulse. The
+distance between pulses is $\lambda $, and the time between
+pulses is the period, $T$, so the speed of the wave is the
+distance divided by the time,
+\begin{equation*}
+                v    =    \lambda /T   .
+\end{equation*}
+
+This important and useful relationship is more commonly
+written in terms of the frequency,
+
+\begin{equation*}
+                v    =    f \lambda\eqquad.
+\end{equation*}
+
+\begin{eg}{Wavelength of radio waves}
+\egquestion The speed of light is $3.0\times10^8$ m/s. What
+is the wavelength of the radio waves emitted by KKJZ, a
+station whose frequency is 88.1 MHz?
+
+\eganswer Solving for wavelength, we have
+\begin{align*}
+ \lambda &= v/f \\
+ &= (3.0\times10^8\ \munit/\sunit)/(88.1\times10^6\ \sunit^{-1}) \\
+ &= 3.4\ \munit
+\end{align*}
+The size of a radio antenna is closely related to the
+wavelength of the waves it is intended to receive. The match
+need not be exact (since after all one antenna can receive
+more than one wavelength!), but the ordinary ``whip''
+antenna such as a car's is 1/4 of a wavelength. An antenna
+optimized to receive KKJZ's signal would have a length of $3.4\ \munit/4= 0.85\ \munit$.
+\end{eg}
+
+<%
+  fig(
+    'ultrasound',
+    %q{%
+      Ultrasound, i.e., sound with frequencies higher than the range of human
+      hearing, was used to make this image of a fetus. The resolution of the image is related to
+      the wavelength, since details smaller than about one wavelength cannot be resolved. High
+      resolution therefore requires a short wavelength, corresponding to a high frequency.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The equation $v=f \lambda $ defines a fixed relationship
+between any two of the variables if the other is held fixed.
+The speed of radio waves in air is almost exactly the same
+for all wavelengths and frequencies (it is exactly the same
+if they are in a vacuum), so there is a fixed relationship
+between their frequency and wavelength. Thus we can say
+either ``Are we on the same wavelength?'' or ``Are we on
+the same frequency?''
+
+<% marg(32) %>
+<%
+  fig(
+    'wavelength-change',
+    %q{%
+      A water wave traveling into a region with a different
+      depth changes its wavelength.
+    }
+  )
+%>
+<% end_marg %>
+A different example is the behavior of a wave that travels
+from a region where the medium has one set of properties to
+an area where the medium behaves differently. The frequency
+is now fixed, because otherwise the two portions of the wave
+would otherwise get out of step, causing a kink or
+discontinuity at the boundary, which would be unphysical. (A
+more careful argument is that a kink or discontinuity would
+have infinite curvature, and waves tend to flatten out their
+curvature. An infinite curvature would flatten out
+infinitely fast, i.e., it could never occur in the first
+place.) Since the frequency must stay the same, any change
+in the velocity that results from the new medium must cause
+a change in wavelength.
+
+The velocity of water waves depends on the depth of the
+water, so based on $\lambda =v/f$, we see that water waves
+that move into a region of different depth must change their
+wavelength, as shown in figure \figref{wavelength-change}. This effect
+can be observed when ocean waves come up to the shore. If
+the deceleration of the wave pattern is sudden enough, the
+tip of the wave can curl over, resulting in a breaking wave.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_hw_sec %>
+
+<% begin_hw('sperm') %>__incl(hw/sperm)<% end_hw() %>
+
+<% begin_hw('pendulum',2) %>__incl(hw/pendulum)<% end_hw() %>
+
+<% begin_hw('alterations') %>__incl(hw/alterations)<% end_hw() %>
+
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-water-wave-pulse',
+    %q{Problem \ref{hw:waterpulse}.}
+  )
+%>
+
+<% end_marg %>
+<% begin_hw('waterpulse') %>__incl(hw/waterpulse)<% end_hw() %>
+
+<% begin_hw('superpositionexperiment') %>__incl(hw/superpositionexperiment)<% end_hw() %>
+
+<% begin_hw('middlec') %>
+ The musical note middle $C$ has a frequency of 262 Hz.
+What are its period and wavelength?\answercheck
+<% end_hw() %>
+
+
+<% end_hw_sec %>
+<% end_chapter() %>

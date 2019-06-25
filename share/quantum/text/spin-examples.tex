@@ -1,0 +1,69 @@
+<% begin_sec("Adds and evens, and how they add up",nil,'odds-and-evens') %>
+From grade-school arithmetic, we have the rules
+\begin{align*}
+  \text{even}+\text{even} &= \text{even} \\
+  \text{odd}+\text{even} &= \text{odd} \\
+  \text{odd}+\text{odd} &= \text{even}.
+\end{align*}
+Thus we know that $123456789+987654321$ is even, without having to actually compute the result.
+Dividing by two gives similar relationships for integer and half-integer angular momenta.
+For example, a half-integer plus an integer gives a half-integer, and therefore when we add
+the intrinsic spin 1/2 of an electron to any additional, integer spin that the electron
+has from its motion through space,
+we get a half-integer angular momentum. That is, the \emph{total} angular momentum of an electron
+will always be a half-integer. Similarly, when we add the intrinsic spin 1 of a photon to its
+angular momentum due to its integral motion through space, we will always get an integer. Thus
+the integer or half-integer character of any particle's \emph{total} angular momentum 
+($\text{spin}+\text{motion}$) is determined entirely by the particle's spin.
+
+These relationships tell us things about the spins we can make by putting together different
+particles to make bigger particles, and they also tell us things about decay processes.
+
+\begin{eg}{Spin of the helium atom}
+A helium-4 atom consists of two protons, two neutrons, and two electrons.
+A proton, a neutron, and an electron each have spin 1/2. Since the atom is
+a composite of six particles, each of which has half-integer spin, the atom as
+a whole has an integer angular momentum.
+\end{eg}
+
+\begin{eg}{Emission of a photon from an atom}
+An atom can emit light,
+\begin{equation*}
+  \text{atom} \rightarrow \text{atom}+\text{photon}.
+\end{equation*}
+This works in terms of angular momentum because the photon's spin 1 is an integer.
+Thus, regardless of whether the atom's angular momentum is an integer or a half-integer,
+the process is allowed by conservation of angular momentum. If the atom's angular momentum
+is an integer, then we have $\text{integer}=\text{integer}+1$, and if it's
+a half-integer, $\text{half-integer}=\text{half-integer}+1$; either of these is possible.
+If not for this logic, it would be impossible for matter to emit light. In general,
+if we want a particle such as a photon to pop into existence like this, it must
+have an integer spin.
+\end{eg}
+
+\begin{eg}{Beta decay}
+When a free neutron undergoes beta decay, we have
+\begin{equation*}
+  \text{n} \rightarrow \text{p}+\text{e}^-+\bar{\nu}.
+\end{equation*}
+All four of these particles have spin 1/2, so the angular momenta go like
+\begin{equation*}
+  \text{half-integer} \rightarrow \text{half-integer}+\text{half-integer}+\text{half-integer},
+\end{equation*}
+which is possible, e.g., $1/2=3/2-5/2+3/2$. Because the neutrino has almost no interaction with
+normal matter, it normally flies off undetected, and the reaction was originally thought to be
+\begin{equation*}
+  \text{n} \rightarrow \text{p}+\text{e}.
+\end{equation*}
+With hindsight, this is impossible, because we can never have
+\begin{equation*}
+  \text{half-integer} \rightarrow \text{half-integer}+\text{half-integer}.
+\end{equation*}
+The reasoning holds not just for the beta decay of a free neutron, but for any beta decay: a neutrino or antineutrino
+must be emitted in order to conserve angular momentum.
+But historically, this was not understood at first, and when Enrico Fermi proposed the
+existence of the neutrino in 1934, the journal to which he first submitted his paper
+rejected it as ``too remote from reality.''
+\end{eg}
+
+<% end_sec('odds-and-evens') %>

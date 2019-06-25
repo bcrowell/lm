@@ -1,0 +1,191 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '01',
+    %q{Scaling and Estimation},
+    'ch:scaling',
+    %q{Life would be very different if you were the size of an insect.},
+    {'opener'=>'bee-flying','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/2_scaling_and_estimation)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{summary}
+
+\begin{notation}
+
+\notationitem{$\propto$}{is proportional to}
+
+\notationitem{$\sim$}{on the order of, is on the order of}
+
+\end{notation}
+
+\begin{summarytext}
+
+Nature behaves differently on large and small scales.
+Galileo showed that this results fundamentally from the way
+area and volume scale. Area scales as the second power of
+length, $A\propto L^2$, while volume scales as length to the
+third power, $V\propto L^3$.
+
+An order of magnitude estimate is one in which we do not
+attempt or expect an exact answer. The main reason why the
+uninitiated have trouble with order-of-magnitude estimates
+is that the human brain does not intuitively make accurate
+estimates of area and volume. Estimates of area and volume
+should be approached by first estimating linear dimensions,
+which one's brain has a feel for.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('cubicft') %>__incl(hw/cubicft)<% end_hw() %>
+
+<% begin_hw('dogbrain') %>__incl(hw/dogbrain)<% end_hw() %>
+
+<% begin_hw('lasf') %>__incl(hw/lasf)<% end_hw() %>
+
+<% begin_hw('dognose') %>__incl(hw/dognose)<% end_hw() %>
+
+<% begin_hw('grass') %>__incl(hw/grass)<% end_hw() %>
+
+<% begin_hw('chip') %>__incl(hw/chip)<% end_hw() %>
+
+<% begin_hw('apartments') %>__incl(hw/apartments)<% end_hw() %>
+
+<% begin_hw('bongoburgers') %>__incl(hw/bongoburgers)<% end_hw() %>
+
+<% begin_hw('bodyvolume') %>__incl(hw/bodyvolume)<% end_hw() %>
+
+<% begin_hw('square-mm-to-cm') %>__incl(hw/square-mm-to-cm)<% end_hw() %>
+
+<% begin_hw('light-bucket') %>__incl(hw/light-bucket)<% end_hw() %>
+
+<% begin_hw('richter') %>__incl(hw/richter)<% end_hw() %>
+
+<% begin_hw('europaper') %>__incl(hw/europaper)<% end_hw() %>
+
+<% marg(30) %>
+<%
+  fig(
+    'einstein',
+    %q{Albert Einstein, and his moustache, problem \ref{hw:hairmass}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-liter-cube',
+    %q{Problem \ref{hw:liter-cube}.}
+  )
+%>
+
+<% end_marg %>
+<% begin_hw('hairmass') %>__incl(hw/hairmass)<% end_hw() %>
+
+<% begin_hw('et-tu',1) %>__incl(hw/et-tu)<% end_hw() %>
+
+<% begin_hw('mars-land-area') %>__incl(hw/mars-land-area)<% end_hw() %>
+
+<% begin_hw('martini') %>__incl(hw/martini)<% end_hw() %>
+
+<% begin_hw('cd-hole') %>__incl(hw/cd-hole)<% end_hw() %>
+
+<% begin_hw('liter-cube') %>__incl(hw/liter-cube)<% end_hw() %>
+
+\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-e-coli',
+    %q{Problem \ref{hw:e-coli}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('dummy') %>
+        [This problem is now problem \ref{ch:intro}-\ref{hw:triangle-formula} on p.~\pageref{hw:triangle-formula}.]
+<% end_hw() %>
+
+<% begin_hw('great-wall') %>__incl(hw/great-wall)<% end_hw() %>
+
+<% begin_hw('e-coli') %>__incl(hw/e-coli)<% end_hw() %>
+
+<% begin_hw('taxa-scaling') %>__incl(hw/taxa-scaling)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('insect-x-ray') %>__incl(hw/insect-x-ray)<% end_hw() %>
+
+<% begin_hw('seti-volume') %>__incl(hw/seti-volume)<% end_hw() %>
+<% marg(65) %>
+<%
+  fig(
+    'seti-volume',
+    %q{Problem \ref{hw:seti-volume}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('jelly-beans') %>__incl(hw/jelly-beans)<% end_hw() %>
+
+<% begin_hw('golf-ball-packing') %>__incl(hw/golf-ball-packing)<% end_hw() %>
+<% marg(65) %>
+<%
+  fig(
+    'hw-golf-ball-packing',
+    %q{Problem \ref{hw:golf-ball-packing}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('plutonium-in-oceans',1) %>__incl(hw/plutonium-in-oceans)<% end_hw() %>
+
+
+<% end_hw_sec %>
+
+ %%----------------------------------------------------------
+
+%====================================================================
+%====================================================================
+%====================================================================
+
+<% begin_ex("Scaling applied to leaves") %>
+
+Equipment:
+
+\begin{indentedblock}
+    leaves of three sizes, having roughly similar proportions
+of length, width, and thickness
+
+    balance
+
+\end{indentedblock}
+
+Each group will have one leaf, and should measure its
+surface area and volume, and determine its surface-to-volume
+ratio. For consistency,
+every group should use units of $\zu{cm}^2$ and $\zu{cm}^3$, and
+should only find the area of one side of the leaf. The area
+can be found by tracing the area of the leaf on graph paper
+and counting squares. The volume can be found by weighing
+the leaf and assuming that its density is 1 $\zu{g}/\zu{cm}^3$ (the density of water).
+What implications do your results have for the plants' abilities
+to survive in different environments?
+
+\includegraphics[width=170mm]{../share/intro/figs/ex-leaves}
+
+<% end_ex %>
+
+<% figure_in_toc('swan-lake') %>
+
+<% end_chapter() %>

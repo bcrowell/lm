@@ -1,0 +1,1507 @@
+<% begin_sec("Types of motion",0,'types-of-motion') %>\index{motion!types of}
+
+If you had to think consciously in order to move your body,
+you would be severely disabled.  Even walking, which we
+consider to be no great feat, requires an intricate series
+of motions that your cerebrum would be utterly incapable of
+coordinating.  The task of putting one foot in front of the
+other is controlled  by the more primitive parts of your
+brain, the ones that have not changed much since the mammals
+and reptiles went their separate evolutionary ways.  The
+thinking part of your brain limits itself to general
+directives such as ``walk faster,'' or ``don't step on her
+toes,'' rather than micromanaging every contraction and
+relaxation of the hundred or so muscles of your hips, legs, and feet.
+
+<% marg(110) %>
+<%
+  fig(
+    'bike',
+    %q{Rotation.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'rolling-soccer-ball',
+    %q{Simultaneous rotation and motion through space.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'chair',
+    %q{%
+      One person might say that the
+      tipping chair was only rotating
+      in a circle about its point of
+      contact with the floor, but
+      another could describe it as
+      having both rotation and
+      motion through space.
+    }
+  )
+%>
+<% end_marg %>%
+Physics is all about the conscious understanding of motion,
+but we're obviously not immediately prepared to understand
+the most complicated types of motion.  Instead, we'll use
+the divide-and-conquer technique.  We'll first classify the
+various types of motion, and then begin our campaign with an
+attack on the simplest cases.  To make it clear what we are
+and are not ready to consider, we need to examine and define
+carefully what types of motion can exist.
+
+  <% begin_sec("Rigid-body motion distinguished from motion that changes an object's shape") %>\index{motion!rigid-body}
+
+Nobody, with the possible exception of Fred Astaire, can
+simply glide forward without bending their joints.  Walking
+is thus an example in which there is both a general motion
+of the whole object and a change in the shape of the object.
+ Another example is the motion of a jiggling water balloon
+as it flies through the air.  We are not presently
+attempting a mathematical description of the way in which
+the shape of an object changes.  Motion without a change in
+shape is called rigid-body motion.  (The word ``body'' is
+often used in physics as a synonym for ``object.'')
+
+  <% end_sec() %>
+  <% begin_sec("Center-of-mass motion as opposed to rotation",nil,'cm-qualitative') %>\index{rotation}
+
+A ballerina leaps into the air and spins around once before
+landing.  We feel intuitively that her rigid-body motion
+while her feet are off the ground consists of two kinds of
+motion going on simultaneously: a rotation and a motion of
+her body as a whole through space, along an arc.  It is not
+immediately obvious, however, what is the most useful way to
+define the distinction between rotation and motion through
+space.  Imagine that you attempt to balance a chair and it
+falls over.  One person might say that the only motion was a
+rotation about the chair's point of contact with the floor,
+but another might say that there was both rotation and
+motion down and to the side.
+
+<%
+  fig(
+    'jete-side',
+    %q{%
+      The leaping dancer's motion is
+      complicated, but the motion of her center of mass is simple.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% marg(140) %>
+<%
+  fig(
+    'pears',
+    %q{%
+      No matter what point you hang the
+      pear from, the string lines up with the
+      pear's center of mass. The center of
+      mass can therefore be defined as the
+      intersection of all the lines made by
+      hanging the pear in this way.  Note that
+      the X in the figure should not be
+      interpreted as implying that the center
+      of mass is on the surface --- it is
+      actually inside the pear.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'trapeze',
+    %q{%
+      The circus performers hang with the ropes passing
+      through their centers of mass.
+    }
+  )
+%>
+
+<% end_marg %>%
+It turns out that there is one particularly natural and
+useful way to make a clear definition, but it requires a
+brief digression.  Every object has a balance point,
+referred to in physics as the \emph{center of mass}.  For a
+two-dimensional object such as a cardboard cutout, the
+center of mass is the point at which you could hang the
+object from a string and make it balance.  In the case of
+the ballerina (who is likely to be three-dimensional unless
+her diet is particularly severe), it might be a point either
+inside or outside her body, depending on how she holds her
+arms.  Even if it is not practical to attach a string to the
+balance point itself, the \index{center of mass}center of
+mass can be defined as shown in figure \figref{pears}.
+
+Why is the center of mass concept relevant to the question
+of classifying rotational motion as opposed to motion
+through space?  As illustrated in figures \figref{jete-side} and \figref{jete-overhead},
+ it turns
+out that the motion of an object's center of mass is nearly
+always far simpler than the motion of any other part of the
+object.  The ballerina's body is a large object with a
+complex shape. We might expect that her motion would be much
+more complicated than the motion of a small, simply-shaped
+object, say a marble, thrown up at the same angle as the
+angle at which she leapt.  But it turns out that the motion
+of the ballerina's center of mass is exactly the same as the
+motion of the marble.  That is, the motion of the center of
+mass is the same as the motion the ballerina would have if
+all her mass was concentrated at a point.  By restricting
+our attention to the motion of the center of mass, we can
+therefore simplify things greatly.
+
+<%
+  fig(
+    'jete-overhead',
+    %q{%
+      %
+      The same leaping dancer, viewed from
+      above.  Her center of mass traces a
+      straight line, but a point away from her
+      center of mass, such as her elbow,
+      traces the much more  complicated
+      path shown by the dots.
+      
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+We can now replace the ambiguous idea of ``motion as a whole
+through space'' with the more useful and better defined
+concept of ``\index{center of mass!motion of}\index{center-of-mass
+motion}center-of-mass motion.''  The motion of any rigid
+body can be cleanly split into rotation and center-of-mass
+motion.  By this definition, the tipping chair does have
+both rotational and center-of-mass motion. Concentrating on
+the center of mass motion allows us to make a simplified
+\index{models}model of the motion, as if a complicated
+object like a human body was just a marble or a point-like
+particle. Science really never deals with reality; it deals
+with models of reality.
+
+<% marg(105) %>
+<%
+  fig(
+    'unbalanced-wheel',
+    %q{%
+      An improperly balanced wheel has a
+      center of mass that is not at its
+      geometric center. When you get a new
+      tire, the mechanic clamps little weights
+      to the rim to balance the wheel.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'jumping-toy',
+    %q{%
+      This toy was intentionally designed so that the mushroom-shaped
+      piece of metal on top would throw off the center of mass. When you wind it
+      up, the mushroom spins, but the center of mass doesn't want to move, so the
+      rest of the toy tends to counter the mushroom's motion, causing the whole
+      thing to jump around.
+    }
+  )
+%>
+<% end_marg %>
+Note that the word ``center'' in ``center of mass'' is not
+meant to imply that the center of mass must lie at the
+geometrical center of an object.  A car wheel that has not
+been balanced properly has a center of mass that does not
+coincide with its geometrical center.  An object such as the
+human body does not even have an obvious geometrical center.
+
+It can be helpful to think of the center of mass as the
+average location of all the mass in the object. With this
+interpretation, we can see for example that raising your
+arms above your head raises your center of mass, since the
+higher position of the arms' mass raises the average. We won't
+be concerned right now with calculating centers of mass
+mathematically; the relevant equations are in ch.~\ref{ch:momentum}.
+
+<%
+  fig(
+    'jete-illusion',
+    %q{%
+      A fixed point on the dancer's body
+      follows a trajectory that is flatter than
+      what we expect, creating an illusion
+      of flight.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Ballerinas and professional basketball players can create an
+illusion of flying horizontally through the air because our
+brains intuitively expect them to have rigid-body motion,
+but the body does not stay rigid while executing a
+\index{grand jete}grand jete or a \index{slam dunk}slam
+dunk.  The legs are low at the beginning and end of the
+jump, but come up higher at the middle.  Regardless of what
+the limbs do, the center of mass will follow the same arc,
+but the low position of the legs at the beginning and end
+means that the torso is higher compared to the center of
+mass, while in the middle of the jump it is lower compared
+to the center of mass.  Our eye follows the motion of the
+torso and tries to interpret it as the center-of-mass motion
+of a rigid body.  But since the torso follows a path that is
+flatter than we expect, this attempted interpretation fails,
+and we experience an illusion that the person is flying
+horizontally.
+<%
+  fig(
+    'cm-examples',
+    %q{Example \ref{eg:cm-examples}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{The center of mass as an average}\label{eg:cm-examples}
+\egquestion Explain how we know that the center of mass of each
+object is at the location shown in figure \figref{cm-examples}.
+
+\eganswer The center of mass is a sort of average, so the height
+of the centers of mass in 1 and 2 has to be midway between the
+two squares, because that height is the average of the heights
+of the two squares. Example 3 is a combination of examples 1
+and 2, so we can find its center of mass by averaging the horizontal
+positions of their centers of mass. In example 4, each 
+square has been skewed a little, but just as much mass has been
+moved up as down, so the average vertical position of the mass
+hasn't changed. Example 5 is clearly not all that different from
+example 4, the main difference being a slight clockwise rotation,
+so just as in example 4, the center of mass must be hanging in
+empty space, where there isn't actually any mass. Horizontally,
+the center of mass must be between the heels and toes, or else
+it wouldn't be possible to stand without tipping over.
+\end{eg}
+
+Another interesting example from the sports
+world is the \index{high jump}high jump, in which the
+jumper's curved body passes over the bar, but the center of
+mass passes under the bar!  Here the jumper lowers his legs
+and upper body at the peak of the jump in order to bring his
+waist higher compared to the center of mass.
+
+<% marg(0) %>
+<%
+  fig(
+    'high-jump',
+    %q{%
+      The high-jumper's body passes over
+      the bar, but his center of mass passes under it.
+    }
+  )
+%>
+\vspace{30mm}
+<%
+  fig(
+    'gymnastics-wheel',
+    %q{Self-check \ref{sc:gymnastics-wheel}.}
+  )
+%>
+
+<% end_marg %>
+
+Later in this course, we'll find that there are more
+fundamental reasons (based on Newton's laws of motion) why
+the center of mass behaves in such a simple way compared to
+the other parts of an object.  We're also postponing any
+discussion of numerical methods for finding an object's
+center of mass. Until later in the course, we will only deal
+with the motion of objects' centers of mass.
+
+  <% end_sec() %>
+  <% begin_sec("Center-of-mass motion in one dimension") %>
+
+
+In addition to restricting our study of motion to center-of-mass
+motion, we will begin by considering only cases in which the
+center of mass moves along a straight line.  This will
+include cases such as objects falling straight down, or a
+car that speeds up and slows down but does not turn.
+
+Note that even though we are not explicitly studying the
+more complex aspects of motion, we can still analyze the
+center-of-mass motion while ignoring other types of motion
+that might be occurring simultaneously .  For instance, if a
+cat is falling out of a tree and is initially upside-down,
+it goes through a series of contortions that bring its feet
+under it.  This is definitely not an example of rigid-body
+motion, but we can still analyze the motion of the cat's
+center of mass just as we would for a dropping rock.
+
+<% self_check('rigid-body',<<-'SELF_CHECK'
+Consider a person running, a person pedaling on a bicycle, a
+person coasting on a bicycle, and a person coasting on ice
+skates.  In which cases is the center-of-mass motion
+one-dimensional?  Which cases are examples of rigid-body motion?
+  SELF_CHECK
+  ) %>
+
+<% self_check('gymnastics-wheel',<<-'SELF_CHECK'
+The figure shows a gymnast holding onto the inside of a big wheel.
+From inside the wheel, how could he make it roll one way or the
+other?
+  SELF_CHECK
+  ) %>
+
+  <% end_sec() %>
+<% end_sec('types-of-motion') %>
+<% begin_sec("Describing distance and time",0,'describing-distance-and-time') %>
+
+Center-of-mass motion in one dimension is particularly easy
+to deal with because all the information about it can be
+encapsulated in two variables: $x$, the position of the
+center of mass relative to the origin, and $t$, which
+measures a point in time. For instance, if someone supplied
+you with a sufficiently detailed table of $x$ and $t$
+values, you would know pretty much all there was to know
+about the motion of the object's center of mass.
+
+  <% begin_sec("A point in time as opposed to duration",nil,'t-vs-delta-t') %>\index{time!point in}\index{time!duration}
+
+In ordinary speech, we use the word ``time'' in two
+different senses, which are to be distinguished in physics.
+It can be used, as in ``a short time'' or ``our time here on
+earth,'' to mean a length or duration of time, or it can be
+used to indicate a clock reading, as in ``I didn't know what
+time it was,'' or ``now's the time.'' In symbols, $t$ is
+ordinarily used to mean a point in time, while $\Delta t$
+signifies an interval or duration in time. The capital Greek
+letter delta, $\Delta $, means ``the change in...,'' i.e. a
+duration in time is the change or difference between one
+clock reading and another. The notation $\Delta t$ does not
+signify the product of two numbers, $\Delta $ and $t$, but
+rather one single number, $\Delta t$. If a matinee begins at
+a point in time $t=1$ o'clock and ends at $t=3$ o'clock, the
+duration of the movie was the change in $t$,
+\begin{equation*}
+     \Delta t=3\ \zu{hours} - 1\ \zu{hour} =  2\ \zu{hours}\eqquad.
+\end{equation*}
+To avoid the use of negative numbers for $\Delta t$, we
+write the clock reading ``after'' to the left of the minus
+sign, and the clock reading ``before'' to the right of the
+minus sign. A more specific definition of the \index{delta
+notation}delta notation is therefore that delta stands for
+``after minus before.''
+
+Even though our definition of the delta notation guarantees
+that $\Delta t$ is positive, there is no reason why $t$
+can't be negative. If $t$ could not be negative, what would
+have happened one second before $t=0?$ That doesn't mean
+that time ``goes backward'' in the sense that adults can
+shrink into infants and retreat into the womb. It just means
+that we have to pick a reference point and call it $t=0$,
+and then times before that are represented by negative values of $t$.
+An example is that a year like 2007 A.D. can be thought of as a positive
+$t$ value, while one like 370 B.C. is negative. Similarly, when you
+hear a countdown for a rocket launch, the phrase ``t minus ten seconds''
+is a way of saying $t=-10\ \sunit$, where $t=0$ is the time of blastoff,
+and $t>0$ refers to times after launch.
+
+Although a point in time can be thought of as a clock
+reading, it is usually a good idea to avoid doing computations
+with expressions such as ``2:35'' that are combinations of
+hours and minutes. Times can instead be expressed entirely
+in terms of a single unit, such as hours. Fractions of an
+hour can be represented by decimals rather than minutes, and
+similarly if a problem is being worked in terms of minutes,
+decimals can be used instead of seconds.
+
+<% self_check('t-versus-delta-t',<<-'SELF_CHECK'
+Of the following phrases, which refer to points in time,
+which refer to time intervals, and which refer to time in
+the abstract rather than as a measurable number?
+
+(1) ``The time has come.''
+
+(2) ``Time waits for no man.''
+
+(3) ``The whole time, he had spit on his chin.''
+  SELF_CHECK
+  ) %>
+
+m4_ifelse(__me,1,[:
+    <% begin_sec("The Leibniz notation and infinitesimals",nil,'leibniz-notation') %>\label{infinitesimals}
+$\Delta$ is the Greek version of ``D,'' suggesting that there is a
+relationship between $\Delta t$ and the notation $\der t$ from calculus.
+The ``d'' notation was invented by Leibniz\index{Leibniz, Gottfried} around 1675 to suggest the word ``difference.''
+                % Cajori, A History of Mathematical Notations: Vol. II, p. 203. Available online through google bookx.
+The idea was that a $\der t$ would be like a $\Delta t$ that was extremely small --- smaller than any real number, and
+yet greater than zero. These infinitestimal numbers\index{infinitesimal number}
+were the way the world's greatest mathematicians thought about calculus for the next two hundred
+years. For example, $\der y/\der x$ meant the number you got when you divided $\der y$ by $\der x$.
+The use of infinitesimal numbers was seen as a natural part of the process of generalization that had
+already seen the invention of fractions and irrational numbers by the ancient Greeks,
+zero and negative numbers in India, and complex numbers in Renaissance Italy.
+By the end of the 19th century, mathematicians had begun making formal mathematical descriptions of number systems,
+and they had succeeded in making nice tidy schemes out of all of these categories except for infinitesimals.
+Having run into a brick wall, they decided to rebuild calculus using the notion of a limit. Depending on when and
+where you got your education in calculus, you may have been warned severely that $\der y$ and $\der x$ were not
+numbers, and that $\der y/\der x$ didn't mean dividing one by another.
+
+But in the 1960's, the logician Abraham Robinson\index{Robinson, Abraham}
+at Yale proved that infinitesimals could be tamed and domesticated; they were no more self-contradictory
+than negative numbers or fractions. There is a handy rule for making sure that you don't come to incorrect conclusions
+by using infinitesimals. The rule is that you can apply any axiom of the real number system to infinitesimals, and
+the result will be correct, provided that the axiom can be put in a form like ``for any number \ldots,''
+but not ``for any \emph{set} of numbers \ldots''
+We carry over the axiom, reinterpreting ``number'' to mean any member of the enriched number system that includes both the
+real numbers and the infinitesimals.
+
+\begin{eg}{Logic and infinitesimals}
+There is an axiom of the real number system that for any number $t$, $t+0=t$. This applies to infinitesimals as well,
+so that $\der t +0=\der t$.
+\end{eg}
+    <% end_sec('leibniz-notation') %>
+:])
+  <% end_sec('t-vs-delta-t') %>
+  <% begin_sec("Position as opposed to change in position",nil,'x-vs-delta-x') %>
+
+As with time, a distinction should be made between a point
+in space, symbolized as a coordinate $x$, and a change in
+position, symbolized as $\Delta x$.
+
+As with $t,x$ can be negative. If a train is moving down the
+tracks, not only do you have the freedom to choose any point
+along the tracks and call it $x=0$, but it's also up to you
+to decide which side of the $x=0$ point is positive $x$ and
+which side is negative $x$.
+
+Since we've defined the delta notation to mean ``after minus
+before,'' it is possible that $\Delta x$ will be negative,
+unlike $\Delta t$ which is guaranteed to be positive.
+Suppose we are describing the motion of a train on tracks
+linking Tucson and Chicago. As shown in the figure, it is
+entirely up to you to decide which way is positive.
+
+<%
+  fig(
+    'tucson',
+    %q{%
+      Two equally valid ways of describing the motion of a train from Tucson to
+      Chicago. In example 1, the train has a positive 
+      $\Delta x$ as it goes from Enid to
+      Joplin. In 2, the same train going forward in the same
+      direction has a negative $\Delta x$.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Note that in addition to $x$ and $\Delta x$, there is a
+third quantity we could define, which would be like an
+odometer reading, or actual distance traveled. If you drive
+10 miles, make a U-turn, and drive back 10 miles, then your
+$\Delta x$ is zero, but your car's odometer reading has
+increased by 20 miles. However important the odometer
+reading is to car owners and used car dealers, it is not
+very important in physics, and there is not even a standard
+name or notation for it. The change in position, $\Delta x$,
+is more useful because it is so much easier to calculate: to
+compute $\Delta x$, we only need to know the beginning and
+ending positions of the object, not all the information
+about how it got from one position to the other.
+
+<% self_check('delta-x-bouncing',<<-'SELF_CHECK'
+A ball falls vertically, hits the floor, bounces to a height of one meter,
+falls, and hits the floor again. Is the $\\Delta x$ between
+the two impacts equal to zero, one, or two meters?
+  SELF_CHECK
+  ) %>
+
+  <% end_sec('x-vs-delta-x') %>
+  <% begin_sec("Frames of reference",nil,'frames-of-reference') %>
+
+The example above shows that there are two arbitrary choices
+you have to make in order to define a position variable,
+$x$. You have to decide where to put $x=0$, and also which
+direction will be positive. This is referred to as choosing
+a \index{coordinate system!defined}coordinate system or
+choosing a \index{frame of reference!defined}frame of
+reference. (The two terms are nearly synonymous, but the
+first focuses more on the actual $x$ variable, while the
+second is more of a general way of referring to one's point
+of view.) As long as you are consistent, any frame is
+equally valid. You just don't want to change coordinate
+systems in the middle of a calculation.
+
+m4_ifelse(__me,1,[:\enlargethispage{\baselineskip}:])
+
+Have you ever been sitting in a train in a station when
+suddenly you notice that the station is moving backward?
+Most people would describe the situation by saying that you
+just failed to notice that the train was moving --- it only
+seemed like the station was moving. But this shows that
+there is yet a third arbitrary choice that goes into
+choosing a coordinate system: valid frames of reference can
+differ from each other by moving relative to one another. It
+might seem strange that anyone would bother with a
+coordinate system that was moving relative to the earth, but
+for instance the frame of reference moving along with a
+train might be far more convenient for describing things
+happening inside the train.
+
+  <% end_sec('frames-of-reference') %>
+<% end_sec('describing-distance-and-time') %>
+<% begin_sec("Graphs of motion; velocity",0,'graphs-of-motion') %>\index{graphs!of position versus time}
+
+<% marg(100) %>
+<%
+  fig(
+    'xt-graph-1',
+    %q{Motion with constant velocity.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'xt-graph-2',
+    %q{%
+      Motion that decreases $x$ is
+      represented with negative values of $\Delta x$
+      and $v$.
+    }
+  )
+%>
+m4_ifelse(__lm_series,1,[:
+\spacebetweenfigs
+<%
+  fig(
+    'xt-graph-3',
+    %q{Motion with changing velocity. How can we find the velocity at the time indicated by the dot?}
+  )
+%>
+:])
+<% end_marg %>%
+
+<% begin_sec("Motion with constant velocity",nil,'constant-velocity-motion') %>
+
+In example \figref{xt-graph-1}, an object is moving at constant speed in one
+direction.  We can tell this because every two seconds, its
+position changes by five meters.
+
+In algebra notation, we'd say that the graph of $x$ vs. $t$
+shows the same change in position, $\Delta x=5.0$ m, over
+each interval of $\Delta t=2.0$ s.  The object's velocity
+or speed is obtained by calculating 
+$v=\Delta x/\Delta t=(5.0\ \munit)/(2.0\ \sunit)=2.5\ \munit/\sunit$.
+In graphical terms, the
+velocity can be interpreted as the slope of the line.  Since
+the graph is a straight line, it wouldn't have mattered if
+we'd taken a longer time interval and calculated 
+$v=\Delta x/\Delta t=(10.0\ \munit)/(4.0\ \sunit)$.  The answer would still have
+been the same, 2.5 m/s.
+
+Note that when we divide a number that has units of meters
+by another number that has units of seconds, we get units of
+meters per second, which can be written m/s.  This is
+another case where we treat units as if they were algebra
+symbols, even though they're not.
+
+m4_ifelse(__me,1,[:\enlargethispage{\baselineskip}:])
+
+In example \figref{xt-graph-2}, the object is moving in the opposite
+direction: as time progresses, its $x$ coordinate decreases.
+Recalling the definition of the $\Delta$ notation as
+``after minus before,'' we find that $\Delta t$ is still
+positive, but $\Delta x$ must be negative.  The slope of the
+line is therefore negative, and we say that the object has a
+negative velocity, 
+$v=\Delta x/\Delta t=(-5.0\ \munit)/(2.0\ \sunit)=-2.5\ \munit/\sunit$.
+We've already seen that the plus and minus
+signs of $\Delta x$ values have the interpretation of
+telling us which direction the object moved.  Since $\Delta t$
+is always positive, dividing by $\Delta t$ doesn't change
+the plus or minus sign, and the plus and minus signs of
+velocities are to be interpreted in the same way.  In
+graphical terms, a positive slope characterizes a line that
+goes up as we go to the right, and a negative slope tells us
+that the line went down as we went to the right.
+
+m4_ifelse(__lm_series,1,[:\worked{light-year-to-meters}{light-years}:])
+
+m4_ifelse(__me,1,[:\pagebreak[4]:])
+
+<% end_sec('constant-velocity-motion') %>
+<% begin_sec("Motion with changing velocity",nil,'changing-velocity') %>
+m4_ifelse(__lm_series,1,,[:
+<% marg(m4_ifelse(__me,1,50,80)) %>
+<%
+  fig(
+    'xt-graph-3',
+    %q{Motion with changing velocity. How can we find the velocity at the time indicated by the dot?}
+  )
+%>
+<% end_marg %>
+:])
+
+Now what about a graph like figure \figref{xt-graph-3}?  This might be a
+graph of a car's motion as the driver cruises down the
+freeway, then slows down to look at a car crash by the side
+of the road, and then speeds up again, disappointed that
+there is nothing dramatic going on such as flames or babies
+trapped in their car seats.  (Note that we are still talking
+about one-dimensional motion.  Just because the graph is
+curvy doesn't mean that the car's path is curvy.  The graph
+is not like a map, and the horizontal direction of the graph
+represents the passing of time, not distance.)
+m4_ifelse(__me,1,[:
+%------------------------ begin ME version ------------------------
+If we apply the equation $v=\Delta x/\Delta t$ to this example, we will get
+the wrong answer, because the  $\Delta x/\Delta t$ gives a single number, but the velocity
+is clearly changing. This is an example of a good general rule that tells you when you need to use your differential
+calculus. Any time a rate of change is measured by an expression of the form $\Delta\ldots/\Delta\ldots$,
+the result will only be right when the rate of change is constant. When the rate of change is varying, we
+need to generalize the expression by making it into a derivative.
+Just as an infinitesimally small\footnote{see p.~\pageref{infinitesimals}} $\Delta t$ is notated $\der t$, an infinitesimally
+small $\Delta x$ is a $\der x$. The velocity is then the derivative $\der x/\der t$.
+
+\begin{eg}{Units of velocity}
+\egquestion
+Verify that the units of $v=\der x/\der t$ make sense.
+
+\eganswer
+We expect the velocity to have units of meters per second, and it does come out to have those units, since
+$\der x$ has units of meters and $\der t$ seconds. This ability to check the units of derivatives is one of the
+main reasons that Leibniz designed his notation for derivatives the way he did.
+\end{eg}
+
+\begin{eg}{An insect pest}\label{eg:pest}
+\egquestion An insect pest from the United States is inadvertently released in
+a village in rural China. The pests spread outward at a rate of $s$ kilometers
+per year, forming a widening circle of contagion. Find the number of square
+kilometers per year that become newly infested. Check that the units of the result
+make sense. Interpret the result.
+
+\eganswer Let $t$ be the time, in years, since the pest was introduced.
+The radius of the circle is $r=st$, and its area is $a=\pi r^2=\pi(st)^2$.
+The derivative is
+\begin{equation*}
+  \frac{\der a}{\der t} = (2\pi s^2) t
+\end{equation*}
+
+The units of $s$ are km/year, so squaring it gives $\zu{km}^2/\zu{year}^2$.
+The 2 and the $\pi$ are unitless, and multiplying by $t$ gives units
+of $\zu{km}^2/\zu{year}$, which is what we expect for $\der a/\der t$, since
+it represents the number of square kilometers per year that become infested.
+
+Interpreting the result, we notice a couple of things. First, the rate
+of infestation isn't constant; it's proportional to $t$, so people might not
+pay so much attention at first, but later on the effort required to combat the
+problem will grow more and more quickly. Second, we notice that the
+result is proportional to $s^2$. This suggests that anything that could be
+done to reduce $s$ would be very helpful. For instance, a measure that cut
+$s$ in half would reduce $\der a/\der t$ by a factor of four.
+\end{eg}
+<% end_sec('changing-velocity') %>
+%------------------------ end ME version ------------------------
+:],[:
+%------------------------ begin LM version ------------------------
+
+<% marg(100) %>
+<%
+  fig(
+    'xt-graph-4',
+    %q{%
+      The velocity at any given moment
+      is defined as the slope of the tangent
+      line through the relevant point on the
+      graph.
+    }
+  )
+%>
+<% end_marg %>%
+Example \figref{xt-graph-3} is similar to example \figref{xt-graph-1}
+in that the object
+moves a total of 25.0 m in a period of 10.0 s, but it is
+no longer true that it makes the same amount of progress
+every second.  There is no way to characterize the entire
+graph by a certain velocity or slope, because the velocity
+is different at every moment.  It would be incorrect to say
+that because the car covered 25.0 m in 10.0 s, its
+velocity was 2.5 m/s.  It moved faster than that at the
+beginning and end, but slower in the middle.  There may have
+been certain instants at which the car was indeed going 2.5
+m/s, but the speedometer swept past that value without
+``sticking,'' just as it swung through various other values
+of speed.  (I definitely want my next car to have a
+speedometer calibrated in m/s and showing both negative
+and positive values.)
+
+We assume that our speedometer tells us what is happening to
+the speed of our car at every instant, but how can we define
+speed mathematically in a case like this?  We can't just
+define it as the slope of the curvy graph, because a curve
+doesn't have a single well-defined slope as does a line.  A
+mathematical definition that corresponded to the speedometer
+reading would have to be one that assigned a
+velocity value to a single point on the curve, i.e., a single
+instant in time, rather than to the entire graph.  If we
+wish to define the speed at one instant such as the one
+marked with a dot, the best way to proceed is illustrated in
+\figref{xt-graph-4}, where we have drawn the line through that point called
+the tangent line, the line that ``hugs the curve.'' We can
+then adopt the following definition of \index{velocity!definition}velocity:
+
+\begin{important}[definition of velocity]
+The velocity of an object at any given moment is the slope of the tangent
+line through the relevant point on its $x-t$ graph.
+\end{important}
+
+One interpretation of this definition is that the velocity
+tells us how many meters the object would have traveled in
+one second, if it had continued moving at the same speed for
+at least one second.
+
+<%
+  fig(
+    'microscope',
+    %q{The original graph, on the left, is the one from figure \figref{xt-graph-2}.
+       Each successive magnification to the right is by a factor of four.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+A good way of thinking about the tangent-line definition is shown in figure \figref{microscope}.
+We zoom in on our point of interest more and more, as if through a microscope capable of unlimited
+magnification. As we zoom in, the curviness of the graph becomes less and less apparent.
+(Similarly, we don't notice in everyday life that the earth is a sphere.)
+In the figure, we zoom in by 400\%, and then again by 400\%, and so on.
+After a series of these zooms, the graph appears indistinguishable from a line, and we can
+measure its slope just as we would for a line.
+
+If all we saw was the ultra-magnified view,
+we would assume that the object was moving at a constant speed, which is 2.5 m/s in our example,
+and that it would continue to move at that speed. Therefore the speed of 2.5 m/s can be interpreted
+as meaning that if the object had continued at constant speed for a further time interval of 1 s, it would have
+traveled 2.5 m.
+
+<% marg(-300) %>
+<%
+  fig(
+    'xt-graph-5',
+    %q{%
+      Example \ref{eg:slope-of-tangent-line}: finding the velocity at the
+      point indicated with the dot.
+    }
+  )
+%>
+<% end_marg %>%
+
+\begin{eg}{The slope of the tangent line}\label{eg:slope-of-tangent-line}
+\egquestion What is the velocity at the point shown with a dot on the graph?
+
+\eganswer First we draw the tangent line through that point.
+To find the slope of the tangent line, we need to pick two
+points on it. Theoretically, the slope should come out the
+same regardless of which two points we pick, but in
+practical terms we'll be able to measure more accurately if
+we pick two points fairly far apart, such as the two white
+diamonds. To save work, we pick points that are directly
+above labeled points on the $t$ axis, so that 
+$\Delta t=4.0\ \sunit$ is easy to read off. One diamond lines up with
+$x\approx17.5$ m, the other with $x\approx26.5$ m,
+so $\Delta x=9.0\ \munit$. The velocity is $\Delta x/\Delta t=2.2\ \munit/\sunit$.
+\end{eg}
+
+Looking at the tangent line in figure \figref{xt-graph-5}, we can see that it
+touches the curve at the point marked with a dot, but without cutting through it at that point.
+No other line through that point has this ``no-cut'' property; if we rotated the line either clockwise
+or counterclockwise about the point, it would cut through. Except in certain unusual
+cases, there is always exactly one such no-cut line at any given point on a smooth curve,
+and that no-cut line is the tangent line. It's as though the region below the curve were
+a solid block of wood, and the tangent line were the edge of a ruler. The ruler can't penetrate
+the block.
+
+<% end_sec('changing-velocity') %>
+<% begin_sec("Conventions about graphing",nil,'conventions-about-graphing') %>\index{graphing}
+
+The placement of $t$ on the horizontal axis and $x$ on the
+upright axis may seem like an arbitrary convention, or may
+even have disturbed you, since your algebra teacher always
+told you that $x$ goes on the horizontal axis and $y$ goes
+on the upright axis.  There is a reason for doing it this
+way, however.  In example \figref{xt-graph-5}, we have an object that
+reverses its direction of motion twice.  It can only be in
+one place at any given time, but there can be more than one
+time when it is at a given place.  For instance, this object
+passed through $x=17$ m on three separate occasions, but
+there is no way it could have been in more than one place at
+$t=5.0\ \sunit$.  Resurrecting some terminology you learned in
+your trigonometry course, we say that $x$ is a function of
+$t$, but $t$ is not a function of $x$.  In situations such
+as this, there is a useful convention that the graph should
+be oriented so that any vertical line passes through the
+curve at only one point.  Putting the $x$ axis across the
+page and $t$ upright would have violated this convention.
+To people who are used to interpreting graphs, a graph that
+violates this convention is as annoying as fingernails
+scratching on a chalkboard.  We say that this is a graph of
+``$x$ versus $t$.''  If the axes were the other way around,
+it would be a graph of ``$t$ versus $x$.''   I remember the
+``versus'' terminology by visualizing the labels on the $x$
+and $t$ axes and remembering that when you read, you go from
+left to right and from top to bottom.
+
+m4_ifelse(__me,1,,\vfill)
+
+\startdqs
+
+\begin{dq}
+Park is running slowly in gym class, but then he notices Jenna
+watching him, so he speeds up to try to impress her. Which
+of the graphs could represent his motion?
+\end{dq}
+
+<%
+  fig(
+    'dq-gym',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\pagebreak
+
+\begin{dq}
+The figure shows a sequence of positions for two racing
+tractors. Compare the tractors' velocities as the race
+progresses. When do they have the same velocity? [Based on
+a question by Lillian McDermott.]
+\end{dq}
+
+<%
+  fig(
+    'dq-tractor-race',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\begin{dq}
+If an object had an $x-t$ graph that was a straight line with
+$\Delta x$=0 and $\Delta t\ne0$, what would you say about its
+velocity?  Sketch an example of such a graph. What about
+$\Delta t$=0 and $\Delta x\ne0$?
+\end{dq}
+
+\begin{dq}
+If an object has a wavy motion graph like the one in
+figure \figref{xt-graph-6} on p.~\pageref{fig:xt-graph-6}, what are the times at
+which the object reverses its direction?  Describe
+the object's velocity at these points.
+\end{dq}
+
+\begin{dq}
+Discuss anything unusual about the following three graphs.
+\end{dq}
+
+<%
+  fig(
+    'dq-unphysical-xt',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\begin{dq}
+I have been using the term ``velocity'' and avoiding the
+more common English word ``speed,'' because introductory
+physics texts typically define them to mean different things.  They
+use the word ``speed,'' and the symbol ``$s$'' to mean the
+absolute value of the velocity, $s=|v|$.  Although I've chosen not to
+emphasize this distinction in technical vocabulary, there
+are clearly two different concepts here.  Can you think of
+an example of a graph of $x$-versus-$t$ in which the object has
+constant speed, but not constant velocity?
+\end{dq}
+
+<% marg(300) %>
+<%
+  fig(
+    'xt-graph-6',
+    %q{Reversing the direction of motion.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-interpret-xt',
+    %q{Discussion question \ref{dq:interpret-xt}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:interpret-xt}
+For the graph shown in the figure, describe how the object's velocity changes.
+\end{dq}
+
+\begin{dq}
+Two physicists duck out of a boring scientific conference.  On the street, they witness an
+accident in which a pedestrian is injured by a hit-and-run
+driver.  A criminal trial results, and they must testify.
+In her testimony, Dr. Transverz Waive says, ``The car was
+moving along pretty fast, I'd say the velocity was +40
+mi/hr.  They saw the old lady too late, and even though they
+slammed on the brakes they still hit her before they
+stopped.  Then they made a $U$ turn and headed off at a
+velocity of about -20 mi/hr, I'd say.''  Dr. Longitud N.L.
+Vibrasheun says, ``He was really going too fast, maybe his
+velocity was -35 or -40 mi/hr.  After he hit Mrs. Hapless,
+he turned around and left at a velocity of, oh, I'd guess
+maybe +20 or +25 mi/hr.''  Is their testimony contradictory?  Explain.
+\end{dq}
+
+<% end_sec('conventions-about-graphing') %>
+%------------------------ end LM version ------------------------
+:])
+
+<% end_sec('graphs-of-motion') %>
+<% begin_sec("The principle of inertia",m4_ifelse(__me,1,0,4),'principle-of-inertia') %>
+
+<% begin_sec("Physical effects relate only to a change in velocity",nil,'effects-from-changing-v') %>
+
+Consider two statements of a kind that was at one time made with
+the utmost seriousness:
+
+\epigraphnobyline{People like Galileo and \index{Copernicus}Copernicus who say
+the earth is rotating must be crazy.  We know the earth
+can't be moving.  Why, if the earth was really turning once
+every day, then our whole city would have to be moving
+hundreds of leagues in an hour.  That's impossible!
+Buildings would shake on their foundations.  Gale-force
+winds would knock us over.  Trees would fall down.  The
+Mediterranean would come sweeping across the east coasts of
+Spain and Italy.  And furthermore, what force would be
+making the world turn?}
+
+\epigraphnobyline{All this talk of passenger trains moving at forty miles an
+hour is sheer hogwash!  At that speed, the air in a
+passenger compartment would all be forced against the back
+wall.  People in the front of the car would suffocate, and
+people at the back would die because in such concentrated
+air, they wouldn't be able to expel a breath.}
+
+Some of the effects predicted in the first quote are clearly
+just based on a lack of experience with rapid motion that is
+smooth and free of vibration.  But there is a deeper
+principle involved.  In each case, the speaker is assuming
+that the mere fact of motion must have dramatic physical
+effects.  More subtly, they also believe that a force is
+needed to keep an object in motion: the first person thinks
+a force would be needed to maintain the earth's rotation,
+and the second apparently thinks of the rear wall as pushing
+on the air to keep it moving.
+
+<% marg(0) %>
+<%
+  fig(
+    'aristotle',
+    %q{%
+      Why does Aristotle look so sad? Has he realized that
+      his entire system of physics is wrong?
+    }
+  )
+%>
+ %\spacebetweenfigs
+<%
+  fig(
+    'shanghai-and-anaheim',
+    %q{%
+      The earth spins. People in Shanghai say they're at rest and
+      people in Los Angeles are moving. Angelenos say the same about the Shanghainese.
+    }
+  )
+%>
+ %\spacebetweenfigs
+<%
+  fig(
+    'jets-in-formation-over-ny',
+    %q{The jets are at rest. The Empire State Building is moving.}
+  )
+%>
+<% end_marg %>
+
+Common modern knowledge and experience tell us that these
+people's predictions must have somehow been based on
+incorrect reasoning, but it is not immediately obvious where
+the fundamental flaw lies.  It's one of those things a
+four-year-old could infuriate you by demanding a clear
+explanation of.  One way of getting at the fundamental
+principle involved is to consider how the modern concept of
+the universe differs from the popular conception at the time
+of the Italian Renaissance.  To us, the word ``earth''
+implies a planet, one of the nine planets of our solar
+system, a small ball of rock and dirt that is of no
+significance to anyone in the universe except for members of
+our species, who happen to live on it.  To Galileo's
+contemporaries, however, the earth was the biggest, most
+solid, most important thing in all of creation, not to be
+compared with the wandering lights in the sky known as
+planets.  To us, the earth is just another object, and when
+we talk loosely about ``how fast'' an object such as a car
+``is going,'' we really mean the car-object's velocity
+relative to the earth-object.
+
+<%
+  fig(
+    'rocket-sled',
+    %q{%
+      This Air Force doctor volunteered to ride a rocket sled as 
+      a medical experiment. The obvious effects on
+      his head and face are not because of the sled's speed but because of its rapid \emph{changes} in speed: increasing
+      in 2 and 3, and decreasing in 5 and 6.
+      In 4 his speed is greatest, but because his speed is not
+      increasing or decreasing very much at this moment, there is little effect on him.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>m4_ifelse(__me,1,false,true)
+    }
+  )
+%>
+
+<% end_sec('effects-from-changing-v') %>
+<% begin_sec("Motion is relative",nil,'motion-is-relative') %>
+
+m4_ifelse(__me,1,[:\enlargethispage{\baselineskip}:])
+
+According to our modern world-view, it isn't 
+reasonable to expect that a special force should be required
+to make the air in the train have a certain velocity
+relative to our planet.  After all, the ``moving'' air in
+the ``moving'' train might just happen to have zero velocity
+relative to some other planet we don't even know about.
+Aristotle claimed that things ``naturally'' wanted to be at
+rest, lying on the surface of the earth.  But experiment
+after experiment has shown that there is really nothing so
+special about being at rest relative to the earth.  For
+instance, if a mattress falls out of the back of a truck on
+the freeway, the reason it rapidly comes to rest with
+respect to the planet is simply because of friction forces
+exerted by the asphalt, which happens to be attached to the planet.
+
+Galileo's insights are summarized as follows:
+
+\begin{important}[The principle of inertia]\index{inertia, principle of}\label{principle-of-inertia}
+No force is required to maintain motion with constant velocity in
+a straight line, and absolute motion does not cause any
+observable physical effects.
+\end{important}
+
+There are many examples of situations that seem to disprove
+the principle of inertia, but these all result from
+forgetting that friction is a force. For instance, it seems
+that a force is needed to keep a sailboat in motion. If the
+wind stops, the sailboat stops too. But the wind's force is
+not the only force on the boat; there is also a frictional
+force from the water. If the sailboat is cruising and the
+wind suddenly disappears, the backward frictional force
+still exists, and since it is no longer being counteracted
+by the wind's forward force, the boat stops. To disprove the
+principle of inertia, we would have to find an example where
+a moving object slowed down even though no forces whatsoever were acting on it.
+Over the years since Galileo's lifetime, physicists have done more and more precise
+experiments to search for such a counterexample, but the results have always been negative.
+Three such tests are described on pp.~\pageref{sec:galileo-ramps-inertia},
+\pageref{eg:clock-comparison-inertia}, and
+m4_ifelse(__lm_series,1,[:\pageref{sec:battat}:],[:\pageref{battat}:]).\label{first-law-evidence}
+
+m4_ifelse(__me,1,[:\enlargethispage{\baselineskip}:])
+
+<% self_check('inertia-counterexamples',<<-'SELF_CHECK'
+What is incorrect about the following supposed counterexamples
+to the principle of inertia?
+
+(1) When astronauts blast off in a rocket, their huge
+velocity does cause a physical effect on their bodies ---
+they get pressed back into their seats, the flesh on their
+faces gets distorted, and they have a hard time lifting their arms.
+
+(2) When you're driving in a convertible with the top down,
+the wind in your face is an observable physical effect of
+your absolute motion.
+  SELF_CHECK
+  ) %>
+
+\worked{cycloid}{a bug on a wheel}
+
+\startdqs
+
+<% marg(m4_ifelse(__me,1,[:-300:],[:140:])) %>
+<%
+  fig(
+    'dq-cruise-ship',
+    %q{Discussion question \ref{dq:cruise-ship}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-flag-in-balloon',
+    %q{Discussion question \ref{dq:flag-in-balloon}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:cruise-ship}
+A passenger on a cruise ship finds, while the ship is
+docked, that he can leap off of the upper deck and just
+barely make it into the pool on the lower deck.  If the ship
+leaves dock and is cruising rapidly, will this adrenaline
+junkie still be able to make it?
+\end{dq}
+
+\begin{dq}\label{dq:flag-in-balloon}
+You are a passenger in the open basket hanging under a
+helium balloon. The balloon is being carried along by the
+wind at a constant velocity. If you are holding a flag in
+your hand, will the flag wave? If so, which way? [Based on a
+question from PSSC Physics.]
+\end{dq}
+
+\begin{dq}
+Aristotle stated that all objects naturally wanted to
+come to rest, with the unspoken implication that ``rest''
+would be interpreted relative to the surface of the earth.
+Suppose we go back in time and transport Aristotle to the
+moon. Aristotle knew, as we do, that the moon circles the
+earth; he said it didn't fall down because, like everything
+else in the heavens, it was made out of some special
+substance whose ``natural'' behavior was to go in circles
+around the earth. We land, put him in a space suit, and kick
+him out the door. What would he expect his fate to be in
+this situation? If intelligent creatures inhabited the moon,
+and one of them independently came up with the equivalent of
+Aristotelian physics, what would they think about objects coming to rest?
+\end{dq}
+
+\begin{dq}\label{dq:beer}
+The glass is sitting on a level table in a train's
+dining car, but the surface of the water is tilted. What can
+you infer about the motion of the train?
+\end{dq}
+<% marg(80) %>
+<%
+  fig(
+    'beer',
+    %q{Discussion question \ref{dq:beer}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec('motion-is-relative') %>
+<% end_sec('principle-of-inertia') %>
+<% begin_sec("Addition of velocities",m4_ifelse(__me,1,0,4),'addition-of-velocities') %>\index{velocity!addition of}
+
+<% begin_sec("Addition of velocities to describe relative motion",nil,'newtonian-v-addition') %>\label{vel-addition-newtonian}
+
+Since absolute motion cannot be unambiguously measured, the
+only way to describe motion unambiguously is to describe the
+motion of one object relative to another. Symbolically, we
+can write $v_{PQ}$ for the velocity of object $P$ relative to object $Q$.
+
+Velocities measured with respect to different reference
+points can be compared by addition. In the figure below, the
+ball's velocity relative to the couch equals the ball's
+velocity relative to the truck plus the truck's velocity
+relative to the couch:
+\begin{align*}
+      v_{BC}   &=  v_{BT}+v_{TC}  \\
+         &=  5\ \zu{cm}/\sunit + 10\ \zu{cm}/\sunit \\
+         &=  15\ \zu{cm}/\sunit
+\end{align*}
+
+The same equation can be used for any combination of three
+objects, just by substituting the relevant subscripts for
+B, T, and C. Just remember to write the equation so
+that the velocities being added have the same subscript
+twice in a row. In this example, if you read off the
+subscripts going from left to right, you get $\zu{BC}\ldots=\ldots\zu{BTTC}$.
+ The fact that the two ``inside'' subscripts on the right
+are the same means that the equation has been set up
+correctly. Notice how subscripts on the left look just like
+the subscripts on the right, but with the two T's eliminated.
+
+<%
+  fig(
+    'dinos',
+    %q{%
+      These two highly competent physicists disagree on absolute
+       velocities, but they would agree on relative
+      velocities. Purple Dino considers the couch to be at rest, while Green Dino
+       thinks of the truck as being at rest.
+      They agree, however, that the truck's velocity relative to the couch is 
+      $v_{TC}=10$ cm/s, the ball's velocity relative
+      to the truck is $v_{BT}=5$ cm/s, and the ball's velocity relative to the couch is 
+      $v_{BC}=v_{BT}+v_{TC}=15$ cm/s.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% end_sec('newtonian-v-addition') %>
+<% begin_sec("Negative velocities in relative motion",nil,'negative-v') %>\index{velocity!negative}
+
+My discussion of how to interpret positive and negative
+signs of velocity may have left you wondering why we should
+bother.  Why not just make velocity positive by definition?
+The original reason why negative numbers were invented was
+that bookkeepers decided it would be convenient to use the
+negative number concept for payments to distinguish them
+from receipts.  It was just plain easier than writing
+receipts in black and payments in red ink.  After adding up
+your month's positive receipts and negative payments, you
+either got a positive number, indicating profit, or a
+negative number, showing a loss.  You could then show 
+that total with a high-tech ``$+$'' or ``$-$'' sign, instead
+of looking around for the appropriate bottle of ink.
+
+Nowadays we use positive and negative numbers for all kinds
+of things, but in every case the point is that it makes
+sense to add and subtract those things according to the
+rules you learned in grade school, such as ``minus a minus
+makes a plus, why this is true we need not discuss.'' Adding
+velocities has the significance of comparing relative
+motion, and with this interpretation negative and positive
+velocities can be used within a consistent framework. For
+example, the truck's velocity relative to the couch equals
+the truck's velocity relative to the ball plus the ball's
+velocity relative to the couch:
+\begin{align*}
+     v_{TC}    &=  v_{TB}+v_{BC}      \\
+         &=  -5\ \zu{cm}/\sunit + 15\ \zu{cm}/\sunit  \\
+         &=  10\ \zu{cm}/\sunit
+\end{align*}
+If we didn't have the technology of negative numbers, we
+would have had to remember a complicated set of rules for
+adding velocities: (1) if the two objects are both moving
+forward, you add, (2) if one is moving forward and one is
+moving backward, you subtract, but (3) if they're both
+moving backward, you add.  What a pain that would have been.
+
+\worked{cross-deck}{two dimensions}
+
+\begin{eg}{Airspeed}\label{eg:airspeed}
+On June 1, 2009, Air France flight 447 disappeared without warning over the Atlantic Ocean.
+All 232 people aboard were killed.
+Investigators believe the disaster was triggered because the pilots lost the ability to
+accurately determine their speed relative to the air. This is done using sensors called Pitot
+tubes, mounted outside the plane on the wing. Automated radio signals showed that these sensors
+gave conflicting readings before the crash, possibly because they iced up. For fuel efficiency,
+modern passenger jets fly at a very high altitude, but in the thin air they
+can only fly within a very narrow range of speeds. If the speed is too low, the plane stalls, and
+if it's too high, it breaks up. If the pilots can't tell what their airspeed is, they can't
+keep it in the safe range.
+
+Many people's reaction to this story is to wonder why planes don't just use GPS to measure their
+speed. One reason is that GPS tells you your speed relative to the ground, not relative to the
+air. Letting P be the plane, A the air, and G the ground, we have
+\begin{equation*}
+  v_{PG} = v_{PA}+v_{AG}\eqquad,
+\end{equation*}
+where $v_{PG}$ (the ``true ground speed'') is what GPS would measure, $v_{PA}$ (``airspeed'')
+is what's critical for stable flight, and $v_{AG}$ is the velocity of the wind relative to
+the ground 9000 meters below. Knowing $v_{PG}$ isn't enough to determine $v_{PA}$ unless
+$v_{AG}$ is also known.
+\end{eg}
+
+<%
+  fig(   
+    'air-france',
+    'Example '+ref_workaround('eg:airspeed')+'. 1.~The aircraft before the disaster. 2.~A Pitot tube. 3.~The flight path of flight 447. 4.~Wreckage being recovered.',
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+\startdqs
+
+\begin{dq}
+Interpret the general rule $v_{AB}=-v_{BA}$ in words.
+\end{dq}
+
+\begin{dq}
+Wa-Chuen slips away from her father at the mall and walks
+up the down escalator, so that she stays in one place. Write
+this in terms of symbols.
+\end{dq}
+
+<% end_sec('negative-v') %>
+<% end_sec('addition-of-velocities') %>
+m4_ifelse(__me,1,,[:
+%----- LM only -------
+<% begin_sec("Graphs of velocity versus time",0,'v-t-graphs') %>\index{graphs!velocity versus time}
+
+Since changes in velocity play such a prominent role in
+physics, we need a better way to look at changes in velocity
+than by laboriously drawing tangent lines on $x$-versus-$t$
+graphs.  A good method is to draw a graph of velocity versus
+time.  The examples on the left show the $x-t$ and $v-t$
+graphs that might be produced by a car starting from a
+traffic light, speeding up, cruising for a while at constant
+speed, and finally slowing down for a stop sign.  If you
+have an air freshener hanging from your rear-view mirror,
+then you will see an effect on the air freshener during the
+beginning and ending periods when the velocity is changing,
+but it will not be tilted during the period of constant
+velocity represented by the flat plateau in the middle of the $v-t$ graph.
+
+Students often mix up the things being represented on these
+two types of graphs.  For instance, many students looking at
+the top graph say that the car is speeding up the whole
+time, since ``the graph is becoming greater.''  What is
+getting greater throughout the graph is $x$, not $v$.
+
+<% marg(40) %>
+<%
+  fig(
+    'xt-vt-traffic-light',
+    %q{%
+      Graphs of $x$ and $v$ versus $t$ for
+      a car accelerating away from a traffic light, and then stopping for
+      another red light.
+    }
+  )
+%>
+<% end_marg %>
+
+Similarly, many students would look at the bottom graph and
+think it showed the car backing up, because ``it's going
+backwards at the end.''  But what is decreasing at the end
+is $v$, not $x$. Having both the $x-t$ and $v-t$ graphs in
+front of you like this is often convenient, because one
+graph may be easier to interpret than the other for a
+particular purpose.  Stacking them like this means that
+corresponding points on the two graphs' time axes are lined
+up with each other vertically.  However, one thing that is a
+little counterintuitive about the arrangement is that in a
+situation like this one involving a car, one is tempted to
+visualize the landscape stretching along the horizontal axis
+of one of the graphs.  The horizontal axes, however,
+represent time, not position.  The correct way to visualize
+the landscape is by mentally rotating the horizon 90 degrees
+counterclockwise and imagining it stretching along the
+upright axis of the $x$-$t$ graph, which is the only axis that
+represents different positions in space.
+
+<% end_sec('v-t-graphs') %> % Graphs of Velocity Versus Time
+:])%----------- end if LM
+m4_ifelse(__lm_series,1,[:<% begin_sec("Applications of calculus",3,'calculus-for-velocity',{'calc'=>true}) %>\index{calculus!invention by Newton}
+
+%------------ begin LM version, Applications of Calculus
+The integral symbol, $\int$, in the heading for this
+section indicates that it is meant to be read by students in
+calculus-based physics. Students in an algebra-based physics
+course should skip these sections. The calculus-related
+sections in this book are meant to be usable by students who
+are taking calculus concurrently, so at this early point in
+the physics course I do not assume you know any calculus
+yet. This section is therefore not much more than a quick
+preview of calculus, to help you relate what you're
+learning in the two courses.
+
+Newton was the first person to figure out the tangent-line
+definition of velocity for cases where the $x-t$ graph is
+nonlinear. Before Newton, nobody had conceptualized the
+description of motion in terms of $x-t$ and $v-t$ graphs. In
+addition to the graphical techniques discussed in this
+chapter, Newton also invented a set of symbolic techniques
+called calculus. If you have an equation for $x$ in terms of
+$t$, calculus allows you, for instance, to find an equation
+for $v$ in terms of $t$. In calculus terms, we say that the
+function $v(t)$ is the derivative of the function $x(t)$. In
+other words, the derivative of a function is a new function
+that tells how rapidly the original function was changing.
+We now use neither Newton's name for his technique (he
+called it ``the method of fluxions'') nor his notation. The
+more commonly used notation is due to Newton's German
+contemporary Leibnitz, whom the English accused of
+plagiarizing the calculus from Newton. In the Leibnitz notation, we write
+\begin{equation*}
+  v = \frac{\der x}{\der t}
+\end{equation*}
+to indicate that the function $v(t)$ equals the slope of the
+tangent line of the graph of $x(t)$ at every time $t$. The
+Leibnitz notation is meant to evoke the delta notation, but
+with a very small time interval. Because the $\der x$ and
+$\der t$ are thought of as very small $\Delta x$'s and
+$\Delta t$'s, i.e., very small differences, the part of
+calculus that has to do with derivatives is called
+differential calculus.
+
+Differential \index{calculus!differential}calculus
+consists of three things:
+
+\begin{itemize}
+
+\item  The concept and definition of the \index{derivative}derivative,
+which is covered in this book, but which will be discussed
+more formally in your math course.
+
+\item  The \index{calculus!Leibnitz notation}\index{Leibnitz}Leibnitz
+notation described above, which you'll need to get more
+comfortable with in your math course.
+
+\item  A set of rules that allows you to find an equation for
+the derivative of a given function. For instance, if you
+happened to have a situation where the position of an object
+was given by the equation $x=2t^7$, you would be able to use
+those rules to find $\der x/\der t=14t^6$. This bag of
+tricks is covered in your math course.
+
+\end{itemize}
+
+<% end_sec() %>
+%------------ end LM version, Applications of Calculus
+:])

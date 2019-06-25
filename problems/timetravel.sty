@@ -1,0 +1,48 @@
+\RequirePackage{everyhook,environ}
+
+\newcounter{timetravelparctr}% a counter that labels each paragraph in the document sequentially
+\newcounter{timetravelctr}% labels each use of the timetravel environment
+
+\newcommand{\inputifitexists}[1]{\IfFileExists{#1.tex}{\input{#1}}{}}
+\newcommand{\timetravelkirk}{\inputifitexists{timetravel/par\thetimetravelparctr}}
+\newcommand{\timetravelspock}{\ifdim\emergencystretch>0pt{}\timetravelkirk\fi}
+% ...Use \ifdim\emergencystretch>0pt to attempt to detect whether we're in outer paragraph
+%    mode. I'm not sure if this works or not.
+%    http://comp.text.tex.narkive.com/ttqVg20H/test-for-outer-par-mode
+\newcommand{\timetraveltohere}{%
+  \stepcounter{timetravelparctr}\label{timetravelpar\thetimetravelparctr}%
+  \ifnum\timetravelpass>1\timetravelspock\fi%
+}
+% ... Use this command to mark a place at which it would be OK to insert a time-traveling float.
+%     We don't want to do this unless we're in outer paragraph mode.
+
+\newcommand{\timetravelenable}{}
+\newcommand{\timetraveldisable}{}
+\DeclareOption{auto}{ % attempt automatic placement at any paragraph break
+  \renewcommand{\timetravelenable}{\PushPreHook{par}{\timetraveltohere}}
+  \renewcommand{\timetraveldisable}{\PopPreHook{par}}
+}
+
+\ProcessOptions\relax
+
+% NewEnviron is provided by package environ. Allows access to \BODY.
+\NewEnviron{timetravel}{%
+  \timetraveltohere % as a fallback, make sure we can always cancel the time-travel
+  \timetraveldisable
+  \stepcounter{timetravelctr}\label{timetravelinvoked\thetimetravelctr}%
+  \ifnum\timetravelpass=1\BODY\fi
+}%
+[%
+  \timetravelenable
+  \timetraveltohere % another fallback option
+]
+
+\AtBeginDocument{
+  \IfFileExists{timetravel/pass.tex}{%
+    \input{timetravel/pass.tex}
+    % Sets the macro \timetravelpass to an integer.
+    % This filename is also set in timetravel.rb.
+  }{%
+    \PackageError{timetravel}{File timetravel/pass.tex does not exist. Did you run the timetravel.rb script before compiling?}{}
+  }
+}

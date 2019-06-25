@@ -1,0 +1,252 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% clear_answer_data %>
+
+<%
+  chapter(
+    '00',
+    %q{Introduction and Review},
+    'ch:intro',
+    %q{The Mars Climate Orbiter is prepared for its mission.
+The laws of physics are the same everywhere, even
+on Mars, so the probe could be designed based on
+the laws of physics as discovered on earth.
+There is unfortunately another reason why this
+spacecraft is relevant to the topics of this chapter: it
+was destroyed attempting to enter Mars' atmosphere
+because engineers at Lockheed Martin forgot to
+convert data on engine thrusts from pounds into the
+metric unit of force (newtons) before giving the
+information to NASA. Conversions are important!},
+    {'opener'=>'climate-orbiter','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/1_intro_and_review)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{matter}{Anything that is affected by gravity.}
+
+\vocabitem{light}{Anything that can travel from one place to another
+through empty space and can influence matter, but is not
+affected by gravity.}
+
+\vocabitem{operational definition}{A definition that states what
+operations should be carried out to measure the thing being defined.}
+
+\vocabitem{Syst\`{e}me International}{A fancy name for the metric system.}
+
+\vocabitem{mks system}{The use of metric units based on the meter,
+kilogram, and second. Example: meters per second is the mks
+unit of speed, not cm/s or km/hr.}
+
+\vocabitem{mass}{A numerical measure of how difficult it is to
+change an object's motion.}
+
+\vocabitem{significant figures}{Digits that contribute to the accuracy of a measurement.}
+
+\end{vocab}
+
+
+\begin{notation}
+\notationitem{m}{meter, the metric distance unit}
+\notationitem{kg}{kilogram, the metric unit of mass}
+\notationitem{s}{second, the metric unit of time}
+\notationitem{M-}{the metric prefix mega-, $10^6$}
+\notationitem{k-}{the metric prefix kilo-, $10^3$}
+\notationitem{m-}{the metric prefix milli-, $10^{-3}$}
+\notationitem{$\mu$-}{the metric prefix micro-, $10^{-6}$}
+\notationitem{n-}{the metric prefix nano-, $10^{-9}$}
+\end{notation}
+
+\begin{summarytext}
+
+Physics is the use of the scientific method to study the
+behavior of light and matter. The scientific method requires
+a cycle of theory and experiment, theories with both
+predictive and explanatory value, and reproducible experiments.
+
+The metric system is a simple, consistent framework for
+measurement built out of the meter, the kilogram, and the
+second plus a set of prefixes denoting powers of ten. The
+most systematic method for doing conversions is shown in
+the following example:
+\begin{equation*}
+  370\ \zu{ms} \times \frac{10^{-3}\ \sunit}{1\ \zu{ms}} = 0.37\ \sunit
+\end{equation*}
+
+Mass is a measure of the amount of a substance. Mass can be
+defined gravitationally, by comparing an object to a
+standard mass on a double-pan balance, or in terms of
+inertia, by comparing the effect of a force on an object to
+the effect of the same force on a standard mass. The two
+definitions are found experimentally to be proportional to
+each other to a high degree of precision, so we usually
+refer simply to ``mass,'' without bothering to specify which type.
+
+A force is that which can change the motion of an object.
+The metric unit of force is the Newton, defined as the force
+required to accelerate a standard 1-kg mass from rest to a
+speed of 1 m/s in 1 s.
+
+Scientific notation means, for example, writing $3.2\times10^5$
+ rather than 320000.
+
+Writing numbers with the correct number of significant
+figures correctly communicates how accurate they are. As a
+rule of thumb, the final result of a calculation is no more
+accurate than, and should have no more significant figures
+than, the least accurate piece of data.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('calculator') %>__incl(hw/calculator)<% end_hw() %>
+
+<% begin_hw('units') %>__incl(hw/units)<% end_hw() %>
+
+<% begin_hw('backyard') %>__incl(hw/backyard)<% end_hw() %>
+
+<% begin_hw('furlongs') %>__incl(hw/furlongs)<% end_hw() %>
+
+<% begin_hw('micrograms') %>__incl(hw/micrograms)<% end_hw() %>
+
+<% begin_hw('mg-to-kg') %>__incl(hw/mg-to-kg)<% end_hw() %>
+
+<% begin_hw('estrogen') %>__incl(hw/estrogen)<% end_hw() %>
+
+<% begin_hw('geometric-mean') %>__incl(hw/geometric-mean)<% end_hw() %>
+
+<% begin_hw('sars') %>__incl(hw/sars)<% end_hw() %>
+
+<% marg(7) %>
+<%
+  fig(
+    'pretzels',
+    %q{Problem \ref{hw:pretzels}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'triangle-formula',
+    %q{Problem \ref{hw:triangle-formula}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('pretzels') %>__incl(hw/pretzels)<% end_hw() %>
+
+<% begin_hw('horizon') %>__incl(hw/horizon)<% end_hw() %>
+
+<% begin_hw('triangle-formula') %>__incl(hw/triangle-formula)<% end_hw() %>
+
+<% begin_hw('neanderthal-calories') %>__incl(hw/neanderthal-calories)<% end_hw() %>
+
+<% end_hw_sec %>
+
+
+
+
+
+
+%====================================================================
+%====================================================================
+%====================================================================
+
+<% begin_ex("Models and idealization") %>
+
+\noindent Equipment:
+
+\begin{indentedblock}
+    coffee filters
+
+    ramps (one per group)
+
+    balls of various sizes
+
+    sticky tape
+
+    vacuum pump and ``guinea and feather'' apparatus (one)
+\end{indentedblock}
+
+The motion of falling objects has been recognized since
+ancient times as an important piece of physics, but the
+motion is inconveniently fast, so in our everyday experience
+it can be hard to tell exactly what objects are doing when
+they fall. In this exercise you will use several techniques
+to get around this problem and study the motion. Your goal
+is to construct a scientific \emph{model} of falling. A
+model means an explanation that makes testable predictions.
+Often models contain simplifications or idealizations that
+make them easier to work with, even though they are
+not strictly realistic.
+
+1. One method of making falling easier to observe is to use
+objects like feathers that we know from everyday experience
+will not fall as fast. You will use coffee filters, in
+stacks of various sizes, to test the following two
+hypotheses and see which one is true, or whether neither is true:
+
+Hypothesis 1A: When an object is dropped, it rapidly speeds
+up to a certain natural falling speed, and then continues to
+fall at that speed. The falling speed is \emph{proportional}
+to the object's weight. (A proportionality is not just a
+statement that if one thing gets bigger, the other does too.
+It says that if one becomes three times bigger, the other
+also gets three times bigger, etc.)
+
+Hypothesis 1B: Different objects fall the same way,
+regardless of weight.
+
+Test these hypotheses and discuss your results with your instructor.
+
+2. A second way to slow down the action is to let a ball
+roll down a ramp. The steeper the ramp, the closer to free
+fall. Based on your experience in part 1, write a hypothesis
+about what will happen when you race a heavier ball against
+a lighter ball down the same ramp, starting them both from rest.
+
+Hypothesis:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Show your hypothesis to your instructor, and then test it.
+
+You have probably found that falling was more complicated
+than you thought! Is there more than one factor that affects
+the motion of a falling object? Can you imagine certain
+idealized situations that are simpler? Try to agree verbally
+with your group on an informal model of falling that can
+make predictions about the experiments described in parts 3 and 4.
+
+3. You have three balls: a standard ``comparison ball'' of
+medium weight, a light ball, and a heavy ball. Suppose you
+stand on a chair and (a) drop the light ball side by side
+with the comparison ball, then (b) drop the heavy ball side
+by side with the comparison ball, then (c) join the light
+and heavy balls together with sticky tape and drop them side
+by side with the comparison ball.
+
+Use your model to make a prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Test your prediction.
+
+4. Your instructor will pump nearly all the air out of a
+chamber containing a feather and a heavier object, then let
+them fall side by side in the chamber.
+
+Use your model to make a prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<% end_ex %>
+<% end_chapter() %>
+ %%----------------------------------------------------------
+
+<% figure_in_toc("bee-flying") %>\label{fig:toc-bee-flying}

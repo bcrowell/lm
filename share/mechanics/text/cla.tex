@@ -1,0 +1,950 @@
+<% begin_sec("The search for a perpetual motion machine",0) %>
+
+Don't underestimate greed and laziness as forces for
+progress. Modern chemistry was born from the collision of
+lust for gold with distaste for the hard work of finding it
+and digging it up. Failed efforts by generations of
+\index{alchemists}alchemists to turn lead into gold led
+finally to the conclusion that it could not be done: certain
+substances, the chemical elements, are fundamental, and
+chemical reactions can neither increase nor decrease the
+amount of an \index{element, chemical}element such as gold.
+
+Now flash forward to the early industrial age. Greed and
+laziness have created the factory, the train, and the ocean
+liner, but in each of these is a boiler room where someone
+gets sweaty shoveling the coal to fuel the steam engine.
+Generations of inventors have tried to create a machine,
+called a \index{perpetual motion machine}perpetual motion
+machine, that would run forever without fuel. Such a machine
+is not forbidden by Newton's laws of motion, which are built
+around the concepts of force and inertia. Force is free, and
+can be multiplied indefinitely with pulleys, gears, or
+levers. The principle of inertia seems even to encourage the
+belief that a cleverly constructed machine might not ever run down.
+
+<% marg(0) %>
+
+<%
+  fig(
+    'perpetual-motion-magnet',
+    %q{%
+      The magnet draws the ball to the
+      top of the ramp, where it falls through
+      the hole and rolls back to the bottom.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'perpetual-motion-arms',
+    %q{%
+      As the wheel spins clockwise, the
+      flexible arms sweep around and bend
+      and unbend. By dropping off its ball
+      on the ramp, the arm is supposed to
+      make itself lighter and easier to lift over
+      the top. Picking its own ball back up
+      again on the right, it helps to pull the
+      right side down.
+    }
+  )
+%>
+
+<% end_marg %>
+Figures \figref{perpetual-motion-magnet} and \figref{perpetual-motion-arms}
+show two of the innumerable perpetual motion
+machines that have been proposed. The reason these two
+examples don't work is not much different from the reason
+all the others have failed. Consider machine
+\figref{perpetual-motion-magnet}. Even if we
+assume that a properly shaped ramp would keep the ball
+rolling smoothly through each cycle, friction would always
+be at work. The designer imagined that the machine would
+repeat the same motion over and over again, so that every
+time it reached a given point its speed would be exactly the
+same as the last time. But because of friction, the speed
+would actually be reduced a little with each cycle, until
+finally the ball would no longer be able to make it over the top.
+
+Friction has a way of creeping into all moving systems. The
+rotating earth might seem like a perfect perpetual motion
+machine, since it is isolated in the vacuum of outer space
+with nothing to exert frictional forces on it. But in fact
+our planet's rotation has slowed drastically since it first
+formed, and the earth continues to slow its rotation, making
+today just a little longer than yesterday. The very subtle
+source of friction is the tides. The moon's gravity raises
+bulges in the earth's oceans, and as the earth rotates the
+bulges progress around the planet. Where the bulges
+encounter land, there is friction, which slows the earth's
+rotation very gradually.
+
+<% end_sec() %>
+<% begin_sec("Energy",0) %>
+
+The analysis based on friction is somewhat superficial,
+however. One could understand friction perfectly well and
+yet imagine the following situation. Astronauts bring back a
+piece of magnetic ore from the moon which does not behave
+like ordinary magnets. A normal bar magnet,
+\subfigref{moon-rock}{1}, attracts a
+piece of iron essentially directly toward it, and has no
+left- or right-handedness. The moon rock, however, exerts
+forces that form a whirlpool pattern around it, 2.
+NASA goes to a machine shop and has the moon rock put in a lathe
+and machined down to a smooth cylinder, 3.
+If we now
+release a ball bearing on the surface of the cylinder, the
+magnetic force whips it around and around at ever higher
+speeds. Of course there is some friction, but there is a net
+gain in speed with each revolution.
+
+Physicists would lay long odds against the discovery of such
+a moon rock, not just because it breaks the rules that
+magnets normally obey but because, like the alchemists, they
+have discovered a very deep and fundamental principle of
+nature which forbids certain things from happening. The
+first alchemist who deserved to be called a chemist was the
+one who realized one day, ``In all these attempts to create
+gold where there was none before, all I've been doing is
+shuffling the same atoms back and forth among different test
+tubes. The only way to increase the amount of gold in my
+laboratory is to bring some in through the door.'' It was
+like having some of your money in a checking account and
+some in a savings account. Transferring money from one
+account into the other doesn't change the total amount.
+
+<% marg(43) %>
+<%
+  fig(
+    'moon-rock',
+    %q{%
+      A mysterious moon rock makes a perpetual
+      motion machine.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'faucet',
+    %q{Example \ref{eg:faucet}.}
+  )
+%>
+
+<% end_marg %>%
+We say that the number of grams of gold is a \emph{conserved}
+quantity. In this context, the word ``conserve'' does not
+have its usual meaning of trying not to waste something. In
+physics, a conserved quantity is something that you wouldn't
+be able to get rid of even if you wanted to. Conservation
+laws in physics always refer to a \emph{closed system},
+meaning a region of space with boundaries through which the
+quantity in question is not passing. In our example, the
+alchemist's laboratory is a closed system because no gold is
+coming in or out through the doors.
+
+\begin{eg}{Conservation of mass}\label{eg:faucet}
+In figure \figref{faucet},
+the stream
+of water is fatter near the mouth of the faucet, and skinnier lower down. This is because the
+water speeds up as it falls. If the cross-sectional area of the stream was equal all along
+its length, then the rate of flow through a lower cross-section
+would be greater than the rate of flow through a cross-section higher up. Since the flow
+is steady, the amount of water between the two cross-sections stays constant.
+The cross-sectional area of the stream must therefore shrink in inverse
+proportion to the increasing speed of the falling water. This is an example of
+conservation of mass. 
+\end{eg}
+
+In general, the amount of any particular substance is not conserved. Chemical
+reactions can change one substance into another, and nuclear reactions can even
+change one element into another. The total mass of all substances is however
+conserved:
+
+\begin{important}[the law of conservation of mass]
+The total mass of a closed system always remains constant. Mass cannot
+be created or destroyed, but only transferred from one system to another.
+\end{important}
+
+A similar lightbulb eventually lit up in the heads of the
+people who had been frustrated trying to build a perpetual
+motion machine. In perpetual motion machine
+\figref{perpetual-motion-magnet},
+consider the motion of one of the balls.
+It performs a cycle of rising and falling. On the way down
+it gains speed, and coming up it slows back down. Having a
+greater speed is like having more money in your checking
+account, and being high up is like having more in your
+savings account. The device is simply shuffling funds back
+and forth between the two. Having more balls doesn't change
+anything fundamentally. Not only that, but friction is
+always draining off money into a third ``bank account:''
+heat. The reason we rub our hands together when we're cold
+is that kinetic friction heats things up. The continual
+buildup in the ``heat account'' leaves less and less for the
+``motion account'' and ``height account,'' causing the
+machine eventually to run down.
+
+These insights can be distilled into the following basic
+principle of physics:
+
+\begin{important}[the law of conservation of energy]
+It is possible to give a numerical rating, called energy, to the state
+of a physical system. The total energy is found by adding up
+contributions from characteristics of the system such
+as motion of objects in it, heating of the objects, and the
+relative positions of objects that interact via forces. The total
+energy of a closed system always remains constant. Energy cannot
+be created or destroyed, but only transferred from one system to another.
+\end{important}
+
+The moon rock story violates conservation of energy because
+the rock-cylinder and the ball together constitute a closed
+system. Once the ball has made one revolution around the
+cylinder, its position relative to the cylinder is exactly
+the same as before, so the numerical energy rating
+associated with its position is the same as before. Since
+the total amount of energy must remain constant, it is
+impossible for the ball to have a greater speed after one
+revolution. If it had picked up speed, it would have more
+energy associated with motion, the same amount of energy
+associated with position, and a little more energy
+associated with heating through friction. There cannot be a
+net increase in energy.
+
+\begin{eg}{Converting one form of energy to another}
+\noindent\emph{Dropping a rock:\/} The rock loses energy because of its
+changing position with respect to the earth. Nearly all that
+energy is transformed into energy of motion, except for a
+small amount lost to heat created by air friction.
+
+\noindent\emph{Sliding in to home base:\/} The runner's energy of motion is
+nearly all converted into heat via friction with the ground.
+
+\noindent\emph{Accelerating a car:\/} The gasoline has energy stored in it,
+which is released as heat by burning it inside the engine.
+Perhaps 10\% of this heat energy is converted into the car's
+energy of motion. The rest remains in the form of heat,
+which is carried away by the exhaust.
+
+\noindent\emph{Cruising in a car:\/} As you cruise at constant speed in your
+car, all the energy of the burning gas is being converted
+into heat. The tires and engine get hot, and heat is also
+dissipated into the air through the radiator and the exhaust.
+
+\noindent\emph{Stepping on the brakes:\/} All the energy of the car's motion
+is converted into heat in the brake shoes.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-stevin',
+    %q{%
+      Example \ref{eg:stevin}.
+    }
+  )
+%>
+
+<% end_marg %>
+
+\begin{eg}{Stevin's machine}\label{eg:stevin}\index{Stevin, Simon}
+The Dutch mathematician and engineer Simon Stevin proposed the imaginary
+machine shown in figure \figref{eg-stevin}, which he had inscribed on his
+tombstone. This is an interesting example, because it shows a link between
+the force concept used earlier in this course, and the energy concept being
+developed now.
+
+The point of the imaginary machine is to show the mechanical advantage of
+an inclined plane. In this example, the triangle has the proportions 3-4-5,
+but the argument works for any right triangle. We imagine that the chain
+of balls slides without friction, so that no energy is ever converted into
+heat. If we were to slide the chain clockwise by one step, then each ball
+would take the place of the one in front of it, and the over all configuration
+would be exactly the same. Since energy is something that only depends on the
+state of the system, the energy would have to be the same. Similarly for
+a counterclockwise rotation, no energy of position would be released by gravity.
+This means that if we place the chain on the triangle, and release it at rest,
+it can't start moving, because there would be no way for it to convert energy
+of position into energy of motion. Thus the chain must be perfectly balanced.
+Now by symmetry, the arc of the chain hanging underneath the triangle has
+equal tension at both ends, so removing this arc wouldn't affect the balance
+of the rest of the chain. This means that a weight of three units hanging
+vertically balances a weight of five units hanging diagonally along the
+hypotenuse.
+
+The mechanical advantage of the inclined plane is therefore $5/3$,
+which is exactly  the same as the result, $1/\sin\theta$, that we got on p.~\pageref{eg:ramp-mechanical-advantage}
+by analyzing force vectors. What this shows is that Newton's laws and conservation
+laws are not logically separate, but rather are very closely related
+descriptions of nature. In the cases where Newton's laws are true, they give
+the same answers as the conservation laws. This is an example of a more
+general idea, called the correspondence principle, about how science progresses
+over time.\index{correspondence principle}
+When a newer, more general theory is proposed to replace an older theory,
+the new theory must agree with the old one in the realm of applicability
+of the old theory, since the old theory only became accepted as a valid
+theory by being verified experimentally in a variety of experiments.
+In other words, the new theory must be backward-compatible with the old one.
+Even though conservation laws can prove things that Newton's laws can't
+(that perpetual motion is impossible, for example), they aren't going
+to \emph{disprove} Newton's laws when applied to mechanical systems where
+we already knew Newton's laws were valid.
+\end{eg}
+
+
+<% marg(20) %>
+<%
+  fig(
+    'hoover-dam',
+    %q{%
+      Discussion question \ref{dq:hoover-dam}. The water behind the Hoover Dam has
+      energy because of its position relative
+      to the planet earth, which is attracting
+      it with a gravitational force. Letting
+      water down to the bottom of the dam
+      converts that energy into energy of
+      motion. When the water reaches the
+      bottom of the dam, it hits turbine
+      blades that drive generators, and its
+      energy of motion is converted into
+      electrical energy.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+\startdq
+
+\begin{dq}\label{dq:hoover-dam}
+Hydroelectric power (water flowing over a dam to spin
+turbines) appears to be completely free. Does this violate
+conservation of energy? If not, then what is the ultimate
+source of the electrical energy produced by a hydroelectric plant?
+\end{dq}
+
+\begin{dq}
+How does the proof in example \ref{eg:stevin} fail if the assumption
+of a frictionless surface doesn't hold?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("A numerical scale of energy",3) %>
+
+Energy comes in a variety of forms, and physicists didn't
+discover all of them right away. They had to start
+somewhere, so they picked one form of energy to use as a
+standard for creating a numerical energy scale. (In fact the
+history is complicated, and several different energy units
+were defined before it was realized that there was a single
+general energy concept that deserved a single consistent
+unit of measurement.) One practical approach is to define an
+energy unit based on heating water. The SI unit of energy is
+the \index{joule (unit)}joule, J, (rhymes with ``cool''),
+named after the British physicist James Joule. One Joule is
+the amount of energy required in order to heat 0.24 g of
+water by $1\degcunit$. The number 0.24 is not worth memorizing.
+A convenient way of restating this definition is that
+when heating water, $\text{heat}=cm\Delta T$, where $\Delta T$ is
+the change in temperature in $\degcunit$, $m$ is the mass, and
+we have defined the joule by defining the constant $c$, called
+the specific heat capacity of water,\index{specific heat capacity}
+to have the value $4.2\times10^3\ \junit/\kgunit\unitdot\degcunit$.
+
+Note that heat, which is a form of energy, is completely
+different from temperature, which is not. Twice as much heat
+energy is required to prepare two cups of coffee as to make
+one, but two cups of coffee mixed together don't have double
+the temperature. In other words, the temperature of an
+object tells us how hot it is, but the heat energy contained
+in an object also takes into account the object's mass
+and what it is made of.\footnote{In standard, formal terminology, there
+is another, finer distinction. The word ``heat'' is used only
+to indicate an amount of energy that is transferred,
+whereas ``thermal energy'' indicates an amount of energy
+contained in an object. I'm informal on this point, and
+refer to both as heat, but you should be aware of the
+distinction.}
+
+Later we will encounter other quantities that are conserved
+in physics, such as momentum and angular momentum, and the
+method for defining them will be similar to the one we have
+used for energy: pick some standard form of it, and then
+measure other forms by comparison with this standard. The
+flexible and adaptable nature of this procedure is part of
+what has made conservation laws such a durable basis for the
+evolution of physics.
+
+\begin{eg}{Heating a swimming pool}
+\egquestion If electricity costs 3.9 cents per MJ (1 MJ = 1
+megajoule = $10^6$ J), how much does it cost to heat a
+26000-gallon swimming pool from $10\degcunit\ $ to 18\degcunit?
+
+\eganswer Converting gallons to $\zu{cm}^3$ gives
+\begin{equation*}
+        26000\ \zu{gallons} \times \frac{3780\ \zu{cm}^3}{1\ \zu{gallon}}
+            =  9.8\times10^7\ \zu{cm}^3\eqquad.
+\end{equation*}
+Water has a density of 1 gram per cubic centimeter, so the
+mass of the water is $9.8\times10^4\ \kgunit$. The energy needed
+to heat the swimming pool is
+\begin{equation*}
+  mc\Delta T= 3.3\times10^3\ \zu{MJ}\eqquad.
+\end{equation*}
+% calc -e "rho=1 g/cm3; v=9.8 10^7 cm3; m=rhov->kg; c=4.2 10^3 J/kg; T=8; mcT->MJ"
+The cost of the electricity is ($3.3\times10^3$ MJ)(\$0.039/MJ)=\$130.
+\end{eg}
+
+\begin{eg}{Irish coffee}
+\egquestion You make a cup of Irish coffee out of 300 g of
+coffee at $100\degcunit\ $ and 30 g of pure ethyl alcohol at
+20\degcunit. The specific heat capacity of ethanol is
+$2.4\times10^3\ \junit/\kgunit\unitdot\degcunit$ (i.e., alcohol is easier
+to heat than water). What temperature is the final mixture?
+
+\eganswer Adding up all the energy after mixing has to give
+the same result as the total before mixing. We let the
+subscript $i$ stand for the initial situation, before
+mixing, and $f$ for the final situation, and use subscripts
+$c$ for the coffee and $a$ for the alcohol. In this notation, we have
+\begin{align*}
+ \text{total initial energy} &= \text{total final energy} \\
+ E_{ci}+E_{ai} &= E_{cf}+E_{af}\eqquad.
+\end{align*}
+We assume coffee has the same heat-carrying properties as
+water. Our information about the heat-carrying properties of
+the two substances is stated in terms of the \emph{change} in
+energy required for a certain \emph{change} in temperature, so we
+rearrange the equation to express everything in terms
+of energy differences:
+\begin{equation*}
+                E_{af}-E_{ai} =    E_{ci}-E_{cf}\eqquad.
+\end{equation*}
+Using the heat capacities $c_c$ for coffee (water) and $c_a$ for alcohol, we have
+\begin{align*}
+ E_{ci}-E_{cf} &= (T_{ci}-T_{cf})m_c c_c \qquad \text{and} \\
+ E_{af}-E_{ai} &= (T_{af}-T_{ai})m_a c_a .
+\end{align*}
+Setting these two quantities to be equal, we have
+\begin{equation*}
+        (T_{af}-T_{ai})m_a c_a         =      (T_{ci}-T_{cf})m_c c_c\eqquad.
+\end{equation*}
+In the final mixture the two substances must be at the same
+temperature, so we can use a single symbol $T_f=T_{cf}=T_{af}$
+for the two quantities previously represented by two different symbols,
+\begin{equation*}
+                (T_f-T_{ai})m_a c_a         =      (T_{ci}-T_f)m_c c_c\eqquad.
+\end{equation*}
+Solving for $T_f$ gives
+\begin{align*}
+ T_f &= \frac{T_{ci}m_c c_c+T_{ai}m_a c_a}{m_c c_c+m_a c_a}\\
+ &= 96\degcunit\eqquad.
+\end{align*}
+\end{eg}
+
+Once a numerical scale of energy has been established for
+some form of energy such as heat, it can easily be extended
+to other types of energy. For instance, the energy stored in
+one gallon of gasoline can be determined by putting some
+gasoline and some water in an insulated chamber, igniting
+the gas, and measuring the rise in the water's temperature.
+(The fact that the apparatus is known as a ``bomb calorimeter''
+will give you some idea of how dangerous these experiments
+are if you don't take the right safety precautions.) Here
+are some examples of other types of energy that can be
+measured using the same units of joules:
+
+\begin{tabular}{|p{38mm}p{62mm}|}\hline
+\textbf{type of energy} & \textbf{example} \\ \hline
+chemical energy\linebreak[4] released by burning & About 50 MJ are released by burning a kg of gasoline. \\ \hline
+energy required to break an object & When a person suffers a spiral fracture of the thighbone (a common
+type in skiing accidents), about 2 J of energy go into breaking the bone. \\ \hline
+energy required to melt a solid substance & 7 MJ are required to melt 1 kg of tin. \\ \hline
+chemical energy\linebreak[4] released by digesting food & A bowl of Cheeries with milk provides us with about 800 kJ of usable energy. \\ \hline
+raising a mass against the force of gravity & Lifting 1.0 kg through a height of 1.0 m requires 9.8 J. \\ \hline
+nuclear energy\linebreak[4] released in fission & 1 kg of uranium oxide fuel consumed by a reactor releases $2\times10^{12}$ J of stored nuclear energy. \\ \hline
+\end{tabular}
+
+It is interesting to note the disproportion between the
+megajoule energies we consume as food and the joule-sized
+energies we expend in physical activities. If we could
+perceive the flow of energy around us the way we perceive
+the flow of water, eating a bowl of cereal would be like
+swallowing a bathtub's worth of energy, the continual loss
+of body heat to one's environment would be like an
+energy-hose left on all day, and lifting a bag of cement
+would be like flicking it with a few tiny energy-drops. The
+human body is tremendously inefficient. The calories we
+``burn'' in heavy exercise are almost all dissipated
+directly as body heat.
+
+\begin{eg}{You take the high road and I'll take the low road.}\label{eg:high-road-low-road}
+\egquestion Figure \figref{high-road-low-road} shows two ramps which two balls will
+roll down. Compare their final speeds, when they reach point
+B. Assume friction is negligible.
+
+\eganswer Each ball loses some energy because of its
+decreasing height above the earth, and conservation of
+energy says that it must gain an equal amount of energy of
+motion (minus a little heat created by friction). The balls
+lose the same amount of height, so their final speeds must be equal.
+\end{eg}
+
+<% marg(53) %>
+
+<%
+  fig(
+    'high-road-low-road',
+    %q{Example \ref{eg:high-road-low-road}.}
+  )
+%>
+
+<% end_marg %>
+It's impressive to note the complete impossibility of
+solving this problem using only Newton's laws. Even if the
+shape of the track had been given mathematically, it would
+have been a formidable task to compute the balls' final
+speed based on vector addition of the normal force and
+gravitational force at each point along the way.
+
+<% begin_sec("How new forms of energy are discovered",0,'new-forms-of-energy') %>
+
+Textbooks often give the impression that a sophisticated
+physics concept was created by one person who had an
+inspiration one day, but in reality it is more in the nature
+of science to rough out an idea and then gradually refine it
+over many years. The idea of energy was tinkered with from
+the early 1800's on, and new types of energy kept
+getting added to the list.
+
+ To establish the existence of a new form of energy, a physicist has to
+
+(1) show that it could be converted to and from other
+forms of energy; and
+
+(2) show that it related to some definite measurable
+property of the object, for example its temperature, motion,
+position relative to another object, or being in a
+solid or liquid state.
+
+For example, energy is released when a piece of iron is
+soaked in water, so apparently there is some form of energy
+already stored in the iron. The release of this energy can
+also be related to a definite measurable property of the
+chunk of metal: it turns reddish-orange. There has been a
+chemical change in its physical state, which we call rusting.
+
+Although the list of types of energy kept getting longer and
+longer, it was clear that many of the types were just
+variations on a theme. There is an obvious similarity
+between the energy needed to melt ice and to melt butter,
+or between the rusting of iron and many other chemical
+reactions. The topic of the next chapter is how this process
+of simplification reduced all the types of energy to a very
+small number (four, according to the way I've chosen to count them).
+
+It might seem that if the principle of conservation of
+energy ever appeared to be violated, we could fix it up
+simply by inventing some new type of energy to compensate
+for the discrepancy. This would be like balancing your
+checkbook by adding in an imaginary deposit or withdrawal to
+make your figures agree with the bank's statements. Step (2)
+above guards against this kind of chicanery. In the 1920s
+there were experiments that suggested energy was not
+conserved in radioactive processes. Precise measurements of
+the energy released in the radioactive decay of a given type
+of atom showed inconsistent results. One atom might decay
+and release, say, $1.1\times10^{-10}$ J of energy, which had
+presumably been stored in some mysterious form in the
+nucleus. But in a later measurement, an atom of exactly the
+same type might release $1.2\times10^{-10}$ J. Atoms of the
+same type are supposed to be identical, so both atoms were
+thought to have started out with the same energy. If the
+amount released was random, then apparently the total amount
+of energy was not the same after the decay as before, i.e.,
+energy was not conserved.
+
+Only later was it found that a previously unknown particle,
+which is very hard to detect, was being spewed out in the
+decay. The particle, now called a neutrino, was carrying off
+some energy, and if this previously unsuspected form of
+energy was added in, energy was found to be conserved after
+all. The discovery of the energy discrepancies is seen with
+hindsight as being step (1) in the establishment of a new
+form of energy, and the discovery of the neutrino was step
+(2). But during the decade or so between step (1) and step
+(2) (the accumulation of evidence was gradual), physicists
+had the admirable honesty to admit that the cherished
+principle of conservation of energy might have to be discarded.
+
+<% self_check('spring-energy',<<-'SELF_CHECK'
+How would you carry out the two steps given above in order
+to establish that some form of energy was stored in a
+stretched or compressed spring?
+  SELF_CHECK
+  ) %>
+
+\begin{optionaltopic}{Mass Into Energy}
+Einstein showed that mass itself
+could be converted to and from  energy,
+according to his celebrated
+equation $E=mc^2$, in which $c$ is the
+speed of light. We thus speak of
+mass as simply another form of
+energy, and it is valid to measure
+it in units of joules. The mass of a
+15-gram pencil corresponds to
+about $1.3\times10^{15}$ J. The issue is
+largely academic in the case of the
+pencil, because very violent processes
+ such as nuclear reactions
+are required in order to convert any
+significant fraction of an object's
+mass into energy. Cosmic rays,
+however, are continually striking
+you and your surroundings and
+converting part of their energy of
+motion into the mass of newly created
+particles. A single high-energy
+cosmic ray can create a ``shower''
+of millions of previously nonexistent
+particles when it strikes the 
+atmosphere. Einstein's theories are
+discussed later in this book.
+
+Even today, when the energy 
+concept is relatively mature and stable,
+a new form of energy has been
+proposed based on observations
+of distant galaxies whose light 
+began its voyage to us billions of
+years ago. Astronomers have
+found that the universe's continuing expansion, resulting from the
+Big Bang, has not been decelerating
+ as rapidly in the last few billion
+years as would have been
+expected from gravitational forces.
+They suggest that a new form of
+energy may be at work.
+\end{optionaltopic}
+
+
+\startdq
+
+\begin{dq}
+I'm not making this up. XS Energy Drink has ads that read
+like this: \emph{All the ``Energy'' ... Without the Sugar! Only 8
+Calories!} Comment on this.
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Kinetic energy",3) %>
+
+The technical term for the energy associated with motion is
+\index{kinetic energy}kinetic energy, from the Greek word
+for motion. (The root is the same as the root of the word ``cinema''
+for a motion picture,
+and in French the term for kinetic energy is
+``\'{e}nergie cin\'{e}tique.'') To find how much kinetic energy is
+possessed by a given moving object, we must convert all its
+kinetic energy into heat energy, which we have chosen as the
+standard reference type of energy. We could do this, for
+example, by firing projectiles into a tank of water and
+measuring the increase in temperature of the water as a
+function of the projectile's mass and velocity. Consider the
+following data from a series of three such experiments:
+
+\begin{tabular}{|c|c|c|} \hline
+\textbf{m} (kg) & \textbf{v} (m/s) & \textbf{energy} (J) \\ \hline
+1.00 & 1.00 & 0.50 \\ \hline
+1.00 & 2.00 & 2.00 \\ \hline
+2.00 & 1.00 & 1.00 \\ \hline
+\end{tabular}
+
+Comparing the first experiment with the second, we see that
+doubling the object's velocity doesn't just double its
+energy, it quadruples it. If we compare the first and third
+lines, however, we find that doubling the mass only doubles
+the energy. This suggests that kinetic energy is proportional
+to mass and to the square of velocity, $KE\propto mv^2$, and further
+experiments of this type would indeed establish such a
+general rule. The proportionality factor equals 0.5 because
+of the design of the metric system, so the kinetic energy of
+a moving object is given by
+
+\begin{equation*}
+                KE    =    \frac{1}{2}mv^2\eqquad.
+\end{equation*}
+The metric system is based on the meter, kilogram, and
+second, with other units being derived from those. Comparing
+the units on the left and right sides of the equation shows
+that the joule can be reexpressed in terms of the basic
+units as $\kgunit\unitdot\munit^2/\sunit^2$.
+
+\begin{eg}{Energy released by a comet impact}
+\egquestion Comet Shoemaker-Levy, which struck the planet
+Jupiter in 1994, had a mass of roughly $4\times10^{13}$ kg,
+and was moving at a speed of 60 km/s. Compare the kinetic
+energy released in the impact to the total energy in the
+world's nuclear arsenals, which is $2\times10^{19}$ J. Assume
+for the sake of simplicity that Jupiter was at rest.
+
+\eganswer Since we assume Jupiter was at rest, we can
+imagine that the comet stopped completely on impact, and
+100\% of its kinetic energy was converted to heat and sound.
+We first convert the speed to mks units, $v=6\times10^4$
+m/s, and then plug in to the equation to find that the
+comet's kinetic energy was roughly $7\times10^{22}$ J, or about
+3000 times the energy in the world's nuclear arsenals.
+\end{eg}
+
+<% begin_sec("Energy and relative motion") %>\label{galilean-energy}
+Galileo's Aristotelian enemies (and it is no exaggeration to call them
+enemies!) would probably have objected to conservation of
+energy. Galilean got in trouble by claiming that an object in
+motion would continue in motion indefinitely in the absence
+of a force.  This is not so different from the idea that an
+object's kinetic energy stays the same unless there is a
+mechanism like frictional heating for converting that energy
+into some other form.
+
+More subtly, however, it's not immediately obvious that what
+we've learned so far about energy is strictly mathematically
+consistent with Galileo's principle that motion is relative.
+Suppose we verify that a certain process, say the collision
+of two pool balls, conserves energy as measured in a certain
+frame of reference: the sum of the balls' kinetic energies
+before the collision is equal to their sum after the
+collision. But what if we were to
+measure everything in a frame of reference that was in a
+different state of motion? It's not immediately obvious that the
+total energy before the collision will still equal the total
+energy after the collision. 
+It \emph{does} still work out. Homework problem \ref{hw:balls}, p.~\pageref{hw:balls},
+gives a simple numerical example, and the general
+proof is taken up in problem \ref{hw:energy-frames} on p.~\pageref{hw:energy-frames} (with the solution
+given in the back of the book).
+<% end_sec() %>
+
+<% begin_sec("Why kinetic energy obeys the equation it does") %>\label{galilean-energy}
+I've presented the magic expression for kinetic energy, $(1/2)mv^2$, as a purely empirical fact.
+Does it have any deeper reason that might be knowable to us mere mortals? Yes and no. It contains
+three factors, and we need to consider each separately.
+
+The reason for the factor of 1/2 is understandable, but only as an arbitrary historical choice.
+The metric system was designed so that some of the equations relating
+to energy would come out looking simple, at the expense of
+some others, which had to have inconvenient conversion
+factors in front. If we were using the old British
+Engineering System of units in this course, then we'd have
+the British Thermal Unit (BTU) as our unit of energy. In
+that system, the equation you'd learn for kinetic energy
+would have an inconvenient proportionality constant,
+$KE=\left(1.29\times10^{-3}\right)mv^2$, with $KE$ measured
+in units of BTUs, $v$ measured in feet per second, and so on.
+At the expense of this inconvenient equation for kinetic
+energy, the designers of the British Engineering System got
+a simple rule for calculating the energy required to heat
+water: one BTU per degree Fahrenheit per pound. The
+inventor of kinetic energy, Thomas Young, actually defined
+it as $KE=mv^2$, which meant that all his other
+equations had to be different from ours by a factor of two.
+All these systems of units work just fine as long as they
+are not combined with one another in an inconsistent way.
+
+The proportionality to $m$ is inevitable because the energy concept is based on the idea
+that we add up energy contributions from all the objects
+within a system. Therefore it is logically
+necessary that a 2 kg object moving at 1 m/s have the same
+kinetic energy as two 1 kg objects moving side-by-side at the same speed.
+
+<% marg(0) %>
+
+<%
+  fig(
+    'ke-of-electrons',
+    %q{%
+      Kinetic energies of electrons measured in three experiments. At high velocities,
+      the equation $KE=(1/2)mv^2$ becomes a poor approximation.
+    }
+  )
+%>
+<% end_marg %>
+
+What about the proportionality to $v^2$? Consider:\label{ke-logic}
+\begin{enumerate}
+\item It's surprisingly hard to tamper with this factor without breaking things: see discussion
+questions \ref{dq:why-ke-not-first-order} and \ref{dq:why-no-fourth-order-term-in-ke} on
+p.~\pageref{dq:why-ke-not-first-order}.
+\item The proportionality to $v^2$ is not even correct, except as a low-velocity approximation.
+Experiments show deviations from the $v^2$
+rule at high speeds (figure \figref{ke-of-electrons}), an effect that is related to Einstein's
+theory of relativity.
+\item As described on p.~\pageref{galilean-energy},
+we want conservation of energy to keep working when we switch frames of reference.
+The fact that this does work for $KE\propto v^2$ is intimately connected with the
+assumption that when we change frames,
+velocities add as described in section \ref{sec:addition-of-velocities}.
+This assumption turns out to be an approximation, which only works well at low velocities.
+\item Conservation laws are of more general validity than Newton's laws, which apply
+to material objects moving at low speeds. Under the conditions where Newton's laws are accurate,
+they follow logically from the conservation laws.
+Therefore we need kinetic energy to have low-velocity behavior that ends up correctly reproducing Newton's laws.
+\end{enumerate}
+So \emph{under a certain set of low-velocity approximations}, $KE\propto v^2$
+is what works. We verify in problem \ref{hw:energy-frames}, p.~\pageref{hw:energy-frames}, that it satisfies criterion 3,
+and we show in section \ref{sec:when-is-work-fd}, p.~\pageref{work-ke-logic}, that it is the \emph{only} such relation that satisfies
+criterion 4.
+
+<% end_sec() %>
+
+\pagebreak
+
+\startdqs
+
+\begin{dq}\label{dq:why-ke-not-first-order}
+Suppose that, like Young or Einstein, you were trying out
+different equations for kinetic energy to see if they agreed
+with the experimental data. Based on the meaning of positive
+and negative signs of velocity, why would you suspect that
+a proportionality to $mv$ would be less likely than $mv^2?$
+\end{dq}
+
+\begin{dq}\label{dq:why-no-fourth-order-term-in-ke}
+As in discussion question \ref{dq:why-ke-not-first-order}, try to
+think of an argument showing that $m(v^2+v^4)$ is not a possible
+formula for kinetic energy.
+\end{dq}
+
+<% marg(30) %>
+<%
+  fig(
+    'dq-pendulum-and-peg',
+    %q{Discussion question \ref{dq:pendulum-and-peg}},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:pendulum-and-peg}
+The figure
+ shows a pendulum that is released at A and
+caught by a peg as it passes through the vertical, B. To
+what height will the bob rise on the right?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Power",3) %>
+
+A car may have plenty of energy in its gas tank, but still
+may not be able to increase its kinetic energy rapidly. A
+Porsche doesn't necessarily have more energy in its gas tank
+than a Hyundai, it is just able to transfer it more quickly.
+The rate of transferring energy from one form to another is
+called $\index{power}power$. The definition can be
+written as an equation,
+\begin{equation*}
+                P    =     \frac{\Delta E}{\Delta t}\eqquad,
+\end{equation*}
+where the use of the delta notation in the symbol $\Delta E$
+has the usual interpretation: the final amount of energy in a
+certain form minus the initial amount that was present in
+that form. Power has units of J/s, which are abbreviated as
+\index{watt (unit)}watts, W (rhymes with ``lots'').
+
+If the rate of energy transfer is not constant, the power at
+any instant can be defined as the 
+m4_ifelse(__me,1,[:derivative $\der E/\der t$:],[:slope of the tangent line
+on a graph of $E$ versus $t$. Likewise $\Delta E$ can be
+extracted from the area under the $P$-versus-$t$ curve.:])
+
+\begin{eg}{Converting kilowatt-hours to joules}
+\egquestion The electric company bills you for energy in units
+of kilowatt-hours (kilowatts multiplied by hours) rather
+than in SI units of joules. How many joules is a kilowatt-hour?
+
+\eganswer
+1 kilowatt-hour = (1 kW)(1 hour) = (1000 J/s)(3600 s) = 3.6 MJ.
+\end{eg}
+
+\begin{eg}{Human wattage}
+\egquestion A typical person consumes 2000 kcal of food in a
+day, and converts nearly all of that directly to heat.
+Compare the person's heat output to the rate of energy
+consumption of a 100-watt lightbulb.
+
+\eganswer Looking up the conversion factor from calories to joules, we find
+\begin{equation*}
+ \Delta E=2000\ \zu{kcal}\times\frac{1000\ \zu{cal}}{1\ \zu{kcal}}\times\frac{4.18\ \junit}{1\ \zu{cal}}=8\times10^6\ \junit
+\end{equation*}
+for our daily energy consumption. Converting the time
+interval likewise into mks,
+\begin{equation*}
+ \Delta t=1\ \zu{day}\times\frac{24\ \zu{hours}}{1\ \zu{day}}\times\frac{60\ \zu{min}}{1\ \zu{hour}}\times\frac{60\ \sunit}{1\ \zu{min}}=9\times10^4\ \sunit\eqquad.
+\end{equation*}
+Dividing, we find that our power dissipated as heat is 90
+J/s = 90 W, about the same as a lightbulb.
+\end{eg}
+
+m4_ifelse(__me,1,[:\begin{eg}{Wind power density}\label{eg:wind-power-density}
+Wind power is a renewable energy resource, but it is most practical in areas where the
+wind is both strong and reliably strong. When a horizontal-axis wind turbine faces
+directly into a wind flowing at speed $v$, the air it intercepts in time $\Delta t$
+forms a cylinder whose length is $v\Delta t$, and whose mass is proportional to the same
+factor. The kinetic energy of this cylinder represents the maximum energy that can theoretically
+be extracted in this time. Since the mass is proportional to $v$, the kinetic energy is proportional
+to $v\times v^2=v^3$. That is, the ``wind power density'' varies as the cube of the wind's speed.
+\end{eg}:])
+
+It is easy to confuse the concepts of force, energy, and
+power, especially since they are synonyms in ordinary
+speech. The table on the following page may help to clear this up:
+
+\vfill
+
+\begin{minipagefullpagewidth}
+\begin{tabular*}{\pagewidth}{|p{25mm}|p{43mm}|p{43mm}|p{43mm}|} \hline
+& \textbf{force} & \textbf{energy} & \textbf{power} \\ \hline
+
+\textbf{conceptual definition} &
+A force is an interaction between two objects that causes a push or a pull.
+ A force can be defined as anything that is capable of changing an object's state of motion. &
+Heating an object, making it move faster, or increasing its distance from another object that is attracting it are all examples of things that would require fuel or physical effort. All these things can be
+quantified using a single scale of measurement, and we describe them all as forms of energy. &
+Power is the rate at which energy is transformed from one form to another or transferred from one object to another. \\ \hline
+
+\textbf{operational definition} &\index{operational definition!energy}\index{operational definition!power}
+A spring scale can be used to measure force. &
+If we define a unit of energy as the amount required to heat a certain amount of water
+ by a $1\degcunit$, then we can measure any other quantity of energy by
+ transferring it into heat in water and measuring the temperature increase. &
+Measure the change in the amount of some form of energy possessed by an object, 
+and divide by the amount of time required for the change to occur. \\ \hline
+
+\textbf{scalar or\linebreak[4] vector?} &
+vector --- has a direction in space which is the direction in which it pulls or pushes &
+scalar --- has no direction in space &
+scalar --- has no direction in space \\ \hline
+
+\textbf{unit} &
+newtons (N) & joules (J) & watts (W) = joules/s \\ \hline
+
+\textbf{Can it run out? Does it cost money?} &
+No. I don't have to pay a monthly bill for the meganewtons of force required to hold up my house. &
+Yes. We pay money for gasoline, electrical energy, batteries, etc., because they contain energy. &
+More power means you are paying money at a higher rate. A 100-W lightbulb costs a certain number of cents per hour. \\ \hline
+
+\textbf{Can it be a property of an object?} &
+No. A force is a relationship between two interacting objects. A home-run baseball doesn't
+``have'' force. &
+Yes. What a home-run baseball has is kinetic energy, not force. &
+Not really. A 100-W lightbulb doesn't ``have'' 100 W. 100 J/s is the rate at which it converts electrical energy into light. \\ \hline
+\end{tabular*}
+\end{minipagefullpagewidth}
+
+<% end_sec() %>

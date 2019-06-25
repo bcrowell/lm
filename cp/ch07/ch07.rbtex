@@ -1,0 +1,1477 @@
+<%
+  require "../eruby_util.rb"
+%>
+<% figure_in_toc("hand-x-ray") %>
+<%
+  chapter(
+    '07',
+    %q{The Ray Model of Light},
+    'ch:ray-model',
+    '',
+    {'opener'=>'crepuscular-rays','width'=>'fullpage'}
+  )
+%>
+
+<% begin_sec("Light rays",0) %>
+
+Ads for one Macintosh computer bragged that it could do an
+arithmetic calculation in less time than it took for the
+light to get from the screen to your eye. We find this
+impressive because of the contrast between the speed of
+light and the speeds at which we interact with physical
+objects in our environment. Perhaps it shouldn't surprise
+us, then, that Newton succeeded so well in explaining the
+motion of objects, but was far less successful with the study of light.
+
+The climax of our study of
+electricity and magnetism was discovery that light is an
+electromagnetic wave. Knowing this, however, is not the same
+as knowing everything about eyes and telescopes. In fact,
+the full description of light as a wave can be rather
+cumbersome. In this chapter, we'll instead make
+use of a simpler model of light, the ray model, which does a
+fine job in most practical situations. Not only that, but we'll
+even backtrack a little and start with a discussion of
+basic ideas about light and vision that predated the
+discovery of electromagnetic waves.
+
+<% begin_sec("The nature of light") %>
+
+<% begin_sec("The cause and effect relationship in vision") %>
+
+Despite its title, this chapter is far from your first look
+at light. That familiarity might seem like an advantage, but
+most people have never thought carefully about light and
+vision. Even smart people who have thought hard about vision
+have come up with incorrect ideas. The ancient Greeks, Arabs
+and Chinese had theories of light and \index{vision}vision,
+all of which were mostly wrong, and all of which were
+accepted for thousands of years.
+
+One thing the ancients did get right is that there is a
+distinction between objects that emit light and objects that
+don't. When you see a leaf in the forest, it's because three
+different objects are doing their jobs: the leaf, the eye,
+and the sun. But luminous objects like the sun, a flame, or
+the filament of a light bulb can be seen by the eye without
+the presence of a third object. Emission of light is often,
+but not always, associated with heat. In modern times, we
+are familiar with a variety of objects that glow without
+being heated, including fluorescent lights and glow-in-the-dark toys.
+
+How do we see luminous objects? The Greek philosophers
+\index{Pythagoras}Pythagoras (b. ca. 560 BC) and \index{Empedocles
+of Acragas}Empedocles of Acragas (b. ca. 492 BC), who
+unfortunately were very influential, claimed that when you
+looked at a candle flame, the flame and your eye were both
+sending out some kind of mysterious stuff, and when your
+eye's stuff collided with the candle's stuff, the candle
+would become evident to your sense of sight.
+
+Bizarre as the Greek ``collision of stuff theory'' might
+seem, it had a couple of good features. It explained why
+both the candle and your eye had to be present for your
+sense of sight to function. The theory could also easily be
+expanded to explain how we see nonluminous objects. If a
+leaf, for instance, happened to be present at the site of
+the collision between your eye's stuff and the candle's
+stuff, then the leaf would be stimulated to express its
+green nature, allowing you to perceive it as green.
+
+Modern people might feel uneasy about this theory, since it
+suggests that greenness exists only for our seeing
+convenience, implying a human precedence over natural
+phenomena. Nowadays, people would expect the cause and
+effect relationship in vision to be the other way around,
+with the leaf doing something to our eye rather than our eye
+doing something to the leaf. But how can you tell? The most
+common way of distinguishing cause from effect is to
+determine which happened first, but the process of seeing
+seems to occur too quickly to determine the order in which
+things happened. Certainly there is no obvious time lag
+between the moment when you move your head and the moment
+when your reflection in the mirror moves.
+
+Today, photography provides the simplest experimental
+evidence that nothing has to be emitted from your eye and
+hit the leaf in order to make it ``greenify.'' A camera can
+take a picture of a leaf even if there are no eyes anywhere
+nearby. Since the leaf appears green regardless of whether
+it is being sensed by a camera, your eye, or an insect's
+eye, it seems to make more sense to say that the leaf's
+greenness is the cause, and something happening in the
+camera or eye is the effect.
+
+\index{light!speed of}
+<% end_sec() %>
+<% begin_sec("Light is a thing, and it travels from one point to another.") %>
+
+Another issue that few people have considered is whether a
+candle's flame simply affects your eye directly, or whether
+it sends out light which then gets into your eye. Again, the
+rapidity of the effect makes it difficult to tell what's
+happening. If someone throws a rock at you, you can see the
+rock on its way to your body, and you can tell that the
+person affected you by sending a material substance your
+way, rather than just harming you directly with an arm
+motion, which would be known as ``action at a distance.'' It
+is not easy to do a similar observation to see whether there
+is some ``stuff'' that travels from the candle to your eye,
+or whether it is a case of action at a distance.
+
+Our description of the physics of material objects included both action at a distance (e.g.,
+the earth's gravitational force on a falling object) and
+contact forces such as friction.
+
+<% marg(90) %>
+<%
+  fig(
+    'deflection-of-candle-light',
+    %q{%
+      Light from a candle is bumped off course by a
+      piece of glass. Inserting the glass causes the apparent location of the candle to
+      shift. The same effect can be produced by taking off your eyeglasses and
+      looking at which you see near the edge of the lens, but a flat piece of glass
+      works just as well as a lens for this purpose.
+    }
+  )
+%>
+<% end_marg %>
+
+One piece of evidence that the candle sends out stuff that
+travels to your eye is that as in figure \figref{deflection-of-candle-light}, intervening transparent
+substances can make the candle appear to be in the wrong
+location, suggesting that light is a thing that can be
+bumped off course. Many people would dismiss this kind of
+observation as an optical illusion, however. (Some optical
+illusions are purely neurological or psychological effects,
+although some others, including this one, turn out to be
+caused by the behavior of light itself.)
+
+A more convincing way to decide in which category light
+belongs is to find out if it takes time to get from the
+candle to your eye; in Newton's picture of the universe, action at a
+distance was supposed to be instantaneous. The fact that we
+speak casually today of ``the speed of light'' implies that
+at some point in history, somebody succeeded in showing that
+light did not travel infinitely fast. Galileo tried, and
+failed, to detect a finite speed for light, by arranging
+with a person in a distant tower to signal back and forth
+with lanterns. \index{Galileo}Galileo uncovered his lantern,
+and when the other person saw the light, he uncovered his
+lantern. Galileo was unable to measure any time lag that was
+significant compared to the limitations of human reflexes.
+
+The first person to prove that light's speed was finite, and
+to determine it numerically, was Ole \index{Roemer}Roemer,
+in a series of measurements around the year 1675. Roemer
+observed Io, one of Jupiter's moons, over a period of
+several years. Since \index{Io}Io presumably took the same
+amount of time to complete each orbit of \index{Jupiter}Jupiter,
+it could be thought of as a very distant, very accurate
+clock. A practical and accurate pendulum clock had recently
+been invented, so Roemer could check whether the ratio of
+the two clocks' cycles, about 42.5 hours to 1 orbit, stayed
+exactly constant or changed a little. If the process of
+seeing the distant moon was instantaneous, there would be no
+reason for the two to get out of step. Even if the speed of
+light was finite, you might expect that the result would be
+only to offset one cycle relative to the other. The earth
+does not, however, stay at a constant distance from Jupiter
+and its moons. Since the distance is changing gradually due
+to the two planets' orbital motions, a finite speed of light
+would make the ``Io clock'' appear to run faster as the
+planets drew near each other, and more slowly as their
+separation increased. Roemer did find a variation in the
+apparent speed of Io's orbits, which caused Io's eclipses by
+Jupiter (the moments when Io passed in front of or behind
+Jupiter) to occur about 7 minutes early when the earth was
+closest to Jupiter, and 7 minutes late when it was farthest.
+Based on these measurements, Roemer estimated the speed of
+light to be approximately $2\times10^8$ m/s, which is in
+the right ballpark compared to modern measurements of
+$3\times10^8$ m/s. (I'm not sure whether the fairly large
+experimental error was mainly due to imprecise knowledge of
+the radius of the earth's orbit or limitations in the
+reliability of pendulum clocks.)
+
+<% marg(150) %>
+<%
+  fig(
+    'io',
+    %q{An image of Jupiter and its moon Io (left) from the Cassini probe.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'roemer',
+    %q{%
+      The earth is moving toward Jupiter and Io. Since the distance is shrinking, it is taking
+      less and less time for the light to get to us from Io, and Io appears to circle Jupiter more
+      quickly than normal. Six months later, the earth will be on the opposite side of the sun,
+      and receding from Jupiter and Io, so Io will appear to revolve around Jupiter more slowly.
+    }
+  )
+%>
+
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("Light can travel through a vacuum.") %>
+
+Many people are confused by the relationship between sound
+and light. Although we use different organs to sense them,
+there are some similarities. For instance, both light and
+sound are typically emitted in all directions by their
+sources. Musicians even use visual metaphors like ``tone
+color,'' or ``a bright timbre'' to describe sound. One way
+to see that they are clearly different phenomena is to note
+their very different velocities. Sure, both are pretty fast
+compared to a flying arrow or a galloping horse, but as we've
+seen, the speed of light is so great as to appear
+instantaneous in most situations. The speed of sound,
+however, can easily be observed just by watching a group of
+schoolchildren a hundred feet away as they clap their hands
+to a song. There is an obvious delay between when you see
+their palms come together and when you hear the clap.
+
+The fundamental distinction between sound and light is that
+sound is an oscillation in air pressure, so it requires air
+(or some other medium such as water) in which to travel.
+Today, we know that outer space is a vacuum, so the fact
+that we get light from the sun, moon and stars clearly shows
+that air is not necessary for the propagation of light.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Interaction of light with matter") %>
+
+\index{absorption}\index{light!absorption of}
+<% begin_sec("Absorption of light") %>
+
+The reason why the sun feels warm on your skin is that the
+sunlight is being absorbed, and the light energy is being
+transformed into heat energy. The same happens with
+artificial light, so the net result of leaving a light
+turned on is to heat the room. It doesn't matter whether the
+source of the light is hot, like the sun, a flame, or an
+incandescent light bulb, or cool, like a fluorescent bulb.
+(If your house has electric heat, then there is absolutely
+no point in fastidiously turning off lights in the winter;
+the lights will help to heat the house at the same dollar
+rate as the electric heater.)
+
+This process of heating by absorption is entirely different
+from heating by thermal conduction, as when an electric
+stove heats spaghetti sauce through a pan. Heat can only be
+conducted through matter, but there is vacuum between us and
+the sun, or between us and the filament of an incandescent
+bulb. Also, heat conduction can only transfer heat energy
+from a hotter object to a colder one, but a cool fluorescent
+bulb is perfectly capable of heating something that had
+already started out being warmer than the bulb itself.
+
+<% marg(10) %>
+<%
+  fig(
+    'selfportraits',
+    %q{%
+      Two self-portraits of the author, one taken in a mirror
+      and one with a piece of aluminum foil.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'specular-and-diffuse-reflection',
+    %q{Specular and diffuse reflection.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("How we see nonluminous objects") %>
+
+Not all the light energy that hits an object is transformed
+into heat. Some is reflected, and this leads us to the
+question of how we see nonluminous objects. If you ask the
+average person how we see a light bulb, the most likely
+answer is ``The light bulb makes light, which hits our
+eyes.'' But if you ask how we see a book, they are likely to
+say ``The bulb lights up the room, and that lets me see the
+book.'' All mention of light actually entering our eyes has
+mysteriously disappeared.
+
+Most people would disagree if you told them that light was
+reflected from the book to the eye, because they think of
+reflection as something that mirrors do, not something that
+a book does. They associate reflection with the formation of
+a reflected image, which does not seem to appear in a piece of paper.
+
+Imagine that you are looking at your reflection in a nice
+smooth piece of aluminum foil, fresh off the roll. You
+perceive a face, not a piece of metal. Perhaps you also see
+the bright reflection of a lamp over your shoulder behind
+you. Now imagine that the foil is just a little bit less
+smooth. The different parts of the image are now a little
+bit out of alignment with each other. Your brain can still
+recognize a face and a lamp, but it's a little scrambled,
+like a Picasso painting. Now suppose you use a piece of
+aluminum foil that has been crumpled up and then flattened
+out again. The parts of the image are so scrambled that you
+cannot recognize an image. Instead, your brain tells you
+you're looking at a rough, silvery surface.
+
+Mirror-like reflection at a specific angle is known as
+specular reflection, and random reflection in many
+directions is called \index{diffuse reflection}\index{reflection!diffuse}diffuse
+reflection. Diffuse reflection is how we see nonluminous
+objects. Specular reflection only allows us to see images of
+objects other than the one doing the reflecting. In top part
+of figure \figref{selfportraits}, imagine that the rays of light are coming
+from the sun. If you are looking down at the reflecting
+surface, there is no way for your eye-brain system to tell
+that the rays are not really coming from a sun down below you.
+
+Figure \figref{reading-with-lamp} shows another example of how we can't avoid the
+conclusion that light bounces off of things other than
+mirrors. The lamp is one I have in my house. It has a bright
+bulb, housed in a completely opaque bowl-shaped metal shade.
+The only way light can get out of the lamp is by going up
+out of the top of the bowl. The fact that I can read a book
+in the position shown in the figure means that light must be
+bouncing off of the ceiling, then bouncing off of the book,
+then finally getting to my eye.
+
+<% marg(30) %>
+<%
+  fig(
+    'reading-with-lamp',
+    %q{Light bounces off of the ceiling, then off of the book.}
+  )
+%>
+<% end_marg %>
+
+
+This is where the shortcomings of the Greek theory of vision
+become glaringly obvious. In the Greek theory, the light
+from the bulb and my mysterious ``eye rays'' are both
+supposed to go to the book, where they collide, allowing me
+to see the book. But we now have a total of four objects:
+lamp, eye, book, and ceiling. Where does the ceiling come
+in? Does it also send out its own mysterious ``ceiling
+rays,'' contributing to a three-way collision at the book?
+That would just be too bizarre to believe!
+
+The differences among white, black, and the various shades
+of gray in between is a matter of what percentage of the
+light they absorb and what percentage they reflect. That's
+why light-colored clothing is more comfortable in the
+summer, and light-colored upholstery in a car stays cooler
+that dark upholstery.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("The ray model of light") %>\index{ray model of light}\index{light!ray model of}
+
+\index{particle model of light}\index{light!particle model
+of}\index{wave model of light}\index{light!wave model of}
+<% begin_sec("Models of light") %>
+
+Note how I've been casually diagramming the motion of light
+with pictures showing light rays as lines on the page. Figure
+\figref{sample-ray-diagrams} shows some more examples. More
+formally, this is known as the ray model of light. The ray
+model of light seems natural once we convince ourselves that
+light travels through space, and observe phenomena like
+sunbeams coming through holes in clouds. If you've read chapter 6,
+you've already been
+introduced to the concept of light as an electromagnetic
+wave, and you know that the ray model is not the ultimate truth
+about light, but the ray model is simpler, and in any case
+science always deals with models of reality, not the
+ultimate nature of reality. Figure \figref{three-models-of-light} summarizes
+three models of light.
+
+<%
+  fig(
+    'sample-ray-diagrams',
+    %q{Examples of ray diagrams.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+<%
+  fig(
+    'three-models-of-light',
+    %q{Three models of light.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+    }
+  )
+%>
+
+The ray model is a generic one. By using it we
+can discuss the path taken by the light, without committing
+ourselves to any specific description of what it is that is
+moving along that path. We will use the nice simple ray
+model for rest of this chapter, and with it we can analyze a
+great many devices and phenomena.
+
+Note that the statements about the applicability of the
+various models are only rough guides. For instance, wave
+interference effects are often detectable, if small, when
+light passes around an obstacle that is quite a bit bigger
+than a wavelength. Also, the criterion for when we need the
+particle model really has more to do with energy scales than
+distance scales, although the two turn out to be related.
+
+
+The alert reader may have noticed that the wave model is
+required at scales smaller than a wavelength of light (on
+the order of a micrometer for visible light), and the
+particle model is demanded on the atomic scale or lower (a
+typical atom being a nanometer or so in size). This implies
+that at the smallest scales we need \emph{both} the wave
+model and the particle model. They appear incompatible, so
+how can we simultaneously use both? The answer is that they
+are not as incompatible as they seem. Light is both a wave
+and a particle, and a full understanding of this apparently
+nonsensical statement would lead us to a discussion of
+the quantum physics revolution of the twentieth century.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Geometry of specular reflection") %>\index{reflection!specular}
+
+Specular reflection obeys two simple geometrical rules:
+
+\begin{itemize}
+
+\item The angle of the reflected ray is the same as that
+of the incident ray.
+
+\item The reflected ray lies in the plane containing the
+incident ray and the normal (perpendicular) line. This plane
+is known as the plane of incidence.
+
+\end{itemize}
+
+<% marg(70) %>
+<%
+  fig(
+    'plane-of-reflection',
+    %q{The geometry of specular reflection.}
+  )
+%>
+<% end_marg %>
+
+The two angles can be defined either with respect to the
+normal, like angles B and C in the figure, or with
+respect to the reflecting surface, like angles A and D.
+There is a convention of several hundred years' standing
+that one measures the angles with respect to the normal,
+but the rule about equal angles can logically be stated
+either as B=C or as A=D.
+
+<% self_check('two-reflections-from-same-point',<<-'SELF_CHECK'
+Each of these diagrams is supposed to show two different
+rays being reflected from the same point on the same mirror.
+Which are correct, and which are incorrect?
+
+\anonymousinlinefig{sc-two-reflections-from-same-point}
+
+  SELF_CHECK
+  ) %>
+
+\index{ray diagrams}
+<% begin_sec("Ray diagrams") %>
+
+Figure \figref{fish} shows some guidelines for using ray
+diagrams effectively. The light rays bend when then pass out
+through the surface of the water (a phenomenon that we'll
+discuss in more detail later). The rays appear to have come
+from a point above the goldfish's actual location, an effect
+that is familiar to people who have tried spear-fishing.
+
+\begin{itemize}
+\item A stream of light is not really confined to a finite
+number of narrow lines. We just draw it that way. In \figref{fish}/1, it
+has been necessary to choose a finite number of rays to draw
+(five), rather than the theoretically infinite number of
+rays that will diverge from that point.
+
+\item There is a tendency to conceptualize rays incorrectly as
+objects. In his Optics, Newton goes out of his way to
+caution the reader against this, saying that some people
+``consider ... the refraction of ... rays to be the bending
+or breaking of them in their passing out of one medium into
+another.'' But a ray is a record of the path traveled by
+light, not a physical thing that can be bent or broken.
+
+\item In theory, rays may continue infinitely far into the past
+and future, but we need to draw lines of finite length. In
+\figref{fish}/1, a judicious choice has been made as to where to begin
+and end the rays. There is no point in continuing the rays
+any farther than shown, because nothing new and exciting is
+going to happen to them. There is also no good reason to
+start them earlier, before being reflected by the fish,
+because the direction of the diffusely reflected rays is
+random anyway, and unrelated to the direction of the
+original, incoming ray.
+
+\item When representing diffuse reflection in a ray diagram,
+many students have a mental block against drawing many rays
+fanning out from the same point. Often, as in example \figref{fish}/2,
+the problem is the misconception that light can only be
+reflected in one direction from one point.
+
+\item Another difficulty associated with diffuse reflection,
+example \figref{fish}/3, is the tendency to think that in addition to
+drawing many rays coming out of one point, we should also be
+drawing many rays coming from many points. In \figref{fish}/1, drawing
+many rays coming out of one point gives useful information,
+telling us, for instance, that the fish can be seen from any
+angle. Drawing many sets of rays, as in \figref{fish}/3, does not give
+us any more useful information, and just clutters up the
+picture in this example. The only reason to draw sets of
+rays fanning out from more than one point would be if
+different things were happening to the different sets.
+\end{itemize}
+
+<%
+  fig(
+    'fish',
+    %q{%
+      %
+      1. Correct.
+      2. Incorrect: implies that diffuse reflection only gives
+      one ray from each reflecting point.
+      3. Correct, but unnecessarily complicated
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\pagebreak[4]
+
+\startdq
+
+\begin{dq}
+If you observe thunder and lightning, you can tell how
+far away the storm is. Do you need to know the speed of
+sound, of light, or of both?
+\end{dq}
+
+\begin{dq}
+When phenomena like X-rays and cosmic rays were first
+discovered, suggest a way one could have tested whether they
+were forms of light.
+\end{dq}
+
+\begin{dq}
+Why did Roemer only need to know the radius of the
+earth's orbit, not Jupiter's, in order to find the speed of light?
+\end{dq}
+
+\begin{dq}
+The curtains in a room are drawn, but a small gap lets
+light through, illuminating a spot on the floor. It may or
+may not also be possible to see the beam of sunshine
+crossing the room, depending on the conditions. What's going on?
+\end{dq}
+
+\begin{dq}
+Laser beams are made of light. In science fiction movies,
+laser beams are often shown as bright lines shooting out of
+a laser gun on a spaceship. Why is this scientifically incorrect?
+\end{dq}
+
+
+\begin{dq}
+Suppose an intelligent tool-using fish is spear-hunting for
+humans. Draw a ray diagram to show how the fish has to
+correct its aim. Note that although the rays are now passing
+from the air to the water, the same rules apply: the rays
+are closer to being perpendicular to the surface when they
+are in the water, and rays that hit the air-water interface
+at a shallow angle are bent the most.
+\end{dq}
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% end_sec %>
+<% begin_sec("Applications",0) %>
+<% begin_sec("The inverse-square law",nil,'inverse-square') %>\index{inverse-square law}
+Energy is conserved, so a ray of light should theoretically be able to cross an
+infinite distance without losing any of its intensity, provided that it's traveling
+through empty space, so that there's no matter that it can give its energy away to.
+In that case, why does a distant candle appear dim? Likewise, our sun is just
+a star like any other star, but it appears much brighter because it's so much
+closer to us. Why are the other stars so dim if not because their light gets ``tired,'' or ``wears out?''
+It's not that the light rays are stopping, it's that they're
+getting spread out more thinly. The light comes out of the source in all directions, and if you're
+very far away, only a tiny percentage of the light will go into your eye. (If all the
+light from a star went into your eye, you'd be in trouble.)
+
+<%
+  fig(
+    'inversesquare',
+    %q{The light is four times dimmer at twice the distance.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \figref{inversesquare} shows what happens if you double your distance from the source. The
+light from the flame spreads out in all directions. We pick four
+representative rays from among those
+that happen to pass through the nearer square. Of these four,
+only one passes through the square of equal area at twice the distance. If the
+two equal-area squares were people's eyes, then only one fourth of the light would
+go into the more distant person's eye.
+
+
+Another way
+of thinking about it is that the light that passed through the first square spreads
+out and makes a bigger square; at double the distance, the square is twice as wide and
+twice as tall, so its area is $2\times2=4$ times greater. The same light has been spread
+out over four times the area.
+
+In general,
+the rule works like this:
+\begin{align*}
+        \text{distance}\times2 &\Rightarrow \text{brightness}\times\frac{1}{4}\\
+        \text{distance}\times3 &\Rightarrow \text{brightness}\times\frac{1}{9}\\
+        \text{distance}\times4 &\Rightarrow \text{brightness}\times\frac{1}{16}
+\end{align*}
+To get the 4, we multiplied 2 by itself, 9 came from multiplying 3 by itself, and so on.
+Multiplying a number by itself is called squaring it, and dividing one by a number
+is called inverting it, so a relationship like this is known as an inverse square law.
+Inverse square laws are very common in physics: they occur whenever something is spreading
+out in all directions from a point. Physicists already knew about this kind of inverse
+square law, for light, before Newton found out that the force of gravity varied as an
+inverse square, so his law of gravity made sense to them intuitively, and they were
+ready to accept it. However, Newton's law of gravity doesn't describe gravity as a
+substance that physically travels outward through space, so it's only a rough
+analogy. (One modern hypothesis about gravity is that the messages of gravitational
+attraction between two objects are actually carried by little particles, called gravitons,
+but nobody has ever detected a graviton directly.)
+
+<% self_check('candlefivetimes',<<-'SELF_CHECK'
+Alice is one meter from the candle, while Bob is at a distance of five meters.
+How many times dimmer is the light at Bob's location?%
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{An example with sound}
+\egquestion Four castaways are adrift in an open boat, and are yelling to try to attract the
+attention of passing ships. If all four of them yell at once, how much is their range
+increased compared to the range they would have if they took turns yelling one at a time?\\
+\eganswer This is an example involving sound. Although sound isn't the same as light,
+it does spread out in all directions from a source, so it obeys the inverse-square
+law. In the previous examples, we knew the distance and wanted to find the intensity
+(brightness). Here, we know about the intensity (loudness), and we want to find out
+about the distance. Rather than taking a number and multiplying it by itself to find the
+answer, we need to reverse the process, and find the number that, when multiplied by
+itself, gives four. In other words, we're computing the square root of four, which is
+two. They will double their range, not quadruple it. 
+\end{eg}
+
+\begin{eg}{Astronomical distance scales}\label{eg:alphacdistance}
+The nearest star, Alpha Centauri,\footnote{Sticklers will note that the nearest star
+is really our own sun, and the second nearest is the burned-out cinder
+known as Proxima Centauri, which is Alpha Centauri's close companion.}
+is about 10,000,000,000,000,000 times dimmer than our sun when viewed from
+our planet. If we assume that Alpha Centauri's true brightness is roughly the same
+as that of our own sun, then we can find the distance to Alpha Centauri by
+taking the square root of this number. Alpha Centauri's distance from us
+is equal to about 100,000,000 times our distance from the sun.
+\end{eg}
+
+\begin{eg}{Pupils and camera diaphragms}
+In bright sunlight, your pupils contract to admit less light. At night they dilate,
+becoming bigger ``light buckets.''
+Your perception of brightness depends not only on the true brightness of the source
+and your distance from it, but also on how much area your pupils present to the light.
+Cameras have a similar mechanism, which is easy to see if you detach the lens
+and its housing from the body of the camera, as shown in the figure. Here, the diameter of
+the largest aperture is about ten times greater than that of the smallest aperture.
+Making a circle ten times greater in radius increases its area by a factor of 100, so
+the light-gathering power of the camera becomes 100 times greater. (Many people expect
+that the area would only be ten times greater, but if you start drawing copies of the
+small circle inside the large circle, you'll see that ten are not nearly enough to
+fill in the entire area of the larger circle. Both the width and the height of the
+bigger circle are ten times greater, so its area is 100 times greater.)
+\end{eg}
+
+<% marg(150) %>
+<% fig('camera-diaphragm','The same lens is shown with its diaphragm set to three different apertures.') %>
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("Parallax") %>\index{parallax}
+Example \ref{eg:alphacdistance} on page \pageref{eg:alphacdistance} showed how we
+can use brightness to determine distance, but your eye-brain system has a different method.
+Right now, you can tell how far away this page is from your eyes. This sense of
+depth perception comes from the fact that your two eyes show you the same scene
+from two different perspectives. If you wink one eye and then the other, the page will
+appear to shift back and forth a little.
+<%
+  fig(
+    'parallax',
+    %q{At double the distance, the parallax angle is approximately halved.},
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+If you were looking at a fly on the bridge
+of your nose, there would be an angle of nearly $180\degunit$ between the ray that
+went into your left eye and the one that went into your right. Your brain would know
+that this large angle implied a very small distance. This is called the parallax
+angle. Objects at greater distances have smaller parallax angles, and when the angles
+are small, it's a good approximation to say that the angle is inversely proportional
+to the distance. In figure \figref{parallax}, the parallax angle is almost exactly
+cut in half when the person moves twice as far away.
+
+Parallax can be observed in other ways than with a pair of eyeballs.
+As a child, you noticed that when you walked around on a moonlit evening,
+the moon seemed to follow you. The moon wasn't really following you, and this isn't
+even a special property of the moon. It's just that as you walk, you expect to observe
+a parallax angle between the same scene viewed from different positions of your whole head.
+Very distant objects, including those on the Earth's surface, have parallax
+angles too small to notice by walking back and forth. In general, rays coming from
+a very distant object are nearly parallel.
+
+If your baseline is long enough, however, the small parallaxes of even very distant objects
+may be detectable. In the nineteenth century, nobody knew how tall the Himalayas were,
+or exactly where their peaks were on a map, and the Andes were generally believed to be the
+tallest mountains in the world. The Himalayas had never been climbed, and could only be viewed
+from a distance. From down on the plains of India, there was no way to tell whether they were
+very tall mountains very far away, or relatively low ones that were much closer. British
+surveyor George Everest finally established their true distance, and astounding height,
+by observing the same peaks through a telescope from different locations far apart.
+
+An even more spectacular feat of measurement was carried out by Hipparchus over\index{Hipparchus}\index{moon!distance to}
+twenty-one centuries ago. By measuring the parallax of the moon as observed from
+Alexandria and the Hellespont, he determined its distance to be about 90 times
+the radius of the earth.\footnote{The reason this was
+a hard measurement was that accurate clocks hadn't been invented, so there was no
+easy way to synchronize the two observations, and the desired effect would be masked
+by the apparent motion of the moon across the sky as it rose and set. Hipparchus's trick
+was to do the measurement during a solar eclipse, so that people at both locations
+would know they were in sync.}\label{hipparchusmoondistance}
+
+The earth circles the sun, \figref{stellarparallax}, and we can therefore determine the distances to a few
+hundred of the nearest stars by making observations six months apart, so that the
+baseline for the parallax measurement is the diameter of the earth's orbit. For these
+stars, the distances derived from parallax can be checked against the ones found by
+the method of example \ref{eg:alphacdistance} on page \pageref{eg:alphacdistance}. They
+do check out, which verifies the assumption that the stars
+are objects analogous to our sun.
+
+<%
+  fig(
+    'stellarparallax',
+    %q{The nearer star has a larger parallax angle. By measuring
+the parallax angles, we can determine the distances to both stars. (The scale on this
+drawing is not realistic. If the earth's orbit was really this size, the nearest stars would
+be several kilometers away.)},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_sec("Reversibility of light rays") %>\index{time reversal}\index{reversibility}
+
+The fact that specular reflection displays equal angles of
+incidence and reflection means that there is a symmetry: if
+the ray had come in from the right instead of the left in
+the figure above, the angles would have looked exactly the
+same. This is not just a pointless detail about specular
+reflection. It's a manifestation of a very deep and
+important fact about nature, which is that the laws of
+physics do not distinguish between past and future.
+Cannonballs and planets have trajectories that are equally
+natural in reverse, and so do light rays. This type of
+symmetry is called time-reversal symmetry.
+
+Typically, time-reversal symmetry is a characteristic of any
+process that does not involve heat. For instance, the
+planets do not experience any friction as they travel
+through empty space, so there is no frictional heating. We
+should thus expect the time-reversed versions of their
+orbits to obey the laws of physics, which they do. In
+contrast, a book sliding across a table does generate heat
+from friction as it slows down, and it is therefore not
+surprising that this type of motion does not appear to obey
+time-reversal symmetry. A book lying still on a flat table
+is never observed to spontaneously start sliding, sucking up
+heat energy and transforming it into kinetic energy.
+
+Similarly, the only situation we've observed so far where
+light does not obey time-reversal symmetry is absorption,
+which involves heat. Your skin absorbs visible light from
+the sun and heats up, but we never observe people's skin to
+glow, converting heat energy into visible light. People's
+skin does glow in infrared light, but that doesn't mean the
+situation is symmetric. Even if you absorb infrared, you
+don't emit visible light, because your skin isn't hot enough
+to glow in the visible spectrum.
+
+\begin{eg}{Ray tracing on a computer}
+A number of techniques can be used for creating artificial visual scenes in
+computer graphics. Figure \figref{computer-ray-tracing} shows such a scene,
+which was created by the brute-force technique of simply constructing a very
+detailed ray diagram on a computer. This technique requires a great deal of
+computation, and is therefore too slow to be used for video games and computer-animated movies.
+One trick for speeding up the computation is to exploit the reversibility of light
+rays. If one was to trace every ray emitted by every illuminated surface, only
+a tiny fraction of those would actually end up passing into the virtual ``camera,''
+and therefore almost all of the computational effort would be wasted. One can instead
+start a ray at the camera, trace it backward in time, and see where it would have
+come from. With this technique, there is no wasted effort.
+\end{eg}
+
+<%
+  fig(
+    'computer-ray-tracing',
+    %q{This photorealistic image of a nonexistent countertop was produced
+       completely on a computer, by computing a  complicated ray diagram.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+
+<% marg(50) %>
+<%
+  fig(
+    'dq-radar-corner-2d',
+    %q{Discussion question \ref{dq:radar-corner-2d}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-radar-corner-3d',
+    %q{Discussion question \ref{dq:radar-corner-3d}.}
+  )
+%>
+<% end_marg %>
+
+\startdqs
+
+\begin{dq}\label{dq:reflect-one-component}
+If a light ray has a velocity vector with components
+$c_x$ and $c_y$, what will happen when it is reflected from
+a surface that lies along the $y$ axis? Make sure your
+answer does not imply a change in the ray's speed.
+\end{dq}
+
+\begin{dq}\label{dq:radar-corner-2d}
+Generalizing your reasoning from discussion question 
+\ref{dq:reflect-one-component},
+what will happen to the velocity components of a light ray
+that hits a corner, as shown in the figure, and undergoes two reflections?
+\end{dq}
+
+\begin{dq}\label{dq:radar-corner-3d}
+Three pieces of sheet metal arranged perpendicularly as
+shown in the figure form what is known as a radar corner.
+Let's assume that the radar corner is large compared to the
+wavelength of the radar waves, so that the ray model makes
+sense. If the radar corner is bathed in radar rays, at least
+some of them will undergo three reflections. Making a
+further generalization of your reasoning from the two
+preceding discussion questions, what will happen to the
+three velocity components of such a ray? What would the
+radar corner be useful for?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% end_sec %>
+<% begin_sec("The principle of least time for reflection",nil,'least-time-reflection',{'optional'=>true}) %>
+
+There is another way of stating the rules of reflection that
+is very simple and beautiful, and turns out to have deep
+consequences and apply much more broadly, not just to reflection. It is called
+the principle of least time, or Fermat's principle. \index{Fermat's principle}\index{least time, principle of}
+
+<% marg(30) %>
+<%
+  fig(
+    'least-time-refl-1',
+    %q{%
+      The solid lines are physically possible paths for light rays traveling from A to B and from A
+      to C. They obey the principle of least time. The dashed lines do not obey the principle of least time, and
+      are not physically possible.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'least-time-refl-2',
+    %q{%
+      Paths AQB and APB are two conceivable paths that a ray could follow to get from A to B with
+      one reflection, but only AQB is physically possible. We wish to prove that the path AQB, with equal angles of
+      incidence and reflection, is shorter than any other path, such as APB. The trick is to construct a third point, C,
+      lying as far below the surface as B lies above it. Then path AQC is a straight line whose length is the same as
+      AQB's, and path APC has the same length as path APB. Since AQC is straight, it must be shorter than any other
+      path such as APC that connects A and C, and therefore AQB must be shorter than any path such as APB.
+    }
+  )
+%>
+<% end_marg %>
+
+Let's start with the motion of light that is not interacting
+with matter at all. In a vacuum, a light ray moves in a
+straight line. This can be rephrased as follows: of all the
+conceivable paths light could follow from P to Q, the
+only one that is physically possible is the path that
+takes the least time.
+
+What about reflection? If light is going to go from one
+point to another, being reflected on the way, the quickest
+path is indeed the one with equal angles of incidence and
+reflection. If the starting and ending points are equally
+far from the reflecting surface, \figref{least-time-refl-1}, it's not hard to
+convince yourself that this is true, just based on symmetry.
+There is also a tricky and simple proof, shown in figure \figref{least-time-refl-2},
+for the more general case where the
+points are at different distances from the surface.
+
+Not only does the principle of least time work for light in
+a vacuum and light undergoing reflection, we will also see
+in a later chapter that it works for the bending of light
+when it passes from one medium into another.
+
+Although it is beautiful that the entire ray model of light
+can be reduced to one simple rule, the principle of least
+time, it may seem a little spooky to speak as if the ray of
+light is intelligent, and has carefully planned ahead to
+find the shortest route to its destination. How does it know
+in advance where it's going? What if we moved the mirror
+while the light was en route, so conditions along its
+planned path were not what it ``expected?'' The answer is
+that the principle of least time is really an approximate shortcut for
+finding certain results of the wave model of light.
+
+There are a couple of subtle points about the principle of
+least time. First, the path does not have to be the quickest
+of all possible paths; it only needs to be quicker than any
+path that differs infinitesimally from it. In figure \figref{least-time-refl-2},
+for instance, light could get from A to B either by the
+reflected path AQB or simply by going straight from A to
+B. Although AQB is not the shortest possible path, it
+cannot be shortened by changing it infinitesimally, e.g., by
+moving Q a little to the right or left. On the other hand,
+path APB is physically impossible, because it is possible to
+improve on it by moving point P infinitesimally to the right.
+
+It's not quite right to call this
+the principle of \emph{least} time. In figure \figref{least-time-ellipse}, for
+example, the four physically possible paths by which a ray
+can return to the center consist of two shortest-time paths
+and two longest-time paths. Strictly speaking, we should
+refer to the \emph{principle of least or greatest time}, but
+most physicists omit the niceties, and assume that other
+physicists understand that both maxima and minima are possible.
+
+<% marg(30) %>
+<%
+  fig(
+    'least-time-ellipse',
+    %q{%
+      Light is emitted at the center of an
+      elliptical mirror. There are four physically possible paths by which
+      a ray can be reflected and return to the center.
+    }
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec() %>
+<% begin_sec("Images by reflection",0) %>
+
+Infants are always fascinated by the antics of the Baby in
+the Mirror. Now if you want to know something about mirror
+images that most people don't understand, try this. First
+bring this page closer wand closer to your eyes, until you
+can no longer focus on it without straining. Then go in the
+bathroom and see how close you can get your face to the
+surface of the mirror before you can no longer easily focus
+on the image of your own eyes. You will find that the
+shortest comfortable eye-mirror distance is much less than
+the shortest comfortable eye-paper distance. This demonstrates
+that the image of your face in the mirror acts as if it had
+depth and existed in the space \emph{behind} the mirror. If
+the image was like a flat picture in a book, then you
+wouldn't be able to focus on it from such a short distance.
+
+In this chapter we will study the images formed by flat and
+curved mirrors on a qualitative, conceptual basis. Although
+this type of image is not as commonly encountered in
+everyday life as images formed by lenses, images formed by
+reflection are simpler to understand.
+
+<% begin_sec("A virtual image") %>\index{images!formed by plane mirrors}\index{images!virtual}
+
+<% marg(0) %>
+<%
+  fig(
+    'flat-mirror',
+    %q{An image formed by a mirror.}
+  )
+%>
+<% end_marg %>
+We can understand a mirror image using a ray diagram. Figure \figref{flat-mirror}
+ shows several light rays, 1, that originated by
+diffuse reflection at the person's nose. They bounce off the
+mirror, producing new rays, 2. To anyone whose eye is in
+the right position to get one of these rays, they appear to
+have come from a behind the mirror, 3, where they would
+have originated from a single point. This point is where the
+tip of the image-person's nose appears to be. A similar
+analysis applies to every other point on the person's face,
+so it looks as though there was an entire face behind the
+mirror. The customary way of describing the situation
+requires some explanation:
+
+\begin{description}
+
+\item[Customary description in physics:] There is an image of the
+face behind the mirror.
+
+\item[Translation:] The pattern of rays coming from the mirror is
+exactly the same as it would be if there was a face behind
+the mirror. Nothing is really behind the mirror.
+
+\end{description}
+
+This is referred to as a \emph{virtual} image, because the
+rays do not actually cross at the point behind the mirror.
+They only appear to have originated there.
+
+<% self_check('move-object-laterally',<<-'SELF_CHECK'
+
+Imagine that the person in figure \figref{flat-mirror} moves his face down
+quite a bit --- a couple of feet in real life, or a few
+inches on this scale drawing. Draw a new ray diagram. Will
+there still be an image? If so, where is it visible from?
+
+  SELF_CHECK
+  ) %>
+
+The geometry of specular reflection tells us that rays 1 and
+2 are at equal angles to the normal (the imaginary
+perpendicular line piercing the mirror at the point of
+reflection). This means that ray 2's imaginary continuation,
+3, forms the same angle with the mirror as ray 1. Since
+each ray of type 3 forms the same angles with the mirror
+as its partner of type 1, we see that the distance of the
+image from the mirror is the same as the actual face from
+the mirror, and lies directly across from it. The image
+therefore appears to be the same size as the actual face.
+
+<% end_sec() %>
+<% begin_sec("Curved mirrors") %>\index{images!formed by curved mirrors}
+
+<% marg(0) %>
+<%
+  fig(
+    'virtual',
+    %q{An image formed by a curved mirror.}
+  )
+%>
+<% end_marg %>
+An image in a flat mirror is a pretechnological example:
+even animals can look at their reflections in a calm pond.
+We now pass to our first nontrivial example of the
+manipulation of an image by technology: an image in a
+curved mirror. Before we dive in, let's consider why this is
+an important example. If it was just a question of
+memorizing a bunch of facts about curved mirrors, then you
+would rightly rebel against an effort to spoil the beauty of
+your liberally educated brain by force-feeding you
+technological trivia. The reason this is an important
+example is not that curved mirrors are so important in and
+of themselves, but that the results we derive for curved
+bowl-shaped mirrors turn out to be true for a large class of
+other optical devices, including mirrors that bulge outward
+rather than inward, and lenses as well. A microscope or a
+telescope is simply a combination of lenses or mirrors or
+both. What you're really learning about here is the basic
+building block of all optical devices from movie projectors to octopus eyes.
+
+Because the mirror in figure \figref{virtual} is curved, it bends the
+rays back closer together than a flat mirror would: we
+describe it as \index{converging}\emph{converging}. Note that the
+term refers to what it does to the light rays, not to the
+physical shape of the mirror's surface . (The surface itself
+would be described as \emph{concave}. The term is not all
+that hard to remember, because the hollowed-out interior of
+the mirror is like a cave.) It is surprising but true that
+all the rays like 3 really do converge on a point, forming
+a good image. We will not prove this fact, but it is true
+for any mirror whose curvature is gentle enough and that is
+symmetric with respect to rotation about the perpendicular
+line passing through its center (not asymmetric like a
+potato chip). The old-fashioned method of making mirrors and
+lenses is by grinding them in grit by hand, and this
+automatically tends to produce an almost perfect spherical surface.
+
+Bending a ray like 2 inward implies bending its imaginary
+continuation 3 outward, in the same way that raising one
+end of a seesaw causes the other end to go down. The image
+therefore forms deeper behind the mirror. This doesn't just
+show that there is extra distance between the image-nose and
+the mirror; it also implies that the image itself is bigger
+from front to back. It has been \index{magnification!by a converging mirror}\emph{magnified} in the front-to-back direction.
+
+<% marg(0) %>
+<%
+  fig(
+    'curved-mirror-mag',
+    %q{%
+      The image is magnified by the same factor in
+      depth and in its other dimensions.
+    }
+  )
+%>
+<% end_marg %>
+It is easy to prove that the same magnification also applies
+to the image's other dimensions. Consider a point like E
+in figure \figref{curved-mirror-mag}. The trick is that out of all the rays
+diffusely reflected by E, we pick the one that happens to
+head for the mirror's center, C. The equal-angle property
+of specular reflection plus a little straightforward
+geometry easily leads us to the conclusion that triangles
+ABC and CDE are the same shape, with ABC being simply a
+scaled-up version of CDE. The magnification of depth equals
+the ratio BC/CD, and the up-down magnification is AB/DE. A
+repetition of the same proof shows that the magnification in
+the third dimension (out of the page) is also the same. This
+means that the image-head is simply a larger version of the
+real one, without any distortion. The scaling factor is
+called the magnification, $M$. The image in the figure is
+magnified by a factor $M=1.9$.
+
+Note that we did not explicitly specify whether the mirror
+was a sphere, a paraboloid, or some other shape. However, we
+assumed that a focused image would be formed, which would
+not necessarily be true, for instance, for a mirror that was
+asymmetric or very deeply curved.
+
+<% end_sec() %>
+<% begin_sec("A real image",0,'real-image') %>
+\index{images!real}
+
+If we start by placing an object very close to the mirror,
+\subfigref{real-and-virtual}{1}, and then move it farther and farther away, the image at
+first behaves as we would expect from our everyday
+experience with flat mirrors, receding deeper and deeper
+behind the mirror. At a certain point, however, a dramatic
+change occurs. When the object is more than a certain
+distance from the mirror, \subfigref{real-and-virtual}{2}, the image appears upside-down
+and in \emph{front} of the mirror.
+
+Here's what's happened. The mirror bends light rays inward,
+but when the object is very close to it, as in \subfigref{real-and-virtual}{1}, the rays
+coming from a given point on the object are too strongly
+diverging (spreading) for the mirror to bring them back
+together. On reflection, the rays are still diverging, just
+not as strongly diverging. But when the object is sufficiently
+far away, \subfigref{real-and-virtual}{2}, the mirror is only intercepting the rays that
+came out in a narrow cone, and it is able to bend these
+enough so that they will reconverge.
+
+Note that the rays shown in the figure, which both
+originated at the same point on the object, reunite when
+they cross. The point where they cross is the image of the
+point on the original object. This type of image is called a
+\emph{real image}, in contradistinction to the virtual
+images we've studied before. The use of the word ``real'' is
+perhaps unfortunate. It sounds as though we are saying the
+image was an actual material object, which of course it is not.
+
+<%
+  fig(
+    'real-and-virtual',
+    %q{%
+      1. A virtual image. 2. A real image. 
+      As you'll verify in homework problem \ref{hw:invertedforehead}, the image is upside-down
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The distinction between a real image and a virtual image is
+an important one, because a real image can be projected onto a
+screen or photographic film. If a piece of paper is inserted
+in figure \subfigref{real-and-virtual}{2} at the location of the image, the image will
+be visible on the paper (provided the object is bright and
+the room is dark). Your eye uses a lens to make a real image
+on the \index{retina}retina.
+
+<% self_check('real-do-and-di',<<-'SELF_CHECK'
+Sketch another copy of the face in figure \subfigref{real-and-virtual}{1}, even farther
+from the mirror, and draw a ray diagram. What has happened
+to the location of the image?
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Images of images") %>\index{images!of images}
+
+If you are wearing glasses right now, then the light rays
+from the page are being manipulated first by your glasses
+and then by the lens of your eye. You might think that it
+would be extremely difficult to analyze        this, but in fact it
+is quite easy. In any series of optical elements (mirrors or
+lenses or both), each element works on the rays furnished by
+the previous element in exactly the same manner as if the
+image formed by the previous element was an actual object.
+
+Figure \figref{newtonian-telescope} shows an example involving only mirrors. The
+Newtonian telescope, invented by Isaac \index{Newton, Isaac}
+Newton, consists of a large curved mirror, plus a
+second, flat mirror that brings the light out of the tube.
+(In very large telescopes, there may be enough room to put a
+camera or even a person inside the tube, in which case the
+second mirror is not needed.) The tube of the telescope is
+not vital; it is mainly a structural element, although it
+can also be helpful for blocking out stray light. The lens
+has been removed from the front of the camera body, and is
+not needed for this setup. Note that the two sample rays
+have been drawn parallel, because an astronomical telescope
+is used for viewing objects that are extremely far away.
+These two ``parallel'' lines actually meet at a certain
+point, say a crater on the moon, so they can't actually be
+perfectly parallel, but they are parallel for all practical
+purposes since we would have to follow them upward for a
+quarter of a million miles to get to the point where they intersect.
+
+<% marg(80) %>
+<%
+  fig(
+    'newtonian-telescope',
+    %q{A Newtonian telescope being used with a camera. }
+  )
+%>
+
+<% end_marg %>
+
+The large curved mirror by itself would form an image $\zu{I}$, but
+the small flat mirror creates an image of the image, $\zu{I}'$. The
+relationship between $\zu{I}$ and $\zu{I}'$ is exactly the same as it
+would be if $\zu{I}$ was an actual object rather than an image: $\zu{I}$
+and $\zu{I}'$ are at equal distances from the plane of the mirror,
+and the line between them is perpendicular to the plane of the mirror.
+
+One surprising wrinkle is that whereas a flat mirror used by
+itself forms a virtual image of an object that is real, here
+the mirror is forming a real image of virtual image $\zu{I}$. This
+shows how pointless it would be to try to memorize lists of
+facts about what kinds of images are formed by various
+optical elements under various circumstances. You are better
+off simply drawing a ray diagram.
+
+<% marg(35) %>
+<%
+  fig(
+    'newtonian-telescope-eye',
+    %q{%
+      A Newtonian telescope being used for visual rather than
+      photographic observing. In real life, an eyepiece lens is normally used for
+      additional magnification, but this simpler setup will also work.
+    }
+  )
+%>
+<% end_marg %>
+Although the main point here was to give an example of an
+image of an image, figure \figref{newtonian-telescope-eye} shows an interesting case where we
+need to make the distinction between \emph{magnification}
+and \emph{angular magnification}\index{angular magnification}\index{magnification!angular}.
+$\zu{I}$f you are looking at the moon through this telescope, then
+the images $\zu{I}$ and $\zu{I}'$ are much \emph{smaller} than the actual
+moon. Otherwise, for example, image $\zu{I}$ would not fit inside
+the telescope! However, these images are very close to your
+eye compared to the actual moon. The small size of the image
+has been more than compensated for by the shorter distance.
+The important thing here is the amount of \emph{angle}
+within your field of view that the image covers, and it is
+this angle that has been increased. The factor by which it
+is increased is called the \emph{angular magnification}, $M_a$.
+
+<%
+  fig(
+    'angular-size',
+    %q{%
+      The angular size of the flower depends on its
+      distance from the eye.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+\pagebreak[4]
+
+\startdqs
+
+\begin{dq}
+The figure shows an object that is off to one side of a
+mirror. Draw a ray diagram. Is an image formed? If so, where
+is it, and from which directions would it be visible?
+
+\begin{center}\anonymousinlinefig{../../../share/optics/figs/dq-image-off-on-side}\end{center}
+
+\end{dq}
+
+\begin{dq}\label{dq:parallel-mirrors}
+Locate the images of you that will be formed if you
+stand between two parallel mirrors.
+\end{dq}
+
+  % couldn't get this to lay out properly using eruby-style figures
+\fullpagewidthfignocaption{dq-parallel-mirrors}
+
+\pagebreak[4]
+
+\begin{dq}
+Locate the images formed by two perpendicular mirrors, as
+in the figure. What happens if the mirrors are not
+perfectly perpendicular?
+\end{dq}
+
+  % couldn't get this to lay out properly using eruby-style figures
+\fullpagewidthfignocaption{dq-perpendicular-mirrors}
+
+\pagebreak[4]
+
+\begin{dq}
+Locate the images formed by the periscope.
+\end{dq}
+
+  % couldn't get this to lay out properly using eruby-style figures
+\fullpagewidthfignocaption{dq-periscope}
+
+\pagebreak[4]
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_hw_sec %>
+
+<% begin_hw('alien-pool') %>__incl(hw/alien-pool)<% end_hw() %>
+<%
+  fig(
+    'hw-alien-pool',
+    %q{Problem \ref{hw:alien-pool}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<%
+  fig(
+    'hw-parabolic-mirror',
+    %q{Problem \ref{hw:parabolic}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+
+<% begin_hw('parabolic') %>__incl(hw/parabolic)<% end_hw() %>
+
+<% begin_hw('rays-cross-but-no-image') %>__incl(hw/rays-cross-but-no-image)<% end_hw() %>
+<% marg(0) %>
+<%
+  fig(
+    'hw-rays-cross-but-no-image',
+    %q{Problem \ref{hw:rays-cross-but-no-image}.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak[4]
+
+<% begin_hw('convexraytracing') %>
+In this chapter we've only done examples of mirrors with
+hollowed-out shapes (called concave mirrors). Now draw a ray
+diagram for a curved mirror that has a bulging outward shape
+(called a convex mirror). (a) How does the image's distance
+from the mirror compare with the actual object's distance
+from the mirror? From this comparison, determine whether the
+magnification is greater than or less than one. (b) Is the
+image real or virtual? Could this mirror ever make the
+other type of image?
+<% end_hw() %>
+
+<% begin_hw('diffuse') %>__incl(hw/diffuse)<% end_hw() %>
+
+<% begin_hw('mirrorspeed') %>__incl(hw/mirrorspeed)<% end_hw() %>
+
+<% begin_hw('belowthebelt') %>__incl(hw/belowthebelt)<% end_hw() %>
+
+<% begin_hw('listmirrorimages') %>__incl(hw/listmirrorimages)<% end_hw() %>
+
+<% begin_hw('invertedforehead') %>__incl(hw/invertedforehead)<% end_hw() %>
+
+<% begin_hw('telescopemovehead') %>__incl(hw/telescopemovehead)<% end_hw() %>
+
+
+
+<% begin_hw('moose') %>__incl(hw/moose)<% end_hw() %>
+
+<% begin_hw('gps') %>
+A Global Positioning System (GPS) receiver is a device
+that lets you figure out where you are by measuring the
+time for radio signals to travel between you and the satellite, which is related to the
+distance between you and the satellite. By finding the
+ranges to several different satellites in this way, it can
+pin down your location in three dimensions to within a few
+meters. How accurate does the measurement of the time delay
+have to be to determine your position to this accuracy?
+<% end_hw() %>
+
+<% begin_hw('lightwithatomwavelength') %>__incl(hw/lightwithatomwavelength)<% end_hw() %>
+
+<% begin_hw('stealth') %>__incl(hw/stealth)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% figure_in_toc("surfing-hand-drag") %>
+
+<% end_chapter() %>

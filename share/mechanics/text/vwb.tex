@@ -1,0 +1,1014 @@
+Soon after the mile-long Tacoma Narrows Bridge opened in
+July 1940, motorists began to notice its tendency to vibrate
+frighteningly in even a moderate wind. Nicknamed ``Galloping
+Gertie,'' the bridge collapsed in a steady 42-mile-per-hour
+wind on November 7 of the same year. The following is an
+eyewitness report from a newspaper editor who found himself
+on the bridge as the vibrations approached the breaking point.
+
+``Just as I drove past the towers, the bridge began to sway
+violently from side to side. Before I realized it, the tilt
+became so violent that I lost control of the car... I jammed
+on the brakes and got out, only to be thrown onto my
+face against the curb.
+
+``Around me I could hear concrete cracking. I started to get
+my dog Tubby, but was thrown again before I could reach the
+car. The car itself began to slide from side to side of the roadway.
+
+``On hands and knees most of the time, I crawled 500 yards
+or more to the towers... My breath was coming in gasps; my
+knees were raw and bleeding, my hands bruised and swollen
+from gripping the concrete curb... Toward the last, I risked
+rising to my feet and running a few yards at a time...
+Safely back at the toll plaza, I saw the bridge in its final
+collapse and saw my car plunge into the Narrows.''
+
+The ruins of the bridge formed an artificial reef, one of
+the world's largest. It was not replaced for ten years. The
+reason for its collapse was not substandard materials or
+construction, nor was the bridge under-designed: the piers
+were hundred-foot blocks of concrete, the girders massive
+and made of carbon steel. The bridge was destroyed because
+the bridge absorbed energy efficiently from the wind, but
+didn't dissipate it efficiently into heat.
+The replacement bridge, which has lasted half a century so
+far, was built smarter, not stronger. The engineers learned
+their lesson and simply included some slight modifications
+to avoid the phenomenon that spelled the
+doom of the first one.
+
+<% begin_sec("Energy in vibrations",0) %>
+
+One way of describing the collapse of the bridge is that the
+bridge kept taking energy from the steadily blowing wind and
+building up more and more energetic vibrations. In this
+section, we discuss the energy contained in a vibration, and
+in the subsequent sections we will move on to the loss of
+energy and the adding of energy to a vibrating system, all
+with the goal of understanding the important phenomenon of resonance.
+
+Going back to our standard example of a mass on a spring, we
+find that there are two forms of energy involved: the
+potential energy stored in the spring and the kinetic energy
+of the moving mass. We may start the system in motion either
+by hitting the mass to put in kinetic energy or by pulling it
+to one side to put in potential energy. Either way, the
+subsequent behavior of the system is identical. It trades
+energy back and forth between kinetic and potential energy.
+(We are still assuming there is no friction, so that no
+energy is converted to heat, and the system never runs down.)
+
+\enlargethispage{-2\baselineskip}
+
+The most important thing to understand about the energy
+content of vibrations is that the total energy is proportional
+to the square of the amplitude.\index{amplitude!related to energy}\index{energy!related to amplitude}
+Although the total energy is
+constant, it is instructive to consider two specific moments
+in the motion of the mass on a spring as examples. When the
+mass is all the way to one side, at rest and ready to
+reverse directions, all its energy is potential. We have
+already seen that the potential energy stored in a spring
+equals $(1/2)kx^2$, so the energy is proportional to the square of the
+amplitude. Now consider the moment when the mass is passing
+through the equilibrium point at $x=0$. At this point it has
+no potential energy, but it does have kinetic energy. The
+velocity is proportional to the amplitude of the motion, and
+the kinetic energy, $(1/2)mv^2$, is proportional to the square of the
+velocity, so again we find that the energy is proportional
+to the square of the amplitude. The reason for singling out
+these two points is merely instructive; proving that energy
+is proportional to $A^2$ at any point would suffice to prove
+that energy is proportional to $A^2$ in general, since
+the energy is constant.
+
+\enlargethispage{-2\baselineskip}
+
+Are these conclusions restricted to the mass-on-a-spring
+example? No. We have already seen that $F=-kx$ is a
+valid approximation for any vibrating object, as long as the
+amplitude is small. We are thus left with a very general
+conclusion: the energy of any vibration is approximately
+proportional to the square of the amplitude, provided that
+the amplitude is small.
+
+<% marg(0) %>
+<%
+  fig(
+    'u-tube',
+    %q{Example \ref{eg:u-tube}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Water in a U-tube}\label{eg:u-tube}
+If water is poured into a U-shaped tube as shown in the
+figure, it can undergo vibrations about equilibrium. The
+energy of such a vibration is most easily calculated by
+considering the ``turnaround point'' when the water has
+stopped and is about to reverse directions. At this point,
+it has only potential energy and no kinetic energy, so by
+calculating its potential energy we can find the energy of
+the vibration. This potential energy is the same as the work
+that would have to be done to take the water out of the
+right-hand side down to a depth $A$ below the equilibrium
+level, raise it through a height $A$, and place it in the
+left-hand side. The weight of this chunk of water is
+proportional to $A$, and so is the height through which it
+must be lifted, so the energy is proportional to $A^2$.
+\end{eg}
+
+\begin{eg}{The range of energies of sound waves}
+\egquestion The amplitude of vibration of your eardrum at the
+threshold of pain is about $10^6$ times greater than the
+amplitude with which it vibrates in response to the softest
+sound you can hear. How many times greater is the energy
+with which your ear has to cope for the painfully loud
+sound, compared to the soft sound?
+
+\eganswer The amplitude is $10^6$ times greater, and energy
+is proportional to the square of the amplitude, so the
+energy is greater by a factor of $10^{12}$ . This is a
+phenomenally large factor!
+\end{eg}
+
+We are only studying vibrations right now, not waves, so we
+are not yet concerned with how a sound wave works, or how
+the energy gets to us through the air. Note that because of
+the huge range of energies that our ear can sense, it would
+not be reasonable to have a sense of loudness that was
+additive. Consider, for instance, the following three levels of sound:
+
+\begin{tabular}{p{40mm}p{53mm}}
+barely audible wind\\
+quiet conversation \dotfill & $10^5$ times more energy than the wind\\
+heavy metal concert \dotfill & $10^{12}$ times more energy than the wind
+\end{tabular}
+
+In terms of addition and subtraction, the difference between
+the wind and the quiet conversation is nothing compared to
+the difference between the quiet conversation and the heavy
+metal concert. Evolution wanted our sense of hearing to be
+able to encompass all these sounds without collapsing the
+bottom of the scale so that anything softer than the crack
+of doom would sound the same. So rather than making our
+sense of loudness additive, mother nature made it multiplicative.
+We sense the difference between the wind and the quiet
+conversation as spanning a range of about 5/12 as much as
+the whole range from the wind to the heavy metal concert.
+Although a detailed discussion of the decibel scale is not
+relevant here, the basic point to note about the decibel
+scale is that it is logarithmic. The zero of the \index{decibel
+scale}decibel scale is close to the lower limit of human
+hearing, and adding 1 unit to the decibel measurement
+corresponds to \emph{multiplying} the energy level (or
+actually the power per unit area) by a certain factor.
+
+<% end_sec() %>
+m4_include(__share[:/text/damped_oscillator_:]m4_ifelse(__me,1,me,lm)[:.tex:])
+<% begin_sec("Putting energy into vibrations",3,'driving-vibrations') %>
+
+<% marg(0) %>
+<%
+  fig(
+    'driving-force-and-resonance',
+    %q{%
+      1. Pushing a child on a swing gradually puts more and more energy
+      into her vibrations. 2. A fairly realistic graph of the driving force acting on the child.
+      3. A less realistic, but more mathematically simple, driving force.
+    }
+  )
+%>
+<% end_marg %>
+When pushing a child on a \index{swing}swing, you cannot
+just apply a constant force. A constant force will move the
+swing out to a certain angle, but will not allow the swing
+to start swinging. Nor can you give short pushes at randomly
+chosen times. That type of random pushing would increase the
+child's kinetic energy whenever you happened to be pushing
+in the same direction as her motion, but it would reduce her
+energy when your pushing happened to be in the opposite
+direction compared to her motion. To make her build up her
+energy, you need to make your pushes rhythmic, pushing at
+the same point in each cycle. In other words, your force
+needs to form a repeating pattern with the same frequency as
+the normal frequency of vibration of the swing. Graph \figref{driving-force-and-resonance}/1
+shows what the child's $x-t$ graph would look like as you
+gradually put more and more energy into her vibrations. A
+graph of your \emph{force} versus time would probably look
+something like graph 2. It turns out, however, that it is
+much simpler mathematically to consider a vibration with
+energy being pumped into it by a \index{driving force}driving
+force that is itself a sine-wave, 3. A good example of
+this is your \index{eardrum}eardrum being driven by the
+force of a sound wave.
+
+<% marg(0) %>
+<%
+  fig(
+    'amplitude-maxing-out',
+    %q{The amplitude approaches a maximum.}
+  )
+%>
+<% end_marg %>
+Now we know realistically that the child on the swing will
+not keep increasing her energy forever, nor does your
+eardrum end up exploding because a continuing sound wave
+keeps pumping more and more energy into it. In any realistic
+system, there is energy going out as well as in. As the
+vibrations increase in amplitude, there is an increase in
+the amount of energy taken away by damping with each cycle.
+This occurs for two reasons. Work equals force times
+distance (or, more accurately, the area under the force-distance
+curve). As the amplitude of the vibrations increases, the
+damping force is being applied over a longer distance.
+Furthermore, the damping force usually increases with
+velocity (we usually assume for simplicity that it is
+proportional to velocity), and this also serves to increase
+the rate at which damping forces remove energy as the
+amplitude increases. Eventually (and small children and our
+eardrums are thankful for this!), the amplitude approaches a
+maximum value, \figref{amplitude-maxing-out}, at which energy is removed by the damping
+force just as quickly as it is being put in by the driving force.
+
+This process of approaching a maximum amplitude happens
+extremely quickly in many cases, e.g., the ear or a radio
+receiver, and we don't even notice that it took a millisecond
+or a microsecond for the vibrations to ``build up steam.''
+We are therefore mainly interested in predicting the
+behavior of the system once it has had enough time to reach
+essentially its maximum amplitude. This is known as the
+\index{steady-state behavior}steady-state behavior
+of a vibrating system.
+
+Now comes the interesting part: what happens if the
+frequency of the driving force is mismatched to the
+frequency at which the system would naturally vibrate on its
+own? We all know that a radio station doesn't have to be
+tuned in exactly, although there is only a small range over
+which a given station can be received. The designers of the
+radio had to make the range fairly small to make it possible to
+eliminate unwanted stations that happened to be nearby in
+frequency, but it couldn't be too small or you wouldn't be
+able to adjust the knob accurately enough. (Even a digital
+radio can be tuned to 88.0 MHz and still bring in a station
+at 88.1 MHz.) The ear also has some natural frequency of
+vibration, but in this case the range of frequencies to
+which it can respond is quite broad. Evolution has made the
+ear's frequency response as broad as possible because it was
+to our ancestors' advantage to be able to hear everything
+from a low roar to a high-pitched shriek.
+
+The remainder of this section develops four important facts
+about the response of a system to a driving force whose
+frequency is not necessarily the same as the system's
+natural frequency of vibration. The style is approximate and
+intuitive, but proofs are given in section \ref{sec:resonance-proofs}.
+
+First, although we know the ear has a frequency --- about
+4000 Hz --- at which it would vibrate naturally, it does not
+vibrate at 4000 Hz in response to a low-pitched 200 Hz tone.
+It always responds at the frequency at which it is driven.
+Otherwise all pitches would sound like 4000 Hz to us. This
+is a general fact about driven vibrations:
+
+\begin{important}
+(1) The steady-state response to a sinusoidal driving force
+occurs at the frequency of the force, not at the system's
+own natural frequency of vibration.
+\end{important}
+
+Now let's think about the amplitude of the steady-state
+response. Imagine that a child on a swing has a natural
+frequency of vibration of 1 Hz, but we are going to try to
+make her swing back and forth at 3 Hz. We intuitively
+realize that quite a large force would be needed to achieve
+an amplitude of even 30 cm, i.e., the amplitude is less in
+proportion to the force. When we push at the natural
+frequency of 1 Hz, we are essentially just pumping energy
+back into the system to compensate for the loss of energy
+due to the damping (friction) force. At 3 Hz, however, we
+are not just counteracting friction. We are also providing
+an extra force to make the child's momentum reverse itself
+more rapidly than it would if gravity and the tension in the
+chain were the only forces acting. It is as if we are
+artificially increasing the $k$ of the swing, but this is
+wasted effort because we spend just as much time decelerating
+the child (taking energy out of the system) as accelerating
+her (putting energy in).
+
+Now imagine the case in which we drive the child at a very
+low frequency, say 0.02 Hz or about one vibration per
+minute. We are essentially just holding the child in
+position while very slowly walking back and forth. Again we
+intuitively recognize that the amplitude will be very small
+in proportion to our driving force. Imagine how hard it
+would be to hold the child at our own head-level when she is
+at the end of her swing! As in the too-fast 3 Hz case, we
+are spending most of our effort in artificially changing the
+$k$ of the swing, but now rather than reinforcing the
+gravity and tension forces we are working against them,
+effectively reducing $k$. Only a very small part of our
+force goes into counteracting friction, and the rest is used
+in repetitively putting potential energy in on the upswing
+and taking it back out on the downswing, without any long-term gain.
+
+We can now generalize to make the following statement, which
+is true for all driven vibrations:
+
+\begin{important}
+(2) A vibrating system \index{resonance!defined}resonates at
+its own natural frequency.\footnote{This is
+an approximation, which is valid in the usual case where $Q$ is significantly greater than 1.} That is, the amplitude of the
+steady-state response is greatest in proportion to the
+amount of driving force when the driving force matches the
+natural frequency of vibration.
+\end{important}
+
+\begin{eg}{An opera singer breaking a wine glass}
+In order to break a wineglass by singing, an opera singer
+must first tap the glass to find its natural frequency of
+vibration, and then sing the same note back.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'nimitz-freeway',
+    %q{The collapsed section of the Nimitz Freeway.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Collapse of the Nimitz Freeway in an earthquake}
+I led off the chapter with the dramatic collapse of the
+Tacoma Narrows Bridge, mainly because it was well
+documented by a local physics professor, and an unknown
+person made a movie of the collapse. The collapse of a section
+of the Nimitz Freeway in Oakland, CA, during a 1989
+earthquake is however a simpler example to analyze.
+
+ An earthquake consists of many low-frequency vibrations
+that occur simultaneously, which is why it sounds like a
+rumble of indeterminate pitch rather than a low hum. The
+frequencies that we can hear are not even the strongest
+ones; most of the energy is in the form of vibrations in the
+range of frequencies from about 1 Hz to 10 Hz.
+
+ Now all the structures we build are resting on geological
+layers of dirt, mud, sand, or rock. When an earthquake wave
+comes along, the topmost layer acts like a system with a
+certain natural frequency of vibration, sort of like a cube
+of jello on a plate being shaken from side to side. The
+resonant frequency of the layer depends on how stiff it is
+and also on how deep it is. The ill-fated section of the
+Nimitz freeway was built on a layer of mud, and analysis by
+geologist Susan E. Hough of the U.S. Geological Survey
+shows that the mud layer's resonance was centered on about
+2.5 Hz, and had a width covering a range from about 1 Hz to 4 Hz.
+
+ When the earthquake wave came along with its mixture of
+frequencies, the mud responded strongly to those that were
+close to its own natural 2.5 Hz frequency. Unfortunately, an
+engineering analysis after the quake showed that the
+overpass itself had a resonant frequency of 2.5 Hz as well!
+The mud responded strongly to the earthquake waves with
+frequencies close to 2.5 Hz, and the bridge responded
+strongly to the 2.5 Hz vibrations of the mud, causing
+sections of it to collapse.
+\end{eg}
+
+\begin{eg}{Collapse of the Tacoma Narrows Bridge}
+Let's now examine the more conceptually difficult case of
+the Tacoma Narrows Bridge. The surprise here is that the
+wind was steady. If the wind was blowing at constant
+velocity, why did it shake the bridge back and forth? The
+answer is a little complicated. Based on film footage and
+after-the-fact wind tunnel experiments, it appears that two
+different mechanisms were involved.
+
+ The first mechanism was the one responsible for the
+initial, relatively weak vibrations, and it involved
+resonance. As the wind moved over the bridge, it began
+acting like a kite or an airplane wing. As shown in the
+figure, it established swirling patterns of air flow around
+itself, of the kind that you can see in a moving cloud of
+smoke. As one of these swirls moved off of the bridge, there
+was an abrupt change in air pressure, which resulted in an
+up or down force on the bridge. We see something similar
+when a flag flaps in the wind, except that the flag's
+surface is usually vertical. This back-and-forth sequence of
+forces is exactly the kind of periodic driving force that
+would excite a resonance. The faster the wind, the more
+quickly the swirls would get across the bridge, and the
+higher the frequency of the driving force would be. At just
+the right velocity, the frequency would be the right one to
+excite the resonance. The wind-tunnel models, however, show
+that the pattern of vibration of the bridge excited by this
+mechanism would have been a different one than the one that
+finally destroyed the bridge.
+
+ The bridge was probably destroyed by a different mechanism,
+in which its vibrations at its own natural frequency of 0.2 Hz
+set up an alternating pattern of wind gusts in the air
+immediately around it, which then increased the amplitude of
+the bridge's vibrations. This vicious cycle fed upon itself,
+increasing the amplitude of the vibrations until the
+bridge finally collapsed.
+\end{eg}
+
+As long as we're on the subject of collapsing bridges, it is
+worth bringing up the reports of bridges falling down when
+soldiers marching over them happened to step in rhythm with
+the bridge's natural frequency of oscillation. This is
+supposed to have happened in 1831 in Manchester, England,
+and again in 1849 in Anjou, France. Many modern engineers
+and scientists, however, are suspicious of the analysis of
+these reports. It is possible that the collapses had more to
+do with poor construction and overloading than with
+resonance. The Nimitz Freeway and Tacoma Narrows Bridge are
+far better documented, and occurred in an era when
+engineers' abilities to analyze the vibrations of a complex
+structure were much more advanced.
+
+\begin{eg}{Emission and absorption of light waves by atoms}
+In a very thin gas, the atoms are sufficiently far apart
+that they can act as individual vibrating systems. Although
+the vibrations are of a very strange and abstract type
+described by the theory of quantum mechanics, they
+nevertheless obey the same basic rules as ordinary
+mechanical vibrations. When a thin gas made of a certain
+element is heated, it emits light waves with certain
+specific frequencies, which are like a fingerprint of that
+element. As with all other vibrations, these atomic
+vibrations respond most strongly to a driving force that
+matches their own natural frequency. Thus if we have a
+relatively cold gas with light waves of various frequencies
+passing through it, the gas will absorb light at precisely
+those frequencies at which it would emit light if heated.
+\end{eg}
+
+\begin{important}
+(3) When a system is driven at resonance, the steady-state
+vibrations have an amplitude that is proportional to $Q$.
+\end{important}
+
+This is fairly intuitive. The steady-state behavior is an
+equilibrium between energy input from the driving force and
+energy loss due to damping. A low-$Q$ oscillator, i.e., one
+with strong damping, dumps its energy faster, resulting in
+lower-amplitude steady-state motion.
+
+<% self_check('opera',<<-'SELF_CHECK'
+If an opera singer is shopping for a wine glass that she can
+impress her friends by breaking, what should she look for?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Piano strings ringing in sympathy with a sung note}
+\egquestion A sufficiently loud musical note sung near a piano
+with the lid raised can cause the corresponding strings in
+the piano to vibrate. (A piano has a set of three strings
+for each note, all struck by the same hammer.) Why would
+this trick be unlikely to work with a violin?
+
+\eganswer If you have heard the sound of a violin being
+plucked (the pizzicato effect), you know that the note dies
+away very quickly. In other words, a violin's $Q$ is much
+lower than a piano's. This means that its resonances are
+much weaker in amplitude.
+\end{eg}
+
+Our fourth and final fact about resonance is perhaps the
+most surprising. It gives us a way to determine numerically
+how wide a range of driving frequencies will produce a
+strong response. As shown in the graph, resonances do not
+suddenly fall off to zero outside a certain frequency range.
+It is usual to describe the width of a resonance by its full
+width at half-maximum (FWHM) as illustrated 
+in figure \figref{fwhm}.\index{FWHM}\index{full width at half-maximum}\label{fwhm}
+
+<% marg(0) %>
+<%
+  fig(
+    'fwhm',
+    %q{%
+      The definition of the full width at half
+      maximum.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{important}
+(4) The FWHM of a resonance is related to its $Q$ and its
+resonant frequency $f_{res}$ by the equation
+\begin{equation*}
+ \text{FWHM} = \frac{f_{res}}{Q}\eqquad.
+\end{equation*}
+(This equation is only a good approximation when $Q$ is large.)
+\end{important}
+
+Why? It is not immediately obvious that there should be any
+logical relationship between $Q$ and the FWHM. Here's the
+idea. As we have seen already, the reason why the response
+of an oscillator is smaller away from resonance is that much
+of the driving force is being used to make the system act as
+if it had a different $k$. Roughly speaking, the half-maximum
+points on the graph correspond to the places where the
+amount of the driving force being wasted in this way is the
+same as the amount of driving force being used productively
+to replace the energy being dumped out by the damping force.
+If the damping force is strong, then a large amount of force
+is needed to counteract it, and we can waste quite a bit of
+driving force on changing $k$ before it becomes comparable
+to the damping force. If, on the other hand, the damping force is
+weak, then even a small amount of force being wasted on
+changing $k$ will become significant in proportion, and we
+cannot get very far from the resonant frequency before
+the two are comparable.
+
+m4_ifelse(__me,1,[:
+The response is in general out of phase with the driving force by
+an angle $\delta$.
+
+<%
+  fig(
+    'resonance',
+    %q{%
+      Dependence of the amplitude and phase angle
+              on the driving frequency. The undamped case is $Q=\infty$, 
+              and the other curves represent $Q$=1, 3, and 10. $F_m$, $m$, and $\omega_\zu{o}$ are all set to 1.
+    },
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+:])
+
+\begin{eg}{Changing the pitch of a wind instrument}
+\egquestion A saxophone player normally selects which note to
+play by choosing a certain fingering, which gives the
+saxophone a certain resonant frequency. The musician can
+also, however, change the pitch significantly by altering
+the tightness of her lips. This corresponds to driving the
+horn slightly off of resonance. If the pitch can be altered
+by about 5\% up or down (about one musical half-step)
+without too much effort, roughly what is the $Q$ of a saxophone?
+
+\eganswer Five percent is the width on one side of the
+resonance, so the full width is about 10\%, FWHM /
+$f_{res}=0.1$. This implies a $Q$ of about 10, i.e., once the
+musician stops blowing, the horn will continue sounding for
+about 10 cycles before its energy falls off by a factor of
+535. (Blues and jazz saxophone players will typically choose
+a mouthpiece that has a low $Q$, so that they can produce
+the bluesy pitch-slides typical of their style. ``Legit,''
+i.e., classically oriented players, use a higher-$Q$ setup
+because their style only calls for enough pitch variation
+to produce a vibrato.)
+\end{eg}
+
+\begin{eg}{Decay of a saxophone tone}
+\egquestion If a typical saxophone setup has a $Q$ of about
+10, how long will it take for a 100-Hz tone played on a
+baritone saxophone to die down by a factor of 535 in energy,
+after the player suddenly stops blowing?
+
+\eganswer A $Q$ of 10 means that it takes 10 cycles for the
+vibrations to die down in energy by a factor of 535. Ten
+cycles at a frequency of 100 Hz would correspond to a time
+of 0.1 seconds, which is not very long. This is why a
+saxophone note doesn't ``ring'' like a note played on a
+piano or an electric guitar.
+\end{eg}
+
+\begin{eg}{$Q$ of a radio receiver}
+\egquestion A radio receiver used in the FM band needs to be
+tuned in to within about 0.1 MHz for signals at about 100
+MHz. What is its $Q$?
+
+\eganswer $Q=f_{res}/\zu{FWHM}=1000$. This is an extremely
+high $Q$ compared to most mechanical systems.
+\end{eg}
+
+\begin{eg}{$Q$ of a stereo speaker}
+We have already given one reason why a stereo speaker should
+have a low $Q$: otherwise it would continue ringing after
+the end of the musical note on the recording. The second
+reason is that we want it to be able to respond to a large
+range of frequencies.
+\end{eg}
+
+\begin{eg}{Nuclear magnetic resonance}\label{eg:nmr}\index{NMR (nuclear magnetic resonance)}\index{MRI (magnetic resonance imaging)|see {NMR}}
+If you have ever played with a magnetic compass, you have
+undoubtedly noticed that if you shake it, it takes some time
+to settle down, \figref{nmr}/1. As it settles down, it acts like a damped
+oscillator of the type we have been discussing. The compass
+needle is simply a small magnet, and the planet earth is a
+big magnet. The magnetic forces between them tend to bring
+the needle to an equilibrium position in which it lines up
+with the planet-earth-magnet.
+
+<% marg(m4_ifelse(__me,1,170,70)) %>
+<%
+  fig(
+    'nmr',
+    %q{%
+      Example \ref{eg:nmr}. 1. A compass needle vibrates about the equilibrium position under the
+      influence of the earth's magnetic forces. 2. The orientation of a proton's
+      spin vibrates around its equilibrium direction under the influence of the
+      magnetic forces coming from the surrounding electrons and nuclei.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gretchen-nmr',
+    %q{%
+      A member of the author's family, who turned out to be
+      healthy.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'three-dimensional-nmr',
+    %q{%
+      A three-dimensional computer reconstruction of the shape
+      of a human brain, based on magnetic resonance data.
+    }
+  )
+%>
+
+<% end_marg %>
+Essentially the same physics lies behind the technique
+called Nuclear Magnetic Resonance (NMR). NMR is a technique
+used to deduce the molecular structure of unknown chemical
+substances, and it is also used for making medical images of
+the inside of people's bodies. If you ever have an NMR scan,
+they will actually tell you you are undergoing ``magnetic
+resonance imaging'' or ``MRI,'' because people are scared of
+the word ``nuclear.'' In fact, the nuclei being referred to
+are simply the non-radioactive nuclei of atoms found
+naturally in your body.\label{mri-resonance-explanation}
+
+Here's how NMR works. Your body contains large numbers of
+hydrogen atoms, each consisting of a small, lightweight
+electron orbiting around a large, heavy proton. That is, the
+nucleus of a hydrogen atom is just one proton. A proton is
+always spinning on its own axis, and the combination of its
+spin and its electrical charge causes it to behave like a
+tiny magnet. The principle is identical to that of an
+electromagnet, which consists of a coil of wire through
+which electrical charges pass; the circling motion of the
+charges in the coil of wire makes it magnetic, and in the
+same way, the circling motion of the proton's charge makes it magnetic.
+
+Now a proton in one of your body's hydrogen atoms finds
+itself surrounded by many other whirling, electrically
+charged particles: its own electron, plus the electrons and
+nuclei of the other nearby atoms. These neighbors act like
+magnets, and exert magnetic forces on the proton, \figref{nmr}/2. The $k$ of
+the vibrating proton is simply a measure of the total
+strength of these magnetic forces. Depending on the
+structure of the molecule in which the hydrogen atom finds
+itself, there will be a particular set of magnetic forces
+acting on the proton and a particular value of $k$. The NMR
+apparatus bombards the sample with radio waves, and if the
+frequency of the radio waves matches the resonant frequency
+of the proton, the proton will absorb radio-wave energy
+strongly and oscillate wildly. Its vibrations are damped not
+by friction, because there is no friction inside an atom,
+but by the reemission of radio waves.
+
+By working backward through this chain of reasoning, one can
+determine the geometric arrangement of the hydrogen atom's
+neighboring atoms. It is also possible to locate atoms in
+space, allowing medical images to be made.
+
+Finally, it should be noted that the behavior of the proton
+cannot be described entirely correctly by Newtonian physics.
+Its vibrations are of the strange and spooky kind described
+by the laws of quantum mechanics. It is impressive, however,
+that the few simple ideas we have learned about resonance
+can still be applied successfully to describe many aspects
+of this exotic system.
+\end{eg}
+
+\startdq
+
+\begin{dq}
+Nikola Tesla, one of the inventors of radio and an
+archetypical mad scientist, told a credulous reporter in 1912 the
+following story about an application of resonance. He built
+an electric vibrator that fit in his pocket, and attached it
+to one of the steel beams of a building that was under
+construction in New York. Although the article in which he
+was quoted didn't say so, he presumably claimed to have
+tuned it to the resonant frequency of the building. ``In a
+few minutes, I could feel the beam trembling. Gradually the
+trembling increased in intensity and extended throughout the
+whole great mass of steel. Finally, the structure began to
+creak and weave, and the steelworkers came to the ground
+panic-stricken, believing that there had been an earthquake.
+... [If] I had kept on ten minutes more, I could have laid
+that building flat in the street.'' Is this physically plausible?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Proofs",nil,'resonance-proofs',{'optional'=>true}) %>
+
+
+m4_ifelse(__lm_series,1,[:
+%------------- LM version
+Our first goal is to predict the amplitude of the steady-state
+vibrations as a function of the frequency of the driving
+force and the amplitude of the driving force. With that
+equation in hand, we will then prove statements 2, 3, and 4
+from  section \ref{sec:driving-vibrations}. We assume without proof statement
+1, that the steady-state motion occurs at the same frequency
+as the driving force.
+
+<% marg(m4_ifelse(__lm_series,1,70,30)) %>
+<%
+  fig(
+    'resonance-proof-1',
+    %q{Driving at a frequency above resonance.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'resonance-proof-2',
+    %q{Driving at resonance.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'resonance-proof-3',
+    %q{Driving at a frequency below resonance.}
+  )
+%>
+<% end_marg %>
+
+As with the proof in chapter \ref{ch:vibrations}, we make use of
+the fact that a sinusoidal vibration is the same as the
+projection of circular motion onto a line. We visualize the
+system shown in figures \figref{resonance-proof-1}-\figref{resonance-proof-3}, in which the mass swings in a
+circle on the end of a spring. The spring does not actually
+change its length at all, but it appears to from the
+flattened perspective of a person viewing the system
+edge-on. The radius of the circle is the amplitude, $A$, of
+the vibrations as seen edge-on. The damping force can be
+imagined as a backward drag force supplied by some fluid
+through which the mass is moving. As usual, we assume that
+the damping is proportional to velocity, and we use the
+symbol $b$ for the proportionality constant, $|F_d|=bv$.
+The driving force, represented by a hand towing the mass
+with a string, has a tangential component $|F_t|$ which
+counteracts the damping force, $|F_t|=|F_d|$, and a radial
+component $F_r$ which works either with or against the
+spring's force, depending on whether we are driving the
+system above or below its resonant frequency.
+
+The speed of the rotating mass is the circumference of the
+circle divided by the period, $v=2\pi A/T$, its acceleration
+(which is directly inward) is $a=v^2/r$, and Newton's second
+law gives $a=F/m=(kA+F_r)/m$. We write $f_\zu{o}$ for
+$\frac{1}{2\pi}\sqrt{k/m}$. Straightforward algebra yields
+\begin{equation}
+ \frac{F_r}{F_t} = \frac{2\pi m}{bf}\left(f^2-f_\zu{o}^2\right)\eqquad.
+\end{equation}
+This is the ratio of the wasted force to the useful force,
+and we see that it becomes zero when the system is
+driven at resonance.
+
+The amplitude of the vibrations can be found by attacking
+the equation $|F_t|=bv=2\pi bAf$, which gives
+\begin{equation}
+  A = \frac{|F_t|}{2\pi bf}\eqquad. (2)
+\end{equation}
+However, we wish to know the amplitude in terms of $|\vc{F}|$, not
+$|F_t|$. From now on, let's drop the cumbersome magnitude
+symbols. With the Pythagorean theorem, it is easily proved that
+\begin{equation}
+  F_t = \frac{F}{\sqrt{1+\left(\frac{F_r}{F_t}\right)^2}}\eqquad, (3)
+\end{equation}
+and equations 1-3 can then be combined to give the final result
+\begin{equation}\label{resonance-amplitude-equation}
+ A = \frac{F}{2\pi\sqrt{4\pi^2m^2\left(f^2-f_\zu{o}^2\right)^2+b^2f^2}}\eqquad.
+\end{equation}
+%------------- end LM version
+:],[:
+%------------- Mechanics version
+Our first goal is to predict the amplitude of the steady-state
+vibrations as a function of the frequency of the driving
+force and the amplitude of the driving force. With that
+equation in hand, we will then prove statements 2, 3, and 4
+from  section \ref{sec:driving-vibrations}.
+
+        We have an external driving force $F=F_m \sin \omega t$, where the constant
+        $F_m$ indicates the maximum strength of the force in either direction. The equation
+        of motion is
+        \begin{equation}\label{eqn:resonancemotion}
+                ma+bv+kx = F_m \sin \omega t 
+\eqquad.
+        \end{equation}
+        For the steady-state motion,
+        we're going to look for a solution of the form
+        \begin{equation*}
+                x = A \sin (\omega{}t+\delta)\eqquad.
+        \end{equation*}
+        The left-hand side of the equation of motion will clearly be a sinusoidal function with frequency $\omega$,
+        so it can only equal the right-hand side if, as we have already implicitly assumed, the frequency of the
+        motion matches the frequency of the driving force. This proves statement (1).
+
+        In contrast to the undriven case, here it's not possible to sweep $A$ and $\delta$ 
+        under the rug. The amplitude of the steady-state motion, $A$, is actually the
+        most interesting thing to know about the steady-state motion, and it's not true that we
+        still have a solution no matter how we fiddle with $A$; if we have a solution for
+        a certain value of $A$, then multiplying $A$ by some constant would break the
+        equality between the two sides of the equation of motion. It's also no longer true
+        that we can get rid of $\delta$ simply be redefining when we start the clock; here
+        $\delta$ represents a \emph{difference} in time between the start of one cycle of the driving
+        force and the start of the corresponding cycle of the motion.
+
+        The velocity and
+        acceleration are $v=\omega{}A\cos(\omega  t+\delta)$ and
+        $a=-\omega^2A\sin(\omega t+\delta)$, and if we plug these into the equation
+        of motion, \eqref{eqn:resonancemotion}, and simplify a little, we find
+        \begin{equation}\label{eqn:steadystate}
+                (k-m\omega^2)\sin (\omega t+\delta)
+                         +\omega b \cos (\omega t+\delta) 
+                        = \frac{F_m}{A} \sin \omega t\eqquad.
+        \end{equation}
+        The sum of any two sinusoidal functions with the same frequency is also
+        a sinusoidal, so the whole left side adds up to a sinusoidal. By fiddling with
+        $A$ and $\delta$ we can make the amplitudes and phases of the two sides
+        of the equation match up.
+
+	Using the trig identities for the sine of a sum
+	and cosine of a sum, we can change equation \eqref{eqn:steadystate}
+        into the form
+	\begin{gather*}
+		 \left[(-m\omega^2+k)\cos\delta-b\omega\sin\delta-F_m/A\right]\sin\omega t \\
+		+  \left[(-m\omega^2+k)\sin\delta+b\omega\cos\delta\right]\cos\omega t
+			= 0\eqquad.
+	\end{gather*}
+	Both the quantities in square brackets must equal zero, which gives us two
+	equations we can use to determine the unknowns $A$ and $\delta$. 
+	The results are
+	\begin{equation}
+		\delta = \tan^{-1}\frac{\omega\omega_\zu{o}}
+					{Q(\omega_\zu{o}^2-\omega^2)} \\
+	\end{equation}
+        and
+	\begin{equation}\label{resonance-amplitude-equation}
+		A = \frac{F_m}{m\sqrt{\left(\omega^2-\omega_\zu{o}^2\right)^2
+				+\omega_\zu{o}^2\omega^2Q^{-2}}}\eqquad.
+	\end{equation}
+\label{resonance-amplitude}
+
+%------------- end Mechanics version
+:])
+<% begin_sec("Statement 2: maximum amplitude at resonance") %>
+
+Equation [\ref{resonance-amplitude-equation}] makes it plausible that the amplitude is maximized
+when the system is driven at close to its resonant frequency. At
+$f=f_\zu{o}$, the first term inside the square root vanishes,
+and this makes the denominator as small as possible, causing
+the amplitude to be as big as possible. (Actually this is
+only approximately true, because it is possible to make $A$
+a little bigger by decreasing $f$ a little below $f_\zu{o}$,
+which makes the second term smaller. This technical issue is
+addressed in homework problem \ref{hw:qcorrection} on page 
+\pageref{hw:qcorrection}.)
+
+<% end_sec() %>
+<% begin_sec("Statement 3: amplitude at resonance proportional to $Q$") %>
+
+Equation [\ref{resonance-amplitude-equation}] shows that the amplitude at resonance is
+proportional to $1/b$, and the $Q$ of the system is
+inversely proportional to $b$, so the amplitude at resonance
+is proportional to $Q$.
+
+<% end_sec() %>
+<% begin_sec("Statement 4: FWHM related to $Q$") %>
+
+We will satisfy ourselves by proving only the proportionality
+$FWHM\propto f_\zu{o}/Q$, not the actual equation $FWHM=f_\zu{o}/Q$.
+The energy is proportional to $A^2$, i.e., to the inverse of
+the quantity inside the square root in equation [\ref{resonance-amplitude-equation}]. At
+resonance, the first term inside the square root vanishes,
+and the half-maximum points occur at frequencies for which
+the whole quantity inside the square root is double its
+value at resonance, i.e., when the two terms are equal. At
+the half-maximum points, we have
+\begin{align*}
+  f^2-f_\zu{o}^2 &= \left(f_\zu{o} \pm \frac{\text{FWHM}}{2}\right)^2 - f_\zu{o}^2\\
+                &= \pm f_\zu{o}\cdot \text{FWHM} + \frac{1}{4}\text{FWHM}^2
+\end{align*}
+If we assume that the width of the resonance is small
+compared to the resonant frequency, then the $\text{FWHM}^2$ term 
+is negligible compared to the $f_\zu{o}\cdot \text{FWHM}$ term, and setting
+the terms in equation 4 equal to each other gives
+\begin{equation*}
+  4\pi^2m^2\left(f_\zu{o}\text{FWHM}\right)^2  = b^2f^2\eqquad.
+\end{equation*}
+We are assuming that the width of the resonance is small
+compared to the resonant frequency, so $f$ and $f_\zu{o}$ can
+be taken as synonyms. Thus,
+\begin{equation*}
+                        \text{FWHM}  = \frac{b}{2\pi m}\eqquad.
+\end{equation*}
+We wish to connect this to $Q$, which can be interpreted as
+the energy of the free (undriven) vibrations divided by the
+work done by damping in one cycle. The former equals
+$kA^2/2$, and the latter is proportional to the force,
+$bv\propto bAf_\zu{o}$, multiplied by the distance traveled,
+$A$. (This is only a proportionality, not an equation, since
+the force is not constant.) We therefore find that $Q$ is
+proportional to $k/bf_\zu{o}$. The equation for the FWHM can
+then be restated as a proportionality $\text{FWHM}\propto k/Qf_\zu{o}m\propto f_\zu{o}/Q$.
+
+<% end_sec() %>
+<% end_sec() %>\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{damping}{the dissipation of a vibration's energy into heat
+energy, or the frictional force that causes the loss of energy}
+
+\vocabitem{quality factor}{the number of oscillations required for a
+system's energy to fall off by a factor of 535 due to damping}
+
+\vocabitem{driving force}{an external force that pumps energy into a vibrating system}
+
+\vocabitem{resonance}{the tendency of a vibrating system to respond most
+strongly to a driving force whose frequency is close to its
+own natural frequency of vibration}
+
+\vocabitem{steady state}{the behavior of a vibrating system after it has
+had plenty of time to settle into a steady response to a driving force}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$Q$}{the quality factor}
+
+\notationitem{$f_\zu{o}$}{the natural (resonant) frequency of a vibrating
+system, i.e., the frequency at which it would vibrate if it
+was simply kicked and left alone}
+
+\notationitem{$f$}{the frequency at which the system actually vibrates, which
+in the case of a driven system is equal to the frequency of
+the driving force, not the natural frequency}
+
+\end{notation}
+
+\begin{summarytext}
+
+The energy of a vibration is always proportional to the
+square of the amplitude, assuming the amplitude is small.
+Energy is lost from a vibrating system for various reasons
+such as the conversion to heat via friction or the emission
+of sound. This effect, called damping, will cause the
+vibrations to decay exponentially unless energy is pumped
+into the system to replace the loss. A driving force that
+pumps energy into the system may drive the system at its own
+natural frequency or at some other frequency. When a
+vibrating system is driven by an external force, we are
+usually interested in its steady-state behavior, i.e., its
+behavior after it has had time to settle into a steady
+response to a driving force. In the steady state, the same
+amount of energy is pumped into the system during each cycle
+as is lost to damping during the same period.
+
+The following are four important facts about a vibrating
+system being driven by an external force:
+
+(1) The steady-state response to a sinusoidal driving force
+occurs at the frequency of the force, not at the system's
+own natural frequency of vibration.
+
+(2) A vibrating system resonates at its own natural
+frequency. That is, the amplitude of the steady-state
+response is greatest in proportion to the amount of driving
+force when the driving force matches the natural frequency of vibration.
+
+(3) When a system is driven at resonance, the steady-state
+vibrations have an amplitude that is proportional to $Q$.
+
+(4) The FWHM of a resonance is related to its $Q$ and its
+resonant frequency $f_\zu{o}$ by the equation
+\begin{equation*}
+  \text{FWHM} = \frac{f_\zu{o}}{Q}.
+\end{equation*}
+(This equation is only a good approximation when $Q$ is large.)
+
+\end{summarytext}
+
+\end{summary}

@@ -1,0 +1,23 @@
+A hot scientific question of the 18th century was the shape
+of the earth: whether its radius was greater at the equator than at the poles, or the
+other way around. One method used to attack this question was to measure gravity
+accurately in different locations on the earth using pendula. If the highest
+and lowest latitudes accessible to explorers were 0 and 70 degrees, then
+the the strength of gravity would in reality be observed to vary over a range from
+about 9.780 to 9.826 $\munit/\sunit^2$. This change, amounting to 0.046 $\munit/\sunit^2$,
+is greater than the 0.022 $\munit/\sunit^2$ effect to be expected if the earth had been spherical.
+The greater effect occurs because the equator feels a reduction due not just to the
+acceleration of the spinning earth out from under it, but also to the greater radius of
+the earth at the equator. What is the accuracy with which the period
+of a one-second pendulum would have to be measured in order to prove that the earth
+was not a sphere, and that it bulged at the equator?\answercheck
+%
+% It's easy to get confused about this. The oblateness effect is basically an effect
+% because you're farther from the earth's mass. (It also increases the centrifugal
+% effect, but that's a second-order effect.)
+% Effect for a spherical earth:
+% calc -e "T=24*(3600 s); omega=2pi/T; r=6370 km->m; ; g=9.8 m/s2; a=omega^2r; a[cos(70deg)-1]"
+% -0.0221658445133495 m/s2
+% Actual difference between equator and poles:
+%   https://en.wikipedia.org/wiki/Gravity_of_Earth#Latitude
+%   .052 m/s2

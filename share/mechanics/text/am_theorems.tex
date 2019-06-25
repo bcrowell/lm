@@ -1,0 +1,144 @@
+<% begin_sec("Some theorems and proofs",nil,'am-theorems') %>
+In this section I prove three theorems stated earlier,
+and state a fourth theorem whose proof is left as an exercise.
+
+<% begin_sec("Uniqueness of the cross product") %>\label{misc:uniquexproof}
+The vector cross product as we have defined it has the
+following properties:\\
+(1) It does not violate rotational invariance.\\
+(2) It has the property $\zb{A}\times(\zb{B}+\zb{C})=\zb{A}\times\zb{B}+\zb{A}\times\zb{C}$.\\
+(3) It has the property $\zb{A}\times(k\zb{B})=k(\zb{A}\times\zb{B})$, where $k$ is a scalar.
+
+
+\mythmhdr{Theorem} The definition we have given is the only possible method of
+multiplying two vectors to make a third vector which has
+these properties, with the exception of trivial
+redefinitions which just involve multiplying all the results
+by the same constant or swapping the names of the axes.
+(Specifically, using a left-hand rule rather than a
+right-hand rule corresponds to multiplying all the results
+by $-1$.)
+
+\mythmhdr{Proof} We prove only the uniqueness of the definition, without
+explicitly proving that it has properties (1) through (3).
+
+Using properties (2) and (3), we can break down any vector
+multiplication
+$(A_x\hat{\zb{x}}+A_y\hat{\zb{y}}+A_z\hat{\zb{z}})
+\times(B_x\hat{\zb{x}}+B_y\hat{\zb{y}}+B_z\hat{\zb{z}})$ into terms involving
+cross products of unit vectors.
+
+A ``self-term'' like $\hat{\zb{x}}\times\hat{\zb{x}}$ must either be zero or lie along the $x$
+axis, since any other direction would violate property (1).
+If it was not zero, then
+$(-\hat{\zb{x}})\times(-\hat{\zb{x}})$
+ would have to lie in the opposite direction to avoid
+breaking rotational invariance, but property (3) says that 
+$(-\hat{\zb{x}})\times(-\hat{\zb{x}})$ is the
+same as $\hat{\zb{x}}\times\hat{\zb{x}}$, which is a contradiction.
+Therefore the self-terms
+must be zero.
+
+An ``other-term'' like $\hat{\zb{x}}\times\hat{\zb{y}}$ could conceivably have components in
+the $x$-$y$ plane and along the $z$ axis. If there was a nonzero
+component in the $x$-$y$ plane, symmetry would require that it
+lie along the diagonal between the $x$ and $y$ axes, and
+similarly the in-the-plane component of $(-\hat{\zb{x}})\times\hat{\zb{y}}$  would have to
+be along the other diagonal in the $x$-$y$ plane. Property (3),
+however, requires that $(-\hat{\zb{x}})\times\hat{\zb{y}}$ equal
+$-(\hat{\zb{x}}\times\hat{\zb{y}})$, which would be along
+the original diagonal. The only way it can lie along both
+diagonals is if it is zero.
+
+We now know that $\hat{\zb{x}}\times\hat{\zb{y}}$
+ must lie along the $z$ axis. Since we are
+not interested in trivial differences in definitions, we can
+fix $\hat{\zb{x}}\times\hat{\zb{y}}=\hat{\zb{z}}$,
+ignoring peurile possibilities such as
+$\hat{\zb{x}}\times\hat{\zb{y}}=7\hat{\zb{z}}$ or the
+left-handed definition $\hat{\zb{x}}\times\hat{\zb{y}}=-\hat{\zb{z}}$.
+Given $\hat{\zb{x}}\times\hat{\zb{y}}=\hat{\zb{z}}$, the symmetry of space
+requires that similar relations hold for $\hat{\zb{y}}\times\hat{\zb{z}}$ and
+$\hat{\zb{z}}\times\hat{\zb{x}}$, with at most
+a difference in sign. A difference in sign could always be
+eliminated by swapping the names of some of the axes, so
+ignoring possible trivial differences in definitions we can
+assume that the cyclically related set of relations  $\hat{\zb{x}}\times\hat{\zb{y}}=\hat{\zb{z}}$,
+ $\hat{\zb{y}}\times\hat{\zb{z}}=\hat{\zb{x}}$, and  $\hat{\zb{z}}\times\hat{\zb{x}}=\hat{\zb{y}}$
+holds. Since the arbitrary cross-product with which we
+started can be broken down into these simpler ones, the
+cross product is uniquely defined.
+<% end_sec %>
+
+<% begin_sec("Choice of axis theorem") %>
+\index{choice of axis theorem!proof}\index{angular momentum!choice of axis theorem}
+\mythmhdr{Theorem} Suppose a closed system of material particles conserves
+angular momentum in one frame of reference, with the axis taken to be
+at the origin. Then conservation of angular momentum is unaffected if the origin
+is relocated or if we change to a frame of reference that is in constant-velocity
+motion with respect to the first one. The theorem also holds in the case where the system is not
+closed, but the total external force is zero.\label{choiceofaxisproof}
+
+\mythmhdr{Proof} In the original frame of reference, angular momentum is
+conserved, so we have $\der\zb{L}/\der t$=0.
+From example \ref{eg:torqueproof} on page \pageref{eg:torqueproof}, this
+derivative can be rewritten as
+\begin{equation*}
+		\frac{\der\zb{L}}{\der t}	= \sum_i  \zb{r}_i\times\zb{F}_i\eqquad,
+\end{equation*}
+where $\zb{F}_i$ is the total force acting on particle $i$. In other words, we're
+adding up all the torques on all the particles. 
+
+By changing to the new frame of reference, we have changed
+the position vector of each particle according to $\zb{r}_i \rightarrow \zb{r}_i+\zb{k}-\zb{u}t$,
+where \zb{k} is a constant vector that indicates the relative position of the new
+origin at $t=0$, and \zb{u} is the velocity of the new frame with respect to the old one.
+The forces are all the same in the new frame of reference, however.
+In the new frame, the rate of change of the angular momentum is
+\begin{align*}
+		\frac{\der\zb{L}}{\der t}	&= \sum_i
+				(\zb{r}_i+\zb{k}-\zb{u}t)\times\zb{F}_i \\
+		&= \sum_i \zb{r}_i\times\zb{F}_i
+			+ (\zb{k}-\zb{u}t) \times \sum_i \zb{F}_i\eqquad.
+\end{align*}
+The first term is the expression for the rate of change of the angular
+momentum in the original frame of reference, which is zero by
+assumption. The second term vanishes by Newton's third law; since the system is
+closed, every force $\zb{F}_i$ cancels with some force $\zb{F}_j$.
+(If external forces act, but they add up to zero, then the sum can be
+broken up into a sum of internal forces and a sum of external forces, each of
+which is zero.)
+The rate of change of the angular momentum is therefore zero
+in the new frame of reference.
+<% end_sec %>
+
+<% begin_sec("Spin theorem") %>
+\index{angular momentum!spin theorem}\index{spin theorem!proof}
+Theorem: An object's angular momentum with respect to some outside
+axis A can be found by adding up two parts:\\
+(1) The first part is the object's angular momentum
+found by using its own center of mass as the axis, i.e., the
+angular momentum the object has because it is spinning.\\
+(2) The other part equals the angular momentum that the object
+would have with respect to the axis A if it had all its mass
+concentrated at and moving with its center of mass.
+
+Proof: Let the system's center of mass be at  $\vc{r}_{cm}$, and let particle $i$ lie at position $\vc{r}_{cm}+\vc{d}_i$.
+Then the total angular momentum is
+\begin{align*}
+  \vc{L} &= \sum_i (\vc{r}_{cm}+\vc{d}_i)\times\vc{p}_i \\
+         &= \vc{r}_{cm}\times\sum_i \vc{p}_i+\sum_i \vc{d}_i\times\vc{p}_i\eqquad,
+\end{align*}
+which establishes the result claimed, since we can identify the first term with (2)
+and the second with (1).
+<% end_sec %>
+
+<% begin_sec("Parallel axis theorem") %>\label{parallel-axis-theorem-statement}\index{parallel axis theorem}
+Suppose an object has mass $m$, and moment of inertia $I_\zu{o}$ for rotation about some axis A
+passing through its center of mass. Given a new axis B, parallel to A and lying at a distance $h$ from
+it, the object's moment of inertia is given by $I_\zu{o}+mh^2$.
+
+The proof of this theorem is left as an exercise (problem \ref{hw:parallel-axis-theorem}, p.~\pageref{hw:parallel-axis-theorem}).
+<% end_sec %>
+
+<% end_sec %>

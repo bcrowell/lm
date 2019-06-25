@@ -1,0 +1,698 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '12',
+    %q{Optics},
+    'ch:optics',
+    '',
+    {'opener'=>'crepuscular-rays','width'=>'fullpage'}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_sec("The ray model of light",0,'ray-model') %>
+
+  __incl(text/1_ray_model)
+
+<% end_sec %>
+
+<% begin_sec("Images by reflection",4,'images-1') %>
+
+__incl(text/2_images_by_reflection)
+
+<% end_sec %>
+
+<% begin_sec("Images, quantitatively",4,'images-2') %>
+
+__incl(text/3_images_quantitatively)
+
+<% end_sec %>
+
+<% begin_sec("Refraction",4,'refraction') %>
+
+__incl(text/4_refraction)
+
+<% end_sec %>
+
+<% begin_sec("Wave optics",4,'wave-optics') %>
+
+__incl(text/5_wave_optics)
+
+<% end_sec %>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('diffuse') %>__incl(hw/diffuse)<% end_hw() %>
+
+<% begin_hw('gps') %>__incl(hw/gps)<% end_hw() %>
+
+<% begin_hw('lightwithatomwavelength') %>__incl(hw/lightwithatomwavelength)<% end_hw() %>
+
+<% begin_hw('stealth') %>__incl(hw/stealth)<% end_hw() %>
+
+<% begin_hw('alien-pool') %>__incl(hw/alien-pool)<% end_hw() %>
+
+<%
+  fig(
+    'hw-alien-pool',
+    %q{Problem \ref{hw:alien-pool}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\enlargethispage{\baselineskip}
+
+\pagebreak
+
+<% begin_hw('parabolic') %>__incl(hw/parabolic)<% end_hw() %>
+
+<%
+  fig(
+    'hw-parabolic-mirror',
+    %q{Problem \ref{hw:parabolic}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% begin_hw('mirrorspeed') %>__incl(hw/mirrorspeed)<% end_hw() %>
+
+<% begin_hw('belowthebelt') %>__incl(hw/belowthebelt)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('convexraytracing') %>__incl(hw/convexraytracing)<% end_hw() %>
+
+<% begin_hw('listmirrorimages') %>__incl(hw/listmirrorimages)<% end_hw() %>
+
+<% begin_hw('telescopemovehead') %>__incl(hw/telescopemovehead)<% end_hw() %>
+
+<% begin_hw('invertedforehead') %>__incl(hw/invertedforehead)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-rays-cross-but-no-image',
+    %q{Problem \ref{hw:rays-cross-but-no-image}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('rays-cross-but-no-image') %>__incl(hw/rays-cross-but-no-image)<% end_hw() %>
+
+<% begin_hw('moose') %>__incl(hw/moose)<% end_hw() %>
+
+<% begin_hw('flatmirrormagnification') %>__incl(hw/flatmirrormagnification)<% end_hw() %>
+
+<% begin_hw('virtual-image-location') %>__incl(hw/virtual-image-location)<% end_hw() %>
+
+<% begin_hw('focal-length-by-ray-tracing') %>__incl(hw/focal-length-by-ray-tracing)<% end_hw() %>
+
+<% marg(47) %>
+<%
+  fig(
+    'hw-rank-focal-lengths',
+    %q{Problem \ref{hw:rank-focal-lengths}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('rank-focal-lengths') %>__incl(hw/rank-focal-lengths)<% end_hw() %>
+
+<% begin_hw('image-combinations') %>__incl(hw/image-combinations)<% end_hw() %>
+
+<% begin_hw('magnificationdependsondistance') %>__incl(hw/magnificationdependsondistance)<% end_hw() %>
+
+<% begin_hw('infinitemagnification') %>__incl(hw/infinitemagnification)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('hear-your-own-whisper') %>__incl(hw/hear-your-own-whisper)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-soldier',
+    %q{Problem \ref{hw:soldier}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('soldier',2) %>__incl(hw/soldier)<% end_hw() %>
+
+<% begin_hw('range-of-magnifications') %>__incl(hw/range-of-magnifications)<% end_hw() %>
+
+<% begin_hw('image-of-dropping-object',nil,{'calc'=>true}) %>__incl(hw/image-of-dropping-object)<% end_hw() %>
+
+<% begin_hw('diamond') %>__incl(hw/diamond)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('underwaterlens') %>__incl(hw/underwaterlens)<% end_hw() %>
+
+<% begin_hw('refractorvsreflector') %>__incl(hw/refractorvsreflector)<% end_hw() %>
+
+<% begin_hw('explainlens') %>__incl(hw/explainlens)<% end_hw() %>
+
+<% begin_hw('camera') %>__incl(hw/camera)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('goggles') %>__incl(hw/goggles)<% end_hw() %>
+
+<% begin_hw('imagelocation1') %>__incl(hw/imagelocation1)<% end_hw() %>
+
+<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
+
+<% marg(80) %>
+<%
+  fig(
+    'hw-funkylenses',
+    %q{Problem \ref{hw:funkylenses}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('eyefocallength',2) %>__incl(hw/eyefocallength)<% end_hw() %>
+
+<% marg(35) %>
+<%
+  fig(
+    'eye-anatomy',
+    %q{Problem \ref{hw:eyefocallength}.},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('imagelocation2') %>__incl(hw/imagelocation2)<% end_hw() %>
+
+<% begin_hw('imagelocation3') %>__incl(hw/imagelocation3)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('imageunderwater',2) %>__incl(hw/imageunderwater)<% end_hw() %>
+
+<% begin_hw('least-time-refraction',2) %>__incl(hw/least-time-refraction)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-field-of-view',
+    %q{Problem \ref{hw:field-of-view}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('field-of-view') %>__incl(hw/field-of-view)<% end_hw() %>
+
+<% begin_hw('nearsighted') %>__incl(hw/nearsighted)<% end_hw() %>
+
+<% begin_hw('flatworm') %>__incl(hw/flatworm)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('deleted') %>__incl(hw/deleted)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('eyeglasses-no-mag') %>__incl(hw/eyeglasses-no-mag)<% end_hw() %>
+
+\pagebreak
+
+%-------------- wave optics -----------------------------
+
+<% begin_hw('label-fringes') %>__incl(hw/label-fringes)<% end_hw() %>
+
+<% marg(33) %>
+<%
+  fig(
+    'hw-with-ruler',
+    %q{Problems \ref{hw:label-fringes} and \ref{hw:find-actual-wavelength}.}
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+<% begin_hw('matchpatterns') %>__incl(hw/matchpatterns)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('yellow-red') %>__incl(hw/yellow-red)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('find-actual-wavelength') %>__incl(hw/find-actual-wavelength)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('microscopeblue') %>__incl(hw/microscopeblue)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('compare-diffraction-same-light') %>__incl(hw/compare-diffraction-same-light)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('overlappingrainbows') %>__incl(hw/overlappingrainbows)<% end_hw() %>
+
+\pagebreak
+
+<% 
+  fig(
+    'pleiades',
+    %q{%
+      Problem \ref{hw:star}. This image of the Pleiades star cluster shows haloes around the stars due to the wave nature of light.
+    },  
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('star') %>__incl(hw/star)<% end_hw() %>
+
+<% begin_hw('compare-double-slits') %>__incl(hw/compare-double-slits)<% end_hw() %>
+
+<% begin_hw('grating') %>__incl(hw/grating)<% end_hw() %>
+
+<% begin_hw('kidney') %>__incl(hw/kidney)<% end_hw() %>
+
+<% begin_hw('unphysical-diffraction') %>__incl(hw/unphysical-diffraction)<% end_hw() %>
+
+<% begin_hw('ultrasound-imaging-versus-heating') %>__incl(hw/ultrasound-imaging-versus-heating)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'illuminable',
+    %q{Problem \ref{hw:illuminable}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('illuminable',2) %>__incl(hw/illuminable)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'peaucellier',
+    %q{Problem \ref{hw:peaucellier}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('peaucellier',2) %>__incl(hw/peaucellier)<% end_hw() %>
+
+<% begin_hw('constant-thickness') %>__incl(hw/constant-thickness)<% end_hw() %>
+
+<% marg(50) %>
+<%
+  fig(
+    'hw-constant-thickness',
+    %q{Problem \ref{hw:constant-thickness}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('very-weak-refraction') %>__incl(hw/very-weak-refraction)<% end_hw() %>
+
+<% begin_hw('close-to-focal-length') %>__incl(hw/close-to-focal-length)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('max-intensifying-of-transmitted-ray',2) %>__incl(hw/max-intensifying-of-transmitted-ray)<% end_hw() %>
+
+<% begin_hw('best-precision-n') %>__incl(hw/best-precision-n)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('real-image-conditions') %>__incl(hw/real-image-conditions)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ % ==================================================================== 
+ % ==================================================================== 
+ % ====================================================================  
+
+\begin{exsection}
+%====================================================================
+%====================================================================
+%====================================================================
+
+\extitle{A}{Exploring Images With a Curved Mirror}
+
+\noindent Equipment:
+
+\begin{indentedblock}
+        concave mirrors with deep curvature
+
+concave mirrors with gentle curvature
+
+        convex mirrors
+\end{indentedblock}
+
+1. Obtain a curved mirror from your instructor. If it is
+silvered on both sides, make sure you're working with the
+concave side, which bends light rays inward. Look at
+your own face in the mirror. Now change the distance between
+your face and the mirror, and see what happens. Explore the full range
+of possible distances between your face and the mirror.
+
+In these observations you've been changing two variables at once:
+the distance between the object (your face) and the mirror, and the
+distance from the mirror to your eye. In general, scientific experiments
+become easier to interpret if we practice isolation of variables,
+i.e., only change one variable while keeping all the others constant.
+In parts 2 and 3 you'll form an image of an object that's not your face,
+so that you can have independent control of the object distance and
+the point of view.
+
+2. With the mirror held far away from you, observe the image
+of something behind you, over your shoulder. Now bring your
+eye closer and closer to the mirror. Can you see the image
+with your eye very close to the mirror? See if you can explain your
+observation by drawing a ray diagram.
+
+\vfill
+
+\hfill --------------------$>$ \emph{turn page}
+
+\pagebreak[4]
+
+3. Now imagine the following new situation, but \emph{don't
+actually do it yet}. Suppose you lay the mirror face-up on a
+piece of tissue paper, put your finger a few cm above the
+mirror, and look at the image of your finger. As in part 2,
+you can bring your eye closer and closer to the mirror.
+
+Will you be
+able to see the image with your eye very close to the mirror?
+Draw a ray diagram to help you predict what you will observe.
+
+\vspace{85mm}
+
+Prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now test your prediction. If your prediction was incorrect,
+see if you can figure out what went wrong, or ask your instructor for help.
+
+4. For parts 4 and 5, it's more convenient to use concave mirrors that are
+more gently curved; obtain one from your instructor.
+Lay the mirror on the tissue paper, and use it to create
+an image of the overhead lights on a piece of paper above it
+and a little off to the side. What do you have to do in
+order to make the image clear? Can you explain this observation using a ray diagram?
+
+\vfill
+
+\hfill --------------------$>$ \emph{turn page}
+
+\pagebreak[4]
+
+5. Now imagine the following experiment, but \emph{don't do
+it yet}. What will happen to the image on the paper if you
+cover half of the mirror with your hand?
+
+Prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Test your prediction. If your prediction was incorrect, can
+you explain what happened?
+
+6. Now imagine forming an image with a convex mirror (one that
+bulges outward), and that therefore bends light rays away
+from the central axis (i.e., is diverging). Draw a typical ray diagram.
+
+\vspace{90mm}
+
+Is the
+image real, or virtual? Will there be more than one type of image?
+
+Prediction:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Test your prediction.
+
+%====================================================================
+
+\pagebreak[4]
+\extitle{B}{Object and Image Distances}
+
+__incl(text/object_and_image_distances)
+
+%====================================================================
+
+\pagebreak[4]
+\extitle{C}{How strong are your glasses?}
+
+This exercise was created by Dan MacIsaac.
+
+\noindent Equipment:
+
+\begin{indentedblock}
+        eyeglasses
+
+        diverging lenses for students who don't wear glasses, or
+who use  glasses with converging lenses
+
+rulers and metersticks
+
+scratch paper
+
+        marking pens
+\end{indentedblock}
+
+Most people who wear glasses have glasses whose lenses are
+outbending, which allows them to focus on objects far away.
+Such a lens cannot form a real image, so its focal length
+cannot be measured as easily as that of a converging lens.
+In this exercise you will determine the focal length of your
+own glasses by taking them off, holding them at a distance
+from your face, and looking through them at a set of
+parallel lines on a piece of paper. The lines will be
+reduced (the lens's magnification is less than one), and by
+adjusting the distance between the lens and the paper, you
+can make the magnification equal 1/2 exactly, so that two
+spaces between lines as seen through the lens fit into one
+space as seen simultaneously to the side of the lens. This
+object distance can be used in order to find the focal length of the lens.
+
+1. Use a marker to draw three evenly spaced parallel lines
+on the paper. (A spacing of a few cm works well.)
+
+2. Does this technique really measure magnification or does
+it measure angular magnification? What can you do in your
+experiment in order to make these two quantities nearly the
+same, so the math is simpler?
+
+3. Before taking any numerical data, use algebra to find the
+focal length of the lens in terms of $d_o$, the object
+distance that results in a magnification of 1/2.
+
+4. Measure the object distance that results in a magnification
+of 1/2, and determine the focal length of your lens.
+
+%====================================================================
+
+\pagebreak[4]
+\extitle{D}{Double-Source Interference}
+
+1. Two sources separated by a distance $d=2$ cm make circular ripples
+with a wavelength of $\lambda=1$ cm.
+On a piece of paper, make a life-size drawing of the two
+sources in the default setup, and locate the following points:
+
+        A. The point that is 10 wavelengths from source \#1 and 10
+wavelengths from source \#2.
+
+B. The point that is 10.5 wavelengths from \#1 and 10.5 from \#2.
+
+C. The point that is 11 wavelengths from \#1 and 11 from \#2.
+
+D. The point that is 10 wavelengths from \#1 and 10.5 from \#2.
+
+E. The point that is 11 wavelengths from \#1 and 11.5 from \#2.
+
+F. The point that is 10 wavelengths from \#1 and 11 from \#2.
+
+G. The point that is 11 wavelengths from \#1 and 12 from \#2.
+
+You can do this either using a compass or by putting the
+next page under your paper and tracing. It is not necessary to trace
+all the arcs completely, and doing so is unnecessarily time-consuming;
+you can fairly easily estimate where these points would lie, and just
+trace arcs long enough to find the relevant intersections.
+
+What do these points correspond to in the real wave pattern?
+
+2. Make a fresh copy of your drawing, showing only point F
+and the two sources, which form a long, skinny triangle. Now
+suppose you were to change the setup by doubling
+$d$, while leaving $\lambda $ the same. It's easiest to understand what's
+happening on the drawing if you move both sources outward,
+keeping the center fixed. Based on your drawing, what will
+happen to the position of point F when you double $d$? How
+has the angle of point F changed?
+
+3. What would happen if you doubled \emph{both} $\lambda$ and $d$
+compared to the standard setup?\_\_\_\_\_\_\_\_\_
+
+4. Combining the ideas from parts 2 and 3, what
+do you think would happen to your angles if, starting from
+the standard setup, you doubled $\lambda $ while leaving $d$
+the same?\_\_\_\_\_\_\_\_\_
+
+5. Suppose $\lambda$ was a millionth of a centimeter, while
+$d$ was still as in the standard setup. What would happen to
+the angles? What does this tell you about observing
+diffraction of light?
+
+\anonymousinlinefig{ripples}
+
+%====================================================================
+
+\pagebreak[4]
+\extitle{E}{Single-slit diffraction}
+
+\noindent Equipment:
+
+\begin{indentedblock}
+        rulers
+
+        computer with web browser
+\end{indentedblock}
+
+The following page is a diagram of a single slit and a
+screen onto which its diffraction pattern is projected. The
+class will make a numerical prediction of the intensity of
+the pattern at the different points on the screen. Each
+group will be responsible for calculating the intensity at
+one of the points. (Either 11 groups or six will work nicely
+-- in the latter case, only points a, c, e, g, i,
+and k are used.) The idea is to break up the wavefront in
+the mouth of the slit into nine parts, each of which is
+assumed to radiate semicircular ripples as in Huygens'
+principle. The wavelength of the wave is 1 cm, and we assume
+for simplicity that each set of ripples has an amplitude of
+1 unit when it reaches the screen.
+
+1. For simplicity, let's imagine that we were only to use
+two sets of ripples rather than nine. You could measure the
+distance from each of the two points inside the slit to your
+point on the screen. Suppose the distances were both 25.0
+cm. What would be the amplitude of the superimposed waves at
+this point on the screen?
+
+Suppose one distance was 24.0 cm and the other was 25.0
+cm. What would happen?
+
+What if one was 24.0 cm and the other was 26.0 cm?
+
+What if one was 24.5 cm and the other was 25.0 cm?
+
+In general, what combinations of distances will lead to
+completely destructive and completely constructive interference?
+
+Can you estimate the answer in the case where the distances
+are 24.7 and 25.0 cm?
+
+2. Although it is possible to calculate mathematically the
+amplitude of the sine wave that results from superimposing
+two sine waves with an arbitrary phase difference between
+them, the algebra is rather laborious, and it become even
+more tedious when we have more than two waves to superimpose.
+Instead, one can simply use a computer spreadsheet or some
+other computer program to add up the sine waves numerically
+at a series of points covering one complete cycle. This is
+what we will actually do. You just need to enter the
+relevant data into the computer, then examine the results
+and pick off the amplitude from the resulting list of numbers.
+You can run the software through a web interface at 
+\verb@http://lightandmatter.com/cgi-bin/diffraction1.cgi@.
+
+3. Measure all nine distances to your group's point on the
+screen, and write them on the board - that way everyone can
+see everyone else's data, and the class can try to make
+sense of why the results came out the way they did.
+Determine the amplitude of the combined wave, and write it
+on the board as well.
+
+The class will discuss why the results came out the way they did.
+
+\anonymousinlinefig{diffraction-ex}
+
+%====================================================================
+
+\pagebreak[4]
+\extitle{F}{Diffraction of Light}
+
+\noindent Equipment:
+
+\begin{indentedblock}
+        slit patterns,
+        lasers, 
+        straight-filament bulbs
+\end{indentedblock}
+
+\formatlikesubsection{station 1}\\
+You have a mask with a bunch of different double slits cut out of it. The values of w and d are as follows:
+
+\begin{tabular}{lll}
+pattern A & w=0.04 mm & d=.250 mm\\
+pattern B & w=0.04 mm & d=.500 mm\\
+pattern C & w=0.08 mm & d=.250 mm\\
+pattern D & w=0.08 mm & d=.500 mm
+\end{tabular}
+
+\noindent Predict how the patterns will look different, and test your prediction. The easiest way to get the laser to point at different sets of slits is to stick folded up pieces of paper in one side or the other of the holders.
+
+\formatlikesubsection{station 2}\\
+This is just like station 1, but with single slits:
+
+\begin{tabular}{ll}
+pattern A & w=0.02 mm \\
+pattern B & w=0.04 mm \\
+pattern C & w=0.08 mm \\
+pattern D & w=0.16 mm
+\end{tabular}
+
+\noindent Predict what will happen, and test your predictions. If you have time, check the actual numerical ratios of the w values against the ratios of the sizes of the diffraction patterns
+
+\formatlikesubsection{station 3}\\
+This is like station 1, but the only difference among the sets of  slits is how many slits there are:
+
+\begin{tabular}{ll}
+pattern A & double slit\\
+pattern B & 3 slits\\
+pattern C & 4 slits\\
+pattern D & 5 slits
+\end{tabular}
+
+\formatlikesubsection{station 4}\\
+Hold the diffraction grating up to your eye, and look through it at the straight-filament light bulb. If you orient the grating correctly, you should be able to see the $m=1$ 
+and $m=-1$ diffraction patterns off the left and right. If you have it oriented the wrong way, they'll be above and below the bulb instead, which is inconvenient
+ because the bulb's filament is vertical. Where is the $m=0$ fringe? Can you see $m=2$, etc.?
+
+\emph{Station 5 has the same equipment as station 4. If you're assigned to station 5 first, you should actually do activity 4 first, because it's easier.}
+
+\formatlikesubsection{station 5}\\
+Use the transformer to increase and decrease the voltage across the bulb. This allows 
+you to control the filament's temperature. Sketch graphs of intensity as a function of wavelength for various temperatures. The
+ inability of the wave model of light to explain the mathematical shapes of these curves was historically one of the reasons
+ for creating a new model, in which light is both a particle and a wave.
+\end{exsection}
+
+<% end_chapter() %>

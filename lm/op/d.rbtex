@@ -1,0 +1,226 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% figure_in_toc("eye-of-old-man") %>
+
+<%
+  chapter(
+    '31',
+    %q{Refraction},
+    'ch:refraction',
+    %q{Three stages in the evolution of the eye. The flatworm has two eye pits. The nautilus's eyes are pinhole cameras. The
+human eye incorporates a lens.},
+    {'opener'=>'eye-evolution','width'=>'fullpage','anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/4_refraction)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{refraction}{the change in direction that occurs when a wave
+encounters the interface between two media}
+
+\vocabitem{index of refraction}{an optical property of matter; the speed
+of light in a vacuum divided by the speed of light in the
+substance in question}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$n$}{the index of refraction}
+
+\end{notation}
+
+\begin{summarytext}
+
+Refraction is a change in direction that occurs when a wave
+encounters the interface between two media. Together,
+refraction and reflection account for the basic principles
+behind nearly all optical devices.
+
+Snell discovered the equation for refraction,
+\begin{equation*}
+n_1 \sin \theta_1=n_2 \sin \theta_2\eqquad,
+\end{equation*}
+\begin{longnoteafterequation}
+                [angles measured with respect to the normal]
+\end{longnoteafterequation}
+\noindent through experiments with light rays, long before light was
+proven to be a wave. Snell's law can be proven based on the
+geometrical behavior of waves. Here $n$ is the index of
+refraction. Snell invented this quantity to describe the
+refractive properties of various substances, but it was
+later found to be related to the speed of light in the substance,
+\begin{equation*}
+                n  =  \frac{c}{v}\eqquad,
+\end{equation*}
+where $c$ is the speed of light in a vacuum. In general a
+material's index of refraction is different for different
+wavelengths of light.
+
+As discussed in chapter \ref{ch:bounded-waves}, any wave is
+partially transmitted and partially reflected at the
+boundary between two media in which its speeds are
+different. It is not particularly important to know the
+equation that tells what fraction is transmitted (and thus
+refracted), but important technologies such as fiber optics
+are based on the fact that this fraction becomes \emph{zero}
+for sufficiently oblique angles. This phenomenon is referred
+to as total internal reflection. It occurs when there is no
+angle that satisfies Snell's law.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('underwaterlens') %>__incl(hw/underwaterlens)<% end_hw() %>
+
+<% begin_hw('refractorvsreflector') %>__incl(hw/refractorvsreflector)<% end_hw() %>
+
+<% begin_hw('explainlens') %>__incl(hw/explainlens)<% end_hw() %>
+
+<% begin_hw('camera') %>__incl(hw/camera)<% end_hw() %>
+
+<% begin_hw('imageunderwater',2) %>__incl(hw/imageunderwater)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'eye-anatomy',
+    %q{Problem \ref{hw:eyefocallength}.},
+    {'suffix'=>'2'}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-funkylenses',
+    %q{Problem \ref{hw:funkylenses}.}
+  )
+%>
+
+<% end_marg %>
+<% begin_hw('eyefocallength',2) %>__incl(hw/eyefocallength)<% end_hw() %>
+
+<% begin_hw('goggles') %>__incl(hw/goggles)<% end_hw() %>
+
+<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
+
+<% begin_hw('least-time-refraction',2) %>__incl(hw/least-time-refraction)<% end_hw() %>
+
+\pagebreak[4]
+
+<% begin_hw('imagelocation1') %>__incl(hw/imagelocation1)<% end_hw() %>
+
+<% begin_hw('imagelocation2') %>__incl(hw/imagelocation2)<% end_hw() %>
+
+<% begin_hw('imagelocation3') %>__incl(hw/imagelocation3)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-field-of-view',
+    %q{Problem \ref{hw:field-of-view}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('field-of-view') %>__incl(hw/field-of-view)<% end_hw() %>
+
+<% begin_hw('nearsighted') %>__incl(hw/nearsighted)<% end_hw() %>
+
+<% begin_hw('diamond') %>__incl(hw/diamond)<% end_hw() %>
+
+<% begin_hw('flatworm') %>__incl(hw/flatworm)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('deleted') %>__incl(hw/deleted)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('eyeglasses-no-mag') %>__incl(hw/eyeglasses-no-mag)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('back-silvered') %>
+A typical mirror consists of a pane of glass of thickness $t$ and index of refraction $n$,
+``silvered'' on the back with a reflective coating. Let $d_o$ and $d_i$ be measured from
+the back of the mirror. Show that $d_i=d_o- 2(1-1/n)t$. Use the result of, and make the approximation
+employed in, problem \ref{hw:imageunderwater}c. As a check on your result, consider separately the special
+values of $n$ and $t$ that would recover the case without any glass.
+<% end_hw() %>
+<% marg(0) %>
+<%
+  fig(
+    'hw-constant-thickness',
+    %q{Problem \ref{hw:constant-thickness}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('constant-thickness') %>__incl(hw/constant-thickness)<% end_hw() %>
+
+<% begin_hw('spider-focal-length') %>__incl(hw/spider-focal-length)<% end_hw() %>
+
+<% begin_hw('real-image-conditions') %>__incl(hw/real-image-conditions)<% end_hw() %>
+
+<% end_hw_sec %>
+<% begin_ex("How strong are your glasses?") %>
+
+This exercise was created by Dan MacIsaac.
+
+\noindent Equipment:
+
+\begin{indentedblock}
+	eyeglasses
+
+	diverging lenses for students who don't wear glasses, or
+who use converging glasses
+
+	rulers and metersticks
+
+	scratch paper
+
+	marking pens
+\end{indentedblock}
+
+Most people who wear glasses have glasses whose lenses are
+diverging, which allows them to focus on objects far away.
+Such a lens cannot form a real image, so its focal length
+cannot be measured as easily as that of an converging lens.
+In this exercise you will determine the focal length of your
+own glasses by taking them off, holding them at a distance
+from your face, and looking through them at a set of
+parallel lines on a piece of paper. The lines will be
+reduced (the lens's magnification is less than one), and by
+adjusting the distance between the lens and the paper, you
+can make the magnification equal 1/2 exactly, so that two
+spaces between lines as seen through the lens fit into one
+space as seen simultaneously to the side of the lens. This
+object distance can be used in order to find the focal length of the lens.
+
+1. Does this technique really measure magnification or does
+it measure angular magnification? What can you do in your
+experiment in order to make these two quantities nearly the
+same, so the math is simpler?
+
+2. Before taking any numerical data, use algebra to find the
+focal length of the lens in terms of $d_o$, the object
+distance that results in a magnification of 1/2.
+
+3. Use a marker to draw three evenly spaced parallel lines
+on the paper. (A spacing of a few cm works well.)
+Measure the object distance that results in a magnification
+of 1/2, and determine the focal length of your lens.
+
+<% end_ex %>
+<% end_chapter() %>

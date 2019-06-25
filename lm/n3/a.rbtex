@@ -1,0 +1,81 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Motion in Three Dimensions") %>
+
+<%
+  chapter(
+    '06',
+    %q{Newton's Laws in Three Dimensions},
+    'ch:three-d',
+    '',
+    {'opener'=>'ringtoss'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n3a)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('tossup') %>__incl(hw/tossup)<% end_hw() %>
+
+<% begin_hw('misslettuce') %>__incl(hw/misslettuce)<% end_hw() %>
+
+<% begin_hw('niagara') %>__incl(hw/niagara)<% end_hw() %>
+
+<% begin_hw('baseballpitch') %>__incl(hw/baseballpitch)<% end_hw() %>
+<%
+  fig(
+    'hw-baseballpitch',
+    %q{Problem \ref{hw:baseballpitch}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('cannon-range') %>__incl(hw/cannon-range)<% end_hw() %>
+
+<% begin_hw('maxrange',nil,{'calc'=>true}) %>__incl(hw/maxrange)<% end_hw() %>
+
+<% begin_hw('speedbump') %>__incl(hw/speedbump)<% end_hw() %>
+
+<% begin_hw('cliff-pond',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/cliff-pond)<% end_hw() %>
+<% marg(45) %>
+<%
+  fig(
+    'hw-cliff-pond',
+    %q{Problem \ref{hw:cliff-pond}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('two-footballs',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/two-footballs)<% end_hw() %>
+
+<% begin_hw('deleted') %>This problem is now problem \ref{hw:rock-roof-2} on p.~\pageref{hw:rock-roof-2}.<% end_hw() %>
+
+<% begin_hw('shoot-bullet-from-cylinder',2) %>__incl(hw/shoot-bullet-from-cylinder)<% end_hw() %>
+<% marg(-300) %>
+<%
+  fig(
+    'hw-shoot-bullet-from-cylinder',
+    %q{Problem \ref{hw:shoot-bullet-from-cylinder}.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_hw_sec %>
+
+
+
+
+
+ %%----------------------------------------------------------
+
+<% if false then figure_in_toc("ringtoss") end %>
+<% end_chapter() %>

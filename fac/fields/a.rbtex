@@ -1,0 +1,1049 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% clear_answer_data %>
+
+<% part_title("Electric and magnetic fields") %>
+
+<%
+  chapter(
+    '01',
+    %q{Electric and magnetic fields},
+    'ch:fields-intro',
+    %q{A telescopic view of an energetic eruption on the sun, August 2012. The bright loops at 
+     the upper left are
+     ionized gas following the sun's magnetic field lines.},
+    {'opener'=>'coronal-mass-ejection','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+A college campus. Many, perhaps most, of the people walking by are
+doing something with their phones. They are sending and receiving
+invisible radio signals, which are disturbances in the electric and
+magnetic \emph{fields}, sort of like disturbances in ``the force'' in
+Star Wars. Surrounding and penetrating the landscape of people, trees,
+and buildings, there is a second, hidden landscape of these fields.  This
+hidden aspect of reality has no mass and is not made of material
+particles such as electrons. 
+
+<% begin_sec("A surprising link to the nature of time",nil,'time') %>
+
+Bear with me for a page while I describe some seemingly unrelated
+ideas about the nature of time, which will turn out to tie back in
+logically to our study of fields.  The phone signals in the college
+campus scene are structured in complex ways and carry information
+using codes like English and binary, but often the signal can carry
+all the needed information simply because of the \emph{time} when it
+arrives. My wife worries about my safety when I head out for a day of
+rock climbing, so when her phone rings late in the afternoon, the
+simple fact of the arrival of a signal from me carries the information
+that I'm safe. This suggests that we consider the nature of
+\emph{time} as a basic question when embarking on our study of
+electricity and magnetism. 
+
+A colorful experiment demonstrating the nature of time was done by
+Hafele and Keating in 1971 (figure \figref{hk-in-cabin2}).\index{Hafele-Keating experiment}\index{atomic clock}
+The two
+physicists brought atomic clocks with them on round-the-world flights
+aboard commercial passenger jets, then compared the clocks with other
+clocks that had been left at home. When the clocks were reunited, they
+\emph{disagreed} by $\sim 100\ \zu{ns}$. The results were consistent
+with Einstein's 1915 theory of relativity, and were interpreted as a
+combined effect from motion and gravity. Because it's difficult to
+move a clock very fast without putting it on an airplane, it wasn't
+until 2010 that Chou \emph{et al.}\footnote{Science 329 (2010) 1630}
+succeeded in carrying out a conceptually simpler tabletop experiment
+in which a clock was simply moved around (at speeds on the order of 10
+m/s) without taking it to high elevation, thus isolating the effect of
+motion from the gravitational effect. It is the effect of motion that
+will be of interest to us here.
+
+<% marg(50) %>
+<%   
+  fig(
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+
+It would be natural to try to explain this effect of motion as
+arising from the clocks' sensitivity to noise, cabin pressure, or
+vibration. But exactly the same effect is observed with other,
+completely different types of clocks under completely different
+circumstances, and even with processes such as the decay of elementary
+particles moving at high speeds --- the radioactive half-life is
+prolonged if the particles are in motion. 
+
+The conclusion is that \emph{time itself} is not absolute: when one\index{time!not absolute}
+observer is in motion relative to another observer, they will disagree
+on the rate at which time passes. A clock appears to tick at its
+normal rate according to an observer who is at rest relative to the
+clock, while observers moving relative to the clock say that the clock
+is slow. 
+
+<% marg(-5) %>
+<%   
+  fig(
+    'ripples',
+    %q{Circular ripples propagate outward in a puddle at a fixed, finite speed.}
+  )
+%>
+<% end_marg %>
+
+We are now ready to connect these observations about time back to our
+main subjects of study, which are the electric and magnetic fields.
+We will prove that if time is relative, then disturbances in the
+electric and magnetic fields must propagate (travel or spread out) at
+some finite speed, not instantaneously. The logic works like this.
+Suppose that observers Alice and Betty are both aboard spaceships, and
+moving at velocities that are different from each other, but both
+constant.  Alice is free to choose her own ship as a frame of
+reference, in which case she considers herself to be at rest while
+Betty moves.  But the situation is completely symmetrical, so Betty
+can say the same thing. Because motion is relative, we can't say who
+is ``really'' moving and who is ``really'' at rest. Alice says Betty's
+time is slowed down due to the effect of motion on time, but Betty
+says Alice is slowed down. This seems paradoxical, since it seems that
+they should be able to get in contact by radio and resolve the
+disagreement. But our experience talking on cell phones misleads us
+into assuming that radio communication is instantaneous. It isn't.  I
+haven't demonstrated in mathematical detail exactly how logical
+consistency is restored by the fact that signals take time to
+propagate. (That would take us too far afield into a discussion of
+relativity, which is not our main topic right now.) But this example
+is sufficient to show that logical consistency cannot be preserved if
+there is some mechanism for sending signals instantaneously, as in the
+``subspace radio'' of the Star Trek universe.
+
+Thus we can never send signals instantaneously. The style of reasoning
+here is called proof by contradiction. In this example, we have propositions
+1 (that time is relative) and 2 (that instantaneous communication is possible),
+and if both 1 and 2 hold, then we reach a paradox, or logical contradiction.
+We can therefore conclude that either 1 is false or 2 is false. But 1 has been
+proved experimentally, so 2 must be false.
+
+In your previous study of mechanics, you were probably briefly exposed
+to the concept of a field through mentions of the gravitational field.
+From that experience, it would be easy to get the impression that
+fields are an optional concept, and that changes in the gravitational
+field (e.g., due to the motion of a planet in its orbit) would take
+effect immediately, throughout the universe. This is what Isaac Newton
+believed, but it is not how the universe actually turns out to work.
+
+Since by now your physical intuition has been strongly influenced by Newton's
+world-view, it's worth noting that what I have given above as
+a tricky disproof of Newton is also backed up by empirical evidence. Nobody
+has ever succeeded in finding a method of instantaneously transmitting signals,
+or any type of cause and effect, with infinite speed.
+
+Not only that but, experiments show that there is a fixed speed limit.
+This maximum speed at which signals can propagate is notated $c$, and
+it has the numerical value of about $3.0\times10^8\ \munit/\sunit$.
+We often refer to it as the speed of light, since visible light
+travels at $c$.  Light is a wave disturbance in the electric and
+magnetic fields, and the visible spectrum from red to violet
+constitutes one part of a much larger electromagnetic spectrum, which
+includes phenomena as apparently disparate as radio waves and x-rays.
+Different parts of the spectrum are distinguished either by their
+frequency (the number of vibrations per unit time) or, equivalently,
+by their wavelength (the distance between successive wave crests).
+Fundamentally, it's best to think of $c$ not as the speed of light but
+as a maximum speed of cause and effect, or as a sort of conversion
+factor between time and space units.\index{light!electromagnetic wave}\index{light!speed}
+
+As an example of the kind of experimental work that has tested these claims,
+there was a dramatic incident in 2011 in which particle physicists believed
+they had detected signals at a laboratory near Rome that had been emitted in
+an accelerator experiment in the Alps at a distance of 731.296 km (measured with GPS), and that these signals
+had arrived with a time delay of 2.43928 ms. The speed implied by these measurements
+exceeded $c$ by 0.002\%. Although this might seem like only a tiny discrepancy, the
+theory it violated had by then been so firmly established by decades of
+experiments that the claim set off a frenzy of theoretical and experimental
+work to try to disprove it, explain it, or use it as evidence for new theories
+of physics. A year later, the scientific collaboration that had found the
+observed result announced publicly, and with considerable embarrassment, that
+they had found the result to be due to two mistakes: a loose cable and a faulty
+electronic clock.
+<% end_sec('time') %>
+
+<%
+  fig(
+    'fields-detection-collage',
+    'Tools for detecting, measuring, or exploiting electric and magnetic fields.',
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+<% begin_sec("Basic properties of fields",nil,'fields-basic-properties') %>\index{field!basic properties}
+In order to get started with our study of the electric and magnetic fields,
+we present three basic assumptions:
+
+\begin{enumerate}
+\item The electric and magnetic fields are \emph{observable}. We can measure them.
+\item The electric and magnetic fields are \emph{vectors}.\index{field!vector}
+\item \emph{Superposition:\/} When fields are created by two effects, the fields contributed
+by the two effects at a particular point add as vectors, and it is the vector sum that is actually
+observed at that location in space.\index{field!observability}
+\end{enumerate}
+
+Figure \figref{fields-detection-collage} shows the wide variety of
+tools that are used for dealing with electric and magnetic fields. All
+of these can be used to detect the presence of fields, and some can
+actually measure the fields quantitatively.  Many of them (the
+photovoltaic panels, Geiger counter, 19th-century x-ray film, and
+human eye) work by taking in the energy of the fields.  Some of them
+are specialized for constant fields and others for oscillating ones.
+Among those that work with oscillating fields, there is further
+specialization by frequency.  For example, the Geiger counter can
+detect gamma rays, which are a form of very high frequency light, but
+not radio waves. 
+
+Assumption 3, superposition, is typical of wave phenomena, as shown in\index{superposition}
+figure \figref{coil-spring-superposition-two-pos}.  As an example
+involving electric and magnetic fields, the lens in figure
+\figref{converging-rays} brings the three beams of light together at a
+point, and the waves pass through one another. The electric and
+magnetic fields in the region of intersection add as vectors but do not
+otherwise interact. The beams emerge unscathed on the other side. 
+
+<% marg(300) %>
+<%   
+  fig(
+    'coil-spring-superposition-two-pos',
+    %q{Wave pulses on a coil spring travel toward each other, superpose, and reemerge without interacting.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'converging-rays',
+    %q{Three rays of light converge.}
+  )
+%>
+<% end_marg %>
+
+
+To see the significance of assumptions 1 and 2, the observability and vector nature of the fields,
+it may be helpful to see examples of how
+they do not hold for other phenomena besides electricity and magnetism. These are a little
+exotic and are just for fun. If this sort of thing doesn't interest you for its own sake,
+feel free to skip ahead to section \ref{sec:vectors}.
+
+Our universe does contain fields that are scalars rather than vectors. One example is
+dark energy, discovered in 1998, which drives the accelerating expansion of the universe.
+Another example is the Higgs field, whose existence was predicted theoretically in 1964
+and which was detected experimentally at the Large Hadron Collider in 2012.\index{field!scalar}
+
+
+<%
+  fig(
+    'ep',
+    'The gravitational field is not observable.',
+    {'width'=>'wide','sidecaption'=>false}
+  )
+%>
+
+One of the considerations that led Einstein to his general theory of
+relativity is that the gravitational field is \emph{not} necessarily
+observable.  Consider Cathy, the girl in figure \figref{ep}.  She is shown in a
+cutaway view, sealed inside a well-lit and air-conditioned box, which
+happens to be her favorite place to go and think about physics. (It's
+small, but it's private and it's all hers.)  She feels pressure from
+the seat of the chair, and this would normally suggest that she was
+experiencing a gravitational force, perhaps from a nearby planet,
+\subfigref{ep}{2}. But Cathy can't infer this without peeking outside at her
+surroundings.  It's equally possible that the box is in deep space,
+\subfigref{ep}{3}, with no gravity whatsoever, but is being towed by a rocket
+ship, so that it accelerates constantly. No possible experiment done
+inside the box can tell her which of these is the
+case.\index{field!gravitational!not observable}
+
+<% end_sec('fields-basic-properties') %>
+
+<% begin_sec("Review of vectors",4,'vectors') %>
+
+<% begin_sec("Definition of vectors and scalars",nil,'vectors-and-scalars') %>
+
+Because the electric and magnetic fields are vectors, we present a brief review of the topic, starting
+with a definition that may be different from the one you've seen previously, but
+is in better agreement with how physicists actually think about these things.
+
+Most of the things we want to measure in physics fall into two categories,
+called vectors and scalars.\index{vector}\index{scalar}
+A \emph{scalar} is something
+that doesn't change when you turn it around, while a \emph{vector} does change
+when you rotate it, and the way in which it changes is the same as the way
+in which a pointer such as a pencil or an arrow would change.
+Figure \figref{vectors-and-scalars} shows two examples.\index{vector!defined}\index{scalar!defined}
+<%
+  fig(
+    'vectors-and-scalars',
+    %q{Temperature is a scalar: a hot cup of coffee doesn't change its temperature
+        when we turn it around. Force is a vector. When I play tug-of-war with my dog,
+        her force and mine are the same in strength, but they're in opposite directions.
+        If we swap positions, our forces reverse their directions, just as a pair of arrows would.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+A vector $\vc{A}$ has a magnitude $|\vc{A}|$, which means its size, length, or amount. Rotating a vector
+can change the vector, but will never change its magnitude.\index{vector!magnitude}\index{magnitude}
+
+<%
+  fig(
+    'earth-field-three-components',
+    %q{A magnetic compass and dip meter are used to find the direction of the earth's magnetic field in three dimensions.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+In figure \figref{earth-field-three-components}, a compass is first used to find the vertical plane
+containing the earth's magnetic field. The needle defines the magnetic north-south direction
+(differing from true north, which is defined by the earth's rotation). Once this plane has been determined,
+a magnetic dip meter is used to find the three-dimensional direction of the field. The field
+has a large vertical component.
+
+<% end_sec('vectors-and-scalars') %>
+
+<% begin_sec("Components of vectors",nil,'vector-components') %>\index{vector!components}\index{component}
+A component of a vector is a signed real number giving its projection onto a line
+such as a coordinate axis.
+In two dimensions,
+when a vector $\vc{A}$ lies in the $x$-$y$ plane, at an angle $\theta$ counterclockwise from the $x$
+axis, its components are $A_x=A\cos\theta$ and $A_y=A\sin\theta$, where $A$ is a shorthand notation for 
+$|\vc{A}|$.
+
+In figure \figref{horseshoe-magnet-components}, the 
+magnetic field sensor only measures the component of the field parallel to the wand,
+at its tip. At the point being tested, the
+component along the horseshoe's axis of symmetry is nearly zero. Rotating the sensor
+by 90 degrees gives a large reading, showing that the field is perpendicular to the
+axis of symmetry. If the magnetic field had been a scalar, then these two measurements
+would have had to give the same result.
+<%
+  fig(
+    'horseshoe-magnet-components',
+    'A magnetic field sensor measures two perpendicular components of the field of a horseshoe magnet.',
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+
+<% end_sec('vector-components') %>
+
+<% begin_sec("Vector addition",nil,'vector-addition') %>\index{vector!addition}
+
+<% marg() %>
+<%   
+  fig(
+    'tip-to-tail',
+    %q{Graphical addition of vectors.}
+  )
+%>
+<% end_marg %>
+
+Scalars are just numbers, and we do arithmetic on them in the usual
+way. Vectors are different. Vectors can be added by placing them tip to tail,
+and then drawing a vector from the tail of the first vector to the tip
+of the second vector. A vector can be multiplied by a scalar to give a new
+vector. For instance, if $\vc{A}$ is a vector, then $2\vc{A}$ is a vector
+that has the same direction but twice the magnitude. Multiplying by $-1$ is
+the same as flipping the vector, $-\vc{A}=(-1)\vc{A}$. Vector subtraction can be
+accomplished by flipping and adding.\index{vector!multiplication by a scalar}
+
+The tip-to-tail method of adding vectors is called graphical addition.\index{vector!addition!graphical}
+It is equivalent to adding components, which is called
+analytic addition. The following example demonstrates analytic addition in
+a case where it is necessary to do conversions back and forth between
+the magnitude-direction and Cartesian descriptions of the vectors. If you have
+any trouble following this example, then you should review vector addition
+from a source that provides more detail than this brief review.\index{vector!addition!analytic}
+
+\begin{eg}{Analytic addition of vectors}\label{eg:la-vegas}
+\egquestion
+The displacement vector from San Diego to Los Angeles has magnitude
+190 km and direction 129\degunit counterclockwise from east.  The one
+from LA to Las Vegas is 370 km at 38\degunit counterclockwise from
+east. Find the distance and direction from San Diego to Las Vegas. 
+
+<% marg(300) %>
+<%   
+  fig(
+    'eg-sd-vegas',
+    %q{Example \ref{eg:la-vegas}.},
+    {
+      'anonymous'=>true
+    }
+
+  )
+%>
+<% end_marg %>
+
+
+\eganswer
+The trig needed in order
+to find the components of the first leg (San Diego to LA) is:
+\begin{align*}
+  \Delta x_1 &= (190\ \zu{km})\cos 129\degunit = -120\ \zu{km} \\
+  \Delta y_1 &= (190\ \zu{km})\sin 129\degunit = 148\ \zu{km} 
+\end{align*}
+Applying the same pattern to the second leg (LA to Vegas), we have:
+\begin{align*}
+  \Delta x_2 &= (370\ \zu{km})\cos 38\degunit = 292\ \zu{km} \\
+  \Delta y_2 &= (370\ \zu{km})\sin 38\degunit = 228\ \zu{km} 
+\end{align*}
+For the vector directly from San Diego to Las Vegas, we have
+\begin{align*}
+  \Delta x &= \Delta x_1 +  \Delta x_2 = 172\ \zu{km}\\
+  \Delta y &= \Delta y_1 +  \Delta y_2 = 376\ \zu{km}\eqquad.
+\end{align*}
+The distance from San Diego to Las Vegas is found using the Pythagorean theorem,
+\begin{equation*}
+  \sqrt{(172\ \zu{km})^2+(376\ \zu{km})^2} = 410\ \zu{km}
+\end{equation*}
+(rounded to two sig figs). The direction
+is one of the two possible values of the inverse tangent
+\begin{equation*}
+  \tan^{-1} (\Delta y/\Delta x) = \{65\degunit,245\degunit\}\eqquad.
+\end{equation*}
+Consulting a sketch shows that the first of these values is the correct one.
+\end{eg}
+
+<% end_sec('vector-addition') %>
+
+<% begin_sec("Unit vector notation",nil,'unit-vector-notation') %>\index{vector!unit}
+Suppose we want to tell someone that a certain vector $\vc{A}$ in two dimensions
+has components $A_x=3$ and $A_y=7$. A more compact way of notating this is
+$\vc{A}=3\hat{\vc{x}}+7\hat{\vc{y}}$, where $\hat{\vc{x}}$ and $\hat{\vc{y}}$, read ``x-hat'' and ``y-hat,''
+are the vectors with magnitude one that point in the positive $x$ and $y$
+directions. Some authors notate the unit vectors as $\hat{\vc{i}}$, $\hat{\vc{j}}$, and $\hat{\vc{k}}$
+rather than $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$.
+<% end_sec('unit-vector-notation') %>
+
+<% begin_sec("Rotational invariance",nil,'rotational-invariance') %>\index{rotational invariance}
+Certain vector operations
+are useful and others are not. Consider the operation of
+multiplying two vectors component by component to produce a third vector:
+\begin{align*}
+        R_x    &=    P_x Q_x  \\
+        R_y    &=    P_y Q_y  \\
+        R_z    &=    P_z Q_z.
+\end{align*}
+This operation will never be useful in physics because it can give different
+results depending on our choice of coordinates. That is, if we change our coordinate
+system by rotating the axes, then the resulting vector
+$\vc{R}$ will of course have different components, but these will not (except in exceptional cases)
+be the components of the same vector expressed in the new coordinates. We say that this
+operation is not rotationally invariant.\index{rotational invariance}
+
+The universe doesn't come equipped with coordinates, so if any vector operation is to be useful in
+physics, it must be rotationally invariant. Vector addition, for example, is rotationally invariant, since we
+can define it using tip-to-tail graphical addition, and this definition doesn't even refer to any coordinate
+system. This rotational invariance would still have held, but might not have been so obvious,
+if we had defined addition in terms of addition of components.
+
+\begin{eg}{Calibrating an electronic compass}
+Some smart phones and GPS units contain electronic compasses that can
+sense the direction of the earth's magnetic field vector, notated
+$\vc{B}$. Because all vectors work according to the same rules, you
+don't need to know anything yet about magnetism in order to understand
+this example.  Unlike a traditional compass that uses a magnetized
+needle on a bearing, an electronic compass has no moving parts. It
+contains two sensors oriented perpendicular to one another, and each
+sensor is only sensitive to the component of the earth's field that
+lies along its own axis. Because a choice of coordinates is arbitrary,
+we can take one of these sensors as defining the $x$ axis and the
+other the $y$. Given the two components $B_x$ and $B_y$, the device's
+computer chip can compute the angle of magnetic north relative to its
+sensors, $\tan^{-1}(B_y/B_x)$.
+
+All compasses are vulnerable to errors because of nearby magnetic
+materials, and in particular it may happen that some part of the
+compass's own housing becomes magnetized. In an electronic compass,
+rotational invariance provides a convenient way of calibrating away
+such effects by having the user rotate the device in a horizontal
+circle. 
+
+Suppose that when the compass is oriented in a certain way, it
+measures $B_x=1.00$ and $B_y=0.00$ (in certain units).  We then expect
+that when it is rotated 90 degrees clockwise, the sensors will detect
+$B_x=0.00$ and $B_y=1.00$. 
+
+But imagine instead that we get $B_x=0.20$ and $B_y=0.80$. This would
+violate rotational invariance, since rotating the coordinate system is
+supposed to give a different description of the \emph{same} vector.
+The magnitude appears to have changed from 1.00 to
+$\sqrt{0.20^2+0.80^2}=0.82$, and a vector can't change its magnitude
+just because you rotate it. The compass's computer chip figures out
+that some effect, possibly a slight magnetization of its housing, must
+be adding an erroneous 0.2 units to all the $B_x$ readings, because
+subtracting this amount from all the $B_x$ values gives vectors that
+have the same magnitude, satisfying rotational invariance.
+\end{eg}
+<% end_sec('rotational-invariance') %>
+
+<% begin_sec("Dot and cross product",nil,'dot-and-cross-product') %>
+The vector dot product\index{dot product} $\vc{A}\cdot\vc{B}$ is
+defined as the (signed) component of $\vc{A}$ parallel to $\vc{B}$. It
+is a scalar. If we know the magnitudes of the vectors and the angle
+$\theta_{AB}$ between them, we can compute the dot product as
+$|\vc{A}||\vc{B}|\cos\theta_{AB}$. If we know the components of the
+vectors in a particular coordinate system, we can express the dot
+product as $A_xB_x+A_yB_y+A_zB_z$. The dot product of a vector with
+itself is the square of its magnitude, $|\vc{A}|^2=\vc{A}\cdot\vc{A}$,
+and when we write $A^2$ as a notational shortcut, this is what we
+mean.\index{vector!dot product}\index{dot product}
+
+<% marg(300) %>
+<%   
+  fig(
+    'parallelogram',
+    %q{The magnitude of the cross product is the area of the shaded parallelogram.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'righthandxprod',
+    %q{The right-hand rule for the direction of the vector cross product.}
+  )
+%>
+<% end_marg %>
+
+There is also a way of multiplying two vectors to obtain a vector
+result. This is called the vector cross product\index{cross product},
+$\vc{C}=\vc{A}\times\vc{B}$.  The magnitude of the cross product is
+the area of the parallelogram illustrated in figure
+\ref{fig:parallelogram}.  The direction of the cross product is
+perpendicular to the plane in which $\vc{A}$ and $\vc{B}$ lie.  There
+are two such directions, and of these two, we choose the one defined
+by the right-hand rule illustrated in figure \ref{fig:righthandxprod}. \index{vector!cross product}\index{cross product}
+
+The dot and cross products are the \emph{only} useful ways of
+multiplying two vectors to form a scalar or a vector, respectively.
+Any other definition of multiplication either will not yield a scalar
+or vector, will not be rotationally invariant, or will be a trivial
+variation on the dot or cross products in which the definitions are
+multiplied by some scalar, e.g., $7\vc{A}\cdot\vc{B}$ or
+$-\vc{A}\times\vc{B}$.
+
+Unlike ordinary multiplication of real numbers, the cross product is anticommutative,
+$\vc{A}\times\vc{B}=-\vc{B}\times\vc{A}$. The magnitude of the cross product can be expressed as
+$|\vc{A}||\vc{B}|\sin\theta_{AB}$. In terms of the components, we have
+\begin{align*}
+        \vc{C}_x        &=  A_yB_z - B_yA_z\\
+        \vc{C}_y        &=  A_zB_x - B_zA_x\\
+        \vc{C}_z        &=  A_xB_y - B_xA_y.
+\end{align*}
+
+<% end_sec('dot-and-cross-product') %>
+
+<% end_sec('vectors') %>
+
+<% begin_sec("Field lines",nil,'field-lines') %>\index{field!field-line representation}
+
+The photograph in figure \subfigref{bar-magnet-field-lines}{1} provides a
+visually compelling image of the magnetic field of a bar magnet. The magnet
+itself is underneath a thin piece of white cardboard. What we see, on top,
+are iron filings, which become magnetized by the bar magnet, orient themselves
+along the field, and join up in chains. This type of visualization made a deep
+impression on the British physicist Michael Faraday, who was the mathematically
+untrained son of a poor blacksmith.\label{faraday-intro-bio}\index{Faraday, Michael}
+
+<%
+  fig(
+    'bar-magnet-field-lines',
+    %q{Three representations of the magnetic field in and around a bar magnet.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+In general, we have two equally valid ways of conceptualizing an
+electric or magnetic field --- not just visually, but mathematically.
+In the ``sea of arrows'' picture,\index{field!sea of arrows representation}
+\subfigref{bar-magnet-field-lines}{2}, the field at a particular point
+is represented by an arrow whose length and direction give the
+magnitude and direction of the field. In
+\subfigref{bar-magnet-field-lines}{3}, we instead have Faraday's
+favored representation in terms of \emph{field lines}. 
+
+The two pictures carry the same information. Given the sea of arrows
+representation, we essentially just link up the arrows to form the
+field lines (\note{link-up-field-vectors}).  Given the field lines, we can also find the field
+vectors: each field vector is tangent to the field line at the given
+point, and its magnitude is proportional to the \emph{density} of the
+field lines. We'll have more to say in ch.~\ref{ch:gauss-law} about
+why this works (it's not obvious), but for now we'll just note that it
+does. For example, the field lines are very dense on the interior of
+the bar magnet in figure \subfigref{bar-magnet-field-lines}{3}, so the
+field is very strong there. Near the top of
+\subfigref{bar-magnet-field-lines}{3}, the field lines are far apart,
+and indeed if we check back in \subfigref{bar-magnet-field-lines}{2},
+the field vectors are very weak there. 
+
+<% marg() %>
+<%
+  fig(
+    'faraday-portrait-oil-painting',
+    %q{%
+      Michael Faraday (1791-1867). When Queen Victoria asked him what the
+        electrical devices in his lab were good for, he famously replied,
+        ``Madam, what good is a baby?''
+    }
+  )
+%>
+<% end_marg %>
+
+Ch.~\ref{ch:gauss-law} says more about how to define the density of
+field lines numerically. Because space has three dimensions and paper
+only two, we will often ``fake it'' by drawing cross-sections like figure
+\figref{bar-magnet-field-lines}. This only works if the lines stay
+within the plane of the page, and even then we should not expect to get more than
+a rough conceptual idea of what actually happens in three dimensions, partly
+because density means something different in two dimensions than in three (figure \figref{bamboo}).
+
+Field lines should not normally cross.\label{field-lines-never-cross}
+If they did cross, then
+the direction of the field vector would have to be undefined. This could happen
+either because the field was undefined at that point or because it was zero.
+But in the case where the field is zero, the density of field lines is zero,
+and therefore we expect that no lines would actually penetrate to that location.
+
+If a field has the same magnitude and direction everywhere in some region of space,
+then we say that the field is uniform.
+Figure \figref{uniform-field} show the two representations of a uniform field.
+The earth's gravitational field is approximately
+uniform on small scales, but it does change its direction appreciably if we move far
+enough around the curve of the earth's surface, and its strength also falls off with elevation.
+
+<% marg(50) %>
+<%   
+  fig(
+    'bamboo',
+    %q{In three dimensions, the density of bamboo stalks would be measured as stalks
+       per unit area, while in two dimensions we would have stalks per unit length.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'uniform-field',
+    %q{A uniform field, in the sea-of-arrows and field-line representations.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec('field-lines') %>
+
+<% begin_sec("Energy in fields and measurement of fields",nil,'energy-in-fields-and-units') %>
+<% begin_sec("Energy in fields",nil,'energy-in-fields') %>\index{field!energy content}\index{energy!of fields}
+
+We have not yet said anything about how to define and measure fields
+quantitatively, or what units would be used. One way to approach this
+is through the fact that fields carry energy. Energy is a scalar, but
+the fields are vectors. There is only one reasonable way to form a
+scalar out of a vector, and that is the dot product. Therefore a pure
+electric field $\vc{E}$, unaccompanied by any magnetic field, must
+have an energy density that depends only on $\vc{E}\cdot\vc{E}$, i.e.,
+the field's squared magnitude $E^2$. Similarly for a magnetic field
+$\vc{B}$, we expect an energy density that depends on
+$\vc{B}\cdot\vc{B}$. When the two fields are both present in a certain
+location, we could in principle have an additional term in the energy
+like $\vc{E}\cdot\vc{B}$, but such a term leads to predictions of
+phenomena that are not actually observed, e.g., an electrical device
+like a battery would tend to align itself with the earth's magnetic
+field, as a compass does.
+
+Therefore we expect to have only an electric-field energy density that depends on
+$E^2$ and a corresponding magnetic one like $B^2$. Supposing the relationships
+to be proportionalities (see discussion question \ref{dq:alternative-energy-formulas}),
+it only remains to determine the constants of proportionality. These two constants
+depend on the units we define for the fields.
+Historically, there was a confusing variety of different and
+incompatible systems of units used for electricity and magnetism, and
+if you look through old books and scientific papers you can find a
+bewildering array of funky electrical units such as the abamp and the
+statcoulomb. Although some particle physicists and astrophysicists
+continue to use some of the less common systems (mostly the one referred
+to as cgs), today most scientists
+and engineers have settled on the version of the metric system called the
+SI. One way of notating the energy densities in SI units is the following.
+\begin{align*}
+  \der U_E &= \frac{1}{8\pi k} E^2 \der v \qquad \text{and} \\
+  \der U_B &= \frac{c^2}{8\pi k} B^2 \der v .
+\end{align*}
+Here $U$ stands for energy (to avoid a notational clash with $\vc{E}$
+for the electric field), $k$ is a constant called the Coulomb
+constant, $c$ is the speed of light, and $v$ indicates volume. The ``$\der$'' notation looks like
+the Leibniz notation for a derivative, but these are not derivatives.
+In these expressions d just means ``a
+little bit of.'' The reason for the
+$\der$'s is that in general the fields are nonuniform, so that we
+can't speak of ``the'' value of $E^2$ or $B^2$ over some large volume.
+Only by taking an infinitesimal volume near one point can we
+speak of the field as having a definite value. The quantity $\der U$ is
+then understood as the infinitesimal energy contained within this volume.
+<% marg(300) %>
+<%   
+  fig(
+    'coulomb-portrait',
+    %q{Charles Coulomb (1736-1806) was a French army officer, engineer, and physicist. The Coulomb constant $k$ is named after him.}
+  )
+%>
+<% end_marg %>
+<% end_sec('energy-in-fields') %>
+
+<% begin_sec("Units of the fields",nil,'units-of-the-fields') %>
+
+If we had the luxury of being the first people to define the units for
+the fields, we would be free to choose $k=1$, or even $1/8\pi k=1$,
+which would simplify these expressions; the electric field would then
+have units of $\zu{J}^{1/2}/\munit^3$. However, in the SI we have
+units for $\vc{E}$ and $\vc{B}$ that result in a value for $k$ that
+has both nontrivial units and a nontrivial numerical value. Although
+this is a disadvantage when calculating energies, it does simplify
+certain other equations that we'll encounter later. The SI units of
+the magnetic field are teslas (T), named after the Serbian-American
+inventor and prototypical mad scientist Nikola Tesla.\index{tesla (unit)}\index{magnetic field!unit}
+
+We can tell from the equations for the energy densities that $E$ has
+the same units as $cB$, so that one way of expressing the units of the
+electric field would be $\zu{T}\unitdot\munit/\sunit$. In reality
+nobody does this, nor is there any convenient name or symbol for the
+relevant unit.  It is instead expressed in terms of other electrical
+units, either the volt or the coulomb, which we'll encounter later.
+The coulomb is a unit of electrical charge,\index{charge}
+a property of material
+objects that measures how strongly they participate in electrical
+interactions.  The SI units of the electric field can be written as
+newtons per coulomb (N/C) or as volts per meter (V/m), and these
+expressions are equivalent, 1 N/C=1 V/m.\index{electric field!unit}
+
+The Coulomb constant is approximately $k=8.988\times10^9\
+\nunit\unitdot\munit^2/\zu{C}^2$ in SI units.  The SI is set up in
+such a way that $k$'s numerical value is equal to $10^{-7}c^2$, and
+since $c$ has a defined value these days in the SI, $k$ also has a
+defined value (which takes 17 decimal digits to express exactly).
+Because of the same pleasant coincidence that makes $c$ so close to
+$3\times10^8\ \munit/\sunit$, $k$ can be approximated as $9\times10^9$
+while incurring an error of only 0.1\%, which is good enough for
+almost all applications. \index{Coulomb constant}
+
+When analyzing the units of an expression, we usually break the defined
+units down into the more basic ones, e.g., in a mechanical calculation
+we might replace newtons, N, with $\kgunit\unitdot\munit/\sunit^{-2}$.
+In the SI, the coulomb is (perhaps somewhat arbitrarily) considered to be more basic than
+the units of the fields. Therefore we would typically reduce electric
+field units to N/C, and if you're the type of person who enjoys crossword
+puzzles, you can convince yourself from the
+foregoing discussion that for the magnetic field, $1\ \zu{T}=1\ \nunit\unitdot\sunit/\zu{C}\unitdot\munit$.
+<% end_sec('units-of-the-fields') %>
+
+<% begin_sec("Defining the magnitude and direction of a field",nil,'direction-of-field') %>
+If we are to be logically rigorous, the question arises of how to
+\emph{define} the electric and magnetic fields. Rather than conceptual
+definitions in the style of a dictionary, physicists typically use
+operational definitions, meaning definitions that specify the
+operations that need to be carried out in order to measure the
+quantity. For example, an operational definition of time is that time
+is what a clock meaures. The equations for the energy densities of the
+fields can be taken as operational definitions of the fields, except
+that they only seem to define the magnitudes of the fields, not their
+directions. Actually, the following example shows that they define more
+than they seem to define.
+
+\begin{eg}{Direction of the field of a horseshoe magnet}\label{eg:horseshoe-magnets-polarity}
+Figure \subfigref{horseshoe-magnets-polarity}{1} shows the horseshoe magnet of
+figure \figref{horseshoe-magnet-components} on p.~\pageref{fig:horseshoe-magnet-components},
+where we saw that in its plane of symmetry, the field was entirely perpendicular to the plane.
+In this figure we show the densely packed field lines that resulted in this observation, in
+the region near the pole tips where the field is very intense. There are no arrowheads drawn
+in the figure to show the direction of the field, because our definition of the field in terms
+of its energy density does not immediately seem to define any such thing or any way of determining it.
+
+Now suppose that we have another such magnet, but there is still no
+indication of which pole is which. We bring the magnets close
+together, \subfigref{horseshoe-magnets-polarity}{2}, so that their
+fields superpose. There are two possibilities. Either the two magnets'
+contributions to the field are aligned, so that in the plane of symmetry
+the total field is $2B$, or they are reversed relative to one another,
+giving zero field in the midplane.
+
+<% marg(300) %>
+<%   
+  fig(
+    'horseshoe-magnets-polarity',
+    %q{Example \ref{eg:horseshoe-magnets-polarity}.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'horseshoe-magnets-polarity-destructive',
+    %q{The case where the fields cancel, producing $U_2=0$.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'horseshoe-magnets-polarity-constructive',
+    %q{One of the magnets is turned around. The fields reinforce, producing the large energy $U_3$.}
+  )
+%>
+<% end_marg %>
+
+Although the field lines curve around, and it is only in the midplane that
+the two fields are collinear, we can tell that there will be a large difference
+between the energy stored in the field in these two cases. For simplicity, let's
+pretend that there is only some volume $v$ near the pole tips where the field is large enough to matter,
+and let's approximate the field within this volume as being uniform and perpendicular to the midplane.
+When the magnets are far away from one another, each has energy $(c^2/8\pi k)B^2v$
+stored in this region, so the total energy is double that,
+\begin{equation*}
+  U_1 = 2(c^2/8\pi k)B^2v. \qquad \text{[total energy, apart]}
+\end{equation*}
+Now suppose that the magnets are brought near to each other, so that the volumes $v$ coincide.
+In the case where the fields are
+reversed in relation to each other, the fields cancel (subject to our crude approximations),
+and we have
+\begin{equation*}
+  U_2 = 0. \qquad \text{[total energy, reversed]}
+\end{equation*}
+With the fields cooperating, we replace $B$ with $2B$, the result being
+\begin{equation*}
+  U_3 = 4(c^2/8\pi k)B^2v. \qquad \text{[total energy, aligned]}
+\end{equation*}
+
+These three energies are all different. If the orientation of each magnet is reversed compared to
+the other, then
+they can reduce their magnetic energy from $U_1$ to $U_2$ by leaping toward
+each other. They attract, and the decrease in magnetic energy is transformed into
+kinetic energy. If the orientation is aligned, then energy is released if
+they fly apart, reducing their total energy from $U_3$ to $U_1$. In this configuration,
+the magnets repel.
+\end{eg}
+
+\begin{eg}{Estimating the force from the field}\label{eg:horseshoe-force}
+Let's use the analysis of example \ref{eg:horseshoe-magnets-polarity} to find a rough
+numerical estimate of the force of attraction or repulsion. From figure \figref{horseshoe-magnet-components}
+on p.~\pageref{fig:horseshoe-magnet-components}, we take $B\sim6\ \zu{mT}$, and we let the
+volume $v$ be a cube, $v=\ell^3$, with $\ell=4\ \zu{cm}$. The absolute value of the work done
+when the magnets are brought together or apart is $\Delta U=U_1-U_2=U_3-U_1=2(c^2/8\pi k)B^2v$. (The
+fact that $U_1-U_2=U_3-U_1$ tells us that the strength of the force will be of the same magnitude
+in the repulsive and attractive cases.) To the precision allowed by our crude approximations,
+we can approximate $F=\der W/\der x\approx \Delta U/\Delta x=\Delta U/\ell$. Plugging in numbers, we get
+\begin{align*}
+  F &\approx 2\frac{c^2}{8\pi k}B^2\ell^2 \\
+    &= 2\frac{(3\times10^8\ \munit/\sunit)^2}{8\pi (9\times10^9\ \nunit\unitdot\munit^2/\zu{C}^2)}
+               (6\times10^{-3}\ \zu{T})^2(4\times10^{-2}\ \munit)^2 \\
+    &= 0.05 \frac{\munit^2/\sunit^2}{\nunit\unitdot\munit^2\unitdot\zu{C}^{-2}}\zu{T}^2\unitdot\munit^2.
+\end{align*}
+%%%% calc -x -e "B=6 mT; L=4 cm; 2[c^2/(8pik)]B^2L^2"
+To unroll the hairball of units, we use the fact that $1\ \zu{T}=1\ \nunit\unitdot\sunit/\zu{C}\unitdot\munit$,
+and verify that the result turns out to be a force in units of newtons
+(problem \ref{hw:horseshoe-units}, p.~\pageref{hw:horseshoe-units}), which is
+as expected because when we plug in
+SI units, we should get a result in SI.
+
+A force of $0.05\ \nunit$ is considerably too low for such massive magnets,
+and this is probably because the magnetic field in figure \figref{horseshoe-magnet-components} was measured
+rather far away from the magnet in order to keep from overloading the sensor.
+\end{eg}
+
+Generalizing the idea of example \ref{eg:horseshoe-magnets-polarity}
+(details \note{field-orientation-defined}),
+we can define any field's direction relative to the direction
+of any other field. What we do not yet have is an absolute definition of the direction of
+a field, and in particular there is an ambiguity because we could always flip the direction
+of all our field vectors, simply as a matter of definition. This final ambiguity will be resolved
+in section \ref{sec:gauss-law}.
+
+<% end_sec('direction-of-field') %>
+
+\startdq
+
+\begin{dq}\label{dq:alternative-energy-formulas}
+Strictly speaking, the argument on p.~\pageref{subsec:energy-in-fields} only shows that
+the energy in a field \emph{depends on} its squared magnitude, not that it is
+\emph{proportional to} its squared magnitude. Recall that when we say $y$ is proportional
+to $x$, $y\propto x$, we mean not just that when $x$ increases, $y$ increases as well, but
+also that $y$ is \emph{equal} to $x$ multiplied by some constant. What goes wrong with the
+following proposed expressions for the energy density of the electric field?
+\begin{align*}
+  & (\text{constant})\sin{E^2} \\
+  & (\text{constant})(E^2+E^4)
+\end{align*}
+\end{dq}
+
+<% end_sec('energy-in-fields-and-units') %>
+
+<% begin_notes %>
+
+\notetext{link-up-field-vectors}{Linking up field vectors}
+\notesummary{A more careful definition of what it means to ``link up'' the field vectors to form field lines.}
+To define this more rigorously, imagine starting at a certain point in an electric field $\vc{E}(x,y,z)$.
+We now move some small distance $\epsilon$ in the direction of the field, to a new point. At this new point,
+we calculate the new and slightly different electric field, move $\epsilon$ in that direction, and continue
+indefinitely. It is intuitively plausible that if the field is smooth and well behaved,
+then in the limit as $\epsilon\rightarrow0$, the
+path connecting these points converges
+to a uniquely defined curve such that the elecric field is everywhere tangent to the curve.
+
+The thing that we have constructed is called the integral curve of a vector field,
+and its existence and uniqueness, for smooth fields, follows from standard theorems about
+first-order differential equations. Physically, we may often consider fields that are not
+so smooth and well-behaved. For example, the field of a point charge
+(ch.~\ref{ch:gauss-law}) blows up to infinity at the point where the charge is, and
+the field lines can't be extended through that point.
+
+\notetext{field-orientation-defined}{Defining the direction of a field}
+\notesummary{If we know the energy density in terms of the field,
+we automatically also get a definition of one field's direction relative to another's.}
+We can abstract out the insight
+provided by example \ref{eg:horseshoe-magnets-polarity}, p.~\pageref{eg:horseshoe-magnets-polarity}, in the
+following way. If we have a way of measuring the magnitude of a field,
+say the electric field, then we automatically get a way of determining
+the orientation of any electric field vector $\vc{E}$ in relation to
+some chosen reference field $\vc{E}_\zu{o}$.  This follows because we
+are free to superpose the two fields in any relative orientation we
+like, producing a total field $\vc{E}+\vc{E}_\zu{o}$. The squared
+magnitude of this total field is
+$(\vc{E}+\vc{E}_\zu{o})\cdot(\vc{E}+\vc{E}_\zu{o})$, which we can
+measure.  But this equals
+$\vc{E}\cdot\vc{E}+\vc{E}_\zu{o}\cdot\vc{E}_\zu{o}+2|\vc{E}||\vc{E}_\zu{o}|\cos\theta$,
+where $\theta$ is the angle between the vectors. (This is essentially
+the law of cosines, stated in vector language.) Since all of the
+quantities in these expressions are assumed to be measurable, we can
+determined the unknown $\theta$, which gives the orientation of
+$\vc{E}$ relative to $\vc{E}_\zu{o}$. 
+
+
+<% end_notes %>
+
+
+<% begin_hw_sec %>
+<% begin_hw('b-field-dip') %>__incl(hw/b-field-dip)<% end_hw() %>
+
+<% begin_hw('perpendicular-b-fields-fac') %>__incl(hw/perpendicular-b-fields-fac)<% end_hw() %>
+
+<% begin_hw('add-b-fields-range-of-magnitudes') %>__incl(hw/add-b-fields-range-of-magnitudes)<% end_hw() %>
+
+<% begin_hw('add-e-field-vectors') %>__incl(hw/add-e-field-vectors)<% end_hw() %>
+
+<% begin_hw('xnonsense') %>__incl(../../share/mechanics/hw/xnonsense)<% end_hw() %>
+
+<% begin_hw('energy-density-not-x-product') %>__incl(hw/energy-density-not-x-product)<% end_hw() %>
+
+<% begin_hw('anglebetween') %>__incl(../../share/mechanics/hw/anglebetween)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('findperp') %>__incl(../../share/mechanics/hw/findperp)<% end_hw() %>
+
+<% begin_hw('b-energy-in-classroom') %>__incl(hw/b-energy-in-classroom)<% end_hw() %>
+
+<% begin_hw('h3-vs-he3-e-field-energy-fac') %>__incl(hw/h3-vs-he3-e-field-energy-fac)<% end_hw() %>
+
+<% begin_hw('antarctica-vs-paraguay') %>__incl(hw/antarctica-vs-paraguay)<% end_hw() %>
+
+<% begin_hw('angle-from-energy-density') %>__incl(hw/angle-from-energy-density)<% end_hw() %>
+
+<% begin_hw('horseshoe-units') %>__incl(hw/horseshoe-units)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('zero-x-not-same-direction') %>__incl(../../share/mechanics/hw/zero-x-not-same-direction)<% end_hw() %>
+
+<% begin_hw('triangle-area-strategy') %>__incl(../../share/mechanics/hw/triangle-area-strategy)<% end_hw() %>
+
+<% begin_hw('proveanticommutative') %>__incl(../../share/mechanics/hw/proveanticommutative)<% end_hw() %>
+
+<% begin_hw('xnotassociative') %>__incl(../../share/mechanics/hw/xnotassociative)<% end_hw() %>
+
+<% begin_hw('perp-in-plane',2) %>__incl(../../share/mechanics/hw/perp-in-plane)<% end_hw() %>
+
+<% begin_hw('vector-plus-scalar-fac',2) %>__incl(hw/vector-plus-scalar-fac)<% end_hw() %>
+
+
+
+<% end_hw_sec %>
+
+<% begin_lab('Magnetic field of a bar magnet as a function of distance') %>\label{lab:bar-magnet-b-vs-r}
+
+\begin{labapparatus}
+bar magnet\\
+compass\\
+2-meter stick
+\end{labapparatus}
+
+\begin{labgoal}
+Find how the magnetic field of a magnet changes with
+distance along one of the magnet's lines of symmetry.
+\end{labgoal}
+
+You can infer the strength of the bar magnet's field at a
+given point by putting the compass there and seeing how
+much it is deflected from the direction of the ambient
+field due to the earth and magnetic materials in the building.
+
+The task can be simplified quite a bit if you pick one of the
+magnet's lines of symmetry and measure the field at points
+along that line. It should have
+an axis of symmetry that coincides with its center-line
+in the long direction, and another such axis for the short direction.
+The field at points on the first axis should be parallel to the axis,
+while the field on the second axis should be perpendicular to that axis.
+
+1. Line up your magnet so it is pointing perpendicular to the ambient field,
+(nominally east-west). Choose one
+of the two symmetry axes, and measure the
+deflection of the compass at two points along that axis.
+For your first point, find the
+distance $r$ at which the deflection is 70 degrees; this angle is chosen because
+it's about as big as it can be without giving very poor relative precision 
+in the determination of the magnetic field. For your second data-point,
+use twice that distance. Using the result of prelab question P2, by what factor does the field decrease
+when you double $r$?
+
+You will probably find that the ambient field in the room is strongly
+influenced by the magnetic field of the building and possibly the
+furniture.  For example, in the lab room where I usually do this
+exercise, the lab benches contain iron or steel parts that distort the
+magnetic field, as my students can easily observe putting a compass on
+the top of the bench and sliding it around to different places. To
+work around this problem, we lay a 2-meter stick across the space
+between two lab benches, and carry out the experiment along the line
+formed by the stick.
+
+It is also common to find that the
+magnetic field due to the building materials in the building is
+significant, and that this field varies from place to place.  Therefore you
+should move the magnet while keeping the compass in one place.  Then
+the field from the building becomes a fixed part of the background
+experienced by the compass, just like the earth's field. 
+
+Note that the measurements are very sensitive to the
+relative position and orientation of the bar magnet and
+compass. 
+
+2. Based on your two data-points, form a hypothesis about the variation
+of the magnet's field with distance according to a power law $B\propto
+r^p$. 
+
+3. Take additional data at a range of distances, including the smallest
+and largest distances that it is practical to do. Graph the data on a log-log
+plot (i.e., with the log of $B$ on one axis and the log of $r$ on the other),
+and test whether your hypothesis actually holds.
+
+\labsection{Prelab}
+
+P1. If the bar magnet's field follows the power law $B\propto r^p$, for some constant $p$,
+predict how the log-log plot should look.
+
+<% end_lab %>
+
+<% end_chapter() %>
+

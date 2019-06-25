@@ -1,0 +1,71 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+
+<% print_end_matter_section_header('Three essential mathematical skills') %>\label{begin-skills}
+
+More often than not when a search-and-rescue team finds a hiker dead in the wilderness, it turns
+out that the person was not carrying some item from a short list of
+essentials, such as water and a map. There are three mathematical essentials 
+in this course.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% conversions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\formatlikesection{1. Converting units}
+
+%------------------------------------------------
+m4_include(../share/end/skills_conversions.tex)
+%------------------------------------------------
+
+Examples with solutions ---
+<% list_some_problems([
+  "mg-to-kg","square-mm-to-cm"
+])%>
+
+Problems you can check at \url{lightandmatter.com/area1checker.html} ---
+<% list_some_problems([
+  "micrograms","furlongs","estrogen","cubicft","liter-cube"
+])%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ratios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\formatlikesection{2. Reasoning about ratios and proportionalities}
+
+%------------------------------------------------
+m4_include(../share/end/skills_ratios.tex)
+%------------------------------------------------
+
+Examples with solutions ---
+<% list_some_problems([
+  "light-bucket","richter","martini","mars-drop-time","ramp-half-speed","tilt-a-whirl","ceres","upsilon-andromedae","alien-gangster","boatengine","aronskeratio"
+])%>
+
+Problems you can check at \url{lightandmatter.com/area1checker.html} ---
+<% list_some_problems([
+  "mars-land-area","cd-hole","taxa-scaling","insect-x-ray","seti-volume","speedbump","train","extrasolar","mars-trip","uranus","crash","therapy"
+])%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% vector addition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\formatlikesection{3. Vector addition}\label{skills-vector-addition}
+
+%------------------------------------------------
+m4_include(../share/end/skills_vector_addition.tex)
+%------------------------------------------------
+
+Examples with solutions ---
+<% list_some_problems([
+  "annie-oakley","cargo-plane","hockey-pucks"
+])%>
+
+Problems you can check at \url{lightandmatter.com/area1checker.html} ---
+<% list_some_problems([
+  "walking","drill","fossil","bird","climbing-anchors","moon2","new-horizons","planes"
+])%>

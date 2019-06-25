@@ -1,0 +1,316 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '13',
+    %q{Work: The Transfer of Mechanical Energy},
+    'ch:work',
+    '',
+    {'opener'=>'tractor'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/clc)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<% begin_sec("A dot product for relativity?",nil,'',{'optional'=>true}) %>
+In section \ref{sec:dot-product-uniquness} I showed that the dot product is the only physically sensible way to multiply two vectors
+to get a scalar. This is essentially because the outcome of experiments shouldn't depend on which way we rotate the laboratory.
+Dot products relate to the lengths of vectors and the angles between them, and rotations don't change lengths or angles.
+
+Let's consider how this would apply to relativity. Relativity tells us that the length of a measuring rod is \emph{not} absolute.
+Rotating the lab won't change its length, but changing the lab's state of motion will. The rod's length is greatest in the frame
+that is at rest relative to the rod. This suggests that relativity requires some new variation on the dot product: some slightly different way
+of multiplying two vectors to find a number that doesn't depend on the frame of reference.
+
+<% begin_sec("Clock time") %>
+We do know of a number that stays the same in all frames of reference.
+In figure \figref{area-proof} on p.~\pageref{fig:area-proof}, we proved that the Lorentz transformation doesn't change the area of a shape in the $x$-$t$ plane.
+We used this only as a stepping stone toward the Lorentz transformation, but it is natural to wonder whether
+this kind of area has any physical interest of its own.
+
+The equal-area result is not relativistic, since the proof never appeals to property 5 on page \pageref{spacetime-properties}. Cases
+I and II on page \pageref{fig:three-cases} also have the equal-area property. We can see this clearly in a Galilean transformation like
+figure \figref{galilean-boost} on p.~\pageref{fig:galilean-boost}, where the distortion of the rectangle could be accomplished by cutting it into
+vertical slices and then displacing the slices upward without changing their areas.
+
+But the area does have a nice interpretation in the relativistic
+case. Suppose that we have events A (Charles VII is restored to the throne) and B (Joan of Arc is executed). Now imagine
+that technologically advanced aliens want to be present at both A and B, but in the interim they wish to fly away in their spaceship, be present
+at some other event P (perhaps a news conference at which they give an update on the events taking place on earth), but get back in
+time for B. Since nothing can go faster than $c$ (which we take to equal 1 in appropriate units), P cannot be too far away. The set of all possible events
+P forms a rectangle, figure \subfigref{light-rectangles}{1}, in the $x-t$ plane that has A and B at opposite corners and whose edges have slopes equal to $\pm 1$.
+We call this type of rectangle a light-rectangle, because its sides could represent the motion of rays of light.
+
+<%
+  fig('light-rectangles',
+    %q{1.~The gray light-rectangle represents the set of all events such as P that could be visited after A and before B.\\\\
+       2.~The rectangle becomes a square in the frame in which A and B occur at the same location in space.\\\\
+       3.~The area of the dashed square is $\tau^2$, so the area of the gray square is $\tau^2/2$.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The area of this rectangle will be the same regardless of one's frame of reference. In particular, we could choose a
+special frame of reference, panel 2 of the figure, such that A and B occur
+in the same place. (They do not occur at the same place, for example, in the sun's frame,
+because the earth is spinning and going around the sun.) Since the speed $c$, which equals 1 in our units,
+is the same in all frames of reference, and the sides of
+the rectangle had slopes $\pm 1$ in frame 1, they must still have slopes $\pm 1$ in frame 2.
+The rectangle becomes a square with its diagonals parallel to the $x$ and $t$ axes, and the length of these diagonals equals the
+time $\tau$ elapsed on a clock that is at rest in frame 2, i.e., a clock that glides through space at constant velocity from A to B,
+meeting up with the planet earth at the appointed time.
+As shown in panel 3 of the figure, the area of the gray regions can be interpreted as half the square of this gliding-clock time.
+
+If events A and B are separated by a distance $x$ and a time $t$, then in general $t^2-x^2$ gives the square of the gliding-clock time. Proof: Based
+on units, the expression must have the form $(\ldots)t^2+(\ldots)tx+(\ldots)x^2$, where each $(\ldots)$ represents a unitless constant.
+The $tx$ coefficient must be zero by property 2 on p.~\pageref{spacetime-properties}. For consistency with figure \subfigref{light-rectangles}{3},
+the $t^2$ coefficient must equal 1. Since the area vanishes for $x=t$, the $x^2$ coefficient must equal $-1$.
+
+When $|x|$ is greater than $|t|$, events A and B are so far apart in space and so close together in time that
+it would be impossible to have a cause and effect relationship between them, since $c=1$ is the maximum speed of cause and effect.
+In this situation $t^2-x^2$ is negative and cannot be interpreted as a clock time, but it can be interpreted as minus the square of the
+distance between A and B as measured by rulers at rest in a frame in which A and B are simultaneous.
+<% end_sec() %> % Clock time
+<% begin_sec("Four-vectors") %>\label{sec:four-vectors}
+No matter what, $t^2-x^2$ is the same as measured in all frames of reference. Geometrically, it plays the same role
+in the $x$-$t$ plane that ruler measurements play in the Euclidean plane. In Euclidean
+geometry, the ruler-distance between any two points stays the same regardless of rotation, i.e., regardless of 
+the angle from which we view the scene; according to the Pythagorean theorem, the square of this distance is $x^2+y^2$.
+In the $x$-$t$ plane, $t^2-x^2$ stays the same regardless of the
+frame of reference. This suggests that by analogy with the dot product
+\begin{equation*}
+  x_1x_2+y_1y_2
+\end{equation*}
+in the Euclidean $x$-$y$ plane, we define a similar operation in the $x$-$t$ plane,
+\begin{equation*}
+  t_1t_2-x_1x_2\eqquad.
+\end{equation*}
+Putting in the other two spatial dimensions, we have
+\begin{equation*}
+  t_1t_2-x_1x_2-y_1y_2-z_1z_2\eqquad.
+\end{equation*}
+A mathematical object like $(t,x,y,z)$ is referred to as a four-vector,\index{four-vector}\index{vector!four-vector}
+as opposed to a three-vector like $(x,y,z)$. The term ``dot product'' has connotations of referring only to
+three-vectors, so the operation of taking the scalar product of two four-vectors is usually referred to
+instead as the ``inner product.'' There are various ways of notating the inner product of vectors
+$\vc{a}$ and $\vc{b}$, such as $\vc{a}\cdot\vc{b}$ or $<\vc{a},\vc{b}>$.
+
+The magnitude of a three-vector is defined by taking the square root of its dot product with itself,
+and this square root is always a real number, because a vector's dot product with itself is always positive.
+But the inner product of a four-vector with itself can be positive, zero, or
+negative, and in these cases the vector is referred to as timelike, lightlike, spacelike, respectively.
+Since material objects can never go as fast as $c$, the vector $(\Delta t,\Delta x,\Delta y,\Delta z)$
+describing an object's motion from one event to another is always timelike.
+
+\begin{eg}{The twin paradox}\index{triangle inequality}\index{twin paradox}
+One of the classic paradoxes of relativity, known as the twin paradox, is usually stated something like this.
+Alice and Betty are identical twins. Betty goes on a space voyage at relativistic speeds, traveling away from the
+earth and then turning around and coming back. Meanwhile, Alice stays on earth. When Betty returns, she is younger
+than Alice because of relativistic time dilation. But isn't it valid to say that Betty's spaceship is standing still
+and the earth moving? In that description, wouldn't Alice end up younger and Betty older?
+
+The most common way of explaining the non-paradoxical nature of this paradox is that although special relativity
+says that inertial motion is relative, it doesn't say that noninertial motion is relative. In this respect it
+is the same as Newtonian mechanics. Betty experiences accelerations on her voyage, but Alice doesn't. Therefore
+there is no doubt about who actually went on the trip and who didn't.
+
+This resolution, however, may not be entirely satisfying because it makes it sound as if relativistic time
+dilation is not occurring while Betty's ship cruises at constant velocity, but only while the ship is speeding
+up or slowing down. This would appear to contradict our earlier interpretation of relativistic time dilation,
+which was that a clock runs fastest according to an observer at rest relative to the clock. Furthermore, if
+it's acceleration that causes the effect, should we be looking for some new formula that computes time
+dilation based on acceleration?
+
+The first thing to realize is that there is no unambiguous way to decide during which part of Betty's journey
+the time dilation is occurring. To do this, we could need to be able to compare Alice and Betty's clocks
+many times over the course of the trip. But neither twin has any way of finding out what her sister's clock reads
+``now,'' except by exchanging radio signals, which travel at the speed of light. The speed-of-light lag vanishes
+only at the beginning and end of the trip, when the twins are in the same place.
+
+Furthermore, we can use the inner product to show that the accumulated difference in clock time doesn't depend
+on the details of how Betty carries out her accelerations and decelerations. In fact, we can get the right
+answer simply by assuming that these changes in velocities occur instantaneously.
+
+In Euclidean geometry, the triangle inequality $|\vc{b}+\vc{c}|<|\vc{b}|+|\vc{c}|$ follows from
+\begin{equation*}
+ (|\vc{b}|+|\vc{c}|)^2-(\vc{b}+\vc{c})\cdot(\vc{b}+\vc{c})=2(|\vc{b}||\vc{c}|-\vc{b}\cdot\vc{c}) \ge 0\eqquad.
+\end{equation*}
+The reason this quantity always comes out positive is that for two vectors of fixed magnitude, the
+greatest dot product is always achieved in the case where they lie along the same direction.
+
+In the geometry of the $x$-$t$ plane, the situation is different. Suppose that $\vc{b}$ and $\vc{c}$ are timelike vectors, so that
+they represent possible
+$(\Delta t,\Delta x,\ldots)$ vectors for Betty on the outward and return legs of her trip. Then $\vc{a}=\vc{b}+\vc{c}$
+describes the vector for Alice's motion. Alice goes by a direct route through the $x$-$t$ plane while Betty takes
+a detour. The magnitude of each timelike vector represents the time elapsed on a clock carried by that twin.
+The triangle equality is now reversed, becoming $|\vc{b}+\vc{c}|>|\vc{b}|+|\vc{c}|$.
+The difference from the Euclidean case arises because inner products are no longer necessarily maximized if vectors
+are in the same direction.
+E.g., for two lightlike vectors, $\vc{b}\cdot\vc{c}$ vanishes entirely if $\vc{b}$ and $\vc{c}$
+are parallel.
+For timelike vectors, parallelism actually minimizes the inner product rather 
+than maximizing it.\footnote{Proof: Let $\vc{b}$ and $\vc{c}$ be parallel and timelike, and directed
+forward in time. Adopt a frame of reference in which
+every spatial component of each vector vanishes.
+This entails no loss of generality, since inner products are
+invariant under such a transformation.
+Now let  $\vc{b}$ and $\vc{c}$ be pulled away
+from parallelism, like opening a pair of scissors in the $x-t$ plane. This reduces $b_tc_t$, while causing
+$b_xc_x$ to become negative. Both effects increase the inner product.}
+\end{eg}
+<% end_sec() %> % Four-vectors
+<% end_sec() %> % A dot product for relativity?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/work_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('stoppingdistances') %>__incl(hw/stoppingdistances)<% end_hw() %>
+
+<% begin_hw('posnegwork') %>__incl(hw/posnegwork)<% end_hw() %>
+<% marg(20) %>
+<%
+  fig(
+    'hw-posnegwork-bull',
+    %q{%
+      A bull paws the ground, as in problem \ref{hw:posnegwork}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('workreverseaxis') %>__incl(hw/workreverseaxis)<% end_hw() %>
+
+<% begin_hw('is-work-conserved') %>__incl(hw/is-work-conserved)<% end_hw() %>
+
+<% begin_hw('microwaveice') %>__incl(hw/microwaveice)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('compound-bow') %>__incl(hw/compound-bow)<% end_hw() %>
+<% marg(100) %>
+<%
+  fig(
+    'hw-compound-bow',
+    %q{%
+      Problem \ref{hw:compound-bow}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-horsepower',
+    %q{%
+      Problem \ref{hw:horsepower-calculus}: A cylinder from the 1965
+      Rambler's engine. The piston is shown
+      in its pushed out position. The two
+      bulges at the top are for the valves that
+      let fresh air-gas mixture in.
+      Based on a figure from Motor Service's
+      Automotive Encyclopedia, Toboldt and
+      Purvis.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('horsepower-calculus') %>__incl(hw/horsepower-calculus)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-contracting-muscle',
+    %q{%
+      Problem \ref{hw:contracting-muscle}.
+    }
+  )
+%>
+<% end_marg %>
+<% begin_hw('contracting-muscle') %>__incl(hw/contracting-muscle)<% end_hw() %>
+
+<% begin_hw('heliumescape') %>__incl(hw/heliumescape)<% end_hw() %>
+
+<% begin_hw('bubba') %>__incl(hw/bubba)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ant') %>__incl(hw/ant)<% end_hw() %>
+
+\vspace{15mm}
+
+<% begin_hw('escape-velocity') %>__incl(hw/escape-velocity)<% end_hw() %>
+
+\vspace{15mm}
+
+<% begin_hw('escape2') %>__incl(hw/escape2)<% end_hw() %>
+
+\vspace{15mm}
+
+<% begin_hw('keconstantaccel',nil,{'calc'=>true}) %>__incl(hw/keconstantaccel)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('maserati') %>__incl(hw/maserati)<% end_hw() %>
+
+<% begin_hw('yukawa',nil,{'calc'=>true}) %>__incl(hw/yukawa)<% end_hw() %>
+
+<% begin_hw('magnetpe',nil,{'calc'=>true}) %>__incl(hw/magnetpe)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('railgun-friction',nil,{'calc'=>true}) %>__incl(hw/railgun-friction)<% end_hw() %>
+
+\vspace{7mm}
+
+<% begin_hw('comet-and-binary-star') %>__incl(hw/comet-and-binary-star)<% end_hw() %>
+
+\vspace{7mm}
+
+<% begin_hw('anglebetween') %>__incl(hw/anglebetween)<% end_hw() %>
+
+\vspace{7mm}
+
+<% begin_hw('crosswind',nil,{'calc'=>true}) %>__incl(hw/crosswind)<% end_hw() %>
+
+\vspace{7mm}
+
+<% begin_hw('dot-product-invariant') %>__incl(hw/dot-product-invariant)<% end_hw() %>
+
+\vspace{7mm}
+
+<% begin_hw('dot-product-by-components') %>__incl(hw/dot-product-by-components)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('space-probe',2,{'calc'=>true}) %>__incl(hw/space-probe)<% end_hw() %>
+
+<% begin_hw('tides',2) %>__incl(hw/tides)<% end_hw() %>
+
+<% begin_hw('sliding-oscillator') %>__incl(hw/sliding-oscillator)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('haul-bag') %>__incl(hw/haul-bag)<% end_hw() %>
+
+<% begin_hw('perp-in-plane') %>__incl(hw/perp-in-plane)<% end_hw() %>
+
+<% begin_hw('triple-speed-of-soccer-ball-work',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/triple-speed-of-soccer-ball-work)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% if false then figure_in_toc("tractor") end %>
+<% end_chapter() %>

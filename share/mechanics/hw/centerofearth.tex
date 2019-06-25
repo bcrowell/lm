@@ -1,0 +1,21 @@
+Estimate the pressure at the center of the Earth,
+assuming it is of constant density throughout. 
+m4_ifelse(__problems,1,[:%
+The gravitational field $g$ is not constant with repsect to
+depth. It equals $Gmr/b^3$ for $r$, the distance from the center,
+less than $b$, the earth's radius. Here $m$ is the mass of the earth, and
+$G$ is Newton's universal gravitational constant, which has units
+of $\nunit\unitdot\munit^2/\kgunit^2$.%:],[:Note that $g$
+is not constant with respect to depth --- as shown in
+example \ref{eg:gravityinearth} on page \pageref{eg:gravityinearth},
+$g$ equals $Gmr/b^3$ for $r$, the distance from the center,
+less than $b$, the earth's radius.%:])
+\hwendpart
+(a) State your result in terms of $G$, $m$, and $b$.\answercheck\hwendpart
+(b) Show that your answer from part a has the right units for pressure.\hwendpart
+(c) Evaluate the result numerically. \answercheck \hwendpart
+(d) Given that the earth's atmosphere is on the order of
+ one thousandth the earth's radius, and that the density
+of the earth is several thousand times greater than the density of the
+lower atmosphere, check that your result is of a reasonable order of
+magnitude.

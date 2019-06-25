@@ -1,0 +1,38 @@
+\begin{eg}{Art!}\label{eg:modern-art}
+\egquestion The abstract sculpture shown in figure \figref{modern-art}
+contains a cube of mass $m$ and sides of length $b$.
+The cube rests on top of a cylinder, which is off-center by a distance $a$.
+Find the tension in the cable.
+
+\eganswer There are four forces on the cube:
+a gravitational force $mg$, 
+the force $F_T$ from the cable, the upward normal
+force from the cylinder, $F_N$, and the horizontal static frictional force
+from the cylinder, $F_s$.
+
+The total force on the cube in the vertical direction is zero:
+\begin{equation*}
+  F_N-mg = 0\eqquad.
+\end{equation*}
+
+As our axis for defining torques, let's choose the center of the cube.
+The  cable's torque is counterclockwise,
+the torque due to $F_N$ clockwise.
+Letting counterclockwise torques be
+positive, and using the convenient equation $\tau=r_\perp F$, we find
+the equation for the total torque:
+\begin{equation*}
+  b F_T - aF_N = 0\eqquad.
+\end{equation*}
+We could also write down the equation saying that the total horizontal
+force is zero, but that would bring in the cylinder's frictional force
+on the cube, which we don't know and don't need to find. We already have
+two equations in the two unknowns $F_T$ and $F_N$, so there's no need
+to make it into three equations in three unknowns.
+Solving the first
+equation for $F_N=mg$, we then substitute into the second equation
+to eliminate $F_N$, and solve for $F_T=(a/b)mg$.
+
+As a check, our result makes sense when $a=0$; the cube is balanced on the
+cylinder, so the cable goes slack.
+\end{eg}

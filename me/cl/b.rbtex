@@ -1,0 +1,335 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '12',
+    %q{Simplifying the Energy Zoo},
+    'ch:energy-zoo',
+    %q{Do these forms of energy have anything in common?},
+    {'opener'=>'energy-collage','width'=>'fullpage','anonymous'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/clb)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<% begin_sec("E=mc$^2$",4,'mass-energy-equivalence',{'optional'=>true}) %>\index{mass!equivalent to energy}\index{energy!equivalent to mass}
+
+In section \ref{sec:ultrarelativistic} we found the relativistic expression for kinetic energy
+in the limiting case of an ultrarelativistic particle, i.e., one with a speed very
+close to $c$: its energy is proportional
+to the ``stretch factor'' of the Lorentz transformation, $s=\sqrt{(1+v)/(1-v)}$ (in units with $c=1$),
+for $v\rightarrow+c$ and $1/s$ for $v\rightarrow-c$.
+What about intermediate cases, like $v=c/2$?
+
+<%
+  fig(
+    'bell-jar',
+    %q{%
+      The match is lit inside the bell jar. It burns, and energy escapes from the jar
+      in the form of light. After it stops burning, all the same atoms are still in the
+      jar: none have entered or escaped. The figure shows the outcome expected before
+      relativity, which was that the mass measured on the balance would remain exactly the same.
+      This is not what happens in reality.
+    },
+    {
+      'width'=>'wide',   
+      'sidecaption'=>true
+    }
+  )
+%>
+
+When we are forced to tinker with a time-honored theory, our first instinct should
+always be to tinker as conservatively as possible. Although we've been forced to
+admit that kinetic energy doesn't vary as $v^2/2$ at relativistic speeds,
+the next most conservative thing we could do would be to assume that the \emph{only} change
+necessary is to replace the factor of $v^2/2$ in the nonrelativistic expression for
+kinetic energy with some other function, which would have to act like $s$ or $1/s$ for $v\rightarrow\pm c$. I suspect that
+this is what Einstein thought when he completed his original paper on relativity in 1905,
+because it wasn't until later that year that he published a second paper showing that this
+still wasn't enough of a change to produce a working theory. We now know that there is
+something more that needs to be changed about prerelativistic physics, and this is the
+assumption that mass is only a property of material particles such as atoms (figure \figref{bell-jar}).
+Call this the ``atoms-only hypothesis.''
+
+Now that we know the correct relativistic way of finding the energy of a ray of
+light, it turns out that we can use that to find what we were originally seeking,
+which was the energy of a material object. The following discussion closely
+follows Einstein's. 
+
+Suppose that a material object O of mass $m_\zu{o}$,
+initially at rest in a certain frame A, emits two rays of light, each with energy $E/2$. By
+conservation of energy, the object must have lost an amount of energy equal to $E$.
+By symmetry, O remains at rest.
+
+We now switch to a different frame of reference B moving at some arbitrary speed
+corresponding to a stretch factor $S$. The change of frames means that we're
+chasing one ray, so that its energy is scaled down to $(E/2)S^{-1}$, while running
+away from the other, whose energy gets boosted to $(E/2)S$. In frame B, as in A,
+O retains the same speed after emission of the light. But observers in frames
+A and B disagree on how much energy O has lost, the discrepancy being
+\begin{equation*}
+  E\left[\frac{1}{2}(S+S^{-1})-1\right]\eqquad.
+\end{equation*}
+Let's consider the case where B's velocity relative to A is small. Expanding the above 
+expression in a Taylor series in $v$, the discrepancy in
+O's energy loss is approximately
+\begin{equation*}
+  \frac{1}{2}Ev^2/c^2\eqquad.
+\end{equation*}
+The interpretation is that when O reduced its energy by $E$ in order to make
+the light rays, it reduced its \emph{mass} from $m_\zu{o}$ to $m_\zu{o}-m$,
+where $m=E/c^2$. Rearranging factors, we have Einstein's famous
+\begin{equation*}
+  E=mc^2\eqquad.
+\end{equation*}
+This derivation entailed an approximation, and redoing it without the approximation
+entails some complexity.\footnote{See Ohanian, ``Einstein's $E=mc^2$ mistakes,'' \url{arxiv.org/abs/0805.1400}, 
+and Jammer, Concepts of Mass in Contemporary Physics and Philosophy.}                              
+It turns out, however, to be valid in general.
+
+We find that mass is not simply a built-in property of the particles that
+make up an object, with the object's mass being the sum of the masses of its particles.
+Rather, mass and energy are equivalent, so that if the experiment of figure \figref{bell-jar} is
+carried out with a sufficiently precise balance, the reading will drop because of
+the mass equivalent of the energy emitted as light.
+
+The equation $E=mc^2$
+tells us how much energy is equivalent to how much mass: the conversion factor is the square
+of the speed of light, $c$. Since $c$ a big number, you get a really really big number
+when you multiply it by itself to get $c^2$. This means that even a small amount of mass
+is equivalent to a very large amount of energy. Conversely, an ordinary amount of energy
+corresponds to an extremely small mass, and this is why nobody detected the non-null
+result of experiments like the one in figure \figref{bell-jar} hundreds of years ago.
+
+The big event here is mass-energy equivalence, but we can also
+harvest a result for the energy of a material particle moving at a certain speed. 
+Plugging in $S=\sqrt{(1+v)/(1-v)}$ to the equation above
+for the energy discrepancy of object O between frames A and B, we find $m(\gamma-1)c^2$. This is the
+difference between O's energy in frame B and its energy when it is at rest, but since mass
+and energy are equivalent, we assign it energy $mc^2$ when it is at rest. The result is that
+the energy is
+\begin{equation*}
+  E = m\gamma c^2\eqquad.
+\end{equation*}
+
+\pagebreak
+
+\begin{eg}{Electron-positron annihilation}\index{positron}
+Natural radioactivity in the earth produces positrons, which are like electrons but have the
+opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
+rays, a form of high-frequency light. Such a process would have been considered impossible
+before Einstein, because conservation of mass and energy were believed to be separate
+principles, and this process eliminates 100\% of the original mass. The amount of energy
+produced by annihilating 1 kg of matter with 1 kg of antimatter is
+\begin{align*}
+ E &= mc^2\\
+   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
+   &= 2\times10^{17}\ \junit\eqquad,
+\end{align*}
+which is on the same order of magnitude as a day's energy consumption for the
+entire world's population!
+
+Positron annihilation forms the basis for the medical imaging technique called
+a PET (positron emission tomography) scan, in which a positron-emitting chemical
+is injected into the patient and map\-ped by the emission of gamma rays from the parts
+of the body where it accumulates.
+\end{eg}
+<% marg(140) %>
+<%
+  fig(
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 0.5 MJ. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 0.5 MJ. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light is
+$c=3\times10^8$ meters per second, so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
+                         &=    6\times10^{-12}\  \text{kilograms}\eqquad.
+\end{align*}
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number.
+\end{eg}
+
+\begin{eg}{Gravity bending light}\label{eg:eclipse}
+Gravity is a universal attraction between things that have mass, and since the energy
+in a beam of light is equivalent to some very small amount of mass, we expect that
+light will be affected by gravity, although the effect should be very small.
+The first important experimental confirmation of relativity
+came in 1919 when stars next to the sun during a solar eclipse were
+observed to have shifted a little from their ordinary
+position. (If there was no eclipse, the glare of the sun
+would prevent the stars from being observed.) Starlight had
+been deflected by the sun's gravity. Figure \figref{eclipse} is a
+photographic negative, so the circle that appears bright is actually the
+dark face of the moon, and the dark area is really the bright corona of
+the sun. The stars, marked by lines above and below them, appeared at
+positions slightly different than their normal ones.
+\end{eg}
+<% marg(90) %>
+<%
+  fig(
+    'newspaper-eclipse',
+    %q{%
+      A New York Times headline from November 10, 1919, describing
+      the observations discussed in example \ref{eg:eclipse}.
+    }
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'eclipse',
+    %q{Example \ref{eg:eclipse}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\begin{eg}{Black holes}\index{black hole}
+A star with sufficiently strong gravity can prevent light
+from leaving. Quite a few black holes have been detected via
+their gravitational forces on neighboring stars or clouds of gas and dust.
+\end{eg}
+
+
+<% end_sec() %> % E=mc$^2$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/energy_zoo_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('maxkepe') %>__incl(hw/maxkepe)<% end_hw() %>
+
+<% begin_hw('throw-down-and-up') %>__incl(hw/throw-down-and-up)<% end_hw() %> 
+
+<% begin_hw('negativepe') %>__incl(hw/negativepe)<% end_hw() %>
+
+<% begin_hw('slidingmagnets') %>
+(a) You release a magnet on a tabletop near a big piece
+of iron, and the magnet slides across the table to the iron.
+Does the magnetic potential energy increase, or decrease?
+Explain. \hwendpart
+(b) Suppose instead that you have two repelling
+magnets. You give them an initial push towards each other,
+so they decelerate while approaching each other. Does the
+magnetic potential energy increase or decrease? Explain.
+
+<% end_hw() %>
+
+<% begin_hw('boilbucket') %>__incl(hw/boilbucket)<% end_hw() %>
+
+<% begin_hw('grasshopper') %>
+<% hw_solution %> A grasshopper with a mass of 110 mg falls from rest
+from a height of 310 cm. On the way down, it dissipates 1.1
+mJ of heat due to air resistance. At what speed, in m/s,
+does it hit the ground?
+<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('two-gases-leaking') %>__incl(hw/two-gases-leaking)<% end_hw() %>
+
+<% begin_hw('bikeloop') %>__incl(hw/bikeloop)<% end_hw() %>
+
+<% begin_hw('rolling-hoop',2) %>Problem \ref{hw:rolling-hoop} has been deleted.<% end_hw() %>
+
+<% begin_hw('pe-ke-yin-yang') %>__incl(hw/pe-ke-yin-yang)<% end_hw() %>
+
+<% begin_hw('honeymoon') %>__incl(hw/honeymoon)<% end_hw() %>
+
+<% begin_hw('niagara-hydroelectric') %>__incl(hw/niagara-hydroelectric)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('heliumcylinder') %>__incl(hw/heliumcylinder)<% end_hw() %>
+
+<% begin_hw('sweat') %>__incl(hw/sweat)<% end_hw() %>
+
+<% begin_hw('hoop',2) %>__incl(hw/hoop)<% end_hw() %> 
+
+<% marg(50) %>
+<% fig('skater-rolls-off-pipe','Problem \ref{hw:skater-rolls-off-pipe}.') %>
+<% end_marg %>
+<% begin_hw('skater-rolls-off-pipe',2) %>__incl(hw/skater-rolls-off-pipe)<% end_hw() %>
+
+<% begin_hw('enterprise-ke') %>__incl(../../share/relativity/hw/enterprise-ke)<% end_hw() %>
+
+<% begin_hw('freeneutron') %>__incl(../../share/relativity/hw/freeneutron)<% end_hw() %>
+
+\vfill
+
+<% marg(-300) %>
+<%
+  fig(
+    'hw-jack-on-hill',
+    %q{Problem \ref{hw:jack-on-hill}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('jack-on-hill',2) %>__incl(hw/jack-on-hill)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-atwood',
+    %q{Problem \ref{hw:atwood-energy}.},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('atwood-energy') %>__incl(hw/atwood-energy)<% end_hw() %>
+
+% Automatic positioning fails, I don't understand why.
+<% marg(-80) %>
+<%
+  fig(
+    'hw-rope-stretch',
+    %q{Problem \ref{hw:rope-stretch}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('norton-dome',2) %>__incl(hw/norton-dome)<% end_hw() %>
+
+\enlargethispage{2\baselineskip}
+
+<% begin_hw('rope-stretch') %>__incl(hw/rope-stretch)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% if false then figure_in_toc("baseball-pitch") end %>
+<% end_chapter() %>

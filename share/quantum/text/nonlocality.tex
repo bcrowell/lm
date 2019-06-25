@@ -1,0 +1,371 @@
+<% begin_sec("Nonlocality and entanglement",nil,'nonlocality-and-entanglement') %>
+<% begin_sec("Nonlocality",nil,'nonlocality') %>
+People sometimes say that quantum mechanics is the set of rules for
+describing the world of the very small, but this is a false
+generalization, like saying that terriers are untrainable. How do we
+define our measure of how small is small? The only distance scales
+we've discussed have been wavelengths, and there is no upper limit on
+wavelengths. The wavelength of an FM radio photon is bigger than my
+terrier, who is very obedient to Newton's laws.  The only scale built
+in to the structure of quantum mechanics is Planck's constant, and
+Planck's constant has units of joules per hertz, not meters, so it
+can't be converted into a distance. Quantum mechanics is, as far as we
+can tell, a valid tool for describing systems at scales from
+quarks to galaxies. 
+
+<% marg(-5) %>
+<%
+  fig(
+    'beam-splitter',
+    %q{%
+      A photon hits a piece of glass that reflects half of the
+      light and transmits the other half.
+    }
+  )
+%>
+<% end_marg %>
+
+So quantum behavior can occur at any scale, even large ones. For an example
+that may be a little disturbing, consider the arrangement shown in figure
+\figref{beam-splitter}.  A single photon comes
+in from the left and encounters a diagonal piece of glass. The glass reflects half
+the light and transmits half of it. The photon is a wave, and this is expected wave
+behavior. But the photon is also a particle, and we can't have half a particle.
+Therefore either camera A will detect a whole photon and B will see none, or it
+will be the other way around. If we repeat the experiment many times times, we might
+come up with a list of results like this:
+
+\begin{tabular}{ll}
+A & B \\
+\hline
+no & yes \\
+yes & no \\
+yes & no \\
+no & yes \\
+no & yes \\
+yes & no \\
+no & yes \\
+yes & no 
+\end{tabular}
+
+\noindent An instant before the moment of detection, the photon is a
+wave pattern that just happens to consist of two widely separated
+pieces, each carrying half the energy.  The situation seems perfectly
+symmetric, but then a moment later we find that B has detected the
+photon and A hasn't. If B's detection of the photon is random, then
+how does the information get to A that it had better \emph{not} detect
+it?  This seems as though there is some sort of conspiracy being
+carried out over arbitrarily large distances and with no time delay.
+It's as though the two parts of the wave are a pair of criminal
+suspects who would like to line up their stories but are being kept in
+separate jail cells so that they can't communicate.  If the part of
+the wave at B is going to be detected (at full strength, carrying
+100\% of the energy $E=hf$), how does the part at A get the message
+that it should fade away like the Cheshire cat?
+This coordination would have to occur over very large distances ---
+real-world experiments of this type have been done over distances of a
+thousand kilometers, with the photons traveling either through outer
+space or through fiber-optic cables.  Einstein derisively referred to
+this apparent coordination as ``spooky action at a distance.''
+
+Niels Bohr and two collaborators proposed in 1924 the
+seemingly reasonable solution that there \emph{can't} be any such
+coordination. Then the random detection of the photon by camera A
+and camera B would be independent. Independent probabilities multiply,
+so there would be a probability of $(1/2)(1/2)=1/4$ that both cameras
+would see photons. This would violate conservation of energy, since
+the original energy $E=hf$ would have been detected twice, and the universe
+would have gained $1hf$ worth of total energy. But Bohr
+pointed out that there would also be the same probability that neither
+camera would detect a photon, in which case the change in the universe's
+energy would be $-1hf$. On the average, energy would be conserved. According
+to Bohr's theory, conservation of energy and momentum would not be absolute
+laws of physics but only rules that would be true on the average.
+
+The experimentalists Geiger and Bothe immediately set out to test this
+prediction. They performed an experiment analogous to the one in
+figure \figref{beam-splitter}, but with x-rays rather than visible
+light.  Their results, published in 1926, showed that if one detector
+saw the x-ray photon, the other did not, so that energy was always
+conserved at the microscopic level, not just on the average.
+We \emph{never} observe an outcome in which both A and B
+detect a photon, or one in which neither detects it. That is, the
+occurrence of event A (camera A sees a photon) and event B (camera B
+sees one) are both random, but they are not independent. 
+
+<% end_sec('nonlocality') %>
+
+<% begin_sec("Entanglement",nil,'entanglement') %>
+At a 1927 conference in Brussels, Einstein protested that this was a
+problem, because the two detectors could in principle make their
+observations simultaneously, and it would then seem that some
+influence or communication was being transmitted between them faster
+than the speed of light.  ``It seems to me,'' he complained, ``that
+this difficulty cannot be overcome unless the description of the
+process in terms of the \ldots wave is supplemented by some detailed
+specification of the [trajectory of the particle]. \ldots If one works
+only with \ldots waves, the interpretation \ldots, I think,
+contradicts the postulate of relativity.''
+
+The experimental fact ends up being that the spooky action at a
+distance exists, and it does go faster than light. In 2012, Guerreiro
+\emph{et al.}\footnote{\url{arxiv.org/abs/1204.1712}. The paper is
+very readable.} carried out a very direct and conceptually simple
+enactment of exactly the experiment in figure \figref{beam-splitter},
+with electronic timing precise enough to prove that the detection
+events at A and B were separated from each other by too great a
+distance to have been linked by any influence traveling at $\le c$.
+These findings are summarized by saying that quantum mechanics is
+\emph{nonlocal}.  A single wave-particle can be spread out over
+an arbitrarily large region of space, but its interactions that
+transfer energy and momentum are always correlated over these
+distances in such a way that the conservation laws are maintained. 
+
+What Einstein had not originally appreciated was that these
+correlations do not violate relativity because they do not actually
+transport any energy, or even any information, between A and B. For
+example, if Alice is at detector A, and Bob is at B, a million
+kilometers away, Alice can detect the photon and know immediately that
+Bob did not detect it. She learns something seemingly instantaneously
+about Bob --- Bob is probably sad and disappointed right now. But
+because Bob does not have any control over the result, he cannot use
+this fact to send a message to Alice, so there is no transmission of
+information. Alice and Bob's states are said to be \emph{entangled}.\index{entanglement}\label{bob-alice-entangled}
+
+<% 
+  fig(
+    'entanglement-gloves',
+    %q{%
+      Entanglement is like finding that you only have your left glove, so that you must
+      have left your right glove at home. There is a gain in information, but no
+      sudden transmission of information from the dog to you.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+By analogy, suppose that you head off to work on a winter day
+in New York. As you step out of the subway station into the cold air,
+you reach into your pockets for your gloves, but you find that
+you only have your left glove. Oh, you must have dropped your right
+glove on the floor while you were petting your adorable terrier on the way out the
+door. The presence of your left glove tells you that your right glove
+must be at home. But there has been no
+spooky action at a distance. You have simply recovered some
+information about a region of space that lies at some distance from
+you.
+
+Einstein and Bohr had strong physical intuitions that led them to
+incorrect predictions about experiments, and these predictions were
+the fruits of inappropriate mental pictures of what was going on. If we take
+the principles of quantum mechanics seriously, then the correct picture
+is the following. Before the photon in figure \figref{beam-splitter} hits the glass
+diagonal, the state of things is the following.
+\begin{equation*}
+\fbox{\parbox{60mm}{A photon is headed to the right.}}
+\end{equation*}
+
+Our photon is then partially reflected and partially transmitted. Now we have
+a superposition of two wave patterns:
+\begin{equation*}
+ c\fbox{\parbox{35mm}{The photon has been reflected upward.}}
++c'\fbox{\parbox{35mm}{The photon has continue to the right.}},
+\end{equation*}
+where the amplitudes $c$ and $c'$ are equal in absolute value.\footnote{
+Conservation of energy requires $c^2=1/2$ and $c'^2=1/2$,
+even in classical physics. We could have, for
+example, $c=1/\sqrt{2}$ and $c'=-1/\sqrt{2}$. Such a possible difference in
+signs wouldn't concern us in this example. It would only be relevant if there
+were some later opportunity for the two parts of the wave to recombine and
+superimpose on one another, producing interference effects.}
+
+Let's say that the cameras are at equal distances from the glass diagonal,
+so that their chances to detect the photon occur simultaneously.\footnote{
+According to special relativity, this simultaneity holds only in one frame
+of reference, say the lab frame. But if simultaneity does hold in one frame,
+then we can also say that in \emph{all} frames, the distance between the two
+events is ``spacelike,'' i.e., they are too far apart to have been connected
+by any causal influence propagating at $\le c$.
+}
+After detection, we have this:
+\begin{equation*}
+ c\fbox{\parbox{35mm}{Camera A detected a photon and B didn't.}}
++c'\fbox{\parbox{35mm}{B detected a photon and A didn't.}},
+\end{equation*}
+Here we have made the nontrivial assumption that material objects like
+cameras obey the same wave-superposition rules as photons. This turns out
+to be true. Cameras are made out of things like electrons,
+and as we'll see in __section_or_chapter(matter-as-a-wave), things like
+electrons are also wave-particles, and they obey all the same wave-particle rules
+as photons. The states of the two cameras are now entangled.
+
+You can see where this is going.  Alice had been standing by camera A,
+watching anxiously, while Bob, a million kilometers away, was
+breathlessly observing camera B. 
+\begin{equation*}
+ c\fbox{\parbox{38mm}{Alice saw a photon and Bob didn't. They consider this result to have been random.}}
++c'\fbox{\parbox{38mm}{Bob saw a photon and Alice didn't. They consider this result to have been random.}},
+\end{equation*}
+It doesn't \emph{seem} to Alice and Bob as though their brains are in
+a superposition of two states. They \emph{feel} as though they have only
+experienced the one possibility that actually happened, not a mixture of
+both at the same time. And yet this picture of the physics explains very nicely
+how the deterministic laws of physics produce a result that \emph{seems}
+to them to have been random.
+
+If Alice and Bob have been split into two ghostlike halves of
+themselves, then conceivably these half-selves could undergo
+interference, as in the double-slit experiment. But there are
+practical reasons why we cannot actually detect such interference
+effects. For one thing, Alice and Bob are macroscopic objects, with
+energies $E$ on the order of many joules. Because Planck's constant is
+small, their wave frequencies $f=E/h$ are extremely high, and their
+wavelengths incredibly short (on the order of $10^{-34}\ \munit$!). We
+have seen that diffraction becomes undetectable when wavelengths are
+too short.  Furthermore, there is a phenomenon called decoherence,\index{decoherence}\label{decoherence-brief}
+m4_ifelse(__sn,1,[:discussed further in sec.~\ref{subsec:decoherence}, p.~\pageref{subsec:decoherence},:],[:%:]) 
+in which interactions with the environment tend to rapidly randomize
+the wave-phases of large objects. When phases are randomized,
+interference and diffraction effects become undetectable. 
+
+Historically, it seemed absurd to the originators of quantum mechanics
+to imagine a macroscopic object in a superposition of states.
+The most celebrated example is called the Schr\"odinger's cat\label{schrodingers-cat}
+experiment. Luckily for the cat, there probably was no
+actual experiment --- it was simply a ``thought experiment''
+that the German theorist Schr\"odinger discussed
+with his colleagues. Schr\"odinger wrote:
+
+\begin{quote}
+One can even construct quite burlesque cases. A cat is shut
+up in a steel container, together with the following
+diabolical apparatus (which one must keep out of the direct
+clutches of the cat): In a Geiger tube [radiation detector]
+there is a tiny mass of radioactive substance, so little
+that in the course of an hour perhaps one atom of it
+disintegrates, but also with equal probability not even one;
+if it does happen, the counter [detector] responds and ...
+activates a hammer that shatters a little flask of prussic
+acid [filling the chamber with poison gas]. If one has left
+this entire system to itself for an hour, then one will say
+to himself that the cat is still living, if in that time no
+atom has disintegrated. The first atomic disintegration
+would have poisoned it.
+\end{quote}
+
+<% marg(50) %>
+<%
+  fig(
+    'cat',
+    %q{Schr\"odinger's cat.}
+  )
+%>
+<% end_marg %>
+
+\noindent It seemed ridiculous to Schr\"odinger that at the end of
+the hour, ``The uncertainty originally restricted to the atomic domain
+has been transformed into a macroscopic uncertainty...,'' and the cat
+would be in a superposed state. 
+
+In modern language, people like Einstein and Schr\"odinger didn't feel
+comfortable with nonlocality, or with entanglement of subatomic
+particles, and they felt even less comfortable with applying these
+concepts to macroscopic objects. Today, entanglement has been
+demonstrated using objects that clearly deserve to be called
+macroscopic.\index{entanglement!of macroscopic objects}\label{macroscopic-entanglement}
+For example, in 2012, K.C.~Lee \emph{et al.} created a
+version of the experiment in figure \figref{beam-splitter} in which
+the cameras were replaced by small diamonds, about 1 mm in size.  They
+were separated by 15 cm, which is a macroscopic distance. When a
+photon hit one of the diamonds, it produced a vibration in the crystal
+lattice.  This vibration was localized to a relatively small region
+within the diamond, but this region was still large enough that one
+has to admit that it qualifies as macroscopic. Its atoms had a total
+weight of about 0.1 nanograms, which is a quantity big enough to weigh
+on a state-of-the-art balance, and the region was about 0.01 mm in
+size, which would make it visible with a magnifying glass. 
+
+The quantum states of the two diamonds became entangled: if one had
+detected the photon, the other hadn't. This entangled state was
+maintained for only about 7 picoseconds before decoherence destroyed
+the phase relationship between one diamond and the other. But Lee was
+able to use additional photons to ``read out'' the quantum states in
+only 0.5 ps, before decoherence occurred, and verify that there were
+wave interference effects in which one diamond's quantum-mechanical
+wave had a definite phase relationship with the other's.  Although
+these experiments are difficult, they suggest that there is no
+obstruction in principle to observing quantum-mechanical effects such
+as superposition in arbitrarily large objects. 
+
+m4_ifelse(__sn,1,[:
+Entanglement is discussed in more mathematical detail in sec.~\ref{sec:more-entanglement}, p.~\pageref{sec:more-entanglement}.
+:],[:
+%
+:])
+<% end_sec('entanglement') %>
+m4_ifelse(__sn,1,[:
+<% begin_sec("The Copenhagen and many-worlds approximations",nil,'ci-and-mwi') %>
+When we last saw Alice and Bob, they were in this superposition of states,
+\begin{equation*}
+ c\fbox{\parbox{38mm}{Alice saw a photon and Bob didn't. They consider this result to have been random.}}
++c'\fbox{\parbox{38mm}{Bob saw a photon and Alice didn't. They consider this result to have been random.}},
+\end{equation*}
+with
+\begin{equation*}
+  |c|=|c'|.
+\end{equation*}
+Let's focus on Bob number one --- the sad Bob --- who didn't see a photon. This is just one of the disappointments
+that Bob has experienced in his life, which include breaking up with his college crush and failing
+to summit Kilimanjaro due to altitude sickness. But Bob is a sane, normal person, and he's not going
+to spend the rest of his life obsessing over how things might have been, in another world. 
+Like a banker writing off a bad debt, Bob decides to stop maintaining all the bookkeeping that is,
+to him, irrelevant going forward. He now rewrites history and says that
+\begin{equation*}
+  |c|=1 \qquad \text{and} \qquad c'=0.
+\end{equation*}
+Technically speaking, this is wrong, because it is in principle still possible to have wave interference
+effects between sad Bob and happy Bob. But such effects are impractical to observe,
+due to effects like short wavelengths and decoherence, so what Bob is doing
+by ``clearing the books''
+is an extremely good approximation. We will refer to this approximation by two different names,
+the \emph{Copenhagen approximation} and the \emph{many-worlds approximation}, for the following historical and
+psychological reasons.
+
+In the early years of quantum mechanics, the school of
+physicists\label{copenhagen-introduced}\index{Copenhagen approximation}\index{Copenhagen interpretation|see {Copenhagen approximation}} 
+centering on Niels Bohr in Copenhagen were horribly confused about how
+to interpret quantum mechanics. They had all kinds of wrong ideas,
+such as the idea that quantum mechanics applied to individual atoms
+but not to light or to macroscopic objects. They didn't know about
+decoherence. They thought there was a clear dividing line between
+microscopic things and macroscopic things (there isn't), and they
+hypothesized that quantum mechanics only applied to microscopic ones
+(it applies to both). They claimed that clearing the books was an
+actual physical process, which they described as the ``collapse'' of
+the wave. This has traditionally been referred to as the Copenhagen ``interpretation,'' but
+we can now see that it is an approximation. There are cases where it
+is a bad approximation, e.g., at $t=3\ \zu{ps}$ during the experiment
+by Lee \emph{et al.} (p.~\pageref{macroscopic-entanglement}), when
+decoherence had started to happen but was only about half-way
+complete.
+
+The many-worlds approximation came along a little later.\footnote{It was
+originally proposed in a 1957 PhD thesis by Hugh Everett, who called it
+the relative state interpretation of quantum mechanics. Later it began
+to be referred to as the many-worlds interpretation.} It consists of
+making the same ``clearing the books'' approximation, but recognizing
+that there is no physical process of collapse.\index{many-worlds approximation}\index{many-worlds interpretation|see {many-worlds approximation}} 
+
+Many physicists are philosophically attached to one or the other of these
+approximations, and would object to my description of them as approximations.
+My main purpose in writing this explanation is to immunize you against the
+impression, which can be mistakenly picked up from many descriptions of quantum
+mechanics, that a particular point of view on these topics (often the Copenhagen
+approximation) is somehow ``standard.''
+<% end_sec('ci-and-mwi') %>
+:]) 
+<% end_sec('nonlocality-and-entanglement') %>

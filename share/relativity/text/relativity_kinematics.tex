@@ -1,0 +1,1090 @@
+<% begin_sec("Time is not absolute",nil,'time-not-absolute') %>
+
+m4_ifelse(__me,1,[: %
+So far we've been discussing relativity according to Galileo and Newton, but there is also relativity according to Einstein.
+:]) %
+When Einstein first began to develop the theory of relativity, around 1905, the only real-world observations he
+could draw on were ambiguous and indirect.
+Today, the evidence is part of everyday life. For example,
+every time you use a GPS receiver, \figref{gps-on-bike}, you're using Einstein's theory of relativity.
+Somewhere between 1905 and today, technology became good enough to allow conceptually \emph{simple} experiments
+that students in the early 20th century could only discuss in terms like ``Imagine that we could\ldots''
+A good jumping-on point is 1971. In that year, J.C.~Hafele and R.E.~Keating\label{hafele-keating-discussed}
+brought atomic clocks aboard commercial
+airliners, \figref{hk-in-cabin}, and went around the world, once from east to west and once from west to east.
+Hafele and Keating observed that there was a discrepancy between the times measured by the
+traveling clocks and the times measured by similar clocks that stayed home at the U.S. Naval Observatory in Washington.
+The east-going clock lost time, ending up off by $-59\pm10$ nanoseconds, while the west-going one gained $273\pm7$ ns.
+<% marg(m4_ifelse(__me,1,100,77)) %>
+<%
+  fig(
+    'gps-on-bike',
+    %q{This Global Positioning System (GPS) system, running on a smartphone attached to a bike's handlebar,
+       depends on Einstein's theory of relativity. Time flows at a different rate aboard a GPS satellite than
+       it does on the bike, and the GPS software has to take this into account.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
+  )
+%>
+m4_ifelse(__me,1,[: % --- occurs later in LM
+\spacebetweenfigs
+<%
+  fig(
+    'football-causality',
+    %q{Newton's laws do not distinguish past from future. The football could travel in either direction while obeying Newton's laws.}
+  )
+%>
+:]) %
+<% end_marg %>
+
+  <% begin_sec("The correspondence principle",nil,'relativity-correspondence-principle') %>
+This establishes that time doesn't work the way Newton believed it did when he wrote that
+``Absolute, true, and mathematical time, of itself, and from its own nature flows equably without regard to anything external\ldots''
+We are used to thinking of time as absolute and universal, so it is
+disturbing to find that it can flow at a different rate for observers in
+different frames of reference. 
+Nevertheless, the effects that Hafele and Keating observed were small.
+This makes sense: Newton's laws have already been thoroughly tested by experiments under a wide variety of conditions,
+so a new theory like relativity must agree with Newton's to a good approximation, within the Newtonian theory's
+realm of applicability. This requirement of backward-compatibility is known as
+the correspondence principle.\index{correspondence principle!for time dilation}\index{correspondence principle!defined}
+  <% end_sec('relativity-correspondence-principle') %>
+
+  <% begin_sec("Causality",nil,'causality') %>\label{causality-defined}
+It's also reassuring that the effects on time were
+small compared to the three-day lengths of the plane trips. There was therefore no
+opportunity for paradoxical scenarios such as one in which the east-going experimenter arrived
+back in Washington before he left and then convinced himself not to take the trip.
+A theory that maintains this kind of orderly relationship between cause and effect is said to satisfy causality.\index{causality}
+
+Causality is like a water-hungry front-yard lawn in Los Angeles: we know we want it, but it's not easy to explain why.
+Even in plain old Newtonian physics, there is no clear distinction between past and future. In figure \figref{football-causality}, number 18
+throws the football to number 25, and the ball obeys Newton's laws of motion. If we took a video of the pass and played
+it backward, we would see the ball flying from 25 to 18, and Newton's laws would still be satisfied. Nevertheless, we have a strong
+psychological impression that there is a forward arrow of time. I can remember what the stock market did last year, but I can't
+remember what it will do next year. Joan of Arc's military victories against England caused the English to burn her at the stake;
+it's hard to accept that Newton's laws provide an equally good description of a process in which her execution in 1431 caused her to win a battle in 1429.
+There is no consensus at this point among physicists on the origin and significance of time's arrow, and for our present purposes
+we don't need to solve this mystery. Instead, we merely note the empirical fact that, regardless of what causality really means and
+where it really comes from, its behavior is consistent. Specifically, experiments show that if an observer
+in a certain frame of reference observes that event A causes event B, then observers in other frames agree
+that A causes B, not the other way around. This is merely a generalization about a large body of experimental results, not a logically necessary
+assumption. If Keating had gone around the world and arrived back in Washington before he left, it would have disproved
+this statement about causality.
+  <% end_sec('causality') %>
+
+m4_ifelse(__me,1,,[: % -- occurs earlier in Me
+<% marg(300) %>
+<%
+  fig(
+    'football-causality',
+    %q{Newton's laws do not distinguish past from future. The football could travel in either direction while obeying Newton's laws.}
+  )
+%>
+<% end_marg %>
+:]) %
+
+  <% begin_sec("Time distortion arising from motion and gravity",nil,'time-distortion') %>
+Hafele and Keating were testing specific quantitative predictions of relativity, and they verified them to within
+their experiment's error bars. Let's work backward instead, and
+inspect the empirical results for clues as to how time works.
+
+The two traveling clocks experienced effects in opposite directions,
+and this suggests that the rate at which time flows depends on the motion
+of the observer. The east-going clock was moving in the same direction as the earth's rotation, so its velocity
+relative to the earth's center was greater than that of the clock that remained in Washington, while the west-going clock's velocity was
+correspondingly reduced. The fact that the east-going clock fell behind, and the west-going one got ahead,
+shows that the effect of motion is to make time go more slowly. This effect of motion on time was predicted by
+Einstein in his original 1905 paper on relativity, written when he was 26.
+<% marg(70) %>
+<%
+  fig(
+    'hafele-keating-directions',
+    %q{All three clocks are moving to the east. Even though the west-going plane is moving to the west relative to the air, the air is moving
+           to the east due to the earth's rotation.}
+  )
+%>
+<% end_marg %>
+
+If this had been the only effect in the Hafele-Keating experiment, then we would have expected to see effects on the
+two flying clocks that were equal in size. Making up some simple numbers to keep the arithmetic transparent, suppose that the earth rotates
+from west to east at 1000 km/hr, and that the planes fly at 300 km/hr. Then the speed of the clock on the ground
+is 1000 km/hr, the speed of the clock on the east-going plane is 1300 km/hr, and that of the west-going clock 700 km/hr.
+Since the speeds of 700, 1000, and 1300 km/hr have equal spacing on either side of 1000, we would expect the discrepancies
+of the moving clocks relative to the one in the lab to be equal in size but opposite in sign.
+
+<%
+  fig(   
+    'iijima',
+    %q{%
+       A graph 
+       showing the time difference between two atomic clocks. One clock was kept at Mitaka Observatory, at 58 m above sea level.
+       The other was moved back and forth to a second observatory, Norikura Corona Station, at the peak of the Norikura volcano, 2876 m above sea level.
+       The plateaus on the graph are data from the periods when the clocks were compared side by side at Mitaka. The difference between one plateau and the next
+       shows a gravitational effect on the rate of flow of time, accumulated during the period when the mobile clock was at the top of Norikura.
+       m4_ifelse(m4_eval(__me || __fac),1,[::],[:Cf.~problem \ref{hw:pound-rebka}, p.~\pageref{hw:pound-rebka}.:])
+    },
+    {
+      'width'=>'wide','sidecaption'=>false
+    }
+  )
+%>
+
+In fact, the two effects are unequal in size: $-59$ ns and 273 ns. This
+implies that there is a second effect involved, simply due to the planes' being up in the air.
+This was verified more directly in a 1978 experiment by Iijima and Fujiwara, figure \figref{iijima}, in which identical atomic
+clocks were kept at rest at the top and bottom of a mountain near Tokyo.
+This experiment, unlike the Hafele-Keating one, isolates one effect on time, the gravitational one: time's
+rate of flow increases with height in a gravitational field. Einstein didn't figure out
+how to incorporate gravity into relativity until 1915, after much frustration and many false starts. The
+simpler version of the theory without gravity is known as special relativity, the full version as general
+relativity. We'll restrict ourselves to 
+special m4_ifelse(m4_eval(__me || __fac),1,[:relativity:],[:relativity until __section_or_chapter(genrel):]), and
+that means that what we want to
+focus on right now is the distortion of time due to motion, not gravity.\label{iijima}
+
+
+m4_ifelse(__me,1,[: % --- occurs later in SN
+<% marg(0) %>
+<%
+  fig(
+    'correspondence-dramatized',
+    %q{The correspondence principle requires that the relativistic distortion of time become small for small velocities.}
+  )
+%>
+<% end_marg %>
+:]) %
+
+We can now see in more detail how to apply the correspondence principle. The behavior of the three clocks in the
+Hafele-Keating experiment shows that the amount of time distortion increases as the speed of the clock's motion
+increases. Newton lived in an era when the fastest
+mode of transportation was a galloping horse, and the best
+pendulum clocks would accumulate errors of perhaps a minute over the course of several days.
+A horse is much slower than a jet plane, so the
+distortion of time would have had a relative size of only $\sim10^{-15}$ --- much smaller than the clocks were capable of detecting.
+At the speed of a passenger jet, the effect is about $10^{-12}$,
+and state-of-the-art atomic clocks in 1971 were capable of measuring that.
+A GPS satellite travels much faster than a jet airplane, and the effect on the satellite
+turns out to be $\sim10^{-10}$. The general idea here is that all physical laws are approximations, and
+approximations aren't simply right or wrong in different situations. Approximations are better or worse
+in different situations, and the question is whether a particular approximation is good enough in a given
+situation to serve a particular purpose. The faster the motion, the worse the Newtonian approximation of
+absolute time. Whether the approximation is good enough depends on what you're trying to accomplish.
+The correspondence principle says that the approximation must have been good enough to explain
+all the experiments done in the centuries before Einstein came up with relativity.
+
+m4_ifelse(__me,0,[: % --- occurs earlier in Me.
+<% marg(300) %>
+<%
+  fig(
+    'correspondence-dramatized',
+    %q{The correspondence principle requires that the relativistic distortion of time become small for small velocities.}
+  )
+%>
+<% end_marg %>
+:]) %
+
+
+By the way, don't get an inflated idea of the importance of the Hafele-Keating
+experiment. Special relativity had already been confirmed by a vast and varied body of experiments decades
+before 1971. The only reason I'm giving such a prominent role to this experiment, which was actually more important as a test of
+general relativity, is that it is conceptually very direct.
+  <% end_sec('time-distortion') %> % Time distortion arising from motion and gravity
+
+<% end_sec('time-not-absolute') %> % Time Is Not Absolute
+
+<% begin_sec("Distortion of space and time",nil,'x-t-distortion') %>
+  <% begin_sec("The Lorentz transformation",nil,'lorentz') %>
+Relativity says that when two observers are in different frames of reference, each observer considers
+the other one's perception of time to be distorted. We'll also
+see that something similar happens to their observations of distances, so both space and
+time are distorted.
+What exactly is this distortion? How do we even conceptualize it?
+
+The idea isn't really as radical as it might seem at first. We can visualize the structure of space
+and time using a graph with position and time on its axes. These graphs are familiar by now, but
+we're going to look at them in a slightly different way. Before, we used them to describe the motion
+of objects. The grid underlying the graph was merely the stage on which the actors played their parts.
+Now the background comes to the foreground: it's time and space themselves that we're studying.
+We don't necessarily need to have a line or a curve drawn on top of the grid to represent a particular
+object. We may, for example, just want to talk about events, depicted as points on the graph as in
+figure \figref{joan-of-arc}. A distortion of the Cartesian grid underlying the graph can arise for
+perfectly ordinary reasons that Isaac Newton would have readily accepted. For example, we can simply
+change the units used to measure time and position, as in figure \figref{change-of-units}. 
+<% marg(150) %>
+<%
+  fig(
+    'joan-of-arc',
+    %q{Two events are given as points on a graph of position versus time. Joan of Arc helps to restore Charles VII to the throne.
+         At a later time and a different position, Joan of Arc is sentenced to death.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'change-of-units',
+    %q{A change of units distorts an $x$-$t$ graph. This graph depicts exactly the same events as figure \figref{joan-of-arc}.
+          The only change is that the $x$ and $t$ coordinates are measured using different units, so the grid is compressed
+          in $t$ and expanded in $x$.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'change-of-units-convention',
+    %q{A convention we'll use to represent a distortion of time and space.}
+  )
+%>
+<% end_marg %>
+
+We're going to
+have quite a few examples of this type, so I'll adopt the convention shown in figure \figref{change-of-units-convention}
+for depicting them. Figure \figref{change-of-units-convention} summarizes the relationship between figures
+\figref{joan-of-arc} and \figref{change-of-units} in a more compact form. The gray rectangle represents the
+original coordinate grid of figure \figref{joan-of-arc}, while the grid of black lines represents the new version
+from figure \figref{change-of-units}. Omitting the grid from the gray rectangle makes the diagram easier
+to decode visually.
+
+Our goal of unraveling the mysteries of special relativity amounts to nothing more than finding out how to
+draw a diagram like \figref{change-of-units-convention} in the case where the two different sets of coordinates represent
+measurements of time and space made by two different observers, each in motion relative to the other.
+Galileo and Newton thought they knew the answer to this question, but their answer turned out to be
+only approximately right. To avoid repeating the same mistakes, we need to clearly spell out what we think are
+the basic properties of time and space that will be a reliable foundation for our reasoning. I want to emphasize
+that there is no purely logical way of deciding on this list of properties. The ones I'll list are simply a summary of the
+patterns observed in the results
+from a large body of experiments. Furthermore, some of them are only approximate. For example, property 1 below
+is only a good approximation when the gravitational field is weak, so it is a property that applies to
+special relativity, not to general relativity.
+
+Experiments show that:\label{spacetime-properties}
+\begin{enumerate}
+\item No point in time or space has properties that make it different from any other point.
+\item Likewise, all directions in space have the same properties.
+\item Motion is relative, i.e., all inertial frames of reference are equally valid.
+\item Causality holds, in the sense described on page \pageref{causality-defined}.
+\item Time depends on the state of motion of the observer.
+\end{enumerate}
+
+Most of these are not very subversive. Properties 1 and 2 date back to the time when Galileo and Newton started
+applying the same universal laws of motion to the solar system and to the earth; this contradicted
+Aristotle, who believed that, for example, a rock would naturally want to move in a certain special
+direction (down) in order to reach a certain special location (the earth's surface).
+Property 3 is the reason that Einstein called his theory ``relativity,'' but Galileo and Newton
+believed exactly the same thing to be true, as dramatized by Galileo's run-in with the Church over
+the question of whether the earth could really be in motion around the sun.
+Property 4 would probably surprise most people only because it asserts in such a weak and specialized
+way something that they feel deeply must be true. The only really strange item on the list is 5,
+but the Hafele-Keating experiment forces it upon us.
+
+If it were not for property 5, we could imagine that figure \figref{galilean-boost} would
+give the correct transformation between frames of reference in motion relative to one another.
+Let's say that observer 1, whose grid coincides with the gray rectangle, is a hitch-hiker standing
+by the side of a road. Event A is a raindrop hitting his head, and event B is another raindrop hitting
+his head. He says that A and B occur at the same location in space. Observer 2 is a motorist who
+drives by without stopping; to him, the passenger compartment of his car is at rest, while the
+asphalt slides by underneath. He says that A and B occur at different points in space, because
+during the time between the first raindrop and the second, the hitch-hiker has moved backward.
+On the other hand, observer 2 says that events A and C occur in the same place, while the hitch-hiker
+disagrees. The slope of the grid-lines is simply the velocity of the relative motion of each observer
+relative to the other.
+<% marg(m4_ifelse(__me,1,130,70)) %>
+<%
+  fig(
+    'galilean-boost',
+    %q{A Galilean version of the relationship between two frames of reference. As in all such graphs in
+      this chapter, the original coordinates, represented by the gray rectangle, have a time axis that
+      goes to the right, and a position axis that goes straight up.}
+  )
+%>
+<% end_marg %>
+
+Figure \figref{galilean-boost} has familiar, comforting, and eminently sensible
+behavior, but it also happens to be wrong, because it violates property 5. The distortion of
+the coordinate grid has only moved the vertical lines up and down, so both observers agree
+that events like B and C are simultaneous. If this was really the way things worked, then
+all observers could synchronize all their clocks with one another for once and for all, and
+the clocks would never get out of sync. This contradicts the results of the Hafele-Keating
+experiment, in which all three clocks were initially synchronized in Washington, but later
+went out of sync because of their different states of motion.
+
+It might seem as though we still had a huge amount of wiggle room available for the correct
+form of the distortion. It turns out, however, that properties 1-5 are sufficient to prove that there
+is only one answer, which is the one found by Einstein in 1905. To see why this is, let's work by
+a process of elimination.
+
+m4_ifelse(__me,1,[: %
+<% marg(-50) %>
+<%
+  fig(
+    'bowtie',
+    %q{A transformation that leads to disagreements about whether two events occur at the same time and place.
+       This is not just a matter of opinion. Either the arrow hit the bull's-eye or it didn't.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'nonlinear-transformation',
+    %q{A nonlinear transformation.}
+  )
+%>
+<% end_marg %>
+:])
+
+Figure \figref{bowtie} shows a transformation that might
+seem at first glance to be as good a candidate as any other,
+but it violates property 3, that motion is relative, for the following
+reason. In observer 2's frame of reference, some of the grid lines cross one another.
+This means that observers 1 and 2 disagree on whether or not certain events are the same.
+For instance, suppose that event A marks the arrival of an arrow at the bull's-eye of a
+target, and event B is the location and time when the bull's-eye is punctured.
+Events A and B occur
+at the same location and at the same time. If one observer says that A and B coincide, but another
+says that they don't, we have a direct contradiction. Since the two frames of reference in figure
+\figref{bowtie} give contradictory results, one of them is right and one is wrong. This violates
+property 3, because all inertial frames of reference are supposed to be equally valid.
+To avoid problems like this, we clearly need to make sure that none of the grid lines ever cross
+one another.
+
+
+m4_ifelse(__me,1,[::],[: %
+<% marg(70) %>
+<%
+  fig(
+    'bowtie',
+    %q{A transformation that leads to disagreements about whether two events occur at the same time and place.
+       This is not just a matter of opinion. Either the arrow hit the bull's-eye or it didn't.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'nonlinear-transformation',
+    %q{A nonlinear transformation.}
+  )
+%>
+<% end_marg %>
+:])
+
+The next type of transformation we want to kill off is shown in figure \figref{nonlinear-transformation},
+in which the grid lines curve, but never cross one another.
+The trouble with this one is that
+it violates property 1, the uniformity of time and space. The transformation is unusually
+``twisty'' at A, whereas at B it's much more smooth. This can't be correct, because the transformation
+is only supposed to depend on the relative state of motion of the two frames of reference, and
+that given information doesn't single out a special role for any particular point in spacetime.
+If, for example, we had one frame of reference \emph{rotating} relative to the other, then there
+would be something special about the axis of rotation. But we're only talking about \emph{inertial}
+frames of reference here, as specified in property 3, so we can't have rotation; each frame of reference
+has to be moving in a straight line at constant speed.
+For frames related in this way, there is nothing that could single out an event like A for special
+treatment compared to B, so transformation \figref{nonlinear-transformation} violates property 1.
+
+The examples in figures \figref{bowtie} and \figref{nonlinear-transformation} show that the transformation
+we're looking for must be linear, meaning that it must transform lines into lines, and furthermore that
+it has to take parallel lines to parallel lines.\index{homogeneity of spacetime}
+Einstein wrote in his 1905 paper that ``\ldots on account of the property of homogeneity [property 1] which we ascribe to time and space,
+the [transformation] must be linear.''\footnote{A. Einstein, ``On the Electrodynamics of Moving Bodies,''
+\emph{Annalen der Physik} 17 (1905), p. 891, tr. Saha and Bose.}
+% Shamos, p. 323
+Applying this to our diagrams,
+the original gray rectangle, which is a special type of parallelogram containing right angles,
+must be transformed into another parallelogram.
+There are three types of transformations, figure \figref{three-cases}, that have this property.
+Case I is the Galilean transformation of figure \figref{galilean-boost} on page \pageref{fig:galilean-boost},
+which we've already ruled out.
+
+<%
+  fig(   
+    'three-cases',
+    %q{%
+      Three types of transformations that preserve parallelism. Their distinguishing feature is what they do
+      to simultaneity, as shown by what happens to the left edge of the original rectangle. In I, the left edge remains
+      vertical, so simultaneous events remain simultaneous. In II, the left edge turns counterclockwise. In III, it turns clockwise.
+    },
+    {
+      'width'=>'wide','sidecaption'=>false
+    }
+  )
+%>
+
+Case II can also be discarded. Here every point on the grid rotates counterclockwise. What physical parameter would
+determine the amount of rotation? The only thing that could be relevant would be
+$v$, the relative velocity of the motion of the two frames of reference with respect to one
+another. But if the angle of rotation was proportional to $v$, then for large enough velocities
+the grid would have left and right reversed, and this would violate property 4, causality: one observer
+would say that event A caused a later event B, but another observer would say that B came first
+and caused A.
+<% marg(0) %>
+<%
+  fig(
+    'smooshing',
+    %q{In the units that are most convenient for relativity, the transformation has symmetry about a 45-degree diagonal line.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'lorentz-slope',
+    %q{Interpretation of the Lorentz transformation. The slope indicated in the figure gives the relative velocity of the two frames of reference.
+         Events A and B that were simultaneous in frame 1 are not simultaneous in frame 2, where event A occurs to the right of the $t=0$ line represented
+         by the left edge of the grid, but event B occurs to its left.}
+  )
+%>
+<% end_marg %>
+
+The only remaining possibility is case III, which I've redrawn in figure \figref{smooshing} with a couple
+of changes. This is the one that Einstein predicted in 1905. The transformation is known as the Lorentz transformation,
+after Hendrik Lorentz (1853-1928),\index{Lorentz, Hendrik}\index{Lorentz transformation}
+who partially anticipated Einstein's work, without arriving at the correct interpretation.
+The distortion is a kind of smooshing and stretching, as suggested by the hands. Also, we've already seen in figures
+\figref{joan-of-arc}-\figref{change-of-units-convention} on page \pageref{fig:joan-of-arc} that we're free to stretch
+or compress everything as much as we like in the horizontal and vertical directions, because this simply corresponds
+to choosing different units of measurement for time and distance. In figure \figref{smooshing} I've chosen units that
+give the whole drawing a convenient symmetry about a 45-degree diagonal line. Ordinarily it wouldn't make sense to
+talk about a 45-degree angle on a graph whose axes had different units. But in relativity, the symmetric appearance of
+the transformation tells us that space and time ought to be treated on the same footing, and measured in the same units.
+
+As in our discussion of the Galilean transformation, slopes are interpreted as velocities, and
+the slope of the near-horizontal lines in figure \figref{lorentz-slope} is interpreted as the relative velocity of the two observers.
+The difference between the Galilean version and the relativistic one is that now there is smooshing happening from the
+other side as well. Lines that were vertical in the original grid, representing simultaneous events, now slant over to
+the right. This tells us that, as required by property 5, different observers do not agree on whether events that occur in different places are
+simultaneous. The Hafele-Keating experiment tells us that this non-simultaneity effect is fairly small, even when the velocity is as
+big as that of a passenger jet, and this is what we would have anticipated by the correspondence principle. The way that
+this is expressed in the graph is that if we pick the time unit to be the second, then the distance unit turns out to be hundreds of thousands of miles.
+In these units, the velocity of a passenger jet is an extremely small number, so the slope $v$ in figure \figref{lorentz-slope}
+is extremely small, and the amount of distortion is tiny --- it would be much too small to see on this scale.
+
+The only thing left to determine about the Lorentz transformation is the size of the transformed parallelogram relative to the
+size of the original one. Although the drawing of the hands in figure \figref{smooshing} may suggest that the grid deforms like
+a framework made of rigid coat-hanger wire, that is not the case. If you look carefully at the figure, you'll see that the edges
+of the smooshed parallelogram are actually a little longer than the edges of the original rectangle. In fact what stays the same
+is not lengths but \emph{areas}, as proved in the caption to figure \figref{area-proof}.
+  <% end_sec('lorentz') %> % The Lorentz transformation
+
+<%
+  fig('area-proof',
+    %q{Proof that Lorentz transformations don't change area: We first subject a square to a transformation with velocity $v$, and this increases its area by a factor $R(v)$, which
+       we want to prove equals 1. We chop the resulting parallelogram up into little squares and finally apply a $-v$ transformation;
+       this changes each little square's area by a factor $R(-v)$, so the whole figure's area is also scaled by $R(-v)$.
+       The final result is to restore the square to its original shape and area, so $R(v)R(-v)=1$. But $R(v)=R(-v)$ by property 2 of spacetime
+       on page \pageref{spacetime-properties}, which states that all directions in space have the same properties, so $R(v)=1$.
+     },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+  <% begin_sec("The $\\mygamma$ factor",nil,'gamma') %>
+With a little algebra and geometry (homework problem \ref{hw:gamma-derivation}, page \pageref{hw:gamma-derivation}),
+one can use the equal-area property to show that the factor $\mygamma$ (Greek letter gamma)
+defined in figure \figref{gamma-as-projection} is given by the equation
+\begin{equation*}
+  \mygamma = \frac{1}{\sqrt{1-v^2}}\eqquad.
+\end{equation*}
+If you've had good training in physics, the first thing you probably
+think when you look at this equation is that it must be nonsense,
+because its units don't make sense. How can we take something with
+units of velocity squared, and subtract it from a unitless 1? But
+remember that this is expressed in our special relativistic units, in
+which the same units are used for distance and time.
+We refer to
+these as \emph{natural} units.\index{units!natural relativistic}\index{natural units}\label{natural-units}
+In this system,
+velocities are always unitless. This sort of thing happens frequently
+in physics. For instance, before James Joule discovered conservation
+of energy, nobody knew that heat and mechanical energy were different
+forms of the same thing, so instead of measuring them both in units of
+joules as we would do now, they measured heat in one unit (such as
+calories) and mechanical energy in another (such as foot-pounds). In
+ordinary metric units, we just need an extra conversion factor $c$,
+and the equation becomes
+\begin{equation*}
+  \mygamma = \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}\eqquad.
+\end{equation*}
+
+Here's why we care about $\mygamma$. Figure \figref{gamma-as-projection} defines it as the ratio of two times: the time between
+two events as expressed in one coordinate system, and the time between the same two events as measured in the other one.
+The interpretation is:
+
+\begin{lessimportant}[Time dilation]
+A clock runs fastest in the frame of reference of an observer who is at rest relative to the clock. An observer
+in motion relative to the clock at speed $v$ perceives the clock as running more slowly by a factor of $\mygamma$.
+\end{lessimportant}
+
+<% marg(0) %>
+<%
+  fig(
+    'gamma-as-projection',
+    %q{The $\mygamma$ factor.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'length-contraction',
+    %q{The ruler is moving in frame 1, represented by a square, but at rest in frame 2, shown as a parallelogram.
+       Each picture of the ruler is a snapshot taken at a certain moment as judged according to frame 2's
+       notion of simultaneity. An observer in frame 1 judges the ruler's length instead according to
+       frame 1's definition of simultaneity, i.e., using points that are lined up vertically on the graph.
+       The ruler appears shorter in the frame in which it is moving.
+       As proved in figure \figref{length-contraction-proof}, the length contracts from $L$ to $L/\gamma$.}
+  )
+%>
+<% end_marg %>
+
+<%
+  fig('length-contraction-proof',
+    %q{This figure proves, as claimed in figure \figref{length-contraction}, that the length contraction is $x=1/\gamma$.
+       First we slice the parallelogram vertically like a salami and slide the slices down, making the
+       top and bottom edges horizontal. Then we do the same in the horizontal direction, forming a rectangle
+       with sides $\gamma$ and $x$. Since both the Lorentz transformation and the slicing processes leave
+       areas unchanged, the area $\gamma x$  of the rectangle must equal the area of the original square, which is 1.
+     },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\noindent As proved in figures \figref{length-contraction} and \figref{length-contraction-proof}, lengths are also distorted:
+
+\begin{lessimportant}[Length contraction]
+A meter-stick appears longest to an observer who is at rest relative to it. An observer moving relative to the
+meter-stick at $v$ observes the stick to be shortened by a factor of $\mygamma$.
+\end{lessimportant}
+
+<% self_check('gammaatvzero',<<-'SELF_CHECK'
+What is $\\mygamma$ when $v=0$? What does this mean?
+  SELF_CHECK
+  ) %>
+
+m4_ifelse(__fac,1,,\pagebreak)
+
+Figure \figref{gamma-graph-small} shows the behavior of $\gamma$ as a function of $v$.
+
+\begin{eg}{Changing an equation from natural units to SI}\label{eg:natural-to-si-1}
+Often it is easier to do all of our algebra in natural units, which are simpler because $c=1$, and
+all factors of $c$ can therefore be omitted. For example, suppose we want to solve for $v$ in terms of $\mygamma$.
+In natural units, we have $\mygamma=1/\sqrt{1-v^2}$, so $\mygamma^{-2}=1-v^2$, and $v=\sqrt{1-\mygamma^{-2}}$.
+
+This form of the result might be fine for many purposes, but if we wanted to find a value of $v$ in SI units,
+we would need to reinsert factors of $c$ in the final result. There is no need to do this throughout the whole
+derivation. By looking at the final result, we see that there is only one possible way to do this so that the
+results make sense in SI, which is to write $v=c\sqrt{1-\mygamma^{-2}}$.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'gamma-graph-small',
+    %q{A graph of $\gamma$ as a function of $v$.}
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{Motion of a ray of light}\label{eg:natural-to-si-2}
+\egquestion The motion of a certain ray of light is given by the equation $x=-t$. Is this expressed in
+natural units, or in SI units? Convert to the other system.
+
+\eganswer The equation is in natural units. It wouldn't make sense in SI units, because we would have
+meters on the left and seconds on the right. To convert to SI units, we insert a factor of $c$ in the only
+possible place that will cause the equation to make sense: $x=-ct$.
+\end{eg}
+
+
+\begin{eg}{An interstellar road trip}\label{eg:interstellar-road-trip}
+Alice stays on earth while her twin Betty
+heads off in a spaceship for Tau Ceti, a nearby star. Tau Ceti is 12 light-years
+away, so even though Betty travels at 87\% of the speed of light, it will take
+her a long time to get there: 14 years, according to Alice.
+
+<%
+  fig('interstellar-road-trip',
+    'Example \ref{eg:interstellar-road-trip}.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Betty
+experiences time dilation. At this speed, her $\gamma$ is 2.0, so that the voyage will
+only seem to her to last 7 years. But there is perfect symmetry between Alice's
+and Betty's frames of reference, so Betty agrees with Alice on their relative speed;
+Betty sees herself as being at rest, while the sun and Tau Ceti both move backward
+at 87\% of the speed of light. How, then, can she observe Tau Ceti to get to her
+in only 7 years, when it should take 14 years to travel 12 light-years at this speed?
+
+We need to take into account length contraction.
+Betty sees the distance between the sun and Tau Ceti
+to be shrunk by a factor of 2. The same thing occurs for Alice, who observes
+Betty and her spaceship to be foreshortened.
+\end{eg}
+
+\begin{eg}{The correspondence principle}\label{eg:gamma-for-low-v}
+The correspondence principle requires that $\mygamma$ be close to 1
+for the velocities much less than $c$ encountered in everyday life.
+In natural units, $\mygamma=(1-v^2)^{-1/2}$.
+For small values of $\epsilon$, the approximation 
+$(1+\epsilon)^p\approx 1+p\epsilon$ holds (see p.~\pageref{math-approx-exp-and-log}).
+Applying this approximation, we find $\mygamma\approx1+v^2/2$.
+
+As expected, this gives approximately 1 when $v$ is small compared to 1 (i.e., compared to $c$, which equals 1
+in natural units).
+
+In problem \ref{hw:gamma-approx-si} on p.~\pageref{hw:gamma-approx-si} we rewrite
+this in SI units.
+
+Figure \figref{gamma-graph-small} on p.~\pageref{fig:gamma-graph-small} shows that the approximation
+is \emph{not} valid for large values of $v/c$. In fact, $\mygamma$
+blows up to infinity as $v$ gets closer and closer to $c$.
+\end{eg}
+
+<% marg(m4_ifelse(__me,1,-8,-8)) %>
+<%
+  fig(
+    'cern-muon-graph',
+    %q{Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
+       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
+       to large systematic errors.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Large time dilation}\label{eg:cern-muons}
+The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
+effect, we can't do it with something the size of the atomic clocks they used; the kinetic energy would be
+greater than the total megatonnage of all the world's nuclear arsenals. We can, however, accelerate subatomic particles
+to speeds at which $\mygamma$ is large. For experimental particle physicists, relativity is something you do all day
+before heading home and stopping off at the store for milk. An early, low-precision experiment of this kind was
+performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. Figure \figref{cern-muon-storage-ring} shows
+a 1974 experiment\footnote{Bailey at al., Nucl. Phys. B150(1979) 1}
+of a similar type which verified the time dilation predicted by relativity to a precision of about
+one part per thousand.
+
+\vfill
+
+<%
+  fig(
+    'cern-muon-storage-ring',
+    %q{Apparatus used for the test of relativistic time dilation described in example \ref{eg:cern-muons}. 
+       The prominent black and white blocks are large magnets surrounding a circular pipe
+       with a vacuum inside. \linebreak (c) 1974 by CERN.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+Particles called muons (named after the Greek letter $\mu$, ``myoo'') were produced by an
+accelerator at CERN, near Geneva. A muon is essentially a heavier version
+of the electron. Muons undergo radioactive decay,
+lasting an average of only 2.197 $\mu\sunit$ before they evaporate into an electron and two neutrinos.
+The 1974 experiment was actually built in order to measure the magnetic properties of muons, but it produced a high-precision
+test of time dilation as a byproduct. Because muons have the same electric charge as electrons, they can be trapped using
+magnetic fields. Muons were injected into the ring shown in figure \figref{cern-muon-storage-ring}, circling around it until they underwent radioactive decay.
+At the speed at which these muons were traveling, they had $\mygamma=29.33$, so on the average they lasted 29.33 times
+longer than the normal lifetime. In other words, they were like tiny alarm clocks that self-destructed at a randomly
+selected time. Figure \figref{cern-muon-graph} shows the number of radioactive decays counted, as a function of the
+time elapsed after a given stream of muons was injected into the storage ring. The two dashed lines show the rates
+of decay predicted with and without relativity. The relativistic line is the one that agrees with experiment.
+\end{eg}
+
+\vfill
+
+<%
+  fig(
+    'rhic',
+    %q{Colliding nuclei show relativistic length contraction.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{An example of length contraction}
+Figure \figref{rhic} shows an
+artist's rendering of the length contraction for the collision of two
+gold nuclei at relativistic speeds in the RHIC accelerator\index{RHIC accelerator}
+in Long Island, New York, which went on line in 2000.
+The gold nuclei would appear nearly spherical (or just
+slightly lengthened like an American football) in frames
+moving along with them, but in the laboratory's frame, they
+both appear drastically foreshortened as they approach the
+point of collision. The later pictures show the nuclei
+merging to form a hot soup, in which experimenters hope to
+observe a new form of matter.
+\end{eg}
+
+
+<%
+  fig(
+    'schoolbus-with-x-t',
+    %q{%
+      Example }+ref_workaround('eg:garage-paradox')+%q{: In the garage's frame of reference, the bus
+      is moving, and can fit in the garage due to its length contraction. In the bus's frame of reference,
+      the garage is moving, and can't hold the bus due to \emph{its} length contraction.
+    },
+    {
+      # 'anonymous'=>true,
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+\enlargethispage{\baselineskip}
+
+\vspace{-\baselineskip}
+
+\begin{eg}{The garage paradox}\label{eg:garage-paradox}\index{garage paradox}
+One of the most famous of all the so-called relativity
+paradoxes has to do with our incorrect 
+feeling that simultaneity is well defined. The idea is that
+one could take a schoolbus and drive it at relativistic
+speeds into a garage of ordinary size, in which it normally
+would not fit. Because of the length contraction, the bus
+would supposedly fit in the garage. The driver, however, will perceive the
+\emph{garage} as being contracted and thus even less able to
+contain the bus. 
+
+The paradox is
+resolved when we recognize that the concept of fitting the
+bus in the garage ``all at once'' contains a hidden
+assumption, the assumption that it makes sense to ask
+whether the front and back of the bus can \emph{simultaneously} be
+in the garage. Observers in different frames of reference
+moving at high relative speeds do not necessarily agree on
+whether things happen simultaneously. As shown in figure \figref{schoolbus-with-x-t}, the person in the
+garage's frame can shut the door at an instant B he perceives
+to be simultaneous with the front bumper's arrival A at the
+back wall of the garage, but the driver would not agree
+about the simultaneity of these two events, and would
+perceive the door as having shut long after she plowed
+through the back wall.
+\end{eg}
+
+  <% end_sec('gamma') %> % The $\mygamma$ factor
+
+  <% begin_sec("The universal speed $c$",nil,'universal-speed') %>
+Let's think a little more about the role of the 45-degree diagonal in the Lorentz transformation.
+Slopes on these graphs are interpreted as velocities.
+This line has a slope of 1 in relativistic units, but that slope corresponds to $c$ in ordinary metric units.
+We already know that the relativistic distance unit must
+be extremely large compared to the relativistic time unit, so $c$ must be extremely large.
+Now note what happens when we perform a Lorentz transformation: this particular line gets stretched, but the new version
+of the line lies right on top of the old one, and its slope stays the
+same. In other words, if one observer says  that something has a velocity equal to $c$, every other observer will agree
+on that velocity as well. (The same thing happens with $-c$.) 
+
+    <% begin_sec("Velocities don't simply add and subtract.",nil,'v-not-simple-addition') %>\label{relativistic-combination-of-vel}
+m4_ifelse(__me,1,[: %
+This is surprising, since we expect, as in section \ref{vel-addition-newtonian}, that a velocity $c$
+in one frame should become $c+v$ in a frame moving at velocity $v$ relative to the first one.
+But velocities are measured by dividing a distance by a time, and
+both distance and time are distorted by relativistic effects, so we actually shouldn't expect the ordinary
+arithmetic addition of velocities to hold in relativity; it's an approximation that's valid at velocities
+that are small compared to $c$. Problem \ref{hw:me-vel-addition} on p.~\pageref{hw:me-vel-addition} shows that
+relativistically, combining velocities $u$ and $v$ gives not $u+v$ but $(u+v)/(1+uv)$ (in units where $c=1$).\label{me-vel-addition-main-text}
+:],[: %
+This is counterintuitive, since we expect velocities to
+add and subtract in relative motion. If a dog is running away from me at
+5 m/s relative to the sidewalk, and I run after it at 3 m/s,
+the dog's velocity in my frame of reference is 2 m/s.
+According to everything we have learned about motion, the
+dog must have different speeds in the two frames: 5 m/s in
+the sidewalk's frame and 2 m/s in mine. But velocities are measured by dividing a distance by a time, and
+both distance and time are distorted by relativistic effects, so we actually shouldn't expect the ordinary
+arithmetic addition of velocities to hold in relativity; it's an approximation that's valid at velocities
+that are small compared to $c$.
+:])
+    <% end_sec('v-not-simple-addition') %>
+
+    <% begin_sec("A universal speed limit",nil,'speed-limit') %>
+For example, suppose Janet takes a trip in a
+spaceship, and accelerates until she is moving at $0.6c$ relative to the
+earth. She then launches a space probe in the forward
+direction at a speed relative to her ship of $0.6c$. We might think that the
+probe was then moving at a velocity of $1.2c$, but in fact the answer is still less 
+than $c$ (problem \ref{hw:six-tenths-c-twice}, page \pageref{hw:six-tenths-c-twice}).
+This is an example of a more general fact about relativity, which is that $c$ represents
+a universal speed limit. This is required by causality, as shown in figure \figref{speed-limit}.
+    <% end_sec('speed-limit') %>
+<% marg(140) %>
+<%
+  fig(
+    'speed-limit',
+    %q{A proof that causality imposes a universal speed limit. In the original frame of reference, represented by the square, event A happens a little before event B.
+       In the new frame, shown by the parallelogram, A happens after $t=0$, but B happens before $t=0$; that is,
+       B happens before A. The time ordering of the two events has been reversed. This can only happen because
+       events A and B are very close together in time and fairly far apart in space. The line segment
+       connecting A and B has a slope greater than 1, meaning that if we wanted to be present at both events, we would
+       have to travel at a speed greater than $c$ (which equals 1 in the units used on this graph). You will find that if
+       you pick any two points for which the slope of the line segment connecting them is less than 1, you can never get them
+       to straddle the new $t=0$ line in this funny, time-reversed way. Since different observers disagree on the time order
+       of events like A and B, causality requires that information never travel from A to B or from B to A; if it did, then
+       we would have time-travel paradoxes. The conclusion is that $c$ is the maximum speed of cause and effect in relativity.
+    }
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'michelson',
+    %q{The Michelson-Morley experiment, shown in photographs, and drawings from the original 1887 paper.
+       1. A simplified drawing of the apparatus. A beam of light from the source, s, is partially reflected and partially transmitted by the half-silvered
+       mirror $\zu{h}_1$. The two half-intensity parts of the beam are reflected by the mirrors at a and b, reunited,
+       and observed in the telescope, t. If the earth's surface was supposed to be moving through the ether,
+       then the times taken by the two light waves to pass through the moving ether would be unequal, and
+       the resulting time lag would be detectable by observing the interference between the waves when they were reunited.
+       2. In the real apparatus, the light beams were reflected multiple times. The effective length of each arm was
+       increased to 11 meters, which greatly improved its sensitivity to the small expected difference in the speed of light.
+       3. In an earlier version of the experiment, they had run into problems with its ``extreme sensitiveness to vibration,''
+       which was ``so great that it was impossible to see the interference fringes except at brief intervals \ldots even at
+       two o'clock in the morning.'' They therefore mounted the whole thing on a massive stone floating in a pool of mercury,
+       which also made it possible to rotate it easily. 4. A photo of the apparatus.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false,
+      'sidepos'=>'t'
+    }
+  )
+%>
+
+    <% begin_sec("Light travels at $c$.",nil,'light-travels-at-c') %>
+Now consider a beam of light. We're used to talking casually about the ``speed of light,'' but what does that really
+mean? Motion is relative, so normally if we want to talk about a velocity, we have to specify what it's measured
+relative to. A sound wave has a certain speed relative to the air, and a water wave has its own speed relative to the
+water. If we want to measure the speed of an ocean wave, for example, we should make sure to measure it in a frame
+of reference at rest relative to the water. But light isn't a vibration of a physical medium; it can propagate through the near-perfect vacuum of outer space,
+as when rays of sunlight travel to earth. This seems like a paradox: light is supposed to have a specific speed,
+but there is no way to decide what frame of reference to measure it in. The way out of the paradox is that light
+must travel at a velocity equal to $c$. Since all observers agree on a velocity of $c$, regardless of their frame
+of reference, everything is consistent.
+    <% end_sec('light-travels-at-c') %>
+
+    <% begin_sec("The Michelson-Morley experiment",nil,'michelson-morley') %>
+The constancy of the speed of light had in fact already been
+observed when Einstein was an 8-year-old boy, but because nobody could
+figure out how to interpret it, the result was largely ignored.
+In 1887 Michelson and Morley set up a clever apparatus to
+measure any difference in the speed of light beams traveling
+east-west and north-south. The motion of the earth around
+the sun at 110,000 km/hour (about 0.01\% of the speed of
+light) is to our west during the day. Michelson and Morley
+believed that light was a vibration of a mysterious medium called the ether, so they expected that the
+speed of light would be a fixed value relative to the ether.
+As the earth moved through the ether, they thought they
+would observe an effect on the velocity of light along an
+east-west line. For instance, if they released a beam of
+light in a westward direction during the day, they expected
+that it would move away from them at less than the normal
+speed because the earth was chasing it through the ether.
+They were surprised when they found that the expected 0.01\%
+change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
+
+    <% end_sec('michelson-morley') %> % The Michelson-Morley experiment
+
+\begin{eg}{The ring laser gyroscope}
+If you've flown in a jet plane, you can thank relativity for helping you to avoid
+crashing into a mountain or an ocean. Figure \figref{ring-laser-gyro} shows a standard
+piece of navigational equipment called a ring laser gyroscope. A beam of light is
+split into two parts, sent around the perimeter of the device, and reunited. Since
+the speed of light is constant, we expect the two parts to come back together at the
+same time. If they don't, it's evidence that the device has been rotating. The plane's
+computer senses this and notes how much rotation has accumulated.
+\end{eg}
+<% marg(-10) %>
+<%
+  fig(
+    'ring-laser-gyro',
+    %q{A ring laser gyroscope.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{No frequency-dependence}
+Relativity has only one universal speed, so it requires that all light waves
+travel at the same speed, regardless of their frequency and wavelength.
+Presently the best experimental tests of the invariance of
+the speed of light with respect to wavelength come from astronomical observations of
+gamma-ray bursts, which are sudden
+outpourings of high-frequency light, believed to originate from a supernova explosion
+in another galaxy. One such observation,
+in 2009,\footnote{\url{http://arxiv.org/abs/0908.1832}} 
+found that the
+times of arrival of all the different frequencies in the burst
+differed by no more than 2 seconds out of a total time in flight on the order
+of ten billion years!
+\end{eg}
+
+  <% end_sec('universal-speed') %> % Universality of $c$
+
+m4_ifelse(__fac,1,,\vfill)
+
+
+\startdqs
+\begin{dq}
+A person in a spaceship moving at 99.99999999\% of the
+speed of light relative to Earth shines a flashlight forward
+through dusty air, so the beam is visible. What does she
+see? What would it look like to an observer on Earth?
+\end{dq}
+
+\vspace{m4_ifelse(__me,1,5,0)mm}
+
+\begin{dq}\label{dq:illusion}
+A question that students often struggle with is whether
+time and space can really be distorted, or whether it just
+seems that way. Compare with optical illusions or magic
+tricks. How could you verify, for instance, that the lines
+in the figure are actually parallel? Are relativistic
+effects the same, or not?
+\end{dq}
+
+\vspace{m4_ifelse(__me,1,5,0)mm}
+
+\begin{dq}
+On a spaceship moving at relativistic speeds, would a
+lecture seem even longer and more boring than normal?
+\end{dq}
+
+\vspace{m4_ifelse(__me,1,5,0)mm}
+
+\begin{dq}
+Mechanical clocks can be affected by motion. For example,
+it was a significant technological achievement to build a
+clock that could sail aboard a ship and still keep accurate
+time, allowing longitude to be determined. How is this
+similar to or different from relativistic time dilation?
+\end{dq}
+
+\begin{dq}\label{dq:rhic}
+Figure \figref{rhic} from page \pageref{fig:rhic}, depicting the collision of
+two nuclei at the RHIC accelerator, is reproduced below.
+What would the shapes of the two nuclei
+look like to a microscopic observer riding on the
+left-hand nucleus? To an observer riding on the right-hand
+one? Can they agree on what is happening? If not, why not
+--- after all, shouldn't they see the same thing if they
+both compare the two nuclei side-by-side at the same instant in time?
+\end{dq}
+<%
+  fig(
+    'rhic',
+    %q{Discussion question \ref{dq:rhic}: colliding nuclei show relativistic length contraction.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>false,
+      'suffix'=>'2'
+    }
+  )
+%>
+
+\begin{dq}\label{dq:foam-rubber}
+If you stick a piece of foam rubber out the window of
+your car while driving down the freeway, the wind may
+compress it a little. Does it make sense to interpret the
+relativistic length contraction as a type of strain that
+pushes an object's atoms together like this? How does this
+relate to discussion question \ref{dq:rhic}?
+\end{dq}
+
+% For some reason, the following figure appears on the previous page unless I put it way down here.
+<% marg(170) %>
+<%
+  fig(
+    'dqillusion',
+    %q{Discussion question \ref{dq:illusion}},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+
+m4_ifelse(__me,1,\pagebreak,\vspace{0mm})
+m4_ifelse(__sn,1,\pagebreak,\vspace{0mm})
+
+% LM also has this DQ, but doesn't use this file, so only do the following if it's SN.
+% Instructions are above the figure so I can project figure on whiteboard, instructions on screen.
+m4_ifelse(__sn,1,[:
+
+\begin{dq}\label{dq:galaxies-signaling}
+The graph shows three galaxies. The axes are drawn according to an observer at rest relative to
+the galaxy 2, so that that galaxy is always at the same $x$ coordinate. 
+Intelligent species in the three different galaxies develop radio technology independently,
+and at some point each begins to actively send out signals in an attempt to communicate with other civilizations.
+Events a, b, and c mark the points at which these
+signals begin spreading out across the universe at the speed of light. Find the events
+at which the inhabitants of galaxy 2 detect
+the signals from galaxies 1 and 3. According to 2, who developed radio
+first, 1 or 3? On top of the graph,
+draw a new pair of position and time axes, for the frame in which galaxy 3 is at rest.
+According to 3, in what order did events a, b, and c happen?
+\end{dq}
+
+<%
+  fig(
+    'galaxies-signaling',
+    %q{Discussion question \ref{dq:galaxies-signaling}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+\vfill
+
+:])
+% ... endif for galaxies-signaling
+
+\begin{dq}\label{dq:machine-gun-ftl}
+The machine-gunner in the figure sends out a spray of bullets. Suppose that the bullets are being shot into
+       outer space, and that the distances traveled are trillions of miles (so that the human figure
+       in the diagram is not to scale). After a long time, the bullets reach the points shown with dots
+       which are all equally far from the gun. Their arrivals at those points are events A through E,
+       which happen at different times.  Sketch these events on a position-time graph.
+       The chain of impacts extends across space at a speed greater
+       than $c$. Does this violate special relativity?
+\end{dq}
+
+<%
+  fig(
+    'machine-gun-ftl',
+    %q{Discussion question \ref{dq:machine-gun-ftl}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+m4_ifelse(__me,1,\pagebreak[4])
+m4_ifelse(__lm_series,1,\vspace{30mm})
+
+% In SN, we have another subsection, relativity_no_action_at_a_distance.tex, after this.
+m4_ifelse(__sn,0,[:
+<% end_sec('x-t-distortion') %> % Distortion of Space and Time
+:])

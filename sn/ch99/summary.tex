@@ -1,0 +1,1392 @@
+\refstepcounter{appendixctr}\label{summary}%
+\appendix\chapter{Appendix \ref{summary}: Summary}
+
+Notation and units are summarized on page \pageref{notationtable}.
+
+\summarych{ch:intro}{Introduction and Review}
+Physics is the use of the scientific method to study the
+behavior of light and matter. The scientific method requires
+a cycle of theory and experiment, theories with both
+predictive and explanatory value, and reproducible experiments.
+
+The metric system is a simple, consistent framework for
+measurement built out of the meter, the kilogram, and the
+second plus a set of prefixes denoting powers of ten. The
+most systematic method for doing conversions is shown in
+the following example:
+\begin{equation*}
+  370\ \zu{ms} \times \frac{10^{-3}\ \sunit}{1\ \zu{ms}} = 0.37\ \sunit
+\end{equation*}
+
+Mass is a measure of the amount of a substance. Mass can be
+defined gravitationally, by comparing an object to a
+standard mass on a double-pan balance, or in terms of
+inertia, by comparing the effect of a force on an object to
+the effect of the same force on a standard mass. The two
+definitions are found experimentally to be proportional to
+each other to a high degree of precision, so we usually
+refer simply to ``mass,'' without bothering to specify which type.
+
+A force is that which can change the motion of an object.
+The metric unit of force is the Newton, defined as the force
+required to accelerate a standard 1-kg mass from rest to a
+speed of 1 m/s in 1 s.
+
+Scientific notation means, for example, writing $3.2\times10^5$
+ rather than 320000.
+
+Writing numbers with the correct number of significant
+figures correctly communicates how accurate they are. As a
+rule of thumb, the final result of a calculation is no more
+accurate than, and should have no more significant figures
+than, the least accurate piece of data.
+
+Nature behaves differently on large and small scales.
+Galileo showed that this results fundamentally from the way
+area and volume scale. Area scales as the second power of
+length, $A\propto L^2$, while volume scales as length to the
+third power, $V\propto L^3$.
+
+An order of magnitude estimate is one in which we do not
+attempt or expect an exact answer. The main reason why the
+uninitiated have trouble with order-of-magnitude estimates
+is that the human brain does not intuitively make accurate
+estimates of area and volume. Estimates of area and volume
+should be approached by first estimating linear dimensions,
+which one's brain has a feel for.
+
+Velocity, $\der x/\der t$, measures how fast an object is
+moving. Acceleration, $\der^2x/\der t^2$, measures how quickly
+its velocity is changing. For motion with constant acceleration,
+we have these useful relations:
+\begin{align*}
+  a &= \frac{\Delta v}{\Delta t} \\
+  x &=  \frac{1}{2}at^2 + v_\zu{o} t + x_\zu{o} \\
+  v_f^2 &= v_\zu{o}^2 + 2 a \Delta x
+\end{align*}
+
+\summarych{ch:1}{Conservation of Mass}
+	\sumem{Conservation laws} are the foundation of physics. A conservation law states that
+	a certain quantity can be neither created nor destroyed; the total amount of it
+	remains the same.
+	
+	\sumem{Mass} is a conserved quantity in classical physics, i.e. physics before
+	Einstein. This is plausible, since we know that matter is composed of
+	subatomic particles; if the particles are neither created or destroyed, then
+	it makes sense that the total mass will remain the same.
+	There are two ways of defining mass. 
+	
+	\sumem{Gravitational mass} is defined
+	by measuring the effect of gravity on a particular object, and comparing with
+	some standard object, taking care to test both objects at a location where the
+	strength of gravity is the same.
+	
+	\sumem{Inertial mass} is defined by measuring how much a particular object resists a
+	change in its state of motion. For instance, an object placed on the end
+	of a spring will oscillate if the spring is initially compressed, and
+	a more massive object will take longer to complete one oscillation.
+	
+	\sumem{Inertial and gravitational mass are equivalent:}\/ experiments show to a very
+	high degree of precision that any two objects with the same inertial mass
+	have the same gravitational mass as well.
+	
+	The definition of inertial mass depends on a correct but counterintuitive
+	assumption: that an object resists a change in its state of motion. Most
+	people intuitively believe that motion has a natural tendency to slow down.
+	This cannot be correct as a general statement, because ``to slow down'' is
+	not a well-defined concept unless we specify what we are measuring motion
+	relative to. This insight is credited to Galileo, and the general principle
+	of \sumem{Galilean relativity} states that the laws of physics are the same in all
+	inertial frames of reference. In other words, there is no way to distinguish
+	a moving frame of reference from one that is at rest. To establish which frames
+	of reference are inertial, we first must find one inertial frame in which
+	objects appear to obey Galilean relativity. The surface of the earth is
+	an inertial frame to a reasonably good approximation, and the frame of reference
+	of the stars is an even better one. Once we have found one inertial frame of
+	reference, any other frame is inertial which is moving in a straight line
+	at constant velocity relative to the first one. For instance, if the surface
+	of the earth is an approximately inertial frame, then a train traveling
+	in a straight line at constant speed is also approximately an inertial frame.
+	
+	The unit of mass is the kilogram, which, along with the meter and the second,
+	forms the basis for the SI system of units (also known as the mks system).
+	A fundamental skill in science is to know the definitions of the most common
+	metric prefixes, which are summarized on page \pageref{metricprefixestable},
+	and to be able to convert among them.
+	
+	One consequence of Einstein's theory of special relativity is that \sumem{mass
+	can be converted to energy and energy to mass}. This prediction has been verified
+	amply by experiment. Thus the conserved quantity is not really mass
+	but rather the total ``mass-energy,''
+	$m+E/c^2$, where $c$ is the speed of light. Since the speed of light is a large
+	number, the $E/c^2$ term is ordinarily small in everyday life, which is why
+	we can usually neglect it.
+
+\summarych{ch:2}{Conservation of Energy}
+	We observe that certain processes are physically impossible. For example, there
+	is no process that can heat up an object without using up fuel or having some
+	other side effect such as cooling a different object. We find that we can
+	neatly separate the possible processes from the impossible by
+	defining a single numerical quantity, called \sumem{energy}, which is conserved.
+	Energy comes in many forms, such as heat, motion, sound, light, the energy required to melt
+	a solid, and gravitational energy (e.g. the energy that depends on the distance between
+	a rock and the earth). Because it has so many forms, we can arbitrarily choose
+	one form, heat, in order to define a standard unit for our numerical scale of energy.
+	Energy is measured in units of joules (J), and one joule can be defined as the amount of energy
+	required in order to raise the termperature of a certain amount of water by a certain number
+	of degrees. (The numbers are not worth memorizing.) \sumem{Power} is defined as the
+	rate of change of energy $P=\der E/\der t$, and the unit of power is the watt,
+	$1\ \zu{W}=1\ \junit/\sunit$.
+	
+	Once we have defined one type of energy numerically, we can perform experiments that establish
+	the mathematical rules governing other types of energy. For example, in his paddlewheel
+	experiment, James Joule allowed weights to drop through a certain height and spin
+	paddlewheels inside sealed canisters of water, thereby heating the water through
+	friction. Since in this book we define the joule unit in terms of the temperature of
+	water, we can think of the paddlewheel experiment as establishing a rule for
+	the \sumem{gravitational energy} of a mass which is at a certain height,
+	\begin{equation*}
+		\der U_g	= mg\der y\eqquad,
+	\end{equation*}
+	where $\der U_g$ is the infinitesimal change in the gravitational energy of
+	a mass $m$ when its height is changed by an infinitesimal amount $\der y$ in the vertical direction.
+	The quantity $g$ is called the \sumem{gravitational field}, and at the earth's
+	surface it has a numerical value of about $10\ \junit/\kgunit\unitdot\munit$. That is,
+	about 10 joules of energy are required in order to raise a one-kilogram mass by
+	one meter. (The gravitational field $g$ also has the interpretation that
+	when we drop an object, its acceleration, $\der^2y/\der t^2$, is equal to
+	$g$.)
+	
+	Using similar techniques, we find that the energy of a moving object, called its
+	\sumem{kinetic energy}, is given by
+	\begin{equation*}
+		K	= \frac{1}{2}mv^2\eqquad,
+	\end{equation*}
+	where $m$ is its mass and $v$ its velocity. The proportionality factor equals
+	1/2 exactly by the design of the SI system of units, and since the SI is based
+	on the meter, the kilogram, and the second, the joule is considered to be
+	a derived unit, $1\ \junit=1\ \kgunit\unitdot\munit^2/\sunit^2$.
+	
+	When the interaction energy $U$ has a local maximum or minimum with respect
+	to the position of an object ($\der U/\der x=0$), then the object is
+	in \sumem{equilibrium} at that position. For example, if a weight is hanging
+	from a rope, and is initially at rest at the bottom, then it must remain
+	at rest, because this is a position of minimum gravitational energy $U_g$; to
+	move, it would have to increase both its kinetic and its gravitational energy,
+	which would violate conservation of energy, since the total energy would
+	increase.
+	
+	Since kinetic energy is independent of the direction of motion, conservation
+	of energy is often insufficient to predict the direction of an object's
+	motion. However, many of the physically impossible motions can be ruled
+	out by the trick of imposing conservation of energy in some other frame
+	of reference. By this device, we can solve the important problem of
+	\sumem{projectile motion:}\/ even if the projectile has horizontal motion,
+	we can imagine ourselves in a frame of reference in which we are moving along with
+	the projectile horizontally. In this frame of reference, the projectile has
+	no horizontal motion, and its vertical motion has constant acceleration $g$.
+	Switching back to a frame of reference in which its horizontal velocity is
+	not zero, we find that a projectile's horizontal and vertical
+	motions are independent, and that the horizontal motion is at constant velocity.
+	
+	Even in one-dimensional motion, it is seldom possible to solve real-world
+	problems and predict the motion of an object in closed form. However, there
+	are straightforward numerical techniques for solving such problems.
+	
+	From observations of the motion of the planets, we infer that the \sumem{gravitational
+	interaction between any two objects} is given by $U_g=-Gm_1m_2/r$, where $r$ is
+	the distance between them. When the sizes of the objects are not small compared
+	to their separation, the definition of $r$ becomes vague; for this reason,
+	we should interpret this fundamentally as the law governing the gravitational
+	interactions between individual atoms. However, in the special case of a spherically
+	symmetric mass distribution, there is a shortcut: the \sumem{shell theorem}
+	states that the gravitational interaction between a spherically symmetric shell
+	of mass and a particle on the outside of the shell is the same as if the
+	shell's mass had all been concentrated at its center. An astronomical body
+	like the earth can be broken down into concentric shells of mass, and so its
+	gravitational interactions with external objects can also be calculated simply
+	by using the center-to-center distance.
+	
+	Energy appears to come in a bewildering variety of forms, but matter is made of
+	atoms, and thus if we restrict ourselves to the study of mechanical systems
+	(containing material objects, not light), all the forms of energy we observe
+	must be explainable in terms of the behabior and interactions of atoms. Indeed,
+	at the atomic level the picture is much simpler. Fundamentally, all the familiar forms of
+	mechanical energy arise from either the kinetic energy of atoms or the energy
+	they have because they interact with each other via gravitational or electrical
+	forces. For example, when we stretch a spring, we distort the latticework of
+	atoms in the metal, and this change in the interatomic distances involves an
+	increase in the atoms' electrical energies.
+	
+	An equilibrium is a local minimum of $U(x)$, and up close, any minimum
+	looks like a parabola. Therefore, small oscillations around
+	an equilibrium exhibit universal behavior, which depends only on the object's
+	mass, $m$, and on the tightness of curvature of the minimum, parametrized
+	by the quantity $k=\der^2U/\der x^2$. The oscillations are sinusoidal
+	as a function of time, and the period is $T=2\pi\sqrt{m/k}$, independent
+	of amplitude. When oscillations are small enough for these statements to
+	be good approximations, we refer to them the oscillations as
+	\sumem{simple harmonic}.
+	
+\summarych{ch:3}{Conservation of Momentum}
+	Since the kinetic energy of a material object depends on $v^2$, it isn't obvious
+	that conservation of energy is consistent with Galilean relativity. Even if
+	a certain mechanical system conserves energy in one frame of reference, the
+	velocities involved will be different as measured in another frame, and therefore
+	so will the kinetic energies. It turns out that consistency is achieved only
+	if there is a new conservation law, conservation of \sumem{momentum},
+	\begin{equation*}
+		\vc{p} = m\vc{v}\eqquad.
+	\end{equation*}
+	In one dimension, the direction of motion is described using positive and negative
+	signs of the velocity $\vc{v}$, and since mass is always positive, the momentum
+	carries the same sign. Thus conservation of momentum, unlike conservation of
+	energy, makes direct predictions about the direction of motion.
+	Although this line of argument was based on the assumption of a mechanical
+	system, momentum need not be mechanical. Light has momentum.
+	
+	A moving object's momentum equals the sum of the momenta of all its atoms.
+	To avoid having to carry out this sum, we can use the concept of the \sumem{center
+	of mass\/}. The center of mass can be defined as a kind of weighted
+	average of the positions of all the atoms in the object,
+	\begin{equation*}
+		\vc{x}_{cm} = \frac{\sum m_j\vc{x}_j}{\sum m_j}\eqquad,
+	\end{equation*}
+	and although the definition does involve a sum, we can often locate the center of
+	mass by symmetry or by physically determining an object's balance point.
+	The total momentum of the object is then given by
+	\begin{equation*}
+		\vc{p}_{total} = m_{total}\vc{v}_{cm}\eqquad.
+	\end{equation*}
+	
+	The rate of transfer of momentum is called \emph{force}, $\vc{F}=\der \vc{p}/\der t$, and
+	is measured in units of newtons, $1\ \nunit=1\ \kgunit\unitdot\munit/\sunit^2$.
+	As a direct consequence of conservation of momentum, we have the following
+	statements, known as \sumem{Newton's laws of motion:}
+	\begin{itemize}
+		\item[] If the total force on an object is
+			zero, it remains in the same state of motion.
+		\item[] $\vc{F}=\der \vc{p}/\der t$
+		\item[] Forces always come in pairs: if object A exerts a force on object B,
+			then object B exerts a force on object A which is the same strength, but
+			in the opposite direction.
+	\end{itemize}
+	
+	Although the fundamental forces at the atomic level are gravity, electromagnetism,
+	and nuclear forces, we use a different and more practical classification scheme in
+	everyday situations. In this scheme, the forces between solid objects are
+	described as follows:\\
+		\noindent\begin{tabular}{|lp{90mm}|}
+		\hline
+		\emph{A normal force, $F_n$,} 
+			& is perpendicular to the surface of contact, and prevents objects
+				from passing through each other by becoming as strong
+				as necessary (up to the point where the objects break).
+				``Normal'' means perpendicular. \\
+		\hline
+		\emph{Static friction, $F_s$,} 
+			& is parallel to the surface of contact, and prevents the surfaces from
+				starting to slip by becoming as strong as necessary, up
+				to a maximum value of $F_{s,max}$. 
+				``Static'' means not moving, i.e. not slipping.\\
+		\hline
+		\emph{Kinetic friction, $F_k$,} 
+			& is parallel to the surface of contact, and tends to slow down
+				any slippage once it starts.
+				``Kinetic'' means moving, i.e. slipping. \\
+		\hline
+	\end{tabular}
+	
+	
+	\sumem{Work} is defined as the transfer of energy by a force. (``By a force'' is meant
+	to exclude energy transfer by heat conduction.) The \sumem{work theorem} states that
+	when a force occurs at a single point of contact, the amount of energy transferred
+	by that force is given by $\der W=\vc{F}\cdot\der\vc{x}$, where $\der\vc{x}$ is
+	the distance traveled by the point of contact. The \sumem{kinetic
+	energy theorem} is $\der K_{cm}=\vc{F}_{total}\cdot\der\vc{x}_{cm}$, where
+	$\der K_{cm}$ is the change in the energy, $(1/2)mv_{cm}^2$, an object possesses due to the motion of
+	its center of mass, $\vc{F}_{total}$ is the total force acting on the object,
+	and $\der\vc{x}_{cm}$ is the distance traveled by the center of mass.
+	
+	The relationship between force and interaction energy is $U=-\der F/\der x$.
+	Any interaction can be described either by giving the force as a function of
+	distance or the interaction energy as a function of distance; the other quantity
+	can then be found by integration or differentiation.
+	
+	An oscillator subject to friction will, if left to itself, suffer a gradual
+	decrease in the amplitude of its motion as mechanical energy is transformed
+	into heat. The \sumem{quality factor\/}, $Q$, is defined as the number of
+	oscillations required for the mechanical energy to fall off by a factor of
+	$e^{2\pi}\approx535$.
+	To maintain an oscillation indefinitely, an external force must
+	do work to replace this energy. We assume for mathematical simplicity that the
+	external force varies sinusoidally with time, $F=F_m\sin\omega t$.
+	If this force is applied for a long time, the motion approaches a steady
+	state, in which the oscillator's motion is sinusoidal, matching the
+	driving force in frequency but not in phase. The amplitude of this
+	steady-state motion, $A$, exhibits the phenomenon of \sumem{resonance:\/}
+	the amplitude is maximized at a driving frequency which, for large $Q$, is essentially the
+	same as the natural frequency of the free vibrations, $\omega_f$ (and
+	for large $Q$ this is also nearly the same as $\omega_\zu{o}=\sqrt{k/m}$).
+	When the energy of the steady-state oscillations is graphed as a function
+	of frequency, both the height and the width of the resonance peak depend
+	on $Q$. The peak is taller for greater $Q$, and its
+	 full width at half-maximum is
+	$\Delta\omega\approx\omega_\zu{o}/Q$. For small values of $Q$, all these
+	approximations become worse, and at $Q<1/2$ qualitatively different behavior
+	sets in.
+	
+	For three-dimensional motion, a moving object's motion can be described
+	by three different velocities, $v_x=\der x/\der t$, and similarly for $v_y$ and $v_z$.
+	Thus conservation of momentum becomes three different conservation laws:
+	conservation of $p_x=mv_x$, and so on. The principle of \sumem{rotational invariance}
+	says that the laws of physics are the same regardless of how we change the
+	orientation of our laboratory: there is no preferred direction in space.
+	As a consequence of this, no matter how we choose our $x$, $y$, and
+	$z$ coordinate axes, we will still have conservation of $p_x$, $p_y$, and
+	$p_z$. To simplify notation, we define a momentum \sumem{vector}, $\vc{p}$, which
+	is a single symbol that stands for all the momentum information
+	contained in the components $p_x$, $p_y$, and $p_z$. The concept of a vector
+	is more general than its application to the momentum: any quantity that has
+	a direction in space is considered a vector, as opposed to a \sumem{scalar}
+	like time or temperature. The following table summarizes some vector operations.\\
+	\begin{tabular}{|l|p{65mm}|}
+	\hline
+	\textsl{operation}	& \textsl{definition} \\
+	\hline
+	$|\mathbf{vector}|$	& $\sqrt{vector_x^2+vector_y^2+vector_z^2}$ \\
+	$\mathbf{vector}+\mathbf{vector}$	& Add component by component. \\
+	$\mathbf{vector}-\mathbf{vector}$	& Subtract component by component. \\
+	$\mathbf{vector}\ \cdot\ scalar	$	& Multiply each component by the scalar. \\
+	$\mathbf{vector}\ /\ scalar	$	& Divide each component by the scalar. \\
+	\hline
+	\end{tabular}\\
+	Differentiation and integration of vectors is defined component by component.
+	
+	There is only one meaningful (rotationally invariant)
+	way of defining a multiplication of vectors
+	whose result is a scalar, and it is known as the vector \sumem{dot product:}
+	\begin{align*}	
+		\vc{b}\cdot\vc{c}	
+			&=  b_{x} c_{x}+ b_y c_{y}+ b_{z} c_z \\
+			&= |\vc{b}|\,|\vc{c}|\,\cos\theta_{bc}\eqquad.
+	\end{align*}
+	The dot product has most of the usual properties associated with multiplication,
+	except that there is no ``dot division.''
+
+\summarych{ch:4}{Conservation of Angular Momentum}
+	\sumem{Angular momentum}\/ is a conserved quantity. For motion confined to
+	a plane, the angular momentum of a material particle is
+	\begin{equation*}
+		L = mv_\perp r\eqquad,
+	\end{equation*}
+	where $r$ is the particle's distance from the point chosen as the axis, and $v_\perp$ is the
+	component of its velocity vector that is perpendicular to the line connecting
+	the particle to the axis. The choice of axis is arbitrary. In a plane, only
+	two directions of rotation are possible, clockwise and counterclockwise. One of
+	these is considered negative and the other positive. Geometrically, angular momentum
+	is related to rate at which area is swept out by the line segment connecting the
+	particle to the axis.
+	
+	\sumem{Torque} is the rate of change of angular momentum, $\tau=\der L/\der t$.
+	The torque created by a given force can be calculated using any of the
+	relations
+	\begin{align*}
+		\tau	&= rF\sin\theta_{rF} \\
+				&= rF_\perp \\
+				&= r_\perp F\eqquad,
+	\end{align*}
+	where the subscript $\perp$ indicates a component perpendicular to the line
+	connecting the axis to the point of application of the force.
+	
+	In the special case of a \sumem{rigid
+	body} rotating in a single plane, we define
+	\begin{align*}
+		\omega	&=  	\frac{\der\theta}{\der t} 	\qquad \text{[angular velocity]}\\
+	\intertext{and}
+		\alpha	&=  	\frac{\der\omega}{\der t}\eqquad,	\qquad \text{[angular acceleration]}\\
+	\intertext{in terms of which we have}
+		L &= I\omega
+	\intertext{and}
+		\tau &= I\alpha\eqquad,
+	\intertext{where the \sumem{moment of inertia}, $I$, is defined as}
+		I	&=  	\sum{m_i r_i^2}\eqquad,
+	\end{align*}
+	summing over all the atoms in the object (or using calculus to perform a continuous
+	sum, i.e. an integral). The relationship between the angular quantities and
+	the linear ones is
+	\begin{multline*}
+		v_t	= \omega r \qquad 	\hfill \shoveright{\text{[tangential velocity of a point]}}\\
+		v_r	= 0 \qquad 	\hfill \shoveright{\text{[radial velocity of a point]}}\\
+		a_t	=  \alpha r	\eqquad. \hfill \shoveright{\text{[radial acceleration of a point]}}\\
+			\hfill\text{at a distance $r$ from the axis]}\\
+		a_r	=  \omega^2 r	 \qquad 	\hfill \shoveright{\text{[radial acceleration of a point]}}\\
+			\hfill\text{at a distance $r$ from the axis]}\\
+	\end{multline*}
+
+	In three dimensions, torque and angular momentum are vectors, and are expressed
+	in terms of the vector \sumem{cross product}, which is the only
+	rotationally invariant way of defining a multiplication of two vectors
+	that produces a third vector:
+	\begin{align*}
+		\vc{L}	&= \vc{r}\times\vc{p}\\
+		\btau	&= \vc{r}\times\vc{F}
+	\end{align*}
+	In general, the cross product of vectors $\vc{b}$ and $\vc{c}$ has
+	magnitude
+	\begin{equation*}
+		|\vc{b}\times\vc{c}|	= |\vc{b}|\,|\vc{c}|\,\sin\theta_{bc}\eqquad,\\
+	\end{equation*}
+	which can be interpreted geometrically as the area of the parallelogram
+	formed by the two vectors when they are placed tail-to-tail.
+	The direction of the cross product lies along the line which is perpendicular
+	to both vectors; of the two such directions, we choose the one that is right-handed,
+	in the sense that if we point the fingers of the flattened right hand along
+	$\vc{b}$, then bend the knuckles to point the fingers along $\vc{c}$, the thumb
+	gives the direction of $\vc{b}\times\vc{c}$. In terms of components, the
+	cross product is
+	\begin{align*}
+	(\vc{b}\times\vc{c})_x	&=  b_yc_z - c_yb_z\\
+	(\vc{b}\times\vc{c})_y	&=  b_zc_x - c_zb_x\\
+	(\vc{b}\times\vc{c})_z	&=  b_xc_y - c_xb_y
+	\end{align*}
+	The  cross product 
+	has the disconcerting properties
+	\begin{align*}
+		\vc{a}\times\vc{b} &= -\vc{b}\times\vc{a} \qquad \text{[noncommutative]}\\
+		\intertext{and}
+		\vc{a}\times(\vc{b}\times\vc{c}) &\ne (\vc{a}\times\vc{b})\times\vc{c} \qquad \text{[nonassociative]}\eqquad,
+	\end{align*}
+	and there is no ``cross-division.''
+	
+	For rigid-body rotation in three dimensions, we define an angular velocity
+	vector $\bomega$, which lies along the axis of rotation and bears a right-hand
+	relationship to it. Except in special cases, there is no scalar moment of
+	inertia for which $\vc{L}=I\bomega$; the moment of inertia must be expressed
+	as a matrix.
+	
+\summarych{ch:thermo}{Thermodynamics}
+	A fluid is any gas or liquid, but not a solid; fluids do not
+	exhibit shear forces. A fluid in equilibrium exerts a force
+	on any surface which is proportional to the surface's area
+	and perpendicular to the surface. We can therefore define a
+	quantity called the \sumem{pressure\/}, $P$, which is ratio of force to area,
+	\begin{equation*}
+			P =     \frac{F_\perp}{A}\eqquad,  
+	\end{equation*}
+	where the subscript $\perp$ indicates the component of the fluid's
+	force which is perpendicular to the surface.
+	
+	Usually it is only the difference in pressure between
+	the two sides of a surface that is physically significant.
+	Pressure doesn't just ``press down'' on things; air pressure
+	upward under your chin is the same as air pressure downward
+	on your shoulders. In a fluid acted on by gravity, pressure
+	varies with depth according to the equation
+	\begin{equation*}
+			\der P    =    \rho \vc{g}\cdot\der\vc{y}   .  
+	\end{equation*}
+	This equation is only valid if the fluid is in equilibrium,
+	and if $g$ and $r$ are  constant with respect to height.
+	
+	Temperature can be defined according to the volume of an
+	ideal gas under conditions of standard pressure. The Kelvin
+	scale of temperature used throughout this book equals
+	zero at absolute zero, the temperature at which all random
+	molecular motion ceases, and equals 273 K at the freezing
+	point of water. We can get away with using the Celsius scale
+	as long as we are only interested in temperature differences;
+	a difference of 1 degree C is the same as a difference of 1 degree K.
+	
+	It is an observed fact that ideal gases obey the \sumem{ideal gas law\/},
+	\begin{equation*}
+			PV=nkT\eqquad,	   \qquad 
+	\end{equation*}
+	and this equation can be explained by the kinetic theory of
+	heat, which states that the gas experts pressure on its
+	container because its molecules are constantly in motion. In
+	the kinetic theory of heat, the temperature of a gas is
+	proportional to the average energy per molecule.
+	
+	Not all the heat energy in an object can be extracted to do
+	mechanical work. We therefore describe heat as a lower grade
+	of energy than other forms of energy. Entropy is a measure
+	of how much of a system's energy is inaccessible to being
+	extracted, even by the most efficient heat engine; a high
+	entropy corresponds to a low grade of energy. The change in
+	a system's entropy when heat $Q$ is deposited into it is
+	\begin{equation*}
+			\Delta S    =    \frac{Q}{T}\eqquad.  
+	\end{equation*}
+	The efficiency of any heat engine is defined as
+	\begin{align*}
+		\text{efficiency}
+			 &= \frac{\text{energy we get in useful form}}{\text{energy we pay for}}\eqquad,
+	\intertext{and the efficiency of a Carnot engine, the most efficient of all, is}
+		\text{efficiency}
+			 &= 1-\frac{T_L}{T_H}\eqquad.
+	\end{align*}
+	These results are all closely related. For instance, example
+	\ref{eg:carnotnoentropychange} on page
+	\pageref{eg:carnotnoentropychange} uses $\Delta S=Q/T$ and
+	$\text{efficiency}=1-T_L/T_H$ to show that a Carnot engine doesn't
+	change the entropy of the universe.
+	
+	Fundamentally, entropy is defined as the being proportional
+	to the natural logarithm of the number of states available
+	to a system, and the above equation then serves as a
+	definition of temperature. The entropy of a closed
+	system always increases; this is the second law of thermodynamics.
+
+\summarych{ch:waves}{Waves}
+
+	\sumem{Wave motion} differs in three important ways from the motion
+	of material objects:
+	
+	\begin{itemize}
+	\item[] Waves obey the principle of superposition. When two
+	waves collide, they simply add together.
+	
+	\item[] The medium is not transported along with the wave. The
+	motion of any given point in the medium is a vibration about
+	its equilibrium location, not a steady forward motion.
+	
+	\item[] The velocity of a wave depends on the medium, not on the
+	amount of energy in the wave. (For some types of waves,
+	notably water waves, the velocity may also depend on
+	the shape of the wave.)
+	\end{itemize}
+	
+	Sound waves consist of increases and decreases (typically
+	very small ones) in the density of the air. Light is a wave,
+	but it is a vibration of electric and magnetic fields, not
+	of any physical medium. Light can travel through a vacuum.
+	
+	A periodic wave is one that creates a periodic motion in a
+	receiver as it passes it. Such a wave has a well-defined
+	period and frequency, and it will also have a wavelength,
+	which is the distance in space between repetitions of the
+	wave pattern. The velocity, frequency, and wavelength of a
+	periodic wave are related by the equation
+	\begin{equation*}
+			v  =  f \lambda\eqquad.  
+	\end{equation*}
+	
+	A wave emitted by a moving source will undergo a \sumem{Doppler shift} in
+	wavelength and frequency. The shifted wavelength is
+	given by the equation
+	\begin{equation*}
+		   \lambda' = \left(1-\frac{u}{v}\right)\lambda\eqquad,
+	\end{equation*}
+	where $v$ is the velocity of the waves and $u$ is the
+	velocity of the source, taken to be positive or negative so
+	as to produce a Doppler-lengthened wavelength if  the source
+	is receding and a Doppler-shortened one if it approaches. A
+	similar shift occurs if the observer is moving, and in
+	general the Doppler shift depends approximately only on the
+	relative motion of the source and observer if their
+	velocities are both small compared to the waves' velocity.
+	(This is not just approximately but exactly true for light
+	waves, as required by Einstein's
+	theory of relativity.)
+
+	Whenever a wave encounters the boundary between two media in
+	which its speeds are different, part of the wave is
+	reflected and part is transmitted. The reflection is always
+	reversed front-to-back, but may also be inverted in
+	amplitude. Whether the reflection is inverted depends on how
+	the wave speeds in the two media compare, e.g. a wave on a
+	string  is uninverted when it is reflected back into a
+	segment of string where its speed is lower. The greater the
+	difference in wave speed between the two media, the greater
+	the fraction of the wave energy that is reflected.
+	Surprisingly, a wave in a dense material like wood will be
+	strongly reflected back into the wood at a wood-air boundary.
+	
+	A one-dimensional wave confined by highly reflective
+	boundaries on two sides will display motion which is
+	periodic. For example, if both reflections are inverting,
+	the wave will have a period equal to twice the time required
+	to traverse the region, or to that time divided by an
+	integer. An important special case is a sinusoidal wave; in
+	this case, the wave forms a stationary pattern composed of a
+	superposition of sine waves moving in opposite direction.
+
+\summarych{ch:rel}{Relativity}
+Experiments show that space and time do not have the properties claimed by Galileo and Newton.
+Time and space as seen by one
+observer are distorted compared to another observer's perceptions if they are moving
+relative to each other. This distortion is quantified by the factor
+\begin{equation*}
+  \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\eqquad,
+\end{equation*}
+where $v$ is the relative velocity of the two observers, and $c$ is a universal velocity
+that is the same in all frames of reference. Light travels at $c$. A clock appears to run fastest to an
+observer who is not in motion relative to it, and appears to run too slowly by a factor of
+$\gamma$ to an observer who has a velocity $v$ relative to the clock. Similarly, a meter-stick
+appears longest to an observer who sees it at rest, and appears shorter to other observers.
+Time and space are relative, not absolute. In particular, there is no well-defined concept
+of simultaneity.
+
+All of these strange effects, however, are very small when the relative
+velocities are small compared to $c$. This makes sense, because
+Newton's laws have already been thoroughly tested by experiments at such speeds,
+so a new theory like relativity must agree with the old one in their realm of
+common applicability. This requirement of backwards-compatibility is known as
+the correspondence principle.
+
+Relativity has implications not just for time and space but also for the objects that
+inhabit time and space. The correct relativistic equation for momentum is
+\begin{equation*}
+  p = m \gamma v\eqquad,
+\end{equation*}
+which is similar to the classical $p=mv$ at low velocities, where $\gamma\approx1$, but
+diverges from it more and more at velocities that approach $c$.
+Since $\gamma$ becomes infinite at $v=c$, an infinite force would be required in order
+to give a material object enough momentum to move at the speed of light. In other words,
+material objects can only move at speeds lower than $c$. Relativistically,
+mass and energy are not separately conserved. Mass and energy are two aspects
+of the same phenomenon, known as mass-energy, and they can be converted to one another
+according to the equation
+\begin{equation*}
+  E=mc^2\eqquad.
+\end{equation*}
+The mass-energy of a moving object is $\massenergy=m\gamma c^2$. When an object is at rest,
+$\gamma=1$, and the mass-energy is simply the energy-equivalent of its mass, $mc^2$.
+When an object is in motion, the excess mass-energy, in addition to the $mc^2$, can be interpreted as its
+kinetic energy.
+
+
+\summarych{ch:atomem}{Atoms and Electromagnetism}
+	All the forces we encounter in everyday life boil down to
+	two basic types: gravitational forces and electrical forces.
+	A force such as friction or a ``sticky force'' arises from
+	electrical forces between individual atoms.
+	
+	Just as we use the word mass to describe how strongly an
+	object participates in gravitational forces, we use the word
+	\sumem{charge} for the intensity of its electrical forces. There
+	are two types of charge. Two charges of the same type repel
+	each other, but objects whose charges are different attract
+	each other. Charge is measured in units of coulombs (C).
+	
+	\sumem{Mobile charged particle model:\/} A great many phenomena are
+	easily understood if we imagine matter as containing two
+	types of charged particles, which are at least partially
+	able to move around.
+	
+	\sumem{Positive and negative charge:\/}  Ordinary objects that have not
+	been specially prepared have both types of charge spread
+	evenly throughout them in equal amounts. The object will
+	then tend not to exert electrical forces on any other
+	object, since any attraction due to one type of charge will
+	be balanced by an equal repulsion from the other. (We say
+	``tend not to'' because bringing the object near an object
+	with unbalanced amounts of charge could cause its charges to
+	separate from each other, and the force would no longer
+	cancel due to the unequal distances.) It therefore makes
+	sense to describe the two types of charge using positive and
+	negative signs, so that an unprepared object will have zero
+	\emph{total} charge.
+	
+	The \sumem{Coulomb force law} states that the magnitude of the
+	electrical force between two charged particles is given by
+	\begin{equation*}
+		|F| = \frac{k|q_1||q_2|}{r^2}\eqquad.
+	\end{equation*}
+	
+	\sumem{Conservation of charge:\/} An even more fundamental reason for
+	using positive and negative signs for charge is that with
+	this definition the total charge of a closed system is
+	a conserved quantity.
+	
+	\sumem{Quantization of charge:\/} Millikan's oil drop experiment
+	showed that the total charge of an object could only be an
+	integer multiple of a basic unit of charge, $e$. This
+	supported the idea the the ``flow'' of electrical charge was
+	the motion of tiny particles rather than the motion of some
+	sort of mysterious electrical fluid.
+	
+	Einstein's analysis of Brownian motion was the first
+	definitive proof of the existence of atoms. Thomson's
+	experiments with vacuum tubes demonstrated the existence of
+	a new type of microscopic particle with a very small ratio
+	of mass to charge. Thomson correctly interpreted these as
+	building blocks of matter even smaller than atoms: the first
+	discovery of subatomic particles. These particles are called electrons.
+	
+	The above experimental evidence led to the first useful
+	model of the interior structure of atoms, called the raisin
+	 cookie model. In the raisin  cookie model, an atom
+	consists of a relatively large, massive, positively charged
+	sphere with a certain number of negatively charged
+	electrons embedded in it.
+	
+	Rutherford and Marsden observed that some alpha particles
+	from a beam striking a thin gold foil came back at angles up
+	to 180 degrees. This could not be explained in the
+	then-favored raisin-cookie model of the atom, and led to
+	the adoption of the planetary model of the atom, in which
+	the electrons orbit a tiny, positively-charged nucleus.
+	Further experiments showed that the nucleus itself was a
+	cluster of positively-charged protons and uncharged neutrons.
+	
+	Radioactive nuclei are those that can release energy. The
+	most common types of radioactivity are alpha decay (the
+	emission of a helium nucleus), beta decay (the transformation
+	of a neutron into a proton or vice-versa), and gamma decay
+	(the emission of a type of very-high-frequency light). Stars
+	are powered by nuclear fusion reactions, in which two light
+	nuclei collide and form a bigger nucleus, with the release of energy.
+	
+	Human exposure to ionizing radiation is measured in units of
+	millirem. The typical person is exposed to about 100 mrem
+	worth of natural background radiation per year.
+
+\summarych{ch:dccircuits}{DC Circuits}
+	All electrical phenomena are alike in that that arise from
+	the presence or motion of charge. Most practical electrical
+	devices are based on the motion of charge around a complete
+	circuit, so that the charge can be recycled and does not hit
+	any dead ends. The most useful measure of the flow of charge
+	is \sumem{current}, 
+	\begin{equation*}
+		I=\frac{\der q}{\der t}\eqquad.
+	\end{equation*}
+	An electrical device whose job is to transform energy from
+	one form into another, e.g. a lightbulb, uses power at a
+	rate which depends both on how rapidly charge is flowing
+	through it and on how much work is done on each unit of
+	charge. The latter quantity is known as the voltage
+	difference between the point where the current enters the
+	device and the point where the current leaves it. Since
+	there is a type of electrical energy associated with
+	electrical forces, the amount of work they do is equal to
+	the difference in potential energy between the two points,
+	and we therefore define voltage differences directly in
+	terms of electrical energy,
+	\begin{equation*}
+		 \Delta V=\frac{\Delta U_{elec}}{q}\eqquad.
+	\end{equation*}
+	 The rate of power dissipation is
+	\begin{equation*}
+		P = I\Delta V\eqquad.
+	\end{equation*}
+	
+	Many important electrical phenomena can only be explained if
+	we understand the mechanisms of current flow at the atomic
+	level. In metals, currents are carried by electrons, in
+	liquids by ions. Gases are normally poor conductors unless
+	their atoms are subjected to such intense electrical forces
+	that the atoms become ionized.
+	
+	Many substances, including all solids, respond to electrical
+	forces in such a way that the flow of current between two
+	points is proportional to the voltage difference between
+	those points (assuming the voltage difference is small).
+	Such a substance is called ohmic, and an
+	object made out of an ohmic substance can be rated in terms
+	of its resistance, 
+	\begin{equation*}
+		R = \frac{\Delta V}{I}
+	\end{equation*}
+	An important corollary is
+	that a perfect conductor, with $R=0$, must have constant
+	voltage everywhere within it.
+	
+	A schematic is a drawing of a circuit that standardizes and
+	stylizes its features to make it easier to understand. Any
+	circuit can be broken down into smaller parts. For instance,
+	one big circuit may be understood as two small circuits in
+	series, another as three circuits in parallel. When circuit
+	elements are combined in parallel and in series, we have two
+	basic rules to guide us in understanding how the parts
+	function as a whole:
+	
+	\begin{itemize}
+	\item[] \sumem{The junction rule:\/} In any circuit that is not storing or
+	releasing charge, conservation of charge implies that the
+	total current flowing out of any junction must be the same
+	as the total flowing in.
+	
+	\item[] \sumem{The loop rule:\/} Assuming the standard convention for plus and
+	minus signs, the sum of the voltage drops around any closed
+	loop in a circuit must be zero.
+	\end{itemize}
+	
+	The simplest application of these rules is to pairs of
+	resistors combined in series or parallel. In such cases, the
+	pair of resistors acts just like a single unit with a
+	certain resistance value, called their equivalent resistance.
+	Resistances in series add to produce a larger equivalent resistance, 
+	\begin{equation*}
+		R = R_1+R_2\eqquad,
+	\end{equation*}
+	because the current has to fight its way through both
+	resistances. Parallel resistors combine to produce an
+	equivalent resistance that is smaller than either individual resistance,
+	\begin{equation*}
+		\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2}\eqquad,
+	\end{equation*}
+	because the current has two different paths open to it.
+	
+	An important example of resistances in parallel and series
+	is the use of voltmeters and ammeters in resistive circuits.
+	A voltmeter acts as a large resistance in parallel with the
+	resistor across which the voltage drop is being measured.
+	The fact that its resistance is not infinite means that it
+	alters the circuit it is being used to investigate,
+	producing a lower equivalent resistance. An ammeter acts as
+	a small resistance in series with the circuit through which
+	the current is to be determined. Its resistance is not quite
+	zero, which leads to an increase in the resistance of the
+	circuit being tested.
+
+\summarych{ch:efield}{Fields}
+	Newton conceived of a universe where forces reached across
+	space instantaneously, but we now know that there is a delay
+	in time before a change in the configuration of mass and
+	charge in one corner of the universe will make itself felt
+	as a change in the forces experienced far away. We imagine
+	the outward spread of such a change as a ripple in an
+	invisible universe-filling \emph{field of force}.
+	
+	As an alternative to our earlier energy-based definition, 
+	we can define the \emph{gravitational field} at a given point as
+	the force per unit mass exerted on objects inserted at that
+	point, and likewise the \emph{electric field} is defined as
+	the force per unit charge. These fields are vectors, and the
+	fields generated by multiple sources add according to the
+	rules of vector addition.
+	
+	The \sumem{relationship between the electric field and the voltage} is 
+	\begin{align*}
+		\frac{\partial V}{\partial x}	&= -E_x \\
+		\frac{\partial V}{\partial y}	&= -E_y \\
+		\frac{\partial V}{\partial z}	&= -E_z\eqquad,
+	\end{align*}
+	which can be notated more compactly as a gradient,
+	\begin{equation*}
+		\vc{E} = -\nabla V\eqquad.
+	\end{equation*}
+	
+	Fields of force contain energy, and the density of energy is
+	proportional to the square of the magnitude of the field,
+	\begin{align*}
+		\der U_g	&= -\frac{1}{8\pi G}g^2 \der v \\
+		\der U_e	&= \frac{1}{8\pi k}E^2 \der v \\
+		\der U_m	&\propto B^2 \der v
+	\end{align*}
+	The equation for the energy stored in the magnetic field is given explicitly
+	in the next chapter; for now, we only need the fact that it behaves in the
+	same general way as the first two equations: the energy density is proportional
+	to the square of the field.
+	In the case of static electric fields, we can calculate potential energy
+	either using the previous definition in terms of mechanical
+	work or by calculating the energy stored in the fields. If
+	the fields are not static, the old method gives incorrect
+	results and the new one must be used.
+	
+	Capacitance, $C$, and inductance, $L$, are defined as
+	\begin{align*}
+		U_C    &=   \frac{1}{2C}q^2    \\
+	\intertext{and}
+		U_L    &=    \frac{L}{2}I^2\eqquad,
+	\end{align*}
+	measured in units of farads and henries, respectively.
+	The voltage across a capacitor or inductor is given by
+	\begin{align*}
+		V_C	&= \frac{q}{C} \\
+	\intertext{or}
+		|V_L|	&= \left|L\frac{\der I}{\der t}\right|\eqquad.
+	\end{align*}
+	In the equation for the inductor, the
+	direction of the voltage drop (plus or minus sign) is such
+	that the inductor resists the change in current.
+	Although the equation for the voltage across an inductor follows
+	directly from fundamental arguments concerning the energy
+	stored in the magnetic field, the result is a surprise: the
+	voltage drop implies the existence of electric fields which
+	are not created by charges. This is an \sumem{induced electric field},
+	discussed in more detail in the next chapter.
+	
+	A series LRC circuit exhibits \sumem{oscillation}, and, if driven
+	by an external voltage, resonates.
+	The $Q$ of the circuit relates to the resistance value. For large
+	$Q$, the resonant frequency is
+	\begin{equation*}
+	  \omega \approx \frac{1}{\sqrt{LC}}\eqquad.
+	\end{equation*}
+	A series RC or RL circuit exhibits exponential \sumem{decay},
+	\begin{align*}
+		q &= q_\zu{o}\exp\left(-\frac{t}{RC}\right) \\
+	\intertext{or}
+		I &= I_\zu{o}\exp\left(-\frac{R}{L}t\right)\eqquad,
+	\end{align*}
+	and the quantity $RC$ or $L/R$ is known as the time constant.
+
+	When driven by a sinusoidal AC voltage with amplitude $\tilde{V}$,
+	a capacitor, resistor, or inductor responds with a current
+	having amplitude
+	\begin{equation*}
+		\tilde{I} = \frac{\tilde{V}}{Z}\eqquad,
+	\end{equation*}
+	where the \sumem{impedance\/}, $Z$, is a frequency-dependent quantity
+	having units of ohms.
+	In a capacitor, the current has a phase that is $90\degunit$ ahead of the voltage,
+	while in an inductor the current is $90\degunit$ behind.
+        We can represent these phase relationships by defining the impedances
+	 as complex numbers:
+	 \begin{align*}
+		Z_C &= -\frac{i}{\omega C}\\
+		Z_R	&= R\\
+		Z_L &= i\omega L 
+	\end{align*}
+	The arguments of the complex impedances are to be interpreted as phase relationships between the
+	oscillating voltages and currents.
+	The complex impedances defined in this way combine in series and parallel
+	 according to the same rules as resistances.
+
+	When a voltage source is driving a load through a transmission line, the maximum
+	power is delivered to the load when the impedances of the line and the load
+	are matched.
+	
+	\sumem{Gauss' law states that}
+	for any region of space, the flux through the surface,
+	\begin{equation*}
+		\Phi = \sum \vc{E}_j\cdot\vc{A}_j\eqquad,
+	\end{equation*}
+	is related by
+	\begin{equation*}
+		\Phi = 4\pi kq_{in}
+	\end{equation*}
+	to the charge enclosed within the surface.
+
+\summarych{ch:em}{Electromagnetism}
+	Relativity implies that there must be an interaction between
+	moving charges and other moving charges. This \sumem{magnetic} interaction
+	is in addition to the usual electrical one.
+	The magnetic field can be defined in terms of the magnetic force
+	exerted on a test charge,
+	\begin{equation*}
+		\vc{F} = q\vc{v}\times\vc{B}\eqquad,
+	\end{equation*}
+	or, alternatively, in terms of the torque on a magnetic test dipole,
+	\begin{equation*}
+		|B| = \frac{\tau}{|\vc{m}_{t}|\sin\theta}\eqquad,
+	\end{equation*}
+	where $\theta$ is the angle between the dipole vector and the field.	
+	The magnetic dipole moment $\vc{m}$ of a loop of current has magnitude
+	$m=IA$, and is in the (right-handed) direction perpendicular to the loop.
+
+	The magnetic field has no sources or sinks. Gauss' law for
+	magnetism is
+	\begin{equation*}
+		\Phi_B = 0\eqquad.
+	\end{equation*}
+	
+	The external magnetic field of a long, straight wire is
+	\begin{equation*}
+		B	= \frac{2kI}{c^2R}\eqquad,
+	\end{equation*}
+	forming a right-handed circular pattern around the wire.
+	
+	The energy of the magnetic field is
+	\begin{equation*}
+		\der U_m	= 		\frac{c^2}{8\pi k}B^2 \der v\eqquad.
+	\end{equation*}
+
+	The magnetic field resulting from a set of currents can be
+	computed by finding a set of dipoles that combine to give
+	those currents. The field of a dipole is
+	\begin{align*}
+		B_z	&= \frac{km}{c^2}\left(3\cos^2\theta-1\right)r^{-3}\\
+		B_R	&= \frac{km}{c^2}\left(3\sin\theta\:\cos\theta\right)r^{-3}\eqquad,\\
+	\end{align*}
+	which reduces to $B_z=km/c^2r^3$ in the plane perpendicular to the
+	dipole moment. By constructing a current loop out of dipoles, 
+	one can prove the \sumem{Biot-Savart law},
+	\begin{equation*}
+	  \der \vc{B} = \frac{kI\der \bell\times\vc{r}}{c^2r^3}\eqquad,
+	\end{equation*}
+	which gives the field when we integrate over a closed current loop.
+	All of this is valid only for static magnetic fields.
+	
+	\sumem{Amp\`{e}re's law} is another way of relating static magnetic fields to the static currents
+	that created them, and it is more easily extended to nonstatic fields than is the
+	Biot-Savart law. Amp\`{e}re's law states that the \sumem{circulation} of the magnetic
+	field,
+	\begin{equation*}
+		\Gamma_B = \sum \vc{s}_j\cdot\vc{B}_j\eqquad,
+	\end{equation*}
+	around the edge of a surface is related to the current $I_{through}$ passing through
+	the surface,
+	\begin{equation*}
+		\Gamma = \frac{4\pi k}{c^2}\,I_{through}\eqquad.
+	\end{equation*}
+
+	In the general nonstatic case, the fundamental laws of physics governing
+	electric and magnetic fields are \sumem{Maxwell's equations\/}, which state that
+	for any closed surface, the fluxes through the surface are
+	\begin{align*}
+		\Phi_E		&= 4\pi kq_{in} \qquad\qquad\qquad \text{and}\\
+		\Phi_B		&= 0\eqquad.\\
+	\intertext{For any surface that is not closed, the circulations 
+	around the edges of the surface are given by}
+		\Gamma_E 	&= -\frac{\partial\Phi_B}{\partial t}  \qquad\qquad\qquad \text{and} \\
+		c^2\Gamma_B 	&= \frac{\partial\Phi_E}{\partial t}  + 4\pi k I_{through}\eqquad.
+	\end{align*}
+
+	The most important result of Maxwell's equations is the existence of
+	\sumem{electromagnetic waves} which propagate at the velocity of light --- that's
+	what light is. The waves are transverse, and the electric and magnetic fields
+	are perpendicular to each other. There are no purely electric or purely magnetic
+	waves; their amplitudes are always related to one another by $B=E/c$. They propagate
+	in the right-handed direction given by the cross product $\vc{E}\times\vc{B}$, and
+	carry momentum $p=U/c$.
+
+A complete statement of Maxwell's equations in the presence of electric and magnetic materials is as follows:
+\begin{align*}
+    \Phi_D &= q_\text{free} \\
+    \Phi_B &= 0 \\
+    \Gamma_E &= -\frac{\der \Phi_B}{\der t} \\
+    \Gamma_H &= \frac{\der \Phi_D}{\der t} + I_\text{free}\eqquad,
+\end{align*}
+where the auxiliary fields $\vc{D}$ and $\vc{H}$ are defined as
+\begin{align*}
+  \vc{D} &=\epsilon \vc{E} \qquad  \text{and}\\
+  \vc{H} &= \frac{\vc{B}}{\mu}\eqquad,
+\end{align*}
+and $\epsilon$ and $\mu$ are the permittivity and permeability of the substance.
+	
+\summarych{ch:optics}{Optics}
+\sumem{The ray model of light:\/}
+We can understand many phenomena involving light without
+having to use sophisticated models such as the wave model or
+the particle model. Instead, we simply describe light
+according to the path it takes, which we call a ray. The ray
+model of light is useful when light is interacting with
+material objects that are much larger than a wavelength of
+light. Since a wavelength of visible light is so short
+compared to the human scale of existence, the ray model is
+useful in many practical cases.
+
+A smooth surface produces specular reflection, in which the
+reflected ray exits at the same angle with respect to the
+normal as that of the incoming ray. A rough surface gives
+diffuse reflection, where a single ray of light is divided
+up into many weaker reflected rays going in many directions.
+
+\sumem{Images:\/}
+A large class of optical devices, including lenses and flat
+and curved mirrors, operates by bending light rays to form
+an image. A real image is one for which the rays actually
+cross at each point of the image. A virtual image, such as
+the one formed behind a flat mirror, is one for which the
+rays only appear to have crossed at a point on the image. A
+real image can be projected onto a screen; a virtual one cannot.
+
+Mirrors and lenses will generally make an image that is
+either smaller than or larger than the original object. The
+scaling factor is called the magnification. In many
+situations, the angular magnification is more important than
+the actual magnification.
+
+Every lens or mirror has a property called the focal length,
+which is defined as the distance from the lens or mirror to
+the image it forms of an object that is infinitely far away.
+A stronger lens or mirror has a shorter focal length.
+
+\sumem{Locating images:\/}
+The relationship between the locations of an object and its
+image formed by a lens or mirror can always be expressed by
+equations of the form
+\begin{align*}
+                        \theta_f &= \pm \theta_i \pm \theta_o \\
+        \frac{1}{f} &= \pm\frac{1}{d_i}\pm\frac{1}{d_o}\eqquad.
+\end{align*}
+The choice of plus and minus signs depends on whether we are
+dealing with a lens or a mirror, whether the lens or mirror
+is converging or diverging, and whether the image is real or
+virtual. A method for determining the plus and minus
+signs is as follows:
+
+\begin{enumerate}
+
+\item Use ray diagrams to decide whether $\theta_i$ and
+$\theta_o$ vary in the same way or in opposite ways. Based
+on this, decide whether the two signs in the equation are
+the same or opposite. If the signs are opposite, go on to
+step 2 to determine which is positive and which is negative.
+
+\item If the signs are opposite, we need to decide which is the
+positive one and which is the negative. Since the focal
+angle is never negative, the smaller angle must be the
+one with a minus sign.
+
+\end{enumerate}
+
+Once the correct form of the equation has been determined,
+the magnification can be found via the equation
+\begin{equation*}
+                M    =    \frac{d_i}{d_o}\eqquad.
+\end{equation*}
+This equation expresses the idea that the entire image-world is shrunk
+consistently in all three dimensions.
+
+\sumem{Refraction:\/}
+Refraction is a change in direction that occurs when a wave
+encounters the interface between two media. Together,
+refraction and reflection account for the basic principles
+behind nearly all optical devices.
+
+Snell discovered the equation for refraction,
+\begin{equation*}
+n_1 \sin \theta_1=n_2 \sin \theta_2\eqquad,
+\end{equation*}
+\begin{longnoteafterequation}
+                [angles measured with respect to the normal]
+\end{longnoteafterequation}
+\noindent through experiments with light rays, long before light was
+proven to be a wave. Snell's law can be proven based on the
+geometrical behavior of waves. Here $n$ is the index of
+refraction. Snell invented this quantity to describe the
+refractive properties of various substances, but it was
+later found to be related to the speed of light in the substance,
+\begin{equation*}
+                n  =  \frac{c}{v}\eqquad,
+\end{equation*}
+where $c$ is the speed of light in a vacuum. In general a
+material's index of refraction is different for different
+wavelengths of light.
+Total internal reflection occurs when there is no
+angle that satisfies Snell's law.
+
+\sumem{Wave optics:\/}
+Wave optics is a more general theory of light than ray
+optics. When light interacts with material objects that are
+much larger then one wavelength of the light, the ray model
+of light is approximately correct, but in other cases the
+wave model is required.
+
+Huygens' principle states that, given a wavefront at one
+moment in time, the future behavior of the wave can be found
+by breaking the wavefront up into a large number of small,
+side-by-side wave peaks, each of which then creates a
+pattern of circular or spherical ripples. As these sets of
+ripples add together, the wave evolves and moves through
+space. Since Huygens' principle is a purely geometrical
+construction, diffraction effects obey a simple scaling
+rule: the behavior is unchanged if the wavelength and the
+dimensions of the diffracting objects are both scaled up or
+down by the same factor. If we wish to predict the angles at
+which various features of the diffraction pattern radiate
+out, scaling requires that these angles depend only on the
+unitless ratio $\lambda $/d, where $d$ is the size of some
+feature of the diffracting object.
+
+Double-slit diffraction is easily analyzed using Huygens'
+principle if the slits are narrower than one wavelength. We
+need only construct two sets of ripples, one spreading out
+from each slit. The angles of the maxima (brightest points
+in the bright fringes) and minima (darkest points in the
+dark fringes) are given by the equation
+\begin{equation*}
+        \frac{\lambda}{d} = \frac{\sin\theta}{m}\eqquad,
+\end{equation*}
+where $d$ is the center-to-center spacing of the slits, and
+$m$ is an integer at a maximum or an integer plus 1/2 at a minimum.
+
+If some feature of a diffracting object is repeated, the
+diffraction fringes remain in the same places, but become
+narrower with each repetition. By repeating a double-slit
+pattern hundreds or thousands of times, we obtain a
+diffraction grating.
+
+A single slit can produce diffraction fringes if it is
+larger than one wavelength. Many practical instances of
+diffraction can be interpreted as single-slit diffraction,
+e.g., diffraction in telescopes. The main thing to realize
+about single-slit diffraction is that it exhibits the same
+kind of relationship between $\lambda$, $d$, and angles of
+fringes as in any other type of diffraction.
+
+\summarych{ch:quantum}{Quantum Physics}
+Quantum physics differs from classical physics in many ways,
+the most dramatic of which is that certain processes at the
+atomic level, such as radioactive decay, are random rather
+than deterministic. There is a method to the madness,
+however: quantum physics still rules out any process that
+violates conservation laws, and it also offers methods for
+calculating probabilities numerically.
+The most important of these generic methods
+is the law of independent probabilities, which states that
+if two random events are not related in any way, then the
+probability that they will both occur equals the product of
+the two probabilities,
+\begin{multline*}
+        \text{probability of A and B}  \\=  P_AP_B  \qquad \shoveright{\text{[if A and B are independent]}\eqquad.}
+\end{multline*}
+When discussing a random variable $x$ that can take on a continuous
+range of values, we cannot assign any finite probability to
+any particular value. Instead, we define the probability distribution
+$D(x)$, defined so that its integral over some range of $x$ gives
+the probability of that range.
+
+In radioactive decay, the
+time that a radioactive atom has a 50\% chance of surviving
+is called the half-life, $t_{1/2}$. The probability of surviving
+for two half-lives is $(1/2)(1/2)=1/4$, and so on. In
+general, the probability of surviving a time $t$ is given by
+\begin{equation*}
+		P_{surv}(t)  =    0.5^{t/t_{1/2}}\eqquad.
+\end{equation*}
+Related quantities such as the rate of decay and probability
+distribution for the time of decay are given by the same
+type of exponential function, but multiplied by certain constant factors.
+
+Around the turn of the twentieth century, experiments began
+to show problems with the classical wave theory of light. In
+any experiment sensitive enough to detect very small amounts
+of light energy, it becomes clear that light energy cannot
+be divided into chunks smaller than a certain amount.
+Measurements involving the photoelectric effect demonstrate
+that this smallest unit of light energy equals $hf$,
+where $f$ is the frequency of the light and $h$ is a number
+known as Planck's constant. We say that light energy is
+quantized in units of $hf$, and we interpret this
+quantization as evidence that light has particle properties
+as well as wave properties. Particles of light are called photons.
+
+The only method of reconciling the wave and particle natures
+of light that has stood the test of experiment is the
+probability interpretation: the probability
+that the particle is at a given location is proportional to
+the square of the amplitude of the wave at that location.
+
+One important consequence of wave-particle duality is that
+we must abandon the concept of the path the particle takes
+through space. To hold on to this concept, we would have to
+contradict the well established wave nature of light, since
+a wave can spread out in every direction simultaneously.
+
+Light is both a particle and a wave. Matter is both
+a particle and a wave. The equations that connect the
+particle and wave properties are the same in all cases:
+\begin{align*}
+        E  &=  hf  \\
+        p  &=  h/\lambda
+\end{align*}
+Unlike the electric and magnetic fields that make up a
+photon-wave, the electron wavefunction is not directly
+measurable. Only the square of the wavefunction, which
+relates to probability, has direct physical significance.
+
+A particle that is bound within a certain region of space is
+a standing wave in terms of quantum physics. The two
+equations above can then be applied to the standing wave to
+yield some important general observations about bound particles:
+
+\begin{enumerate}
+\item The particle's energy is quantized (can only have certain values).
+
+\item The particle has a minimum energy.
+
+\item The smaller the space in which the particle is confined,
+the higher its kinetic energy must be.
+\end{enumerate}
+These immediately resolve the difficulties that classical
+physics had encountered in explaining observations such as
+the discrete spectra of atoms, the fact that atoms don't
+collapse by radiating away their energy, and the formation of chemical bonds.
+
+A standing wave confined to a small space must have a short
+wavelength, which corresponds to a large momentum in quantum
+physics. Since a standing wave consists of a superposition
+of two traveling waves moving in opposite directions, this
+large momentum should actually be interpreted as an equal
+mixture of two possible momenta: a large momentum to the
+left, or a large momentum to the right. Thus it is not
+possible for a quantum wave-particle to be confined to a
+small space without making its momentum very uncertain. In
+general, the Heisenberg uncertainty principle states that it
+is not possible to know the position and momentum of a
+particle simultaneously with perfect accuracy. The
+uncertainties in these two quantities must satisfy the
+approximate inequality
+\begin{equation*}
+    \Delta p\Delta x \gtrsim h\eqquad.
+\end{equation*}
+
+When an electron is subjected to electric forces, its
+wavelength cannot be constant. The ``wavelength'' to be used
+in the equation $p=h/\lambda$ should be thought of as the
+wavelength of the sine wave that most closely approximates
+the curvature of the wavefunction at a specific point.
+
+Infinite curvature is not physically possible, so realistic
+wavefunctions cannot have kinks in them, and cannot just cut
+off abruptly at the edge of a region where the particle's
+energy would be insufficient to penetrate according to
+classical physics. Instead, the wavefunction ``tails off''
+in the classically forbidden region, and as a consequence it
+is possible for particles to ``tunnel'' through regions
+where according to classical physics they should not be able
+to penetrate. If this quantum tunneling effect did not
+exist, there would be no fusion reactions to power our sun,
+because the energies of the nuclei would be insufficient to
+overcome the electrical repulsion between them.
+
+Hydrogen, with one proton and one electron, is the simplest
+atom, and more complex atoms can often be analyzed to a
+reasonably good approximation by assuming their electrons
+occupy states that have the same structure as the hydrogen
+atom's. The electron in a hydrogen atom exchanges very
+little energy or angular momentum with the proton, so its
+energy and angular momentum are nearly constant, and can be
+used to classify its states. The energy of a hydrogen state
+depends only on its $n$ quantum number.
+
+In quantum physics, the angular momentum of a particle
+moving in a plane is quantized in units of $\hbar$. Atoms are
+three-dimensional, however, so the question naturally arises
+of how to deal with angular momentum in three dimensions. In
+three dimensions, angular momentum is a vector in the
+direction perpendicular to the plane of motion, such that
+the motion appears clockwise if viewed along the direction
+of the vector. Since angular momentum depends on both
+position and momentum, the Heisenberg uncertainty principle
+limits the accuracy with which one can know it. The most that
+can be known about an angular momentum vector is its
+magnitude and one of its three vector components, both of
+which are quantized in units of $\hbar$.
+
+In addition to the angular momentum that an electron carries
+by virtue of its motion through space, it possesses an
+intrinsic angular momentum with a magnitude of $\hbar/2$. Protons
+and neutrons also have spins of $\hbar/2$, while the photon
+has a spin equal to $\hbar$.
+
+Particles with half-integer spin obey the Pauli exclusion
+principle: only one such particle can exist in a given
+state, i.e., with a given combination of quantum numbers.
+
+We can enumerate the lowest-energy states of hydrogen as follows:
+
+\noindent\begin{tabular}{|llll|l|}
+\hline
+  $n=1$, & $\ell=0$, & $\ell_z=0$, & $s_z=+1/2$ or $-1/2$ &	two states \\
+  $n=2$, & $\ell=0$, & $\ell_z=0$, & $s_z=+1/2$ or $-1/2$ &	two states\\
+  $n=2$, & $\ell=1$, & $\ell_z=-1$, 0, or 1, & $s_z=+1/2$ or $-1/2$ &	six states\\
+	\ldots & & & & \ldots\\
+\hline
+\end{tabular}
+
+\noindent The periodic table can be understood in terms of the filling
+of these states. The nonreactive noble gases are those atoms
+in which the electrons are exactly sufficient to fill all
+the states up to a given $n$ value. The most reactive
+elements are those with one more electron than a noble gas
+element, which can release a great deal of energy by giving
+away their high-energy electron, and those with one electron
+fewer than a noble gas, which release energy by accepting an electron.

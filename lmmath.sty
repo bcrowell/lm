@@ -1,0 +1,80 @@
+%
+%
+% lmmath.sty
+% (c) 2001 Ben Crowell, licensed under the Creative Commons
+% Attribution-ShareAlike license,
+% http://creativecommons.org/licenses/by-sa/3.0/
+%
+% These are mainly convenience macros for typesetting math.
+% Also, there's some stuff for typesetting math in sans serif ---
+% as discussed Aug 2001 on comp.text.tex, there is supposed to be a better
+% way to handle sans serif math. However, I can't figure out how to do it!
+% 
+%
+%================================ math ================================
+%-------------------- differentials, vectors not in italics, units -------------------
+\newcommand{\der}{\operatorname{d\!}}
+%   ... the \! is a negative thin space to keep the d close to the variable that comes after it
+%       http://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator
+\newcommand{\divg}{\textup{div}\:}
+\newcommand{\curl}{\textup{curl}\:}
+\newcommand{\grad}{\textup{grad}\:}
+\newcommand{\myvec}[1]{\mathbf{#1}} % Use /vc{} instead.
+\newcommand{\myunit}[1]{\textup{#1}}
+\newcommand{\kgunit}{\myunit{kg}}
+\newcommand{\gunit}{\myunit{g}}
+\newcommand{\munit}{\myunit{m}}
+\newcommand{\sunit}{\myunit{s}}
+\newcommand{\degunit}{\ensuremath{\mspace{0mu}^\circ}} % the \mspace{0mu} is a zero-width math space; need it so that, e.g., $2\times10^{-3}\degunit$ doesn't get
+                                                       % interpreted as a double superscript
+\newcommand{\degcunit}{\degunit\textup{C}}
+\newcommand{\junit}{\myunit{J}}
+\newcommand{\nunit}{\myunit{N}}
+\newcommand{\kunit}{\myunit{K}}
+\newcommand{\unitdot}{\!\cdot\!}
+\newcommand{\momunit}{\kgunit\unitdot\munit/\sunit}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\bomega}{\boldsymbol{\omega}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bsigma}{\boldsymbol{\sigma}}
+\newcommand{\btau}{\boldsymbol{\tau}}
+\newcommand{\bell}{\boldsymbol{\ell}}
+\newcommand{\gravunit}{\junit/\kgunit\unitdot\munit}
+%========================= vectors in bold =========================
+% The following is set up so vectors are in upright bold. If I ever change my mind and want them in
+% slanted bold, it should be easy to change here.
+\newcommand{\vc}[1]{\ensuremath{\mathbf{#1}}}
+%========================= general math stuff =========================
+% Symbols for relativity. These are described verbally when introduced in the text, so if I ever change them,
+% I need to change the verbal descriptions as well.
+\newcommand{\massenergy}{\mathcal{E}}
+\newcommand{\interval}{\mathcal{I}}% spacetime interval
+\newcommand{\mytilde}[1]{\widetilde{#1}}
+\newcommand{\mytildewide}[1]{\stackrel{\sim}{\smash{#1}\rule{0pt}{1.1ex}}}
+%      ... for use with wide characters like W
+%      https://tex.stackexchange.com/questions/471312/large-tilde-over-math-symbol-with-appropriate-horizontal-positioning
+%-------------------- math in sans-serif text -------------------
+% $...\zs{x}...$ -- italic, for use when I need symbol font mixed in
+% $...\zu{x}...$ -- upright, e.g. for digits and things in sans
+% See DeclareMathAlphabet near top, and p. 177 of LaTeX companion, for \ms{}.
+% Note: don't put superscripts or subscripts inside these, or any math commands
+% at all.
+% They can all be used outside of math mode in examples or other sans-serif
+% text, but won't necessarily produce the right results in serif text,
+% since zs forces sans serif. So when cutting and pasting from example text
+% into serif text, have to change zs's.
+\newcommand{\zs}[1]{\ensuremath{\ms{#1}}}
+\newcommand{\zu}[1]{\textup{#1}}
+\newcommand{\zb}[1]{\textbf{#1}}
+%==============================================
+\newenvironment{longnoteafterequation}
+	{%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{20mm}\noindent%
+	}
+	{%
+		 \par\setlength{\leftskip}{\saveleftskip} \par
+	}
+%==============================================
+\newcommand{\mygamma}{\textup{\textgamma}}  % more legible for students who don't know Greek alphabet; they mistake Computer Modern gamma for Latin y
+% For reasons I don't understand, this doesn't work in SN. In SN, ch 1 redefines it as plain old \gamma.

@@ -1,0 +1,1802 @@
+<% begin_sec("Newton's third law",0,'third-law') %>
+
+Newton created the modern concept of force starting from his
+insight that all the effects that govern motion are
+interactions between two objects: unlike the Aristotelian
+theory, Newtonian physics has no phenomena in which an
+object changes its own motion.
+
+\pagebreak
+
+Is one object always the ``order-giver'' and the other the
+``order-follower''? As an example, consider a batter hitting
+a baseball. The bat definitely exerts a large force on the
+ball, because the ball accelerates drastically. But if you
+have ever hit a baseball, you also know that the ball makes
+a force on the bat --- often with painful results if your
+technique is as bad as mine!
+
+How does the ball's force on the bat compare with the bat's
+force on the ball? The bat's acceleration is not as
+spectacular as the ball's, but maybe we shouldn't expect it
+to be, since the bat's mass is much greater. In fact,
+careful measurements of both objects' masses and accelerations
+would show that $m_{ball}a_{ball}$ is very nearly equal to
+$-m_{bat}a_{bat}$, which suggests that the ball's force
+on the bat is of the same magnitude as the bat's force on
+the ball, but in the opposite direction.
+
+Figures \figref{third-law-magnets} and \figref{third-law-spring-scales}
+ show two somewhat more practical laboratory
+experiments for investigating this issue accurately and
+without too much interference from extraneous forces.
+
+<% marg(86) %>
+<%
+  fig(
+    'third-law-magnets',
+    %q{%
+      Two magnets exert forces on each
+      other.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'third-law-spring-scales',
+    %q{%
+      Two people's hands exert forces
+      on each other.
+    }
+  )
+%>
+<% end_marg %>
+
+
+In experiment \figref{third-law-magnets}, a large magnet and a small magnet
+are weighed separately, and then one magnet is hung from the
+pan of the top balance so that it is directly above the
+other magnet. There is an attraction between the two
+magnets, causing the reading on the top scale to increase
+and the reading on the bottom scale to decrease. The large
+magnet is more ``powerful'' in the sense that it can pick up
+a heavier paperclip from the same distance, so many people
+have a strong expectation that one scale's reading will
+change by a far different amount than the other. Instead, we
+find that the two changes are equal in magnitude but
+opposite in direction: the force of the bottom magnet pulling
+down on the top one has the same strength as the force of
+the top one pulling up on the bottom one.
+
+<% marg(32) %>
+<%
+  fig(
+    'shuttle-launch',
+    %q{%
+      Rockets work by pushing exhaust gases out
+      the back. Newton's third law says that if the
+      rocket exerts a backward force on the gases,
+      the gases must make an equal forward force
+      on the rocket. Rocket engines can function
+      above the atmosphere, unlike propellers and
+      jets, which work by pushing against the 
+      surrounding air.
+    }
+  )
+%>
+
+<% end_marg %>
+
+m4_ifelse(__me,1,[:
+\enlargethispage{-3\baselineskip}
+:],[:
+\enlargethispage{-3\baselineskip}
+:])
+
+In experiment \figref{third-law-spring-scales}, two people pull on two spring
+scales. Regardless of who tries to pull harder, the two
+forces as measured on the spring scales are equal.
+Interposing the two spring scales is necessary in order to
+measure the forces, but the outcome is not some artificial
+result of the scales' interactions with each other. If one
+person slaps another hard on the hand, the slapper's hand
+hurts just as much as the slappee's, and it doesn't matter
+if the recipient of the slap tries to be inactive. (Punching
+someone in the mouth causes just as much force on the fist
+as on the lips. It's just that the lips are more delicate.
+The forces are equal, but not the levels of pain and injury.)
+
+Newton, after observing a series of results such as these,
+decided that there must 
+be a fundamental \index{Newton's laws of motion!third law}law of nature at work:
+
+\begin{important}[Newton's third law]
+Forces occur in equal and opposite pairs: whenever object A
+exerts a force on object B, object B must also be exerting a
+force on object A. The two forces are equal in magnitude and
+opposite in direction.
+\end{important}
+
+Two modern, high-precision tests of the third law are described 
+on m4_ifelse(__lm_series,1,[:p.~\pageref{sec:kreuzer}.:],[:p.~\pageref{sec:third-law-true}.:])
+
+In one-dimensional situations, we can use plus and minus
+signs to indicate the directions of forces, and Newton's
+third law can be written succinctly as $F_{\text{A on B}}=-F_{\text{B on A}}$.
+m4_ifelse(__me,1,[:%
+Section \ref{sec:third-law-true} gives a more detailed discussion of the logical and
+empirical underpinnings of the third law.
+\enlargethispage{-1\baselineskip}
+:],[:
+\enlargethispage{-3\baselineskip}
+:])
+
+
+<% self_check('swimming-and-walking',<<-'SELF_CHECK'
+Figure \\figref{swimming} analyzes swimming using Newton's third law.
+Do a similar analysis for a sprinter leaving the starting line.
+  SELF_CHECK
+  ) %>
+
+There is no cause and effect relationship between the two
+forces in Newton's third law. There is no ``original'' force, and neither one is a
+response to the other. The pair of forces is a relationship,
+like marriage, not a back-and-forth process like a tennis
+match. Newton came up with the third law as a generalization
+about all the types of forces with which he was familiar,
+such as frictional and gravitational forces. When later
+physicists discovered a new type of force, such as the force
+that holds atomic nuclei together, they had to check whether
+it obeyed Newton's third law. So far, no violation of the
+third law has ever been discovered, whereas the first and
+second laws were shown to have limitations by Einstein and
+the pioneers of atomic physics.
+
+<% marg(130) %>
+<%
+  fig(
+    'swimming',
+    %q{%
+      A swimmer doing the breast stroke pushes backward
+      against the water. By Newton's third law, the water pushes
+      forward on him. 
+    }
+  )
+%>
+<% end_marg %>
+
+The English vocabulary for describing forces is unfortunately
+rooted in Aristotelianism, and often implies incorrectly
+that forces are one-way relationships. It is unfortunate
+that a half-truth such as ``the table exerts an upward force
+on the book'' is so easily expressed, while a more complete
+and correct description ends up sounding awkward or strange:
+``the table and the book interact via a force,'' or ``the
+table and book participate in a force.''
+<% marg(36) %>
+<%
+  fig(
+    'skaters',
+    %q{%
+      Newton's third law does not mean that
+      forces always cancel out so that nothing can ever move. If these two ice
+      skaters, initially at rest, push against
+      each other, they will both move.
+    }
+  )
+%>
+<% end_marg %>
+
+To students, it often sounds as though Newton's third law
+implies nothing could ever change its motion, since the two
+equal and opposite forces would always cancel. The two
+forces, however, are always on two different objects, so it
+doesn't make sense to add them in the first place --- we
+only add forces that are acting on the same object. If two
+objects are interacting via a force and no other forces are
+involved, then \emph{both} objects will accelerate --- in
+opposite directions!
+
+<%
+  fig(
+    'cartoon-bar-tab',
+    %q{%
+      It doesn't make sense for the man to
+      talk about using the woman's money 
+      to cancel out his bar tab, because there
+      is no good reason to combine his
+      debts and her assets. Similarly, it
+      doesn't make sense to refer to the
+      equal and opposite forces of Newton's
+      third law as canceling. It only makes
+      sense to add up forces that are acting
+      on the \emph{same} object, whereas two
+      forces related to each other by
+      Newton's third law are always acting
+      on two \emph{different} objects.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+<% begin_sec("A mnemonic for using Newton's third law correctly") %>
+
+Mnemonics are tricks for memorizing things. For instance,
+the musical notes that lie between the lines on the treble
+clef spell the word FACE, which is easy to remember. Many
+people use the mnemonic ``SOHCAHTOA'' to remember the
+definitions of the sine, cosine, and tangent in trigonometry.
+I have my own modest offering, \index{POFOSTITO}POFOSTITO,
+which I hope will make it into the mnemonics hall of fame.
+It's a way to avoid some of the most common problems with
+applying Newton's third law correctly:
+
+<% raw_fig('pofostito') %>
+
+\begin{eg}{A book lying on a table}
+\egquestion A book is lying on a table. What force is the
+Newton's-third-law partner of the earth's gravitational force on the book?
+
+Answer: Newton's third law works like ``B on A, A on $B$,''
+so the partner must be the book's gravitational force
+pulling upward on the planet earth. Yes, there is such a
+force! No, it does not cause the earth to do anything noticeable.
+
+Incorrect answer: The table's upward force on the book is
+the Newton's-third-law partner of the earth's gravitational force on the book.
+
+<% x_mark %> This answer violates two out of three of the commandments
+of POFOSTITO. The forces are not of the same type, because
+the table's upward force on the book is not gravitational.
+Also, three objects are involved instead of two: the book,
+the table, and the planet earth.
+
+\end{eg}
+
+\begin{eg}{Pushing a box up a hill}\label{eg:box-uphill}
+\egquestion A person is pushing a box up a hill. What force is
+related by Newton's third law to the person's force on the box?
+
+\eganswer The box's force on the person.
+
+Incorrect answer: The person's force on the box is opposed
+by friction, and also by gravity.
+
+<% x_mark %> This answer fails all three parts of the POFOSTITO test,
+the most obvious of which is that three forces are referred
+to instead of a pair.
+
+\end{eg}
+
+<% marg(100) %>
+\begin{margtopic}{Optional topic: Newton's third law and action at a distance}
+Newton's third law is completely symmetric in the sense that
+neither force constitutes a delayed response to the other.
+Newton's third law does not even mention time, and the
+forces are supposed to agree at any given instant. This
+creates an interesting situation when it comes to noncontact
+forces. Suppose two people are holding magnets, and when one
+person waves or wiggles her magnet, the other person feels
+an effect on his. In this way they can send signals to each
+other from opposite sides of a wall, and if Newton's third
+law is correct, it would seem that the signals are
+transmitted instantly, with no time lag. The signals are
+indeed transmitted quite quickly, but experiments with
+electrically controlled magnets show that the signals do
+not leap the gap instantly: they travel at the same speed as
+light, which is an extremely high speed but not an infinite one.
+
+Is this a contradiction to Newton's third law? Not really.
+According to current theories, there are no true noncontact
+forces. Action at a distance does not exist. Although it
+appears that the wiggling of one magnet affects the other
+with no need for anything to be in contact with anything,
+what really happens is that wiggling a magnet creates a ripple
+in the magnetic field pattern that exists even in empty space. The magnet shoves
+the ripples out with a kick and receives a kick in return,
+in strict obedience to Newton's third law. The ripples spread
+out in all directions, and the ones that hit the other
+magnet then interact with it, again obeying Newton's third law.
+\end{margtopic}
+<% end_marg %>
+
+\begin{eg}{If we could violate Newton's third law\ldots}\label{eg:third-law-violation-car}
+If we could violate Newton's third law, we could do strange and wonderful things.
+Newton's third laws says that the unequal magnets in figure \figref{third-law-magnets} on p.~\pageref{fig:third-law-magnets}
+should exert equal forces on each other, and this is what we actually find when we do
+the experiment shown in that figure. But suppose instead that it worked as most
+people intuitively expect. What if the third law was violated, so that the big magnet
+made more force on the small one than the small one made on the big one? To make the analysis
+simple, we add some extra nonmagnetic material to the small magnet in figure \subfigref{third-law-violation-car}{1},
+so that it has the same mass and size as the big one. We also attach springs.
+When we release the magnets, \subfigref{third-law-violation-car}{2}, the weak one is accelerated strongly,
+while the strong one barely moves. If we put them inside a box, \subfigref{third-law-violation-car}{3},
+the recoiling strong magnet bangs
+hard against the side of the box, and the box mysteriously accelerates itself. The process can be repeated
+indefinitely for free, so we have a magic box that propels itself without needing fuel.
+We can make it into a perpetual-motion car, \subfigref{third-law-violation-car}{4}. If Newton's
+third law was violated, we'd never have to pay for gas!
+\end{eg}
+
+<%
+  fig(
+    'third-law-violation-car',
+    %q{%
+      Example \ref{eg:third-law-violation-car}. This doesn't actually happen!
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+
+\worked{box-uphill-partners}{More about example \ref{eg:box-uphill}}
+
+\worked{third-law-partners}{Why did it accelerate?}
+
+\startdqs
+
+\begin{dq}
+When you fire a gun, the exploding gases push outward in
+all directions, causing the bullet to accelerate down the
+barrel. What third-law pairs are involved? [Hint: Remember
+that the gases themselves are an object.]
+\end{dq}
+
+\begin{dq}
+Tam Anh grabs Sarah by the hand and tries to pull her.
+She tries to remain standing without moving. A student
+analyzes the situation as follows. ``If Tam Anh's force on
+Sarah is greater than her force on him, he can get her to
+move. Otherwise, she'll be able to stay where she is.''
+What's wrong with this analysis?
+\end{dq}
+
+\begin{dq}
+You hit a tennis ball against a wall. Explain any and all
+incorrect ideas in the following description of the physics
+involved: ``According to Newton's third law, there has to be
+a force opposite to your force on the ball. The opposite
+force is the ball's mass, which resists acceleration, and
+also air resistance.''
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Classification and behavior of forces",0) %>\index{forces!classification of}
+One of the most basic and important tasks of physics is to
+classify the forces of nature. I have already referred
+informally to ``types'' of forces such as friction,
+magnetism, gravitational forces, and so on. Classification
+systems are creations of the human mind, so there is always
+some degree of arbitrariness in them. For one thing, the
+level of detail that is appropriate for a classification
+system depends on what you're trying to find out. Some
+linguists, the ``lumpers,'' like to emphasize the similarities
+among languages, and a few extremists have even tried to
+find signs of similarities between words in languages as
+different as English and Chinese, lumping the world's
+languages into only a few large groups. Other linguists, the
+``splitters,'' might be more interested in studying the
+differences in pronunciation between English speakers in New
+York and Connecticut. The splitters call the lumpers sloppy,
+but the lumpers say that science isn't worthwhile unless it
+can find broad, simple patterns within the seemingly complex universe.
+
+Scientific classification systems are also usually
+compromises between practicality and naturalness. An example
+is the question of how to classify flowering plants. Most
+people think that biological classification is about
+discovering new species, naming them, and classifying them
+in the class-order-family-genus-species system according to
+guidelines set long ago. In reality, the whole system is in
+a constant state of flux and controversy. One very practical
+way of classifying flowering plants is according to whether
+their petals are separate or joined into a tube or cone ---
+the criterion is so clear that it can be applied to a plant
+seen from across the street. But here practicality conflicts
+with naturalness. For instance, the begonia has separate
+petals and the pumpkin has joined petals, but they are so
+similar in so many other ways that they are usually placed
+within the same order. Some taxonomists have come up with
+classification criteria that they claim correspond more
+naturally to the apparent relationships among plants,
+without having to make special exceptions, but these may be
+far less practical, requiring for instance the examination
+of pollen grains under an electron microscope.
+<% marg(70) %>
+<%
+  fig(
+    'flowers',
+    %q{A scientific classification system.}
+  )
+%>
+<% end_marg %>
+
+In physics, there are two main systems of classification for
+forces. At this point in the course, you are going to learn
+one that is very practical and easy to use, and that splits
+the forces up into a relatively large number of types: seven
+very common ones that we'll discuss explicitly in this
+chapter, plus perhaps ten less important ones such as
+surface tension, which we will not bother with right now.
+
+Physicists, however, are obsessed
+with finding simple patterns, so recognizing as many as
+fifteen or twenty types of forces strikes them as distasteful
+and overly complex. Since about the year 1900, physics has
+been on an aggressive program to discover ways in which
+these many seemingly different types of forces arise from a
+smaller number of fundamental ones. For instance, when you
+press your hands together, the force that keeps them from
+passing through each other may seem to have nothing to do
+with electricity, but at the atomic level, it actually does
+arise from electrical repulsion between atoms. By about
+1950, all the forces of nature had been explained as arising
+from four fundamental types of forces at the atomic and
+nuclear level, and the lumping-together process didn't stop
+there. By the 1960's the length of the list had been reduced
+to three, and some theorists even believe that they may be
+able to reduce it to two or one. Although the unification of
+the forces of nature is one of the most beautiful and
+important achievements of physics, it makes much more sense
+to start this course with the more practical and easy system
+of classification. The unified system of four forces will be
+one of the highlights of the end of your introductory physics sequence.
+<%
+  fig(
+    'force-tree',
+    %q{%
+      A practical classification scheme
+      for forces.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+The practical classification scheme which concerns us now
+can be laid out in the form of the tree shown in figure \figref{force-tree}. The
+most specific types of forces are shown at the tips of the
+branches, and it is these types of forces that are referred
+to in the POFOSTITO mnemonic. For example, electrical and
+magnetic forces belong to the same general group, but
+Newton's third law would never relate an electrical force
+to a magnetic force.
+
+The broadest distinction is that between contact and
+noncontact forces, which has been discussed in ch.~\ref{ch:newton}.
+Among the contact forces, we distinguish between
+those that involve solids only and those that have to do
+with fluids, a term used in physics to include both gases
+and liquids. 
+
+It should not be necessary to memorize this diagram by rote.
+It is better to reinforce your memory of this system by
+calling to mind your commonsense knowledge of certain
+ordinary phenomena. For instance, we know that the
+gravitational attraction between us and the planet earth
+will act even if our feet momentarily leave the ground, and
+that although magnets have mass and are affected by gravity,
+most objects that have mass are nonmagnetic.
+
+\begin{eg}{Hitting a wall}
+\egquestion A bullet, flying horizontally, hits a steel wall. What type
+of force is there between the bullet and the wall?
+
+\eganswer Starting at the bottom of the tree, we determine that the
+force is a contact force, because it only occurs once the bullet touches
+the wall. Both objects are solid. The wall forms a vertical
+plane. If the nose of the bullet was some shape like a sphere, you might
+imagine that it would only touch the
+wall at one point. Realistically, however, we know that a lead bullet will flatten out
+a lot on impact, so there is a surface of contact between the
+two, and its orientation is vertical. The effect of the force on the bullet is to stop the
+horizontal motion of the bullet, and this horizontal acceleration must be produced
+by a horizontal force. The force is therefore perpendicular to the surface of contact,
+and it's also repulsive (tending to keep the bullet from entering the wall), so it must be
+a normal force.
+\end{eg}
+
+Diagram \figref{force-tree} is meant to be as simple as possible while
+including most of the forces we deal with in everyday life.
+If you were an insect, you would be much more interested in
+the force of surface tension, which allowed you to walk on
+water. I have not included the nuclear forces, which are
+responsible for holding the nuclei of atoms, because they
+are not evident in everyday life.
+
+You should not be afraid to invent your own names for types
+of forces that do not fit into the diagram. For instance,
+the force that holds a piece of tape to the wall has been
+left off of the tree, and if you were analyzing a situation
+involving scotch tape, you would be absolutely right to
+refer to it by some commonsense name such as ``sticky force.''
+
+On the other hand, if you are having trouble classifying a
+certain force, you should also consider whether it is a
+force at all. For instance, if someone asks you to classify
+the force that the earth has because of its rotation, you
+would have great difficulty creating a place for it  on the
+diagram. That's because it's a type of motion, not a type of force!
+
+\enlargethispage{-\baselineskip}
+
+<% begin_sec("Normal forces") %>\index{force!normal}
+
+A normal force, $F_N$, is a force that keeps one solid
+object from passing through another. ``Normal'' is simply a
+fancy word for ``perpendicular,'' meaning that the force is
+perpendicular to the surface of contact. Intuitively, it
+seems the normal force magically adjusts itself to provide
+whatever force is needed to keep the objects from occupying
+the same space. If your muscles press your hands together
+gently, there is a gentle normal force. Press harder, and
+the normal force gets stronger. How does the normal force
+know how strong to be? The answer is that the harder you jam
+your hands together, the more compressed your flesh becomes.
+Your flesh is acting like a spring: more force is required
+to compress it more. The same is true when you push on a
+wall. The wall flexes imperceptibly in proportion to your
+force on it. If you exerted enough force, would it be
+possible for two objects to pass through each other? No,
+typically the result is simply to strain the objects so much
+that one of them breaks.
+
+<% end_sec() %>
+<% begin_sec("Gravitational forces") %>\index{force!gravitational}
+
+As we'll discuss in more detail later in the course, a
+gravitational force exists between any two things that have
+mass. In everyday life, the gravitational force between two
+cars or two people is negligible, so the only noticeable
+gravitational forces are the ones between the earth and
+various human-scale objects. We refer to these planet-earth-induced
+gravitational forces as weight forces, and as we have
+already seen, their magnitude is given by $|F_W|=mg$.
+
+\worked{waterbottle-in-space}{Weight and mass}
+
+<% end_sec() %>
+<% begin_sec("Static and kinetic friction",nil,'coulomb-friction') %>\index{friction!kinetic}\index{friction!static}\index{force!frictional}
+
+If you have pushed a refrigerator across a kitchen floor,
+you have felt a certain series of sensations. At first, you
+gradually increased your force on the refrigerator, but it
+didn't move. Finally, you supplied enough force to unstick
+the fridge, and there was a sudden jerk as the fridge
+started moving. Once the fridge was unstuck, you could reduce
+your force significantly and still keep it moving.
+
+While you were gradually increasing your force, the floor's
+frictional force on the fridge increased in response. The
+two forces on the fridge canceled, and the fridge didn't
+accelerate. How did the floor know how to respond with just
+the right amount of force? Figure \figref{friction-microscopic} shows one
+possible \emph{model} of friction that explains this
+behavior. (A scientific \index{model!scientific}model is a
+description that we expect to be incomplete, approximate, or
+unrealistic in some ways, but that nevertheless succeeds in
+explaining a variety of phenomena.) Figure \figref{friction-microscopic}/1 shows a
+microscopic view of the tiny bumps and holes in the surfaces
+of the floor and the refrigerator. The weight of the fridge
+presses the two surfaces together, and some of the bumps in
+one surface will settle as deeply as possible into some of
+the holes in the other surface. In
+\figref{friction-microscopic}/2, your leftward
+force on the fridge has caused it to ride up a little higher
+on the bump in the floor labeled with a small arrow. Still
+more force is needed to get the fridge over the bump and
+allow it to start moving. Of course, this is occurring
+simultaneously at millions of places on the two surfaces.
+
+<% marg(170) %>
+<%
+  fig(
+    'friction-microscopic',
+    %q{%
+      A model that correctly explains many
+      properties of friction. The microscopic
+      bumps and holes in two surfaces dig
+      into each other.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'waiter',
+    %q{%
+      Static friction: the tray doesn't slip on
+      the waiter's fingers.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'skid',
+    %q{Kinetic friction: the car skids.}
+  )
+%>
+
+<% end_marg %>%
+Once you had gotten the fridge moving at constant speed, you
+found that you needed to exert less force on it. Since zero
+total force is needed to make an object move with constant
+velocity, the floor's rightward frictional force on the
+fridge has apparently decreased somewhat, making it easier
+for you to cancel it out. Our model also gives a plausible
+explanation for this fact: as the surfaces slide past each
+other, they don't have time to settle down and mesh with one
+another, so there is less friction.
+
+\enlargethispage{-\baselineskip}
+
+Even though this model is intuitively appealing and fairly
+successful, it should not be taken too seriously, and in
+some situations it is misleading. For instance, fancy racing
+bikes these days are made with smooth tires that have no
+tread --- contrary to what we'd expect from our model, this
+does not cause any decrease in friction. Machinists know
+that two very smooth and clean metal surfaces may stick to
+each other firmly and be very difficult to slide apart. This
+cannot be explained in our model, but makes more sense in
+terms of a model in which friction is described as arising
+from chemical bonds between the atoms of the two surfaces at
+their points of contact: very flat surfaces allow more atoms
+to come in contact.
+
+Since friction changes its behavior dramatically once the
+surfaces come unstuck, we define two separate types of
+frictional forces. \index{friction!static}\emph{Static friction}
+is friction that occurs between surfaces that are not
+slipping over each other. Slipping surfaces experience
+\index{friction!kinetic}\emph{kinetic friction}. The forces of static and
+kinetic friction, notated $F_s$ and $F_k$, are always
+parallel to the surface of contact between the two objects.
+
+<% self_check('static-or-kinetic',<<-'SELF_CHECK'
+1. When a baseball player slides in to a base, is the
+friction static, or kinetic?
+
+\\noindent 2. A mattress stays on the roof of a slowly accelerating
+car. Is the friction static, or kinetic?
+
+\noindent 3. Does static friction create heat? Kinetic friction?
+  SELF_CHECK
+  ) %>
+<% marg(100) %>
+<%
+  fig(
+    'partridge-normal-and-friction',
+    %q{%
+      Many landfowl, even those that are competent fliers, prefer to escape from a predator by
+      running upward rather than by flying. This partridge is running up a vertical tree trunk.
+      Humans can't walk up walls because there is no normal force and therefore no frictional force;
+      when $F_N=0$, the maximum force of static friction $F_{s,max} = \\mu_s F_N$ is also zero.
+      The partridge, however, has wings that it can flap in order to create a force between it and the air. Typically when
+      a bird flaps its wings, the resulting force from the air is in the direction that
+      would tend to lift the bird up. In this situation, however, the partridge changes its style of flapping so that
+      the direction is reversed. The normal force between the feet and
+      the tree allows a nonzero static frictional force. The mechanism is similar to that of a spoiler
+      fin on a racing car. Some evolutionary biologists believe that when vertebrate flight first evolved, in dinosaurs,
+      there was first a stage in which the wings were used only as an aid in running up steep inclines, and only
+      later a transition to flight. (Redrawn from a figure by K.P.~Dial.)
+    }
+  )
+%>
+<% end_marg %>
+
+\enlargethispage{-\baselineskip}
+
+The maximum possible force of static friction depends on
+what kinds of surfaces they are, and also on how hard they
+are being pressed together. The approximate mathematical
+relationships can be expressed as follows:
+\begin{equation*}
+        F_{s,max} = \mu_s F_N\eqquad,
+\end{equation*}
+where $\mu_s$ is a unitless number, called the \index{coefficient
+of static friction}coefficient of static friction, which
+depends on what kinds of surfaces they are. The maximum
+force that static friction can supply, $\mu_s F_N$,
+represents the boundary between static and kinetic friction.
+It depends on the normal force, which is numerically equal
+to whatever force is pressing the two surfaces together. In
+terms of our model, if the two surfaces are being pressed
+together more firmly, a greater sideways force will be
+required in order to make the irregularities in the surfaces
+ride up and over each other.
+
+    Note that just because we use an adjective such as
+``applied'' to refer to a force, that doesn't mean that
+there is some special type of force called the ``applied
+force.'' The applied force could be any type of force, or it
+could be the sum of more than one force trying to make an object move.
+
+<% self_check('partridge',<<-'SELF_CHECK'
+The arrows in figure \figref{partridge-normal-and-friction} show the forces
+of the tree trunk on the partridge. Describe the forces the bird makes on the tree.
+  SELF_CHECK
+  ) %>
+
+\enlargethispage{-\baselineskip}
+
+The force of kinetic friction on each of the two objects is
+in the direction that resists the slippage of the surfaces.
+Its magnitude is usually well approximated as
+\begin{equation*}
+        F_k = \mu_k F_N
+\end{equation*}
+where $\mu_k$ is the \index{coefficient of kinetic
+friction}coefficient of kinetic friction. Kinetic friction
+is usually more or less independent of velocity.
+
+<%
+  fig(
+    'friction-graph',
+    %q{%
+      We choose a coordinate system in
+      which the applied force, i.e., the force
+      trying to move the objects, is positive.
+      The friction force is then negative,
+      since it is in the opposite direction. As
+      you increase the applied force, the
+      force of static friction increases to
+      match it and cancel it out, until the
+      maximum force of static 
+      friction is surpassed. The surfaces then begin
+       slipping past each other, and the friction
+      force becomes smaller in absolute
+      value.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% self_check('friction-and-normal',<<-'SELF_CHECK'
+Can a frictionless surface exert a normal force? Can a
+frictional force exist without a normal force?
+  SELF_CHECK
+  ) %>
+
+If you try to accelerate or decelerate your car too quickly,
+the forces between your wheels and the road become too
+great, and they begin slipping. This is not good, because
+kinetic friction is weaker than static friction, resulting
+in less control. Also, if this occurs while you are turning,
+the car's handling changes abruptly because the kinetic
+friction force is in a different direction than the static
+friction force had been: contrary to the car's direction of
+motion, rather than contrary to the forces applied to the tire.
+
+Most people respond with disbelief when told of the
+experimental evidence that both static and kinetic friction
+are approximately independent of the amount of surface area
+in contact. Even after doing a hands-on exercise with spring
+scales to show that it is true, many students are unwilling
+to believe their own observations, and insist that bigger
+tires ``give more traction.'' In fact, the main reason why
+you would not want to put small tires on a big heavy car is
+that the tires would burst!
+
+Although many people expect that friction would be
+proportional to surface area, such a proportionality would
+make predictions contrary to many everyday observations. A
+dog's feet, for example, have very little surface area in
+contact with the ground compared to a human's feet, and yet
+we know that a dog can often win a tug-of-war with a person.
+
+The reason a smaller surface area does not lead to less
+friction is that the force between the two surfaces is more
+concentrated, causing their bumps and holes to dig into
+each other more deeply.
+
+<% self_check('find-directions-of-forces',<<-'SELF_CHECK'
+Find the direction of each of the forces in 
+figure \\figref{sc-find-directions-of-forces}.
+  SELF_CHECK
+  ) %>
+
+<%
+  fig(
+    'sc-find-directions-of-forces',
+    %q{%
+      1. The
+      cliff's normal force on the climber's feet.
+      2. The track's static frictional force on the wheel of
+      the accelerating dragster.
+      3. The ball's normal force on the bat.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{Locomotives}\label{eg:locomotives}
+Looking at a picture of a locomotive, \figref{locomotive}, we notice
+two obvious things that are different from an automobile. Where a car
+typically has two drive wheels, a locomotive normally has many --- ten
+in this example. (Some also have smaller, unpowered wheels in front of and
+behind the drive wheels, but this example doesn't.) Also, cars these days are generally built to be as light as possible
+for their size, whereas locomotives are very massive, and no effort seems to be made
+to keep their weight low. (The steam locomotive in the photo is from about 1900, but this
+is true even for modern diesel and electric trains.)
+
+<% fig('locomotive','Example \ref{eg:locomotives}.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+) %>
+
+The reason locomotives are built to be so heavy is for traction. The upward normal force of
+the rails on the wheels, $F_N$, cancels the downward force of gravity, $F_W$, so ignoring plus and minus
+signs, these two forces are equal in absolute value, $F_N=F_W$. Given this amount of normal
+force, the maximum force of static friction is $F_s=\mu_s F_N=\mu_s F_W$. This static frictional
+force, of the rails pushing forward on the wheels, is the only force that can accelerate the
+train, pull it uphill, or cancel out the force of air resistance while cruising at constant speed.
+The coefficient of static friction for steel on steel is about 1/4, so no locomotive can pull
+with a force greater than about 1/4 of its own weight. If the engine is capable of supplying
+more than that amount of force, the result will be simply to break static friction and spin the wheels.
+
+The reason this is all so different from the situation with a car is that a car isn't pulling
+something else. If you put extra weight in a car, you improve the traction, but you also
+increase the inertia of the car, and make it just as hard to accelerate. In a train, the inertia
+is almost all in the cars being pulled, not in the locomotive.
+
+The other fact we have to explain is the large number of driving wheels. First, we have to
+realize that increasing the number of driving wheels neither increases nor decreases the
+total amount of static friction, because static friction is independent of the amount of
+surface area in contact. (The reason four-wheel-drive is good in a car is that if one or
+more of the wheels is slipping on ice or in mud, the other wheels may still have traction.
+This isn't typically an issue for a train, since all the wheels experience the same conditions.)
+The advantage of having more driving wheels on a train is that it allows us to increase the weight of the locomotive
+without crushing the rails, or damaging bridges.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Fluid friction") %>\index{friction!fluid}
+
+<% marg(100) %>
+<%
+  fig(
+    'fluid-patterns',
+    %q{%
+      Fluid friction depends on the fluid's pattern of flow, so it is more complicated than friction between solids,
+      and there are no simple, universally applicable formulas to calculate it. From top to bottom: supersonic wind
+      tunnel, vortex created by a crop duster, series of vortices created by a single object, turbulence.
+    }
+  )
+%>
+<% end_marg %>
+
+Try to drive a nail into a waterfall and you will be
+confronted with the main difference between solid friction
+and fluid friction. Fluid friction is purely kinetic; there
+is no static fluid friction. The nail in the waterfall may
+tend to get dragged along by the water flowing past it, but
+it does not stick in the water. The same is true for gases
+such as air: recall that we are using the word ``fluid'' to
+include both gases and liquids.
+
+Unlike kinetic friction between solids, fluid friction
+increases rapidly with velocity. It also depends
+on the shape of the object, which is why a fighter jet is
+more streamlined than a Model T.
+For objects of the same shape but different sizes, fluid friction
+typically scales up with the cross-sectional area of the
+object, which is one of the main reasons that an SUV gets
+worse mileage on the freeway than a compact car.
+
+\pagebreak
+
+\startdqs
+<% marg(80) %>
+<%
+  fig(
+    'fluid-dimples',
+    %q{%
+      What do the golf ball and the shark have in common? Both use the same trick to reduce fluid friction.
+      The dimples on the golf ball modify the pattern of flow of the air around it, counterintuitively
+      \emph{reducing} friction. Recent studies have shown that sharks can accomplish the same thing by
+      raising, or ``bristling,'' the scales on their skin at high speeds.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hummer-vs-prius',
+    %q{%
+      The wheelbases of the Hummer H3 and the Toyota Prius are surprisingly similar,
+      differing by only 10\%. The main difference in shape is that the Hummer is much taller and wider.
+      It presents a much greater cross-sectional area to the wind, and this is the main
+      reason that it uses about 2.5 times more gas on the freeway.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{dq}
+A student states that when he tries to push his
+refrigerator, the reason it won't move is because Newton's
+third law says there's an equal and opposite frictional
+force pushing back. After all, the static friction force is
+equal and opposite to the applied force. How would you
+convince him he is wrong?
+\end{dq}
+
+\begin{dq}
+Kinetic friction is usually more or less independent of
+velocity. However, inexperienced drivers tend to produce a
+jerk at the last moment of deceleration when they stop at a
+stop light. What does this tell you about the kinetic
+friction between the brake shoes and the brake drums?
+\end{dq}
+
+\begin{dq}
+Some of the following are correct descriptions of types
+of forces that could be added on as new branches of the
+classification tree. Others are not really types of forces,
+and still others are not force phenomena at all. In each
+case, decide what's going on, and if appropriate, figure out
+how you would incorporate them into the tree.
+
+\begin{tabular}{lp{80mm}}
+sticky force       & makes tape stick to things\\
+ %
+opposite force      & the force that Newton's third law says
+                       relates to every force you make\\
+ %
+flowing force      & the force that water carries with it as
+it flows out of a hose\\
+ %
+surface tension    & lets insects walk on water\\
+ %
+horizontal force   &  a force that is horizontal\\
+ %
+motor force        & the force that a motor makes on the thing it is turning\\
+ %
+canceled force     & a force that is being canceled out by some other force
+\end{tabular}
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+
+\vspace{20mm}
+
+<% begin_sec("Analysis of forces",0,'analysis-of-forces') %>\index{force!analysis of forces}
+
+Newton's first and second laws deal with the total of all
+the forces exerted on a specific object, so it is very
+important to be able to figure out what forces there are.
+Once you have focused your attention on one object and
+listed the forces on it, it is also helpful to describe all
+the corresponding forces that must exist according to
+Newton's third law. We refer to this as ``analyzing the
+forces'' in which the object participates.
+
+\pagebreak
+
+\begin{egwide}{A barge}
+A barge is being pulled to the right along a canal by teams of horses on
+the shores. Analyze all the forces in which the barge participates.
+
+\begin{tabular}{|p{70mm}|p{70mm}|}
+\hline
+\emph{force acting on barge}  &   \emph{force related to it by Newton's third law} \\
+\hline
+ropes' normal forces on barge, $\rightarrow$  &  barge's normal force on ropes, $\leftarrow$\\
+\hline
+water's fluid friction force on barge, $\leftarrow$  &  barge's fluid friction force on water, $\rightarrow$\\
+\hline
+planet earth's gravitational force on barge, $\downarrow$  &  barge's gravitational force on earth, $\uparrow$\\
+\hline
+water's ``floating'' force on barge, $\uparrow$  &  barge's ``floating'' force on water, $\downarrow$\\
+\hline
+\end{tabular}
+
+Here I've used the word ``floating'' force as an example of
+a sensible invented term for a type of force not classified
+on the tree on p.~\pageref{fig:force-tree}. A more formal technical
+term would be ``hydrostatic force.''
+
+Note how the pairs of forces are all structured as ``A's
+force on B, B's force on A'': ropes on barge and barge on
+ropes; water on barge and barge on water. Because all the
+forces in the left column are forces acting on the barge,
+all the forces in the right column are forces being exerted
+by the barge, which is why each entry in the column
+begins with ``barge.''
+\end{egwide}
+
+Often you may be unsure whether you have forgotten one of
+the forces. Here are three strategies for checking your list:
+
+\begin{enumerate}\label{checking-force-analysis}
+\item See what physical result would come from the forces
+you've found so far. Suppose, for instance, that you'd
+forgotten the ``floating'' force on the barge in the example
+above. Looking at the forces you'd found, you would have
+found that there was a downward gravitational force on the
+barge which was not canceled by any upward force. The barge
+isn't supposed to sink, so you know you need to find a
+fourth, upward force.
+
+\item Another technique for finding missing forces is simply
+to go through the list of all the common types of forces and
+see if any of them apply.
+
+\item Make a drawing of the object, and draw a dashed boundary
+line around it that separates it from its environment. Look
+for points on the boundary where other objects come in
+contact with your object. This strategy guarantees that
+you'll find every contact force that acts on the object,
+although it won't help you to find non-contact forces.
+
+\end{enumerate}
+
+\begin{eg}{Fifi}\label{eg:fifi}
+\egquestion Fifi is an industrial espionage dog who loves doing her job and looks great doing it.
+She leaps through a window and lands at initial horizontal speed $v_\zu{o}$ on a conveyor belt which is itself
+moving at the greater speed $v_b$. Unfortunately the coefficient of kinetic friction $\mu_k$ between her foot-pads
+and the belt is fairly low, so she skids for a time $\Delta t$, during which the effect on her coiffure is \emph{un d\'{e}sastre}.
+Find $\Delta t$.
+<% marg(0) %>
+<%
+  fig(
+    'eg-fifi',
+    %q{%
+      Example \ref{eg:fifi}.
+    }
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+\eganswer We analyze the forces:
+
+\begin{tabular}{|p{52mm}|p{52mm}|}
+\hline
+\emph{force acting on Fifi}  &   \emph{force related to it by Newton's third law} \\
+\hline
+planet earth's gravitational force $F_W=mg$ on Fifi, \hfill $\downarrow$  &  Fifi's gravitational force on earth, \hfill $\uparrow$\\
+\hline
+belt's kinetic frictional force $F_k$ on Fifi, \hfill $\rightarrow$  &  Fifi's kinetic frictional force on belt, \hfill $\leftarrow$\\
+\hline
+belt's normal force $F_N$ on Fifi, \hfill $\uparrow$  &  Fifi's normal force on belt, \hfill $\downarrow$\\
+\hline
+\end{tabular}
+
+Checking the analysis of the forces as described on p.~\pageref{checking-force-analysis}:
+
+(1) The physical result makes sense. The left-hand column consists of forces $\downarrow\rightarrow\uparrow$. 
+We're describing the time when she's moving horizontally on the belt, so it makes sense that we have two vertical forces that could cancel.
+The rightward force is what will accelerate her until her speed matches that of the belt.
+
+(2) We've included every relevant type of force from the tree on p.~\pageref{fig:force-tree}.
+
+(3) We've included forces from the belt, which is the only object in contact with Fifi.
+
+The purpose of the analysis is to let us set up equations containing enough information to solve the problem.
+Using the generalization of Newton's second law given on p.~\pageref{generalization-of-second-law}, we use
+the horizontal force to determine the horizontal acceleration, and separately require the vertical forces
+to cancel out.
+
+Let positive $x$ be to the right. Newton's second law gives
+\begin{equation*}
+  (\rightarrow) \qquad a=F_k/m
+\end{equation*}
+
+Although it's the horizontal motion we care about, the only way to find $F_k$ is via
+the relation $F_k=\mu_k F_N$, and the only way to find $F_N$ is from the $\uparrow\downarrow$ forces.
+The two vertical forces must cancel, which means they have to be of equal strength:
+\begin{equation*}
+  (\uparrow\downarrow) \qquad F_N - mg = 0\eqquad.
+\end{equation*}
+Using the constant-acceleration equation $a=\Delta v/\Delta t$, we have
+\begin{align*}
+  \Delta t &= \frac{\Delta v}{a} \\
+           &= \frac{v_b-v_\zu{o}}{\mu_k mg/m}\\
+           &= \frac{v_b-v_\zu{o}}{\mu_k g}\eqquad.
+\end{align*}
+
+The units check out:
+\begin{equation*}
+  \sunit = \frac{\munit/\sunit}{\munit/\sunit^2}\eqquad,
+\end{equation*}
+where $\mu_k$ is omitted as a factor because it's unitless.
+
+We should also check that the dependence on the variables makes sense. 
+If Fifi puts on her rubber ninja booties, increasing $\mu_k$, then dividing by a larger number gives a smaller result for $\Delta t$;
+this makes sense physically, because the greater friction will cause her to come up to the belt's speed more quickly.
+The dependence on $g$ is similar; more gravity would press her harder against the belt, improving her traction.
+Increasing $v_b$ increases $\Delta t$, which makes sense because it will take her longer to get up to a bigger speed.
+Since $v_\zu{o}$ is subtracted, the dependence of $\Delta t$ on it is the other way around, and that makes sense too,
+because if she can land with a greater speed, she has less speeding up left to do.
+\end{eg}
+
+
+<%
+  fig(
+    'horses-triangle',
+    %q{%
+      Example \ref{eg:horses-triangle}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+
+\begin{eg}{Forces don't have to be in pairs or at right angles}\label{eg:horses-triangle}
+In figure \figref{horses-triangle}, the three horses are arranged symmetrically at 120 degree
+intervals, and are all pulling on the central knot. Let's say the knot is at rest and at least momentarily
+in equilibrium. The analysis of forces on the knot is as follows.
+
+\begin{tabular}{|p{52mm}|p{52mm}|}
+\hline
+\emph{force acting on knot}  &   \emph{force related to it by Newton's third law} \\
+\hline
+top rope's normal force on knot, \hfill $\uparrow$  &  knot's normal force on top rope, \hfill $\downarrow$\\
+\hline
+left rope's normal force on knot, \hfill \anonymousinlinefig{../../../share/misc/arrows/8-oclock}
+        &  knot's normal force on left rope, \hfill \anonymousinlinefig{../../../share/misc/arrows/2-oclock}\\
+\hline
+right rope's normal force on knot, \hfill \anonymousinlinefig{../../../share/misc/arrows/4-oclock}  
+        &  knot's normal force on right rope, \hfill \anonymousinlinefig{../../../share/misc/arrows/10-oclock}\\
+\hline
+\end{tabular}
+
+In our previous examples, the forces have all run along two perpendicular lines, and
+they often canceled in pairs. This example shows that neither of these always happens.
+Later in the book we'll see how to handle forces that are at arbitrary angles,
+using mathematical objects called vectors. But even without knowing about vectors, we
+already know what directions to draw the arrows in the table, since a rope can only pull
+parallel to itself at its ends. And furthermore, we can say something about the forces:
+by symmetry, we expect them all to be equal in strength. (If the knot was not in equilibrium,
+then this symmetry would be broken.)
+
+This analysis also demonstrates that it's all right to leave out details if they aren't
+of interest and we don't intend to include them in our model. 
+We called the forces normal forces, but we can't actually tell whether they are normal forces
+or frictional forces. They are probably some combination of those, but we don't include
+such details in this model, since aren't interested in describing the internal physics
+of the knot. This is an example of a more general fact about science, which is that science
+doesn't describe reality. It describes simplified \emph{models} of reality, because reality
+is always too complex to model exactly.
+\end{eg}
+
+\pagebreak
+
+\startdqs
+
+\begin{dq}
+In the example of the barge going down the canal, I
+referred to a ``floating'' or ``hydrostatic'' force that
+keeps the boat from sinking. If you were adding a new branch
+on the force-classification tree to represent this
+force, where would it go?
+\end{dq}
+
+\begin{dq}\label{dq:shovel}
+The earth's gravitational force on you, i.e., your weight,
+is always equal to $mg$, where $m$ is your mass. So why
+can you get a shovel to go deeper into the ground by jumping
+onto it? Just because you're jumping, that doesn't mean your
+mass or weight is any greater, does it?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Transmission of forces by low-mass objects",nil,'transmitforces') %>%
+\index{force!transmission}\index{transmission of forces}
+
+You're walking your dog. The dog wants to go faster than you
+do, and the leash is taut. Does Newton's third law guarantee
+that your force on your end of the leash is equal and
+opposite to the dog's force on its end? If they're not
+exactly equal, is there any reason why they should be
+approximately equal?
+
+If there was no leash between you, and you were in direct
+contact with the dog, then Newton's third law would apply,
+but Newton's third law cannot relate your force on the leash
+to the dog's force on the leash, because that would involve
+three separate objects. Newton's third law only says that
+your force on the leash is equal and opposite to the
+leash's force on you,
+\begin{equation*}
+        F_{yL}  =  - F_{Ly}  ,
+\end{equation*}
+
+and that the dog's force on the leash is equal and opposite
+to its force on the dog
+\begin{equation*}
+        F_{dL}  =  - F_{Ld}  .
+\end{equation*}
+Still, we have a strong intuitive expectation that whatever
+force we make on our end of the leash is transmitted to the
+dog, and vice-versa. We can analyze the situation by
+concentrating on the forces that act on the leash, $F_{dL}$
+and $F_{yL}$. According to Newton's second law, these relate
+to the leash's mass and acceleration:
+\begin{equation*}
+        F_{dL} + F_{yL}  =  m_La_L  .
+\end{equation*}
+The leash is far less massive then any of the other objects
+involved, and if $m_L$ is very small, then apparently the
+total force on the leash is also very small, $F_{dL}$ +
+$F_{yL}\approx 0$, and therefore
+\begin{equation*}
+ F_{dL}\approx - F_{yL}\eqquad.
+\end{equation*}
+Thus even though Newton's third law does not apply directly
+to these two forces, we can approximate the low-mass leash
+as if it was not intervening between you and the dog. It's
+at least approximately as if you and the dog were acting
+directly on each other, in which case Newton's third
+law would have applied.
+
+In general, low-mass objects can be treated approximately as
+if they simply transmitted forces from one object to
+another. This can be true for strings, ropes, and cords, and
+also for rigid objects such as rods and sticks.
+
+<%
+  fig(
+    'tension',
+    %q{%
+      If we imagine dividing a taut
+      rope up into small segments, then any segment has forces
+      pulling outward on it at each end. If the rope is of
+      negligible mass, then all the forces equal
+      $+T$ or $-T$, where $T$, the tension, is a single number.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% marg(-80) %>
+<%
+  fig(
+    'golden-gate-bridge',
+    %q{%
+      The Golden Gate Bridge's roadway
+      is held up by the tension in the vertical cables.
+    }
+  )
+%>
+<% end_marg %>
+If you look at a piece of string under a magnifying glass as
+you pull on the ends more and more strongly, you will see
+the fibers straightening and becoming taut. Different parts
+of the string are apparently exerting forces on each other.
+For instance, if we think of the two halves of the string as
+two objects, then each half is exerting a force on the other
+half. If we imagine the string as consisting of many small
+parts, then each segment is transmitting a force to the next
+segment, and if the string has very little mass, then all
+the forces are equal in magnitude. We refer to the magnitude
+of the forces as the tension in the string, $T$.\index{tension}
+
+The term ``tension'' refers only to internal forces within the string.
+If the string makes
+forces on objects at its ends, then those forces are typically
+normal or frictional forces (example \ref{eg:types-of-forces-made-by-ropes}).
+
+\pagebreak
+
+\begin{eg}{Types of force made by ropes}\label{eg:types-of-forces-made-by-ropes}
+\egquestion Analyze the forces in figures \subfigref{tension-is-not-a-type-of-force}{1}
+and \subfigref{tension-is-not-a-type-of-force}{2}.
+
+\eganswer
+In all cases, a rope can only make ``pulling'' forces, i.e., forces that are parallel to its own length
+and that are toward itself, not away from itself. You can't push with a rope!
+
+In \subfigref{tension-is-not-a-type-of-force}{1}, the rope passes through a type of hook, called a
+carabiner, used in rock climbing and mountaineering. Since the rope can only pull along its own length,
+the direction of its force on the carabiner must be down and to the right. This is perpendicular to
+the surface of contact, so the force is a normal force.
+<% marg(80) %>
+<%
+  fig(
+    'tension-is-not-a-type-of-force',
+    %q{%
+      Example \ref{eg:types-of-forces-made-by-ropes}. The forces between the rope and other objects are normal and frictional forces.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{tabular}{|p{52mm}|p{52mm}|}
+\hline
+\emph{force acting on carabiner}  &   \emph{force related to it by Newton's third law} \\
+\hline
+rope's normal force on carabiner \hfill \anonymousinlinefig{../../../share/misc/arrows/5-oclock} &
+          carabiner's normal force on rope \hfill \anonymousinlinefig{../../../share/misc/arrows/11-oclock} \\
+\hline
+\end{tabular}
+
+(There are presumably other forces acting on the carabiner from other hardware above it.)
+
+In figure \subfigref{tension-is-not-a-type-of-force}{2}, the rope can only exert a net force at its end that is
+parallel to itself and in the pulling direction, so its force on the hand is down and to the left.
+This is parallel
+to the surface of contact, so it must be a frictional force. If the rope isn't slipping through the hand,
+we have static friction. Friction can't exist without normal forces. These forces are perpendicular to the
+surface of contact.
+For simplicity, we show only two pairs of these normal forces, as if the hand were a pair of pliers.
+
+\begin{tabular}{|p{52mm}|p{52mm}|}
+\hline
+\emph{force acting on person}  &   \emph{force related to it by Newton's third law} \\
+\hline
+rope's static frictional force on person \hfill \anonymousinlinefig{../../../share/misc/arrows/8-oclock} &
+          person's static frictional force on rope \hfill \anonymousinlinefig{../../../share/misc/arrows/2-oclock} \\
+\hline
+rope's normal force on \linebreak[4] person \hfill \anonymousinlinefig{../../../share/misc/arrows/11-oclock} &
+          person's normal force on \linebreak[4]  rope \hfill \anonymousinlinefig{../../../share/misc/arrows/5-oclock} \\
+\hline
+rope's normal force on \linebreak[4] person \hfill \anonymousinlinefig{../../../share/misc/arrows/5-oclock} &
+          person's normal force on \linebreak[4] rope \hfill \anonymousinlinefig{../../../share/misc/arrows/11-oclock} \\
+\hline
+\end{tabular}
+
+(There are presumably other forces acting on the person as well, such as gravity.)
+
+\end{eg}
+
+If a rope goes over a pulley or around some other object,
+then the tension throughout the rope is approximately equal
+so long as the pulley has negligible mass and there is not too much friction. A rod or stick
+can be treated in much the same way as a string, but it is
+possible to have either compression or tension.
+
+\startdq
+
+\begin{dq}
+When you step on the gas pedal, is your foot's force being
+transmitted in the sense of the word used in this section?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Objects under strain",0) %>\index{strain}
+
+A string lengthens slightly when you stretch it. Similarly,
+we have already discussed how an apparently rigid object
+such as a wall is actually flexing when it participates in a
+normal force. In other cases, the effect  is more obvious. A
+spring or a rubber band visibly elongates when stretched.
+
+Common to all these examples is a change in shape of some
+kind: lengthening, bending, compressing, etc. The change in
+shape can be measured by picking some part of the object and
+measuring its position, $x$. For concreteness, let's imagine
+a spring with one end attached to a wall. When no force is
+exerted, the unfixed end of the spring is at some position
+$x_o$. If a force acts at the unfixed end, its position will
+change to some new value of $x$. The more force, the greater
+the departure of $x$ from $x_o$.
+
+<%
+  fig(
+    'hooke-definitions',
+    %q{%
+      Defining the quantities
+      $F$, $x$, and $x_\zu{o}$ in Hooke's law.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Back in Newton's time, experiments like this were considered
+cutting-edge research, and his contemporary Hooke is
+remembered today for doing them and for coming up with a
+simple mathematical generalization called Hooke's law:
+\begin{multline*}
+    F \approx k(x-x_o)\eqquad. \hfill \shoveright{\text{[force required to stretch a spring; valid}}\\
+                                      \text{for small forces only]}
+\end{multline*}
+Here $k$ is a constant, called the spring constant,\index{spring constant}
+that depends on how stiff the object is. If too much force is
+applied, the spring exhibits more complicated behavior, so
+the equation is only a good approximation if the force is
+sufficiently small. Usually when the force is so large that
+Hooke's law is a bad approximation, the force ends up
+permanently bending or breaking the spring.
+
+Although \index{Hooke's law}Hooke's law may seem like a
+piece of trivia about springs, it is actually far more
+important than that, because all solid objects exert
+Hooke's-law behavior over some range of sufficiently small
+forces. For example, if you push down on the hood of a car,
+it dips by an amount that is directly proportional to the
+force. (But the car's behavior would not be as mathematically
+simple if you dropped a boulder on the hood!)
+
+\worked{combine-springs}{Combining springs}
+
+\worked{youngs-modulus}{Young's modulus}
+
+\startdq
+
+\begin{dq}
+A car is connected to its axles through big, stiff springs
+called shock absorbers, or ``shocks.'' Although we've
+discussed Hooke's law above only in the case of stretching a
+spring, a car's shocks are continually going through both
+stretching and compression. In this situation, how would you
+interpret the positive and negative signs  in Hooke's law?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Simple Machines: the pulley",0,'pulley') %>\index{pulley}
+
+Even the most complex machines, such as cars or pianos, are
+built out of certain basic units called \index{simple machine!defined}
+\emph{simple machines}. The following are some of
+the main functions of simple machines:
+
+\begin{indentedblock}
+\noindent transmitting a force: The chain on a bicycle transmits a
+force from the crank set to the rear wheel.
+
+\noindent changing the direction of a force: If you push down on a
+seesaw, the other end goes up.
+
+\noindent changing the speed and precision of motion: When you make
+the ``come here'' motion, your biceps only moves a couple of
+centimeters where it attaches to your forearm, but your arm
+moves much farther and more rapidly.
+
+\noindent changing the amount of force: A lever or pulley can be used
+to increase or decrease the amount of force.
+\end{indentedblock}
+
+\noindent You are now prepared to understand one-dimensional simple
+machines, of which the pulley is the main example.
+
+<%
+  fig(
+    'eg-tractor',
+    %q{Example \ref{eg:tractor}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{A pulley}\label{eg:tractor}
+\egquestion Farmer Bill says this pulley arrangement doubles
+the force of his tractor. Is he just a dumb hayseed, or does
+he know what he's doing?
+
+\eganswer To use Newton's first law, we need to pick an
+object and consider the sum of the forces on it. Since our
+goal is to relate the tension in the part of the cable
+attached to the stump to the tension in the part attached to
+the tractor, we should pick an object to which both those
+cables are attached, i.e., the pulley itself. The tension in a string or cable remains
+approximately constant as it passes around an idealized pulley.
+\footnote{This was asserted in section \ref{sec:transmitforces} without proof.
+      Essentially it holds because of symmetry. E.g., if the U-shaped piece of rope in figure \figref{eg-tractor}
+      had unequal tension in its two legs, then this would have to be caused by some asymmetry between clockwise and counterclockwise
+      rotation. But such an asymmetry can only be caused by friction or inertia, which we assume don't exist.}
+ There are
+therefore two leftward forces acting on the pulley, each
+equal to the force exerted by the tractor. Since the
+acceleration of the pulley is essentially zero, the forces
+on it must be canceling out, so the rightward force of the
+pulley-stump cable on the pulley must be double the force
+exerted by the tractor. Yes, Farmer Bill knows what he's talking about.
+\end{eg}
+
+m4_ifelse(__me,1,[:
+More complicated pulley systems can be constructed to give greater
+amplification of forces or to redirect forces in different directions.
+For an idealized system,\footnote{In such a system: (1) The ropes and pulleys have negligible mass. (2)
+Friction in the pulleys' bearings is negligible. (3) The ropes don't stretch.} the fundamental principles are:
+
+\begin{enumerate}\label{pulley-rules}
+\item The total force acting on any pulley is zero.\footnote{$F=ma$, and $m=0$ since the pulley's mass is assumed to be negligible.}
+\item The tension in any given piece of rope is
+      constant throughout its length.
+\item The length of every piece of rope remains the same.
+\end{enumerate}
+
+\begin{eg}{A compound pulley}\label{eg:pulleys-three-quarters}
+\egquestion Find the mechanical advantage $T_5/F$ of the pulley system. The bar is massless.
+
+\eganswer By rule 2, $T_1=T_2$, and by rule 1, $F=T_1+T_2$, so $T_1=T_2=F/2$. Similarly, $T_3=T_4=F/4$.
+Since the bar is massless, the same reasoning that led to rule 1 applies to the bar as well, and $T_5=T_1+T_3$.
+The mechanical advantage is $T_5/F=3/4$, i.e., this pulley system \emph{reduces} the input force.
+\end{eg}
+
+<% marg(30) %>
+<%
+  fig(
+    'eg-pulleys-three-quarters',
+    %q{%
+      Example \ref{eg:pulleys-three-quarters}.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{How far does the tractor go compared to the stump?}\label{eg:tractor-motion}
+\egquestion To move the stump in figure \figref{eg-tractor} by 1 cm, how far must the tractor move?
+
+\eganswer Applying rule 3 to the the right-hand piece of rope, we find that the pulley moves 1 cm. The upper leg of the U-shaped
+rope therefore shortens by 1 cm, so the lower leg must lengthen by 1 cm. Since the pulley moves 1 cm to the left, and the lower
+leg extending from it also lengths by 1 cm, the tractor must move 2 cm.
+
+\end{eg}
+
+Examples \ref{eg:tractor} and \ref{eg:tractor-motion} showed that
+the pulley system in figure \figref{eg-tractor} amplifies the force by a factor of 2, but it reduces the motion by 1/2. This is an example
+of a more general inverse proportionality for all such systems. Superficially, it follows from rules 1-3 above.
+If, for example, we try to construct a pulley system that doubles the force while keeping the motion the same, we will find that
+the rules seem to mysteriously conspire against us, and every attempt ends in failure. We could in fact prove as a mathematical
+theorem that the inverse proportionality always holds if we assume these rules. 
+
+But these rules are only an idealized mathematical
+model of a specific type of simple machine. What about other machines built out of other parts such as levers, screws, or gears?
+Through trial and error we will find that the inverse proportionality holds for them as well, so there must be some more fundamental principles involved.
+These principles, which we won't discuss formally until
+ch.~\ref{ch:energy} and \ref{ch:work}, are conservation of energy and the equation for mechanical work.
+Informally, imagine that we had a machine that violated this rule. We could then insert it into a
+setup like the one in figure \figref{impossible-machine}. When we release the single weight at the top, it drops
+to the ground while lifting the pan, which holds double the weight, all the way to the top. This is the ultimate
+free lunch. Once the pair of weights is up at the top, we can use them to hoist four more, then 8, 16, and so on.
+This is known as a perpetual motion machine.\index{perpetual motion machine}
+<% marg(58) %>
+<%
+  fig(
+    'impossible-machine',
+    %q{%
+      The black box marked with an X is a machine that doubles force while leaving the amount of motion unchanged.
+      If 1 cm of rope is pulled out through the input on the bottom at tension $T$, the amount of rope consumed at tension
+      $2T$ on top is not 1/2 cm, as we would normally expect, but 1 cm. This machine is impossible.
+    }
+  )
+%>
+<% end_marg %>
+
+If this seems to be too good to be true, it is.
+Just as small machines can be put together to make bigger ones, any machine can also be broken down into smaller
+and smaller ones. This process can be continued until we get down to the level of atoms.
+The law of conservation of energy essentially says that atoms don't act like perpetual motion machines, and therefore
+any machine built out of atoms also fails to be a perpetual motion machine.
+:])
+
+<% end_sec() %>
+
+m4_ifelse(__me,1,[:
+%--------------------- begin "Does Newton's third law mean anything, and if so, is it true?"
+<% begin_sec("Does Newton's third law mean anything, and if so, is it true?",4,'third-law-true',{'optional'=>true}) %>
+This section discusses Newton's third law in the same spirit as section \ref{sec:newton-true} on the first and second laws.
+<% marg(50) %>
+<%
+  fig(
+    'mach-portrait',
+    %q{%
+      Ernst Mach (1838-1916) is mainly known for having proposed a radical extension of the principle of inertia to state that
+      all motion, not just constant-velocity motion, was relative. His ideas strongly influenced Einstein. The Mach factor
+      (used, e.g., when we describe a jet as traveling at ``Mach 2'') is named after him.
+    }
+  )
+%>
+<% end_marg %>
+
+Ernst Mach gave a cogent critique of the third laws's logical assumptions in his book \emph{The Science of Mechanics}.
+The book is available online for free at \url{archive.org}, and is very readable. 
+To understand Mach's criticism, consider the experiment illustrated in figure \figref{third-law-magnets} on p.~\pageref{fig:third-law-magnets},
+in which a large magnet and a small magnet are found to exert equal forces on one another. I use this as a student lab, and I find
+that most students are surprised by the result. Nevertheless, the lab can be considered a swindle, for the following reason.
+If we wanted to, we could cut the large magnet apart into smaller pieces, each of which was the same size as the small
+magnet. In fact, the large magnets I use for this lab were constructed simply by taking six small ones, stacking them together,
+and wrapping them in plastic. To represent this symbolically, let the small magnet be [A] and the large one [BCDEFG].
+Since A and B are identical, and they are oriented in the same way, it follows simply by symmetry that A's force on B
+and B's on A obey the third law. The same holds for A on C and C on A, and so on. Since Newton claims that forces
+combine by addition, it follows that the result of the experiment must be in accord with the third law, despite the
+superficial asymmetry. 
+
+Now suppose that material objects 1 and 2 have the same chemical composition. By a similar argument it seems likely that
+$F_{12}$ and $F_{21}$ obey Newton's third law.
+
+This argument shows how pointless it can be to attempt to test a scientific theory unless you have in your possession a sensible
+alternative theory that predicts something different. One could spend decades doing experiments of the kind described
+above without realizing that the tests were all trivially guaranteed to give null results, even if nature was really
+described by a theory that violated Newton's third law.
+
+Here is an example of a fairly sane theory that could violate Newton's third law. Einstein's famous $E=mc^2$
+states that a certain amount of energy $E$ is equivalent to a certain amount of mass $m$, with $c$ being the speed of
+light. (We won't formally encounter energy until ch.~\ref{ch:energy}, or the reasons for $E=mc^2$ until section \ref{sec:mass-energy-equivalence},
+but for now just think of energy as the kind of thing you intuitively associate with food calories or a tank full of gasoline,
+and take $E=mc^2$ for granted.) Einstein claimed that this would hold for three different kinds of mass: the mass measured
+by an object's inertia, the ``active'' gravitational mass $m_a$ that determines the gravitational forces it makes on other
+objects, and the ``passive'' gravitational mass $m_p$ that measures how strongly it feels gravity. Einstein's reason for
+predicting similar behavior for $m_a$ and $m_p$ was that anything else would have violated Newton's third law for gravitational
+forces.
+
+Suppose instead
+that an object's energy content contributes only to $m_p$, not to $m_a$. 
+Atomic nuclei get something like 1\% of their mass from the energy of the electric fields inside their nuclei,
+but this percentage varies with the number of protons, so if we have objects $m$ and $M$ with different chemical
+compositions, it follows that in this theory $m_p/m_a$ will not be the same as $M_p/M_a$, and in this non-Einsteinian version of relativity,
+Newton's third law is violated.
+
+This was tested in
+a Princeton PhD-thesis experiment by Kreuzer\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}
+in 1966. Kreuzer carried out an experiment, figure \figref{kreuzer}, using masses made of two different substances. The first substance was teflon.
+The second substance was
+a mixture of the liquids trichloroethylene and dibromoethane, with the proportions chosen so as to give a passive-mass
+density as close as possible to that of teflon, as determined by the neutral buoyancy of the teflon masses suspended inside the liquid.
+If the active-mass densities of these substances are not strictly proportional to their passive-mass densities, then moving the chunk of
+teflon back and forth in figure \subfigref{kreuzer}{2} would change the gravitational force acting on the nearby small sphere.
+No such change was observed, and
+the results verified $m_p/m_a=M_p/M_a$ to within one part in $10^6$, in agreement with Einstein and Newton. If electrical energy had not contributed at all to
+active mass, then a violation of the third law would have been detected at the level of about one part in $10^2$.
+% my x in genrel book is deviation from unit contribution by E field to m_a; x is limited to about 10^-4, but E field only makes up only about 10^-2 of rest mass
+
+<% marg(m4_ifelse(__me,1,85,50)) %>
+<%
+  fig(
+    'kreuzer',
+    %q{1. A balance that measures the gravitational attraction between masses $M$ and $m$. (See section \ref{sec:weighing-the-earth} for
+          a more detailed description.) When the two masses $M$ are inserted, the fiber twists.
+       2. A simplified diagram of Kreuzer's modification. The moving teflon mass is submerged in a liquid with nearly the same density.
+       3. Kreuzer's actual apparatus.}
+  )
+%>
+<% end_marg %>
+
+The Kreuzer result was improved in 1986 by Bartlett and van Buren\footnote{Phys. Rev. Lett. 57 (1986) 21}
+using lunar laser ranging data similar to those described in section \ref{sec:newton-true}. 
+Since the moon
+has an asymmetrical distribution of iron and aluminum, a theory with $m_p/m_a \ne M_p/M_a$ would cause it to have an anomalous acceleration along
+a certain line. The lack of any such observed acceleration limits violations of
+Newton's third law to about one part in $10^{10}$.
+% not just 1/x=10^8, for same reasons as in the other comment above
+
+
+<% end_sec %> % Does Newton's third law mean anything, and if so, is it true?
+%--------------------- "Do Newton's laws mean anything?
+:])
+
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{repulsive}{describes a force that tends to push the two
+participating objects apart}
+
+\vocabitem{attractive}{describes a force that tends to pull the two
+participating objects together}
+
+\vocabitem{oblique}{describes a force that acts at some other angle, one
+that is not a direct repulsion or attraction}
+
+\vocabitem{normal force}{the force that keeps two objects from
+occupying the same space}
+
+\vocabitem{static friction}{a friction force between surfaces that are
+not slipping past each other}
+
+\vocabitem{kinetic friction}{a friction force between surfaces that are
+slipping past each other}
+
+\vocabitem{fluid}{a gas or a liquid}
+
+\vocabitem{fluid friction}{a friction force in which at least one of the
+object is is a fluid}
+
+\vocabitem{spring constant}{the constant of proportionality between
+force and elongation of a spring or other object under strain}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$F_N$}{a normal force}
+
+\notationitem{$F_s$}{a static frictional force}
+
+\notationitem{$F_k$}{a kinetic frictional force}
+
+
+\notationitem{$\mu_s$}{the coefficient of static friction; the constant of
+proportionality between the maximum static frictional force
+and the normal force; depends on what types of surfaces are involved}
+
+\notationitem{$\mu_k$}{the coefficient of kinetic friction; the constant of
+proportionality between the kinetic frictional force and the
+normal force; depends on what types of surfaces are involved}
+
+\notationitem{$k$}{the spring constant; the constant of proportionality
+between the force exerted on an object and the amount by
+which the object is lengthened or compressed}
+
+\end{notation}
+
+\begin{summarytext}
+
+Newton's third law states that forces occur in equal and
+opposite pairs. If object A exerts a force on object B,
+then object B must simultaneously be exerting an equal and
+opposite force on object A. Each instance of Newton's third
+law involves exactly two objects, and exactly two forces,
+which are of the same type.
+
+There are two systems for classifying forces. We are
+presently using the more practical but less fundamental one.
+In this system, forces are classified by whether they are
+repulsive, attractive, or oblique; whether they are contact
+or noncontact forces; and whether the two objects involved
+are solids or fluids.
+
+Static friction adjusts itself to match the force that is
+trying to make the surfaces slide past each other, until the
+maximum value is reached,
+\begin{equation*}
+        F_{s,max} = \mu_s F_N\eqquad.
+\end{equation*}
+Once this force is exceeded, the surfaces slip past one
+another, and kinetic friction applies,
+\begin{equation*}
+        F_k = \mu_k F_N\eqquad.
+\end{equation*}
+Both types of frictional force are nearly independent of
+surface area, and kinetic friction is usually approximately
+independent of the speed at which the surfaces are slipping.
+The direction of the force is in the direction that would tend
+to stop or prevent slipping.
+
+A good first step in applying Newton's laws of motion to any
+physical situation is to pick an object of interest, and
+then to list all the forces acting on that object. We
+classify each force by its type, and find its Newton's-third-law
+partner, which is exerted by the object on some other object.
+
+When two objects are connected by a third low-mass object,
+their forces are transmitted to each other nearly unchanged.
+
+Objects under strain always obey Hooke's law to a good
+approximation, as long as the force is small. Hooke's law
+states that the stretching or compression of the object is
+proportional to the force exerted on it,
+\begin{equation*}
+    F \approx k(x-x_\zu{o})\eqquad.
+\end{equation*}
+
+\end{summarytext}
+
+\end{summary}

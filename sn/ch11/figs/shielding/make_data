@@ -1,0 +1,71 @@
+#!/usr/bin/ruby
+
+# see Jackson, p. 200
+
+n = 10
+
+mu = 10.0
+
+# plot covers -1<=x<=1 and -1<=y<=1
+# offset in x by:
+offset=0.5
+# run once with -0.5, once with 0.5
+
+a=0.6
+b=0.8
+b0=1.0
+
+a3 = a*a*a
+b3 = b*b*b
+
+p=(2*mu+1.0)*(mu-1)
+q=(2*mu+1)*(mu+2)-2*a3/b3*(mu-1)*(mu-1)
+alpha = (b3-a3)*b0*p/q
+p=9*mu
+delta = -b0*p/q
+# The following are exact if delta is exact:
+beta = (1.0/3.0)*(2.0+1.0/mu)*delta
+gamma = (1.0/3.0)*(1.0-1.0/mu)*a3*delta
+
+$stderr.print "mu=#{mu}, a=#{a}, b=#{b}\n"
+
+$stderr.print "external, uniform=#{b0}, dipole=a=#{alpha}\n"
+$stderr.print "shell,    uniform=-b=#{-beta}, dipole=g=#{gamma}\n"
+$stderr.print "inside,   uniform=-d=#{-delta}\n"
+
+$stderr.print "The following should equal zero (Jackson, p. 200, eq. 5.120):\n"
+$stderr.print "#{alpha-b3*beta-gamma-b3*b0}\n"
+$stderr.print "#{2*alpha+mu*b3*beta-2*mu*gamma+b3*b0}\n"
+$stderr.print "#{a3*beta+gamma-a3*delta}\n"
+$stderr.print "#{mu*a3*beta-2*mu*gamma-a3*delta}\n"
+
+for i in -n..n
+  y = (i.to_f)/(n.to_f)
+  for j in -n..n
+    x = (j.to_f)/(n.to_f)+offset
+    r = Math.sqrt(x*x+y*y)
+    nx = x/r
+    ny = y/r
+    dx = (1/(r*r*r))*(3*nx*nx-1) # Jackson, p. 138, eq. 4.13; p=(1,0)
+    dy = (1/(r*r*r))*(3*ny*nx)
+    region = 'out'
+    if r<b then region='shell' end
+    if r<a then region='in' end
+    if region == 'out' then
+      bx = b0+alpha*dx
+      by =    alpha*dy
+    end
+    if region == 'shell' then
+      bx = (-beta+gamma*dx)*mu
+      by =        gamma*dy *mu
+    end
+    if region == 'in' then
+      bx = -delta
+      by = 0
+      bx = 'NA'
+      by = 'NA'
+    end
+    print bx.to_s + " " + by.to_s + "\n"
+  end
+  print "\n"
+end

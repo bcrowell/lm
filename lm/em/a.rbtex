@@ -1,0 +1,3177 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% if false then figure_in_toc('m51',{'scootx'=>0}) end %>
+
+<% part_title("Relativity and Electromagnetism") %>\label{splits:startvol2}
+
+<%
+  chapter(
+    '21',
+    %q{Electricity and Circuits},
+    'ch:circuits',
+    '',
+    {'opener'=>'lightning'}
+  )
+%>
+
+        \epigraph{Where the telescope ends, the microscope begins. Which of
+        the two has the grander view?}{Victor Hugo}\index{Hugo, Victor}
+
+        His father died during his mother's pregnancy. Rejected by
+        her as a boy, he was packed off to boarding school when she
+        remarried. He himself never married, but in middle age he
+        formed an intense relationship with a much younger man, a
+        relationship that he terminated when he underwent a
+        psychotic break. Following his early scientific successes,
+        he spent the rest of his professional life mostly in
+        frustration over his inability to unlock the secrets of alchemy.
+
+        The man being described is Isaac Newton, but not the
+        triumphant \index{Newton, Isaac!alchemy}Newton of the standard
+        textbook hagiography. Why dwell on the sad side of his life?
+        To the modern science educator, Newton's lifelong obsession
+        with alchemy may seem an embarrassment, a distraction from
+        his main achievement, the creation of the modern science of
+        mechanics. To Newton, however, his alchemical researches
+        were naturally related to his investigations of force and
+        motion. What was radical about Newton's analysis of motion
+        was its universality: it succeeded in describing both the
+        heavens and the earth with the same equations, whereas
+        previously it had been assumed that the sun, moon, stars,
+        and planets were fundamentally different from earthly
+        objects. But Newton realized that if science was to describe
+        all of nature in a unified way, it was not enough to unite
+        the human scale with the scale of the universe: he would not
+        be satisfied until he fit the microscopic universe into
+        the picture as well.
+
+        It should not surprise us that Newton failed. Although he
+        was a firm believer in the existence of atoms, there was no
+        more experimental evidence for their existence than there
+        had been when the ancient Greeks first posited them on
+        purely philosophical grounds. \index{alchemy}Alchemy labored
+        under a tradition of secrecy and mysticism. Newton had
+        already almost single-handedly transformed the fuzzyheaded
+        field of ``natural philosophy'' into something we would
+        recognize as the modern science of physics, and it would be
+        unjust to criticize him for failing to change alchemy into
+        modern chemistry as well. The time was not ripe. The
+        microscope was a new invention, and it was cutting-edge
+        science when Newton's contemporary \index{Hooke}Hooke
+        discovered that living things were made out of cells.
+
+<% begin_sec("The quest for the atomic force",0) %>
+
+        \epigraph{Newton was not the first of the age of reason. He was the
+        last of the magicians.}{John Maynard \index{Keynes, John Maynard}Keynes}
+
+        Nevertheless it will be instructive to pick up Newton's
+        train of thought and see where it leads us with the benefit
+        of modern hindsight. In uniting the human and cosmic scales
+        of existence, he had reimagined both as stages on which the
+        actors were objects (trees and houses, planets and stars)
+        that interacted through attractions and repulsions. He was
+        already convinced that the objects inhabiting the microworld
+        were atoms, so it remained only to determine what kinds of
+        forces they exerted on each other.
+
+        His next insight was no less brilliant for his inability to
+        bring it to fruition. He realized that the many human-scale
+        forces --- friction, sticky forces, the normal forces that
+        keep objects from occupying the same space, and so on ---
+        must all simply be expressions of a more fundamental force
+        acting between atoms. Tape sticks to paper because the atoms
+        in the tape attract the atoms in the paper. My house doesn't
+        fall to the center of the earth because its atoms repel the
+        atoms of the dirt under it.
+
+        Here he got stuck. It was tempting to think that the atomic
+        force was a form of gravity, which he knew to be universal,
+        fundamental, and mathematically simple. Gravity, however, is
+        always attractive, so how could he use it to explain the
+        existence of both attractive and repulsive atomic forces?
+        The gravitational force between objects of ordinary size is
+        also extremely small, which is why we never notice cars and
+        houses attracting us gravitationally. It would be hard to
+        understand how gravity could be responsible for anything as
+        vigorous as the beating of a heart or the explosion of
+        gunpowder. Newton went on to write a million words of
+        alchemical notes filled with speculation about some other
+        force, perhaps a ``divine force'' or ``vegetative force''
+        that would for example be carried by the sperm to the egg.
+
+        Luckily, we now know enough to investigate a different
+        suspect as a candidate for the atomic force: electricity.
+        \index{electric forces}Electric forces are often observed
+        between objects that have been prepared by rubbing (or other
+        surface interactions), for instance when clothes rub against
+        each other in the dryer. A useful example is shown in figure
+        \ref{fig:twotapes}/1: stick two pieces of tape on a tabletop, and then put
+        two more pieces on top of them. Lift each pair from the
+        table, and then separate them. The two top pieces will then
+        repel each other, \ref{fig:twotapes}/2, as will the two bottom pieces. A
+        bottom piece will attract a top piece, however, \ref{fig:twotapes}/3.
+        Electrical forces like these are similar in certain ways to
+        gravity, the other force that we already know to be fundamental:
+
+        \begin{itemize}
+        \item Electrical forces are \emph{universal}. Although some
+        substances, such as fur, rubber, and plastic, respond more
+        strongly to electrical preparation than others, all matter
+        participates in electrical forces to some degree. There is
+        no such thing as a ``nonelectric'' substance. Matter is both
+        inherently gravitational and inherently electrical.
+
+        \item Experiments show that the electrical force, like the
+        gravitational force, is an \emph{inverse square} force. That
+        is, the electrical force between two spheres is proportional
+        to $1/r^2$, where $r$ is the center-to-center distance between them.
+        \end{itemize}
+
+<% marg(130) %>
+<%
+  fig(
+    'twotapes',
+    %q{%
+      Four pieces of tape are prepared, 1, as
+              described in the text. Depending on which combination is tested,
+              the interaction can be either repulsive, 2, or attractive, 3.
+    }
+  )
+%>
+<% end_marg %>
+        Furthermore, electrical forces make more sense than gravity
+        as candidates for the fundamental force between atoms,
+        because we have observed that they can be either attractive or repulsive.
+
+
+<% end_sec() %>
+<% begin_sec("Electrical forces",0) %>
+        <% begin_sec("Charge") %>\index{charge}
+
+        ``Charge'' is the technical term used to
+        indicate that an object has been prepared so as to
+        participate in electrical forces. This is to be distinguished
+        from the common usage, in which the term is used indiscriminately
+        for anything electrical. For example, although we speak
+        colloquially of ``charging'' a battery, you may easily
+        verify that a battery has no charge in the technical sense,
+        e.g., it does not exert any electrical force on a piece of
+        tape that has been prepared as described in the previous section.
+
+<% begin_sec("Two types of charge") %>
+
+        We can easily collect reams of data on electrical forces
+        between different substances that have been charged in
+        different ways. We find for example that cat fur prepared by
+        rubbing against rabbit fur will attract glass that has been
+        rubbed on silk. How can we make any sense of all this
+        information? A vast simplification is achieved by noting
+        that there are really only two types of charge. Suppose we
+        pick cat fur rubbed on rabbit fur as a representative of
+        type A, and glass rubbed on silk for type B. We will now
+        find that there is no ``type C.'' Any object electrified by
+        any method is either A-like, attracting things A attracts
+        and repelling those it repels, or B-like, displaying the
+        same attractions and repulsions as B. The two types, A and
+        B, always display opposite interactions. If A displays an
+        attraction with some charged object, then B is guaranteed
+        to undergo repulsion with it, and vice-versa.
+
+<% end_sec() %>
+<% begin_sec("The coulomb") %>\index{coulomb (unit)}
+
+        Although there are only two types of charge, each type can
+        come in different amounts. The metric unit of charge is the
+        coulomb (rhymes with ``drool on''), defined as follows:
+
+        \begin{lessimportant}
+        One Coulomb (C) is the amount of charge such that
+        a force of $9.0\times10^9$ N occurs between two pointlike
+        objects with charges of 1 C separated by a distance of 1 m.
+        \end{lessimportant}
+
+        The notation for an amount of charge is $q$. The numerical
+        factor in the definition is historical in origin, and is not
+        worth memorizing. The definition is stated for pointlike,
+        i.e., very small, objects, because otherwise different parts
+        of them would be at different distances from each other.
+
+<% end_sec() %>
+<% begin_sec("A model of two types of charged particles") %>
+
+        Experiments show that all the methods of rubbing or
+        otherwise charging objects involve two objects, and both of
+        them end up getting charged. If one object acquires a
+        certain amount of one type of charge, then the other ends up
+        with an equal amount of the other type. Various interpretations
+        of this are possible, but the simplest is that the basic
+        building blocks of matter come in two flavors, one with each
+        type of charge. Rubbing objects together results in the
+        transfer of some of these particles from one object to the
+        other. In this model, an object that has not been electrically
+        prepared may actually possesses a great deal of \emph{both}
+        types of charge, but the amounts are equal and they are
+        distributed in the same way throughout it. Since type A
+        repels anything that type B attracts, and vice versa, the
+        object will make a total force of zero on any other object.
+        The rest of this chapter fleshes out this model and
+        discusses how these mysterious particles can be understood
+        as being internal parts of atoms.
+
+<% end_sec() %>
+<% begin_sec("Use of positive and negative signs for charge") %>
+
+        Because the two types of charge tend to cancel out each
+        other's forces, it makes sense to label them using positive
+        and negative signs, and to discuss the \emph{total} charge
+        of an object. It is entirely arbitrary which type of charge
+        to call negative and which to call positive. Benjamin
+        \index{Franklin, Benjamin!definition of signs of charge}Franklin
+        decided to describe the one we've been calling ``A'' as
+        negative, but it really doesn't matter as long as everyone
+        is consistent with everyone else. An object with a total
+        charge of zero (equal amounts of both types) is referred to
+        as electrically $\index{neutral (electrically)}neutral$.
+
+        <% self_check('typesofcharge',<<-'SELF_CHECK'
+        Criticize the following statement: ``There are two types of
+        charge, attractive and repulsive.''
+          SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Coulomb's law") %>
+        \index{Coulomb's law}
+        A large body of experimental observations can be summarized as follows: 
+
+        \begin{important}
+        Coulomb's law: The magnitude of the force acting between pointlike charged
+        objects at a center-to-center distance $r$ is given by the equation
+        \begin{equation*}
+                        |\vc{F}|        =    k\frac{|q_1||q_2|}{r^2}\eqquad,  
+        \end{equation*}
+        where the constant $k$ equals $9.0\times10^9\ \zu{N}\unitdot\zu{m}^2/\zu{C}^2$.
+        The force is attractive if the charges are of different
+        signs, and repulsive if they have the same sign.
+        \end{important}
+
+        Clever modern techniques have allowed the $1/r^2$ form of
+        Coulomb's law to be tested to incredible accuracy, showing
+        that the exponent is in the range from 1.9999999999999998
+        to 2.0000000000000002.
+
+        Note that Coulomb's law is closely analogous to Newton's law
+        of gravity, where the magnitude of the force is $Gm_1m_2/r^2$, except
+        that there is only one type of mass, not two, and gravitational
+        forces are never repulsive. Because of this close analogy
+        between the two types of forces, we can recycle a great deal
+        of our knowledge of gravitational forces. For instance,
+        there is an electrical equivalent of the shell theorem: the
+        electrical forces exerted externally by a uniformly charged
+        spherical shell are the same as if all the charge was
+        concentrated at its center, and the forces exerted
+        internally are zero.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Conservation of charge") %>\index{charge!conservation of}
+
+        An even more fundamental reason for using positive and
+        negative signs for electrical charge is that experiments
+        show that charge is conserved according to this definition:
+        in any closed system, the total amount of charge is a
+        constant. This is why we observe that rubbing initially
+        uncharged substances together always has the result that one
+        gains a certain amount of one type of charge, while the
+        other acquires an equal amount of the other type. Conservation
+        of charge seems natural in our model in which matter is made
+        of positive and negative particles. If the charge on each
+        particle is a fixed property of that type of particle, and
+        if the particles themselves can be neither created nor
+        destroyed, then conservation of charge is inevitable.
+
+<% end_sec() %>
+<% begin_sec("Electrical forces involving neutral objects") %>
+        As shown in figure \ref{fig:scrapsofpaper}, an electrically charged object can
+        attract objects that are uncharged. How is this possible?
+        The key is that even though each piece of paper has a total
+        charge of zero, it has at least some charged particles in it
+        that have some freedom to move. Suppose that the tape is
+        positively charged, \ref{fig:induction}. Mobile particles in the paper will
+        respond to the tape's forces, causing one end of the paper to
+        become negatively charged and the other to become positive.
+        The attraction between the paper and the tape is now
+        stronger than the repulsion, because the negatively charged
+        end is closer to the tape.
+
+<% marg(50) %>
+<%
+  fig(
+    'scrapsofpaper',
+    %q{%
+      A charged piece of tape attracts uncharged pieces of paper
+              from a distance, and they leap up to it.
+    }
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'induction',
+    %q{%
+      The paper has zero total charge, but it does have charged
+              particles in it that can move.
+    }
+  )
+%>
+<% end_marg %>
+
+<% self_check('inductionneg',<<-'SELF_CHECK'
+       What would have happened if the tape was negatively charged?
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+
+
+\startdqs
+
+\begin{dq}
+        If the electrical attraction between two pointlike
+        objects at a distance of 1 m is $9\times10^9$ N, why can't
+        we infer that their charges are $+1$ and $-1$ C? What further
+        observations would we need to do in order to prove this?
+\end{dq}
+ %
+\begin{dq}
+        An electrically charged piece of tape will be attracted
+        to your hand. Does that allow us to tell whether the mobile
+        charged particles in your hand are positive or negative, or both?
+\end{dq}
+
+<% end_sec() %> % Electrical forces
+
+<% begin_sec("Current") %>
+        <% begin_sec("Unity of all types of electricity") %>
+
+        We are surrounded by things we have been \emph{told} are
+        ``electrical,'' but it's far from obvious what they have in
+        common to justify being grouped together. What relationship
+        is there between the way socks cling together and the way a
+        battery lights a lightbulb? We have been told that both an
+        electric eel and our own brains are somehow electrical in
+        nature, but what do they have in common?
+
+        British physicist Michael \index{Faraday, Michael!types of
+        electricity}Faraday (1791-1867) set out to address this
+        problem. He investigated electricity from a variety of
+        sources --- including electric eels! --- to see whether they
+        could all produce the same effects, such as shocks and
+        sparks, attraction and repulsion. ``Heating'' refers, for
+        example, to the way a lightbulb filament gets hot enough to
+        glow and emit light. Magnetic induction is an effect
+        discovered by Faraday himself that connects electricity and
+        magnetism. We will not study this effect, which is the basis
+        for the electric generator, in detail until later in the book.
+
+<% if is_print() then
+  print %q(
+        \\noindent\\begin{tabular}{p{20mm}@{\\extracolsep{2mm}}llll}
+        {\\textbf source} & \\multicolumn{4}{c}{\\textbf effect}    \\\\
+        \\cline{1-1}  \\cline{2-5} 
+                         &        &        & attraction and &\\\\
+                         & shocks         & sparks        & repulsion & heating\\\\
+        \\cline{2-5}
+        rubbing                & $\\surd$  & $\\surd$ & $\\surd$ & $\\surd$\\\\
+        battery                & $\\surd$ & $\\surd$ & $\\surd$ & $\\surd$\\\\
+        animal                & $\\surd$ & $\\surd$ & ($\\surd$) & $\\surd$\\\\
+        magnetically induced                & $\\surd$ & $\\surd$ & $\\surd$ & $\\surd$\\\\
+        \\end{tabular}
+    )
+end
+%>
+<% if is_web() then
+  print <<-TABLE
+        <table>
+        <tr><td></td>   <td>shocks</td>   <td>attraction and repulsion</td> <td>heating</td></tr>
+        <tr><td>rubbing</t>   <td>&times;</td>   <td>&times;</td>   <td>&times;</td>   <td>&times;</td></tr>
+        <tr><td>battery</t>   <td>&times;</td>   <td>&times;</td>   <td>&times;</td>   <td>&times;</td></tr>
+        <tr><td>animal</t>   <td>&times;</td>   <td>&times;</td>   <td>(&times;)</td>   <td>&times;</td></tr>
+        <tr><td>magnetically induced</t>   <td>&times;</td>   <td>&times;</td>   <td>&times;</td>   <td>&times;</td></tr>
+        </table>
+  TABLE
+end
+%>
+
+        The table shows a summary of some of Faraday's results.
+        Check marks indicate that Faraday or his close contemporaries
+        were able to verify that a particular source of electricity
+        was capable of producing a certain effect. (They evidently
+        failed to demonstrate attraction and repulsion between
+        objects charged by electric eels, although modern workers
+        have studied these species in detail and been able to
+        understand all their electrical characteristics on the same
+        footing as other forms of electricity.)
+<% marg(90) %>
+<%
+  fig(
+    'faraday-portrait-oil-painting',
+    %q{%
+      Michael Faraday (1791-1867) was the son of a poor
+      blacksmith.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gymnotus',
+    %q{%
+      \emph{Gymnotus carapo}, a knifefish, uses
+              electrical signals to sense
+              its environment and to communicate with others of its species.
+    }
+  )
+%>
+<% end_marg %>
+
+        Faraday's results indicate that there is nothing fundamentally
+        different about the types of electricity supplied by the
+        various sources. They are all able to produce a wide variety
+        of identical effects. Wrote Faraday, ``The general
+        conclusion which must be drawn from this collection of facts
+        is that electricity, whatever may be its source, is
+        identical in its nature.''
+
+\enlargethispage{-2\baselineskip}
+
+        If  the types of electricity are the same thing, what thing
+        is that? The answer is provided by the fact that all the
+        sources of electricity can cause objects to repel or attract
+        each other. We use the word ``charge'' to describe the
+        property of an object that allows it to participate in such
+        electrical forces, and we have learned that charge is
+        present in matter in the form of nuclei and electrons.
+        Evidently all these electrical phenomena boil down to the
+        motion of charged particles in matter.
+
+\enlargethispage{-2\baselineskip}
+
+<% end_sec() %>
+<% begin_sec("Electric current") %>
+
+         If the fundamental phenomenon is the motion of charged
+        particles, then how can we define a useful numerical
+        measurement of it? We might describe the flow of a river
+        simply by the velocity of the water, but velocity will not
+        be appropriate for electrical purposes because we need to
+        take into account how much charge the moving particles have,
+        and in any case there are no practical devices sold at Radio
+        Shack that can tell us the velocity of charged particles.
+        Experiments show that the intensity of various electrical
+        effects is related to a different quantity: the number of
+        coulombs of charge that pass by a certain point per second.
+        By analogy with the flow of water, this quantity is called
+        the \index{electric current!defined}electric \emph{current},
+        \index{current!defined} $I$.
+        Its units of coulombs/second are more conveniently
+        abbreviated as \index{ampere (unit)}amperes, \linebreak[3] 1 A=1 C/s.
+        (In informal speech, one usually says ``amps.'')
+
+
+        The main subtlety involved in this definition is how to
+        account for the two types of charge. The stream of water
+        coming from a hose is made of atoms containing charged
+        particles, but it produces none of the effects we associate
+        with electric currents. For example, you do not get an
+        electrical shock when you are sprayed by a hose. This type
+        of experiment shows that the effect created by the motion of
+        one type of charged particle can be canceled out by the
+        motion of the opposite type of charge in the same direction.
+        In water, every oxygen atom with a charge of $+8e$ is
+        surrounded by eight electrons with charges of $-e$, and
+        likewise for the hydrogen atoms. 
+<% marg(100) %>
+<%
+  fig(
+    'ampere',
+    %q{Andr\'{e} Marie Ampère (1775-1836).}
+  )
+%>
+<% end_marg %>
+
+        We therefore refine our definition of current as follows:
+
+\begin{lessimportant}[definition of electric current]
+        When charged particles are exchanged between regions of space
+        A and B, the electric current flowing from A to B is
+        \begin{equation*}
+                I = \frac{\Delta q}{\Delta t}\eqquad,
+        \end{equation*}
+        where $\Delta q$ is the change in region B's total charge occurring over
+        a period of time $\Delta t$.
+\end{lessimportant}
+
+\noindent        In the garden hose example, your body picks up equal amounts
+        of positive and negative charge, resulting in no change in
+        your total charge, so the electrical current flowing into you is zero.
+
+\begin{eg}{Interpretation of $\Delta q/\Delta t$}\label{eg:dq-dt}
+\egquestion How should the expression $\Delta q/\Delta t$ be interpreted when the
+current isn't constant?
+
+\eganswer You've seen lots of equations of this form before: $v=\Delta x/\Delta t$,
+$F=\Delta p/\Delta t$, etc. These are all descriptions of rates of change, and
+they all require that the rate of change be constant. If the rate of change isn't
+constant, you instead have to use the slope of the tangent line on a graph. The slope
+of a tangent line is equivalent to a derivative in calculus; applications of calculus
+are discussed in section \ref{sec:current-calculus}.
+\end{eg}
+
+
+\begin{eg}{Ions moving across a cell membrane}\label{eg:cells}
+        \egquestion
+        Figure \figref{cells} shows ions, labeled with their charges,
+        moving in or out through the membranes of four cells. If
+        the ions all cross the membranes during the same interval of
+        time, how would the currents into the cells compare with each other?
+
+        \eganswer
+        Cell A has positive current going into it because its
+        charge is increased, i.e., has a positive value of $\Delta  q$.
+
+        Cell B has the same current as cell A, because by losing
+        one unit of negative charge it also ends up increasing its
+        own total charge by one unit.
+
+                Cell C's total charge is reduced by three units, so it has
+        a large negative current going into it.
+
+                Cell D loses one unit of charge, so it has a small
+        negative current into it.
+\end{eg}
+        %
+<%
+  fig(
+    'cells',
+    %q{Example \ref{eg:cells}},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+        It may seem strange to say that a negatively charged
+        particle going one way creates a current going the other
+        way, but this is quite ordinary. As we will see, currents
+        flow through metal wires via the motion of electrons, which
+        are negatively charged, so the direction of motion of the
+        electrons in a circuit is always opposite to the direction
+        of the current. Of course it would have been convenient of
+        Benjamin Franklin had defined the positive and negative
+        signs of charge the opposite way, since so many electrical
+        devices are based on metal wires.
+
+\begin{eg}{Number of electrons flowing through a lightbulb}
+        \egquestion
+        If a lightbulb has 1.0 A flowing through it, how
+        many electrons will pass through the filament in 1.0 s?
+
+        \eganswer
+                We are only calculating the number of electrons
+        that flow, so we can ignore the positive and negative signs. 
+        Solving for
+        $\Delta q= I \Delta  t$ gives a charge of 1.0 C flowing in
+        this time interval. The number of electrons is
+        \begin{align*}
+                \text{number of electrons}         &=         \text{coulombs}\times\frac{\text{electrons}}{\text{coulomb}}  \\
+                         &=         \text{coulombs}/\frac{\text{coulombs}}{\text{electron}}   \\
+                         &=          1.0\ \zu{C} /  e  \\
+                         &=          6.2\times10^{18}   
+        \end{align*}
+
+\end{eg}
+
+ %%----------------------------------------------
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Circuits") %>
+        How can we put electric currents to work? The only method of
+        controlling electric charge we have studied so far is to
+        charge different substances, e.g., rubber and fur, by rubbing
+        them against each other. Figure \ref{fig:basiccircuits}/1 shows an attempt to use
+        this technique to light a lightbulb. This method is
+        unsatisfactory. True, current will flow through the bulb,
+        since electrons can move through metal wires, and the excess
+        electrons on the rubber rod will therefore come through the
+        wires and bulb due to the attraction of the positively
+        charged fur and the repulsion of the other electrons. The
+        problem is that after a zillionth of a second of current,
+        the rod and fur will both have run out of charge. No more
+        current will flow, and the lightbulb will go out.
+
+        <% marg(40) %>
+<%
+  fig(
+    'basiccircuits',
+    %q{%
+      1. Static electricity runs out quickly. 2. A practical
+              circuit. 3. An open circuit. 4. How an ammeter works. 5. Measuring the
+              current with an ammeter.
+    }
+  )
+%>
+<% end_marg %>
+        Figure \ref{fig:basiccircuits}/2 shows a setup that works. The battery pushes
+        charge through the circuit, and recycles it over and over
+        again. (We will have more to say later in this chapter about
+        how batteries work.) This is called a \emph{\index{circuit!complete}\index{complete
+        circuit}complete \index{circuit}circuit}. Today, the
+        electrical use of the word ``circuit'' is the only one that
+        springs to mind for most people, but the original meaning
+        was to travel around and make a round trip, as when a
+        circuit court judge would ride around the boondocks,
+        dispensing justice in each town on a certain date.
+
+        Note that an example like \ref{fig:basiccircuits}/3 does not work. The wire will
+        quickly begin acquiring a net charge, because it has no way
+        to get rid of the charge flowing into it. The repulsion of
+        this charge will make it more and more difficult to send any
+        more charge in, and soon the electrical forces exerted by
+        the battery will be canceled out completely. The whole
+        process would be over so quickly that the filament would not
+        even have enough time to get hot and glow. This is known as
+        an \index{circuit!open}\index{open circuit}\emph{open circuit}.
+        Exactly the same thing would happen if the complete circuit
+        of figure \ref{fig:basiccircuits}/2 was cut somewhere with a pair of scissors, and
+        in fact that is essentially how an ordinary light switch
+        works: by opening up a gap in the circuit.
+
+        The definition of electric current we have developed has the
+        great virtue that it is easy to measure. In practical
+        electrical work, one almost always measures current, not
+        charge. The instrument used to measure current is called an
+        \index{ammeter}\emph{ammeter}.
+        A simplified ammeter, \ref{fig:basiccircuits}/4, simply
+        consists of a coiled-wire magnet whose force twists an iron
+        needle against the resistance of a spring. The greater the
+        current, the greater the force. Although the construction of
+        ammeters may differ, their use is always the same. We break
+        into the path of the electric current and interpose the
+        meter like a tollbooth on a road, \ref{fig:basiccircuits}/5. There is still a
+        complete circuit, and as far as the battery and bulb are
+        concerned, the ammeter is just another segment of wire.
+
+        Does it matter where in the circuit we place the ammeter?
+        Could we, for instance, have put it in the left side of the
+        circuit instead of the right? Conservation of charge tells
+        us that this can make no difference. Charge is not destroyed
+        or ``used up'' by the lightbulb, so we will get the same
+        current reading on either side of it. What is ``used up'' is
+        energy stored in the battery, which is being converted into
+        heat and light energy.
+<% end_sec() %>
+<% begin_sec("Voltage",4,'voltage') %>
+        <% begin_sec("The volt unit") %>
+
+        Electrical circuits can be used for sending signals, storing
+        information, or doing calculations, but their most common
+        purpose by far is to manipulate energy, as in the battery-and-bulb
+        example of the previous section. We know that lightbulbs are
+        rated in units of watts, i.e., how many joules per second of
+        energy they can convert into heat and light, but how would
+        this relate to the flow of charge as measured in amperes? By
+        way of analogy, suppose your friend, who didn't take
+        physics, can't find any job better than pitching bales of
+        hay. The number of calories he burns per hour will certainly
+        depend on how many bales he pitches per minute, but it will
+        also be proportional to how much mechanical work he has to
+        do on each bale. If his job is to toss them up into a
+        hayloft, he will get tired a lot more quickly than someone
+        who merely tips bales off a loading dock into trucks. In metric units,
+        \begin{equation*}
+                \frac{\text{joules}}{\text{second}}
+                 = \frac{\text{haybales}}{\text{second}}
+                         \times \frac{\text{joules}}{\text{haybale}}\eqquad.  
+        \end{equation*}
+        Similarly, the rate of energy transformation by a battery
+        will not just depend on how many coulombs per second it
+        pushes through a circuit but also on how much mechanical
+        work it has to do on each coulomb of charge:
+        \begin{equation*}
+                \frac{\text{joules}}{\text{second}}
+                 = \frac{\text{coulombs}}{\text{second}}
+                         \times \frac{\text{joules}}{\text{coulomb}}
+        \end{equation*}
+        \noindent or
+        \begin{equation*}
+                        \text{power}         =         \text{current} \times \text{work per unit charge}\eqquad.  
+        \end{equation*}
+
+        Units of joules per coulomb are abbreviated as \index{volt
+        (unit)!defined}\emph{volts}, 1 V=1 J/C, named after the Italian
+        physicist Alessandro Volta. Everyone knows that batteries are
+        rated in units of volts, but the voltage concept is more
+        general than that; it turns out that voltage is a property
+        of every point in space. To gain more insight, let's think
+        more carefully about what goes on in the battery and bulb circuit.
+<% marg(60) %>
+<%
+  fig(
+    'volta',
+    %q{Alessandro Volta (1745-1827).}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% begin_sec("The concept of voltage (electrical potential) in general") %>
+
+        To do work on a charged particle, the battery apparently
+        must be exerting forces on it. How does it do this? Well,
+        the only thing that can exert an electrical force on a
+        charged particle is another charged particle. It's as though
+        the haybales were pushing and pulling each other into the
+        hayloft! This is potentially a horribly complicated
+        situation. Even if we knew how much excess positive or
+        negative charge there was at every point in the circuit
+        (which realistically we don't) we would have to calculate
+        zillions of forces using Coulomb's law,  perform all the
+        vector additions, and finally calculate how much work was
+        being done on the charges as they moved along. To make
+        things even more scary, there is more than one type of
+        charged particle that moves: electrons are what move in the
+        wires and the bulb's filament, but ions are the moving
+        charge carriers inside the battery. Luckily, there are two
+        ways in which we can simplify things:
+
+\begin{indentedblock}
+        \noindent\textbf{The situation is unchanging.} Unlike the imaginary setup in
+        which we attempted to light a bulb using a rubber rod and a
+        piece of fur, this circuit maintains itself in a steady
+        state (after perhaps a microsecond-long period of settling
+        down after the circuit is first assembled). The current is
+        steady, and as charge flows out of any area of the circuit
+        it is replaced by the same amount of charge flowing in. The
+        amount of excess positive or negative charge in any part of
+        the circuit therefore stays constant. Similarly, when we
+        watch a river flowing, the water goes by but the river doesn't disappear.
+
+        \noindent\textbf{Force depends only on position.} Since the charge distribution
+        is not changing, the total electrical force on a charged
+        particle depends only on its own charge and on its location.
+        If another charged particle of the same type visits the same
+        location later on, it will feel exactly the same force.
+\end{indentedblock}
+
+        The second observation tells us that there is nothing all
+        that different about the experience of one charged particle
+        as compared to another's. If we single out one particle to
+        pay attention to, and figure out the amount of work done on
+        it by electrical forces as it goes from point A to point $B$
+        along a certain path, then this is the same amount of work
+        that will be done on any other charged particles of the same
+        type as it follows the same path. For the sake of visualization,
+        let's think about the path that starts at one terminal of
+        the battery, goes through the light bulb's filament, and
+        ends at the other terminal. When an object experiences a
+        force that depends only on its position (and when certain
+        other, technical conditions are satisfied), we can define an
+        electrical energy associated with the position of that
+        object. The amount of work done on the particle by
+        electrical forces as it moves from A to B equals the drop
+        in electrical energy between A and B. This
+        electrical energy is what is being converted into other forms
+        of energy such as heat and light. We therefore define
+        $\Delta V$ in general as electrical energy per unit charge:
+
+\begin{lessimportant}[definition of potential difference]\index{voltage!defined}
+        The $\Delta V$ between two points in space is defined as
+        \begin{equation*}
+                \Delta V=\Delta PE_{elec}/q\eqquad,
+        \end{equation*}
+        where $\Delta PE_{elec}$ is the change in the electrical
+        energy of a particle with charge $q$ as it moves from the
+        initial point to the final point.
+\end{lessimportant}
+        \noindent In this context, where we think of the voltage as being a scalar function that is
+        defined everywhere in space, it is more common in formal writing to refer to
+        it as the electrical \emph{potential}.\index{potential!electrical}
+
+        The amount of power dissipated (i.e., rate at which energy is
+        transformed by the flow of electricity) is then given by the equation
+        \begin{equation*}
+                                P    =    I \Delta V\eqquad.  
+        \end{equation*}\index{power!electrical}
+
+\begin{eg}{Energy stored in a battery}\label{eg:milliamp-hours}
+        \egquestion
+        The 1.2 V rechargeable battery in figure \ref{fig:battery} is labeled 1800 milliamp-hours.
+        What is the maximum amount of energy the battery can store?
+<% marg(55) %>
+<%
+  fig(
+    'battery',
+    %q{Example \ref{eg:milliamp-hours}.}
+  )
+%>
+<% end_marg %>
+
+        \eganswer
+                An ampere-hour is a unit of current multiplied by
+        a unit of time. Current is charge per unit time, so an
+        ampere-hour is in fact a funny unit of \emph{charge}:
+        \begin{align*}
+                        \text{(1 A)(1 hour)}         &=    \text{(1 C/s)(3600 s)}  \\
+                                         &=    \text{3600 C}  
+        \end{align*}
+        \noindent 1800 milliamp-hours is therefore $1800\times10^{-3}\times 3600\ \zu{C}=6.5\times10^3\ \zu{C}$.
+        That's a huge number of charged particles, but the
+        total loss of electrical energy will just be their total
+        charge multiplied by the voltage difference across which they move:
+        \begin{align*}
+                        \Delta  PE_{elec}                 &=     q \Delta  V  \\
+                                         &=    (6.5\times10^3\ \zu{C})(1.2\ \zu{V})  \\
+                                         &=    7.8\ \zu{kJ}  
+        \end{align*}
+\end{eg}
+
+\begin{eg}{Units of volt-amps}
+        \egquestion
+        Doorbells are often rated in volt-amps. What does
+        this combination of units mean?
+
+        \eganswer
+                Current times voltage gives units of power,
+        $P= I\Delta  V$, so volt-amps are really just a nonstandard
+        way of writing watts. They are telling you how much power
+        the doorbell requires.
+
+\end{eg}
+\begin{eg}{Power dissipated by a battery and bulb}
+        \egquestion
+        If a 9.0-volt battery causes 1.0 A to flow through
+        a lightbulb, how much power is dissipated?
+
+        \eganswer
+                The voltage rating of a battery tells us what
+        voltage difference $\Delta  V$ it is designed to maintain
+        between its terminals.
+        \begin{align*}
+                         P         &=      I \ \Delta \zu{V}   \\
+                                 &=     9.0 \ \zu{A}\cdot\zu{V} \\
+                                 &=     9.0  \ \frac{\zu{C}}{\zu{s}}\cdot\frac{\zu{J}}{\zu{C}} \\
+                                 &=     9.0 \ \text{J/s}  \\
+                                 &=     9.0 \ \zu{W}  
+        \end{align*}
+
+        The only nontrivial thing in this problem was dealing with
+        the units. One quickly gets used to translating common
+        combinations like $\zu{A}\cdot\zu{V}$ into simpler terms.
+\end{eg}
+
+\pagebreak
+
+        Here are a few questions and answers about the voltage concept.
+
+        \noindent{}\emph{Question:\/} 
+        OK, so what \emph{is} voltage, really?\\
+        \noindent{}\emph{Answer:\/}  A device like a battery has positive and negative
+        charges inside it that push other charges around the outside
+        circuit. A higher-voltage battery has denser charges in it,
+        which will do more work on each charged particle that moves
+        through the outside circuit.
+
+                To use a gravitational analogy, we can put a paddlewheel at
+        the bottom of either a tall waterfall or a short one, but a
+        kg of water that falls through the greater gravitational
+        energy difference will have more energy to give up
+        to the paddlewheel at the bottom.
+
+        \noindent{}\emph{Question:\/}  Why do we define voltage as electrical 
+        energy divided by charge, instead of just defining it as
+        electrical  energy?\\
+        \noindent{}\emph{Answer:\/}  One answer is that it's the only definition that
+        makes the equation $P=I \Delta V$  work. A more general
+        answer is that we want to be able to define a voltage
+        difference between any two points in space without having to
+        know in advance how much charge the particles moving between
+        them will have. If you put a nine-volt battery on your
+        tongue, then the charged particles that move across your
+        tongue and give you that tingly sensation are not electrons
+        but ions, which may have charges of $+e$, $-2e$, or
+        practically anything. The manufacturer probably expected the
+        battery to be used mostly in circuits with metal wires,
+        where the charged particles that flowed would be electrons
+        with charges of $-e$. If the ones flowing across your tongue
+        happen to have charges of $-2e$, the electrical energy
+        difference for them will be twice as much, but dividing by
+        their charge of $-2e$ in the definition of voltage will
+        still give a result of 9 $V$.
+
+        \noindent{}\emph{Question:\/}  Are there two separate roles for the charged
+        particles in the circuit, a type that sits still and exerts
+        the forces, and another that moves under the influence of those forces?\\
+        \noindent{}\emph{Answer:\/}  No. Every charged particle simultaneously plays both
+        roles. Newton's third law says that any particle that has an
+        electrical force acting on it must also be exerting an
+        electrical force back on the other particle. There are no
+        ``designated movers'' or ``designated force-makers.''
+
+        \noindent{}\emph{Question:\/}  Why does the definition of voltage only refer to
+        voltage \emph{differences}?\\
+        \noindent{}\emph{Answer:\/}  It's perfectly OK to define voltage as $V=PE_{elec}/q$.
+        But recall that it is only \emph{differences} in interaction
+        energy, $U$, that have direct physical meaning in physics.
+        Similarly, voltage differences are really more useful than
+        absolute voltages. A voltmeter measures voltage differences,
+        not absolute voltages.
+
+\pagebreak
+
+\startdqs
+
+\begin{dq}\label{dq:roller-coaster}
+        A roller coaster is sort of like an electric circuit, but
+        it uses gravitational forces on the cars instead of electric
+        ones. What would a high-voltage roller coaster be like? What
+        would a high-current roller coaster be like?
+\end{dq}
+ %
+\begin{dq}
+        Criticize the following statements:
+        \begin{itemize}
+                \item[] ``He touched the wire, and 10000 volts went through him.''
+                \item[]``That battery has a charge of 9 volts.''
+                \item[]``You used up the charge of the battery.''
+        \end{itemize}
+\end{dq}
+ %
+\begin{dq}\label{dq:signsofcurrent}
+        When you touch a 9-volt battery to your tongue, both
+        positive and negative ions move through your saliva.
+        Which ions go which way?
+\end{dq}
+ %
+\begin{dq}
+        I once touched a piece of physics apparatus that had been
+        wired incorrectly, and got a several-thousand-volt voltage
+        difference across my hand. I was not injured. For what
+        possible reason would the shock have had insufficient power to hurt me?
+\end{dq}
+
+\vfill
+
+ %%----------------------------------------------
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Resistance",3) %>
+        <% begin_sec("Resistance") %>
+
+        So far we have simply presented it as an observed fact that
+        a battery-and-bulb circuit quickly settles down to a steady
+        flow, but why should it? Newton's second law, $a=F/m$, would
+        seem to predict that the steady forces on the charged
+        particles should make them whip around the circuit faster
+        and faster. The answer is that as charged particles move
+        through matter, there are always forces, analogous to
+        frictional forces, that resist the motion. These forces need
+        to be included in Newton's second law, which is really 
+        $a=F_{total}/m$, not  $a=F/m$.  If, by analogy, you push a
+        crate across the floor at constant speed, i.e., with zero
+        acceleration, the total force on it must be zero. After you
+        get the crate going, the floor's frictional force is exactly
+        canceling out your force. The chemical energy stored in your
+        body is being transformed into heat in the crate and the
+        floor, and no longer into an increase in the crate's kinetic
+        energy. Similarly, the battery's internal chemical energy is
+        converted into heat, not into perpetually increasing the
+        charged particles' kinetic energy. Changing energy into heat
+        may be a nuisance in some circuits, such as a computer chip,
+        but it is vital in an incandescent lightbulb, which must get hot enough to
+        glow. Whether we like it or not, this kind of heating effect
+        is going to occur any time charged particles move through matter.
+
+        What determines the amount of heating? One flashlight bulb
+        designed to work with a 9-volt battery might be labeled 1.0
+        watts, another 5.0. How does this work? Even without knowing
+        the details of this type of friction at the atomic level, we
+        can relate the heat dissipation to the amount of current
+        that flows via the equation $P=I\Delta $V. If the two
+        flashlight bulbs can have two different values of $P$ when
+        used with a battery that maintains the same $\Delta V$, it
+        must be that the 5.0-watt bulb allows five times more
+        current to flow through it.
+
+        For many substances, including the tungsten from which
+        lightbulb filaments are made, experiments show that the
+        amount of current that will flow through it is directly
+        proportional to the voltage difference placed across it. For
+        an object made of such a substance, we define its electrical
+        \index{resistance!defined}\emph{resistance} as follows:
+<% marg(0) %>
+<%
+  fig(
+    'ohm',
+    %q{Georg Simon Ohm (1787-1854).}
+  )
+%>
+<% end_marg %>
+
+\begin{lessimportant}[definition of resistance]        
+        If an object inserted in a circuit displays a current flow 
+        proportional to the voltage difference across it, then we define
+        its resistance as the constant ratio
+        \begin{equation*}
+                R = \Delta V / I
+        \end{equation*}
+\end{lessimportant}
+
+        \noindent The units of resistance are volts/ampere, usually abbreviated
+        as ohms, symbolized with the capital Greek letter omega, $\Omega$. 
+
+\pagebreak
+
+\begin{eg}{Resistance of a lightbulb}
+        \egquestion
+        A flashlight bulb powered by a 9-volt battery has
+        a resistance of 10 $\Omega$. How much current will it draw?
+
+        \eganswer
+                Solving the definition of resistance for $I$, we find
+        \begin{align*}
+                         I         &=    \Delta V/ R  \\
+                                 &=     0.9\ \zu{V}/\Omega   \\
+                                 &=     0.9\ \zu{V}/(\zu{V}/\zu{A})  \\
+                                 &=    \text{0.9 A}  
+        \end{align*}
+
+\end{eg}
+
+        Ohm's law\index{Ohm's law}
+        states that many substances, including many solids
+        and some liquids, display this kind of behavior, at least
+        for voltages that are not too large. The fact that Ohm's law
+        is called a ``law'' should not be taken to mean that all
+        materials obey it, or that it has the same fundamental
+        importance as Newton's laws, for example. Materials are
+        called \index{ohmic!defined}\emph{ohmic} or \emph{nonohmic},
+        depending on whether they obey Ohm's law. Although we will
+concentrate on ohmic materials in this book, it's important to keep in
+mind that a great many materials are nonohmic, and devices made from them
+are often very important. For instance, a transistor\index{transistor} is a nonohmic device
+that can be used to amplify a signal (as in a guitar amplifier) or to store and
+manipulate the ones and zeroes in a computer chip.
+
+        If objects of the same size and shape made from two
+        different ohmic materials have different resistances, we can
+        say that one material is more resistive than the other, or
+        equivalently that it is less conductive. Materials, such as
+        metals, that are very conductive are said to be good
+        \index{conductor!defined}\emph{conductors}. Those that are
+        extremely poor conductors, for example wood or rubber, are
+        classified as \index{insulator!defined}\emph{insulators}. There
+        is no sharp distinction between the two classes of
+        materials. Some, such as silicon, lie midway between the two
+        extremes, and are called semiconductors.
+
+        On an intuitive level, we can understand the idea of
+        resistance by making the sounds ``hhhhhh'' and ``ffffff.''
+        To make air flow out of your mouth, you use your diaphragm
+        to compress the air in your chest. The pressure difference
+        between your chest and the air outside your mouth is
+        analogous to a voltage difference. When you make the ``h''
+        sound, you form your mouth and throat in a way that allows
+        air to flow easily. The large flow of air is like a large
+        current. Dividing by a large current in the definition of
+        resistance means that we get a small resistance. We say that
+        the small resistance of your mouth and throat allows a large
+        current to flow. When you make the ``f'' sound, you increase
+        the resistance and cause a smaller current to flow.
+
+        <% marg(40) %>
+<%
+  fig(
+    'resistance-depends-on-shape',
+    %q{%
+      Four objects made of the same substance
+              have different resistances.
+    }
+  )
+%>
+<% end_marg %>
+        Note that although the resistance of an object depends on
+        the substance it is made of, we cannot speak simply of the
+        ``resistance of gold'' or the ``resistance of wood.'' 
+        Figure \ref{fig:resistance-depends-on-shape} shows four examples of objects that have had wires
+        attached at the ends as electrical connections. If they were
+        made of the same substance, they would all nevertheless have
+        different resistances because of their different sizes and
+        shapes. A more detailed discussion will be more natural in
+        the context of the following chapter, but it should not be
+        too surprising that the resistance of \ref{fig:resistance-depends-on-shape}/2 will be greater
+        than that of \ref{fig:resistance-depends-on-shape}/1 --- the image of water flowing through a
+        pipe, however incorrect, gives us the right intuition.
+        Object \ref{fig:resistance-depends-on-shape}/3 will have a smaller 
+        resistance than \ref{fig:resistance-depends-on-shape}/1 because
+        the charged particles have less of it to get through.
+
+<% end_sec() %>
+<% begin_sec("Superconductors") %>
+
+
+        All materials display some variation in resistance according
+        to temperature (a fact that is used in thermostats to make a
+        thermometer that can be easily interfaced to an electric
+        circuit). More spectacularly, most metals have been found to
+        exhibit a sudden change to \emph{zero} resistance when
+        cooled to a certain critical temperature. They are then said
+        to be superconductors. Currently, the most important practical
+application of superconductivity is in medical MRI (magnetic resonance imaging) scanners. The mechanism of MRI is explained on 
+p.~\pageref{mri-resonance-explanation},
+but the important point for now is that when your
+body is inserted into one of these devices, you are being immersed in an extremely strong magnetic
+field produced by electric currents flowing through the coiled wires of an electromagnet.
+If these wires were not superconducting, they would instantly burn up because of the heat
+generated by their resistance. 
+<% marg(50) %>
+<%
+  fig(
+    'mri',
+    %q{%
+      A medical MRI scanner, which uses superconductors.
+    }
+  )
+%>
+<% end_marg %>
+
+There are many other potential applications for superconductors, but most of these, such as
+power transmission, are not currently economically feasible because of the extremely low
+temperatures required for superconductivity to occur.
+
+        However, it was discovered in 1986 that
+        certain ceramics are superconductors at less extreme
+        temperatures. The technological barrier is now in finding
+        practical methods for making wire out of these brittle
+        materials. Wall Street is currently investing billions of
+        dollars in developing superconducting devices for cellular
+        phone relay stations based on these materials.
+
+        There is currently no satisfactory theory of superconductivity
+        in general, although superconductivity in metals is
+        understood fairly well. Unfortunately I have yet to find a
+        fundamental explanation of superconductivity in metals that
+        works at the introductory level.
+
+<% end_sec() %>
+<% begin_sec("Constant voltage throughout a conductor") %>
+
+
+        The idea of a superconductor leads us to the question of how
+        we should expect an object to behave if it is made of a very
+        good conductor. Superconductors are an extreme case, but
+        often a metal wire can be thought of as a perfect conductor,
+        for example if the parts of the circuit other than the wire
+        are made of much less conductive materials. What happens if
+        $R$ equals zero in the equation $R=\Delta V/I$? The result
+        of dividing two numbers can only be zero if the number on
+        top equals zero. This tells us that if we pick any two
+        points in a perfect conductor, the voltage difference
+        between them must be zero. In other words, the entire
+        conductor must be at the same voltage.
+<%
+  fig(
+    'doorknob',
+    %q{%
+      1. The finger deposits charges on the solid, spherical, metal doorknob and is then withdrawn.
+      2. Almost instantaneously, the charges' mutual repulsion makes them redistribute themselves
+         uniformly on the surface of the sphere. The only \emph{excess} charge is on the surface;
+         charges do exist in the atoms that form the interior of
+         the sphere, but they are balanced. Charges on
+         the interior feel zero total electrical force from the ones at the surface. Charges at the surface
+         experience a net outward repulsion, but this is canceled out by the force that keeps them from
+         escaping into the air.
+      3. A voltmeter shows zero difference in voltage between any two points
+         on the interior or surface of the sphere. If the voltage difference wasn't
+         zero, then energy could be released by the flow of charge from one point to the other; this
+         only happens before equilibrium is reached.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'t'
+    }
+  )
+%>
+
+        Constant voltage means that no work would be done on a
+        charge as it moved from one point in the conductor to
+        another. If zero work was done only along a certain path
+        between two specific points, it might mean that positive
+        work was done along part of the path and negative work along
+        the rest, resulting in a cancellation. But there is no way
+        that the work could come out to be zero for all possible
+        paths unless the electrical force on a charge was in fact
+        zero at every point. Suppose, for example, that you build up
+        a static charge by scuffing your feet on a carpet, and then
+        you deposit some of that charge onto a doorknob, which is a
+        good conductor. How can all that charge be in the doorknob
+        without creating any electrical force at any point inside
+        it? The only possible answer is that the charge moves around
+        until it has spread itself into just the right configuration
+        so that the forces exerted by all the little bits of excess
+        surface charge on any charged particle within the doorknob
+        exactly cancel out.
+
+        We can explain this behavior if we assume that the charge
+        placed on the doorknob eventually settles down into a stable
+        equilibrium. Since the doorknob is a conductor, the charge
+        is free to move through it. If it was free to move and any
+        part of it did experience a nonzero total force from the
+        rest of the charge, then it would move, and we would not
+        have an equilibrium.
+
+        Excess charge placed on a conductor, once it
+        reaches its equilibrium configuration, is entirely on the
+        surface, not on the interior. This should be intuitively reasonable
+        in figure \figref{doorknob}, for example, since the charges are all
+        repelling each other. A proof is given in example \ref{eg:no-charge-on-interior} on 
+        p.~\pageref{eg:no-charge-on-interior}.\label{assert-no-charge-on-interior}
+
+      Since wires are good conductors, constancy of voltage throughout a conductor provides
+      a convenient freedom in hooking up a voltmeter to a circuit. In figure \figref{voltmeter-doesnt-care},
+      points B and C are on the same piece of conducting wire, so $V_B=V_C$.
+      Measuring $V_B-V_A$ gives the same result as measuring $V_C-V_A$.
+
+<% marg(0) %>
+<%
+  fig(
+    'voltmeter-doesnt-care',
+    %q{%
+      The voltmeter doesn't care which of these setups you use.
+    }
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+\begin{eg}{The lightning rod}\label{eg:lightning-rod}
+ Suppose you have a pear-shaped conductor like the one
+        in figure \subfigref{lightning-rod}{1}.  Since the pear is a conductor,
+        there are free charges everywhere inside it. Panels 1 and 2 of the figure show
+        a computer simulation with 100 identical electric charges. In 1, the charges
+        are released at random positions inside the pear. Repulsion causes them all
+        to fly outward onto the surface and then settle down into an orderly but nonuniform
+        pattern. 
+
+        We might not have been able to guess the pattern in advance, but we can
+        verify that some of its features make sense. For example, charge A has more neighbors
+        on the right than on the left, which would tend to make it accelerate off to the left.
+        But when we look at the picture as a whole, it appears reasonable that this is prevented
+        by the larger number of more distant charges on its left than on its right.
+
+        There also seems to be a pattern to the nonuniformity: the charges collect more
+        densely in areas like B, where the surface is strongly curved, and less densely in flatter areas like C.
+<% marg(130) %>
+<%
+  fig(
+    'lightning-rod',
+    %q{%
+      Example \ref{eg:lightning-rod}. In 1 and 2, charges that are visible on the front surface of the conductor
+      are shown as solid dots; the others would have to be seen through the conductor, which we
+      imagine is semi-transparent.
+    }
+  )
+%>
+<% end_marg %>
+
+To understand the reason for this pattern, consider \subfigref{lightning-rod}{3}.
+Two conducting spheres are connected by a conducting wire. Since the whole apparatus
+is conducting, it must all be at one voltage. As shown in problem \ref{hw:lightning-rod}
+on p.~\pageref{hw:lightning-rod}, the density of charge is greater on the smaller
+sphere. This is an example of a more general fact observed in \subfigref{lightning-rod}{2}, which is that the charge on
+a conductor packs itself more densely in areas that are more sharply curved.
+
+Similar reasoning shows why Benjamin Franklin used a sharp
+        tip when he invented the lightning rod. The charged stormclouds
+        induce positive and negative charges to move to opposite
+        ends of the rod.  At the pointed upper end of the rod, the
+        charge tends to concentrate at the point, and this charge
+        attracts the lightning. The same effect can sometimes be seen when
+        a scrap of aluminum foil is inadvertently put in a microwave oven. Modern experiments (Moore \emph{et al.},
+        Journal of Applied Meteorology 39 (1999) 593) show that although
+        a sharp tip is best at starting a spark, a more moderate curve,
+        like the right-hand tip of the pear in this example, is better
+        at successfully sustaining the spark for long enough to connect
+        a discharge to the clouds.
+
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Short circuits") %>
+
+        <% marg(0) %>
+<%
+  fig(
+    'short-circuit',
+    %q{%
+      Short-circuiting a battery. Warning: you can burn yourself this
+              way or start a fire! If you want to try this, try making the
+              connection only very briefly, use a low-voltage battery, and avoid
+              touching the battery or the wire, both of which will get hot.
+    }
+  )
+%>
+<% end_marg %>
+
+        So far we have been assuming a perfect conductor. What if it
+        is a good conductor, but not a perfect one? Then we can
+        solve for $\Delta V=IR$. An ordinary-sized current
+        will make a very small result when we multiply it by the
+        resistance of a good conductor such as a metal wire. The
+        voltage throughout the wire will then be nearly constant.
+        If, on the other hand, the current is extremely large, we
+        can have a significant voltage difference. This is what
+        happens in a \index{circuit!short}\index{short circuit!defined}\emph{short-circuit:\/}
+        a circuit in which a low-resistance pathway connects the two
+        sides of a voltage source. Note that this is much more
+        specific than the popular use of the term to indicate any
+        electrical malfunction at all. If, for example, you
+        short-circuit a 9-volt battery as shown in figure \ref{fig:short-circuit}, you
+        will produce perhaps a thousand amperes of current, leading
+        to a very large value of $P=I\Delta V$. The wire gets hot!
+
+        <% self_check('killbattery',<<-'SELF_CHECK'
+        What would happen to the battery in this kind of short circuit?
+          SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Resistors") %>
+
+        Inside any electronic gadget you will see quite a few little
+        circuit elements like the one shown in the photo. These \index{resistor}\emph{resistors}
+        are simply a cylinder of ohmic material with wires
+        attached to the end.
+<% marg(120) %>
+<%
+  fig(
+    'resistor-photo',
+    %q{Resistors.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+        At this stage, most students have a hard time understanding
+        why resistors would be used inside a radio or a computer. We
+        obviously want a lightbulb or an electric stove to have a
+        circuit element that resists the flow of electricity and
+        heats up, but heating is undesirable in radios and
+        computers. Without going too far afield, let's use a
+        mechanical analogy to get a general idea of why a resistor
+        would be used in a radio.
+
+        The main parts of a radio receiver are an antenna, a tuner
+        for selecting the frequency, and an amplifier to strengthen
+        the signal sufficiently to drive a speaker. The tuner
+        resonates at the selected frequency, just as in the examples
+        of mechanical resonance discussed in chapter \ref{ch:resonance}. The behavior of
+        a mechanical resonator depends on three things: its inertia,
+        its stiffness, and the amount of friction or damping. The
+        first two parameters locate the peak of the resonance curve,
+        while the damping determines the width of the resonance. In
+        the radio tuner we have an electrically vibrating system
+        that resonates at a particular frequency. Instead of a
+        physical object moving back and forth, these vibrations
+        consist of electrical currents that flow first in one
+        direction and then in the other. In a mechanical system,
+        damping means taking energy out of the vibration in the form
+        of heat, and exactly the same idea applies to an electrical
+        system: the resistor supplies the damping, and therefore
+        controls the width of the resonance. If we set out to
+        eliminate all resistance in the tuner circuit, by not
+        building in a resistor and by somehow getting rid of all the
+        inherent electrical resistance of the wires, we would have a
+        useless radio. The tuner's resonance would be so narrow that
+        we could never get close enough to the right frequency to
+        bring in the station. The roles of inertia and stiffness are
+        played by other circuit elements we have not discusses (a
+        capacitor and a coil).
+                
+<% marg(150) %>
+<%
+  fig(
+    'resistorsymbol',
+    %q{The symbol used in schematics to represent a resistor.}
+  )
+%>
+        \spacebetweenfigs
+<%
+  fig(
+    'colorcode',
+    %q{An example of a resistor with a color code.}
+  )
+%>
+%\spacebetweenfigs %%%% makes too much space
+<%
+  fig(
+    'colorcodetable',
+    %q{Color codes used on resistors.},
+    {
+      'text'=>
+      %q{
+\begin{tabular}{ll}
+black& 0 \\\\
+brown& 1\\\\
+red& 2\\\\
+orange& 3\\\\
+yellow& 4\\\\
+green& 5\\\\
+blue& 6\\\\
+violet& 7\\\\
+gray& 8\\\\
+white& 9\\\\
+silver& $\pm 10\%$\\\\
+gold& $\pm 5\%$\\\\
+\end{tabular}
+      }
+    }
+  )
+%>
+        
+<% end_marg %>
+        Many electrical devices are based on electrical resistance
+        and Ohm's law, even if they do not have little components in
+        them that look like the usual resistor. The following are some examples.
+
+<% begin_sec("Lightbulb") %>
+
+        There is nothing special about a lightbulb filament --- you
+        can easily make a lightbulb by cutting a narrow waist into a
+        metallic gum wrapper and connecting the wrapper across the
+        terminals of a 9-volt battery. The trouble is that it will
+        instantly burn out. Edison solved this technical challenge
+        by encasing the filament in an evacuated bulb, which
+        prevented burning, since burning requires oxygen.
+
+<% end_sec() %>
+<% begin_sec("Polygraph") %>
+
+        The polygraph, or ``lie detector,'' is really just a set of
+        meters for recording physical measures of the subject's
+        psychological stress, such as sweating and quickened
+        heartbeat. The real-time sweat measurement works on the
+        principle that dry skin is a good insulator, but sweaty skin
+        is a conductor. Of course a truthful subject may become
+        nervous simply because of the situation, and a practiced
+        liar may not even break a sweat. The method's practitioners
+        claim that they can tell the difference, but you should
+        think twice before allowing yourself to be polygraph tested.
+        Most U.S. courts exclude all polygraph evidence, but some
+        employers attempt to screen out dishonest employees by
+        polygraph testing job applicants, an abuse that ranks with
+        such pseudoscience as handwriting analysis.
+
+<% end_sec() %>
+<% begin_sec("Fuse") %>
+
+        A fuse is a device inserted in a circuit tollbooth-style in
+        the same manner as an ammeter. It is simply a piece of wire
+        made of metals having a relatively low melting point. If too
+        much current passes through the fuse, it melts, opening the
+        circuit. The purpose is to make sure that the building's
+        wires do not carry so much current that they themselves will
+        get hot enough to start a fire. Most modern houses use
+        circuit breakers instead of fuses, although fuses are still
+        common in cars and small devices. A circuit breaker is a
+        switch operated by a coiled-wire magnet, which opens the
+        circuit when enough current flows. The advantage is that
+        once you turn off some of the appliances that were sucking
+        up too much current, you can immediately flip the switch
+        closed. In the days of fuses, one might get caught without a
+        replacement fuse, or even be tempted to stuff aluminum foil
+        in as a replacement, defeating the safety feature.
+
+<% end_sec() %>
+<% begin_sec("Voltmeter") %>\index{voltmeter}
+
+        A voltmeter is nothing more than an ammeter with an
+        additional high-value resistor through which the current is
+        also forced to flow. Ohm's law states that the current through
+        the resistor is related directly to the voltage difference
+        across it, so the meter can be calibrated in units of volts
+        based on the known value of the resistor. The voltmeter's
+        two probes are touched to the two locations in a circuit
+        between which we wish to measure the voltage difference,
+        \ref{fig:voltmeter}/2. Note how cumbersome this type of drawing is, and how
+        difficult it can be to tell what is connected to what. This
+        is why electrical drawing are usually shown in schematic
+        form. Figure \ref{fig:voltmeter}/3 is a schematic 
+        representation of figure \ref{fig:voltmeter}/2.
+
+\enlargethispage{-2\baselineskip}
+
+<% marg(35) %>
+<%
+  fig(
+    'voltmeter',
+    %q{%
+      1. A simplified diagram of how a voltmeter
+              works. 2. Measuring the voltage difference across a lightbulb.
+              3. The same setup drawn in schematic form.
+              4. The setup for measuring current is different.
+    }
+  )
+%>
+<% end_marg %>
+        The setups for measuring current and voltage are different.
+        When we are measuring current, we are finding ``how much
+        stuff goes through,'' so we place the ammeter where all the
+        current is forced to go through it. Voltage, however, is not
+        ``stuff that goes through,'' it is a measure of electrical
+        energy. If an ammeter is like the meter that measures your
+        water use, a voltmeter is like a measuring stick that tells
+        you how high a waterfall is, so that you can determine how
+        much energy will be released by each kilogram of falling
+        water. We do not want to force the water to go through the
+        measuring stick! The arrangement in figure \ref{fig:voltmeter}/3 is a
+        \index{circuit!parallel}\index{parallel circuit!defined}\emph{parallel}
+        circuit: one in there are ``forks in the road'' where some
+        of the current will flow one way and some will flow the
+        other. Figure \ref{fig:voltmeter}/4 is said to be wired in 
+        \index{circuit!series}\index{series
+        circuit!defined}\emph{series:} all the current will visit all the
+        circuit elements one after the other. We will deal with
+        series and parallel circuits in more detail in the following chapter.
+
+        If you inserted a voltmeter incorrectly, in series with the
+        bulb and battery, its large internal resistance would cut
+        the current down so low that the bulb would go out. You
+        would have severely disturbed the behavior of the circuit by
+        trying to measure something about it.
+
+        Incorrectly placing an ammeter in parallel is likely to be
+        even more disconcerting. The ammeter has nothing but wire
+        inside it to provide resistance, so given the choice, most
+        of the current will flow through it rather than through the
+        bulb. So much current will flow through the ammeter, in
+        fact, that there is a danger of burning out the battery or
+        the meter or both! For this reason, most ammeters have fuses
+        or circuit breakers inside. Some models will trip their
+        circuit breakers and make an audible alarm in this
+        situation, while others will simply blow a fuse and stop
+        working until you replace it.
+
+\startdqs
+
+\begin{dq}
+        In figure \ref{fig:voltmeter}/1, would it make any difference in the
+        voltage measurement if we touched the voltmeter's probes to
+        different points along the same segments of wire?
+\end{dq}
+ %
+\begin{dq}
+        Explain why it would be incorrect to define resistance as
+        the amount of charge the resistor allows to flow.
+\end{dq}
+ %
+
+
+ %%----------------------------------------------
+<% end_sec() %> % Resistors
+<% end_sec() %> % Voltmeter
+<% end_sec() %>
+<% begin_sec("Applications of calculus",0,'current-calculus',{'calc'=>true}) %>
+
+As discussed in example \ref{eg:dq-dt} on page \pageref{eg:dq-dt}, the
+definition of current as the rate of change of charge with respect to
+time must be reexpressed as a derivative in the case where the rate of
+change is not constant,
+\begin{equation*}
+  I = \frac{\der q}{\der t}\eqquad.
+\end{equation*}
+
+\begin{eg}{Finding current given charge}
+        \egquestion
+        A charged balloon falls to the ground, and its
+        charge begins leaking off to the Earth. Suppose that the
+        charge on the balloon is given by $q=ae^{-bt}$. Find
+        the current as a function of time, and interpret the answer.
+
+        \eganswer
+                Taking the derivative, we have
+        \begin{align*}
+                         I         &=    \frac{\der  q}{\der  t}  \\
+                                 &=      - abe^{- bt}
+        \end{align*}
+        An  exponential function approaches zero as the exponent
+        gets more and more negative. This means that both the charge
+        and the current are decreasing in magnitude with time. It
+        makes sense that the charge approaches zero, since the
+        balloon is losing its charge. It also makes sense that the
+        current is decreasing in magnitude, since charge cannot flow
+        at the same rate forever without overshooting zero.
+
+\end{eg}
+
+
+<% end_sec() %>
+<% begin_sec("Series and parallel circuits") %>
+<% begin_sec("Schematics") %>\index{schematics}
+
+        I see a chess position; Kasparov sees an interesting Ruy
+        Lopez variation. To the uninitiated a schematic may look as
+        unintelligible as Mayan hieroglyphs, but even a little bit
+        of eye training can go a long way toward making its meaning
+        leap off the page. A \index{schematic}schematic is a
+        stylized and simplified drawing of a circuit. The purpose is
+        to eliminate as many irrelevant features as possible, so
+        that the relevant ones are easier to pick out.
+
+<%
+  fig(
+    'sample-schematics',
+    %q{%
+      1. Wrong: The shapes of
+              the wires are irrelevant. 2. Wrong: Right angles should be used.
+              3. Wrong: A simple pattern is made to look unfamiliar and complicated.
+              4. Right.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+        An example of an irrelevant feature is the physical shape,
+        length, and diameter of a wire. In nearly all circuits, it
+        is a good approximation to assume that the wires are perfect
+        conductors, so that any piece of wire uninterrupted by other
+        components has constant voltage throughout it. Changing the
+        length of the wire, for instance, does not change this fact.
+        (Of course if we used miles and miles of wire, as in a
+        telephone line, the wire's resistance would start to add up,
+        and its length would start to matter.) The shapes of the
+        wires are likewise irrelevant, so we draw them with
+        standardized, stylized shapes made only of vertical and
+        horizontal lines with right-angle bends in them. This has
+        the effect of making similar circuits look more alike and
+        helping us to recognize familiar patterns, just as words in
+        a newspaper are easier to recognize than handwritten ones.
+        Figure \ref{fig:sample-schematics} shows some examples of these concepts.
+
+        The most important first step in learning to read schematics
+        is to learn to recognize contiguous pieces of wire which
+        must have constant voltage throughout. In figure \ref{fig:constant-voltage-areas}, for
+        example, the two shaded E-shaped pieces of wire must each
+        have constant voltage. This focuses our attention on two of
+        the main unknowns we'd like to be able to predict: the
+        voltage of the left-hand E and the voltage of the one on the right.
+<% marg(50) %>
+<%
+  fig(
+    'constant-voltage-areas',
+    %q{%
+      The two shaded areas shaped like the letter
+              ``E'' are both regions of constant voltage.
+    }
+  )
+%>
+<% end_marg %>
+
+ %%----------------------------------------------
+<% end_sec() %>
+<% begin_sec("Parallel resistances and the junction rule",0) %>
+        \index{resistance!in parallel}\index{junction rule}
+
+        One of the simplest examples to analyze is the parallel
+        resistance circuit, of which figure \figref{constant-voltage-areas} was an example. In
+        general we may have unequal resistances $R_1$ and $R_2$, as
+        in \figref{parallel-resistors}/1. Since there are only two constant-voltage areas in
+        the circuit, \figref{parallel-resistors}/2, all three components have the same voltage
+        difference across them. A battery normally succeeds in
+        maintaining the voltage differences across itself for which
+        it was designed, so the voltage drops $\Delta V_1$ and
+        $\Delta V_2$ across the resistors must both equal the
+        voltage of the battery:
+        \begin{equation*}
+                \Delta V_1=\Delta V_2=\Delta V_{battery}\eqquad.
+        \end{equation*}
+        Each resistance thus feels the same voltage difference as if
+        it was the only one in the circuit, and Ohm's law tells us
+        that the amount of current flowing through each one is also
+        the same as it would have been in a one-resistor circuit.
+        This is why household electrical circuits are wired in
+        parallel. We want every appliance to work the same,
+        regardless of whether other appliances are plugged in or
+        unplugged, turned on or switched off. (The electric company
+        doesn't use batteries of course, but our analysis would be
+        the same for any device that maintains a constant voltage.)
+
+        %
+<%
+  fig(
+    'parallel-resistors',
+    %q{%
+      1. Two resistors in parallel. 2. There are two
+              constant-voltage areas. 3. The current that comes out of the battery
+              splits between the two resistors, and later reunites. 4. The two resistors
+              in parallel can be treated as a single resistor with a smaller resistance value.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+        Of course the electric company can tell when we turn on
+        every light in the house. How do they know? The answer is
+        that we draw more current. Each resistance draws a certain
+        amount of current, and the amount that has to be supplied is
+        the sum of the two individual currents. The current is like
+        a river that splits in half, \ref{fig:parallel-resistors}/3, and then reunites.
+        The total current is
+        \begin{equation*}
+                        I_{total}         =    I_1 + I_2\eqquad.  
+        \end{equation*}
+
+        This is an example of a general fact called the junction rule:
+
+\begin{lessimportant}[the junction rule]
+        In any circuit that is not storing or releasing charge, conservation of
+        charge implies that the total current flowing out of any junction must be the
+        same as the total flowing in.
+\end{lessimportant}
+        
+        Coming back to the analysis of our circuit, we apply Ohm's
+        law to each resistance, resulting in
+        \begin{align*}
+                        I_{total}         &=    \Delta V/R_1+ \Delta V/R_2  \\
+                                 &=             \Delta V\left(\frac{1}{R_1}+\frac{1}{R_2}\right)\eqquad.  
+        \end{align*}
+
+        As far as the electric company is concerned, your whole
+        house is just one resistor with some resistance $R$, called
+        the \index{resistors!in parallel}\index{equivalent
+        resistance!of resistors in parallel}\emph{equivalent resistance}.
+        They would write Ohm's law as
+        \begin{equation*}
+                                I_{total}         =    \Delta V/R\eqquad,  
+        \end{equation*}
+        from which we can determine the equivalent resistance by
+        comparison with the previous expression:
+        \begin{align*}
+                                1/R         &=   \frac{1}{R_1}+\frac{1}{R_2}   \\
+                                  R         &=  \left(\frac{1}{R_1}+\frac{1}{R_2}\right)^{-1}          
+        \end{align*}
+        \hfill{}[equivalent resistance of two resistors in parallel]
+
+        \noindent Two resistors in parallel, \ref{fig:parallel-resistors}/4, are equivalent to a single
+        resistor with a value given by the above equation.
+
+\begin{eg}{Two lamps on the same household circuit}
+        \egquestion
+        You turn on two lamps that are on the same
+        household circuit. Each one has a resistance of 1 ohm. What
+        is the equivalent resistance, and how does the power
+        dissipation compare with the case of a single lamp?
+
+        \eganswer
+                The equivalent resistance of the two lamps in parallel is
+        \begin{align*}
+                         R         &=    \left(\frac{1}{ R_1}+\frac{1}{ R_2}\right)^{-1}  \\
+                                 &=    \left(\frac{1}{1\ \Omega}+\frac{1}{1\ \Omega}\right)^{-1}  \\
+                                 &=    \left(1\ \Omega^{-1} + 1\ \Omega^{-1}\right)^{-1}  \\
+                                 &=    \left(2\ \Omega^{-1}\right)^{-1}  \\
+                                 &=    \text{0.5}\ \Omega   
+        \end{align*}
+        The voltage difference across the whole circuit is always
+        the 110 V set by the electric company (it's alternating
+        current, but that's irrelevant). The resistance of the whole
+        circuit has been cut in half by turning on the second lamp,
+        so a fixed amount of voltage will produce twice as much
+        current. Twice the current flowing across the same voltage
+        difference means twice as much power dissipation, which makes sense.
+
+\end{eg}
+
+        The cutting in half of the resistance surprises many
+        students, since we are ``adding more resistance'' to the
+        circuit by putting in the second lamp. Why does the
+        equivalent resistance come out to be less than the
+        resistance of a single lamp? This is a case where purely
+        verbal reasoning can be misleading. A resistive circuit
+        element, such as the filament of a lightbulb, is neither a
+        perfect insulator nor a perfect conductor. Instead of
+        analyzing this type of circuit in terms of ``resistors,''
+        i.e., partial insulators, we could have spoken of ``conductors.''
+        This example would then seem reasonable, since we ``added
+        more conductance,'' but one would then have the incorrect
+        expectation about the case of resistors in series, discussed
+        in the following section.
+
+        Perhaps a more productive way of thinking about it is to use
+        mechanical intuition. By analogy, your nostrils resist the
+        flow of air through them, but having two nostrils makes it
+        twice as easy to breathe.
+
+        \begin{eg}{Three resistors in parallel}\label{eg:three-resistors-in-parallel}
+        \egquestion
+        What happens if we have three or more resistors in parallel?
+
+        \eganswer
+                This is an important example, because the solution
+        involves an important technique for understanding circuits:
+        breaking them down into smaller parts and them simplifying
+        those parts. In the circuit \ref{fig:eg-three-resistors-in-parallel}/1, with three resistors in
+        parallel, we can think of two of the resistors as forming a
+        single resistor, \ref{fig:eg-three-resistors-in-parallel}/2, with equivalent resistance 
+        \begin{equation*}
+                         R_{12}         =    \left(\frac{1}{ R_1}+\frac{1}{ R_2}\right)^{-1}\eqquad.  
+        \end{equation*}
+        We can then simplify the circuit as shown in \ref{fig:eg-three-resistors-in-parallel}/3, so that it
+        contains only two resistances. The equivalent resistance of
+        the whole circuit is then given by
+        \begin{equation*}
+                         R_{123}    =    \left(\frac{1}{ R_{12}}+\frac{1}{ R_3}\right)^{-1}\eqquad.  
+        \end{equation*}
+        Substituting for $R_{12}$ and simplifying, we find the result
+        \begin{equation*}
+                         R_{123}    =  \left(\frac{1}{ R_1}+\frac{1}{ R_2}+\frac{1}{ R_3}\right)^{-1}\eqquad,  
+        \end{equation*}
+        which you probably could have guessed. The interesting point
+        here is the divide-and-conquer concept, not the mathematical result.
+
+\end{eg}
+<% marg(110) %>
+<%
+  fig(
+    'eg-three-resistors-in-parallel',
+    %q{Example \ref{eg:three-resistors-in-parallel}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+\begin{eg}{An arbitrary number of identical resistors in parallel}
+        \egquestion
+        What is the resistance of $N$ identical resistors in parallel?
+
+        \eganswer
+                Generalizing the results for two and three resistors, we have
+        \begin{equation*}
+                         R_{N}         =   \left(\frac{1}{ R_1}+\frac{1}{ R_2}+\ldots\right)^{-1}\eqquad,  
+        \end{equation*}
+        where ``...'' means that the sum includes all the resistors.
+        If all the resistors are identical, this becomes
+        \begin{align*}
+                         R_{N}         &=  \left(\frac{ N}{ R}\right)^{-1}    \\
+                                 &=     \frac{ R}{ N} 
+        \end{align*}
+
+\end{eg}
+
+\pagebreak
+% ...this is basically just to make long example eg:close-switch come out on two facing pages
+
+\begin{eg}{Dependence of resistance on cross-sectional area}\label{eg:resistance-and-area}
+        We have alluded briefly to the fact that an object's
+        electrical resistance depends on its size and shape, but now
+        we are ready to begin making more mathematical statements
+        about it. As suggested by figure \ref{fig:eg-cross-sectional-area}, increasing a
+        resistors's cross-sectional area is equivalent to adding
+        more resistors in parallel, which will lead to an overall
+        decrease in resistance. Any real resistor with straight,
+        parallel sides can be sliced up into a large number of
+        pieces, each with cross-sectional area of, say, 1 $\mu \zu{m}^2$.
+        The number, $N$, of such slices is proportional to the total
+        cross-sectional area of the resistor, and by application of
+        the result of the previous example we therefore find that
+        the resistance of an object is inversely proportional to its
+        cross-sectional area.
+<% marg(55) %>
+<%
+  fig(
+    'eg-cross-sectional-area',
+    %q{%
+      Example \ref{eg:resistance-and-area}: Uniting four resistors in 
+              parallel is equivalent to making a
+              single resistor with the same length but four times the
+              cross-sectional area. The result is to make a resistor with one
+              quarter the resistance.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'fat-and-skinny-pipes',
+    %q{%
+      A fat pipe has less resistance than a skinny pipe.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'t',
+      'anonymous'=>true
+    }
+  )
+%>
+
+                An analogous relationship holds for water pipes, which is
+        why high-flow trunk lines have to have large cross-sectional
+        areas. To make lots of water (current) flow through a skinny
+        pipe, we'd need an impractically large pressure (voltage) difference.
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{Incorrect readings from a voltmeter}
+                A voltmeter is really just an ammeter with an internal
+        resistor, and we use a voltmeter in parallel with the thing
+        that we're trying to measure the voltage difference across.
+        This means that any time we measure the voltage drop across
+        a resistor, we're essentially putting two resistors in
+        parallel. The ammeter inside the voltmeter can be ignored
+        for the purpose of analyzing how current flows in the
+        circuit, since it is essentially just some coiled-up wire
+        with a very low resistance.
+<% marg(38) %>
+<%
+  fig(
+    'eg-voltmeter-internal-resistance',
+    %q{%
+      A voltmeter is really an ammeter 
+              with an internal resistor.
+              When we measure the voltage difference across a resistor, 1, we are
+              really constructing a parallel resistance circuit, 2.
+    }
+  )
+%>
+<% end_marg %>
+
+                Now if we are carrying out this measurement on a resistor
+        that is part of a larger circuit, we have changed the
+        behavior of the circuit through our act of measuring. It is
+        as though we had modified the circuit by replacing the
+        resistance $R$ with the smaller equivalent resistance of $R$
+        and $R_v$ in parallel. It is for this reason that voltmeters
+        are built with the largest possible internal resistance. As
+        a numerical example, if we use a voltmeter with an internal
+        resistance of 1 $\zu{M}\Omega $ to measure the voltage drop
+        across a one-ohm resistor, the equivalent resistance is
+        0.999999 $\Omega $, which is not different enough to make
+        any difference. But if we tried to use the same voltmeter to
+        measure the voltage drop across a 2 $M\Omega$ resistor, we
+        would be reducing the resistance of that part of the circuit
+        by a factor of three, which would produce a drastic change
+        in the behavior of the whole circuit.
+\end{eg}
+
+                This is the reason why you can't use a voltmeter to measure
+        the voltage difference between two different points in
+        mid-air, or between the ends of a piece of wood. This is by
+        no means a stupid thing to want to do, since the world
+        around us is not a constant-voltage environment, the most
+        extreme example being when an electrical storm is brewing.
+        But it will not work with an ordinary voltmeter because the
+        resistance of the air or the wood is many gigaohms. The
+        effect of waving a pair of voltmeter probes around in the
+        air is that we provide a reuniting path for the positive and
+        negative charges that have been separated --- through the
+        voltmeter itself, which is a good conductor compared to the
+        air. This reduces to zero the voltage difference we
+        were trying to measure.
+
+                In general, a voltmeter that has been set up with an open
+        circuit (or a very large resistance) between its probes is
+        said to be ``floating.'' An old-fashioned analog voltmeter
+        of the type described here will read zero when left
+        floating, the same as when it was sitting on the shelf. A
+        floating digital voltmeter usually shows an error message.
+
+<% end_sec() %>
+<% begin_sec("Series resistances",0) %>\index{resistance!in series}
+
+        The two basic circuit layouts are parallel and series, so a
+        pair of resistors in series, \ref{fig:seriesresistors}/1, is another of the most
+        basic circuits we can make. By conservation of charge, all
+        the current that flows through one resistor must also flow
+        through the other (as well as through the battery):
+        \begin{equation*}
+                        I_1    =    I_2\eqquad.  
+        \end{equation*}
+        The only way the information about the two resistance values
+        is going to be useful is if we can apply Ohm's law, which
+        will relate the resistance of each resistor to the current
+        flowing through it and the voltage difference across it.
+        Figure \ref{fig:seriesresistors}/2 shows the three constant-voltage areas. Voltage
+        differences are more physically significant than voltages,
+        so we define symbols for the voltage differences across the
+        two resistors in figure \ref{fig:seriesresistors}/3.
+        
+        We have three constant-voltage areas, with symbols for the
+        difference in voltage between every possible pair of them.
+        These three voltage differences must be related to each
+        other. It is as though I tell you that Fred is a foot taller
+        than Ginger, Ginger is a foot taller than Sally, and Fred is
+        two feet taller than Sally. The information is redundant,
+        and you really only needed two of the three pieces of data
+        to infer the third. In the case of our voltage differences, we have
+        \begin{equation*}
+                   |\Delta V_1| + |\Delta V_2| = |\Delta V_{battery}|\eqquad.
+        \end{equation*}
+        The absolute value signs are because of the ambiguity in how
+        we define our voltage differences. If we reversed the two
+        probes of the voltmeter, we would get a result with the
+        opposite sign. Digital voltmeters will actually provide a
+        minus sign on the screen if the wire connected to the ``V''
+        plug is lower in voltage than the one connected to the
+        ``COM'' plug. Analog voltmeters pin the needle against a peg
+        if you try to use them to measure negative voltages, so you
+        have to fiddle to get the leads connected the right way, and
+        then supply any necessary minus sign yourself.
+<% marg(190) %>
+<%
+  fig(
+    'seriesresistors',
+    %q{%
+      1. A battery drives current through
+              two resistors in series. 2. There are three constant-voltage regions.
+              3. The three voltage differences are related.
+              4. If the meter crab-walks around the circuit without flipping
+              over or crossing its legs, the resulting voltages have plus and minus
+              signs that make them add up to zero.
+    }
+  )
+%>
+<% end_marg %>
+
+        Figure \ref{fig:seriesresistors}/4 shows a standard way of taking care of the
+        ambiguity in signs. For each of the three voltage measurements
+        around the loop, we keep the same probe (the darker one) on
+        the clockwise side. It is as though the voltmeter was
+        sidling around the circuit like a crab, without ever
+        ``crossing its legs.'' With this convention, the relationship
+        among the voltage drops becomes
+        \begin{equation*}
+                  \Delta V_1 + \Delta V_2 = -\Delta V_{battery}\eqquad,
+        \end{equation*}
+        or, in more symmetrical form,
+        \begin{equation*}
+                  \Delta V_1 + \Delta V_2 + \Delta V_{battery} = 0\eqquad.
+        \end{equation*}
+
+        More generally, this is known as the loop rule for analyzing circuits:
+
+\begin{lessimportant}[the loop rule]
+        Assuming the standard convention for plus and minus signs, the sum of the
+        voltage drops around any closed loop in a DC circuit must be zero.
+\end{lessimportant}
+
+        Looking for an exception to the \index{loop rule}loop rule
+        would be like asking for a hike that would be downhill all
+        the way and that would come back to its starting point!
+
+                For the circuit we set out to analyze, the equation
+        \begin{equation*}
+                  \Delta V_1 + \Delta V_2 + \Delta V_{battery} = 0
+        \end{equation*}
+        can now be rewritten by applying Ohm's law to each resistor:
+        \begin{equation*}
+                  I_1R_1 + I_2R_2 + \Delta V_{battery} = 0\eqquad.
+        \end{equation*}
+        The currents are the same, so we can factor them out:
+        \begin{equation*}
+                  I\left(R_1 + R_2\right) + \Delta V_{battery} = 0\eqquad,
+        \end{equation*}
+        and this is the same result we would have gotten if we had
+        been analyzing a one-resistor circuit with resistance
+        $R_1+R_2$. Thus the equivalent resistance of resistors in
+        series equals the sum of their resistances.
+
+\vspace{10mm}
+
+\begin{eg}{Two lightbulbs in series}\label{eg:two-bulbs-in-series}
+        \egquestion
+        If two identical  lightbulbs are placed in series,
+        how do their brightnesses compare with the brightness of a single bulb?
+
+        \eganswer
+                Taken as a whole, the pair of bulbs act like a
+        doubled resistance, so they will draw half as much current
+        from the wall. Each bulb will be dimmer than a single
+        bulb would have been.
+
+The total power dissipated by the circuit is $I\Delta V$.
+        The voltage drop across the whole circuit is the same as
+        before, but the current is halved, so the two-bulb circuit
+        draws half as much total power as the one-bulb circuit. Each
+        bulb draws one-quarter of the normal power.
+
+                Roughly speaking, we might expect this to result in one
+        quarter the light being produced by each bulb, but in
+        reality lightbulbs waste quite a high percentage of their
+        power in the form of heat and wavelengths of light that are
+        not visible (infrared and ultraviolet). Less light will be
+        produced, but it's hard to predict exactly how much less,
+        since the efficiency of the bulbs will be changed by
+        operating them under different conditions.
+\end{eg}
+<% marg(95) %>
+<%
+  fig(
+    'eg-two-bulbs-in-series',
+    %q{Example \ref{eg:two-bulbs-in-series}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{More than two equal resistances in series}
+        By straightforward application of the divide-and-conquer
+        technique discussed in the previous section, we find that
+        the equivalent resistance of $N$ identical resistances $R$
+        in series will be $NR$.
+\end{eg}
+
+<% marg(-300) %>
+<%
+  fig(
+    'eg-resistance-length',
+    %q{%
+      Example \ref{eg:resistance-and-length}. Doubling the length of a resistor is like putting two resistors
+              in series. The resistance is doubled.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Dependence of resistance on length}\label{eg:resistance-and-length}
+        In the previous section, we proved that resistance is
+        inversely proportional to cross-sectional area. By
+        equivalent reason about resistances in series, we find that
+        resistance is proportional to length. Analogously, it is
+        harder to blow through a long straw than through a short one.
+\end{eg}
+
+        Combining the results of examples \ref{eg:resistance-and-area} and \ref{eg:resistance-and-length}, we find that the
+        resistance of an object with straight, parallel sides is given by
+        \begin{equation*}
+                                 R    =    \text{(constant)} \cdot  L/ A  
+        \end{equation*}
+        The proportionality constant is called the \index{resistivity!defined}resistivity,
+        and it depends only on the substance of which the object is
+        made. A resistivity measurement could be used, for instance,
+        to help identify a sample of an unknown substance.
+
+\begin{eg}{Choice of high voltage for power lines}\label{hvtransmission}
+                Thomas Edison got involved in a famous technological
+        controversy over the voltage difference that should be used
+        for electrical power lines. At this time, the public was
+        unfamiliar with electricity, and easily scared by it. The
+        president of the United States, for instance, refused to
+        have electrical lighting in the White House when it first
+        became commercially available because he considered it
+        unsafe, preferring the known fire hazard of oil lamps to the
+        mysterious dangers of electricity. Mainly as a way to
+        overcome public fear, Edison believed that power should be
+        transmitted using small voltages, and he publicized his
+        opinion by giving demonstrations at which a dog was lured
+        into position to be killed by a large voltage difference
+        between two sheets of metal on the ground. (Edison's
+        opponents also advocated alternating current rather than
+        direct current, and AC is more dangerous than DC as well. As
+        we will discuss later, AC can be easily stepped up and down
+        to the desired voltage level using a device called a transformer.)
+
+                        Now if we want to deliver a certain amount of power $P_L$ to
+        a load such as an electric lightbulb, we are constrained
+        only by the equation $P_{L} =  I\Delta  V_L$. We can deliver any
+        amount of power we wish, even with a low voltage, if we are
+        willing to use large currents. Modern electrical distribution
+        networks, however, use dangerously high voltage differences
+        of tens of thousands of volts. Why did Edison lose the debate?  
+
+                It boils down to money. The electric company must deliver
+        the amount of power $P_L$ desired by the customer through a
+        transmission line whose resistance $R_T$ is fixed by
+        economics and geography. The same current flows through both
+        the load and the transmission line, dissipating power
+        usefully in the former and wastefully in the latter. The
+        efficiency of the system is
+        \begin{align*}
+                        \text{efficiency}         &=   \frac{\text{power paid for by the customer}}
+                                                                                {\text{power paid for by the utility}}   \\
+                                         &=  \frac{ P_{L}}{ P_L+ P_{T}}    \\
+                                         &=   \frac{1}{1+ P_{T}/ P_L}   
+        \end{align*}
+        Putting ourselves in the shoes of the electric company, we
+        wish to get rid of the variable $P_T$, since it is something
+        we control only indirectly by our choice of $\Delta  V_T$ and
+        $I$. Substituting $P_{T}= I\Delta  V_T$, we find
+        \begin{equation*}
+                        \text{efficiency}         =      \frac{1}
+                                                        {1+\frac{ I \Delta V_T}{ P_L}}
+        \end{equation*}
+        We assume the transmission line (but not necessarily the
+        load) is ohmic, so substituting $\Delta V_T=IR_T$ gives
+        \begin{equation*}
+                        \text{efficiency}         =      \frac{1}{1+\frac{I^2R_T}{P_L}}
+        \end{equation*}
+        This quantity can clearly be maximized by making $I$ as
+        small as possible, since we will then be dividing by the
+        smallest possible quantity on the bottom of the fraction. A
+        low-current circuit can only deliver significant amounts of
+        power if it uses high voltages, which is why electrical
+        transmission systems use dangerous high voltages.
+\end{eg}
+
+<%
+  fig(
+    'qbert',
+    '',
+    {
+      'width'=>'fullpage',
+      'anonymous'=>true
+    }
+  )
+%>
+        
+
+
+\begin{eg}{Two ways of handling signs}\label{eg:qbert}
+The figure above shows two ways of visualizing the loop rule and handling the signs involved.
+In panel 1, each circuit element is labeled with the voltage drop across it.
+
+In 2, the crab is a voltmeter whose reading is the voltage on the white claw
+minus the voltage on the black claw. The crab can't flip over. It can only scuttle sideways as it moves around
+the loop that we've chosen, consisting of four resistors. The sum of the four readings is zero.
+
+Panel 3 shows a visualization of the same circuit in which voltage is like height. The stick figure on the ledge
+wants to get down to the ground by doing a series of hops. He has two ways: do the 3 V drop and then the 1 V drop,
+or do the 2 V and the other 2 V. Here we treat all the voltage differences as positive numbers.
+This method works nicely if you're pretty sure for each resistor in the circuit which end is the higher
+voltage.
+\end{eg}
+
+<%
+  fig(
+    'eg-close-switch',
+    %q{%
+      Example \ref{eg:close-switch}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b',
+      'anonymous'=>true
+    }
+  )
+%>
+
+
+\begin{eg}{A complicated circuit}\label{eg:close-switch}
+\egquestion
+All seven resistors in the left-hand panel of figure \figref{eg-close-switch} are identical.
+Initially, the switch S is open as shown in the figure, and the current through resistor A is $I_\zu{o}$.
+The switch is then closed. Find the current through resistor B, after the switch is closed, in terms of $I_\zu{o}$.
+
+\eganswer
+The second panel shows the circuit redrawn for simplicity, in the initial condition with the switch open.
+When the switch is open, no current can flow through the central resistor, so we may as well ignore it.
+I've also redrawn the junctions, without changing what's connected to what. This is the kind of mental
+rearranging that you'll eventually learn to do automatically from experience with analyzing circuits.
+The redrawn version makes it easier to see what's happening with the current. Charge is conserved, so
+any charge that flows past point 1 in the circuit must also flow past points 2 and 3. This would have
+been harder to reason about by applying the junction rule to the original version, which appears to have nine separate junctions.
+
+In the new version, it's also clear that the circuit has a great deal of symmetry. We could flip over each
+parallel pair of identical resistors without changing what's connected to what, so that makes it clear that the voltage
+drops and currents must be equal for the members of each pair. We can also prove this by using the loop rule.
+The loop rule says that the two voltage drops in loop 4 must be equal, and similarly for loops 5 and 6.
+Since the resistors obey Ohm's law, equal voltage drops across them also imply equal currents. That means
+that when the current at point 1 comes to the top junction, exactly half of it goes through each resistor. Then
+the current reunites at 2, splits between the next pair, and so on. We conclude that each of the six resistors
+in the circuit experiences the same voltage drop and the same current. Applying the loop rule to loop 7, we
+find that the sum of the three voltage drops across the three left-hand resistors equals the battery's
+voltage, $V$, so each resistor in the circuit experiences a voltage drop $V/3$. Letting $R$ stand for
+the resistance of one of the resistors, we find that the current through resistor B, which is the same
+as the currents through all the others, is given by $I_\zu{o}=V/3R$.
+
+We now pass to the case where the switch is closed, as shown in the third panel. The battery's voltage is
+the same as before, and each resistor's resistance is the same, so we can still use the same symbols
+$V$ and $R$ for them. It is no longer true, however, that each resistor feels a voltage drop $V/3$.
+The equivalent resistance of the whole circuit is $R/2+R/3+R/2=4R/3$, so the total current drawn from
+the battery is $3V/4R$. In the middle group of resistors, this current is split three ways, so the new current
+through B is $(1/3)(3V/4R)=V/4R=3I_\zu{o}/4$.
+
+Interpreting this result, we see that it comes from two effects that partially cancel.
+Closing the switch reduces the equivalent resistance of the circuit by giving charge another
+way to flow, and increases the amount of current drawn from the battery. Resistor B, however,
+only gets a 1/3 share of this greater current, not 1/2. The second effect turns out to be
+bigger than first, and therefore the current through resistor B is lessened
+over all.
+
+\end{eg}
+
+\begin{eg}{Getting killed by your ammeter}
+                As with a voltmeter, an ammeter can give erroneous readings
+        if it is used in such a way that it changes the behavior the
+        circuit. An ammeter is used in series, so if it is used to
+        measure the current through a resistor, the resistor's value
+        will effectively be changed to $R+ R_a$, where $R_a$ is the
+        resistance of the ammeter. Ammeters are designed with very
+        low resistances in order to make it unlikely that $R+ R_a$
+        will be significantly different from $R$.
+
+                In fact, the real hazard is death, not a wrong reading!
+        Virtually the only circuits whose resistances are significantly
+        less than that of an ammeter are those designed to carry
+        huge currents. An ammeter inserted in such a circuit can
+        easily melt. When I was working at a laboratory funded by
+        the Department of Energy, we got periodic bulletins from the
+        DOE safety office about serious accidents at other sites,
+        and they held a certain ghoulish fascination. One of these
+        was about a DOE worker who was completely incinerated by the
+        explosion created when he inserted an ordinary Radio Shack
+        ammeter into a high-current circuit. Later estimates showed
+        that the heat was probably so intense that the explosion was
+        a ball of plasma --- a gas so hot that its atoms have been ionized.
+\end{eg}
+
+\startdq
+
+\begin{dq}
+        We have stated the loop rule in a symmetric form where a
+        series of voltage drops adds up to zero. To do this, we had
+        to define a standard way of connecting the voltmeter to the
+        circuit so that the plus and minus signs would come out
+        right. Suppose we wish to restate the junction rule in a
+        similar symmetric way, so that instead of equating the
+        current coming in to the current going out, it simply states
+        that a certain sum of currents at a junction adds up to
+        zero. What standard way of inserting the ammeter would we
+        have to use to make this work?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %> % Series and Parallel Circuits
+
+\begin{summary}
+
+\begin{vocab}
+\vocabitem{charge}{a numerical rating of how strongly an object
+participates in electrical forces}
+
+\vocabitem{coulomb (C)}{the unit of electrical charge}
+
+\vocabitem{current}{the rate at which charge crosses a certain boundary}
+
+\vocabitem{ampere}{the metric unit of current, one coulomb pe second; also ``amp''}
+
+\vocabitem{ammeter}{a device for measuring electrical current}
+
+\vocabitem{circuit}{an electrical device in which charge can come back
+to its starting point and be recycled rather than getting stuck in a dead end}
+
+\vocabitem{open circuit}{a circuit that does not function because it has a gap in it}
+
+\vocabitem{short circuit}{a circuit that does not function because
+charge is given a low-resistance ``shortcut'' path that it
+can follow, instead of the path that makes it do something useful}
+
+\vocabitem{voltage}{electrical potential energy per unit charge that
+will be possessed by a charged particle at a certain point in space}
+
+\vocabitem{volt}{the metric unit of voltage, one joule per coulomb}
+
+\vocabitem{voltmeter}{a device for measuring voltage differences}
+
+\vocabitem{ohmic}{describes a substance in which the flow of current
+between two points is proportional to the voltage difference between them}
+
+\vocabitem{resistance}{the ratio of the voltage difference to the
+current in an object made of an ohmic substance}
+
+\vocabitem{ohm}{the metric unit of electrical resistance, one volt per ampere}
+
+\end{vocab}
+\begin{notation}
+
+\notationitem{$q$}{charge}
+
+\notationitem{$I$}{current}
+
+\notationitem{$A$}{units of amperes}
+
+\notationitem{$V$}{voltage}
+
+\notationitem{V}{units of volts}
+
+\notationitem{$R$}{resistance}
+
+\notationitem{$\Omega$}{units of ohms}
+\end{notation}
+\begin{othernotation}
+
+\notationitem{electric potential}{rather than the more informal ``voltage''
+used here; despite the misleading name, it is not the same
+as electric potential energy}
+
+\notationitem{eV}{a unit of energy, equal to $e$ multiplied by 1 volt;
+$1.6\times10^{-19}$ joules}
+
+\end{othernotation}
+
+\pagebreak
+
+\begin{summarytext}
+
+All the forces we encounter in everyday life boil down to
+two basic types: gravitational forces and electrical forces.
+A force such as friction or a ``sticky force'' arises from
+electrical forces between individual atoms.
+
+Just as we use the word ``mass'' to describe how strongly an
+object participates in gravitational forces, we use the word
+``charge'' for the intensity of its electrical forces. There
+are two types of charge. Two charges of the same type repel
+each other, but objects whose charges are different attract
+each other. Charge is measured in units of coulombs (C).
+
+Mobile charged particle model: A great many phenomena are
+easily understood if we imagine matter as containing two
+types of charged particles, which are at least partially
+able to move around.
+
+Positive and negative charge: Ordinary objects that have not
+been specially prepared have both types of charge spread
+evenly throughout them in equal amounts. The object will
+then tend not to exert electrical forces on any other
+object, since any attraction due to one type of charge will
+be balanced by an equal repulsion from the other. (We say
+``tend not to'' because bringing the object near an object
+with unbalanced amounts of charge could cause its charges to
+separate from each other, and the force would no longer
+cancel due to the unequal distances.) It therefore makes
+sense to describe the two types of charge using positive and
+negative signs, so that an unprepared object will have zero
+\emph{total} charge.
+
+The Coulomb force law states that the magnitude of the
+electrical force between two charged particles is given by
+$|\vc{F}| =k |q_1| |q_2| / r^2$.
+
+Conservation of charge: An even more fundamental reason for
+using positive and negative signs for charge is that with
+this definition the total charge of a closed system is
+a conserved quantity.
+
+All electrical phenomena are alike in that that arise from
+the presence or motion of charge. Most practical electrical
+devices are based on the motion of charge around a complete
+circuit, so that the charge can be recycled and does not hit
+any dead ends. The most useful measure of the flow of charge
+is current, $I=\Delta q/\Delta t$.
+
+An electrical device whose job is to transform energy from
+one form into another, e.g., a lightbulb, uses power at a
+rate which depends both on how rapidly charge is flowing
+through it and on how much work is done on each unit of
+charge. The latter quantity is known as the voltage
+difference between the point where the current enters the
+device and the point where the current leaves it. Since
+there is a type of potential energy associated with
+electrical forces, the amount of work they do is equal to
+the difference in potential energy between the two points,
+and we therefore define voltage differences directly in
+terms of potential energy, $\Delta V=\Delta PE_{elec}/q$. The
+rate of power dissipation is $P=I\Delta V$.
+
+Many important electrical phenomena can only be explained if
+we understand the mechanisms of current flow at the atomic
+level. In metals, currents are carried by electrons, in
+liquids by ions. Gases are normally poor conductors unless
+their atoms are subjected to such intense electrical forces
+that the atoms become ionized.
+
+Many substances, including all solids, respond to electrical
+forces in such a way that the flow of current between two
+points is proportional to the voltage difference between
+those points. Such a substance is called ohmic, and an
+object made out of an ohmic substance can be rated in terms
+of its resistance, $R=\Delta $V/I. An important corollary is
+that a perfect conductor, with $R=0$, must have constant
+voltage everywhere within it.
+
+A schematic is a drawing of a circuit that standardizes and
+stylizes its features to make it easier to understand. Any
+circuit can be broken down into smaller parts. For instance,
+one big circuit may be understood as two small circuits in
+series, another as three circuits in parallel. When circuit
+elements are combined in parallel and in series, we have two
+basic rules to guide us in understanding how the parts
+function as a whole:
+
+\begin{indentedblock}
+\noindent\textbf{the junction rule:} In any circuit that is not storing or
+releasing charge, conservation of charge implies that the
+total current flowing out of any junction must be the same
+as the total flowing in.
+
+\noindent\textbf{the loop rule:} Assuming the standard convention for plus and
+minus signs, the sum of the voltage drops around any closed
+loop in a circuit must be zero.
+\end{indentedblock}
+
+The simplest application of these rules is to pairs of
+resistors combined in series or parallel. In such cases, the
+pair of resistors acts just like a single unit with a
+certain resistance value, called their equivalent resistance.
+Resistances in series add to produce a larger equivalent resistance,
+\begin{equation*}
+  R_{series} = R_1+R_2\eqquad,
+\end{equation*}
+because the current has to fight its way through both
+resistances. Parallel resistors combine to produce an
+equivalent resistance that is smaller than either individual resistance,
+\begin{equation*}
+ R_{parallel} = \left(\frac{1}{R_1}+\frac{1}{R_2}\right)^{-1}\eqquad,
+\end{equation*}
+because the current has two different paths open to it.
+
+An important example of resistances in parallel and series
+is the use of voltmeters and ammeters in resistive circuits.
+A voltmeter acts as a large resistance in parallel with the
+resistor across which the voltage drop is being measured.
+The fact that its resistance is not infinite means that it
+alters the circuit it is being used to investigate,
+producing a lower equivalent resistance. An ammeter acts as
+a small resistance in series with the circuit through which
+the current is to be determined. Its resistance is not quite
+zero, which leads to an increase in the resistance of the
+circuit being tested.
+
+\end{summarytext}
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-neuron',
+    %q{%
+      Problem \ref{hw:neuron-stick}. Top: A realistic picture
+      of a neuron. Bottom: A simplified diagram of one segment of the tail (axon).
+    },
+    {'suffix'=>2}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-heline',
+    %q{Problem \ref{hw:heline}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-hetriangle',
+    %q{Problem \ref{hw:hetriangle}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('neuron-stick') %>__incl(../../share/em-general/hw/neuron-stick)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('hands-repulsion') %>__incl(../../share/em-general/hw/hands-repulsion)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('leadbound') %>__incl(../../share/em-general/hw/leadbound)<% end_hw() %>
+
+<% begin_hw('muonic') %>__incl(../../share/em-general/hw/muonic)<% end_hw() %>
+
+<% begin_hw('earthmoonelec') %>__incl(../../share/em-general/hw/earthmoonelec)<% end_hw() %>
+
+<% marg(-10) %>
+<%
+  fig(
+    'hw-nacl',
+    %q{Problem \ref{hw:nacl}.},
+    {'suffix'=>1}
+  )
+%>
+<% end_marg %>
+<% begin_hw('nacl',2) %>__incl(../../share/em-general/hw/nacl)<% end_hw() %>
+
+\pagebreak
+
+<% marg(10) %>
+<%
+  fig(
+    'hw-croquet',
+    %q{Problem \ref{hw:croquet}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-neuroncurrent',
+    %q{Problem \ref{hw:neuroncurrent}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('croquet',nil,{'calc'=>true}) %>__incl(../../share/em-general/hw/croquet)<% end_hw() %>
+
+<% begin_hw('hail-an-electron-cab') %>__incl(hw/hail-an-electron-cab)<% end_hw() %>
+
+<% begin_hw('neuroncurrent') %>__incl(hw/neuroncurrent)<% end_hw() %>
+
+<% begin_hw('bulbresistance') %>__incl(hw/bulbresistance)<% end_hw() %>
+
+<% begin_hw('jouleheating') %>__incl(hw/jouleheating)<% end_hw() %>
+
+<% begin_hw('drier') %>__incl(hw/drier)<% end_hw() %>
+
+<% begin_hw('pointchargevoltage') %>__incl(hw/pointchargevoltage)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('battery-and-bulb') %>__incl(hw/battery-and-bulb)<% end_hw() %>
+
+<% marg(87) %>
+<%
+  fig(
+    'hw-battery-and-bulb',
+    %q{Problem \ref{hw:battery-and-bulb}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-measure-on-printed-circuit',
+    %q{A printed circuit board, like the kind referred to in problem \ref{hw:measure-on-printed-circuit}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-lpcurrent',
+    %q{An LP record, problem \ref{hw:lpcurrent}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-nacl',
+    %q{Problem \ref{hw:vnacl}.},
+    {'suffix'=>2}
+  )
+%>
+<% end_marg %>
+<% begin_hw('measure-on-printed-circuit') %>__incl(hw/measure-on-printed-circuit)<% end_hw() %>
+
+<% begin_hw('teardrop') %>Problem \ref{hw:teardrop} has been replaced with problem \ref{hw:lightning-rod}.<% end_hw() %>
+
+<% begin_hw('lpcurrent',2) %>__incl(hw/lpcurrent)<% end_hw() %>
+
+<% begin_hw('equilateralcharges') %>__incl(hw/equilateralcharges)<% end_hw() %>
+
+
+<% begin_hw('vnacl',2) %>__incl(hw/vnacl)<% end_hw() %>
+
+<% begin_hw('negative-resistance') %>__incl(hw/negative-resistance)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('car') %>__incl(hw/car)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('eel') %>__incl(hw/eel)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('stove') %>__incl(hw/stove)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('toaster') %>__incl(hw/toaster)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('wiregauges') %>__incl(hw/wiregauges)<% end_hw() %>
+
+\vfill
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-two-switching-methods',
+    %q{Problem \ref{hw:two-switching-methods}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-short-across-bulb',
+    %q{Problem \ref{hw:short-across-bulb}.}
+  )
+%>        
+<% end_marg %>
+
+<% begin_hw('two-switching-methods') %>__incl(hw/two-switching-methods)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('short-across-bulb') %>__incl(hw/short-across-bulb)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('circuit-puzzle') %>__incl(hw/circuit-puzzle)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-messy-wires',
+    %q{Problem \ref{hw:messy-wires}.}
+  )
+%>
+<% end_marg %>
+
+
+<% begin_hw('messy-wires') %>__incl(hw/messy-wires)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('combineresistors') %>__incl(hw/combineresistors)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('extensioncord',nil,{'calc'=>true}) %>__incl(hw/extensioncord)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('combine-unequal-resistors') %>__incl(hw/combine-unequal-resistors)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('tetrahedron-resistors',2) %>__incl(hw/tetrahedron-resistors)<% end_hw() %>
+
+\pagebreak
+
+
+<% marg(65) %>
+<%
+  fig(
+    'hw-many-measurements',
+    %q{Problems \ref{hw:many-v-measurements} and \ref{hw:many-i-measurements}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-tricky-unlit-bulb',
+    %q{Problem \ref{hw:tricky-unlit-bulb}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-network',
+    %q{Problem \ref{hw:network}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-junctions',
+    %q{Problem \ref{hw:junctions}.}
+  )
+%>
+
+<% end_marg %>
+
+<% begin_hw('many-v-measurements') %>__incl(hw/many-v-measurements)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('many-i-measurements') %>__incl(hw/many-i-measurements)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('tricky-unlit-bulb',2) %>__incl(hw/tricky-unlit-bulb)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('network',2) %>__incl(hw/network)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('junctions') %>__incl(hw/junctions)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('falling-charged-string',nil,{'calc'=>true}) %>__incl(hw/falling-charged-string)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('pe-of-point-charges') %>__incl(hw/pe-of-point-charges)<% end_hw() %>
+
+<% begin_hw('lightning-rod') %>__incl(hw/lightning-rod)<% end_hw() %>
+<% marg(40) %>
+<%
+  fig(
+    'hw-disguised-parallel',
+    %q{%
+      Problem \ref{hw:disguised-parallel}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('disguised-parallel') %>__incl(hw/disguised-parallel)<% end_hw() %>
+
+
+<% begin_hw('dirty-contacts') %>__incl(hw/dirty-contacts)<% end_hw() %>
+
+<% end_hw_sec %>
+
+
+<% begin_ex("Electrical measurements","A") %>
+1. How many different currents could you measure in this
+circuit? Make a prediction, and then try it.
+
+<%
+  fig(
+    'how-many-currents',
+    '',
+    {'width'=>'narrow','float'=>false}
+  )
+%>
+
+
+What do you notice? How does this make sense in terms of the
+roller coaster metaphor introduced in discussion question \ref{sec:voltage}\ref{dq:roller-coaster} on p.~\pageref{dq:roller-coaster}?
+
+What is being \emph{used up} in the resistor?
+
+
+
+2. By connecting probes to these points, how many ways could
+you measure a voltage? How many of them would be different
+numbers? Make a prediction, and then do it.
+
+<%
+  fig(
+    'how-many-voltages',
+    '',
+    {'width'=>'narrow','float'=>false}
+  )
+%>
+
+
+What do you notice? Interpret this using the roller coaster
+metaphor, and color in parts of the circuit that represent constant voltages.
+
+
+
+3. The resistors are unequal. How many \emph{different}
+voltages and currents can you measure? Make a prediction, and then try it.
+
+<%
+  fig(
+    'series',
+    '',
+    {'width'=>'narrow','float'=>false}
+  )
+%>
+
+What do you notice? Interpret this using the roller coaster
+metaphor, and color in parts of the circuit that represent constant voltages.
+<% end_ex %>
+
+<% begin_ex("Voltage and current","B",2) %>
+This exercise is based on one created by Virginia Roundy.
+
+\noindent Apparatus:
+
+\begin{indentedblock}
+DC power supply
+
+
+1.5 volt batteries
+
+lightbulbs and holders
+
+wire
+
+highlighting pens, 3 colors
+\end{indentedblock}
+
+When you first glance at this exercise, it may look scary and intimidating --- all those
+circuits! However, all those wild-looking circuits can be analyzed using the following four
+guides to thinking:
+
+1. \emph{A circuit has to be complete\/}, i.e., it must be possible for charge to get recycled
+as it goes around the circuit. If it's not complete, then charge will build up at a dead end. This built-up
+charge will repel any other charge that tries to get in, and everything will rapidly grind to a stop.
+
+2. \emph{There is constant voltage everywhere along a piece of wire.} To apply this rule during
+this lab, I suggest you use the colored highlighting pens to mark the circuit. For instance, if there's
+one whole piece of the circuit that's all at the same voltage, you could highlight it in yellow.
+A second piece of the circuit, at some other voltage, could be highlighted in blue.
+
+3. \emph{Charge is conserved,} so charge can't ``get used up.''
+
+\pagebreak
+
+4. You can draw a \emph{rollercoaster diagram}, like the one shown below. On this
+kind of diagram, height corresponds to voltage --- that's why the wires are drawn as horizontal
+tracks.
+
+<% fig('analyzing-rollercoaster','',{'width'=>'native','float'=>false}) %>
+
+\emph{A Bulb and a Switch}
+
+Look at circuit 1, and try to predict what will happen when the switch is open, and what
+will happen when it's closed. Write both your predictions in the table on the following page
+before you build the circuit.
+When you build the circuit, you don't need an actual switch like a light switch; just 
+connect and disconnect the banana plugs. Use one of the 1.5 volt batteries as your voltage
+source.
+
+\newcommand{\circuittablestrut}{\raisebox{0mm}[0mm][24mm]{}}
+\newcommand{\circuittabletwocols}[2]{
+\begin{tabular}{|p{20mm}|p{42mm}|}
+\hline
+         & \emph{#1} \\
+\hline
+prediction & \\
+\hline
+explanation  \circuittablestrut &\\
+\hline
+observation & \\
+\hline
+explanation  & \\
+(if different) \circuittablestrut & \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|p{20mm}|p{42mm}|}
+\hline
+         & \emph{#2} \\
+\hline
+prediction & \\
+\hline
+explanation \circuittablestrut  &\\
+\hline
+observation  & \\
+\hline
+explanation  & \\
+(if different) \circuittablestrut & \\
+\hline
+\end{tabular}
+}
+\newcommand{\circuittableonecol}{
+\begin{tabular}{|l|p{50mm}|}
+\hline
+prediction  &\\
+\hline
+explanation \circuittablestrut   &\\
+\hline
+observation &\\
+\hline
+explanation  & \\
+(if different) \circuittablestrut &\\
+\hline
+\end{tabular}
+}
+
+<% fig('analyzing-simple','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 1}
+
+\vfill\pagebreak[4]
+
+\circuittabletwocols{switch open}{switch closed}
+
+Did it work the way you expected? If not, try to figure it out with the benefit of
+hindsight, and write your explanation in the table above.
+
+\vfill\pagebreak[4]
+
+<% fig('analyzing-switch-shorts','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 2 (Don't leave the switch closed for a long time!)}
+
+\circuittabletwocols{switch open}{switch closed}
+
+\vfill\pagebreak[4]
+
+<% fig('analyzing-irrelevant','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 3}
+
+\circuittabletwocols{switch open}{switch closed}
+
+\vfill\pagebreak[4]
+
+<% fig('analyzing-far-side','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 4}
+
+\circuittabletwocols{switch open}{switch closed}
+
+\vfill\pagebreak[4]
+
+\emph{Two Bulbs}
+
+Instead of a battery, use the DC power supply, set to
+2.4 volts, for circuits 5 and 6.
+Analyze this one both by highlighting and by drawing a
+rollercoaster diagram.
+
+<% fig('analyzing-series','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 5}
+
+\circuittabletwocols{bulb a}{bulb b}
+
+\vfill\pagebreak[4]\vfill
+
+<% fig('analyzing-corner','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 6}
+
+\circuittabletwocols{bulb a}{bulb b}
+
+\vfill\pagebreak[4]
+
+\emph{Two Batteries}
+
+Use batteries for circuits 7-9.
+Circuits 7 and 8 are both good candidates for rollercoaster
+diagrams. 
+
+<% fig('analyzing-two-batteries','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 7}
+
+\circuittableonecol
+
+<% fig('analyzing-reversed','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 8}
+
+\circuittableonecol
+
+\pagebreak[4]
+
+\emph{A Final Challenge}
+
+<% fig('analyzing-inside','',{'width'=>'native','float'=>false}) %>
+\textsf{Circuit 9}
+
+\circuittabletwocols{bulb a}{bulb b}
+
+<% end_ex %>
+<% begin_ex("Reasoning about circuits","C") %>
+The questions in this exercise can all be solved using some
+combination of the following approaches:
+
+\begin{indentedblock}
+a) There is constant voltage throughout any conductor.
+
+b) Ohm's law can be applied to any \emph{part} of a circuit.
+
+c) Apply the loop rule.
+
+d) Apply the junction rule.
+\end{indentedblock}
+
+In each case, discuss the question, decide what you think is
+the right answer, and then try the experiment.
+
+If you've already done exercise \ref{ch:circuits}B, skip number 1.
+
+1. The series circuit is changed as shown.
+
+\hspace{20mm}\anonymousinlinefig{circuits-2}
+
+
+Which reasoning is correct?
+
+\begin{itemize}
+\item \emph{Each bulb now has its sides connected to the two terminals
+of the battery, so each now has 2.4 V across it instead of
+1.2 V.  They get brighter.}
+
+\item \emph{Just as in the original circuit, the current goes through
+one bulb, then the other.  It's just that now the current
+goes in a  figure-8 pattern.  The bulbs glow the same as before. }
+\end{itemize}
+
+2. A wire is added as shown to the original circuit.
+
+\hspace{20mm}\anonymousinlinefig{circuits-3}
+
+
+What is wrong with the following reasoning?
+
+\emph{The top right bulb will go out, because its two sides are
+now connected with wire, so there will be no voltage
+difference across it.  The other three bulbs will not be affected.}
+
+\pagebreak[4]
+
+3. A wire is added as shown to the original circuit.
+
+   \hspace{20mm}\anonymousinlinefig{circuits-4}
+
+
+What is wrong with the following reasoning?
+
+\emph{The current flows out of the right side of the battery. When
+it hits the first junction, some of it will go left and some
+will keep going up  The part that goes up lights the top
+right bulb.  The part that turns left then follows the path
+of least resistance, going through the new wire instead of
+the bottom bulb. The top bulb stays lit, the bottom one goes
+out, and others stay the same.  }
+
+4. What happens when one bulb is unscrewed, leaving an air gap?
+
+\hspace{20mm}\anonymousinlinefig{circuits-5}
+
+5. This part is optional. You can do it if you finished early and would like an extra
+challenge.
+
+Predict the voltage drop across each of the three bulbs in part 4,
+and also predict how the three currents will compare with one another. (You can't
+predict the currents in units of amperes, since you don't know the resistances
+of the bulbs.) Test your predictions. If your predictions are wrong, try to figure
+out what's going on.
+
+<% end_ex %>
+<% end_chapter() %>

@@ -1,0 +1,631 @@
+% lmcommon.sty
+%    This is meant to contain code shared by all my books. Stuff that's not applicable to DP and SN
+%    goes in lmseries.cls. However, not all shared code is in here; some is in
+%    lmfigs.sty, ... I haven't actually made DP and SN use this yet, and I
+%    always tried to err on the side of putting too much in here, so there is
+%    undoubtedly some stuff in here that is actually not appropriate to share with
+%    SN and DP. In particular, I left a bunch of hw stuff in here (difficulty symbols,...)
+%    that is not right for SN. Rather then making SN and DP use this, what's turning out
+%    to be more practical is to take functionality out of this file and put it in small,
+%    maintainable chunks, which are then used by all the books.
+%
+% notes on wrapfig:
+%   wrapfig: for 2 figs in a row, both need to be in same wrapfig
+%   wrapfig doesn't work in a theorem environment, so can't implement dqs and egs as thms
+%	do wrapfig just before first line of a para
+%	I thought it was messing up (positioning too far down) if I used it near a sectioning
+%		command, but that doesn't seem to be the case. Sometimes works if you put it right
+%		above the sectioning command. Other times when I thought it was a problem with the
+%		sectioning command, changing the sectioning command to a styling command didn't help.
+%
+% example of how to do explanatory text in square brackets to the right of an equation:
+%    \begin{multline*}
+%	    v_t	=  \omega r   \qquad . \hfill
+%	    \shoveright{\text{[tangential velocity of a point at a}}\\
+%	     \text{distance $r$ from the axis of rotation]}
+%    \end{multline*}
+%    For really long notes, use longnoteafterequation environment.
+%
+% Summary of my sectioning:
+%   \mychapter{}, all words with initial caps in title
+%   \mysection{}, all words with initial caps  in title; first section in a chapter needs \mysection[0]{}
+%   \begin{envsubsection}{} or \begin{envsubsection}[x]{}, only first word in title capitalized
+%   \subsubsection{}, only first in title word capitalized
+%
+% Notes about design:
+%	Subsections and subsubsections are not numbered.
+%	Only capitalize first word of example titles, subsections.
+%	Subfigures are numbered 1, 2, etc, in 9-point Helv, captions labeled like "1" or "1. blah"
+%	Figures are numbered within sections. (This could result in high letters,
+%		but doing subsections leads to incongruous starting over from "a.")
+%	All figures have to have captions, since otherwise "c/" looks bare.
+%		Where L&M had a series of panels (a), (b), ..., SN has
+%		a single letter, but a series of subfigures 1, 2, etc.
+%		Refer to subfigs as a/1, etc. Subfigs without captions have (1), ... inside the figure.
+%	Text within figures is 10-point Helvetica, except labels 1, 2, etc. All text within figures
+%		is upright, even math variables.
+%	Punctuation after displayed equations: \qquad in between.
+%	Subscripts are italic, since this is what LaTeX makes it easy for me to do.
+%	Equation numbers, when used, go on the left, to allow room for notes on the
+%		right. Equation numbers are in square brackets,
+%		numbered within sections.
+%	Problem with equation numbers in examples: not indented, and not in sans.
+%	page breaks:
+%		mysection makes a pagebreak by default, but can give it an optional parameter
+%			to make it less likely to happen.
+%		subsection environment makes a pagebreak[3] by default, which usually doesn't result
+%			in a pagebreak, but can use optional argument 4 to force it
+%		Introducing page breaks always seems to make equations get spaced out a whole
+%			bunch, which looks stupid. This seems to happen even if I sprinkle
+%			\myeqnspacing all over the place. The solution is to precede the page
+%			break with a \vfill.
+%	Differentials and vectors are upright. Can do bold vectors with \boldmath outside of math mode,
+%	or \mathbf or \boldsymbol in math mode.
+%       Paragraph indentation: Turning off paragraph indentation gives a cleaner look, because
+%             everything on the page is a nice rectangle. However, in the main text, turning it
+%             off makes the page look scarier: your eye doesn't see any landmarks. Also, if para
+%             indentation is turned off, your only cues for seeing para divisions is the extra space
+%             between them, and then equations look like paragraph breaks. Decision: leave 6 mm
+%             paragraph indentation in main text, but turn it off in most other places (examples,
+%             self-checks, homework problems, exercises).
+%   In example title, first letter of first word is capitalized.
+%	When an example has more than one part, number them (1), (2),... 
+%
+% I've activated pdflatex's margin kerning feature. For the fonts used in this
+% book, I decided that the margins appeared straightest when I modified 
+% protcode.tex to use half the amount of margin kerning that was supplied by
+% default. (One expects this to be completely dependent on the font and size.)
+
+\RequirePackage{mytocloft,titlesec,titletoc,multicol,makeidx,wrapfig,fancyhdr,calc,amssymb,moreverb,ifthen,lmmath,mathrsfs,framed,alphalph,cancel,tipa,xstring,comment,shaddap,navigator,multirow}
+%   used to include isolatin1, but now that causes error?
+\RequirePackage{color}% ---- see pdftex mailing list, 2004 May 22-23
+%------------------------------------------------
+% Notes:
+%   tocloft -- Using this has the effect, which I want, of suppressing the mandatory clearpage before the table of contents.
+\renewcommand{\sfdefault}{phv}
+     % ... use nimbus, which is similar to helvetica, for sans serif; this has to come before sansmath.sty
+\RequirePackage[EULERGREEK]{sansmath}
+     % The EULERGREEK option is necessary with Helvetica, because otherwise
+     % there is no uppercase Greek. He actually doesn't recommend using sansmath.sty
+     % with Helvetica, since some of the symbols match the letters poorly, but
+     % I had hundreds of preexisting figures with Helvetica in them.
+\RequirePackage[leqno]{amsmath}
+
+%\usepackage[french,english]{babel}
+% ... if using this, need to install ubuntu package texlive-lang-french , see https://tex.stackexchange.com/a/139707/6853
+%      This is also in simple.cls.
+
+\RequirePackage[absolute]{textpos}% ---- http://nxg.me.uk/dist/textpos/
+% The following line is for margin kerning. There is more stuff
+% relating to margin kerning after the begin{document}, and that's
+% where to go if I want to turn it off.
+\newboolean{wantmarginkerning}
+\setboolean{wantmarginkerning}{true}
+\newcommand{\inputprotcode}{\ifthenelse{\boolean{wantmarginkerning}}{\input protcode.tex}{}}
+
+\definecolor{shadecolor}{gray}{.9} % for framed.sty
+
+\newcommand{\degfunit}{\degunit\textup{F}}
+
+%----------------------------------------------------------------------------------
+% Notes for FAC.
+%
+% This could conceivably conflict with a \danger macro defined in the stix fonts.
+% https://tex.stackexchange.com/a/262549/6853
+% https://tex.stackexchange.com/a/18160/6853}
+% The anchor and jumplink macros are from the navigator package, https://tex.stackexchange.com/a/200073/6853 .
+\DeclareFontFamily{U}{stixbbit}{}
+\DeclareFontShape{U}{stixbbit}{m}{it}{<-> stix-mathbbit}{}
+\DeclareRobustCommand{\stixdangerousbend}{%
+  {\usefont{U}{stixbbit}{m}{it}\symbol{"F6}}%
+}
+\newcommand{\dangerousbend}{\rotatebox[origin=c]{-10}{\stixdangerousbend}}
+\newcommand{\note}[1]{\link{note-#1}{\dangerousbend\pageref{note:#1}}\label{notebackref:#1}\anchor{anchor-noteback-#1}}
+\newcommand{\notetext}[2]{\textbf{\link{noteback-#1}{\dangerousbend\pageref{notebackref:#1}}\label{note:#1}\anchor{anchor-note-#1}\quad{}#2}\par}
+% ... first arg is label, second is title
+\newcommand{\notewithoutbackref}[1]{\link{note-#1}{\dangerousbend\pageref{note:#1}}}
+% ... use this to refer to a note elsewhere than in the spot where the note's main reference is
+\newcommand{\notesummary}[1]{\emph{#1}\par}
+%----------------------------------------------------------------------------------
+
+% ----------------
+\newcommand{\zerosizebox}[3]{
+  \makebox[0mm][l]{%
+    \hspace{#1}%
+    \raisebox{0mm}[0mm][0mm]{% used to have #2 as 1st arg, but it went the wrong direction!
+      \makebox[0mm][l]{%
+		\begin{minipage}{8.5in}
+			\vspace{#2}#3
+		\end{minipage}%
+      }%
+    }%
+  }%
+}%
+% ----------------
+\newcommand{\widelayout}{\nomarginlayout\onecolumn\setlength{\parindent}{0mm}}
+\newcommand{\getreadyforbackmatter}{\widelayout}
+
+%-------------------- counters -------------------
+\newcounter{figctr}[chapter] % for my roll-your-own captions
+\newcounter{appendixctr}
+\newcounter{labctr}[chapter]
+\newcounter{labpartctr}[section]
+\newcounter{prelabctr}[section]
+
+\renewcommand{\thedqctr}{\Alph{dqctr}}
+\renewcommand{\thefigctr}{\alphalph{\value{figctr}}}
+\renewcommand{\thelabctr}{\alph{labctr}}
+\renewcommand{\thelabpartctr}{\Alph{labpartctr}\quad}
+
+%-------------------- numbered equations ----------------
+\newenvironment{numberedequations}{\setcounter{equation}{0}}{}
+
+\newcommand{\photocreditsboilerplate}{%
+Except as specifically noted below or in a parenthetical credit in the
+caption of a figure, all the illustrations in this book are
+under my own copyright, and are copyleft licensed under the same license
+as the rest of the book. 
+
+In some cases it's clear from the date that the
+figure is public domain, but I don't know the name of the artist or photographer; I would
+be grateful to anyone who could help me to give proper credit.
+I have assumed that images
+that come from U.S. government web pages are copyright-free, since products
+of federal agencies fall into the public domain.
+I've included some
+public-domain paintings; photographic reproductions of them are not
+copyrightable in the U.S. (Bridgeman Art Library, Ltd. v. Corel Corp.,
+36 F. Supp. 2d 191, S.D.N.Y. 1999).
+
+When ``PSSC Physics'' is given as a credit, it indicates that the figure
+is from the first edition of the textbook entitled Physics, by the
+Physical Science Study Committee.
+The early editions of these books never had their copyrights renewed, and
+are now therefore in the public domain. There is also
+a blanket permission given in the later PSSC College Physics edition, which states
+on the copyright page that ``The materials taken from the original and second
+editions and the Advanced Topics of PSSC PHYSICS included in this text
+will be available to all publishers for use in English after December 31, 1970,
+and in translations after December 31, 1975.'' 
+
+Credits to Millikan and Gale refer to the textbooks Practical Physics (1920) and
+Elements of Physics (1927). Both are public domain. (The 1927 version did not have
+its copyright renewed.) Since it is possible that some of the illustrations in
+the 1927 version had their copyrights renewed and are still under copyright, I
+have only used them when it was clear that they were originally taken from public
+domain sources.
+
+In a few cases, I have made use of images under the fair use doctrine. However,
+I am not a lawyer, and the laws on fair use are vague, so you should not assume
+that it's legal for you to use these images. In particular, fair use law may
+give you less leeway than it gives me, because I'm using the images for
+educational purposes, and giving the book away for free. Likewise, if the
+photo credit says ``courtesy of ...,'' that means the copyright owner gave
+me permission to use it, but that doesn't mean you have permission to use it.}
+%
+\newcommand{\dedication}[1]{\zerosizebox{0mm}{140mm}{#1}}
+%========================= sans serif math stuff =========================
+% sansmath.sty takes care of it. The following is just to get back to normal
+% math mode:
+\newcommand{\lmserifmath}{\mathversion{normal}\everymath{}\everydisplay{}}
+%========================= design =========================
+\definecolor{secnumgray}{gray}{.55}
+\newcommand{\showsecnum}[1]{\color{secnumgray}#1}
+
+\titlespacing*{\chapter}{0mm}{4mm}{6mm}
+\titlespacing*{\section}{0mm}{4mm}{0mm}
+\titlespacing{\subsection}{0mm}{1mm}{-0.5mm}
+\titlespacing{\subsubsection}{0mm}{1mm}{-0.5mm}
+
+\newcommand{\formatlikechapter}[1]{\huge{\bfseries{\sffamily{#1}}}\normalsize\normalfont}
+\newcommand{\formatlikesection}[1]{\vspace{2.5mm}\Large{\bfseries{\sffamily{#1}}}\normalsize\normalfont}
+\newcommand{\formatlikesubsection}[1]{\bfseries{\sffamily{#1}}\normalsize\normalfont}
+\newcommand{\formatlikesubsubsection}[1]{\textsl{#1}\normalsize\normalfont}
+
+\newcommand{\startscanswers}[1]{\pagebreak[4]\noindent\formatlikesection{\langscansch{} \ref{#1}}\nopagebreak\par}
+\newcommand{\dqheaderformat}[1]{\pagebreak[1]\noindent\formatlikesubsection{#1}\nopagebreak\par}
+\newcommand{\startdq}{\dqheaderformat{\langdq}}
+\newcommand{\startdqs}{\dqheaderformat{\langdqs}}
+\newcommand{\startdqswithintro}[1]%
+  {\pagebreak[1]\noindent\formatlikesubsection{\langdqs}\nopagebreak\noindent{\small\sffamily\nopagebreak\\*\noindent #1}}
+\newenvironment{dq}{%
+  \refstepcounter{dqctr}\noindent\small\sffamily\textbf{\thedqctr}\myeqnspacing\protect\sansmath%
+  \setlength{\parindent}{0mm}%undone by normalparafmt
+}%
+{%
+  \normalparafmt
+  \lmserifmath\par\myeqnspacing
+}
+
+%Summary appendix:
+\newcommand{\summarych}[2]{\noindent\formatlikesection{Chapter \ref{#1}, #2, page \pageref{#1}}\label{summary#1}\\}
+\newcommand{\sumem}[1]{\emph{#1}}
+
+\newcommand{\hwanssection}[1]{\vspace{4mm}\noindent\formatlikesection{#1}}
+
+\newcommand{\beginsolutions}[1]{\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{\langsolforch{} \ref{ch:#1}}\\*}%Solutions for Chapter
+\newcommand{\beginanswers}[1]{\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{Answers for chapter \ref{ch:#1}}\\*}%Answers for Chapter
+\newcommand{\beginscanswers}[1]{\pagebreak[3]\vspace{2mm}\noindent\formatlikesubsection{\langscansch{} \ref{ch:#1}}\\*}%Answers to Self-Checks for Chapter
+
+\newcommand{\kludgyblankfooter}{\thispagestyle{plain}}
+\newcommand{\hwsolnhdr}[1]{\kludgyblankfooter\noindent\textbf{\langpage{} \pageref{hw:#1}, \langprob{} \ref{hw:#1}:}\ \label{soln:#1}}% Page xxx, problem yyy.
+\newcommand{\hwanshdr}[1]{\kludgyblankfooter\noindent\textbf{\langpage{} \pageref{hw:#1}, \langprob{} \ref{hw:#1}:}\ \label{hwans:#1}}% Page xxx, problem yyy.
+\newcommand{\scanshdr}[1]{\kludgyblankfooter\noindent\textbf{\langpage{} \pageref{sc:#1}, \langselfcheck{} \ref{sc:#1}:}\ \label{scans:#1}}%Page xxx, self check yyy.
+\newcommand{\hinthdr}[1]{\hwanshdr{#1}\label{hwhint:#1}}
+
+%-------------------- summary -------------------------
+\newcommand{\summaryleaders}{\leaders\hbox to 0.7 em{\hss.\hss}\hfill}% TeXBook, p. 223
+\newcommand{\summarysubsectionheader}[1]{\noindent\formatlikesubsection{#1}}
+\newenvironment{summarysubsectiontab}[1]{\summarysubsectionheader{#1}\\*\begin{tabular}{p{30mm}p{77mm}}}{\end{tabular}}
+% ...............................................................................If I change it so the sum isn't 30+77, have to change all
+% ............................................................................... summarysectiontabw and vocabw macros, too.
+\newenvironment{summarysubsectiontabw}[3]{\summarysubsectionheader{#1}\\*\begin{tabular}{p{#2}p{#3}}}{\end{tabular}}
+% The summary section is supposed to be like any other section, but not numbered.
+% addtocontents: see Lamport, p. 176
+\newenvironment{summary}{
+    \vfill                               % in last section, on previous page
+    \setcounter{secnumdepth}{0}          % Don't number this section.
+    \renewcommand{\printthesection}{}    % Footers should read ``Summary,'' not ``Section X.Y Summary''
+    \mysection{\langsummary}                  % Has the side-effect of generating a page break.
+    \setcounter{secnumdepth}{2}          % Start numbering sections again.
+                                         % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
+                                         % this. Using section* messes up footers & toc. 
+}%
+{\vfill}
+%
+\newenvironment{vocab}{\begin{summarysubsectiontab}{\langselvocab}}{\end{summarysubsectiontab}}
+\newenvironment{vocabw}[2]{\begin{summarysubsectiontabw}{\langselvocab}{#1}{#2}}{\end{summarysubsectiontabw}}
+\newcommand{\vocabitem}[2]{#1\summaryleaders {} & #2\\}
+\newenvironment{notation}{\begin{summarysubsectiontab}{\langnotation}}{\end{summarysubsectiontab}}
+\newenvironment{othernotation}{\begin{summarysubsectiontab}{\langothernotation}}{\end{summarysubsectiontab}}
+\newcommand{\notationitem}[2]{#1\summaryleaders {}  & #2\\}
+\newenvironment{summarytext}[1][Summary]{\ifthenelse{\equal{#1}{}}{}{\summarysubsectionheader{#1}}}{}
+%...use \begin{summarytext}[] as in ch. 8 of NP, where we don't want Summary twice in a row
+\newenvironment{exploring}{\summarysubsectionheader{\langexploring}\par}{}
+\newenvironment{reading}[2]{\noindent {\textbf{#1}}, #2. }{\par}
+
+%---------------------------------------------------------------------------------------------------------------------------------------
+%-------------------- fancyhdr -------------------
+\newcommand{\yesiwantarabic}{\renewcommand{\thepage}{\arabic{page}}}
+\renewcommand{\headrulewidth}{0mm}
+\renewcommand{\footrulewidth}{0mm}
+%\setlength{\headrulewidth}{0mm}
+\newcommand{\printthesection}{Section\ \thesection} % for titlesec, hw environment
+% LaTeX companion, p. 96
+% Force headings outward, so they're not confined to text column:
+  \setlength{\headwidth}{\textwidth}
+  \addtolength{\headwidth}{\marginfigoverhang}
+\newlength{\myfooterspace}
+\setlength{\myfooterspace}{5mm}
+\newlength{\myfooterspacep}
+\setlength{\myfooterspacep}{19mm}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]%
+  {\markboth{\textsf{Chapter\ \thechapter\hspace{\myfooterspace}#1}}{}}
+\newcommand{\blankchaptermarks}{
+  \renewcommand{\chaptermark}[1]%
+    {\markboth{}{}}
+}
+\newcommand{\normalchapters}{%
+  \renewcommand{\thechapter}{\arabic{chapter}}%
+  \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}%
+}
+\renewcommand{\thepart}{}
+\newcommand{\optionalchapternote}[1]{\emph{#1}}
+\renewcommand{\sectionmark}[1]%
+  {\markright{\textsf{\printthesection\hspace{\myfooterspace}#1}}{}}
+\newcommand{\myheadertext}{}
+\lhead[\myheadertext]{}
+\chead[]{}
+\rhead[]{\myheadertext}
+\lfoot[\textbf{\textsf{\thepage}} \hspace{\myfooterspacep} \nouppercase{\textsf{\leftmark}}]{}
+\cfoot[]{}
+\rfoot[]{\nouppercase{\textsf{\rightmark}} \hspace{\myfooterspacep} \textbf{\textsf{\thepage}}}
+\fancypagestyle{plain}{%
+  \fancyhf{}% clear everything, except...
+  \fancyfoot[LE,RO]{\textbf{\textsf{\thepage}}} % page numbers on left of even pages, right of odd pages
+}
+%-------------------- preface
+\newenvironment{preface}{%
+  \renewcommand{\thesection}{\hspace{-2mm}}    % kludge!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  \renewcommand{\printthesection}{}    % Footers should read ``Preface,'' not ``Section Preface''
+}
+{%
+  \renewcommand{\printthesection}{Section\ \thesection} % for titlesec, hw environment
+}
+\newcommand{\wugga}{\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}}
+%-------------------- epigraph commands -------------------
+\newcommand{\epigraphlong}[2]{
+  \noindent{}\myindented{10mm}{\textsf{#1}}\par
+  \noindent{}\hfill \textsf{\textit{#2}}
+}
+\newcommand{\epigraphlongfitbyline}[2]{
+  \noindent{}\myindented{10mm}{\textsf{#1} \hfill \textsf{\textit{#2}}}
+}
+\newcommand{\epigraphnobyline}[2]{
+  \noindent{}\myindented{10mm}{\textsf{#1}}
+}
+\newcommand{\epigraph}[2]{
+  \noindent{}#1 \hspace*{\fill}\nolinebreak[1]\hspace*{\fill}\textit{#2}
+}
+%...based on an example on p. 443 of LaTeX Companion
+%-------------------- oneofaseriesofpoints -----------------------------------------------------------
+% The following is basically like an item in the description environment, but the stuff in bold can
+% be more than one line:
+\newcommand{\oneofaseriesofpoints}[2]{\myindented{\egindent}{\noindent\textbf{#1}\ {#2}}\par}
+%-------------------- homework remark -------------------
+\newcommand{\hwremark}[1]{\par\noindent\footnotesize{\textit{Remark:\/} #1}}
+%-------------------- photo credit command -------------------
+\newcommand{\photocredit}[1]{\footnotesize{(\textit{#1})}}% for use in captions
+% for use in photo credits appendix:
+\newcommand{\barecred}[2]{ \emph{#1:} #2.\quad}
+\newcommand{\docred}[3]{\textbf{#1} \emph{#2:} #3.\quad}
+\newcommand{\cred}[3]{\docred{\pageref{fig:#1}}{#2}{#3}}
+\newcommand{\credtwo}[4]{\docred{\pageref{fig:#1},\pageref{fig:#2}}{#3}{#4}}
+\newcommand{\credthree}[5]{\docred{\pageref{fig:#1},\pageref{fig:#2},\pageref{fig:#3}}{#4}{#5}}
+%-------------------- theorem header -------------------
+\newcommand{\mythmhdr}[1]{\noindent\textbf{#1:}}
+%-------------------- equation numbering -------------------
+\numberwithin{equation}{section}
+% Equation numbers have square brackets:
+%   Original code from amsmath.sty:
+%		\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip\@@italiccorr)}}
+%   Change it as follows:
+		\renewcommand{\tagform@}[1]{\maketag@@@{[\ignorespaces#1\unskip\@@italiccorr]}}
+%	Use \eqref to refer to an equation.
+%\renewcommand{\theequation}{\ensuremath{\fnsymbol{equation}}} % used to use symbols...
+\renewcommand{\theequation}{\ensuremath{\arabic{equation}}} % ... now using numbers
+%-------------------- tuning placement of floating figures -------------------
+% The following three numbers are to make TeX more likely to put figures on the
+% same page rather than on a separate figures page. Can tinker with these, but
+% make sure floatpagefraction<topfraction.
+% Values recommended by the web page I found were 0.85, 0.1, 0.75
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\floatpagefraction}{0.98}
+%-------------------- hw section & hw problem environments-------------------
+\newcommand{\hwdifficulty}{0}
+% ... This needs to be a global variable because I only display the symbol in  \end{hw},
+%     which doesn't have access to #1.
+\newsavebox{\hwtrailingstuff}
+% There is also a boolean register, hwhavetrailing, defined under AtBeginDocument.
+%
+% The homework problem section is supposed to be like any other section, but not numbered.
+% addtocontents: see Lamport, p. 176
+\newcommand{\displayhwdifficulty}[1]{\ifthenelse{\equal{#1}{2}}{$\star$}{}}
+\newcommand{\hwtopboilerplate}{%
+  \noindent\formatlikesubsection{\langkey}\\*
+  \begin{tabular}{lll}
+    \hwcheckmark & A computerized answer check is available online. \\
+    $\int$       & A problem that requires calculus. \\
+    \displayhwdifficulty{2} & A difficult problem.
+  \end{tabular}
+}
+\newenvironment{hwsection}[1][Problems]{
+    \setcounter{secnumdepth}{0}          % Don't number this section.
+    \renewcommand{\printthesection}{}    % Footers should read ``Problems,'' not ``Section X.Y Problems''
+    \hwcaptions                          % figures in hw section don't have a, b, c, labels
+    \setcounter{figure}{0}               %
+    \begingroup
+    \renewcommand{\addcontentsline}[3]{} % temporarily disable \addcontentsline; toc line is done by eruby's
+                                         % sectioning_command_with_href()
+    \mysection{#1}                       % Has the side-effect of generating a page break.
+    \endgroup
+    \setcounter{secnumdepth}{2}          % Start numbering sections again.
+                                         % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
+                                         % this. Using section* messes up footers & toc. 
+    \setlength{\parindent}{0mm}%undone by normalparafmt
+    \hwtopboilerplate\par
+}%
+{%
+  \vfill
+  \normalparafmt
+}
+% The lab... stuff is used by FAC.
+\newenvironment{labapparatus}{%
+                \setlength{\saveleftskip}{\leftskip}%
+                \formatlikesubsubsection{Apparatus}\par
+                \addtolength{\leftskip}{\egindent}%
+}{%
+  \par%
+  \setlength{\leftskip}{\saveleftskip}%
+  \par%
+}
+\newenvironment{labgoal}{%
+                \emph{Goal:\/} 
+}{}
+\newcommand{\labsection}[1]{\formatlikesubsubsection{#1}}
+\newenvironment{handson}[3]{\begin{activity}{#1}{#2}{#3}{Exercise \thechapter#1: }}{\end{activity}}
+% Activity environment is used by exercises in LM et al., minilabs in FAC, notes section in FAC.
+\newenvironment{activity}[4]{
+    % #1 is a suffix, e.g., B if this is activity 3B in ch. 3
+    \setcounter{secnumdepth}{0}          % Don't number this section.
+    \renewcommand{\printthesection}{}    % Footers should read ``Problems,'' not ``Section X.Y Problems''
+    \hwcaptions                          % figures in this section don't have a, b, c, labels; is overridden for labs
+    \setcounter{figure}{0}               %
+    \nomarginlayout                      %
+    #3                                   % Normally \onecolumn. I don't understand why this is necessary, but it is. If I don't do it, no change in format occurs.
+    \begingroup
+    \renewcommand{\addcontentsline}[3]{} % temporarily disable \addcontentsline; toc line is done by eruby's
+                                         % sectioning_command_with_href()
+    \mysection{#4#2}                     % Has the side-effect of generating a page break.
+    \endgroup
+    \setcounter{secnumdepth}{2}          % Start numbering sections again.
+                                         % The \setcounter{secnumdepth} stuff is the way the author of titlesec suggests doing
+                                         % this. Using section* messes up footers & toc. 
+    \setlength{\parindent}{0mm}%undone by normalparafmt
+    \def\@currentlabel{\thechapter#1}    % so that any \label{...} after this works correctly
+    \sloppypar\par
+}%
+{%
+  \vfill
+  \normallayout\normalparafmt\onecolumn
+}
+%
+\newcommand{\hwnote}[1]{\noindent\emph{#1}}
+\newcommand{\currenthwlabel}{}
+\newcommand{\calccrud}{}
+\newenvironment{homework}[3]
+  {%
+    \refstepcounter{hwctr}%
+    \begin{homeworkforcelabel}{#1}{#2}{#3}{\thehwctr}
+  }%
+  {%
+    \end{homeworkforcelabel}
+  }
+%
+\newenvironment{homeworkforcelabel}[4]
+       {\renewcommand{\@currentlabel}{#4}\label{hw:#1}\noindent\textbf{#4}%
+        \renewcommand{\hwdifficulty}{#2}%
+        \hwcleartrailingstuff
+         \renewcommand{\currenthwlabel}{#1}
+	\quad%
+        \renewcommand{\calccrud}{}
+        \ifthenelse{\equal{#3}{1}}{\renewcommand{\calccrud}{\hwaddtrailingstuff{$\int$}}}{}
+        }
+	{%
+             \calccrud
+             \hwaddtrailingstuff{%
+                                \displayhwdifficulty{\hwdifficulty}
+                            }%
+             \hwflushtrailingstuff\par%
+        }
+%
+\newcommand{\hwendpart}[1][3]{\hwflushtrailingstuff[#1]\\}
+%	The optional argument ends up being passed to \nolinebreak. It defaults to 3, but
+%	you can make it 2 or 4 if it seems to be making the wrong decision.
+%   If there is only one part to the problem, or if you're fiddling with the very last
+%   part of a multipart problem, I think you can add a gratuitous \hwendpart, but
+%   except in this situation, don't do \hwendpart after the last part, because sometimes
+%   it causes extra blank lines to appear.
+%
+\newcommand{\hwcredit}[1]{\footnotesize{\textit{[problem by #1]}}}
+\newcommand{\hwhint}[1]{\hwaddtrailingstuff{\hwtriangle\ Hint, p. \pageref{#1}}}
+\newcommand{\hwans}[1]{\hwaddtrailingstuff{\hwtriangle\ Answer, p. \pageref{#1}}}
+\newcommand{\hwsoln}{\hwaddtrailingstuff{\hwtriangle\ Solution, p. \pageref{soln:\currenthwlabel}}}
+\newcommand{\answercheck}{\hwaddtrailingstuff{\hwcheckmark}}
+%
+\newcommand{\hwtriangle}{$\triangleright$}
+\newcommand{\hwcheckmark}{\scriptsize\raisebox{1mm}{$\surd$}\normalsize}
+%
+\newcommand{\hwflushtrailingstuff}[1][3]{\ifthenelse{\boolean{hwhavetrailing}}{\hwfill{#1}\usebox{\hwtrailingstuff}\hwcleartrailingstuff}{}}
+%
+\newcommand{\hwcleartrailingstuff}{\sbox{\hwtrailingstuff}{}\setboolean{hwhavetrailing}{false}}
+%
+\newcommand{\hwaddtrailingstuff}[1]{\sbox{\hwtrailingstuff}{\usebox{\hwtrailingstuff}\quad{}#1}%
+                                             \setboolean{hwhavetrailing}{true}}
+%
+\newcommand{\hwfill}[1]{\hspace*{\fill}\nolinebreak[#1]\nopagebreak[1]\hspace*{\fill}}
+% ... cf LaTeX Companion, p. 443
+%
+%
+\newcommand{\scans}[1]{$\triangleright$\ Answer, p. \pageref{scans:#1}}
+\newcommand{\noetherimplies}{\ensuremath{\Rightarrow}}
+\newenvironment{noethertable}{%
+  \noindent\hspace{5mm}\begin{tabular}{|p{40mm}cp{40mm}|}
+  \hline
+	\textbf{symmetry} & & \textbf{conserved quantity} \\
+}%
+{
+  \hline
+\end{tabular}
+}
+%=========================
+\newcommand{\eqquad}{}
+% I used to have flying punctuation after displayed math, e.g.,
+%      x=7 \qquad .
+% I decided that looked bad, so I replaced the qquads with this do-nothing macro.
+\newcommand{\mynormaltype}{\normalsize\normalfont\myeqnspacing}
+\newcommand{\myeqnspacing}{
+	\setlength{\abovedisplayskip}{4mm plus 1mm minus 3mm}
+	\setlength{\belowdisplayskip}{4mm plus 1mm minus 3mm}
+	\setlength{\abovedisplayshortskip}{0mm plus 1mm}
+	\setlength{\belowdisplayshortskip}{2mm plus 1mm minus 1mm}
+}
+%==============================toc==================================
+\newcommand{\link}[2]{\protect\jumplink{anchor-#1}{\textcolor{blue}{#2}}} % navigator package
+\newcommand{\brieftocentry}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
+            {\ref{#2} & #3 #1 \pageref{#2}}
+\newcommand{\brieftocentrywithlink}[3][\quad]% #1=\hfill (LM and Me.) or \quad (other books), #2=label, #3=title, 
+            {\link{#2}{\ref{#2}} & \link{#2}{#3} #1 \link{#2}{\pageref{#2}}}
+\newcommand{\toclinewithlink}[4]% #1=subsection, etc., #2=label, #3=title, #4=\thesubsection, etc.
+  {%
+    \addcontentsline{toc}{#1}{\protect\numberline{#4}\link{#2}{#3}}%
+  }
+\newcommand{\toclinewithoutlink}[4]% #1=subsection, etc., #2=label, #3=title, #4=\thesubsection, etc.
+  {%
+    \addcontentsline{toc}{#1}{\protect\numberline{#4}#3}%
+  }
+%For the following, see the documentation for tocloft.sty:
+\renewcommand{\contentsname}{}
+\setlength{\cftbeforetoctitleskip}{0mm}
+\setlength{\cftaftertoctitleskip}{0mm}
+%titletoc stuff:
+\newcommand{\formatchtoc}[3]{%
+  \titlecontents{chapter}[0mm]{\addvspace{#3}\sffamily}%
+	{\contentsmargin{0mm}#1\thecontentslabel\enspace#1}%
+	{\contentsmargin{0mm}#1}{#2}[]%
+}
+% Arguments to titlecontents are:
+%   {section}
+%   [left: horizontal space from left margin; is mandatory, even though in square brackets]
+%   {above: global formatting, vertical material allowed}
+%   {before with label: horizontal-mode stuff that occurs before the entry}
+%   {before without label: like the preceding arg, but for entries that do not have any label}
+%   {filler and page: e.g., you can put ... and page # commands here}
+%   [after: stuff that is happens after the entry, vertical material allowed]
+%   titlecontents* has up to three optional args at the tail end
+% In the following, the -5mm is to get rid of a horizontal space that crops up for reasons I don't understand.
+\titlecontents{part}%
+        [0mm]% left
+        {\addvspace{5mm}\sffamily\bfseries\noindent}% above
+	{}%
+	{\contentsmargin{0mm}\Large\noindent\hspace{-5mm}}% before without label
+        {}% filler and page
+        [\addvspace{2mm}]% after
+\contentsmargin{6mm}
+\titlecontents{section}%
+        [0mm]% left
+        {\sffamily}% above
+	{\contentsmargin{0mm}\thecontentslabel\enspace}% before with label
+	{}% before without label
+        {\titlerule*[4mm]{.}\contentspage}% filler and page
+% In the following, titlecontents* is titletoc's way of saying I want subsections listed in a single paragraph.
+\titlecontents*{subsection}%
+        [1.5em]% left
+        {\small}% above
+        {}% before with label
+        {}% before without label
+        {, \thecontentspage}% filler and page
+        [.---]% separator
+        [.]% end
+\titlecontents{subsubsection}[]{}{}{}{}[]
+% Brief contents:
+\titlecontents{briefchapter}[0mm]{\Large\sffamily{}}
+        {}{}
+        {}
+%========================= detect bug in titlesec package=========================
+% https://bugs.launchpad.net/ubuntu/+source/texlive-extra/+bug/1574052/comments/11
+\@ifpackagelater{titlesec}{2016/03/21}{%
+ % Package titlesec is on version 2.10.2 or higher, nothing to do %
+}{%
+ % Check if package titlesec is on version 2.10.1 %
+ \@ifpackagelater{titlesec}{2016/03/15}{%
+   \PackageError{lmcommon}{You're using broken version 2.10.1 of titlesec. Replace titlesec.sty on your system with the file fixed_titlesec.sty that was packaged with this book.}{}
+ }{%
+  % Package titlsec is on version 2.10.0 or lower, nothing to do %
+ }%
+}
+%========================= graphicx package=========================
+\usepackage{graphicx}
+%========================= AtBeginDocument stuff=========================
+\AtBeginDocument{
+  \newboolean{hwhavetrailing}
+  \input{declaregraphicsextensions.tex}
+  \newcommand{\chapdir}{glub}
+  \myeqnspacing
+  	% This gets reset any time I do normalsize, so have to do it after preamble,
+  	% and have to use \mynormaltype rather than \normalsize
+}
+%============= preamble commands such as includeonly, controllable from makefile ==============
+\input{makefilepreamble}

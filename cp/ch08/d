@@ -1,0 +1,1299 @@
+\addtocontents{toc}{\protect\figureintoc{toc-hand-x-ray}}
+
+ %%---------------------------------------------------------
+
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '04',
+    %q{Bounded Waves},
+    'ch:bounded-waves',
+    %q{A cross-sectional view
+of a human body, showing the vocal tract.},
+    {'opener'=>'human-cross-section'}
+  )
+%>
+
+
+
+Speech is what separates humans most decisively from
+animals. No other species can master syntax, and even though
+chimpanzees can learn a vocabulary of hand signs, there is
+an unmistakable difference between a human infant and a baby
+chimp: starting from birth, the human experiments with the
+production of complex speech sounds.
+
+Since speech sounds are instinctive for us, we seldom think
+about them consciously. How do we do control sound waves so
+skillfully? Mostly we do it by changing the shape of a
+connected set of hollow cavities in our chest, throat, and
+head. Somehow by moving the boundaries of this space in and
+out, we can produce all the vowel sounds. Up until now, we
+have been studying only those properties of waves that can
+be understood as if they existed in an infinite, open space
+with no boundaries. In this chapter we address what happens
+when a wave is confined within a certain space, or when a
+wave pattern encounters the boundary between two different
+media, such as when a light wave moving through air
+encounters a glass windowpane.
+
+\mysection{Reflection, Transmission, and Absorption}\label{sec:reflection-and-transmission}
+
+\mysubsection[0]{Reflection and transmission}
+
+Sound waves can echo back from a cliff, and light waves are
+\index{reflection of waves}reflected from the surface of a
+pond. We use the word reflection, normally applied only to
+light waves in ordinary speech, to describe any such case of
+a wave rebounding from a barrier. Figure \figref{circular-reflection} shows a
+circular water wave being reflected from a straight wall. In
+this chapter, we will concentrate mainly on reflection of
+waves that move in one dimension, as in figure \figref{pulse-reflected-from-fixed-end}.
+
+<% marg(46) %>
+<%
+  fig(
+    'circular-reflection',
+    %q{Circular water waves are reflected from a boundary on the left.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'pulse-reflected-from-fixed-end',
+    %q{A wave on a spring, initially traveling to the left, is reflected from the fixed end.}
+  )
+%>
+
+<% end_marg %>
+Wave reflection does not surprise us. After all, a material
+object such as a rubber ball would bounce back in the same
+way. But waves are not objects, and there are some surprises in store.
+
+First, only part of the wave is usually reflected. Looking
+out through a window, we see light waves that passed through
+it, but a person standing outside would also be able to see
+her reflection in the glass. A light wave that strikes the
+glass is partly \emph{reflected} and partly \emph{transmitted}
+(passed) by the glass. The energy of the original wave is
+split between the two. This is different from the behavior
+of the rubber ball, which must go one way or the other, not both.
+
+Second, consider what you see if you are swimming underwater
+and you look up at the surface. You see your own reflection.
+This is utterly counterintuitive, since we would expect the
+light waves to burst forth to freedom in the wide-open air.
+A material projectile shot up toward the surface would never
+rebound from the water-air boundary!
+
+What is it about the difference between two media that
+causes waves to be partly reflected at the boundary between
+them? Is it their density? Their chemical composition?
+Ultimately all that matters is the speed of the wave in the
+two media. \emph{A wave is partially reflected and partially
+transmitted at the boundary between media in which it has
+different speeds.} For example, the speed of light waves in
+window glass is about 30\% less than in air, which explains
+why windows always make reflections. Figures \figref{coil-spring-reflections}/1 and 2
+show examples of wave pulses being reflected at the boundary
+between two coil springs of different weights, in which the
+wave speed is different.
+
+Reflections such as \figref{circular-reflection} and \figref{pulse-reflected-from-fixed-end}, where a wave encounters a
+massive fixed object, can usually be understood on the same
+basis as cases like \figref{coil-spring-reflections}/1 and 2 later in his section, where
+two media meet. Example \figref{pulse-reflected-from-fixed-end}, for instance, is like a more
+extreme version of example \figref{coil-spring-reflections}/1. If the heavy coil spring in
+\figref{coil-spring-reflections}/1 was made heavier and heavier, it would end up acting
+like the fixed wall to which the light spring in \figref{pulse-reflected-from-fixed-end} has been attached.
+
+\begin{selfcheck}{reflected-energy}
+In figure \figref{pulse-reflected-from-fixed-end}, the reflected pulse is upside-down, but
+its depth is just as big as the original pulse's height. How
+does the energy of the reflected pulse compare with
+that of the original?
+\end{selfcheck}
+
+\begin{eg}{Fish have internal ears.}\label{eg:fish-ears}
+Why don't fish have ear-holes? The speed of sound waves in a
+fish's body is not much different from their speed in water,
+so sound waves are not strongly reflected from a fish's
+skin. They pass right through its body, so fish can have internal ears.
+\end{eg}
+
+<%
+  fig(
+    'coil-spring-reflections',
+    %q{%
+      1. A wave in the lighter spring, where the wave speed is greater, travels to the
+      left and is then partly reflected and partly transmitted at the boundary with the heavier coil spring, which has a lower
+      wave speed. The reflection is inverted. 2. A wave moving to the right in the heavier spring is partly reflected at the
+      boundary with the lighter spring. The reflection is uninverted.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+
+\begin{eg}{Whale songs traveling long distances}\label{eg:whale-songs}
+Sound waves travel at drastically different speeds through
+rock, water, and air. Whale songs are thus strongly
+reflected at both the bottom and the surface. The sound
+waves can travel hundreds of miles, bouncing repeatedly
+between the bottom and the surface, and still be detectable.
+Sadly, noise pollution from ships has nearly shut down this
+cetacean version of the internet.
+\end{eg}
+
+\begin{eg}{Long-distance radio communication.}
+Radio communication can occur between stations on opposite
+sides of the planet. The mechanism is similar to the one
+explained in example \ref{eg:whale-songs}, but the three media
+involved are the earth, the atmosphere, and the ionosphere.
+\end{eg}
+
+\begin{selfcheck}{invisible-to-sonar}
+Sonar is a method for ships and submarines to detect each
+other by producing sound waves and listening for echoes.
+What properties would an underwater object have to have in
+order to be invisible to sonar?
+\end{selfcheck}
+
+The use of the word ``reflection'' naturally brings to mind
+the creation of an image by a mirror, but this might be
+confusing, because we do not normally refer to ``reflection''
+when we look at surfaces that are not shiny. Nevertheless,
+reflection is how we see the surfaces of all objects, not
+just polished ones. When we look at a sidewalk, for example,
+we are actually seeing the reflecting of the sun from the
+concrete. The reason we don't see an image of the sun at our
+feet is simply that the rough surface blurs the image so drastically.
+
+\mysubsection[0]{Inverted and uninverted reflections}
+
+Notice how the pulse reflected back to the right in example
+\figref{coil-spring-reflections}/1 comes back upside-down, whereas the one reflected back
+to the left in 2 returns in its original upright form.
+This is true for other waves as well. In general, there are
+two possible types of reflections, a reflection back into a
+faster medium and a reflection back into a slower medium.
+One type will always be an inverting reflection and one noninverting.
+
+<% marg(93) %>
+<%
+  fig(
+    'rope-reflections',
+    %q{%
+      1. An uninverted reflection. The reflected pulse is reversed front
+      to back, but is not upside-down.\\
+      2. An inverted reflection. The reflected pulse is reversed both front to back and top
+      to bottom.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'attenuation-SHARED',
+    %q{A pulse traveling through a highly absorptive medium.}
+  )
+%>
+
+<% end_marg %>
+It's important to realize that when we discuss inverted and
+uninverted reflections on a string, we are talking about
+whether the wave is flipped across the direction of motion
+(i.e., upside-down in these drawings). The reflected pulse
+will always be reversed front to back, as shown in figure
+\figref{rope-reflections}. This is because it is traveling in the other
+direction. The leading edge of the pulse is what gets
+reflected first, so it is still ahead when it starts back to
+the left --- it's just that ``ahead'' is now in the opposite direction.
+
+\mysubsection[0]{Absorption}\index{absorption of waves}
+
+So far we have tacitly assumed that wave energy remains as
+wave energy, and is not converted to any other form. If this
+was true, then the world would become more and more full of
+sound waves, which could never escape into the vacuum of
+outer space. In reality, any mechanical wave consists of a
+traveling pattern of vibrations of some physical medium, and
+vibrations of matter always produce heat, as when you bend a
+coat-hangar back and forth and it becomes hot. We can thus
+expect that in mechanical waves such as water waves, sound
+waves, or waves on a string, the wave energy will gradually
+be converted into heat. This is referred to as \emph{absorption}.
+
+The wave suffers a decrease in amplitude, as shown in figure
+\figref{attenuation}. The decrease in amplitude amounts to the same
+fractional change for each unit of distance covered. For
+example, if a wave decreases from amplitude 2 to amplitude 1
+over a distance of 1 meter, then after traveling another
+meter it will have an amplitude of 1/2. That is, the
+reduction in amplitude is exponential. This can be proven as
+follows. By the principle of superposition, we know that a
+wave of amplitude 2 must behave like the superposition of
+two identical waves of amplitude 1. If a single amplitude-1
+wave would die down to amplitude 1/2 over a certain
+distance, then two amplitude-1 waves superposed on top of
+one another to make amplitude $1+1=2$ must die down to
+amplitude $1/2+1/2=1$ over the same distance.
+
+\begin{selfcheck}{absorption-and-speed}
+As a wave undergoes absorption, it loses energy. Does this
+mean that it slows down?
+\end{selfcheck}
+
+<% marg(0) %>
+<%
+  fig(
+    'hand-x-ray',
+    %q{%
+      X-rays are light waves with a very high frequency. They are
+      absorbed strongly by bones, but weakly by flesh.
+    }
+  )
+%>
+<% end_marg %>
+In many cases, this frictional heating effect is quite weak.
+Sound waves in air, for instance, dissipate into heat
+extremely slowly, and the sound of church music in a
+cathedral may reverberate for as much as 3 or 4 seconds
+before it becomes inaudible. During this time it has
+traveled over a kilometer! Even this very gradual dissipation
+of energy occurs mostly as heating of the church's walls and
+by the leaking of sound to the outside (where it will
+eventually end up as heat). Under the right conditions
+(humid air and low frequency), a sound wave in a straight
+pipe could theoretically travel hundreds of kilometers
+before being noticeable attenuated.
+
+In general, the absorption of mechanical waves depends a
+great deal on the chemical composition and microscopic
+structure of the medium. Ripples on the surface of
+antifreeze, for instance, die out extremely rapidly compared
+to ripples on water. For sound waves and surface waves in
+liquids and gases, what matters is the viscosity of the
+substance, i.e., whether it flows easily like water or
+mercury or more sluggishly like molasses or antifreeze. This
+explains why our intuitive expectation of strong absorption
+of sound in water is incorrect. Water is a very weak
+absorber of sound (viz. whale songs and sonar), and our
+incorrect intuition arises from focusing on the wrong
+property of the substance: water's high density, which is
+irrelevant, rather than its low viscosity, which is what matters.
+
+Light is an interesting case, since although it can travel
+through matter, it is not itself a vibration of any material
+substance. Thus we can look at the star Sirius, $10^{14}$
+km away from us, and be assured that none of its light was
+absorbed in the vacuum of outer space during its 9-year
+journey to us. The Hubble Space Telescope routinely observes
+light that has been on its way to us since the early history
+of the universe, billions of years ago. Of course the energy
+of light can be dissipated if it does pass through matter
+(and the light from distant galaxies is often absorbed if
+there happen to be clouds of gas or dust in between).
+
+\begin{eg}{Soundproofing}\label{eg:soundproofing}
+Typical amateur musicians setting out to soundproof their
+garages tend to think that they should simply cover the
+walls with the densest possible substance. In fact, sound is
+not absorbed very strongly even by passing through several
+inches of wood. A better strategy for soundproofing is to
+create a sandwich of alternating layers of materials in
+which the speed of sound is very different, to encourage reflection.
+
+The classic design is alternating layers of fiberglass and
+plywood. The speed of sound in plywood is very high, due to
+its stiffness, while its speed in fiberglass is essentially
+the same as its speed in air. Both materials are fairly good
+sound absorbers, but sound waves passing through a few
+inches of them are still not going to be absorbed sufficiently.
+The point of combining them is that a sound wave that tries
+to get out will be strongly reflected at each of the
+fiberglass-plywood boundaries, and will bounce back and
+forth many times like a ping pong ball. Due to all the
+back-and-forth motion, the sound may end up traveling a
+total distance equal to ten times the actual thickness of
+the soundproofing before it escapes. This is the equivalent
+of having ten times the thickness of sound-absorbing material.
+\end{eg}
+
+\begin{eg}{The swim bladder}
+The swim bladder of a fish, which was first discussed in homework problem \ref{hw:swimbladder} in chapter \ref{ch:resonance}, is often located
+ right next to the fish's ear. As discussed in example \ref{eg:fish-ears} on page \pageref{eg:fish-ears}, the fish's body
+ is nearly transparent to sound, so it's actually difficult to get any of the
+ sound wave energy to deposit itself in the fish so that the fish can hear it!
+ The physics here is almost exactly the same as the physics of example \ref{eg:soundproofing} above,
+ with the gas-filled swim bladder playing the role of the low-density material.
+\end{eg}
+
+\begin{eg}{Radio transmission}
+A radio transmitting station, such as a commercial station
+or an amateur ``ham'' radio station, must have a length of
+wire or cable connecting the amplifier to the antenna. The
+cable and the antenna act as two different media for radio
+waves, and there will therefore be partial reflection of the
+waves as they come from the cable to the antenna. If the
+waves bounce back and forth many times between the amplifier
+and the antenna, a great deal of their energy will be
+absorbed. There are two ways to attack the problem. One
+possibility is to design the antenna so that the speed of
+the waves in it is as close as possible to the speed of the waves in the
+cable; this minimizes the amount of reflection. The other method is to
+connect the amplifier to the antenna using a type of wire or
+cable that does not strongly absorb the waves. Partial
+reflection then becomes irrelevant, since all the wave
+energy will eventually exit through the antenna.
+\end{eg}
+
+\startdq
+
+\begin{dq}
+A sound wave that underwent a pressure-inverting reflection
+would have its compressions converted to expansions and vice
+versa. How would its energy and frequency compare with those
+of the original sound? Would it sound any different? What
+happens if you swap the two wires where they connect to a
+stereo speaker, resulting in waves that vibrate in the opposite way?
+\end{dq}
+
+\myoptionalsection{Quantitative Treatment of Reflection}\label{sec:quantitative-reflection}
+
+In this optional section we analyze the reasons why
+reflections occur at a speed-changing boundary, predict
+quantitatively the intensities of reflection and transmission,
+and discuss how to predict for any type of wave which
+reflections are inverting and which are noninverting. The
+gory details are likely to be of interest mainly to students
+with concentrations in the physical sciences, but all
+readers are encouraged at least to skim the first two
+subsections for physical insight.
+
+\mysubsection[0]{Why reflection occurs}
+
+<% marg(0) %>
+<%
+  fig(
+    'kink-and-discontinuity-SHARED',
+    %q{%
+      1. A change in frequency without a change in wavelength
+      would produce a discontinuity in the wave.\\
+      2. A simple change in wavelength without a reflection would result in a sharp kink in the wave.
+    }
+  )
+%>
+<% end_marg %>
+To understand the fundamental reasons for what does occur at
+the boundary between media, let's first discuss what doesn't
+happen. For the sake of concreteness, consider a sinusoidal
+wave on a string. If the wave progresses from a heavier
+portion of the string, in which its velocity is low, to a
+lighter-weight part, in which it is high, then the equation
+$v=f\lambda $ tells us that it must change its frequency, or
+its wavelength, or both. If only the frequency changed, then
+the parts of the wave in the two different portions of the
+string would quickly get out of step with each other,
+producing a discontinuity in the wave, \figref{kink-and-discontinuity}/1. This is
+unphysical, so we know that the wavelength must change while
+the frequency remains constant, 2.
+
+But there is still something unphysical about figure 2.
+The sudden change in the shape of the wave has resulted in a
+sharp kink at the boundary. This can't really happen,
+because the medium tends to accelerate in such a way as to
+eliminate curvature. A sharp kink corresponds to an infinite
+curvature at one point, which would produce an infinite
+acceleration, which would not be consistent with the smooth
+pattern of wave motion envisioned in figure 2. Waves can
+have kinks, but not stationary kinks.
+
+We conclude that without positing partial reflection of the
+wave, we cannot simultaneously satisfy the requirements of
+(1) continuity of the wave, and (2) no sudden changes in the
+slope of the wave. (The student who has studied calculus
+will recognize this as amounting to an assumption that both
+the wave and its derivative are continuous functions.)
+
+Does this amount to a proof that reflection occurs? Not
+quite. We have only proven that certain types of wave motion
+are not valid solutions. In the following subsection, we
+prove that a valid solution can always be found in which a
+reflection occurs. Now in physics, we normally assume (but
+seldom prove formally) that the equations of motion have a
+unique solution, since otherwise a given set of initial
+conditions could lead to different behavior later on, but
+the Newtonian universe is supposed to be deterministic.
+Since the solution must be unique, and we derive below a
+valid solution involving a reflected pulse, we will have
+ended up with what amounts to a proof of reflection.
+
+\mysubsection[0]{Intensity of reflection}
+
+We will now show, in the case of waves on a string, that it
+is possible to satisfy the physical requirements given above
+by constructing a reflected wave, and as a bonus this will
+produce an equation for the proportions of reflection and
+transmission and a prediction as to which conditions will
+lead to inverted and which to uninverted reflection. We
+assume only that the principle of superposition holds, which
+is a good approximations for waves on a string of sufficiently small amplitude.
+
+<% marg(54) %>
+<%
+  fig(
+    'into-slower-SHARED',
+    %q{%
+      A pulse being partially reflected and partially transmitted at the
+      boundary between two strings in which the speed of waves is different. The top drawing shows the
+      pulse heading to the right, toward the heavier string. For clarity, all but the first and last
+      drawings are schematic. Once the reflected pulse begins to emerge from the boundary, it adds together
+      with the trailing parts of the incident pulse. Their sum, shown as a wider line, is what is
+      actually observed.
+    }
+  )
+%>
+<% end_marg %>
+Let the unknown amplitudes of the reflected and transmitted
+waves be $R$ and $T$, respectively. An inverted reflection
+would be represented by a negative value of $R$. We can
+without loss of generality take the incident (original) wave
+to have unit amplitude. Superposition tells us that if, for
+instance, the incident wave had double this amplitude, we
+could immediately find a corresponding solution simply by
+doubling $R$ and $T$.
+
+Just to the left of the boundary, the height of the wave is
+given by the height 1 of the incident wave, plus the height
+$R$ of the part of the reflected wave that has just been
+created and begun heading back, for a total height of $1+R$.
+On the right side immediately next to the boundary, the
+transmitted wave has a height $T$. To avoid a discontinuity, we must have
+\begin{equation*}
+		1+R  =  T   \qquad   .
+\end{equation*}
+Next we turn to the requirement of equal slopes on both
+sides of the boundary. Let the slope of the incoming wave be
+$s$ immediately to the left of the junction. If the wave was
+100\% reflected, and without inversion, then the slope of
+the reflected wave would be $-s$, since the wave has been
+reversed in direction. In general, the slope of the
+reflected wave equals $-sR$, and the slopes of the
+superposed waves on the left side add up to $s-sR$.
+On the right, the slope depends on the amplitude, $T$, but
+is also changed by the stretching or compression of the wave
+due to the change in speed. If, for example, the wave speed
+is twice as great on the right side, then the slope is cut
+in half by this effect. The slope on the right is therefore
+$s(v_1/v_2)T$, where $v_1$ is the velocity in the original
+medium and $v_2$ the velocity in the new medium. Equality of
+slopes gives $s-sR=s(v_1/v_2)T$, or
+\begin{equation*}
+  1-R = \frac{v_1}{v_2}T \qquad .
+\end{equation*}
+Solving the two equations for the unknowns $R$ and $T$ gives
+\begin{equation*}
+  R=\frac{v_2-v_1}{v_2+v_1} \quad \text{and} \quad T=\frac{2v_2}{v_2+v_1} \qquad .
+\end{equation*}
+The first equation shows that there is no reflection unless
+the two wave speeds are different, and that the reflection
+is inverted in reflection back into a fast medium.
+
+The energies of the transmitted and reflected wavers always
+add up to the same as the energy of the original wave. There
+is never any abrupt loss (or gain) in energy when a wave
+crosses a boundary. (Conversion of wave energy to heat
+occurs for many types of waves, but it occurs throughout the
+medium.) The equation for $T$, surprisingly, allows the
+amplitude of the transmitted wave to be greater than 1, i.e.,
+greater than that of the incident wave. This does not
+violate conservation of energy, because this occurs when the
+second string is less massive, reducing its kinetic energy,
+and the transmitted pulse is broader and less strongly
+curved, which lessens its potential energy.
+
+\mysubsection[0]{Inverted and uninverted reflections in general}
+
+For waves on a string, reflections back into a faster medium
+are inverted, while those back into a slower medium are
+uninverted. Is this true for all types of waves? The rather
+subtle answer is that it depends on what property of the
+wave you are discussing.
+
+<% marg(0) %>
+<%
+  fig(
+    'freeway-graphs-SHARED',
+    %q{A disturbance in freeway traffic.}
+  )
+%>
+<% end_marg %>
+Let's start by considering wave disturbances of freeway
+traffic. Anyone who has driven frequently on crowded
+freeways has observed the phenomenon in which one driver
+taps the brakes, starting a chain reaction that travels
+backward down the freeway as each person in turn exercises
+caution in order to avoid rear-ending anyone. The reason why
+this type of wave is relevant is that it gives a simple,
+easily visualized example of our description of a wave
+depends on which aspect of the wave we have in mind. In
+steadily flowing freeway traffic, both the density of cars
+and their velocity are constant all along the road. Since
+there is no disturbance in this pattern of constant velocity
+and density, we say that there is no wave. Now if a wave is
+touched off by a person tapping the brakes, we can either
+describe it as a region of high density or as a region of
+decreasing velocity.
+
+The freeway traffic wave is in fact a good model of a sound
+wave, and a sound wave can likewise be described either by
+the density (or pressure) of the air or by its speed.
+Likewise many other types of waves can be described by
+either of two functions, one of which is often the
+derivative of the other with respect to position.
+
+Now let's consider reflections. If we observe the freeway
+wave in a mirror, the high-density area will still appear
+high in density, but velocity in the opposite direction will
+now be described by a negative number. A person observing
+the mirror image will draw the same density graph, but the
+velocity graph will be flipped across the $x$ axis, and its
+original region of negative slope will now have positive
+slope. Although I don't know any physical situation that
+would correspond to the reflection of a traffic wave, we can
+immediately apply the same reasoning to sound waves, which
+often do get reflected, and determine that a reflection can
+either be density-inverting and velocity-noninverting or
+density-noninverting and velocity-inverting.
+
+This same type of situation will occur over and over as one
+encounters new types of waves, and to apply the analogy we
+need only determine which quantities, like velocity, become
+negated in a mirror image and which, like density, stay the same.
+
+A light wave, for instance consists of a traveling pattern
+of electric and magnetic fields. All you need to know in
+order to analyze the reflection of light waves is how
+electric and magnetic fields behave under reflection; you
+don't need to know any of the detailed physics of electricity
+and magnetism. An electric field can be detected, for
+example, by the way one's hair stands on end. The direction
+of the hair indicates the direction of the electric field.
+In a mirror image, the hair points the other way, so the
+electric field is apparently reversed in a mirror image. The
+behavior of magnetic fields, however, is a little tricky.
+The magnetic properties of a bar magnet, for instance, are
+caused by the aligned rotation of the outermost orbiting
+electrons of the atoms. In a mirror image, the direction of
+rotation is reversed, say from clockwise to counterclockwise,
+and so the magnetic field is reversed twice: once simply
+because the whole picture is flipped and once because of the
+reversed rotation of the electrons. In other words, magnetic
+fields do not reverse themselves in a mirror image. We can
+thus predict that there will be two possible types of
+reflection of light waves. In one, the electric field is
+inverted and the magnetic field uninverted. In the other,
+the electric field is uninverted and the magnetic field inverted.
+
+\mysection{Interference Effects}\label{sec:interference-effects}\index{interference effects}
+
+<% marg(0) %>
+<%
+  fig(
+    'binoculars',
+    %q{%
+      Seen from this angle, the optical coating on the lenses
+      of these binoculars appears purple and green. (The color varies depending on the angle
+      from which the coating is viewed, and the angle varies across the faces of the lenses
+      because of their curvature.)
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'rope-with-three-parts-SHARED',
+    %q{%
+      A rope consisting of three sections,
+      the middle one being lighter.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'inverted-sine-wave-trailing-SHARED',
+    %q{Two reflections, are superimposed. One reflection is inverted.}
+  )
+%>
+<% end_marg %>
+
+If you look at the front of a pair of high-quality
+binoculars, you will notice a greenish-blue coating on the
+lenses. This is advertised as a coating to prevent
+reflection. Now reflection is clearly undesirable --- we
+want the light to go \emph{in} the binoculars --- but so far
+I've described reflection as an unalterable fact of nature,
+depending only on the properties of the two wave media. The
+coating can't change the speed of light in air or in glass,
+so how can it work? The key is that the coating itself is a
+wave medium. In other words, we have a three-layer sandwich
+of materials: air, coating, and glass. We will analyze the
+way the coating works, not because optical coatings are an
+important part of your education but because it provides a
+good example of the general phenomenon of wave interference effects.
+
+There are two different interfaces between media: an
+air-coating boundary and a coating-glass boundary. Partial
+reflection and partial transmission will occur at each
+boundary. For ease of visualization let's start by
+considering an equivalent system consisting of three
+dissimilar pieces of string tied together, and a wave
+pattern consisting initially of a single pulse. Figure \figref{rope-with-three-parts}/1
+shows the incident pulse moving through the heavy rope, in
+which its velocity is low. When it encounters the lighter-weight
+rope in the middle, a faster medium, it is partially
+reflected and partially transmitted. (The transmitted pulse
+is bigger, but nevertheless has only part of the original
+energy.) The pulse transmitted by the first interface is
+then partially reflected and partially transmitted by the
+second boundary, 3. In figure 4, two pulses are on the
+way back out to the left, and a single pulse is heading off
+to the right. (There is still a weak pulse caught between
+the two boundaries, and this will rattle back and forth,
+rapidly getting too weak to detect as it leaks energy to the
+outside with each partial reflection.)
+
+Note how, of the two reflected pulses in 4, one is
+inverted and one uninverted. One underwent reflection at
+the first boundary (a reflection back into a slower medium
+is uninverted), but the other was reflected at the second
+boundary (reflection back into a faster medium is inverted).
+
+Now let's imagine what would have happened if the incoming
+wave pattern had been a long sinusoidal wave train instead
+of a single pulse. The first two waves to reemerge on the
+left could be in phase, \figref{inverted-sine-wave-trailing}/1, or out of phase, 2, or
+anywhere in between. The amount of lag between them depends
+entirely on the width of the middle segment of string. If we
+choose the width of the middle string segment correctly,
+then we can arrange for destructive interference to occur,
+2, with cancellation resulting in a very weak reflected wave.
+
+This whole analysis applies directly to our original case of
+optical coatings. Visible light from most sources does
+consist of a stream of short sinusoidal wave-trains such as
+the ones drawn above. The only real difference between the
+waves-on-a-rope example and the case of an optical coating
+is that the first and third media are air and glass, in
+which light does not have the same speed. However, the
+general result is the same as long as the air and the glass
+have light-wave speeds that either both greater than the
+coating's or both less than the coating's.
+
+The business of optical coatings turns out to be a very
+arcane one, with a plethora of trade secrets and ``black
+magic'' techniques handed down from master to apprentice.
+Nevertheless, the ideas you have learned about waves in
+general are sufficient to allow you to come to some definite
+conclusions without any further technical knowledge. The
+self-check and discussion questions will direct you along
+these lines of thought.
+
+<% marg(0) %>
+<%
+  fig(
+    'bubble',
+    %q{A soap bubble displays interference effects.}
+  )
+%>
+<% end_marg %>
+The example of an optical coating was typical of a wide
+variety of wave interference effects. With a little
+guidance, you are now ready to figure out for yourself other
+examples such as the rainbow pattern made by a compact disc,
+a layer of oil on a puddle, or a soap bubble.
+
+\begin{selfcheck}{film}
+1. Color corresponds to wavelength of light waves. Is it
+possible to choose a thickness for an optical coating that
+will produce destructive interference for all colors of light?
+
+2. How can you explain the rainbow colors on the soap bubble in figure \figref{bubble}?
+\end{selfcheck}
+
+\startdqs
+
+\begin{dq}
+Is it possible to get \emph{complete} destructive
+interference in an optical coating, at least for light of
+one specific wavelength?
+\end{dq}
+
+\begin{dq}
+Sunlight consists of sinusoidal wave-trains containing on
+the order of a hundred cycles back-to-back, for a length of
+something like a tenth of a millimeter. What happens if you
+try to make an optical coating thicker than this?
+\end{dq}
+
+\begin{dq}
+Suppose you take two microscope slides and lay one on top
+of the other so that one of its edges is resting on the
+corresponding edge of the bottom one. If you insert a sliver
+of paper or a hair at the opposite end, a wedge-shaped layer
+of air will exist in the middle, with a thickness that
+changes gradually from one end to the other. What would you
+expect to see if the slides were illuminated from above by
+light of a single color? How would this change if you
+gradually lifted the lower edge of the top slide until the
+two slides were finally parallel?
+\end{dq}
+
+\begin{dq}
+An observation like the one described in the previous
+discussion question was used by Newton as evidence
+\emph{against} the wave theory of light! If Newton didn't
+know about inverting and noninverting reflections, what
+would have seemed inexplicable to him about the region where
+the air layer had zero or nearly zero thickness?
+\end{dq}
+
+\mysection{Waves Bounded on Both Sides}
+
+In the examples discussed in section \ref{sec:interference-effects}, it was theoretically
+true that a pulse would be trapped permanently in the middle
+medium, but that pulse was not central to our discussion,
+and in any case it was weakening severely with each partial
+reflection. Now consider a guitar string. At its ends it is
+tied to the body of the instrument itself, and since the
+body is very massive, the behavior of the waves when they
+reach the end of the string can be understood in the same
+way as if the actual guitar string was attached on the ends
+to strings that were extremely massive. Reflections are most
+intense when the two media are very dissimilar. Because the
+wave speed in the body is so radically different from the
+speed in the string, we should expect nearly 100\% reflection.
+
+<% marg(50) %>
+<%
+  fig(
+    'guitar-and-model-SHARED',
+    %q{%
+      We model a guitar string attached to the guitar's body at both
+      ends as a light-weight string attached to extremely heavy strings at its ends.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'period-of-pulse-on-guitar-SHARED',
+    %q{The motion of a pulse on the string.}
+  )
+%>
+
+<% end_marg %>
+Although this may seem like a rather bizarre physical model
+of the actual guitar string, it already tells us something
+interesting about the behavior of a guitar that we would not
+otherwise have understood. The body, far from being a
+passive frame for attaching the strings to, is actually the
+exit path for the wave energy in the strings. With every
+reflection, the wave pattern on the string loses a tiny
+fraction of its energy, which is then conducted through the
+body and out into the air. (The string has too little
+cross-section to make sound waves efficiently by itself.) By
+changing the properties of the body, moreover, we should
+expect to have an effect on the manner in which sound
+escapes from the instrument. This is clearly demonstrated by
+the electric guitar, which has an extremely massive, solid
+wooden body. Here the dissimilarity between the two wave
+media is even more pronounced, with the result that wave
+energy leaks out of the string even more slowly. This is why
+an electric guitar with no electric pickup can hardly be
+heard at all, and it is also the reason why notes on an
+electric guitar can be sustained for longer than notes
+on an acoustic guitar.
+
+If we initially create a disturbance on a guitar string, how
+will the reflections behave? In reality, the finger or pick
+will give the string a triangular shape before letting it
+go, and we may think of this triangular shape as a very
+broad ``dent'' in the string which will spread out in both
+directions. For simplicity, however, let's just imagine a
+wave pattern that initially consists of a single, narrow
+pulse traveling up the neck, \figref{period-of-pulse-on-guitar}/1. After reflection from the
+top end, it is inverted, 3. Now something interesting
+happens: figure 5 is identical to figure 1. After two
+reflections, the pulse has been inverted twice and has
+changed direction twice. It is now back where it started.
+The motion is periodic. This is why a guitar produces sounds
+that have a definite sensation of pitch.
+
+\begin{selfcheck}{guitar-period}
+Notice that from \figref{period-of-pulse-on-guitar}/1 to \figref{period-of-pulse-on-guitar}/5, the pulse has passed by every
+point on the string exactly twice. This means that the total
+distance it has traveled equals $2L$, where $L$ is the
+length of the string. Given this fact, what are the period
+and frequency of the sound it produces, expressed in terms
+of $L$ and $v$, the velocity of the wave?
+\end{selfcheck}
+
+Note that if the waves on the string obey the principle of
+superposition, then the velocity must be independent of
+amplitude, and the guitar will produce the same pitch
+regardless of whether it is played loudly or softly. In
+reality, waves on a string obey the principle of superposition
+approximately, but not exactly. The guitar, like just about
+any acoustic instrument, is a little out of tune when played
+loudly. (The effect is more pronounced for wind instruments
+than for strings, but wind players are able to compensate for it.)
+
+<% marg(40) %>
+<%
+  fig(
+    'guitar-harmonic-SHARED',
+    %q{A tricky way to double the frequency.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'fourier',
+    %q{%
+      Using the sum of four sine waves to approximate the triangular initial shape
+      of a plucked guitar string.
+    }
+  )
+%>
+<% end_marg %>
+Now there is only one hole in our reasoning. Suppose we
+somehow arrange to have an initial setup consisting of two
+identical pulses heading toward each other, as in figure
+\figref{guitar-harmonic}. They will pass through each other, undergo a single
+inverting reflection, and come back to a configuration in
+which their positions have been exactly interchanged. This
+means that the period of vibration is half as long. The
+frequency is twice as high.
+
+This might seem like a purely academic possibility, since
+nobody actually plays the guitar with two picks at once! But
+in fact it is an example of a very general fact about waves
+that are bounded on both sides. \index{Fourier's theorem}A
+mathematical theorem called Fourier's theorem states that
+any wave can be created by superposing sine waves. Figure
+\figref{fourier} shows how even by using only four sine
+waves with appropriately chosen amplitudes, we can arrive at
+a sum which is a decent approximation to the realistic
+triangular shape of a guitar string being plucked. The
+one-hump wave, in which half a wavelength fits on the
+string, will behave like the single pulse we originally
+discussed. We call its frequency $f_o$. The two-hump wave,
+with one whole wavelength, is very much like the two-pulse
+example. For the reasons discussed above, its frequency is
+$2f_o$. Similarly, the three-hump and four-hump waves have
+frequencies of $3f_o$ and $4f_o$.
+
+Theoretically we would need to add together infinitely many
+such wave patterns to describe the initial triangular shape
+of the string exactly, although the amplitudes required for
+the very high frequency parts would be very small, and an
+excellent approximation could be achieved with as few as ten waves.
+
+We thus arrive at the following very general conclusion.
+Whenever a wave pattern exists in a medium bounded on both
+sides by media in which the wave speed is very different,
+the motion can be broken down into the motion of a
+(theoretically infinite) series of sine waves, with
+frequencies $f_\zu{o}$, $2f_\zu{o}$, $3f_\zu{o}$, ... Except for some
+technical details, to be discussed below, this analysis
+applies to a vast range of sound-producing systems,
+including the air column within the human vocal tract.
+Because sounds composed of this kind of pattern of
+frequencies are so common, our ear-brain system has evolved
+so as to perceive them as a single, fused sensation of tone.
+
+\mysubsection[0]{Musical applications}
+
+Many musicians claim to be able to pick out by ear
+several of the frequencies $2f_\zu{o}$, $3f_\zu{o}$, ..., called
+\index{overtones}overtones or \index{harmonics}\emph{harmonics} of the fundamental $f_\zu{o}$,\index{fundamental}
+but they are kidding themselves. In reality, the overtone
+series has two important roles in music, neither of which
+depends on this fictitious ability to ``hear out'' the
+individual overtones.
+
+<% marg(40) %>
+<%
+  fig(
+    'fourier-spectra-SHARED',
+    %q{%
+      Graphs of loudness versus frequency
+      for the vowel ``ah,'' sung as three different musical notes. G is consonant
+      with D, since every overtone of G that is close to an overtone of D (*) is
+      at exactly the same frequency. G and C\# are dissonant together, since some
+      of the overtones of G (x) are close to, but not right on top of, those of C\#.
+    }
+  )
+%>
+<% end_marg %>
+First, the relative strengths of the overtones is an
+important part of the personality of a sound, called its
+\index{timbre}timbre (rhymes with ``amber''). The
+characteristic tone of the brass instruments, for example,
+is a sound that starts out with a very strong harmonic
+series extending up to very high frequencies, but whose
+higher harmonics die down drastically as the attack changes
+to the sustained portion of the note.
+
+Second, although the ear cannot separate the individual
+harmonics of a single musical tone, it is very sensitive to
+clashes between the overtones of notes played simultaneously,
+i.e., in harmony. We tend to perceive a combination of notes
+as being dissonant if they have overtones that are close but
+not the same. Roughly speaking, strong overtones whose
+frequencies differ by more than 1\% and less than 10\% cause
+the notes to sound dissonant. It is important to realize
+that the term ``dissonance'' is not a negative one in music.
+No matter how long you search the radio dial, you will never
+hear more than three seconds of music without at least one
+dissonant combination of notes. Dissonance is a necessary
+ingredient in the creation of a musical cycle of tension and
+release. Musically knowledgeable people don't use
+the word ``dissonant'' as a criticism of music, although
+dissonance can be used in a clumsy way, or without providing any contrast
+between dissonance and consonance.
+
+\pagebreak[4]
+
+<%
+  fig(
+    'standing-waves-on-floor-SHARED',
+    %q{Standing waves on a spring.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\mysubsection[0]{Standing waves}
+
+Figure \figref{standing-waves-on-floor} shows sinusoidal wave patterns made by
+shaking a rope. I used to enjoy doing this at the bank with
+the pens on chains, back in the days when people actually
+went to the bank. You might think that I and the person in
+the photos had to practice for a long time in order to get
+such nice sine waves. In fact, a sine wave is the only shape
+that can create this kind of wave pattern, called a
+\index{standing wave}standing wave, which simply vibrates
+back and forth in one place without moving. The sine wave
+just creates itself automatically when you find the right
+frequency, because no other shape is possible.
+
+<% marg(54) %>
+<%
+  fig(
+    'viola-harmonic',
+    %q{Example \ref{eg:viola-harmonic}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Harmonics on string instruments}\label{eg:viola-harmonic}
+Figure \figref{viola-harmonic} shows a violist playing what string players
+refer to as a natural harmonic. The term ``harmonic'' is used here in a
+somewhat different sense than in physics. The musician's pinkie
+is pressing very lightly against the string --- not hard enough to
+make it touch the fingerboard --- at a point precisely at the center
+of the string's length. As shown in the diagram, this allows the string
+to vibrate at frequencies $2f_\zu{o}, 4f_\zu{o}, 6f_\zu{o}, \ldots$, which have
+stationary points at the center of the string, but not at
+the odd multiples $f_\zu{o}, 3f_\zu{o}, \ldots$. Since all the
+overtones are multiples of $2f_\zu{o}$, the ear perceives $2f_\zu{o}$ as
+the basic frequency of the note. In musical terms, doubling the frequency
+corresponds to raising the pitch by an octave. The technique can be used
+in order to make it easier to play high notes in rapid passages, or for
+its own sake, because of the change in timbre.
+\end{eg}
+
+If you think about it, it's not even obvious that sine waves
+should be able to do this trick. After all, waves are
+supposed to travel at a set speed, aren't they? The speed
+isn't supposed to be zero! Well, we can actually think of a
+standing wave as a superposition of a moving sine wave with
+its own reflection, which is moving the opposite way. Sine
+waves have the unique mathematical property that the sum of
+sine waves of equal wavelength is simply a new sine wave
+with the same wavelength. As the two sine waves go back and
+forth, they always cancel perfectly at the ends, and their
+sum appears to stand still.
+
+<% marg(34) %>
+<%
+  fig(
+    'add-sine-and-square-SHARED',
+    %q{%
+      Sine waves add to make
+      sine waves. Other functions don't have this property.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'beer-bottle-SHARED',
+    %q{%
+      Surprisingly, sound waves undergo partial reflection at the open ends
+      of tubes as well as closed ones.
+    }
+  )
+%>
+<% end_marg %>
+Standing wave patterns are rather important, since atoms are
+really standing-wave patterns of electron waves. You
+are a standing wave!
+
+\mysubsection[0]{Standing-wave patterns of air columns}
+
+The air column inside a wind instrument or the human vocal
+tract behaves very much like the wave-on-a-string example
+we've been concentrating on so far, the main difference
+being that we may have either inverting or noninverting
+reflections at the ends.
+
+\subsubsection{Inverting reflection at one end and noninverting at the other}
+
+
+If you blow over the mouth of a beer bottle to produce a
+tone, the bottle outlines an air column that is closed at
+the bottom and open at the top. Sound waves will be
+reflected at the bottom because of the difference in the
+speed of sound in air and glass. The speed of sound is
+greater in glass (because its stiffness more than compensates
+for its higher density compared to air). Using the type of
+reasoning outlined in optional section \ref{sec:quantitative-reflection}, we find that
+this reflection will be density-noninverting: a compression
+comes back as a compression, and a rarefaction as a
+rarefaction. There will be strong reflection and very weak
+transmission, since the difference in speeds is so great.
+But why do we get a reflection at the \emph{mouth} of the
+bottle? There is no change in medium there, and the air
+inside the bottle is connected to the air in the room. This
+is a type of reflection that has to do with the three-dimensional
+shape of the sound waves, and cannot be treated the same way
+as the other types of reflection we have encountered. Since
+this chapter is supposed to be confined mainly to wave
+motion in one dimension, and it would take us too far afield
+here to explain it in detail, but the reason has to do with
+readjustment of the wave pattern from a plane wave to a spherical
+wave. If the readjustment was as sudden as that shown in the figure,
+then there would be kinks in the wave. Waves don't like to develop
+kinks. In section \ref{sec:quantitative-reflection} we deduced the strength of the reflected wave
+at a change in medium from the requirement that the wave would not
+have discontinuities or kinks. Here there is no change in medium, but
+a reflected wave is still required in order to avoid kinks.
+
+The important point is that whereas the reflection at the
+bottom was density-noninverting, the one at the top is
+density-inverting. This means that at the top of the bottle,
+a compression superimposes with its own reflection, which is
+a rarefaction. The two nearly cancel, and so the wave has
+almost zero amplitude at the mouth of the bottle. The
+opposite is true at the bottom --- here we have a peak in
+the standing-wave pattern, not a stationary point. The
+standing wave with the lowest frequency, i.e., the longest
+wave length, is therefore one in which 1/4 of a wavelength
+fits along the length of the tube, as shown in figure \figref{lowest-modes-of-air-column}/1.
+
+\subsubsection{Both ends the same}
+
+<% marg(38) %>
+<%
+  fig(
+    'lowest-modes-of-air-column-SHARED',
+    %q{%
+      Graphs of excess density versus position for the lowest-frequency
+      standing waves of three types of air columns. Points on the axis have
+      normal air density.
+    }
+  )
+%>
+<% end_marg %>
+If both ends are open (as in the flute) or both ends closed
+(as in some organ pipes), then the standing wave pattern
+must be symmetric. The lowest-frequency wave fits half a
+wavelength in the tube, \figref{lowest-modes-of-air-column}/2-3.
+
+\begin{selfcheck}{fish-pattern}
+Draw a graph of pressure versus position for the first
+overtone of the air column in a tube open at one end and
+closed at the other. This will be the next-to-longest
+possible wavelength that allows for a point of maximum
+vibration at one end and a point of no vibration at the
+other. How many times shorter will its wavelength be
+compared to the frequency of the lowest-frequency standing
+wave, shown in the figure? Based on this, how many times
+greater will its frequency be?
+\end{selfcheck}
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{reflection}{the bouncing back of part of a wave from a boundary}
+
+\vocabitem{transmission}{the continuation of part of a wave through a boundary}
+
+\vocabitem{absorption}{the gradual conversion of wave energy into
+heating of the medium}
+
+\vocabitem{standing wave}{a wave pattern that stays in one place}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$\lambda$}{wavelength (Greek letter lambda)}
+
+\end{notation}
+
+\begin{summarytext}
+
+Whenever a wave encounters the boundary between two media in
+which its speeds are different, part of the wave is
+reflected and part is transmitted. The reflection is always
+reversed front-to-back, but may also be inverted in
+amplitude. Whether the reflection is inverted depends on how
+the wave speeds in the two media compare, e.g., a wave on a
+string is uninverted when it is reflected back into a
+segment of string where its speed is lower. The greater the
+difference in wave speed between the two media, the greater
+the fraction of the wave energy that is reflected.
+Surprisingly, a wave in a dense material like wood will be
+strongly reflected back into the wood at a wood-air boundary.
+
+A one-dimensional wave confined by highly reflective
+boundaries on two sides will display motion which is
+periodic. For example, if both reflections are inverting,
+the wave will have a period equal to twice the time required
+to traverse the region, or to that time divided by an
+integer. An important special case is a sinusoidal wave; in
+this case, the wave forms a stationary pattern composed of a
+superposition of sine waves moving in opposite direction.
+
+\end{summarytext}
+
+\end{summary}
+
+\begin{hwsection}
+
+\begin{hw}{mirage}
+Light travels faster in warmer air. Use this fact to
+explain the formation of a mirage appearing like the shiny
+surface of a pool of water when there is a layer of
+hot air above a road. (For simplicity, pretend that there
+is actually a sharp boundary between the hot layer and the
+cooler layer above it.)
+\end{hw}
+
+\begin{hw}{airwaterrefl}
+(a) Using the equations from optional section \ref{sec:quantitative-reflection},
+compute the amplitude of light that is reflected back into
+air at an air-water interface, relative to the amplitude of
+the incident wave. The speeds of light in air and water are
+$3.0\times10^8$ and $2.2\times10^8$ m/s, respectively.
+
+(b) Find the energy of the reflected wave as a fraction of \answercheck
+the incident energy. [Hint: The answers to the two
+parts are not the same.]
+\end{hw}
+
+\begin{hw}{clarinet}
+A B-flat clarinet (the most common kind) produces its
+lowest note, at about 230 Hz, when half of a wavelength fits
+inside its tube. Compute the length of the clarinet.
+[Check: The actual length of a clarinet is about 67 cm from
+the tip of the mouthpiece to the end of the bell. Because
+the behavior of the clarinet and its coupling to air outside
+it is a little more complex than that of a simple tube
+enclosing a cylindrical air column, your answer will be
+close to this value, but not exactly equal to it.]
+\end{hw}
+
+\begin{hw}{freaknotes}
+(a) A good tenor saxophone player can play all of the
+following notes without changing her fingering, simply by
+altering the tightness of her lips: E$\flat$ (150 Hz), E$\flat$ (300
+Hz), B$\flat$ (450 Hz), and E$\flat$ (600 Hz). How is this possible?
+(b) Some saxophone players are known for their ability to
+use this technique to play ``freak notes,'' i.e., notes above
+the normal range of the instrument. Why isn't it possible
+to play notes below the normal range using this technique?
+\end{hw}
+
+<% marg(0) %>
+<% fig(
+  'musical-scale-table',
+  %q{Problem \ref{hw:dissonance}.},
+  {'text'=>
+    %q{
+      \begin{tabular}{ll}
+      C & 261.6 Hz \\\\
+      D & 293.7 \\\\
+      E & 329.6 \\\\
+      F & 349.2 \\\\
+      G & 392.0 \\\\
+      A & 440.0 \\\\
+      B$\flat$ & 466.2
+      \end{tabular}
+    }
+  })
+%>
+<% end_marg %>
+
+\begin{hw}{dissonance}
+The table gives the frequencies of the notes that make up
+the key of F major, starting from middle C and going up
+through all seven notes. (a) Calculate the first five or six
+harmonics of C and G, and determine whether these two
+notes will be consonant or dissonant. (b) Do the same for
+C and B$\flat$. [Hint: Remember that harmonics that differ
+by about 1-10\% cause dissonance.]
+\end{hw}
+
+\begin{hw}{warmup}
+Brass and wind instruments go up in pitch as the musician
+warms up. Suppose a particular trumpet's frequency goes up
+by 1.2\%. Let's consider possible physical reasons for the
+change in pitch. (a) Solids generally expand with increasing
+temperature, because the stronger random motion of the atoms
+tends to bump them apart. Brass expands by $1.88\times10^{-5}$
+ per degree C. Would this tend to raise the pitch, or
+lower it? Estimate the size of the effect in comparison with
+the observed change in frequency. (b) The speed of sound in
+a gas is proportional to the square root of the absolute
+temperature, where zero absolute temperature is -273 degrees
+C. As in part a, analyze the size and direction of the
+effect. (c) Determine the change in temperature, in units
+of degrees C, that would account for the observed effect.
+\end{hw}
+
+\begin{hw}{exhale}
+Your exhaled breath contains about 4.5\% carbon dioxide,
+and is therefore more dense than fresh air by about 2.3\%.
+By analogy with the treatment of waves on a string in
+section \ref{sec:waves-on-a-string}, we expect that the speed of sound will be
+inversely proportional to the square root of the density of
+the gas. Calculate the effect on the frequency produced
+by a wind instrument.
+\end{hw}
+
+\end{hwsection}
+
+

@@ -1,0 +1,145 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '13',
+    %q{Work: The Transfer of Mechanical Energy},
+    'ch:work',
+    '',
+    {'opener'=>'tractor'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/clc)
+__incl(text/work_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('stoppingdistances') %>__incl(hw/stoppingdistances)<% end_hw() %>
+
+<% begin_hw('posnegwork') %>__incl(hw/posnegwork)<% end_hw() %>
+<% marg(20) %>
+<%
+  fig(
+    'hw-posnegwork-bull',
+    %q{%
+      A bull paws the ground, as in problem \ref{hw:posnegwork}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('heliumescape') %>__incl(hw/heliumescape)<% end_hw() %>
+
+<% begin_hw('bubba') %>__incl(hw/bubba)<% end_hw() %>
+
+\enlargethispage{-\baselineskip}
+
+<% begin_hw('ant') %>__incl(hw/ant)<% end_hw() %>
+
+<% begin_hw('') %>
+[Problem 6 has been deleted.]
+<% end_hw() %>
+
+<% begin_hw('anchor') %>__incl(hw/anchor)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-horsepower',
+    %q{%
+      Problem \ref{hw:horsepower}: A cylinder from the 1965
+      Rambler's engine. The piston is shown
+      in its pushed out position. The two
+      bulges at the top are for the valves that
+      let fresh air-gas mixture in.
+      Based on a figure from Motor Service's
+      Automotive Encyclopedia, Toboldt and
+      Purvis.
+    }
+  )
+%>
+<% end_marg %>
+
+\enlargethispage{-\baselineskip}
+
+<% begin_hw('horsepower') %>__incl(hw/horsepower)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('magnetpe',nil,{'calc'=>true}) %>__incl(hw/magnetpe)<% end_hw() %>
+
+<% begin_hw('keconstantaccel',nil,{'calc'=>true}) %>__incl(hw/keconstantaccel)<% end_hw() %>
+
+<% begin_hw('space-probe',2,{'calc'=>true}) %>__incl(hw/space-probe)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('railgun-friction',nil,{'calc'=>true}) %>__incl(hw/railgun-friction)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('comet-and-binary-star') %>__incl(hw/comet-and-binary-star)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('crosswind',nil,{'calc'=>true}) %>__incl(hw/crosswind)<% end_hw() %>
+
+<% begin_hw('yukawa',nil,{'calc'=>true}) %>__incl(hw/yukawa)<% end_hw() %>
+
+<% begin_hw('dot-product-invariant') %>__incl(hw/dot-product-invariant)<% end_hw() %>
+
+<% begin_hw('dot-product-by-components') %>__incl(hw/dot-product-by-components)<% end_hw() %>
+
+<% begin_hw('is-work-conserved') %>__incl(hw/is-work-conserved)<% end_hw() %>
+
+<% begin_hw('workreverseaxis') %>__incl(hw/workreverseaxis)<% end_hw() %>
+
+<% begin_hw('microwaveice') %>__incl(hw/microwaveice)<% end_hw() %>
+
+<% begin_hw('escape-velocity',{'calc'=>true}) %>__incl(hw/escape-velocity)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-contracting-muscle',
+    %q{%
+      Problem \ref{hw:contracting-muscle}.
+    }
+  )
+%>
+<% end_marg %>
+<% begin_hw('contracting-muscle') %>__incl(hw/contracting-muscle)<% end_hw() %>
+
+<% begin_hw('maserati') %>__incl(hw/maserati)<% end_hw() %>
+<% marg(0) %>
+<%
+  fig(
+    'hw-compound-bow',
+    %q{%
+      Problem \ref{hw:compound-bow}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('compound-bow') %>__incl(hw/compound-bow)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('sliding-oscillator') %>__incl(hw/sliding-oscillator)<% end_hw() %>
+
+<% begin_hw('haul-bag') %>__incl(hw/haul-bag)<% end_hw() %>
+
+<% begin_hw('triple-speed-of-soccer-ball-work',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/triple-speed-of-soccer-ball-work)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% if false then figure_in_toc("tractor") end %>
+<% end_chapter() %>

@@ -1,0 +1,3069 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '02',
+    %q{Conservation of Energy},
+    'ch:2',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+\epigraphlong{Do you pronounce it Joule's to rhyme with schools,\\
+Joule's to rhyme with Bowls,\\
+or Joule's to rhyme with Scowls?\\
+Whatever you call it, by Joule's,\\
+or Joule's,\\
+or Joule's, it's good!}{Advertising slogan of the Joule brewery. The name,
+and the corresponding unit of energy, are now usually pronounced so as
+to rhyme with ``school.''}
+
+<% begin_sec("Energy",0,'energy') %>
+\index{energy}
+
+<% begin_sec("The energy concept") %>
+
+You'd probably like to be able to drive your car and light your apartment
+without having to pay money for gas and electricity, and if you do a little
+websurfing, you can easily find people who say they have the solution to
+your problem. This kind of scam has been around for centuries. It used to be
+known as a perpetual motion machine,\index{perpetual motion machine}
+but nowadays the con artists' preferred phrase is
+``free energy.''\footnote{An entertaining account of this form of quackery
+is given in \textbf{Voodoo Science: The Road from Foolishness to Fraud}, Robert Park,
+Oxford University Press, 2000. Until reading this book, I hadn't realized
+the degree to which pseudoscience had penetrated otherwise respectable
+scientific organizations like NASA.} A typical ``free-energy'' machine
+\index{energy!``free''} would
+be a sealed box that heats your house without needing to be plugged into a
+wall socket or a gas pipe. Heat comes out, but nothing goes in, and this
+can go on indefinitely. But an interesting thing happens if you try to check
+on the advertised performance of the machine. Typically, you'll find out that
+either the device is still in development, or it's back-ordered because
+so many people have already taken advantage of this Fantastic Opportunity!
+In a few cases, the magic box exists, but the inventor
+is only willing to demonstrate very small levels of heat output for short
+periods of time, in which case there's probably a tiny hearing-aid battery hidden in 
+there somewhere, or some other trick.
+
+<% marg(155) %>
+<%
+  fig(
+    'joule',
+    %q{%
+      James Joule, 1818-1889. The son of a wealthy brewer,
+              Joule was tutored as a young man by the famous scientist John Dalton.
+              Fascinated by electricity, he and his
+              brother experimented by giving electric shocks to each other and to the
+              family's servants. Joule ran the brewery as an adult, and science was merely a
+              serious hobby. His work on energy can be traced to his attempt to build
+              an electric motor that would replace steam engines. His ideas
+              were not accepted at first, partly because they contradicted the widespread
+              belief that heat was a fluid, and partly because they depended on extremely
+              precise measurements, which had not previously been common in
+              physics.
+    }
+  )
+%>
+<% end_marg %>
+\index{Joule, James}%
+        Since nobody has ever succeeded in building
+        a device that creates
+        heat out of nothing, we might also wonder whether any
+        device exists that can do the opposite, turning heat into nothing. You might think
+        that a refrigerator was such a device, but actually your refrigerator doesn't
+        destroy the heat in the food. What it really does is to extract some of the heat
+        and bring it out into the room. That's why it has big radiator coils on
+        the back, which get hot when it's in operation.\index{heat}\index{energy!heat}
+
+<% marg(15) %>
+<%
+  fig(
+    'irface',
+    %q{%
+      Heat energy can be converted to light energy.
+              Very hot objects glow visibly, and even objects that
+              aren't so hot give off infrared light, a color of light that lies beyond the red end of
+              the visible rainbow. This photo was made with a special camera that records infrared
+              light. The man's warm skin emits quite a bit of infrared light energy, while his
+              hair, at a lower temperature, emits less.
+    }
+  )
+%>
+<% end_marg %>
+
+If it's not possible to destroy or create heat outright, then you might start to
+suspect that heat was a conserved quantity. This would be a successful rule
+for explaining certain processes, such as the transfer of heat between a cold
+Martini and a room-temperature olive: if the olive loses a little heat, then
+the drink must gain the same amount. It would fail in general, however.
+\index{energy!light}
+Sunlight can heat your skin, for example, and a hot lightbulb filament can
+cool off by emitting light. Based on these observations, we could revise our
+proposed conservation law, and say that there is something called heatpluslight,
+which is conserved. Even this, however, needs to be generalized in order to
+explain why you can get a painful burn playing baseball when you slide into
+a base. Now we could call it heatpluslightplusmotion. The word is getting pretty
+long, and we haven't even finished the list.
+
+Rather than making the word longer and longer, physicists have 
+hijacked the word ``energy'' from ordinary usage, and give it a new, specific
+technical meaning. 
+Just as the Parisian platinum-iridium kilogram defines a
+specific unit of mass, we need to pick something that defines a definite
+unit of energy. The metric unit of energy is the joule (J),\index{joule (unit)}
+and we'll define
+it as the amount of energy required to heat 0.24 grams
+of water from 20 to 21 degrees Celsius.\index{Celsius scale}
+(Don't memorize the numbers.)\footnote{Although
+the definition refers to the Celsius scale of temperature, it's not
+necessary to give an operational definition of the temperature\index{temperature}
+concept
+in general (which turns out to be quite a tricky thing to do completely
+rigorously); we only need to establish two specific temperatures that can
+be reproduced on thermometers that have been calibrated in a standard way.
+Heat and temperature are discussed in more detail in section \ref{atomicphenomenasection},
+and in chapter \ref{ch:thermo}. Conceptually, heat is a measure of energy, whereas
+temperature relates to how concentrated that energy is.}
+\index{heat!compared to temperature}\index{temperature!compared to heat}
+
+\begin{eg}{Temperature of a mixture}
+\egquestion
+If 1.0 kg of water at 20\degcunit{}  is mixed with 4.0 kg of water at 30\degcunit,
+what is the temperature of the mixture?
+
+\eganswer
+Let's assume as an approximation that each degree of temperature change
+corresponds to the same amount of energy. In other words, we assume
+$\Delta E\zu{=} mc\Delta T$, regardless of whether,
+as in the definition of the joule, we have 
+$\Delta T=\zu{21\degcunit{}-20\degcunit{}}$ or, as in the present example, some other
+combination of initial and final temperatures.
+To be consistent with
+the definition of the joule, we must have
+$c=\zu{(1 J)/(0.24 g)/(1\degcunit{})}$
+= 4.2$\times10^3$ $\zu{J/kg}\cdot^{\circ}$$\zu{C}$,
+which is referred to as the
+specific heat\index{specific heat}\index{water!specific heat} of water.
+
+Conservation of energy tells us $\Delta{} E=0$, so
+\begin{equation*}
+         m_1c\Delta{} T_1+ m_2c\Delta{} T_2 = 0
+\end{equation*}
+\noindent{}or
+\begin{align*}
+        \frac{\Delta{} T_1}{\Delta{} T_2} &= -\frac{ m_2}{ m_1} \\
+                & = - 4.0\qquad{}.
+\end{align*}
+\noindent{}If $T_1$ has to change four times as much as $T_2$, and the
+two final temperatures are equal, then the final temperature must be
+28\degcunit{}.
+\end{eg}
+
+Note how only \emph{differences} in temperature and energy appeared in the preceding
+example. In other words, we don't have to make any assumptions about
+whether there is a temperature at which all an object's heat energy is
+removed. Historically, the energy and temperature units were invented before
+it was shown that there is such a temperature,
+called absolute zero\index{absolute zero}\index{temperature!absolute zero}.
+There is a scale of temperature, the Kelvin scale,\index{Kelvin scale} in which
+the unit of temperature is the same as the Celsius degree,
+but the zero point is defined as absolute
+zero. But as long as we only deal with temperature differences, it doesn't matter
+whether we use Kelvin or Celsius. Likewise, as long as we deal with differences
+in heat energy, we don't normally have to worry about the total amount of heat
+energy the object has. In standard physics terminology, ``heat'' is used only
+to refer to differences, while the total amount is called the object's
+``thermal energy.''\index{heat!compared to thermal energy}%
+\index{thermal energy!compared to heat} This distinction is often
+ignored by scientists in casual speech, and in this book I'll usually use ``heat'' for
+either quantity.
+
+We're defining energy by adding up things from a list, which
+we lengthen as needed: heat, light,
+motion, etc. One objection to this approach is aesthetic: physicists tend to regard
+complication as a synonym for ugliness. If we have to keep on adding more
+and more forms of energy to our laundry list, then it's starting to sound
+like energy is distressingly complicated. Luckily it turns out that energy is
+simpler than it seems. Many forms of energy that are apparently unrelated
+turn out to be manifestations of a small number of forms at the atomic level,
+and this is the topic of section \ref{atomicphenomenasection}.
+
+
+
+\startdqs
+
+\begin{dq}
+The ancient Greek philosopher Aristotle said that objects ``naturally'' tended to
+slow down, unless there was something pushing on them to keep them moving.
+What important insight was he missing? 
+\end{dq}
+
+<% end_sec() %>
+
+<% begin_sec("Logical issues") %>
+
+Another possible objection is that 
+the open-ended approach to defining energy might seem like a kind of cheat, since
+we keep on inventing new forms whenever we need them. If a certain experiment seems to
+violate conservation of energy, can't we just invent a new form of invisible
+``mystery energy'' that patches things up? This would be like balancing
+your checkbook by putting in a fake transaction that makes your calculation
+of the balance agree with your bank's. If we could fudge this way, then conservation
+of energy would be untestable --- impossible to prove or disprove.
+
+Actually all scientific theories are unprovable. A theory can never be proved,
+because the experiments can
+only cover a finite number out of the infinitely many situations in which the
+theory is supposed to apply. Even a million experiments won't suffice to
+prove it in the same sense of the word ``proof'' that is used
+in mathematics. However, even one experiment that contradicts a theory is
+sufficient to show that the theory is wrong. A theory that is
+immune to disproof is a bad theory, because there is no way to test it. For
+instance, if I say that 23 is the maximum number of angels that
+can dance on the head of a pin, I haven't made a properly falsifiable
+scientific theory, since there's no method by which anyone could even
+attempt to prove me wrong based on observations or experiments.
+
+\index{Joule, James!paddlewheel experiment}
+Conservation of energy is testable because
+new forms of energy are expected to show regular mathematical behavior,
+and are supposed to be related in a measurable way to
+observable phenomena. As an example, let's see how to extend the energy concept
+to include motion.  
+
+<% marg(50) %>
+<%
+  fig(
+    'irbike',
+    %q{%
+      As in figure \figref{irface}, an infrared camera distinguishes
+              hot and cold areas. As the bike skids to a stop with its brakes locked, the kinetic
+              energy of the bike and rider is converted into heat in both the floor (top) and the
+              tire (bottom).
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% begin_sec("Kinetic energy") %>
+
+Energy of motion is called
+\emph{kinetic energy}\index{energy!kinetic}\index{kinetic energy}.
+(The root of the word is the same as the word ``cinema'' -- in French,
+kinetic energy is ``\'{e}nergie cin\'{e}tique.'')
+How does an object's kinetic energy depend on its mass and velocity?
+Joule attempted a conceptually simple experiment on his
+honeymoon in the French-Swiss Alps near Mt. Chamonix, in which
+he measured the difference in temperature between the top and bottom of
+a waterfall. The water at the top of the falls has some gravitational
+energy, which isn't our subject right now, but as it drops, that
+gravitational energy is converted into kinetic energy, and then into
+heat energy due to internal friction in the churning pool at the bottom:
+\begin{equation*}
+        \text{gravitational energy} \rightarrow \text{kinetic energy} \rightarrow \text{heat energy} 
+\end{equation*}
+In the logical framework of this book's presentation of energy, the
+significance of the experiment is that it provides a way to find out how
+an object's kinetic energy depends on its mass and velocity.
+The increase in heat energy should equal the kinetic energy of the water
+just before impact, so in principle we could measure the water's mass,
+velocity, and kinetic energy, and see how they relate to one
+another.\footnote{From Joule's point of view, the
+point of the experiment was different. At that time,
+most physicists believed that heat was a quantity that was conserved separately
+from the rest of the things to which we now refer as energy, i.e., mechanical\        energy. Separate units
+of measurement had been constructed for heat and mechanical
+of energy, but Joule was trying to
+show that one could convert back and forth between them, and that 
+it was actually their sum that was conserved, if they were both
+expressed in consistent units. His main result was the conversion factor that
+would allow the two sets of units to be reconciled. By showing that the conversion
+factor came out the same in different types of experiments, he was supporting
+his assertion that heat was not separately conserved. From Joule's perspective or
+from ours, the result is to connect the mysterious, invisible phenomenon
+of heat with forms of energy that are visible properties of objects, i.e.,
+mechanical energy.}
+
+\index{paddlewheel experiment}
+Although the story is picturesque and memorable, most books that mention the
+experiment fail to note that it was a failure! The problem was that
+heat wasn't the only form of energy being released. In reality, the
+situation was more like this:
+\begin{align*}
+        \text{gravitational energy}  \rightarrow & \text{kinetic energy} \\
+         \rightarrow & \text{heat energy} \\
+                & + \text{sound energy} \\
+                 & + \text{energy of partial evaporation}\eqquad.
+\end{align*}
+
+<% marg(50) %>
+<%
+  fig(
+    'paddlewheelsimple',
+    %q{%
+      A simplified drawing of Joule's paddlewheel
+              experiment.
+    }
+  )
+%>
+
+\spacebetweenfigs
+%
+
+<%
+  fig(
+    'irball',
+    %q{%
+      The heating of the tire and floor in figure \figref{irbike} is something that
+              the average person might have predicted in advance, but there are other situations
+              where it's not so obvious. When a ball slams into a wall, it doesn't rebound with the
+              same amount of kinetic energy. Was some energy destroyed? No.
+              The ball and the wall heat up. These infrared photos show
+              a squash ball at room temperature (top), and after it has been played with for
+              several minutes (bottom), causing it to heat up detectably. 
+    }
+  )
+%>
+<% end_marg %>
+
+The successful version of the experiment, shown in figures \figref{paddlewheelsimple}
+and \figref{paddlewheel}, used
+a paddlewheel spun by a dropping weight. 
+As with the waterfall experiment, this one involves several types of energy,
+but the difference is that in this case, they can all be determined and taken
+into account. (Joule even took the precaution of putting a screen between himself
+and the can of water, so that the infrared light emitted by his warm body wouldn't
+warm it up at all!) The result\footnote{If you've
+had a previous course in physics, you may have seen this presented not
+as an empirical result but as a theoretical
+one, derived from Newton's laws, and
+in that case you might feel you're being
+cheated here. However, I'm going to reverse that reasoning and derive Newton's
+laws from the conservation laws in chapter \ref{ch:3}. From the modern perspective, conservation
+laws are more fundamental, because they apply in cases where Newton's laws don't.}  is
+\begin{equation*}
+        K = \frac{1}{2}mv^2 \qquad \text{[kinetic energy]}\eqquad.
+\end{equation*}
+
+<%
+  fig(
+    'paddlewheel',
+    %q{%
+      A realistic drawing of Joule's apparatus, based on the
+              illustration in his original paper. The paddlewheel is sealed inside the can in the
+              middle. Joule wound up the two 13-kg 
+              lead weights and dropped them 
+              1.6 meters, repeating this 20 times to produce a temperature change of only
+              about half a degree Fahrenheit in the water inside the sealed can.
+              He claimed in his paper to be able to measure
+              temperatures to an accuracy of 1/200 of a degree.
+    },
+    {
+      'width'=>'wide',
+      'floatpos'=>'t'
+    }
+  )
+%>
+
+Whenever you encounter an equation like this for the first time, you should get
+in the habit of interpreting it. First off, we can tell that by making the mass or
+velocity greater, we'd get more kinetic energy. That makes sense. Notice,
+however, that we have mass to the first power, but velocity to the second.
+Having the whole thing proportional to mass to the first power is necessary
+on theoretical grounds, since energy is supposed to be additive.
+The dependence on $v^2$ couldn't have been predicted, but it is sensible.
+For instance, suppose we reverse the direction of motion. This would reverse
+the sign of $v$, because in one dimension we use positive and negative signs
+to indicate the direction of motion. But since $v^2$ is what appears in the
+equation, the resulting kinetic energy is unchanged.
+
+What about the factor
+of 1/2 in front? It comes out to be exactly 1/2 by the design of the metric system.
+If we'd been using the old-fashioned British engineering system of units
+(which is no longer used in the U.K.), the equation would have been
+$K=(7.44\times10^{-2}\ \myunit{Btu}\cdot\sunit^2/\myunit{slug}\cdot\myunit{ft}^2)mv^2$.
+The version of the metric system called the
+SI,\footnote{Syst\`eme International}\index{SI units} in which everything is based
+on units of kilograms, meters, and seconds, not only has the numerical constant
+equal to 1/2, but makes it unitless as well. In other words, we can think of
+the joule as simply an abbreviation, 1 J=1 $\kgunit\cdot\munit^2/\sunit^2$.
+More familiar examples of this type of abbreviation are 1 minute=60 s,
+and the metric unit of land area, 1 hectare=$10000\ \munit^2$.
+
+\begin{eg}{Ergs and joules}
+\egquestion
+There used to be two commonly used systems of metric units, referred to as
+mks and cgs. The mks system, now called the SI, is based on the meter, the
+kilogram, and the second. The cgs system, which is now obsolete, was based
+on the centimeter, the gram, and the second. In the cgs system, the unit of
+energy is not the joule but the erg,\index{erg (unit)}
+1 erg=1 $\myunit{g}\cdot\myunit{cm}^2/\myunit{s}^2$. How many ergs are in
+one joule?
+
+\eganswer
+        The simplest approach is to treat the units as if they were algebra symbols.
+        \begin{align*}
+                \zu{1 J}        &=         1\ \frac{\zu{kg}\cdot\zu{m}^2}{\zu{s}^2} \\
+                                        &=        1\ \frac{\zu{kg}\cdot\zu{m}^2}{\zu{s}^2} 
+                                                \times \frac{\zu{1000 g}}{\zu{1 kg}}
+                                                \times \left(\frac{\zu{100 cm}}{\zu{1 m}}\right)^2 \\
+                                        &=        10^7\ \frac{\zu{g}\cdot\zu{cm}^2}{\zu{s}^2} \\
+                                        &=        10^7\ \zu{erg}
+        \end{align*}
+\end{eg}
+
+\begin{eg}{Cabin air in a jet airplane}
+\egquestion
+        A jet airplane typically cruises at a velocity of 270 m/s. Outside air is
+        continuously pumped into the cabin, but must be cooled off first, both because (1) it
+        heats up due to friction as it enters the engines, and (2) it is heated
+        as a side-effect of being compressed to cabin pressure. Calculate the
+        increase in temperature due to the first effect. The specific heat of dry
+        air is about 1.0$\times10^3$ $\zu{J/kg}\cdot^{\circ}$$\zu{C}$.
+
+\eganswer
+        This is easiest to understand in the frame of reference of the plane,
+        in which the air rushing into the engine is stopped, and its
+        kinetic energy converted into heat.\footnote{It's not at all obvious that
+        the solution would work out in the earth's frame of reference, although
+        Galilean relativity states that it doesn't matter which frame we use. Chapter
+        \ref{ch:3} discusses the relationship between conservation of energy and
+        Galilean relativity.}
+         Conservation of energy tells us
+        \begin{align*}
+                0        &=        \Delta{} E \\
+                                &=        \Delta{} K+\Delta{} E_{heat}\eqquad.
+        \end{align*}
+        In the plane's frame of reference, the air's initial velocity is
+        $v_i$=270 m/s, and its final velocity is zero, so the change
+        in its kinetic energy is negative,
+        \begin{align*}
+                \Delta{} K        &=         K_{f} -  K_{i} \\
+                                        &=        0-\zu{(1/2)} m{ v_{i}}^2 \\
+                                        &=        -\zu{(1/2)} m{ v_i}^2\eqquad.
+        \end{align*}
+        Assuming that the specific heat of air is roughly independent of
+        temperature (which is why the number was stated with the word
+        ``about''), we can substitute into
+        $0 = \Delta{} K+\Delta{} E_{heat}$, giving 
+        \begin{equation*}
+                0 = -\frac{1}{2} m{ v_{i}}^2+ mc\Delta{} T 
+        \end{equation*}
+        \begin{equation*}
+                \frac{1}{2}{ v_{i}}^2        =  c\Delta{} T\eqquad.
+        \end{equation*}
+        Note how the mass cancels out. This is a big advantage of solving problems
+        algebraically first, and waiting until the end to plug in numbers. With a purely
+        numerical approach, we wouldn't even have known what value of
+        $m$ to pick, or if we'd guessed a value like 1 kg, we wouldn't have known
+        whether our answer depended on that guess.
+
+        Solving for $\Delta T$, and writing $v$ instead of $v_i$
+        for simplicity, we find
+        \begin{align*}
+                \Delta{} T & = \frac{ v^2}{2 c} \\
+                                &\approx 40^{\circ}\zu{C}\eqquad.
+        \end{align*}
+        The passengers would be boiled alive if not for the refrigeration. The
+        first
+        stage of cooling happens via heat exchangers in the engine struts, but
+        a second stage, using a refrigerator under the floor of the cabin, is also
+        necessary. Running this refrigerator uses up energy, cutting into the
+        fuel efficiency of the airplane, which is why typically only 50\% of the
+        cabin's air is replaced in each pumping cycle of 2-3 minutes. Although the
+        airlines prefer to
+        emphasize that this is a much faster recirculation rate than in the ventilation
+        systems of most buildings, people are packed more tightly in an
+        airplane.
+\end{eg}
+
+<% end_sec() %>
+
+<% begin_sec("Power") %>
+
+Power, $P$, is defined as the rate of change of energy, $\der{}E/\der{}t$.\index{power}
+Power thus has units of joules per second, which are usually abbreviated
+as watts, 1 W=1 J/s. Since energy is conserved, we would have
+$\der{}E/\der{}t=0$ if $E$ was the total energy of a closed system,
+and that's not very interesting. What's usually more interesting to discuss is either
+the power flowing in or out of an open system, or the rate at which energy is
+being transformed from one form into another. The following is an example
+of energy flowing into an open system.
+
+\begin{eg}{Heating by a lightbulb}
+\egquestion
+The electric company bills you for energy in units of
+kilowatt-hours (kilowatts multiplied by hours) rather than
+in SI units of joules. How many joules is a kilowatt-hour?
+
+\eganswer
+1 kilowatt-hour = (1 kW)(1 hour) = (1000 J/s)(3600 s) = 3.6 MJ.
+\end{eg}
+
+Now here's an example of energy being transformed from one form
+into another.
+
+\begin{eg}{Human wattage}
+\egquestion
+Food contains chemical energy (discussed in more detail
+in section \ref{atomicphenomenasection}), and for historical
+reasons, food energy is normally given in non-SI units
+of Calories.\index{calorie!unit} One Calorie with a capital ``C''
+equals 1000 calories, and 1 calorie is defined as 4.18 J.
+A typical person consumes
+2000 Calories of food in a day, and converts nearly all of that
+directly to body heat. Compare the person's heat production to the
+rate of energy consumption of a 100-watt lightbulb.
+
+\eganswer
+Strictly speaking, we can't really
+compute the derivative $\der{} E/\der{} t$, since we don't know how the
+person's metabolism ebbs and flows over the course of a day. What we can
+really compute is $\Delta E/\Delta t$, which is the power averaged over
+a one-day period.
+
+Converting to joules, we find $\Delta E=8\times10^6$ J 
+for the amount of energy transformed into heat within our bodies in one day.
+Converting the time interval likewise into SI units,
+$\Delta t=9\times10^4$ s. Dividing, we find that our power
+ is 90 J/s = 90 W, about the same as a lightbulb.
+\end{eg}
+
+<% end_sec() %>
+
+<% begin_sec("Gravitational energy") %>
+
+Gravitational energy, to which I've already alluded, is different from heat and
+kinetic energy in an important way. Heat and kinetic energy are properties of
+a single object, whereas gravitational energy describes an interaction between
+two objects. When the skater in figures \figref{skaterphoto} and \figref{skaterline}
+is at the top, his distance from the bulk of the planet earth is greater. Since we
+observe his kinetic energy decreasing on the way up, there must be some
+other form of energy that is increasing. We invent a new form of energy, called
+gravitational energy, and written $U$ or $U_g$, which depends on the
+distance between his body and
+the planet. Where is this energy? It's not in the skater's body, and it's not inside
+the earth, either, since it takes two to tango. If either object didn't exist, there
+wouldn't be any interaction or any way to measure a distance,
+so it wouldn't make sense to talk about a distance-dependent energy.
+Just as marriage is a relationship between two people, gravitational energy
+is a relationship between two objects. 
+
+<% marg() %>
+
+        %
+
+<%
+  fig(
+    'skaterphoto',
+    %q{%
+      A skateboarder rises to the edge of an empty pool and
+                              then falls back down.
+    }
+  )
+%>
+%
+                \spacebetweenfigs%
+                %
+
+<%
+  fig(
+    'skaterline',
+    %q{%
+      The sum of kinetic plus gravitational energy is 
+                                      constant.
+    }
+  )
+%>
+%
+
+<% end_marg %>
+%
+
+There is no precise way to define the distance between the skater and the
+earth, since both are objects that have finite size.
+As discussed in more detail in
+section \ref{gravphenomenasection}, gravity is one of the fundamental forces
+of nature, a universal attraction between any two particles that have mass.
+Each atom in the skater's
+body is at a definite distance from each atom in the earth, but each of these
+distances is different. An atom in his foot is only a few centimeters from some of
+the atoms in the plaster side of the pool, but most of the earth's atoms are
+thousands of kilometers away from him. In theory, we might have to add up
+the contribution to the gravitational energy for every interaction between an
+atom in the skater's body and an atom in the earth.
+
+For our present purposes, however, there is a far simpler and more practical
+way to solve problems. In any region of the earth's surface, there is a direction
+called ``down,'' which we can establish by dropping a rock or hanging a plumb
+bob. In figure \figref{skaterline}, the skater is moving up and down in one dimension,
+and if we did measurements of his kinetic energy, like the made-up data in the
+figure, we could infer his gravitational energy. As long as we stay within a relatively
+small range of heights, we find that an object's gravitational energy increases at
+a steady rate with height. In other words, the strength of gravity doesn't change
+much if you only move up or down a few meters. We also find that the gravitational
+energy is proportional to the mass of the object we're testing.
+Writing $y$ for the height, and $g$ for the
+overall constant of proportionality, we have
+%\begin{multline*}%
+%        \shoveright{U_g=mgy\eqquad. \qquad \text{[gravitational energy;  $x$=height;}}\\ 
+%                \text{only accurate within a small range of heights]}%
+%\end{multline}%
+\begin{equation*}
+        \begin{array}{cr}
+                U_g=mgy\eqquad. & \text{[gravitational energy;  $y$=height; only ac-} \\
+                        & \text{curate within a small range of heights]}
+        \end{array}
+\end{equation*}
+The number $g$, with units of joules per kilogram per meter, is called the
+\emph{gravitational field}\index{gravitational field}. It tells us the strength of gravity
+in a certain region of space. Near the surface of our planet, it has a value of
+about 9.8 $\gravunit$, which is conveniently close to 10 $\gravunit$ for rough
+calculations.
+
+\begin{eg}{Velocity at the bottom of a drop}
+\egquestion
+If the skater in figure \figref{skaterphoto} drops 3 meters from rest, what is
+his velocity at the bottom of the pool?
+
+\eganswer
+        Starting from conservation of energy, we have
+        \begin{align*}
+                0        &=        \Delta E  \\
+                                &=        \Delta K +\Delta U   \\
+                                &=         K_f - K_i + U_f - U_i  \\
+                                &=        \frac{1}{2} m { v_f }^2
+                                                + mgy_f - mgy_i  
+                                                                                & \text{(because $K_i$=0)} \\
+                                &=        \frac{1}{2} m { v_f }^2
+                                                + mg \Delta y\eqquad, 
+                                                                                & \text{($\Delta y<$0)} 
+                \intertext{so}
+                 v         &=        \sqrt{-2 g \Delta y} \\
+                                &=        \sqrt{-\zu{(2)(10\ J/kg}\unitdot{}\zu{m)(}-\zu{3 m)}} \\
+                                &=        \zu{8 m/s} & \text{(rounded to one sig. fig.)}
+        \end{align*}
+\end{eg}
+There are a couple of important things to note about this example. First, we were able
+to massage the equation so that it only involved $\Delta{}y$, rather than $y$ itself.
+In other words, we don't need to worry about where $y=0$ is; any coordinate system
+will work, as long as the positive $y$ axis points up, not down. This is no accident.
+Gravitational energy can always be changed by adding a constant onto it, 
+with no effect on the final result, as long as you're consistent within a given problem.
+
+The other interesting thing is that the mass canceled out: even if the skater gained weight
+or strapped lead weights to himself, his velocity at the bottom would still be 8 m/s.
+This isn't an accident either.
+This is the same conclusion we reached in section \ref{gravinersection}, based on the
+equivalence of gravitational and inertial mass. The kinetic energy depends on the
+inertial mass, while gravitational energy is related to gravitational mass, but since
+these two masses are equal, we were able to use a single symbol, $m$, for them, and
+cancel them out.
+
+We can see from the equation $v=\sqrt{-2g\Delta{}y}$ that a falling object's velocity
+isn't constant. It increases as the object drops farther and farther. What about its
+acceleration? If we assume that air friction is negligible, the arguments in
+section \ref{gravinersection} show that
+the acceleration can't depend on the object's mass, so there isn't much else
+the acceleration \emph{can} depend on besides $g$. In fact, the acceleration
+of a falling object equals $-g$ (in a coordinate system where the positive $y$
+axis points up), as we can easily show using the chain rule:\label{gaccelproof}
+\begin{align*}
+        \left(\frac{\der{}v}{\der{}t}\right)%
+                &=        \left(\frac{\der{}v}{\der{}K}\right)% 
+                        \left(\frac{\der{}K}{\der{}U}\right)% 
+                        \left(\frac{\der{}U}{\der{}y}\right)% 
+                        \left(\frac{\der{}y}{\der{}t}\right) \\
+                &= \left(\frac{1}{mv}\right)(-1)(mg)(v) \\
+                &= -g\eqquad,
+\end{align*}
+where I've calculated $\der{}v/\der{}K$ as $1/(\der{}K/\der{}v)$, and $\der{}K/\der{}U=-1$
+can be found by differentiating $K+U=\text{(constant)}$ to give $\der{}K+\der{}U=0$.\footnote{There
+is a mathematical loophole in this argument that would allow the object to hover for a while with zero velocity and zero acceleration.
+This point is discussed on page \pageref{hovering}.\label{hoveringrefback}}
+
+We can also check that the units of $g$, $\gravunit$, are equivalent to the units
+of acceleration,
+\begin{equation*}
+        \frac{\junit}{\kgunit\unitdot\munit} = 
+                        \frac{\kgunit\unitdot\munit^2/\sunit^2}
+                        {\kgunit\unitdot\munit} \\
+                = \frac{\munit}{\sunit^2}\eqquad,
+\end{equation*}
+and therefore the strength of the gravitational field near the earth's surface
+ can just as well be stated as $10\ \munit/\sunit^2$.
+
+\begin{eg}{Speed after a given time}
+\egquestion
+An object falls from rest.
+How fast is it moving after two seconds? Assume that the
+amount of energy converted to heat by air friction is negligible.
+
+\eganswer
+Under the stated assumption, we have $a=- g$, which can be
+integrated to give $v=- gt+\text{constant}$. If we let $t=0$
+be the beginning of the fall, then the constant of integration is zero,
+so at $t=\zu{2\ s}$ we have
+$v=- gt=-\zu{(10 m/s}^2\zu{)}\times\zu{(2 s)}=\zu{20 m/s}$.
+
+\end{eg}
+
+\begin{eg}{The Vomit Comet}\label{eg:vomitcomet}
+\egquestion
+The U.S. Air Force has an airplane, affectionately known as the Vomit Comet,
+in which astronaut trainees can experience simulated weightlessness.
+Oversimplifying a little, imagine that the plane climbs up high, and then drops straight down like a rock.
+(It actually flies along a parabola.)
+Since the people are falling
+with the same acceleration as the plane, the sensation is just like what you'd
+experience if you went out of the earth's gravitational field. If the plane can
+start from 10 km up, what is the maximum amount of time for which the dive
+can last?
+
+\eganswer
+Based on data about acceleration and distance, we want to find time.
+Acceleration is the second derivative of distance, so if we integrate the
+acceleration twice with respect to time, we can find how position relates
+to time. For convenience, let's pick a coordinate system in which the positive
+$y$ axis is down, so $a$=$g$ instead of $- g$.
+\begin{align*}
+         a        &=         g \\
+         v        &=         gt + \zu{constant}        & \text{(integrating)} \\
+                        &=         gt        & \text{(starts from rest)} \\
+         y        &=        \frac{1}{2} gt^2 +\zu{constant}
+                                        & \text{(integrating again)}
+\end{align*}
+Choosing our coordinate system to have $y=0$ at $t=0$,
+                we can make the second constant of integration equal zero as well, so
+\begin{align*}
+         t                &=        \sqrt{\frac{2 y}{ g}} \\
+                        &=        \sqrt{\frac{2\cdot\zu{10000 m}}{\zu{10 m/s}^2}} \\
+                        &=        \sqrt{\zu{2000\ s}^2} \\
+                        &=        \zu{40\ s} & \text{(to one sig. fig.)}
+\end{align*}
+Note that if we hadn't converted the altitude to units of meters, we would have
+gotten the wrong answer, but we would have been alerted to the problem
+because the units inside the square root wouldn't have come out to be
+$\zu{s}^2$. In general, it's a good idea to convert all your data into
+SI (meter-kilogram-second) units before you do anything with them.
+\end{eg}
+
+<% marg(-10) %>
+
+<%
+  fig(
+    'highlow',
+    %q{%
+      Two balls start from rest, and
+              roll from A to B by different paths.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{High road, low road}\label{eg:highlow}
+\egquestion
+In figure \figref{highlow}, what can you say based on conservation of energy
+about the speeds of the balls when the reach point B? What does
+conservation of energy tell you about which ball will get there first?
+Assume friction doesn't convert any mechanical energy to heat or sound energy.
+
+\eganswer
+Since friction is assumed to be negligible, there are only two forms of energy
+involved: kinetic and gravitational. Since both balls start from rest, and both
+lose the same amount of gravitational energy, they must have the same
+kinetic energy at the end, and therefore they're rolling at the same speed when
+they reach B. (A subtle point is that the balls have kinetic energy both because they're
+moving through space and because they're spinning as they roll. These two types of
+energy must be in fixed proportion to one another, so this has no effect on the conclusion.)
+
+Conservation of energy does not, however, tell us anything obvious about which ball
+gets there first. This is a general problem with applying conservation laws:
+conservation laws don't refer directly to time, since they are statements
+that something stays the same at all moments in time. We expect on
+intuitive grounds that the ball that goes by the lower ramp gets to B first, since
+it builds up speed early on.
+\end{eg}\myeqnspacing
+
+\begin{eg}{Buoyancy}\label{eg:buoyancycube}
+\index{buoyancy}\index{Archimedes' principle}
+\egquestion
+A cubical box with mass $m$ and volume $V= b^3$ is submerged in a fluid
+of density $\rho$. How much energy is required to raise it through a height $\Delta y$?
+
+\eganswer
+As the box moves up, it invades a volume $V'= b^2\Delta y$ 
+previously occupied
+by some of the fluid, and fluid flows into an equal volume that it has vacated on the bottom.
+Lowering this amount of fluid by a height $b$ reduces the fluid's gravitational energy
+by $\rho V' gb=\rho g b^3\Delta y$, so the net change in energy is
+\begin{align*}
+        \Delta  E        &=  mg\Delta y-\rho g b^3\Delta y \\
+                                &= ( m-\rho V) g\Delta y\eqquad.
+\end{align*}
+In other words, it's as if the mass of the box had been reduced by an amount equal
+to the fluid that otherwise would have occupied that volume. This is known as Archimedes'
+principle, and it is true even if the box is not a cube, although we'll defer the more general
+proof until page \pageref{eg:buoyancy} in chapter \ref{ch:3}. If the box is less dense than
+the fluid, then it will float.
+\end{eg}
+
+<% marg(20) %>
+<%
+  fig(
+    'buoyancy',
+    %q{%
+      How much energy is required to raise the submerged box
+              through a height $\Delta y$?
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'seesaw',
+    %q{A seesaw.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'biceps',
+    %q{The biceps muscle is a reversed lever.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A simple machine}\label{eg:seesaw}
+\egquestion
+If the father and son on the seesaw in figure \figref{seesaw} start from rest,
+what will happen?
+
+        \eganswer
+        Note that although the father is twice as massive, he is at half the distance
+        from the fulcrum. If the seesaw was going to start rotating, it would have to be
+        losing gravitational energy in order to gain some kinetic energy. However,
+        there is no way for it to gain or lose gravitational energy by rotating in either
+        direction. The change in gravitational energy would be
+        \begin{align*}
+                \Delta U                &=        \Delta U_{1} + \Delta U_{2} \\
+                        &=         g( m_1\Delta y_{1} + m_{2}\Delta y_2 )
+\eqquad,
+        \end{align*}
+        but $\Delta y_1$ and $\Delta y_2$ have opposite signs and
+        are in the proportion of two to one,
+        since the son moves along a circular arc that covers the same angle as the father's
+        but has half the radius. Therefore $\Delta U=0$, and there is no way for the
+        seesaw to trade gravitational energy for kinetic. 
+        \end{eg}
+
+The seesaw example demonstrates the principle of the lever,
+which is one of the basic mechanical building blocks known as simple machines.
+As discussed in more detail in chapters \ref{ch:3} and \ref{ch:4}, the principle applies even when
+the interactions involved aren't gravitational.
+
+Note that although a lever makes it easier to lift a heavy weight, it also decreases
+the distance traveled by the load. By reversing the lever, we can make the load travel
+a greater distance, at the expense of increasing the amount of force required. 
+The human muscular-skeletal system uses reversed levers of this kind, which
+allows us to move more rapidly, and also makes our bodies more compact, at
+the expense of brute strength. A piano uses reversed levers so that a small amount
+of motion of the key produces a longer swing of the hammer. Another interesting example
+is the hydraulic jack shown in figure \figref{hydraulic}. The analysis in terms of
+gravitational energy is exactly the same as for the seesaw, except that the
+relationship between $\Delta{}y_1$ and $\Delta{}y_2$ is now determined not
+by geometry but by conservation of mass: since water is highly incompressible,
+conservation of mass is approximately the same as a requirement of constant
+volume, which can only be satisfied if the distance traveled by each piston is
+in inverse proportion to its cross-sectional area.
+
+<% marg(50) %>
+<%
+  fig(
+    'pendulumandpeg',
+    %q{Discussion question \ref{dq:pendulumandpeg}.}
+  )
+%>
+<% end_marg %>
+
+\startdqs
+
+\begin{dq}
+Hydroelectric power (water flowing over a dam to spin
+turbines) appears to be completely free. Does this violate
+conservation of energy? If not, then what is the ultimate
+source of the electrical energy produced by a hydroelectric plant?
+\end{dq}
+
+\begin{dq}
+You throw a steel ball up in the air. How can you prove
+based on conservation of energy that it has the same speed
+when it falls back into your hand? What if you threw a
+feather up? Is energy not conserved in this case?
+\end{dq}
+
+\begin{dq}\label{dq:pendulumandpeg}
+Figure \figref{pendulumandpeg} shows a pendulum that is released at A and
+caught by a peg as it passes through the vertical, B. To
+what height will the bob rise on the right?
+\end{dq}
+
+\begin{dq}
+What is wrong with the following definitions of $g$?\\
+(a) ``$g$ is gravity.''\\
+(b) ``$g$ is the speed of a falling object.''\\
+(c) ``$g$ is how hard gravity pulls on things.''\\
+\end{dq}
+
+<% end_sec() %>
+
+<% begin_sec("Equilibrium and stability") %>
+
+<% marg(50) %>
+<%
+  fig(
+    'hydraulic',
+    %q{A hydraulic jack.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'equilibrium',
+    %q{%
+      The surfaces are frictionless.
+              The black blocks are in equilibrium.
+    }
+  )
+%>
+<% end_marg %>
+
+The seesaw in figure  \figref{seesaw} is in equilibrium, meaning that if it starts out
+being at rest, it will stay put.\index{equilibrium}
+This is known as a neutral equilibrium\index{equilibrium!neutral}\index{neutral equilibrium}, since the seesaw
+has no preferred position to which it will return if we disturb it. If we move it to a different
+position and release it, it will stay at rest there as well. If we put it in motion, it will simply
+continue in motion until one person's feet hit the ground.
+
+Most objects around you are
+in stable equilibria\index{equilibrium!stable}\index{stability}, like the black block in figure
+\figref{equilibrium}/3. Even if the block is moved or set in motion, it will oscillate
+about the equilibrium position. The pictures are like graphs of $y$ versus
+$x$, but since the gravitational energy $U=mgy$ is proportional to $y$, we can just
+as well think of them as graphs of  $U$ versus $x$. The block's stable equilibrium
+position is where the function $U(x)$ has a local minimum.
+The book you're reading right now is in equilibrium, but gravitational energy isn't the
+only form of energy involved. To move it upward, we'd have to supply gravitational
+energy, but downward motion would require a different kind of energy, in order to
+compress the table more. (As we'll see in section \ref{atomicphenomenasection},
+this is electrical energy due to interactions between atoms within the table.)
+
+A differentiable function's local extrema occur where its derivative is zero.
+A position where $\der{}U/\der{}x$ is zero can be a stable
+(3), neutral (2), or unstable equilibrium, (4). An unstable\index{unstable equilibrium}\index{equilibrium!unstable}
+equilibrium is like a pencil balanced on its tip. Although it could theoretically
+remain balanced there forever, in reality it will topple due to any tiny perturbation,
+such as an air current or a vibration from a passing truck. This is a technical,
+mathematical definition of instability, which is more restrictive than the way the
+word is used in ordinary speech. Most people would describe a
+domino standing upright as being unstable, but in technical usage it would be
+considered stable, because a certain finite amount of energy is required to tip
+it over, and perturbations smaller than that would only cause it to oscillate around
+its equilibrium position.
+
+The domino is also an interesting example because
+it has two local minima, one in which it is upright, and another in which it is
+lying flat. A local minimum that is not the global minimum, as in figure \figref{equilibrium}/5, is
+referred to as a metastable equilibrium\index{equilibrium!metastable}.
+
+<%
+  fig(
+    'funicular-railroad',
+    %q{%
+      Example \ref{eg:funicular-railroad}.
+    },
+    { 
+      'width'=>'wide',
+      'sidecaption'=>true
+    }   
+  )
+%>
+
+\begin{eg}{A neutral equilibrium}\label{eg:funicular-railroad}
+Figure \figref{funicular-railroad} shows a special-purpose one-block funicular railroad near Hill and Fourth Streets in Los Angeles, California,
+used for getting passengers up and down a very steep hill. It has two cars attached to a single loop of cable, arranged so that while
+one car goes up, the other comes down. They pass each other in the middle. Since one car's gravitational energy is increasing while the
+other's is decreasing, the system is in neutral equilibrium. If there were no frictional heating, exactly zero energy would be required
+in order to operate the system. A similar counterweighting principle is used in aerial tramways in mountain resorts, and in elevators
+(with a solid weight, rather than a second car, as counterweight).
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{Water in a U-shaped tube}\label{eg:utube1}
+\egquestion
+The U-shaped tube in figure \figref{utube} has cross-sectional area
+ $A$, and the density of the water inside
+is $\rho$. Find the gravitational energy as a function of the quantity $y$ shown in the
+figure, and show that there is an equilibrium at $y$=0.
+
+\eganswer
+The question is a little ambiguous, since gravitational energy is only well defined
+up to an additive constant. To fix this constant, let's define $U$ to be zero when $y$=0.
+The difference between $U( y)$ and $U(0)$ is the energy that would
+be required to lift a water column of height $y$ out of the right side, and place it
+above the dashed line, on the left side, raising it through a height $y$.
+This water column has height $y$ and
+cross-sectional area $A$, so its volume is $Ay$, its mass is $\rho Ay$, and
+the energy required is $mgy$=$(\rho Ay) gy$=$\rho gAy^2$.
+We then have $U( y)= U(0)+\rho gAy^2=\rho gAy^2$.
+
+<% marg(15) %>
+<%
+  fig(
+    'utube',
+    %q{Water in a U-shaped tube.}
+  )
+%>
+<% end_marg %>
+
+To find equilibria, we look for places where the derivative 
+$\zu{d} U/\zu{d} y=2\rho gAy$ equals 0.
+As we'd expect intuitively, the only equilibrium occurs at $y$=0.
+The second derivative test shows that this is a local minimum (not a maximum or
+a point of inflection), so this is a stable equilibrium.
+\end{eg}
+
+<% end_sec() %>
+
+<% begin_sec("Predicting the direction of motion",nil,'predictingdirection') %>
+
+Kinetic energy doesn't depend on the direction of motion. Sometimes this is
+helpful, as in the high road-low road example (p. \pageref{eg:highlow},
+example \ref{eg:highlow}), where we were able to predict that the balls
+would have the same final speeds, even though they followed different
+paths and were moving in different directions at the end. In general, however,
+the two conservation laws we've encountered so far aren't enough to
+predict an object's path through space, for which we need conservation of
+momentum (chapter \ref{ch:3}), and the mathematical technique of vectors. Before
+we develop those ideas in their full generality, however, it will be helpful
+to do a couple of simple examples, including one that we'll get a lot of mileage
+out of in section \ref{gravphenomenasection}.
+
+Suppose we observe an air hockey puck gliding frictionlessly to the right
+at a velocity $v$, and we want to predict its future motion. Since there is
+no friction, no kinetic energy is converted to heat. The only form of energy
+involved is kinetic energy, so conservation of energy, $\Delta{}E=0$, becomes
+simply $\Delta{}K=0$. There's no particular reason for the puck to do anything
+but continue moving to the right at constant speed, but it would be equally
+consistent with conservation of energy if it spontaneously decided to reverse
+its direction of motion, changing its velocity to $-v$. Either way, we'd have  $\Delta{}K=0$.         There is, however,
+a way to tell which motion is physical and which is unphysical. Suppose we
+consider the whole thing again in the frame of reference that is initially moving
+right along with the puck. In this frame, the puck starts out with $K=0$. What we
+originally described as a reversal of its velocity from $v$ to $-v$ is, in this new
+frame of reference, a change from zero velocity to $-2v$, which would violate
+conservation of energy. In other words, the physically possible motion conserves
+energy in all frames of reference, but the unphysical motion only conserves
+energy in one special frame of reference.
+
+<% marg(0) %>
+<%
+  fig(
+    'cliff',
+    %q{A car drives over a cliff.}
+  )
+%>
+<% end_marg %>
+%
+        \label{paraboladerivation}
+        For our second example, we consider a car driving off the edge of a cliff (\figref{cliff}).
+        For simplicity, we assume that air friction is negligible, so only kinetic and gravitational
+        energy are involved.
+        Does the car follow trajectory 1, familiar from Road Runner cartoons, trajectory 2, a parabola,
+        or 3, a diagonal line? All three could be consistent with conservation of energy, in the
+        ground's frame of reference. For instance, the car would have constant gravitational
+        energy along the initial horizontal segment of trajectory 1, so during that time it would
+        have to maintain constant kinetic energy as well. Only a parabola, however, is
+        consistent with conservation of energy combined with Galilean relativity.  Consider the frame
+        of reference that is moving horizontally at the same speed as that with which the car
+        went over the edge. In this frame of reference, the cliff slides out from under the
+        initially motionless car. The car can't just hover for a while, so trajectory 1 is out.
+        Repeating the same math as in example \ref{eg:vomitcomet}
+        on p. \pageref{eg:vomitcomet}, we have
+        \begin{equation*}
+                x^*=0\ , \qquad y^*=\frac{1}{2}gt^2
+        \end{equation*}
+        in this
+        frame of reference, where the stars indicate coordinates measured in the moving
+        frame of reference. These coordinates are related to the ground-fixed coordinates
+        $(x,y)$ by the equations
+        \begin{equation*}
+                x=x^*+vt \qquad and \qquad y=y^*\eqquad,
+        \end{equation*}
+        where $v$ is the velocity of one
+        frame with respect to the other. We therefore have
+        \begin{equation*}
+                x=vt \ , \qquad y=\frac{1}{2}gt^2\eqquad,
+        \end{equation*}
+        in our
+        original frame of reference. Eliminating $t$, we can see that this has the
+        form of a parabola:
+        \begin{equation*}
+                y=\frac{g}{2v^2}x^2\eqquad.
+        \end{equation*}
+
+<% self_check('cardiag',<<-'SELF_CHECK'
+What would the car's motion be like in the * frame of reference if it
+        followed trajectory 3?
+  SELF_CHECK
+  ) %>
+
+
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Numerical techniques",4) %>
+\label{numsection}
+
+Engineering majors are a majority of the students in the kind of physics
+course for which this book is designed, so most likely you fall into that category.
+Although you surely recognize that physics is an important
+part of your training, if you've had any exposure to how engineers really
+work, you're probably skeptical about the flavor of problem-solving
+taught in most science courses. You
+realize that not very many practical engineering calculations fall
+into the narrow range of problems for which an exact solution can be calculated
+with a piece of paper and a sharp pencil. Real-life problems are usually
+complicated, and typically they need to be solved by number-crunching on a computer,
+although we can often gain insight by working simple approximations that
+have algebraic solutions. Not only is numerical problem-solving more useful
+in real life, it's also educational; as a beginning physics student, I really only felt like
+I understood projectile motion after I had worked it both ways, using algebra
+and then a computer program. (This was back in the days when 64 kilobytes
+of memory was considered a lot.)
+
+In this section, we'll start by seeing how to apply numerical techniques
+to some simple problems for which we know the answer in ``closed form,'' i.e.,
+a single algebraic expression without any calculus or infinite sums.
+After that, we'll solve a problem that would have made you world-famous
+if you could have done it in the seventeenth century using
+paper and a quill pen!
+Before you continue, you should read Appendix \ref{pythonappendix} on page
+\pageref{pythonappendix} that introduces you to the Python programming
+language.
+
+        First let's solve the trivial problem of finding how much time it takes         
+        an object moving at speed \verb-v- to travel a straight-line distance \verb-dist-. This
+        closed-form answer is, of course, \verb-dist/v-, but the point is to introduce
+        the techniques we can use to solve other problems of this type. The basic
+        idea is to divide the distance up into \verb-n- equal parts, and add up the
+        times required to traverse all the parts. The following Python function
+        does the job. Note that you shouldn't type in the line numbers on the left,
+        and you don't need to type in the comments, either. I've omitted the prompts
+        \verb->>>- and \verb-...- in order to save space.
+\begin{listing}{1}<%code_listing('constant_speed.py',%q{
+import math
+def time1(dist,v,n):
+  x=0                        # Initialize the position.
+  dx = dist/n                # Divide dist into n equal parts.
+  t=0                        # Initialize the time.
+  for i in range(n):
+    x = x+dx                # Change x.
+    dt=dx/v                #  time=distance/speed
+    t=t+dt                # Keep track of elapsed time.
+  return t
+})%>
+\end{listing}
+        How long does it take to move
+        1 meter at a constant speed of 1 m/s? If we do this,
+\begin{verbatim}
+>>> print(time1(1.0,1.0,10))        # dist, v, n
+0.99999999999999989
+\end{verbatim}
+        \noindent{}Python produces the expected answer by dividing the distance
+        into ten equal 0.1-meter segments, and adding up the ten 0.1-second
+        times required to traverse each one. Since the object moves at 
+        constant speed, it doesn't even matter whether we set \verb-n- to
+        10, 1, or a million:
+\begin{verbatim}
+>>> print(time1(1.0,1.0,1))        # dist, v, n
+1.0
+\end{verbatim}
+
+        Now let's do an example where the answer isn't obvious to people
+        who don't know calculus: how long does it take an object to fall
+        through a height \verb-h-, starting from rest? We know from
+        example \ref{eg:vomitcomet} on page \pageref{eg:vomitcomet} that
+        the exact answer, found using calculus, is $\sqrt{2h/g}$. Let's see
+        if we can reproduce that answer numerically. The main
+        difference between this program and the previous one is that now
+        the velocity isn't constant, so we need to update it as we go along.
+        Conservation of energy gives $mgh=(1/2)mv^2+mgy$ for the
+        velocity $v$ at height $y$, so $v=-\sqrt{2g(h-y)}$. (We choose the negative
+        root because the object is moving down, and our coordinate system
+        has the positive $y$ axis pointing up.)\label{program-time2}
+\begin{listing}{1}<%code_listing('falling.py',%q{
+import math
+def time2(h,n):
+  g=9.8                     # gravitational field
+  y=h                       # Initialize the height.
+  v=0                       # Initialize the velocity.
+  dy = -h/n                 # Divide h into n equal parts.
+  t=0                       # Initialize the time.
+  for i in range(n):
+    y = y+dy                # Change y. (Note dy<0.)
+    v = -math.sqrt(2*g*(h-y))        # from cons. of energy
+    dt=dy/v                 #  dy and v are <0, so dt is >0
+    t=t+dt                  # Keep track of elapsed time.
+  return t
+})%>
+\end{listing}
+        For \verb-h-=1.0 m, the closed-form result is
+        $\sqrt{2\cdot1.0\ \munit/9.8\ \munit/\sunit^2}=0.45\ \sunit$.
+        With the drop split up into only 10 equal height intervals, the numerical
+        technique provides a pretty lousy approximation:
+\begin{verbatim}
+>>> print(time2(1.0,10))        # h, n
+0.35864270709233342
+\end{verbatim}
+        But by increasing \verb-n- to ten thousand, we get an answer that's as close
+        as we need, given the limited accuracy of the raw data:
+
+\begin{verbatim}
+>>> print(time2(1.0,10000))        # h, n
+0.44846664060793945
+\end{verbatim}
+
+A subtle point is that we changed \verb-y- in line 9, and \emph{then} on line 10
+we calculated \verb-v-, which depends on \verb-y-.
+Since \verb-y- is only changing by a ten-thousandth
+of a meter with each step, you might think this wouldn't make much of
+a difference, and you'd be almost right, except for one small problem:
+if we swapped lines 9 and 10, then the very first time through the loop,
+we'd have \verb-v-=0, which would produce a division-by-zero error
+when we calculated \verb-dt-! Actually what would make the most sense
+would be to calculate the velocity at height \verb-y- and 
+the velocity at height \verb-y+dy- (recalling that \verb-dy- is negative),
+average them together, and use that value of \verb-y- to calculate
+ the best estimate of the velocity
+between those two points. Since the acceleration is constant in the present
+example, this modification results in a program that gives an exact
+result even for \verb-n-=1:\label{time3listing}
+
+\begin{listing}{1}<%code_listing('falling2.py',%q{
+import math
+def time3(h,n):
+  g=9.8
+  y=h
+  v=0
+  dy = -h/n
+  t=0
+  for i in range(n):
+    y_old = y
+    y = y+dy
+    v_old = math.sqrt(2*g*(h-y_old))
+    v = math.sqrt(2*g*(h-y))
+    v_avg = -(v_old+v)/2.
+    dt=dy/v_avg
+    t=t+dt
+  return t
+})%>
+\end{listing}
+\begin{verbatim}
+>>> print(time3(1.0,1))        # h, n
+0.45175395145262565
+\end{verbatim}
+
+Now we're ready to attack a problem that challenged the best
+minds of Europe
+back in the days when there were no computers. In 1696, the mathematician
+Johann Bernoulli\index{Bernoulli, Johann}
+posed the following famous question. Starting from rest,
+an object slides frictionlessly
+over a curve joining the point $(a,b)$ to the point $(0,0)$. Of all the possible shapes
+that such a curve could have, which one gets the object to its destination in
+the least possible time, and how much time does it take? The optimal
+curve is called the \emph{brachistochrone}\index{brachistochrone}, from the
+Greek ``short time.'' The solution to the brachistochrone problem evaded
+Bernoulli himself, as well as Leibniz,\index{Leibniz}
+ who had been one of the inventors of
+calculus. The English physicist Isaac Newton,\index{Newton, Isaac}
+however,  stayed up late one night after a day's
+work running the royal mint, and, according to legend,
+produced an algebraic solution at four
+in the morning. He then published it anonymously, but Bernoulli is said to have
+remarked that when he read it, he knew instantly from the style that it was Newton ---
+he could ``tell the lion from the mark of his claw.''
+
+<% marg(0) %>
+<%
+  fig(
+    'brachgraph',
+    %q{%
+      Approximations to the
+              brachistochrone curve using a third-order polynomial (solid line),
+              and a seventh-order polynomial (dashed). The latter only improves the
+              time by four milliseconds.
+    }
+  )
+%>
+<% end_marg %>
+%
+        %.61905*x-.93427*x**2+1.31522*x**3 gives 0.58874004509924582 s with n=10e5
+        %.425*x+.05*x**2-.75*x**3+3.9*x**4-1.725*x**5-5.25*x**6+4.35*x**7
+        %        gives 0.58467623884591269 s with n=10e5
+        Rather than attempting an exact algebraic solution, as Newton did,
+        we'll produce a numerical
+        result for the shape of the curve and the minimum time, in the special
+        case of $a$=1.0 m and $b$=1.0 m. Intuitively, we want to start with a fairly
+        steep drop, since any speed we can build up at the start will help us throughout
+        the rest of the motion. On the other hand, it's possible to go too far with this idea:
+        if we drop straight down for the whole vertical distance, and then do a right-angle turn to
+        cover the horizontal distance, the resulting time of 0.68 s is quite a bit longer than
+        the optimal result, the reason being that the path is unnecessarily long.
+        There are infinitely many possible curves for which we could calculate the
+        time, but let's look at third-order polynomials,
+        \begin{equation*}
+                y = c_1x+c_2x^2+c_3x^3\eqquad,
+        \end{equation*}
+        where we require $c_3=(b-c_1a-c_2a^2)/a^3$ in order to make the curve
+        pass through the point $(a,b)$. The Python program, below, is not much
+        different from what we've done before. The function only asks for $c_1$
+        and $c_2$, and calculates $c_3$ internally at line 4. Since the motion is
+        two-dimensional, we have to calculate the distance between one point and
+        the next using the Pythagorean theorem, at line 16.
+\begin{listing}{1}<%code_listing('brachistochrone.py',%q{
+import math
+def timeb(a,b,c1,c2,n):
+  g=9.8
+  c3 = (b-c1*a-c2*a**2)/(a**3)
+  x=a
+  y=b
+  dx = -a/n
+  t=0
+  for i in range(n):
+    y_old = y
+    x = x+dx
+    y = c1*x+c2*x**2+c3*x**3
+    dy = y-y_old
+    v_old = math.sqrt(2*g*(b-y_old))
+    v = math.sqrt(2*g*(b-y))
+    v_avg = (v_old+v)/2.
+    ds = math.sqrt(dx**2+dy**2)        # Pythagorean thm.
+    dt=ds/v_avg
+    t=t+dt
+  return t
+})%>
+\end{listing}
+
+        As a first guess, we could try a straight diagonal line, $y=x$, which
+        corresponds to setting $c_1=1$, and all the other coefficients to zero.
+        The result is a fairly long time:
+\begin{verbatim}
+>>> a=1.
+>>> b=1.
+>>> n=10000
+>>> c1=1.
+>>> c2=0.
+>>> print(timeb(a,b,c1,c2,n))
+0.63887656499994161
+\end{verbatim}
+        What we really need is a curve that's very steep on the right, and flatter on the left,
+        so it would actually make more sense to try $y=x^3$:
+\begin{verbatim}
+>>> c1=0.
+>>> c2=0.
+>>> print(timeb(a,b,c1,c2,n))
+0.59458339947087069
+\end{verbatim}
+        This is a significant improvement, and turns out to be only a hundredth of
+        a second off of the shortest possible time!\label{brachrefback}
+        It's possible, although not very educational or entertaining, to find better
+        approximations to the brachistochrone curve by fiddling around with
+        the coefficients of the polynomial by hand. The real point of this
+        discussion was to give an example of a nontrivial problem that can be
+        attacked successfully with numerical techniques. I found the first approximation
+        shown in figure \figref{brachgraph},
+\begin{equation*}
+                y = (0.62)x+(-0.93)x^2+(1.31)x^3
+\end{equation*}
+        by using the program listed in appendix \ref{miscappendix}
+        on page \pageref{brachsearchcode} to search
+        automatically for the optimal curve. The seventh-order approximation
+        shown in the figure came from a straightforward extension of the same program.
+
+<% end_sec() %>
+
+<% begin_sec("Gravitational phenomena",4) %>
+\label{gravphenomenasection}
+        Cruise your radio dial today and try to find any popular song that would
+        have been imaginable without Louis Armstrong. By introducing solo
+        improvisation into jazz, Armstrong took apart the jigsaw puzzle of
+        popular music and fit the pieces back together in a different way. In
+        the same way, Newton reassembled our view of the universe. Consider the
+        titles of some recent physics books written for the general reader:
+        \textbf{The
+        God Particle}, \textbf{Dreams of a Final Theory}. When the subatomic particle
+        called the neutrino was recently proven for the first time to have mass,
+        specialists in cosmology began discussing seriously what effect this
+        would have on calculations of the evolution of the universe from the
+        Big Bang to its present state. Without the English physicist Isaac
+        Newton, such attempts at universal understanding would not merely have
+        seemed ambitious, they simply would not have occurred to
+        anyone.
+
+<% marg(100) %>
+<%
+  fig(
+    'ellipse',
+    %q{%
+      An ellipse is circle that has been distorted by
+              shrinking and stretching along perpendicular axes.
+    }
+  )
+%>
+%
+        \spacebetweenfigs%
+        %
+
+<%
+  fig(
+    'ellipse2',
+    %q{%
+      An ellipse can be constructed by tying a string to
+              two pins and drawing like this with a pencil stretching the
+              string taut. Each pin constitutes one focus of the ellipse.
+    }
+  )
+%>
+%
+        \spacebetweenfigs%
+        %
+
+<%
+  fig(
+    'equalarea',
+    %q{%
+      If the time interval taken by the planet to move from P
+              to Q is equal to the time interval from R to S, then according to Kepler's
+              equal-area law, the two shaded areas are equal. The planet is moving
+              faster during time interval RS than it was during PQ, because gravitational
+              energy has been transformed into kinetic energy.
+    }
+  )
+%>
+<% end_marg %>
+%
+
+This section is about Newton's theory of gravity, which he used
+to explain the motion of the planets as they orbited the sun.
+Newton tosses off a general treatment of motion in the first 20 pages
+of his \textbf{Mathematical Principles of Natural Philosophy},
+ and then spends the next 130 discussing the
+motion of the planets. Clearly he saw this as the crucial scientific
+focus of his work. Why? Because in it he showed that the same laws of
+nature applied to the heavens as to the earth, and that the
+gravitational interaction that made an apple fall was the same as the as the one
+that kept the earth's motion from carrying it away from the sun.
+
+<% begin_sec("Kepler's laws") %>
+\index{Kepler's laws}
+        Newton
+        wouldn't have been able to figure out \emph{why} the planets move
+        the way they do if it hadn't been for the astronomer Tycho
+        Brahe (1546-1601) and his protege Johannes Kepler
+        (1571-1630), who together came up with the first simple and
+        accurate description of \emph{how} the planets actually do move.
+        The difficulty of their task is suggested by the figure
+        below, which shows how the relatively simple orbital motions
+        of the earth and Mars combine so that as seen from earth
+        Mars appears to be staggering in loops like a drunken
+        sailor.
+
+<%
+  fig(
+    'retrograde',
+    %q{%
+      As the earth and Mars
+              revolve around the sun at different rates, the combined effect of their motions makes Mars 
+              appear to trace a strange, looped path across the background of the distant stars.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Brahe, the last of the great
+naked-eye astronomers, collected extensive data on the
+motions of the planets over a period of many years, taking
+the giant step from the previous observations' accuracy of
+about 10 minutes of arc (10/60 of a degree) to an
+unprecedented 1 minute. The quality of his work is all the
+more remarkable considering that his observatory consisted
+of four giant brass protractors mounted upright in his
+castle in Denmark. Four different observers would
+simultaneously measure the position of a planet in order to
+check for mistakes and reduce random errors.
+
+With
+Brahe's death, it fell to his former assistant Kepler to try
+to make some sense out of the volumes of data.
+After 900 pages of calculations and
+many false starts and dead-end ideas, Kepler finally
+synthesized the data into the following three laws:
+
+\myindented{4mm}{
+\noindent\textbf{Kepler's elliptical orbit law:} The planets orbit the sun in
+elliptical orbits with the sun at one focus.\\
+\textbf{Kepler's equal-area law:} The line connecting a planet to the
+sun sweeps out equal areas in equal amounts of
+time.\\
+\textbf{Kepler's law of periods:} The time required
+for a planet to orbit the sun, called its period, $T$, is
+proportional to the long axis of the ellipse raised to the
+3/2 power. The constant of proportionality is the same for
+all the planets.}
+
+Although the planets' orbits are
+ellipses rather than circles, most are very close to being
+circular. The earth's orbit, for instance, is only
+flattened by 1.7\% relative to a circle. In the special case
+of a planet in a circular orbit, the two foci (plural of
+``focus'') coincide at the center of the circle, and Kepler's
+elliptical orbit law thus says that the circle is centered
+on the sun. The equal-area law implies that a planet in a
+circular orbit moves around the sun with constant speed. 
+For a circular orbit, the law of periods then amounts to a
+statement that the time for one orbit is proportional to
+$r^{3/2}$, where $r$ is the radius. If all the planets were moving
+in their orbits at the same speed, then the time for one
+orbit would simply depend on the circumference of the
+circle, so it would only be proportional to $r$ to the first
+power. The more drastic dependence on $r^{3/2}$ means that the
+outer planets must be moving more slowly than the inner
+planets.
+
+Our main focus in this section will be to use the law of
+periods to deduce the general equation for
+gravitational energy. The equal-area law turns out to be
+a statement on conservation of angular momentum, which is
+discussed in chapter \ref{ch:4}. We'll demonstrate the elliptical orbit
+law numerically in chapter \ref{ch:3}, and analytically in chapter \ref{ch:4}.
+
+<% end_sec() %>
+
+<% begin_sec("Circular orbits") %>
+\index{circular orbit}\index{orbit!circular}
+
+<% marg(0) %>
+<%
+  fig(
+    'cannon',
+    %q{%
+      A cannon fires cannonballs at different velocities, from
+              the top of an imaginary mountain that rises above the earth's atmosphere.
+              This is almost the same as a figure Newton included in his
+              \textbf{Mathematical Principles}.
+    }
+  )
+%>
+<% end_marg %>
+%
+        Kepler's laws say that planets move along elliptical paths (with circles as a special
+        case), which would seem to contradict the proof on page \pageref{paraboladerivation}
+        that objects moving under the influence of gravity have parabolic trajectories.
+        Kepler was right. The parabolic path was really only an approximation, based
+        on the assumption that the gravitational field is constant, and that vertical lines
+        are all parallel. In figure \figref{cannon}, trajectory 1 is an ellipse, but
+        it gets chopped off when the cannonball hits the earth, and the small piece
+        of it that is above ground is nearly indistinguishable from a parabola.
+        Our goal is to connect the previous calculation of parabolic trajectories,
+        $y=(g/2v^2)x^2$, with Kepler's data for planets orbiting the sun in nearly
+        circular orbits. Let's start by thinking in terms of an orbit that circles the earth,
+        like orbit 2 in figure \figref{cannon}. It's more natural now to choose
+        a coordinate system with its origin at the center of the earth, so the parabolic
+        approximation becomes $y=r-(g/2v^2)x^2$, where $r$ is the distance from the
+        center of the earth. For small values of $x$, i.e., when the cannonball hasn't
+        traveled very far from the muzzle of the gun, the parabola is still a good
+        approximation to the actual circular orbit, defined by the Pythagorean theorem,
+        $r^2=x^2+y^2$, or $y=r\sqrt{1-x^2/r^2}$. For small values of $x$, we can use
+        the approximation $\sqrt{1+\epsilon}\approx1+\epsilon/2$ to find
+        $y\approx{}r-(1/2r)x^2$. Setting this equal to the equation of the parabola,
+        we have $g/2v^2=(1/2r)$, or
+        \begin{equation*}
+                v = \sqrt{gr} \qquad \text{[condition for a circular orbit]}\eqquad.
+        \end{equation*}
+
+\begin{eg}{Low-earth orbit}
+        To get a feel for what this all means, let's calculate the velocity
+        required for a satellite in a circular low-earth orbit. Real low-earth-orbit
+        satellites are only a few hundred km up, so for purposes of rough
+        estimation we can take $r$ to be
+        the radius of the earth, and $g$ is not much less than its value on the
+        earth's surface, 10 $\zu{m/s}^2$. Taking numerical data from
+        Appendix \ref{dataappendix}, we have
+        \begin{align*}
+                 v        &= \sqrt{ gr} \\
+                                &= \sqrt{(10\ \munit/\sunit^2)(6.4\times10^3\ \zu{km})} \\
+                                &= \sqrt{(10\ \munit/\sunit^2)(6.4\times10^6\ \zu{m})} \\
+                                &= \sqrt{ 6.4\times10^7\ \zu{m}^2/\zu{s}^2} \\
+                                &= \zu{8000 m/s}
+        \end{align*}
+        (about twenty times the speed of sound).
+
+        In one second, the satellite moves 8000 m horizontally. During this time, it
+        drops the same distance any other object would: about 5 m.
+        But a drop of 5 m over a horizontal distance of 8000 m is just enough to keep
+        it at the same altitude above the earth's curved surface.
+\end{eg}
+
+<% end_sec() %>
+
+<% begin_sec("The sun's gravitational field",nil,'sungrav') %>
+
+We can now use the circular orbit condition $v = \sqrt{gr}$, combined with Kepler's
+law of periods, $T\propto{}r^{3/2}$ for circular orbits, to determine how the sun's gravitational
+field falls off with distance.\footnote{There
+is a hidden assumption here, which is that the sun doesn't move.
+Actually the sun wobbles a little because of the planets' gravitational interactions
+with it, but the wobble is small due to the sun's large mass, so
+it's a pretty good approximation to assume the sun is stationary. Chapter \ref{ch:3} provides
+the tools to analyze this sort of thing completely correctly
+ --- see p. \pageref{eg:earthmooncg}.}
+From there, it will be just a hop, skip, and a jump to
+get to a universal description of gravitational interactions.
+
+The velocity of a planet in a circular orbit is proportional to $r/T$, so
+\begin{align*}
+        r/T        & \propto{}\sqrt{gr} \\
+        r/r^{3/2}        & \propto{}\sqrt{gr} \\
+        g        & \propto{}1/r^2
+\end{align*}
+If gravity behaves systematically, then we can expect the same to be true for the
+gravitational field created by any object, not just the sun.
+
+There is a subtle point here, which is that so far, $r$ has just meant the radius of a
+circular orbit, but what we have come up with smells more like an equation that
+tells us the strength of the gravitational field made by some object (the sun)
+if we know how far we are from the object. In other words, we could reinterpret
+$r$ as the distance from the sun.  
+
+<% end_sec() %>
+
+<% begin_sec("Gravitational energy in general",3) %>
+
+We now want to find an equation for the gravitational energy of any two masses
+that attract each other from a distance $r$. We assume that $r$ is large enough compared
+to the distance between the objects so that we don't really have to worry about
+whether $r$ is measured from center to center or in some other way. This would
+be a good approximation for describing the solar system, for example, since the sun
+and planets are small compared to the distances between them --- that's why you
+see Venus (the ``evening star'') with your bare eyes as a dot, not a disk.  
+
+The equation we seek is going to give the gravitational energy, $U$, as a function
+of $m_1$, $m_2$, and $r$. We already know from experience with gravity near the
+earth's surface that $U$ is proportional to the mass of the object that interacts with
+the earth gravitationally, so it makes sense to assume the relationship is symmetric:
+$U$ is presumably proportional to the product $m_1m_2$. We can
+no longer assume $\Delta{}U\propto{}\Delta{}r$, as in the earth's-surface equation
+$\Delta{}U=mg\Delta{}y$, since we are trying to construct an equation that would be
+valid for all values of $r$, and $g$ depends on $r$. We can, however,
+consider an infinitesimally small change in distance $\der{}r$, for which
+we'll have $\der{}U=m_2g_1\der{}r$, where $g_1$ is the gravitational field
+created by $m_1$. (We could just as well have written this as $\der{}U=m_1g_2\der{}r$,
+since we're not assuming either mass is ``special'' or ``active.'') Integrating this
+equation, we have
+\begin{align*}
+        \int{\der{}U}        &= \int{m_2g_1\der{}r}\\
+        U                        &= m_2\int{g_1\der{}r}\\
+        U                        &\propto m_1m_2\int{\frac{1}{r^2}\der{}r}\\
+        U                        &\propto -\frac{m_1m_2}{r}\eqquad,
+\end{align*}
+where we're free to take the constant of integration to be equal to zero, since
+gravitational energy is never a well-defined quantity in absolute terms. Writing $G$
+for the constant of proportionality, we
+have the following fundamental description of
+gravitational interactions:
+\begin{align*}
+        U = -\frac{Gm_1m_2}{r} \qquad & \text{[gravitational energy of two masses}\\
+                                                        & \text{separated by a distance $r$]}
+\end{align*}
+We'll refer to this as Newton's law of gravity, although in reality he stated it in
+an entirely different form, which turns out to be mathematically equivalent to this one.
+
+Let's interpret his result. First, don't get hung up on the fact that it's negative, since it's only
+differences in gravitational energy that have physical significance. The graph in
+figure \figref{ugraph} could be shifted up or down without having any physical effect.
+The slope of this graph relates to the strength of the gravitational field. For instance,
+suppose figure \figref{ugraph} is a graph of the gravitational energy of an asteroid
+interacting with the sun. If the asteroid drops straight toward the sun, from A to B,
+the decrease in gravitational energy is very small, so it won't speed up very much
+during that motion. Points C and
+D, however, are in a region where the graph's
+slope is much greater.
+As the asteroid moves from C to D, it loses a lot of gravitational
+energy, and therefore speeds up considerably. This is due to the stronger gravitational field.
+
+<% marg(80) %>
+<%
+  fig(
+    'ugraph',
+    %q{%
+      The gravitational energy
+                       $U=-Gm_1m_2/r$ graphed as a function of $r$.
+    }
+  )
+%>
+<% end_marg %>
+%
+
+\pagebreak
+
+\begin{eg}{Determining G}\label{eg:cavendish}
+The constant $G$ is not easy to determine, and Newton went to his grave without
+knowing an accurate value for it. If we knew the mass of the earth, then we could
+easily determine $G$ from experiments with terrestrial gravity, but the only way
+to determine the mass of the earth accurately in units of kilograms
+is by finding $G$ and reasoning the other way around! (If you estimate the average
+density of the earth, you can make at least a rough estimate of $G$.)
+Figures \figref{cavendish1} and \figref{cavendish2} show how $G$ was
+first measured by Henry Cavendish in the nineteenth century.The
+rotating arm is released from rest, and the kinetic energy of the two moving
+balls is measured when they pass position C. Conservation of energy gives
+\begin{equation*}
+        -2\frac{ GMm}{ r_{BA}}  -2\frac{ GMm}{ r_{BD}} =
+                -2\frac{ GMm}{ r_{CA}}  -2\frac{ GMm}{ r_{CD}}
+                + 2 K\eqquad,
+\end{equation*}
+where $M$ is the mass of one of the large balls, $m$ is the mass of one of the small ones,
+and the factors of two, which will cancel, occur because every energy is mirrored on the
+opposite side of the apparatus.  
+(As discussed on page \pageref{shelltheoremsubsection},
+it turns out that we get the right result by measuring all
+the distances from the center of one sphere to the center of the other.)
+This can easily be solved for $G$. The best modern
+value of $G$, from later versions of the same experiment, is
+$ 6.67\times10^{-11}\ \zu{J}\cdot\zu{m}/\zu{kg}^2$.
+\end{eg}
+
+<% marg(100) %>
+<%
+  fig(
+    'cavendish1',
+    %q{%
+      Cavendish's original drawing of the apparatus for his
+                              experiment, discussed in example \ref{eg:cavendish}. The room was
+                              sealed to exclude air currents, and the
+                              motion was observed through telescopes sticking through holes in the
+                              walls.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'cavendish2',
+    %q{%
+      A simplified drawing of the Cavendish experiment, viewed
+                              from above. The rod with the two small masses on the ends hangs from
+                              a thin fiber, and is free to rotate.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'pioneer',
+    %q{%
+      The Pioneer 10 space probe's trajectory from 1974 to 1992,
+                      with circles marking its position at one-year intervals. After its 1974 slingshot
+                      maneuver around Jupiter, the probe's motion was determined almost
+                      exclusively by the sun's gravity.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Escape velocity}
+\egquestion
+The Pioneer 10 space probe was launched in 1972, and continued sending back signals for 30 years.
+In the year 2001, not long before contact with the probe was lost, it was about
+$ 1.2\times10^{13}\ \zu{m}$ from the sun, and was moving almost
+directly away from the sun at a velocity of $ 1.21\times10^4\ \zu{m}$.
+The mass of the sun is $ 1.99\times10^{30}\ \zu{kg}$. Will Pioneer 10
+escape permanently, or will it fall back into the solar system?
+
+\eganswer
+We want to know whether there will be a point where the probe will turn around. If
+so, then it will have zero kinetic energy at the turnaround point:
+\begin{align*}
+         K_{i}+ U_{i} &=  U_{f} \\
+        \frac{1}{2} mv^2-\frac{ GMm}{ r_{i}} &=
+                -\frac{ GMm}{ r_{f}} \\
+        \frac{1}{2} v^2-\frac{ GM}{ r_{i}} &=
+                -\frac{ GM}{ r_f}\eqquad,
+\end{align*}
+where $M$ is the mass of the sun, $m$ is the (irrelevant) mass of the probe, and
+$r_f$ is the distance from the sun of the hypothetical turnaround point.
+Plugging in numbers on the left, we get a positive result. There can therefore
+be no solution, since the right side is negative. There won't be any turnaround point,
+and Pioneer 10 is never coming back.
+
+The minimum velocity required for this to happen is called
+\emph{escape velocity}.\index{escape velocity} For speeds above escape velocity,
+the orbits are open-ended hyperbolas, rather than repeating elliptical orbits.
+In figure \figref{pioneer}, Pioneer's hyperbolic trajectory
+becomes
+        almost indistinguishable from a line at large distances from the sun. The
+        motion slows perceptibly in the first few years after 1974, but later the speed
+        becomes nearly constant, as shown by the nearly constant spacing of the dots.
+\end{eg}
+
+        
+<% begin_sec("The gravitational field") %>
+
+We got the energy equation $U = -Gm_1m_2/r$ by integrating $g\propto 1/r^2$
+and then inserting a constant of proportionality
+to make the proportionality into an equation. The opposite of an integral is a derivative,
+so we can now go backwards and insert a 
+ constant of proportionality in $g\propto 1/r^2$ that will be consistent with
+ the energy equation:
+\begin{align*}
+        \der U         &= m_2 g_1 \der r \\
+        g_1                &= \frac{1}{m_2} \,\frac{\der U}{\der r} \\
+                        &= \frac{1}{m_2} \,\frac{\der}{\der r} \left(-\frac{Gm_1m_2}{r}\right)\\
+                        &= -Gm_1 \,\frac{\der}{\der r} \left(\frac{1}{r}\right)\\
+                        &= \frac{Gm_1}{r^2}
+\end{align*}
+This kind of inverse-square law occurs all the time in nature. For instance,
+if you go twice as far away from a lightbulb, you receive 1/4 as much light from
+it, because as the light spreads out, it is like an expanding sphere, and
+a sphere with twice the radius has four times the surface area. It's like
+spreading the same amount of peanut butter on four pieces of bread instead of
+one --- we have to spread it thinner.  
+
+\startdqs
+
+\begin{dq}
+A bowling ball interacts gravitationally with the earth. Would it make sense
+for the gravitational energy to be inversely proportional to the distance between
+their surfaces rather than their centers?
+\end{dq}
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("The shell theorem") %>
+\label{shelltheoremsubsection}\index{shell theorem}
+        Newton's great insight was that gravity near the earth's surface was the same
+        kind of interaction as the one that kept the planets from flying away from the sun.
+        He told his niece that the idea came to him when he saw an apple fall from
+        a tree, which made him wonder whether the earth might be affecting the apple
+        and the moon in the same way. 
+        Up until now, we've generally been dealing with gravitational interactions between
+        objects that are small compared to the distances between them, but that assumption
+        doesn't apply to the apple. A kilogram of dirt a few feet
+        under his garden in England would interact much more strongly with the
+        apple than a kilogram of molten rock deep under
+        Australia, thousands of miles away. 
+        Also, we know that the earth has some parts that
+        are more dense, and some parts that are less dense. The
+        solid crust, on which we live, is considerably less dense
+        than the molten rock on which it floats. By all
+        rights, the computation of the total gravitational energy of the apple
+        should be a horrendous mess. Surprisingly, it turns out to be fairly simple         in the end. First, we note that although the earth doesn't have the same
+        density throughout, it does have spherical symmetry: if we imagine
+        dividing it up into thin concentric shells, the density of each shell
+        is uniform.
+
+Second, it turns out that a uniform spherical shell interacts with external
+masses as if all its mass were concentrated at its center.
+
+\mythmhdr{The shell theorem} The gravitational energy of a uniform spherical
+shell of mass $M$ interacting with a pointlike mass $m$ outside it equals
+$-GMm/s$, where $s$ is the center-to-center distance. If mass $m$ is inside
+the shell, then the energy is constant, i.e., the shell's interior gravitational field is zero.
+
+<% marg(0) %>
+<%
+  fig(
+    'shellthm',
+    %q{%
+      A spherical shell of mass $M$ interacts with
+              a pointlike mass $m$.
+    }
+  )
+%>
+<% end_marg %>
+%
+        \mythmhdr{Proof} Let $b$ be the radius of the shell, $h$ its thickness, and $\rho$
+        its density.
+        Its volume is then $V$=(area)(thickness)=$4\pi{}b^2h$, and
+        its mass is $M=\rho{}V=4\pi{}\rho{}b^2h$. The strategy is to divide the shell
+        up into rings as shown in figure \figref{shellthm}, with each ring
+        extending from $\theta$ to $\theta+\der{}\theta$. Since the ring is infinitesimally
+        skinny, its entire mass lies at the same distance, $r$, from mass $m$.
+        The width of such a ring is
+        found by the definition of radian measure to be $w=b\der{}\theta$, and its mass
+        is $\der{}M=(\rho)$(circumference)(thickness)(width)=
+        $(\rho)(2\pi{}b \sin{} \theta)(h)(b\der{}\theta)$=$2\pi\rho b^2h\sin{}\theta\der{}\theta$.
+        The gravitational energy of the ring interacting with mass $m$ is therefore
+        \begin{align*}
+                \der{}U        &= -\frac{Gm\der{}M}{r} \\
+                                &= -2\pi{}G\rho{}b^2hm\frac{\sin{}\theta\der{}\theta}{r}\eqquad.
+        \intertext{Integrating both sides, we find the total gravitational energy of the shell:}
+                U                &= -2\pi{}G\rho{}b^2hm\int_0^\pi{\frac{\sin{}\theta\der{}\theta}{r}}
+        \end{align*}
+        The integral has a mixture of the variables $r$ and $\theta$, which are related
+        by the law of cosines,
+        \begin{equation*}
+                r^2        =        b^2 + s^2 - 2bs\cos\theta\eqquad,
+        \end{equation*}
+        and to evaluate the integral, we need to get everything in terms of either $r$ and $\der{}r$
+        or $\theta$ and $\der{}\theta$. The relationship
+        between the differentials is found by differentiating the law of cosines,
+        \begin{equation*}
+                2r\der{}r        =        2bs\sin\theta\der\theta\eqquad,
+        \end{equation*}
+        and since $\sin\theta\der\theta$ occurs in the integral, the easiest path
+        is to substitute for it, and get everything in terms of $r$ and $\der{}r$:
+        \begin{align*}
+                U                &= -\frac{2\pi{}G\rho{}bhm}{s}\int_{s-b}^{s+b}{\der{}r} \\
+                                 &= -\frac{4\pi{}G\rho{}b^2hm}{s} \\
+                                 &= -\frac{GMm}{s}
+        \end{align*}
+        This was all under the assumption that mass $m$ was on the outside of the shell.
+        To complete the proof, we consider the case where it's inside. In this case,
+        the only change is that the limits of integration are different:
+        \begin{align*}
+                U                &= -\frac{2\pi{}G\rho{}bhm}{s}\int_{b-s}^{b+s}{\der{}r} \\
+                                 &= -4\pi{}G\rho{}bhm \\
+                                 &= -\frac{GMm}{b}
+        \end{align*}
+
+<% marg(0) %>
+<%
+  fig(
+    'ugraphshell',
+    %q{%
+      The gravitational energy of a mass $m$ at a distance
+              $s$ from the center of a hollow spherical shell of mass.
+    }
+  )
+%>
+<% end_marg %>
+%
+        The two results are equal at the surface of the sphere, $s=b$, so the constant-energy
+        part joins continuously onto the $1/s$ part, and the effect is to chop off the steepest
+        part of the graph that we would have had if the whole mass $M$ had been concentrated
+        at its center. Dropping a mass $m$ from A to B in figure \figref{ugraphshell} releases
+        the same amount of energy as if mass $M$ had been concentrated at its center, but
+        there is no release of gravitational energy at all when moving between two interior
+        points like C and D. In other words, the internal gravitational field is zero. Moving from
+        C to D brings mass $m$ farther away from the nearby side of the shell, but closer to
+        the far side, and the cancellation between these two effects turns out to be perfect.
+        Although the gravitational field has to be zero at the center due to symmetry, it's
+        much more surprising that it cancels out perfectly in the whole interior region; this is a special
+        mathematical characteristic of a $1/r$ interaction like gravity.
+
+\begin{eg}{Newton's apple}
+Over a period of 27.3 days, the moon travels the circumference of its orbit, so using data from
+Appendix \ref{dataappendix}, we can calculate its speed, and
+solve the circular orbit condition
+to determine the strength of the earth's gravitational field at the moon's distance from
+the earth, $g= v^2/ r= 2.72\times10^{-3}\ \munit/\sunit^2$,
+which is 3600 times smaller than the gravitational field at the earth's surface.
+The center-to-center distance from the moon to the earth is 60 times greater than the
+radius of the earth. The earth is, to a very good approximation, a sphere made up
+of concentric shells, each with uniform density, so 
+the shell theorem tells us that its external gravitational field is the same as if all its
+mass was concentrated at its center. We already know that a gravitational energy
+that varies as $-1/ r$ is equivalent to a gravitational field proportional to
+$1/ r^2$, so it makes sense that a distance that is greater by a factor
+of 60 corresponds to a gravitational field that is $60\times60$=3600
+times weaker. Note that the calculation didn't require knowledge of the earth's
+mass or the gravitational constant, which Newton didn't know.
+
+In 1665, shortly after Newton graduated from Cambridge,  the Great Plague forced
+the college to close for two years, and Newton returned to the family farm and worked
+intensely on scientific problems. During this productive period, he carried out this
+calculation, but it came out wrong, causing him to doubt his new theory of gravity.
+The problem was that during the plague years, he was unable to use the university's
+library, so he had to use a figure for the radius of the moon's orbit that he had
+memorized, and he forgot that the memorized value was in units of nautical miles
+rather than statute miles. Once he realized his mistake, he found that the calculation
+came out just right, and became confident that his theory was right after all.
+\footnote{Some historians
+are suspicious that the story of the apple and the mistake in conversions may have been
+fabricated by Newton later in life. The conversion incident may have been a way of
+explaining his long delay in publishing his work, which led to a conflict with
+Leibniz over priority in the invention of calculus.}
+\end{eg}  
+
+\begin{eg}{Weighing the earth}\label{eg:weighearth}
+\egquestion
+Once Cavendish had found
+$G= 6.67\times10^{-11}\ \zu{J}\cdot\zu{m}/\zu{kg}^2$
+(p. \pageref{eg:cavendish}, example \ref{eg:cavendish}), it became possible to
+determine the mass of the earth. By the shell theorem, the gravitational energy
+of a mass $m$ at a distance $r$ from the center of the earth is $U=- GMm/ r$,
+where $M$ is the mass of the earth. The gravitational field is related to this by
+$ mg\der{} r=\der{} U$, or
+$g=(1/ m)\der{} U/\der{} r= GM/ r^2$.
+Solving for $M$, we have 
+\begin{align*}
+         M        &=  gr^2/ G \\
+                        & = \frac{\zu{(9.8\ }\zu{m}/\zu{s}^2\zu{)}
+                                                \zu{(} 6.4\times10^6\zu{\ m)}^2}
+                                        { 6.67\times10^{-11}\ \zu{J}\cdot\zu{m}/\zu{kg}^2} \\
+                        & =  6.0\times10^{24}
+                                \ \frac{\zu{m}^2\cdot\zu{kg}^2}{\zu{J}\cdot\zu{s}^2} \\
+                        & =  6.0\times10^{24}\ \zu{kg}
+\end{align*}
+\end{eg}  
+
+\begin{eg}{Gravity inside the earth}\label{eg:gravityinearth}
+\egquestion
+The earth is somewhat more dense at greater depths, but as an approximation let's
+assume it has a constant density throughout. How does its internal gravitational
+field vary with the distance $r$ from the center?
+
+\eganswer
+Let's write $b$ for the radius of the earth. The shell theorem tell us that at a
+given location $r$, we only need to consider the mass $M_{< r}$
+that is deeper than $r$.
+Under the assumption of constant density,
+this mass is related to the total mass of the earth by
+\begin{equation*}
+        \frac{ M_{< r}}{ M} = \frac{ r^3}{\zu{b}^3}\eqquad,
+\end{equation*}
+and by the same reasoning as in example \ref{eg:weighearth},
+\begin{equation*}
+         g = \frac{ GM_{< r}}{ r^2}\eqquad,
+\end{equation*}
+so
+\begin{equation*}
+         g = \frac{ GMr}{ b^3}\eqquad.
+\end{equation*}
+In other words, the gravitational field interpolates linearly between zero at
+$r=0$ and its ordinary surface value at $r= b$.
+\end{eg}  
+
+<% marg(0) %>
+<%
+  fig(
+    'apollo',
+    %q{%
+      The actual trajectory of the Apollo 11 spacecraft, A, and
+              the straight-line trajectory, B, assumed in the example.
+    }
+  )
+%>
+<% end_marg %>
+%
+        The following example applies the numerical techniques of section
+        \ref{numsection}.
+
+\begin{eg}{From the earth to the moon}
+The Apollo 11 mission landed the first humans on the moon in 1969.
+In this example, we'll estimate the time it took to get to the moon, and compare
+our estimate with the actual time, which was 73.0708 hours from the engine
+burn that took the ship out of earth orbit to the engine burn that inserted it into
+lunar orbit. During this time, the ship was coasting with the engines off, except
+for a small course-correction burn, which we neglect. More importantly, we
+do the calculation for a straight-line trajectory rather than the real S-shaped one,
+so the result can only be expected to agree roughly with what really happened.
+The following data come from the original press kit, which NASA has scanned and
+posted on the Web:\\
+\begin{tabular}{ll}
+        \qquad initial altitude & $ 3.363\times10^5\ \zu{m}$\\
+        \qquad initial velocity & $ 1.083\times10^4\ \zu{m/s}$\\
+\end{tabular}\\
+The endpoint of the the straight-line trajectory is a free-fall impact on
+the lunar surface, which is also unrealistic (luckily for the astronauts).
+
+        The ship's energy is
+        \begin{align*}
+                 E        &= -\frac{ GM_{e} m}{ r}
+                                        -\frac{ GM_{m} m}{ r_{m}- r}
+                                        +\frac{1}{2} mv^2\eqquad,
+        \intertext{but since everything is proportional to the mass of the ship,  m,
+                we can divide it out}
+                \frac{ E}{ m}        &= -\frac{ GM_{e}}{ r}
+                                        -\frac{ GM_{m}}{ r_{m}- r}
+                                        +\frac{1}{2} v^2\eqquad,
+        \end{align*}
+        and the energy variables in the program with names like \verb-e-, \verb-k-, 
+        and \verb-u- are actually energies per unit mass. The program is a straightforward
+        modification of the function
+        \verb-time3- on page \pageref{time3listing}.
+\begin{listing}{1}<%code_listing('apollo.py',%q{
+import math
+def tmoon(vi,ri,rf,n):
+  bigg=6.67e-11        # gravitational constant
+  me=5.97e24        # mass of earth
+  mm=7.35e22        # mass of moon
+  rm=3.84e8        # earth-moon distance
+  r=ri
+  v=vi
+  dr = (rf-ri)/n
+  e=-bigg*me/ri-bigg*mm/(rm-ri)+.5*vi**2
+  t=0
+  for i in range(n):
+    u_old = -bigg*me/r-bigg*mm/(rm-r)
+    k_old = e - u_old
+    v_old = math.sqrt(2.*k_old)
+    r = r+dr
+    u = -bigg*me/r-bigg*mm/(rm-r)
+    k = e - u
+    v = math.sqrt(2.*k)
+    v_avg = .5*(v_old+v)
+    dt=dr/v_avg
+    t=t+dt
+  return t
+})%>
+\end{listing}
+\begin{verbatim}
+>>> re=6.378e6  # radius of earth
+>>> rm=1.74e6   # radius of moon
+>>> ri=re+3.363e5       # re+initial altitude
+>>> rf=3.8e8-rm # earth-moon distance minus rm
+>>> vi=1.083e4 # initial velocity
+>>> print(tmoon(vi,ri,rf,1000)/3600.) # convert seconds to hours
+59.654047441976552
+\end{verbatim}
+        This is pretty decent agreement, considering the wildly inaccurate trajectory
+        assumed. It's interesting to see how much the duration of the trip changes if
+        we increase the initial velocity by only ten percent:
+\begin{verbatim}
+>>> vi=1.2e4
+>>> print(tmoon(vi,ri,rf,1000)/3600.)
+18.177752636111677
+\end{verbatim}
+        \noindent{}The most important
+        reason for using the lower speed was that if something had gone wrong,
+        the ship would have been able to whip around the moon and take a ``free return''
+        trajectory back to the earth, without having to do any further burns. At a higher speed,
+        the ship would have had so much kinetic energy that in the absence of any further
+        engine burns, it would have escaped from the earth-moon system. The Apollo 13
+        mission had to take a free return trajectory after an explosion crippled the spacecraft.
+        \end{eg}  
+
+<% end_sec() %>
+
+<% begin_sec("Evidence for repulsive gravity",nil,'',{'optional'=>true}) %>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/dark_energy)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Atomic phenomena") %>
+\label{atomicphenomenasection}
+        Variety is the spice of life, not of science. So far this
+        chapter has focused on heat energy, kinetic energy, and
+        gravitational energy, but it might seem that in addition to
+        these there is a bewildering array of other forms of
+        energy. Gasoline, chocolate bars, batteries, melting water ---
+        in each case there seems to be a whole new type of energy.
+        The physicist's psyche rebels
+        against the prospect of a long laundry list of types of
+        energy, each of which would require
+        its own equations,
+        concepts, notation, and terminology. The point at which
+        we've arrived in the study of energy is analogous to the
+        period in the 1960's when a half a dozen new subatomic
+        particles were being discovered every year in particle
+        accelerators. It was an embarrassment. Physicists began to
+        speak of the ``particle zoo,'' and it seemed that the
+        subatomic world was distressingly complex. The particle zoo
+        was simplified by the realization that most of the new
+        particles being whipped up were simply clusters of a
+        previously unsuspected set of fundamental particles
+        (which were whimsically dubbed quarks, a made-up word
+        from a line of poetry by James Joyce, ``Three quarks for
+        Master Mark.'') The energy zoo can also be simplified, and
+        it's the purpose of this section to demonstrate the hidden
+        similarities between forms of energy as seemingly different
+        as heat and motion.
+
+<% begin_sec("Heat is kinetic energy.") %>
+
+What is heat really? Is it an invisible fluid that your bare
+feet soak up from a hot sidewalk? Can one ever remove all
+the heat from an object? Is there a maximum to the
+temperature scale?
+
+<% marg(50) %>
+<%
+  fig(
+    'can-imploding',
+    %q{%
+              A vivid demonstration that heat is a form of motion. A small
+              amount of boiling water is poured into the empty can, which
+              rapidly fills up with hot steam. The can is then sealed
+              tightly, and soon crumples.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'random-motion',
+    %q{%
+      Random motion of atoms in a gas,
+              a liquid, and a solid.
+    }
+  )
+%>
+<% end_marg %>
+%
+
+The theory of heat as a fluid seemed to
+explain why colder objects absorbed heat from hotter ones,
+but once it became clear that heat was a form of energy, it
+began to seem unlikely that a material substance could
+transform itself into and out of all those other forms of
+energy like motion or light. For instance, a compost pile
+gets hot, and we describe this as a case where, through the
+action of bacteria, chemical energy stored in the plant
+cuttings is transformed into heat energy. The heating occurs
+even if there is no nearby warmer object that could have
+been leaking ``heat fluid'' into the pile.
+
+An alternative
+interpretation of heat was suggested by the theory that
+matter is made of atoms. Since gases are thousands of times
+less dense than solids or liquids, the atoms (or clusters of
+atoms called molecules) in a gas must be far apart. In that
+case, what is keeping all the air molecules from settling
+into a thin film on the floor of the room in which you are
+reading this book? The simplest explanation is that they are
+moving very rapidly, continually ricocheting off of the
+floor, walls, and ceiling. Though bizarre, the
+cloud-of-bullets image of a gas did give a natural
+explanation for the surprising ability of something as
+tenuous as a gas to exert huge forces.
+
+The
+experiment shown in figure \figref{can-imploding}, for instance, can be explained as
+follows. The high temperature of the steam is interpreted
+as
+a high average speed of random motions of its molecules.
+Before
+the lid was put on the can, the rapidly moving steam
+molecules pushed their way out of the can, forcing the
+slower air molecules out of the way. As the steam inside the
+can thinned out, a stable situation was soon achieved, in
+which the force from the less dense steam molecules moving
+at high speed balanced against the force from the more dense
+but slower air molecules outside. The cap was put on, and
+after a while the steam inside the can began to cool off.
+The force from the cooler, thin steam no longer matched the
+force from the cool, dense air outside, and the imbalance of
+forces crushed the can.
+
+This type of
+observation leads naturally to the conclusion that hotter
+matter differs from colder in that its atoms' random motion
+is more rapid. In a liquid, the motion could be visualized
+as people in a milling crowd shoving past each other more
+quickly. In a solid, where the atoms are packed together,
+the motion is a random vibration of each atom as it knocks
+against its neighbors.  
+
+We thus achieve a great
+simplification in the theory of heat. Heat is simply a form
+of kinetic energy, the total kinetic energy of random motion
+of all the atoms in an object. With this new understanding,
+it becomes possible to answer at one stroke the questions
+posed at the beginning of the section. Yes, it is at least
+theoretically possible to remove all the heat from an
+object. The coldest possible temperature, known as absolute
+zero, is that at which all the atoms have zero velocity, so
+that their kinetic energies, $K=(1/2)mv^2$, are all zero. No, there is no
+maximum amount of heat that a certain quantity of matter can
+have, and no maximum to the temperature scale, since
+arbitrarily large values of $v$ can create arbitrarily large
+amounts of kinetic energy per atom.  
+
+The kinetic theory of
+heat also provides a simple explanation of the true nature
+of temperature. Temperature is a measure of the amount of
+energy per molecule, whereas heat is the total amount of
+energy possessed by all the molecules in an object.  
+
+There is
+an entire branch of physics, called thermodynamics, that
+deals with heat and temperature and forms the basis for
+technologies such as refrigeration. Thermodynamics is
+discussed in more detail in chapter \ref{ch:thermo}, and I've
+provided here only a brief overview of the thermodynamic
+concepts that relate directly to energy.
+
+<% end_sec() %>
+
+<% begin_sec("All energy comes from particles moving or interacting.") %>
+
+If I stretch the spring in figure \figref{spring} and then release it, it snaps
+taut
+again. The creation of some kinetic energy shows that there must have been some
+other form of energy that was destroyed. What was it?
+
+<% marg(80) %>
+<%
+  fig(
+    'spring',
+    %q{%
+      The spring's energy is really due to electrical interactions
+                      among atoms.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'atomic',
+    %q{%
+      All these energy transformations turn out at the atomic
+                      level to be due to changes in the distances between atoms that
+                      interact electrically.
+    }
+  )
+%>
+<% end_marg %>
+
+We could just invent a new
+type of energy called ``spring energy,'' study its behavior, and call it quits, but that
+would be ugly. Are we going to have to invent a new forms of energy like this,
+over and over? No: the title of this book doesn't lie, and physics really is fundamentally
+simple. As shown in figure \figref{atomic}, when we bend or stretch an object, we're
+really changing the distances between the atoms, resulting in a change in electrical
+energy. Electrical energy isn't really our topic right now --- that's what most of the
+second half of this book is about --- but conceptually it's very similar to gravitational
+energy. Like gravitational energy, it depends on $1/r$, although there are some
+interesting new phenomena, such as the existence of both attraction and repulsion,
+which doesn't occur with gravity because gravitational mass can't be negative.
+The real point is that all the apparently dissimilar forms of energy in figure
+\figref{atomic} turn out to be due to electrical interactions among atoms.
+Even if we wish to include nuclear reactions (figure \figref{fission}) in the
+picture, there still turn out to be only four fundamental types of energy:
+
+\myindented{6mm}{
+        \noindent\textbf{kinetic energy} (including heat)\\
+        \textbf{gravitational energy}\\
+        \textbf{electrical and magnetic energy}\\
+        \textbf{nuclear energy}
+}
+
+Astute students have often asked me how light fits into this picture. This is a very
+good question, and in fact it could be argued that it is the basic question that led
+to Einstein's theory of relativity as well as the modern quantum picture of nature.
+Since these are topics for the second half of the book, we'll have to be content
+with half an answer at this point. For now, we may think of light energy as a form
+of kinetic energy, but one calculated not according to $(1/2)mv^2$ but by
+some other equation. (We know that $(1/2)mv^2$ would not make sense, because
+light has no mass, and furthermore, high-energy beams of light do not differ in
+speed from low-energy ones.)
+
+<% marg(30) %>
+<%
+  fig(
+    'fission',
+    %q{%
+      This figure looks similar to the previous ones, but the
+                      scale is a million times smaller. The little balls are the neutrons and protons
+                      that make up the tiny nucleus at the center of a uranium atom. When the
+                      nucleus splits (fissions), the source of the kinetic energy is partly electrical and
+                      partly nuclear.
+    }
+  )
+%>
+<% end_marg %>
+%
+
+\begin{eg}{Temperature during boiling}
+\egquestion
+If you stick a thermometer in a pan of water, and watch the temperature as you
+bring the water to a boil, you'll notice an interesting fact. The temperature
+goes up until the boiling point is reached, but then stays at $100\degcunit$ during the
+whole time the water is being boiled off. The temperature of the steam is also $100\degcunit$.
+Why does the temperature ``stick'' like this? What's happening to all the energy that
+the stove's burner is putting into the pan?
+
+\eganswer
+As shown in figure \figref{atomic}, boiling requires an increase in electrical
+energy, because the atoms coming out as gas are moving away from the other atoms,
+which attract them electrically. It is only this electrical energy that is increasing,
+not the atoms' kinetic energy, which is what the thermometer can measure.
+\end{eg}
+
+\begin{eg}{Diffusion}
+\egquestion
+A drop of food coloring in a cup of water will gradually spread out, even if
+you don't do any mixing with a spoon. This is called diffusion.
+Why would this happen, and what effect
+would temperature have? What would happen with solids or gases?
+
+\eganswer
+Figure \figref{random-motion} shows that the atoms in a liquid mingle because
+of their random thermal motion. Diffusion is slow (typically on the
+order of a centimeter a minute), despite
+the \emph{high} speeds of the atoms (typically hundreds of miles per
+hour). This is due to the randomness of the motion: a particular atom
+will take a long time to travel any significant distance, because it doesn't
+travel in a straight line.
+
+Based on this picture, we expect that the speed of diffusion should increase
+as a function of temperature, and experiments show that this is true.
+
+Diffusion also occurs in gases, which is why you can smell things even when
+the air is still. The speeds are much faster, because the typical distance
+between collisions is much longer than in a liquid.
+
+We can see from figure \figref{random-motion} that diffusion won't occur
+in solids, because each atom vibrates around an equilibrium position.
+\end{eg}
+
+
+
+\startdqs
+
+\begin{dq}
+I'm not making this up. XS Energy Drink has ads that read like this: \emph{All
+the ``Energy'' ... Without the Sugar! Only 8 Calories!''} Comment
+on this.
+\end{dq}
+
+<% end_sec() %>
+
+__incl(text/energy_zoo_applications)
+\enlargethispage{\baselineskip}
+
+<% end_sec() %>
+
+<% begin_sec("Oscillations",4,'oscillations') %>
+\index{oscillations}
+\enlargethispage{\baselineskip}
+
+<% marg(80) %>
+<%
+  fig(
+    'mass-on-spring',
+    %q{%
+      The spring has a minimum-energy length, 1, and energy is
+                      required in order to compress or stretch it, 2 and 3. A mass attached to the spring
+                      will oscillate around the equilibrium, 4-13.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'curvature',
+    %q{Three functions with the same curvature at $x$=0.}
+  )
+%>
+<% end_marg %>
+
+Let's revisit the example of the stretched spring from the previous section.
+We know that its energy is a form of electrical energy of interacting atoms, which is nice
+conceptually but doesn't help us to solve problems, since we don't
+know how the energy, $U$, depends on the length of the spring. All we know is
+that there's an equilibrium (figure \figref{mass-on-spring}/1), which is
+a local minimum of the function $U$. An extremely important problem which arises
+in this connection is how to calculate oscillatory motion around an equilibrium,
+as in \figref{mass-on-spring}/4-13. Even if we did special experiments to find out
+how the spring's energy worked, it might seem like we'd have to go through just
+as much work to deal with any other kind of oscillation, such as a sapling swinging back
+and forth in the breeze.
+
+Surprisingly, it's possible to analyze this type of oscillation in a very general and
+elegant manner, as long as the analysis is limited to \emph{small} oscillations.
+We'll talk about the mass on the spring for concreteness, but there will be nothing
+in the discussion at all that is restricted to that particular physical system.
+First, let's choose a coordinate system in which $x=0$ corresponds to the
+position of the mass where the spring is in equilibrium, and since interaction
+energies like $U$ are only well defined up to an additive constant, we'll simply
+define it to be zero at equilibrium:
+\begin{equation*}
+        U(0) = 0
+\end{equation*}
+Since $x=0$ is an equilibrium, $U(x)$ must have a local minimum there, and
+a differentiable function (which we assume $U$ is) has a zero derivative at
+a local minimum:
+\begin{equation*}
+        \frac{\der{}U}{\der{}x}(0) = 0
+\end{equation*}
+There are still infinitely many functions that could satisfy these criteria,
+including the three shown in figure \figref{curvature}, which are
+$x^2/2$, $x^2/2(1+x^2)$, and $(e^{3x}+e^{-3x}-2)/18$. Note,
+however, how all three functions are virtually identical right near the
+minimum. That's because they all have the same curvature. More specifically,
+each function has its second derivative equal to 1 at $x=0$, and the second
+derivative is a measure of curvature. We write $k$ for the second derivative
+of the energy at an equilibrium point,
+\begin{equation*}
+        \frac{\der{}^2U}{\der{}x^2}(0) = k\eqquad.
+\end{equation*}
+Physically, $k$ is a measure of stiffness. For example, the heavy-duty springs
+in a car's shock absorbers would have a high value of $k$. It is often referred to as
+the spring constant\index{spring constant}, but we're only using a spring as
+an example here. As shown in figure
+\figref{curvature}, any two functions that have $U(0)=0$, $\der{}U/\der{}x=0$, and
+$\der{}^2U/\der{}x^2=k$, with the same value of $k$, are virtually indistinguishable
+for small values of $x$, so if we want to analyze small oscillations, it doesn't even
+matter which function we assume. For simplicity, we'll just use $U(x)=(1/2)kx^2$
+from now on.  
+
+Now we're ready to analyze the mass-on-a-spring system, while keeping in mind
+that it's really only a representative example of a whole class of similar
+oscillating systems. We expect that the motion is going to repeat itself over
+and over again, and since we're not going to include frictional heating in our
+model, that repetition should go on forever without dying out. The most interesting
+thing to know about the motion would be the period, $T$, which is
+the amount of time required for one
+complete cycle of the motion. We might expect that the period would depend on
+the spring constant, $k$, the mass, $m$, and and the amplitude,\index{amplitude}
+$A$, defined in figure \figref{amplitude}.\footnote{Many kinds of oscillations are
+possible, so there is no standard definition of the amplitude. For a pendulum, the
+natural definition would be in terms of an angle. For a radio transmitter, we'd use
+some kind of electrical units.}
+
+<% marg(0) %>
+<%
+  fig(
+    'amplitude',
+    %q{%
+      The amplitude would usually be defined as the distance from
+              equilibrium to one extreme of the motion, i.e., half the total travel.
+    }
+  )
+%>
+<% end_marg %>
+%
+
+In examples like the brachistochrone and the Apollo 11 mission, it was generally
+necessary to use numerical techniques to determine the amount of time required
+for a certain motion. Once again, let's dust off the \verb-time3- function
+from page \pageref{time3listing} and modify it for our purposes. For flexibility,
+we'll define the function $U(x)$ as a separate Python function. We really want
+to calculate the time required for the mass to come back to its starting point, but
+that would be awkward to set up, since our function works by dividing up the
+distance to be traveled into tiny segments. By symmetry, the time required to
+go from one end to the other equals the time required to come back to the start,
+so we'll just calculate the time for half a cycle and then double it when we return
+the result at the end of the function. The test at lines 16-19 is necessary because
+otherwise at the very end of the motion we can end up trying to take the square
+root of a negative number due to rounding errors.
+
+        
+\pagebreak
+
+\begin{listing}{1}<%code_listing('oscillations.py',%q{
+import math
+def u(k,x):
+  return .5*k*x**2
+
+def osc(m,k,a,n):
+  x=a
+  v=0
+  dx = -2.*a/n
+  t=0
+  e = u(k,x)+.5*m*v**2
+  for i in range(n):
+    x_old = x
+    v_old = v
+    x = x+dx
+    kinetic = e-u(k,x)
+    if kinetic<0. :
+      v=0.
+      print "warning, K=",kinetic,"<0"
+    else :
+      v = -math.sqrt(2.*kinetic/m)
+    v_avg = (v+v_old)/2.
+    dt=dx/v_avg
+    t=t+dt
+  return 2.*t
+})%>
+\end{listing}
+\begin{verbatim}
+>>> print(osc(1.,1.,1.,100000))
+warning, K= -1.43707268307e-12 <0
+6.2831854132667919
+\end{verbatim}
+
+        The first thing to notice is that with this particular set of inputs ($m$=1 kg,
+        $k=1\ \junit/\munit^2$, and $A=1\ \munit$), the program has done an excellent
+        job of computing $2\pi=6.2831853\ldots$. This is Mother Nature giving us
+        a strong hint that the problem has an algebraic solution, not just a numerical
+        one. The next interesting thing happens when we change the amplitude from
+        1 m to 2 m:
+\begin{verbatim}
+>>> print(osc(1.,1.,2.,100000))
+warning, K= -5.7482907323e-12 <0
+6.2831854132667919
+\end{verbatim}
+        \noindent{}Even though the mass had to travel double the distance in each direction,
+        the period is the same to within the numerical accuracy of the calculation!
+
+With these hints, it seems like we should start looking for an algebraic solution. For guidance,
+here's a graph of $x$ as a function of $t$, as calculated by the \verb-osc- function
+with \verb-n-=10.
+
+%
+
+<%
+  fig(
+    'oscnumerical',
+    '',
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+
+This looks like a cosine function, so let's see if a $x=A\cos{}(\omega{}t+\delta)$
+is a solution to the conservation of energy equation ---
+ it's not uncommon to try to ``reverse-engineer'' the cryptic results
+of a numerical calculation like this.
+The symbol $\omega=2\pi/T$ (Greek omega), called angular frequency,\index{angular frequency} is a standard symbol for
+the number of radians per second of oscillation. Except for the factor of $2\pi$, 
+it is identical to the ordinary frequency $f=1/T$,\index{frequency} which has units of $\sunit^{-1}$ or Hz (Hertz).
+The phase angle
+$\delta$ is to allow for the possibility that $t=0$ doesn't coincide with the
+beginning of the motion. The energy is
+\begin{align*}
+        E        &= K + U \\
+                &= \frac{1}{2}mv^2 + \frac{1}{2}kx^2 \\
+                &= \frac{1}{2}m\left(\frac{\der{}x}{\der{}t}\right)^2 + \frac{1}{2}kx^2 \\
+                &= \frac{1}{2}m\left[-A\omega\sin{}(\omega{}t+\delta)\right]^2
+                                 + \frac{1}{2}k\left[A\cos{}(\omega{}t+\delta)\right]^2 \\
+                &= \frac{1}{2}A^2\left[m\omega^2\sin{}^2(\omega{}t+\delta)
+                                 + k\cos{}^2(\omega{}t+\delta)\right] 
+\end{align*}
+According to conservation of energy, this has to be a constant. Using the identity
+$\sin^2+\cos^2=1$, we can see that it will be a constant if we have $m\omega^2=k$,
+or $\omega=\sqrt{k/m}$, i.e., $T=2\pi\sqrt{m/k}$. Note that the period is independent
+of amplitude.\label{shm-k-m}
+
+<% marg(50) %>
+<%
+  fig(
+    'leverspring',
+    %q{Example \ref{eg:leverspring}. The rod pivots on the hinge at the bottom.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A spring and a lever}\label{eg:leverspring}
+\egquestion
+What is the period of small oscillations of the system shown in the figure?
+Neglect the mass of the lever and the spring. Assume that the spring is
+so stiff that gravity is not an important effect. The spring is relaxed
+when the lever is vertical.
+
+\eganswer
+This is a little tricky, because the spring constant $k$, although it
+is relevant, is \emph{not} the $k$ we should be putting into the equation
+$T=2\pi\sqrt{m/k}$. The $k$ that goes in there has to be the second
+derivative of $U$ with respect to the position, $x$, of the mass that's
+moving. The energy $U$ stored in the spring depends on how far the
+\emph{tip} of the lever is from the center. This distance equals
+$(L/b)x$, so the energy in the spring is
+\begin{align*}
+        U        &= \frac{1}{2}k\left(\frac{L}{b}x\right)^2 \\
+                &= \frac{kL^2}{2b^2}x^2\eqquad, \\
+\end{align*}
+and the $k$ we have to put in $T=2\pi\sqrt{m/k}$ is
+\begin{equation*}
+        \frac{\der^2 U}{\der x^2}        =  \frac{kL^2}{b^2}\eqquad. \\
+\end{equation*}
+The result is
+\begin{align*}
+        T        &=  2\pi\sqrt{\frac{mb^2}{kL^2}} \\
+                &=  \frac{2\pi b}{L}\sqrt{\frac{m}{k}} \\
+\end{align*}
+The leverage of the lever makes it as if the spring was stronger, and 
+decreases the period of the oscillations by a factor of $b/L$.
+\end{eg}
+
+\begin{eg}{Water in a U-shaped tube}
+\egquestion
+What is the period of oscillation of the water in figure \figref{utube2}?
+
+\eganswer
+In example \ref{eg:utube1} on p. \pageref{eg:utube1}, we 
+found $U( y)=\rho gAy^2$, so the ``spring constant,'' which really
+isn't a spring constant here at all, is
+\begin{align*}
+         k        &= \frac{\zu{d}^2 U}{\zu{d} y^2} \\
+                        &= 2\rho gA\eqquad.
+\end{align*}
+This is an interesting example, because $k$ can be calculated without any
+approximations, but the kinetic energy requires an approximation, because we
+don't know the details of the pattern of flow of the water. It could be very complicated.
+There will be a tendency for the water near the walls to flow more slowly due to
+friction, and there may also be swirling, turbulent motion. However, if we make
+the approximation that all the water moves with the same velocity as the surface,
+$\zu{d} y/\zu{d} t$, then the mass-on-a-spring analysis applies. Letting
+$L$ be the total length of the filled part of the tube, the mass is $\rho LA$, and
+we have
+\begin{align*}
+         T        &= 2\pi\sqrt{ m/ k} \\
+                        &= 2\pi\sqrt{\frac{\rho LA}{2\rho gA}} \\
+                        &= 2\pi\sqrt{\frac{ L}{2 g}}\eqquad.
+\end{align*}
+\end{eg}
+
+<% marg(100) %>
+<%
+  fig(
+    'utube',
+    %q{Water in a U-shaped tube.},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+
+\backofchapterboilerplate{2}
+ % ============================= homework ============================== 
+
+<% end_sec() %>
+
+<% begin_hw_sec %>
+
+<% begin_hw('boatpower',0) %>__incl(hw/boatpower)<% end_hw() %>
+
+<% begin_hw('ratioke',0) %>__incl(hw/ratioke)<% end_hw() %>
+
+<% begin_hw('microwave-waste') %>__incl(hw/microwave-waste)<% end_hw() %>
+
+<% begin_hw('colliding-balls',0) %>__incl(hw/colliding-balls)<% end_hw() %>
+
+%
+
+<%
+  fig(
+    'hw-colliding-balls',
+    %q{Problem \ref{hw:colliding-balls}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% begin_hw('grasshopper') %>__incl(hw/grasshopper)<% end_hw() %>
+
+<% begin_hw('maxkepe') %>__incl(hw/maxkepe)<% end_hw() %>
+
+<% begin_hw('slidingmagnets') %>__incl(hw/slidingmagnets)<% end_hw() %>
+
+<% begin_hw('sprinter',0) %>__incl(hw/sprinter)<% end_hw() %>
+
+<% begin_hw('crash',0) %>__incl(hw/crash)<% end_hw() %>
+
+<% begin_hw('astronaut') %>__incl(hw/astronaut)<% end_hw() %>
+
+<% begin_hw('melt-and-boil') %>__incl(hw/melt-and-boil)<% end_hw() %>
+
+<% begin_hw('compare-ke-two-heights') %>__incl(hw/compare-ke-two-heights)<% end_hw() %>
+
+<% begin_hw('throw-down-and-up',0) %>__incl(hw/throw-down-and-up)<% end_hw() %>
+
+<% begin_hw('hoop',2) %>__incl(hw/hoop)<% end_hw() %>
+
+<% begin_hw('gaccelproof2') %>__incl(hw/gaccelproof2)<% end_hw() %>
+
+<% marg(106) %>
+<%
+  fig(
+    'atwood',
+    %q{Problem \ref{hw:atwood-energy-sn}.}
+  )
+%>
+%
+        \spacebetweenfigs%
+        %
+
+<%
+  fig(
+    'pulley',
+    %q{Problem \ref{hw:pulley}.}
+  )
+%>
+%
+        \spacebetweenfigs%
+        %
+
+<%
+  fig(
+    'tightropish',
+    %q{Problem \ref{hw:tightropish}.}
+  )
+%>
+
+\spacebetweenfigs%
+%
+
+<%
+  fig(
+    'funkyatwood',
+    %q{Problem \ref{hw:funkyatwood}.}
+  )
+%>
+<% end_marg %>
+%
+
+<% begin_hw('atwood-energy-sn') %>__incl(hw/atwood-energy-sn)<% end_hw() %>
+
+<% begin_hw('pulley') %>
+
+What ratio of masses will balance the pulley system shown in the figure?
+
+<% hw_hint("pulley") %>
+
+<% end_hw() %>
+
+<% begin_hw('tightropish',2) %>__incl(hw/tightropish)<% end_hw() %>
+
+<% begin_hw('funkyatwood') %>__incl(hw/funkyatwood)<% end_hw() %>
+
+<% begin_hw('lennardjones') %>__incl(hw/lennardjones)<% end_hw() %>
+
+<% begin_hw('gspacestation',0) %>__incl(hw/gspacestation)<% end_hw() %>
+
+<% begin_hw('geosynch') %>__incl(hw/geosynch)<% end_hw() %>
+
+<% begin_hw('g-in-au-system') %>__incl(hw/g-in-au-system)<% end_hw() %>
+
+<% begin_hw('extrasolar') %>__incl(hw/extrasolar)<% end_hw() %>
+
+<% begin_hw('escape2') %>__incl(hw/escape2)<% end_hw() %>
+
+<% begin_hw('tides',3) %>__incl(hw/tides)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'marstrip',
+    %q{Problem \ref{hw:mars-trip}.}
+  )
+%>
+<% end_marg %>
+%
+
+<% begin_hw('mars-trip') %>__incl(hw/mars-trip)<% end_hw() %>
+
+<% begin_hw('heliumcylinder') %>__incl(hw/heliumcylinder)<% end_hw() %>
+
+<% begin_hw('sweat') %>__incl(hw/sweat)<% end_hw() %>
+
+<% begin_hw('dummy') %>
+
+[This problem is now problem \ref{ch:3}-\ref{hw:microwaveice}.]
+
+<% end_hw() %>
+
+<% begin_hw('melt-antarctic') %>__incl(hw/melt-antarctic)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'whistle',
+    %q{Problem \ref{hw:whistle}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'pulleyandspring',
+    %q{Problem \ref{hw:pulleyandspring}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'vibtransverse',
+    %q{Problem \ref{hw:vibtransverse}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'springsseries',
+    %q{Problem \ref{hw:springsseries}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('whistle',0) %>__incl(hw/whistle)<% end_hw() %>
+
+<% begin_hw('hangfromspring') %>__incl(hw/hangfromspring)<% end_hw() %>
+
+<% begin_hw('oscillate-vs-fall') %>__incl(hw/oscillate-vs-fall)<% end_hw() %>
+
+<% begin_hw('pulleyandspring') %>__incl(hw/pulleyandspring)<% end_hw() %>
+
+<% begin_hw('vibtransverse') %>__incl(hw/vibtransverse)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('springsseries') %>__incl(hw/springsseries)<% end_hw() %>
+
+<% begin_hw('simulate-anharmonic') %>__incl(hw/simulate-anharmonic)<% end_hw() %>
+
+<% begin_hw('simulate-pendulum',2) %>__incl(hw/simulate-pendulum)<% end_hw() %>
+
+<% begin_hw('air-resistance-falling-ball') %>
+
+  A ball falls from a height $h$. Without air resistance, the time it takes
+  to reach the floor is $\sqrt{2h/g}$. A numerical version of this calculation was given
+  in program \verb@time2@ on page  \pageref{program-time2}. Now suppose
+  that air resistance is not negligible. For a smooth sphere of radius $r$, moving
+  at speed $v$ through air of density $\rho$, the amount of energy $\der Q$ dissipated as
+  heat as the ball falls through a height $\der y$ is given (ignoring signs)
+  by $\der Q = (\pi/4)\rho v^2 r^2 \der y$. Modify the program to incorporate this effect,
+  and find the resulting change in the fall time in the case of a 21 g ball of radius 1.0 cm,
+  falling from a height of 1.0 m. The density of air at sea level is about $1.2\ \kgunit/\munit^3$.
+  Turn in a printout of both your program and its output.
+  Answer: 0.34 ms.
+
+<% end_hw() %>
+
+<% begin_hw('python-factorial') %>__incl(hw/python-factorial)<% end_hw() %>
+
+<% begin_hw('fly-wing-ke') %>__incl(hw/fly-wing-ke)<% end_hw() %>
+
+<% begin_hw('grass-growing') %>__incl(hw/grass-growing)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ % ==================================================================== 
+ % ==================================================================== 
+ % ====================================================================  
+
+\begin{exsection}
+\extitle{A}{Reasoning with Ratios and Powers}
+
+Equipment:
+
+\begin{indentedblock}
+    ping-pong balls and paddles
+
+    two-meter sticks
+\end{indentedblock}
+
+You have probably bounced a ping pong ball straight up and
+down in the air. The time between hits is related to the
+height to which you hit the ball. If you take twice as much
+time between hits, how many times higher do you think you
+will have to hit the ball? Write down your hypothesis:\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Your instructor will first beat out a tempo of 240 beats per
+minute (four beats per second), which you should try to
+match with the ping-pong ball. Measure the height to which
+the ball rises:\_\_\_\_\_\_\_
+
+Now try it at 120 beats per minute:\_\_\_\_\_\_\_\_
+
+Compare your hypothesis and your results with the rest of the class.
+
+ % ==================================================================== 
+ % ==================================================================== 
+ % ==================================================================== 
+\extitle{B}{The Shell Theorem}
+
+This exercise is an approximate numerical test of the shell
+theorem. There are seven masses A-G, each being one
+kilogram. Masses A-E, each one meter from the center, form a
+shape like two Egyptian pyramids joined at their bases; this
+is a rough approximation to a six-kilogram spherical shell
+of mass. Mass G is five meters from the center of the main
+group. The class will divide into six groups and split up
+the work required in order to calculate the total gravitational energy
+of mass G.
+
+\includegraphics[width=78mm]{\chapdir/figs/ex-octahedron}
+
+1. Each group should write its results on the board in units
+of picojoules, retaining six significant figures of precision.
+
+2. The class will add the results and compare with
+the result that would be obtained with the shell theorem.
+
+\pagebreak[4]
+
+ % ==================================================================== 
+ % ==================================================================== 
+ % ==================================================================== 
+\extitle{C}{Vibrations}
+
+\noindent Equipment:
+\begin{itemize}
+\item air track and carts of two different masses
+\item springs
+\item weights
+\end{itemize}
+
+\inlinefignocaptionnoresize{vibrations}
+
+\noindent Place the cart on the air track and attach springs so that it can vibrate.
+
+1. Test whether the period of vibration depends on amplitude. Try at
+least one moderate amplitude, for which the springs do not go slack,
+at least one amplitude that is large enough so that they do go
+slack, and one amplitude that's the very smallest you can possibly observe.
+
+2. Try a cart with a different mass. Does the period change by the
+expected factor, based on the equation $T=2\pi\sqrt{m/k}$?
+
+3. In homework problem \ref{hw:hangfromspring} on page \pageref{hw:hangfromspring},
+you showed that a spring's spring constant can be determined by hanging a weight from it.
+Use this technique to find the spring constant of each of the two springs. The equivalent spring
+constant of these two springs, attached to the cart in this way, can be found by adding their
+spring constants.
+
+4. Test the equation $T=2\pi\sqrt{m/k}$ numerically.
+
+\end{exsection}
+
+<% end_chapter() %>

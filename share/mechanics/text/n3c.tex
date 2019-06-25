@@ -1,0 +1,785 @@
+In 1872, capitalist and former California governor Leland
+\index{Stanford, Leland}Stanford asked photographer Eadweard
+\index{Muybridge, Eadweard}Muybridge if he would work for
+him on a project to settle a \$25,000 bet (a princely sum at
+that time). Stanford's friends were convinced that a
+trotting horse always had at least one foot on the ground,
+but Stanford claimed that there was a moment during each
+cycle of the motion when all four feet were in the air. The
+human eye was simply not fast enough to settle the question.
+In 1878, Muybridge finally succeeded in producing what
+amounted to a motion picture of the horse, showing
+conclusively that all four feet did leave the ground at one
+point. (Muybridge was a colorful figure in San Francisco
+history, and his acquittal for the murder of his wife's
+lover was considered the trial of the century in California.)
+
+The losers of the bet had probably been influenced by
+Aristotelian reasoning, for instance the expectation that a
+leaping horse would lose horizontal velocity while in the
+air with no force to push it forward, so that it would be
+more efficient for the horse to run without leaping. But
+even for students who have converted wholeheartedly to
+Newtonianism, the relationship between force and acceleration
+leads to some conceptual difficulties, the main one being a
+problem with the true but seemingly absurd statement that an
+object can have an acceleration vector whose direction is
+not the same as the direction of motion. The horse, for
+instance, has nearly constant horizontal velocity, so its
+$a_x$ is zero. But as anyone can tell you who has ridden a
+galloping horse, the horse accelerates up and down. The
+horse's acceleration vector therefore changes back and forth
+between the up and down directions, but is never in the same
+direction as the horse's motion. In this chapter, we will
+examine more carefully the properties of the velocity,
+acceleration, and force vectors. No new principles are
+introduced, but an attempt is made to tie things together
+and show examples of the power of the vector formulation of Newton's laws.
+
+<% begin_sec("The velocity vector",0,'velocity-vector') %>\index{velocity!as a vector}\index{vector!velocity}
+
+For motion with constant velocity, the velocity vector is
+\begin{equation*}
+        \vc{v} = \Delta \vc{r}/\Delta t\eqquad. \qquad \hfill \shoveright{\text{[only for constant velocity]}}
+\end{equation*}
+The $\Delta\vc{r}$ vector points in the direction of the motion,
+and dividing it by the scalar $\Delta t$ only changes its
+length, not its direction, so the velocity vector points in
+the same direction as the motion.
+m4_ifelse(__me,1,[:%
+  When the velocity vector is not constant, we form it from the components
+  $v_x=\der x/\der t$, $v_y=\der y/\der t$, and $v_z=\der z/\der t$.
+  This set of three equations can be notated more compactly as
+  \begin{equation*}
+    \vc{v}=\der\vc{r}/\der t\eqquad.
+  \end{equation*}
+  This is an example of a more general rule about differentiating vectors: to differentiate a vector,
+  take the derivative component by component.
+  Even when the velocity vector
+  is not constant, it still points along the direction of motion.
+
+  \begin{eg}{A car bouncing on its shock absorbers}
+  \egquestion
+  A car bouncing on its shock absorbers has a position as a function of time given by
+  \begin{equation*}
+    \vc{r} = bt\hat{\vc{x}}+(c\sin\omega t)\hat{\vc{y}}\eqquad,
+  \end{equation*}
+  where $b$, $c$, and $\omega$ (Greek letter omega) are constants.
+  Infer the units of the constants, find the velocity, and check the units of
+  the result.
+
+  \eganswer
+  The components of the position vector are $bt$ and $c\sin\omega t$, and if these
+  are both to have units of meters, then $b$ must have units of $\munit/\sunit$ and $c$ units of meters.
+  The sine function requires a unitless input, so $\omega$ must have units of $\sunit^{-1}$ (interpreted
+  as radians per second, e.g., if $c=2\pi\ \zu{rad}/\sunit$, then the car completes one cycle of vertical
+  oscillation in one second).
+
+  Differentiating component by component, we find
+  \begin{equation*}
+    \vc{v} = b\hat{\vc{x}}+(c\omega\cos\omega t)\hat{\vc{y}}\eqquad.
+  \end{equation*}
+  The units of the first component are simply the units of $b$, $\munit/\sunit$, which makes sense.
+  The units of the second component are \\
+  $\munit\cdot\sunit^{-1}$, which also checks out.
+  \end{eg}
+:],[:%
+  When the velocity is not
+  constant, i.e., when the $x-t$, $y-t$, and $z-t$ graphs are not
+  all linear, we use the slope-of-the-tangent-line approach to
+  define the components $v_x$, $v_y$, and $v_z$, from which we
+  assemble the velocity vector.
+  Even when the velocity vector
+  is not constant, it still points along the direction of motion.
+:])%
+
+Vector addition is the correct way to generalize the
+one-dimensional concept of adding velocities in relative
+motion, as shown in the following example:
+
+<% marg(70) %>
+<%
+  fig(
+    'greyhound',
+    %q{The racing greyhound's velocity vector is in the direction of its motion, i.e., tangent to
+       its curved path.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-cross-river',
+    %q{Example \ref{eg:cross-river}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Velocity vectors in relative motion}\label{eg:cross-river}
+\egquestion You wish to cross a river and arrive at a dock
+that is directly across from you, but the river's current
+will tend to carry you downstream. To compensate, you must
+steer the boat at an angle. Find the angle $\theta $, given
+the magnitude, $|\vc{v}_{WL}|$, of the water's velocity relative
+to the land, and the maximum speed, $|\vc{v}_{BW}|$, of which the
+boat is capable relative to the water.
+
+\eganswer The boat's velocity relative to the land equals
+the vector sum of its velocity with respect to the water and
+the water's velocity with respect to the land,
+\begin{equation*}
+            \vc{v}_{BL} =  \vc{v}_{BW}+  \vc{v}_{WL}\eqquad.
+\end{equation*}
+If the boat is to travel straight across the river, i.e.,
+along the $y$ axis, then we need to have $\vc{v}_{BL,x}=0$. This $x$
+component equals the sum of the $x$ components of the other two vectors,
+\begin{equation*}
+            \vc{v}_{BL,x}  =  \vc{v}_{BW,x} +  \vc{v}_{WL,x}\eqquad,
+\end{equation*}
+or
+\begin{equation*}
+            0  =  -|\vc{v}_{BW}| \sin  \theta  + |\vc{v}_{WL}|\eqquad.
+\end{equation*}
+Solving for $\theta $, we find $\sin  \theta  =  |\vc{v}_{WL}|/|\vc{v}_{BW}|,$ so
+\begin{equation*}
+            \theta = \sin^{-1}\frac{|\vc{v}_{WL}|}{|\vc{v}_{BW}|}\eqquad.
+\end{equation*}
+\end{eg}
+
+\worked{annie-oakley}{Annie Oakley}
+
+\startdqs
+
+\begin{dq}
+Is it possible for an airplane to maintain a constant
+velocity vector but not a constant $|\vc{v}|?$  How about the
+opposite -- a constant $|\vc{v}|$ but not a constant velocity vector? Explain.
+\end{dq}
+
+\begin{dq}
+New York and Rome are at about the same latitude, so the
+earth's rotation carries them both around nearly the same
+circle. Do the two cities have the same velocity vector
+(relative to the center of the earth)? If not, is there any
+way for two cities to have the same velocity vector?
+\end{dq}
+
+<% end_sec() %>
+
+<% begin_sec("The acceleration vector",nil) %>\index{acceleration!as a vector}\index{vector!acceleration}
+
+m4_ifelse(__me,1,[:%
+When the acceleration is constant,
+we have
+\begin{equation*}
+        \vc{a} = \Delta\vc{v}/\Delta t\eqquad, \qquad \shoveright{\text{[only for constant acceleration]}}
+\end{equation*}
+which can be written in terms of initial and final velocities as
+\begin{equation*}
+        \vc{a} = (\vc{v}_f-\vc{v}_i)/\Delta t\eqquad. \qquad \shoveright{\text{[only for constant acceleration]}}
+\end{equation*}
+In general, we define the acceleration vector as the derivative
+  \begin{equation*}
+    \vc{a}=\der\vc{v}/\der t\eqquad.
+  \end{equation*}
+:],[:%
+When the acceleration is constant, we can define the acceleration vector as
+\begin{equation*}
+        \vc{a} = \Delta\vc{v}/\Delta t\eqquad, \qquad \shoveright{\text{[only for constant acceleration]}}
+\end{equation*}
+which can be written in terms of initial and final velocities as
+\begin{equation*}
+        \vc{a} = (\vc{v}_f-\vc{v}_i)/\Delta t\eqquad. \qquad \shoveright{\text{[only for constant acceleration]}}
+\end{equation*}
+Otherwise, we can use the type of graphical definition described in section
+\ref{sec:velocity-vector} for the velocity vector.
+:])
+
+<% marg(0) %>
+<%
+  fig(
+    'delta-v-arrows-1',
+    %q{%
+      A change in the magnitude of the
+      velocity vector implies an acceleration.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'delta-v-arrows-2',
+    %q{%
+      A change in the direction of the
+      velocity vector also produces a nonzero 
+      $\Delta\vc{v}$ vector, and thus a nonzero
+      acceleration vector, $\Delta\vc{v}/\Delta t$.
+    }
+  )
+%>
+<% end_marg %>
+
+Now there are two ways in which we could have a nonzero
+acceleration. Either the magnitude or the direction of the
+velocity vector could change. This can be visualized with
+arrow diagrams as shown in figures 
+\figref{delta-v-arrows-1} and \figref{delta-v-arrows-2}. Both the magnitude
+and direction can change simultaneously, as when a car
+accelerates while turning. Only when the magnitude of the
+velocity changes while its direction stays constant do we
+have a $\Delta v$ vector and an acceleration vector along
+the same line as the motion.
+
+<% self_check('acceleration-vector',<<-'SELF_CHECK'
+(1) In figure \\figref{delta-v-arrows-1}, is the object speeding up, or slowing
+down? (2) What would the diagram look like if $\\vc{v}_i$ was the
+same as $\\vc{v}_f?$ (3) Describe how the $\\Delta \\vc{v}$ vector is
+different depending on whether an object is speeding up or slowing down.
+  SELF_CHECK
+  ) %>
+
+\pagebreak
+
+The acceleration vector points in the direction that an accelerometer would point,
+as in figure \ref{fig:accelerometer}.
+
+
+<%
+  fig(
+    'accelerometer',
+    %q{The car has just swerved to the right. The air freshener hanging from the
+        rear-view mirror acts as an accelerometer, showing that the acceleration vector is to the right.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+<% self_check('projectile-a-vector',<<-'SELF_CHECK'
+In projectile motion, what direction does the acceleration vector have?
+  SELF_CHECK
+  ) %>
+
+<%
+  fig(
+    'rappelling-reprise',
+    %q{Example }+ref_workaround('eg:rappelling-reprise')+%q{.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+\begin{eg}{Rappelling}\label{eg:rappelling-reprise}
+In figure \figref{rappelling-reprise},
+the rappeller's velocity has long
+periods of gradual change interspersed with short periods of
+rapid change. These correspond to periods of small
+acceleration and force, and periods of large acceleration and force.
+\end{eg}
+
+<%
+  fig(
+    'horse-outlines',
+    %q{Example }+ref_workaround('eg:horse-outlines')+%q{.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+\begin{eg}{The galloping horse}\label{eg:horse-outlines}
+Figure \figref{horse-outlines} on page \pageref{fig:horse-outlines}
+shows outlines traced from the first, third,
+fifth, seventh, and ninth frames in Muybridge's series of
+photographs of the galloping horse. The estimated location
+of the horse's center of mass is shown with a circle, which
+bobs above and below the horizontal dashed line.
+
+   If we don't care about calculating velocities and
+accelerations in any particular system of units, then we can
+pretend that the time between frames is one unit. The
+horse's velocity vector as it moves from one point to the
+next can then be found simply by drawing an arrow to connect
+one position of the center of mass to the next. This
+produces a series of velocity vectors which alternate
+between pointing above and below horizontal.
+
+   The $\Delta\vc{v}$ vector is the vector which we would have
+to add onto one velocity vector in order to get the next
+velocity vector in the series. The $\Delta\vc{v}$ vector
+alternates between pointing down (around the time when the
+horse is in the air, B) and up (around the time when the
+horse has two feet on the ground, D).
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+When a car accelerates, why does a bob hanging from the
+rearview mirror swing toward the back of the car? Is it
+because a force throws it backward? If so, what force?
+Similarly, describe what happens in the other cases described above.
+\end{dq}
+
+\begin{dq}
+Superman is guiding a crippled spaceship into port. The ship's
+engines are not working. If Superman suddenly changes the direction
+of his force on the ship, does the ship's velocity vector change
+suddenly? Its acceleration vector? Its direction of motion?
+\end{dq}
+
+
+<% end_sec() %>
+
+\vfill
+
+<% begin_sec("The force vector and simple machines",nil,'force-vector') %>%
+\index{force!as a vector}\index{vector!force}
+
+Force is relatively easy to intuit as a vector. The force
+vector points in the direction in which it is trying to
+accelerate the object it is acting on.
+
+<% marg(-40) %>
+<%
+  fig(
+    'sled',
+    %q{Example \ref{eg:sled}.}
+  )
+%>
+<% end_marg %>
+
+Since force vectors are so much easier to visualize than
+acceleration vectors, it is often helpful to first find the
+direction of the (total) force vector acting on an object,
+and then use that to find the direction of
+the acceleration vector. Newton's second law
+tells us that the two must be in the same direction.
+
+\begin{eg}{A component of a force vector}\label{eg:sled}
+Figure \figref{sled}, redrawn from a classic 1920 textbook, shows
+a boy pulling another child on a sled. His force has both a horizontal
+component and a vertical one, but only the horizontal one accelerates
+the sled. (The vertical component just partially cancels the force of gravity,
+causing a decrease in the normal force between the runners and the snow.)
+There are two triangles in the figure. One triangle's hypotenuse is the
+rope, and the other's is the magnitude of the force. These triangles are
+similar, so their internal angles are all the same, but they are not the
+same triangle. One is a distance triangle, with sides measured in meters, the other
+a force triangle, with sides in newtons. In both cases, the horizontal leg
+is 93\% as long as the hypotenuse. It does not make sense, however, to
+compare the sizes of the triangles --- the force triangle is not smaller
+in any meaningful sense.
+\end{eg}
+
+\begin{eg}{Pushing a block up a ramp}\label{eg:ramp-mechanical-advantage}
+\egquestion Figure \figref{eg-ramp-1} shows a block being pushed up a
+frictionless ramp at constant speed by an externally applied force
+$\vc{F}_A$. How much force is required, in terms of the block's
+mass, $m$, and the angle of the ramp, $\theta $?
+
+\eganswer We analyze the forces on the block and introduce notation for the other forces besides
+$\vc{F}_A$:
+
+\begin{tabular}{|p{50mm}|p{50mm}|}
+\hline
+\emph{force acting on block}  &   \emph{3rd-law partner} \\
+\hline
+ramp's normal force on block,   &  block's normal force on ramp, \\
+$\vc{F}_N$, \hfill \anonymousinlinefig{../../../share/misc/arrows/1-oclock} & \hfill \anonymousinlinefig{../../../share/misc/arrows/7-oclock} \\ 
+\hline
+external object's force on block (type irrelevant), $\vc{F}_A$ \hfill \anonymousinlinefig{../../../share/misc/arrows/10-oclock-short}  &  block's force on external object (type irrelevant), \hfill \anonymousinlinefig{../../../share/misc/arrows/4-oclock-short}\\
+\hline
+planet earth's gravitational force on block, $\vc{F}_W$ \hfill $\downarrow$  &  block's gravitational force on earth, \hfill $\uparrow$\\
+\hline
+\end{tabular}
+
+
+Because the block is being pushed up at constant speed, it
+has zero acceleration, and the total force on it must be
+zero. From figure \figref{eg-ramp-3}, we find
+\begin{align*}
+        |\vc{F}_A|      &=  |\vc{F}_W| \sin  \theta   \\
+                        &=  mg \sin  \theta\eqquad.
+\end{align*}
+
+Since the sine is always less than one, the applied force is
+always less than $mg$, i.e., pushing the block up the
+ramp is easier than lifting it straight up. This is
+presumably the principle on which the pyramids were
+constructed: the ancient Egyptians would have had a hard
+time applying the forces of enough slaves to equal the full
+weight of the huge blocks of stone.
+
+Essentially the same analysis applies to several other
+simple machines, such as the wedge and the screw.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'eg-ramp-1',
+    %q{%
+      The applied force
+      $\vc{F}_A$ pushes the
+      block up the frictionless ramp.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-ramp-3',
+    %q{%
+      If the block is to move at constant
+      velocity, Newton's first law says that
+      the three force vectors acting on it
+      must add up to zero. To perform 
+      vector addition, we put the vectors tip to
+      tail, and in this case we are adding
+      three vectors, so each one's tail goes
+      against the tip of the previous one.
+      Since they are supposed to add up to
+      zero, the third vector's tip must come
+      back to touch the tail of the first 
+      vector. They form a triangle, and since the
+      applied force is perpendicular to the
+      normal force, it is a right triangle.
+    }
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<%
+  fig(
+    'hw-layback',
+    %q{Example \ref{eg:layback} and problem \ref{hw:layback} on p.~\pageref{hw:layback}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{A layback}\label{eg:layback}
+The figure shows a rock climber 
+using a technique called a layback. He can make the normal forces
+$\vc{F}_{N1}$ and $\vc{F}_{N2}$ large, which has the side-effect of increasing
+the frictional forces $\vc{F}_{F1}$ and $\vc{F}_{F2}$, so that he doesn't slip
+down due to the gravitational (weight) force $\vc{F}_W$. The purpose of the
+problem is not to analyze all of this in detail, but simply to practice
+finding the components of the forces based on their magnitudes.
+To keep the notation simple, let's write $F_{N1}$ for 
+$|\vc{F}_{N1}|$, etc. The crack overhangs by a small, positive angle $\theta\approx9\degunit$.
+
+In this example, we 
+ determine the
+$x$ component of $\vc{F}_{N1}$. The other nine components are left as an exercise to
+the reader (problem \ref{hw:layback}, p.~\pageref{hw:layback}).
+
+The easiest method is the one demonstrated in example \ref{eg:component-shortcut}
+on p.~\pageref{eg:component-shortcut}. Casting vector $\vc{F}_{N1}$'s shadow on the ground,
+we can tell that it would point to the left, so its $x$ component is
+negative. The only two possibilities for its $x$ component are therefore
+$-F_{N1}\cos\theta$ or $-F_{N1}\sin\theta$. We expect this force to have
+a large $x$ component and a much smaller $y$. Since $\theta$ is small,
+$\cos\theta\approx 1$, while $\sin\theta$ is small. Therefore
+the $x$ component must be $-F_{N1}\cos\theta$.
+\end{eg}
+
+<% marg(-300) %>
+<%
+  fig(
+    'eg-push-broom',
+    %q{Example \ref{eg:push-broom}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Pushing a broom}\label{eg:push-broom}
+\egquestion Figure \figref{eg-push-broom} shows a man pushing a broom at an angle $\theta$ relative to the horizontal. The mass $m$
+of the broom is concentrated at the brush. If the magnitude of the broom's acceleration is $a$, find the force $F_H$ that the
+man must make on the handle.
+
+\eganswer First we analyze all the forces on the brush.
+
+\begin{tabular}{|p{50mm}|p{50mm}|}
+\hline
+\emph{force acting on brush}  &   \emph{3rd-law partner} \\
+\hline
+handle's normal force & brush's normal force \\
+   on brush, $F_H$, \hfill \anonymousinlinefig{../../../share/misc/arrows/4-oclock}
+    & on handle, \hfill \anonymousinlinefig{../../../share/misc/arrows/10-oclock} \\
+\hline
+earth's gravitational force & brush's gravitational force \\
+  on brush, $mg$, \hfill $\downarrow$ & on earth, \hfill $\uparrow$ \\
+\hline
+floor's normal force & brush's normal force \\
+  on brush, $F_N$, \hfill $\uparrow$ & on floor, \hfill $\downarrow$ \\
+\hline
+floor's kinetic friction force & brush's kinetic friction force \\
+  on brush, $F_k$, \hfill $\leftarrow$ & on floor, \hfill $\rightarrow$ \\
+\hline
+\end{tabular}
+
+Newton's second law is:
+\begin{equation*}
+  \vc{a} = \frac{\vc{F}_H+m\vc{g}+\vc{F}_N+\vc{F}_k}{m}\eqquad,
+\end{equation*}
+where the addition is vector addition.
+If we actually want to carry out the vector addition of the forces, we have to do either graphical addition (as in example
+\ref{eg:ramp-mechanical-advantage}) or analytic addition. Let's do analytic addition, which means finding all
+the components of the forces, adding the $x$'s, and adding the $y$'s.
+
+Most of the forces have components that are trivial to express in terms of their magnitudes,
+the exception being $\vc{F}_H$, whose components we can determine
+using the technique demonstrated in example \ref{eg:component-shortcut}
+on p.~\pageref{eg:component-shortcut} and example \ref{eg:layback} on p.~\pageref{eg:layback}.
+Using the coordinate system shown in the figure, the results are:
+
+\begin{tabular}{ll}
+$F_{Hx}=F_H\cos\theta$ & $F_{Hy}=-F_H\sin\theta$ \\
+$mg_x = 0$ & $mg_y = -mg$ \\
+$F_{Nx} = 0$ & $F_{Ny} = F_N$ \\
+$F_{kx} = -F_k$ & $F_{ky} = 0$
+\end{tabular}
+
+\noindent Note that we don't yet know the magnitudes $F_H$, $F_N$, and $F_k$. That's all right. First we need to set up
+Newton's laws, and \emph{then} we can worry about solving the equations.
+
+Newton's second law in the $x$ direction gives:
+\begin{equation}\label{eqn:push-broom-x}
+  a = \frac{F_H\cos\theta-F_k}{m}
+\end{equation}
+
+The acceleration in the vertical direction is zero, so Newton's second law in the $y$ direction tells us that
+\begin{equation}\label{eqn:push-broom-y}
+  0 = -F_H\sin\theta-mg+F_N\eqquad.
+\end{equation}
+
+Finally, we have the relationship between kinetic friction and the normal force,
+\begin{equation}\label{eqn:push-broom-fk}
+  F_k = \mu_k F_N\eqquad.
+\end{equation}
+
+Equations \eqref{eqn:push-broom-x}-\eqref{eqn:push-broom-fk} are three equations, which we can use to determine
+the three unknowns, $F_H$, $F_N$, and $F_k$. Straightforward algebra gives
+\begin{equation*}
+  F_H = m \left(\frac{a+\mu_k g}{\cos\theta-\mu_k\sin\theta}\right)
+\end{equation*}
+\end{eg}
+
+\worked{cargo-plane}{A cargo plane}
+\worked{angle-of-repose}{The angle of repose}
+\worked{wagon-uphill}{A wagon}
+
+\startdqs
+
+<% marg(50) %>
+<%
+  fig(
+    'dq-pressblock',
+    %q{Discussion question \ref{dq:pressblock}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-roller-coaster',
+    %q{Discussion question \ref{dq:roller-coaster-mechanics}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:pressblock}
+The figure shows a block being pressed diagonally upward
+against a wall, causing it to slide up the wall. Analyze the
+forces involved, including their directions.
+\end{dq}
+
+\begin{dq}\label{dq:roller-coaster-mechanics}
+The figure shows a roller coaster car rolling down and
+then up under the influence of gravity. Sketch the car's
+velocity vectors and acceleration vectors. Pick an
+interesting point in the motion and sketch a set of force
+vectors acting on the car whose vector sum could have
+resulted in the right acceleration vector.
+\end{dq}
+
+
+<% end_sec() %>
+<% begin_sec("m4_ifelse(__me,1,[:More about calculus:],[:Calculus:]) with vectors",0,'',{'calc'=>true}) %>\index{calculus!with vectors}
+m4_ifelse(__me,1,[:
+Our definition of the  derivative of a vector implies
+:],[:
+Using the unit vector notation introduced in section
+\ref{sec:unit-vector-notation}, the definitions of the velocity and acceleration components
+given in chapter \ref{ch:three-d} can be translated into calculus notation as
+\begin{align*}
+     \vc{v} &= \frac{\der x}{\der t} \hat{\vc{x}} + \frac{\der y}{\der t} \hat{\vc{y}} + \frac{\der z}{\der t} \hat{\vc{z}}\\
+\intertext{and}
+     \vc{a} &= \frac{\der v_x}{\der t} \hat{\vc{x}} + \frac{\der v_y}{\der t} \hat{\vc{y}} + \frac{\der v_z}{\der t} \hat{\vc{z}}\eqquad. 
+\end{align*}
+To make the notation less cumbersome, we generalize the
+concept of the derivative to include derivatives of vectors,
+so that we can abbreviate the above equations as
+\begin{align*}
+  \vc{v} &= \frac{\der \vc{r}}{\der t} \\
+\intertext{and}
+  \vc{a} &= \frac{\der \vc{v}}{\der t}\eqquad.
+\end{align*}
+In words, to take the derivative of a vector, you take the
+derivatives of its components and make a new vector out of
+those.
+This definition means that the derivative of a vector
+function has 
+:])%
+the familiar properties
+\begin{align*}
+  \frac{\der(c\vc{f})}{\der t} &= c \frac{\der\vc{f}}{\der t} \qquad \shoveright{\text{[$c$ is a constant]}} \\
+\intertext{and}
+  \frac{\der(\vc{f}+\vc{g})}{\der t} &=  \frac{\der\vc{f}}{\der t}  +  \frac{\der\vc{g}}{\der t}\eqquad.
+\end{align*}
+The integral of a vector is likewise defined as integrating
+component by component.
+
+\begin{eg}{The second derivative of a vector}
+\egquestion Two objects have positions as functions of time
+given by the equations
+\begin{align*}
+        \vc{r}_1  &= 3t^2\hat{\vc{x}} + t\hat{\vc{y}}
+\intertext{and}
+        \vc{r}_2  &= 3t^4\hat{\vc{x}} + t\hat{\vc{y}}\eqquad.
+\end{align*}
+Find both objects' accelerations using calculus. Could
+either answer have been found without calculus?
+
+\eganswer Taking the first derivative of each component, we find
+\begin{align*}
+        \vc{v}_1  &=   6t\hat{\vc{x}} + \hat{\vc{y}} \\
+        \vc{v}_2  &=   12t^3\hat{\vc{x}} + \hat{\vc{y}}\eqquad,
+\end{align*}
+and taking the derivatives again gives acceleration,
+\begin{align*}
+        \vc{a}_1  &=    6\hat{\vc{x}}\\
+        \vc{a}_2  &=    36t^2\hat{\vc{x}}\eqquad.
+\end{align*}
+The first object's acceleration could have been found
+without calculus, simply by comparing the $x$ and $y$
+coordinates with the constant-acceleration equation 
+$\Delta x = v_\zu{o}\Delta t+\frac{1}{2}a\Delta t^2$. The
+second equation, however, isn't just a second-order
+polynomial in $t$, so the acceleration isn't constant, and
+we really did need calculus to find the corresponding acceleration.
+\end{eg}
+
+\begin{eg}{The integral of a vector}
+\egquestion Starting from rest, a flying saucer of mass $m$ 
+is observed to vary its propulsion
+with mathematical precision according to the equation
+\begin{equation*}
+  \vc{F} = bt^{42}\hat{\vc{x}} + ct^{137}\hat{\vc{y}}\eqquad. \\
+\end{equation*}
+(The aliens inform us that the numbers 42 and 137 have a special religious
+significance for them.) Find the saucer's velocity as a function of time.
+
+\eganswer From the given force, we can easily find the acceleration
+\begin{align*}
+  \vc{a} &= \frac{\vc{F}}{m} \\
+         &= \frac{b}{m}t^{42}\hat{\vc{x}} + \frac{c}{m}t^{137}\hat{\vc{y}}\eqquad. 
+\end{align*}
+The velocity vector $\vc{v}$ is the integral with respect
+to time of the acceleration,
+\begin{align*}
+  \vc{v} &= \int \vc{a} \der t \\
+         &= \int \left( \frac{b}{m}t^{42}\hat{\vc{x}} + \frac{c}{m}t^{137}\hat{\vc{y}} \right) \der t\eqquad, \\
+\intertext{and integrating component by component gives}
+         &= \left( \int \frac{b}{m}t^{42} \der t \right) \hat{\vc{x}} + \left( \int \frac{c}{m}t^{137} \der t\right) \hat{\vc{y}}\\
+         &= \frac{b}{43m}t^{43} \hat{\vc{x}} + \frac{c}{138m}t^{138}\hat{\vc{y}}\eqquad,
+\end{align*}
+where we have omitted the constants of integration, since the saucer was starting from rest.
+\end{eg}
+
+\begin{eg}{A fire-extinguisher stunt on ice}
+\egquestion Prof. Puerile smuggles a fire extinguisher into a
+skating rink. Climbing out onto the ice without any skates
+on, he sits down and pushes off from the wall with his feet,
+acquiring an initial velocity $v_\zu{o}\hat{\vc{y}}$. At $t=0$, he then
+discharges the fire extinguisher at a 45-degree angle so
+that it applies a force to him that is backward and to the
+left, i.e., along the negative $y$ axis and the positive $x$
+axis. The fire extinguisher's force is strong at first, but
+then dies down according to the equation $|\vc{F}|=b-ct$,
+where $b$ and $c$ are constants. Find the professor's
+velocity as a function of time.
+
+\eganswer Measured counterclockwise from the $x$ axis, the
+angle of the force vector becomes 315\degunit. Breaking the
+force down into $x$ and $y$ components, we have
+\begin{align*}
+        F_x     &=    |\vc{F}| \cos  315\degunit  \\
+             &=     (b-ct)  \\
+        F_y     &=    |\vc{F}| \sin  315\degunit  \\
+             &=     (-b+ct)\eqquad.
+\end{align*}
+In unit vector notation, this is
+\begin{equation*}
+        F     =     (b-ct)\hat{\vc{x}} +  (-b+ct)\hat{\vc{y}}\eqquad.
+\end{equation*}
+Newton's second law gives
+\begin{align*}
+        \vc{a}     &=    \vc{F}/m \\
+                   &=    \frac{b-ct}{\sqrt{2}m}\hat{\vc{x}} + \frac{-b+ct}{\sqrt{2}m}\hat{\vc{y}}\eqquad.
+\end{align*}
+To find the velocity vector as a function of time, we need
+to integrate the acceleration vector with respect to time,
+\begin{align*}
+        \vc{v}     &=  \int \vc{a} \der t    \\
+                   &=  \int \left(  \frac{b-ct}{\sqrt{2}m} \: \hat{\vc{x}} + \frac{-b+ct}{\sqrt{2}m} \: \hat{\vc{y}} \right) \der t    \\
+                   &=  \frac{1}{\sqrt{2}m} \int \bigl[ (b-ct) \: \hat{\vc{x}} \: + \: (-b+ct) \: \hat{\vc{y}} \bigr] \der t    \\
+\end{align*}
+A vector function can be integrated component by component,
+so this can be broken down into two integrals,
+
+\begin{align*}
+        \vc{v}     &=  \frac{\hat{\vc{x}}}{\sqrt{2}m} \int  (b-ct) \der t \: + \: \frac{\hat{\vc{y}}}{\sqrt{2}m}\int (-b+ct) \der t    \\
+             &=   \left(\frac{bt-\frac{1}{2}ct^2}{\sqrt{2}m}+\text{constant \#1}\right)\hat{\vc{x}} 
+                 + \left(\frac{-bt+\frac{1}{2}ct^2}{\sqrt{2}m}+\text{constant \#2}\right)\hat{\vc{y}}
+\end{align*}
+Here the physical significance of the two constants of
+integration is that they give the initial velocity. Constant
+\#1 is therefore zero, and constant \#2 must equal
+$v_\zu{o}$. The final result is
+\begin{equation*}
+        \vc{v}     =      \left(\frac{bt-\frac{1}{2}ct^2}{\sqrt{2}m}\right)\hat{\vc{x}} 
+                 + \left(\frac{-bt+\frac{1}{2}ct^2}{\sqrt{2}m}+v_\zu{o}\right)\hat{\vc{y}}\eqquad.
+\end{equation*}
+\end{eg}
+
+<% end_sec() %>\begin{summary}
+
+\begin{summarytext}[]%don't want two headings in a row that say summary
+
+The velocity vector points in the direction of the object's
+motion. Relative motion can be described by vector
+addition of velocities.
+
+The acceleration vector need not point in the same direction
+as the object's motion. We use the word ``acceleration'' to
+describe any change in an object's velocity vector, which
+can be either a change in its magnitude or a change in its direction.
+
+An important application of the vector addition of forces is
+the use of Newton's first law to analyze mechanical systems.
+
+\end{summarytext}
+
+\end{summary}

@@ -1,0 +1,91 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% figure_in_toc("bass") %>
+
+<% part_title("Vibrations and Waves") %>
+
+<%
+  chapter(
+    '17',
+    %q{Vibrations},
+    'ch:vibrations',
+    %q{The vibrations of this electric bass string are converted to electrical
+vibrations, then to sound vibrations, and finally to vibrations of our eardrums.},
+    {'opener'=>'bass','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/vwa)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('shmfreq') %>__incl(hw/shmfreq)<% end_hw() %>
+
+<% begin_hw('sperm') %>__incl(hw/sperm)<% end_hw() %>
+
+<% begin_hw('pendulum') %>__incl(hw/pendulum)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-pneumatic-spring',
+    %q{Problem \ref{hw:piston}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('piston') %>__incl(hw/piston)<% end_hw() %>
+
+<% begin_hw('pistonxt') %>__incl(hw/pistonxt)<% end_hw() %>
+
+<% begin_hw('bobbing') %>__incl(hw/bobbing)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-codornices',
+    %q{Problem \ref{hw:codornices}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('codornices',2) %>__incl(hw/codornices)<% end_hw() %>
+
+<% begin_hw('shm-units') %>__incl(hw/shm-units)<% end_hw() %>
+
+<% begin_hw('oblate-earth') %>__incl(hw/oblate-earth)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Vibrations") %>
+\noindent Equipment:
+\begin{itemize}
+\item air track and carts of two different masses
+\item springs
+\item spring scales
+\end{itemize}
+
+
+\inlinefignocaptionnoresize{../../../share/mechanics/figs/ex-vibrations}
+
+\noindent Place the cart on the air track and attach springs so that it can vibrate.
+
+1. Test whether the period of vibration depends on amplitude. Try at
+least one moderate amplitude, for which the springs do not go slack,
+at least one amplitude that is large enough so that they do go
+slack, and one amplitude that's the very smallest you can possibly observe.
+
+2. Try a cart with a different mass. Does the period change by the
+expected factor, based on the equation $T=2\pi\sqrt{m/k}$?
+
+3. Use a spring scale to pull the cart away from equilibrium, and
+make a graph of force versus position. Is it linear? If so, what is
+its slope?
+
+4. Test the equation $T=2\pi\sqrt{m/k}$ numerically.
+<% end_ex %>
+ %%---------------------------------------------------------
+
+<% end_chapter() %>

@@ -1,0 +1,545 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Electromagnetic properties of materials") %>
+
+<%
+  chapter(
+    '15',
+    %q{Electromagnetic properties of materials},
+    'ch:materials',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+Different types of matter have a variety of useful electrical and magnetic properties. Some are conductors, and some are insulators.
+Some, like iron and nickel, can be magnetized, while others have useful electrical properties, e.g., dielectrics, discussed
+qualitatively in the discussion question on page \pageref{dq:dielectric}, which allow us to make capacitors with much higher
+values of capacitance than would otherwise be possible. We need to organize our knowledge about the properties that materials
+can possess, and see whether this knowledge allows us to calculate anything useful with Maxwell's equations.
+
+<% begin_sec("Conductors") %>
+
+A perfect conductor, such as a superconductor, has no DC electrical resistance. It is not possible to have a static electric field
+inside it, because then charges would move in response to that field, and the motion of the charges would tend to reduce the field,
+contrary to the assumption that the field was static. Things are a little different at the surface of a perfect conductor than on
+the interior. We expect that any net charges that exist on the conductor will spread out under the influence of their mutual
+repulsion, and settle on the surface.
+Gauss's law requires that the fields on the two
+sides of a sheet of charge have $|\vc{E}_{\perp,1}-\vc{E}_{\perp,2}|$
+proportional to the surface charge density, and since the field inside
+the conductor is zero, we infer that there can be a field on or immediately outside the conductor, with a nonvanishing component
+perpendicular to the surface. The component of the field parallel to the surface must vanish, however, since otherwise it would
+cause the charges to move along the surface.
+
+On a hot summer day, the reason the sun feels warm on your skin is that the oscillating fields of the light waves excite currents
+in your skin, and these currents dissipate energy by ohmic heating. In a perfect conductor, however, this could never happen, because
+there is no such thing as ohmic heating.
+Since electric fields can't penetrate a perfect conductor, we also know that an electromagnetic wave can never pass into one.
+By conservation of energy, we know that the wave can't just vanish, and if the energy can't be dissipated as heat, then the only
+remaining possibility is that all of the wave's energy is reflected. This is why metals, which are good electrical conductors,
+are also highly reflective. They are not \emph{perfect} electrical conductors, however, so they are not perfectly reflective.
+The wave enters the conductor, but immediately excites oscillating currents, and these oscillating currents dissipate the energy
+both by ohmic heating and by reradiating the reflected wave. Since the parts of Maxwell's equations describing radiation have
+time derivatives in them, the efficiency of this reradiation process depends strongly on frequency. When the frequency is high
+and the material is a good conductor, reflection predominates, and is so efficient that the wave only penetrates to a very
+small depth, called the skin depth.\index{skin depth}
+In the limit of poor conduction and low frequencies, absorption predominates, and the
+skin depth becomes much greater. In a high-frequency AC circuit, the skin depth in a copper wire is very small, and therefore
+the signals in such a circuit are propagated entirely at the surfaces of the wires. In the limit of low frequencies, i.e., DC,
+the skin depth approaches infinity, so currents are carried uniformly over the wires' cross-sections.
+
+We can quantify how well a particular material conducts electricity. We know that the resistance of a wire is proportional
+to its length, and inversely proportional to its cross-sectional area. The constant of proportionality is $1/\sigma$, where $\sigma$ (not the
+same $\sigma$ as the surface charge density) is called the electrical conductivity.\index{conductivity}
+Exposed to an electric field $\vc{E}$, a conductor responds with a current per unit cross-sectional area $\vc{J}=\sigma\vc{E}$.
+The skin depth is proportional to $1/\sqrt{f\sigma}$, where $f$ is the frequency of the wave.
+
+<% marg(0) %>
+<%
+  fig(
+    'dielectric2',
+    %q{A capacitor with a dielectric between the plates.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% begin_sec("Dielectrics") %>
+
+A material with a very low conductivity is an insulator. Such materials are usually composed of atoms or molecules whose
+electrons are strongly bound to them; since the atoms or molecules have zero total charge, their motion cannot create
+an electric current. But even though they have zero charge, they may not have zero dipole moment.
+Imagine such a substance filling in the space between the plates of a capacitor, as in figure \figref{dielectric2}.
+For simplicity, we assume that the molecules are oriented randomly at first, \subfigref{dielectric2}{1}, and then
+become completely aligned when a field is applied, \subfigref{dielectric2}{2}. The effect has been to take all of the negatively
+charged black ands of the molecules and shift them upward, and the opposite for the positively charged white ends.
+Where the black and white charges overlap, there is still zero net charge, but we have a strip of negative charge
+at the top, and a strip of positive charge at the bottom, \subfigref{dielectric2}{3}. The effect has been to cancel
+out part of the charge that was deposited on the plates of the capacitor. Now this is very subtle, because Maxwell's
+equations treat these charges on an equal basis, but in terms of practical measurements, they are completely different.
+The charge on the plates can be measured be inserting an ammeter in the circuit, and integrating the current over time.
+But the charges in the layers at the top and bottom of the dielectric never flowed through any wires, and cannot be
+detected by an ammeter. In other words, the total charge, $q$, appearing in Maxwell's equartions is actualy $q=q_{\text{free}}-q_{\text{bound}}$,
+where $q_{\text{free}}$ is the charge that moves freely through wires, and can be detected in an ammeter, while $q_{bound}$ is the charge bound
+onto the individual molecules, which can't. We will, however, detect the presence of the bound charges via their electric fields.
+Since their electric fields partially cancel the fields of the free charges,
+a voltmeter will register a smaller than expected voltage difference between the plates. If we measure $q_{\text{free}}/V$, we have a result
+that is larger than the capacitance we would have expected.
+
+Although the relationship $\vc{E}\leftrightarrow q$ between electric fields and their sources is unalterably locked in by Gauss's law,
+that's not what we see in practical measurements. In this example, we can measure the voltage difference between the plates of
+the capacitor and divide by the distance between them to find $\vc{E}$, and then integrate an ammeter reading to find $q_{\text{free}}$, and
+we will find that Gauss's law appears not to hold. We have $\vc{E}\leftrightarrow q_{\text{free}}/(\text{constant})$, where the constant
+fudge factor is greater than one. This constant is a property of the dielectric material, and tells us how many dipoles there are,
+how strong they are, and how easily they can be reoriented. The conventional notation is to incorporate this fudge factor into
+Gauss's law by defining an altered version of the electric field, 
+\begin{equation*}
+  \vc{D}=\epsilon \vc{E}\eqquad,
+\end{equation*}
+and to rewrite Gauss's law as
+\begin{equation*}
+  \Phi_D = q_{\text{in, free}}\eqquad.
+\end{equation*}
+The constant $\epsilon$ is a property of the material, known as its permittivity.\index{permittivity} In a vacuum, $\epsilon$ takes on a value known as
+$\epsilon_\zu{o}$, defined as $1/(4\pi k)$. In a dielectric, $\epsilon$ is greater than $\epsilon_\zu{o}$.
+When a dielectric is present between the plates of
+a capacitor, its capacitance is proportional to $\epsilon$ (problem \ref{hw:cap-fom}).
+The following table gives some sample values of the permittivities of a few substances.
+
+\begin{tabular}{ll}
+\emph{substance} & $\epsilon/\epsilon_\zu{o}$ at zero frequency\\
+\hline
+vacuum           & 1 \\
+air              & 1.00054 \\
+water            & 80 \\
+barium titanate  & 1250
+\end{tabular}
+
+\noindent A capacitor with a very high capacitance is potentially a superior replacement for a battery, but until the 1990's this was
+impractical because capacitors with high enough values couldn't be made, even with dielectrics having the largest known permittivities.
+Such supercapactors, some with values in the kilofarad range,
+are now available. Most of them do not use dielectric at all; the very high capacitance values are instead obtained by using electrodes that
+are not parallel metal plates at all, but exotic
+materials such as aerogels, which allows the spacing between the ``electrodes'' to be very small.
+
+Although figure \subfigref{dielectric2}{2} shows the dipoles in the dielectric being completely aligned, this is not a situation commonly
+encountered in practice. In such a situation, the material would be as polarized as it could possibly be, and if the field was increased
+further, it would not respond. In reality, a capacitor, for example, would normally be operated with fields that produced quite a small
+amount of alignment, and it would be under these conditions that the linear relationship $\vc{D}=\epsilon\vc{E}$ would actually be
+a good approximation. Before a material's maximum polarization is reached, it may actually spark or burn up.
+
+<% self_check('withdraw-dielectric',<<-'SELF_CHECK'
+Suppose a parallel-plate capacitor is built so that a slab of dielectric material can be slid in or out. (This is similar to the
+way the stud finder in figure \figref{studfinder} works.) We insert the dielectric,
+hook the capacitor up to a battery to charge it, and then use an ammeter and a voltmeter to observe what happens when the dielectric
+is withdrawn. Predict the changes observed on the meters, and correlate them with the expected change in capacitance. Discuss the
+energy transformations involved, and determine whether positive or negative work is done in removing the dielectric.
+  SELF_CHECK
+  ) %>
+
+<% marg(300) %>
+<%
+  fig(
+    'studfinder',
+    %q{A stud finder is used to locate the wooden beams, or studs, that form the frame behind the wallboard. It is
+       a capacitor whose capacitance changes when it is brought close to a substance with a particular permittivity.
+       Although the wall is external to the capacitor, a change in capacitance is still observed, because the capacitor has
+       ``fringing fields'' that extend outside the region between its plates.}
+  )
+%>
+<% end_marg %>
+
+<% 
+  fig(
+    'permeability-sideways',
+    %q{%
+      The magnetic version of figure \figref{dielectric2}. A magnetically permeable material is placed at the 
+      center of a solenoid.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+
+
+<% end_sec() %>
+
+<% begin_sec("Magnetic materials") %>
+
+<% begin_sec("Magnetic permeability") %>
+
+Atoms and molecules may have magnetic dipole moments as well as electric dipole moments. Just as an electric dipole contains
+bound charges, a magnetic dipole has bound currents, which come from
+the motion of the electrons as they orbit the nucleus, \subfigref{permeability-sideways}{1}. Such a substance, subjected to a magnetic field, tends to align
+itself, \subfigref{permeability-sideways}{2}, so that a sheet of current circulates around the externally applied field. Figure \subfigref{permeability-sideways}{3}
+is closely analogous to figure \subfigref{dielectric2}{3}; in the central gray area, the atomic currents cancel out, but the atoms at the outer surface
+form a sheet of bound current. However, whereas like charges repel and
+opposite charges attract, it works the other way around for currents: currents in the same direction attract, and currents
+in opposite directions repel. Therefore the bound currents in a material inserted inside a solenoid tend to \emph{reinforce} the
+free currents, and the result is to strengthen the field. The total current is $I=I_{\text{free}}+I_{\text{bound}}$,
+and we define an altered version of the magnetic field,
+\begin{equation*}
+  \vc{H}= \frac{\vc{B}}{\mu}\eqquad,
+\end{equation*}
+and rewrite Amp\`{e}re's law as
+\begin{equation*}
+  \Gamma_H = I_{\text{through, free}}\eqquad.
+\end{equation*}
+The constant $\mu$ is the permeability,\index{permeability-sideways} 
+with a vacuum value of $\mu_\zu{o}=4\pi k/c^2$. Here are the magnetic permeabilities of some substances:
+
+\begin{tabular}{ll}
+\emph{substance} & $\mu/\mu_\zu{o}$ \\
+\hline
+vacuum           & 1 \\
+aluminum         & 1.00002 \\
+steel            & 700 \\
+transformer iron & 4,000 \\
+mu-metal         & 20,000
+\end{tabular}
+
+<% marg(175) %>
+<%
+  fig(
+    'iron-core',
+    %q{Example \ref{eg:iron-core}: a cutaway view of a solenoid.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{An iron-core electromagnet}\label{eg:iron-core}
+\egquestion A solenoid has 1000 turns of wire wound along a cylindrical core with a length of 10 cm. If
+a current of 1.0 A is used, find the magnetic field inside the solenoid if the core is air, and if the
+core is made of iron with $\mu/\mu_\zu{o}=4,000$.
+
+\eganswer Air has essentially the same permability as vacuum, so using the result of example \ref{eg:amperesolenoid} on page \pageref{eg:amperesolenoid},
+we find that the field is 0.013 T.
+
+<% marg(80) %>
+<%
+  fig(
+    'iron-core-photo',
+    %q{Example \ref{eg:iron-core}: without the iron core, the field is so weak that it barely deflects the compass. With it,
+       the deflection is nearly 90$\degunit$.}
+  )
+%>
+<% end_marg %>
+
+We now consider the case where the core is filled with iron. The original derivation in example  \ref{eg:amperesolenoid} started from
+Amp\`{e}re's law, which we now rewrite as $\Gamma_H = I_{\text{through, free}}$. As argued previously, the only significant contributions
+to the circulation come from line segment AB. This segment lies inside the iron, where $\vc{H}=\vc{B}/\mu$. The $\vc{H}$ field is the same as
+in the air-core case, since the new form of Amp\`{e}re's law only relates  $\vc{H}$ to the current in the wires (the free current).
+This means that $\vc{B}=\mu\vc{H}$ is greater by a factor of 4,000 than in the air-core case, or 52 T. This is an extremely intense
+field --- so intense, in fact, that the iron's magnetic polarization would probably become saturated before we could actually get the
+field that high.
+\end{eg}
+
+The electromagnet of example \ref{eg:iron-core} could also be used as an inductor, and its inductance would be proportional to
+the permittivity of the core. This makes it possible to construct high-value inductors that are relatively compact.
+Permeable cores are also used in transformers.
+
+A transformer or
+inductor with a permeable core does have some disadvantages, however, in certain applications.
+The oscillating magnetic field induces an electric field, and because the core is typically a metal, these
+currents dissipate energy strongly as heat. This behaves like a fairly large resistance in series with the coil.
+Figure \figref{laminated-core} shows a method for reducing this effect. The iron core of this transformer
+has been constructed out of laminated layers, which has the effect of blocking the conduction of the eddy currents.
+
+\begin{eg}{A ferrite bead}\label{eg:ferrite-bead}
+Cables designed to carry audio signals are typically made with two adjacent conductors, such that the current flowing out through
+one conductor comes back through the other one. Computer cables are similar, but usually have several such pairs bundled inside the
+insulator. This paired arrangement is known as differential mode,\index{differential mode} and
+has the advantage of cutting down on the reception and transmission of interference.
+In terms of transmission, the magnetic field created by the outgoing current is almost exactly canceled by the field from the
+return current, so electromagnetic waves are only weakly induced. In reception, both conductors are bathed in the same electric and
+magnetic fields, so an emf that adds current on one side subtracts current from the other side, resulting in cancellation.
+
+The opposite of differential mode is called common mode. In common mode, all conductors have currents flowing in the same direction.
+Even when a circuit is designed to operate in differential mode, it may not have exactly equal currents in the two conductors with $I_1+I_2=0$,
+meaning that current is leaking off to ground at one end of the circuit or the other. Although paired cables are relatively immune to
+differential-mode interference, they do not have any automatic protection from common-mode interference.
+
+Figure \figref{ferrite-bead} shows a device for reducing common-mode interference called a ferrite bead\index{ferrite bead}, which surrounds
+the cable like a bead on a string. 
+Ferrite is a magnetically permeable alloy.
+In this application, the ohmic properties of the ferrite actually turn put to be advantageous.
+
+<% marg(60) %>
+<%
+  fig(
+    'laminated-core',
+    %q{A transformer with a laminated iron core. The input and output coils are inside the paper wrapper. The
+     iron core is the black part that passes through the coils at the center, and also wraps around them on the outside.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'ferrite-bead',
+    %q{Example \ref{eg:ferrite-bead}: ferrite beads. The top panel shows a clip-on type, while the bottom shows one built into a cable.}
+  )
+%>
+<% end_marg %>
+
+Let's consider common-mode transmission of interference.
+The bare cable has some DC resistance, but is also surrounded by a magnetic field, so it has inductance as well. This means that it behaves like
+a series L-R circuit, with an impedance that varies as $R+i\omega L$, where both $R$ and $L$ are very small. When we add the ferrite bead,
+the inductance is increased by orders of magnitude, but so is the resistance. 
+Neither $R$ nor $L$ is actually constant with respect to frequency, but both are much greater than for the bare
+cable.
+
+Suppose, for example, that a signal is being transmitted from a digital camera to a computer via a USB cable. The camera has an
+internal impedance that is on the order of 10 $\Omega$, the computer's input also has a $\sim10$ $\Omega$ impedance, and in differential
+mode the ferrite bead has no effect, so the cable's impedance has its low, designed value (probably also about 10 $\Omega$, for good
+impedance matching\index{impedance matching}). The signal is transmitted unattenuated from the camera to the computer, and there is
+almost no radiation from the cable.
+
+But in reality there will be a certain amount of common-mode current as well. With respect to common mode, the ferrite bead
+has a large impedance, with the exact value depending on frequency, but typically on the order of 100 $\Omega$ for frequencies
+in the MHz range. We now have a series circuit consisting of three impedances: 10, 100, and 10 $\Omega$. For a given emf applied
+by an external radio wave, the current induced in the circuit has been attenuated by an order of magnitude, relative to its value
+without the ferrite bead.
+
+Why is the ferrite is necessary at all? Why not just insert ordinary air-core inductors in the circuit?
+We could, for example, have two solenoidal coils, one in the outgoing line and one in the return line, interwound with one another
+with their windings oriented so that their differential-mode fields would cancel.
+There are two good reasons to prefer the ferrite bead design. One is that it allows a clip-on device like the one in the top panel
+of figure \figref{ferrite-bead}, which can be added without breaking the circuit.
+The other is that our circuit will inevitably have some stray capacitance, and will therefore
+act like an LRC circuit, with a resonance at some frequency. 
+At frequencies close to the resonant frequency,
+the circuit would absorb and transmit
+common-mode interference very strongly, which is exactly the opposite of the effect
+we were hoping to produce. The resonance peak could be made low and broad by adding resistance in series, but this extra resistance
+would attenuate the differential-mode signals as well as the common-mode ones. The ferrite's resistance, however, is actually
+a purely magnetic effect, so it vanishes in differential mode.
+\end{eg}
+
+Surprisingly, some materials have magnetic permeabilities less than $\mu_\zu{o}$. This cannot be accounted for in the model
+above, and although there are semiclassical arguments that can explain it to some extent, it is fundamentally a quantum mechanical effect.
+Materials with $\mu>\mu_\zu{o}$ are called paramagnetic, while those with $\mu<\mu_\zu{o}$ are referred to as diamagnetic.
+Diamagnetism is generally a much weaker effect than paramagnetism, and is easily masked if there is any trace of
+contamination from a paramagnetic material. Diamagnetic materials have the interesting property that they are repelled from regions
+of strong magnetic field, and it is therefore possible to levitate a diamagnetic object above a magnet, as in figure \figref{levitating-frog}.
+\index{diamagnetism}\index{paramagnetism}
+
+<% marg(20) %>
+<%
+  fig(
+    'levitating-frog',
+    %q{A frog is levitated diamagnetically by the nonuniform field inside a powerful magnet. Evidently frog has $\mu<\mu_\zu{o}$.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'permeability-boundary',
+    %q{At a boundary between two substances with $\mu_2>\mu_1$, the $\vc{H}$ field has a continuous component parallel to the
+       surface, which implies a discontinuity in the parallel component of the magnetic field $\vc{B}$.}
+  )
+%>
+<% end_marg %>
+
+A complete statement of Maxwell's equations in the presence of electric and magnetic materials is as follows:
+
+\begin{align*}
+    \Phi_D &= q_\text{free} \\
+    \Phi_B &= 0 \\
+    \Gamma_E &= -\frac{\der \Phi_B}{\der t} \\
+    \Gamma_H &= \frac{\der \Phi_D}{\der t} + I_\text{free}
+\end{align*}
+
+Comparison with the vacuum case shows that the speed of an electromagnetic wave moving through a substance described by
+permittivity and permeability $\epsilon$ and $\mu$ is $1/\sqrt{\epsilon\mu}$. For most substances, $\mu\approx\mu_\zu{o}$, and
+$\epsilon$ is highly frequency-dependent.
+
+Suppose we have a boundary between two substances.
+By constructing a Gaussian or Amp\`{e}rian surface that extends across the boundary, we can arrive at various
+constraints on how the fields must behave as me move from one substance into the other, when there are no free currents or charges present, and the fields are static.
+An interesting example is the application of Faraday's law, $\Gamma_H=0$, to the case where one medium --- let's say it's air --- has a low permeability,
+while the other one has a very high one. We will violate Faraday's law unless the component of the $\vc{H}$ field
+parallel to the boundary is a continuous function, $\vc{H}_{\parallel,1}=\vc{H}_{\parallel,2}$. This means that if $\mu/\mu_\zu{o}$ is
+very high, the component of $\vc{B}=\mu\vc{H}$ parallel to the surface will have an abrupt discontinuity, being much stronger inside
+the high-permeability material. The result is that when a magnetic field enters a high-permeability material, it
+tends to twist abruptly to one side, and the pattern of the field tends to be channeled through the material like water through a
+funnel. In a transformer, a permeable core functions to channel more of the magnetic flux from the input coil to the output coil.
+Figure \figref{eg-magnetic-shielding-sphere} shows another example, in which the effect is to shield the interior of the sphere
+from the externally imposed field. Special high-permeability alloys, with trade names like Mu-Metal, are sold for this
+purpose.
+% In the following figure, I want this caption:
+%      A hollow sphere with $\mu/\mu_\zu{o}=10$, is immersed in a uniform, externally imposed magnetic field.
+%      The interior of the sphere is shielded from the field. The arrows map the magnetic field $\vc{B}$.
+%      (See homework problem \ref{hw:spherical-shielding} on page \pageref{hw:spherical-shielding}.)
+% But putting in the pageref causes this error: ! Missing \endcsname inserted.
+%    %q{%
+%      A hollow sphere with $\mu/\mu_\zu{o}=10$, is immersed in a uniform, externally imposed magnetic field.
+%      The interior of the sphere is shielded from the field. The arrows map the magnetic field $\vc{B}$.
+%      (See homework problem \ref{hw:spherical-shielding}, page 
+%    }+pageref_workaround('hw:spherical-shielding')+'.)'
+
+<%
+  fig(
+    'eg-magnetic-shielding-sphere',
+    %q{%
+      A hollow sphere with $\mu/\mu_\zu{o}=10$, is immersed in a uniform, externally imposed magnetic field.
+      The interior of the sphere is shielded from the field. The arrows map the magnetic field $\vc{B}$.
+      (See homework problem }+ref_workaround('hw:spherical-shielding')+%q{, page 
+    }+pageref_workaround('hw:spherical-shielding')+'.)',
+    {
+      'width'=>'fullpage',
+      'floatpos'=>'b'
+    }
+  )
+%>
+
+<% end_sec() %>
+
+<% begin_sec("Ferromagnetism") %>
+
+The very last magnetic phenomenon we'll discuss is probably the very first experience you ever had of magnetism.\index{ferromagnetism}
+Ferromagnetism is a phenomenon in which a material tends to organize itself so that it has a nonvanishing magnetic field.
+It is exhibited strongly by iron and nickel, which explains the origin of the name.
+
+<%
+  fig(
+    'ferromagnetism',
+    %q{%
+      A model of ferromagnetism.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \subfigref{ferromagnetism}{1} is a simple one-dimensional model of ferromagnetism. Each magnetic compass needle
+represents an atom. The compasses in the chain are stable when aligned with one another, because each one's north end is
+attracted to its neighbor's south end. The chain can be turned around, \subfigref{ferromagnetism}{2}, without disrupting
+its organization, and the compasses do not realign themselves with the Earth's field, because their torques on one another
+are stronger than the Earth's torques on them. The system has a memory. For example, if I want to remind myself that my friend's
+address is 137 Coupling Ct., I can align the chain at an angle of 137 degrees. The model fails, however, as an explanation of
+real ferromagnetism, because in two or more dimensions, the most stable arrangement of a set of interacting magnetic dipoles
+is something more like \subfigref{ferromagnetism}{3}, in which alternating rows point in opposite directions. In this two-dimensional
+pattern, every compass is aligned in the most stable way with all four of its neighbors. This shows that ferromagnetism, like
+diamagnetism, has no purely classical explanation; a full explanation requires quantum mechanics.
+
+<% marg(0) %>
+<%
+  fig(
+    'core-memory',
+    %q{Magnetic core memory.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'hysteresis-curve',
+    %q{A hysteresis curve.}
+  )
+%>
+<% end_marg %>
+
+Because ferromagnetic substances ``remember'' the history of how they were prepared, they are commonly used to store
+information in computers. Figure \figref{core-memory} shows 16 bits from an ancient (ca. 1970) 4-kilobyte random-access memory,
+in which each doughnut-shaped iron ``core'' can be magnetized in one of two possible directions, so that it stores
+one bit of information. Today, RAM is made of transistors rather than magnetic cores, but a remnant of the old technology
+remains in the term ``core dump,'' meaning ``memory dump,'' as in ``my girlfriend gave me a total core dump about her
+mom's divorce.'' Most computer hard drives today do store their information on rotating magnetic platters, but the platter
+technology may be obsoleted by flash memory in the near future.
+
+The memory property of ferromagnets can be depicted on the type of graph shown in figure \figref{hysteresis-curve},
+known as a hysteresis curve.\index{hysteresis} The y axis is the magnetization of a sample of the material --- a measure
+of the extent to which its atomic dipoles are aligned with one another. If the sample is initially unmagnetized, 1,
+and a field $H$ is externally applied, the magnetization increases, 2, but eventually becomes saturated, 3, so that
+higher fields do not result in any further magnetization, 4. The external field can then be reduced, 5, and even eliminated
+completely, but the material will retain its magnetization. It is a permanent magnet. To eliminate its magnetization
+completely, a substantial field must be applied in the opposite direction. If this reversed field is made stronger, then
+the substance will eventually become magnetized just as strongly in the opposite direction. Since the hysteresis curve is
+nonlinear, and is not a function (it has more than one value of $M$ for a particular value of $B$), a ferromagnetic material
+does not have a single, well-defined value of the permeability $\mu$; a value like 4,000 for transformer iron represents some
+kind of a rough average.
+
+\begin{eg}{The fluxgate compass}
+The fluxgate compass is a type of magnetic compass without moving parts, commonly used on ships and aircraft.
+An AC current is applied in a coil wound around a ferromagnetic core, driving the core repeatedly around a hysteresis
+loop. Because the hysteresis curve is highly nonlinear, the addition of an external field such as the Earth's alters
+the core's behavior. Suppose, for example, that the axis of the coil is aligned with the magnetic north-south.
+The core will reach saturation more quickly when the coil's field is in the same
+direction as the Earth's, but will not saturate as early in the next half-cycle, when the two fields are in opposite directions.
+With the use of multiple coils, the components of the Earth's field can be measured along two or three axes, permitting the
+compass's orientation to be determined in two or (for aircraft) three dimensions.
+\end{eg}
+
+<% marg(50) %>
+<%
+  fig(
+    'fluxgate-compass',
+    %q{A fluxgate compass.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Sharp magnet poles}\label{eg:sharp-magnet-poles}
+Although a ferromagnetic material does not really have a single value of the magnetic permeability,
+there is still a strong tendency to have $\vc{B}_\parallel\approx 0$ just outside the magnet's surface,
+for the same reasons as discussed above for high-permeability substances in general. For example, if
+we have a cylindrical bar magnet about the size and shape of your finger, magnetized lengthwise, then the field
+near the ends is nearly perpendicular to the surfaces, while the field near the sides, although it may be
+oriented nearly parallel to the surface, is very weak, so that we still have $\vc{B}_\parallel\approx 0$.
+This is in close analogy to the situation for the \emph{electric} field near the surface of a conductor in
+equilibrium, for which $\vc{E}_\parallel=0$. This analogy is close enough so that we can recycle much
+of our knowledge about electrostatics.
+
+For example, we saw in example \ref{eg:lightning-rod}, p.~\pageref{eg:lightning-rod},
+and problem \ref{hw:lightning-rod}, p.~\pageref{hw:lightning-rod},
+that charge tends to collect on the most highly curved portions of a conductor, and therefore
+becomes especially dense near a corner or knife-edge. This gives us a way of making especially
+intense magnetic fields. Most people would imagine that a very intense field could be made simply
+by using a very large and bulky permanent magnet, but this doesn't actually work very well, because
+magnetic dipole fields fall off as $1/r^3$, so that at a point near the surface,
+nearly all the field is contributed by atoms near the surface. Our analogy with electrostatics suggests that
+we should instead construct a permanent magnet with a sharp edge.
+
+Figure \figref{sharp-magnet-poles} shows the cross-sectional shapes of two magnet poles used
+in the historic Stern-Gerlach experiment that discovered the spin of the electron.\index{Stern-Gerlach experiment}
+The external magnetic field is represented using field lines.
+The field lines enter and exit the surfaces perpendicularly, and they are particularly dense
+near the corner of the upper pole, indicating a strong field. The spreading of the field lines
+indicates that the field is strongly nonuniform, becoming much weaker toward the bottom of the
+gap between the poles. This strong nonuniformity was crucial for the experiment, in which the
+magnets were used as part of a dipole spectrometer. See 
+figure  \figref{dipole-spectrometer-sideways} on p.~\pageref{fig:dipole-spectrometer-sideways}
+for an electric version of such a spectrometer.
+\end{eg}
+
+<% marg(50) %>
+<%
+  fig(
+    'sharp-magnet-poles',
+    %q{Example \ref{eg:sharp-magnet-poles}.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_hw_sec %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

@@ -1,0 +1,1319 @@
+<% begin_sec("Work: the transfer of mechanical energy",0,'work-concept') %>
+
+  <% begin_sec("The concept of work") %>
+
+The mass contained in a closed system is a conserved
+quantity, but if the system is not closed, we also have ways
+of measuring the amount of mass that goes in or out. The
+water company does this with a meter that records your water use.
+
+Likewise, we often
+have a system that is not closed, and
+would like to know how much energy comes in or out.
+Energy, however, is not a physical substance
+like water, so energy transfer cannot be measured with the
+same kind of meter. How can we tell, for instance, how much
+useful energy a tractor can ``put out'' on one tank of gas?
+
+The law of conservation of energy guarantees that all the
+chemical energy in the gasoline will reappear in some form,
+but not necessarily in a form that is useful for doing farm
+work. Tractors, like cars, are extremely inefficient, and
+typically 90\% of the energy they consume is converted
+directly into heat, which is carried away by the exhaust and
+the air flowing over the radiator. We wish to distinguish
+the energy that comes out directly as heat from the energy
+that serves to accelerate a trailer or to plow a field, so
+we define a technical meaning of the ordinary word
+``\index{work!defined}work'' to express the distinction:
+
+\begin{lessimportant}[definition of work]
+Work is the amount of energy transferred into or out of a system,
+not counting energy transferred by heat conduction.
+\end{lessimportant}
+
+<% self_check('work-scalar-joules',<<-'SELF_CHECK'
+Based on this definition, is work a vector, or a scalar? What are its units?
+  SELF_CHECK
+  ) %>
+
+<% marg(82) %>
+<%
+  fig(
+    'work-concept-diagram',
+    %q{Work is a transfer of energy.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tractor-at-cliff',
+    %q{%
+      The tractor raises the weight over
+      the pulley, increasing its gravitational
+      potential energy.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tractor-pulling-trailer',
+    %q{%
+      The tractor accelerates the trailer,
+      increasing its kinetic energy.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tractor-pulling-plow',
+    %q{%
+      The tractor pulls a plow. Energy is
+      expended in frictional heating of the
+      plow and the dirt, and in breaking dirt
+      clods and lifting dirt up to the sides of
+      the furrow.
+    }
+  )
+%>
+<% end_marg %>
+The \index{heat conduction!distinguished from work}\index{work!distinguished
+from heat conduction}\index{conduction of heat!distinguished
+from work}conduction of heat is to be distinguished from
+heating by friction. When a hot potato heats up your hands
+by conduction, the energy transfer occurs without any force,
+but when friction heats your car's brake shoes, there is a
+force involved. The transfer of energy with and without a
+force are measured by completely different methods, so we
+wish to include heat transfer by frictional heating under
+the definition of work, but not heat transfer by conduction.
+The definition of work could thus be restated as the amount
+of energy transferred by forces.
+
+  <% end_sec() %> % The concept of work
+
+  <% begin_sec("Calculating work as force multiplied by distance") %>\index{work!calculated as $Fd$}
+
+The examples in figures \figref{tractor-at-cliff}-\figref{tractor-pulling-plow}
+show that there are
+many different ways in which energy can be transferred. Even
+so, all these examples have two things in common:
+
+\begin{enumerate}
+ \item A force is involved.
+
+ \item The tractor travels some distance as it does the work.
+\end{enumerate}
+
+In \figref{tractor-at-cliff}, the increase in the height of the weight,
+$\Delta y$, is the same as the distance the tractor travels,
+which we'll call $d$. For simplicity, we discuss the case where the
+tractor raises the weight at constant speed, so that there
+is no change in the kinetic energy of the weight, and we
+assume that there is negligible friction in the pulley, so
+that the force the tractor applies to the rope is the same
+as the rope's upward force on the weight. By Newton's first
+law, these forces are also of the same magnitude as the
+earth's gravitational force on the weight. The increase in
+the weight's potential energy is given by $F\Delta y$, so
+the work done by the tractor on the weight equals $Fd$,
+the product of the force and the distance moved:
+\begin{equation*}
+                W  =  Fd\eqquad.
+\end{equation*}
+In example \figref{tractor-pulling-trailer}, the tractor's force on the trailer
+accelerates it, increasing its kinetic energy. If frictional
+forces on the trailer are negligible, then the increase in
+the trailer's kinetic energy can be found using the same
+algebra that was used on page \pageref{pe-derivation} to find the
+potential energy due to gravity. Just as in example \figref{tractor-at-cliff}, we have
+\begin{equation*}
+                W  =  Fd\eqquad.
+\end{equation*}
+Does this equation always give the right answer? Well, sort
+of. In example \figref{tractor-pulling-plow}, there are two quantities of work you
+might want to calculate: the work done by the tractor on the
+plow and the work done by the plow on the dirt.\label{plow-discussion} These two
+quantities can't both equal $Fd$. Most of the energy transmitted
+through the cable goes into frictional heating of the plow and
+the dirt. The work done by the plow on the dirt is less than
+the work done by the tractor on the plow, by an amount equal to
+the heat absorbed by the plow. It turns out that the equation
+$W=Fd$ gives the work done by the tractor, not the
+work done by the plow. How are you supposed to know when the
+equation will work and when it won't? The somewhat complex
+answer is postponed until section \ref{sec:when-is-work-fd}. Until then, we will
+restrict ourselves to examples in which $W=Fd$
+gives the right answer; essentially the reason the ambiguities come
+up is that when one surface is slipping past another, $d$ may be
+hard to define, because the two surfaces move different distances.
+
+<%
+  fig(
+    'baseball-pitch',
+    %q{%
+      The baseball pitcher put kinetic energy
+      into the ball, so he did work on it. To do the greatest possible amount of
+      work, he applied the greatest possible force over the greatest possible distance.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We have also been using examples in which the force is in
+the same direction as the motion, and the force is constant.
+(If the force was not constant, we would have to represent
+it with a function, not a symbol that stands for a number.)
+To summarize, we have:
+
+\begin{important}[rule for calculating work (simplest version)]
+The work done by a force can be calculated as
+\begin{equation*}
+                W  =  Fd\eqquad,
+\end{equation*}
+if the force is constant and in the same direction as the
+motion. Some ambiguities are encountered in cases such
+as kinetic friction.
+\end{important}
+
+\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'earthquake-fault-slip',
+    %q{\raggedright Example \ref{eg:earthquake-fault-slip}.}
+  )
+%>
+<% end_marg %>
+
+
+
+\begin{eg}{Mechanical work done in an earthquake}\label{eg:earthquake-fault-slip}
+\egquestion In 1998, geologists discovered evidence for a big
+prehistoric earthquake in Pasadena, between 10,000 and
+15,000 years ago. They found that the two sides of the fault
+moved 6.7 m relative to one another, and estimated that
+the force between them was $1.3\times10^{17}\ \nunit$. How much
+energy was released?
+
+\eganswer Multiplying the force by the distance gives
+$9\times10^{17}\ \junit$. For comparison, the Northridge earthquake
+of 1994, which killed 57 people and did 40 billion dollars
+of damage, released 22 times less energy.
+\end{eg}
+
+\begin{eg}{The fall factor}\label{eg:fall-factor}
+Counterintuitively, the rock climber may be in more danger in figure \subfigref{fall-factor}{1}
+than later when she gets up to position \subfigref{fall-factor}{2}.
+<% marg(8) %>
+<%
+  fig(
+    'fall-factor',
+    %q{Example \ref{eg:fall-factor}. Surprisingly, the climber is in more danger at 1 than at 2.
+       The distance $d$ is the amount by which the rope will stretch while work is done to transfer
+       the kinetic energy of a fall out of her body.}
+  )
+%>
+<% end_marg %>
+
+Along her route, the climber
+has placed removable rock anchors (not shown) and carabiners attached to the anchors.
+She clips the rope into each carabiner so that it can travel but can't pop out. In both 1 and 2, she
+has ascended a certain distance above her last anchor, so that if she falls, she will drop through a height
+$h$ that is about twice this distance, and this fall height is about the same in both cases.
+In fact, $h$ is somewhat larger than twice her height above the last anchor, because the rope is
+intentionally designed to stretch under the big force of a falling climber who suddenly brings it taut.
+
+To see why we want a stretchy rope, consider the equation $F=W/d$ in the case where $d$ is zero;
+$F$ would theoretically become infinite. In a fall, the climber loses a fixed amount of gravitational
+energy $mgh$. This is transformed into an equal amount of kinetic energy as she falls, and eventually
+this kinetic energy has to be transferred out of her body when the rope comes up taut.
+If the rope was not stretchy, then the distance traveled at the point where the rope attaches to
+her harness would be zero, and the force exerted would theoretically be infinite. 
+Before the rope reached the theoretically infinite tension $F$ it would break (or her back
+would break, or her anchors would be pulled out of the rock).
+We want the rope
+to be stretchy enough to make $d$ fairly big, so that dividing $W$ by $d$ gives a small 
+force.\footnote{Actually $F$ isn't constant, because the tension in the rope increases steadily as
+it stretches, but this is irrelevant to the present analysis.}
+
+In \subfigref{fall-factor}{1} and \subfigref{fall-factor}{2}, the fall $h$ is about the same.
+What is different is the length $L$ of rope that has been paid out. A longer rope can stretch
+more, so the distance $d$ traveled after the ``catch'' is proportional to $L$.
+Combining $F=W/d$, $W\propto h$, and $d\propto L$, we have $F\propto h/L$.
+For these reasons, rock climbers define a \emph{fall factor} $f=h/L$. The larger fall factor 
+in \subfigref{fall-factor}{1} is more
+dangerous.\index{fall factor}
+\end{eg}
+
+  <% end_sec() %> % Calculating work as force multiplied by distance
+
+  <% begin_sec("Machines can increase force, but not work.") %>
+
+Figure \ref{fig:pulling-stump} shows a pulley arrangement for doubling the
+force supplied by the tractor (book 1, section 5.6). The
+tension in the left-hand rope is equal throughout, assuming
+negligible friction, so there are two forces pulling the
+pulley to the left, each equal to the original force exerted
+by the tractor on the rope. This doubled force is transmitted
+through the right-hand rope to the stump.
+
+<%
+  fig(
+    'pulling-stump',
+    %q{%
+      The pulley doubles the force the tractor
+      can exert on the stump.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+It might seem as though this arrangement would also double
+the work done by the tractor, but look again. As the tractor
+moves forward 2 meters, 1 meter of rope comes around the
+pulley, and the pulley moves 1 m to the left. Although the
+pulley exerts double the force on the stump, the pulley and
+stump only move half as far, so the work done on the stump
+is no greater that it would have been without the pulley.
+
+The same is true for any mechanical arrangement that
+increases or decreases force, such as the gears on a
+ten-speed bike. You can't get out more work than you put in,
+because that would violate conservation of energy. If you
+shift gears so that your force on the pedals is amplified,
+the result is that you just have to spin the pedals more times.
+
+  <% end_sec() %> % Machines can increase force, but not work
+
+  <% begin_sec("No work is done without motion.") %>
+
+It strikes most students as nonsensical when they are told
+that if they stand still and hold a heavy bag of cement,
+they are doing no work on the bag. Even if it makes sense
+mathematically that $W=Fd$ gives zero when $d$ is
+zero, it seems to violate common sense. You would certainly
+become tired! The solution is simple.
+Physicists have taken over the common word ``work'' and
+given it a new technical meaning, which is the transfer of
+energy. The energy of the bag of cement is not changing, and
+that is what the physicist means by saying no work is done on the bag.
+
+There is a transformation of energy, but it is taking place
+entirely within your own muscles, which are converting
+chemical energy into heat. Physiologically, a human muscle
+is not like a tree limb, which can support a weight
+indefinitely without the expenditure of energy. Each muscle
+cell's contraction is generated by zillions of little
+molecular machines, which take turns supporting the tension.
+When a particular molecule goes on or off duty, it moves,
+and since it moves while exerting a force, it is doing work.
+There is work, but it is work done by one molecule in a
+muscle cell on another.
+
+
+<% marg(0) %>
+<%
+  fig(
+    'spring-pos-neg-work',
+    %q{%
+      %
+      Whenever energy is transferred out of the spring, the same amount has to be transferred into the ball, and vice
+      versa. As the spring compresses, the ball is doing positive work on the spring (giving up its KE and transferring
+      energy into the spring as PE), and as it decompresses the ball is doing negative work (extracting energy).
+    }
+  )
+%>
+<% end_marg %>
+
+  <% end_sec() %> % No work is done without motion
+
+  <% begin_sec("Positive and negative work") %>
+\index{work!positive and negative}
+
+When object A transfers energy to object B, we say that A
+does positive work on B. B is said to do negative work
+on A. In other words, a machine like a tractor is defined as
+doing positive work. This use of the plus and minus signs
+relates in a logical and consistent way to their use in
+indicating the directions of force and motion in one
+dimension. In figure \figref{spring-pos-neg-work}, suppose we
+choose a coordinate system with the $x$ axis pointing to the
+right. Then the force the spring exerts on the ball is
+always a positive number. The ball's motion, however,
+changes directions. The symbol $d$ is really just a shorter
+way of writing the familiar quantity $\Delta x$, whose
+positive and negative signs indicate direction.
+
+While the ball is moving to the left, we use $d<0$ to
+represent its direction of motion, and the work done by the
+spring, $Fd$, comes out negative. This indicates that
+the spring is taking kinetic energy out of the ball, and
+accepting it in the form of its own potential energy.
+
+As the ball is reaccelerated to the right, it has $d>0$,
+$Fd$ is positive, and the spring does positive work on
+the ball. Potential energy is transferred out of the spring
+and deposited in the ball as kinetic energy.
+
+In summary:
+
+\begin{lessimportant}[rule for calculating work (including cases of negative work)]
+The work done by a force can be calculated as
+\begin{equation*}
+                W  =  Fd\eqquad,
+\end{equation*}
+if the force is constant and along the same line as the
+motion. The quantity $d$ is to be interpreted as a synonym
+for $\Delta x$, i.e., positive and negative signs are used
+to indicate the direction of motion. Some ambiguities are
+encountered in cases such as kinetic friction.
+\end{lessimportant}
+
+<% self_check('ball-does-work-on-spring',<<-'SELF_CHECK'
+In figure
+\\figref{spring-pos-neg-work}, what about the work done by the ball on the spring?\\linebreak[4]
+  SELF_CHECK
+  ) %>
+
+There are many examples where the transfer of energy out of
+an object cancels out the transfer of energy in. When the
+tractor pulls the plow with a rope, the rope does negative
+work on the tractor and positive work on the plow. The total
+work done by the rope is zero, which makes sense, since it
+is not changing its energy.
+
+It may seem that when your arms do negative work by lowering
+a bag of cement, the cement is not really transferring
+energy into your body. If your body was storing potential
+energy like a compressed spring, you would be able to raise
+and lower a weight all day, recycling the same energy. The
+bag of cement does transfer energy into your body, but your
+body accepts it as heat, not as potential energy. The
+tension in the muscles that control the speed of the motion
+also results in the conversion of chemical energy to heat,
+for the same physiological reasons discussed previously in
+the case where you just hold the bag still.
+
+<% marg(100) %>
+<%
+  fig(
+    'muscle-contraction',
+    %q{%
+      \emph{Left:} No mechanical work occurs in the man's body while he holds himself motionless.
+      There is a transformation of chemical energy into heat, but this happens at the microscopic level inside the tensed muscles.
+      \emph{Right:} When the woman lifts herself, her arms do positive work on her body, transforming chemical energy into
+      gravitational potential energy and heat. On the way back down, the arms' work is negative; gravitational potential energy is transformed
+      into heat. (In exercise physiology, the man is said to be doing isometric exercise, while the woman's is concentric and then eccentric.)
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'brake-shoes',
+    %q{%
+      Because the force is in the opposite
+      direction compared to the motion, the
+      brake shoe does negative work on the
+      drum, i.e., accepts energy from it in the
+      form of heat.
+    }
+  )
+%>
+<% end_marg %>
+One of the advantages of electric cars over gasoline-powered
+cars is that it is just as easy to put energy back in a
+battery as it is to take energy out. When you step on the
+brakes in a gas car, the brake shoes do negative work on the
+rest of the car. The kinetic energy of the car is transmitted
+through the brakes and accepted by the brake shoes in the
+form of heat. The energy cannot be recovered. Electric cars,
+however, are designed to use regenerative braking. The
+brakes don't use friction at all. They are electrical, and
+when you step on the brake, the negative work done by the
+brakes means they accept the energy and put it in the
+battery for later use. This is one of the reasons why an
+electric car is far better for the environment than a gas
+car, even if the ultimate source of the electrical energy
+happens to be the burning of oil in the electric company's
+plant. The electric car recycles the same energy over and
+over, and only dissipates heat due to air friction and
+rolling resistance, not braking. (The electric company's
+power plant can also be fitted with expensive pollution-reduction
+equipment that would be prohibitively expensive or bulky
+for a passenger car.)
+
+\vfill\pagebreak[4]\startdqs
+
+\begin{dq}
+Besides the presence of a force, what other things
+differentiate the processes of frictional heating and heat conduction?
+\end{dq}
+
+\begin{dq}
+Criticize the following incorrect statement: ``A force
+doesn't do any work unless it's causing the object to move.''
+\end{dq}
+
+
+
+\begin{dq}\label{dq:stopping-distance}
+To stop your car, you must first have time to react, and
+then it takes some time for the car to slow down. Both of
+these times contribute to the distance you will travel
+before you can stop. The figure shows how the average
+stopping distance increases with speed. Because the stopping
+distance increases more and more rapidly as you go faster,
+the rule of one car length per 10 m.p.h. of speed is not
+conservative enough at high
+speeds. In terms of work and
+kinetic energy, what is the reason for the more rapid
+increase at high speeds?
+\end{dq}
+
+<%
+  fig(
+    'dq-stopping-distances',
+    %q{Discussion question \ref{dq:stopping-distance}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+  <% end_sec() %> % Positive and negative work
+
+<% end_sec() %> % Work: The Transfer of Mechanical Energy
+
+<% begin_sec("Work in three dimensions",3) %>\index{work!in three dimensions}
+
+<% marg(0) %>
+<%
+  fig(
+    'force-at-points-of-compass',
+    %q{%
+      A force can do positive, negative, or zero
+      work, depending on its direction relative to the direction of the motion.
+    }
+  )
+%>
+<% end_marg %>
+
+  <% begin_sec("A force perpendicular to the motion does no work.") %>
+
+Suppose work is being done to change an object's kinetic
+energy. A force in the same direction as its motion will
+speed it up, and a force in the opposite direction will slow
+it down. As we have already seen, this is described as doing
+positive work or doing negative work on the object. All the
+examples discussed up until now have been of motion in one
+dimension, but in three dimensions the force can be at any
+angle $\theta $ with respect to the direction of motion.
+
+What if the force is perpendicular to the direction of
+motion? We have already seen that a force perpendicular to
+the motion results in circular motion at constant speed. The
+kinetic energy does not change, and we conclude that no work
+is done when the force is perpendicular to the motion.
+
+So far we have been reasoning about the case of a single
+force acting on an object, and changing only its kinetic
+energy. The result is more generally true, however. For
+instance, imagine a hockey puck sliding across the ice. The
+ice makes an upward normal force, but does not transfer
+energy to or from the puck.
+
+  <% end_sec() %> % A force perpendicular to the motion does no work
+
+  <% begin_sec("Forces at other angles") %>\index{work!force not collinear with motion}
+
+Suppose the force is at some other angle with respect to the
+motion, say $\theta=45\degunit$. Such a force could be broken
+down into two components, one along the direction of the
+motion and the other perpendicular to it. The force vector
+equals the vector sum of its two components, and the
+principle of vector addition of forces thus tells us that
+the work done by the total force cannot be any different
+than the sum of the works that would be done by the two
+forces by themselves. Since the component perpendicular to
+the motion does no work, the work done by the force must be
+\begin{equation*}
+                W  =  F_{\parallel} |\vc{d}|\eqquad,                   \qquad  \text{[work done by
+a constant force]}
+\end{equation*}
+where the vector $\vc{d}$ is simply a less cumbersome version of
+the notation $\Delta\vc{r}$. This result can be rewritten via trigonometry as
+\begin{equation*}
+                W  =  |\vc{F}| |\vc{d}| \cos  \theta\eqquad.            \qquad
+\text{[work done by a constant force]}
+\end{equation*}
+Even though this equation has vectors in it, it depends only
+on their magnitudes, and the magnitude of a vector is a
+scalar. Work is therefore still a scalar quantity, which
+only makes sense if it is defined as the transfer of energy.
+Ten gallons of gasoline have the ability to do a certain
+amount of mechanical work, and when you pull in to a
+full-service gas station you don't have to say ``Fill 'er up
+with 10 gallons of south-going gas.''
+<% marg(80) %>
+<%
+  fig(
+    'force-at-another-angle',
+    %q{%
+      Work is only done by
+      the component of the force parallel to the motion.
+    }
+  )
+%>
+<% end_marg %>
+
+Students often wonder why this equation involves a cosine
+rather than a sine, or ask if it would ever be a sine. In
+vector addition, the treatment of sines and cosines seemed
+more equal and democratic, so why is the cosine so special
+now? The answer is that if we are going to describe, say, a
+velocity vector, we must give both the component \emph{parallel}
+to the $x$ axis and the component \emph{perpendicular} to
+the $x$ axis (i.e., the $y$ component). In calculating work,
+however, the force component perpendicular to the motion is
+irrelevant --- it changes the direction of motion without
+increasing or decreasing the energy of the object on which
+it acts. In this context, it is \emph{only} the parallel
+force component that matters, so only the cosine occurs.
+
+<% marg(0) %>
+<%
+  fig(
+    'breaking-trail',
+    %q{Self-check. (Breaking Trail, by Walter E. Bohl.)}
+  )
+%>
+<% end_marg %>
+
+<% self_check('breaking-trail',<<-'SELF_CHECK'
+(a) Work is the transfer of energy. According to this
+definition, is the horse in the picture doing work on the
+pack? (b) If you calculate work by the method described in
+this section, is the horse in figure \\figref{breaking-trail} doing work on the pack?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Pushing a broom}
+\egquestion If you exert a force of 21 N on a push broom, at
+an angle 35 degrees below horizontal, and walk for 5.0 m,
+how much work do you do? What is the physical significance
+of this quantity of work?
+
+\eganswer Using the second equation above, the work done equals
+\begin{equation*}
+                (21\ \nunit)(5.0\ \munit)(\cos  35\degunit)  =  86\ \junit\eqquad.
+\end{equation*}
+The form of energy being transferred is heat in the floor
+and the broom's bristles. This comes from the chemical
+energy stored in your body. (The majority of the calories
+you burn are dissipated directly as heat inside your body
+rather than doing any work on the broom. The 86 J is only
+the amount of energy transferred through the broom's handle.)
+\end{eg}
+
+\begin{eg}{A violin}
+As a violinist draws the bow across a string, the bow hairs exert
+both a normal force and a kinetic frictional force on the string. The normal
+force is perpendicular to the direction of motion, and does no work.
+However, the frictional force is in the same direction as the motion
+of the bow, so it does work: energy is transferred to the string,
+causing it to vibrate.
+
+One way of playing a violin more loudly is to use longer
+strokes. Since $W=Fd$, the greater distance results in more work.
+
+A second way of getting a louder sound is to press the bow more
+firmly against the strings. This increases the normal force, and
+although the normal force itself does no work, an increase in the
+normal force has the side effect of increasing the frictional force,
+thereby increasing $W=Fd$.
+
+The violinist moves the bow back and forth, and sound is produced on both
+the ``up-bow'' (the stroke toward the player's left) and the ``down-bow''
+(to the right). One may, for example, play a series of notes in alternation
+between up-bows and down-bows. However, if the notes are of unequal length,
+the up and down motions tend to be unequal, and if the player is not
+careful, she can run out of bow in the middle of a note! To keep this
+from happening, one can move the bow more quickly on the shorter notes,
+but the resulting increase in $d$ will make the shorter notes louder than
+they should be. A skilled player compensates by reducing the force.
+\end{eg}
+
+  <% end_sec() %> % Forces at other angles
+<% end_sec() %> % Work in Three Dimensions
+
+% Dot product is here and not optional for Mechanics, later in chapter and optional for LM.
+<% begin_if(__me) %>
+  m4_include(__share/text/dot_product.tex)
+<% end_if %>
+
+<% begin_sec("Varying force") %>\index{work!done by a varying force}
+
+Up until now we have done no actual calculations of work in
+cases where the force was not constant. 
+m4_ifelse(__me,1,[:%
+The question of how
+to treat such cases is mathematically analogous to the issue
+of how to generalize the equation 
+$(\text{distance})=(\text{velocity})(\text{time})$
+to cases where the velocity was not constant. We have to make
+the equation into an integral:
+\begin{equation*}
+  W = \int F \der x
+\end{equation*}
+The examples in this section are ones in which the force is
+varying, but is always along the same line as the motion.
+:],[:%
+The question of how
+to treat such cases is mathematically analogous to the issue
+of how to generalize the equation 
+$(\text{distance})=(\text{velocity})(\text{time})$
+to cases where the velocity was not constant. There, we
+found that the correct generalization was to find the area
+under the graph of velocity versus time. The equivalent
+thing can be done with work:
+
+\begin{lessimportant}[general rule for calculating work]
+The work done by a force $F$ equals the area under the curve
+on a graph of $F_{\parallel}$ versus $x$. (Some ambiguities are
+encountered in cases such as kinetic friction.)
+\end{lessimportant}
+The examples in this section are ones in which the force is
+varying, but is always along the same line as the motion, so
+$F$ is the same as $F_{\parallel}$.
+:])
+
+<% self_check('work-constant-and-not-constant',<<-'SELF_CHECK'
+In which of the following examples would it be OK to
+calculate work using $Fd$, and in which ones would you
+have to m4_ifelse(__me,1,[:integrate:],[:use the area under the $F-x$ graph:])?
+
+(a) A fishing boat cruises with a net dragging behind it.
+
+(b) A magnet leaps onto a refrigerator from a distance.
+
+(c) Earth's gravity does work on an outward-bound space probe.
+  SELF_CHECK
+  ) %>
+
+m4_ifelse(__me,1,[:%
+<% marg(37) %>
+<%
+  fig(
+    'cart-on-spring',
+    %q{%
+      The spring does work on the cart.
+      (Unlike the ball in section \ref{sec:work-concept}, the cart
+      is attached to the spring.)
+    }
+  )
+%>
+<% end_marg %>
+\begin{eg}{Work done by a spring}
+An important and straightforward example is the calculation
+of the work done by a spring that obeys Hooke's law,
+\begin{equation*}
+ F \approx -k(x-x_\zu{o})\eqquad,
+\end{equation*}
+where $x_\zu{o}$ is the equilibrium position and
+the minus sign is because this is the force being exerted by
+the spring, not the force that would have to act on the
+spring to keep it at this position. That is, if the position
+of the cart in figure \figref{cart-on-spring}
+is to the right of equilibrium, the spring pulls
+back to the left, and vice-versa.
+Integrating, we find that the work done between $x_1$ and $x_2$ is
+\begin{equation*}
+  W=\left.-\frac{1}{2}k(x-x_\zu{o})^2\right|_{x_1}^{x_2}\eqquad. 
+\end{equation*}
+\end{eg}
+
+\begin{eg}{Work done by gravity}\label{eg:work-done-by-gravity}
+Another important example
+is the work done by gravity when the change in height is not
+small enough to assume a constant force. Newton's law of gravity is
+\begin{equation*}
+ F = \frac{GMm}{r^2}\eqquad,
+\end{equation*}
+which can be integrated to give
+\begin{align*}
+ W &= \int_{r_1}^{r_2} \frac{GMm}{r^2} \der r\\
+ &= -GMm\left(\frac{1}{r_2}-\frac{1}{r_1}\right)\eqquad.
+\end{align*}
+\end{eg}
+:],[:%
+%------------- LM version
+<% marg(37) %>
+<%
+  fig(
+    'cart-on-spring',
+    %q{%
+      The spring does work on the cart.
+      (Unlike the ball in section \ref{sec:work-concept}, the cart
+      is attached to the spring.)
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'triangular-work-graph',
+    %q{%
+      The area of the shaded triangle
+      gives the work done by the spring as
+      the cart moves from the equilibrium
+      position to position $x$.
+    }
+  )
+%>
+<% end_marg %>
+
+An important and straightforward example is the calculation
+of the work done by a spring that obeys Hooke's law,
+\begin{equation*}
+ F \approx -k\left(x-x_\zu{o}\right)\eqquad.
+\end{equation*}
+The minus sign is because this is the force being exerted by
+the spring, not the force that would have to act on the
+spring to keep it at this position. That is, if the position
+of the cart in figure \figref{cart-on-spring}
+is to the right of equilibrium, the spring pulls
+back to the left, and vice-versa.
+
+We calculate the work done when the spring is initially at
+equilibrium and then decelerates the car as the car moves to
+the right. The work done by the spring on the cart equals
+the minus area of the shaded triangle, because the triangle
+hangs below the $x$ axis. The area of a triangle is half its
+base multiplied by its height, so
+\begin{equation*}
+  W = -\frac{1}{2}k\left(x-x_\zu{o}\right)^2\eqquad.
+\end{equation*}
+This is the amount of kinetic energy lost by the cart as the
+spring decelerates it.
+
+It was straightforward to calculate the work done by the
+spring in this case because the graph of $F$ versus $x$ was
+a straight line, giving a triangular area. But if the curve
+had not been so geometrically simple, it might not have been
+possible to find a simple equation for the work done, or an
+equation might have been derivable only using calculus.
+Optional section \ref{sec:calculus-applied-to-work} gives an important example of such an
+application of calculus.
+
+
+<%
+  fig(
+    'cno-cycle',
+    %q{Example \ref{eg:cno-cycle}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{Energy production in the sun}\label{eg:cno-cycle}
+The sun produces energy through nuclear reactions in which
+nuclei collide and stick together. The figure depicts one
+such reaction, in which a single proton (hydrogen nucleus)
+collides with a carbon nucleus, consisting of six protons
+and six neutrons. Neutrons and protons attract other
+neutrons and protons via the strong nuclear force, so as the
+proton approaches the carbon nucleus it is accelerated. In
+the language of energy, we say that it loses nuclear
+potential energy and gains kinetic energy. Together, the
+seven protons and six neutrons make a nitrogen nucleus.
+Within the newly put-together nucleus, the neutrons and
+protons are continually colliding, and the new proton's
+extra kinetic energy is rapidly shared out among all the
+neutrons and protons. Soon afterward, the nucleus calms down
+by releasing some energy in the form of a gamma ray, which
+helps to heat the sun.
+
+The graph shows the force between the carbon nucleus and the
+proton as the proton is on its way in, with the distance in
+units of femtometers (1 fm=$10^{-15}$ m). Amusingly, the
+force turns out to be a few newtons: on the same order of
+magnitude as the forces we encounter ordinarily on the human
+scale. Keep in mind, however, that a force this big exerted
+on a single subatomic particle such as a proton will produce
+a truly fantastic acceleration (on the order of $10^{27}\ \munit/\sunit^2$!).
+
+Why does the force have a peak around $x=3$ fm, and become
+smaller once the proton has actually merged with the
+nucleus? At $x=3$ fm, the proton is at the edge of the crowd
+of protons and neutrons. It feels many attractive forces
+from the left, and none from the right. The forces add up to
+a large value. However if it later finds itself at the
+center of the nucleus, $x=0$, there are forces pulling it
+from all directions, and these force vectors cancel out.
+
+We can now calculate the energy released in this reaction by
+using the area under the graph to determine the amount of
+mechanical work done by the carbon nucleus on the proton.
+(For simplicity, we assume that the proton came in ``aimed''
+at the center of the nucleus, and we ignore the fact that it
+has to shove some neutrons and protons out of the way in
+order to get there.) The area under the curve is about 17
+squares, and the work represented by each square is
+\begin{equation*}
+                (1\ \nunit)(10^{-15}\ \munit)  =  10^{-15}\ \junit\eqquad,
+\end{equation*}
+so the total energy released is about
+\begin{equation*}
+                (10^{-15}\ \junit/\text{square})(17\ \text{squares}) =  1.7\times10^{-14}\ \junit\eqquad.
+\end{equation*}
+This may not seem like much, but remember that this is only
+a reaction between the nuclei of two out of the zillions of
+atoms in the sun. For comparison, a typical \emph{chemical}
+reaction between two atoms might transform on the order of
+$10^{-19}$ J of electrical potential energy into heat ---
+100,000 times less energy!
+
+As a final note, you may wonder why reactions such as these
+only occur in the sun. The reason is that there is a
+repulsive electrical force between nuclei. When two nuclei
+are close together, the electrical forces are typically
+about a million times weaker than the nuclear forces, but
+the nuclear forces fall off much more quickly with distance
+than the electrical forces, so the electrical force is the
+dominant one at longer ranges. The sun is a very hot gas, so
+the random motion of its atoms is extremely rapid, and a
+collision between two atoms is sometimes violent enough to
+overcome this initial electrical repulsion.
+\end{eg}
+
+<% end_sec() %> % Varying Force
+
+<% begin_sec("Applications of calculus",nil,'calculus-applied-to-work',{'calc'=>true}) %>
+\index{work!calculated with calculus}
+
+The student who has studied integral calculus will recognize
+that the graphical rule given in the previous section can be
+reexpressed as an integral,
+\begin{equation*}
+ W = \int_{x_1}^{x_2}F \der x\eqquad.
+\end{equation*}
+We can then immediately find by the fundamental theorem of
+calculus that force is the derivative of work with
+respect to position,
+\begin{equation*}
+ F = \frac{\der W}{\der x}\eqquad.
+\end{equation*}
+For example, a crane raising a one-ton block on the moon
+would be transferring potential energy into the block at
+only one sixth the rate that would be required on Earth, and
+this corresponds to one sixth the force.
+
+Although the work done by the spring could be calculated
+without calculus using the area of a triangle, there are
+many cases where the methods of calculus are needed in order
+to find an answer in closed form. The most important example
+is the work done by gravity when the change in height is not
+small enough to assume a constant force. Newton's law of gravity is
+\begin{equation*}
+ F = \frac{GMm}{r^2}\eqquad,
+\end{equation*}
+which can be integrated to give
+
+\begin{align*}
+ W &= \int_{r_1}^{r_2} \frac{GMm}{r^2} \der r\\
+ &= -GMm\left(\frac{1}{r_2}-\frac{1}{r_1}\right)\eqquad.
+\end{align*}
+
+\vfill
+%------------- end LM version
+:])
+<% end_sec() %> % Applications of Calculus --- FIXME -- shouldn't this be inside the conditional for LM?
+<% begin_sec("Work and potential energy",3) %>
+\index{work!related to potential energy}
+\index{potential energy!related to work}
+
+The techniques for calculating work can also be applied to
+the calculation of potential energy. If a certain force
+depends only on the distance between the two participating
+objects, then the energy released by changing the distance
+between them is defined as the potential energy, and the
+amount of potential energy lost equals minus the work done by the force,
+\begin{equation*}
+                \Delta PE  =  -W\eqquad.
+\end{equation*}
+The minus sign occurs because positive work indicates that
+the potential energy is being expended and converted to some other form.
+
+It is sometimes convenient to pick some arbitrary position
+as a reference position, and derive an equation for once and
+for all that gives the potential energy relative to this position
+\begin{equation*}
+                PE_x  =  -W_{\text{ref}\rightarrow x}\eqquad.    
+\qquad  \text{[potential energy at a point $x$]}
+\end{equation*}
+To find the energy transferred into or out of potential
+energy, one then subtracts two different values of this equation.
+
+These equations might almost make it look as though work and
+energy were the same thing, but they are not. First,
+potential energy measures the energy that a system
+\emph{has} stored in it, while work measures how much energy
+is \emph{transferred} in or out. Second, the techniques for
+calculating work can be used to find the amount of energy
+transferred in many situations where there is no potential
+energy involved, as when we calculate the amount of kinetic
+energy transformed into heat by a car's brake shoes.
+
+\begin{eg}{A toy gun}
+\egquestion A toy gun uses a \index{work!done by a spring}\index{potential
+energy!of a spring}\index{spring!potential energy of}\index{spring!work
+done by}spring with a spring constant of 10 N/m to shoot a
+ping-pong ball of mass 5 g. The spring is compressed to 10
+cm shorter than its equilibrium length when the gun is
+loaded. At what speed is the ball released?
+
+\eganswer The equilibrium point is the natural choice for a
+reference point. Using the equation found previously
+for the work, we have
+\begin{equation*}
+                PE_x  =   \frac{1}{2}k\left(x-x_\zu{o}\right)^2\eqquad.
+\end{equation*}
+The spring loses contact with the ball at the equilibrium
+point, so the final potential energy is
+\begin{equation*}
+                PE_f          =  0\eqquad.
+\end{equation*}
+The initial potential energy is
+\begin{align*}
+ PE_i &= \frac{1}{2}(10\ \nunit/\munit)(0.10\ \munit)^2\eqquad. \\
+ &= 0.05\ \junit.
+\end{align*}
+The loss in potential energy of 0.05 J means an increase
+in kinetic energy of the same amount. The velocity of the
+ball is found by solving the equation $KE=(1/2)mv^2$ for $v$,
+\begin{align*}
+ v &= \sqrt{\frac{2KE}{m}}\\
+ &= \sqrt{\frac{(2)(0.05\ \junit)}{0.005\ \kgunit}}\\
+ &= 4\ \munit/\sunit\eqquad.
+\end{align*}
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'pe-grav-versus-r',
+    %q{Example \ref{eg:pe-grav}, gravitational potential energy as a function of distance.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Gravitational potential energy}\label{eg:pe-grav}\index{potential energy!gravitational}
+\egquestion We have already found the equation
+$\Delta PE = -F\Delta y$ for the gravitational potential
+energy when the change in height is not enough to cause a
+significant change in the gravitational force $F$. What if
+the change in height is enough so that this assumption is no
+longer valid? Use the equation $W=GMm(1/r_2-1/r_1)$ derived in
+m4_ifelse(__me,1,example \ref{eg:work-done-by-gravity},section \ref{sec:calculus-applied-to-work})
+to find the potential energy, using $r=\infty$
+as a reference point.
+
+\eganswer The potential energy equals minus the work that
+would have to be done to bring the object from $r_1=\infty$
+ to $r= r_2$, which is
+\begin{equation*}
+                   PE  =  -\frac{GMm}{r}\eqquad.
+\end{equation*}
+This is simpler than the equation for the work, which is an
+example of why it is advantageous to record an equation for
+potential energy relative to some reference point, rather
+than an equation for work.
+\end{eg}
+
+Although the equations derived in the previous two examples
+may seem arcane and not particularly useful except for toy
+designers and rocket scientists, their usefulness is
+actually greater than it appears. The equation for the
+potential energy of a spring can be adapted to any other
+case in which an object is compressed, stretched, twisted,
+or bent. While you are not likely to use the equation for
+gravitational potential energy for anything practical, it is
+directly analogous to an equation that is extremely useful
+in chemistry, which is the equation for the potential energy
+of an electron at a distance $r$ from the nucleus of its
+atom. As discussed in more detail later in the course, the
+electrical force between the electron and the nucleus is
+proportional to $1/r^2$, just like the gravitational force
+between two masses. Since the equation for the force is of
+the same form, so is the equation for the potential energy.
+
+\vfill
+
+<%
+  fig(
+    'voyager',
+    %q{%
+      The twin Voyager space 
+      probes were perhaps the greatest scientific successes of the space program. Over a
+      period of decades, they flew by all the planets of the
+      outer solar system, probably accomplishing more of
+      scientific interest than the entire space shuttle program
+      at a tiny fraction of the cost. Both Voyager probes
+      completed their final planetary flybys with speeds greater
+      than the escape velocity at that distance from the sun,
+      and so headed on out of the solar system on hyperbolic
+      orbits, never to return. Radio contact has been lost, and
+      they are now likely to travel interstellar space for billions
+      of years without colliding with anything or being detected
+      by any intelligent species.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\startdqs
+
+\begin{dq}
+What does the graph of $PE=(1/2)k\left(x-x_\zu{o}\right)^2$ look like as a function
+of $x$? Discuss the physical significance of its features.
+\end{dq}
+
+\begin{dq}
+What does the graph of $PE=-GMm/r$ look like as a
+function of $r?$ Discuss the physical significance of its
+features. How would the equation and graph change if some
+other reference point was chosen rather than $r=\infty$?
+\end{dq}
+
+\begin{dq}
+Starting at a distance $r$ from a planet of mass $M$, how
+fast must an object be moving in order to have a hyperbolic
+orbit, i.e., one that never comes back to the planet? This
+velocity is called the escape velocity. Interpreting the
+result, does it matter in what direction the velocity is?
+Does it matter what mass the object has? Does the object
+escape because it is moving too fast for gravity to act on it?
+\end{dq}
+
+\begin{dq}
+Does a spring have an ``escape velocity?''
+\end{dq}
+
+\begin{dq}
+m4_ifelse(__lm_series,1,[:Calculus-based question::]) If the form of energy being
+transferred is potential energy, then the equations 
+$F=\der W/\der x$ and $W=\int F \der x$
+become
+$F=-\der PE/\der x$ and $PE=-\int F \der x$.
+How would you then apply the following
+calculus concepts: zero derivative at minima and maxima, and
+the second derivative test for concavity up or down.
+\end{dq}
+
+<% end_sec() %> % Work and Potential Energy
+
+<% begin_sec("When does work equal force times distance?",nil,'when-is-work-fd',{'optional'=>true}) %>\index{work!not equal to $Fd$}
+
+In the example of the tractor pulling the plow discussed on page
+\pageref{plow-discussion},
+the work did not equal $Fd$.
+The purpose of this section is to explain more fully how the
+quantity $Fd$ can and cannot be used. To simplify
+things, I write $Fd$ throughout this section, but more
+generally everything said here would be true for the area
+under the graph of $F_{\parallel}$ versus $d$.
+
+The following two \index{work-kinetic energy theorem}theorems
+allow most of the ambiguity to be cleared up.
+
+\begin{lessimportant}[the work-kinetic-energy theorem]
+The change in kinetic energy associated with the motion of
+an object's center of mass is related to the total force acting
+on it and to the distance traveled by its center of mass
+according to the equation $\Delta KE_{cm}=F_\text{total}d_{cm}$.
+\end{lessimportant}
+
+<% marg(300) %>
+\formatlikecaption{%
+\begin{flushleft}\textbf{The work-KE theorem}\end{flushleft}
+\begin{flushleft}\textit{Proof}\end{flushleft}
+      For simplicity, we have assumed $F_\text{total}$ to be constant, and therefore
+      $a_\text{cm}=F_\text{total}/m$ is also constant, and the constant-acceleration equation
+      \begin{equation*}
+        v_\text{cm,f}^2=v_\text{cm,i}^2+2a_\text{cm}\Delta x_\text{cm}
+      \end{equation*}
+      applies. Multiplying by $m/2$ on both sides and applying Newton's second law gives
+      \begin{equation*}
+        KE_\text{cm,f}^2=KE_\text{cm,i}^2+F_\text{total}\Delta x_\text{cm},
+      \end{equation*}
+      which is the result that was to be proved.
+
+\begin{flushleft}\textit{Further interpretation}\end{flushleft}
+The logical structure of this book is that although Newton's laws are discussed
+before conservation laws, the conservation laws are taken to be fundamental, since
+they are true even in cases where Newton's laws fail.
+Many treatments of this subject present the work-KE theorem as a proof that kinetic
+energy behaves as $(1/2)mv^2$. This is a matter of taste, but
+one can just as well rearrange the equations in the proof above
+to solve for the unknown $a_\text{cm}$ and prove Newton's second law as a
+consequence of conservation of energy. Ultimately we have a great deal of freedom
+in choosing which equations to take as definitions, which to take as empirically
+verified laws of nature, and which to take as theorems.
+
+\noindent Regardless of how we slice things, we require both mathematical consistency and consistency
+with experiment. As described on p.~\pageref{ke-logic}, the work-KE theorem is
+an important part of this interlocking system of relationships.\label{work-ke-logic}
+}%
+<% end_marg %>
+
+A proof is given in the sidebar, along with some interpretation of how this result relates to the
+logical structure of our presentation. Note that despite the traditional
+name, it does not necessarily tell the amount of work done,
+since the forces acting on the object could be changing
+other types of energy besides the KE associated with
+its center of mass motion.
+
+The second theorem does relate directly to work:
+
+\begin{lessimportant}
+When a contact force acts between two objects and the two surfaces
+do not slip past each other, the work done equals $Fd$, where $d$ is
+the distance traveled by the point of contact.
+\end{lessimportant}
+
+\noindent This one has no generally accepted name, so we refer to it
+simply as the second theorem.
+
+A great number of physical situations can be analyzed with
+these two theorems, and often it is advantageous to apply
+both of them to the same situation.
+
+\begin{eg}{An ice skater pushing off from a wall}
+The work-kinetic energy theorem tells us how to calculate
+the skater's kinetic energy if we know the amount of force
+and the distance her center of mass travels while she is pushing off.
+
+The second theorem tells us that the wall does no work on
+the skater. This makes sense, since the wall does not have
+any source of energy.
+\end{eg}
+
+\begin{eg}{Absorbing an impact without recoiling?}
+\egquestion Is it possible to absorb an impact without
+recoiling? For instance, would a brick wall ``give'' at all
+if hit by a ping-pong ball?
+
+\eganswer There will always be a recoil. In the example
+proposed, the wall will surely have some energy transferred
+to it in the form of heat and vibration. The second theorem
+tells us that we can only have nonzero work if the distance
+traveled by the point of contact is nonzero.
+\end{eg}
+
+m4_ifelse(__lm_series,1,[:\pagebreak[4]:])
+
+\begin{eg}{Dragging a refrigerator at constant velocity}
+Newton's first law tells us that the total force on the
+refrigerator must be zero: your force is canceling the
+floor's kinetic frictional force. The work-kinetic energy
+theorem is therefore true but useless. It tells us that
+there is zero total force on the refrigerator, and that the
+refrigerator's kinetic energy doesn't change.
+
+The second theorem tells us that the work you do equals
+your hand's force on the refrigerator multiplied by the
+distance traveled. Since we know the floor has no source of
+energy, the only way for the floor and refrigerator to gain
+energy is from the work you do. We can thus calculate the
+total heat dissipated by friction in the refrigerator and the floor.
+
+Note that there is no way to find how much of the heat is
+dissipated in the floor and how much in the refrigerator.
+\end{eg}
+
+\begin{eg}{Accelerating a cart}
+If you push on a cart and accelerate it, there are two
+forces acting on the cart: your hand's force, and the static
+frictional force of the ground pushing on the wheels in
+the opposite direction.
+
+Applying the second theorem to your force tells us how to
+calculate the work you do.
+
+Applying the second theorem to the floor's force tells us
+that the floor does no work on the cart. There is no motion
+at the point of contact, because the atoms in the floor are
+not moving. (The atoms in the surface of the wheel are also
+momentarily at rest when they touch the floor.) This makes
+sense, since the floor does not have any source of energy.
+
+The work-kinetic energy theorem refers to the total force,
+and because the floor's backward force cancels part of your
+force, the total force is less than your force. This tells
+us that only part of your work goes into the kinetic energy
+associated with the forward motion of the cart's center of
+mass. The rest goes into rotation of the wheels.
+\end{eg}
+
+<% end_sec() %> % When Does Work Equal Force Times Distance?
+
+% Dot product is here and optional for LM, earlier in chapter and not optional for Mechanics.
+<% begin_if(__me==0) %>
+  m4_include(__share/text/dot_product.tex)
+<% end_if %>
+
+%--- Mechanics has proof of uniqueness of dot product:
+m4_ifelse(__me,1,[:
+<% begin_sec("Uniqueness of the dot product",nil,'dot-product-uniquness',{'optional'=>true}) %>\label{subsec:dotproduct}%label for both SN and Mechanics
+        In this section I prove that the vector dot product is unique, in the sense that there is
+        no other possible way to define it that is consistent with rotational invariance and that
+        reduces appropriately to ordinary multiplication in one dimension.
+
+        Suppose we want to find some way to multiply two vectors to get a scalar, and we don't know
+        how this operation should be defined. Let's consider what we would get
+        by performing this operation on various combinations of the unit vectors
+        $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$.
+        Rotational invariance requires that we handle the three coordinate axes
+        in the same way, without giving special treatment to any of them, so we must
+        have $\hat{\vc{x}}\cdot\hat{\vc{x}}=\hat{\vc{y}}\cdot\hat{\vc{y}}=\hat{\vc{z}}\cdot\hat{\vc{z}}$
+        and $\hat{\vc{x}}\cdot\hat{\vc{y}}=\hat{\vc{y}}\cdot\hat{\vc{z}}=\hat{\vc{z}}\cdot\hat{\vc{x}}$.
+        This is supposed to be a way of generalizing ordinary multiplication, so for consistency
+        with the property $1\times1=1$ of ordinary numbers, the result
+        of multiplying a magnitude-one vector by itself had better be the scalar 1, so
+        $\hat{\vc{x}}\cdot\hat{\vc{x}}=\hat{\vc{y}}\cdot\hat{\vc{y}}=\hat{\vc{z}}\cdot\hat{\vc{z}}=1$.
+        Furthermore, there is no way to satisfy rotational invariance unless we define the mixed
+        products to be zero,
+        $\hat{\vc{x}}\cdot\hat{\vc{y}}=\hat{\vc{y}}\cdot\hat{\vc{z}}=\hat{\vc{z}}\cdot\hat{\vc{x}}=0$;
+        for example, a 90-degree rotation of our frame of reference about the $z$ axis
+        reverses the sign of $\hat{\vc{x}}\cdot\hat{\vc{y}}$, but rotational invariance requires
+        that $\hat{\vc{x}}\cdot\hat{\vc{y}}$ produce the same result either way, and zero is the
+        only number that stays the same when we reverse its sign. Establishing these six
+        products of unit vectors suffices to define the operation in general, since any
+        two vectors that we want to multiply can be broken down into components, e.g.,
+        $(2\hat{\vc{x}}+3\hat{\vc{z}})\cdot\hat{\vc{z}}
+        =2\hat{\vc{x}}\cdot\hat{\vc{z}}+3\hat{\vc{z}}\cdot\hat{\vc{z}}=0+3=3$. Thus by
+        requiring rotational invariance and consistency with multiplication of ordinary
+        numbers, we find that there is only one possible way to define a multiplication
+        operation on two vectors that gives a scalar as the result. (There is, however,
+        a different operation, discussed in chapter \ref{ch:angular-momentum}, which multiplies two vectors
+        to give a vector.)
+<% end_sec() %> % Uniqueness of the dot product
+:])

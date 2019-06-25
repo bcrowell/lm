@@ -1,0 +1,107 @@
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{work}{the amount of energy transferred into or out of a
+system, excluding energy transferred by heat conduction}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$W$}{work}
+
+\end{notation}
+
+\begin{summarytext}
+
+Work is a measure of the transfer of mechanical energy, i.e.,
+the transfer of energy by a force rather than by heat
+conduction. When the force is constant, work can usually be calculated as
+\begin{equation*}
+                W  =  F_{\parallel} |\vc{d}|\eqquad,           \qquad  \text{[only if the
+force is constant]}
+\end{equation*}
+where $\vc{d}$ is simply a less cumbersome notation for $\Delta \vc{r}$,
+the vector from the initial position to the final position. Thus,
+\begin{itemize}
+\item A force in the same direction as the motion does positive
+work, i.e., transfers energy into the object on which it acts.
+
+\item A force in the opposite direction compared to the motion
+does negative work, i.e., transfers energy out of the
+object on which it acts.
+
+\item When there is no motion, no mechanical work is done. The
+human body burns calories when it exerts a force without
+moving, but this is an internal energy transfer of energy
+within the body, and thus does not fall within the
+scientific definition of work.
+
+\item A force perpendicular to the motion does no work.
+\end{itemize}
+When the force is not constant, the above equation should be generalized as
+m4_ifelse(__me,1,[:%
+an integral, $\int F_{\parallel}\der x$.
+:],[:%
+the area under the graph of $F_{\parallel}$ versus $d$.
+:])
+
+m4_ifelse(__me,1,[:
+	There is only one meaningful (rotationally invariant)
+	way of defining a multiplication of vectors
+	whose result is a scalar, and it is known as the vector \sumem{dot product:}
+	\begin{align*}	
+		\vc{b}\cdot\vc{c}	
+			&=  b_{x} c_{x}+ b_y c_{y}+ b_{z} c_z \\
+			&= |\vc{b}|\,|\vc{c}|\,\cos\theta_{bc}\eqquad.
+	\end{align*}
+	The dot product has most of the usual properties associated with multiplication,
+	except that there is no ``dot division.''
+        The dot product can be used to compute mechanical work as $W=\vc{F}\cdot\vc{d}$.
+:])
+
+Machines such as pulleys, levers, and gears may increase or
+decrease a force, but they can never increase or decrease
+the amount of work done. That would violate conservation of
+energy unless the machine had some source of stored energy
+or some way to accept and store up energy.
+
+There are some situations in which the equation $W=F_{\parallel}$
+$|\vc{d}|$ is ambiguous or not true, and these issues are
+discussed rigorously in section \ref{sec:when-is-work-fd}. However, problems can
+usually be avoided by analyzing the types of energy being
+transferred before plunging into the math. In any case there
+is no substitute for a physical understanding of the processes involved.
+
+The techniques developed for calculating work can also be
+applied to the calculation of potential energy. We fix some
+position as a reference position, and calculate the
+potential energy for some other position, $x$, as
+\begin{equation*}
+                PE_x  =  -W_{\text{ref}\rightarrow x}\eqquad.
+\end{equation*}
+
+The following two equations for potential energy have
+broader significance than might be suspected based on the
+limited situations in which they were derived:
+\begin{equation*}
+  PE = \frac{1}{2}k\left(x-x_\zu{o}\right)^2\eqquad.
+\end{equation*}
+\begin{longnoteafterequation}
+[potential energy of a spring having spring constant $k$,
+when stretched or compressed from the equilibrium position
+$x_o;$ analogous equations apply for the twisting, bending,
+compression, or stretching of any object.]
+\end{longnoteafterequation}
+\begin{equation*}
+                PE  = -\frac{GMm}{r}
+\end{equation*}
+\begin{longnoteafterequation}
+[gravitational potential energy of objects of masses $M$
+and $m$, separated by a distance $r$; an analogous equation
+applies to the electrical potential energy of an electron in an atom.]
+\end{longnoteafterequation}
+\end{summarytext}
+
+\end{summary}

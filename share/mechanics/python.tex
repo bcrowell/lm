@@ -1,0 +1,175 @@
+<% print_end_matter_section_header('Programming with python') %>
+
+\refstepcounter{appendixctr}\label{pythonappendix}%
+\newcommand\pythontryit[1]{\noindent\myindented{4mm}{\textsl{\textsf{Try it.}} \textsf{#1}}}
+
+
+The purpose of this tutorial is to help you get familiar with 
+a computer programming
+language called Python, which I've chosen because (a) it's free, and (b)
+it's easy to use interactively. I won't assume you have any previous
+experience with computer programming; you won't need to learn very much
+Python, and what little you do need to learn I'll explain explicitly. If
+you really want to learn Python more thoroughly, there are a couple of
+excellent books that you can download for free on the Web:
+\begin{itemize}
+\item[]\textbf{How to Think Like a Computer Scientist (Python Version)}, Allen B.
+Dow\-ney, Jeffrey Elkner, Moshe Zadka,\\
+http://www.ibiblio.org/obp/
+\item[]\textbf{Dive Into Python}, Mark Pilgrim,\\
+http://diveintopython.net/
+\end{itemize}
+The first book is meant for people who have never programmed before,
+while the second is a more complete introduction aimed at veteran
+programmers who know a different language already.
+
+\textbf{Using Python as a calculator}
+
+The easiest way to get Python going is to go to the web site \verb@ideone.com@.
+Under ``choose a language,'' select Python. Inside the window where it says
+``paste your source code or insert template or sample,'' type \verb@print(2+2)@.
+Click on the ``submit'' button. The result, 4, is shown under ``output.''
+In other words, you can use Python just like a calculator. 
+
+For compactness, I'll show examples in the following style:
+\begin{verbatim}
+  >>> print(2+2)
+  4
+\end{verbatim}
+Here the \verb@>>>@ is not something you would type yourself; it's just
+a marker to distinguish your input from the program's output.
+(In some other versions of Python, the computer will actually print out \verb@>>>@
+as a prompt to tell you it's ready to type something.)
+
+There are only a couple of things to watch out for. First, Python
+distinguishes between integers and real numbers, so the following gives
+an unexpected result:
+
+\begin{verbatim}
+  >>>  print(2/3)
+  0
+\end{verbatim}
+
+\noindent{}To get it to treat these values as real numbers, you have to use decimal
+points:
+
+\begin{verbatim}
+  >>> print(2./3.)
+  0.6666666666666666666663
+\end{verbatim}
+
+\noindent{}Multiplication is represented by ``*'':
+
+\begin{verbatim}
+  >>> print(2.*3.)
+  6.0
+\end{verbatim}
+
+\noindent{}Also, Python doesn't know about its own library of math functions unless
+you tell it explicitly to load them in:
+
+\begin{verbatim}
+  >>> print (sqrt(2.))
+  Traceback (most recent call last):
+  File ``<stdin>'', line 1, in ?
+  NameError: There is no variable named `sqrt'
+\end{verbatim}
+
+\noindent{}Here are the steps you have to go through to calculate the square root
+of 2 successfully:
+
+\begin{verbatim}
+  >>> import math
+  >>> print(math.sqrt(2.))
+  1.4142135623730951
+\end{verbatim}
+
+\noindent{}The first line is just something you can make a habit of doing every
+time you start up Python. In the second line, the name of the square
+root function had to be prefixed with ``\verb@math@.'' to tell Python where you
+wanted to get this ``\verb@sqrt@'' function from. (All of this may seem like a
+nuisance if you're just using Python as a calculator, but it's a good
+way to design a programming language so that names of functions never
+conflict.)
+
+\pythontryit{ Experiment and figure out whether Python's trig functions assume
+radians or degrees.}
+
+\textbf{Variables}
+
+Python lets you define variables and assign values to them using an
+equals sign:
+
+\begin{verbatim}
+  >>> dwarfs=7
+  >>> print(dwarfs)
+  >>> print(dwarfs+3)
+  7
+  10
+\end{verbatim}
+
+Note that a variable in computer programming isn't quite like a variable
+in algebra. In algebra, if $a$=7 then $a$=7 always, throughout a particular
+calculation. But in a programming language, the variable name really
+represents a place in memory where a number can be stored, so you can
+change its value:
+
+\begin{verbatim}
+  >>> dwarfs=7
+  >>> dwarfs=37
+  >>> print(dwarfs)
+  37
+\end{verbatim}
+
+\noindent{}You can even do stuff like this,
+
+\begin{verbatim}
+  >>> dwarfs=37
+  >>> dwarfs=dwarfs+1
+  >>> print(dwarfs)
+  38
+\end{verbatim}
+
+\noindent{}In algebra it would be nonsense to have a variable equal to itself plus
+one, but in a computer program, it's not an assertion that the two
+things are equal, its a command to calculate the value of the expression
+on the right side of the equals, and then put that number into the
+memory location referred to by the variable name on the left.
+
+\pythontryit{ What happens if you do dwarfs+1 = dwarfs? Do you understand why?}
+
+\noindent\textbf{Functions}
+
+Somebody had to teach Python how to do functions like \verb@sqrt@, and it's
+handy to be able to define your own functions in the same way.
+Here's how to do it:
+
+\begin{verbatim}
+  >>> def double(x):
+  >>>   return 2.*x
+  >>> print(double(5.))
+  10.0
+\end{verbatim}
+
+\noindent{}Note that the indentation is mandatory. The first and second lines
+define a function called \verb@double@. The final line evaluates that function
+with an input of 5.
+
+\noindent\textbf{Loops}\\
+Suppose we want to add up all the numbers from 0 to 99.
+
+Automating this kind of thing is exactly what computers are best at, and
+Python provides a mechanism for this called a loop:
+
+\begin{verbatim}
+  >>> sum=0
+  >>> for j in range(100):
+  >>>   sum=sum+j
+  >>> print(sum)
+  4950
+\end{verbatim}
+
+\noindent{}The stuff that gets repeated --- the inside of the loop --- has to be
+indented, just like in a function definition. Python always counts loops
+starting from 0, so for \verb@j in range(100)@ actually causes \verb@j@
+to range from 0 to 99, not from 1 to 100.

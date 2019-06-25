@@ -1,0 +1,1325 @@
+
+ %%========================================== toc decoration ===============================================
+
+<%
+  require "../eruby_util.rb"
+%>
+<% figure_in_toc('pool',{'noresize'=>true}) %>
+<%
+  chapter(
+    '02',
+    %q{Conservation of Momentum},
+    'ch:momentum',
+    '',
+    {'opener'=>'pool','special_width'=>'117mm'}
+  )
+%>
+
+Fantasy novelist T.H.~White invented a wonderful phrase that has since\index{Gell-Mann, Murray}
+entered into popular culture: ``Everything not forbidden is compulsory.''
+Originally intended as a satire of totalitarianism, it was taken up by 
+physicist Murray Gell-Mann as a metaphor for physics. What he meant
+was that the laws of physics forbid all the impossible things, and what's
+left over is what really happens.
+Conservation of mass and energy prevent many things from happening. Objects
+can't disappear into thin air, and you can't run your car forever without
+putting gas in it.
+
+Some other processes are impossible, but not forbidden
+by these two conservation laws. 
+In the martial arts movie \emph{Crouching Tiger, Hidden Dragon},
+those who have received mystical enlightenment are able to violate the
+laws of physics. Some of the violation, such as their ability
+to fly, are obvious, but others are a little more subtle. The rebellious young
+heroine/antiheroine Jen Yu gets into an argument while sitting
+at a table in a restaurant. A young tough, Iron Arm Lu, comes running toward her at full
+speed, and she puts up one arm and effortlessly makes him bounce
+back, without even getting out of her seat or bracing herself against
+anything. She does all this between bites.
+It's impossible, but how do we know it's impossible? It doesn't violate conservation
+of mass, because neither character's mass changes. It conserves energy as well,
+since the rebounding Lu has the same energy he started with.\label{tiger}
+
+Suppose you live in a country where the only laws are prohibitions against
+murder and robbery. One day someone covers your house with graffiti, and the
+authorities refuse to prosecute, because no crime was committed. You're
+convinced of the need for a new law against vandalism. Similarly, the story of
+Jen Yu and Iron Arm Lu shows that we need a new conservation law.
+
+<% begin_sec("Translation symmetry",0,'translation-symmetry') %>\index{symmetry!translation}
+The most fundamental laws of physics are conservation laws, and Noether's theorem
+tells us that conservation laws are the way they are because of symmetry. Time
+symmetry is responsible for conservation of energy, but time is like a
+river with only two directions, past and future. What's impossible about Lu's
+motion is the abrupt reversal in the direction of his motion in \emph{space}, but neither
+time symmetry nor energy conservation tell us anything about directions
+in space. When you put gas in your car, you don't have to decide whether you want to
+buy north gas or south gas, east, west, up or down gas. Energy has no direction. What
+we need is a new conserved quantity that has a direction in space, and such a
+conservation law can only come from a symmetry that relates to space. Since we've already
+had some luck with time symmetry, which says that the laws of physics are the same at all
+times, it seems reasonable to turn now to the possibility of a new type of symmetry,
+which would state that the laws of physics are the same in all places in space.
+This is known as translation symmetry, where the word ``translation'' is being
+used in a mathematical sense that means sliding something around without rotating it.
+
+\label{points-in-space-have-no-identity}
+Translation symmetry would seem reasonable to most people, but you'll see that it
+ends up producing some very surprising results. To see how, it will be
+helpful to imagine the consequences of a violation of translation symmetry.
+What if, like the laws of nations, the laws of physics were different in different
+places? What would happen, and how would we detect it? We could try doing the
+same experiment in two different places and comparing the results, but it's
+even easier than that. Tap your finger on this spot on the page
+\begin{equation*}
+        \times
+\end{equation*}
+and then wait a second and do it again. Did both taps occur at the same point in space?
+You're probably thinking that's a silly question; am I just checking whether you followed
+my directions? Not at all. Consider the whole scene from the point of view of a Martian
+who is observing it through a powerful telescope from her home planet. (You didn't
+draw the curtains, did you?) From her point of view, the earth is spinning
+on its axis and orbiting the sun, at speeds measured in thousands of kilometers per hour.
+According to her, your second finger tap happened at a point in space about
+30 kilometers from the first. If you want to impress the Martians and win the Martian version of
+the Nobel Prize for detecting a violation of translation symmetry,
+all you have to do is perform a physics experiment twice in the same laboratory, and
+show that the result is different.
+
+But who's to say that the Martian point of view is the right one? It gets a little thorny
+now. How do you know that what you detected was a violation of translation symmetry
+at all? Maybe it was just a violation of time symmetry. The Martian Nobel
+committee isn't going to give you the prize based on an experiment this ambiguous. A
+possible scheme for resolving the ambiguity would be to wait a year and do the same
+experiment a third time. After a year, the earth will have completed one full orbit around the
+sun, and your lab will be back in the same spot in space. If the third experiment comes out
+the same as the first one, then you can make a strong argument that what you've detected is
+an asymmetry of space, not time. There's a problem, however. You and the Martians agree
+that the earth is back in the same place after a year, but what about an observer from
+another solar system, whose planet orbits a different star? This observer says that our
+whole solar system is in motion. To him, the earth's motion around our sun looks like a spiral or a
+corkscrew, since the sun is itself moving.
+
+<% end_sec() %>
+<% begin_sec("The principle of inertia",0,'principle-of-inertia') %>\index{inertia!principle of}
+<% begin_sec("Symmetry and inertia") %>
+This story shows that translation symmetry is closely related to the relative nature
+of motion, as expressed by the principle of inertia. Riding in a train on a long, straight track at constant speed, how can you even
+tell you're in motion? You can look at the scenery outside, but that's irrelevant, because
+we could argue that the trees and cows are moving while you stand still. (The Martians
+say both train and scenery are moving.) The real point is whether you can
+detect your motion without reference to any external object. You can hear the repetitive
+thunk-thunk-thunk as the train passes from one piece of track to the next, but again
+this is just a reference to an external object --- all that proves is that you're moving
+relative to the tracks, but is there any way to tell that you're moving in some
+\emph{absolute} sense? Assuming no interaction with the outside world, 
+is there any experiment you can do that will give a different result
+when the train is in motion than when it's at rest?
+You could if translation symmetry was violated. If the laws of physics were different
+in different places, then as the train moved it would pass through them. ``Riding over''
+these regions would be like riding over the pieces of track, but you would be able
+to detect the transition from one region to the next simply because experiments inside
+the train came out different, without referring to any external objects.
+Rather than the thunk-thunk-thunk of the rails, you would
+detect increases and decreases in some quantity such as the gravitational constant $G$,
+or the speed of light, or the mass of the electron.
+
+We can therefore conclude that the following two hypotheses are closely related.
+
+\begin{important}[The principle of inertia]
+The results of experiments don't depend on the straight-line,
+constant-speed motion of the apparatus. 
+\end{important}
+
+\begin{important}[Translation symmetry]
+The laws of physics are the same at every point in space. Specifically, experiments
+don't give different results just because you set up your apparatus in a different place.
+\end{important}
+
+\begin{eg}{A state of absolute rest}\label{eg:absoluterest}
+Suppose that translation symmetry is violated. The laws of phys\-ics are different
+in one region of space than in another. Cruising in our spaceship, we monitor the
+fluctuations in the laws of physics by watching the needle on a meter that measures
+some fundamental quantity such as the gravitational constant. We make a short blast
+with the ship's engines and turn them off again. Now we see that the needle is wavering
+more slowly, so evidently it's taking us more time to move from one region to the next.
+We keep on blasting with the ship's engines until the fluctuations stop entirely. Now
+we know that we're in a state of absolute rest. The violation of translation
+symmetry logically resulted in a violation of the principle of inertia.
+\end{eg}
+
+<% self_check('moonviolatestranslation',<<-'SELF_CHECK'
+Suppose you do an experiment to see how long it takes
+for a rock to drop one meter. This experiment comes out different if you do it on the moon.
+Does this violate translation symmetry?
+  SELF_CHECK
+  ) %>
+
+
+%
+
+<% end_sec() %>
+<% end_sec('principle-of-inertia') %>
+<% begin_sec("Momentum",0,'momentum') %>\index{momentum!conservation of}
+<% begin_sec("Conservation of momentum") %>\index{momentum!conservation of}\index{conservation!of momentum}
+Let's return to the impossible story of Jen Yu and Iron Arm Lu on page \pageref{tiger}.
+For simplicity, we'll model them as two identical, featureless pool balls,
+\figref{impossible-a}. This may seem like a drastic simplification, but even a collision
+between two human bodies is really just a series of many collisions between atoms.
+The film shows a series of instants in time, viewed from overhead. The light-colored ball comes in, hits the
+darker ball, and rebounds. It seems strange that the dark ball has such a big
+effect on the light ball without experiencing any consequences itself, but how can we show that
+this is really impossible?
+
+<%
+  fig(
+    'impossible-a',
+    %q{%
+        How can we prove that this collision is impossible?
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We can show it's impossible by looking at it in a different frame of reference,
+\figref{impossible-b}. This camera follows the light ball on its way in, so in this
+frame the incoming light ball appears motionless. (If you ever get hauled into court
+on an assault charge for hitting someone, try this defense: ``Your honor, in my fist's
+frame of reference, it was his face that assaulted my knuckles!'') After the collision,
+we let the camera keep moving in the same direction, because if we didn't, it wouldn't be
+showing us an inertial frame of reference. To help convince yourself that figures
+\figref{impossible-a} and \figref{impossible-b} represent the same motion seen in two
+different frames, note that both films agree on the distances between the balls at
+each instant. After the collision, frame \figref{impossible-b} shows the light ball moving twice as fast as the dark
+ball; an observer who prefers frame \figref{impossible-a} explains this
+by saying that the camera that produced film \figref{impossible-b} was moving one
+way, while the ball was moving the opposite way.
+
+<%
+  fig(
+    'impossible-b',
+    %q{%
+      The collision of figure \figref{impossible-a} is viewed in a different frame of reference.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figures \figref{impossible-a} and \figref{impossible-b} record the same
+events, so if one is impossible, the other is too. But figure \figref{impossible-b}
+is definitely impossible, because it violates conservation of energy. Before
+the collision, the only kinetic energy is the dark ball's. After the collision, light
+ball suddenly has some energy, but where did that energy come from? It can only have
+come from the dark ball. The dark ball should then have lost some energy, which it hasn't,
+since it's moving at the same speed as before.
+
+Figure \figref{possible} shows what really does happen. This kind of behavior is
+familiar to anyone who plays pool. In a head-on collision, the incoming ball stops
+dead, and the target ball takes all its energy and flies away. In \subfigref{possible}{1},
+the light ball hits the dark ball. In \subfigref{possible}{2}, the camera is initially following
+the light ball; in this frame of reference, the dark ball hits the light one (``Judge,
+his face hit my knuckles!''). The frame of reference shown in
+\subfigref{possible}{3} is particularly interesting. Here the
+camera always stays at the midpoint between the two balls. This is called the
+center-of-mass frame of reference.
+
+<%
+  fig(
+    'possible',
+    %q{%
+       This is what really happens. Three films represent the same
+       collision viewed in three different frames of reference. Energy is conserved in
+       all three frames. Figure \figref{collision-x-t} shows a less cumbersome way of
+       representing the same thing.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% self_check('markcm',<<-'SELF_CHECK'
+In each picture in figure \subfigref{possible}{1}, mark an x at
+the point half-way in between the two balls. This series of five x's represents the motion of the
+camera that was used to make the bottom film. How fast is the camera moving? Does it represent
+an inertial frame of reference?
+  SELF_CHECK
+  ) %>
+
+
+What's special about the center-of-mass frame is its symmetry. In this frame, both balls
+have the same initial speed. Since they start out with the same speed, and they have the
+same mass, there's no reason for them to behave differently from each other after the collision.
+By symmetry, if the light ball feels a certain effect from the dark ball, the dark ball must feel
+the same effect from the light ball. 
+
+This is exactly like the rules of accounting. Let's say two big corporations are
+doing business with each other. If Glutcorp pays a million dollars to Slushco,
+two things happen: Glutcorp's bank account goes down by a million dollars, and
+Slushco's rises by the same amount. The two companies' books have to show
+transactions on the same date that are equal in size, but one is positive
+(a payment) and one is negative. What if Glutcorp records $-1,000,000$ dollars,
+but Slushco's books say $+920,000$? This indicates that a law has been broken;
+the accountants are going to call the police and start looking for the employee who's
+driving a new 80,000-dollar Jaguar. Money is supposed to be conserved.
+
+<% marg(150) %>
+<%
+  fig(
+    'collision-x-t',
+    %q{%
+       A less cumbersome representation of figure \figref{possible}.
+       The collision is shown as a graph of position, $x$, versus time, $t$.
+       By distorting the graph-paper grid, we can describe the same collision
+       in the two other frames of reference. Cf.~figure \figref{galilean-transformation}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'galilean-transformation',
+    %q{%
+       A visual shorthand for describing the relationship between two frames of
+       reference as in figure \figref{collision-x-t}: the gray rectangle represents the original, undistorted,
+       graph paper, while the superimposed grid shows a different frame.
+    }
+  )
+%>
+<% end_marg %>
+
+<% if is_print then
+print %q(
+\\newcommand{\\velocitytable}[8]{%
+\\noindent\\hspace{5mm}\\begin{tabular}{|p{4mm}|p{30mm}|p{30mm}|p{20mm}|}
+\\hline
+ & \\multicolumn{2}{p{50mm}}{velocity (meters per second)} & \\\\
+\\cline{2-4}
+ & before the collision
+       & after the collision  & change \\\\
+\\hline
+\\anonymousinlinefig{#7} & #1 & #2 & #3 \\\\
+\\anonymousinlinefig{#8} & #4 & #5 & #6 \\\\
+\\hline
+\\end{tabular}
+}
+)
+end
+%>
+
+<%
+def p_vel_table(a,b,c,d,e,f)
+if is_print then
+  return "\\velocitytable{#{a}}{#{b}}{#{c}}{#{d}}{#{e}}{#{f}}{darkball}{lightball}"
+end
+if is_web then
+return %Q(
+\\noindent\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
+\\hline
+ & before the collision
+       & after the collision  \\\\
+\\hline
+small ball & #{a} & #{b}  \\\\
+big ball & #{c} & #{d}  \\\\
+\\hline
+\\end{tabular}
+)
+end
+end
+%>
+
+
+In figure \figref{possible}, let's define velocities as positive if the motion
+is toward the top of the page. In figure \subfigref{possible}{1}
+let's say the incoming light ball's velocity is 1 m/s.
+
+<% print p_vel_table(0,1,'$+1$',1,0,'$-1$') %>
+
+\noindent The books balance. The light ball's payment, $-1$, matches the dark ball's
+receipt, $+1$. Everything also works out fine in the center of mass frame, \subfigref{possible}{3}:
+
+<% print p_vel_table('$-\ensuremath{0.5}$','$+\ensuremath{0.5}$','$+1$','$+\ensuremath{0.5}$','$-\ensuremath{0.5}$','$-1$') %>
+
+<% self_check('thirdframepcons',<<-'SELF_CHECK'
+Make a similar table for figure \subfigref{possible}{2}. What
+do you notice about the change in velocity when you compare the three tables?
+  SELF_CHECK
+  ) %>
+
+
+Accounting works because money is conserved. Apparently, something is also conserved when
+the balls collide. We call it momentum. Momentum is not the same as velocity, because
+conserved quantities have to be additive. Our pool balls are like identical atoms, but
+atoms can be stuck together to form molecules, people, and planets. Because conservation
+laws work by addition, two atoms stuck together and moving at a certain velocity must have
+double the momentum that a single atom would have had. We therefore define momentum as
+velocity multiplied by mass.\index{Noether's theorem!for momentum}
+
+\begin{important}[Conservation of momentum]
+The quantity defined by
+$        \text{momentum} = mv$
+is conserved.
+\end{important}
+
+This is our second example of Noether's theorem:\nopagebreak
+
+\begin{noethertable}
+time symmetry & \noetherimplies & mass-energy \\
+translation symmetry & \noetherimplies & momentum \\
+\end{noethertable}
+
+\begin{eg}{Conservation of momentum for pool balls}
+\egquestion
+Is momentum conserved in figure \subfigref{possible}{1}?
+
+\eganswer
+We have to check whether the total initial momentum is the same as the total
+final momentum.
+\begin{multline*}
+        \text{dark ball's initial momentum} + \text{light ball's initial momentum}\\
+        =? \\
+       \text{dark ball's final momentum} + \text{light ball's final momentum}
+\end{multline*}
+Yes, momentum was conserved:
+\begin{equation*}
+        0+mv = mv+0
+\end{equation*}
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'skaters',
+    %q{%
+        Example \ref{eg:skatersmomentum}.
+    }
+  )
+%>  
+<% end_marg %>
+
+\begin{eg}{Ice skaters push off from each other}\label{eg:skatersmomentum}
+If the ice skaters in figure \figref{skaters} have equal masses,
+then left-right (mirror) symmetry implies that they moved off with equal speeds
+in opposite directions. Let's check that this is consistent with conservation
+of momentum:
+\begin{multline*}
+        \text{left skater's initial momentum} + \text{right skater's initial momentum}\\
+        =? \\
+       \text{left skater's final momentum} + \text{right skater's final momentum}
+\end{multline*}
+Momentum was conserved:
+\begin{equation*}
+        0+0 = m\times(-v)+mv
+\end{equation*}
+This is an interesting example, because if these had been pool balls instead
+of people, we would have accused them of violating conservation of energy. Initially
+there was zero kinetic energy, and at the end there wasn't zero. (Note that the energies
+at the end don't cancel, because kinetic energy is always positive, regardless
+of direction.) The mystery is resolved because they're people, not pool balls. They
+both ate food, and they therefore have chemical energy inside their bodies:
+\begin{equation*}
+        \text{food energy} \rightarrow \text{kinetic energy} + \text{kinetic energy} + \text{heat}
+\end{equation*}
+\end{eg}
+
+\begin{eg}{Unequal masses}
+\egquestion Suppose the skaters have unequal masses: 50 kg for the one on the left, and 55 kg for
+the other. The more massive skater, on the right, moves off at 1.0 m/s. How fast does
+the less massive skater go?
+
+\eganswer Their momenta (plural of momentum) have to be the same amount, but with opposite signs.
+The less massive skater  must have a greater velocity if her momentum is going to be
+as much as the more massive one's.
+\begin{align*}
+        0+0 &= (50\ \kgunit)(-v)+(55\ \kgunit)(1.0\ \munit/\sunit)\\
+        (50\ \kgunit)(v) &= (55\ \kgunit)(1.0\ \munit/\sunit)\\
+        v &= \frac{(55\ \kgunit)}{50\ \kgunit}(1.0\ \munit/\sunit)\\
+          &= 1.1\ \munit/\sunit
+\end{align*}
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Momentum compared to kinetic energy") %>\index{momentum!compared to kinetic energy}\index{kinetic energy!compared to momentum}
+Momentum and kinetic energy are both measures of the
+amount of motion, and a sideshow in the Newton-Leibniz
+controversy over who invented calculus was an argument over
+which quantity was the ``true'' measure of
+motion. The modern student can certainly be excused for
+wondering why we need both quantities, when their complementary
+nature was not evident to the greatest minds of the 1700's.
+The following table highlights their differences.
+
+\noindent\begin{tabular}{|p{52mm}|p{52mm}|}
+\hline
+\textbf{Kinetic energy\ldots}        & \textbf{Momentum\ldots}\\
+\hline
+has no direction in space. & has a direction in space.\\
+\hline
+is always positive, and cannot cancel out. & cancels with momentum in the opposite direction.\\
+\hline
+can be traded for forms of energy that do not involve motion. KE is not
+a conserved quantity by itself. & is always conserved.\\
+\hline
+is quadrupled if the velocity is doubled. & is doubled if the velocity is doubled.\\
+\hline
+\end{tabular}
+
+
+Here are some examples that show the different behaviors
+of the two quantities.
+
+<% marg(0) %>
+<%
+  fig(
+    'coin',
+    %q{%
+        Example \ref{eg:coinmomentum}.
+    }
+  )
+%>  
+<% end_marg %>
+\begin{eg}{A spinning coin}\label{eg:coinmomentum}
+A spinning coin has zero total momentum, because for every
+moving point, there is another point on the opposite side
+that cancels its momentum. It does, however, have kinetic energy.
+\end{eg}
+
+\begin{eg}{Momentum and kinetic energy in firing a rifle}
+The rifle and bullet have zero momentum and zero kinetic
+energy to start with. When the trigger is pulled, the bullet
+gains some momentum in the forward direction, but this is
+canceled by the rifle's backward momentum, so the total
+momentum is still zero. The kinetic energies of the gun and
+bullet are both positive numbers, however, and do not
+cancel. The total kinetic energy is allowed to increase,
+because both objects' kinetic energies are destined to be
+dissipated as heat --- the gun's ``backward'' kinetic energy
+does not refrigerate the shooter's shoulder!
+\end{eg}
+
+\begin{eg}{The wobbly earth}
+As the moon completes half a circle around the earth, its
+motion reverses direction. This does not involve any change
+in kinetic energy, because the moon doesn't speed up or slow
+down, nor is there any change in gravitational energy, because
+the moon stays at the same distance from the earth.\footnote{Actually these
+statements are both only approximately true. The moon's orbit isn't exactly a circle.}
+ The reversed velocity 
+does, however, imply a reversed momentum, so
+conservation of momentum 
+tells us that the earth must also change its momentum. In
+fact, the earth wobbles in a little ``orbit'' about a point
+below its surface on the line connecting it and the moon.
+The two bodies' momenta always point in opposite
+directions and cancel each other out.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'earthmoondivorce',
+    %q{%
+        Example \ref{eg:earthmoondivorce}.
+    }
+  )
+%>  
+<% end_marg %>
+\begin{eg}{The earth and moon get a divorce}\label{eg:earthmoondivorce}
+Why can't the moon suddenly decide to fly off one way and
+the earth the other way? It is not forbidden by conservation
+of momentum, because the moon's newly acquired momentum in
+one direction could be canceled out by the change in the
+momentum of the earth, supposing the earth headed the
+opposite direction at the appropriate, slower speed. The
+catastrophe is forbidden by conservation of energy, because
+both their kinetic energies would have increased greatly.
+\end{eg}
+
+\begin{eg}{Momentum and kinetic energy of a glacier}
+A cubic-kilometer glacier would have a mass of about
+$10^{12}$  kg --- 1 followed by 12 zeroes. If it moves at a speed of $0.00001$  m/s,
+then its momentum would be $10,000,000\ \kgunit\unitdot\munit/\sunit$. 
+This is the kind of
+heroic-scale result we expect, perhaps the equivalent of the
+space shuttle taking off, or all the cars in LA driving in
+the same direction at freeway speed. Its kinetic energy,
+however, is only 50 joules, the equivalent of the calories
+contained in a poppy seed or the energy in a drop of
+gasoline too small to be seen without a microscope. The
+surprisingly small kinetic energy is because kinetic energy
+is proportional to the square of the velocity, and the
+square of a small number is an even smaller number.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Force") %>
+<% begin_sec("Definition of force") %>\index{force!definition}
+When momentum is being transferred, we refer to the rate of transfer as the force.\footnote{This
+definition is known as Newton's second law of motion. Don't memorize that!} The metric
+unit of force is the newton (N).\index{force!unit}\index{newton (unit)}
+The relationship between force and momentum is like the relationship between
+power and energy, or the one between your cash flow and your bank balance:
+
+\begin{tabular}{|p{20mm}p{20mm}|p{20mm}p{20mm}|}
+\hline
+\multicolumn{2}{|p{40mm}|}{\textbf{conserved quantity}} &\multicolumn{2}{|p{40mm}|}{\textbf{rate of transfer}} \\
+\hline
+\textbf{name} & \textbf{units} & \textbf{name} & \textbf{units} \\
+energy & joules (J) & power & watts (W) \\
+momentum & $\kgunit\unitdot\munit/\sunit$ & force & newtons (N)\\
+\hline
+\end{tabular}
+
+\begin{eg}{A bullet}\label{eg:bulletforce}
+\egquestion A bullet emerges from a gun with a momentum of 1.0 $\kgunit\unitdot\munit/\sunit$, after
+having been acted on for 0.01 seconds by the force of the gases from the explosion of the gunpowder.
+What was the force on the bullet?
+
+\eganswer 
+The force is\footnote{This is really only an estimate of the average force over the time it takes for the bullet
+to move down the barrel. The force probably starts out stronger than this, and then gets weaker because the gases
+expand and cool.}
+\begin{equation*}
+        \frac{1.0}{0.01} = 100\ \text{newtons}\eqquad.
+\end{equation*}
+\end{eg}
+
+There's no new physics happening here, just a definition of the word ``force.'' Definitions are neither right nor
+wrong, and just because the Chinese call it \raisebox{-0.2mm}{\anonymousinlinefig{li}} instead, that doesn't mean they're
+incorrect. But when Isaac Newton first started using the term ``force'' according to this
+technical definition, people already had some definite ideas about what the word meant.
+
+In some cases Newton's definition matches our intuition. In example \ref{eg:bulletforce}, we divided by a small
+time, and the result was a big force; this is intuitively reasonable, since we expect the force on the bullet to
+be strong.
+
+<% end_sec() %>
+<% begin_sec("Forces occur in equal-strength pairs") %>\index{force!pairs}\index{Newton, Isaac!third law}
+In other situations, however, our intuition rebels against reality.
+
+\begin{eg}{Extra protein}\label{eg:extraprotein}
+\egquestion
+While riding my bike fast down a steep hill, I pass through a cloud of gnats, and one of them goes into my
+mouth. Compare my force on the gnat to the gnat's force on me.
+
+\eganswer
+Momentum is conserved, so the momentum gained by the gnat equals the momentum lost by me. Momentum
+conservation holds true at every instant over the fraction of a second that it takes for the collision to
+happen. The rate of transfer
+of momentum out of me must equal the rate of transfer into the gnat. Our forces on each other have the
+same strength, but they're in opposite directions.
+\end{eg}
+
+\noindent Most people would be willing to believe that the momentum gained by the gnat is the same as the
+momentum lost by me, but they would not believe that the forces are the same strength. Nevertheless, 
+the second statement follows from the first merely as a matter of definition. 
+Whenever two objects, A and B, interact,\label{thirdlaw}
+A's force on B is the same strength as B's force on A, and the forces are in opposite directions.\footnote{This
+is called Newton's third law. Don't memorize that name!}
+\begin{equation*}
+        \text{(A on B)} = -\text{(B on A)}
+\end{equation*}
+Using the metaphor of money, suppose Alice and Bob are adrift in a life raft, and pass the time by playing
+poker. Money is conserved, so if they count all the money in the boat every night, they should always come
+up with the same total. A completely equivalent statement is that their cash flows are equal and opposite.
+If Alice is winning five dollars per hour, then Bob must be losing at the same rate.
+
+This statement about equal forces in opposite directions implies to many students a kind of mystical
+principle of equilibrium that explains why things don't move. That would be a useless principle, since it
+would be violated every time something moved.\footnote{During the Scopes monkey trial, William Jennings Bryan
+claimed that every time he picked his foot up off the ground, he was violating the law of gravity.} The ice skaters
+of figure \figref{skaters} on page \pageref{fig:skaters} make forces on each
+other, and their forces are equal in strength and opposite in direction. That doesn't mean
+they won't move. They'll both move --- in opposite directions.
+
+<% marg(0) %>
+<%
+  fig(
+    'cartoon-bar-tab',
+    %q{%
+        It doesn't make sense to add his debts to her assets.
+    }
+  )
+%>  
+\spacebetweenfigs
+<%
+  fig(
+    'squeezescale',
+    %q{%
+        I squeeze the bathroom scale.
+        It does make sense to add my fingers' force to my thumbs', because they both act on the same object --- the scale.
+    }
+  )
+%>  
+<% end_marg %>
+
+The fallacy comes from trying to
+add things that it doesn't make sense to add, as suggested by the cartoon in figure \figref{cartoon-bar-tab}.
+We only add forces that are acting on the same object. It doesn't make sense to say that the skaters'
+forces on each other add up to zero, because it doesn't make sense to add them. One is a force on the
+left-hand skater, and the other is a force on the right-hand skater.
+
+In figure \figref{squeezescale}, my fingers'
+force and my thumbs' force are both acting on the bathroom scale.
+It does make sense to add these forces, and they may possibly add up to zero, but
+that's not guaranteed by the laws of physics. 
+If I throw the scale at you, my thumbs' force is stronger that my fingers', and the forces no longer cancel:
+\begin{equation*}
+        \text{(fingers on scale)} \ne -\text{(thumbs on scale)}\eqquad.
+\end{equation*}
+What's guaranteed by conservation of momentum is a whole different relationship:
+\begin{align*}
+        \text{(fingers on scale)} &= -\text{(scale on fingers)} \\
+        \text{(thumbs on scale)} &= -\text{(scale on thumbs)} \\
+\end{align*}
+<% end_sec() %>
+<% begin_sec("The force of gravity") %>\index{force!of gravity}\index{gravity!force of}
+How much force does gravity make on an object? From everyday experience, we know
+that this force is proportional to the object's mass.\footnote{This follows from the
+additivity of forces.} Let's find the force on
+a one-kilogram object. If we release this object from rest, then after it has
+fallen one meter, its kinetic energy equals the strength of the gravitational field,
+\begin{equation*}
+10\ \text{joules per kilogram per meter}\times1\ \text{kilogram}\times1\ \text{meter} = 10\ \text{joules}\eqquad.
+\end{equation*}
+Using the equation for kinetic energy and doing a little simple algebra, we find that
+its final velocity is 4.4 m/s. It starts from 0 m/s, and ends at 4.4 m/s, so
+its average velocity is 2.2 m/s, and the time takes to fall one meter is therefore
+(1 m)/(2.2 m/s)=0.44 seconds. Its final momentum is 4.4 units, so the force on it was
+evidently
+\begin{equation*}
+        \frac{4.4}{0.44} = 10\ \text{newtons}\eqquad.
+\end{equation*}
+This is like one of those card tricks where the magician makes you go through a bunch
+of steps so that you end up revealing the card you had chosen --- the result is just
+equal to the gravitational field, 10, but in units of newtons! If algebra makes you feel
+warm and fuzzy, you may want to replay the derivation using symbols and convince yourself
+that it had to come out that way. If not, then I hope the numerical result is enough
+to convince you of the general fact that the force of gravity on a one-kilogram mass
+equals $g$. For masses other than one kilogram, we have the handy-dandy result that
+\begin{equation*}
+        (\text{force of gravity on a mass $m$}) = mg\eqquad.
+\end{equation*}
+In other words, $g$ can be interpreted not just as the gravitational energy per kilogram
+per meter of height, but also as the gravitational force per kilogram.
+
+%
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Motion in two dimensions") %>
+<% begin_sec("Projectile motion") %>
+Galileo was an innovator in more than one way. He was arguably the inventor of open-source
+software: he invented a mechanical calculating device for certain engineering applications,
+and rather than keeping the device's design secret as his competitors did, he made it
+public, but charged students for lessons in how to use it. Not only that, but he was
+the first physicist to make money as a military consultant. Galileo understood projectiles
+better than anyone else, because he understood the principle of inertia. Even if you're not
+planning on a career involving artillery, projectile motion is a good thing to learn about
+because it's an example of how to handle motion in two or three dimensions. \index{Galileo!projectile motion}\index{projectile motion}
+
+
+Figure \figref{dropball} shows a ball in the process of falling --- or rising,
+it really doesn't matter which. Let's say the ball has a mass of one kilogram, each square in
+the grid is 10 meters on a side, and the positions of the ball are shown at time intervals
+of one second. The earth's gravitational force on the ball is 10 newtons, so with each
+second, the ball's momentum increases by 10 units, and its speed also increases by
+10 m/s. The ball falls 10 m in the first second, 20 m in the next second, and so on.
+
+<% self_check('heavierball',<<-'SELF_CHECK'
+What would happen if the ball's mass was 2 kilograms?
+  SELF_CHECK
+  ) %>
+
+Now let's look at the ball's motion in a new frame of reference, \figref{parabolaball},
+which is moving at 10 meters per second to the left compared to the frame of reference
+used in figure \figref{dropball}. An observer in this frame of reference sees the ball
+as moving to the right by 10 meters every second. The ball traces an arc of a specific
+mathematical type called a parabola:\index{parabola}
+
+\hspace{15mm}\parbox{80mm}{\begin{tabular}{p{60mm}}
+1 step over and 1 step down\\
+1 step over and 2 steps down\\
+1 step over and 3 steps down\\
+1 step over and 4 steps down\\
+\ldots
+\end{tabular}}
+
+It doesn't matter which frame of reference is the ``real'' one. Both diagrams
+show the possible motion of a projectile. The interesting point here is that the vertical
+force of gravity has no effect on the horizontal motion, and the horizontal motion also
+has no effect on what happens in the vertical motion. The two are completely independent.
+If the sun is directly overhead, the motion of the ball's shadow on the ground seems perfectly
+natural: there are no horizontal forces, so it either sits still or moves at constant
+velocity. (Zero force means zero rate of transfer of momentum.) The same is true if we shine
+a light from one side and cast the ball's shadow on the wall. Both shadows obey the laws
+of physics.
+
+<% marg(0) %>
+<%
+  fig(
+    'dropball',
+    %q{%
+        A ball is falling (or rising).
+    }
+  )
+%>  
+\spacebetweenfigs
+<%
+  fig(
+    'parabolaball',
+    %q{%
+      The same ball is viewed in a frame of reference that is moving horizontally.
+    }
+  )
+%>  
+\spacebetweenfigs
+<%
+  fig(
+    'hose',
+    %q{%
+        The drops of water travel in parabolic arcs.
+    }
+  )
+%>  
+<% end_marg %>
+
+
+\begin{eg}{The moon}\label{eg:moonorbit}
+In example \ref{eg:newtonsapple} on page \pageref{eg:newtonsapple}, I promised an
+explanation of how Newton knew that the gravitational field experienced by the moon
+due to the earth was 1/3600 of the one we feel here on the earth's surface.
+The radius of the moon's orbit had been known since ancient times,
+so Newton knew its speed to be 1,100 m/s (expressed in modern units).
+If the earth's gravity wasn't acting on the moon, the moon would fly off straight,
+along the straight line shown in figure \figref{moonorbit}, and it
+would cover 1,100 meters in one second. We observe instead
+that it travels the arc of a circle centered on the earth. Straightforward
+geometry shows that the amount by which the arc drops below the straight line
+is 1.6 millimeters. Near the surface of the earth, an object falls 5 meters
+in one second,\footnote{Its initial speed is 0, and its final speed is 10 m/s, so its
+average speed is 5 m/s over the first second of falling.} which is
+indeed about 3600 times greater than 1.6 millimeters.
+
+The tricky part about this argument is that although I said the path of a projectile
+was a parabola, in this example it's a circle. What's going on here? What's different
+here is that as the moon moves 1,100 meters, it changes its position relative to the
+earth, so down is now in a new direction. We'll discuss circular motion more
+carefully soon, but in this example, it really doesn't matter. The curvature of the
+arc is so gentle that a parabola and a circle would appear almost identical. (Actually
+the curvature is so gentle --- 1.6 millimeters over a distance of 1,100 meters! --- that
+if I had drawn the figure to scale, you wouldn't have even been able to tell that it
+wasn't straight.)\index{moon!orbit}
+
+As an interesting historical note, Newton claimed that he first did this
+calculation while confined to his family's farm during the plague of 1666, and
+found the results to ``answer pretty nearly.''
+His notebooks, however, show that although he did the calculation on that date,
+the result didn't quite come out quite right, and he became uncertain about
+whether his theory of gravity was correct as it stood or needed to be modified.
+Not until 1675 did he learn of more accurate astronomical data, which convinced
+him that his theory didn't need to be tinkered with.
+It appears that he rewrote his own life story a little bit
+in order to make it appear that his work was more advanced at an earlier
+date, which would have helped him in his dispute with Leibniz over priority
+in the invention of calculus.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'memoryofmotion',
+    %q{%
+      The memory of motion: the default would be for the ball to continue
+      doing what it was already doing. The force of gravity makes it deviate downward, ending
+      up one square below the default.
+    }
+  )
+%>  
+<% end_marg %>
+
+<% end_sec() %>
+
+<% marg(300) %>
+<%
+  fig(
+    'moonorbit',
+    %q{%
+        Example \ref{eg:moonorbit}.
+    }
+  )
+%>  
+<% end_marg %>
+
+<% begin_sec("The memory of motion") %>
+There's another useful way of thinking about motion
+along a curve.
+In the absence of a force, an
+object will continue moving in the same speed and in the same direction. One of my students
+invented a wonderful phrase for this: the memory of motion. 
+Over the first second of its motion, the ball in figure
+\figref{memoryofmotion} moved 1 square over and 1 square down, which is 10 meters and
+10 meters. The default for the next one-second
+interval would be to repeat this, ending up at the location marked with the 
+first dashed circle. The earth's 10-newton gravitational force on the ball, however, changes
+the vertical part of the ball's momentum by 10 units. The ball actually ends up 10 meters
+(1 square) below the default.
+
+<% end_sec() %>
+<% begin_sec("Circular motion") %>\index{circular motion}
+Figure \figref{hammer-polygons} shows how to apply the memory-of-motion idea to circular motion. It
+should convince you that only an inward force is needed to produce circular motion.
+One of the reasons Newton was the first to make any progress in analyzing the motion of
+the planets around the sun was that his contemporaries were confused on this point. Most
+of them thought that in addition to an attraction from the sun, a second, forward force
+must exist on the planets, to keep them from slowing down. This is incorrect Aristotelian
+thinking; objects don't naturally slow down. Car 1 in figure \figref{car-in-circle} only
+needs a forward force in order to cancel out the backward force of friction; the total force on
+it is zero. Similarly, the forward and backward forces on car 2 are canceling out, and the
+only force left over is the inward one. There's no friction in the vacuum of outer space,
+so if car 2 was a planet, the backward force wouldn't exist; the forward force wouldn't
+exist either, because the only force would be the force of the sun's gravity.
+
+<% marg(0) %>
+<%
+  fig(
+    'car-in-circle',
+    %q{%
+      The forces on car 1 cancel, and the total force on it is zero. The forward
+      and backward forces on car 2 also cancel. Only the inward force remains.        
+    }
+  )
+%>  
+<% end_marg %>
+
+
+<%
+  fig(
+    'hammer-polygons',
+    %q{%
+       A large number of gentle taps gives a good approximation to circular
+       motion. A steady inward force would give exactly circular motion.
+    },
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+
+One confusing thing about circular motion is that it often tempts us psychologically to adopt a
+noninertial frame of reference. Figure \figref{pickup-truck-circular} shows a bowling ball in
+the back of a turning pickup truck. Each panel gives a view of the same events from a different
+frame of reference.
+The frame of reference \subfigref{pickup-truck-circular}{1}, attached to the turning truck, is noninertial, because 
+it changes the direction of its motion. The ball violates conservation of energy
+by accelerating from rest for no apparent reason. Is there some mysterious outward force
+that is slamming the ball into the side of the truck's bed? No. By analyzing everything in
+a proper inertial frame of reference, \subfigref{pickup-truck-circular}{2}, we see that it's
+the truck that swerves and hits the ball. That makes sense, because the truck is interacting
+with the asphalt.\index{frame of reference!noninertial}
+
+<%
+  fig(
+    'pickup-truck-circular',
+    %q{%
+      A bowling ball is in the back of a pickup truck turning left.
+      The motion is viewed first in a frame that turns along with the truck, 1, and then in
+      an inertial frame, 2.
+    },
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+
+
+<% end_sec() %>
+<% end_sec() %>
+<% end_sec('momentum') %>\label{end-of-momentum-section}
+<% begin_sec("Newton's triumph",0) %>
+
+Isaac Newton's greatest triumph was his explanation of the motion of the planets
+in terms of universal physical laws. It was a tremendous psychological revolution:
+for the first time, both heaven and earth were seen as operating automatically
+according to the same rules.
+
+Newton wouldn't have been able to figure out \emph{why} the
+planets move the way they do if it hadn't been for the
+astronomer Tycho Brahe (1546-1601)\index{Brahe, Tycho} and his protege Johannes
+\index{Kepler, Johannes}Kepler (1571-1630), who together came up with
+the first simple and accurate description of \emph{how} the
+planets actually do move. The difficulty of their task is
+suggested by figure \figref{retrograde}, which shows how the
+relatively simple orbital motions of the earth and Mars
+combine so that as seen from earth Mars appears to be
+staggering in loops like a drunken sailor.
+
+<%
+  fig(
+    'retrograde',
+    %q{%
+      As the Earth and Mars revolve around the
+      sun at different rates, the combined effect of their motions makes
+      Mars appear to trace a strange, looped path across the background
+      of the distant stars.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Brahe, the last of the great naked-eye astronomers,
+collected extensive data on the motions of the planets over
+a period of many years, taking the giant step from the
+previous observations' accuracy of about 10 minutes of arc
+(10/60 of a degree) to an unprecedented 1 minute. The
+quality of his work is all the more remarkable considering
+that his observatory consisted of four giant brass
+protractors mounted upright in his castle in Denmark. Four
+different observers would simultaneously measure the
+position of a planet in order to check for mistakes and
+reduce random errors.
+
+<% marg(155) %>
+<%
+  fig(
+    'tycho-brahe',
+    %q{%
+      Tycho Brahe made his name as an
+      astronomer by showing that the bright
+      new star, today called a supernova,
+      that appeared in the skies in 1572 was
+      far beyond the Earth's atmosphere.
+      This, along with Galileo's discovery of
+      sunspots, showed that contrary to Aristotle, the heavens were not perfect
+      and unchanging. Brahe's fame as an
+      astronomer brought him patronage
+      from King Frederick II, allowing him to
+      carry out his historic high-precision
+      measurements of the planets' motions.
+      A contradictory character, Brahe enjoyed lecturing other nobles about the
+      evils of dueling, but had lost his own
+      nose in a youthful duel and had it replaced with a prosthesis made of an
+      alloy of gold and silver. Willing to 
+      endure scandal in order to marry a peasant, he nevertheless used the feudal
+      powers given to him by the king to
+      impose harsh forced labor on the inhabitants of his parishes. The result
+      of their work, an Italian-style palace
+      with an observatory on top, surely
+      ranks as one of the most luxurious
+      science labs ever built. He died of a ruptured bladder after falling from a wagon on the way
+      home from a party --- in those days, it
+      was considered rude to leave the dinner table to relieve oneself.
+    }
+  )
+%>
+<% end_marg %>
+
+With Brahe's death, it fell to his former assistant Kepler
+to try to make some sense out of the volumes of data.
+Kepler, in contradiction to his late boss, had formed a
+prejudice, a correct one as it turned out, in favor of the
+theory that the earth and planets revolved around the sun,
+rather than the earth staying fixed and everything rotating
+about it. Although motion is relative, it is not just a
+matter of opinion what circles what. The earth's rotation
+and revolution about the sun make it a noninertial reference
+frame, which causes detectable violations of Newton's laws
+when one attempts to describe sufficiently precise
+experiments in the earth-fixed frame. Although such direct
+experiments were not carried out until the 19th century,
+what convinced everyone of the sun-centered system in the
+17th century was that Kepler was able to come up with a
+surprisingly simple set of mathematical and geometrical
+rules for describing the planets' motion using the
+sun-centered assumption. After 900 pages of calculations and
+many false starts and dead-end ideas, Kepler finally
+synthesized the data into the following \index{Kepler's laws}three laws:
+
+
+\index{Kepler's laws!elliptical orbit law}
+\begin{lessimportant}[Kepler's elliptical orbit law]
+The planets orbit the sun in
+elliptical orbits with the sun at one focus.
+\end{lessimportant}
+
+\index{Kepler's laws!equal-area law}
+\begin{lessimportant}[Kepler's equal-area law]
+The line connecting a planet to the sun sweeps out equal
+areas in equal amounts of time.
+\end{lessimportant}
+
+\index{Kepler's laws!law of periods}
+\begin{lessimportant}[Kepler's law of periods]
+Let $T$, called the planet's period,
+be the time required for a planet to orbit the sun,
+and let $a$ be the long axis of the ellipse.
+Then $T^2$ is proportional to $a^3$.
+\end{lessimportant}
+
+<% marg(170) %>
+<%
+  fig(
+    'kepler-ellipse-stretch',
+    %q{%
+      An ellipse is a circle that has been
+      distorted by shrinking and stretching
+      along perpendicular axes.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'kepler-ellipse-foci',
+    %q{%
+      An ellipse can be constructed by tying
+      a string to two pins and drawing like
+      this with the pencil stretching the string
+      taut.  Each pin constitutes one focus
+      of the ellipse.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'kepler-equal-area',
+    %q{%
+      If the time interval taken by the planet to move from P to Q is equal to the time
+      interval from R to S, then according to Kepler's equal-area law, the two shaded
+      areas are equal. The planet is moving faster during interval RS than it did during
+      PQ, which Newton later determined was due to the sun's gravitational force 
+      accelerating it. The equal-area law predicts exactly how much it will speed up.
+    }
+  )
+%>
+
+<% end_marg %>
+
+
+Although the planets' orbits are ellipses rather than
+circles, most are very close to being circular.  The earth's
+orbit, for instance, is only flattened by 1.7\% relative to
+a circle.  In the special case of a planet in a circular
+orbit, the two foci (plural of ``focus'') coincide at the
+center of the circle, and Kepler's elliptical orbit law thus
+says that the circle is centered on the sun. The equal-area
+law implies that a planet in a circular orbit moves around
+the sun with constant speed.  For a circular orbit, the law
+of periods then amounts to a statement that $T^2$ is proportional
+to $r^3$, where $r$ is the radius. If
+all the planets were moving in their orbits at the same
+speed, then the time for one orbit would only increase with
+the circumference of the circle, so we would have a simple
+proportionality between $T$ and $r$. Since this is not the
+case, we can interpret the law of periods to mean that different
+planets orbit the sun at different speeds. In fact, the outer
+planets move more slowly than the inner ones.
+
+\begin{eg}{Jupiter and Uranus}\label{eg:jupiter-uranus-numerical}
+\egquestion The planets Jupiter and Uranus have very nearly circular orbits,
+and the radius of Uranus's orbit is about four times grater than that of
+Jupiter's orbit. Compare their orbital periods.
+
+\eganswer If all the planets moved at the same speed, then it would take
+Uranus four times longer to complete the four-times-greater circumference of
+its orbit. However, the law of periods tells us that this isn't the case.
+We expect Uranus to take \emph{more} than four times as long to orbit the sun.
+
+The law of periods is stated as a proportionality, and
+proportionalities are statements about quantities in proportion to one
+another, i.e.. about division. We're given information about Uranus's
+orbital radius divided by Jupiter's, and what we should expect to get
+out is information about Uranus's period divided by Jupiter's. Let's
+call the latter ratio $y$. Then we're looking for a number $y$ such that
+\begin{align*}
+  y^2 &= 4^3\eqquad, \\
+\intertext{i.e.,}
+  y \times y &= 4 \times 4 \times 4 \\
+  y \times y &= 64 \\
+  y &= 8
+\end{align*}
+The law of periods predicts that Uranus's period will be eight times
+greater than Jupiter's, which is indeed what is observed (to within the
+precision to be expected since the given figure of 4 was just stated
+roughly as a whole number, for convenience in calculation).
+\end{eg}
+
+What Newton discovered was the reasons why Kepler's laws were true: he showed
+that they followed from his laws of motion. From a modern point of view,
+conservation laws are more fundamental than Newton's laws, so rather than
+following Newton's approach, it makes more sense to look for the reasons
+why Kepler's laws follow from conservation laws. The equal-area law is
+most easily understood as a consequence of conservation of angular momentum,
+which is a new conserved quantity to be discussed in chapter \ref{ch:angular-momentum}.
+The proof of the elliptical orbit law is a little too mathematical to be appropriate
+for this book, but the interested reader can find the proof in chapter 15 of
+my online book \emph{Light and Matter}.
+
+
+<%
+  fig(
+    'law-of-periods-example',
+    %q{%
+        Connecting Kepler's law of periods to the laws of physics.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>  
+
+The law of periods follows directly from the physics we've
+already covered. Consider the example of Jupiter and Uranus. We want to show
+that the result of example \ref{eg:jupiter-uranus-numerical} is the only one that's consistent with conservation
+of energy and momentum, and Newton's law of gravity. Since Uranus takes eight
+times longer to cover four times the distance, it's evidently moving at half
+Jupiter's speed. In figure \figref{law-of-periods-example}, the distance Jupiter
+covers from A to B is therefore twice the distance Uranus covers, over the same time,
+from D to E. If there hadn't been any gravitational force from the sun, Jupiter would
+have ended up at C, and Uranus at F. The distance from B to C is a measure of how much
+force acted on Jupiter, and likewise for the very small distance from E to F. We find
+that BC is 16 millimeters on this scale drawing, and EF is 1 mm, but this is exactly what
+we expect from Newton's law of gravity: quadrupling the distance should give
+1/16 the force.
+
+
+<% end_sec() %>
+<% begin_sec("Work",0) %>\index{work}
+
+Imagine a black box\footnote{``Black box'' is a traditional engineering term
+for a device whose inner workings we don't care about.}, containing a gasoline-powered
+engine, which is designed to reel in a steel cable of length $d$, exerting a certain force $F$.
+
+<% marg(30) %>
+<%
+  fig(
+    'blackbox',
+    %q{The black box does work by reeling in its cable.}
+  )
+%>
+<% end_marg %>
+If we use this black box was to lift a weight, then by the time it has pulled in its whole cable,
+it will have lifted the weight through a height $d$. The force $F$ is barely capable of lifting a
+weight $m$ if $F=mg$, and if it does this, then the upward force from the cable exactly cancels
+the downward force of gravity, so the weight will rise at constant speed, without changing its
+kinetic energy. Only gravitational energy is transferred into the weight, and the amount of
+gravitational energy is $mgd$, which equals $Fd$. By conservation of energy, this must also be the amount of
+energy lost from the chemical energy of the gasoline inside the box.\footnote{For conceptual simplicity, we ignore the transfer of
+        heat energy to the outside world via the exhaust and radiator. In reality, the
+        sum of these energies plus the useful kinetic energy transferred would equal $W$.}
+
+Now what if we use the black box to pull a plow? The energy increase in the outside
+world is of a different type than before: mainly heat created by friction between the
+dirt and the ploughshare. The box,
+however, only communicates with the outside world via the hole through which its
+cable passes. The amount of chemical energy lost by the gasoline can therefore
+only depend on $F$ and $d$, so again the amount of energy transferred must equal
+$Fd$.
+
+The same reasoning can in fact be applied no matter what the cable is being used to
+do. There must always be a transfer of energy from the box to the outside world
+that is equal to $Fd$. In general, when energy is transferred, we refer to the amount
+of energy transferred as \emph{work}, $W$. If, as in the example of the black box,
+the motion of the object to which the
+force is applied is in the same direction as the force, then $W=Fd$.
+<%
+  fig(
+    'baseball-pitch',
+    %q{%
+      The baseball pitcher put kinetic energy
+      into the ball, so he did work on it. To do the greatest possible amount of
+      work, he applied the greatest possible force over the greatest possible distance.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+If the
+motion is in the opposite direction compared to the force, then $W=-Fd$; the negative
+work is to be interpreted as energy removed from the object to which the force was applied.
+For example, if Superman gets in front of an oncoming freight train, and brings
+it to a stop, he's decreased its energy rather than increasing it. In a normal
+gasoline-powered car, stepping on the brakes takes away the car's kinetic energy
+(doing negative work on it), and turns it into heat in the brake shoes. In an
+electric or hybrid-electric car, the car's kinetic energy is transformed back
+into electrical energy to be used again.
+
+  %===============================================================================
+  %===============================================================================
+
+<% end_sec() %>
+<% begin_hw_sec %>
+
+<% begin_hw('beer') %>__incl(hw/beer)<% end_hw() %>
+
+<% begin_hw('flag-in-balloon') %>__incl(hw/flag-in-balloon)<% end_hw() %>
+
+<% marg(45) %>
+<% fig('beer','Problem \ref{hw:beer}.') %>
+\spacebetweenfigs
+<% fig('dq-flag-in-balloon','Problem \ref{hw:flag-in-balloon}.') %>
+<% end_marg %>
+<% begin_hw('foot-off-gas') %>__incl(hw/foot-off-gas)<% end_hw() %>
+
+<% begin_hw('airsettlesonfloor') %>__incl(hw/airsettlesonfloor)<% end_hw() %>
+
+<% begin_hw('bulletthroughbook') %>
+A bullet flies through the air, passes through a
+paperback book, and then continues to fly through the air
+beyond the book. When is there a force? When is there energy?
+<% end_hw() %>
+
+<% begin_hw('findthetop') %>__incl(hw/findthetop)<% end_hw() %>
+
+<% begin_hw('interpret-film-time-not-space') %>__incl(hw/interpret-film-time-not-space)<% end_hw() %>
+
+<% begin_hw('film-dropping') %>__incl(hw/film-dropping)<% end_hw() %>
+
+<% fig(
+    'film-dropping','Problem \ref{hw:film-dropping}.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+   )
+%>
+
+<% begin_hw('stoppingdistances') %>
+Two cars with different masses each have the same kinetic
+energy. (a) If both cars have the same brakes, capable of
+supplying the same force, how will the stopping distances
+compare? Explain. (b) Compare the times required for the cars to stop.
+<% end_hw() %>
+
+<% begin_hw('posnegwork') %>__incl(hw/posnegwork)<% end_hw() %>
+<% marg(20) %>
+<%
+  fig(
+    'hw-posnegwork-bull',
+    %q{%
+      A bull paws the ground, as in problem \ref{hw:posnegwork}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('bubba') %>__incl(hw/bubba)<% end_hw() %>
+
+
+<% end_hw_sec %>
+
+
+<% end_chapter() %>

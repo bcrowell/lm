@@ -1,0 +1,67 @@
+<% marg(0) %>
+<% fig(
+    'eg-toppling-rod',
+    'Example \ref{eg:toppling-rod}.'
+  )
+%>
+<% end_marg %>
+\begin{eg}{Toppling a rod}\label{eg:toppling-rod}
+\egquestion A rod of length $b$ and mass $m$ stands upright. We want
+to strike the rod at the bottom, causing it to fall and land flat.
+Find the momentum, $p$, that should be delivered, in terms of $m$, $b$,
+and $g$. Can this really be done without having the rod scrape on the floor?
+
+\eganswer This is a nice example of a question that can very nearly be
+answered based only on units. Since the three variables, $m$, $b$,
+and $g$, all have different units, they can't be added or subtracted.
+The only way to combine them mathematically is by multiplication or division.
+Multiplying one of them by itself is exponentiation, so in general
+we expect that the answer must be of the form
+\begin{equation*}
+  p = A m^j b^k g^l\eqquad,
+\end{equation*}
+where $A$, $j$, $k$, and $l$ are unitless constants. The result has
+to have units of $\kgunit\unitdot\munit/\sunit$. To get kilograms to
+the first power, we need
+\begin{equation*}
+  j=1\eqquad,
+\end{equation*}
+meters to the first power requires
+\begin{equation*}
+  k+l=1\eqquad,
+\end{equation*}
+and
+seconds to the power $-1$ implies
+\begin{equation*}
+  l=1/2\eqquad.
+\end{equation*}
+We find $j=1$, $k=1/2$, and $l=1/2$, so the solution must be of the form
+\begin{equation*}
+  p = A m\sqrt{bg}\eqquad.
+\end{equation*}
+Note that no physics was required!
+
+Consideration of units, however, won't help us to find the unitless constant
+$A$. Let $t$ be the time the rod takes to fall, so that $(1/2)gt^2=b/2$.
+If the rod is going to land exactly on its side, then the number of revolutions
+it completes while in the air must be 1/4, or 3/4, or 5/4,  \ldots, but all the
+possibilities greater than 1/4 would cause the head of the rod to collide with
+the floor prematurely. The rod must therefore rotate at a rate that would
+cause it to complete a full rotation in a time $T=4t$, and it has angular
+momentum $L=(\pi/6)mb^2/T$.
+
+The momentum lost by the object striking
+the rod is $p$, and by conservation of momentum, this is the amount of
+momentum, in the horizontal direction, that the rod acquires. In other words,
+the rod will fly forward a little. However, this has no effect on the solution
+to the problem. More importantly, the object striking the rod loses angular
+momentum $bp/2$, which is also transferred to the rod. Equating this to the
+expression above for $L$, we find $p=(\pi/12)m\sqrt{bg}$.
+
+Finally, we need to know whether this can really be done without having the
+foot of the rod scrape on the floor. The figure shows that the answer is no
+for this rod of finite width, but it appears that the answer would be yes for
+a sufficiently thin rod. This is analyzed further in homework problem \ref{hw:toppling-rod}
+on page \pageref{hw:toppling-rod}.
+
+\end{eg}

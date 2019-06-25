@@ -1,0 +1,27 @@
+% meta {"stars":1}
+In 2003, physicist and philosopher John Norton came up with the following
+apparent paradox, in which Newton's laws, which appear deterministic,
+can produce nondeterministic results.
+Suppose that a bead moves frictionlessly on a curved wire under the
+influence of gravity. The shape of the wire is defined by the function
+$y(x)$, which passes through the origin, and the bead is released from rest at the
+origin. For convenience of notation, choose units such that $g=1$, and
+define $\dot{y}=\der y/\der t$ and $y'=\der y/\der x$.\\
+(a) Show that the equation of motion is
+\begin{equation*}
+  y = -\frac{1}{2}\dot{y}^2\left(1+y'^{-2}\right).
+\end{equation*}\hwendpart
+(b) To simplify the calculations, assume from now on that $y'\ll 1$.
+Find a shape for the wire such that $x=t^4$ is a solution.
+(Ignore units.)\answercheck\hwendpart
+(c) Show that not just the motion assumed in part b, but
+any motion of the following form is a solution:
+\begin{equation*}
+  x = \begin{cases}
+    0          & \text{if}\ t\le t_0 \\
+    (t-t_0)^4  & \text{if}\ t\ge t_0 
+  \end{cases}
+\end{equation*}
+This is remarkable because there is no physical principle that determines
+$t_0$, so if we place the bead at rest at the origin, there is no way
+to predict when it will start moving.

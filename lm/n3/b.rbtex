@@ -1,0 +1,57 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '07',
+    %q{Vectors},
+    'ch:vectors',
+    %q{Vectors are used in aerial navigation.},
+    {'opener'=>'mondavi','sidecaption'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n3b)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-tiptotail',
+    %q{Problem \ref{hw:tiptotail}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('tiptotail') %>__incl(hw/tiptotail)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('bangkok') %>__incl(hw/bangkok)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('walking') %>__incl(hw/walking)<% end_hw() %>
+
+\vfill
+
+<% marg(10) %>
+<%
+  fig(
+    'hw-drill',
+    %q{Problem \ref{hw:drill}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('drill') %>__incl(hw/drill)<% end_hw() %>
+
+\pagebreak
+%%%%%%%%%%%% This pagebreak is to prevent a renumbering of the later pages in the book. Can be removed whenever I decide I don't mind a renumbering.
+
+<% begin_hw('vector-plus-scalar') %>__incl(hw/vector-plus-scalar)<% end_hw() %>
+
+<% end_hw_sec %>
+<% end_chapter() %>

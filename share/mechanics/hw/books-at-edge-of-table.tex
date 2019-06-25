@@ -1,0 +1,13 @@
+% meta {"stars":1}
+We have $n$ identical books of width $w$, and we wish to stack them at the edge of a
+table so that they extend the maximum possible distance $L_n$ beyond the edge.
+Surprisingly, it is possible to have values of $L_n$ that are greater than
+$w$, even with fairly small $n$. For large $n$, however, $L_n$ begins
+to grow very slowly.
+Our goal is to find $L_n$ for a given $n$.
+We adopt the restriction that only one book is ever used at a given 
+height.\footnote{When this restriction is lifted, the calculation of $L_n$ becomes
+a much more difficult problem, which was partially solved in 2009 by Paterson, Peres, Thorup, Winkler, and Zwick.}
+(a) Use proof by induction to find $L_n$, expressing your result as a sum.
+(b) Find a sufficiently tight lower bound on this sum, as a closed-form
+expression, to prove that 1,202,604 books suffice for $L>7w$.

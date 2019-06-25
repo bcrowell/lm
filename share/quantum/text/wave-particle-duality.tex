@@ -1,0 +1,230 @@
+\index{duality!wave-particle}\index{wave-particle duality}
+
+How can light be both a particle and a wave? We are now
+ready to resolve this seeming contradiction. Often in
+science when something seems paradoxical, it's because we
+(1) don't define our terms carefully, or (2) don't test our
+ideas against any specific real-world situation. Let's
+define particles and waves as follows:
+
+\begin{itemize}
+\item \index{wave!definition of}Waves exhibit superposition, and
+specifically interference phenomena.
+\item \index{particle!definition of}Particles can only exist in
+whole numbers, not fractions.
+\end{itemize}
+
+As a real-world check on our philosophizing, there is one
+particular experiment that works perfectly. We set up a
+double-slit interference experiment that we know will
+produce a diffraction pattern if light is an honest-to-goodness
+wave, but we detect the light with a detector that is
+capable of sensing individual photons, e.g., a digital
+camera. To make it possible to pick out individual dots due to
+individual photons, we must use filters to cut down the
+intensity of the light to a very low level, just as in the
+photos by Prof. Page on p.~\pageref{lymanpage}. The whole thing is
+sealed inside a light-tight box. The results are shown in
+figure \figref{ccd-diffraction}. (In fact, the similar
+figures in on page \pageref{lymanpage}
+ are simply cutouts from these figures.)
+
+<%
+  fig(
+    'ccd-diffraction',
+    %q{%
+      Wave interference patterns photographed by Prof. Lyman
+       Page with a digital camera. Laser light with a single well-defined wavelength
+       passed through a series of absorbers to cut down its intensity, then through a
+       set of slits to produce interference, and finally into
+       a digital camera chip. (A triple slit was actually
+       used, but for conceptual simplicity we discuss the results
+       in the main text as if it was a
+       double slit.) In panel 2 the intensity has been
+       reduced relative to 1, and even more so for panel 3.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Neither the pure wave theory nor the pure particle theory
+can explain the results. If light was only a particle and
+not a wave, there would be no interference effect. The
+result of the experiment would be like firing a hail of
+bullets through a double slit, \figref{double-slit-bullets}. Only two spots directly
+behind the slits would be hit.
+
+If, on the other hand, light was only a wave and not a
+particle, we would get the same kind of diffraction pattern
+that would happen with a water wave, \figref{interference}. There would be no
+discrete dots in the photo, only a  diffraction pattern that
+shaded smoothly between light and dark.
+
+Applying the definitions to this experiment, light must be
+both a particle and a wave. It is a wave because it exhibits
+interference effects. At the same time, the fact that the
+photographs contain discrete dots is a direct demonstration
+that light refuses to be split into units of less than a
+single photon. There can only be whole numbers of photons:
+four photons in figure \figref{ccd-diffraction}/3, for example.
+
+<% marg(100) %>
+<%
+  fig(
+    'double-slit-bullets',
+    %q{Bullets pass through a double slit. }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'interference',
+    %q{A water wave passes through a double slit.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'skier',
+    %q{A single photon can go through both slits.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("A wrong interpretation: photons interfering with each other") %>
+One possible interpretation of wave-particle duality that
+occurred to physicists early in the game was that perhaps
+the interference effects came from photons interacting with
+each other. By analogy, a water wave consists of moving
+water molecules, and interference of water waves results
+ultimately from all the mutual pushes and pulls of the
+molecules. This interpretation has been conclusively disproved by
+forming interference patterns with light so dim that no more than one photon
+is in flight at a time. In figure \figref{ccd-diffraction}/3, for example, the
+intensity of the light has been cut down so much by the
+absorbers that if it was in the open, the average separation
+between photons would be on the order of a kilometer! Although
+most light sources tend to emit photons in bunches, experiments
+have been done with light sources that really do emit single
+photons at wide time intervals, and the same type of interference
+pattern is observed, showing that a single photon can interfere with
+\emph{itself}.
+
+\subsubsection{The concept of a photon's
+ \index{path of a photon undefined}path is undefined.}
+If a single photon can demonstrate double-slit interference,
+then which slit did it pass through? The unavoidable answer
+must be that it passes through both! This might not seem so
+strange if we think of the photon as a wave, but it is
+highly counterintuitive if we try to visualize it as a
+particle. The moral is that we should not think in terms of
+the path of a photon. Like the fully human and fully divine
+Jesus of Christian theology, a photon is supposed to be
+100\% wave and 100\% particle. If a photon had a well
+defined path, then it would not demonstrate wave superposition
+and interference effects, contradicting its wave nature. (In
+sec.~__bare_subsection_or_section(uncertainty-principle)
+we will discuss the Heisenberg uncertainty
+principle, which gives a numerical way of approaching this issue.)
+
+<% end_sec() %>
+<% begin_sec("The probability interpretation") %>
+\index{wave-particle duality!probability interpretation of}\index{probability interpretation}
+
+The correct interpretation of wave-particle duality is
+suggested by the random nature of the experiment we've been
+discussing: even though every photon wave/particle is
+prepared and released in the same way, the location at which
+it is eventually detected by the digital camera is different
+every time. The idea of the probability interpretation of
+wave-particle duality is that the location of the photon-particle
+is random, but the probability that it is in a certain
+location is higher where the photon-wave's amplitude is greater.
+
+More specifically, the probability distribution of the
+particle must be proportional to the \emph{square} of
+the wave's amplitude,
+\begin{equation*}
+    (\text{probability distribution}) \propto (\text{amplitude})^2\eqquad.
+\end{equation*}
+This follows from the correspondence principle and from the
+fact that a wave's energy density is proportional to the
+square of its amplitude. If we run the double-slit
+experiment for a long enough time, the pattern of dots fills
+in and becomes very smooth as would have been expected in
+classical physics. To preserve the correspondence between
+classical and quantum physics, the amount of energy
+deposited in a given region of the picture over the long run
+must be proportional to the square of the wave's amplitude.
+The amount of energy deposited in a certain area depends on
+the number of photons picked up, which is proportional to
+the probability of finding any given photon there.
+
+
+\begin{eg}{A microwave oven}\label{eg:carrot}
+\egquestion The figure shows two-dimensional (top) and
+one-dimensional (bottom) representations of the standing
+wave inside a microwave oven. Gray represents zero field,
+and white and black signify the strongest fields, with white
+being a field that is in the opposite direction compared to
+black. Compare the probabilities of detecting a microwave
+photon at points A, B, and C.
+
+\eganswer A and C are both extremes of the wave, so the
+probabilities of detecting a photon at A and C are equal.
+It doesn't matter that we have represented C as negative
+and A as positive, because it is the square of the amplitude
+that is relevant. The amplitude at B is about 1/2 as much
+as the others, so the probability of detecting a photon
+there is about 1/4 as much.
+\end{eg}
+
+<% marg(50) %>
+<%
+  fig(
+    'carrot',
+    %q{Example \ref{eg:carrot}.}
+  )
+%>
+<% end_marg %>
+
+\startdqs
+
+\begin{dq}
+Referring back to the example of the carrot in the
+microwave oven, show that it would be nonsensical to have
+probability be proportional to the field itself, rather than
+the square of the field.
+\end{dq}
+
+\begin{dq}
+Einstein did not try to reconcile the wave and particle
+theories of light, and did not say much about their apparent
+inconsistency. Einstein basically visualized a beam of light
+as a stream of bullets coming from a machine gun. In the
+photoelectric effect, a photon ``bullet'' would only hit one
+atom, just as a real bullet would only hit one person.
+Suppose someone reading his 1905 paper wanted to interpret
+it by saying that Einstein's so-called particles of light
+are simply short wave-trains that only occupy a small
+region of space.  Comparing the wavelength of visible light
+(a few hundred nm) to the size of an atom (on the order of
+0.1 nm), explain why this poses a difficulty for reconciling
+the particle and wave theories.
+\end{dq}
+
+\begin{dq}
+Can a white photon exist?
+\end{dq}
+
+\begin{dq}\label{dq:cover-one-slit}
+In double-slit diffraction of photons, would you get the
+same pattern of dots on the digital camera image if you
+covered one slit? Why should it matter whether you give the
+photon two choices or only one?
+\end{dq}
+
+<% end_sec() %>

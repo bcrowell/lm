@@ -1,0 +1,22 @@
+If $x$ has an average value of zero, then
+the standard deviation of the probability distribution $D(x)$ is defined by
+\begin{equation*}
+  \sigma^2 = \sqrt{\int D(x)x^2 \der x}\eqquad,
+\end{equation*}
+where the integral ranges over all possible values of $x$.
+
+Interpretation: if $x$ only has a high probability of having values close to the average
+(i.e., small positive and negative values), the thing being integrated will always
+be small, because $x^2$ is always a small number; the standard deviation will therefore
+be small. Squaring $x$ makes sure that either a number below the average ($x<0$) or a number above
+the average ($x>0$) will contribute a positive amount to the standard deviation. We take
+the square root of the whole thing so that it will have the same units as $x$, rather
+than having units of $x^2$.
+
+Redo problem \ref{hw:fwhm-heisenberg} using the standard deviation rather than
+the FWHM.
+
+Hints: (1) You need to determine the amplitude of the wave based on normalization.
+(2) You'll need the following definite integral:
+$\int_{-\pi/2}^{\pi/2} u^2 \cos^2 u \der u = (\pi^3-6\pi)/24$.
+\answercheck

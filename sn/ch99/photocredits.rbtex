@@ -1,0 +1,186 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+\refstepcounter{appendixctr}\label{photocreditsappendix}%
+\appendix\chapter{Appendix \ref{photocreditsappendix}: Photo Credits}
+
+\footnotesize
+
+Except as specifically noted below or in a parenthetical credit in the
+caption of a figure, all the illustrations in this book are by
+under my own copyright, and are copyleft licensed under the same license
+as the rest of the book. 
+
+In some cases it's clear from the date that the
+figure is public domain, but I don't know the name of the artist or photographer; I would
+be grateful to anyone who could help me to give proper credit.
+I have assumed that images
+that come from U.S. government web pages are copyright-free, since products
+of federal agencies fall into the public domain.
+When ``PSSC Physics'' is given as a credit, it indicates that the figure
+is from the second edition of the textbook entitled Physics, by the
+Physical Science Study Committee; these are used according to a blanket
+permission given in the later PSSC College Physics edition, which states
+on the copyright page that ``The materials taken from the original and second
+editions and the Advanced Topics of PSSC PHYSICS included in this text
+will be available to all publishers for use in English after December 31, 1970,
+and in translations after December 31, 1975.'' 
+
+In a few cases, I have made use of images under the fair use doctrine. However,
+I am not a lawyer, and the laws on fair use are vague, so you should not assume
+that it's legal for you to use these images. In particular, fair use law may
+give you less leeway than it gives me, because I'm using the images for
+educational purposes, and giving the book away for free. Likewise, if the
+photo credit says ``courtesy of ...,'' that means the copyright owner gave
+me permission to use it, but that doesn't mean you have permission to use it.
+
+\newcommand{\cred}[3]{\textbf{\pageref{fig:#1}} \emph{#2:} #3.\quad}
+\newcommand{\credtwo}[4]{\textbf{\pageref{fig:#1},\pageref{fig:#2}} \emph{#3:} #4.\quad}
+\newcommand{\credthree}[5]{\textbf{\pageref{fig:#1},\pageref{fig:#2},\pageref{fig:#3}} \emph{#4:} #5.\quad}
+
+\begin{sloppypar}
+\noindent
+\textbf{Cover} Eclipse: Luc Viatour, CC-BY-SA licensed.\quad%http://commons.wikimedia.org/wiki/Image:Solar_eclips_1999_4_NR.jpg
+<% if false then photo_credit("raft","Raft in neutrino detector","Kamioka Observatory, ICRR (Institute for Cosmic Ray Research), The University of Tokyo") end %>
+<% photo_credit("hw-rope-stretch","Rock climber","Redrawn from a photo by Joseff Thomas, CC-BY") %> % https://www.flickr.com/photos/josefft/19783204388
+<% photo_credit("air-wedge","Air wedge","Franklin D.~Jones, 1920, public domain") %> % https://commons.wikimedia.org/wiki/File:Optical_flat_interference_fringes.jpg
+<% photo_credit("lissajous-figure","Lissajous figure","Wikimedia Commons user Alessio Damato, CC-BY-SA") %> % https://en.wikipedia.org/wiki/File:Lissajous_curve_1by2.svg
+<% photo_credit("stern-gerlach","Stern-Gerlach photo","Gerlach's photo from 1922, public domain") %>
+<% photo_credit("hw-iss-apparent-gravity","ISS","NASA/Crew of STS-132, public domain") %> % https://commons.wikimedia.org/wiki/File:International_Space_Station_after_undocking_of_STS-132.jpg
+<% photo_credit("hw-skee-ball","Skee ball","Photo by Wikipedia user Joyous!, CC-BY-SA") %> % https://commons.wikimedia.org/wiki/File:Skee_Ball.JPG
+<% photo_credit("greyhound","Greyhound","Line art by the author, based on a photo by Alex Lapuerta, CC-BY licensed") %> % http://commons.wikimedia.org/wiki/File:Greyhound_racing_turn.jpg
+<% photo_credit("machine-gun-ftl","Machine gunner's body","Redrawn from a public-domain photo by Cpl.~Sheila Brooks") %>% http://commons.wikimedia.org/wiki/File:V-22_M240_machine_gun.jpg
+<% photo_credit("machine-gun-ftl","Machine gunner's head","Redrawn from a sketch by Wenceslas Hollar, 17th century") %>% http://commons.wikimedia.org/wiki/File:Wenceslas_Hollar_-_Woman%27s_head_seen_from_behind.jpg
+<% photo_credit("c-s-wu-with-beamline","C.S.~Wu","Smithsonian Institution, believed to be public domain") %>% http://en.wikipedia.org/wiki/File:Chien-shiung_Wu_%281912-1997%29.jpg
+<% photo_credit("swan-lake-symmetry","Swan Lake","Peter Gerstbach, GFDL 1.2") %>% 
+<% photo_credit("fifty-foot-woman","Fifty-foot woman","Public domain due to nonrenewal of copyright") %>% http://commons.wikimedia.org/wiki/File:Attackofthe50ftwoman.jpg
+<% photo_credit("zombies","Zombies","Public domain due to an error by the distributor in failing to place a copyright notice on the film") %>% http://commons.wikimedia.org/wiki/File:Night_of_the_Living_Dead_affiche.jpg
+<% photo_credit("ladybug","Ladybug","Redrawn from a photo by Wikimedia Commons user Gilles San Martin, CC-BY-SA") %>% http://commons.wikimedia.org/wiki/File:Coccinella_magnifica01.jpg
+<% photo_credit("complex-wavefunction","Dance of the baby swans from Swan Lake","Line art by B.~Crowell, CC-BY-SA licensed. Based on a photo by Paata Vardanashvili, CC-BY licensed") %> % http://commons.wikimedia.org/wiki/File:Swanlake010bis.jpg
+<% photo_credit("complex-wavefunction","Circle dancing","Franz von Stuck, 1910, public domain") %> % http://commons.wikimedia.org/wiki/File:Stuck_Circle_dancing.jpg
+<% photo_credit("superposition","Superposition of pulses","Photo from PSSC Physics") %>
+<% photo_credit("superposition-cancellation","Superposition of pulses","Photo from PSSC Physics") %>
+<% photo_credit("hw-wall-of-death","Runner","Line art by B.~Crowell, CC-BY-SA licensed. Based on a photo by Wikimedia Commons user Fengalon, public domain") %> % http://commons.wikimedia.org/wiki/File:Running.gif
+<% photo_credit("hw-layback","Rock climber","Line art by B.~Crowell, CC-BY-SA licensed. Based on a photo by Richard Peter/Deutsche Fotothek, CC-BY-SA licensed.") %> % http://en.wikipedia.org/wiki/File:Fotothek_df_ps_0000628_Sport_%5E_Felsen.jpg
+<% photo_credit("jelly-beans","Jar of jellybeans","Flickr user cbgrfx123, CC-BY-SA licensed") %>% http://www.flickr.com/photos/72005145@N00/5600978712/
+<% photo_credit("hw-airplaneforces","Biplane","Open Clip Art Library, public domain") %>% http://commons.wikimedia.org/wiki/File:Qsjapaneseicon-getinandgo.png
+<% photo_credit("amphicoelias","Amphicoelias","Wikimedia commons users Dinoguy2, Niczar, ArthurWeasley, Steveoc 86, Dropzink, and Piotr Jaworski, CC-BY-SA licensed") %>% http://commons.wikimedia.org/wiki/File:Largestdinosaursbysuborder_scale.svg
+<% photo_credit("lion","The Sleeping Gypsy","H.~Rousseau, 1897") %>%http://en.wikipedia.org/wiki/File:A_Swarm_of_Ancient_Stars_-_GPN-2000-000930.jpg
+<% photo_credit("airbag","Air bag","DaimlerChrysler AG, CC-BY-SA licensed.") %>%http://commons.wikimedia.org/wiki/File:Airbag1.jpg
+<% photo_credit("galaxies","Galaxies","Hubble Space Telescope. Hubble material is copyright-free and may be freely used as in the public domain without fee, on the condition that NASA and ESA is credited as the source of the material. The material was created for NASA by STScI under Contract NAS5-26555 and for ESA by the Hubble European Space Agency Information Centre.") %>
+<% photo_credit("standard-kilogram","Standard kilogram","Bo Bengtsen, GFDL licensed. Further retouching by Wikipedia user Greg L and by B.~Crowell") %>%http://en.wikipedia.org/wiki/File:Denmark%E2%80%99s_K48_Kilogram.jpg
+<% photo_credit("climate-orbiter","Mars Climate Orbiter","NASA/JPL/CIT") %>
+<% photo_credit("lavoisier","Portrait of Monsieur Lavoisier and His Wife","Jacques-Louis David, 1788") %>
+<% photo_credit("bodymass","Astronaut","NASA") %>
+<% photo_credit("galileo","Galileo","Justus Sustermans, 1636") %>
+<% photo_credit("foucault","Foucault and pendulum","contemporary, ca. 1851") %>
+<% photo_credit("galileo-trial","Galileo's trial","Cristiano Banti (1857)") %>
+<% photo_credit("wind-tunnel","Wind tunnel","NASA") %>	% www.grc.nasa.gov/WWW/K-12/airplane/tunnel1.html
+<% photo_credit("joule","Portrait of James Joule","contemporary") %>
+<% photo_credit("irface","Infrared photographs","Courtesy of M. Vollmer and K.P. M\"{o}llmann, Univ. Appl. Sciences, Brandenburg, Germany") %> % http://www.fh-brandenburg.de/~piweb/projekte/thermo_galerie_eng.html
+<% photo_credit("skaterphoto","Skateboarder","Courtesy of J.D. Rogge") %> % url was www.sonic.net/~shawn , no longer exists
+<% photo_credit("funicular-railroad","Funicular railroad","Historic American Buildings Survey, public domain") %>%http://memory.loc.gov/pnp/habshaer/ca/ca0200/ca0209/photos/011992pv.jpg
+<% photo_credit("hw-colliding-balls","Colliding balls","PSSC Physics") %>
+<% photo_credit("hw-spider-oscillations","Spider oscillations","Emile, Le Floch, and Vollrath, \\emph{Nature} 440:621 (2006)") %>
+<% photo_credit("ion-drive","Ion drive","NASA") %>
+<% photo_credit("halley","Halley's comet","W. Liller") %>
+<% photo_credit("halley","Nucleus of Halley's comet","Europen Space Agency") %>
+<% photo_credit("colliding-galaxies","Colliding galazies","NASA") %>
+<% photo_credit("wrench","Wrench","PSSC Physics") %>
+<% photo_credit("highjumper","Highjumper","Courtesy of Dunia Young") %>
+<% photo_credit("nimitz","Nimitz freeway","Courtesy of U.C. Berkeley Earth Sciences and Map Library") %>
+<% photo_credit("descartesstamp","Descartes","French postal stamp") %>
+<% photo_credit("solar-sail-art","Solar sail (artist's rendering)","Wikipedia user Paranoid, CC-BY-SA licensed") %>
+<% photo_credit("breakingtrail","Breaking trail","Art by Walter E. Bohl. Image courtesy of the University of Michigan Museum of Art/School of Information and Library Studies") %>
+<% photo_credit("hw-oldlady","Football player and old lady","Hazel Abaya") %>
+<% photo_credit("highjump","High jump","Thomas Eakins, public domain") %>
+<% photo_credit("explorer-one","Explorer I","NASA/JPL, public domain") %>
+<% photo_credit("carnot","Carnot","contemporary") %>
+<% photo_credit("space-junk","Space junk","STK-generated images courtesy of CSSI (www.centerforspace.com)") %>
+<% photo_credit("molecular-shapes","Difluoroethane molecule","Wikipedia user Edgar181, public domain") %> % http://en.wikipedia.org/wiki/Image:Difluoroethane3D.png
+<% photo_credit("boltzmann-tomb","Boltzmann's tomb","Wikipedia user Daderot, CC-BY-SA licensed") %>
+<% photo_credit("otto-cycle","Otto cycle","based on an animation by Wikipedia user UtzOnBike, CC-BY-SA licensed") %>
+<% photo_credit("bass","Electric bass","Brynjar Vik, CC-BY license") %>%http://commons.wikimedia.org/wiki/Image:Gig_bass.jpg
+<% photo_credit("mount-wilson","Mount Wilson","Andrew Dunn, cc-by-sa licensed") %>
+<% photo_credit("shock-wave","X-15 shock wave","NASA, public domain") %>
+<% photo_credit("traffic","Traffic","Wikipedia user Diliff, CC-BY licensed") %>%http://commons.wikimedia.org/wiki/Image:Hollywood_boulevard_from_kodak_theatre.jpg
+<% photo_credit("pan-pipes","Pan pipes","Wikipedia user Andrew Dunn, CC-BY-SA licensed") %> % http://en.wikipedia.org/wiki/Image:ChileanPanpipes-cutout.jpg
+<% photo_credit("flute","Flute","Wikipedia user Grendelkhan, CC-BY-SA licensed") %>
+<% photo_credit("gps-on-bike","GPS","Wikipedia user HawaiianMama, CC-BY license") %>%http://en.wikipedia.org/wiki/File:GPS_on_smartphone_cycling.JPG
+<% photo_credit("hk-in-cabin","Atomic clock on plane","Copyright 1971, Associated press, used under U.S. fair use exception to copyright law") %> % Time Magazine, October 18, 1971
+<% photo_credit("football-causality","Football pass","Wikipedia user RMelon, CC-BY-SA licensed") %>% http://en.wikipedia.org/wiki/File:Orton_To_Wolfe.jpg
+<% photo_credit("joan-of-arc","Joan of Arc holding banner","Ingres, 1854") %> % http://en.wikipedia.org/wiki/File:Ingres_coronation_charles_vii.jpg
+<% photo_credit("joan-of-arc","Joan of Arc interrogated","Delaroche, 1856") %> % http://en.wikipedia.org/wiki/File:Joan_of_arc_interrogation.jpg
+<% photo_credit("correspondence-dramatized","Horse","From a public-domain photo by Eadweard Muybridge, 1872") %>
+<% photo_credit("correspondence-dramatized","Satellite","From a public-domain artist's conception of a GPS satellite, product of NASA") %>%http://en.wikipedia.org/wiki/File:GPS_Satellite_NASA_art-iif.jpg
+<% photo_credit("cern-muon-storage-ring","Muon storage ring at CERN","(c) 1974 by CERN; used here under the U.S. fair use doctrine") %>
+<% photo_credit("rhic","Colliding nuclei","courtesy of RHIC") %>
+<% photo_credit("eclipse","Eclipse","1919, public domain") %>
+<% photo_credit("newspaper-eclipse","Newspaper headline","1919, public domain") %>
+<% photo_credit("pet","Photo of PET scanner","Wikipedia user Hg6996, public domain") %>%http://en.wikipedia.org/wiki/File:16slicePETCT.jpg
+<% photo_credit("pet","Ring of detectors in PET scanner","Wikipedia user Damato, public domain") %>%http://en.wikipedia.org/wiki/File:PET-detectorsystem_2.png
+<% photo_credit("pet","PET body scan","Jens Langner, public domain") %>%http://en.wikipedia.org/wiki/File:PET-MIPS-anim.gif
+<% photo_credit("lightning","Lightning","C. Clark, NOAA photo library") %>
+<% photo_credit("millikan","Millikan","contemporary") %>
+<% photo_credit("thomson","Thomson","Harper's Monthly, 1904") %>
+<% photo_credit("nuclear-fuel-pellets","nuclear fuel pellets","US DOE, public domain") %>
+<% photo_credit("nuclear-power-plant","nuclear power plant","Wikipedia user Stefan Kuhn, CC-BY-SA licensed") %>
+<% photo_credit("fusion-collage","GAMMASPHERE","Courtesy of C.J. Lister and R.V.F. Janssens") %>
+<% photo_credit("fusion-collage","H bomb test","public domain product of US DOE, Ivy Mike test") %>
+<% photo_credit("fusion-collage","Fatu Hiva Rainforest","Wikipedia user Makemake, CC-BY-SA licensed") %>
+<% photo_credit("fusion-collage","fusion reactor","``These images may be used free of charge for educational purposes but please use the acknowledgement `photograph courtesy of EFDA-JET'''") %>
+<% photo_credit("fusion-collage","sun","SOHO (ESA and NASA)") %>
+<% photo_credit("chernobyl-map","Chernobyl map","CIA Handbook of International Economic Statistics, 1996, public domain") %>
+<% photo_credit("chernobyl-horses","Horses","(c) 2004 Elena Filatova") %>%http://www.kiddofspeed.com/chapter8.html
+<% photo_credit("polar-bear","Polar bear","U.S. Fish and Wildlife Service, public domain") %>%http://commons.wikimedia.org/wiki/Image:Polar_Bear.jpg
+<% photo_credit("unilac","UNILAC","Copyrighted, not covered by the book's copyleft") %>
+<% photo_credit("gymnotus","Knifefish","Courtesy of Greg DeGreef") %>
+<% photo_credit("atlassegment","Superconducting accelerator segment","Courtesy of Argonne National Laboratory, managed and operated by the University of Chicago for the U.S. Department of Energy under contract no. W-31-109-ENG-38") %>
+<% photo_credit("ligo","LIGO","California Institute of Technology") %>
+<% photo_credit("topo","Topographical map","United States Geological Survey, 19th century, uncopyrighted.") %>
+<% photo_credit("capacitors-photo","Capacitors","Wikipedia user de:Benutzer:Honina, CC-BY-SA licensed") %>
+<% photo_credit("inductors-photo","Inductors","Wikipedia user de:Benutzer:Honina, CC-BY-SA licensed") %>
+<% photo_credit("ballasts","Ballasts","Magnetic ballast: Wikimedia Commons use Atlant, CC-BY; solid-state ballast: Wikipedia user Anton, CC-BY-SA") %>
+<% photo_credit("faraday","Faraday banknote","fair use") %>
+<% photo_credit("escher","Ascending and Descending","(c) 1960, M.C. Escher") %>
+<% photo_credit("levitating-frog","Levitating frog","``Permission granted for this photo to be licensed under the GNU-type license by Lijnis Nelemans, High Field Magnet Laboratory, Radboud University Nijmegen.''") %> % http://commons.wikimedia.org/wiki/Image:Frog_diamagnetic_levitation.jpg
+<% photo_credit("laminated-core","Laminated core","Wikipedia user ArnoldReinhold, CC-BY-SA licensed") %> % http://en.wikipedia.org/wiki/Image:Transformer.filament.agr.jpg
+<% photo_credit("ferrite-bead","Ferrite bead","Photo of clip-on bead by the author; photo of built-in bead by Wikipedia user Stwalkerster, CC-BY-SA") %>
+<% photo_credit("core-memory","Core memory","H.J. Sommer III, Professor of Mechanical Engineering, Penn State University, CC-BY") %> % http://en.wikipedia.org/wiki/Image:Magnetic_core.jpg
+<% photo_credit("hysteresis-curve","Hysteresis curve","Based on a figure by Wikipedia user Omegatron, CC-BY-SA licensed") %> % http://en.wikipedia.org/wiki/Image:Hysteresiscurve.svg
+<% photo_credit("fluxgate-compass","Fluxgate compass","Wikipedia user Mike1024, public domain") %> % http://en.wikipedia.org/wiki/Image:Floating_core_fluxgate_inclinometer_compass_autonnic.jpg
+<% photo_credit("crepuscular-rays","Rays of sunlight","Wikipedia user PiccoloNamek, CC-BY-SA") %>
+<% photo_credit("io","Jupiter and Io","NASA/JPL/University of Arizona") %>
+<% photo_credit("praxinoscope","Praxinoscope","Thomas B. Greenslade, Jr.") %>
+<% photo_credit("angular-size","Flower","Based on a photo by Wikimedia Commons user Fir0002, CC-BY-SA") %>
+<% photo_credit("computer-ray-tracing","Ray-traced image","Gilles Tran, Wikimedia Commons, public domain") %>
+<% photo_credit("newtonian-telescope-eye","Moon","Wikimedia commons image") %>
+<% photo_credit("short-lens-aberration","Fish-eye lens","Martin D\"{u}rrschnabel, CC-BY-SA") %>
+<% photo_credit("hubble-aberration","Hubble space telescope","NASA, public domain") %>
+<% photo_credit("peaucellier","Anamorphic image","Wikipedia user Istvan Orosz, CC-BY") %>
+<% photo_credit("eye-cross-section","Cross-section of eye","NEI") %>
+<% photo_credit("eye-anatomy","Eye's anatomy","After a public-domain drawing from NEI") %>
+<% photo_credit("ulcer","Ulcer","Wikipedia user Aspersions, CC-BY-SA") %>
+<% photo_credit("refr-derivation","Water wave refracting","Original photo from PSSC") %>
+<% photo_credit("pleiades","Pleiades","NASA/ESA/AURA/Caltech, public domain") %>
+<% photo_credit("double-slit-water-waves","Diffraction of water waves","Assembled from photos in PSSC") %>
+<% photo_credit("huygens","Huygens","Contemporary painting?") %>
+<% photo_credit("double-slit-no-diffraction","Counterfactual lack of diffraction of water waves","Assembled from photos in PSSC") %>
+<% photo_credit("scaling","Scaling of diffraction","Assembled from photos in PSSC") %>
+<% photo_credit("double-slit-water-waves-photo","Diffraction of water waves","Assembled from photos in PSSC") %>
+<% photo_credit("young","Young","Wikimedia Commons, ``After a portrait by Sir Thomas Lawrence, From: Arthur Shuster \\& Arthur E. Shipley: Britain's Heritage of Science. London, 1917''") %>
+<% photo_credit("double-slit-water-waves","Diffraction of water waves","Assembled from photos in PSSC") %>
+<% photo_credit("single-slit-water-waves","Single-slit diffraction of water waves","PSSC") %>
+<% photo_credit("single-slit-simulated-with-three-sources","Simulation of a single slit using three sources","PSSC") %>
+<% photo_credit("pleiades-closeup","Pleiades","NASA/ESA/AURA/Caltech, public domain") %>
+<% photo_credit("very-large-array","Radio telescope","Wikipedia user Hajor, CC-BY-SA") %>
+<% photo_credit("volcano","Mount St. Helens","Public-domain image by Austin Post, USGS") %>
+<% photo_credit("ozone","Ozone maps","NASA/GSFC TOMS Team") %>
+<% photo_credit("ccd-spot","Photon interference photos","Courtesy of Prof. Lyman Page") %>
+<% photo_credit("melting-witch","Wicked witch","W.W. Denslow, 1900. Quote from The Wizard of Oz, by L. Frank Baum, 1900") %>
+<% photo_credit("hindenburg","Hindenburg","Public domain product of the U.S. Navy") %>
+
+<% print_photo_credits() %>
+
+\end{sloppypar}\normalsize

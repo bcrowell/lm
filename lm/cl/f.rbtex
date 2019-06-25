@@ -1,0 +1,124 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '16',
+    %q{Thermodynamics},
+    'ch:thermo',
+    '',
+    {'opener'=>'engine'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/clf)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('stpvol') %>__incl(hw/stpvol)<% end_hw() %>
+
+<% begin_hw('workpdv') %>__incl(hw/workpdv)<% end_hw() %>
+
+<% begin_hw('he') %>
+(a) A helium atom contains 2 protons, 2 electrons, and 2
+neutrons. Find the mass of a helium atom.  \answercheck\hwendpart
+(b) Find the
+number of atoms in 1 kg of helium.  \answercheck\hwendpart
+(c) Helium gas is
+monoatomic. Find the amount of heat needed to raise the
+temperature of 1 kg of helium by 1 degree C. (This is known
+as helium's heat capacity at constant volume.) \answercheck
+<% end_hw() %>
+
+<% begin_hw('airconditioner') %>
+Refrigerators, air conditioners, and heat pumps are heat engines that
+work in reverse.
+You put in mechanical work, and the effect is to take heat out of
+a cooler reservoir and deposit heat in a warmer one: $Q_L+W=Q_H$.
+As with the heat engines discussed previously, the efficiency is
+defined as the energy transfer you want ($Q_L$ for a refrigerator or
+air conditioner, $Q_H$ for a heat pump) divided by the energy transfer
+you pay for ($W$).
+
+Efficiencies are supposed to be unitless, but the
+efficiency of an air conditioner is normally given in terms of an EER rating
+(or a more complex version called an SEER). The EER is defined
+as $Q_L/W$, but expressed in the barbaric units of of Btu/watt-hour.
+A typical EER rating
+for a residential air conditioner is about 10 Btu/watt-hour, corresponding to an
+efficiency of about 3.
+The standard temperatures used for testing an air conditioner's efficiency
+are $80\degunit F$ ($27\degcunit$) inside and
+ $95\degunit F$ ($35\degcunit$) outside.
+
+\noindent (a) What would be the EER rating of a reversed Carnot engine used as
+an air conditioner? \answercheck\hwendpart
+(b) If you ran a 3-kW residential air conditioner, with an efficiency of 3,
+ for one hour, what would
+be the effect on the total entropy of the universe? Is your answer
+consistent with the second law of thermodynamics? \answercheck
+<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('centerofearth',nil,{'calc'=>true}) %>
+(a) Estimate the pressure at the center of the Earth,
+assuming it is of constant density throughout. 
+Use the technique of example \ref{eg:pressure-at-altitude} on
+page \pageref{eg:pressure-at-altitude}.
+Note that $g$
+is not constant with respect to depth --- 
+it equals $Gmr/b^3$ for $r$, the distance from the center,
+less than $b$, the earth's radius.\footnote{Derivation: The shell
+theorem tells us that the gravitational field at $r$ is the same as
+if all the mass existing at greater depths was concentrated at the
+earth's center. Since volume scales like the third power of distance,
+this constitutes a fraction $(r/b)^3$ of the earth's mass, so the field
+is $(Gm/r^2)(r/b)^3=Gmr/b^3$.}
+State your result in terms of $G$, $m$, and $b$.\hwendpart
+(b) Show that your answer from part a has the right units for pressure.\hwendpart
+(c) Evaluate the result numerically. \answercheck \hwendpart
+(d) Given that the earth's atmosphere is on the order of
+ one thousandth the thickness of the earth's radius, and that the density
+of the earth is several thousand times greater than the density of the
+lower atmosphere, check that your result is of a reasonable order of
+magnitude.
+<% end_hw() %>
+
+<% begin_hw('fluorocarbon') %>__incl(hw/fluorocarbon)<% end_hw() %>
+
+<% begin_hw('igm') %>__incl(hw/igm)<% end_hw() %>
+
+<% begin_hw('cracking-gas-molecules') %>__incl(hw/cracking-gas-molecules)<% end_hw() %>
+
+\pagebreak
+
+<%
+  fig(
+    'magdeburg',
+    %q{Problem \ref{hw:magdeburg}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+<% begin_hw('magdeburg') %>__incl(hw/magdeburg)<% end_hw() %>
+
+<% begin_hw('heart-efficiency') %>__incl(hw/heart-efficiency)<% end_hw() %>
+
+<% begin_hw('challenger-deep') %>__incl(hw/challenger-deep)<% end_hw() %>
+
+<% begin_hw('fusion') %>__incl(hw/fusion)<% end_hw() %>
+
+<% begin_hw('half-brick') %>__incl(hw/half-brick)<% end_hw() %>
+
+<% begin_hw('inversion-layer') %>__incl(hw/inversion-layer)<% end_hw() %>
+
+<% begin_hw('entropy-stirring-coffee') %>__incl(hw/entropy-stirring-coffee)<% end_hw() %>
+
+
+<% end_hw_sec %>
+<% end_chapter() %>

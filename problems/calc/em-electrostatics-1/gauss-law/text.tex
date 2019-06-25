@@ -1,0 +1,40 @@
+When we look at the ``sea of arrows'' representation of a field,
+\ref{fig:field-line-concept-stacked}/1, there is a natural visual tendency to
+imagine connecting the arrows as in \ref{fig:field-line-concept-stacked}/2.
+The curves formed in this way are called field lines, and they have a
+direction, shown by the arrowheads. 
+
+% fig {"name":"field-line-concept-stacked","caption":"Two different representations of an electric field."}
+
+Electric field lines originate from positive
+charges and terminate on negative ones. We can choose a constant of proportionality that fixes
+how coarse or fine the ``grain of the wood'' is, but once this choice is made 
+the strength of each charge is shown by the number of lines that begin or end on it. For example, figure
+\ref{fig:field-line-concept-stacked}/2
+shows eight lines at each charge, so we know that $q_1/q_2=(-8)/8=-1$. Because lines never begin or end except on a charge,
+we can always find the total charge inside any given region by subtracting the number of lines that go in from the number
+that come out and multiplying by the appropriate constant of proportionality. Ignoring the constant, we can apply this
+technique to figure \ref{fig:gauss-field-lines} to find $q_A=-8$, $q_B=2-2=0$, and $q_C=5-5=0$.
+
+% fig {"name":"gauss-field-lines","caption":"The number of field lines coming in and out of each region depends on the total charge it encloses."}
+
+Let us now make this description more mathematically precise.
+Given a smooth, closed surface such as the ones in figure \ref{fig:gauss-field-lines},
+we have an inside and an outside, so that at any point on the surface we can
+define a unit normal $\hat{\vc{n}}$ (i.e., a vector with magnitude 1, perpendicular to the
+surface) that points outward. Given an infinitesimally small piece of the surface, with
+area $\der A$, we define an area vector $\der\vc{A}=\hat{\vc{n}}\der A$.
+The infinitesimal flux $\der\Phi$ through this infinitesimal patch of the surface is defined
+as $\der\Phi=\vc{E}\cdot\der\vc{A}$, and integrating over the entire surface gives the total flux
+$\Phi=\int\der\Phi=\int \vc{E}\cdot\der\vc{A}$. Intuitively, the flux
+measures how many field lines pierce the surface. Gauss's law states that
+\begin{equation}
+  q_\text{in}=\frac{\Phi}{4\pi k},
+\end{equation}
+where $q_\text{in}$ is the total charge inside a closed surface, and $\Phi$ is the
+flux through the surface. (In terms of the constant $\epsilon_0=1/(4\pi k)$, we have 
+$q_\text{in}=\epsilon_0\Phi$.)
+
+Unlike Coulomb's law, Gauss's law holds in all circumstances, even when there are charges
+moving in complicated ways and electromagnetic waves flying around. Gauss's law can be
+thought of as a definition of electric charge. 

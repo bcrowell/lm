@@ -1,0 +1,47 @@
+(a) Since the wagon has no acceleration, the total
+forces in both the x and y directions must be zero.
+There are three forces acting on the wagon: $\vc{F}_T$, $\vc{F}_W$,
+and the normal force from the ground, $\vc{F}_N$. If we pick a
+coordinate system with x being horizontal and y
+vertical, then the angles of these forces measured
+counterclockwise from the x axis are $90\degunit-\phi$,
+$270\degunit$, and $90\degunit+\theta$, respectively. We have
+\begin{align*}
+    F_{x,total}
+             & =   |\vc{F}_T|\cos (90\degunit-\phi ) 
+                 + |\vc{F}_W|\cos (270\degunit)
+                 + |\vc{F}_N|\cos (90\degunit+\theta )\\
+    F_{y,total}
+             & =  |\vc{F}_T|\sin (90\degunit-\phi )
+                + |\vc{F}_W|\sin (270\degunit)
+                + |\vc{F}_N|\sin (90\degunit+\theta )\eqquad,
+\end{align*}
+which simplifies to
+\begin{align*}
+        0  &=  |\vc{F}_T|\sin  \phi  - |\vc{F}_N|\sin  \theta   \\
+        0  &=  |\vc{F}_T|\cos  \phi   - |\vc{F}_W| + |\vc{F}_N|\cos  \theta   .
+\end{align*}
+The normal force is a quantity that we are not given and do
+not wish to find, so we should choose it to eliminate.
+Solving the first equation for $|\vc{F}_N|=(\sin  \phi/\sin  \theta)|\vc{F}_T|$,
+ we eliminate $|\vc{F}_N|$ from the second equation,
+\begin{equation*}
+        0  =   |\vc{F}_T|\cos  \phi   
+             - |\vc{F}_W| + |\vc{F}_T|\sin  \phi \cos  \theta/\sin  \theta
+\end{equation*}
+and solve for $|\vc{F}_T|$, finding
+\begin{equation*}
+    |\vc{F}_T| = \frac{|\vc{F}_W|}{\cos\phi+\sin\phi\cos\theta/\sin\theta}\eqquad.
+\end{equation*}
+Multiplying both the top and the bottom of the fraction by
+$\sin  \theta $, and using the trig identity for 
+$\sin(\theta +\phi )$ gives the desired result,
+\begin{equation*}
+    |\vc{F}_T| = \frac{\sin\theta}{\sin(\theta+\phi)} |\vc{F}_W|\eqquad.
+\end{equation*}
+(b) The case of $\phi=0$, i.e., pulling straight up on the
+wagon, results in $|\vc{F}_T|=|\vc{F}_W|$: we simply support the wagon and
+it glides up the slope like a chair-lift on a ski slope. In
+the case of $\phi =180\degunit-\theta$, $|\vc{F}_T|$ becomes infinite.
+Physically this is because we are pulling directly into the
+ground, so no amount of force will suffice.

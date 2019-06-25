@@ -1,0 +1,595 @@
+% This file contains code for handling figures that can be used not
+% just by LM but also by SN and DP.
+%
+%-------------------- minipagefullpagewidth -------------------
+%  if using p{...} stuff, make sure the widths add up to about 162 mm
+% bugs:
+% - if the widths of the columns don't add up to the right amount, you can get gaps in the rules
+% A lot of the ifrightifleft environment's logic has to be duplicated in \margdown -- if changing it here,
+% change it there as well. This has to be implemented as an environment, so that the label occurs at the
+% end; otherwise it messes up if it's the first thing on the page, because the label's page number refers
+% to the previous page.
+\newcounter{ifrightifleftctr}% only purpose is to distinguish the labels from one another
+\setcounter{ifrightifleftctr}{0}
+\newenvironment{ifrightifleft}[2]{%
+    \stepcounter{ifrightifleftctr}%
+    \ifthenelse{\isodd{\pageref{ifrightifleft\theifrightifleftctr}}}{#1}{#2}%
+}{%
+    \label{ifrightifleft\theifrightifleftctr}%
+}
+\newenvironment{minipagefullpagewidth}%
+  {%
+    \begin{ifrightifleft}{}{\hspace{-\marginfigoverhang}}%
+    \begin{minipage}{\pagewidth}
+  }%
+  {%
+    \end{minipage}
+    \end{ifrightifleft}
+  }
+%-------------------- figure preferences -------------------
+% The following three numbers are to make TeX more likely to put figures on the
+% same page rather than on a separate figures page. Can tinker with these, but
+% make sure floatpagefraction<topfraction.
+% Values recommended by the web page I found were 0.85, 0.1, 0.75
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\floatpagefraction}{0.98}
+%
+\newcommand{\mypart}[1]{\part{#1}}
+%-------------------- my figure commands -------------------
+% For an example of how to do a figure containing LaTeX text, see fig:hmassratios
+% in chapter 8.
+%
+% Force it to start figure numbering afresh with each chapter:
+  \newcommand{\zapcounters}{\setcounter{figctr}{0}}
+% The following is complicated, because I want to be able to have chapter opener pictures that appear before the
+% chapter's title:
+  \newcommand{\mychaptercmdsa}{%
+           \renewcommand\cleardoublepage{}%
+	   \clearpage
+	   \ifodd\c@page
+           \else
+		  \hbox{}\newpage
+           \fi
+           \zapcounters
+  }
+  \newcommand{\mychaptercmdsb}{%
+           \thispagestyle{fancy}\myeqnspacing\normalfont\normalsize%
+  }
+  \newcommand{\mychapter}[3]{\mychaptercmdsa\chapter[#1]{#3}\mychaptercmdsb}
+       %...ignore #2 because only memoir supports it
+  \newcommand{\mychapterwithopener}[3]{%
+         \mychaptercmdsa%
+         \noindent\widefignocaptionnofloat{#1}%
+         {\formatlikecaption{#2}}%
+         \par\chapter{#3}%
+         \mychaptercmdsb%
+         
+  }
+  \newcommand{\mychapterwithopenersidecaption}[3]{%
+         \mychaptercmdsa%
+         \noindent\widefigsidecaption{b}{#1}{#2}{labeled}{h}{nofloat}{}{\figprefix\chapdir/figs}%
+         \par\chapter{#3}%
+         \mychaptercmdsb%
+         \addtocounter{figctr}{1}% I don't understand why this is necessary, since it should get zeroed by mychaptercmdsa, which is before the figure.
+  }
+  \newcommand{\mychapterwithopenersidecaptionanon}[3]{%
+         \mychaptercmdsa%
+         \noindent\widefigsidecaption{b}{#1}{#2}{anonymous}{h}{nofloat}{}{\figprefix\chapdir/figs}%
+         \par\chapter{#3}%
+         \mychaptercmdsb%
+  }
+  \newcommand{\mychapterwithnarrowopenerwidecaption}[3]{%
+         \mychaptercmdsa%
+         \noindent\narrowfigwidecaptionanon{#1}{#2}%
+         \par\chapter{#3}%
+         \mychaptercmdsb%
+  }
+  \newcommand{\specialchapterwithopener}[4]{% used in CL, ch. 4, so pool ball hangs off edge, #1=width, #2=figure, #3=caption, #4=title of chapter
+         \mychaptercmdsa%
+         \noindent\widefigspecial{#1}{#2}%
+         {\formatlikecaption{#3}}%
+         \par\chapter{#4}%
+         \mychaptercmdsb%
+  }
+  \newcommand{\mychapterwithfullpagewidthopener}[3]{%
+         \mychaptercmdsa%
+         \noindent%
+         \begin{minipagefullpagewidth}%
+           \includegraphics[width=\textwidth]{\figprefix\chapdir/figs/#1}\\
+           \formatlikecaption{#2}%
+         \end{minipagefullpagewidth}%
+         \label{fig:#1}%
+         \par\chapter{#3}%
+         \mychaptercmdsb%
+  }
+  \newcommand{\mychapterwithfullpagewidthopenernocaption}[2]{%
+         \mychaptercmdsa%
+         \noindent%
+         \begin{minipagefullpagewidth}%
+           \includegraphics[width=\textwidth]{\figprefix\chapdir/figs/#1}
+         \end{minipagefullpagewidth}%
+         \label{fig:#1}%
+         \par\chapter{#2}%
+         \mychaptercmdsb%
+  }
+  \newcommand{\mychapterwithopenernocaption}[2]{%
+         \mychaptercmdsa%
+         \noindent\widefignocaptionnofloat{#1}%
+         \par\chapter{#2}%
+%        The following was what I had in DP instead of the line above. It caused
+%        an error in LM...?
+%         \par\vfill\hspace{-9mm}\noindent\chapter{#2}%
+         \mychaptercmdsb%
+  }
+% Letters for figure number, and no "Figure .." in caption:
+  \newcommand{\hwcaptions}{\def\figurelabel{}}
+  \newcommand{\normalcaptions}{\def\figurelabel{\thefigctr\hspace{1mm}{\scriptsize{/}}\hspace{1mm}}}
+  \normalcaptions
+%
+\newcommand{\marg}[1]{\margdown{0mm}{#1}}
+\newlength{\columnfigwidth}
+\setlength{\columnfigwidth}{76.5mm}
+% The \figinindentedcorr length is to fix a problem where marginal figures are offset when used inside an indented
+% block of text, such as an example. The eg environment changes this length to a nonzero value at the beginning, and
+% then resets it to zero at the end. Problem:
+%     A figure above(?) or below(?) an eg doesn't benefit from the correction, but gets affected by the neighboring eg.
+%     One solution is to place the figure inside the eg instead. However, don't place it immediately before the
+%     first paragraph of the example, because that introduces extra vertical space.
+\newlength{\figinindentedcorr}
+\setlength{\figinindentedcorr}{0mm}
+\newcommand{\indentedcorrend}{\setlength{\figinindentedcorr}{0mm}}
+\newcommand{\indentedcorrstart}{\setlength{\figinindentedcorr}{\egindent}}
+% For reasons I don't understand, it's also necessary to put in a roughly 2-mm correction to the positions of
+% stuff on left-hand pages. To handle this, the margdown macro duplicates a lot of logic from the
+% ifrightifleft environment; tried using that env. here, but that breaks wrapfigure.
+% When the figure is the very first thing on a right-hand page, the ifrightifleft logic seems to mess
+% up. Solution: never make a figure the very first thing on a page.
+% If a left-hand figure is too close to the text by a couple of mm, the problem is that the odd/even logic
+% is messed up, possibly because it's the first figure on the page. May need to recompile book from scratch
+% to fix it, even after moving fig?
+\newlength{\fixwrapfigweirdness}
+\newcommand{\margdown}[2]{%
+        \stepcounter{ifrightifleftctr}%
+        \ifthenelse{\isodd{\pageref{ifrightifleft\theifrightifleftctr}}}{\setlength{\fixwrapfigweirdness}{0mm}}{\setlength{\fixwrapfigweirdness}{-2.9mm}}%
+                           % ... for reasons I don't understand, this correction gets scaled down by about a factor of 2.
+        \addtolength{\fixwrapfigweirdness}{-\figinindentedcorr}%
+                           %set to a nonzero value by eg
+                           % environment; examples: CL, pp. 76 (ion drive), 111 (colliding asteroids)
+	\begin{wrapfigure}{o}[\marginfigoverhang]{0mm}%
+                \makebox[\marginfigwidth][l]{%
+                    \hspace{\fixwrapfigweirdness}%
+		    \begin{minipage}{\marginfigwidth}
+			\vspace*{#1}
+			#2
+		    \end{minipage}%
+                }%
+	\end{wrapfigure}%
+        \label{ifrightifleft\theifrightifleftctr}%
+}
+\newcommand{\formatlikecaption}[1]{%
+	\small{\protect\sansmath\sf{#1}\lmserifmath} %
+}
+\newcommand{\docaptionnorefstep}[2][l]{%
+	\break%
+        \ifthenelse{\equal{#1}{r}}{\hspace*{\fill}}{}
+        \formatlikecaption{\figurelabel#2}%
+        \hfill%
+}
+\newcommand{\docaption}[1]{%
+        \refstepcounter{figctr}%
+        \docaptionnorefstep{#1}%
+}
+% In the following, the optional first argument is appended to the end of
+% the label. This is necessary sometimes if I'm including the same figure
+% more than once and want to have separate labels.
+% This logic is not just simpler than ifrightifleft, it's more reliable, because
+% the label is really attached to the figure itself, not the place from which
+% it was created in the text.
+\newcommand{\fullpagewidthfig}[3][\figprefix\chapdir/figs]{%
+    % #1 = directory (optional)
+    % #2 = name
+    % #3 = caption
+  \ifthenelse{\isodd{\pageref{fig:#2}}}{%
+    \fullpagewidthfigx{#2}{#3}{0mm}{fig}{#1}
+  }{%
+    \fullpagewidthfigx{#2}{#3}{-\marginfigoverhang}{fig}{#1}
+  }%
+}
+\newcommand{\fullpagewidthfignocaption}[2][\figprefix\chapdir/figs]{%
+    % #1 = directory (optional)
+    % #2 = name
+  \ifthenelse{\isodd{\pageref{fig:#2}}}{%
+    \fullpagewidthfigx{#2}{}{0mm}{fig}{#1}
+  }{%
+    \fullpagewidthfigx{#2}{}{-\marginfigoverhang}{fig}{#1}
+  }%
+}
+\newcommand{\fullpagewidthfigx}[5]{ %
+  \begin{figure}[h]
+    \hspace{#3}%
+    \begin{minipage}{\pagewidth}
+      \includegraphics[width=\pagewidth]{#5/#1}
+      \ifthenelse{\equal{#2}{}}{}{\linebreak[4]\docaption{#2}}
+      \label{#4:#1} %
+    \end{minipage}%
+  \end{figure}
+}
+\immediate\write18{rm -f ch*.pos}%The \immediate is necessary, because otherwise it deletes it after it's been written.
+\newcommand{\recordpos}[2]{\pdfsavepos\write18{echo "fig,label=#1,page=\thepage,x=\the\pdflastxpos,y=\the\pdflastypos,at=#2" >>all.pos}}
+% .... This is called from commands like \fig, etc.
+\newenvironment{margin}[3]{%
+  % #1 = figure number
+  % #2 = delta-y (in mm, positive=up)
+  % #3 = chapter (so we can figure out which data file to write to)
+  \pdfsavepos\write18{echo "#1,page=\thepage,refx=\the\pdflastxpos,refy=\the\pdflastypos,deltay=#2" >>figfeedback#3}
+}{%
+}
+% For the sake of consistency, try not to use anonymousfig in general. However, there's no harm in
+% using it for discussion question figures, where a caption like ``i / Discussion question A'' looks
+% goofy anyway.
+\newcommand{\fig}[4]{ %
+          % #1 = name
+          % #2 = caption
+          % #3 = suffix
+          % #4 = directory
+        \figx{#1}{#2}{#3}{#4}{labeled}%
+}
+\newcommand{\anonymousfig}[3]{%
+          % #1 = name
+          % #2 = caption
+          % #3 = directory
+        \figx{#1}{#2}{}{#3}{anonymous}%
+}
+\newcommand{\figx}[5]{ %
+          % #1 = name
+          % #2 = caption
+          % #3 = suffix
+          % #4 = directory
+          % #5 = anonymous or labeled
+        \recordpos{fig:#1#3}{begin}\break    % The break is important!!! Without it, we end up recording the height of the *bottom* of the graphic!!
+	\includegraphics[width=\marginfigwidth]{#4/#1}%
+        \recordpos{fig:#1#3}{endgraphic}%
+        % The use of the minipage environment in the folowing looks useless, but it isn't! In most cases, the surrounding textpos
+        % environment's width forces the caption to be the right width, and everything is OK. However, there are some cases
+        % (CL5, starting at 5.3 and ending when CL6 starts) where the stuff inside the figure is inexplicably typeset at the full 113mm
+        % text with unless I put in this minipage. The sloppypar is because fussy mode doesn't really work for such a narrow column of text.
+        \begin{sloppypar}\noindent\begin{minipage}{\marginfigwidth}\noindent%
+        \ifthenelse{\equal{#5}{labeled}}{%
+          \docaption{#2}%
+        }{%
+          \break\formatlikecaption{#2}\hfill%
+        }%
+        \label{fig:#1#3}% Should be labeled regardless of whether it's anonymous; e.g., might need to refer to it in photo credits.
+        \end{minipage}\end{sloppypar}%
+        \recordpos{fig:#1#3}{endcaption}%
+}
+% The following is for figures that exist in translated versions. The \figprefix is omitted.
+\newcommand{\trfig}[3][]{ %
+        \fig{#2}{#3}{#1}{translated}
+}
+% Note that for textfigs, there's no reason to have a provision for suffixes, since there's
+% no external graphics file that might be reused.
+\newcommand{\starttextfig}[1]{%
+          % #1 = name
+        \recordpos{fig:#1}{begintextfig}\break% Without the break, we record the height at the middle of the table, not the top.
+        \begin{sloppypar}\setlength\parindent{0cm}
+}
+\newcommand{\finishtextfig}[2]{%
+          % #1 = name
+          % #2 = caption
+        \end{sloppypar}
+	\break\noindent\docaption{%
+          #2%
+          \recordpos{fig:#1}{endtextfig}%
+        } %
+	\label{fig:#1} %
+        \normalfont\normalsize
+}
+\newcommand{\finishtextfignocaption}[2]{%
+        % #1 = name
+        % #2 = caption (should be null)
+        \end{sloppypar}
+        \recordpos{fig:#1}{endtextfig}%
+	\label{fig:#1} %
+        \normalfont\normalsize
+}
+\newcommand{\starttextbox}[1]{%
+          % #1 = name
+        \recordpos{fig:#1}{begintextfig}\break% Without the break, we record the height at the middle of the table, not the top.
+}
+\newcommand{\textboxbody}[2]{
+          % #1 = title
+          % #2 = text
+        \noindent%
+        \refstepcounter{textboxctr}
+        \begin{shaded}
+          \noindent \ensuremath{\triangleright} Box \thetextboxctr \quad \textbf{#1}\\
+          #2
+        \end{shaded}
+}
+\newcommand{\finishtextbox}[1]{%
+          % #1 = name
+	\break\recordpos{fig:#1}{endtextfig}\label{fig:#1}\label{textbox:#1}\normalfont\normalsize
+}
+\newcommand{\figref}[1]{\formatfigref{\ref{fig:#1}}}
+\newcommand{\subfigref}[2]{\figref{#1}/#2}
+\newcommand{\fignocaptionnativewidth}[2]{%
+	\includegraphics{#2/#1} %
+	\label{fig:#1} %
+}
+\newcommand{\fignocaption}[2]{%
+        \recordpos{fig:#1}{begin}
+	\includegraphics[width=\marginfigwidth]{#2/#1} %
+        \recordpos{fig:#1}{endgraphic}%
+	\label{fig:#1} %
+}
+\newcommand{\fignoresize}[2]{ %
+	\includegraphics{\figprefix\chapdir/figs/#1} %
+	\docaption{#2} %
+	\label{fig:#1} %
+}
+\newcommand{\widefig}[6][h]{ %
+         % #1 -- float location
+         % #2 -- file
+         % #3 -- caption
+         % #4 -- suffix
+         % #5 -- labeled or anonymous
+         % #6 -- directory
+	\spaceabovewidefig
+	\begin{figure}[#1]
+        \recordpos{fig:#2#4}{begin}
+	\includegraphics[width=\textwidth]{#6/#2} %
+        \recordpos{fig:#2#4}{endgraphic}
+        \ifthenelse{\equal{#5}{labeled}}{%
+          \docaption{#3}%
+          \recordpos{fig:#2#4}{endcaption}
+        }{%
+          \formatlikecaption{#3}%
+          \recordpos{fig:#2#4}{endcaption}
+        }%
+	\label{fig:#2#4} %
+	\end{figure}
+}
+\newcommand{\widefigspecial}[3][\figprefix\chapdir/figs]{ %
+          % #1 = directory (optional)
+          % #2 = width
+          % #3 = file
+	\spaceabovewidefig
+	\includegraphics[width=#2]{#1/#3} %
+	\label{fig:#3} %
+}
+\newcommand{\widefignocaptionnofloat}[2][\figprefix\chapdir/figs]{ %
+           % #1 = directory (optional)
+           % #2 = file
+        \noindent\widefigspecial[#1]{\textwidth}{#2}%
+}
+\newcommand{\columnfignocaptionnofloat}[2][\figprefix\chapdir/figs]{ %
+           % #1 = directory (optional)
+           % #2 = file
+        \noindent\widefigspecial[#1]{76.5mm}{#2}%
+}
+\newcommand{\columnfignofloat}[3][\figprefix\chapdir/figs]{ %
+           % #1 = directory (optional)
+           % #2 = file
+           % #3 = caption
+        \noindent\widefigspecial[#1]{76.5mm}{#2}\\
+        \formatlikecaption{#3}
+}
+\newcommand{\columnfignofloatanon}[3][\figprefix\chapdir/figs]{ %
+           % #1 = directory (optional)
+           % #2 = file
+           % #3 = caption
+        \noindent\widefigspecial[#1]{82.6mm}{#2}\\
+        \formatlikecaption{#3}
+}
+\newcommand{\columnfig}[6][h]{ %
+         % modeled on widefig; is floating
+         % #1 -- float location
+         % #2 -- file
+         % #3 -- caption
+         % #4 -- suffix
+         % #5 -- labeled or anonymous
+         % #6 -- directory
+	\spaceabovewidefig
+	\begin{figure}[#1]
+        \recordpos{fig:#2#4}{begin}
+	\includegraphics[width=\columnfigwidth]{#6/#2} %
+        \recordpos{fig:#2#4}{endgraphic}
+        \ifthenelse{\equal{#5}{labeled}}{%
+          \docaption{#3}%
+          \recordpos{fig:#2#4}{endcaption}
+        }{%
+          \formatlikecaption{#3}%
+          \recordpos{fig:#2#4}{endcaption}
+        }%
+	\label{fig:#2#4} %
+	\end{figure}
+}
+\newcommand{\inlinefignocaption}[1]{ %
+	\spaceabovewidefig
+	\includegraphics[width=\textwidth]{\figprefix\chapdir/figs/#1}\label{fig:#1}
+}
+\newcommand{\inlinefignocaptionnoresize}[1]{ %
+	\spaceabovewidefig
+	\includegraphics{\figprefix\chapdir/figs/#1}\label{fig:#1}
+}
+\newsavebox{\sidecaptionbox}
+\newsavebox{\includegraphicsbox}
+\newlength{\xmarginscoot}
+\newlength{\ymarginscoot}
+\newlength{\kludge}
+\newlength{\oddsidemarginscoot}
+\setlength{\oddsidemarginscoot}{\textwidth}
+\addtolength{\oddsidemarginscoot}{\marginparsep}
+\addtolength{\oddsidemarginscoot}{\mysteriousextracolsep}
+\newlength{\evensidemarginscoot}
+\setlength{\evensidemarginscoot}{\marginfigwidth}
+\addtolength{\evensidemarginscoot}{\marginparsep}
+\addtolength{\evensidemarginscoot}{\mysteriousextracolsep}
+\newlength{\adjustevensidemargin}
+\setlength{\adjustevensidemargin}{-3.5mm}
+\addtolength{\evensidemarginscoot}{\adjustevensidemargin}
+ % ...This is necessary in order to make it line up with margin figs, which are actually too close
+ % to the text for some mysterious reason.
+% ---------- side captions ------------
+% The side caption stuff is really evil -- seemingly inconsequential modifications to the code can
+% have unexpected effects. When making a change to this code, make sure to test as many cases and
+% combinations of cases as possible:
+%   t, c, and b
+%   odd and even pages
+%   labeled or anonymous
+%   test bar cartoon fig in NP5 -- at end of page, caption tended to get pushed to next page
+%   captions less than 52 mm wide, versus ones that fill the whole margin's width
+% There are also some constants hardcoded below that should really be computed.
+% (The ones that *are* computed only apply to the older code that's if'ed out.)
+% -------------------------------------
+\newcommand{\widefigsidecaption}[8]{%
+        % not to be called directly
+                  % #1 = t to align top of caption with top of figure, c to align centers, b for bottoms
+                  % #2 = name of graphic
+                  % #3 = caption
+                  % #4 = labeled or anonymous
+                  % #5 = standard latex positioning stuff, h, t, b
+                  % #6 = float or nofloat
+                  % #7 = suffix
+                  % #8 = directory (would normally be \figprefix\chapdir/figs )
+  \ifthenelse{\equal{#6}{float}}{\begin{figure}[#5]}{}%
+      % If I don't enclose it in this, and make it floating, then it becomes impossible to get the page reference right reliably.
+	\begin{lrbox}{\includegraphicsbox}\begin{minipage}{\textwidth}\includegraphics[width=\textwidth]{#8/#2}\end{minipage}\end{lrbox}%
+        \refstepcounter{figctr}
+        % Note that although it would seem logical to put this code inside the first clause of the following ifthenelse, in fact that
+        % causes strange errors (later figures get same caption as earlier ones).
+        \begin{lrbox}{\sidecaptionbox}\begin{minipage}{\marginfigwidth}%
+          \ifthenelse{\equal{#4}{labeled}}{%
+            \docaptionnorefstep{#3}%
+          }{%
+            \formatlikecaption{#3}
+          }
+        \end{minipage}\end{lrbox}%
+	\ifthenelse{\isodd{\pageref{fig:#2#7}}}{%
+          \setlength{\xmarginscoot}{\oddsidemarginscoot}
+        }%
+        {% even, left-hand page
+          \setlength{\xmarginscoot}{-\evensidemarginscoot}
+	  \settowidth{\kludge}{\formatlikecaption{#3}}
+          \ifthenelse{\lengthtest{\kludge < \marginfigwidth}}{
+	    \begin{lrbox}{\sidecaptionbox}\begin{minipage}{\marginfigwidth}%
+              \ifthenelse{\equal{#4}{labeled}}{%
+                \docaptionnorefstep[r]{#3}%
+              }{%
+                \formatlikecaption{#3}
+              }
+            \end{minipage}\end{lrbox}%
+          }{}
+          \addtolength{\xmarginscoot}{-4mm}% empirical
+        }
+        \ifthenelse{\equal{#1}{t}}{
+          \settoheight{\ymarginscoot}{\usebox{\includegraphicsbox}}
+          \settodepth{\kludge}{\usebox{\includegraphicsbox}}
+	  \addtolength{\ymarginscoot}{\kludge}
+          \settoheight{\kludge}{\usebox{\sidecaptionbox}}
+	  \addtolength{\ymarginscoot}{-\kludge}
+        }{}
+        \ifthenelse{\equal{#1}{b}}{
+          \settodepth{\ymarginscoot}{\usebox{\sidecaptionbox}}
+        }{}
+        \ifthenelse{\equal{#1}{c}}{
+          \settodepth{\ymarginscoot}{\usebox{\includegraphicsbox}}
+        }{}
+        \par
+	\label{fig:#2#7} % need to make sure this lies on same page as fig, otherwise parity is wrong
+        \ifthenelse{\equal{1}{0}}{
+          % old code, sometimes causes caption to go onto next page (as in NP5, bar cartoon)
+          \noindent\usebox{\includegraphicsbox}
+          \raisebox{\ymarginscoot}[0mm][0mm]{\makebox[0mm][l]{\hspace{\xmarginscoot}\usebox{\sidecaptionbox}}}
+        }{%
+          \settodepth{\kludge}{\usebox{\includegraphicsbox}}
+          \addtolength{\ymarginscoot}{-\kludge}
+          \ifthenelse{\isodd{\pageref{fig:#2#7}}}{%
+            % odd, right-hand page
+            \noindent\usebox{\includegraphicsbox}%
+            \makebox[\marginparsep][l]{}%
+            \makebox[3.5mm][l]{}% why??
+            \raisebox{\ymarginscoot}[0mm][0mm]{\makebox[0mm][l]{\usebox{\sidecaptionbox}}}
+          }%
+          {%
+            % even, left-hand page
+            \noindent\usebox{\includegraphicsbox}%
+            \makebox[\marginparsep][l]{}%
+            \makebox[4mm][l]{}% why??
+            \raisebox{\ymarginscoot}[0mm][0mm]{\makebox[0mm][l]{\hspace{-184mm}\usebox{\sidecaptionbox}}}
+          }
+        }%
+  \ifthenelse{\equal{#6}{float}}{\end{figure}}{}%
+}
+% I only use this in a few places (NP, and EM, near pp. 92, 152), and the layouts in those places are tightly defined, so
+% I don't want this to be floating. However, making it a floating figure was the only way I was ever able to figure out
+% to get widefigsidecaption to figure out reliably when it was on a left or right page, so this is inherently unreliable.
+\newcommand{\narrowfigwidecaptionnofloat}[4][t]{%
+                  % #1 = t to align top of caption with top of figure, c to align centers, b for bottoms
+                  % #2 = name of graphic
+                  % #3 = caption
+                  % #4 = directory
+        \vspace{2mm}\narrowfigwidecaptionanon[#1]{#2}{\docaptionnorefstep{#3}}{#4}
+}
+%
+\newcommand{\narrowfigwidecaptionanon}[4][t]{%
+                  % See comments under narrowfigwidecaption
+	\spaceabovewidefig
+	\begin{lrbox}{\includegraphicsbox}\begin{minipage}{\marginfigwidth}\includegraphics[width=\marginfigwidth]{#4/#2}\end{minipage}\end{lrbox}%
+        \refstepcounter{figctr}
+	\begin{lrbox}{\sidecaptionbox}\begin{minipage}{\textwidth}\formatlikecaption{#3}\end{minipage}\end{lrbox}%
+	\ifthenelse{\isodd{\pageref{fig:#2}}}{%
+          \setlength{\xmarginscoot}{\oddsidemarginscoot}
+        }%
+        {% even, left-hand page
+          \setlength{\xmarginscoot}{-\evensidemarginscoot}
+	  \settowidth{\kludge}{\formatlikecaption{#3}}
+          \ifthenelse{\lengthtest{\kludge < \textwidth}}{
+	    \begin{lrbox}{\sidecaptionbox}\begin{minipage}{\textwidth}\formatlikecaption{#3}\end{minipage}\end{lrbox}%
+          }{}
+          \addtolength{\xmarginscoot}{-4mm}% empirical
+        }
+        \ifthenelse{\equal{#1}{t}}{
+          \settoheight{\ymarginscoot}{\usebox{\sidecaptionbox}}
+          \settodepth{\kludge}{\usebox{\sidecaptionbox}}
+	  \addtolength{\ymarginscoot}{\kludge}
+          \settoheight{\kludge}{\usebox{\includegraphicsbox}}
+	  \addtolength{\ymarginscoot}{-\kludge}
+        }{}
+        \ifthenelse{\equal{#1}{b}}{
+          \settodepth{\ymarginscoot}{\usebox{\includegraphicsbox}}
+        }{}
+        \ifthenelse{\equal{#1}{c}}{
+          \settodepth{\ymarginscoot}{\usebox{\sidecaptionbox}}
+        }{}
+        \par
+	\noindent\usebox{\sidecaptionbox}
+        \raisebox{\ymarginscoot}[0mm][0mm]{\makebox[0mm][l]{\hspace{\xmarginscoot}\usebox{\includegraphicsbox}}}
+        \par
+	\label{fig:#2} %
+}
+\newcommand{\anonymousinlinefig}[1]{\includegraphics{\figprefix\chapdir/figs/#1}}
+\newlength{\toccolumnwidth}
+\setlength{\toccolumnwidth}{77mm}%kludge -- shouldn't hardcode this
+%
+% Adding decorative figures in table of contents:
+%%%%%%%%%%%\newcommand{\tocdir}{ch00}
+\newcommand{\figureintoc}[1]{\par\includegraphics[width=\toccolumnwidth]{\figprefix#1}\par}
+% ...To use this:   \addtocontents{toc}{\protect\figureintoc{myfig}}
+\newcommand{\figureintocnoresize}[1]{\par\includegraphics{\figprefix#1}\par}
+% ...only needed if you want the figure to hang over the edge
+\newcommand{\figureintocscootx}[2]{\par\hspace{#2}\includegraphics[width=\toccolumnwidth]{\figprefix#1}\par}
+% ...used if you want to put a figure in the middle of a chapter in the toc, as in VW, where the surfer is
+%    in the middle of ch. 3; this is because the toc package is enforcing indentation at this point
+\newcommand{\figureintocscooty}[2]{\par\vspace{#2}\includegraphics[width=\toccolumnwidth]{\figprefix#1}\par}
+% ...used at the end of VW's toc, to make the galaxy come out flush at the bottom
+%
+\newcommand{\spacebetweenfigs}{
+	\vspace{6mm}
+}
+\newcommand{\smspacebetweenfigs}{
+	\vspace{2mm}
+}
+\newcommand{\spaceabovewidefig}{\vspace{1mm}}

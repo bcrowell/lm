@@ -1,0 +1,59 @@
+% fig {"name":"top-rigid-body-kinematics","caption":"Different atoms in the top have
+% different velocity vectors, 1, but sweep out the same angle in a given time, 2."}
+
+
+\subsection{Angular velocity and acceleration}
+If a rigid body such as a top rotates about a fixed axis, then every particle in that body
+performs circular motion about a point on that axis.
+Every atom has a different velocity
+vector, figure \ref{fig:top-rigid-body-kinematics}. Since all the velocities are different, we
+can't measure the top's speed of rotation of the top by giving a
+single velocity.
+But every particle covers the same angle in the same
+amount of time, so we can specify the speed of
+rotation consistently in terms of angle per unit time. Let
+the position of some reference point on the top be denoted
+by its angle $\theta$, measured in a circle around the axis. We measure
+all our angles in radians.  We define the angular velocity as\index{angular velocity}
+\begin{equation*}
+        \omega        =          \frac{\der\theta}{\der t} .
+\end{equation*}
+The relationship between $\omega$ and $t$ is
+exactly analogous to that between $x$ and $t$ for the motion of
+a particle through space.
+The angular velocity has units of radians per second, $\sunit^{-1}$.
+We also define an
+angular acceleration,\index{angular acceleration}
+\begin{equation*}
+        \alpha        =          \frac{\der\omega}{\der t}.
+\end{equation*}
+with units $\sunit^{-2}$.
+
+The mathematical relationship between $\omega$ and $\theta$ is the same as
+the one between $v$ and $x$, and similarly for $\alpha$ and $a$. We can
+thus make a system of analogies, and recycle all
+the familiar kinematic equations for constant-acceleration
+motion.
+
+% fig {"name":"analogieskin","caption":"Analogies between rotational and linear quantities."}
+
+\subsection{Angular and linear quantities related}
+We often want to relate the angular
+quantities to the motion of a particular point on the rotating
+object.
+The velocity vector has tangential and radial components
+\begin{equation*}
+        v_t        =  \omega r
+\end{equation*}
+and
+\begin{equation*}
+        v_r        =  0.
+\end{equation*}
+For the acceleration vector,
+\begin{equation*}
+        a_t        =  \alpha r
+\end{equation*}
+and
+\begin{equation*}
+        a_r        =  \omega^2 r.
+\end{equation*}

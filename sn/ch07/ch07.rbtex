@@ -1,0 +1,340 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '07',
+    %q{Relativity},
+    'ch:rel',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/relativity_kinematics)
+\pagebreak
+__incl(text/relativity_no_action_at_a_distance)
+__incl(text/relativity_light_cone)
+
+<% end_sec %>
+ % Distortion of Space and Time -- begin_sec is inside relativity_kinematics.tex
+\pagebreak
+__incl(text/relativity_dynamics)
+
+<% begin_sec("General relativity",4,'genrel',{'optional'=>true}) %>
+
+__incl(text/relativity_general)
+
+<% end_sec %>
+ % General relativity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('six-tenths-c-twice') %>__incl(hw/six-tenths-c-twice)<% end_hw() %>
+
+\vspace{22mm}
+
+<%
+  fig(   
+    'hw-six-tenths-c-twice',
+    '',
+    {
+      'width'=>'fullpage'
+      #'sidecaption'=>true
+    }
+  )
+%>
+
+\pagebreak
+
+<% begin_hw('agreeontime') %>__incl(hw/agreeontime)<% end_hw() %>
+
+<% begin_hw('gammafornegativev') %>__incl(hw/gammafornegativev)<% end_hw() %>
+
+<% begin_hw('voyagergamma') %>__incl(hw/voyagergamma)<% end_hw() %>
+
+<% begin_hw('enterprise-ke') %>__incl(hw/enterprise-ke)<% end_hw() %>
+
+<% begin_hw('earth-lorentz-contraction') %>__incl(hw/earth-lorentz-contraction)<% end_hw() %>
+
+<% begin_hw('gamma-derivation') %>__incl(hw/gamma-derivation)<% end_hw() %>
+
+<% marg(50) %>
+<%
+  fig(
+    'hw-gamma-derivation',
+    %q{Problem \ref{hw:gamma-derivation}.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<% begin_hw('freeneutron') %>__incl(hw/freeneutron)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('vintermsofp') %>__incl(hw/vintermsofp)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('gammasimplefraction') %>__incl(hw/gammasimplefraction)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ultrarelativistic') %>
+\index{momentum!of light}\index{light!momentum of}
+An object moving at a speed very close to the speed of light is referred to as
+ultrarelativistic. Ordinarily (luckily) the only ultrarelativistic objects
+in our universe are subatomic particles, such as cosmic rays or particles
+that have been accelerated in a particle accelerator.\hwendpart
+(a) What kind of number is $\gamma$ for an ultrarelativistic particle?\hwendpart
+(b) Repeat example \ref{eg:massenergy-low-speed} on page \pageref{eg:massenergy-low-speed},
+but instead of very low, nonrelativistic speeds, consider ultrarelativistic speeds.\hwendpart
+(c) Find an equation for the ratio $\massenergy/p$. The speed may be relativistic, but don't
+assume that it's ultrarelativistic.\answercheck\hwendpart
+(d) Simplify your answer to part c for the case where the speed is ultrarelativistic.\answercheck\hwendpart
+(e) We can think of a beam of light as an ultrarelativistic object --- it certainly moves at a speed
+that's sufficiently close to the speed of light! Suppose you turn on a one-watt flashlight, leave it
+on for one second, and then turn it off. Compute the momentum of the recoiling flashlight, in units
+of $\kgunit\unitdot\munit/\sunit$.\answercheck\hwendpart
+(f) Discuss how part e relates to the correspondence principle.
+
+<% end_hw() %>
+
+<% begin_hw('relativity-max-tension') %>__incl(hw/relativity-max-tension)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('double-voltage') %>__incl(hw/double-voltage)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('velocity-addition-double-limit') %>
+Problem \ref{hw:velocity-addition-double-limit} has been deleted.
+<% end_hw() %>
+
+\vfill
+
+<% begin_hw('ke-taylor') %>__incl(hw/ke-taylor)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('p-rel-taylor') %>__incl(hw/p-rel-taylor)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('rel-vel-addition') %>__incl(hw/rel-vel-addition)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('congruent-four-vectors') %>__incl(hw/congruent-four-vectors)<% end_hw() %>
+
+<% marg(17) %>
+<%
+  fig(
+    'hw-congruent-four-vectors',
+    %q{Problem \ref{hw:congruent-four-vectors}.}
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+<% begin_hw('momentum-cone') %>__incl(hw/momentum-cone)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('no-pe-in-vacuum') %>__incl(hw/no-pe-in-vacuum)<% end_hw() %>
+
+<% begin_hw('doppler-taylor') %>__incl(hw/doppler-taylor)<% end_hw() %>
+
+<% begin_hw('angular-defect') %>__incl(hw/angular-defect)<% end_hw() %>
+
+<% begin_hw('cone-intrinsic-curvature') %>__incl(hw/cone-intrinsic-curvature)<% end_hw() %>
+
+<% begin_hw('grav-doppler-units') %>__incl(hw/grav-doppler-units)<% end_hw() %>
+
+\vspace{-\baselineskip}
+
+<% begin_hw('pound-rebka') %>__incl(hw/pound-rebka)<% end_hw() %>
+
+<% marg(43) %>
+<%
+  fig(
+    'van-baak',
+    %q{Problem \ref{hw:pound-rebka}b. Redrawn from Van Baak, Physics Today 60 (2007) 16.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<% begin_hw('iss-time-dilation') %>__incl(hw/iss-time-dilation)<% end_hw() %>
+
+<% begin_hw('earth-black-hole') %>__incl(hw/earth-black-hole)<% end_hw() %>
+
+<% begin_hw('tossed-clock') %>__incl(hw/tossed-clock)<% end_hw() %>
+
+<% begin_hw('sphere-angular-defect') %>__incl(hw/sphere-angular-defect)<% end_hw() %>
+
+<% begin_hw('side-by-side-lasers') %>__incl(hw/side-by-side-lasers)<% end_hw() %>
+
+<% begin_hw('gamma-decay-energy-comparisons') %>__incl(hw/gamma-decay-energy-comparisons)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('gamma-approx-si') %>__incl(hw/gamma-approx-si)<% end_hw() %>
+
+<% begin_hw('ball-through-hole') %>__incl(hw/ball-through-hole)<% end_hw() %>
+
+<% begin_hw('energy-to-traverse-galaxy') %>__incl(hw/energy-to-traverse-galaxy)<% end_hw() %>
+
+<% end_hw_sec %>
+
+\begin{exsection}
+\extitle{A}{The Michelson-Morley Experiment}
+
+<%
+  fig(
+    'ex-michelson-morley',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+   In this exercise you will analyze the Michelson-Morley
+experiment, and find what the results should have been
+according to Galilean relativity and Einstein's theory of
+relativity. A beam of light coming from the west (not shown)
+comes to the half-silvered mirror A. Half the light goes
+through to the east, is reflected by mirror C, and comes
+back to A. The other half is reflected north by A, is
+reflected by B, and also comes back to A. When the beams
+reunite at A, part of each ends up going south, and these
+parts interfere with one another. If the time taken for a
+round trip differs by, for example, half the period of the
+wave, there will be destructive interference.
+
+   The point of the experiment was to search for a
+difference in the experimental results between the daytime,
+when the laboratory was moving west relative to the sun, and
+the nighttime, when the laboratory was moving east relative
+to the sun. Galilean relativity and Einstein's theory of
+relativity make different predictions about the results.
+According to Galilean relativity, the speed of light cannot
+be the same in all reference frames, so it is assumed that
+there is one special reference frame, perhaps the sun's, in
+which light travels at the same speed in all directions; in
+other frames, Galilean relativity predicts that the speed of
+light will be different in different directions, e.g., slower
+if the observer is chasing a beam of light. There are four
+different ways to analyze the experiment:
+
+\begin{itemize}
+\item \emph{Laboratory's frame of reference, Galilean
+relativity}. This is not a useful way to analyze the
+experiment, since one does not know how fast light will
+travel in various directions.
+
+\item \emph{Sun's frame of reference, Galilean relativity}. We
+assume that in this special frame of reference, the speed of
+light is the same in all directions: we call this speed $c$.
+In this frame, the laboratory moves with velocity $v$, and
+mirrors A, B, and C move while the light beam is in flight.
+
+\item \emph{Laboratory's frame of reference, Einstein's theory
+of relativity}. The analysis is extremely simple. Let the
+length of each arm be $L$. Then the time required to get
+from A to either mirror is $L/c$, so each beam's round-trip time is $2L/c$.
+
+\item \emph{Sun's frame of reference, Einstein's theory of
+relativity}. We analyze this case by starting with the
+laboratory's frame of reference and then transforming to the sun's frame.
+\end{itemize}
+
+Groups 1-4 work in the sun's frame of reference according to
+Galilean relativity.
+
+Group 1 finds time AC. Group 2 finds time CA. Group 3 finds
+time AB. Group 4 finds time BA.  
+
+Groups 5 and 6 transform the lab-frame results into the
+sun's frame according to Einstein's theory.
+
+Group 5 transforms the $x$ and $t$ when ray ACA gets back to
+A into the sun's frame of reference, and group 6 does
+the same for ray ABA.
+
+Discussion:
+
+Michelson and Morley found no change in the interference of
+the waves between day and night. Which version of relativity
+is consistent with their results?
+
+What does each theory predict if $v$ approaches $c$?
+
+What if the arms are not exactly equal in length?
+
+Does it matter if the ``special'' frame is some frame
+other than the sun's?
+
+\vfill\pagebreak[4]
+
+\extitle{B}{Sports in Slowlightland}
+
+In Slowlightland, the speed of light is 20 mi/hr  $\approx$ 32 km/hr $\approx$ 
+9 m/s. Think of an example of how relativistic effects would
+work in sports. Things can get very complex very quickly, so
+try to think of a simple example that focuses on just one of
+the following effects:
+
+- relativistic momentum
+
+- relativistic kinetic energy
+
+- relativistic addition of velocities
+
+- time dilation and length contraction
+
+- Doppler shifts of light
+
+- equivalence of mass and energy
+
+- time it takes for light to get to an athlete's eye
+
+- deflection of light rays by gravity
+
+\vfill\pagebreak[4]
+
+\extitle{C}{Events and Spacetime}
+
+\includegraphics[width=168mm]{../share/relativity/figs/spacetime-ex-0.png}
+
+\includegraphics[width=168mm]{../share/relativity/figs/spacetime-ex-1.png}
+
+\includegraphics[width=168mm]{../share/relativity/figs/spacetime-ex-2.png}
+
+\vfill\pagebreak[4]
+
+\extitle{D}{Misconceptions about Relativity}
+
+__incl(text/relativity_misconceptions)
+
+\vfill\pagebreak[4]
+
+\extitle{E}{The sum of observer-vectors is an observer-vector.}
+
+__incl(text/laurent)
+
+\end{exsection}
+
+<% end_chapter() %>

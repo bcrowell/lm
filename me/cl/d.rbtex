@@ -1,0 +1,295 @@
+<%
+  require "../eruby_util.rb"
+%>
+<% if true then figure_in_toc('pool',{'noresize'=>true}) end %>
+<%
+  chapter(
+    '14',
+    'Conservation of Momentum',
+    'ch:momentum',
+    'Pool balls exchange momentum.',
+    {'opener'=>'pool','special_width'=>'117mm'}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/cld)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<% begin_sec("Relativistic momentum",nil,'rel-momentum',{'optional'=>true}) %>
+How does momentum behave in relativity?
+
+Newtonian mechanics has two different measures of motion, kinetic energy and momentum,
+and the relationship between them is nonlinear. Doubling your car's momentum quadruples
+its kinetic energy.
+
+But nonrelativistic mechanics can't handle massless particles, which are always ultrarelativistic.
+We saw in section \ref{sec:ultrarelativistic} that ultrarelativistic particles are ``generic,''
+in the sense that they have no individual mechanical properties other than an energy and a direction
+of motion. Therefore the relationship between kinetic energy and momentum must be \emph{linear}
+for ultrarelativistic particles. Indeed, experiments verify that light has momentum, and
+doubling the energy of a ray of light doubles its momentum rather than quadrupling it.
+
+How can we make sense of these energy-momentum relationships, which seem to take on two completely
+different forms in the limiting cases of very low and very high velocities?
+
+The first step is realize that since mass and energy are equivalent (section \ref{sec:mass-energy-equivalence}),
+we will get more of an apples-to-apples comparison if we stop talking about a material object's
+\emph{kinetic} energy and consider instead its \emph{total} energy $E$, which includes a contribution from its mass.
+
+On a graph of $p$ versus $E$, massless particles, which have $E\propto|p|$, lie on two diagonal lines that connect at the
+origin. If we like, we can pick units such that the slopes of these lines are plus and minus one. Material particles
+lie to the right of these lines. For example, a car sitting in a parking lot has $p=0$ and $E=mc^2$. 
+
+Now what happens to such a graph when we change to a different frame or reference that is in motion relative to the
+original frame? A massless particle still has to act like a massless particle, so the diagonals are simply stretched
+or contracted along their own lengths. A transformation that always takes a line to a line is a linear transformation
+(p.~\pageref{fig:nonlinear-transformation}), and if the transformation between different frames of reference preserves
+the linearity of the lines $p=E$ and $p=-E$, then it's natural to suspect that it is actually some kind of linear transformation.
+In fact the transformation must be linear (p.~\pageref{fig:nonlinear-transformation}), because conservation of
+energy and momentum involve addition, and we need these laws to be valid in all frames of reference.
+By the same reasoning as in figure \figref{area-proof} on p.~\pageref{fig:area-proof}, the transformation must be area-preserving.
+We then have the same three cases to consider as in figure \figref{three-cases} on p.~\pageref{fig:three-cases}.
+Case I is ruled out because it would imply that particles keep the same energy when we change frames.
+(This is what would happen if $c$ were infinite, so that the mass-equivalent $E/c^2$ of a given energy was zero,
+and therefore $E$ would be interpreted purely as the mass.) Case II can't be right because it doesn't preserve
+the $E=|p|$ diagonals. We are left with case III, which establishes the following aesthetically appealing
+fact: \emph{the $p$-$E$ plane transforms according to exactly the same kind of Lorentz transformation as the $x$-$t$ plane}.
+That is, $(E,p_x,p_y,p_z)$ is a four-vector (p.~\pageref{sec:four-vectors}) just like $(t,x,y,z)$. This is a highly
+desirable result. If it were not true, it would be like having to learn different mathematical rules for different
+kinds of three-vectors in Newtonian mechanics.
+<% marg(30) %>
+<%
+  fig(
+    'e-p-plane',
+    %q{In the $p$-$E$ plane, massless particles lie on the two diagonals, while particles with mass lie to the right.}
+  )
+%>
+<% end_marg %>
+
+
+The only remaining issue to settle is whether the choice of units that gives invariant 45-degree diagonals in the
+$x$-$t$ plane is the same as the choice of units that gives such diagonals in the $p$-$E$ plane.
+That is, we need to establish that the $c$ that applies to $x$ and $t$ is equal to the $c'$ needed for $p$ and $E$,
+i.e., that the velocity scales of the two graphs are matched up.
+This is true because in the Newtonian limit, the total mass-energy $E$ is essentially just the particle's mass,
+and then $p/E \approx p/m \approx v$. This establishes that the velocity scales are matched at small velocities,
+which implies that they coincide for all velocities, since a large velocity, even one approaching $c$,
+can be built up from many small increments. (This also establishes that the exponent $n$ defined on p.~\pageref{pesky-exponent-claim}
+equals 1 as claimed.)\label{pesky-exponent-proof}
+
+Suppose that a particle is at rest. Then it has $p=0$ and mass-energy $E$  equal to its mass $m$. Therefore
+the inner product of its $(E,p)$ four-vector with itself equals $m^2$. In other words, the ``magnitude'' of
+the energy-momentum four-vector is simply equal to the particle's mass. If we transform into a different
+frame of reference, the inner product stays the same. We can therefore always interpret the magnitude of
+an energy-momentum four-vector as the mass. In symbols,
+\begin{equation*}
+  m^2 = E^2 - p^2\eqquad,
+\end{equation*}
+or, in units with $c \ne 1$,
+\begin{equation*}
+  (mc^2)^2 = E^2 - (pc)^2\eqquad.
+\end{equation*}
+
+<% self_check('massless-m-e-p',<<-'SELF_CHECK'
+Interpret this relationship in the case where $m=0$.
+  SELF_CHECK
+  ) %>
+
+Since we already have an equation $E=m\gamma$ for the energy of a material particle in terms of
+its velocity, we can find a similar equation for the momentum:
+\begin{align*}
+  p &= \sqrt{E^2-m^2} \\
+    &= m\sqrt{\gamma^2-1} \\
+    &= m\sqrt{\frac{1}{1-v^2}-1} \\
+    &= m\gamma v\eqquad.
+\end{align*}
+As a material particle gets closer and closer to $c$, its momentum approaches infinity,
+so that an infinite force would be required in order to reach $c$.
+Figure \figref{relativistic-momentum-tests} shows experimental data confirming the relativistic
+equation for momentum.
+
+<% marg(300) %>
+<%
+  fig(
+    'relativistic-momentum-tests',
+    %q{Two early high-precision tests of the relativistic equation $p=m\mygamma v$ for momentum.
+       Graphing $p/m$ rather than $p$ allows the data for electrons and protons to be placed on the same graph.
+       Natural units are used, so that the horizontal axis is the velocity in units of $c$, and
+       the vertical axis is the unitless quantity $p/mc$. The very small error bars for the data point from
+       Zrelov are represented by the height of the black rectangle.
+       }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Light rays don't interact}\label{eg:light-rays-do-not-interact}
+We observe that when two rays of light cross paths, they continue through one another
+without bouncing like material objects. This behavior follows directly from conservation
+of energy-momentum.
+
+Any two vectors can be contained in a single plane, so we can choose our coordinates
+so that both rays have vanishing $p_z$. By choosing the state of motion of our coordinate
+system appropriately, we can also make $p_y=0$, so that the collision takes place along a single line parallel to the $x$ axis.
+Since only $p_x$ is nonzero, we
+write it simply as $p$. In the resulting $p$-$E$ plane, there are two possibilities:
+either the rays both lie along the same diagonal, or they lie along different diagonals.
+If they lie along the same diagonal, then there can't be a collision, because the
+two rays are both moving in the same direction at the same speed $c$, and the trailing
+one will never catch up with the leading one.
+
+Now suppose they lie along different diagonals. We add their energy-momentum vectors
+to get their total energy-momentum, which will lie in the gray area of figure \figref{e-p-plane}.
+That is, a pair of light rays taken as a single system act sort of like a material object
+with a nonzero mass.\footnote{If you construct a box out of mirrors and put some light inside, it
+has weight, and theoretically even has a gravitational field! This is an example of the fact
+that mass is not additive in relativity. Two objects, each with zero mass, can have an
+aggregate mass that is nonzero.} By a Lorentz transformation,
+we can always find a frame in which this total energy-momentum vector lies along the $E$
+axis. This is a frame in which the momenta of the two rays cancel, and we have
+a symmetric head-on collision between two rays of equal energy. It is the ``center-of-mass''
+frame, although neither object has any mass on an individual basis.  For convenience, let's
+assume that the $x$-$y$-$z$ coordinate system was chosen so that its origin was at rest in this
+frame. 
+
+Since the collision occurs along the $x$ axis, by symmetry
+it is not possible for the rays after the collision to depart from the $x$ axis; for if they
+did, then there would be nothing to determine the orientation of the plane in which they
+emerged.\footnote{In quantum mechanics, there is a loophole here.
+Quantum mechanics allows certain kinds of randomness, so that the symmetry can be broken by
+letting the outgoing rays be observed in a plane with some random orientation.} Therefore
+we are justified in continuing to use the same $p_x$-$E$ plane to analyze the four-vectors
+of the rays after the collision.
+
+Let each ray have
+energy $E$ in the frame described above.
+Given this total energy-momentum vector, how can we cook up two energy-momentum vectors
+for the final state such that energy and momentum will have been conserved? Since
+there is zero total momentum, our only choice is two light rays, one with energy-momentum
+vector $(E,E)$ and one with $(E,-E)$. But this is exactly the same as our initial state,
+except that we can arbitrarily choose the roles of the two rays to have been interchanged.
+Such an interchanging is only a matter of labeling, so there is no observable sense in which
+the rays have collided.\footnote{There is a second loophole here, which is that a ray of light
+is actually a wave, and a wave has other properties besides energy and momentum. It has
+a wavelength, and some waves also have a property called polarization. As a mechanical analogy for polarization,
+consider a rope stretched taut. Side-to-side vibrations can propagate along the rope, and
+these vibrations can occur in any plane that coincides with the rope. The orientation of this
+plane is referred to as the polarization of the wave. Returning to the case of the colliding
+light rays, it is possible to have nontrivial collisions in the sense that the rays could
+affect one another's wavelengths and polarizations. Although this doesn't actually happen
+with non-quantum-mechanical light waves, it can happen with other types of waves; see, e.g.,
+Hu et al., \url{arxiv.org/abs/hep-ph/9502276}, figure 2. The title of example \ref{eg:light-rays-do-not-interact}
+is only valid if a ``ray'' is taken to be something that lacks wave structure. The wave nature of
+light is not evident in everyday life from observations with apparatus such as
+flashlights, mirrors, and eyeglasses, so we expect the
+result to hold under those circumstances, and it does. E.g., flashlight beams do pass through one
+anther without interacting.}
+%--------- see http://physicsforums.com/showthread.php?p=3998393&posted=1#post3998393
+\end{eg}
+
+<% end_sec() %> % Relativistic energy and momentum
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/momentum_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('keintermsofp') %>__incl(hw/keintermsofp)<% end_hw() %>
+
+<% begin_hw('rowboat') %>__incl(hw/rowboat)<% end_hw() %>
+
+<% begin_hw('firework') %>__incl(hw/firework)<% end_hw() %>
+
+<% begin_hw('gun') %>__incl(hw/gun)<% end_hw() %>
+
+
+<%
+  fig(
+    'hw-rocket',
+    %q{Problem \ref{hw:rocket}},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('rocket') %>__incl(hw/rocket)<% end_hw() %>
+
+
+<% begin_hw('cosmicray') %>__incl(hw/cosmicray)<% end_hw() %>
+
+<% begin_hw('cmaverage') %>__incl(hw/cmaverage)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-hockey-pucks',
+    %q{Problem \ref{hw:hockey-pucks}}
+  )
+%>
+<% end_marg %>
+<% begin_hw('hockey-pucks') %>__incl(hw/hockey-pucks)<% end_hw() %>
+
+<% begin_hw('planes') %>
+\answercheck A learjet traveling due east at 300 mi/hr collides with
+a jumbo jet which was heading southwest at 150 mi/hr. The
+jumbo jet's mass is 5.0 times greater than that of the
+learjet. When they collide, the learjet sticks into the
+fuselage of the jumbo jet, and they fall to earth together.
+Their engines stop functioning immediately after the
+collision. On a map, what will be the direction from the
+location of the collision to the place where the wreckage
+hits the ground? (Give an angle.)
+<% end_hw() %>
+
+
+<% begin_hw('recoil-double-speed') %>__incl(hw/recoil-double-speed)<% end_hw() %>
+
+<% begin_hw('max-heat-released-in-collision') %>__incl(hw/max-heat-released-in-collision)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('fridge-recoil') %>__incl(hw/fridge-recoil)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('bowling-collision') %>__incl(hw/bowling-collision)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('three-to-one-collision') %>__incl(hw/three-to-one-collision)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('energy-frames',2) %>__incl(hw/energy-frames)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('funkosity') %>__incl(hw/funkosity)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('exhaust',2,{'calc'=>true}) %>__incl(hw/exhaust)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('rope-over-edge',2,{'calc'=>true}) %>__incl(hw/rope-over-edge)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('vintermsofp',2) %>__incl(../../share/relativity/hw/vintermsofp)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('force-to-momentum-2',nil,{'calc'=>true,'credit'=>'B.~Shotwell'}) %>__incl(hw/force-to-momentum-2)<% end_hw() %>
+
+<% begin_hw('ballistic-pendulum',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/ballistic-pendulum)<% end_hw() %>
+
+<% begin_hw('car-truck-crash',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/car-truck-crash)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% end_chapter() %>

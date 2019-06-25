@@ -1,0 +1,42 @@
+(a) Since the wagon has no acceleration, the total
+forces in both the $x$ and $y$ directions must be zero. There
+are three forces acting on the wagon: $T$, $\zb{F}_g$, and the normal
+force from the ground, $\zb{F}_n$. If we pick a coordinate system
+with $x$ being horizontal and $y$ vertical, then the angles of
+these forces measured counterclockwise from the $x$ axis are
+$90\degunit-\phi$, $270\degunit$, and $90\degunit+\theta$, respectively.
+We have
+\begin{align*}
+	F_{x,total} &= T\cos(90\degunit-\phi) + F_{g}\cos(270\degunit) +
+				F_ncos(90\degunit+\theta) \\
+	F_{y,total} &= T\sin(90\degunit-\phi) + F_{g}\sin(270\degunit) +
+				F_nsin(90\degunit+\theta)\eqquad,
+\end{align*}
+which simplifies to
+\begin{align*}
+	0 &= T \sin \phi - F_n \sin \theta\\
+	0 &= T \cos \phi  - F_{g} + F_n \cos \theta  .
+\end{align*}
+The normal force is a quantity that we are not given and do
+not wish to find, so we should choose it to eliminate.
+Solving the first equation for $F_n=(\sin \phi/\sin \theta)T$, we
+eliminate $F_n$ from the second equation,
+\begin{equation*}
+	0 = T \cos \phi  - F_{g} + T \sin \phi \cos \theta/\sin \theta
+\end{equation*}
+and solve for $T$, finding
+\begin{equation*}
+	T = \frac{F_g}{\cos\phi+\sin\phi\cos\theta/\sin\theta}
+\end{equation*}
+Multiplying both the top and the bottom of the fraction by
+$\sin \theta$, and using the trig identity for $\sin(\theta+\phi)$ gives the
+desired result,
+\begin{equation*}
+	T = \frac{\sin\theta}{\sin(\theta+\phi)}F_gs
+\end{equation*}
+(b) The case of $\phi=0$, i.e. pulling straight up on the wagon,
+results in $T=F_{g}$: we simply support the wagon and it glides
+up the slope like a chair-lift on a ski slope. In the case
+of $\phi=180\degunit-\theta$, $T$ becomes infinite. Physically this is
+because we are pulling directly into the ground, so no
+amount of force will suffice.

@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+local $/;
+
+my $t = <>;
+
+$t =~ s/set\s+(time|label|xlabel|ylabel|title).*//g;
+$t =~ s/plot/unset tics\nplot/;
+$t =~ s/set arrow from.*\n+set nokey/set nokey/;
+$t =~ s/set arrow from.*\n+set nokey/set nokey/;
+$t =~ s/(plot.*)with point.*/$1/;
+
+print $t;

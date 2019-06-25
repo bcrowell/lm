@@ -1,0 +1,151 @@
+---
+command:
+  myunit: {}
+  munit: {}
+  kgunit: {}
+  gunit: {}
+  sunit: {}
+  degcunit: {}
+  junit: {}
+  nunit: {}
+  kunit: {}
+  unitdot: {}
+  momunit: {}
+  btheta: {}
+  bomega: {}
+  balpha: {}
+  bsigma: {}
+  btau: {}
+  bell: {}
+  zu: {}
+  zb: {}
+environment:
+  dialogline: {}
+  dq:
+    stick_in: ! '&loz;'
+  eg:
+    use_arg_as_title: true
+    stick_in_front_of_header: ! 'Example NNNEG: '
+    optionaltopic: ! 'Optional topic: '
+    n_req: 1
+    n_opt: 0
+  egnoheader: {}
+  enumerate:
+    surround_with_tag: ol
+    n_req: 0
+    n_opt: 0
+  exploring:
+    generate_header:
+    - 2
+    - Exploring further
+  exsection:
+    stick_in: <h2>Exercises</h2>
+  homework:
+    n_req: 3
+    n_opt: 0
+  hw:
+    n_req: 3
+    n_opt: 0
+  homeworkforcelabel:
+    n_req: 4
+    n_opt: 0
+  hwsection:
+    generate_header:
+    - 2
+    - Homework Problems
+  important:
+    use_arg_as_title: true
+  itemize:
+    surround_with_tag: ul
+    n_req: 0
+    n_opt: 0
+  lessimportant:
+    use_arg_as_title: true
+  listing:
+    surround_with_tag: pre
+    n_req: 1
+    n_opt: 0
+  notation:
+    generate_header:
+    - 2
+    - Notation
+  optionaltopic:
+    use_arg_as_title: 2
+  othernotation:
+    generate_header:
+    - 2
+    - Other Notation
+  reading: {}
+  selfcheck:
+    stick_in: <i>self-check:</i>
+    stick_at_end: (answer in the back of the PDF version of the book)
+  summary:
+    generate_header:
+    - 2
+    - Summary
+  summarytext:
+    generate_header:
+    - 2
+    - Summary
+  verbatim:
+    surround_with_tag: pre
+    n_req: 0
+    n_opt: 0
+  vocab:
+    generate_header:
+    - 2
+    - Vocabulary
+boilerplate:
+  # The special-casing is to get adsense to work with xhtml, since document.write() doesn't work in xhtml. This is shown inside an <object> tag in the xhtml.
+  # In the xml case, I don't need to give an IE-compatible alternative to the object tag, since the xhtml version will never be shown to IE anyway.
+  google_ad_xhtml: |-
+        <!-- ============== ad =============== -->
+        <div id="ads">
+        <object data="http://www.lightandmatter.com/adsense_for_xhtml.html" type="text/html"  width="728" height="90">
+        </object>
+        </div>
+  # If I change the following, I also need to change it in http://www.lightandmatter.com/adsense_for_xhtml.html.
+  google_ad_html: |-
+          <!-- ============== ad =============== -->
+          <script type="text/javascript"><!--
+          google_ad_client = "pub-2202341256191765";
+          google_ad_width = 728;
+          google_ad_height = 90;
+          google_ad_format = "728x90_as";
+          google_ad_type = "text";
+          google_ad_channel ="";
+          google_color_border = "dddddd";
+          google_color_bg = "FFFFFF";
+          google_color_link = "444444";
+          google_color_text = "000000";
+          google_color_url = "000000";
+          //--></script>
+
+          <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+  disclaimer_wiki: |-
+    <p>This is the wiki version of #{$config["title"]}, by Benjamin Crowell.
+    This version may have some formatting problems.
+    For serious reading, you want the printer-friendly <a href="#{$config["url"]}">Adobe
+    Acrobat version</a>.</p>
+    <p>(c) 1998-2009 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative
+    Commons Attribution-ShareAlike license</a>.
+    Photo credits are given at the end of the Adobe Acrobat version.</p>
+    </div>
+  disclaimer_html: |-
+    <div class="topstuff">
+    #{boilerplate("valid_icon",format)}
+    <p>You are viewing the html version of <b>#{$config["title"]}</b>, by
+    Benjamin Crowell. This version is only designed for casual browsing, and may have
+    some formatting problems.
+    For serious reading, you want the <a href="#{$config["url"]}">Adobe Acrobat
+    version</a>.</p>
+    <p><a href="..">Table of Contents</a></p>
+    </div>
+  copyright_footer_html: |-
+    <div class="topstuff">
+    <p>(c) 1998-2013 Benjamin Crowell, licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative
+    Commons Attribution-ShareAlike license</a>.
+    Photo credits are given at the end of the Adobe Acrobat version.</p>
+    </div>

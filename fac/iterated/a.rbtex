@@ -1,0 +1,933 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Iterated integrals") %>
+
+<%
+  chapter(
+    '09',
+    %q{Iterated integrals (optional)},
+    'ch:iterated',
+    {'opener'=>'','optional'=>true}
+  )
+%>
+
+In sec.~\ref{sec:gauss-global}, p.~\pageref{sec:gauss-global}, we introduced the concept of
+flux, which we defined using a surface integral. We have avoided up until now
+any development of the toolbox of techniques that are needed in order to evaluate nontrivial
+surface integrals, restricting ourselves to cases like example \ref{eg:flux-above-new-york},
+p.~\pageref{eg:flux-above-new-york}, in which the integral could be broken down into a few
+pieces, and the integrand was a constant for each piece. In this optional chapter, we describe
+the main technique for explicitly evaluating a surface integral, which is to rewrite it as
+two plain old integrals, one nested inside the other like Russian dolls. These are called
+iterated integrals, and they have other applications besides the calculation of fluxes.
+We will also look at some of these other applications as they apply to electricity and magnetism.
+Knowledge of this material is not assumed later in the book.
+
+<% begin_sec("A warm-up: iterated sums",nil,'iterated-sums') %>
+
+A kindergarten teacher in Chicago is letting her kids out onto the
+snowy playground for recess. One little boy is wearing a nice red wool cardigan,
+but he doesn't know how to button it up. Mrs.~Kidlove uses the following algorithm
+to button it up for him:
+
+\begin{listing}{1}
+For each button,
+  push the button through the hole.
+\end{listing}
+
+This method of describing an algorithm is called pseudocode, because
+unlike actual programming code, it's written in a format meant to be
+read by humans. Line 1 introduces a repetitive action, known in
+programming as a ``loop,'' because after performing the action in line 2,
+we come back and do it again. Line 2 is the body of the loop --- the
+thing that we're going to do over and over --- and it's indented to
+show this. The effect is like modern poetry, but not as pretentious. 
+
+\pagebreak
+
+But wait, now Mrs.~Kidlove realizes it's not just this one kid. Red
+wool cardigans are in style this year, and every little kid needs to
+be buttoned up before going out. Now her algorithm looks like this:
+
+\begin{listing}{1}
+For each kid,
+  for each button,
+    push the button through the hole.
+\end{listing}
+
+To see how all this relates to surface integrals, let's consider the steps that would
+have been required in order to knit one of those sweaters by hand. For those unfamiliar
+with knitting, figure \figref{knitting} shows the idea:
+
+<% marg(50) %>
+<%   
+  fig(
+    'knitting',
+    %q{A knitted fabric.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'gauss-law-lab',
+    %q{Measuring the flux through the box in minilab \ref{lab:gauss-law}, p.~\pageref{lab:gauss-law}.},
+    {'suffix'=>'3','width'=>'narrow','float'=>true}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'a-corner-in-wheat',
+    %q{A puzzle involving a discrete sum over a surface.}
+  )
+%>
+<% end_marg %>
+
+\begin{listing}{1}
+For each row,
+  for each stitch,
+    do certain things with the knitting needles.
+\end{listing}
+
+\noindent We're now going systematically through all the locations in
+a surface, as in minilab \ref{lab:gauss-law}
+(fig.~\figref{gauss-law-lab3}), where we measured the flux through the
+top of the box:
+
+\begin{listing}{1}
+For each row,
+  for each column,
+    add the flux through the square to the total flux.
+\end{listing}
+
+This is still a discrete sum rather than an integral, but it clearly
+can be used to approximate an integral. As an example involving a
+discrete sum that we can write in mathematical notation, consider
+the following puzzle (figure \figref{a-corner-in-wheat}) posed by Sam Loyd, who was known around 1900 as
+the ``prince of puzzlers.''
+
+\begin{quote}
+According to encyclopediacal lore, the royal game, or what is now known as
+chess, was invented by \ldots Sessa, and the king of [the Gupta Empire],
+Shevan the Great, asked Sessa what reward he demanded for his wonderful
+game. Sessa astonished the king by the apparent moderation of his demand, viz.,
+one grain of wheat for the first square of the chess-board, two for the second,
+four for the third, eight for the fourth, and so on, always doubling for each
+square up to the sixty-fourth square of the chess board.
+\end{quote}
+
+This sum can be written as
+\begin{equation*}
+  \sum_{i=0}^7 \sum_{j=0}^7 2^{8i+j}.
+\end{equation*}
+Actually the two-dimensional nature of this sum is not really crucial to
+the statement or solution of the puzzle, but it's picturesque and illustrates
+the ideas and notation. The idea here is that we number the rows from 0 to 7,
+and also the columns. Going across row $i=0$, the terms in the sum go
+$2^0+\ldots+2^7$ as the column runs from $j=0$ to $j=7$. Then in row $i=1$ we have
+$2^8+\ldots+2^{15}$, and so on for $i$ running up to $7$. Loyd doesn't explicitly
+state what the reader is supposed to do in order to solve the puzzle, and figuring
+out the right trick isn't relevant to your study of electricity and magnetism, but
+if you enjoy this sort of thing:
+
+<% self_check('a-corner-in-wheat',<<-'SELF_CHECK'
+Simplify the sum and then approximate it in your head using scientific notation. (You will find
+it useful that $10^{10}=1024\approx 10^3$, ``one k.'')
+  SELF_CHECK
+  ) %>
+
+Although this puzzle can be fun to solve, the point here is really to introduce some
+concepts and notation, using discrete sums as a warm-up for integrals. The sums $\sum$ are
+like integrals $\int$, and the symbols $i$ and $j$ are like variables of integration
+such as $\der x$ and $\der y$. In both cases, the variables are ``bound.'' That is,
+in an expression like $\sum_{i}\ldots$, the symbol $i$ only has meaning \emph{inside} the
+sum, and similarly in an integral $\int\ldots \der x$, $x$ doesn't mean anything outside
+the integral.
+
+<% marg(50) %>
+<%   
+  fig(
+    'russian-dolls',
+    %q{Iterated sums involve nesting one sum inside another like Russian dolls, and similarly
+       for iterated integrals.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('iterated-sums') %>
+
+<% begin_sec("Iterated integrals",nil,'iterated-integrals') %>
+The continuous version of the sum in the Loyd puzzle would be
+\begin{equation*}
+  \int_{y=0}^8 \left( \int_{x=0}^8 2^{8x+y } \der x\right) \der y.
+\end{equation*}
+We have an ``integral sandwich.''
+Usually no ambiguity results if we simplify the notation a little:
+\begin{equation*}
+  \int_0^7 \int_0^7 2^{8x+y } \der x \der y.
+\end{equation*}
+This turns out to be of about the same order of magnitude as the discrete sum.
+% Is actually about 1/8 as big:
+% maxima -q --batch-string="1/float(integrate(integrate(2^(8*x+y),x,0,7),y,0,7)/(2^64-1));"
+
+<% marg(50) %>
+<%   
+  fig(
+    'e-to-x-plus-y',
+    %q{The function $e^{x+y}$.}
+  )
+%>
+<% end_marg %>
+
+To make this a little easier to visualize and work with, let's change it to the following:
+\begin{equation*}
+  \int_0^1 \left( \int_0^1 e^{x+y } \der x \right) \der y.
+\end{equation*}
+Just as an ordinary
+integral is the area under a curve, this iterated integral can be interpreted as
+the volume under the surface in figure \figref{e-to-x-plus-y}. We can handle this computation
+just by applying some algebra and the familiar methods of integration. First let's
+break up the exponential into two factors:
+\begin{equation*}
+  \int_0^1 \left( \int_0^1 e^x e^y \der x \right) \der y.
+\end{equation*}
+The advantage of doing this is that as far as the inside integral is concerned,
+$x$ is the variable of integration, and $y$ is just a constant. Then we can
+do as we are always allowed in integration and take the constant factor outside:
+\begin{equation*}
+  \int_0^1 \left( e^y \int_0^1 e^x \der x \right) \der y.
+\end{equation*}
+Now the innermost integral is just an ordinary one-dimensional integral,
+which we can evaluate as $\left.e^x\right|_0^1=e-1$. We then have
+\begin{align*}
+  &\int_0^1 \left( e^y (e-1) \right) \der y \\
+       &\qquad = (e-1) \int_0^1 e^y \der y \\
+       &\qquad = (e-1)^2 \\
+       &\qquad \approx 2.95.
+\end{align*}
+As a check to see that this is reasonable, the solid in the figure has a base that is
+$1\times1$ in area, so its volume should be equal to $1\times1$ multiplied by the average
+value of the function within this square. The function varies from $e^{0+0}=1$ at the lower
+corner to $e^{1+1}\approx 7.4$ at the top of the ski jump, so it's pretty plausible that
+its average value is 2.95.
+
+<% end_sec('iterated-integrals') %>
+
+
+<% begin_sec("Varying limits of integration",nil,'varying-limits') %>
+One way to express the number of squares on a chess board is
+\begin{equation*}
+  \sum_{i=0}^7\sum_{j=0}^7 1 = 64,
+\end{equation*}
+represented visually by figure \subfigref{summing-dots}{1}.
+This is the world's silliest way to notate the type of standard grade-school
+arithmetic problem in which Sally has 8 skirts and 8 tops, and we want to
+know how many outfits she can put together.
+
+<% marg() %>
+<%   
+  fig(
+    'summing-dots',
+    %q{Summing dots.}
+  )
+%>
+<% end_marg %>
+
+Suppose, on the other hand, that Sally has 8 dogs, and she wants to pick two
+to take on a walk. Then the sum becomes
+\begin{equation*}
+  \sum_{i=0}^7\sum_{j=0}^{i-1} 1 = 28,
+\end{equation*}
+figure \subfigref{summing-dots}{2}. The restriction on the inner sum prevents
+double counting, since, e.g., taking Daisy and Lucy on a walk is the same
+as taking Lucy and Daisy. We've come across sums of this form previously,
+in example \ref{eg:chlorine-pentafluoride}, p.~\pageref{eg:chlorine-pentafluoride}, where
+we found the electrical energy of a molecule containing 6 atoms. With a 1 inside the sum,
+as in the present examples, we got the number of combinations of atoms that needed to
+be considered, while with an energy inside the sum we got the total energy.
+
+In the second example, note how the upper limit of of the inner sum depends on the
+summation variable $i$ used in the outer sum. This makes sense, because $i$ is
+a bound variable that does mean something inside the outer sum. On the other hand,
+it would not make sense to write a sum like $\sum_{i=0}^{j-1}\sum_{j=0}^7$, because
+the upper limit $j-1$ contains the symbol. In the example of the teacher buttoning
+the kids' sweaters, a similar nonsensical example would be
+\begin{listing}{1}
+For each button on that kid's sweater,
+  for each kid,
+    push the button through the hole.
+\end{listing}
+If you show this sentence to someone, they'll get confused because there is no
+``that kid'' at the outermost level.
+
+All of these ideas apply to integrals as well. If the limits of integration
+are constant and finite, then an integral of the form $\int_a^b\int_c^d\ldots$
+can only be an integral over a rectangle. But if we relax this restriction,
+then we can, for example, find the area of a triangle:
+\begin{align*}
+  \int_0^1\int_0^y \der x\der y &= \int_0^1 y \der y \\
+            &= \frac{1}{2}.
+\end{align*}
+
+Often we want to do a change of variable (``$u$ substitution), and this works
+out pretty much the same for iterated integrals as for ordinary integrals,
+including the need to change the differential and the limits of integration.
+
+\begin{eg}{Area of a right triangle}
+Let a right triangle have legs $a$ and $b$. We want to find its area.
+As a preliminary, we set up a coordinate system with side $a$ along the
+$x$ axis and the hypotenuse described as the line $y=(b/a)x$.
+The setup looks like this.
+\begin{align*}
+  \int_0^a \int_0^{bx/a} \der y \der x
+\end{align*}
+Notice how we had to make the $y$ integral the inside part of the sandwich
+and $x$ the outside part. If we hadn't done this, then we would have
+had to fiddle with things to keep from ungrammatically referring to the
+inner integral's variable in the outer integral's limits of integration.
+In examples like these, it's almost always advantageous to do a change of
+variables, if possible, such that the new variables are unitless. Here,
+the natural way to accomplish that is to define $u=x/a$ and $v=y/b$.
+We then have $\der y \der x=ab\der v\der u$ and for the upper limit
+of integration on the inside integral, $v=y/b=(bx/a)/b=x/a=u$. Taking
+the constant factor $ab$ outside, we then have
+\begin{align*}
+  ab \int_0^1 \int_0^u \der v \der u.
+\end{align*}
+This is a big win, because the double integral is now a true definite
+integral, with no adjustable parameters like $a$ or $b$. In fact,
+we've already evaluated this integral (with different names for the
+bound variables, which is irrelevant) and found it to be $1/2$, so
+the result is $ab/2$, as expected.
+\end{eg}
+
+<% end_sec('varying-limits') %>
+
+<% begin_sec("How to set up applications",nil,'iterated-setup') %>
+Up until now we've been doing a lot of integrals where the thing inside the
+integral is just 1. But in real-world applications we usually have something
+we're integrating. Here are some typical applications from mechanics, in which
+we integrate over space:
+
+\begin{tabular}{p{50mm}p{50mm}}
+\emph{thing being integrated} & \emph{integral} \\
+density                       & mass \\
+density $\times r^2$          & moment of inertia
+\end{tabular}
+
+\noindent In electricity and magnetism:
+
+\begin{tabular}{p{50mm}p{50mm}}
+\emph{thing being integrated} & \emph{integral} \\
+charge density                & charge \\
+energy density                & energy \\
+momentum density              & momentum \\
+charge density $\times z$     & dipole moment along the $z$ axis
+\end{tabular}
+
+Any of these can exist in one dimension ($\int$), two ($\int\int$), or three ($\int\int\int$).
+The following two examples from mechanics
+illustrate the typical setup process in a one-dimensional case.
+
+\begin{eg}{Mass of an air column}
+\egquestion
+Above some small area on the surface of the earth, we have an air column
+with mass per unit height (i.e., linear density) $\der m/\der z = Ae^{-az}$, where $a$ is a
+positive constant $A$ tells us how thick the atmosphere is at sea level.
+Find the total mass in this air column.
+
+\eganswer The general idea is simply to start by saying that the integral is
+the sum of a whole bunch of little tiny parts:
+\begin{equation*}
+  \int \der m.
+\end{equation*}
+If you're not experienced with this sort of thing, it might never occur to you
+to you to write this down, because $m$ isn't a variable, and nothing is
+a function of $m$. That's OK. Here $\der m$ just means ``a little bit of
+mass,'' and $\int$ means ``add upp all the\ldots'' But in order to evaluate
+the integral, we now have to substitute:
+\begin{align*}
+  \int \der m &= \int \frac{\der m}{\der z} \der z \\
+              &= \int_0^\infty Ae^{-az} \der z \\
+              &= \frac{A}{a}.
+\end{align*}
+This makes sense, because the units come out right ($(\kgunit/\munit)/\munit^{-1}$),
+and the the dependence on $A$ and $a$ is right (e.g., smaller $a$ means the density falls
+off more slowly with height, which should give a bigger total mass).
+\end{eg}
+
+\begin{eg}{Moment of inertia of a rod}
+\egquestion Find the moment of inertia of a uniform rod for rotation about one end.
+
+\eganswer Let the rod's total mass be $M$ and its length $\ell$.
+The moment of inertia $I$ is
+\begin{align*}
+  I &= \int \der I \\
+    &= \int r^2 \der m .
+\end{align*}
+Because the rod is uniform, $\der m/\der r = M/\ell$, and $\der m = (M/\ell)\der r$.
+\begin{align*}
+  I &= \int_0^\ell r^2 \frac{M}{\ell} \der r \\
+    &= \frac{M}{\ell} \int_0^\ell r^2 \der r
+\end{align*}
+It's nicer to change to the unitless variable $u=r/\ell$, which gives
+\begin{align*}
+  I &= \frac{M}{\ell}\ell^3 \int_0^1 u^2 \der u \\
+    &= \frac{1}{3}M\ell^2.
+\end{align*}
+\end{eg}
+
+Here's an example involving electromagnetism and three dimensions.
+
+\begin{eg}{Energy of an electromagnetic wave}
+\egquestion Find the average energy density of a sinusoidal electromagnetic plane wave, within
+a rectangular box oriented so that its axes coincide with $\vc{E}$, $\vc{B}$, and $\vc{S}$.
+Let the box encompass an integer number of wavelengths.
+
+\eganswer
+Using the expressions for the energy densities of the fields, and the fact that $Bc=E$, we
+have
+\begin{align*}
+  U &= \int \der U \\
+    &= \int \frac{1}{4\pi k}E^2 \der v \\
+    &= \frac{1}{4\pi k} \int E^2 \der v.
+\end{align*}
+Let the $z$ axis be the direction of propagation, and let $x$ and $y$ be aligned with the
+other edges of the box. Let $k=2\pi/\lambda$. Then
+\begin{align*}
+  U &= \frac{1}{4\pi k} \int E^2 \der x\der y\der z \\
+    &= \frac{1}{4\pi k} \int \int \int \mytilde{E}^2 \sin^2 kz \der x\der y\der z \\
+    &= \frac{\mytilde{E}^2}{4\pi k} \int \int \int \sin^2 kz \der x\der y\der z .
+\end{align*}
+The integrand doesn't depend on $x$ or $y$, so
+\begin{align*}
+  U &= \frac{\mytilde{E}^2}{4\pi k} \int \sin^2 kz \left(\int \int \der x\der y\right)\der z \\
+    &= \frac{\mytilde{E}^2A}{4\pi k} \int \sin^2 kz \der z ,
+\end{align*}
+where $A$ is the cross-sectional area of the box in the plane perpendicular to propagation.
+Because the remaining $z$ integral covers an integer number of wavelengths, its average value is
+$1/2$, and we can replace it with $1/2$. This fact becomes obvious if you graph the function
+$\sin^2$, or if you consider that $\sin^2+\cos^2=1$. The $z$ integral therefore equals $1/2$ times
+the length of the box. Grouping these factors together with $A$, we get $V/2$, half the volume.
+The result for the total energy is $  U = \mytilde{E}^2V/8\pi k$, which gives the
+average energy density
+\begin{equation*}
+  \frac{U}{V} = \frac{\mytilde{E}^2}{8\pi k}.
+\end{equation*}
+In other words, the electric and magnetic fields have equal energy densities, their average
+energy densities are equal to half their maximum values, and therefore the average total
+energy density is equal to the maximum energy density of the electric field.
+\end{eg}
+
+\begin{eg}{Energy of a line of charge}
+\egquestion Find the electrical potential energy of a uniform line of charge
+of finite length.
+
+\eganswer The total electrical potential energy is
+\begin{equation*}
+  U = \int \der U = \frac{1}{2} \int\int \frac{k\der q_1\der q_2}{r},
+\end{equation*}
+where the factor of 1/2 is to undo the effect of double-counting. Let the density of
+charge be $\lambda=\der q/\der x$, and let the line go from $x=0$ to $\ell$. Then
+\begin{align*}
+  U &= \frac{1}{2} k\lambda^2 \int_{x_1=0}^\ell \int_{x_2=0}^\ell \frac{\der x_1\der x_2}{|x_1-x_2|}\\
+    &= k\lambda^2 \int_{x_1=0}^\ell \int_{x_2=0}^{x_1} \frac{\der x_1\der x_2}{x_1-x_2} .
+\end{align*}
+In the second line, we've changed the limits of integration so that we only integrate over combinations
+of points with $x_2<x_1$. This means we get rid of the $1/2$, and we don't need the absolute value
+in the denominator anymore. Evaluating the inside integral gives
+\begin{align*}
+  U &= -k\lambda^2 \int_{x_1=0}^\ell \left.\ln(x_1-x_2)\right|_0^{x_1}\der x_2.
+\end{align*}
+Plugging in the limits of integration gives a divergence at $x_2=x_1$, so the result is that
+the energy is $+\infty$. In other words, if we wanted to bring charges from far away and assemble
+them into this configuration, it would require an infinite amount of mechanical work.
+\end{eg}
+
+<% end_sec('iterated-setup') %>
+
+
+<% begin_sec("Electric field of a continuous charge distribution",nil,'field-of-continuous-charge') %>
+
+The electric
+field made by a continuous charge distribution is the
+sum of the fields created by every part of it. If we let the
+``parts'' become infinitesimally small, we have a sum of an
+infinitely many infinitesimal numbers: an
+integral.
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-charged-rod',
+    %q{Example \ref{eg:chargedrod}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Field of a uniformly charged rod}\label{eg:chargedrod}
+\egquestion
+A rod of length $L$ has charge $Q$ spread
+uniformly along it. Find the electric field at a point a
+distance $d$ from the center of the rod, along the rod's axis.
+
+\eganswer
+This is a one-dimensional
+situation, so we really only need to do a single integral
+representing the total field along the axis. We imagine
+breaking the rod down into short pieces of length $\der  z$, each
+with charge $\der  q$. Since charge is uniformly spread along the
+rod, we have $\der  q=\lambda\der  z$, where $\lambda= Q/ L$ (Greek lambda) is the
+charge per unit length, in units of coulombs per meter. Since the pieces are infinitesimally
+short, we can treat them as point charges and use the
+expression $k\der  q/ r^2$ for their contributions to the field,
+where $r= d- z$ is the distance from the charge at $z$ to the
+point in which we are interested.
+\begin{align*}
+                 E_{z}         &=  \int \frac{ k\der  q }{ r^2}   \\
+                         &=  \int_{- L/2}^{+ L/2} \frac{ k\lambda\der  z }{ r^2}   \\
+                         &=   k \lambda \int_{- L/2}^{+ L/2} \frac{\der  z}{( d- z)^2}
+\end{align*}
+The integral can be looked up in a table, or reduced to an
+elementary form by substituting a new variable for
+$d- z$. The result is
+\begin{align*}
+                 E_{z}         &=    k\lambda\left(\frac{1}{ d- z}\right)_{- L/2}^{+ L/2}   \\
+                         &=   \frac{ kQ}{ L} \left(\frac{1}{ d- L/2}-\frac{1}{ d+ L/2}\right)\eqquad.  
+\end{align*}
+        For large values of $d$, this expression gets
+smaller for two reasons: (1) the denominators of the
+fractions become large, and (2) the two fractions become
+nearly the same, and tend to cancel out. This makes sense,
+since the field should get weaker as we get farther away from
+the charge. In fact, the field at large distances must approach
+$ kQ/ d^2$ (homework problem \ref{hw:distantrsquared}).
+
+It's also interesting to note that the field becomes
+infinite at the ends of the rod, but is not infinite on the
+interior of the rod. Can you explain physically why this happens?
+\end{eg}
+
+Example \ref{eg:chargedrod} was one-dimensional. In the general three-dimensional
+case, we might have to integrate all three components of the field. However,
+there is a trick that lets us avoid this much complication. The potential is a scalar,
+so we can find the potential by doing just a single integral, then use the potential
+to find the field.
+
+<% marg(0) %>
+<%
+  fig(
+    'chargedrodside',
+    %q{Example \ref{eg:chargedrodside}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Potential, then field}\label{eg:chargedrodside}
+\egquestion
+A rod of length $L$ is uniformly charged with charge $Q$.
+Find the field at a point lying in the midplane of the rod
+at a distance $R$. 
+
+\eganswer
+By symmetry, the field has only a radial component, $E_R$, pointing
+directly away from the rod (or toward it for $Q<0$). The brute-force approach,
+then, would be to evaluate the integral $E=\int |\der\vc{E}|\zu{cos}\ \theta$,
+where $\der\vc{E}$ is the contribution to the field from a charge $\der q$ at some
+point along the rod, and $\theta$ is the angle $\der\vc{E}$ makes with the radial line.
+
+It's easier, however, to find the potential first, and then find the field from the
+potential. Since the potential is a scalar,
+we simply integrate the contribution $\der V$ from each charge $\der q$, without
+even worrying about angles and directions. Let $z$ be the coordinate that measures distance
+up and down along the rod, with $z=0$ at the center of the rod. Then the distance
+between a point $z$ on the rod and the point of interest is 
+$r=\sqrt{ z^2+ R^2}$, and we have
+\begin{align*}
+         V        &= \int \frac{ k\der q}{ r} \\
+                        &=  k\lambda \int_{- L/2}^{+ L/2}\frac{\der z}{ r} \\
+                        &=  k\lambda \int_{- L/2}^{+ L/2}\frac{\der z}{\sqrt{ z^2+ R^2}} \\
+\end{align*}
+The integral can be looked up in a table, or evaluated using computer software:
+\begin{align*}
+         V        &= \left. k\lambda\: \zu{ln}\left( z+\sqrt{ z^2+ R^2}\right)\right|_{- L/2}^{+ L/2} \\
+                &=  k\lambda\: \zu{ln}\left(%
+                                        \frac{ L/2+\sqrt{ L^2/4+ R^2}}%
+                                                {- L/2+\sqrt{ L^2/4+ R^2}}%
+                                \right) \\
+\end{align*}
+The expression inside the parentheses can be simplified a little.
+Leaving out some tedious algebra, the result is
+\begin{equation*}
+         V = 2 k\lambda\: \zu{ln}\left(%
+                                        \frac{ L}{2 R}%
+                                                +\sqrt{1+\frac{ L^2}{4 R^2}}%
+                                \right)
+\end{equation*}
+
+This can readily be differentiated to find the field:
+\begin{align*}
+         E_{R}        &= -\frac{\der V}{\der R} \\
+                                        &= (-2 k\lambda)%
+                                                \frac{%
+                                                        - L/2 R^2
+                                                        +(1/2)(1+ L^2/4 R^2)^{-1/2}(- L^2/2 R^3)
+                                                }{%
+                                                         L/2 R+(1+ L^2/4 R^2)^{1/2}
+                                                }\eqquad, \qquad \\
+\intertext{or, after some simplification,}
+                 E_{R} &= \frac{ k\lambda L}{ R^2\sqrt{1+ L^2/4 R^2}}
+\end{align*}
+
+For large values of $R$, the square root approaches one, and we have
+simply $E_{R}\approx k\lambda L/ R^2= k Q/ R^2$.
+In other words, the field very far away is the same regardless of whether the charge
+is a point charge or some other shape like a rod. This is intuitively appealing, and
+doing this kind of check also helps to reassure one that the final result is correct.
+\end{eg}
+The preceding example, although it involved some messy algebra, required only straightforward
+calculus, and no vector operations at all, because we only had to integrate a scalar
+function to find the potential. The next example is one in which
+we can integrate either the field or the potential without too much complication.
+
+<% marg(0) %>
+<%
+  fig(
+    'ring',
+    %q{Example \ref{eg:ring}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{On-axis field of a ring of charge}\label{eg:ring}
+        \egquestion
+        Find the potential and field along the axis of a uniformly charged ring.
+
+        \eganswer
+        Integrating the potential is straightforward.
+        \begin{align*}
+                 V        &= \int \frac{ k\der q}{ r} \\
+                                &=  k \int \frac{\der q}{\sqrt{ b^2+ z^2}} \\
+                                &= \frac{ k}{\sqrt{ b^2+ z^2}} \int \der q \\
+                                &= \frac{ kQ}{\sqrt{ b^2+ z^2}}\eqquad,
+        \end{align*}
+        where $Q$ is the total charge of the ring.
+        This result could have been derived without calculus, since the distance
+        $r$ is the same for every point around the ring, i.e., the integrand is a constant.
+        It would also be straightforward to find the field by differentiating this expression
+        with respect to $z$ (homework problem \ref{hw:ringve}).
+
+        Instead, let's see how to find the field by direct integration. By symmetry, the
+        field at the point of interest can have only a component along the axis of
+        symmetry, the $z$ axis:
+        \begin{align*}
+                 E_{x}        &= 0 \\
+                 E_y        &= 0 
+        \end{align*}
+        To find the field in the $z$ direction, we integrate the $z$ components
+        contributed to the field by each infinitesimal part of the ring.
+        \begin{align*}
+                 E_{z}        &= \int \der E_z \\
+                                                &= \int |\der\vc{E}|\:\zu{cos}\:\theta\eqquad,
+        \end{align*}
+        where $\theta$ is the angle shown in the figure.
+        \begin{align*}
+                 E_{z}        &= \int \frac{ k\der q}{ r^2}\:\zu{cos}\:\theta \\
+                                                &=  k \int \frac{\der q}{ b^2+ z^2}\:\zu{cos}\:\theta 
+        \end{align*}
+        Everything inside the integral is a constant, so we have
+        \begin{align*}
+                 E_{z}        &= \frac{ k}{ b^2+ z^2}\:\zu{cos}\:\theta \int \der q \\
+                                                &= \frac{ kQ}{ b^2+ z^2}\:\zu{cos}\:\theta \\
+                                                &= \frac{ kQ}{ b^2+ z^2}\:\frac{ z}{ r} \\
+                                                &= \frac{ kQz}{\left( b^2+ z^2\right)^\zu{3/2}} 
+        \end{align*}
+\end{eg}
+
+In all the examples presented so far, the charge has been confined to a one-dimensional
+line or curve. Although it is possible, for example, to put charge on a piece of wire,
+it is more common to encounter practical devices in which the charge is distributed
+over a two-dimensional surface, as in the flat metal plates used in Thomson's experiments.
+Mathematically, we can approach this type of calculation with the divide-and-conquer
+technique: slice the surface into lines or curves whose fields we know how to calculate,
+and then add up the contributions to the field from all these slices. In the limit where the
+slices are imagined to be infinitesimally thin, we have an integral.
+
+\begin{eg}{Field of a uniformly charged disk}\label{eg:diskofcharge}
+\egquestion
+A circular disk is uniformly charged. (The disk must be an insulator; if it was a conductor,
+then the repulsion of all the charge would cause it to collect more densely near the
+edge.) Find the field at a point on the axis, at a distance $z$ from the plane of the disk.
+
+<% marg(70) %>
+<%
+  fig(
+    'disk',
+    %q{Example \ref{eg:diskofcharge}: geometry.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'diskfield',
+    %q{Example \ref{eg:diskofcharge}: the field on both sides (for $\sigma>0$).}
+  )
+%>
+<% end_marg %>
+
+\eganswer
+We're given that every part of the disk has the same charge per unit area, so rather
+than working with $Q$, the total charge, it will be easier to use the charge
+per unit area, conventionally notated $\sigma$ (Greek sigma), $\sigma= Q/\pi b^2$.
+
+Since we already know the field due to a ring of charge, we can solve the problem
+by slicing the disk into rings, with each ring extending from $r$ to $r+\der r$.
+The area of such a ring equals its circumference multiplied by its width,
+i.e., $2\pi r\der r$, so its charge is $\der q=2\pi\sigma r\der r$,
+and from the result of example \ref{eg:ring}, its contribution to the field is
+\begin{align*}
+        \der E_{z}        &= \frac{ kz\der q}{\left( r^2+ z^2\right)^\zu{3/2}} \\
+                                        &= \frac{2\pi\sigma kzr\der r}{\left( r^2+ z^2\right)^\zu{3/2}} \\
+\end{align*}
+The total field is
+\begin{align*}
+         E_{z}        &= \int \der E_{z} \\
+                                        &= 2\pi\sigma kz
+                                                \int_0^{b} 
+                                                \frac{ r\der r}{\left( r^2+ z^2\right)^\zu{3/2}} \\
+                &= 2\pi\sigma kz \left. %
+                                \frac{-1}{\sqrt{ r^2+ z^2}}
+                        \right|_{ r=0}^{ r=\zu{b}} \\
+                &= 2\pi\sigma k\left(1-\frac{ z}{\sqrt{ b^2+ z^2}}\right)
+\end{align*}
+\end{eg}
+
+The result of example \ref{eg:diskofcharge} has some interesting properties.
+First, we note that it was derived on the unspoken assumption
+of $z>0$. By symmetry, the field on the other side of the disk must be equally
+strong, but in the opposite direction, as shown  in
+figures \figref{diskfield} and \figref{diskfieldgraph}. Thus there is a discontinuity in the field
+at $z=0$. In reality, the disk will have some finite thickness, and the switching
+over of the field will be rapid, but not discontinuous.
+
+At large values of $z$, i.e., $z\gg b$, the field rapidly approaches
+the $1/r^2$ variation that we expect when we are so far from the disk that the disk's
+size and shape cannot matter (homework problem \ref{hw:distantrsquared}).
+
+%
+
+<%
+  fig(
+    'diskfieldgraph',
+    %q{Example \ref{eg:diskofcharge}: variation of the field ($\sigma>0$).},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+
+
+<% end_sec('field-of-continuous-charge') %>
+
+
+<% begin_sec("Surface integrals",4,'surface-integrals') %>
+
+The integral form of Maxwell's equations involves the concept of flux,
+so that surface integrals involving flux are of fundamental importance.
+Up until now, we've avoided many of the mathematical complications involved in
+actually carrying out these integrals. The typical procedure was the one
+used in example \ref{eg:e-line-of-charge}, p.~\pageref{eg:e-line-of-charge},
+in which we found the electric field of a line of charge. We used a tricky choice of
+the Gaussian surface that conformed to the cylindrical symmetry of the
+problem. This brought the integral into the form $\int (\text{constant})\der A$,
+and we could then bring the constant outside the integral.
+
+<%
+  fig(
+    'flux-integral-three-examples',
+    %q{Three examples of flux integrals, with different levels of difficulty and complication.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+Figure \figref{flux-integral-three-examples} shows some examples of what can happen
+when this trick doesn't apply. One relatively simple case is the one in which
+we have a uniform field and a curved Gaussian surface, \subfigref{flux-integral-three-examples}{1}.
+We can also have a nonuniform field and a flat surface, \subfigref{flux-integral-three-examples}{2}.
+And finally we have the most general case, \subfigref{flux-integral-three-examples}{3},
+in which the field is nonuniform and the surface curved. In this section we will carry
+out the computations in these three examples in order to demonstrate the relevant techniques.
+All three are examples in which we already know the answer from Gauss's law, so we can
+easily check that our results are correct.
+
+<% begin_sec("Curved surface, uniform field",nil,'surface-integrals-uniform') %>
+Consider the example of \subfigref{flux-integral-three-examples}{1}, in which a cylindrical
+Gaussian surface is immersed in a uniform electric field, with the field perpendicular to
+the cylinder's axis.
+Let the field be in the $x$ direction,
+and let the axis of the cylindrical Gaussian surface be in the $z$ direction. Let the
+radius of the cylinder be $a$. We define
+coordinates $(\theta,z)$ on the surface, so that any point on the surface can be described
+by these two numbers. The angle $\theta$ is defined counterclockwise from the $x$ axis when
+we project the given point into the $x$-$y$ plane at $z=0$.
+For infinitesimal changes $\der z$ and $\der\theta$ in the coordinates,
+the area is $\der A=(\text{arc length})\der z=a\der\theta\der z$. Let the height of the
+cylinder be $H$.
+
+The area vector $\der\vc{A}$ has magnitude $\der A$ and points outward, perpendicular
+to the cylinder. The angle between $\der\vc{A}$ and $\vc{E}$ is $\theta$, so we have
+$\vc{E}\cdot\der\vc{A}=E\cos\theta\der A$. The flux integral is
+\begin{align*}
+  \Phi &= \int E\cos\theta\der A \\
+       &= E\int\cos\theta\der A \\
+       &= E\int_0^H\int_0^{2\pi}\cos\theta\der\theta\der z \\
+       &= EH\int_0^{2\pi}\cos\theta\der\theta.
+\end{align*}
+But here we are integrating a sine wave over one full cycle, so it averages to zero
+by symmetry, and the result is that $\Phi=0$.
+
+To confirm this by Gauss's law, we need to know how much charge is inside the cylinder.
+The divergence of a uniform field is zero, so there is zero charge density everywhere.
+Thus there is zero charge enclosed, and we confirm by Gauss's law that we should have $\Phi=0$.
+<% end_sec('surface-integrals-uniform') %>
+<% begin_sec("Flat surface, varying field",nil,'surface-integrals-flat') %>
+In figure \subfigref{flux-integral-three-examples}{2}, we consider the flux through an
+infinite plane due to an infinite, uniform line of charge lying parallel to the plane.
+Let the line of charge have density $\lambda$, and let its distance from the plane be $b$.
+We choose coordinates such that the line of charge is in the $z$ direction, and the $x$
+axis is in the direction from the line of charge to the closest part of the plane.
+We coordinatize our Gaussian surface as $(y,z)$, which gives the area element $\der A=\der y \der z$.
+Let $r=\sqrt{b^2+y^2}$ be the distance from a point in the plane to the nearest point on the line.
+At a particular point $(y,z)$, the cosine of the angle between the the field and the
+area vector is $\cos\theta=b/r$. The electric field is $E=2k\lambda/r$
+(example \ref{eg:e-line-of-charge}, p.~\pageref{eg:e-line-of-charge}).
+The flux integral is therefore
+\begin{align*}
+  \der\Phi    &=  \vc{E}\cdot\der\vc{A} \\
+          &= \left(E\right)\left(\der A\right)\left(\cos\theta\right) \\
+          &= \left(\frac{2k\lambda}{r}\right)\left(\der y\der z\right)\left(\frac{b}{r}\right) \\
+          &= 2k\lambda b \frac{\der y\der z}{r^2}.
+\end{align*}
+Because both the line of charge and the surface are infinite, integrating this will give infinity.
+This is a common issue, with the common solution that we switch from calculating a given
+quantity such as flux to calculating the amount of that quantity per unit length. In the
+present example, the simple way to do this is simply to refrain from integrating in the
+$z$ direction. Then the flux per unit length is
+\begin{align*}
+  \frac{\der \Phi}{\der z} &= 2k\lambda b \int_{-\infty}^\infty \frac{\der y}{r^2} \\
+         &= 2k\lambda b \int_{-\infty}^\infty \frac{\der y}{b^2+y^2} .
+\end{align*}
+This is actually an indefinite integral because it involves the parameter $b$, but we can
+turn it into a true definite integral by doing, as is always a good idea when possible,
+a change of variable to a unitless variable. Letting $u=y/b$, we then have
+\begin{align*}
+  \frac{\der \Phi}{\der z} 
+         &= 2k\lambda  \int_{-\infty}^\infty \frac{\der u}{1+u^2} .
+\end{align*}
+The definite integral can be done either using software or by figuring out that the
+correct trig substitution is $v=\tan^{-1}u$. The result is $\pi$, so we have
+\begin{align*}
+  \frac{\der \Phi}{\der z} = 2\pi k\lambda.
+\end{align*}
+
+We now compare with the result to be expected from Gauss's law. Gauss's law refers
+to a closed surface, which we don't have here. However, if we put a similar surface on
+the other side, we can make a geometry sort of like a pencil sandwich. Each piece
+of bread receives half the flux from the pencil. It doesn't matter that there is a gap
+between the two pieces of bread, because the bread slices are infinite, so zero flux
+gets out without passing through the bread. The result is that we expect the flux
+per unit length, through one surface, to be half the value given by Gauss's law for
+a closed surface:
+\begin{align*}
+  \frac{\der \Phi}{\der z} = \frac{4\pi k \der q/\der z}{2} = 2\pi k \lambda.
+\end{align*}
+This agrees with the result found by direct computation.
+
+<% end_sec('surface-integrals-flat') %>
+<% begin_sec("The general case",nil,'surface-integrals-general') %>
+In the most general case, the surface is not flat, and the field is nonuniform, as in figure
+\subfigref{flux-integral-three-examples}{3}, shown in cross-section in
+\subfigref{eg-line-charge-flux-through-cylinder}{1}.
+As our Gaussian surface, we take a cylinder of radius $a$ and finite height $H$,
+whose axis is parallel to the line
+of charge and lies at a distance $\ell$ from it. We expect the flux to be zero, since the charge
+is outside the surface.
+
+<% marg(50) %>
+<%   
+  fig(
+    'eg-line-charge-flux-through-cylinder',
+    %q{The flux through a cylindrical circuit due to a line of charge.}
+  )
+%>
+<% end_marg %>
+
+Figure \subfigref{eg-line-charge-flux-through-cylinder}{2} shows the setup for directly calculating
+this flux. A certain point on the surface lies at a distance $r$ from the line of charge, and
+the electric field at this point has magnitude $E=2k\lambda/r$, and the direction shown by the
+arrow. To describe the point, we use the same $(\theta,z)$ coordinates as in section
+\ref{subsec:surface-integrals-uniform}, and $\der A=a\der\theta\der z$. We write $\varphi$ for
+the angle between the area vector and the field. Then the flux is given by
+\begin{align*}
+  \Phi &= \int \vc{E}\cdot\der\vc{A} \\
+       &= \int E\der A\cos\varphi \\
+       &= 2ka\lambda \int_0^H \int_0^{2\pi} \frac{\cos\varphi}{r} \der\theta\der z \\
+       &= 2kaH\lambda \int_0^{2\pi} \frac{\cos\varphi}{r} \der\theta . \\
+\end{align*}
+Since we expect to prove $\Phi$ is zero, let's drop the constant factors in front.
+The law of cosines can be applied in two different ways here, as
+$\ell^2 =a^2+r^2-2ar\cos\varphi$ and $r^2 = \ell^2+a^2+2a\ell\cos\theta$.
+Using the first of these to eliminate $\cos\varphi$, we have for our integral
+\begin{equation*}
+  \Phi \quad =  \quad \int_0^{2\pi} \left(1-\frac{\ell^2-a^2}{r^2}\right) \der\theta .
+\end{equation*}
+Now using the second one to eliminate $r^2$, we obtain
+\begin{equation*}
+  \Phi \quad \propto \quad \int_0^{2\pi} \left(1-\frac{\ell^2-a^2}{\ell^2+a^2+2a\ell\cos\theta}\right) \der\theta.
+\end{equation*}
+The writing can be simplified by defining the dimensionless constant $c=a/\ell$, with $c<1$ because
+the cylinder doesn't contain the charge, and it also turns out to be helpful to
+let $\beta=2c/(1+c^2)$, which gives $\beta<1$.
+Then
+\begin{equation*}
+  \Phi \quad \propto \quad 2\pi \enskip - \enskip \frac{1-c^2}{1+c^2}\int_0^{2\pi} \frac{\der\theta}{1+\beta\cos\theta} .
+\end{equation*}
+I didn't know how to do this integral, so I resorted to computer software, which verified that the result
+was indeed just right in order to cancel out the $2\pi$ term.
+Later I learned that integrals of this form can be approached systematically by using a set of
+rules called Bioche's rules. There is a Wikipedia article on the topic, including a sketch of how
+to apply the rules to this example.
+<% end_sec('surface-integrals-general') %>
+<% end_sec('surface-integrals') %>
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+applications of 3-d integration:
+
+energy, momentum, charge, dipole moment
+
+applications of 2-d integration:
+
+flux, field and potential of a strip
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+<% begin_notes %>
+
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+uniformly charged arc of a circle, find field at center of circle
+
+<% end_hw_sec %>
+
+
+<% end_chapter() %>

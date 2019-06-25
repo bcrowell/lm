@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+use strict;
+
+my $c = "mv $ARGV[0] $ARGV[1]";
+#print STDERR "mv_silent called\n";
+if (-e $ARGV[0]) {
+  #print STDERR "mv_silent: $c, -e=",(-e $ARGV[0])," ===================================================\n";
+  system $c;
+}
+else {
+  #print STDERR "mv_silent: $ARGV[0] doesn't exist\n"
+}

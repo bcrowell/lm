@@ -1,0 +1,167 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '30',
+    %q{Images, Quantitatively},
+    'ch:images-2',
+    %q{Breakfast Table, by Willem Clasz. de Heda, 17th century. The painting shows
+a variety of images, some of them distorted, resulting both from reflection and from refraction (ch. \ref{ch:refraction}).},
+    {'opener'=>'breakfast','width'=>'fullpage','anonymous'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/3_images_quantitatively)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{focal length}{a property of a lens or mirror, equal to the
+distance from the lens or mirror to the image it forms of an
+object that is infinitely far away}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$f$}{the focal length}
+
+\notationitem{$d_o$}{the distance of the object from the mirror}
+
+\notationitem{$d_i$}{the distance of the image from the mirror}
+
+\notationitem{$\theta_f$}{the focal angle, defined as $1/f$}
+
+\notationitem{$\theta_o$}{the object angle, defined as $1/d_o$}
+
+\notationitem{$\theta_i$}{the image angle, defined as $1/d_i$}
+
+\end{notation}
+
+\begin{othernotation}
+
+\notationitem{$f>0$}{describes a converging lens or mirror; in this book, all
+focal lengths are positive, so there is no such implication}
+
+\notationitem{$f<0$}{describes a diverging lens or mirror; in this book, all
+focal lengths are positive}
+
+\index{magnification!negative}
+\notationitem{$M<0$}{indicates an inverted image; in this book, all magnifications are positive}
+
+\end{othernotation}
+
+\begin{summarytext}
+
+Every lens or mirror has a property called the focal length,
+which is defined as the distance from the lens or mirror to
+the image it forms of an object that is infinitely far away.
+A stronger lens or mirror has a shorter focal length.
+
+The relationship between the locations of an object and its
+image formed by a lens or mirror can always be expressed by
+equations of the form
+\begin{align*}
+                        \theta_f &= \pm \theta_i \pm \theta_o \\
+        \frac{1}{f} &= \pm\frac{1}{d_i}\pm\frac{1}{d_o}\eqquad.
+\end{align*}
+The choice of plus and minus signs depends on whether we are
+dealing with a lens or a mirror, whether the lens or mirror
+is converging or diverging, and whether the image is real or
+virtual. A method for determining the plus and minus
+signs is as follows:
+
+\begin{enumerate}
+
+\item Use ray diagrams to decide whether $\theta_i$ and
+$\theta_o$ vary in the same way or in opposite ways. Based
+on this, decide whether the two signs in the equation are
+the same or opposite. If the signs are opposite, go on to
+step 2 to determine which is positive and which is negative.
+
+\item If the signs are opposite, we need to decide which is the
+positive one and which is the negative. Since the focal
+angle is never negative, the smaller angle must be the
+one with a minus sign.
+
+\end{enumerate}
+
+Once the correct form of the equation has been determined,
+the magnification can be found via the equation
+\begin{equation*}
+                M    =    \frac{d_i}{d_o}\eqquad.
+\end{equation*}
+This equation expresses the idea that the entire image-world is shrunk
+consistently in all three dimensions.
+
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('flatmirrormagnification') %>__incl(hw/flatmirrormagnification)<% end_hw() %>
+
+<% begin_hw('virtual-image-location') %>__incl(hw/virtual-image-location)<% end_hw() %>
+
+<% begin_hw('magnificationdependsondistance') %>__incl(hw/magnificationdependsondistance)<% end_hw() %>
+
+<% begin_hw('infinitemagnification') %>__incl(hw/infinitemagnification)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-soldier',
+    %q{Problem \ref{hw:soldier}.}
+  )
+%>
+
+<% end_marg %>
+<% begin_hw('soldier',2) %>__incl(hw/soldier)<% end_hw() %>
+
+<% begin_hw('hear-your-own-whisper') %>__incl(hw/hear-your-own-whisper)<% end_hw() %>
+
+<% begin_hw('focal-length-by-ray-tracing') %>__incl(hw/focal-length-by-ray-tracing)<% end_hw() %>
+
+<% marg(47) %>
+<%
+  fig(
+    'hw-rank-focal-lengths',
+    %q{Problem \ref{hw:rank-focal-lengths}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('rank-focal-lengths') %>__incl(hw/rank-focal-lengths)<% end_hw() %>
+
+<% begin_hw('range-of-magnifications') %>__incl(hw/range-of-magnifications)<% end_hw() %>
+
+<% begin_hw('image-combinations') %>__incl(hw/image-combinations)<% end_hw() %>
+
+<% begin_hw('image-of-dropping-object',nil,{'calc'=>true}) %>__incl(hw/image-of-dropping-object)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'peaucellier',
+    %q{Problem \ref{hw:peaucellier}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('peaucellier',2) %>__incl(hw/peaucellier)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Object and image distances") %>
+__incl(text/object_and_image_distances)
+<% end_ex %>
+
+ %%----------------------------------------------------------
+
+<% if false then figure_in_toc("mirror-ball") end %>
+<% end_chapter() %>

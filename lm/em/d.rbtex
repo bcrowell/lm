@@ -1,0 +1,1722 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '24',
+    %q{Electromagnetism},
+    'ch:em',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+<% begin_sec("The magnetic field",nil,'b-field') %>\index{magnetic field}\index{field!magnetic}
+
+<% begin_sec("No magnetic monopoles") %>\index{monopoles!magnetic}
+
+<% marg(10) %>
+<%
+  fig(
+    'break-bar-magnet',
+    %q{%
+      Breaking a bar magnet in half doesn't create two monopoles, it creates two
+      smaller dipoles.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'break-bar-magnet-atoms',
+    %q{An explanation at the atomic level.}
+  )
+%>
+<% end_marg %>
+If you could play with a handful of electric dipoles and a
+handful of bar magnets, they would appear very similar. For
+instance, a pair of bar magnets wants to align themselves
+head-to-tail, and a pair of electric dipoles does the same
+thing. (It is unfortunately not that easy to make a
+permanent electric dipole that can be handled like this,
+since the charge tends to leak.)
+
+You would eventually notice an important difference between
+the two types of objects, however. The electric dipoles can
+be broken apart to form isolated positive charges and
+negative charges. The two-ended device can be broken into
+parts that are not two-ended. But if you break a bar magnet
+in half, \figref{break-bar-magnet}, you will find that you have simply made two
+smaller two-ended objects.
+
+The reason for this behavior is not hard to divine from our
+microscopic picture of permanent iron magnets. An electric
+dipole has extra positive ``stuff'' concentrated in one end
+and extra negative in the other. The bar magnet, on the
+other hand, gets its magnetic properties not from an
+imbalance of magnetic ``stuff'' at the two ends but from the
+orientation of the rotation of its electrons. One end is the
+one from which we could look down the axis and see the
+electrons rotating clockwise, and the other is the one from
+which they would appear to go counterclockwise. There is no
+difference between the ``stuff'' in one end of the
+magnet and the other, \figref{break-bar-magnet-atoms}.
+
+Nobody has ever succeeded in isolating a single magnetic
+pole. In technical language, we say that magnetic \index{monopoles!magnetic}monopoles
+do not seem to exist. Electric monopoles \emph{do} exist
+--- that's what charges are.
+
+Electric and magnetic forces seem similar in many ways. Both
+act at a distance, both can be either attractive or
+repulsive, and both are intimately related to the property
+of matter called charge. (Recall that magnetism is an
+interaction between moving charges.) Physicists's aesthetic
+senses have been offended for a long time because this
+seeming symmetry is broken by the existence of electric
+monopoles and the absence of magnetic ones. Perhaps some
+exotic form of matter exists, composed of particles that are
+magnetic monopoles. If such particles could be found in
+cosmic rays or moon rocks, it would be evidence that the
+apparent asymmetry was only an asymmetry in the composition
+of the universe, not in the laws of physics. For these
+admittedly subjective reasons, there have been several
+searches for magnetic monopoles. Experiments have been
+performed, with negative results, to look for magnetic
+monopoles embedded in ordinary matter. Soviet physicists in
+the 1960's made exciting claims that they had created and
+detected magnetic monopoles in particle accelerators, but
+there was no success in attempts to reproduce the results
+there or at other accelerators. The most recent search for
+magnetic monopoles, done by reanalyzing data from the search
+for the top quark at Fermilab, turned up no candidates,
+which shows that either monopoles don't exist in nature or
+they are extremely massive and thus hard to create in accelerators.
+
+<% end_sec() %>
+<% begin_sec("Definition of the magnetic field") %>
+
+<% marg(100) %>
+<%
+  fig(
+    'tesla',
+    %q{The unit of magnetic field, the tesla, is named after Serbian-American inventor Nikola Tesla.},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'current-loop-dipole',
+    %q{%
+      A standard dipole made from a square loop of wire shorting
+      across a battery. It acts very much like a bar magnet, but its strength is more
+      easily quantified.
+    },
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'current-loop-aligns',
+    %q{A dipole tends to align itself to the surrounding magnetic field.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+Since magnetic monopoles don't seem to exist, it would not
+make much sense to define a magnetic field in terms of the
+force on a test monopole. Instead, we follow the philosophy
+of the alternative definition of the electric field, and
+define the field in terms of the torque on a magnetic test
+dipole. This is exactly what a magnetic compass does: the
+needle is a little iron magnet which acts like a magnetic
+dipole and shows us the direction of the earth's magnetic field.
+
+To define the strength of a magnetic field, however, we need
+some way of defining the strength of a test dipole, i.e., we
+need a definition of the magnetic dipole moment. We could
+use an iron permanent magnet constructed according to
+certain specifications, but such an object is really an
+extremely complex system consisting of many iron atoms, only
+some of which are aligned. A more fundamental standard
+dipole is a square current loop. This could be little
+resistive circuit consisting of a square of wire shorting across a battery.
+
+We will find that such a loop, when placed in a magnetic
+field, experiences a torque that tends to align plane so
+that its face points in a certain direction. (Since the loop
+is symmetric, it doesn't care if we rotate it like a wheel
+without changing the plane in which it lies.) It is this
+preferred facing direction that we will end up defining as
+the direction of the magnetic field.
+
+Experiments show if the loop is out of alignment with the
+field, the torque on it is proportional to the amount of
+current, and also to the interior area of the loop. The
+proportionality to current makes sense, since magnetic
+forces are interactions between moving charges, and current
+is a measure of the motion of charge. The proportionality to
+the loop's area is also not hard to understand, because
+increasing the length of the sides of the square increases
+both the amount of charge contained in this circular
+``river'' and the amount of leverage supplied for making
+torque. Two separate physical reasons for a proportionality
+to length result in an overall proportionality to length
+squared, which is the same as the area of the loop. For
+these reasons, we define the magnetic dipole moment of a
+square current loop as
+\begin{multline*}
+                D_m         =    IA\eqquad, \hfill\shoveright{\text{[definition of the magnetic}}\\
+                                                            \text{ dipole moment of a square current loop]}
+\end{multline*}
+We now define the \index{magnetic field!defined}magnetic
+field in a manner entirely analogous to the alternative
+definition of the electric field on p.~\pageref{subsec:efielddipoledef}:
+
+\begin{lessimportant}[definition of the magnetic field]
+The magnetic field vector, $\vc{B}$, at any location in space is
+defined by observing the torque exerted on a magnetic test
+dipole $D_{mt}$ consisting of a square current loop. The
+field's magnitude is $|\vc{B}| =\tau/D_{mt} \sin \theta $, where
+$\theta $ is the angle by which the loop is misaligned. The
+direction of the field is perpendicular to the loop; of the
+two perpendiculars, we choose the one such that if we look
+along it, the loop's current is counterclockwise.
+\end{lessimportant}
+
+We find from this definition that the magnetic field has
+units of $\zu{N}\unitdot\munit/\zu{A}\unitdot\munit^2=\zu{N}/\zu{A}\unitdot\munit$. This unwieldy combination of
+units is abbreviated as the \index{tesla (unit)}tesla, 1
+$\zu{T}=1\ \zu{N}/\zu{A}\unitdot\munit$. Refrain from memorizing the part about the
+counterclockwise direction at the end; in section \ref{sec:em-waves} we'll
+see how to understand this in terms of more basic principles.
+
+<% marg(130) %>
+<%
+  fig(
+    'iron-filings-around-magnet',
+    %q{The magnetic field pattern of a bar magnet. This picture was made by putting iron filings on
+      a piece of paper, and bringing a bar magnet up underneath it. Note how the field pattern
+      passes across the body of the magnet, forming closed loops, as in figure \figref{electric-versus-magnetic-dipole}/2.
+      There are no sources or sinks.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'electric-versus-magnetic-dipole',
+    %q{Electric fields, 1, have sources and sinks, but magnetic fields, 2, don't.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'e-b-lorentz',
+    %q{Transformation of the fields.}
+  )
+%>
+<% end_marg %>
+
+The nonexistence of magnetic monopoles means that unlike an
+electric field, \figref{electric-versus-magnetic-dipole}/1, a magnetic one, \figref{electric-versus-magnetic-dipole}/2, can never have
+sources or sinks. The magnetic field vectors lead in paths
+that loop back on themselves, without ever converging or
+diverging at a point.
+<% end_sec() %>
+<% begin_sec("Relativity") %>
+The definition of the tesla as $1\ \zu{N}/\zu{A}\unitdot\munit$ looks messy, but relativity suggests
+a simple explanation. We saw in __subsection_or_section(magnetic-interactions)
+that a particular mixture of electric and magnetic fields appears to be a different mixture in a
+different frame of reference. In a system of units designed for relativity, $\vc{E}$ and $\vc{B}$
+have the same units. The SI, which predates relativity, wasn't designed this way, which is also why
+$c$ is some number with units of $\munit/\sunit$ rather than simply equaling 1. The SI units of the
+$\vc{E}$ and $\vc{B}$ fields are \emph{almost} the same: they differ only by a factor of $\munit/\sunit$.
+
+Figure \figref{e-b-lorentz} shows that something similar to the parallelogram diagrams developed in
+ch.~\ref{ch:relativity} also works as a way of representing the transformation of the
+$\vc{E}$ and $\vc{B}$ fields from one frame of reference to another. One frame is moving relative
+to the other in the $x$ direction, and this mixes certain components of the fields. A dot on the
+graph represents a particular set of fields, which are seen by each observer according to her
+own coordinate grid.
+<% end_sec() %> % Relativity
+<% end_sec() %>
+\vfill
+<% begin_sec("Calculating magnetic fields and forces",4,'calculating-magnetism') %>
+
+<% begin_sec("Magnetostatics") %>\index{magnetostatics}
+
+Our study of the electric field built on our previous
+understanding of electric forces, which was ultimately based
+on Coulomb's law for the electric force between two point
+charges. Since magnetism is ultimately an interaction
+between currents, i.e., between moving charges, it is
+reasonable to wish for a magnetic analog of Coulomb's law,
+an equation that would tell us the magnetic force between
+any two moving point charges.
+
+Such a law, unfortunately, does not exist. Coulomb's law
+describes the special case of electrostatics: if a set of
+charges is sitting around and not moving, it tells us the
+interactions among them. Coulomb's law fails if the charges
+are in motion, since it does not incorporate any allowance
+for the time delay in the outward propagation of a change in
+the locations of the charges.
+
+A pair of moving point charges will certainly exert magnetic
+forces on one another, but their magnetic fields are like
+the v-shaped bow waves left by boats. Each point charge
+experiences a magnetic field that originated from the other
+charge when it was at some previous position. There is no
+way to construct a force law that tells us the force between
+them based only on their current positions in space.
+
+There is, however, a science of magnetostatics that covers a
+great many important cases. Magnetostatics describes
+magnetic forces among currents in the special case where the
+currents are steady and continuous, leading to magnetic
+fields throughout space that do not change over time.
+
+The magnetic field of a long, straight wire is one example that we can
+say something about without resorting to fancy mathematics. We saw in examples \ref{eg:line-charge-radial-dependence}
+on p.~\pageref{eg:line-charge-radial-dependence} and \ref{eg:line-charge-gauss} on p.~\pageref{eg:line-charge-gauss} that the \emph{electric} field of a
+uniform line of charge is $E=2kq/Lr$, where $r$ is the distance from the line and $q/L$ is the charge per unit length.
+In a frame of reference moving at velocity $v$ parallel to the line, this electric field will be observed
+as a combination of electric and magnetic fields. It therefore follows that the magnetic
+field of a long, straight, current-carrying wire must be proportional to $1/r$. We also expect that it will
+be proportional to the Coulomb constant, which sets the strength of electric and magnetic
+interactions, and to the current $I$ in the wire. The complete expression turns out to be
+$B=(k/c^2)(2I/r)$. This is identical to the expression for $E$ except for replacement of
+$q/L$ with $I$ and an additional factor of $1/c^2$.
+The latter occurs because magnetism is a purely relativistic effect, and the relativistic
+length contraction depends on $v^2/c^2$.
+
+\pagebreak
+
+Figure \figref{magnetic-field-equations} shows the equations for some of the more commonly
+encountered configurations, with illustrations of their
+field patterns. They all have a factor of $k/c^2$ in front, which shows that magnetism
+is just electricity ($k$) seen through the lens of relativity ($1/c^2$). A convenient
+feature of SI units is that $k/c^2$ has a numerical value of exactly $10^{-7}$, with units of $\nunit/\zu{A}^2$.
+<% marg(-15) %>
+<%
+  fig(
+    'magnetic-field-equations',
+    %q{Some magnetic fields.}
+  )
+%>
+<% end_marg %>
+
+\begin{offsettopic}
+\noindent\textit{Field created by a long, straight wire carrying current $I$:}
+\begin{equation*}
+ B = \frac{k}{c^2}\cdot\frac{2I}{r}
+\end{equation*}
+Here $r$ is the distance from the center of the wire. The field vectors trace
+circles in planes perpendicular to the wire, going clockwise when viewed from along
+the direction of the current.
+
+\noindent\textit{Field created by a single circular loop of current:}\\
+The field vectors form a dipole-like pattern, coming through the loop and back
+around on the outside. Each oval path traced out by the field vectors appears clockwise
+if viewed from along the direction the current is going when it punches through it.
+There is no simple equation for a field at an arbitrary point in space, but
+for a point lying \emph{along the central axis} perpendicular to the loop,
+the field is
+\begin{equation*}
+  B = \frac{k}{c^2}\cdot 2\pi Ib^2\left(b^2+z^2\right)^{-3/2}\eqquad,
+\end{equation*}
+where $b$ is the radius of the loop and $z$ is the distance of the point
+from the plane of the loop.
+
+\noindent\textit{Field created by a solenoid (cylindrical coil):}\\
+The field pattern is similar to that of a single loop, but for a long solenoid
+the paths of the field vectors become very straight on the inside of the coil
+and on the outside immediately next to the coil. For a sufficiently long solenoid,
+the interior field also becomes very nearly uniform, with a magnitude of
+\begin{equation*}
+  B = \frac{k}{c^2}\cdot 4\pi I N/\ell\eqquad,
+\end{equation*}
+where $N$ is the number of turns of wire and $\ell$ is the length of the
+solenoid. The field near the mouths or outside the coil is not constant, and
+is more difficult to calculate. For a long solenoid, the exterior field is
+much smaller than the interior field.
+\end{offsettopic}
+
+Don't memorize the equations! 
+
+<% end_sec() %>
+<% begin_sec("Force on a charge moving through a magnetic field",4) %>
+
+We now know how to calculate magnetic fields in some typical
+situations, but one might also like to be able to calculate
+magnetic forces, such as the force of a solenoid on a moving
+charged particle, or the force between two parallel
+current-carrying wires.
+
+We will restrict ourselves to the case of the force on a
+charged particle moving through a magnetic field, which
+allows us to calculate the force between two objects when
+one is a moving charged particle and the other is one whose
+magnetic field we know how to find. An example is the use of
+solenoids inside a TV tube to guide the electron beam as
+it paints a picture.
+
+Experiments show that the magnetic force on a moving charged
+particle has a magnitude given by
+\begin{equation*}
+ |\vc{F}|    = q|\vc{v}||\vc{B}|\sin\theta\eqquad,
+\end{equation*}
+where $\vc{v}$ is the velocity vector of the particle, and
+$\theta $ is the angle between the $\vc{v}$ and $\vc{B}$ vectors.
+Unlike electric and gravitational forces, magnetic forces do
+not lie along the same line as the field vector. The force
+is always \emph{perpendicular} to both $\vc{v}$ and $\vc{B}$. Given
+two vectors, there is only one line perpendicular to both of
+them, so the force vector points in one of the two possible
+directions along this line. For a positively charged
+particle, the direction of the force vector can be found as follows.
+First, position the $\vc{v}$ and $\vc{B}$ vectors with their tails
+together. The direction of $\vc{F}$ is such
+that if you sight along it, the $\vc{B}$ vector is clockwise from
+the $\vc{v}$ vector; for a negatively charged particle the
+direction of the force is reversed. Note that since the
+force is perpendicular to the particle's motion, the
+magnetic field never does work on it.\label{geom-mag-force-on-charge}
+<% marg(-36) %>
+<%
+  fig(
+    'battery-wire-magnet',
+    %q{%
+      Example \ref{eg:battery-wire-magnet}.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+If we place a moving test charge in a magnetic field, we can use
+the equation $|\vc{F}|    = q|\vc{v}||\vc{B}|\sin\theta$ and the geometrical relationship
+discussed above to indirectly determine $\vc{B}$. (More than one measurement
+will in general be required.) This can also serve as a definition of the magnetic field,
+analogous to the one on p.~\pageref{subsec:e-field-defined} for the electric field.
+
+\begin{eg}{Magnetic levitation}\label{eg:battery-wire-magnet}
+      In figure \figref{battery-wire-magnet}, a small, disk-shaped permanent magnet is stuck on the side of a
+      battery, and a wire is clasped loosely around the battery, shorting it.
+      A large current flows through the wire. The electrons moving through the
+      wire feel a force from the magnetic field made by the permanent magnet,
+      and this force levitates the wire.
+
+      From the photo, it's possible to find the direction of the magnetic field made by the permanent magnet.
+      The electrons in the copper wire are negatively charged, so they flow from the negative (flat) terminal
+      of the battery to the positive terminal (the one with the bump, in front). As the electrons pass by the
+      permanent magnet, we can imagine that they would experience a field either toward the magnet, or away from
+      it, depending on which way the magnet was flipped when it was stuck onto the battery.
+      Imagine sighting along the upward force vector, which you could do if
+      you were a tiny bug lying on your back underneath the wire. Since the electrons are negatively charged,
+      the $\vc{B}$ vector must be counterclockwise from the $\vc{v}$ vector, which means toward the magnet.
+\end{eg}
+
+\vspace{10mm}
+
+\begin{eg}{A circular orbit}\label{eg:circular-orbit}
+      Magnetic forces cause a beam of electrons to move in a circle.
+              The beam is created in a vacuum tube, in which a small amount of
+              hydrogen gas has been left. A few of the electrons strike hydrogen
+              molecules, creating light and letting us see the beam. A magnetic
+              field is produced by passing a current (meter) through the circular
+              coils of wire in front of and behind the tube. In the bottom figure,
+              with the magnetic field turned on, the force perpendicular to the
+              electrons' direction of motion causes them to move in a circle.
+\end{eg}
+<% marg(42) %>
+<%
+  fig(
+    'circular-orbit',
+    %q{%
+      Example \ref{eg:circular-orbit}.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\enlargethispage{-2\baselineskip}
+
+\vspace{10mm}
+
+\begin{eg}{Nervous-system effects during an MRI scan}\index{NMR (nuclear magnetic resonance)}\index{MRI (magnetic resonance imaging)|see {NMR}}
+During an MRI scan of the head, the patient's nervous system
+is exposed to intense magnetic fields, and there are ions moving
+around in the nerves. The resulting forces on the ions can cause
+symptoms such as vertigo.
+\end{eg}
+
+\vspace{10mm}
+
+<% end_sec() %> % Force on a charge moving through a magnetic field
+<% begin_sec("Energy in the magnetic field") %>\label{sec:b-energy}\index{energy!stored in magnetic field}
+On p.~\pageref{sec:energy-in-fields} I gave equations for the energy stored in the gravitational and electric fields.
+Since a magnetic field is essentially an electric field seen in a different frame of reference, we expect the magnetic-field
+equation to be closely analogous to the electric version, and it is:
+\begin{align*}
+(\text{energy stored in the gravitational field per $\munit^3$}) &= -\frac{1}{8\pi G}|\vc{g}|^2\\
+(\text{energy stored in the electric field per $\munit^3$}) &= \frac{1}{8\pi k}|\vc{E}|^2\\
+(\text{energy stored in the magnetic field per $\munit^3$}) &= \frac{c^2}{8\pi k}|\vc{B}|^2
+\end{align*}
+The idea here is that $k/c^2$ is the magnetic version of the electric quantity $k$, the $1/c^2$ representing the fact
+that magnetism is a relativistic effect.
+
+\pagebreak
+
+\begin{eg}{Getting killed by a solenoid}
+ Solenoids are very common electrical devices, but they can
+be a hazard to someone who is working on them. Imagine a
+solenoid that initially has a DC current passing through it.
+The current creates a magnetic field inside and around it,
+which contains energy. Now suppose that we break the
+circuit. Since there is no longer a complete circuit,
+current will quickly stop flowing, and the magnetic field
+will collapse very quickly. The field had energy stored in
+it, and even a small amount of energy can create a dangerous
+power surge if released over a short enough time interval.
+It is prudent not to fiddle with a solenoid that has current
+flowing through it, since breaking the circuit could be
+hazardous to your health.
+
+ As a typical numerical estimate, let's assume a 40 cm $\times$
+40 cm $\times$ 40 cm solenoid with an interior magnetic field of
+1.0 T (quite a strong field). For the sake of this rough
+estimate, we ignore the exterior field, which is weak, and
+assume that the solenoid is cubical in shape. The energy
+stored in the field is
+
+\begin{align*}
+ (\text{energy per unit volume})(\text{volume})
+ &= \frac{c^2}{8\pi k}|\vc{B}|^2V\\
+ &= 3\times10 ^4\ \junit
+\end{align*}
+That's a lot of energy!
+\end{eg}
+
+<% end_sec() %> % Energy in the magnetic field
+<% end_sec() %>
+<% begin_sec("The universal speed $c$") %>\label{sec:universal-speed-c}
+Let's think a little more about the role of the 45-degree diagonal in the Lorentz transformation.
+Slopes on these graphs are interpreted as velocities.
+This line has a slope of 1 in relativistic units, but that slope corresponds to $c$ in ordinary metric units.
+We already know that the relativistic distance unit must
+be extremely large compared to the relativistic time unit, so $c$ must be extremely large.
+Now note what happens when we perform a Lorentz transformation: this particular line gets stretched, but the new version
+of the line lies right on top of the old one, and its slope stays the
+same. In other words, if one observer says  that something has a velocity equal to $c$, every other observer will agree
+on that velocity as well. (The same thing happens with $-c$.) 
+
+<% marg(80) %>
+<%
+  fig(
+    'ring-laser-gyro',
+    %q{If you've flown in a jet plane, you can thank relativity for helping you to avoid
+crashing into a mountain or an ocean. The figure shows a standard
+piece of navigational equipment called a ring laser gyroscope. A beam of light is
+split into two parts, sent around the perimeter of the device, and reunited. Since
+light travels at the universal speed $c$, which is constant, we expect the two parts to come back together at the
+same time. If they don't, it's evidence that the device has been rotating. The plane's
+computer senses this and notes how much rotation has accumulated.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Velocities don't simply add and subtract.") %>\label{relativistic-combination-of-vel}\index{velocity!addition of!relativistic}
+This is counterintuitive, since we expect velocities to
+add and subtract in relative motion. If a dog is running away from me at
+5 m/s relative to the sidewalk, and I run after it at 3 m/s,
+the dog's velocity in my frame of reference is 2 m/s.
+According to everything we have learned about motion (p.~\pageref{vel-addition-newtonian}), the
+dog must have different speeds in the two frames: 5 m/s in
+the sidewalk's frame and 2 m/s in mine. But velocities are measured by dividing a distance by a time, and
+both distance and time are distorted by relativistic effects, so we actually shouldn't expect the ordinary
+arithmetic addition of velocities to hold in relativity; it's an approximation that's valid at velocities
+that are small compared to $c$.
+<% end_sec %>
+
+<% begin_sec("A universal speed limit") %>\label{c-as-speed-limit}
+For example, suppose Janet takes a trip in a
+spaceship, and accelerates until she is moving at $0.6c$ relative to the
+earth. She then launches a space probe in the forward
+direction at a speed relative to her ship of $0.6c$. We might think that the
+probe was then moving at a velocity of $1.2c$, but in fact the answer is still less 
+than $c$ (problem \ref{hw:six-tenths-c-twice}, page \pageref{hw:six-tenths-c-twice}).
+This is an example of a more general fact about relativity, which is that $c$ represents
+a universal speed limit. This is required by causality, as shown in figure \figref{speed-limit}.
+<% end_sec %>
+<% marg(100) %>
+<%
+  fig(
+    'speed-limit',
+    %q{A proof that causality imposes a universal speed limit. In the original frame of reference, represented by the square, event A happens a little before event B.
+       In the new frame, shown by the parallelogram, A happens after $t=0$, but B happens before $t=0$; that is,
+       B happens before A. The time ordering of the two events has been reversed. This can only happen because
+       events A and B are very close together in time and fairly far apart in space. The line segment
+       connecting A and B has a slope greater than 1, meaning that if we wanted to be present at both events, we would
+       have to travel at a speed greater than $c$ (which equals 1 in the units used on this graph). You will find that if
+       you pick any two points for which the slope of the line segment connecting them is less than 1, you can never get them
+       to straddle the new $t=0$ line in this funny, time-reversed way. Since different observers disagree on the time order
+       of events like A and B, causality requires that information never travel from A to B or from B to A; if it did, then
+       we would have time-travel paradoxes. The conclusion is that $c$ is the maximum speed of cause and effect in relativity.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Light travels at $c$.") %>\label{sec:light-travels-at-c}
+Now consider a beam of light. We're used to talking casually about the ``speed of light,'' but what does that really
+mean? Motion is relative, so normally if we want to talk about a velocity, we have to specify what it's measured
+relative to. A sound wave has a certain speed relative to the air, and a water wave has its own speed relative to the
+water. If we want to measure the speed of an ocean wave, for example, we should make sure to measure it in a frame
+of reference at rest relative to the water. But light isn't a vibration of a physical medium; it can propagate through the near-perfect vacuum of outer space,
+as when rays of sunlight travel to earth. This seems like a paradox: light is supposed to have a specific speed,
+but there is no way to decide what frame of reference to measure it in. The way out of the paradox is that light
+must travel at a velocity equal to $c$. Since all observers agree on a velocity of $c$, regardless of their frame
+of reference, everything is consistent.
+<% end_sec %>
+
+<% begin_sec("The Michelson-Morley experiment") %>
+The constancy of the speed of light had in fact already been
+observed when Einstein was an 8-year-old boy, but because nobody could
+figure out how to interpret it, the result was largely ignored.
+In 1887 Michelson and Morley set up a clever apparatus to
+measure any difference in the speed of light beams traveling
+east-west and north-south. The motion of the earth around
+the sun at 110,000 km/hour (about 0.01\% of the speed of
+light) is to our west during the day. Michelson and Morley
+believed that light was a vibration of a mysterious medium called the ether, so they expected that the
+speed of light would be a fixed value relative to the ether.
+As the earth moved through the ether, they thought they
+would observe an effect on the velocity of light along an
+east-west line. For instance, if they released a beam of
+light in a westward direction during the day, they expected
+that it would move away from them at less than the normal
+speed because the earth was chasing it through the ether.
+They were surprised when they found that the expected 0.01\%
+change in the speed of light did not occur.\index{Michelson-Morley experiment}\index{ether}
+<%
+  fig(
+    'michelson',
+    %q{The Michelson-Morley experiment, shown in photographs, and drawings from the original 1887 paper.
+       1. A simplified drawing of the apparatus. A beam of light from the source, s, is partially reflected and partially transmitted by the half-silvered
+       mirror $\zu{h}_1$. The two half-intensity parts of the beam are reflected by the mirrors at a and b, reunited,
+       and observed in the telescope, t. If the earth's surface was supposed to be moving through the ether,
+       then the times taken by the two light waves to pass through the moving ether would be unequal, and
+       the resulting time lag would be detectable by observing the interference between the waves when they were reunited.
+       2. In the real apparatus, the light beams were reflected multiple times. The effective length of each arm was
+       increased to 11 meters, which greatly improved its sensitivity to the small expected difference in the speed of light.
+       3. In an earlier version of the experiment, they had run into problems with its ``extreme sensitiveness to vibration,''
+       which was ``so great that it was impossible to see the interference fringes except at brief intervals \ldots even at
+       two o'clock in the morning.'' They therefore mounted the whole thing on a massive stone floating in a pool of mercury,
+       which also made it possible to rotate it easily. 4. A photo of the apparatus.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false,
+      'sidepos'=>'t',
+      'anonymous'=>true
+    }
+  )
+%>
+
+<% end_sec %> % The Michelson-Morley experiment
+
+<% end_sec %> % Universality of $c$
+
+\pagebreak
+
+\startdqs
+
+\vspace{15mm}
+
+\begin{dq}
+The figure shows a famous thought experiment devised by Einstein. A train is moving at
+constant velocity to the right when bolts of lightning strike the ground near its front and
+back. Alice, standing on the dirt at the midpoint of the flashes, observes that the light
+from the two flashes arrives simultaneously, so she says the two strikes must have occurred
+simultaneously. Bob, meanwhile, is sitting aboard the train, at its middle. 
+He passes by Alice at the moment when Alice later figures out that the flashes happened.
+Later, he receives flash 2, and then flash 1. He infers that since both flashes traveled
+half the length of the train, flash 2 must have occurred first.
+How can this be reconciled with Alice's belief that the flashes were simultaneous?
+Explain using a graph.
+\end{dq}
+
+<%
+ fig(
+   'einstein-train',
+   '',
+   {
+     'width'=>'wide',
+     'sidecaption'=>true,
+     'anonymous'=>true
+   }
+ )
+%>
+
+\vspace{20mm}
+
+\begin{dq}
+Use a graph to resolve the following relativity paradox.
+Relativity says that in one frame of reference, event A could happen before event B, but in someone else's
+frame B would come before A. How can this be? Obviously the two people could meet up at A and talk
+as they cruised past each other. Wouldn't they have to
+agree on whether B had already happened?
+\end{dq}
+
+\vspace{20mm}
+
+\begin{dq}\label{dq:machine-gun-ftl}
+The machine-gunner in the figure sends out a spray of bullets. Suppose that the bullets are being shot into
+       outer space, and that the distances traveled are trillions of miles (so that the human figure
+       in the diagram is not to scale). After a long time, the bullets reach the points shown with dots
+       which are all equally far from the gun. Their arrivals at those points are events A through E,
+       which happen at different times. Sketch these events on a position-time graph.
+       The chain of impacts extends across space at a speed greater
+       than $c$.  Does this violate special relativity?
+\end{dq}
+
+<%
+  fig(
+    'machine-gun-ftl',
+    %q{Discussion question \ref{dq:machine-gun-ftl}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+\pagebreak
+
+\begin{dq}\label{dq:galaxies-signaling}
+The graph shows three galaxies. The axes are drawn according to an observer at rest relative to
+the galaxy 2, so that that galaxy is always at the same $x$ coordinate. 
+Intelligent species in the three different galaxies develop radio technology independently,
+and at some point each begins to actively send out signals in an attempt to communicate with other civilizations.
+Events a, b, and c mark the points at which these
+signals begin spreading out across the universe at the speed of light. Find the events
+at which the inhabitants of galaxy 2 detect
+the signals from galaxies 1 and 3. According to 2, who developed radio
+first, 1 or 3? On top of the graph,
+draw a new pair of position and time axes, for the frame in which galaxy 3 is at rest.
+According to 3, in what order did events a, b, and c happen?
+\end{dq}
+
+<%
+  fig(
+    'galaxies-signaling',
+    %q{Discussion question \ref{dq:galaxies-signaling}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+
+
+<% begin_sec("Induction",4,'induction') %>\index{induction}
+
+<% begin_sec("The principle of induction") %>
+Physicists of Michelson and Morley's generation thought that light was
+a mechanical vibration of the ether, but we now know that it is a ripple
+in the electric and magnetic fields. With hindsight, relativity essentially
+requires this:
+\begin{enumerate}
+\item Relativity requires that changes in any field propagate as waves at a finite speed (p.~\pageref{subsec:time-delays}).
+\item Relativity says that if a wave has a fixed speed but is not a mechanical disturbance in a physical medium, then it
+must travel at the universal velocity $c$ (p.~\pageref{sec:light-travels-at-c}).
+\end{enumerate}
+What is less obvious is that there are not two separate kinds of waves, electric and magnetic.
+In fact an electric wave can't exist without a magnetic one, or a magnetic one without an electric one.
+This new fact follows from the principle of induction, which was discovered experimentally
+by Faraday\index{Faraday, Michael} in 1831, seventy-five years before Einstein. Let's state Faraday's idea first, and
+then see how something like it must follow 
+inevitably from relativity:
+<% marg(0) %>
+<%
+  fig(
+    'induced-field-geometry',
+    %q{%
+      The geometry of induced fields. The induced field tends to
+              form a whirlpool pattern around the change in the vector producing it.
+              Note how they circulate in opposite directions.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{lessimportant}[the principle of induction]
+Any electric field that changes over time will produce a
+magnetic field in the space around it.
+
+\noindent Any magnetic field that changes over time will produce an
+electric field in the space around it.
+\end{lessimportant}
+
+The induced field tends to have a whirlpool pattern, as
+shown in figure \figref{induced-field-geometry}, but the whirlpool image is not to be
+taken too literally; the principle of induction really just
+requires a field pattern such that, if one inserted a
+paddlewheel in it, the paddlewheel would spin. All of the
+field patterns shown in figure \figref{curl-concept} are ones that
+could be created by induction; all have a counterclockwise ``curl'' to them.
+
+<%
+  fig(
+    'curl-concept',
+    %q{Three fields with counterclockwise ``curls.''},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<%
+  fig(
+    'relativity',
+    %q{%
+        Observer 1 is at rest with respect to the bar magnet, and
+        observes magnetic fields that have different strengths at different
+        distances from the magnet. Observer 2, hanging out in the region to the left of the
+        magnet, sees the magnet moving toward her, and detects that the
+        magnetic field in that region is getting stronger as time passes. 
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'narrowfigwidecaption'=>true,
+      'float'=>false,
+      'anonymous'=>false
+    }
+  )
+%>
+
+
+Figure \figref{relativity} shows an example of the fundamental
+reason why a changing $\vc{B}$ field must create an $\vc{E}$ field.
+In section \ref{sec:magnetic-interactions} we established that according to
+relativity, what one observer describes as a purely magnetic field,
+an observer in a different state of motion describes as a mixture of magnetic and electric fields.
+This is why there must be both an $\vc{E}$ and a $\vc{B}$ in observer 2's frame.
+Observer 2 cannot explain the electric field as coming from any
+charges. In frame 2, the $\vc{E}$ can only be explained as an effect
+caused by the changing $\vc{B}$.
+
+Observer 1 says, ``2 feels a changing $\vc{B}$ field because he's moving through
+a static field.'' Observer 2 says, ``I feel a changing $\vc{B}$ because the
+magnet is getting closer.'' 
+
+Although this argument doesn't prove the ``whirlpool'' geometry, we can
+verify that the fields I've drawn in figure \figref{relativity} are consistent
+with it.
+The $\Delta\vc{B}$ vector is upward,
+        and the electric field has a curliness to it: a paddlewheel inserted
+        in the electric field would spin clockwise as seen from above, since
+        the clockwise torque made by the strong electric field on the right is
+        greater than the counterclockwise torque made by the weaker electric
+        field on the left.
+
+\begin{eg}{The generator}\index{generator}
+A generator, \figref{generator}, consists of a permanent magnet that
+rotates within a coil of wire. The magnet is turned by a
+motor or crank, (not shown). As it spins, the nearby
+magnetic field changes. According to the principle of
+induction, this changing magnetic field results in an
+electric field, which has a whirlpool pattern. This electric
+field pattern creates a current that whips around the coils
+of wire, and we can tap this current to light the lightbulb.
+\end{eg}
+<% marg(33) %>
+<%
+  fig(
+    'generator',
+    %q{A generator.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'transformer',
+    %q{A transformer.}
+  )
+%>
+<% end_marg %>
+
+<% self_check('alternator',<<-'SELF_CHECK'
+When you're driving a car, the engine recharges the
+battery continuously using a device called an alternator,
+which is really just a generator like the one shown on the
+previous page, except that the coil rotates while the
+permanent magnet is fixed in place. Why can't you use the
+alternator to start the engine if your car's battery is dead?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{The transformer}
+In example \ref{hvtransmission} on p.~\pageref{hvtransmission} we discussed the advantages of transmitting
+power over electrical lines using high voltages and low
+currents. However, we don't want our wall sockets to operate
+at 10000 volts! For this reason, the electric company uses a
+device called a \index{transformer}transformer, \figref{transformer}, to
+convert to lower voltages and higher currents inside your
+house. The coil on the input side creates a magnetic field.
+Transformers work with alternating current, so the magnetic
+field surrounding the input coil is always changing. This
+induces an electric field, which drives a current around the output coil.
+
+                If both coils were the same, the arrangement would be
+symmetric, and the output would be the same as the input,
+but an output coil with a smaller number of coils gives the
+electric forces a smaller distance through which to push the
+electrons. Less mechanical work per unit charge means a
+lower voltage. Conservation of energy, however, guarantees
+that the amount of power on the output side must equal the
+amount  put in originally, $I_{in}V_{in} = I_{out}V_{out}$,
+so this reduced voltage must be accompanied by an increased current.
+
+\end{eg}
+
+<% end_sec() %>
+<% end_sec() %>
+
+<% begin_sec("Electromagnetic waves",0,'em-waves') %>\index{electromagnetic waves}\index{waves!electromagnetic}
+
+The most important consequence of induction is the existence
+of electromagnetic waves. Whereas a gravitational wave would
+consist of nothing more than a rippling of gravitational
+fields, the principle of induction tells us that there can
+be no purely electrical or purely magnetic waves. Instead,
+we have waves in which there are both electric and magnetic
+fields, such as the sinusoidal one shown in the figure.
+Maxwell proved that such waves were a direct consequence of
+his equations, and derived their properties mathematically.
+The derivation would be beyond the mathematical level of
+this book, so we will just state the results.
+
+\enlargethispage{-\baselineskip}
+
+<%
+  fig(
+    'em-wave',
+    %q{An electromagnetic wave.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+A sinusoidal electromagnetic wave has the geometry shown above.
+The $\vc{E}$ and $\vc{B}$ fields are perpendicular
+to the direction of motion, and are also perpendicular to
+each other. If you look along the direction of motion of the
+wave, the $\vc{B}$ vector is always 90 degrees clockwise from the
+$\vc{E}$ vector. In a plane wave, the magnitudes of the two fields are related by
+$|\vc{E}|=c|\vc{B}|$.
+
+How is an electromagnetic wave created? It could be emitted,
+for example, by an electron orbiting an atom or currents
+going back and forth in a transmitting antenna. In general
+any accelerating charge will create an electromagnetic wave,
+although only a current that varies sinusoidally with time
+will create a sinusoidal wave. Once created, the wave
+spreads out through space without any need for charges or
+currents along the way to keep it going. As the electric
+field oscillates back and forth, it induces the magnetic
+field, and the oscillating magnetic field in turn creates
+the electric field. The whole wave pattern propagates
+through empty space at the velocity $c$.
+
+\begin{eg}{Einstein's motorcycle}\label{eg:einstein-motorcycle}
+As a teenage physics student, Einstein imagined the following paradox. 
+(See p.~\pageref{qualitative-doppler-light}.) What if
+he could get on a motorcycle and ride at speed $c$, alongside a beam of light?
+In his frame of reference, he observes constant electric and magnetic fields.
+But only a \emph{changing} electric field can induce a magnetic field, and
+only a \emph{changing} magnetic field can induce an electric field. The laws
+of physics are violated in his frame, and this seems
+to violate the principle that all frames of reference are equally valid.
+
+The resolution of the paradox is that $c$ is a universal speed limit, so the
+motorcycle can't be accelerated to $c$. Observers can never be at rest relative
+to a light wave, so no observer can have a frame of reference in which a light
+wave is observed to be at rest.
+\end{eg}
+
+\begin{eg}{Reflection}\label{eg:em-wave-refl-conductor}
+The wave in figure \figref{em-wave-refl-conductor} hits a silvered mirror.
+The metal is a good conductor, so it has constant voltage throughout, and
+the electric field equals zero inside it: the wave
+doesn't penetrate and is 100\%
+reflected. If the electric field is to be zero at the surface as well, the reflected wave must have
+its electric field inverted (p.~\pageref{wave-inversion}), so that the incident and reflected
+fields cancel there.
+
+But the magnetic field of the reflected wave is \emph{not} inverted. This is because the reflected
+wave, when viewed along its leftward direction of propagation, needs to have its $\vc{B}$ vector
+90 degrees clockwise from its $\vc{E}$ vector.
+\end{eg}
+
+<% begin_sec("Polarization") %>
+\index{polarization}
+
+Two electromagnetic waves traveling in the same direction
+through space can differ by having their electric and
+magnetic fields in different directions, a property of the
+wave called its polarization.
+
+<% end_sec() %>
+
+\enlargethispage{-\baselineskip}
+
+<% begin_sec("Light is an electromagnetic wave") %>
+
+Once Maxwell had derived the existence of electromagnetic
+waves, he became certain that they were the same phenomenon
+as light. Both are transverse waves (i.e., the vibration is
+perpendicular to the direction the wave is moving), and the
+velocity is the same.
+<% marg(0) %>
+<%
+  fig(
+    'em-wave-refl-conductor',
+    %q{Example \ref{eg:em-wave-refl-conductor}. The incident and reflected waves are drawn offset from
+       each other for clarity, but are actually on top of each other so that their fields superpose.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hertz',
+    %q{Heinrich Hertz (1857-1894).},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+Heinrich \index{Hertz, Heinrich}Hertz (for whom the unit of
+frequency is named) verified Maxwell's ideas experimentally.
+Hertz was the first to succeed in producing, detecting, and
+studying electromagnetic waves in detail using antennas and
+electric circuits. To produce the waves, he had to make
+electric currents oscillate very rapidly in a circuit. In
+fact, there was really no hope of making the current reverse
+directions at the frequencies of $10^{15}$ Hz possessed by
+visible light. The fastest electrical oscillations he could
+produce were $10^9$ Hz, which would give a wavelength of
+about 30 cm. He succeeded in showing that, just like light,
+the waves he produced were polarizable, and could be
+reflected and refracted (i.e., bent, as by a lens), and he
+built devices such as parabolic mirrors that worked
+according to the same optical principles as those employing
+light. Hertz's results were convincing evidence that light
+and electromagnetic waves were one and the same.
+
+<% end_sec() %>
+<% begin_sec("The electromagnetic spectrum",nil,'em-spectrum') %>\index{spectrum!electromagnetic}\index{electromagnetic spectrum}
+
+Today, electromagnetic waves with frequencies in the range
+employed by Hertz are known as radio waves. Any remaining
+doubts that the ``Hertzian waves,'' as they were then
+called, were the same type of wave as light waves were soon
+dispelled by experiments in the whole range of frequencies
+in between, as well as the frequencies outside that range.
+In analogy to the spectrum of visible light, we speak of the
+entire electromagnetic spectrum, of which the visible
+spectrum is one segment.
+
+<%
+ fig(
+   'em-spectrum',
+   '',
+   {'width'=>'fullpage'}
+ )
+%>
+
+The terminology for the various parts of the spectrum is
+worth memorizing, and is most easily learned by recognizing
+the logical relationships between the wavelengths and the
+properties of the waves with which you are already familiar.
+ Radio waves have wavelengths that are comparable to the
+size of a radio antenna, i.e., meters to tens of meters.
+Microwaves were named that because they have much shorter
+wavelengths than radio waves; when food heats unevenly in a
+microwave oven, the small distances between neighboring hot
+and cold spots is half of one wavelength of the standing
+wave the oven creates. The infrared, visible, and
+ultraviolet obviously have much shorter wavelengths, because
+otherwise the wave nature of light would have been as
+obvious to humans as the wave nature of ocean waves. To
+remember that ultraviolet, x-rays, and gamma rays all lie on
+the short-wavelength side of visible, recall that all three
+of these can cause cancer. (As we'll discuss later in the
+course, there is a basic physical reason why the cancer-causing
+disruption of DNA can only be caused by very short-wavelength
+electromagnetic waves. Contrary to popular belief,
+microwaves cannot cause cancer, which is why we have
+microwave ovens and not x-ray ovens!)
+
+\vspace{20mm}
+
+\begin{eg}{Switching frames of reference}\label{eg:null-field}
+If we switch to a different frame of
+reference, a legal light wave should still be legal. Consider the requirement $\vc{E}=c\vc{B}$,
+in the case where observer 1 says observer 2 is trying to run away from the wave.
+In figure \figref{e-b-lorentz} on p.~\pageref{fig:e-b-lorentz}, we saw that the familiar parallelogram
+graphs described the transformation of electric and magnetic fields from one frame of
+reference to another. These pictures are intended to be used in units where $c=1$, so
+the requirement for the fields becomes $\vc{E}=\vc{B}$, and such a combination of fields is represented
+by a dot on the diagonal, which is the same line in both frames.
+\end{eg}
+
+\vspace{20mm}
+
+
+<% marg(60) %>
+<%
+  fig(
+    'null-field',
+    %q{%
+      Example \ref{eg:null-field}: an electromagnetic wave that is legal in one frame of reference is legal in another.
+      As in figure \figref{e-b-lorentz} on p.~\pageref{fig:e-b-lorentz}, the each frame of reference is
+      in motion relative to the other along the $x$ axis.
+      If the wave's electric field
+      is aligned with the $y$ axis, and its magnetic field with $z$, then $x$ is also the direction in which the
+      wave is moving, as required for our example. 
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{Why the sky is blue}
+When sunlight enters the upper atmosphere, a particular air mole\-cule
+finds itself being washed over by an electromagnetic wave of frequency $f$.
+The molecule's charged
+particles (nuclei and electrons) act like oscillators being driven by
+an oscillating force, and respond by vibrating at the same frequency $f$.
+Energy is sucked out of the incoming beam of sunlight and converted into the
+kinetic energy of the oscillating particles. However, these particles are
+accelerating, so they act like little radio antennas that put the energy back
+out as spherical waves of light that spread out in all directions.
+An object oscillating at a frequency $f$ has an acceleration proportional to
+$f^2$, and an accelerating charged particle creates an electromagnetic wave
+whose fields are proportional to its acceleration, so the field of the
+reradiated spherical wave is proportional to $f^2$. The energy of a field
+is proportional to the square of the field, so the energy of the reradiated wave
+is proportional to $f^4$. Since blue light has about twice the frequency of
+red light, this process is about $2^4=16$ times as strong for blue as for
+red, and that's why the sky is blue.
+\end{eg}
+
+\vfill
+
+<% end_sec('em-spectrum') %> % The electromagnetic spectrum
+
+
+<%
+  fig(
+    'maxwellian-momentum-of-light',
+    %q{An electromagnetic wave strikes an ohmic surface. The wave's electric field causes currents to flow up and down.
+            The wave's magnetic field then acts on these currents, producing a force in the direction of the wave's propagation.
+            This is a pre-relativistic argument that light must possess inertia.},
+    {
+      'width'=>'wide',
+      'narrowfigwidecaption'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'nichols-radiometer',
+    %q{A simplified drawing of the 1903 experiment by Nichols and Hull that verified the predicted momentum
+       of light waves. Two circular mirrors were hung from a fine quartz fiber, inside an evacuated
+       bell jar. A 150 mW beam of light was shone on one of the mirrors for 6 s, producing a tiny rotation,
+       which was measurable by an optical lever (not shown). The force was within 0.6\%
+       of the theoretically predicted value
+       (problem \ref{hw:ultrarelativistic} on p.~\pageref{hw:ultrarelativistic})
+       of $0.001\ \mu\nunit$.\index{Nichols-Hull experiment on momentum of light}
+       For comparison, a short clipping of a single human hair weighs $\sim 1\ \mu\nunit$.},
+    {
+      'width'=>'wide',
+      'narrowfigwidecaption'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+<% begin_sec("Momentum of light") %>\index{light!momentum of}\index{electromagnetic wave!momentum of}\index{momentum!of light}
+
+Newton defined momentum as $mv$, which would imply that light, which has no mass,
+should have no momentum. But Newton's laws only work at speeds small compared to
+the speed of light, and light travels \emph{at} the speed of light.
+In fact, it's straightforward to show that electromagnetic waves have momentum. If a light wave strikes
+an ohmic surface, as in figure \figref{maxwellian-momentum-of-light}, the wave's electric field causes charges to vibrate back and forth
+in the surface. These currents then
+experience a magnetic force from the wave's magnetic field, and application of the geometrical rule on p.~\pageref{geom-mag-force-on-charge} shows that
+the resulting force is in the direction of propagation of the wave. A light wave
+has momentum and inertia. This is explored further in 
+problem \ref{hw:ultrarelativistic} on p.~\pageref{hw:ultrarelativistic}. Figure
+\figref{nichols-radiometer} shows an experimental confirmation.
+
+<% end_sec() %> % Momentum of light
+<% end_sec() %> % Electromagnetic waves
+<% begin_sec("Symmetry and handedness",nil,'',{'optional'=>true}) %>\index{symmetry}\index{handedness}
+
+Imagine that you establish
+radio contact with an alien on another planet. Neither of
+you even knows where the other one's planet is, and you
+aren't able to establish any landmarks that you both
+recognize. You manage to learn quite a bit of each other's
+languages, but you're stumped when you try to establish the
+definitions of left and right (or, equivalently, clockwise
+and counterclockwise). Is there any way to do it?
+
+<% marg(0) %>
+<% fig(
+     'swan-lake-symmetry',
+     %q{In this scene from Swan Lake, the choreography has a symmetry with respect to left and right.}
+   )
+%>
+\label{fig:swan-lake-symmetry}
+<% end_marg %>
+
+If there was any way to do it without reference to external
+landmarks, then it would imply that the laws of physics
+themselves were asymmetric, which would be strange. Why
+should they distinguish left from right? The gravitational
+field pattern surrounding a star or planet looks the same in
+a mirror, and the same goes for electric fields.
+The field patterns shown in section \ref{sec:calculating-magnetism} seem to violate this
+principle, but do they really? Could you use these patterns
+to explain left and right to the alien? In fact, the answer
+is no. If you look back at the definition of the magnetic
+field in section \ref{sec:b-field}, it also contains a reference to
+handedness: the counterclockwise direction of the loop's
+current as viewed along the magnetic field. The aliens might
+have reversed their definition of the magnetic field, in
+which case their drawings of field patterns would look like
+mirror images of ours.
+
+<% marg(80) %>
+<% fig(
+     'c-s-wu-with-beamline',
+     %q{C.S.~Wu},
+     {'anonymous'=>true}
+   )
+%>
+\label{fig:c-s-wu-with-beamline}
+\spacebetweenfigs
+<%
+  fig(
+    'six-tenths-c',
+    %q{%
+      A graphical representation of the Lorentz transformation for a velocity of $(3/5)c$. The long diagonal is stretched by a factor of two, the
+         short one is half its former length, and the area is the same as before.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'doppler',
+    %q{%
+      The pattern of waves made by a point source moving to the right
+      across the water. Note the shorter wavelength of the forward-emitted waves and the longer
+      wavelength of the backward-going ones.
+    },
+    {'suffix'=>'2'} # doesn't work, gets labeled by subsec number ... why?
+  )
+%>
+<% end_marg %>
+
+Until the middle of the twentieth century, physicists
+assumed that any reasonable set of physical laws would have
+to have this kind of symmetry between left and right. An
+asymmetry would be grotesque. Whatever their aesthetic
+feelings, they had to change their opinions about reality
+when experiments by C.S.~Wu et al.~showed that the \index{weak nuclear
+force}weak \index{nuclear forces}nuclear force (section \ref{sec:energy-in-fields})
+violates right-left symmetry! It is still a mystery why
+right-left symmetry is observed so scrupulously in general,
+but is violated by one particular type of physical process.
+
+<% end_sec() %>
+<% begin_sec("Doppler shifts and clock time",nil,'doppler-and-clock',{'optional'=>true}) %>
+
+Figure \figref{six-tenths-c} shows our now-familiar method of visualizing a Lorentz transformation,
+in a case where the numbers come out to be particularly simple. This diagram has two geometrical features that we have referred to
+before without digging into their physical significance: the \emph{stretch factor} of the diagonals, and the \emph{area}. In this section
+we'll see that the former can be related to the Doppler effect, and the latter to clock time.
+
+
+<% begin_sec("Doppler shifts of light",nil,'doppler-light') %>\index{light!Doppler effect for}\index{Doppler effect!for light}
+When Doppler shifts happen to ripples on a pond or the sound waves from an airplane, they can depend on the relative motion of three
+different objects: the source, the receiver, and the medium. But light waves don't have a medium. Therefore Doppler shifts of
+light can only depend on the relative motion of the source and observer.
+
+One simple case is the one in which the relative motion of the source and the receiver is perpendicular to the line connecting them.
+That is, the motion is transverse.
+Nonrelativistic Doppler shifts happen because the distance between the source and receiver is changing, so in nonrelativistic
+physics we don't expect any Doppler shift at all when the motion is transverse, and this is what is in fact observed to high precision.
+For example, the photo
+% Can't get it to label correctly, so can't do figref.
+shows shortened and lengthened wavelengths to the right and left, along the source's line of motion,
+but an observer above or below the source measures just the normal, unshifted wavelength and frequency. But relativistically, we have
+a time dilation effect, so for light waves emitted transversely, there is a Doppler shift of $1/\mygamma$ in frequency (or $\mygamma$ in wavelength).
+
+The other simple case is the one in which the relative motion of the source and receiver is longitudinal, i.e., they are either approaching or
+receding from one another. For example, distant galaxies are receding from our galaxy due to the expansion of the universe, and this expansion was
+originally detected because Doppler shifts toward the red (low-frequency) end of the spectrum were observed. 
+
+Nonrelativistically, we would expect
+the light from such a galaxy to be Doppler shifted down in frequency by some factor, which would depend on the relative velocities of three different
+objects: the source, the wave's medium, and the receiver. Relativistically, things get simpler, because light isn't a vibration of a physical medium,
+so the Doppler shift can only depend on a single velocity $v$, which is the rate at which the separation between the source and the receiver is
+increasing.
+
+The square in figure \figref{doppler-geometry} is the ``graph paper'' used by someone who considers the source to be at rest, while
+the parallelogram plays a similar role for the receiver. The figure is drawn for the case where $v=3/5$ (in units where $c=1$),
+and in this case the stretch factor of the long diagonal is 2. To keep the area the same, the short diagonal has to be squished to half its
+original size. But now it's a matter of simple geometry to show that OP equals half the width of the square, and this tells us that the Doppler
+shift is a factor of 1/2 in frequency. That is, the squish factor of the short diagonal is interpreted as the Doppler shift.
+To get this as a general equation for velocities other than 3/5, one can show by straightforward fiddling with the result of
+part c of problem \ref{hw:gamma-derivation} on p.~\pageref{hw:gamma-derivation} that
+the Doppler shift is
+\begin{equation*}
+  D(v) = \sqrt{\frac{1-v}{1+v}}\eqquad.
+\end{equation*}
+Here $v>0$ is the case where the source and receiver are getting farther apart, $v<0$ the case where they are approaching.
+(This is the opposite of the sign convention used in section \ref{sec:doppler}. It is convenient to change conventions here so that we can
+use positive values of $v$ in the case of cosmological red-shifts, which are the most important application.)
+<% marg(100) %>
+<%
+  fig(
+    'doppler-geometry',
+    %q{%
+      At event O, the source and the receiver are on top of each other, so as the source emits a wave crest, it is received without any time delay.
+      At P, the source emits another wave crest, and at Q the receiver receives it.
+    }
+  )
+%>
+<% end_marg %>
+
+Suppose that Alice stays at home on earth while her twin Betty takes off in her rocket ship at 3/5 of the speed of light.
+When I first learned relativity, the thing that caused me the most pain was understanding how each observer could say that the
+other was the one whose time was slow. It seemed to me that if I could take a pill that would speed up my mind and my body,
+then naturally I would see everybody \emph{else} as being \emph{slow}. Shouldn't the same apply to relativity? But suppose Alice and Betty
+get on the radio and try to settle who is the fast one and who is the slow one. Each twin's voice sounds slooooowed doooowwwwn
+to the other. If Alice claps her hands twice, at a time interval of one second by her clock, Betty hears the hand-claps coming
+over the radio two seconds apart, but the situation is exactly symmetric, and Alice hears the same thing if Betty claps.
+Each twin analyzes the situation using a diagram identical to \figref{doppler-geometry}, and attributes her sister's
+observations to a complicated combination of time distortion, the time taken by the radio signals to propagate, and
+the motion of her twin relative to her.
+
+<% self_check('doppler-approaching',<<-'SELF_CHECK'
+Turn your book upside-down and reinterpret figure \figref{doppler-geometry}.
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{A symmetry property of the Doppler effect}\label{eg:doppler-abc}
+Suppose that A and B are at rest relative to one another, but C is moving along the line between A and B. A transmits a signal
+to C, who then retransmits it to B. The signal accumulates two Doppler shifts, and the result is their product $D(v)D(-v)$. But
+this product must equal 1, so we must have $D(-v)D(v)=1$, which can be verified directly from the equation.
+\end{eg}
+
+\begin{eg}{The Ives-Stilwell experiment}\index{Ives-Stilwell experiment}
+The result of example \ref{eg:doppler-abc} was the basis of one of the earliest laboratory tests of special relativity, by Ives and Stilwell in 1938.
+They observed the light emitted by excited by a beam of $\zu{H}_2^+$ and $\zu{H}_3^+$ ions with speeds of a few tenths of a percent of $c$.
+Measuring the light from both ahead of and behind the beams, they found that the product of the Doppler shifts $D(v)D(-v)$ was equal to 1,
+as predicted by relativity. If relativity had been false, then one would have expected the product to differ from 1 by an amount that would
+have been detectable in their experiment. In 2003, Saathoff et al.~carried out an extremely precise version of the Ives-Stilwell technique
+with $\zu{Li}^+$ ions moving at 6.4\% of $c$. The frequencies observed, in units of MHz, were:
+
+\noindent\begin{tabular}{rl}
+$f_\zu{o}$ &=      $546466918.8  \pm 0.4$ \\
+           & \hfill (unshifted frequency)\\
+$f_\zu{o}D(-v)$ & =          $582490203.44 \pm .09$ \\
+           & \hfill (shifted frequency, forward)\\
+$f_\zu{o} D(v)$ & =          $512671442.9  \pm 0.5$ \\
+           & \hfill (shifted frequency, backward)\\
+$\sqrt{f_\zu{o}D(-v)\cdot f_\zu{o} D(v)}$ &= $546466918.6  \pm 0.3$ 
+\end{tabular}
+
+\noindent The results show incredibly precise agreement between $f_\zu{o}$ and $\sqrt{f_\zu{o}D(-v)\cdot f_\zu{o} D(v)}$, as expected
+relativistically because $D(v)D(-v)$ is supposed to equal 1. The agreement extends to 9 significant figures, whereas
+if relativity had been false there should have been a relative disagreement of about $v^2=.004$, i.e., a discrepancy in the third significant figure.
+The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+\end{eg}
+
+We saw on p.~\pageref{relativistic-combination-of-vel} that relativistic velocities should not be expected to be exactly additive,
+and problem \ref{hw:six-tenths-c-twice} on p.~\pageref{hw:six-tenths-c-twice} verifies this in the special case where A moves relative to B
+at $0.6c$ and B relative to C at $0.6c$ --- the result \emph{not} being $1.2c$.\index{velocity!addition of!relativistic}
+The relativistic Doppler shift provides a simple way of deriving a general equation for the relativistic combination of velocities;
+problem \ref{hw:rel-vel-addition} on p.~\pageref{hw:rel-vel-addition} guides you through the steps of this derivation.
+
+<% end_sec() %>
+<% begin_sec("Clock time",nil,'proper-time',{'optional'=>true}) %>
+On p.~\pageref{fig:area-proof} we proved that the Lorentz transformation doesn't change the area of a shape in the $x$-$t$ plane.
+We used this only as a stepping stone toward the Lorentz transformation, but it is natural to wonder whether
+this kind of area has any physical interest of its own.
+
+The equal-area result is not relativistic, since the proof never appeals to property 5 on page \pageref{spacetime-properties}. Cases
+I and II on page \pageref{fig:three-cases} also have the equal-area property. We can see this clearly in a Galilean transformation like
+figure \figref{galilean-boost} on p.~\pageref{fig:galilean-boost}, where the distortion of the rectangle could be accomplished by cutting it into
+vertical slices and then displacing the slices upward without changing their areas.
+
+But the area does have a nice interpretation in the relativistic
+case. Suppose that we have events A (Charles VII is restored to the throne) and B (Joan of Arc is executed). Now imagine
+that technologically advanced aliens want to be present at both A and B, but in the interim they wish to fly away in their spaceship, be present
+at some other event P (perhaps a news conference at which they give an update on the events taking place on earth), but get back in
+time for B. Since nothing can go faster than $c$ (which we take to equal 1 in appropriate units), P cannot be too far away. The set of all possible events
+P forms a rectangle, figure \subfigref{light-rectangles}{1}, in the $x-t$ plane that has A and B at opposite corners and whose edges have slopes equal to $\pm 1$.
+We call this type of rectangle a light-rectangle, because its sides could represent the motion of rays of light.
+
+<%
+  fig('light-rectangles',
+    %q{1.~The gray light-rectangle represents the set of all events such as P that could be visited after A and before B.\\\\
+       2.~The rectangle becomes a square in the frame in which A and B occur at the same location in space.\\\\
+       3.~The area of the dashed square is $\tau^2$, so the area of the gray square is $\tau^2/2$.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The area of this rectangle will be the same regardless of one's frame of reference. In particular, we could choose a
+special frame of reference, panel 2 of the figure, such that A and B occur
+in the same place. (They do not occur at the same place, for example, in the sun's frame,
+because the earth is spinning and going around the sun.) Since the speed $c$, which equals 1 in our units,
+is the same in all frames of reference, and the sides of
+the rectangle had slopes $\pm 1$ in frame 1, they must still have slopes $\pm 1$ in frame 2.
+The rectangle becomes a square with its diagonals parallel to the $x$ and $t$ axes, and the length of these diagonals equals the
+time $\tau$ elapsed on a clock that is at rest in frame 2, i.e., a clock that glides through space at constant velocity from A to B,
+meeting up with the planet earth at the appointed time.
+As shown in panel 3 of the figure, the area of the gray regions can be interpreted as half the square of this gliding-clock time.
+If events A and B are separated by a distance $x$ and a time $t$, then in general $t^2-x^2$ gives the square of the gliding-clock time.\footnote{Proof: Based
+on units, the expression must have the form $(\ldots)t^2+(\ldots)tx+(\ldots)x^2$, where each $(\ldots)$ represents a unitless constant.
+The $tx$ coefficient must be zero by property 2 on p.~\pageref{spacetime-properties}. For consistency with figure \subfigref{light-rectangles}{3},
+the $t^2$ coefficient must equal 1. Since the area vanishes for $x=t$, the $x^2$ coefficient must equal $-1$.}
+
+When $|x|$ is greater than $|t|$, events A and B are so far apart in space and so close together in time that
+it would be impossible to have a cause and effect relationship between them, since $c=1$ is the maximum speed of cause and effect.
+In this situation $t^2-x^2$ is negative and cannot be interpreted as a clock time, but it can be interpreted as minus the square of the
+distance between A and B as measured by rulers at rest in a frame in which A and B are simultaneous.\label{interval-using-ruler}
+
+No matter what, $t^2-x^2$ is the same as measured in all frames of reference. Geometrically, it plays the same role
+in the $x$-$t$ plane that ruler measurements play in the Euclidean plane. In Euclidean
+geometry, the ruler-distance between any two points stays the same regardless of rotation, i.e., regardless of 
+the angle from which we view the scene; according to the Pythagorean theorem, the square of this distance is $x^2+y^2$.
+In the $x$-$t$ plane, $t^2-x^2$ stays the same regardless of the
+frame of reference.
+
+To avoid overloading the reader with terms to memorize, some commonly used terminology is
+relegated to problem \ref{hw:geroch-interval} on p.~\pageref{hw:geroch-interval}.
+<% end_sec() %> % Clock time
+<% end_sec() %> % Doppler shifts and clock time
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{magnetic field}{a field of force, defined in terms of the
+torque exerted on a test dipole}
+
+\vocabitem{magnetic dipole}{an object, such as a current loop, an atom,
+or a bar magnet, that experiences torques due to magnetic
+forces; the strength of magnetic dipoles is measured by
+comparison with a standard dipole consisting of a square
+loop of wire of a given size and carrying a given amount of current}
+
+\vocabitem{induction}{the production of an electric field by a changing
+magnetic field, or vice-versa}
+
+\end{vocab}
+
+\begin{notation}
+\notationitem{$\vc{B}$}{the magnetic field}
+
+\notationitem{$D_m$}{magnetic dipole moment}
+
+\end{notation}
+
+\begin{summarytext}
+
+The magnetic field is defined in terms of
+the torque on a magnetic test dipole. It has no sources or
+sinks; magnetic field patterns never converge on or
+diverge from a point.
+
+Relativity dictates a maximum speed limit $c$ for cause and effect. This
+speed is the same in all frames of reference.
+
+Relativity requires that the magnetic and electric fields be intimately related. The
+principle of induction states that any changing electric
+field produces a magnetic field in the surrounding space,
+and vice-versa. These induced fields tend to form whirlpool patterns.
+
+The most important consequence of the principle of induction
+is that there are no purely magnetic or purely electric
+waves. Electromagnetic disturbances
+propagate outward at $c$ as combined magnetic and electric waves,
+with a well-defined relationship between the magnitudes
+and directions of the electric and magnetic fields. These electromagnetic waves are what light
+is made of, but other forms of electromagnetic waves exist
+besides visible light, including radio waves, x-rays, and gamma rays.
+\end{summarytext}
+\end{summary}
+
+ %%===============================================================================
+
+<% begin_hw_sec %>
+
+<% begin_hw('six-tenths-c-twice') %>__incl(../../share/relativity/hw/six-tenths-c-twice)<% end_hw() %>
+
+\vfill
+
+\enlargethispage{3\baselineskip}
+
+<%
+  fig(   
+    'hw-six-tenths-c-twice',
+    '',
+    {
+      'width'=>'fullpage'
+      #'sidecaption'=>true
+    }
+  )
+%>
+
+\pagebreak
+
+\pagebreak
+
+<% begin_hw('side-by-side-lasers') %>__incl(../../share/relativity/hw/side-by-side-lasers)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('nestedsolenoids') %>__incl(hw/nestedsolenoids)<% end_hw() %>
+
+\vfill
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-nested-wire-loops',
+    %q{Problem \ref{hw:nested-wire-loops}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('nested-wire-loops') %>__incl(hw/nested-wire-loops)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('atom') %>__incl(hw/atom)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('velocityfilter') %>__incl(hw/velocityfilter)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('solenoid-u-quadruple-i') %>__incl(hw/solenoid-u-quadruple-i)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('mystery-magnet',2) %>__incl(hw/mystery-magnet)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('solenoid-sex') %>__incl(hw/solenoid-sex)<% end_hw() %>
+
+<%
+  fig(
+    'hw-wire-box',
+    %q{Problem \ref{hw:wire-box}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\vfill
+
+<% begin_hw('wire-box') %>__incl(hw/wire-box)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('force-on-wire-in-b') %>__incl(hw/force-on-wire-in-b)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('force-between-wires') %>__incl(hw/force-between-wires)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('cyclic-vbf') %>__incl(hw/cyclic-vbf)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('dipoleshape',2) %>__incl(hw/dipoleshape)<% end_hw() %>
+
+\vfill
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-helmholtz-coil',
+    %q{Problem \ref{hw:helmholtzcoil}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('helmholtzcoil') %>__incl(hw/helmholtzcoil)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('b-from-photo') %>__incl(hw/b-from-photo)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('corkscrew-beam',2) %>__incl(hw/corkscrew-beam)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('deleted') %>This problem is now problem \ref{hw:cosmic-ray-lightning} on p.~\pageref{hw:cosmic-ray-lightning}.<% end_hw() %>
+
+\vfill
+
+<% begin_hw('field-at-mouth-of-solenoid',2) %>__incl(hw/field-at-mouth-of-solenoid)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('em-wave-energy-split') %>__incl(hw/em-wave-energy-split)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('rel-vel-addition') %>__incl(../../share/relativity/hw/rel-vel-addition)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('geroch-interval') %>__incl(../../share/relativity/hw/geroch-interval)<% end_hw() %>
+
+<% marg(200) %>
+<%
+  fig(
+    'hw-geroch-interval',
+    %q{%
+      Problem \ref{hw:geroch-interval}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('pure-e-b-lorentz-graphical') %>__incl(hw/pure-e-b-lorentz-graphical)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Polarization","A") %>
+
+\noindent Apparatus:
+
+\begin{indentedblock}
+calcite (Iceland spar) crystal
+
+polaroid film
+\end{indentedblock}
+
+1. Lay the crystal on a piece of paper that has print on it.
+You will observe a double image. See what happens if
+you rotate the crystal.
+
+	Evidently the crystal does something to the light that
+passes through it on the way from the page to your eye. One
+beam of light enters the crystal from underneath, but two
+emerge from the top; by conservation of energy the energy of
+the original beam must be shared between them. Consider the
+following three possible interpretations of what you have observed:
+
+(a) The two new beams differ from each other, and from the
+original beam, only in energy. Their other properties are the same.
+
+(b) The crystal adds to the light some mysterious new
+property (not energy), which comes in two flavors, X and
+Y. Ordinary light doesn't have any of either. One beam
+that emerges from the crystal has some X added to it, and
+the other beam has Y.
+
+(c) There is some mysterious new property that is possessed
+by all light. It comes in two flavors, X and Y, and most
+ordinary light sources make an equal mixture of type X and
+type Y light. The original beam is an even mixture of both
+types, and this mixture is then split up by the crystal into
+the two purified forms.
+
+In parts 2 and 3 you'll make observations that will allow
+you to figure out which of these is correct.
+
+2. Now place a polaroid film over the crystal and see what
+you observe. What happens when you rotate the film in the
+horizontal plane? Does this observation allow you to rule
+out any of the three interpretations?
+
+\vspace{20mm}
+
+3. Now put the polaroid film under the crystal and try the
+same thing. Putting together all your observations, which
+interpretation do you think is correct?
+
+\vspace{20mm}
+
+4. Look at an overhead light fixture through the polaroid,
+and try rotating it. What do you observe? What does this
+tell you about the light emitted by the lightbulb?
+
+\vspace{20mm}
+
+5. Now position yourself with your head under a light
+fixture and directly over a shiny surface, such as a glossy
+tabletop. You'll see the lamp's reflection, and the light
+coming from the lamp to your eye will have undergone a
+reflection through roughly a 180-degree angle (i.e. it very
+nearly reversed its direction). Observe this reflection
+through the polaroid, and try rotating it. Finally, position
+yourself so that you are seeing glancing reflections, and
+try the same thing. Summarize what happens to light with
+properties X and Y when it is reflected. (This is the
+principle behind polarizing sunglasses.)
+<% end_ex %>
+
+<% begin_ex("Events and spacetime","B") %>
+
+\includegraphics[width=168mm]{../share/relativity/figs/spacetime-ex-0.png}
+
+\includegraphics[width=168mm]{../share/relativity/figs/spacetime-ex-1.png}
+
+\includegraphics[width=168mm]{../share/relativity/figs/spacetime-ex-2.png}
+<% end_ex %>
+
+<% end_chapter() %>

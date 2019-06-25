@@ -1,0 +1,54 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '27',
+    %q{General relativity},
+    'ch:genrel',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/relativity_general)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+<% begin_hw('angular-defect') %> __incl(hw/angular-defect) <% end_hw() %>
+
+<% begin_hw('cone-intrinsic-curvature') %>  __incl(hw/cone-intrinsic-curvature) <% end_hw() %>
+
+<% begin_hw('grav-doppler-units') %> __incl(hw/grav-doppler-units) <% end_hw() %>
+
+\vspace{-\baselineskip}
+
+<% begin_hw('pound-rebka') %> __incl(hw/pound-rebka) <% end_hw() %>
+<% marg(43) %>
+<%
+  fig(
+    'van-baak',
+    %q{Problem \ref{hw:pound-rebka}b. Redrawn from Van Baak, Physics Today 60 (2007) 16.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('iss-time-dilation') %> __incl(hw/iss-time-dilation)<% end_hw() %>
+
+<% begin_hw('earth-black-hole') %> __incl(hw/earth-black-hole) <% end_hw %>
+
+<% begin_hw('tossed-clock') %> __incl(hw/tossed-clock) <% end_hw %>
+
+<% begin_hw('sphere-angular-defect') %> __incl(hw/sphere-angular-defect) <% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% end_hw_sec %>
+
+<% begin_ex("Misconceptions about relativity") %>
+__incl(text/relativity_misconceptions)
+<% end_ex %>
+
+<% end_chapter() %>

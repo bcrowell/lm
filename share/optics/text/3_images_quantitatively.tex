@@ -1,0 +1,668 @@
+It sounds a bit odd when a scientist refers to a theory as
+``beautiful,'' but to those in the know it makes perfect
+sense. One mark of a beautiful theory is that it surprises
+us by being simple. The mathematical theory of lenses and
+curved mirrors gives us just such a surprise. We expect the
+subject to be complex because there are so many cases: a
+converging mirror forming a real image, a diverging lens
+that makes a virtual image, and so on for a total of six
+possibilities. If we want to predict the location of the
+images in all these situations, we might expect to need six
+different equations, and six more for predicting magnifications.
+Instead, it turns out that we can use just one equation for
+the location of the image and one equation for its
+magnification, and these two equations work in all the
+different cases with no changes except for plus and minus
+signs. This is the kind of thing the physicist Eugene
+\index{Wigner, Eugene}Wigner referred to as ``the unreasonable
+effectiveness of mathematics.'' Sometimes we can find a
+deeper reason for this kind of unexpected simplicity, but
+sometimes it almost seems as if God went out of Her way to
+make the secrets of universe susceptible to attack by the
+human thought-tool called math.
+
+<% begin_sec("A real image formed by a converging mirror",0,'locate-real-image') %>
+\index{mirror!converging}
+
+<% begin_sec("Location of the image") %>\index{images!location of}
+
+We will now derive the equation for the location of a real
+image formed by a converging mirror. We assume for
+simplicity that the mirror is spherical, but actually this
+isn't a restrictive assumption, because any shallow,
+symmetric curve can be approximated by a sphere. The shape
+of the mirror can be specified by giving the location of its
+center, C. A deeply curved mirror is a sphere with a small
+radius, so C is close to it, while a weakly curved mirror
+has C farther away. Given the point O where the object
+is, we wish to find the point I where the image will be formed.
+<% marg(80) %>
+<%
+  fig(
+    'thetai-and-thetao',
+    %q{%
+      The relationship between the object's position
+      and the image's can be expressed in terms of the angles $\theta_o$ and $\theta_i$.
+    }
+  )
+%>
+<% end_marg %>
+
+To locate an image, we need to track a minimum of two rays
+coming from the same point. Since we have proved in the
+previous chapter that this type of image is not distorted,
+we can use an on-axis point, O, on the object, as in
+figure \subfigref{thetai-and-thetao}{1}. The results we derive will also hold for
+off-axis points, since otherwise the image would have to be
+distorted, which we know is not true. We let one of the rays
+be the one that is emitted along the axis; this ray is
+especially easy to trace, because it bounces straight back
+along the axis again. As our second ray, we choose one that
+strikes the mirror at a distance of 1 from the axis. ``One
+what?'' asks the astute reader. The answer is that it
+doesn't really matter. When a mirror has shallow curvature,
+all the reflected rays hit the same point, so 1 could be
+expressed in any units you like. It could, for instance, be
+1 cm, unless your mirror is smaller than 1 cm!
+
+The only way to find out anything mathematical about the
+rays is to use the sole mathematical fact we possess
+concerning specular reflection: the incident and reflected
+rays form equal angles with respect to the normal, which is
+shown as a dashed line. Therefore the two angles shown in
+figure \subfigref{thetai-and-thetao}{2} are the same, and skipping some straightforward
+geometry, this leads to the visually reasonable result that
+the two angles in figure \subfigref{thetai-and-thetao}{3} are related as follows:
+\begin{equation*}
+                \theta_i+\theta_o  =  \text{constant}
+\end{equation*}
+(Note that $\theta_i$ and $\theta_o$, which are measured
+from the image and the object, not from the eye like the
+angles we referred to in discussing angular magnification
+on page \pageref{fig:angular-size}.)
+For example, move O farther from the
+mirror. The top angle in figure \subfigref{thetai-and-thetao}{2} is increased, so the
+bottom angle must increase by the same amount, causing the
+image point, I, to move closer to the mirror. In terms of
+the angles shown in figure \subfigref{thetai-and-thetao}{3}, the more distant object has
+resulted in a smaller angle $\theta_o$, while the closer
+image corresponds to a larger $\theta_i;$ One angle
+increases by the same amount that the other decreases, so
+their sum remains constant. These changes are summarized in figure \subfigref{thetai-and-thetao}{4}.
+
+<% marg(30) %>
+<%
+  fig(
+    'focal-angle',
+    %q{The geometrical interpretation of the focal angle.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-focal-angle-alternative',
+    %q{%
+      Example \ref{eg:focal-angle-alternative}, an alternative test for finding
+      the focal angle. The mirror is the same as in figure \figref{focal-angle}.
+    }
+  )
+%>
+
+<% end_marg %>
+
+The sum $\theta_i+\theta_o$ is a constant. What does this
+constant represent? Geometrically, we interpret it as double
+the angle made by the dashed radius line. Optically, it is a
+measure of the strength of the mirror, i.e., how strongly
+the mirror focuses light, and so we call it the focal
+angle,\index{focal angle} $\theta_f$,
+\begin{equation*}
+                \theta_i+\theta_o  =  \theta_f\eqquad.
+\end{equation*}
+Suppose, for example, that we wish to use a quick and dirty
+optical test to determine how strong a particular mirror is.
+We can lay it on the floor as shown in figure \figref{eg-focal-angle-alternative}, and use
+it to make an image of a lamp mounted on the ceiling
+overhead, which we assume is very far away compared to the
+radius of curvature of the mirror, so that the mirror
+intercepts only a very narrow cone of rays from the lamp.
+This cone is so narrow that its rays are nearly parallel,
+and $\theta_o$ is nearly zero. The real image can be
+observed on a piece of paper. By moving the paper nearer and
+farther, we can bring the image into focus, at which point
+we know the paper is located at the image point. Since
+$\theta_o\approx 0$, we have $\theta_i\approx \theta_f$, and we can
+then determine this mirror's focal angle either by measuring
+$\theta_i$ directly with a protractor, or indirectly via
+trigonometry. A strong mirror will bring the rays together to form
+an image close to the mirror, and these rays will form a
+blunt-angled cone with a large $\theta_i$ and $\theta_f$.
+
+\begin{eg}{An alternative optical test}\label{eg:focal-angle-alternative}
+\egquestion Figure \figref{eg-focal-angle-alternative} shows an alternative optical test. Rather
+than placing the object at infinity as in figure \figref{focal-angle}, we
+adjust it so that the image is right on top of the object.
+Points O and I coincide, and the rays are reflected right
+back on top of themselves. If we measure the angle $\theta $
+shown in figure \figref{eg-focal-angle-alternative}, how can we find the focal angle?
+
+\eganswer The object and image angles are the same; the
+angle labeled $\theta $ in the figure equals both of them.
+We therefore have $\theta_i+\theta_o=\theta =\theta_f$.
+Comparing figures \figref{focal-angle} and \figref{eg-focal-angle-alternative}, it is indeed plausible that
+the angles are related by a factor of two.
+\end{eg}
+
+At this point, we could consider our work to be done.
+Typically, we know the strength of the mirror, and we want
+to find the image location for a given object location.
+Given the mirror's focal angle and the object location, we
+can determine $\theta_o$ by trigonometry, subtract to find
+$\theta_i=\theta_f-\theta_o$, and then do more trig to
+find the image location.
+
+There is, however, a shortcut that can save us from doing so
+much work. Figure \subfigref{thetai-and-thetao}{3} shows two right triangles whose legs
+of length 1 coincide and whose acute angles are $\theta_o$
+and $\theta_i$. These can be related by trigonometry to the
+object and image distances shown in figure \figref{di-and-do}:
+\begin{equation*}
+                \tan  \theta_o = 1/d_o \qquad \qquad        \tan  \theta_i  =  1/d_i
+\end{equation*}
+Ever since chapter 2, we've been assuming small angles. For
+small angles, we can use the small-angle approximation 
+$\tan x\approx x$ (for $x$ in radians), giving simply
+\begin{equation*}
+                \theta_o = 1/d_o \qquad\qquad \theta_i  =  1/d_i\eqquad.
+\end{equation*}
+We likewise define a distance called the focal length,\index{focal
+length} $f$ according to $\theta_f=1/f$. In figure \figref{focal-angle}, $f$
+is the distance from the mirror to the place where the rays cross. We can
+now reexpress the equation relating the object and image positions as
+\begin{equation*}
+        \frac{1}{f} = \frac{1}{d_i}+\frac{1}{d_o}\eqquad.
+\end{equation*}
+Figure \figref{focal-length-concept} summarizes the interpretation of the focal
+length and focal angle.\footnote{There is a standard piece of terminology
+which is that the ``focal point'' is the point lying on the optical
+axis at a distance from the mirror equal to the focal length.\index{focal point}
+This term isn't particularly helpful, because it names a location where nothing
+normally happens. In particular, it is \emph{not} normally the place where
+the rays come to a focus! --- that would be the \emph{image} point.
+In other words, we don't normally have $d_i=f$, unless perhaps
+$d_o=\infty$. A recent online discussion among some physics teachers 
+(https://carnot.physics.buffalo.edu/archives, Feb. 2006) showed that
+many disliked the terminology, felt it was misleading, or didn't know it and would have
+misinterpreted it if they had come across it. That is, it appears to be what grammarians
+call a ``skunked term'' --- a word that bothers half the population when it's used
+incorrectly, and the other half when it's used correctly.}
+
+<% marg(79) %>
+<%
+  fig(
+    'di-and-do',
+    %q{The object and image distances}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'focal-length-concept',
+    %q{%
+      Mirror 1 is weaker than mirror 2. It has a shallower curvature, a longer focal length,
+      and a smaller focal angle. It reflects rays at angles not much different than those that would be produced
+      with a flat mirror.
+    }
+  )
+%>
+
+<% end_marg %>
+Which form is better, $\theta_f=\theta_i+\theta_o$ or 
+$1/f=1/d_i+1/d_o?$ The angular form has in its favor its
+simplicity and its straightforward visual interpretation,
+but there are two reasons why we might prefer the second
+version. First, the numerical values of the angles depend on
+what we mean by ``one unit'' for the distance shown as 1 in
+figure \subfigref{thetai-and-thetao}{1}. Second, it is usually easier to measure
+distances rather than angles, so the distance form is more
+convenient for number crunching. Neither form is superior
+overall, and we will often need to use both to solve any
+given problem.\footnote{I would like to thank Fouad Ajami for
+pointing out the pedagogical advantages of using both
+equations side by side.}
+
+\begin{eg}{A searchlight}
+Suppose we need to create a parallel beam of light, as in a
+searchlight. Where should we place the lightbulb? A parallel
+beam has zero angle between its rays, so $\theta_i=0$. To
+place the lightbulb correctly, however, we need to know a
+distance, not an angle: the distance $d_o$ between the bulb
+and the mirror. The problem involves a mixture of distances
+and angles, so we need to get everything in terms of one or
+the other in order to solve it. Since the goal is to find a
+distance, let's figure out the image distance corresponding
+to the given angle $\theta_i=0$. These are related by
+$d_i=1/\theta_i$, so we have $d_i=\infty$. (Yes, dividing
+by zero gives infinity. Don't be afraid of infinity.
+Infinity is a useful problem-solving device.) Solving the
+distance equation for $d_o$, we have
+\begin{align*}
+                d_o          &= (1/f - 1/d_i)^{-1} \\
+                          &= (1/f - 0)^{-1} \\
+                          &= f
+\end{align*}
+The bulb has to be placed at a distance from the mirror
+equal to its focal point.
+\end{eg}
+
+\begin{eg}{Diopters}
+An equation like $d_i=1/\theta_i$ really doesn't make sense
+in terms of units. Angles are unitless, since radians aren't
+really units, so the right-hand side is unitless. We can't
+have a left-hand side with units of distance if the
+right-hand side of the same equation is unitless. This is an
+artifact of my cavalier statement that the conical bundles
+of rays spread out to a distance of 1 from the axis where
+they strike the mirror, without specifying the units used to
+measure this 1. In real life, optometrists define the thing
+we're calling $\theta_i=1/d_i$ as the ``dioptric strength''
+of a lens or mirror, and measure it in units of inverse
+meters ($\munit^{-1}$), also known as diopters (1 D=1 $\munit^{-1}$).\index{diopter}
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Magnification") %>
+
+We have already discussed in the previous chapter how to
+find the magnification of a virtual image made by a curved
+mirror. The result is the same for a real image, and we omit
+the proof, which is very similar. In our new notation, the
+result is $M=d_i/d_o$. A numerical example is given in
+__subsection_or_section(other-curved-mirrors).
+
+\vspace{0mm plus 1mm}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Other cases with curved mirrors",0,'other-curved-mirrors') %>
+
+The equation $d_i=(1/f-1/d_o)^{-1}$ can easily produce a negative result,
+but we have been thinking of $d_i$ as a distance, and
+distances can't be negative. A similar problem occurs with
+$\theta_i=\theta_f-\theta_o$ for $\theta_o>\theta_f$.
+What's going on here?
+
+The interpretation of the angular equation is straightforward.
+As we bring the object closer and closer to the image,
+$\theta_o$ gets bigger and bigger, and eventually we reach a
+point where $\theta_o=\theta_f$ and $\theta_i=0$. This large
+object angle represents a bundle of rays forming a cone that
+is very broad, so broad that the mirror can no longer bend
+them back so that they reconverge on the axis. The image
+angle $\theta_i=0$ represents an outgoing bundle of rays
+that are parallel. The outgoing rays never cross, so this is
+not a real image, unless we want to be charitable and say
+that the rays cross at infinity. If we go on bringing the
+object even closer, we get a virtual image.
+
+m4_ifelse(__sn,1,[::],[:\pagebreak:])
+
+<%
+  fig(
+    'graph-of-di-vs-do',
+    %q{%
+      A graph of the image distance $d_i$ as a function
+      of the object distance $d_o$.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+To analyze the distance equation, let's look at a graph of
+$d_i$ as a function of $d_o$. The branch on the upper right
+corresponds to the case of a real image. Strictly speaking,
+this is the only part of the graph that we've proven
+corresponds to reality, since we never did any geometry for
+other cases, such as virtual images. As discussed in the
+previous section, making $d_o$ bigger causes $d_i$ to become
+smaller, and vice-versa.
+
+Letting $d_o$ be less than $f$ is equivalent to $\theta_o>\theta_f:$
+a virtual image is produced on the far side of the mirror.
+This is the first example of Wigner's ``unreasonable
+effectiveness of mathematics'' that we have encountered in
+optics. Even though our proof depended on the assumption
+that the image was real, the equation we derived turns out
+to be applicable to virtual images, provided that we either
+interpret the positive and negative signs in a certain way,
+or else modify the equation to have different positive and negative signs.
+
+<% self_check('asymptotes',<<-'SELF_CHECK'
+Interpret the three places where, in physically realistic
+parts of the graph, the graph approaches one of the dashed
+lines. [This will come more naturally if you have learned
+the concept of limits in a math class.]
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{A flat mirror}
+We can even apply the equation to a flat mirror. As a sphere
+gets bigger and bigger, its surface is more and more gently
+curved. The planet Earth is so large, for example, that we
+cannot even perceive the curvature of its surface. To
+represent a flat mirror, we let the mirror's radius of
+curvature, and its focal length, become infinite. Dividing
+by infinity gives zero, so we have
+\begin{align*}
+                1/d_o  &=  -1/d_i\eqquad,\\
+\intertext{or}
+                d_o  &=  -d_i\eqquad.
+\end{align*}
+If we interpret the minus sign as indicating a virtual image
+on the far side of the mirror from the object, this makes sense.
+\end{eg}
+
+It turns out that for any of the six possible combinations
+of real or virtual images formed by converging or diverging
+lenses or mirrors, we can apply equations of the form
+\begin{gather*}
+                \theta_f =  \theta_i+\theta_o \\
+\intertext{and}
+        \frac{1}{f}            =  \frac{1}{d_i}+\frac{1}{d_o}\eqquad,
+\end{gather*}
+with only a modification of plus or minus signs. There are
+two possible approaches here. The approach we have been
+using so far is the more popular approach in American
+textbooks: leave the equation the same, but attach
+interpretations to the resulting negative or positive values
+of the variables. The trouble with this approach is that one
+is then forced to memorize tables of sign conventions, e.g.,
+that the value of $d_i$ should be negative when the image is
+a virtual image formed by a converging mirror. Positive and
+negative signs also have to be memorized for focal lengths.
+Ugh! It's highly unlikely that any student has ever retained
+these lengthy tables in his or her mind for more than five
+minutes after handing in the final exam in a physics course.
+Of course one can always look such things up when they are
+needed, but the effect is to turn the whole thing into an
+exercise in blindly plugging numbers into formulas.
+
+As you have gathered by now, there is another method which I
+think is better, and which I'll use throughout the rest of
+this book. In this method, all distances and angles are
+\emph{positive by definition}, and we put in positive and
+negative signs in the \emph{equations} depending on the
+situation. (I thought I was the first to invent this method,
+but I've been told that this is known as the European sign
+convention, and that it's fairly common in Europe.) Rather
+than memorizing these signs, we start with the generic equations
+\begin{align*}
+                \theta_f &= \pm \theta_i \pm \theta_o \\
+        \frac{1}{f}            &=  \pm\frac{1}{d_i}\pm\frac{1}{d_o}\eqquad,
+\end{align*}
+and then determine the signs by a two-step method that
+depends on ray diagrams. There are really only two signs to
+determine, not four; the signs in the two equations match up
+in the way you'd expect. The method is as follows:
+
+1. Use ray diagrams to decide whether $\theta_o$ and
+$\theta_i$ vary in the same way or in opposite ways. (In
+other words, decide whether making $\theta_o$ greater
+results in a greater value of $\theta_i$ or a smaller one.)
+Based on this, decide whether the two signs in the angle
+equation are the same or opposite. If the signs are
+opposite, go on to step 2 to determine which is positive
+and which is negative.
+
+2. If the signs are opposite, we need to decide which is the
+positive one and which is the negative. Since the focal
+angle is never negative, the smaller angle must be the
+one with a minus sign.
+
+In step 1, many students have trouble drawing the ray
+diagram correctly. For simplicity, you should always do your
+diagram for a point on the object that is on the axis of the
+mirror, and let one of your rays be the one that is emitted
+along the axis and reflected straight back on itself, as in
+the figures in __subsection_or_section(locate-real-image). As shown in figure \subfigref{thetai-and-thetao}{4} in
+__subsection_or_section(locate-real-image), there are four angles involved: two at the
+mirror, one at the object $(\theta_o)$, and one at the image
+$(\theta_i)$. Make sure to draw in the normal to the mirror
+so that you can see the two angles at the mirror. These two
+angles are equal, so as you change the object position, they
+fan out or fan in, like opening or closing a book. Once
+you've drawn this effect, you should easily be able to tell
+whether $\theta_o$ and $\theta_i$ change in the same way
+or in opposite ways.
+
+Although focal lengths are always positive in the method
+used in this book, you should be aware that diverging
+mirrors and lenses are assigned negative focal lengths in
+the other method, so if you see a lens labeled
+$f=-30$ cm, you'll know what it means.
+
+\begin{eg}{An anti-shoplifting mirror}\label{eg:shoplifting-mirror}
+\egquestion Convenience stores often install a diverging
+mirror so that the clerk has a view of the whole store and
+can catch shoplifters. Use a ray diagram to show that the
+image is reduced, bringing more into the clerk's field of
+view. If the focal length of the mirror is 3.0 m, and the
+mirror is 7.0 m from the farthest wall, how deep is
+the image of the store?
+<% marg(60) %>
+<%
+  fig(
+    'eg-shoplifting-mirror',
+    %q{Example \ref{eg:shoplifting-mirror}.}
+  )
+%>
+<% end_marg %>
+
+\eganswer 
+As shown in ray diagram \figref{eg-shoplifting-mirror}/1, $d_i$ is less than
+$d_o$. The magnification, $M= d_i/d_o$, will be less than
+one, i.e., the image is actually reduced rather than magnified.
+
+Apply the method outlined above for determining the
+plus and minus signs. Step 1: 
+The object is the point on the
+opposite wall. As an experiment, \subfigref{eg-shoplifting-mirror}{2}, move the
+object closer. I did these drawings using illustration
+software, but if you were doing them by hand, you'd want to
+make the scale much larger for greater accuracy. Also,
+although I split figure \figref{eg-shoplifting-mirror} into two separate drawings in
+order to make them easier to understand, you're less likely
+to make a mistake if you do them on top of each other.
+
+        The two angles at the mirror fan out from the normal.
+Increasing $\theta_o$ has clearly made $\theta_i$ larger as
+well. (All four angles got bigger.) There must be a
+cancellation of the effects of changing the two terms on the
+right in the same way, and the only way to get such a
+cancellation is if the two terms in the angle equation
+have opposite signs:
+\begin{equation*}
+                        \theta_f =  + \theta_i  -  \theta_o \qquad
+\end{equation*}
+or
+\begin{equation*}
+                        \theta_f =  - \theta_i  +  \theta_o\eqquad.
+\end{equation*}
+        Step 2: Now which is the positive term and which is
+negative? Since the image angle is bigger than the object
+angle, the angle equation must be
+\begin{equation*}
+                        \theta_f =     \theta_i  -  \theta_o\eqquad,
+\end{equation*}
+in order to give a positive result for the focal angle. The
+signs of the distance equation behave the same way:
+\begin{equation*}
+                        \frac{1}{f}         = \frac{1}{d_i}-\frac{1}{d_o}\eqquad.
+\end{equation*}
+Solving for $d_i$, we find
+\begin{align*}
+                        d_i         &= \left(\frac{1}{f}+\frac{1}{d_o}\right)^{-1}\\
+                                 &= 2.1\ \munit\eqquad.
+\end{align*}
+The image of the store is reduced by a factor of $2.1/7.0=0.3$,
+i.e., it is smaller by 70\%.
+\end{eg}
+
+<%
+  fig(
+    'mirrorball',
+    %q{%
+      A diverging mirror in the shape of a sphere. The image is reduced ($M<1$).
+      This is similar to example \ref{eg:shoplifting-mirror}, but here the image is
+      distorted because the mirror's curve is not shallow.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{A shortcut for real images}
+In the case of a real image, there is a shortcut for step 1,
+the determination of the signs. In a real image, the rays
+cross at both the object and the image. We can therefore
+time-reverse the ray diagram, so that all the rays are
+coming from the image and reconverging at the object. Object
+and image swap roles. Due to this time-reversal symmetry,
+the object and image cannot be treated differently in any of
+the equations, and they must therefore have the same signs.
+They are both positive, since they must add up to a positive result.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Aberrations",nil,'aberration',{'optional'=>true}) %>\index{aberration}
+
+An imperfection or distortion in an image is called an
+aberration. An aberration can be produced by a flaw in a
+lens or mirror, but even with a perfect optical surface some
+degree of aberration is unavoidable. To see why, consider
+the mathematical approximation we've been making, which is
+that the depth of the mirror's curve is small compared to
+$d_o$ and $d_i$. Since only a flat mirror can satisfy this
+shallow-mirror condition perfectly, any curved mirror will
+deviate somewhat from the mathematical behavior we derived
+by assuming that condition. There are two main types of
+aberration in curved mirrors, and these also occur with lenses.
+
+(1) An object on the axis of the lens or mirror may be
+imaged correctly, but off-axis objects may be out of focus or distorted.
+In a camera, this type of aberration would show up as a
+fuzziness or warping near the sides of the picture when the center
+was perfectly focused. An example of this is shown in figure \figref{short-lens-aberration},
+and in that particular example, the aberration is not a sign that the equipment was of
+low quality or wasn't right for the job but rather an inevitable result of trying to flatten
+a panoramic view; in the limit of a 360-degree panorama, the problem would be similar to the
+problem of representing the Earth's surface on a flat map, which can't be accomplished
+without distortion.
+
+<%
+  fig(
+    'short-lens-aberration',
+    %q{%
+      This photo was taken using a ``fish-eye lens,'' which
+      gives an extremely large field of view. 
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+(2) The image may be sharp when the object is at certain
+distances and blurry when it is at other distances. The
+blurriness occurs because the rays do not all cross at
+exactly the same point. If we know in advance the distance
+of the objects with which the mirror or lens will be used,
+then we can optimize the shape of the optical surface to
+make in-focus images in that situation. For instance, a
+spherical mirror will produce a perfect image of an object
+that is at the center of the sphere, because each ray is
+reflected directly onto the radius along which it was
+emitted. For objects at greater distances, however, the
+focus will be somewhat blurry. In astronomy the objects
+being used are always at infinity, so a spherical mirror is
+a poor choice for a telescope. A different shape (a
+parabola) is better specialized for astronomy.
+
+<%
+  fig(
+    'spherical-vs-parabolic',
+    %q{%
+      Spherical mirrors are the cheapest to
+      make, but parabolic mirrors are better for making images of objects at
+      infinity. A sphere has equal curvature everywhere, but a parabola has
+      tighter curvature at its center and gentler curvature at the sides.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+One way of decreasing aberration is to use a small-diameter
+mirror or lens, or block most of the light with an opaque
+screen with a hole in it, so that only light that comes in
+close to the axis can get through. Either way, we are using
+a smaller portion of the lens or mirror whose curvature will
+be more shallow, thereby making the shallow-mirror (or
+thin-lens) approximation more accurate. Your eye does this
+by narrowing down the pupil to a smaller hole. In a camera,
+there is either an automatic or manual adjustment, and
+narrowing the opening is called ``stopping down.'' The
+disadvantage of stopping down is that light is wasted, so
+the image will be dimmer or a longer exposure must be used.
+
+<%
+  fig(
+    'spherical-and-parabolic-stopped',
+    %q{%
+      Even though the spherical mirror
+      (solid line) is not well adapted for viewing an object at infinity, we can
+      improve its performance greatly by stopping it down. Now the only part of the mirror
+      being used is the central portion, where its shape is virtually indistinguishable
+      from a parabola (dashed line).
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+What I would suggest you take away from this discussion for
+the sake of your general scientific education is simply an
+understanding of what an aberration is, why it occurs, and
+how it can be reduced, not detailed facts about specific
+types of aberrations.
+
+<%
+  fig(
+    'hubble-aberration',
+    %q{%
+      The Hubble Space Telescope was placed into orbit
+      with faulty optics in 1990. Its main mirror was supposed to have been nearly parabolic, since
+      it is an astronomical telescope, meant for producing images of objects at infinity.
+      However, contractor Per\-kin Elmer had delivered a faulty mirror, which produced aberrations.
+      The large photo shows astronauts putting correcting mirrors in place in 1993. The two small
+      photos show images produced by the telescope before and after the fix.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+
+<% end_sec() %>

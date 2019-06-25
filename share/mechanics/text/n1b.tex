@@ -1,0 +1,1507 @@
+<% begin_sec("The motion of falling objects",0) %>
+
+The motion of \index{falling objects}falling objects is the
+simplest and most common example of motion with changing
+velocity. The early pioneers of physics had a correct
+intuition that the way things drop was a message directly
+from Nature herself about how the universe worked. Other
+examples seem less likely to have deep significance. A
+walking person who speeds up is making a conscious choice.
+If one stretch of a river flows more rapidly than another,
+it may be only because the channel is narrower there, which
+is just an accident of the local geography. But there is
+something impressively consistent, universal, and inexorable
+about the way things fall.
+
+Stand up now and simultaneously drop a coin and a bit of
+paper side by side. The paper takes much longer to hit the
+ground. That's why Aristotle wrote that heavy objects fell
+more rapidly. Europeans believed him for two thousand years.
+
+<% marg(10) %>
+<%
+  fig(
+    'galileo-drops-balls',
+    %q{%
+      According to Galileo's student Viviani, 
+      Galileo dropped a cannonball and a
+      musketball simultaneously from the leaning tower of Pisa,
+      and observed that they hit the
+      ground at nearly the same time. This
+      contradicted Aristotle's long-accepted
+      idea that heavier objects fell faster.
+    }
+  )
+%>
+<% end_marg %>
+Now repeat the experiment, but make it into a race between
+the coin and your shoe. My own shoe is about 50 times
+heavier than the nickel I had handy, but it looks to me like
+they hit the ground at exactly the same moment. So much for
+Aristotle! Galileo, who had a flair for the theatrical, did
+the experiment by dropping a bullet and a heavy cannonball
+from a tall tower. Aristotle's observations had been
+incomplete, his interpretation a vast oversimplification.
+
+It is inconceivable that Galileo was the first person to
+observe a discrepancy with Aristotle's predictions. Galileo
+was the one who changed the course of history because he was
+able to assemble the observations into a coherent pattern,
+and also because he carried out systematic quantitative
+(numerical) measurements rather than just describing
+things qualitatively.
+
+Why is it that some objects, like the coin and the shoe,
+have similar motion, but others, like a feather or a bit of
+paper, are different? Galileo speculated that in addition to
+the force that always pulls objects down, there was an
+upward force exerted by the air. Anyone can speculate, but
+Galileo went beyond speculation and came up with two clever
+experiments to probe the issue. First, he experimented with
+objects falling in water, which probed the same issues but
+made the motion slow enough that he could take time
+measurements with a primitive pendulum clock. With this
+technique, he established the following facts:
+
+\begin{itemize}
+
+\item  All heavy, streamlined objects (for example a steel rod
+dropped point-down) reach the bottom of the tank in about
+the same amount of time, only slightly longer than the time
+they would take to fall the same distance in air.
+
+\item  Objects that are lighter or less streamlined take a longer
+time to reach the bottom.
+
+\end{itemize}
+
+This supported his hypothesis about two contrary forces. He
+imagined an idealized situation in which the falling object
+did not have to push its way through any substance at all.
+Falling in air would be more like this ideal case than
+falling in water, but even a thin, sparse medium like air
+would be sufficient to cause obvious effects on feathers and
+other light objects that were not streamlined. Today, we
+have vacuum pumps that allow us to suck nearly all the air
+out of a chamber, and if we drop a feather and a rock side
+by side in a vacuum, the feather does not lag behind the rock at all.
+
+<% begin_sec("How the speed of a falling object increases with time",nil,'galileo-ramps-a-motivation') %>
+
+Galileo's second stroke of genius was to find a way to make
+quantitative measurements of how the speed of a falling
+object increased as it went along. Again it was problematic
+to make sufficiently accurate time measurements with
+primitive clocks, and again he found a tricky way to slow
+things down while preserving the essential physical
+phenomena: he let a ball roll down a slope instead of
+dropping it vertically. The steeper the incline, the more
+rapidly the ball would gain speed. Without a modern video
+camera, Galileo had invented a way to make a slow-motion version of falling.
+
+<%
+  fig(
+    'inclined-plane',
+    %q{%
+      Velocity increases more gradually on
+      the gentle slope, but the motion is
+      otherwise the same as the motion of
+      a falling object.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% marg(0) %>
+<%
+  fig(
+    'linear-vt-graph',
+    %q{%
+      The $v-t$ graph of a falling object is a
+      line.
+    }
+  )
+%>
+<% end_marg %>
+Although Galileo's clocks were only good enough to do
+accurate experiments at the smaller angles, he was confident
+after making a systematic study at a variety of small angles
+that his basic conclusions were generally valid. Stated in
+modern language, what he found was that the velocity-versus-time
+graph was a line. In the language of algebra, we know that a
+line has an equation of the form $y=ax+b$, but our
+variables are $v$ and $t$, so it would be $v=at+b$.
+(The constant $b$ can be interpreted simply as the initial
+velocity of the object, i.e., its velocity at the time when
+we started our clock, which we conventionally write as $v_\zu{o}$.)
+
+<% self_check('rolling-distances',<<-'SELF_CHECK'
+An object is rolling down an incline. After it has been
+rolling for a short time, it is found to travel 13 cm during
+a certain one-second interval. During the second after that,
+it goes 16 cm. How many cm will it travel in the second after that?
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("A contradiction in Aristotle's reasoning") %>
+
+Galileo's inclined-plane experiment disproved the long-accepted
+claim by Aristotle that a falling object had a definite
+``natural falling speed'' proportional to its weight.
+Galileo had found that the speed just kept on increasing,
+and weight was irrelevant as long as air friction was
+negligible. Not only did Galileo prove experimentally that
+Aristotle had been wrong, but he also pointed out a logical
+contradiction in Aristotle's own reasoning. Simplicio, the
+stupid character, mouths the accepted Aristotelian wisdom:
+<% marg(70) %>
+<%
+  fig(
+    'tied-rocks-1',
+    %q{%
+      Galileo's experiments show that all
+      falling objects have the same motion
+      if air resistance is negligible.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tied-rocks-2',
+    %q{%
+      1. Aristotle said that heavier objects fell
+      faster than lighter ones. 2. If two rocks
+      are tied together, that makes an extra-
+      heavy rock, which should fall
+      faster. 3. But Aristotle's theory would also
+      predict that the light rock would hold
+      back the heavy rock, resulting in a
+      slower fall.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{dialogline}{Simplicio}
+There can be no doubt but that a particular body
+\ldots has a fixed velocity which is determined by nature\ldots
+\end{dialogline}
+
+\begin{dialogline}{Salviati}
+If then we take two bodies whose natural speeds
+are different, it is clear that, [according to Aristotle],
+on uniting the two, the more rapid one will be partly held
+back by the slower, and the slower will be somewhat hastened
+by the swifter. Do you not agree with me in this opinion?
+\end{dialogline}
+
+\begin{dialogline}{Simplicio}
+You are unquestionably right.
+\end{dialogline}
+
+\begin{dialogline}{Salviati}
+But if this is true, and if a large stone moves
+with a speed of, say, eight [unspecified units] while a
+smaller moves with a speed of four, then when they are
+united, the system will move with a speed less than eight;
+but the two stones when tied together make a stone larger
+than that which before moved with a speed of eight. Hence
+the heavier body moves with less speed than the lighter; an
+effect which is contrary to your supposition. Thus you see
+how, from your assumption that the heavier body moves more
+rapidly than the lighter one, I infer that the heavier
+body moves more slowly.
+\end{dialogline}
+
+<% end_sec() %>
+<% begin_sec("What is gravity?") %>
+
+The physicist Richard \index{Feynman}\index{Feynman,
+Richard}Feynman liked to tell a story about how when he was
+a little kid, he asked his father, ``Why do things fall?''
+As an adult, he praised his father for answering, ``Nobody
+knows why things fall. It's a deep mystery, and the smartest
+people in the world don't know the basic reason for it.''
+Contrast that with the average person's off-the-cuff answer,
+``Oh, it's because of gravity.'' Feynman liked his father's
+answer, because his father realized that simply giving a
+name to something didn't mean that you understood it. The
+radical thing about Galileo's and Newton's approach to
+science was that they concentrated first on describing
+mathematically what really did happen, rather than spending
+a lot of time on untestable speculation such as Aristotle's
+statement that ``Things fall because they are trying to
+reach their natural place in contact with the earth.'' That
+doesn't mean that science can never answer the ``why''
+questions. Over the next month or two as you delve deeper
+into physics, you will learn that there are more fundamental
+reasons why all falling objects have $v-t$ graphs with the
+same slope, regardless of their mass. Nevertheless, the
+methods of science always impose limits on how deep
+our explanation can go.
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Acceleration",0) %>
+
+<% begin_sec("Definition of acceleration for linear $v-t$ graphs") %>
+Galileo's experiment with dropping heavy and light objects
+from a tower showed that all falling objects have the same
+motion, and his inclined-plane experiments showed that the
+motion was described by $v=at+v_\zu{o}$. The initial
+velocity $v_\zu{o}$ depends on whether you drop the object from rest
+or throw it down, but even if you throw it down, you cannot
+change the slope, $a$, of the $v-t$ graph.
+
+Since these experiments show that all falling objects have
+linear $v-t$ graphs with the same slope, the slope of such a
+graph is apparently an important and useful quantity. We use
+the word \index{acceleration}acceleration, and the symbol
+$a$, for the slope of such a graph. In symbols, $a=\Delta v/\Delta $t.
+The acceleration can be interpreted as the
+amount of speed gained in every second, and it has units of
+velocity divided by time, i.e., ``meters per second per
+second,'' or m/s/s. Continuing to treat units as if they
+were algebra symbols, we simplify ``m/s/s'' to read
+$``\munit/\sunit^2$.'' Acceleration can be a useful quantity for
+describing other types of motion besides falling, and the
+word and the symbol ``$a$'' can be used in a more general
+context. We reserve the more specialized symbol ``$g$'' for
+the acceleration of falling objects, which on the surface of
+our planet equals $9.8\ \munit/\sunit^2$. Often when doing approximate
+calculations or merely illustrative numerical examples it is
+good enough to use $g=10\ \munit/\sunit^2$, which is off by only 2\%.
+
+<% marg(32) %>
+<%
+  fig(
+    'eg-suicidal-student-graph',
+    %q{Example \ref{eg:suicidal-student-graph}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-extract-accel-from-graphs',
+    %q{Example \ref{eg:extract-accel-from-graphs}.}
+  )
+%>
+
+<% end_marg %>
+\begin{eg}{Finding final speed, given time}\label{eg:suicidal-student-graph}
+\egquestion A despondent physics student jumps off a bridge,
+and falls for three seconds before hitting the water. How
+fast is he going when he hits the water?
+
+\eganswer Approximating $g$ as $10\ \munit/\sunit^2$, he will gain 10
+m/s of speed each second. After one second, his velocity is
+10 m/s, after two seconds it is 20 m/s, and on impact, after
+falling for three seconds, he is moving at 30 m/s.
+\end{eg}
+
+\begin{eg}{Extracting acceleration from a graph}\label{eg:extract-accel-from-graphs}
+\egquestion The $x-t$ and $v-t$ graphs show the motion of a car
+starting from a stop sign. What is the car's acceleration?
+
+\eganswer Acceleration is defined as the slope of the v-t
+graph. The graph rises by 3 m/s during a time interval of 3
+s, so the acceleration is $(3\ \munit/\sunit)/(3\ \sunit)=1\ \munit/\sunit^2$.
+
+\noindent Incorrect solution \#1: The final velocity is 3 m/s, and
+acceleration is velocity divided by time, so the acceleration
+is $(3\ \munit/\sunit)/(10\ \sunit)=0.3\ \munit/\sunit^2$.
+
+<% x_mark %> The solution is incorrect because you can't find the slope
+of a graph from one point. This person was just using the
+point at the right end of the v-t graph to try to find
+the slope of the curve.
+
+\noindent Incorrect solution \#2: Velocity is distance divided by time
+so $v=(4.5$ m)/(3 $s)=1.5$ m/s. Acceleration is velocity
+divided by time, so $a=(1.5$ m/s)/(3 $s)=0.5\ \munit/\sunit^2$.
+
+\noindent<% x_mark %> The solution is incorrect because velocity is the slope of
+the tangent line. In a case like this where the velocity is
+changing, you can't just pick two points on the x-t graph
+and use them to find the velocity.
+\end{eg}
+
+\begin{eg}{Converting $g$ to different units}
+\egquestion What is $g$ in units of $\zu{cm}/\sunit^2$?
+
+\eganswer The answer is going to be how many cm/s of speed a
+falling object gains in one second. If it gains 9.8 m/s in
+one second, then it gains 980 cm/s in one second, so
+$g=980\ \zu{cm}/\sunit^2$. Alternatively, we can use the method of
+fractions that equal one:
+
+\begin{equation*}
+\frac{9.8\ \cancel{\munit}}{\sunit^2}\times\frac{100\ \zu{cm}}{1\ \cancel{\munit}}
+  =\frac{980\ \zu{cm}}{\sunit^2}
+\end{equation*}
+
+\egquestion What is $g$ in units of $\zu{miles}/\zu{hour}^2$?
+
+\eganswer
+
+\begin{equation*}
+\frac{9.8\ \munit}{\sunit^2} 
+  \times \frac{1\ \zu{mile}}{1600\ \munit}
+  \times \left(\frac{3600\ \sunit}{1\ \zu{hour}}\right)^2
+  = 7.9\times 10^4\ \zu{mile}/\zu{hour}^2
+\end{equation*}
+This large number can be interpreted as the speed, in miles
+per hour, that you would gain by falling for one hour. Note that
+we had to square the conversion factor of 3600 s/hour in
+order to cancel out the units of seconds squared in the denominator.
+
+\egquestion What is $g$ in units of miles/hour/s?
+
+\eganswer
+
+\begin{equation*}
+\frac{9.8\ \munit}{\sunit^2} 
+  \times \frac{1\ \zu{mile}}{1600\ \munit}
+  \times \frac{3600\ \sunit}{1\ \zu{hour}}
+  = 22\ \zu{mile}/\zu{hour}/\sunit
+\end{equation*}
+This is a figure that Americans will have an intuitive feel
+for. If your car has a forward acceleration equal to the
+acceleration of a falling object, then you will gain 22
+miles per hour of speed every second. However, using mixed
+time units of hours and seconds like this is usually
+inconvenient for problem-solving. It would be like using
+units of foot-inches for area instead of $\zu{ft}^2$ or $\zu{in}^2$.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("The acceleration of gravity is different in different locations.") %>
+
+Everyone knows that gravity is weaker on the moon, but
+actually it is not even the same everywhere on Earth, as
+shown by the sampling of numerical data in the following table.
+
+\begin{tabular}{llll}
+\textbf{location} & \textbf{latitude} & \textbf{elevation (m)} & \textbf{g ($\munit/\sunit^2$)} \\
+north pole               & 90\degunit N    &   0         & 9.8322 \\
+Reykjavik, Iceland       & 64\degunit N    &   0         & 9.8225 \\
+Guayaquil, Ecuador       & 2\degunit  S    &   0         & 9.7806 \\
+Mt. Cotopaxi, Ecuador    & 1\degunit  S    &   5896      & 9.7624 \\
+Mt. Everest              & 28\degunit N    & 8848        & 9.7643
+\end{tabular}
+
+\noindent The main variables that relate to the value of $g$ on Earth
+are latitude and elevation. Although you have not yet
+learned how $g$ would be calculated based on any deeper
+theory of gravity, it is not too hard to guess why $g$
+depends on elevation. Gravity is an attraction between
+things that have mass, and the attraction gets weaker with
+increasing distance. As you ascend from the seaport of
+Guayaquil to the nearby top of Mt. Cotopaxi, you are
+distancing yourself from the mass of the planet. The
+dependence on latitude occurs because we are measuring the
+acceleration of gravity relative to the earth's surface, but
+the earth's rotation causes the earth's surface to fall out
+from under you. (We will discuss both gravity and rotation
+in more detail later in the course.)
+
+<%
+  fig(
+    'global-gravity-map',
+    %q{%
+      This false-color map shows variations
+      in the strength of the earth's gravity.
+      Purple areas have the strongest
+      gravity, yellow the weakest. The overall
+       trend toward weaker gravity at the
+      equator and stronger gravity at the
+      poles has been artificially removed to
+      allow the weaker local variations to
+      show up. The map covers only the
+      oceans because of the technique used
+      to make it: satellites look for bulges
+      and depressions in the surface of the
+      ocean. A very slight bulge will occur
+      over an undersea mountain, for
+      instance, because the mountain's
+      gravitational attraction pulls water
+      toward it. The US government
+      originally began collecting data like
+      these for military use, to correct for the
+      deviations in the paths of missiles. The
+      data have recently been released for
+      scientific and commercial use (e.g.,
+      searching for sites for off-shore oil
+      wells).
+    },
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
+
+Much more spectacular differences in the strength of gravity
+can be observed away from the Earth's surface:
+
+\begin{tabular}{lp{55mm}}
+\textbf{location} & \textbf{g ($\munit/\sunit^2$)} \\
+asteroid Vesta (surface)       & 0.3 \\
+Earth's moon (surface)         & 1.6 \\
+Mars (surface)                 & 3.7 \\
+Earth (surface)                & 9.8 \\
+Jupiter (cloud-tops)           & 26 \\
+Sun (visible surface)          & 270 \\
+typical neutron star (surface) & $10^{12}$ \\
+black hole (center)            & infinite according to some theories, on the order of $10^{52}$ according
+                                 to others
+\end{tabular}
+
+\noindent A typical neutron star is not so different in size from a
+large asteroid, but is orders of magnitude more massive, so
+the mass of a body definitely correlates with the $g$ it
+creates. On the other hand, a neutron star has about the
+same mass as our Sun, so why is its $g$ billions of times
+greater? If you had the misfortune of being on the surface
+of a neutron star, you'd be within a few thousand miles of
+all its mass, whereas on the surface of the Sun, you'd still
+be millions of miles from most of its mass.
+
+
+\startdqs
+
+\begin{dq}
+What is wrong with the following definitions of $g?$
+
+(1) ``$g$ is gravity.''
+
+(2) ``$g$ is the speed of a falling object.''
+
+(3) ``$g$ is how hard gravity pulls on things.''
+\end{dq}
+
+\begin{dq}
+When advertisers specify how much acceleration a car is
+capable of, they do not give an acceleration as defined in
+physics. Instead, they usually specify how many seconds are
+required for the car to go from rest to 60 miles/hour.
+Suppose we use the notation ``$a$'' for the acceleration as
+defined in physics, and ``$a_\text{car ad}$'' for the quantity used in
+advertisements for cars. In the US's non-metric system of
+units, what would be the units of $a$ and $a_\text{car ad}$? How would
+the use and interpretation of large and small, positive and
+negative values be different for $a$ as opposed to $a_\text{car ad}$?
+\end{dq}
+
+\begin{dq}
+Two people stand on the edge of a cliff. As they lean
+over the edge, one person throws a rock down, while the
+other throws one straight up with an exactly opposite
+initial velocity. Compare the speeds of the rocks on impact
+at the bottom of the cliff.
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Positive and negative acceleration",0) %>\index{acceleration!negative}
+
+Gravity always pulls down, but that does not mean it always
+speeds things up. If you throw a ball straight up, gravity
+will first slow it down to $v=0$ and then begin increasing
+its speed. When I took physics in high school, I got the
+impression that positive signs of acceleration indicated
+speeding up, while negative accelerations represented
+slowing down, i.e., deceleration. Such a definition would be
+inconvenient, however, because we would then have to say
+that the same downward tug of gravity could produce either a
+positive or a negative acceleration. As we will see in the
+following example, such a definition also would not be the
+same as the slope of the $v-t$ graph.
+
+<% marg(60) %>
+<%
+  fig(
+    'person-throws-ball',
+    %q{%
+      The ball's acceleration stays the same ---
+      on the way up, at the top, and on the way back down. It's always
+      negative.
+    }
+  )
+%>
+<% end_marg %>
+Let's study the example of the rising and falling ball. In
+the example of the person falling from a bridge, I assumed
+positive velocity values without calling attention to it,
+which meant I was assuming a coordinate system whose $x$
+axis pointed down. In this example, where the ball is
+reversing direction, it is not possible to avoid negative
+velocities by a tricky choice of axis, so let's make the
+more natural choice of an axis pointing up. The ball's
+velocity will initially be a positive number, because it is
+heading up, in the same direction as the $x$ axis, but on
+the way back down, it will be a negative number. As shown in
+the figure, the $v-t$ graph does not do anything special at
+the top of the ball's flight, where $v$ equals 0. Its slope
+is always negative. In the left half of the graph, there is
+a negative slope because the positive velocity is getting
+closer to zero. On the right side, the negative slope is due
+to a negative velocity that is getting farther from zero, so
+we say that the ball is speeding up, but its velocity is decreasing!
+
+To summarize, what makes the most sense is to stick with the
+original definition of acceleration as the slope of the
+$v-t$ graph, $\Delta v/\Delta t$. By this definition, it
+just isn't necessarily true that things speeding up have
+positive acceleration while things slowing down have
+negative acceleration. The word ``deceleration'' is not used
+much by physicists, and the word ``acceleration'' is used
+unblushingly to refer to slowing down as well as speeding
+up: ``There was a red light, and we accelerated to a stop.''
+
+\begin{eg}{Numerical calculation of a negative acceleration}
+\egquestion In figure \figref{person-throws-ball}, what happens if you
+calculate the acceleration between $t=1.0$ and 1.5 s?
+
+\eganswer Reading from the graph, it looks like the velocity
+is about $-1$ m/s at $t=1.0$ s, and around $-6$ m/s at $t=1.5$ s.
+The acceleration, figured between these two points, is
+\begin{equation*}
+  a = \frac{\Delta v}{\Delta t} = \frac{(-6\ \munit/\sunit)-(-1\ \munit/\sunit)}{(1.5\ \sunit)-(1.0\ \sunit)} = -10\ \munit/\sunit^2\eqquad.
+\end{equation*}
+Even though the ball is speeding up, it has a negative acceleration.
+\end{eg}
+
+Another way of convincing you that this way of handling the
+plus and minus signs makes sense is to think of a device
+that measures acceleration. After all, physics is supposed
+to use operational definitions, ones that relate to the
+results you get with actual measuring devices.\index{operational definition!acceleration}
+Consider an
+air freshener hanging from the rear-view mirror of your car.
+When you speed up, the air freshener swings backward.
+Suppose we define this as a positive reading. When you slow
+down, the air freshener swings forward, so we'll call this a
+negative reading on our accelerometer. But what if you put
+the car in reverse and start speeding up backwards? Even
+though you're speeding up, the accelerometer responds in the
+same way as it did when you were going forward and slowing
+down. There are four possible cases:
+
+\noindent\begin{tabular}{p{40mm}p{21mm}p{16mm}p{17mm}}
+motion of car & accelerometer swings & slope of v-t graph & direction of force acting on car \\
+forward, speeding up      & backward   & $+$   & forward \\
+forward, slowing down     & forward    & $-$   & backward \\
+backward, speeding up     & forward    & $-$   & backward \\
+backward, slowing down    & backward   & $+$   & forward \\
+\end{tabular}
+
+\noindent Note the consistency of the three right-hand columns ---
+nature is trying to tell us that this is the right system of
+classification, not the left-hand column.
+
+Because the positive and negative signs of acceleration
+depend on the choice of a coordinate system, the acceleration
+of an object under the influence of gravity can be either
+positive or negative. Rather than having to write things
+like ``$g=9.8\ \munit/\sunit^2$ or $-9.8\ \munit/\sunit^2$''
+every time we want to
+discuss $g$'s numerical value, we simply define $g$ as the
+absolute value of the acceleration of objects moving under
+the influence of gravity. We consistently let $g=9.8 \ \munit/\sunit^2$,
+but we may have either $a=g$ or $a=-g$, depending on our
+choice of a coordinate system.
+
+\begin{eg}{Acceleration with a change in direction of motion}
+\egquestion A person kicks a ball, which rolls up a sloping
+street, comes to a halt, and rolls back down again. The ball
+has constant acceleration. The ball is initially moving at a
+velocity of 4.0 m/s, and after 10.0 s it has returned to
+where it started. At the end, it has sped back up to the
+same speed it had initially, but in the opposite direction.
+What was its acceleration?
+
+\eganswer By giving a positive number for the initial
+velocity, the statement of the question implies a coordinate
+axis that points up the slope of the hill. The ``same''
+speed in the opposite direction should therefore be
+represented by a negative number, -4.0 m/s. The acceleration
+is
+\begin{align*}
+  a &= \Delta v/\Delta t \\
+    &= (v_f-v_\zu{o})/10.0\ \sunit \\
+    &= [(-4.0 \ \munit/\sunit)-(4.0 \ \munit/\sunit)]/10.0 s \\
+    &= -0.80\ \munit/\sunit^2\eqquad.
+\end{align*}
+The
+acceleration was no different during the upward part of the
+roll than on the downward part of the roll.
+
+Incorrect solution: Acceleration is $\Delta v/\Delta $t, and
+at the end it's not moving any faster or slower than when it
+started, so $\Delta $v=0 and $a=0$.
+
+\noindent<% x_mark %>  The velocity does change, from a positive number
+to a negative number.
+\end{eg}
+
+<%
+  fig(
+    'dq-water-bottle',
+    %q{Discussion question \ref{dq:water-bottle}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true
+    }
+  )
+%>
+
+\startdqs
+
+\begin{dq}
+A child repeatedly jumps up and down on a trampoline.
+Discuss the sign and magnitude of his acceleration,
+including both the time when he is in the air and the time
+when his feet are in contact with the trampoline.
+\end{dq}
+
+\begin{dq}\label{dq:water-bottle}
+The figure
+shows a refugee from a Picasso painting
+blowing on a rolling water bottle. In some cases the
+person's blowing is speeding the bottle up, but in others it
+is slowing it down. The arrow inside the bottle shows which
+direction it is going, and a coordinate system is shown at
+the bottom of each figure. In each case, figure out the plus
+or minus signs of the velocity and acceleration. It may be
+helpful to draw a $v-t$ graph in each case.
+\end{dq}
+
+<% marg %>
+<%
+  fig(
+    'dq-corndog',
+    %q{Discussion question \ref{dq:corndog}.},
+    {
+      'anonymous'=>true
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:corndog}
+Sally is on an amusement park ride which begins with her
+chair being hoisted straight up a tower at a constant speed
+of 60 miles/hour. Despite stern warnings from her father
+that he'll take her home the next time she misbehaves, she
+decides that as a scientific experiment she really needs to
+release her corndog over the side as she's on the way up.
+She does not throw it. She simply sticks it out of the car,
+lets it go, and watches it against the background of the
+sky, with no trees or buildings as reference points. What
+does the corndog's motion look like as observed by Sally?
+Does its speed ever appear to her to be zero? What
+acceleration does she observe it to have: is it ever
+positive? negative? zero? What would her enraged father
+answer if asked for a similar description of its motion as
+it appears to him, standing on the ground?
+\end{dq}
+
+\begin{dq}
+Can an object maintain a constant acceleration, but
+meanwhile reverse the direction of its velocity?
+\end{dq}
+
+\begin{dq}
+Can an object have a velocity that is positive and
+increasing at the same time that its acceleration is decreasing?
+\end{dq}
+
+
+
+<% end_sec() %>
+<% begin_sec("Varying acceleration",0) %>\index{acceleration!definition}
+m4_ifelse(__me,1,[:
+So far we have only been discussing examples of motion for
+which the acceleration is constant. As always, an expression of the
+form $\Delta\ldots/\Delta\ldots$ for a rate of change must be generalized
+to a derivative when the rate of change isn't constant. We therefore define
+the acceleration as $a=\der v/\der t$, which is the same as the second
+derivative, which Leibniz notated as
+\begin{equation*}
+  a = \frac{\der^2 x}{\der t^2}\eqquad.
+\end{equation*}
+The seemingly inconsistent placement of the twos on the top
+and bottom confuses all beginning calculus students. The
+motivation for this funny notation is that acceleration has
+units of $\munit/\sunit^2$, and the notation correctly suggests that:
+the top looks like it has units of meters, the bottom
+$\text{seconds}^2$. The notation is not meant, however, to suggest
+that $t$ is really squared.
+:],[:%
+%------------- start of LM, varying acceleration
+So far we have only been discussing examples of motion for
+which the $v-t$ graph is linear. If we wish to generalize
+our definition to v-t graphs that are more complex curves,
+the best way to proceed is similar to how we defined
+velocity for curved $x-t$ graphs:
+
+\begin{lessimportant}[definition of acceleration]
+The acceleration of an object at any instant is the slope of
+the tangent line passing through its $v$-versus-$t$ graph
+at the relevant point.
+\end{lessimportant}
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-skydiver-graph',
+    %q{Example \ref{eg:skydiver-graph}.},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A skydiver}\label{eg:skydiver-graph}
+\egquestion The graphs in figure \figref{eg-skydiver-graph2}
+show the results of a fairly realistic
+computer simulation of the motion of a skydiver, including
+the effects of air friction. The $x$ axis has been chosen
+pointing down, so $x$ is increasing as she falls. Find (a)
+the skydiver's acceleration at $t=3.0\ \sunit$, and also (b) at $t=7.0\ \sunit$.
+
+\eganswer The solution is shown in figure \figref{eg-skydiver-graph-soln}.
+I've added tangent lines at the two points in question.
+
+(a) To find the slope of the tangent line, I pick two points
+on the line (not necessarily on the actual curve): 
+$(3.0\ \sunit,28 \munit/\sunit)$ and $(5.0\ \sunit,42\ \munit/\sunit)$.
+The slope of the tangent line
+is 
+$(42\ \munit/\sunit-28\ \munit/\sunit)/(5.0\ \sunit - 3.0\ \sunit)=7.0\ \munit/\sunit^2$.
+
+(b) Two points on this tangent line are 
+$(7.0\ \sunit,47\ \munit/\sunit)$
+and 
+$(9.0\ \sunit, 52\ \munit/\sunit)$. 
+The slope of the tangent line is 
+$(52\ \munit/\sunit-47\ \munit/\sunit)/(9.0\ \sunit - 7.0\ \sunit)=2.5\ \munit/\sunit^2$.
+
+Physically, what's happening is that at $t=3.0\ \sunit$, the
+skydiver is not yet going very fast, so air friction is not
+yet very strong. She therefore has an acceleration almost as
+great as $g$. At $t=7.0\ \sunit$, she is moving almost twice as
+fast (about 100 miles per hour), and air friction is
+extremely strong, resulting in a significant departure from
+the idealized case of no air friction.
+\end{eg}
+<%
+  fig(
+    'eg-skydiver-graph-soln',
+    %q{The solution to example \ref{eg:skydiver-graph}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'c'
+    }
+  )
+%>
+
+In example \ref{eg:skydiver-graph}, the $x-t$ graph was not even used in
+the solution of the problem, since the definition of
+acceleration refers to the slope of the $v-t$ graph. It is
+possible, however, to interpret an $x-t$ graph to find out
+something about the acceleration. An object with zero
+acceleration, i.e., constant velocity, has an $x-t$ graph
+that is a straight line. A straight line has no curvature. A
+change in velocity requires a change in the slope of the $x-t$
+graph, which means that it is a curve rather than a line.
+Thus acceleration relates to the curvature of the $x-t$
+graph. Figure \figref{curvature-examples} shows some examples.
+
+\pagebreak[4]
+
+In example \ref{eg:skydiver-graph}, the $x-t$ graph was more strongly
+curved at the beginning, and became nearly straight at the
+end. If the $x-t$ graph is nearly straight, then its slope,
+the velocity, is nearly constant, and the acceleration is
+therefore small. We can thus interpret the acceleration as
+representing the curvature of the $x-t$ graph, as shown
+in figure \figref{curvature-examples}. If the
+``cup'' of the curve points up, the acceleration is
+positive, and if it points down, the acceleration is negative.
+
+<%
+  fig(
+    'curvature-examples',
+    %q{%
+      Acceleration relates to the
+      curvature of the $x-t$ graph.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+\pagebreak[4]
+
+Since the relationship between $a$ and $v$ is analogous to
+the relationship between $v$ and $x$, we can also make
+graphs of acceleration as a function of time, as shown in
+figure \figref{sample-xva-graphs}.
+<%
+  fig(
+    'sample-xva-graphs',
+    %q{%
+      Examples of graphs of $x$, $v$, and
+      $a$ versus $t$. 1. An object in free fall, with no friction.
+      2. A continuation of example \ref{eg:skydiver-graph}, the skydiver.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+<% marg(0) %>
+<%
+  fig(
+    'chart-of-xva',
+    %q{How position, velocity, and acceleration are related.}
+  )
+%>
+<% end_marg %>
+\worked{x-graph-to-v-graph}{Drawing a $v-t$ graph.}
+
+\worked{two-ramps}{Drawing $v-t$ and $a-t$ graphs.}
+
+Figure \figref{chart-of-xva} summarizes the relationships among the three types of graphs.
+
+\startdqs
+
+\begin{dq}
+Describe in words how the changes in the $a-t$ graph in
+figure \figref{sample-xva-graphs}/2 relate to the behavior of the $v-t$ graph.
+\end{dq}
+
+\pagebreak[4]
+
+\begin{dq}\label{dq:inconsistent-graphs}
+Explain how each set of graphs contains inconsistencies, and fix them.
+\end{dq}
+
+<%
+  fig(
+    'dq-inconsistent-graphs',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false,
+    }
+  )
+%>
+
+\begin{dq}
+In each case, pick a coordinate system and draw
+$x-t,v-t$, and $a-t$ graphs. Picking a coordinate system
+means picking where you want $x=0$ to be, and also picking a
+direction for the positive $x$ axis.
+
+(1) An ocean liner is cruising in a straight line at constant speed.
+
+(2) You drop a ball. Draw two different sets of graphs (a
+total of 6), with one set's positive $x$ axis pointing in
+the opposite direction compared to the other's.
+
+(3) You're driving down the street looking for a house you've
+never been to before. You realize you've passed the address,
+so you slow down, put the car in reverse, back up, and stop
+in front of the house.
+\end{dq}
+%------------- end of LM, varying acceleration
+:])
+<% end_sec() %>
+m4_ifelse(__me,0,[:
+%------------ start of LM section on area under curve
+<% begin_sec("The area under the velocity-time graph",0,'area-under-vt') %>\index{area}\index{area under a curve!under v-t graph}
+
+A natural question to ask about falling objects is how fast
+they fall, but Galileo showed that the question has no
+answer. The physical law that he discovered connects a cause
+(the attraction of the planet Earth's mass) to an effect,
+but the effect is predicted in terms of an acceleration
+rather than a velocity. In fact, no physical law predicts a
+definite velocity as a result of a specific phenomenon,
+because velocity cannot be measured in absolute terms, and
+only changes in velocity relate directly to physical phenomena.
+
+The unfortunate thing about this situation is that the
+definitions of velocity and acceleration are stated in terms
+of the tangent-line technique, which lets you go from $x$ to
+$v$ to $a$, but not the other way around. Without a
+technique to go backwards from $a$ to $v$ to $x$, we cannot
+say anything quantitative, for instance, about the $x-t$
+graph of a falling object. Such a technique does exist, and
+I used it to make the $x-t$ graphs in all the examples above.
+
+First let's concentrate on how to get $x$ information out of
+a $v-t$ graph. In example \figref{area-under-curve}/1, an object moves at a speed of
+$20\ \munit/\sunit$ for a period of 4.0 s. The distance covered is
+$\Delta x=v\Delta t=(20\ \munit/\sunit)\times(4.0\ \sunit)=80\ \munit$.
+ Notice that the quantities
+being multiplied are the width and the height of the shaded
+rectangle --- or, strictly speaking, the time represented by
+its width and the velocity represented by its height. The
+distance of $\Delta x=80\ \munit$ thus corresponds to the area of the
+shaded part of the graph.
+<% marg(75) %>
+<%
+  fig(
+    'area-under-curve',
+    %q{%
+      The area under the $v-t$ graph gives
+      $\Delta x$.
+    }
+  )
+%>
+<% end_marg %>
+
+The next step in sophistication is an example like \figref{area-under-curve}/2,
+where the object moves at a constant speed of $10\ \munit/\sunit$ for two
+seconds, then for two seconds at a different constant speed
+of $20\ \munit/\sunit$. The shaded region can be split into a small
+rectangle on the left, with an area representing $\Delta x=20\ \munit$,
+and a taller one on the right, corresponding to another 40 m
+of motion. The total distance is thus 60 m, which
+corresponds to the total area under the graph.
+
+An example like \figref{area-under-curve}/3 is now just a trivial generalization;
+there is simply a large number of skinny rectangular areas
+to add up. But notice that graph \figref{area-under-curve}/3 is quite a good
+approximation to the smooth curve \figref{area-under-curve}/4. Even though we have
+no formula for the area of a funny shape like \figref{area-under-curve}/4, we can
+approximate its area by dividing it up into smaller areas
+like rectangles, whose area is easier to calculate. If
+someone hands you a graph like \figref{area-under-curve}/4 and asks you to find the
+area under it, the simplest approach is just to count up the
+little rectangles on the underlying graph paper, making
+rough estimates of fractional rectangles as you go along.
+
+<%
+  fig(
+    'area-under-curve-soln',
+    %q{An example using estimation of fractions of a rectangle.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+That's what I've done in figure \figref{area-under-curve-soln}. Each rectangle on the graph
+paper is 1.0 s wide and $2\ \munit/\sunit$ tall, so it represents 2
+m. Adding up all the numbers gives $\Delta x=41\ \munit$. If you needed
+better accuracy, you could use graph paper with smaller rectangles.
+
+It's important to realize that this technique gives you
+$\Delta x$, not $x$. The $v-t$ graph has no information about
+where the object was when it started.
+
+The following are important points to keep in mind when
+applying this technique:
+
+\begin{itemize}
+
+\item  If the range of $v$ values on your graph does not extend
+down to zero, then you will get the wrong answer unless you
+compensate by adding in the area that is not shown.
+
+\item  As in the example, one rectangle on the graph paper does
+not necessarily correspond to one meter of distance.
+
+\item  Negative velocity values represent motion in the opposite
+direction, so as suggested by figure \figref{negative-and-positive-area},
+area under the $t$ axis should be subtracted,
+i.e., counted as ``negative area.''
+
+\item  Since the result is a $\Delta x$ value, it only tells you
+$x_{after}-x_{before}$, which may be less than the actual
+distance traveled. For instance, the object could come back
+to its original position at the end, which would correspond
+to $\Delta x$=0, even though it had actually moved a nonzero distance.
+
+\end{itemize}
+<% marg(25) %>
+<%
+  fig(
+    'negative-and-positive-area',
+    %q{%
+      Area underneath the axis is considered negative.
+    }
+  )
+%>
+<% end_marg %>
+
+Finally, note that one can find $\Delta v$ from an $a-t$ graph
+using an entirely \index{area under a curve!area under a-t
+graph}analogous method. Each rectangle on the $a-t$ graph
+represents a certain amount of velocity change.
+
+\startdq
+
+\begin{dq}
+Roughly what would a pendulum's $v-t$ graph look like? What
+would happen when you applied the area-under-the-curve
+technique to find the pendulum's $\Delta x$ for a time
+period covering many swings?
+\end{dq}
+
+<% end_sec() %>
+%------------ end of LM section on area under curve
+:])
+<% begin_sec("Algebraic results for constant acceleration",0,'const-accel-equations') %>\index{acceleration!constant}
+m4_ifelse(__me,0,[:
+%------------ start of LM section on algebraic results for constant acceleration
+
+Although the area-under-the-curve technique can be applied
+to any graph, no matter how complicated, it may be laborious
+to carry out, and if fractions of rectangles must be
+estimated the result will only be approximate. In the
+special case of motion with constant acceleration, it is
+possible to find a convenient shortcut which produces exact
+results. When the acceleration is constant, the $v-t$ graph
+is a straight line, as shown in the figure. The area under
+the curve can be divided into a triangle plus a rectangle,
+both of whose areas can be calculated exactly: $A=bh$
+for a rectangle and $A=bh/2$ for a triangle. The height
+of the rectangle is the initial velocity, $v_\zu{o}$, and the
+height of the triangle is the change in velocity from
+beginning to end, $\Delta v$. The object's $\Delta x$ is therefore given
+by the equation $\Delta x = v_\zu{o} \Delta t + \Delta v\Delta t/2$.
+ This can be simplified a little by using
+the definition of acceleration, $a=\Delta v/\Delta t$, to eliminate $\Delta v$, giving
+\begin{multline*}
+  \Delta x = v_\zu{o} \Delta t + \frac{1}{2}a\Delta t^2\eqquad. \qquad \hfill 
+       \shoveright{\text{[motion with}}\\
+             \text{constant acceleration]}
+\end{multline*}
+Since this is a second-order polynomial in $\Delta t$, the graph
+of $\Delta x$ versus $\Delta t$ is a parabola, and the same is true of a
+graph of $x$ versus $t$ --- the two graphs differ only by
+shifting along the two axes. Although I have derived the
+equation using a figure that shows a positive $v_\zu{o}$, positive
+$a$, and so on, it still turns out to be true regardless of
+what plus and minus signs are involved.
+
+<% marg(0) %>
+<%
+  fig(
+    'half-a-tsquared-derivation',
+    %q{%
+      The shaded area tells us how far an
+      object moves while accelerating at a constant rate.
+    }
+  )
+%>
+<% end_marg %>
+Another useful equation can be derived if one wants to
+relate the change in velocity to the distance traveled. This
+is useful, for instance, for finding the distance needed by
+a car to come to a stop. For simplicity, we start by
+deriving the equation for the special case of $v_\zu{o}=0$, in
+which the final velocity $v_f$ is a synonym for $\Delta v$. Since
+velocity and distance are the variables of interest, not
+time, we take the equation $\Delta x=\frac{1}{2}a\Delta t^2$ and use $\Delta t=\Delta v/a$ to
+eliminate $\Delta t$. This gives $\Delta x=(\Delta v)^2/2a$, which can be rewritten as
+\begin{equation*}
+  v_f^2 = 2a\Delta x \quad . \quad \hfill \shoveright{\text{[motion with constant acceleration, $v_\zu{o}=0$]}}
+\end{equation*}
+For the more general case where $v_\zu{o}\ne 0$, we skip the tedious
+algebra leading to the more general equation,
+\begin{equation*}
+  v_f^2 = v_\zu{o}^2 + 2a\Delta x \quad . \quad \hfill \shoveright{\text{[motion with constant acceleration]}}
+\end{equation*}
+
+\pagebreak[4]
+
+To help get this all organized in your head, first let's
+categorize the variables as follows:
+
+\noindent Variables that change during motion with constant acceleration:
+
+    $x$ ,$v$, $t$
+
+\noindent Variable that doesn't change:
+
+   $a$
+
+\noindent If you know one of the changing variables and want to find
+another, there is always an equation that relates those two:
+
+<% raw_fig('accel-triangle') %>
+
+The symmetry among the three variables is imperfect only
+because the equation relating $x$ and $t$ includes
+the initial velocity.
+
+There are two main difficulties encountered by students in
+applying these equations:
+
+\begin{itemize}
+
+\item  The equations apply only to motion with constant
+acceleration. You can't apply them if the acceleration is changing.
+
+\item  Students are often unsure of which equation to use, or may
+cause themselves unnecessary work by taking the longer path
+around the triangle in the chart above. Organize your
+thoughts by listing the variables you are given, the ones
+you want to find, and the ones you aren't given and don't care about.
+
+\end{itemize}
+
+\begin{eg}{Saving an old lady}
+\egquestion You are trying to pull an old lady out of the way
+of an oncoming truck. You are able to give her an acceleration
+of $20\ \munit/\sunit^2$. Starting from rest, how much time is required
+in order to move her 2 m?
+
+\eganswer First we organize our thoughts:
+
+    Variables given:    $\Delta x$, $a$, $v_\zu{o}$
+
+    Variables desired:    $\Delta t$
+
+    Irrelevant variables: $v_f$
+
+\noindent Consulting the triangular chart above, the equation we need
+is clearly  $\Delta x=v_\zu{o}\Delta t+\frac{1}{2}a\Delta t^2$, since it has the four variables of interest
+and omits the irrelevant one. Eliminating the $v_\zu{o}$ term and
+solving for $\Delta t$ gives $\Delta t=\sqrt{2\Delta x/a}=0.4\ \sunit$.
+
+\end{eg}
+
+\worked{stupid}{A stupid celebration}
+
+\worked{mars-drop-time}{Dropping a rock on Mars}
+
+\worked{dodge-viper}{The Dodge Viper}
+
+\worked{ramp-half-speed}{Half-way sped up}
+
+\startdqs
+
+\begin{dq}
+In chapter 1, I gave examples of correct and incorrect
+reasoning about proportionality, using questions about the
+scaling of area and volume. Try to translate the incorrect
+modes of reasoning shown there into mistakes about the
+following question: If the acceleration of gravity on Mars
+is 1/3 that on Earth, how many times longer does it take for
+a rock to drop the same distance on Mars?
+\end{dq}
+
+\begin{dq} Check that the units make sense in the three equations
+derived in this section.
+\end{dq}
+%------------ end of LM section on algebraic results for constant acceleration
+:],[:%
+%------------ start of SN section on algebraic results for constant acceleration
+When an object is accelerating, the variables $x$, $v$, and $t$ are all changing continuously.
+It is often of interest to eliminate one of these and relate the other two to each other.
+
+\begin{eg}{Constant acceleration}\label{eg:diving-board}
+\egquestion
+How high does a diving board have to be above the water if the diver is to have as much as 1.0 s
+in the air?
+
+\eganswer
+The diver starts at rest, and has an acceleration of $9.8\ \munit/\sunit^2$. 
+We need to find a connection between the distance she travels and time it takes. In other words,
+we're looking for information about the function $x(t)$, given information about the acceleration.
+To go from acceleration to position, we need to integrate twice:
+\begin{align*}
+  x &= \int \int a \der t \der t \\
+    &= \int \left(at+v_\zu{o}\right) \der t \qquad \text{[$v_\zu{o}$ is a constant of integration.]} \\
+    &= \int at \der t \qquad \text{[$v_\zu{o}$ is zero because she's dropping from rest.]} \\
+    &= \frac{1}{2}at^2+x_\zu{o} \qquad \text{[$x_\zu{o}$ is a constant of integration.]} \\
+    &= \frac{1}{2}at^2 \qquad \text{[$x_\zu{o}$ can be zero if we define it that way.]}
+\end{align*}
+Note some of the good problem-solving habits demonstrated here. We solve the problem symbolically, and only
+plug in numbers at the very end, once all the algebra and calculus are done. One should also make
+a habit, after finding a symbolic result, of checking whether the dependence on the variables
+make sense. A greater value of $t$ in this expression would lead to a greater value for $x$; that makes
+sense, because if you want more time in the air, you're going to have to jump from higher up. A greater
+acceleration also leads to a greater height; this also makes sense, because the stronger gravity is,
+the more height you'll need in order to stay in the air for a given amount of time.
+Now we plug in numbers.
+\begin{align*}
+  x  &= \frac{1}{2}\left(9.8\ \munit/\sunit^2\right)(1.0\ \sunit)^2  \\
+    &= 4.9\ \munit
+\end{align*}
+Note that when we put in the numbers,
+we check that the units work out correctly, $\left(\munit/\sunit^2\right)(\sunit)^2=\munit$. We should
+also check that the result makes sense: 4.9 meters is pretty high, but not unreasonable.
+\end{eg}
+
+Under conditions of constant acceleration,
+we can relate velocity and time,
+\begin{equation*}
+  a = \frac{\Delta v}{\Delta t}\eqquad,
+\end{equation*}
+or, as in the example \ref{eg:diving-board}, position and time,
+\begin{equation*}
+  x =  \frac{1}{2}at^2 + v_\zu{o} t + x_\zu{o}\eqquad.
+\end{equation*}
+It can also be handy to have a relation involving velocity and position, eliminating time.
+Straightforward algebra gives
+\begin{equation*}
+  v_f^2 = v_\zu{o}^2 + 2 a \Delta x\eqquad,
+\end{equation*}
+where $v_f$ is the final velocity, $v_\zu{o}$ the initial velocity, and $\Delta x$ the
+distance traveled.
+
+\vspace{0mm plus 5mm}
+
+\worked{mars-drop-time}{Dropping a rock on Mars}
+
+\vspace{0mm plus 5mm}
+
+\worked{dodge-viper}{The Dodge Viper}
+
+\vspace{0mm plus 5mm}
+
+%------------ end of SN section on algebraic results for constant acceleration
+:])
+<% end_sec %>
+%----------------------------------------------------------------------------
+<% begin_sec("A test of the principle of inertia",nil,'galileo-ramps-inertia',{'optional'=>true}) %>
+Historically, the first quantitative and well 
+documented experimental test\index{Newton's laws of motion!first law!test of}
+of the principle of inertia (p.~\pageref{principle-of-inertia}) was performed by Galileo
+around 1590 and published decades later when he managed to find a publisher in
+the Netherlands that was beyond the reach of
+the Roman Inquisition.\footnote{Galileo, \emph{Discourses and Mathematical Demonstrations
+Relating to Two New Sciences}, 1638. The experiments are described in the Third Day,
+and their support for the principle of inertia is discussed
+in the Scholium following 
+Theorems I-XIV. % at "Let us suppose that the descent...," Britannica Great Books ed., p. 225, at 
+Another experiment involving a ship is described
+in Galileo's 1624 reply to a letter from Fr.~Ingoli, but although Galileo vigorously
+asserts that he really did carry it out, no detailed description or quantitative results
+are given.} It was ingenious but somewhat indirect, and required a layer of
+interpretation and extrapolation on top of the actual observations. As described
+on p.~\pageref{subsec:galileo-ramps-a-motivation}, he established that objects rolling
+on inclined planes moved according to mathematical laws that we would today describe
+as in section \ref{sec:const-accel-equations}. He knew that his rolling balls were subject
+to friction, as well as random errors due to the limited precision of the water clock that
+he used, but he took the approximate agreement of his equations with experiment to indicate
+that they gave the results that would be exact in the absence of friction. He also showed,
+purely empirically, that when a ball went up or down a ramp inclined at an angle $\theta$,
+its acceleration was proportional to $\sin\theta$. Again, this required extrapolation to
+idealized conditions of zero friction. He then reasoned that if a ball was rolled on a
+\emph{horizontal} ramp, with $\theta=0$, its acceleration would be zero. This is exactly
+what is required by the principle of inertia: in the absence of friction, motion continues
+indefinitely.
+
+m4_ifelse(__me,1,[:
+<% marg(-8) %>
+<%
+  fig(
+    'eg-sin-theta-proof',
+    %q{%
+      Example \ref{eg:sin-theta-proof}.
+    }
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{Reversing the logic}\label{eg:sin-theta-proof}
+If we assume that the principle of inertia holds, then we can reverse the direction of Galileo's
+reasoning and show that the acceleration of an object moving frictionlessly
+on an inclined plane is proportional to
+$\sin\theta$, which is a useful practical result for skateboarders or for mountaineers worried
+about sliding down an icy slope.
+
+Figure \subfigref{eg-sin-theta-proof}{1} shows beads sliding frictionlessly down three wires
+inclined at different angles, each losing the same amount of height as it travels from one end
+of its wire to the other. How do their speeds compare when they reach the bottom?
+It seems likely that the bead on the vertical wire will have the greatest
+acceleration, but that doesn't necessarily mean that its final speed will be greater, because
+it will also have less time available to accelerate. In fact, we will show that the final speed
+is the same regardless of the angle.
+
+To demonstrate this, we assume that it is \emph{not} true and show that it leads to an impossible
+result. Suppose that the final speed is greater, for the same vertical drop, when the slope is steeper
+(which is probably what most people intuitively expect, and is true when there is friction).
+In figure \subfigref{eg-sin-theta-proof}{2}, we join together two pieces of wire with different
+slopes, and let a bead ride down the steep side and then coast back \emph{up} the less steep one.
+Under our assumption, the \emph{loss} of speed on the way back up must be smaller than the gain
+on the way down, so that there is a net gain in speed. If we released the bead on the right and
+let it travel to the left, there would be a net loss.
+
+Now suppose that we join together a series of these shapes, making a kind of asymmetric sawtooth
+pattern, \subfigref{eg-sin-theta-proof}{3}. A bead released on the left near the top of one of
+the steep sections will speed up indefinitely as it travels to the right. There is no limit to
+how much speed can be gained if we extend the wire far enough.
+We could use this arrangement to launch satellites into orbit,
+without the need for fuel or rocket engines. If we instead start the bead heading to the left
+with an initial push, it will gradually slow down, turn around, and then speed up indefinitely
+to the right as in the case considered earlier.
+
+This is not just an absurd conclusion but one that in some sense violates the principle of inertia,
+if we state the principle loosely as a rule that motion doesn't naturally speed up or slow down
+in the absence of friction. We therefore conclude that the assumption was false: an object moving
+frictionlessly down an inclined plane does \emph{not} gain a different amount of speed, for a fixed
+loss of height, depending on the slope.
+
+It is now straightforward to show that the acceleration equals $g\sin\theta$.
+Applying the appropriate constant-acceleration equation, we have $v_f^2=2a\ell$, where
+$\ell$ is the distance traveled along the slope.
+Since $v_f$ is the same regardless of angle,
+we have $a\propto\ell^{-1}$, but for a change in height $h$, we have $h/\ell=\sin\theta$,
+so $a\propto\sin\theta$, which is what we wanted to prove.
+
+For the bead on the wire, or for an object sliding down a ramp,
+we can fix the constant of proportionality because $\theta=90\degunit$ should give $a=g$,
+so we have $a=g\sin\theta$.
+
+For an object such as a sphere or a cylinder that rolls down a ramp without slipping, a similar proportionality holds between
+$a$ and $\sin\theta$, but the constant of proportionality is smaller by a unitless factor that depends on the
+object's shape and how its mass is distributed.
+The difference comes about because of the frictional force (the ``traction'') between
+the object and the ramp.
+\end{eg}
+:])
+<% end_sec %> % A test of the principle of inertia
+%----------------------------------------------------------------------------
+m4_ifelse(__me,0,[:
+%-------------- start of optional LM section on applications of calculus
+<% begin_sec("Applications of calculus",0,'',{'calc'=>true}) %>
+
+In section \ref{sec:calculus-for-velocity}, I discussed how the slope-of-the-tangent-line
+idea related to the calculus concept of a derivative, and
+the branch of calculus known as differential calculus. The
+other main branch of calculus, \index{calculus!integral}integral
+calculus, has to do with the area-under-the-curve concept
+discussed in section \ref{sec:area-under-vt}. Again there is a
+concept, a notation, and a bag of tricks for doing things
+symbolically rather than graphically. In calculus, the area
+under the $v-t$ graph between $t=t_1$ and $t=t_2$ is notated like this:
+\begin{equation*}
+  \text{area under curve} = \Delta x = \int_{t_1}^{t_2}v \der t\eqquad.
+\end{equation*}
+The expression on the right is called an integral, and the
+s-shaped symbol, the integral sign, is read as ``\index{integral}integral of \ldots''
+
+Integral calculus and differential calculus are closely
+related. For instance, if you take the derivative of the
+function $x(t)$, you get the function $v(t)$, and if you
+integrate the function $v(t)$, you get $x(t)$ back again. In
+other words, integration and differentiation are inverse
+operations. This is known as the fundamental theorem of
+\index{calculus!fundamental theorem of}calculus.
+
+On an unrelated topic, there is a special notation for
+taking the derivative of a function twice. The acceleration,
+for instance, is the second (i.e., double) \index{derivative!second}derivative
+of the position, because differentiating $x$ once gives $v$,
+and then differentiating $v$ gives $a$. This is written as
+\begin{equation*}
+   a = \frac{\der^2 x}{\der t^2}\eqquad.
+\end{equation*}
+The seemingly inconsistent placement of the twos on the top
+and bottom confuses all beginning calculus students. The
+motivation for this funny notation is that acceleration has
+units of $\munit/\sunit^2$, and the notation correctly suggests that:
+the top looks like it has units of meters, the bottom
+$\text{seconds}^2$. The notation is not meant, however, to suggest
+that $t$ is really squared.
+
+<% end_sec() %>
+%-------------- end of optional LM section on applications of calculus
+:])
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{gravity}{A general term for the phenomenon of attraction
+between things having mass. The attraction between our
+planet and a human-sized object causes the object to fall.}
+
+\vocabitem{acceleration}{The rate of change of velocity; the slope of
+the tangent line on a $v-t$ graph.}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$v_o$}{initial velocity}
+\notationitem{$v_f$}{final velocity}
+\notationitem{$a$}{acceleration}
+\notationitem{$g$}{the acceleration of objects in free fall; the strength of the local gravitational field}
+
+\end{notation}
+
+\begin{summarytext}
+
+Galileo showed that when air resistance is negligible all
+falling bodies have the same motion regardless of mass.
+Moreover, their $v-t$ graphs are straight lines. We
+therefore define a quantity called acceleration as the
+m4_ifelse(__me,1,[:%
+derivative $\der v/\der t$.
+This
+definition has the advantage that a force with a given sign,
+representing its direction,
+always produces an acceleration with the same sign.
+:],[:%
+slope, $\Delta v/\Delta $t, of an object's $v-t$  graph. In
+cases other than free fall, the $v-t$  graph may be curved,
+in which case the definition is generalized as the slope of
+a tangent line on the $v-t$ graph.
+:])%
+ The acceleration of
+objects in free fall varies slightly across the surface of
+the earth, and greatly on other planets.
+
+m4_ifelse(__me,1,[:%
+:],[:%
+Positive and negative signs of acceleration are defined
+according to whether the $v-t$ graph slopes up or down. 
+This
+definition has the advantage that a force with a given sign,
+representing its direction,
+always produces an acceleration with the same sign.
+
+The area under the $v-t$ graph gives $\Delta x$, and
+analogously the area under the $a-t$ graph gives $\Delta v$.
+:])
+
+For motion with constant acceleration, the following
+three equations hold:
+\begin{align*}
+  \Delta x &= v_\zu{o}\Delta t + \frac{1}{2}a\Delta t^2 \\
+  v_f^2 &= v_\zu{o}^2 + 2 a \Delta x \\
+  a &= \frac{\Delta v}{\Delta t}
+\end{align*}
+They are not valid if the acceleration is changing.
+
+\end{summarytext}
+
+\end{summary}
+
+\vfill\pagebreak[4]
+
+<% if is_web then print "<p>The following form can be used for the homework problems that require sketching a set of graphs.</p>" end
+%>
+m4_ifelse(__me,0,[:\fullpagewidthfignocaption{../../../share/mechanics/figs/hw-xva-form}\label{fig:hw-xva-form}:])
+
+\vfill\pagebreak[4]

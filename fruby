@@ -1,0 +1,67 @@
+#!/usr/bin/ruby
+
+# (c) 2008 B. Crowell, GPL v 2
+
+# This is designed to be more or less a drop-in replacement for eruby. It supports a subset
+# of eruby, and has better error handling.
+# Usage:
+#   fruby infile >outfile
+# How it's different:
+#   - Better error handling.
+#   - Parses and evaluates the input file on the fly, rather than
+#     translating it into a .rb file.
+#   - Supports <% %>, <%= %>, and <%# %>, but not % at beginning of line. This makes
+#     it compatible with TeX.
+#   - Doesn't support this kind of thing:
+#       <% 3.times do %> rah <% end %>
+#       <% if foo %> foo <% end %>
+#     Every block has to be a syntactically self-contained piece of ruby code.
+#     Variables assigned to in one piece of code *are* available in later pieces of code.
+#     This type of thing has to be accomplished by using a single block of ruby code,
+#     with print statements inside it.
+# Bugs:
+#   - Doesn't check if <% and %> are properly matched.
+# Security:
+#   Will happily run any code in the file.
+
+def die(message)
+  $stderr.print "fruby: " + message + "\n"
+  exit(-1)
+end
+
+# The following dummy subroutine is the environment in which we evaluate the code.
+# see pickaxe book, pp. 296, 419
+# This accomplishes two things for us:
+# - If we change a variable in one <% %> block, the change persists in later blocks.
+# - Local variables in <% %> blocks are separate from local variables in this program.
+def binding_for_eval()
+  return binding()
+end
+
+if ARGV.empty? then die("Usage: fruby infile >outfile") end
+infile = ARGV[0]
+if ! File.exist?(infile) then die("File #{infile} does not exist.") end
+t = nil
+File.open(infile,'r') { |f|
+  t = f.gets(nil) # nil means read whole file
+}
+
+b = binding_for_eval()
+inside = false # even if there is a ruby expression at the very beginning of the string, split() gives us a null string as our first string
+line = 1
+t.split(/(?:\<\%|\%\>)/).each { |x|
+  if inside then
+    what = 'execute'
+    if x=~/\A=/ then what='evaluate' end
+    if x=~/\A#/ then what='comment' end
+    x.gsub!(/\A[=#]/,'')
+    if what != 'comment' then
+      y = eval(x,b,infile,line)
+      if what == 'evaluate' then print y end
+    end
+  else
+    print x
+  end
+  x.scan(/\n/) {line += 1}
+  inside = !inside
+}

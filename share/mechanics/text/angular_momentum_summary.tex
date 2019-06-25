@@ -1,0 +1,182 @@
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{angular momentum}{a measure of rotational motion; a conserved
+quantity for a closed system}
+
+\vocabitem{axis}{An arbitrarily chosen point used in the definition of
+angular momentum. Any object whose direction changes
+relative to the axis is considered to have angular momentum.
+No matter what axis is chosen, the angular momentum of a
+closed system is conserved.}
+
+\vocabitem{torque}{the rate of change of angular momentum; a numerical
+measure of a force's ability to twist on an object}
+
+\vocabitem{equilibrium}{a state in which an object's momentum and
+angular momentum are constant}
+
+\vocabitem{stable equilibrium}{one in which a force always acts to bring
+the object back to a certain point}
+
+\vocabitem{unstable equilibrium}{one in which any deviation of the
+object from its equilibrium position results in a force
+pushing it even farther away}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$L$}{angular momentum}
+
+\notationitem{$t$}{torque}
+
+\notationitem{$T$}{m4_ifelse(__me,1,the period,) the time required for a rigidly rotating body to
+complete one rotation}
+
+m4_ifelse(__me,1,[:
+\notationitem{$\omega$}{the angular velocity, $\der\theta/\der t$}
+
+\notationitem{moment of inertia, $I$}{the proportionality constant in the
+equation $L  =  I\omega$}
+:])
+
+\end{notation}
+
+m4_ifelse(__me,1,[::],[:
+\begin{othernotation}
+
+\notationitem{period}{a name for the variable $T$ defined above}
+
+\notationitem{moment of inertia, $I$}{the proportionality constant in the
+equation $L  =  2\pi I / T$}
+\end{othernotation}
+:])
+
+\begin{summarytext}
+
+Angular momentum is a measure of rotational motion which is
+conserved for a closed system. This book only discusses
+angular momentum for rotation of material objects in two
+dimensions. Not all rotation is rigid like that of a wheel
+or a spinning top. An example of nonrigid rotation is a
+cyclone, in which the inner parts take less time to complete
+a revolution than the outer parts. In order to define a
+measure of rotational motion general enough to include
+nonrigid rotation, we define the angular momentum of a
+system by dividing it up into small parts, and adding up all
+the angular momenta of the small parts, which we think of as
+tiny particles. We arbitrarily choose some point in space,
+the \emph{axis}, and we say that anything that changes its
+direction relative to that point possesses angular momentum.
+The angular momentum of a single particle is
+\begin{equation*}
+                L  =  mv_{\perp}r\eqquad,
+\end{equation*}
+where $v_{\perp}$ is the component of its velocity perpendicular to
+the line joining it to the axis, and $r$ is its distance
+from the axis. Positive and negative signs of angular
+momentum are used to indicate clockwise and counterclockwise rotation.
+
+The \emph{choice of axis theorem} states that any axis may
+be used for defining angular momentum. If a system's angular
+momentum is constant for one choice of axis, then it is also
+constant for any other choice of axis.
+
+The \emph{spin theorem} states that an object's angular
+momentum with respect to some outside axis A can be found by
+adding up two parts:
+
+(1) The first part is the object's angular momentum found by
+using its own center of mass as the axis, i.e., the angular
+momentum the object has because it is spinning.
+
+(2) The other part equals the angular momentum that the
+object would have with respect to the axis A if it had all
+its mass concentrated at and moving with its center of mass.
+
+Torque is the rate of change of angular momentum. The torque
+a force can produce is a measure of its ability to twist on
+an object. The relationship between force and torque is
+\begin{equation*}
+                |\btau |    =    r |F_{\perp} |\eqquad,
+\end{equation*}
+where $r$ is the distance from the axis to the point where
+the force is applied, and $F_{\perp}$ is the component of the force
+perpendicular to the line connecting the axis to the point
+of application. Statics problems can be solved by setting
+the total force and total torque on an object equal to zero
+and solving for the unknowns.
+
+m4_ifelse(__me,1,[:
+	In the special case of a \sumem{rigid
+	body} rotating in a single plane, we define
+	\begin{align*}
+		\omega	&=  	\frac{\der\theta}{\der t} 	\qquad \text{[angular velocity]}\\
+	\intertext{and}
+		\alpha	&=  	\frac{\der\omega}{\der t}\eqquad,	\qquad \text{[angular acceleration]}\\
+	\intertext{in terms of which we have}
+		L &= I\omega
+	\intertext{and}
+		\tau &= I\alpha\eqquad,
+	\intertext{where the \sumem{moment of inertia}, $I$, is defined as}
+		I	&=  	\sum{m_i r_i^2}\eqquad,
+	\end{align*}
+	summing over all the atoms in the object (or using calculus to perform a continuous
+	sum, i.e. an integral). The relationship between the angular quantities and
+	the linear ones is
+	\begin{multline*}
+		v_t	= \omega r \qquad 	\hfill \shoveright{\text{[tangential velocity of a point]}}\\
+		v_r	= 0 \qquad 	\hfill \shoveright{\text{[radial velocity of a point]}}\\
+		a_t	=  \alpha r	\eqquad. \hfill \shoveright{\text{[radial acceleration of a point]}}\\
+			\hfill\text{at a distance $r$ from the axis]}\\
+		a_r	=  \omega^2 r	 \qquad 	\hfill \shoveright{\text{[radial acceleration of a point]}}\\
+			\hfill\text{at a distance $r$ from the axis]}\\
+	\end{multline*}
+
+	In three dimensions, torque and angular momentum are vectors, and are expressed
+	in terms of the vector \sumem{cross product}, which is the only
+	rotationally invariant way of defining a multiplication of two vectors
+	that produces a third vector:
+	\begin{align*}
+		\vc{L}	&= \vc{r}\times\vc{p}\\
+		\btau	&= \vc{r}\times\vc{F}
+	\end{align*}
+	In general, the cross product of vectors $\vc{b}$ and $\vc{c}$ has
+	magnitude
+	\begin{equation*}
+		|\vc{b}\times\vc{c}|	= |\vc{b}|\,|\vc{c}|\,\sin\theta_{bc}\eqquad,\\
+	\end{equation*}
+	which can be interpreted geometrically as the area of the parallelogram
+	formed by the two vectors when they are placed tail-to-tail.
+	The direction of the cross product lies along the line which is perpendicular
+	to both vectors; of the two such directions, we choose the one that is right-handed,
+	in the sense that if we point the fingers of the flattened right hand along
+	$\vc{b}$, then bend the knuckles to point the fingers along $\vc{c}$, the thumb
+	gives the direction of $\vc{b}\times\vc{c}$. In terms of components, the
+	cross product is
+	\begin{align*}
+	(\vc{b}\times\vc{c})_x	&=  b_yc_z - c_yb_z\\
+	(\vc{b}\times\vc{c})_y	&=  b_zc_x - c_zb_x\\
+	(\vc{b}\times\vc{c})_z	&=  b_xc_y - c_xb_y
+	\end{align*}
+	The  cross product 
+	has the disconcerting properties
+	\begin{align*}
+		\vc{a}\times\vc{b} &= -\vc{b}\times\vc{a} \qquad \text{[noncommutative]}\\
+		\intertext{and}
+		\vc{a}\times(\vc{b}\times\vc{c}) &\ne (\vc{a}\times\vc{b})\times\vc{c} \qquad \text{[nonassociative]}\eqquad,
+	\end{align*}
+	and there is no ``cross-division.''
+	
+	For rigid-body rotation in three dimensions, we define an angular velocity
+	vector $\bomega$, which lies along the axis of rotation and bears a right-hand
+	relationship to it. Except in special cases, there is no scalar moment of
+	inertia for which $\vc{L}=I\bomega$; the moment of inertia must be expressed
+	as a matrix.
+:])
+
+\end{summarytext}
+
+\end{summary}

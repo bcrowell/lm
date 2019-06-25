@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+
+# usage:
+#     create_fullembed_file <mybook.log >fullembed.map
+# see http://tex.stackexchange.com/questions/24002/turning-off-font-subsetting-in-pdftex
+# This script is not run automatically. If I add another font to a book, I need to re-run it.
+# I've noticed some confusing stuff where it seems to leave out exactly one font, but then when I run it again, it works right.
+# After running it, always check with pdffonts to make sure that it really worked.
+# Can make a copy of the old fullembed.map and compare against it to make sure that fonts haven't been incorrectly left out.
+
+use strict;
+
+my $default_map = `kpsewhich pdftex.map`;
+open(F,"<$default_map");
+my @map = ();
+while (my $line=<F>) {
+  chomp $line;
+  # yvtri8r VenturisADF-Italic <8r.enc <yvtri8a.pfb "TeXBase1Encoding ReEncodeFont" 
+  # "..." may also be before <'s; just eliminate it:
+  $line =~ s/".*"//;
+  #print "=$line=\n";
+  push @map,$line;
+
+}
+close(F);
+
+local $/; # slurp whole file
+
+my $log = <>;
+
+#print "encs:\n";
+my @enc = (''); # null string is because some lines in pdftex.map have no .enc
+while ($log =~ /{([^}]+\.enc)}/g) {
+  my $enc = $1;
+  $enc =~ s/\n//g;
+  if ($enc =~ /([^\/]+)\.enc/) {
+    my $tail = $1;
+    #print "enc=$tail\n";
+    push @enc,$tail;
+  }
+}
+
+#print "pfbs:\n";
+my @pfb = ();
+while ($log =~ /<([^>]+\.pfb)>/g) {
+  my $pfb = $1;
+  $pfb =~ s/\n//g;
+  if ($pfb =~ /([^\/]+\.pfb)/) {
+    my $tail = $1;
+    #print "$tail\n";
+    push @pfb,$tail;
+  }
+
+}
+
+foreach my $enc(@enc) {
+  my $e = quotemeta $enc;
+  foreach my $pfb(@pfb) {
+    my $p = quotemeta $pfb;
+    foreach my $map(@map) {
+      #if ($pfb =~ /tipasl10/ && $enc eq '') {print "trying enc=$enc, pfb=$pfb, map=$map\n"}
+      if ( $map =~/$p/ && (($enc ne '' && $map =~ /$e/) || ($enc eq '' && ! ($map =~ /\.enc/)))) {
+        $map =~ s/(<[^ ]+.pfb)/<$1/;
+        #print "enc=$enc, pfb=$pfb, map=$map\n";
+        print "$map\n";
+      }
+    }
+  }
+}

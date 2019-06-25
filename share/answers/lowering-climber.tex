@@ -1,0 +1,22 @@
+The partner's hands are not touching the climber, so they don't make any force
+on him. The hands have an indirect effect through the rope, but our concept of
+force only includes direct effects 
+% The following m4 is handled by handle_m4_in_answer_file() in eruby_util.
+m4_ifelse(__problems,1,[:%
+(see p.~\pageref{force-is-direct}).%
+:],[:%
+(section \ref{sec:what-force-is-not}, p.~\pageref{sec:what-force-is-not}).%
+:])
+
+The corrected table looks like this:
+
+\begin{tabular}{p{90mm}}
+force of the earth's gravity, $\downarrow$ \\
+force from the rope, $\uparrow$ \\
+\end{tabular}
+
+The student is also wrong to claim that the upward and downward forces are
+unbalanced. The climber is moving down at constant speed, so his
+acceleration is zero, and the total force acting on him is zero.
+The upward and downward forces are of equal strength, and they
+cancel.

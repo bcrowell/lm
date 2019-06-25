@@ -1,0 +1,1131 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Sources of magnetism") %>
+
+<%
+  chapter(
+    '10',
+    %q{Sources of magnetism},
+    'ch:b-superpos',
+    %q{This electric doorbell ringer uses two electromagnets made out of coils of copper wire
+       with a layer of enamel or polymer insulation. The main practical goal of this chapter is to
+       be able to calculate the magnetic field made by currents.},
+    {'opener'=>'doorbell','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+<% begin_sec("The current density",nil,'current-density') %>\index{current!density}
+
+<% begin_sec("Definition",nil,'current-density-def') %>
+
+We've interpreted the junction rule (sec.~\ref{sec:junction-rule}, p.~\pageref{sec:junction-rule})
+as a statement of conservation of
+charge, but this interpretation only works if we assume that no charge
+ever gets stashed away temporarily at some location in the circuit and
+then brought back into action later. By analogy, the junction rule can
+be disobeyed by cars, if there are lots of cars coming into a parking
+garage in the morning and staying there all day until they leave after
+working hours. Circuits can actually accumulate charge, e.g., on the
+plates of a capacitor, so we would like to have a more general way of
+describing conservation of charge (which is always true) than the
+junction rule (which is only sometimes true). 
+
+<% marg(0) %>
+<%
+  fig(
+    'faucet',
+    %q{The mass of water is conserved.}
+  )
+%>
+<% end_marg %>
+
+By the way, this kind of thing arises in many physical situations, not just in electricity and
+magnetism.  In figure \figref{faucet},
+the stream of water is fatter near the mouth of the
+faucet, and skinnier lower down. This is because the water speeds up as
+it falls. If the cross-sectional area of the stream was equal all
+along its length, then the rate of flow (kilograms per second) through
+a lower cross-section would be greater than the rate of flow through a
+cross-section higher up. Since the flow is \emph{steady}, the amount of water
+between the two cross-sections stays constant. Conservation of mass
+therefore requires that the cross-sectional area of the stream shrink
+in inverse proportion to the increasing speed of the falling water.
+Notice how we had to assume a \emph{steady} flow, so that no region
+of space had any net influx or outflow of water.
+
+The first step in formulating this sort of thing mathematically for
+electric charge and currents is to recognize that we're describing
+a law of physics --- conservation of charge --- and the
+laws of physics are really always \emph{local}. This means that the
+electric current, $I$, in units of amperes, is fundamentally ill suited
+to our purposes, since the definition of current involves the net charge
+flowing across some surface, which can be large. We want some way of talking
+about the flow of current at a particular \emph{point} in space, which
+would be a kind of current \emph{density} and should be a vector. The mathematical
+setup is the same as as the one occurring in the definition of flux (sec.~\ref{sec:gauss-global},
+p.~\pageref{flux-defined}), but with different variables. The current through an
+infinitesimal area, with area vector $\der\vc{A}$, is
+\begin{equation*}
+  \der I = \vc{j}\cdot\der\vc{A},
+\end{equation*}
+which implicitly defines the current density $\vc{j}$. Integrating this gives
+the current through a finite surface, $I=\int \vc{j}\cdot\der\vc{A}$, which looks
+just like our definition of flux, but with different letters of the alphabet and
+a different physical interpretation. The current density has SI units of $\zu{A}/\munit^2$.
+It is a vector pointing in the net direction of flow of electric charge, with the flow
+of negative charge being represented by a vector in the opposite direction.
+
+\begin{eg}{Current density in a copper wire}
+\egquestion Electrical codes in the U.S.~require that a copper wire carrying 20 A
+should be at least of a certain size (called 12 gauge),
+which has a cross-sectional area of $3.31\ \zu{mm}^2$. What is the corresponding
+current density, assuming that the current is uniformly distributed across the
+wire's entire cross-section?
+
+\eganswer Since the current density
+is stated to be constant, we can take it outside the integral,
+$I=\int \vc{j}\cdot\der\vc{A}=\vc{j}\cdot\int \vc{A}=\vc{j}\cdot\vc{A}$.
+The cross-sectional area is stated for a cross-section perpendicular to the
+wire, so that the area vector points along the wire's axis, and therefore
+$\vc{j}$ and $\vc{A}$ are parallel, meaning that the dot product $\vc{j}\cdot\vc{A}$
+is simply the product of the magnitudes $jA$. We then have
+\begin{align*}
+  j &= \frac{I}{A} \\
+    &= 6.0\times10^6\ \zu{A}/\munit^2.
+\end{align*}
+Comparing with the requirements in the code for other amounts of current, we find that the area is
+required to scale up somewhat faster than the current, so that the current density has to be somewhat smaller
+for thicker wires. This is presumably because a thicker wire has a smaller surface-to-volume ratio,
+and therefore cannot get rid of its heat as quickly.
+\end{eg}
+
+<% end_sec('current-density-def') %>
+
+<% begin_sec("Continuity equation",nil,'continuity') %>\index{charge!conservation!continuity equation}
+
+We can now imagine a ``div-meter'' (figure \figref{divmeter}, p.~\pageref{fig:divmeter})
+that measures the divergence of the current density rather than the divergence of
+the electric field. If $\operatorname{div}\vc{j}$ is nonzero --- let's say positive --- at a certain
+point, then either conservation of charge is being violated at that point, or
+charge that was stored in that location is being taken out, like the cars in the
+parking garage leaving at the end of the day. Conservation of charge can now be stated
+succinctly as
+\begin{equation*}
+  \operatorname{div}\vc{j} = -\frac{\partial\rho}{\partial t},
+\end{equation*}
+where $\rho$ is the charge density. An equation of this form also holds in other
+physical cases such as the flow of water, and is known more generally as an equation
+of continuity.
+
+
+<% marg(-5) %>
+<%
+  fig(
+    'skin-depth',
+    %q{Example \ref{eg:skin-depth}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Skin depth}\label{eg:skin-depth}
+There is a general phenomenon in AC circuits that the flow of current
+in a wire is nonuniform: the current density is higher as we get closer to the surface
+of the wire. This is referred to as the ``skin effect,'' and it occurs because of
+induced electric fields. Figure \figref{skin-depth} shows a typical profile of current
+density throughout a wire. If we visualize a div-meter in this field, we can see that
+although it would tend to spin and be swept downstream, it would not change its volume,
+which is how a div-meter registers a divergence. Therefore 
+$\operatorname{div}\vc{j}=0$ in this example, and by conservation of charge
+we find that $\partial\rho/\partial t=0$, i.e., charge is not being stored or taken
+out of storage anywhere in the wire.
+\end{eg}
+
+<%
+  fig(
+    'div-focusing',
+    %q{%
+      Example \ref{eg:possible-and-impossible-flows}. Each sea-of-arrows diagram represents
+      a current density $\vc{j}$. Which are physically possible?
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{Possible and impossible patterns of steady flow}\label{eg:possible-and-impossible-flows}
+For a steady flow of electric charge, nothing is changing over time, so
+$\partial\rho/\partial t=0$ and therefore the continuity equation
+requires $\operatorname{div}\vc{j}=0$ everywhere:
+the flow must be divergence-free. Figure \figref{div-focusing} shows some possible and impossible
+examples.
+
+Example \subfigref{div-focusing}{1} is impossible. The current density is of the form
+$\vc{j}=bx\hat{\vc{x}}$, with $b>0$, and we showed in example \ref{eg:div-examples}, p.~\pageref{eg:div-examples},
+that such a field has a divergence equal to $b$, which is nonzero.
+
+The flow in \subfigref{div-focusing}{2} is also impossible. This is like $\vc{j}=-by\hat{\vc{y}}$,
+which can be obtained from \subfigref{div-focusing}{1} by rotating 90 degrees and then reversing
+all the vectors. Because the divergence is a scalar, the 90-degree rotation doesn't change the divergence.
+The divergence is also a \emph{linear} operator (like any kind of derivative operator), so flipping
+the arrows works like $\operatorname{div}(-\vc{j})=-\operatorname{div}\vc{j}$, i.e., it flips the
+sign of the result. We therefore find that the divergence of this flow is $-b$, and this is also
+impossible for a steady flow.
+
+The flow in figure \subfigref{div-focusing}{3} is the point-by-point vector sum of \subfigref{div-focusing}{1}
+and \subfigref{div-focusing}{2}. Since the divergence is again a linear operator,
+we have $\operatorname{div}(\vc{j}_1+\vc{j}_2)=\operatorname{div}\vc{j}_1+\operatorname{div}\vc{j}_2$.
+But this is $b-b=0$, so this \emph{is} a possible steady flow of charges.
+\end{eg}
+
+<%
+  fig(
+    'einzel-lens',
+    %q{%
+      An einzel lens, example \ref{eg:einzel-lens}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{The einzel lens}\label{eg:einzel-lens}\index{Einzel lens}
+Figure \figref{einzel-lens} shows a common electrostatic focusing
+device called an einzel lens.  Einzel lenses are used to focus beams
+of charged particles in, for example, scanning electron microscopes
+and old-fashioned CRT video tubes. This one consists of three
+cylindrical pieces of metal. The axes coincide, and run from left to
+right in the figure, which shows a cross-sectional view. The two dark
+lines on the left are the top and bottom of the left-hand cylinder,
+and similarly in the middle and right.
+The left and right cylinders
+are kept at the ground potential, while the one in the middle
+is at a different potential $\phi<0$.
+
+The silhouette of the beam of electrons is shown as a white highlight
+in the figure.  As the electrons enter from the left side, they first
+encounter strong electric fields when they reach the gap between the
+left and middle cylinders. If we consider an electron at the top edge
+of the beam, the field initially decelerates it and moves it away
+from the axis, to point A. Continuing from A to B, the electron is reaccelerated
+and deflected toward a point on the right at which the beam reaches a
+focus on the axis. 
+
+It might seem like an accident that the electron speeds up as it travels from
+A to B, but in fact this this required by the equation of continuity.
+The physics is identical to that of the faucet in figure \figref{faucet}, and
+to right-hand portion of figure \subfigref{div-focusing}{3}. In all of these
+examples, the speeding-up and the coming-together are logically related. If we
+had a coming together without a speeding up, we would violate the equation of
+continuity.
+\end{eg}
+
+<% end_sec('continuity') %>
+
+<% begin_sec("Transformation properties (optional)",nil,'j-transformation',{'optional'=>true}) %>
+
+Clearly the values of $\rho$ and $\vc{j}$ depend on our frame of reference.
+By analogy with the flow of water, if Huck and Jim are floating down the Mississippi River
+on a raft, the current density is zero in their frame of reference. If this analogy were
+to hold in detail, then we would expect, however, that $\rho$ would stay the same.
+This turns out not to be true. The purpose of this optional section is to work out
+the transformation properties of $\rho$ and $\vc{j}$ correctly. Some of the discussion
+will only be understandable to the reader who has studied optional chapter \ref{ch:relativity}.
+
+Suppose that in a certain frame of reference, a long, straight rod holds charge density
+$\rho$ and carries a uniform current density $j_z$ in the longitudinal direction.
+It will be surrounded by an electric field that is proportional to $\rho$, and a magnetic
+field proportional to $j_z$. Even if you haven't read ch.~\ref{ch:relativity}, you know
+that when we change frames of reference, we will have a new mix of electric and magnetic
+fields. Therefore if we know the transformation of the electric and magnetic fields, we
+can immediately infer the same transformation properties for $\rho$ and $j_z$. We have
+worked out the transformation of the fields on p.~\pageref{transformation-e-b}, so we
+obtain the transformation of $\rho$ and $j_z$ simply by swapping in the new variables
+and putting in factors of $c$ to make the units work:
+\begin{align*}\label{transformation-e-b}
+  c\rho' &=  \quad \mygamma c\rho - \frac{v}{c}\mygamma j_z  \\
+  j_z' &= -\frac{v}{c}\mygamma c\rho + \mygamma j_z .
+\end{align*}
+Because $\rho$ and $\vc{j}$ are things we can measure at a point in space, they have
+their own independent physical existence, and therefore these relationships hold regardless
+of whether the physical context is the one involving the straight rod.\index{current density!transformation of}
+
+\begin{eg}{Length contraction}
+Suppose that in a certain frame of reference, a wire carries zero current but has a charge.
+Setting $j_z=0$ in the equation above for $\rho'$ gives $\rho'=\mygamma\rho$. This is
+the result of relativistic length contraction (sec.~\ref{subsec:length-contraction},
+p.~\pageref{subsec:length-contraction}).
+\end{eg}
+
+<% end_sec('j-transformation') %>
+
+<% end_sec('current-density') %>
+
+<% begin_sec("Maxwell's equations",nil,'maxwell-full') %>
+<% begin_sec("Adding a current term",nil,'maxwell-current') %>
+
+In sec.~\ref{sec:maxwell-vacuum} we studied Maxwell's equations in a vacuum. Now we wish to
+generalize them to their full form, including the possibility that there are both charges
+and currents. We've already seen in sec.~\ref{sec:gauss-div} how to incorporate a charge
+density $\rho$, which acts as a source of electric fields. The only finishing touch left
+is to add a term describing how a current density $\vc{j}$ produces a curly magnetic field.
+We first present Maxwell's equations and then give some justification. They are:
+\begin{align*}\index{Maxwell's equations!full version}
+  \operatorname{div}\vc{E} &=  4\pi k\rho \\
+  \operatorname{div}\vc{B} &=  0 \\
+  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
+  \operatorname{curl}\vc{B} &=  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}+\frac{4\pi k}{c^2}\vc{j}.
+\end{align*}
+The only new feature is the final term involving $\vc{j}$. 
+Something like this is required physically because we know that currents create magnetic fields.
+The $k/c^2$ has to be there because of units. The positive sign of this term expresses the
+right-hand relationship between the direction of the current and the curliness of the magnetic field
+it creates, which was proved in \notewithoutbackref{slope-is-v}. (If aliens on another planet define
+their magnetic field to be the opposite direction compared to ours, then they can flip all the signs
+of terms involving $\vc{B}$, but they have to do so in a consistent way.)
+
+The only thing left to justify is the factor of $4\pi$. A nice way to do this, which is
+fundamentally of more physical interest than the $4\pi$, is to show that Maxwell's equations
+imply conservation of charge. The $4\pi$ then arises as the correct factor to put
+in so that charge conservation comes out correctly. 
+This can be done in the following vector calculus
+calculation, which requires almost no real knowledge of vector calculus other than understanding generic
+ideas about the linearity of derivatives. 
+You can skip ahead to sec.~\ref{subsec:maxwell-round-up} if this kind of thing doesn't seem exciting.
+
+We take the divergence of both sides of the fourth Maxwell's equation:
+\begin{equation*}
+  \operatorname{div}(\operatorname{curl}\vc{B}) =  
+        \operatorname{div}\left[\frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}+\frac{4\pi k}{c^2}\vc{j}\right].
+\end{equation*}
+The left side is zero by symmetry (\note{div-of-curl-is-zero}). On the right-hand side, we can
+use the fact that the divergence is a kind of derivative, so it's linear, just like with a
+plain old derivative, which has $(c_1f+c_2g)'=c_1f'+c_2g'$. This gives
+\begin{equation*}
+  0 = \operatorname{div}\frac{\partial\vc{E}}{\partial t}+4\pi k\operatorname{div} \vc{j}.
+\end{equation*}
+In general it's legitimate to swap the order of derivative operators
+(\note{order-of-derivatives}), so we can make this into
+\begin{equation*}
+  0 = \frac{\partial}{\partial t}\operatorname{div}\vc{E}+4\pi k\operatorname{div} \vc{j}.
+\end{equation*}
+But now the first Maxwell's equation $\operatorname{div}\vc{E}=4\pi k\rho$ allows us to make this
+into
+\begin{equation*}
+  0 = \frac{\partial\rho}{\partial t}+\operatorname{div} \vc{j},
+\end{equation*}
+which is the equation of continuity, stating that charge is conserved.
+<% end_sec('maxwell-current') %>
+
+<% begin_sec("The view from the top of the mountain",nil,'maxwell-round-up') %>
+In a similar way, it is also possible to show from Maxwell's equations
+that energy is conserved, a result known as Poynting's theorem.  The
+basic concept is the same as in sec.~\ref{subsec:poynting}, where we
+showed that the Poynting vector could be interpreted as a rate of
+energy flow, but extending it to apply more generally than in the case of
+a plane wave in vacuum.\label{maxwell-logic-roundup} Way back at the beginning of
+ch.~\ref{ch:radiation},
+p.~\pageref{maxwell-logic-promise}, I claimed that we would eventually
+lay out the full set of tightly interlocking logical relationships
+behind Maxwell's equations. Here's how that works.  The logical
+development up until now has been the following:
+
+\begin{tabular}{lp{80mm}}
+  Assumptions: & 1.~Time is relative (sec.~\ref{sec:time}, p.~\pageref{sec:time}).\\
+               & 2.~All frames of reference are equally valid, regardless of their motion how we orient them.\\
+               & 3.~Charge is conserved.\\
+               & 4.~Energy is conserved.\\
+               & 5.~Electric and magnetic fields have some basic properties (observability, vectors, and
+                 superposition --- sec.~\ref{sec:fields-basic-properties},
+                 p.~\pageref{sec:fields-basic-properties}). \\
+  Results:     & 6.~Maxwell's equations\\
+               & 7.~$E=mc^2$ (sec.~\ref{sec:mass-energy-equivalence}, p.~\pageref{sec:mass-energy-equivalence}) \\
+               & 8.~Time dilation, length contraction, and other facts about the structure of space
+                    and time (sec.~\ref{sec:spacetime}, p.~\pageref{sec:spacetime}).
+\end{tabular}
+
+On the other hand, we can see that it's possible to run the logic in the opposite
+direction as well. If we consider Maxwell's equations to be a starting assumption
+(originally deduced by Maxwell from experimentalists' observations), then we can
+deduce facts such as conservation of charge. Historically, the
+idea of Einstein's two ground-breaking 1905 papers on relativity was to show that,
+starting from facts 2-6 as assumptions, he could prove facts 1, 7, and 8.
+
+<% marg(-8) %>
+<%
+  fig(
+    'out-of-nowhere',
+    %q{Example \ref{eg:out-of-nowhere}. A current distribution describing
+       a segment of wire, isolated and hanging in space.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Out of nowhere?}\label{eg:out-of-nowhere}
+Adding the final current term to Maxwell's equations means that we know enough laws
+of physics that it should be possible, in principle, to predict the magnetic field
+made by a set of currents, as in the doorbell ringer on p.~\pageref{ch:b-superpos}.
+A seemingly reasonable approach would be to break down the wire into short segments,
+like a dot-to-dot puzzle, find the field of one such segment, and then add up the fields
+of all the segments. This divide-and-conquer technique would then reduce the hard problem
+to the easier problem of finding the magnetic field created by a current distribution like the
+one in figure \figref{out-of-nowhere}.
+
+The trouble here is that the laws of physics can't predict the magnetic field in this
+situation, because the laws of physics forbid this situation from happening. Although
+the total amount of charge in the figure is staying constant, charge is springing into
+existence on the left and disappearing into nothingness on the right. If Maxwell's equations
+are true, then the continuity equation is true as well, and the continuity equation is a
+\emph{local} law of physics: it forbids us from creating or destroying charge in one place,
+even if we try to make up for it somewhere else.
+\end{eg}
+
+<% end_sec('maxwell-round-up') %>
+
+<% end_sec('maxwell-full') %>
+
+<% begin_sec("The magnetic dipole",nil,'b-dipole') %>\index{dipole!magnetic!further properties}
+
+Example \ref{eg:out-of-nowhere}, p.~\pageref{eg:out-of-nowhere}, shows that if we want to
+find the field made by a current distribution like the one in the doorbell ringer, we can't
+necessarily chop up the current distribution into building blocks that look like little
+line segments. Let's instead investigate magnetic dipoles as building blocks.
+
+<% begin_sec("Modeling the dipole using a current loop",nil,'b-dipole-current-loop') %>
+Our discussion of the dipole in sec.~\ref{sec:dipole}, p.~\pageref{sec:dipole}, focused mainly
+on the electric dipole. Here we discuss the magnetic dipole in more detail. We've defined
+two types of dipoles in terms of the energy they have when they interact with an external field,
+\begin{align*}
+  U &= -\vc{D}\cdot\vc{E} \qquad \text{[definition of the electric dipole moment $\vc{D}$]}\\
+  U &= -\vc{m}\cdot\vc{B} \qquad \text{[definition of the magnetic dipole moment $\vc{m}$]},
+\end{align*}
+and the perfect mathematical analogy between the two definitions automatically implies that
+electric and magnetic dipoles have many of the same properties. Both dipole moments are measured by vectors,
+and this implies that they behave as vectors when we rotate them, and also that they add like
+vectors.
+
+<% marg() %>
+<%
+  fig(
+    'current-loop',
+    %q{A magnetic dipole made out of a square current loop. The dipole vector is perpendicular to the
+       loop and is related to the direction of the current by a right-hand rule.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'adddipoles',
+    %q{Adding two dipole vectors. The dipole moment increases in proportion to the area.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'squaretorque-fac',
+    %q{Side view of a square current dipole, with the direction of the current as indicated,
+       coming out of the page on one side and going back in on the other. The dipole is immersed
+       in an externally imposed uniform field shown by the vertical arrows.}
+  )
+%>
+<% end_marg %>
+
+But this is somewhat abstract, and it's nice to have a more concrete
+physical picture in mind.  Because our universe doesn't seem to come
+equipped with magnetic charges, we can't make a magnetic dipole by
+gluing such charges to the ends of a stick. Instead, the simplest
+embodiment of a magnetic dipole would be something like the current
+loop shown in figure \figref{current-loop}.  Figure
+\figref{adddipoles} shows an example of why it makes sense that dipole
+moments add as vectors, and that the dipole moment is proportional to
+the area of the loop. You should take a moment and verify using the right-hand
+rule that the torque in figure \figref{squaretorque-fac} is in the direction
+that tends to align the dipole vector with the magnetic field. A calculation
+(\note{b-dipole-torque}) shows that the dipole moment is $\vc{m}=I\vc{A}$, where
+$I$ is the current and $\vc{A}$ is the area vector.
+
+\begin{eg}{The magnetic dipole moment of an atom}\label{eg:estimate-atomic-dipole}
+Let's make an order-of-magnitude estimate of the magnetic dipole moment of an atom.
+A hydrogen atom is about $10^{-10}$ m in diameter, and the electron moves at speeds
+of about $10^{-2} c$. We don't know the shape of the orbit, and indeed it turns out that
+according to the principles of quantum mechanics, the electron doesn't even have a well-defined
+orbit, but if we're brave, we can still estimate the dipole moment using the
+cross-sectional area of the atom, which will be on the order of 
+$(10^{-10}\ \zu{m})^2=10^{-20}\ \zu{m}^2$.
+The electron is a single particle, not a steady current, but again we throw caution to
+the winds, and estimate the current it creates as $e/\Delta t$,
+where $\Delta t$, the time for one orbit, can be estimated by dividing the
+size of the atom by the electron's velocity. (This is only a rough estimate,
+and we don't know the shape of the orbit, so it would be silly, for instance,
+to bother with multiplying the diameter by $\pi$ based on our intuitive visualization
+of the electron as moving around the circumference of a circle.)
+The result for the dipole moment is $m\sim10^{-23}\ \zu{A}\unitdot\zu{m}^2$. 
+
+Should we
+be impressed with how small this dipole moment is, or with how big it is, considering
+that it's being made by a single atom? 
+Very large or very small numbers are never very interesting by themselves. To get a
+feeling for what they mean, we need to compare them to something else. An interesting
+comparison here is to think in terms of the total number of atoms in a typical object,
+which might be on the order of $10^{26}$ (Avogadro's number). Suppose we had this
+many atoms, with their moments all aligned. The total dipole moment would be on the
+order of $10^3\ \zu{A}\unitdot\zu{m}^2$, which is a pretty big number. To get
+a dipole moment this strong using human-scale devices,
+we'd have to send a thousand amps of current through a
+one-square meter loop of wire! The insight to be gained here is that, even in
+a permanent magnet, we must not have all the atoms perfectly aligned, because that
+would cause more spectacular magnetic effects than we really observe. Apparently, nearly
+all the atoms in such a magnet are oriented randomly, and do not contribute to the
+magnet's dipole moment.
+\end{eg}
+
+
+<% end_sec('b-dipole-current-loop') %>
+<% begin_sec("Dipole moment related to angular momentum",nil,'g-factor') %>\index{$g$ factor}
+
+In example \ref{eg:estimate-atomic-dipole} we made a crude estimate of the typical
+magnetic dipole moment of an atom. There is another way of going about this,
+which is potentially much more accurate and of interest as a way of probing the structure
+of the atom.
+
+Suppose that a particle of charge $q$
+and mass $m$ is whizzing around and around some closed path. We don't
+even care whether the trajectory is a square or a circle, an orbit or a random wiggle.
+But let's say for convenience that it's a planar shape. The magnetic
+dipole moment (averaged over time) is $\vc{m}=I\vc{A}$. But the angular
+momentum of a unit mass can also be interpreted as twice the area it sweeps out per unit time.
+Aside from the factor of two, which is just a historical glitch in the definitions,
+this mathematical analogy is exact: mass is to
+charge as angular momentum $\vc{L}$ is to magnetic dipole moment $\vc{m}$. Therefore we
+have the identity
+\begin{equation*}
+  \frac{q}{m}\cdot\frac{|\vc{L}|}{|\vc{m}|} = 2
+\end{equation*}
+(where $\vc{m}$ is the dipole moment, while $m$ is the mass). The left-hand side
+is called the $g$ factor. We expect $g=2$
+for a single orbiting particle.
+
+Now suppose that we have a collection of particles with identical values of $q/m$ (or
+a continuous distribution of charge and mass in which the ratio of the charge and mass
+densities is constant). Then vector addition of the $\vc{L}$ and $\vc{m}$ values
+gives the same $g=2$ for the system as a whole. On the other hand, if the different
+members of the system do \emph{not} all have the same $q/m$, then the $g$ of the system
+as a whole need not be 2. For example, a collection of positive and negative charges
+could easily have zero net charge but $\vc{m}\ne0$, giving $g=0$.
+
+Particles such as the electron, the neutron, and the proton may be pointlike, or they
+may be composites of other particles.
+The electon and proton, which are charged, have the expected $g$ factors
+of exactly 2 when we measure the $\vc{L}$ and $\vc{m}$ that they have due
+to their motion through space. But we also find that electrons, neutrons, and protons all come equipped
+with a built-in angular momentum, present even when they are at rest.
+This intrinsic angular momentum, called spin,\index{spin}
+is fixed in magnitude but can vary in direction, like that of a gyroscope.
+Thus if we measure the $\vc{L}$ and $\vc{m}$ of these particles when they
+are \emph{at rest}, they have fixed $g$ factors, which are as follows:
+
+\begin{tabular}{ll}
+electron & 2.002319304361 \\
+neutron & 0 \\
+proton & 5.58569471 
+\end{tabular}
+
+The electron's intrinsic $g$ factor is extremely close to 2, and if we ignore the small discrepancy for
+now, we are led to imagine that the electron is either a pointlike particle or a composite
+of smaller particles, each of which has the same charge-to-mass ratio. The neutron does have a
+nonvanishing dipole moment, so its zero $g$ factor suggests that it is a composite of other
+particles whose charges cancel. The proton's $g$ factor is quite different from 2, so we
+infer that it, too, is composite. The current theory is that protons and neutrons
+are clusters of particles called quarks.\index{quark} Quarks come in different types,
+and the different types have different values of $q/m$.
+
+The magnetic dipole moment of the proton is of considerable importance in our lives because
+of its use in the MRI (magnetic resonance imaging) scans used in medicine.
+As described on p.~\pageref{fig:mri}, a large DC magnetic field, generated by
+superconducing magnets, is used to cause the protons in the body's hydrogen
+atoms to align partially (about $10^{-5}$ of full alignment). These magnetic
+moments are then manipulated and observed using AC fields.
+
+From a physicist's point of view, it is also remarkable that we can infer these facts about the internal
+structures of neutrons and protons without having to do any
+experiments that directly probe their interior structure.  We don't
+need a super-powerful microscope, nor do we need a particle
+accelerator that can supply enough energy to shake up their internal
+structure, like shaking a gift-wrapped box to tell what's inside.
+Merely by measuring the external, aggregate properties of the ``box,''
+we can get clues about the structure inside.\footnote{This is closely analogous
+to the Tolman-Stewart experiment (example \ref{eg:tolman-stewart},
+p.~\pageref{eg:tolman-stewart}), in which the subatomic structure of
+metals was probed by measuring inertial effects in an electric
+circuit.}
+<% end_sec('g-factor') %>
+
+<% begin_sec("Field of a dipole",nil,'dipole-field') %>
+An electric dipole, unlike a magnetic
+one, can be built out of two opposite monopoles, i.e., charges, separated by a certain
+distance, and it is then straightforward to show by vector addition that the
+field of an electric dipole, far away, is\index{dipole!electric!field of}\index{electric dipole!field of}
+\begin{align*}
+        E_z        &= kD\left(3\cos^2\theta-1\right)r^{-3}\\
+        E_R        &= kD\left(3\sin\theta\:\cos\theta\right)r^{-3}\eqquad,
+\end{align*}
+where $r$ is the distance from the dipole to the point of interest, $\theta$
+is the angle between the dipole vector and the line connecting the dipole to this
+point, and $E_z$ and $E_R$ are, respectively, the components of the field
+parallel to and perpendicular to the dipole vector. We have already found this field in
+the special cases of $\theta=\pi/2$ (example \ref{eg:e-dipole-mid-plane},
+p.~\pageref{eg:e-dipole-mid-plane}) and $\theta=0$ (problem \ref{hw:dipole-axis},
+p.~\pageref{hw:dipole-axis}).\index{dipole!far field!equations}
+
+<% marg() %>
+<%
+  fig(
+    'field-of-point-dipole',
+    %q{The field of a dipole.}
+  )
+%>
+<% end_marg %>
+
+This is the field pattern that exists far away from the dipole, in empty space.
+Because the vacuum form of Maxwell's equations treats the electric and magnetic
+fields totally symmetrically, the magnetic field of a magnetic dipole has to have
+the same form. With the correct constant of proportionality, it turns out to be
+\index{dipole!magnetic!field of}\index{magnetic dipole!field of}
+\begin{align*}
+        B_z        &= \frac{km}{c^2}\left(3\cos^2\theta-1\right)r^{-3}\\
+        B_R        &= \frac{km}{c^2}\left(3\sin\theta\:\cos\theta\right)r^{-3}\eqquad.
+\end{align*}
+<% end_sec('dipole-field') %>
+<% end_sec('b-dipole') %>
+
+<% begin_sec("Magnetic fields found by summing dipoles",nil,'sum-dipoles') %>
+Many real-world electromagnets are built out of multiple circular loops of wire. In this section
+we use a trick to calculate the useful result for the field at the center of
+a single circular loop. Usually I'm not a big fan of tricks, but we'll see later
+that this trick can be generalized in a useful way.
+
+We start by considering a problem, figure \subfigref{counterrotating}{1},
+that looks harder but is actually easier. We have not one but two loops of wire, with
+slightly different radii $r$ and $r+\der r$. Here the ``d'' just means ``a little bit of,''
+i.e., writing the radii this way is just a way of saying that they're almost, but not quite, the same.
+The currents in the two rings are both $I$, but they flow in opposite directions. This is actually a reasonably
+realistic setup; the inset \subfigref{counterrotating}{2} shows a type of cable,
+called ``twin lead,'' that is often used in this way, with current flowing one way through one
+conductor and then coming back through the other conductor in the opposite direction.
+Of course in the real circuit we would have to have a battery and connections to the loops from the outside,
+and we would probably hook up the two loops in series so that their currents were guaranteed to be
+exactly equal in absolute value. These complications are not shown in the diagram.
+
+<% marg(0) %>
+<%
+  fig(
+    'counterrotating',
+    %q{Two counterrotating rings of current. The inset photo 2 shows a twin lead cable with the insulation
+       stripped off of its ends.}
+  )
+%>
+<% end_marg %>
+
+The trick, as shown in \subfigref{counterrotating}{3}, is to take the circular strip between the
+rings and break it up into imaginary squares, then place a square current loop with current $I$ on each one.
+These are all dipoles, and each one contributes a field at the center which we can calculate
+by plugging $\theta=\pi/2$ in to our expressions from section \ref{subsec:dipole-field}. The result is that
+each tiny dipole $\der m$ contributes $-(k/c^2r^3)\der m$, where the minus sign means that the field
+points out of the page (in the opposite direction compared to the vector $\der\vc{m}$). The total
+field is found by adding up all these small contributions to the field,
+\begin{equation*}
+  B = -\int \frac{k}{c^2r^3} \der m.
+\end{equation*}
+This integral, like any integral, represents a sum of infinitely many infinitesimal things.
+We're not integrating with respect to some variable $m$, though; $\der m$ here just means an infinitesimal
+dipole moment of one of the squares. But we don't actually need any calculus to do this integral.
+Moving all the constants outside and substituting $\der m=I\der A$, we have
+\begin{equation*}
+  B = -\frac{kI}{c^2r^3} \int \der A,
+\end{equation*}
+where $\int\der A$ is the area of the strip,
+$A=(\text{width})(\text{circumference})=(\der r)(2\pi r)$. Our final result is
+\begin{equation*}
+  B = -\frac{2\pi kI}{c^2r^2} \der r \qquad \text{[field at the center of figure \subfigref{counterrotating}{1}]}.
+\end{equation*}
+
+We weren't actually that excited about finding the field in the somewhat artificial example
+of figure \figref{counterrotating}. What would be more useful would be to find the field of
+a \emph{single} circular loop. Now we just play a similar trick again. We imagine an infinite
+set of concentric rings, extending from some radius $a$ all the way out to infinity. The current
+on the outer edge of each ring is canceled out by the current in the overlapping inner edge of
+the next ring, so that the only loop of current that \emph{doesn't} cancel out is the very 
+innermost one, at $r=a$. The result is then that the field at the center of a circular loop
+is $\int_a^\infty [-(2\pi kI)/(c^2 r^2)]\der r$, or
+\begin{equation*}
+  B = \frac{2\pi kI}{c^2a} \qquad \text{[field at the center of a ring of current]}.
+\end{equation*}
+The positive sign means that the direction of the field is right-handed, e.g., out of the page
+if the current is counterclockwise.
+<% end_sec('sum-dipoles') %>
+
+<% begin_sec("Magnetic fields for some practical examples",nil,'b-fields-practical') %>
+
+Figure \figref{magnetic-field-equations} shows the equations for some of the more commonly
+encountered configurations in which wires produce a magnetic field, with illustrations of their
+field patterns. Of these three results, we've only previously derived the first and a special case
+of the second. The remaining derivations are given later in the book, but the results
+are presented together at this point for reference.
+
+<% marg(-15) %>
+<%
+  fig(
+    'magnetic-field-equations',
+    %q{Some magnetic fields.}
+  )
+%>
+<% end_marg %>
+
+\noindent\textit{Field created by a long, straight wire carrying current $I$:}\index{magnetic field!long, straight wire}
+\begin{equation*}
+ B = \frac{k}{c^2}\cdot\frac{2I}{r}
+\end{equation*}
+Here $r$ is the distance from the center of the wire. The field vectors trace
+circles in planes perpendicular to the wire, in a direction given by a right-hand
+rule where the thumb is the current and the fingers are the field.
+
+\noindent\textit{Field created by a single circular loop of current:}\\\index{magnetic field!circular loop of current}
+The field vectors form a dipole-like pattern, coming through the loop and back
+around on the outside. The orientation of the loops is such that in the middle
+region there is a right-hand relationship in which the thumb is the field; or, alternatively,
+one can use the same right-hand rule as for a straight wire, applying it to the area
+close to the wire.
+There is no simple equation for a field at an arbitrary point in space, but
+for a point lying \emph{along the central axis} perpendicular to the loop,
+the field is
+\begin{equation*}
+  B = \frac{k}{c^2}\cdot 2\pi Ib^2\left(b^2+z^2\right)^{-3/2}\eqquad,
+\end{equation*}
+where $b$ is the radius of the loop and $z$ is the distance of the point
+from the plane of the loop.
+
+\noindent\textit{Field created by a solenoid (cylindrical coil):}\\
+The field pattern is similar to that of a single loop, but for a long solenoid
+the field lines become very straight on the inside of the coil
+and on the outside immediately next to the coil. For a sufficiently long solenoid,
+the interior field also becomes very nearly uniform, with a magnitude of
+\begin{equation*}
+  B = \frac{k}{c^2}\cdot 4\pi I N/\ell\eqquad,
+\end{equation*}
+where $N$ is the number of turns of wire and $\ell$ is the length of the
+solenoid. The field near the mouths or outside the coil is not constant, and
+is more difficult to calculate. For a long solenoid, the exterior field is
+much smaller than the interior field.
+
+Some other cases of interest can be solved by superposing the fields
+above. An example is the Helmholtz coil (problem \ref{hw:helmholtzcoil-center},
+p.~\pageref{hw:helmholtzcoil-center}).
+
+<% end_sec('b-fields-practical') %>
+
+<% begin_sec("The Biot-Savart law (optional)",4,'biot-savart',{'optional'=>true}) %>\index{Biot-Savart law}
+
+In sec.~\ref{sec:sum-dipoles}, p.~\pageref{sec:sum-dipoles}, we were able to find the magnetic
+field at  the center of a current loop by the trick of turning the current distribution into
+a superposition of small, square dipoles. It's usually a waste of time to learn a trick that
+only works in one case, but this trick can be extended to apply more generally. Consider the
+wire loop shown in figure \subfigref{potato-chip}{1}, which has a randomly chosen, asymmetric
+shape like a potato chip. If it carries a steady current, it will create a static magnetic field pattern. (The
+assumption of a steady current is necessary, since otherwise, e.g., it could act like an antenna
+and radiate electromagnetic waves.)
+
+<% marg(0) %>
+<%
+  fig(
+    'potato-chip',
+    %q{Extending the dipole trick to handle a randomly chosen, asymmetric current loop.}
+  )
+%>
+<% end_marg %>
+
+Figure \subfigref{potato-chip}{2} shows an idea for extending our
+dipole trick to handle this case.  We form an imaginary tube that
+starts on the loop and extends off to infinity, then split it up into
+strips like railroad tracks, where each railroad track contains an
+infinite number of square dipoles, \subfigref{potato-chip}{3}. The key
+here is that although each track has a pair of long, straight rails
+that bring current in from infinity and then send it back out, the
+currents along these rails cancel when we overlay each track with its
+neighbor. Therefore all we really need to do is find the magnetic
+field of \emph{one} such semi-infinite strip, and by adding it up we
+can find the field of an arbitrary object like the potato-chip loop. 
+
+The field of such a strip is probably pretty complicated, and likely
+to be mainly the field due to the two long rails. However, the
+currents in the rails are destined to cancel out when we add
+everything up, sort of like a politically opposed married couple who
+vote in every election and cancel each other out --- they might as
+well have stayed home. We therefore conjecture that the correct final
+result can be found by adding up fields that depend only on the
+properties of the little end-caps. This is not guaranteed to be
+correct, for the reasons described in example \ref{eg:out-of-nowhere}
+on p.~\pageref{eg:out-of-nowhere}, but let's go ahead based on this
+questionable assumption and see where it gets us.
+
+Given some point in space, we want to find the contribution to the field
+at that point coming from a particular end-cap. Let the vector from the
+end-cap to our point be $\vc{r}$. The contribution to the field
+has to be of the form $\text{function}(\vc{j},\vc{r})\der v$, where
+the $\der v$ is the volume of the wire constituting the end-cap.
+The mystery function has to be proportional to its two vector inputs,
+and as its output it has to give a vector with units of tesla. This
+severely constrains the form of the function. The only rotationally
+invariant way to combine two vectors like this is the cross product,
+and the only way of getting the right units is by throwing in a factor
+of $kc^{-2}r^{-3}$. The only wiggle room is a possible unitless factor
+in front. This unitless factor turns out to be 1, which we will prove
+later, in example \ref{eg:biot-savart-center-of-loop},
+by comparing with a configuration whose field we already know.
+So the contribution to the field from this end-cap is
+\begin{equation*}
+  \frac{k}{c^2} \frac{\vc{j}\times\vc{r}}{r^3}\der v.
+\end{equation*}
+Within the small volume of the end-cap, the integrand is constant,
+and the end-cap is approximately straight, so that it forms a
+cylinder with volume $\der v=\der A\der\ell$, where $\der A$ is the
+cross-sectional area.
+We also assume that, within this short segment of wire,
+the current flows in the direction of the wire and is uniform across
+the wire's cross-sectional area. This allows us to rewrite
+the end-cap's field as
+\begin{equation*}
+  \frac{Ik}{c^2} \frac{\der\bell\times\vc{r}}{r^3}.
+\end{equation*}
+Integrating over the contributions of all the end-caps gives the formula
+known as the Biot-Savart law (rhymes with ``Leo bazaar''),
+\begin{equation*}
+  \vc{B} = \frac{Ik}{c^2} \int\frac{\der\bell\times\vc{r}}{r^3}.
+\end{equation*}
+
+<% marg(60) %>
+<%
+  fig(
+    'biotgeom',
+    %q{%
+      The geometry of the Biot-Savart law. The small arrows show the result
+              of the Biot-Savart law at various positions relative to the current segment $\der\bell$.
+              The Biot-Savart law involves a cross product, and the right-hand rule for this cross
+              product is demonstrated for one case.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The field at the center of a circular loop}\label{eg:biot-savart-center-of-loop}
+In section \ref{sec:sum-dipoles} we had to use a trick
+to find the the field at the center
+of a circular loop of current of radius $a$. The Biot-Savart law routinizes the trick
+for us and eliminates the need for that kind of creativity. Dividing the loop
+into many short segments, each $\der\bell$ is perpendicular to the 
+$\vc{r}$ vector that goes from it to the center of the circle, and
+every $\vc{r}$ vector has magnitude $a$. Therefore 
+every cross product $\der\bell\times\vc{r}$ has the same magnitude,
+$a\der \ell$, as well as the same direction along the axis perpendicular to the loop.
+The field is
+\begin{align*}
+        B        &= \int \frac{ kIa\der \ell}{ c^2 a^3}\\
+                &= \frac{ kI}{ c^2 a^2} \int \der \ell \\
+                &= \frac{ kI}{ c^2 a^2} (2\pi a) \\
+                &= \frac{2\pi kI}{ c^2 a}.
+\end{align*}
+\end{eg}
+
+The fact that the field in example \ref{eg:biot-savart-center-of-loop} comes out the same as in the previous calculation verifies
+that we have the right unitless factor in the Biot-Savart law.
+
+Although the Biot-Savart law seems to have given us a correct result, we highlighted
+an assumption in its derivation that was not guaranteed to be correct. To give
+a full proof of the law, we would really need to prove that when we plug the
+result back in to Maxwell's equations, it gives a solution. That unfortunately
+requires a level of vector calculus beyond the scope of this book.
+
+\begin{eg}{Out-of-the-plane field of a circular loop}\label{eg:biotloop}
+\egquestion
+What is the magnetic field of a circular loop of current at a point on the axis
+perpendicular to the loop,  lying a distance $z$ from the loop's center?
+
+\eganswer
+Again, let's write $a$ for the loop's radius. The \vc{r} vector now has
+magnitude $\sqrt{ a^2+ z^2}$, but it is still perpendicular to the $\der\bell$
+vector. By symmetry, the only nonvanishing component of the field is along the $z$ axis,
+\begin{align*}
+         B_{z}        &= \int |\der\vc{B}|\:\zu{cos}\:\alpha\\
+                &= \int \frac{ kI\,r\,\der \ell}{ c^2 r^3}\frac{ a}{ r}\\
+                &= \frac{ kIa}{ c^2 r^3} \int \der \ell \\
+                &= \frac{2\pi kIa^2}{ c^2( a^2+ z^2)^{3/2}}\eqquad.
+\end{align*}
+For $z=0$ we recover the result of example \ref{eg:biot-savart-center-of-loop}.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'biotloopaxis',
+    %q{Example \ref{eg:biotloop}.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec('biot-savart') %>
+
+<% begin_notes %>
+
+\notetext{div-of-curl-is-zero}{Divergence of a curl}
+\notesummary{The divergence of a curl is zero}
+The kind of field that looks like it would have a nonvanishing value of this
+operation is something like $\vc{F}=zx\hat{\vc{y}}$, the idea being that we take
+a field like $x\hat{\vc{y}}$ that has a curl in the $z$ direction, and then we
+give it some $z$ dependence so that there could be a divergence. In fact, any
+field that is differentiable near the origin can have its components approximated in that neighborhood
+by a function of this general form (a second-order mixed polynomial), so if we can prove
+that $\operatorname{div}(\operatorname{curl}\vc{F})=0$ for this particular $\vc{F}$, it
+follows that the div of a curl is zero for any $\vc{F}$.
+
+Now we show based on symmetry that $\operatorname{div}(\operatorname{curl}\vc{F})=0$ for this $\vc{F}$.
+Suppose we rotate our coordinate system by 180 degrees about the $y$ axis. 
+This doesn't change the field or its components, but the curl
+lies in the $x$-$z$ plane, so the output of the curl operation has its components sign-flipped
+because of the new coordinate system used to describe it.
+This is an over-all reversal of the curl's direction, and since
+the div is linear, the effect is to sign-flip $\operatorname{div}(\operatorname{curl}\vc{F})$.
+
+But the divergence is a scalar, so the final result of taking $\operatorname{div}(\operatorname{curl}\vc{F})$
+cannot change just because we change our coordinates.
+
+We have proved that $\operatorname{div}(\operatorname{curl}\vc{F})$ flips its sign, but also
+that it doesn't change its sign. This is only possible if it is zero, as claimed.
+
+\notetext{order-of-derivatives}{Order of derivatives}
+\notesummary{Typically it's OK to freely interchange the order of derivative operations}
+Of course an example doesn't prove a general rule, but let's consider a simple example in order
+to get the idea of what is being discussed. We have
+\begin{equation*}
+  \frac{\partial}{\partial x} \left(\frac{\partial}{\partial y}(xy)\right)
+        = \frac{\partial}{\partial x}x = 1
+\end{equation*}
+but also
+\begin{equation*}
+  \frac{\partial}{\partial y} \left(\frac{\partial}{\partial x}(xy)\right)
+        = \frac{\partial}{\partial y}y = 1.
+\end{equation*}
+In this example, it didn't matter which derivative we applied first.
+A theorem called Clairaut's theorem says that if a function $f(x,y)$ is well-behaved,
+in the sense that all its second derivatives
+($\partial^2f/\partial x^2$, $\partial(\partial f/\partial x)/\partial y$, and
+$\partial(\partial f/\partial y)/\partial x$)
+are continuous at a certain point, then the first derivatives can be interchanged at that point,
+so that $\partial(\partial f/\partial x)/\partial y=\partial(\partial f/\partial y)/\partial x$.
+
+Because derivative operators like div, grad, and curl can be expressed in terms of partial
+derivatives, it follows that they can also be interchanged under the same conditions.
+
+\notetext{b-dipole-torque}{Magnetic dipole moment of a current loop}
+\notesummary{The magnetic dipole moment of a square current loop is given by $\vc{m}=I\vc{A}$.}
+
+<%
+  fig(
+    'squaretorque-fac',
+    %q{Side view of a square current dipole, with the direction of the current as indicated,
+       coming out of the page on one side and going back in on the other. The dipole is immersed
+       in an externally imposed uniform field shown by the vertical arrows.},
+    {'suffix'=>2,'width'=>'narrow'}
+  )
+%>
+
+Consider the
+geometry shown in figure \figref{squaretorque-fac}.
+Let the mobile charge carriers in the wire have linear
+density $\lambda$, and
+let the sides of the loop have
+length $h$, so that we have $I=\lambda v$. We want to show that
+$m=IA=h^2\lambda v$ is consistent with the definition of the dipole moment
+$U=-\vc{m}\cdot\vc{B}$, where $\vc{B}$ is an externally applied field.
+We do this by computing the torque and then finding the work done when
+the dipole is reoriented.
+
+The only nonvanishing torque comes from the forces on the
+left and right sides. The currents in these sides are perpendicular to the field,
+so the magnitude of the cross product $\vc{F}=q\vc{v}\times\vc{B}$ is simply
+$|\vc{F}|=qvB$. The torque supplied by each of these forces
+is $\vc{r}\times\vc{F}$, where the lever arm $\vc{r}$ has length $h/2$,
+and makes an angle $\theta$ with respect to the force vector. The magnitude of the total torque
+acting on the loop is therefore
+\begin{align*}
+  |\btau|        &=2\frac{h}{2}|\vc{F}|\sin\theta \\
+                                  &=h\:qvB\:\sin\theta\eqquad,\\
+         \intertext{and substituting $q=\lambda h$ and $v=m/h^2\lambda$, we have}
+                  |\btau|        &= h\:\lambda h\:\frac{m}{h^2\lambda} B\sin\theta \\
+                                  &=m B\sin\theta\eqquad.\\
+\end{align*}
+The work done to reorient the dipole is $W=\int \tau\der\theta=-mB\cos\theta$
+(ignoring the irrelevant constant of integration), and this
+is the same as $U=-\vc{m}\cdot\vc{B}$.
+
+<% end_notes %>
+
+
+
+<% begin_hw_sec %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-helmholtz-coil',
+    %q{Problem \ref{hw:helmholtzcoil-center}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('helmholtzcoil-center') %>__incl(hw/helmholtzcoil-center)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_lab('Charge-to-mass ratio of the electron',2,'','lab') %>\label{lab:charge-to-mass}
+
+\begin{labapparatus}
+vacuum tube with Helmholtz coils\\
+high-voltage power supply\\
+DC power supply\\
+multimeter
+\end{labapparatus}
+
+\begin{labgoal}
+Measure the $q/m$ ratio of the electron.
+\end{labgoal}
+
+Why should you believe electrons exist? By the turn of the
+twentieth century, not all scientists believed in the
+literal reality of atoms, and few could imagine smaller
+objects from which the atoms themselves were constructed.
+Over two thousand years had elapsed since the Greeks first
+speculated that atoms existed based on philosophical
+arguments without experimental evidence. During the Middle
+Ages in Europe, ``atomism'' had been considered highly
+suspect, and possibly heretical. Finally by the Victorian
+era, enough evidence had accumulated from chemical
+experiments to make a persuasive case for atoms, but
+subatomic particles were not even discussed.
+
+If it had taken two millennia to settle the question of
+atoms, it is remarkable that another, subatomic level of
+structure was brought to light over a period of only about
+five years, from 1895 to 1900. Most of the crucial work was
+carried out in a series of experiments by J.J. Thomson, who
+is therefore often considered the discoverer of the electron.
+
+<%
+  fig(
+    'lab-charge-to-mass',
+    %q{The vacuum tube apparatus used in this lab.},
+    {'width'=>'column','float'=>false}
+  )
+%>
+
+In this lab, you will carry out a variation on a crucial
+experiment by Thomson, in which he measured the ratio of the
+charge of the electron to its mass, $q/m$. The basic idea is
+to observe a beam of electrons in a region of space where
+there is an approximately uniform magnetic field, B. The
+electrons are emitted perpendicular to the field, and, it
+turns out, travel in a circle in a plane perpendicular to
+it. The force of the magnetic field on the electrons is
+\begin{equation*}
+      F  =  qvB \qquad ,  \qquad (1)  
+\end{equation*}
+
+directed towards the center of the circle. Their acceleration is
+\begin{equation*}
+      a  =  \frac{v^2}{r}  \qquad ,  \qquad  (2)  
+\end{equation*}
+so using $F=ma$, we can write
+\begin{equation*}
+      qvB  =  \frac{mv^2}{r} \qquad .  \qquad  (3)  
+\end{equation*}
+If the initial velocity of the electrons is provided by
+accelerating them through a voltage difference $V$, they
+have a kinetic energy equal to $qV$, so
+\begin{equation*}
+   \frac{1}{2}mv^2 = qV \qquad . \qquad   (4)
+\end{equation*}
+From equations 3 and 4, you can determine $q/m$. Note that
+since the force of a magnetic field on a moving charged
+particle is always perpendicular to the direction of the
+particle's motion, the magnetic field can never do any work
+on it, and the particle's KE and speed are therefore constant.
+
+You will be able to see where the electrons are going,
+because the vacuum tube is filled with a hydrogen gas at a
+low pressure. Most electrons travel large distances through
+the gas without ever colliding with a hydrogen atom, but a
+few do collide, and the atoms then give off blue light,
+which you can see. Although I will loosely refer to ``seeing
+the beam,'' you are really seeing the light from the
+collisions, not the beam of electrons itself. The manufacturer
+of the tube has put in just enough gas to make the beam
+visible; more gas would make a brighter beam, but would
+cause it to spread out and become too broad to measure it precisely.
+
+The field is supplied by an electromagnet consisting of two
+circular coils, each with 130 turns of wire (the same on all
+the tubes we have). The coils are placed on the same axis,
+with the vacuum tube at the center. A pair of coils arranged
+in this type of geometry are called Helmholtz coils. Such a
+setup provides a nearly uniform field in a large volume of
+space between the coils, and that space is more accessible
+than the inside of a solenoid.
+
+\labsection{Setup}
+
+Heater circuit: As with all vacuum tubes, the cathode is
+heated to make it release electrons more easily.
+There is a separate low-voltage power supply built into
+the high-voltage supply. It has a set of green plugs that, in different
+combinations, allow you to get various low voltage values.
+Use it to supply 6 V to the terminals
+marked ``heater'' on the vacuum tube.
+The tube should start to glow.
+
+Electromagnet circuit: Connect the other DC power
+supply, in series with an ammeter, to the terminals marked
+``coil.'' The current from this power supply goes through
+both coils to make the magnetic field. Verify that the
+magnet is working by using it to deflect a nearby compass.
+
+High-voltage circuit: 
+Connect the high voltage supply to the
+terminals marked ``anode.'' Ask your instructor to check
+your circuit. Now plug in the HV supply and turn up the
+voltage to 300 V. You should see the electron beam. If you
+don't see anything, try it with the lights dimmed.
+
+\labsection{Observations}
+
+Make the necessary observations in order to find $q/m$,
+carrying out your plan to deal with the effects of the
+Earth's field. The high voltage is supposed to be 300 V,
+but to get an accurate measurement of what it really is
+you'll need to use a multimeter rather than the poorly
+calibrated meter on the front of the high voltage supply.
+
+The beam can be measured accurately by using the glass
+rod inside the tube, which has a centimeter scale marked
+on it.
+
+Be sure to compute $q/m$ before you leave the lab. That way
+you'll know you didn't forget to measure something
+important, and that your result is reasonable compared to
+the currently accepted value.
+
+<% end_lab %>
+
+<% end_chapter() %>
+

@@ -1,0 +1,140 @@
+<% begin_sec("Applications",m4_ifelse(__lm_series,1,4,3),'energy-zoo-applications') %>
+
+<% begin_sec("Heat transfer",nil,'heat-transfer') %>
+
+<% begin_sec("Conduction",nil,'heat-conduction') %>
+
+When you hold a hot potato in your hand, energy is transferred from the hot object to
+the cooler one. Our microscopic picture of this process (figure \figref{random-motion}, p.~\pageref{fig:random-motion})
+tells us that the heat transfer can only occur at the surface of contact, where one layer of atoms in the
+potato skin make contact with one such layer in the hand. This type of heat transfer is called
+\emph{conduction},\index{conduction of heat}\index{heat transfer!by conduction}
+and its rate is proportional to both the surface area and the temperature difference.
+<% end_sec('heat-conduction') %>
+
+<% begin_sec("Convection",nil,'convection') %>
+In a gas or a liquid, a faster method of heat transfer can occur, because hotter or colder parts
+of the fluid can flow, physically transporting their heat energy from one place to another. This
+mechanism of heat transfer, \emph{convection},\index{convection}\index{heat transfer!by convection}
+is at work in Los Angeles when hot Santa Ana winds blow in from the Mojave Desert. On a cold day,
+the reason you feel warmer when there is no wind is that your skin warms a thin layer of air near
+it by conduction. If a gust of wind comes along, convection robs you of this layer.
+A thermos bottle has inner and outer walls separated by a layer of vacuum, which prevents heat transport
+by conduction or convection, except for a tiny amount of conduction through the thin connection between the walls, near the neck, which has
+a small cross-sectional area.
+<% end_sec('convection') %>
+
+<% begin_sec("Radiation",nil,'heat-radiation') %>
+The glow of the sun or a candle flame is an example of heat transfer
+by \emph{radiation}.\index{radiation of heat}\index{heat transfer!by
+radiation} In this context, ``radiation'' just means anything that
+radiates outward from a source, including, in these examples, ordinary
+visible light. The power is proportional to the surface area of the radiating object. It also
+depends very dramatically on the radiator's absolute temperature, $P\propto T^4$. 
+
+We can easily understand the reason for radiation based on the
+picture of heat as random kinetic energy at the atomic scale. Atoms are made out of subatomic particles,
+such as electrons and nuclei, that carry electric charge. When a charged particle vibrates, it creates
+wave disturbances in the electric and magnetic fields, and the waves have a frequency (number of vibrations
+per second) that matches the frequency of the particle's motion. If this frequency is in the right range,
+they constitute visible light%
+m4_ifelse(__lm_series,1,[:%
+ (see section \ref{subsec:em-spectrum}, p.~\pageref{subsec:em-spectrum}).
+:],[:%
+.
+:])%
+m4_ifelse(__lm_series,1,[:%
+In figure \figref{plutonium-glowing}, the nuclear and electrical potential energy
+in the plutonium pellet cause the pellet to heat up, and an equilibrium is reached, in which the heat is radiated
+away just as quickly as it is produced. :],[::])%
+When an object is closer to room temperature, it glows in the invisible
+infrared part of the m4_ifelse(__lm_series,1,[:spectrum (figure \figref{irface}).:],[:spectrum.:])
+m4_ifelse(__lm_series,1,[:
+<% marg(15) %>
+<%
+  fig(
+    'irface',
+    %q{%
+      A portrait of a man's face made with infrared light, a color of light that lies beyond the red end of
+              the visible rainbow.
+              His warm skin emits quite a bit of infrared light energy, while his
+              hair, at a lower temperature, emits less.
+    }
+  )
+%>
+<% end_marg %>
+:])
+
+<% end_sec('heat-radiation') %>
+
+<% end_sec('heat-transfer') %>
+
+<% begin_sec("Earth's energy equilibrium",nil,'earth-energy-equilibrium') %>
+Our planet receives a nearly constant amount of energy from the sun (about $1.8\times10^{17}\ \zu{W}$).
+If it hadn't had any mechanism for getting rid of that energy, the result would have been some kind of catastrophic explosion
+soon after its formation. Even a 10\% imbalance between energy input and output, if maintained steadily from the time
+of the Roman Empire until the present, would have been enough to raise the oceans to a boil.
+So evidently the earth does dump this energy somehow. How does it do it?
+Our planet is surrounded by the vacuum of outer space, like the ultimate thermos bottle.
+Therefore it can't expel heat by conduction or convection, but
+it does radiate in the infrared, and this is the \emph{only} available mechanism for cooling.
+
+% calc -xe "m=1.4 10^21 kg; c=4 10^3 J/kg; T=100; P=1.8 10^17 W; t=(mcT)/P; t/[365*24*3600]"
+% 99 years
+<% end_sec('earth-energy-equilibrium') %>
+
+<% begin_sec("Global warming",nil,'global-warming') %>\index{global warming}\index{climate change}
+
+It was realized starting around 1930 that this created a dangerous vulnerability in our biosphere.
+Our atmosphere is only about 0.04\% carbon dioxide, but carbon dioxide is an extraordinarily efficient
+absorber of infrared light. It is, however, transparent to visible light. Therefore any increase
+in the concentration of carbon dioxide would decrease the efficiency of cooling by radiation, while
+allowing in just as much heat input from visible light. When we burn fossil fuels such as gasoline
+or coal, we release into the atmosphere carbon that had previously been locked away underground.
+This results in a shift to a new energy balance. The average temperature $T$ of the land and oceans increases
+until the $T^4$ dependence of radiation compensates for the additional absorption of infrared light.
+
+<% marg(-300) %>
+<%
+  fig(
+    'greenhouse-effect',
+    %q{%
+      The ``greenhouse effect.'' Carbon dioxide in the atmosphere allows visible light in, but partially
+      blocks the reemitted infrared light.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'global-warming',
+    %q{%
+      Global average temperatures over the last 2000 years. The black line is from thermometer measurements.
+      The colored lines are from various indirect indicators such as tree rings, ice cores, buried pollen, and corals.
+    }
+  )
+%>
+<% end_marg %>
+
+By about 1980, a clear scientific consensus had emerged that this effect was real, that it was
+caused by human activity, and that it had resulted in an abrupt increase in the earth's
+average temperature. We know, for example,  from radioisotope studies that the effect has not been caused by the release of
+carbon dioxide in volcanic eruptions. The temperature increase has been verified by multiple independent
+methods, including studies of tree rings and coral reefs. Detailed computer models have correctly
+predicted a number of effects that were later verified empirically, including a rise in sea levels,
+and day-night and pole-equator variations. There is no longer any controversy among climate scientists
+about the existence or cause of the effect.
+
+One solution to the problem is to replace fossil fuels with renewable sources of energy such as
+solar power and wind. However, these cannot be brought online fast enough to prevent severe
+warming in the next few decades, so nuclear power is also a critical piece of the
+m4_ifelse(__lm_series,1,[:%
+puzzle (see
+section \ref{subsec:biological-effects-radiation}, p.~\pageref{subsec:biological-effects-radiation}).
+:],[:%
+puzzle.
+:])
+
+<% end_sec('global-warming') %>
+
+<% end_sec('energy-zoo-applications') %>

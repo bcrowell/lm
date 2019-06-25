@@ -1,0 +1,30 @@
+I'm not sure if I'm modeling the battery realistically. I just take it
+as a constant potential gradient, which makes it not so different from
+the resistances.
+
+Someone else's drawing that looks almost exactly like mine, seems to
+confirm that it's pretty much correct:
+  http://www.abc.net.au/science/articles/2014/02/05/3937083.htm
+
+Physics:
+
+If you write out Maxwell's equations for a DC case like this, and throw
+out all the time derivatives, you do get the same equations that lead
+to Poisson's equation.
+
+The code outputs an approximation to the laplacian along the wires. This
+tells me roughly what the charge density is, so that I can get the density
+of field lines sort of right. Going clockwise from + terminal of battery,
+charge density goes like .3, .3, .2, -.2, -.3, -.3. This is why I have
+electric field lines slightly more dense on the left as they terminate on
+the wire.
+
+Field is small near the center. Drawing is a 2-d slice, so it makes it look
+like this is not the case, but actually the density of field lines is
+small there. I didn't know how to space out the field lines near the
+center, made them approximately equally spaced.
+
+Fields have small components parallel to surface of wires, because wires
+are modeled with finite resistance. This is why Poynting vector points
+slightly inward toward wires. In units where the main resistor has a
+resistance of 100, each wire is 30.

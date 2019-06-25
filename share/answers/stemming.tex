@@ -1,0 +1,30 @@
+(a) There is no theoretical limit on how much normal force $F_N$ the climber can make on
+the walls with each foot, so the frictional force can be made arbitrarily large. This means
+that with any $\mu>0$, we can always get the vertical forces to cancel.
+The theoretical minimum value of $\mu$ will be determined by the need for
+the horizontal forces to cancel, so that the climber doesn't pop out of the
+corner like a watermelon seed squeezed between two fingertips. The horizontal
+component of the frictional force is always less than the magnitude of the
+frictional force, which is turn is less than $\mu F_N$. To find the minimum
+value of $\mu$, we set the static frictional force equal to $\mu F_N$.
+
+Let the $x$ axis be along the plane that bisects the two walls, let $y$
+be the horizontal direction perpendicular to $x$, and let $z$ be vertical.
+Then cancellation of the forces in the $z$ direction is not the limiting factor,
+for the reasons described above, and cancellation in $y$ is guaranteed by
+symmetry, so the only issue is the cancellation of the $x$ forces.
+We have $2F_s\cos(\theta/2)-2F_N\sin(\theta/2)=0$. Combining this with
+$F_s=\mu F_N$ results in $\mu=\tan(\theta/2)$.
+
+(b) For $\theta=0$, $\mu$ is very close to zero. That is,
+we can always theoretically stay stuck between two parallel walls, simply by
+pressing hard enough, even if the walls are made of ice or polished
+marble with a coating of WD-40. As $\theta$ gets close to $180\degunit$,
+$\mu$ blows up to infinity. We need at least some dihedral angle to do
+this technique, because otherwise we're facing a flat wall, and there is nothing
+to cancel the wall's normal force on our feet.
+
+(c) The result is $99.0\degunit$, i.e., just a little wider than a right angle.
+%
+% calc -e "mu=1.17; theta=2atan(mu)/deg"
+%    theta = 98.9589209047005

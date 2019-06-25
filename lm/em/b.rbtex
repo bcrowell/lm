@@ -1,0 +1,1814 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '22',
+    %q{The Nonmechanical Universe},
+    'ch:fields',
+    '',
+    {'opener'=>''}
+  )
+%>
+\index{force!fields of}\index{fields of force}
+        \marg{%
+<%
+  fig(
+    'pulp',
+    '',
+    {
+      'anonymous'=>true
+    }
+  )
+%>}
+        \formatlikecaption{%
+        ``Okay. Your duties are as follows: Get Breen. I don't care
+        how you get him, but get him soon. That faker! He posed for twenty
+        years as a scientist without ever being apprehended. Well, I'm going
+        to do some apprehending that'll make all previous apprehending look
+        like no apprehension at all. You with me?'' 
+        
+        ``Yes,'' said
+        Battle, very much confused. ``What's that thing you have?''
+        
+        ``Piggy-back heat-ray. You transpose the air in its path into an
+        unstable isotope which tends to carry all energy as heat. Then you
+        shoot your juice light, or whatever along the isotopic path and you
+        burn whatever's on the receiving end. You want a few?''
+        
+        ``No,'' said Battle. ``I have my gats. What else have you
+        got for offense and defense?'' Underbottam opened a cabinet and
+        proudly waved an arm. ``Everything,'' he said.
+        
+        ``Disintegraters, heat-rays, bombs of every type. And impenetrable
+        shields of energy, massive and portable. What more do I 
+        need?''\footnote{From ``The Reversible Revolutions,'' by Cecil Corwin, Cosmic Stories, March
+        1941. Art by Morey, Bok, Kyle, Hunt, Forte. Copyright expired.}
+        }        
+
+\normalfont\normalsize
+        
+        Cutting-edge science readily infiltrates popular culture,
+        though sometimes in garbled form. The Newtonian imagination
+        populated the universe mostly with that nice solid stuff
+        called matter, which was made of little hard balls called
+        atoms. In the early twentieth century, consumers of pulp
+        fiction and popularized science began to hear of a new image
+        of the universe, full of x-rays, N-rays, and Hertzian waves.
+        What they were beginning to soak up through their skins was
+        a drastic revision of Newton's concept of a universe made of
+        chunks of matter which happened to interact via forces. In
+        the newly emerging picture, the universe was \emph{made} of
+        force, or, to be more technically accurate, of ripples in
+        universal fields of force. Unlike the average reader of
+        Cosmic Stories in 1941, you now have enough technical
+        background to understand what a ``force field'' really is.
+
+<% begin_sec("The stage and the actors",4) %>
+<% begin_sec("Newton's instantaneous action at a distance") %>
+The Newtonian picture has particles interacting with each other by exerting
+forces from a distance, and these forces are imagined to occur without any time
+delay. For example, suppose that super-powerful aliens, angered when they hear disco
+music in our AM radio transmissions, come to our solar system on a mission to
+cleanse the universe of our aesthetic contamination. They apply a force to our
+sun, causing it to go flying out of the solar system at a gazillion miles an hour. According to Newton's
+laws, the gravitational force of the sun on
+the earth will \emph{immediately} start dropping off. This will be detectable on earth,
+and since sunlight takes eight minutes to get from the sun to the earth, the change in gravitational force
+will, according to Newton, be the first way in which earthlings learn the bad news --- the sun will not
+visibly start receding until a little later.
+Although this scenario is fanciful enough to be at home in the pages of Cosmic Stories, it shows
+a real feature of Newton's laws: that information can be transmitted from one place in the universe to another with zero time delay,
+so that transmission and reception occur at exactly the same instant.
+<% marg(0) %>
+<%
+  fig(
+    'gps-on-bike',
+    %q{This Global Positioning System (GPS) system, running on a smartphone attached to a bike's handlebar,
+       depends on Einstein's theory of relativity. Time flows at a different rates aboard a GPS satellite than
+       it does on the bike, and the GPS software has to take this into account.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
+  )
+%>
+<% end_marg %>
+
+Newton was sharp enough to realize that this required a nontrivial assumption,
+which was that there was some completely objective and well-defined way of saying whether
+two things \emph{happened} at exactly the same instant. He stated this assumption explicitly:
+%---------------- This is the 1729 Motte translation, except for my substitution of "at a constant rate" for "equably." ------------------
+``Absolute, true, and mathematical time, of itself, and from its own nature flows
+at a constant rate without regard to anything external\ldots''
+<% end_sec %> % Newton's instantaneous action at a distance
+<% begin_sec("No absolute time") %>\label{hafele-keating}
+Ever since Einstein, we've known that this assumption was false.
+When Einstein first began to develop the theory of relativity, around 1905, the only real-world observations he
+could draw on were ambiguous and indirect.
+Today, the evidence is part of everyday life. For example,
+every time you use a GPS receiver, figure \figref{gps-on-bike}, you're using Einstein's theory of relativity.
+Somewhere between 1905 and today, technology became good enough to allow conceptually \emph{simple} experiments
+that students in the early 20th century could only discuss in terms like ``Imagine that we could\ldots''
+A good jumping-on point is 1971. In that year, J.C.~Hafele and R.E.~Keating
+brought atomic clocks aboard commercial
+airliners, \figref{hk-in-cabin}, and flew around the world, once from east to west and once from west to east. 
+Hafele and Keating observed that there was a discrepancy between the times measured by the
+traveling clocks and the times measured by similar clocks that stayed home at the U.S.~Naval Observatory in Washington.
+The east-going clock lost time, ending up off by $-59\pm10$ nanoseconds, while the west-going one gained $273\pm7$ ns.
+Although this example is particularly dramatic, a large number of other experiments have also confirmed that
+time is not absolute, as Newton had imagined.
+
+Nevertheless, the effects that Hafele and Keating observed were small.
+This makes sense: Newton's laws have already been thoroughly tested by experiments under a wide variety of conditions,
+so a new theory like relativity must agree with Newton's to a good approximation, within the Newtonian theory's
+realm of applicability. This requirement of backward-compatibility is known as
+the \emph{correspondence principle}.\index{correspondence principle!for time dilation}\index{correspondence principle!defined}
+
+<% end_sec %> % No absolute time
+<% begin_sec("Causality") %>\label{causality-defined}
+It's also reassuring that the effects on time were
+small compared to the three-day lengths of the plane trips. There was therefore no
+opportunity for paradoxical scenarios such as one in which the east-going experimenter arrived
+back in Washington before he left and then convinced himself not to take the trip.
+A theory that maintains this kind of orderly relationship between cause and effect is said to satisfy causality.\index{causality}
+<% marg(100) %>
+<%
+  fig(
+    'football-causality',
+    %q{Newton's laws do not distinguish past from future. The football could travel in either direction while obeying Newton's laws.}
+  )
+%>
+<% end_marg %>
+
+Causality is like a water-hungry front-yard lawn in Los Angeles: we know we want it, but it's not easy to explain why.
+Even in plain old Newtonian physics, there is no clear distinction between past and future. In figure \figref{football-causality}, number 18
+throws the football to number 25, and the ball obeys Newton's laws of motion. If we took a video of the pass and played
+it backward, we would see the ball flying from 25 to 18, and Newton's laws would still be satisfied. Nevertheless, we have a strong
+psychological impression that there is a forward arrow of time. I can remember what the stock market did last year, but I can't
+remember what it will do next year. Joan of Arc's military victories against England caused the English to burn her at the stake;
+it's hard to accept that Newton's laws provide an equally good description of a process in which her execution in 1431 caused her to win a battle in 1429.
+There is no consensus at this point among physicists on the origin and significance of time's arrow, and for our present purposes
+we don't need to solve this mystery. Instead, we merely note the empirical fact that, regardless of what causality really means and
+where it really comes from, its behavior is consistent. Specifically, experiments show that if an observer
+in a certain frame of reference observes that event A causes event B, then observers in other frames agree
+that A causes B, not the other way around. This is merely a generalization about a large body of experimental results, not a logically necessary
+assumption. If Keating had gone around the world and arrived back in Washington before he left, it would have disproved
+this statement about causality.
+<% end_sec %> % Causality
+<% begin_sec("Time delays in forces exerted at a distance",nil,'time-delays') %>
+Relativity is closely related to electricity and magnetism, and we will go into
+relativity in more detail in chapters \ref{ch:relativity}-\ref{ch:genrel}. What we care about for now is that
+relativity forbids Newton's instantaneous action at a distance. For suppose that instantaneous action at a distance
+existed. It would then be possible to send signals from one place in the universe to another without any time lag.
+This would allow perfect synchronization of all clocks. But the Hafele-Keating experiment demonstrates that
+clocks A and B that have been initially synchronized will drift out of sync if one is in motion relative to the other.\footnote{As discussed
+in ch.~\ref{ch:em}, there are actually two different effects here, one due to motion and one due to gravity.}
+With instantaneous transmission of signals, we could determine, without having to wait for A and B to be reunited,
+which was ahead and which was behind. Since they don't need to be reunited, neither one needs to undergo any acceleration;
+each clock can fix an inertial frame of reference, with a velocity vector that changes neither its direction nor its magnitude.
+But this violates the principle that constant-velocity motion is relative, because each clock
+can be considered to be at rest, in its own frame of reference. Since no experiment has ever detected any violation
+of the relativity of motion, we conclude that instantaneous action at a distance is impossible.
+
+Since forces can't be transmitted instantaneously, it becomes natural to imagine force-effects
+spreading outward from their source like ripples on a pond, and we then have no choice but to
+impute some physical reality to these ripples. We call them fields, and they have their own
+independent existence. Chapters \ref{ch:fields}-\ref{ch:em} are mainly about the electric and magnetic fields,
+although we'll also talk about the gravitational field. Ripples of the electric and magnetic fields
+turn out to be light waves. Fields don't have to wiggle; they can hold still as well. The earth's magnetic
+field, for example, is nearly constant, which is why we can use it for direction-finding.
+
+Even empty space, then, is not perfectly featureless. It has measurable
+properties. For example, we can drop a rock in order to measure the direction of the gravitational
+field, or use a magnetic compass to find the direction of the magnetic field. This concept made a deep impression
+on Einstein as a child. He recalled that
+when he was five years old,
+the gift of a magnetic compass convinced him that there was ``something behind things, something deeply hidden.''
+<% end_sec %> % Time delays in forces exerted at a distance
+<% begin_sec("More evidence that fields of force are real: they carry energy.") %>\label{fieldenergy}
+The smoking-gun argument for this strange notion of
+traveling force ripples comes from the fact that they carry energy. In figure \subfigref{e-field-energy-argument}{1},
+Alice and Betty hold positive charges A and B at some distance from one another. If Alice chooses to move
+her charge closer to Betty's, \subfigref{e-field-energy-argument}{2}, Alice will have to do some mechanical work
+against the electrical repulsion, burning off some of the calories from that
+chocolate cheesecake she had at lunch.
+This reduction in
+her body's chemical energy is offset by a corresponding increase in the electrical potential energy $q\Delta V$.
+Not only that, but Alice feels the resistance stiffen as the charges get closer together
+and the repulsion strengthens. 
+She has to do a little extra work, but this is all properly accounted for in the electrical potential energy.
+<% marg(20) %>
+<%
+  fig(
+    'e-field-energy-argument',
+    %q{Fields carry energy.}
+  )
+%>
+<% end_marg %>
+
+But now suppose, \subfigref{e-field-energy-argument}{3}, that Betty decides to play a trick on Alice
+by tossing charge B far away just as Alice is getting ready to move charge A.
+We have already established that Alice can't feel charge B's motion instantaneously, so the electric forces
+must actually be propagated by an electric \emph{field}. Of course this experiment is
+utterly impractical, but suppose for the sake of argument that the time it takes the change in the electric field
+to propagate across the diagram is long enough so that Alice can complete her motion before she feels the
+effect of B's disappearance. She is still getting stale information about B's position. As she moves A to the
+right, she feels a repulsion, because the field in her region of space is still the field caused by
+B in its \emph{old} position. She has burned some chocolate cheesecake calories, and it appears that
+conservation of energy has been violated, because these calories can't be properly accounted for
+by any interaction with B, which is long gone.
+
+If we hope to preserve the law of conservation of energy, then the only possible conclusion is that
+the electric field itself carries away the cheesecake energy. In fact, this example
+represents an impractical method of transmitting radio waves. Alice does work on charge A, and that energy
+goes into the radio waves. Even if B had never existed, the radio waves would still have carried energy,
+and Alice would still have had to do work in order to create them.
+<% end_sec %> % More evidence that fields of force are real: they carry energy.
+
+\startdqs
+
+\begin{dq}
+Amy and Bill are flying on spaceships in opposite directions at such high velocities that
+the relativistic effect on time's rate of flow is easily noticeable.
+Motion is relative, so Amy considers herself to be at rest and Bill to be in motion. She says that
+time is flowing normally for her, but Bill is slow. But Bill can say exactly the same thing.
+How can they \emph{both} think the other is slow? Can they settle the disagreement by getting
+on the radio and seeing whose voice is normal and whose sounds slowed down and Darth-Vadery?
+\end{dq}
+
+\anonymousinlinefig{../../../share/relativity/figs/spaceships-opposite-directions}
+
+<% end_sec %> % The Stage and the Actors
+
+<% begin_sec("The gravitational field",4) %>\index{gravitational field}\index{field!gravitational}
+
+        <% marg(50) %>
+<%
+  fig(
+    'seaofarrows',
+    %q{%
+      The wind patterns in a certain area of the ocean could be
+              charted in a ``sea of arrows'' representation like this. Each
+              arrow represents both the wind's strength and its direction at a
+              certain location.
+    }
+  )
+%>
+<% end_marg %>        
+Given that fields of force are real, how do we define,
+measure, and calculate them? A fruitful metaphor will be the
+wind patterns experienced by a sailing ship. Wherever the
+ship goes, it will feel a certain amount of force from the
+wind, and that force will be in a certain direction. The
+weather is ever-changing, of course, but for now let's just
+imagine steady wind patterns. Definitions in physics are
+operational, i.e., they describe how to measure the thing
+being defined. The ship's captain can measure the wind's
+``field of force'' by going to the location of interest and
+determining both the direction of the wind and the strength
+with which it is blowing. Charting all these measurements on
+a map leads to a depiction of the field of wind force like
+the one shown in the figure. This is known as the ``sea of
+arrows'' method of visualizing a field.
+
+Now let's see how these concepts are applied to the
+fundamental force fields of the universe. We'll start with
+the gravitational field, which is the easiest to understand.
+As with the wind patterns, we'll start by imagining gravity
+as a static field, even though the existence of the tides
+proves that there are continual changes in the gravity field
+in our region of space. Defining the direction of the
+gravitational field is easy enough: we simply go to the
+location of interest and measure the direction of the
+gravitational force on an object, such as a weight tied to
+the end of a string.
+
+But how should we define the strength of the gravitational
+field? Gravitational forces are weaker on the moon than on
+the earth, but we cannot specify the strength of gravity
+simply by giving a certain number of newtons. The number of
+newtons of gravitational force depends not just on the
+strength of the local gravitational field but also on the
+mass of the object on which we're testing gravity, our
+``test mass.'' A boulder on the moon feels a stronger
+gravitational force than a pebble on the earth. We can get
+around this problem by defining the strength of the
+gravitational field as the force acting on an object,
+\emph{divided by the object's mass}.
+
+\begin{lessimportant}[definition of the gravitational field]
+The gravitational field vector, $\vc{g}$, at any location in space
+is found by placing a test mass $m_t$ at that point. The field vector
+is then given by $\vc{g}=\vc{F}/m_t$, where $\vc{F}$ is the gravitational
+force on the test mass.
+\end{lessimportant}
+
+The magnitude of the gravitational field near the surface of
+the earth is about 9.8 N/kg, and it's no coincidence that
+this number looks familiar, or that the symbol $\vc{g}$ is the
+same as the one for gravitational acceleration. The force of
+gravity on a test mass will equal $m_t\vc{g}$, where $\vc{g}$ is the
+gravitational acceleration. Dividing by $m_t$ simply gives
+the gravitational acceleration. Why define a new name and
+new units for the same old quantity? The main reason is that
+it prepares us with the right approach for defining other fields.
+
+The most subtle point about all this is that the gravitational
+field tells us about what forces \emph{would} be exerted on
+a test mass by the earth, sun, moon, and the rest of the
+universe, \emph{if} we inserted a test mass at the point in
+question. The field still exists at all the places where
+we didn't measure it.
+
+
+
+\begin{eg}{Gravitational field of the earth}\label{eg:gravfieldofsphere}
+        \egquestion
+        What is the magnitude of the earth's gravitational
+        field, in terms of its mass, $M$, and the distance
+        $r$ from its center?
+
+        \eganswer
+                Substituting $|\vc{F}|= GMm_{t}/ r^2$ into the definition of the
+        gravitational field, we find $|\vc{g}|= GM/ r^2$. This expression
+        could be used for the field of any spherically symmetric mass distribution, since
+        the equation we assumed for the gravitational force would apply in any such
+        case.
+
+\end{eg}
+        <% begin_sec("Sources and sinks") %>\index{sinks in fields}\index{sources of fields}
+
+        <% marg(0) %>
+        %
+<%
+  fig(
+    'sink',
+    %q{%
+      The gravitational field surrounding a clump of mass such as
+              the earth.
+    }
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'earthmoonfield',
+    %q{%
+      The gravitational fields of the earth and moon superpose.
+              Note how the fields cancel at one point, and how there is no boundary
+              between the interpenetrating fields surrounding the two bodies.
+    }
+  )
+%>
+        
+<% end_marg %>
+        If we make a \index{sea-of-arrows representation}sea-of-arrows
+        picture of the gravitational fields surrounding the earth,
+        \ref{fig:sink}, the result is evocative of water going down a drain.
+        For this reason, anything that creates an inward-pointing
+        field around itself is called a sink. The earth is a
+        gravitational sink. The term ``source'' can refer specifically
+        to things that make outward fields, or it can be used as a
+        more general term for both ``outies'' and ``innies.''
+        However confusing the terminology, we know that gravitational
+        fields are only attractive, so we will never find a region
+        of space with an outward-pointing field pattern.
+
+        Knowledge of the field is interchangeable with knowledge of
+        its sources (at least in the case of a static, unchanging
+        field). If aliens saw the earth's gravitational field
+        pattern they could immediately infer the existence of the
+        planet, and conversely if they knew the mass of the earth
+        they could predict its influence on the surrounding
+        gravitational field.
+
+<% end_sec() %>
+<% begin_sec("Superposition of fields") %>\index{superposition of fields}\index{fields!superposition of}
+
+        A very important fact about all fields of force is that when
+        there is more than one source (or sink), the fields add
+        according to the rules of vector addition. The gravitational
+        field certainly will have this property, since it is defined
+        in terms of the force on a test mass, and forces add like
+        vectors. Superposition is an important characteristic of
+        waves, so the superposition property of fields is consistent
+        with the idea that disturbances can propagate outward
+        as waves in a field.
+
+\begin{eg}{Reduction in gravity on Io due to Jupiter's gravity}
+        \egquestion
+        The average gravitational field on Jupiter's moon
+        Io is 1.81 N/kg. By how much is this reduced when Jupiter is
+        directly overhead? Io's orbit has a radius of $ 4.22\times10^8$ m,
+        and Jupiter's mass is $ 1.899\times10^{27}$  kg.
+
+        \eganswer
+                        By the shell theorem, we can treat the Jupiter as if its
+        mass was all concentrated at its center, and likewise for
+        Io. If we visit Io and land at the point where Jupiter is
+        overhead, we are on the same line as these two centers, so
+        the whole problem can be treated one-dimensionally, and
+        vector addition is just like scalar addition. Let's use
+        positive numbers for downward fields (toward the center of
+        Io) and negative for upward ones. Plugging the appropriate
+        data into the expression  derived in example \ref{eg:gravfieldofsphere},
+        we find that the Jupiter's contribution to the field is
+        $-0.71$ N/kg. Superposition says that we can find the actual
+        gravitational field by adding up the fields created by Io
+        and Jupiter: $1.81-0.71$ N/kg = 1.1 N/kg.  
+                You might think that this reduction would create some
+        spectacular effects, and make Io an exciting tourist
+        destination. Actually you would not detect any difference if
+        you flew from one side of Io to the other. This is because
+        your body and Io both experience Jupiter's gravity, so you
+        follow the same orbital curve through the space around Jupiter.        
+
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Gravitational waves") %>
+\index{waves!gravitational}\index{gravitational waves}
+        Looking back at the argument given on p.~\pageref{fieldenergy} for the existence of
+        energy-bearing ripples in the electric field, we see that nowhere was it necessary to appeal to any
+        specific properties of the electrical interaction. We therefore expect
+        energy-carrying gravitational waves to exist, and Einstein's general theory of relativity does
+        describe such waves and their properties.
+
+<%
+  fig(
+    'ligo',
+    %q{%
+      The part of the LIGO gravity wave detector at 
+      Hanford Nuclear Reservation, near Richland, Washington. The other half of the
+      detector is in Louisiana.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+A Caltech-MIT collaboration has built
+        a pair of gravitational wave detectors
+        called LIGO\index{LIGO} to search for direct evidence of gravitational
+        waves. Since they are essentially the most sensitive
+        vibration detectors ever made, they are located in quiet
+        rural areas, and signals are compared between them to
+        make sure that  they were not due to passing trucks. 
+        The signature of a gravitational wave is if the same wiggle is seen in both detectors within
+        a short time. The detectors are able to
+        sense a vibration that causes a change of $10^{-18}$ m in the distance between
+        the mirrors at the ends of the 4-km vacuum tunnels. This is a thousand times
+        less than the size of an atomic nucleus!
+        In 2016, the collaboration announced the first detection of a gravitational wave, which is believed
+        to have originated from the collision of two black holes. Propagation of gravitational waves
+        at $c$ was verified through multiple methods both by study of the 2016 event and through
+        an event in 2017, interpreted as a collision of two neutron stars, in which both gravitational
+        waves and electromagnetic waves were detected simultaneously.
+
+<% end_sec() %>
+<% end_sec() %>
+\vfill
+<% begin_sec("The electric field") %>\index{electric field}\index{field!electric}
+
+        <% begin_sec("Definition",nil,'e-field-defined') %>
+
+        The definition of the electric field is directly analogous
+        to, and has the same motivation as, the definition of the
+        gravitational field:
+
+\begin{lessimportant}[definition of the electric field]
+        The electric field vector, $\vc{E}$, at any location in space is
+        found by placing a test charge $q_t$ at that point. The electric
+        field vector is then given by $\vc{E}=\vc{F}/q_t$, where
+        $\vc{F}$ is the electric force on the test charge.        
+\end{lessimportant}
+
+        Charges are what create electric fields. Unlike gravity,
+        which is always attractive, electricity displays both
+        attraction and repulsion. A positive charge is a source of
+        electric fields, and a negative one is a sink.
+
+        The most difficult point about the definition of the
+        electric field is that the force on a negative charge is in
+        the opposite direction compared to the field. This follows
+        from the definition, since dividing a vector by a negative
+        number reverses its direction. It's as though we had some
+        objects that fell upward instead of down.
+
+        <% self_check('pointchargefield',<<-'SELF_CHECK'
+        Find an equation for the magnitude of the field of a
+        single point charge $Q$.
+          SELF_CHECK
+  ) %>
+
+\pagebreak
+
+\begin{eg}{Superposition of electric fields }\label{eg:square}
+        \egquestion
+        Charges $q$ and $- q$ are at a distance $b$ from
+        each other, as shown in the figure. What is the electric
+        field at the point P, which lies at a third corner of the square?
+<% marg(60) %>
+<%
+  fig(
+    'eg-square',
+    %q{Example \ref{eg:square}.}
+  )
+%>
+<% end_marg %>
+
+        \eganswer
+                The field at P is the vector sum of the fields
+        that would have been created by the two charges independently.
+        Let positive $x$ be to the right and let positive $y$ be up.
+
+        Negative charges have fields that point at them, so the
+        charge $-q$ makes a field that points to the right, i.e., has
+        a positive $x$ component. Using the answer to the self-check, we have
+        \begin{align*}
+                         E_{-q,x}         &=    \frac{ kq}{ b^2}  \\
+                         E_{-q,y}         &=    0\eqquad.  
+        \end{align*}
+        Note that if we had blindly ignored the absolute value signs
+        and plugged in $- q$ to the equation, we would have
+        incorrectly concluded that the field went to the left.
+        
+                        By the Pythagorean theorem, the positive charge is at a
+        distance $\sqrt{2} b$ from P, so the magnitude of its contribution to
+        the field is  $E=  kq/2 b^2$. Positive charges have
+        fields that point away from them, so the field vector is at
+        an angle of 135\degunit counterclockwise from the $x$ axis.  \\
+        \begin{align*}
+                         E_{q,x}         &=    \frac{ kq}{2 b^2} \zu{cos}\  135\degunit  \\
+                                 &=     -\frac{ kq}{2^\zu{3/2} b^2}   \\
+                         E_{q,y}         &=    \frac{ kq}{2 b^2} \zu{sin}\  135\degunit  \\
+                                 &=      \frac{ kq}{2^\zu{3/2} b^2}
+        \end{align*}
+        
+        The total field is
+        \begin{align*}
+                         E_\zu{x}         &=   \left(1-2^{-\zu{3/2}}\right)\frac{ kq}{ b^2}   \\
+                         E_{y}         &=   \frac{ kq}{2^\zu{3/2} b^2}\eqquad.
+        \end{align*}
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{A line of charge}\label{eg:line-charge-radial-dependence}\index{line of charge!field of}
+In a complete circuit, there is typically no net charge on any of the wires. However, there are
+some devices in which a circuit is intentionally left open in order to produce a nonzero net charge
+on a wire. One example is a type of radiation detector called a Geiger-M\"uller tube,\index{Geiger-M\"uller tube} figure 
+\figref{gm-counter}. A high voltage is applied between the outside of the cylinder and the wire that
+    runs along the central axis. A net positive charge builds up on the wire and a negative one on the cylinder's wall. Electric
+    fields originate from the wire, spread outward from the axis, and terminate on the wall. The cylinder is filled with a low-pressure inert gas. An
+    incoming particle of radioactivity strikes an atom of the gas, \emph{ionizing} it, i.e., splitting it into
+    positively and negatively charged parts, known as \emph{ions}. These ions then accelerate in opposite directions, since the force exerted by
+    an electric field on a charged particle flips directions when the charge is reversed. The ions accelerate up to speeds at which they are capable
+    of ionizing other atoms when they collide with them. The result is an electrical avalanche that causes a disturbance on the voltmeter.
+<% marg(110) %>
+<%
+  fig(
+    'gm-counter',
+    %q{A  Geiger-M\"uller tube.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-line-charge-radial-dependence',
+    %q{Proof that the electric field of a line of charge is proportional to $1/r$, example \ref{eg:line-charge-radial-dependence}.}
+  )
+%>
+<% end_marg %>
+
+Motivated by this example, we would like to find how the field of a long, uniformly charged wire varies with distance.
+In figure \subfigref{eg-line-charge-radial-dependence}{1}, the point P experiences a field that is the vector sum of
+contributions such as the one coming from the segment $q$. The field $\vc{E}_q$ arising from this segment has to be
+added to similar contributions from all other segments of the wire. By symmetry, the total field will end up
+pointing at a right angle to the wire. We now consider point $\zu{P}'$, figure \subfigref{eg-line-charge-radial-dependence}{2},
+at twice the distance from the wire. If we reproduce all the angles from \subfigref{eg-line-charge-radial-dependence}{1}, then
+the new triangle is simply a copy of the old one that has been scaled up by a factor of two. The left side's length has doubled,
+so $q'=2q$, and this would tend to make $\vc{E}_{q'}$ twice as big. But all the distances have also been doubled, and the
+$1/r^2$ in Coulomb's law therefore contributes an additional factor of 1/4. Combining these two factors, we find
+$\vc{E}_{q'}=\vc{E}_q/2$. The total field is the sum of contributions such as $\vc{E}_{q'}$, so if all of these
+have been weakened by a factor of two, the same must apply to the total as well. There was nothing special about the number
+2, so we conclude that in general the electric field of a line of charge is proportional to $1/r$.
+
+Applying this to the Geiger-M\"uller tube, we can see the reason why the device is built with a wire. When $r$ is small,
+$1/r$ is big, and the field is very strong. Therefore the device can be sensitive enough to trigger an avalanche in the
+gas when only a single atom has been ionized.
+
+We have only shown that the field is proportional to $1/r$, but we haven't filled in the other factors in the equation.
+This is done in example \ref{eg:line-charge-gauss} on p.~\pageref{eg:line-charge-gauss}.
+\end{eg}
+<% end_sec() %>
+
+<% begin_sec("Dipoles",4) %>\index{dipole!electric}\index{electric dipole}
+        The simplest set of sources that can occur with electricity
+        but not with gravity is the \index{dipole!electric}\emph{dipole},
+        consisting of a positive charge and a negative charge
+        with equal magnitudes. More generally, an electric dipole can
+        be any object with an imbalance of positive charge on one
+        side and negative on the other. A water molecule, \ref{fig:watermolecule}, is a
+        dipole because the electrons tend to shift away from the
+        hydrogen atoms and onto the oxygen atom.
+<%
+  fig(
+    'dipoleinfield',
+    %q{%
+      1. A uniform electric field created by some charges 
+               ``off-stage.'' 2. A dipole is placed in the field. 3. The dipole aligns with the field.
+    },
+    {
+      'width'=>'wide',
+      'floatpos'=>'b'
+    }
+  )
+%>
+<% marg(80) %>
+<%
+  fig(
+    'dipolefield',
+    %q{%
+      A dipole field. Electric fields diverge from a positive
+              charge and converge on a negative charge.
+    }
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'watermolecule',
+    %q{A water molecule is a dipole.}
+  )
+%>
+<% end_marg %>
+
+        Your microwave oven acts on water molecules with electric
+        fields. Let us imagine what happens if we start with a
+        uniform electric field, \ref{fig:dipoleinfield}/1, made by some external charges,
+        and then insert a dipole, \ref{fig:dipoleinfield}/2, consisting of two charges
+        connected by a rigid rod. The dipole disturbs the field
+        pattern, but more important for our present purposes is that
+        it experiences a torque. In this example, the positive
+        charge feels an upward force, but the negative charge is
+        pulled down. The result is that the dipole wants to align
+        itself with the field, \ref{fig:dipoleinfield}/3. The microwave oven heats food
+        with electrical (and magnetic) waves. The alternation of the
+        torque causes the molecules to wiggle and increase the
+        amount of random motion. The slightly vague definition of a
+        dipole given above can be improved by saying that a dipole
+        is any object that experiences a torque in an electric field.
+        
+        What determines the torque on a dipole placed in an
+        externally created field? Torque depends on the force, the
+        distance from the axis at which the force is applied, and
+        the angle between the force and the line from the axis to
+        the point of application. Let a dipole consisting of charges
+        $+q$ and $-q$ separated by a distance $\ell$ be placed in an
+        external field of magnitude $|\vc{E}|$, at an angle $\theta$ with
+        respect to the field. The total torque on the dipole is
+        \begin{align*}
+                        \tau          &=  \frac{\ell}{2}q|\vc{E}|\sin \theta+\frac{\ell}{2}q|\vc{E}|\sin \theta    \\
+                                 &=     \ell q|\vc{E}|\sin \theta\eqquad.  
+        \end{align*}
+        (Note that even though the two forces are in opposite
+        directions, the torques do not cancel, because they are both
+        trying to twist the dipole in the same direction.) The
+        quantity $\ell q$ is called the dipole \index{moment!dipole}\index{dipole
+        moment}moment, notated $D$.
+
+\begin{eg}{Dipole moment of a molecule of NaCl gas}
+        \egquestion
+        In a molecule of NaCl gas, the center-to-center
+        distance between the two atoms is about 0.24 nm. Assuming
+        that the chlorine completely steals one of the sodium's
+        electrons, compute the magnitude of this molecule's dipole moment.
+
+        \eganswer
+        The total charge is zero, so it doesn't matter where we choose the
+        origin of our coordinate system. For convenience, let's choose
+        it to be at one of the atoms, so that the charge on that atom 
+        doesn't contribute to the dipole moment.
+         The magnitude of the dipole moment is then
+        \begin{align*}
+                         D         &=    (2.4\times10^{-10}\ \zu{m})( e)  \\
+                                 &=    (2.4\times10^{-10}\ \zu{m})( 1.6\times10^{-19}\ \zu{C})  \\
+                                 &\approx    4\times10^{-29}\ \zu{C}\cdot\zu{m}.
+        \end{align*}
+        The experimentally measured value is $3.0\times10^{-29}\ \zu{C}\cdot\zu{m}$, which shows
+        that the electron is not completely ``stolen.''
+% McCaffrey, https://www.era.lib.ed.ac.uk/bitstream/1842/2601/2/McCaffrey%20PD%20thesis%2007.pdf
+% someone else's measurement, quoted on p. 167 of pdf
+% 8.97 Debye units; 1 D=10^-18 statC.cm
+% calc -e "d=3.3 10^-30 C.m; 8.97d"
+\end{eg}
+
+ More complex dipoles can also
+        be assigned a dipole moment --- they are defined as having
+        the same dipole moment as the two-charge dipole that would
+        experience the same torque.
+        
+
+\begin{eg}{Molecules with zero and nonzero dipole moments}\label{eg:molecular-dipoles}
+It can be useful to know whether or not a molecule is polar, i.e., has a nonzero dipole moment.
+A polar molecule such as water is readily heated in a microwave oven, while a nonpolar one is not.
+Polar molecules are attracted to one another, so polar substances dissolve in other polar substances,
+but not in nonpolar substances, i.e., ``like dissolves like.'' 
+
+<%
+  fig(
+    'molecular-dipoles',
+    %q{%
+      Example \ref{eg:molecular-dipoles}. The positive $x$ axis is to the right, $y$ is up,
+      and $z$ is out of the page. Dark gray atoms are carbon, and the small light gray ones are hydrogen.
+      Some other elements are labeled when their identity would otherwise not be clear.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+In a symmetric molecule such as carbon disulfide, figure
+\subfigref{molecular-dipoles}{1}, the dipole moment vanishes.
+For if we rotate the molecule by 180 degrees about any one
+of the three coordinate axes defined in the caption of the figure, the molecule is unchanged, which means
+that its dipole moment is unchanged. This means that $\zu{C}\zu{S}_2$ cannot
+be equivalent to any simple, two-charge dipole, because a simple dipole
+can only stay the same under a 180 degree rotation if the rotation is about
+the line connecting the two charges.
+
+Similar symmetry arguments show that sulfur hexafluoride, \subfigref{molecular-dipoles}{2}, and
+benzene \subfigref{molecular-dipoles}{3}, have vanishing dipole moments.
+
+The formaldehyde molecule, \subfigref{molecular-dipoles}{4}, does not have enough symmetry to guarantee
+that its dipole moment must vanish, but it does have enough to dictate it must be equivalent
+to a two-charge dipole lying along the left-right axis.
+Chloroform, \subfigref{molecular-dipoles}{5}, is a front-to-back dipole for the
+orientation drawn in the figure.
+
+From these considerations we can tell, for example, that
+carbon disulfide will be soluble in benzene, but chloroform will not.
+
+Symmetry arguments are not enough to determine, for example, whether 
+formaldehyde is equivalent to a dipole whose positive charge lies to
+the left of its negative one or to the right. This requires some knowledge of
+chemistry and the periodic table.
+\end{eg}
+
+
+
+        <% end_sec() %>
+<% begin_sec("Alternative definition of the electric field",nil,'efielddipoledef') %>
+
+        The behavior of a dipole in an externally created field
+        leads us to an alternative definition of the electric field:
+
+\begin{lessimportant}[alternative definition of the electric field]
+        The electric field vector, $E$, at any location in space is
+        defined by observing the torque exerted on a test dipole
+        $D_t$ placed there. The direction of the field is the
+        direction in which the field tends to align a dipole (from
+        $-$ to +), and the field's magnitude is $|\vc{E}|=\tau/D_t\sin\theta$.
+\end{lessimportant}
+
+        The main reason for introducing a second definition for the
+        same concept is that the magnetic field is most easily
+        defined using a similar approach.
+
+<% end_sec() %>
+<% begin_sec("Potential related to electric field") %>\index{electric field!related to voltage}\index{voltage!related to electric field}
+
+Voltage (electric potential) is potential energy per unit charge, and electric
+field is force per unit charge. We can therefore relate
+potential and field if we start from the relationship between
+potential energy and force,
+\begin{multline*}
+                \Delta PE    =    -Fd\eqquad, \hfill \shoveright{\text{[assuming constant force and}}\\
+                                             \text{motion parallel to the force]}
+\end{multline*}
+and divide by charge,
+\begin{multline*}
+                \frac{\Delta PE}{q}    =    -\frac{F}{q}d\eqquad,\hfill
+\end{multline*}
+giving
+\begin{multline*}
+                        \Delta V    =    -Ed\eqquad, \hfill \shoveright{\text{[assuming constant force and}}\\
+                                             \text{motion parallel to the force]}
+\end{multline*}
+
+\noindent In other words, the difference in potential between two points
+equals the electric field strength multiplied by the
+distance between them. The interpretation is that a strong
+electric field is a region of space where the potential is
+rapidly changing. By analogy, a steep hillside is a place on
+the map where the altitude is rapidly changing.
+
+\begin{eg}{Field generated by an electric eel}
+        \egquestion
+        Suppose an electric eel is 1 m long, and
+        generates a voltage difference of 1000 volts between its
+        head and tail. What is the electric field in the water around it?
+
+        \eganswer
+                We are only calculating the amount of field, not
+        its direction, so we ignore positive and negative signs.
+        Subject to the possibly inaccurate assumption of a constant
+        field parallel to the eel's body, we have
+        \begin{equation*}
+                                |\vc{E}| =    \frac{\Delta V}{\Delta  x} =    1000\ \zu{V/m}\eqquad.  
+        \end{equation*}
+
+\end{eg}
+\begin{eg}{The hammerhead shark}\label{eg:hammerhead}
+One of the reasons hammerhead sharks have their heads shaped the way they
+do is that, like quite a few other fish, they can sense electric fields
+as a way of finding prey, which may for example be hidden in the sand. From the equation $E=\Delta V/\Delta x$, we can
+see that if the shark is sensing the potential difference between two points,
+it will be able to detect smaller electric fields if those two points are
+farther apart. The shark has a network of sensory organs, called the
+ampullae of Lorenzini, on the skin of its head. Since the network is spread
+over a wider head, the $\Delta x$ is larger. Some sharks can detect electric
+fields as weak as 50 \emph{pico}volts per meter!
+\end{eg}
+<% marg(50) %>
+<%
+  fig(
+    'hammerhead',
+    %q{Example \ref{eg:hammerhead}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Relating the units of electric field and potential}
+        From our original definition of the electric field, we
+        expect it to have units of newtons per coulomb, N/C. The
+        example above, however, came out in volts per meter, V/m.
+        Are these inconsistent? Let's reassure ourselves that this
+        all works. In this kind of situation, the best strategy is
+        usually to simplify the more complex units so that they
+        involve only mks units and coulombs. Since potential is
+        defined as electrical energy per unit charge, it has units of J/C:
+        \begin{equation*}
+                        \frac{\zu{V}}{\zu{m}}         =   \frac{\zu{J/C}}{\zu{m}}   
+                                 =  \frac{\zu{J}}{\zu{C}\cdot\zu{m}}\eqquad.  
+        \end{equation*}
+        To connect joules to newtons, we recall that work equals
+        force times distance, so $\zu{J}=\zu{N}\cdot\zu{m}$, so
+        \begin{equation*}
+                        \frac{\zu{V}}{\zu{m}} =   \frac{\zu{N}\cdot\zu{m}}{\zu{C}\cdot\zu{m}}   
+                                 =      \frac{\zu{N}}{\zu{C}}
+        \end{equation*}
+        As with other such difficulties with electrical units, one
+        quickly begins to recognize frequently occurring combinations.
+\end{eg}
+
+\pagebreak
+
+\startdqs
+
+\begin{dq}
+In the definition of the electric field, does the test
+charge need to be 1 coulomb? Does it need to be positive?
+\end{dq}
+
+\begin{dq}
+Does a charged particle such as an electron or proton
+feel a force from its own electric field?
+\end{dq}
+
+\begin{dq}
+Is there an electric field surrounding a wall socket that
+has nothing plugged into it, or a battery that is just sitting on a table?
+\end{dq}
+
+\begin{dq}
+In a flashlight powered by a battery, which way do the
+electric fields point? What would the fields be like inside
+the wires? Inside the filament of the bulb?
+\end{dq}
+
+\begin{dq}
+Criticize the following statement: ``An electric field
+can be represented by a sea of arrows showing how current is flowing.''
+\end{dq}
+
+\begin{dq}
+The field of a point charge, $|\vc{E}|=kQ/r^2$, was
+derived in the self-check above. How would the field pattern
+of a uniformly charged sphere compare with the field of a point charge?
+\end{dq}
+
+\begin{dq}
+The interior of a perfect electrical conductor in
+equilibrium must have zero electric field, since otherwise
+the free charges within it would be drifting in response to
+the field, and it would not be in equilibrium. What about
+the field right at the surface of a perfect conductor?
+Consider the possibility of a field perpendicular to the
+surface or parallel to it.
+\end{dq}
+
+<% marg(30) %>
+<%
+  fig(
+    'dq-dipole-moments',
+    %q{Discussion question \ref{dq:dipole-moments}.}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:dipole-moments}
+Compare the dipole moments of the molecules and molecular
+ions shown in the figure.
+\end{dq}
+
+\begin{dq}
+Small pieces of paper that have not been electrically
+prepared in any way can be picked up with a charged object
+such as a charged piece of tape. In our new terminology, we
+could describe the tape's charge as inducing a dipole moment
+in the paper. Can a similar technique be used to induce not
+just a dipole moment but a charge?
+\end{dq}
+
+\begin{dq}
+The earth and moon are fairly uneven in size and far
+apart, like a baseball and a ping-pong ball held in your
+outstretched arms. Imagine instead a planetary system with
+the character of a double planet: two planets of equal size,
+close together. Sketch a sea of arrows diagram of their
+gravitational field.
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Calculating energy in fields",4,'energy-in-fields') %>\index{energy!stored in fields}
+We found on p.~\pageref{fieldenergy} that fields have energy, and we now know as well that fields
+act like vectors. Presumably there is a relationship between the strength of a field and its energy
+density. Flipping the direction of the field can't change the density of energy, which is a scalar
+and therefore has no direction in space. We therefore expect that the energy density to be proportional
+to the square of the field, so that changing $\vc{E}$ to $-\vc{E}$ has no effect on the result. This
+is exactly what we've already learned to expect for waves: the energy depends on the square of the amplitude.
+The relevant equations for the gravitational and electric fields are as follows:
+\begin{align*}
+(\text{energy stored in the gravitational field per $\munit^3$}) &= -\frac{1}{8\pi G}|\vc{g}|^2\\
+(\text{energy stored in the electric field per $\munit^3$}) &= \frac{1}{8\pi k}|\vc{E}|^2\\
+\end{align*}
+A similar expression is given on p.~\pageref{sec:b-energy} for the magnetic field.
+
+\noindent Although funny factors of $8\pi $ and the plus and minus
+signs may have initially caught your eye, they are not the
+main point. The important idea is that the energy density is
+proportional to the square of the field strength in all
+cases. We first give a simple numerical example and
+work a little on the concepts, and then turn our attention to
+the factors out in front.
+
+In chapter \ref{ch:fields} when we discussed the original reason for
+introducing the concept of a field of force, a prime
+motivation was that otherwise there was no way to account
+for the energy transfers involved when forces were delayed
+by an intervening distance. We used to think of the
+universe's energy as consisting of
+
+\begin{align*}
+   &\text{kinetic energy}\\
+ + &\text{gravitational potential energy based on the distances between}\\
+   &\text{objects that interact gravitationally}\\
+ + &\text{electric potential energy based on the distances between}\\
+   &\text{objects that interact electrically}\\
+ + &\text{magnetic potential energy based on the distances between}\\
+   &\text{objects that interact magnetically}\eqquad,\\
+\intertext{but in nonstatic situations we must use a different method:}
+   &\text{kinetic energy}\\
+ + &\text{gravitational potential energy stored in gravitational fields}\\
+ + &\text{electric potential energy stored in electric fields}\\
+ + &\text{magnetic potential stored in magnetic fields}
+\end{align*}
+
+\noindent Surprisingly, the new method still gives the same answers
+for the static cases.
+
+\begin{eg}{Energy stored in a capacitor}\label{eg:capacitor-energy}\index{capacitor}
+ A pair of parallel metal plates, seen from the side in
+figure \figref{eg-capacitor-energy}, can be used to store electrical energy
+by putting positive charge on one side and negative charge
+on the other. Such a device is called a capacitor. (We have
+encountered such an arrangement previously, but there its
+purpose was to deflect a beam of electrons, not to store energy.)
+
+ In the old method of describing potential energy, 1, we
+think in terms of the mechanical work that had to be done to
+separate the positive and negative charges onto the two
+plates, working against their electrical attraction. The new
+description, 2, attributes the storage of energy to the
+newly created electric field occupying the volume between
+the plates. Since this is a static case, both methods give
+the same, correct answer.
+\end{eg}
+<% marg(10) %>
+<%
+  fig(
+    'eg-capacitor-energy',
+    %q{Example \ref{eg:capacitor-energy}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'eg-two-charges-pe',
+    %q{Example \ref{eg:two-charges-pe}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Potential energy of a pair of opposite charges}\label{eg:two-charges-pe}
+ Imagine taking two opposite charges, \figref{eg-two-charges-pe}, that were
+initially far apart and allowing them to come together under
+the influence of their electrical attraction.
+
+ According to the old method, potential energy is lost
+because the electric force did positive work as it brought
+the charges together. (This makes sense because as they come
+together and accelerate it is their potential energy that is
+being lost and converted to kinetic energy.)
+
+ By the new method, we must ask how the energy stored in the
+electric field has changed. In the region indicated
+approximately by the shading in the figure, the superposing
+fields of the two charges undergo partial cancellation
+because they are in opposing directions. The energy in the
+shaded region is reduced by this effect. In the unshaded
+region, the fields reinforce, and the energy is increased.
+
+ It would be quite a project to do an actual numerical
+calculation of the energy gained and lost in the two regions
+(this is a case where the old method of finding energy gives
+greater ease of computation), but it is fairly easy to
+convince oneself that the energy is less when the charges
+are closer. This is because bringing the charges together
+shrinks the high-energy unshaded region and enlarges the
+low-energy shaded region.
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{Energy transmitted by ripples in the electric and magnetic fields}
+We'll see in chapter \ref{ch:em} that phenomena like light, radio waves, and x-rays are all
+ripples in the electric and magnetic fields.
+The old method would give zero energy for a region of space
+containing a light  wave but no charges. That
+would be wrong! We can only use the old method in static cases.
+\end{eg}
+
+Now let's give at least some justification for the other
+features of the expressions for energy density, $-\frac{1}{8\pi G}|\vc{g}|^2$
+and $\frac{1}{8\pi k}|\vc{E}|^2$,
+besides the proportionality to the square of the field strength.
+
+First, why the different plus and minus signs? The basic
+idea is that the signs have to be opposite in the gravitational
+and electric cases because there is an attraction between
+two positive masses (which are the only kind that exist),
+but two positive charges would repel. Since we've already
+seen examples where the positive sign in the electric energy
+makes sense, the gravitational energy equation must be the
+one with the minus sign.
+
+It may also seem strange that the constants $G$ and $k$
+are in the denominator. They tell us how strong the
+three different forces are, so shouldn't they be on top? No.
+Consider, for instance, an alternative universe in which
+gravity is twice as strong as in ours. The numerical value
+of $G$ is doubled. Because $G$ is doubled, all the
+gravitational field strengths are doubled as well, which
+quadruples the quantity $|\vc{g}|^2$. In the expression $-\frac{1}{8\pi G}|\vc{g}|^2$, we have
+quadrupled something on top and doubled something on the
+bottom, which makes the energy twice as big. That makes perfect sense.
+
+\startdqs
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-point-charge-in-capacitor',
+    %q{Discussion question \ref{dq:point-charge-in-capacitor}.}
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:point-charge-in-capacitor}
+The figure shows a positive charge in the gap between two
+capacitor plates. First make a large drawing of the field
+pattern that would be formed by the capacitor itself,
+without the extra charge in the middle. Next, show how the
+field pattern changes when you add the particle at these two
+positions. Compare the energy of the electric fields in the
+two cases. Does this agree with what you would have expected
+based on your knowledge of electrical forces?
+\end{dq}
+
+\begin{dq}
+Criticize the following statement: ``A solenoid makes a
+charge in the space surrounding it, which dissipates when
+you release the energy.''
+\end{dq}
+
+\begin{dq}
+In example \ref{eg:two-charges-pe}, I argued that the
+fields surrounding a positive and negative charge contain
+less energy when the charges are closer together. Perhaps a
+simpler approach is to consider the two extreme possibilities:
+the case where the charges are infinitely far apart, and the
+one in which they are at zero distance from each other, i.e.,
+right on top of each other. Carry out this reasoning for the
+case of (1) a positive charge and a negative charge of equal
+magnitude, (2) two positive charges of equal magnitude, (3)
+the gravitational energy of two equal masses.
+\end{dq}
+
+<% end_sec() %> % Calculating energy in fields
+
+<% begin_sec("Potential for nonuniform fields",4,'v-e-nonuniform',{'calc'=>true}) %>
+
+The calculus-savvy reader will have no difficulty generalizing
+the field-potential relationship to the case of a varying
+field. The potential energy associated with a varying force is
+\begin{equation*}
+                \Delta PE         =   -\int F \der x\eqquad, \qquad \text{[one dimension]}
+\end{equation*}
+so for electric fields we divide by $q$ to find
+\begin{equation*}
+                \Delta V         =   -\int E \der x\eqquad, \qquad \text{[one dimension]}
+\end{equation*}
+Applying the fundamental theorem of calculus yields
+\begin{equation*}
+  E = -\frac{\der V}{\der x}\eqquad. \qquad \text{[one dimension]}
+\end{equation*}
+
+\begin{eg}{Potential associated with a point charge}
+\egquestion What is the potential associated with a point charge?
+
+\eganswer As derived previously in self-check \ref{sc:pointchargefield} on page \pageref{sc:pointchargefield}, the field is
+        \begin{equation*}
+                        |\vc{E}|         =    \frac{ kQ}{ r^2}     
+        \end{equation*}
+        The difference in potential between two points on the same radius line is
+        \begin{align*}
+                        \Delta  V         &=      \int \der  V \\
+                                                &= -\int  E_{x} \der  x
+        \end{align*}
+        In the general discussion above, $x$ was just a generic name
+        for distance traveled along the line from one point to the
+        other, so in this case $x$ really means $r$.
+        \begin{align*}
+                        \Delta V &= -\int_{ r_1}^{ r_2}  E_{r} \der  r \\
+                                 &=   -\int_{ r_1}^{ r_2} \frac{ kQ}{ r^2} \der  r   \\
+                                 &=   \left.\frac{ kQ}{ r}\right]_{ r_1}^{ r_2} \\  
+                                 &= \frac{ kQ}{ r_2}-\frac{ kQ}{ r_1}\eqquad.
+        \end{align*}
+        The standard convention is to use $r_1=\infty$ as a reference
+        point, so that the potential at any distance $r$ from the charge is
+        \begin{equation*}
+                         V         =   \frac{ kQ}{ r}\eqquad.  
+        \end{equation*}
+        The interpretation is that if you bring a positive test
+        charge closer to a positive charge, its electrical energy is
+        increased; if it was released, it would spring away,
+        releasing this as kinetic energy.
+\end{eg}
+
+<% self_check('pointchargevtoe',<<-'SELF_CHECK'
+Show that you can recover the expression for the field of a
+        point charge by evaluating the derivative $E_{x}=-\der  V/\der  x$.
+  SELF_CHECK
+  ) %>
+
+<%
+  fig(
+    'topo-map',
+    %q{%
+      Left: A topographical map of Stowe, Vermont. From one constant-height line to the next is a height difference of 200 feet.
+      Lines far apart, as in the lower village, indicate relatively flat terrain, while lines close together, like the ones to the west of the main town,
+      represent a steep slope. Streams flow downhill, perpendicular to the constant-height lines. Right: The same map has been redrawn in perspective,
+      with shading to suggest relief.
+      
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Two or three dimensions",0) %>
+The topographical map shown in figure \figref{topo-map} suggests a good
+way to visualize the relationship between field and potential
+in two dimensions. Each contour on the map is a line of
+constant height; some of these are labeled with their
+elevations in units of feet. Height is related to gravitational
+potential energy, so in a gravitational analogy, we can
+think of height as representing potential. Where the contour
+lines are far apart, as in the town, the slope is gentle.
+Lines close together indicate a steep slope.
+
+If we walk along a straight line, say straight east from the
+town, then height (potential) is a function of the east-west
+coordinate $x$. Using the usual mathematical definition of
+the slope, and writing $V$ for the height in order to remind
+us of the electrical analogy, the slope along such a line is
+$\Delta V/\Delta $x. If the slope isn't constant, we either
+need to use the slope of the $V-x$ graph,  or use calculus and
+talk about the derivative $\der V/\der x$.
+<% marg(0) %>
+<%
+  fig(
+    'map-point-charge',
+    %q{%
+      The constant-potential curves surrounding a point charge.
+              Near the charge, the curves are so closely spaced that they blend
+              together on this drawing due to the finite width with which they were
+              drawn. Some electric fields are shown as arrows.
+    }
+  )
+%>
+<% end_marg %>
+
+What if everything isn't confined to a straight line? Water
+flows downhill. Notice how the streams on the map cut
+perpendicularly through the lines of constant height.
+
+It is possible to map potentials in the same way, as shown in
+figure \figref{map-point-charge}. The electric field is strongest where the
+constant-potential curves are closest together, and the
+electric field vectors always point perpendicular to the
+constant-potential curves.
+
+Figure \figref{rod-and-dipole-2-d} 
+ %%%%%%%%%%%%%%%%%%%%%%%%%  on page \pageref{fig:rod-and-dipole-2-d}
+  shows some examples of ways
+to visualize field and potential patterns.
+
+Mathematically, the calculus of section \ref{sec:v-e-nonuniform}
+generalizes to three dimensions as follows:
+\begin{align*}
+ E_x &= -\der V/\der x \\
+ E_y &= -\der V/\der y \\
+ E_z &= -\der V/\der z
+\end{align*}
+
+<% self_check('topointerp',<<-'SELF_CHECK'
+Imagine that the topographical map in figure \figref{sc-topo-map} represents potential rather than height.
+(a) Consider the stream that starts near the center of the
+map. Determine the positive and negative signs of $dV/dx$
+and $dV/dy$, and relate these to the direction of the force
+that is pushing the current forward against the resistance
+of friction. (b) If you wanted to find a lot of electric
+charge on this map, where would you look?
+  SELF_CHECK
+  ) %>
+<% marg(43) %>
+<%
+  fig(
+    'sc-topo-map',
+    %q{Self-check \ref{sc:topointerp}.}
+  )
+%>
+<% end_marg %>
+
+
+\vfill
+
+        %
+<%
+  fig(
+    'rod-and-dipole-2-d',
+    %q{%
+      Two-dimensional field and potential patterns.
+      Top: A uniformly charged rod. Bottom: A dipole.
+      In each case, the diagram on the left shows the field vectors and constant-potential curves, while the one on the right shows
+      the potential (up-down coordinate) as a function of x and y.
+      Interpreting the field diagrams: Each arrow represents the field at the point where its tail has been positioned. For clarity,
+      some of the arrows in regions of very strong field strength are not shown --- they would be too long to show.
+      Interpreting the constant-potential curves: In regions of very strong fields, the curves are not shown because they would
+      merge together to make solid black regions.
+      Interpreting the perspective plots: Keep in mind that even though we're visualizing things in three dimensions, these are
+      really two-dimensional potential patterns being represented. The third (up-down) dimension represents potential, not position.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec() %>
+<% begin_sec("Field lines and Gauss's law",4,'',{'optional'=>true}) %>
+When we look at the ``sea of arrows'' representation of a field, \subfigref{field-line-concept}{1}, there is a natural
+visual tendency to imagine connecting the arrows as in \subfigref{field-line-concept}{2}. The curves formed in this way
+are called field lines, and they have a direction, shown by the arrowheads. 
+<%
+  fig(
+    'field-line-concept',
+    %q{Two different representations of an electric field.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+\pagebreak
+
+\begin{eg}{An avalanche transceiver}\label{eg:avalanche-transceiver}
+The dipole field pattern is universal: it always has the same mathematical shape,
+and this holds regardless of whether the field is electric or magnetic, static
+or oscillating. One of its universal properties is that the field lines always pass
+through the source, and this is taken advantage of in a device called an avalanche
+transceiver used by backcountry skiers and hikers in winter. The device is worn on
+the body and is left in transmitting mode while the user is traveling. It creates a dipole
+pattern of electric and magnetic fields, oscillating at 457 kHz. If a member of the party
+is buried in an avalanche, his companions must find and locate him within
+about 30-90 minutes, or he will suffocate. The rescuers switch their own transceivers
+to receive mode, allowing them to determine the direction of the field line; when the
+antenna is parallel to the field line, the oscillating electric field drives electrons
+up and down it, creating the maximum possible current.
+
+In the figure,
+the rescuer moves along the field line from A to B. At B, she verifies that
+the strength of the signal has increased. (If it hadn't, she would have had to turn around
+and go in the opposite direction.) She redetermines the direction of the field and continues
+in the new direction. Continuing the process, she proceeds along an approximation to the
+field line. At D she finds that the field strength has fallen off again, so she
+knows that she has just passed over the victim's position.
+\end{eg}
+<% marg(100) %>
+<%
+  fig(
+    'eg-avalanche-transceiver',
+    %q{Example \ref{eg:avalanche-transceiver}.}
+  )
+%>
+<% end_marg %>
+
+
+Electric field lines originate from positive
+charges and terminate on negative ones. We can choose a constant of proportionality that fixes
+how coarse or fine the ``grain of the wood'' is, but once this choice is made 
+the strength of each charge is shown by the number of lines that begin or end on it. For example, figure \subfigref{field-line-concept}{2}
+shows eight lines at each charge, so we know that $q_1/q_2=(-8)/8=-1$. Because lines never begin or end except on a charge,
+we can always find the total charge inside any given region by subtracting the number of lines that go in from the number
+that come out and multiplying by the appropriate constant of proportionality. Ignoring the constant, we can apply this
+technique to figure \figref{gauss-field-lines} to find $q_A=-8$, $q_B=2-2=0$, and $q_C=5-5=0$.
+<% marg(50) %>
+<%
+  fig(
+    'gauss-field-lines',
+    %q{The number of field lines coming in and out of each region depends on the total charge it encloses.}
+  )
+%>
+<% end_marg %>
+
+Figures \figref{field-line-concept} and \figref{gauss-field-lines} are drawn in two dimensions, but we should
+really imagine them in three dimensions, so that the regions A, B, and C in figure \figref{gauss-field-lines}
+are volumes bounded by surfaces. It is only because our universe happens to have three dimensions that the field
+line concept is as useful as it is. This is because the number of field lines per unit area perpendicularly
+piercing a surface can be interpreted as the strength of the electric field. To see this, consider an imaginary
+spherical surface of radius $r$, with a positive charge $q$ at its center. The field at the surface equals
+$kq/r^2$. The number of field lines piercing the surface is independent of $r$, but the surface's area
+is proportional to $r^2$, so the number of piercings per unit area is proportional to $1/r^2$, just like
+the electric field. With this interpretation, we arrive at Gauss's law,\index{Gauss's law}
+which states that the field strength on a surface multiplied by the surface area equals the total charge
+enclosed by the surface. (This particular formulation only works in the case where the field pierces the
+surface perpendicularly and is constant in magnitude over the whole surface. It can be reformulated so
+as to eliminate these restrictions, but we won't require that reformulation for our present purposes.)
+
+\begin{eg}{The field of a line of charge}\label{eg:line-charge-gauss}\index{line of charge!field of}
+In example \ref{eg:line-charge-radial-dependence} on p.~\pageref{eg:line-charge-radial-dependence}, we found
+by simple scaling arguments that the electric field of a line of charge is proportional to $1/r$, where $r$
+is the distance from the line. Since electric fields are always proportional to the Coulomb constant $k$ and
+to the amount of charge, clearly we must have something of the form\linebreak[4] $E=(\ldots)k(q/L)/r$, where $q/L$ is the charge
+per unit length and $(\ldots)$ represents an unknown numerical constant (which you can easily verify is
+unitless). Using Gauss's law we can fill in the final piece of the puzzle, which is the value of this constant.
+<% marg(30) %>
+<%
+  fig(
+    'eg-line-charge-gauss',
+    %q{Example \ref{eg:line-charge-gauss}.}
+  )
+%>
+<% end_marg %>
+
+Figure \figref{eg-line-charge-gauss} shows two surfaces, a cylindrical one A and a spherical one B.
+Every field line that passes through A also passes through B. By making A sufficiently small and B sufficiently
+large, we can make the field on each surface nearly constant and perpendicular to the surface, as required by
+our restricted form of Gauss's law. If  radius $r_B$ is made large, the field at B made by the line of charge becomes indistinguishable
+from that of a point charge, $kq/r_B^2$. By Gauss's law, the electric field at each surface is proportional to
+the number of field lines divided by its area. But the number of field lines is the same in both cases, so
+each field is inversely proportional to the corresponding surface area. We therefore have
+\begin{align*}
+  E_A &= E_B\left(\frac{A_B}{A_A}\right) \\
+      &= \left(\frac{kq}{r_B^2}\right)\left(\frac{4\pi r_B^2}{2\pi r_A L}\right) \\
+      &= \frac{2kq}{Lr_A}\eqquad.
+\end{align*}
+The unknown numerical constant equals 2.
+\end{eg}
+
+\begin{eg}{No charge on the interior of a conductor}\label{eg:no-charge-on-interior}
+I asserted on p.~\pageref{assert-no-charge-on-interior} that for a perfect conductor in equilibrium,
+excess charge is found only at the surface, never in the interior. This can be proved using Gauss's law.
+Suppose that a charge $q$ existed at some point in the interior, and it was in stable equilibrium. For concreteness,
+let's say $q$ is positive. If its
+equilibrium is to be stable, then we need an electric field everywhere around it that points inward like
+a pincushion, so that if the charge were to be perturbed slightly, the field would bring it back to its
+equilibrium position. Since Newton's third law forbids objects from making forces on themselves, this field
+would have to be the field contributed by all the other charges, not by $q$ itself. But by Gauss's law,
+an \emph{external} set of charges cannot form this kind of inward-pointing pincushion pattern; for such a pattern, Gauss's
+law would require there to be some \emph{negative} charge \emph{inside} the pincusion.
+\end{eg}
+<% end_sec() %> % Field lines and Gauss's law
+<% begin_sec("Electric field of a continuous charge distribution",nil,'',{'optional'=>true,'calc'=>true}) %>
+
+Charge really comes in discrete chunks, but often it is
+mathematically convenient to treat a set of charges as if
+they were like a continuous fluid spread throughout a region
+of space. For example, a charged metal ball will have charge
+spread nearly uniformly all over its surface, and in for
+most purposes it will make sense to ignore the fact that
+this uniformity is broken at the atomic level. The electric
+field made by such a continuous charge distribution is the
+sum of the fields created by every part of it. If we let the
+``parts'' become infinitesimally small, we have a sum of an
+infinite number of infinitesimal numbers, which is an
+integral. If it was a discrete sum, we would have a total
+electric field in the $x$ direction that was the sum of all
+the $x$ components of the individual fields, and similarly
+we'd have sums for the $y$ and $z$ components. In the
+continuous case, we have three integrals.
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-charged-rod',
+    %q{Example \ref{eg:charged-rod}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Field of a uniformly charged rod}\label{eg:charged-rod}\index{line of charge!field of}
+        \egquestion
+        A rod of length $L$ has charge $Q$ spread
+        uniformly along it. Find the electric field at a point a
+        distance $d$ from the center of the rod, along the rod's axis.
+        (This is different from examples \ref{eg:line-charge-radial-dependence} on p.~\pageref{eg:line-charge-radial-dependence}
+        and  \ref{eg:line-charge-gauss} on p.~\pageref{eg:line-charge-gauss},
+        both because the point is on the axis of the rod and because the rod is of finite length.)
+
+        \eganswer
+        This is a one-dimensional
+        situation, so we really only need to do a single integral
+        representing the total field along the axis. We imagine
+        breaking the rod down into short pieces of length $\der  z$, each
+        with charge $\der  q$. Since charge is uniformly spread along the
+        rod, we have $\der  q=\lambda\der  z$, where $\lambda= Q/ L$ (Greek lambda) is the
+        charge per unit length, in units of coulombs per meter. Since the pieces are infinitesimally
+        short, we can treat them as point charges and use the
+        expression $k\der  q/ r^2$ for their contributions to the field,
+        where $r= d- z$ is the distance from the charge at $z$ to the
+        point in which we are interested.
+        \begin{align*}
+                         E_{z}         &=  \int \frac{ k\der  q }{ r^2}   \\
+                                 &=  \int_{- L/2}^{+ L/2} \frac{ k\lambda\der  z }{ r^2}   \\
+                                 &=   k \lambda \int_{- L/2}^{+ L/2} \frac{\der  z}{( d- z)^2}
+        \end{align*}
+        The integral can be looked up in a table, or reduced to an
+        elementary form by substituting a new variable for
+        $d- z$. The result is
+        \begin{align*}
+                         E_{z}         &=    k\lambda\left(\frac{1}{ d- z}\right)_{- L/2}^{+ L/2}   \\
+                                 &=   \frac{ kQ}{ L} \left(\frac{1}{ d- L/2}-\frac{1}{ d+ L/2}\right)\eqquad.  
+        \end{align*}
+                For large values of $d$, this expression gets
+        smaller for two reasons: (1) the denominators of the
+        fractions become large, and (2) the two fractions become
+        nearly the same, and tend to cancel out. This makes sense,
+        since the field should get weaker as we get farther away from
+        the charge. In fact, the field at large distances must approach
+        $ kQ/ d^2$, since from a great distance, the rod looks like a point.
+
+
+        It's also interesting to note that the field becomes
+        infinite at the ends of the rod, but is not infinite on the
+        interior of the rod. Can you explain physically why this happens?
+\end{eg}
+
+<% end_sec() %>
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{field}{a property of a point in space describing the forces
+that would be exerted on a particle if it was there}
+
+\vocabitem{sink}{a point at which field vectors converge}
+
+\vocabitem{source}{a point from which field vectors diverge; often used
+more inclusively to refer to points of either convergence or divergence}
+
+\vocabitem{electric field}{the force per unit charge exerted on a test
+charge at a given point in space}
+
+\vocabitem{gravitational field}{the force per unit mass exerted on a
+test mass at a given point in space}
+
+\vocabitem{electric dipole}{an object that has an imbalance between
+positive charge on one side and negative charge on the
+other; an object that will experience a torque in an electric field}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$\vc{g}$}{the gravitational field}
+
+\notationitem{$\vc{E}$}{the electric field}
+
+\notationitem{$D$}{an electric dipole moment}
+
+\end{notation}
+
+\begin{othernotation}
+
+\notationitem{$d$, $p$, $m$}{other notations for the electric dipole moment}
+
+\end{othernotation}
+
+\begin{summarytext}
+
+Experiments show that time is not absolute: it flows at different rates depending
+on an observer's state of motion.
+This is an example of the strange effects predicted by Einstein's theory of relativity.
+All of these effects, however, are very small when the relative
+velocities are small compared to $c$. This makes sense, because
+Newton's laws have already been thoroughly tested by experiments at such speeds,
+so a new theory like relativity must agree with the old one in their realm of
+common applicability. This requirement of backwards-compatibility is known as
+the correspondence principle.
+
+Since time is not absolute, simultaneity is not a well-defined concept,
+and therefore the universe cannot operate as Newton imagined, through
+instantaneous action at a distance.
+There is a delay
+in time before a change in the configuration of mass and
+charge in one corner of the universe will make itself felt
+as a change in the forces experienced far away. We imagine
+the outward spread of such a change as a ripple in an
+invisible universe-filling \emph{field of force}.
+
+We define the \emph{gravitational field} at a given point as
+the force per unit mass exerted on objects inserted at that
+point, and likewise the \emph{electric field} is defined as
+the force per unit charge. These fields are vectors, and the
+fields generated by multiple sources add according to the
+rules of vector addition.
+
+When the electric field is constant, the $\Delta V$
+between two points lying on a line parallel to the field is
+related to the field by the equation $\Delta V=-Ed$,
+where $d$ is the distance between the two points. In this
+context, one usually refers to $V$ as the electrical potential
+rather than ``the voltage.''
+
+Fields of force contain energy. The density of energy is
+proportional to the square of the magnitude of the field. In
+the case of static fields, we can calculate potential energy
+either using the previous definition in terms of mechanical
+work or by calculating the energy stored in the fields. If
+the fields are not static, the old method gives incorrect
+results and the new one must be used.
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+<% marg(0) %>
+<%
+  fig(
+    'hw-neuron',
+    %q{Problem \ref{hw:neuronfield}.},
+    {'suffix'=>1}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('neuronfield') %>__incl(hw/neuronfield)<% end_hw() %>
+
+<% begin_hw('sparkplug') %>__incl(hw/sparkplug)<% end_hw() %>
+
+<% begin_hw('chargemotioninfield') %>__incl(hw/chargemotioninfield)<% end_hw() %>
+
+<% begin_hw('zero-e-center-of-square') %>__incl(hw/zero-e-center-of-square)<% end_hw() %>
+<% marg(30) %>
+<%
+  fig(
+    'hw-zero-e-center-of-square',
+    %q{Problem \ref{hw:zero-e-center-of-square}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('dipole-on-axis-field',2) %>__incl(hw/dipole-on-axis-field)<% end_hw() %>
+
+<% begin_hw('ring-field-on-axis',2) %>__incl(hw/ring-field-on-axis)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('field-of-sheet-by-scaling',2) %>__incl(hw/field-of-sheet-by-scaling)<% end_hw() %>
+
+\pagebreak
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('dipoleetov',nil,{'calc'=>true}) %>__incl(hw/dipoleetov)<% end_hw() %>
+
+<% begin_hw('carbondioxide',nil,{'calc'=>true}) %>__incl(hw/carbondioxide)<% end_hw() %>
+
+<% begin_hw('proton-in-nonuniform-field',nil,{'calc'=>true}) %>__incl(hw/proton-in-nonuniform-field)<% end_hw() %>
+
+<% begin_hw('field-at-mouth-of-cylinder',nil,{'calc'=>true}) %>__incl(hw/field-at-mouth-of-cylinder)<% end_hw() %>
+
+<% begin_hw('lightning') %>__incl(hw/lightning)<% end_hw() %>
+
+<% begin_hw('neuronenergy') %>__incl(hw/neuronenergy)<% end_hw() %>
+<% marg(110) %>
+<%
+  fig(
+    'hw-neuron',
+    %q{Problem \ref{hw:neuronenergy}.},
+    {'suffix'=>3}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('diverging-energy',2,{'calc'=>true}) %>__incl(hw/diverging-energy)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('overlapping-cubical-capacitors') %>__incl(hw/overlapping-cubical-capacitors)<% end_hw() %>
+<% marg(50) %>
+<%
+  fig(
+    'hw-overlapping-cubical-capacitors',
+    %q{Problem \ref{hw:overlapping-cubical-capacitors}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('cosmic-ray-lightning') %>__incl(hw/cosmic-ray-lightning)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Field vectors") %>
+\noindent Apparatus:
+\begin{indentedblock}
+
+3 solenoids
+
+DC power supply
+
+compass
+
+ruler
+
+cut-off plastic cup
+\end{indentedblock}
+
+At this point you've studied the gravitational field, $\vc{g}$,
+and the electric field, $\vc{E}$, but not the magnetic field,
+$\vc{B}$. However, they all have some of the same mathematical
+behavior: they act like vectors. Furthermore, magnetic
+fields are the easiest to manipulate in the lab. Manipulating
+gravitational fields directly would require futuristic
+technology capable of moving planet-sized masses around!
+Playing with electric fields is not as ridiculously
+difficult, but static electric charges tend to leak off
+through your body to ground, and static electricity effects
+are hard to measure numerically. Magnetic fields, on the
+other hand, are easy to make and control. Any moving charge,
+i.e. any current, makes a magnetic field.
+
+A practical device for making a strong magnetic field is
+simply a coil of wire, formally known as a solenoid. The
+field pattern surrounding the solenoid gets stronger or
+weaker in proportion to the amount of current passing through the wire.
+
+1. With a single solenoid connected to the power supply and
+laid with its axis horizontal, use a magnetic compass to
+explore the field pattern inside and outside it. The compass
+shows you the field vector's direction, but not its
+magnitude, at any point you choose. Note that the field the
+compass experiences is a combination (vector sum) of the
+solenoid's field and the earth's field. 
+
+2. What happens when you bring the compass extremely far
+away from the solenoid? 
+
+\vspace{20mm}
+
+What does this tell you about the way the solenoid's field
+varies with distance? 
+
+\vspace{20mm}
+
+Thus although the compass doesn't tell you the field
+vector's magnitude numerically, you can get at least some
+general feel for how it depends on distance.
+
+\pagebreak[4]
+
+3. The figure below is a cross-section of the solenoid
+in the plane containing its axis. Make a sea-of-arrows sketch of the magnetic field
+in this plane. The length
+of each arrow should at least approximately reflect the
+strength of the magnetic field at that point.
+
+
+\vspace{30mm}
+
+
+\hspace{50mm}\anonymousinlinefig{map-solenoid-field}
+
+\vspace{30mm}
+
+Does the field seem to have sources or sinks?
+
+4. What do you think would happen to your sketch if
+you reversed the wires?
+
+
+\vspace{20mm}
+
+Try it.
+
+\pagebreak[4]
+
+5. Now hook up the two solenoids in parallel. You are going
+to measure what happens when their two fields combine 
+at a certain point in space. As you've seen already, the solenoids'
+nearby fields are much stronger than the earth's field; so
+although we now theoretically have three fields involved
+(the earth's plus the two solenoids'), it will be safe to
+ignore the earth's field. The basic idea here is to place
+the solenoids with their axes at some angle to each other,
+and put the compass at the intersection of their axes, so
+that it is the same distance from each solenoid. Since the
+geometry doesn't favor either solenoid, the only factor that
+would make one solenoid influence the compass more than the
+other is current. You can use the cut-off plastic cup as a
+little platform to bring the compass up to the same level as
+the solenoids' axes.
+
+a)What do you think will happen with the solenoids' axes at
+90 degrees to each other, and equal currents? Try it. Now
+represent the vector addition of the two magnetic fields
+with a diagram. Check your diagram with your instructor to
+make sure you're on the right track.
+
+\hspace{30mm}\anonymousinlinefig{crossed-fields}
+
+
+b) Now try to make a similar diagram of  what would happen if
+you switched the wires on one of the solenoids. 
+
+\vspace{25mm}
+
+After predicting what the compass will do, try it and
+see if you were right.
+
+c)Now suppose you were to go back to the arrangement you had
+in part a, but you changed one of the currents to half its
+former value. Make a vector addition diagram, and use trig
+to predict the angle. 
+
+\anonymousinlinefig{crossed-fields-half}
+
+Try it. To cut the current to one of the solenoids in half,
+an easy and accurate method is simply to put the third solenoid in
+series with it, and put that third solenoid so far away that its
+magnetic field doesn't have any significant effect on the compass.
+
+
+<% end_ex %>
+ %%---------------------------------------------------------
+
+<% if false then figure_in_toc("mars-reconnaissance-orbiter-antenna") end %>
+<% end_chapter() %>

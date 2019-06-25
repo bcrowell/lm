@@ -1,0 +1,44 @@
+
+% figure is in previous section, on KE, so it goes above section heading
+
+Figure \ref{fig:bug-pe} shows someone lifting a heavy textbook at constant speed while a bug hitches
+a ride on top. The person's body has burned some calories, and although some of
+that energy went into body heat, an amount equal to $Fd$ must have flowed into the
+book. But the bug may be excused for being skeptical about this. No measurement that
+the bug can do within its own immediate environment shows any changes in the properties
+of the book: there is no change in temperature, no vibration, nothing.
+Even if the bug looks at the walls of the room and is able to tell that it is rising,
+it finds that it is rising at constant speed, so there is no change in the book's kinetic
+energy. But if the person then takes her hand away and lets the book drop, the bug
+will have to admit that there is a spectacular and scary release of kinetic energy,
+which will later be transformed into sound and vibration when the book hits the floor.
+
+If we are to salvage the law of conservation of energy, we are forced to invent a new
+type of energy, which depends on the height of the book in the earth's gravitational
+field. This is an energy of position, which is usually notated as $PE$ or $U$.
+Any time two objects interact through a force exerted at a distance (gravity, magnetism,
+etc.), there is a corresponding position-energy, which is referred to as \intro{potential energy}.\index{potential energy}
+The hand was giving gravitational potential energy to the book. Since the work done by the
+hand equals $Fd$, it follows that the potential energy must be given by
+\begin{equation}
+  PE_\text{grav} = mgy,
+\end{equation}
+where an arbitary additive constant is implied because we have to choose a reference level
+at which to define $y=0$. In the more general case where the external force such as gravity
+is not constant and can point in any direction, we have
+\begin{equation}
+  \Delta PE = -\int_1^2 \vc{F}\cdot\der\vc{x},
+\end{equation}
+where 1 and 2 stand for the inital and final positions. This is a line integral, which is general
+may depend on the path the object takes. But for a certain class of forces, which includes, to a
+good approximation, the earth's gravitational force on an object, the result is \emph{not}
+dependent on the path, and therefore the potential energy is well defined.
+
+A common example is an elastic restoring force $F=-kx$ (Hooke's law), such as the force of
+a spring. Calculating $\Delta PE=-\int F \der x$, we find
+\begin{equation}
+  PE = \frac{1}{2}kx^2,
+\end{equation}
+where the constant of integration is arbitrarily chosen to be zero. This is in fact a type
+of electrical potential energy, which varies as the lattice of atoms within the spring is
+distorted.

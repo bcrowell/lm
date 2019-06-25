@@ -1,0 +1,20 @@
+A car's radio antenna is usually in the form of a whip sticking up above its metal roof.
+This is an example involving radio waves, which are time-varying electric and magnetic fields,
+but a similar, simpler electrostatic example is the following. Suppose that we position a charge $q>0$
+at a distance $\ell$ from a conducting plane. What is the resulting electric field? The conductor has
+charges that are free to move, and due to the field of the charge $q$, we will end up with a
+net concentration of negative charge in the part of the plane near $q$. The field in the vacuum surrounding
+$q$ will be a sum of fields due to $q$ and fields due to these charges in the conducting plane.
+The problem can be stated as that of finding a solution to Poisson's equation with the boundary
+condition that $V=0$ at the conducting plane. Figure \ref{fig:method-of-images}/1 shows the
+kind of field lines we expect.
+
+% fig {"name":"method-of-images","caption":"The method of images."}
+
+This looks like a very complicated problem, but there is trick that allows us to find
+a simple solution. We can convert the problem into an equivalent one in which the conductor
+isn't present, but a fictitious \emph{image} charge $-q$ is placed at an equal distance behind
+the plane, like a reflection in a mirror, as in figure
+\ref{fig:method-of-images}/2. The field is then simply the sum of the fields of the
+charges $q$ and $-q$, so we can either add the field vectors or add the potentials. By symmetry, the
+field lines are perpendicular to the plane, so the plane is an surface of constant potential, as required.

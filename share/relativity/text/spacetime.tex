@@ -1,0 +1,161 @@
+<% begin_sec("Spacetime",nil,'spacetime') %>
+Let's compare how Aristotle, Galileo, and Einstein would describe space and time.
+
+Aristotle: All observers agree on whether or not two things happen at the same \emph{time}, and also
+on whether they happen at the same \emph{place}.
+
+Galileo: Observers always agree on simultaneity, but not necessarily on whether things happen in the same
+place.
+
+The reason for the disagreement is shown in figure \figref{cow-and-car}. Aristotle says that the
+only legitimate observers are those that are at rest relative to the ground,
+while Galileo is willing to accept any inertial frame of reference, such as the driver's.
+Galileo ended up winning this argument because of experiments verifying the principle of inertia.
+
+<% marg(30) %>
+<%
+  fig(
+    'cow-and-car',
+    %q{As time passes, the driver says the car stays in the same place, but the cow says the car 
+       is moving forward.}
+  )
+%>
+<% end_marg %>
+
+Einstein: Observers need not agree on whether two things happen at the same time \emph{or} the same place.
+
+We accept Einstein's view because of evidence such as the atomic clock
+experiment described on p.~\pageref{hafele-keating}.
+Such experiments rule out both the instantaneous transmission of signals (p.~\pageref{subsec:time-delays})
+and, as we will argue in more detail on p.~\pageref{hk-implies-nonsimultaneity}, Galileo's claim
+about universal agreement on simultaneity.
+
+One of the reasons that nineteenth-century Europeans found Marxism alarming was because it
+was atheistic, and they felt that without the framework of religion, there could be no basis
+for morality. For similar reasons, I was deeply disoriented when I first encountered relativity.
+The idea had been firmly inculcated that the universe was described by mathematical functions,
+and the natural habitat of those functions was graph paper. The graph paper provided what seemed
+like a necessary framework. For a position-time graph, the vertical lines meant ``same time,''
+and the horizontal ones ``same place.'' Somehow it didn't bother me much when Galileo
+erased the same-place lines (or at least relegated them to subjectivity), but without the same-time
+lines I felt lost, as if I were wandering in a landscape of Hieronymus Bosch's hell or
+Dali's melting watches.
+
+<% marg(300) %>
+<%
+  fig(
+    'bosch',
+    %q{Hell, according to Hieronymus Bosch (1450-1516).}
+  )
+%>
+<% end_marg %>
+
+One of the disorienting things about this vision of the universe is that it takes away the notion
+that we can have a literal ``vision'' of the universe. We no longer have the idea of a
+snapshot of the landscape at a certain moment frozen in time. The sense of vision is merely
+a type of optical measurement, in which we receive signals that have traveled to our eyes
+at some finite speed (the speed of light). What relativity substitutes for the Galilean
+instantaneous snapshot is the concept of \emph{spacetime}, which is like the graph paper
+when its lines have been erased. Every point on the paper is called an \emph{event}. How can we
+even agree on the existence of an event, or define which one we are talking about, if we can't
+necessarily agree on its time or position? The relativist's attitude is that if a firecracker
+pops, that's an event, everyone agrees that it's an event, and $x$ and $t$ coordinates are just
+an optional and arbitrary name or label for the event. Labeling an event with coordinates is like
+God asking Adam to name all the birds and animals: the animals weren't consulted and didn't care.
+%       Genesis 20:19, "Out of the ground Yahweh God formed every animal of the field,
+%       and every bird of the sky, and brought them to the man to see what he would call
+%       them. Whatever the man called every living creature became its name." -- http://ebible.org/web/GEN02.htm#V0
+
+My grandparents' German shepherd lived for a certain amount of time, so he was
+not just a pointlike event
+in spacetime. Way back in ch.~\ref{ch:motion}, we saw how to represent the motion of such things
+as curves on an $x$-$t$ graph. From the point of view of relativity, the curve \emph{is} the thing ---
+we make no distinction between the dog and the dog's track through spacetime. Such a track is called
+a \emph{world-line}.\index{world-line} A world-line is a set of events strung together continuously:
+the dog as a puppy in Walnut Creek in 1964, the dog dozing next to the TV in 1970, and so on. The
+strange terminology is translated from German, and is supposed to be a description of the idea that
+the line is the thing's track \emph{through} the world, i.e., through spacetime.
+
+Sometimes if we want to describe an event, we can describe it as the beginning or end of a world-line:
+the dog's birth, or the firecracker's self-destruction. More commonly, we pick out an event of interest
+as the intersection of two world-lines, as in figure \figref{cell-phone-signal}. In this figure, as is
+common in relativity, we omit any indications of the axes, since the idea is that events and world-lines
+are primary, and coordinates secondary. In this book, to be consistent with the familiar depiction of
+$x$-$t$ graphs, we will use the convention that
+later times on an object's world-line are to the right, but it is actually more common in relativity to
+show time progressing from the bottom of the diagram to the top.
+
+<% marg() %>
+<%
+  fig(
+    'cell-phone-signal',
+    %q{A phone transmits a 1 or 0 to a cell tower. The phone, the tower, and the signal
+       all have world-lines. Two events, corresponding to the transmission and reception of
+       the signal, can be defined by the intersections of the world-lines.}
+  )
+%>
+<% end_marg %>
+
+All observers agree on whether or not two world-lines intersect, and another aid in holding on to
+our sanity is that they agree on whether or not world-lines are \emph{straight}. A straight world-line
+is an object moving inertially, with no forces acting on it.\label{agreement-on-intersection}
+
+<% marg(300) %>
+<%
+  fig(   
+    'light-cone',
+    %q{%
+      Normally we only try to represent one spatial dimension in a depiction of spacetime, as in
+      panel 1, where a light bulb is momentarily turned on, producing flashes of light that spread
+      out in both directions.
+      In panel 2 we attempt to show a second spatial dimension, so that the world-line becomes a
+      surface: a ``world-sheet'' shaped like a cone.
+    }
+  )
+%>
+<% end_marg %>
+
+
+If we wish to, we are able to draw a graph-paper grid on our picture of spacetime, and
+assign $x$ and $t$ coordinates to events, but these are not built into the structure of spacetime,
+and they are observer-dependent --- even more so than in Galilean spacetime.
+They are best thought of as the sophisticated results of a laborious
+process of collecting and analyzing data obtained by methods such as
+consulting clocks or exchanging signals between different places.
+Figure \figref{surveying} outlines such a process in a cartoonish way.
+A fleet of rocket ships, carrying surveyors,
+is sent out from Earth and dispersed throughout a vast region of space. The surveyors
+look through their theodolites at images, which are formed by light rays (dashed lines)
+that have arrived after traveling at a finite speed. Such light rays carry old, stale information
+about various events. A nuclear war has broken out. Rock and roll music has arrived on Saturn.
+The resulting data are then transmitted by various means (passenger pigeon, Morse-coded radio,
+paper mail) and consolidated at the surveying office, where coordinates are charted.
+
+<%
+  fig(   
+    'surveying',
+    %q{%
+      Coordinates like $x$ and $t$ are the after-the-fact result of a process analogous
+      to surveying.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+
+<% self_check('grandparents-house',<<-'SELF_CHECK'
+Here is a spacetime graph for an empty object such as a house:
+\anonymousinlinefig{../../../share/relativity/figs/grandparents-house-1}. Explain why
+it looks like this. My grandparents had a dog door with a flap cut into their back door, so
+that their dog could come in and out. Draw a spacetime diagram showing the dog going out into
+the back yard. Can an observer using another frame of reference say  that the dog didn't go outside?
+  SELF_CHECK
+  ) %>
+
+In the next section we turn to a more quantitative treatment of how time and distance
+behave in relativity.
+
+
+<% end_sec('spacetime') %> % 

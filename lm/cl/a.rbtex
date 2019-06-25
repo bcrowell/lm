@@ -1,0 +1,226 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% figure_in_toc("poolskater") %>
+
+<% part_title("Conservation Laws") %>
+
+\addtocontents{toc}{\protect\vspace{-4mm}}
+
+<%
+  chapter(
+    '11',
+    %q{Conservation of Energy},
+    'ch:energy',
+    %q{%
+In July of 1994, Comet Shoemaker-Levy struck the
+planet Jupiter, depositing $7\times10^{22}$ joules of energy, and
+incidentally giving rise to a series of Hollywood movies
+in which our own planet is threatened by an
+impact by a comet or asteroid. There is evidence that
+such an impact caused the extinction of the dinosaurs.
+Left: Jupiter's gravitational force on the near side of
+the comet was greater than on the far side, and this
+difference in force tore up the comet into a string of
+fragments. Two separate telescope images have been
+combined to create the illusion of a point of view just
+behind the comet. (The colored fringes at the edges
+of Jupiter are artifacts of the imaging system.) Top: A
+series of images of the plume of superheated gas
+kicked up by the impact of one of the fragments. The
+plume is about the size of North America. Bottom: An
+image after all the impacts were over, showing the
+damage done.},
+    {'opener'=>'jupiter-comet'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/cla)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{energy}{A numerical scale used to measure the heat, motion,
+or other properties that would require fuel or physical
+effort to put into an object; a scalar quantity with
+units of joules (J).}
+
+\vocabitem{power}{The rate of transferring energy; a scalar quantity
+with units of watts (W).}
+
+\vocabitem{kinetic energy}{The energy an object possesses because of its motion.}
+
+\vocabitem{heat}{A form of energy that relates to temperature.
+Heat is different from temperature because an object with
+twice as much mass requires twice as much heat to increase
+its temperature by the same amount. Heat is measured in joules, temperature
+in degrees. (In standard terminology, there
+is another, finer distinction between heat and thermal energy,
+which is discussed below. In this book, I informally refer to both
+as heat.)
+}
+
+\vocabitem{temperature}{What a thermometer measures. Objects left in
+contact with each other tend to reach the same temperature.
+Cf. heat. As discussed in more detail in chapter 2,
+temperature is essentially a measure of the average kinetic
+energy per molecule.}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$E$}{energy}
+
+\notationitem{J}{joules, the SI unit of energy}
+
+\notationitem{$KE$}{kinetic energy}
+
+\notationitem{$P$}{power}
+
+\notationitem{W}{watts, the SI unit of power; equivalent to J/s}
+
+\end{notation}
+
+\begin{othernotation}
+
+\notationitem{$Q$ or $\Delta Q$}{the amount of heat transferred into or out of an object}
+
+\notationitem{$K$ or $T$}{alternative symbols for kinetic energy, used in the
+scientific literature and in most advanced textbooks}
+
+\vocabitem{thermal energy}{Careful writers make a distinction between
+heat and thermal energy, but the distinction is often
+ignored in casual speech, even among physicists. Properly,
+thermal energy is used to mean the total amount of energy
+possessed by an object, while heat indicates the amount of
+thermal energy transferred in or out. The term heat is used
+in this book to include both meanings.}
+\end{othernotation}
+
+\begin{summarytext}
+
+Heating an object, making it move faster, or increasing its
+distance from another object that is attracting it are all
+examples of things that would require fuel or physical
+effort. All these things can be
+quantified using a single scale of measurement, and we describe them all as forms of \emph{energy}. 
+The SI unit of
+energy is the Joule. The reason why energy is a useful and
+important quantity is that it is always conserved. That is,
+it cannot be created or destroyed but only transferred
+between objects or changed from one form to another.
+Conservation of energy is the most important and broadly
+applicable of all the laws of physics, more fundamental and
+general even than Newton's laws of motion.
+
+Heating an object requires a certain amount of energy per
+degree of temperature and per unit mass, which depends on
+the substance of which the object consists. Heat and
+temperature are completely different things. Heat is a form
+of energy, and its SI unit is the joule (J). Temperature is
+not a measure of energy. Heating twice as much of something
+requires twice as much heat, but double the amount of a
+substance does not have double the temperature.
+
+The energy that an object possesses because of its motion is
+called kinetic energy. Kinetic energy is related to the mass
+of the object and the magnitude of its velocity vector by the equation
+\begin{equation*}
+  KE = \frac{1}{2}mv^2\eqquad.
+\end{equation*}
+
+Power is the rate at which energy is transformed from one
+form to another or transferred from one object to another,
+\begin{equation*}
+m4_ifelse(__me,1,[:%
+  P = \frac{\der E}{\der t}
+:],[:%
+ P = \frac{\Delta E}{\Delta t}\eqquad. 
+        \qquad\hfill\shoveright{\text{[only for constant power]}}
+:])%
+\end{equation*}
+The SI unit of power is the watt (W).
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('sweatold') %>
+This problem is now problem \ref{hw:sweat} in chapter \ref{ch:energy-zoo},
+on page \pageref{hw:sweat}.
+<% end_hw() %>
+
+<% begin_hw('negativeke') %>__incl(hw/negativeke)<% end_hw() %>
+
+<% begin_hw('sprinter') %>__incl(hw/sprinter)<% end_hw() %>
+
+<% begin_hw('crash') %>__incl(hw/crash)<% end_hw() %>
+
+<% begin_hw('astronaut') %>__incl(hw/astronaut)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('melt-antarctic') %>__incl(hw/melt-antarctic)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('bulletthroughbook') %>__incl(hw/bulletthroughbook)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('boatengine') %>__incl(hw/boatengine)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('aronskeratio') %>__incl(hw/aronskeratio)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('earthmoonke') %>__incl(hw/earthmoonke)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('microwave-waste') %>__incl(hw/microwave-waste)<% end_hw() %>
+
+\vfill\pagebreak[4]
+
+<% begin_hw('colliding-balls') %>__incl(hw/colliding-balls)<% end_hw() %>
+
+<%
+  fig(
+    'hw-colliding-balls',
+    %q{Problem \ref{hw:colliding-balls}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('balls') %>__incl(hw/balls)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('columbia') %>__incl(hw/columbia)<% end_hw() %>
+
+\vfill
+
+\fullpagewidthfignocaption{../../../share/mechanics/figs/hydraulic-ram}\label{fig:hydraulic-ram}
+<% begin_hw('hydraulic-ram') %>__incl(hw/hydraulic-ram)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('melt-and-boil') %>__incl(hw/melt-and-boil)<% end_hw() %>
+
+<% begin_hw('fly-wing-ke') %>__incl(hw/fly-wing-ke)<% end_hw() %>
+
+<% begin_hw('grass-growing') %>__incl(hw/grass-growing)<% end_hw() %>
+
+<% end_hw_sec %>
+<% end_chapter() %>

@@ -1,0 +1,1008 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '08',
+    %q{DC circuits},
+    'ch:dc-circuits'
+  )
+%>
+
+<% begin_sec("Schematics") %>
+\index{schematics}
+
+I see a chess position; Kasparov sees an interesting Ruy
+Lopez variation. To the uninitiated a schematic may look as
+unintelligible as Mayan hieroglyphs, but even a little bit
+of eye training can go a long way toward making its meaning
+leap off the page. A \index{schematic}schematic is a
+stylized and simplified drawing of a circuit. The purpose is
+to eliminate as many irrelevant features as possible, so
+that the relevant ones are easier to pick out.
+
+<%
+  fig(
+    'sample-schematics',
+    %q{%
+      1. Wrong: The shapes of
+              the wires are irrelevant. 2. Wrong: Right angles should be used.
+              3. Wrong: A simple pattern is made to look unfamiliar and complicated.
+              4. Right.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+An example of an irrelevant feature is the physical shape,
+length, and diameter of a wire. In nearly all circuits, it
+is a good approximation to assume that the wires are perfect
+conductors, so that any piece of wire uninterrupted by other
+components has constant potential throughout it. Changing the
+length of the wire, for instance, does not change this fact.
+(Of course if we used miles and miles of wire, as in a
+telephone line, the wire's resistance would start to add up,
+and its length would start to matter.) The shapes of the
+wires are likewise irrelevant, so we draw them with
+standardized, stylized shapes made only of vertical and
+horizontal lines with right-angle bends in them. This has
+the effect of making similar circuits look more alike and
+helping us to recognize familiar patterns, just as words in
+a newspaper are easier to recognize than handwritten ones.
+Figure \ref{fig:sample-schematics} shows some examples of these concepts.
+
+The most important first step in learning to read schematics
+is to learn to recognize contiguous pieces of wire which
+must have constant potential throughout. In figure \ref{fig:constant-voltage-areas}, for
+example, the two shaded E-shaped pieces of wire must each
+have constant potential. This focuses our attention on two of
+the main unknowns we'd like to be able to predict: the
+potential of the left-hand E and the potential of the one on the right.
+
+<% marg(50) %>
+<%
+  fig(
+    'constant-voltage-areas',
+    %q{%
+      The two shaded areas shaped like the letter
+              ``E'' are both regions of constant potential.
+    }
+  )
+%>
+<% end_marg %>
+
+ %%----------------------------------------------
+
+<% end_sec() %>
+
+<% begin_sec("Parallel resistances and the junction rule",0,'junction-rule') %>
+
+\index{resistance!in parallel}\index{junction rule}\index{charge!conservation!junction rule}
+\index{Kirchoff's voltage law|see {loop rule}}
+\index{Kirchoff's current law|see {junction rule}}
+
+One of the simplest examples to analyze is the parallel
+resistance circuit, of which figure \figref{constant-voltage-areas} was an example. In
+general we may have unequal resistances $R_1$ and $R_2$, as
+in \figref{parallel-resistors}/1. Since there are only two constant-potential areas in
+the circuit, \figref{parallel-resistors}/2, all three components have the same potential
+difference across them. A battery normally succeeds in
+maintaining the potential differences across itself for which
+it was designed, so the voltage drops $\Delta V_1$ and
+$\Delta V_2$ across the resistors must both equal the
+voltage of the battery:
+\begin{equation*}
+        \Delta V_1=\Delta V_2=\Delta V_{battery}\eqquad.
+\end{equation*}
+Each resistance thus feels the same potential difference as if
+it was the only one in the circuit, and Ohm's law tells us
+that the amount of current flowing through each one is also
+the same as it would have been in a one-resistor circuit.
+This is why household electrical circuits are wired in
+parallel. We want every appliance to work the same,
+regardless of whether other appliances are plugged in or
+unplugged, turned on or switched off. (The electric company
+doesn't use batteries of course, but our analysis would be
+the same for any device that maintains a constant voltage.)
+
+%
+
+<%
+  fig(
+    'parallel-resistors',
+    %q{%
+      1. Two resistors in parallel. 2. There are two
+              constant-potential areas. 3. The current that comes out of the battery
+              splits between the two resistors, and later reunites. 4. The two resistors
+              in parallel can be treated as a single resistor with a smaller resistance value.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Of course the electric company can tell when we turn on
+every light in the house. How do they know? The answer is
+that we draw more current. Each resistance draws a certain
+amount of current, and the amount that has to be supplied is
+the sum of the two individual currents. The current is like
+a river that splits in half, \ref{fig:parallel-resistors}/3, and then reunites.
+The total current is
+\begin{equation*}
+                I_{total}         =    I_1 + I_2\eqquad.  
+\end{equation*}
+
+This is an example of a general fact called the junction rule:
+
+\begin{lessimportant}[the junction rule]
+        In any circuit that is not storing or releasing charge, conservation of
+        charge implies that the total current flowing out of any junction must be the
+        same as the total flowing in.
+\end{lessimportant}
+
+Coming back to the analysis of our circuit, we apply Ohm's
+law to each resistance, resulting in
+\begin{align*}
+                I_{total}         &=    \Delta V/R_1+ \Delta V/R_2  \\
+                         &=             \Delta V\left(\frac{1}{R_1}+\frac{1}{R_2}\right)\eqquad.  
+\end{align*}
+
+As far as the electric company is concerned, your whole
+house is just one resistor with some resistance $R$, called
+the \index{resistors!in parallel}\index{equivalent
+resistance!of resistors in parallel}\emph{equivalent resistance}.
+They would write Ohm's law as
+\begin{equation*}
+                        I_{total}         =    \Delta V/R\eqquad,  
+\end{equation*}
+from which we can determine the equivalent resistance by
+comparison with the previous expression:
+\begin{align*}
+                        1/R         &=   \frac{1}{R_1}+\frac{1}{R_2}   \\
+                          R         &=  \left(\frac{1}{R_1}+\frac{1}{R_2}\right)^{-1}          
+\end{align*}
+\hfill{}[equivalent resistance of two resistors in parallel]
+
+\noindent Two resistors in parallel, \ref{fig:parallel-resistors}/4, are equivalent to a single
+resistor with a value given by the above equation.
+
+\begin{eg}{Two lamps on the same household circuit}
+\egquestion
+You turn on two lamps that are on the same
+household circuit. Each one has a resistance of 1 ohm. What
+is the equivalent resistance, and how does the power
+dissipation compare with the case of a single lamp?
+
+\eganswer
+        The equivalent resistance of the two lamps in parallel is
+\begin{align*}
+                 R         &=    \left(\frac{1}{ R_1}+\frac{1}{ R_2}\right)^{-1}  \\
+                         &=    \left(\frac{1}{1\ \Omega}+\frac{1}{1\ \Omega}\right)^{-1}  \\
+                         &=    \left(1\ \Omega^{-1} + 1\ \Omega^{-1}\right)^{-1}  \\
+                         &=    \left(2\ \Omega^{-1}\right)^{-1}  \\
+                         &=    \text{0.5}\ \Omega   
+\end{align*}
+The potential difference across the whole circuit is always
+the 110 V set by the electric company (it's alternating
+current, but that's irrelevant). The resistance of the whole
+circuit has been cut in half by turning on the second lamp,
+so a fixed amount of voltage will produce twice as much
+current. Twice the current flowing across the same potential
+difference means twice as much power dissipation, which makes sense.
+
+\end{eg}
+
+The cutting in half of the resistance surprises many
+students, since we are ``adding more resistance'' to the
+circuit by putting in the second lamp. Why does the
+equivalent resistance come out to be less than the
+resistance of a single lamp? This is a case where purely
+verbal reasoning can be misleading. A resistive circuit
+element, such as the filament of a lightbulb, is neither a
+perfect insulator nor a perfect conductor. Instead of
+analyzing this type of circuit in terms of ``resistors,''
+i.e., partial insulators, we could have spoken of ``conductors.''
+This example would then seem reasonable, since we ``added
+more conductance,'' but one would then have the incorrect
+expectation about the case of resistors in series, discussed
+in the following section.
+
+Perhaps a more productive way of thinking about it is to use
+mechanical intuition. By analogy, your nostrils resist the
+flow of air through them, but having two nostrils makes it
+twice as easy to breathe.
+
+\begin{eg}{Three resistors in parallel}\label{eg:three-resistors-in-parallel}
+\egquestion
+What happens if we have three or more resistors in parallel?
+
+\eganswer
+        This is an important example, because the solution
+involves an important technique for understanding circuits:
+breaking them down into smaller parts and them simplifying
+those parts. In the circuit \ref{fig:eg-three-resistors-in-parallel}/1, with three resistors in
+parallel, we can think of two of the resistors as forming a
+single resistor, \ref{fig:eg-three-resistors-in-parallel}/2, with equivalent resistance 
+\begin{equation*}
+                 R_{12}         =    \left(\frac{1}{ R_1}+\frac{1}{ R_2}\right)^{-1}\eqquad.  
+\end{equation*}
+We can then simplify the circuit as shown in \ref{fig:eg-three-resistors-in-parallel}/3, so that it
+contains only two resistances. The equivalent resistance of
+the whole circuit is then given by
+\begin{equation*}
+                 R_{123}    =    \left(\frac{1}{ R_{12}}+\frac{1}{ R_3}\right)^{-1}\eqquad.  
+\end{equation*}
+Substituting for $R_{12}$ and simplifying, we find the result
+\begin{equation*}
+                 R_{123}    =  \left(\frac{1}{ R_1}+\frac{1}{ R_2}+\frac{1}{ R_3}\right)^{-1}\eqquad,  
+\end{equation*}
+which you probably could have guessed. The interesting point
+here is the divide-and-conquer concept, not the mathematical result.
+
+\end{eg}
+
+<% marg(110) %>
+<%
+  fig(
+    'eg-three-resistors-in-parallel',
+    %q{Example \ref{eg:three-resistors-in-parallel}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+\begin{eg}{An arbitrary number of identical resistors in parallel}
+\egquestion
+What is the resistance of $N$ identical resistors in parallel?
+
+\eganswer
+        Generalizing the results for two and three resistors, we have
+\begin{equation*}
+                 R_{N}         =   \left(\frac{1}{ R_1}+\frac{1}{ R_2}+\ldots\right)^{-1}\eqquad,  
+\end{equation*}
+where ``...'' means that the sum includes all the resistors.
+If all the resistors are identical, this becomes
+\begin{align*}
+                 R_{N}         &=  \left(\frac{ N}{ R}\right)^{-1}    \\
+                         &=     \frac{ R}{ N} 
+\end{align*}
+
+\end{eg}
+
+\begin{eg}{Dependence of resistance on cross-sectional area}\label{eg:resistance-and-area}
+We have alluded briefly to the fact that an object's
+electrical resistance depends on its size and shape, but now
+we are ready to begin making more mathematical statements
+about it. As suggested by figure \ref{fig:eg-cross-sectional-area}, increasing a
+resistors's cross-sectional area is equivalent to adding
+more resistors in parallel, which will lead to an overall
+decrease in resistance. Any real resistor with straight,
+parallel sides can be sliced up into a large number of
+pieces, each with cross-sectional area of, say, 1 $\mu \zu{m}^2$.
+The number, $N$, of such slices is proportional to the total
+cross-sectional area of the resistor, and by application of
+the result of the previous example we therefore find that
+the resistance of an object is inversely proportional to its
+cross-sectional area.
+
+<% marg(55) %>
+<%
+  fig(
+    'eg-cross-sectional-area',
+    %q{%
+      Example \ref{eg:resistance-and-area}: Uniting four resistors in 
+              parallel is equivalent to making a
+              single resistor with the same length but four times the
+              cross-sectional area. The result is to make a resistor with one
+              quarter the resistance.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'fat-and-skinny-pipes',
+    %q{%
+      A fat pipe has less resistance than a skinny pipe.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b',
+      'anonymous'=>true
+    }
+  )
+%>
+
+        An analogous relationship holds for water pipes, which is
+why high-flow trunk lines have to have large cross-sectional
+areas. To make lots of water (current) flow through a skinny
+pipe, we'd need an impractically large pressure (voltage) difference.
+\end{eg}
+
+\pagebreak
+
+\begin{eg}{Incorrect readings from a voltmeter}
+        A voltmeter is really just an ammeter with an internal
+resistor, and we use a voltmeter in parallel with the thing
+that we're trying to measure the potential difference across.
+This means that any time we measure the voltage drop across
+a resistor, we're essentially putting two resistors in
+parallel. The ammeter inside the voltmeter can be ignored
+for the purpose of analyzing how current flows in the
+circuit, since it is essentially just some coiled-up wire
+with a very low resistance.
+
+<% marg(38) %>
+<%
+  fig(
+    'eg-voltmeter-internal-resistance',
+    %q{%
+      A voltmeter is really an ammeter 
+              with an internal resistor.
+              When we measure the voltage difference across a resistor, 1, we are
+              really constructing a parallel resistance circuit, 2.
+    }
+  )
+%>
+<% end_marg %>
+
+        Now if we are carrying out this measurement on a resistor
+that is part of a larger circuit, we have changed the
+behavior of the circuit through our act of measuring. It is
+as though we had modified the circuit by replacing the
+resistance $R$ with the smaller equivalent resistance of $R$
+and $R_v$ in parallel. It is for this reason that voltmeters
+are built with the largest possible internal resistance. As
+a numerical example, if we use a voltmeter with an internal
+resistance of 1 $\zu{M}\Omega $ to measure the voltage drop
+across a one-ohm resistor, the equivalent resistance is
+0.999999 $\Omega $, which is not different enough to make
+any difference. But if we tried to use the same voltmeter to
+measure the voltage drop across a 2 $M\Omega$ resistor, we
+would be reducing the resistance of that part of the circuit
+by a factor of three, which would produce a drastic change
+in the behavior of the whole circuit.
+\end{eg}
+
+        This is the reason why you can't use a voltmeter to measure
+the potential difference between two different points in
+mid-air, or between the ends of a piece of wood. This is by
+no means a stupid thing to want to do, since the world
+around us is not a constant-potential environment, the most
+extreme example being when an electrical storm is brewing.
+But it will not work with an ordinary voltmeter because the
+resistance of the air or the wood is many gigaohms. The
+effect of waving a pair of voltmeter probes around in the
+air is that we provide a reuniting path for the positive and
+negative charges that have been separated --- through the
+voltmeter itself, which is a good conductor compared to the
+air. This reduces to zero the potential difference we
+were trying to measure.
+
+        In general, a voltmeter that has been set up with an open
+circuit (or a very large resistance) between its probes is
+said to be ``floating.'' An old-fashioned analog voltmeter
+of the type described here will read zero when left
+floating, the same as when it was sitting on the shelf. A
+floating digital voltmeter usually shows an error message.
+
+<% end_sec('junction-rule') %>
+
+<% begin_sec("Series resistances and the loop rule",4,'loop-rule') %>
+\index{resistance!in series}
+
+The two basic circuit layouts are parallel and series, so a
+pair of resistors in series, \ref{fig:seriesresistors}/1, is another of the most
+basic circuits we can make. By conservation of charge, all
+the current that flows through one resistor must also flow
+through the other (as well as through the battery):
+\begin{equation*}
+                I_1    =    I_2\eqquad.  
+\end{equation*}
+The only way the information about the two resistance values
+is going to be useful is if we can apply Ohm's law, which
+will relate the resistance of each resistor to the current
+flowing through it and the voltage difference across it.
+Figure \ref{fig:seriesresistors}/2 shows the three constant-potential areas. Voltage
+differences are more physically significant than voltages,
+so we define symbols for the voltage differences across the
+two resistors in figure \ref{fig:seriesresistors}/3.
+
+We have three constant-potential areas, with symbols for the
+difference in voltage between every possible pair of them.
+These three potential differences must be related to each
+other. It is as though I tell you that Fred is a foot taller
+than Ginger, Ginger is a foot taller than Sally, and Fred is
+two feet taller than Sally. The information is redundant,
+and you really only needed two of the three pieces of data
+to infer the third. In the case of our voltage differences, we have
+\begin{equation*}
+           |\Delta V_1| + |\Delta V_2| = |\Delta V_{battery}|\eqquad.
+\end{equation*}
+The absolute value signs are because of the ambiguity in how
+we define our voltage differences. If we reversed the two
+probes of the voltmeter, we would get a result with the
+opposite sign. Digital voltmeters will actually provide a
+minus sign on the screen if the wire connected to the ``V''
+plug is lower in potential than the one connected to the
+``COM'' plug. Analog voltmeters pin the needle against a peg
+if you try to use them to measure negative voltages, so you
+have to fiddle to get the leads connected the right way, and
+then supply any necessary minus sign yourself.
+
+<% marg(190) %>
+<%
+  fig(
+    'seriesresistors',
+    %q{%
+      1. A battery drives current through
+              two resistors in series. 2. There are three constant-potential regions.
+              3. The three voltage differences are related.
+              4. If the meter crab-walks around the circuit without flipping
+              over or crossing its legs, the resulting voltages have plus and minus
+              signs that make them add up to zero.
+    }
+  )
+%>
+<% end_marg %>
+
+Figure \ref{fig:seriesresistors}/4 shows a standard way of taking care of the
+ambiguity in signs. For each of the three voltage measurements
+around the loop, we keep the same probe (the darker one) on
+the clockwise side. It is as though the voltmeter was
+sidling around the circuit like a crab, without ever
+``crossing its legs.'' With this convention, the relationship
+among the voltage drops becomes
+\begin{equation*}
+          \Delta V_1 + \Delta V_2 = -\Delta V_{battery}\eqquad,
+\end{equation*}
+or, in more symmetrical form,
+\begin{equation*}
+          \Delta V_1 + \Delta V_2 + \Delta V_{battery} = 0\eqquad.
+\end{equation*}
+
+More generally, this is known as the loop rule for analyzing circuits:
+
+\begin{lessimportant}[the loop rule]
+        Assuming the standard convention for plus and minus signs, the sum of the
+        voltage drops around any closed loop in a DC circuit must be zero.
+\end{lessimportant}
+
+The loop rule and junction rule are credited to Gustav Kirchoff and are therefore
+often referred to by names such as Kirchoff's rules, Kirchoff's loop rule, Kirchoff's junction rule,
+and acronyms such as KCL (for current) and KVL (for voltage).
+
+<% marg() %>
+
+<%
+  fig(
+    'penrose-stairs',
+    %q{%
+      An impossible staircase.
+    }
+  )
+%>
+<% end_marg %>
+
+In a DC circuit, we have a well-defined electric potential, which is analogous to height
+in a gravitational field.
+Looking for an exception to the \index{loop rule}loop rule
+would be like asking for a hike that would be downhill all
+the way and that would come back to its starting point, or a staircase like the one in
+figure \figref{penrose-stairs}.
+The sum of voltage drops described in the loop rule is the work
+done per unit charge as we bring a charge around the loop and
+back to its starting point. If this work were nonzero for a static field, then as
+argued in sec.~\ref{sec:something-is-missing}, p.~\pageref{zero-work-around-closed-loop},
+we would have a perpetual motion machine, violating conservation of energy.
+The assumption of a DC circuit (static field) is necessary, and the loop rule
+can be violated when the fields are time-varying (\note{loop-rule-dc-necessary}).
+
+        For the circuit we set out to analyze, the equation
+\begin{equation*}
+          \Delta V_1 + \Delta V_2 + \Delta V_{battery} = 0
+\end{equation*}
+can now be rewritten by applying Ohm's law to each resistor:
+\begin{equation*}
+          I_1R_1 + I_2R_2 + \Delta V_{battery} = 0\eqquad.
+\end{equation*}
+The currents are the same, so we can factor them out:
+\begin{equation*}
+          I\left(R_1 + R_2\right) + \Delta V_{battery} = 0\eqquad,
+\end{equation*}
+and this is the same result we would have gotten if we had
+been analyzing a one-resistor circuit with resistance
+$R_1+R_2$. Thus the equivalent resistance of resistors in
+series equals the sum of their resistances.
+
+\vspace{10mm}
+
+\begin{eg}{Two lightbulbs in series}\label{eg:two-bulbs-in-series}
+\egquestion
+If two identical  lightbulbs are placed in series,
+how do their brightnesses compare with the brightness of a single bulb?
+
+\eganswer
+        Taken as a whole, the pair of bulbs act like a
+doubled resistance, so they will draw half as much current
+from the wall. Each bulb will be dimmer than a single
+bulb would have been.
+
+The total power dissipated by the circuit is $I\Delta V$.
+        The voltage drop across the whole circuit is the same as
+        before, but the current is halved, so the two-bulb circuit
+        draws half as much total power as the one-bulb circuit. Each
+        bulb draws one-quarter of the normal power.
+
+        Roughly speaking, we might expect this to result in one
+quarter the light being produced by each bulb, but in
+reality lightbulbs waste quite a high percentage of their
+power in the form of heat and wavelengths of light that are
+not visible (infrared and ultraviolet). Less light will be
+produced, but it's hard to predict exactly how much less,
+since the efficiency of the bulbs will be changed by
+operating them under different conditions.
+\end{eg}
+
+<% marg(95) %>
+<%
+  fig(
+    'eg-two-bulbs-in-series',
+    %q{Example \ref{eg:two-bulbs-in-series}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{More than two equal resistances in series}
+By straightforward application of the divide-and-conquer
+technique discussed in the previous section, we find that
+the equivalent resistance of $N$ identical resistances $R$
+in series will be $NR$.
+\end{eg}
+
+<% marg(-300) %>
+
+<%
+  fig(
+    'eg-resistance-length',
+    %q{%
+      Example \ref{eg:resistance-and-length}. Doubling the length of a resistor is like putting two resistors
+              in series. The resistance is doubled.
+    },
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Dependence of resistance on length}\label{eg:resistance-and-length}
+In the previous section, we proved that resistance is
+inversely proportional to cross-sectional area. By
+equivalent reason about resistances in series, we find that
+resistance is proportional to length. Analogously, it is
+harder to blow through a long straw than through a short one.
+\end{eg}
+
+Combining the results of examples \ref{eg:resistance-and-area} and \ref{eg:resistance-and-length}, we find that the
+resistance of an object with straight, parallel sides is given by
+\begin{equation*}
+                         R    =    \text{(constant)} \cdot  L/ A  
+\end{equation*}
+The proportionality constant is called the \index{resistivity!defined}resistivity,
+and it depends only on the substance of which the object is
+made. A resistivity measurement could be used, for instance,
+to help identify a sample of an unknown substance.
+
+\begin{eg}{Choice of high voltage for power lines}\label{hvtransmission}
+        Thomas Edison got involved in a famous technological
+controversy over the voltage difference that should be used
+for electrical power lines. At this time, the public was
+unfamiliar with electricity, and easily scared by it. The
+president of the United States, for instance, refused to
+have electrical lighting in the White House when it first
+became commercially available because he considered it
+unsafe, preferring the known fire hazard of oil lamps to the
+mysterious dangers of electricity. Mainly as a way to
+overcome public fear, Edison believed that power should be
+transmitted using small voltages, and he publicized his
+opinion by giving demonstrations at which a dog was lured
+into position to be killed by a large voltage difference
+between two sheets of metal on the ground. (Edison's
+opponents also advocated alternating current rather than
+direct current, and AC is more dangerous than DC as well. As
+we will discuss later, AC can be easily stepped up and down
+to the desired voltage level using a device called a transformer.)
+
+                Now if we want to deliver a certain amount of power $P_L$ to
+a load such as an electric lightbulb, we are constrained
+only by the equation $P_{L} =  I\Delta  V_L$. We can deliver any
+amount of power we wish, even with a low voltage, if we are
+willing to use large currents. Modern electrical distribution
+networks, however, use dangerously high voltage differences
+of tens of thousands of volts. Why did Edison lose the debate?  
+
+        It boils down to money. The electric company must deliver
+the amount of power $P_L$ desired by the customer through a
+transmission line whose resistance $R_T$ is fixed by
+economics and geography. The same current flows through both
+the load and the transmission line, dissipating power
+usefully in the former and wastefully in the latter. The
+efficiency of the system is
+\begin{align*}
+                \text{efficiency}         &=   \frac{\text{power paid for by the customer}}
+                                                                        {\text{power paid for by the utility}}   \\
+                                 &=  \frac{ P_{L}}{ P_L+ P_{T}}    \\
+                                 &=   \frac{1}{1+ P_{T}/ P_L}   
+\end{align*}
+Putting ourselves in the shoes of the electric company, we
+wish to get rid of the variable $P_T$, since it is something
+we control only indirectly by our choice of $\Delta  V_T$ and
+$I$. Substituting $P_{T}= I\Delta  V_T$, we find
+\begin{equation*}
+                \text{efficiency}         =      \frac{1}
+                                                {1+\frac{ I \Delta V_T}{ P_L}}
+\end{equation*}
+We assume the transmission line (but not necessarily the
+load) is ohmic, so substituting $\Delta V_T=IR_T$ gives
+\begin{equation*}
+                \text{efficiency}         =      \frac{1}{1+\frac{I^2R_T}{P_L}}
+\end{equation*}
+This quantity can clearly be maximized by making $I$ as
+small as possible, since we will then be dividing by the
+smallest possible quantity on the bottom of the fraction. A
+low-current circuit can only deliver significant amounts of
+power if it uses high voltages, which is why electrical
+transmission systems use dangerous high voltages.
+\end{eg}
+
+<%
+  fig(
+    'qbert',
+    '',
+    {
+      'width'=>'fullpage',
+      'anonymous'=>true
+    }
+  )
+%>
+
+\begin{eg}{Two ways of handling signs}\label{eg:qbert}
+The figure above shows two ways of visualizing the loop rule and handling the signs involved.
+In panel 1, each circuit element is labeled with the voltage drop across it.
+
+In 2, the crab is a voltmeter whose reading is the potential on the white claw
+minus the potential on the black claw. The crab can't flip over. It can only scuttle sideways as it moves around
+the loop that we've chosen, consisting of four resistors. The sum of the four readings is zero.
+
+Panel 3 shows a visualization of the same circuit in which potential is like height. The stick figure on the ledge
+wants to get down to the ground by doing a series of hops. He has two ways: do the 3 V drop and then the 1 V drop,
+or do the 2 V and the other 2 V. Here we treat all the voltage differences as positive numbers.
+This method works nicely if you're pretty sure for each resistor in the circuit which end is the higher
+voltage.
+\end{eg}
+
+<%
+  fig(
+    'eg-close-switch',
+    %q{%
+      Example \ref{eg:close-switch}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b',
+      'anonymous'=>true
+    }
+  )
+%>
+
+\begin{eg}{A complicated circuit}\label{eg:close-switch}
+\egquestion
+All seven resistors in the left-hand panel of figure \figref{eg-close-switch} are identical.
+Initially, the switch S is open as shown in the figure, and the current through resistor A is $I_\zu{o}$.
+The switch is then closed. Find the current through resistor B, after the switch is closed, in terms of $I_\zu{o}$.
+
+\eganswer
+The second panel shows the circuit redrawn for simplicity, in the initial condition with the switch open.
+When the switch is open, no current can flow through the central resistor, so we may as well ignore it.
+I've also redrawn the junctions, without changing what's connected to what. This is the kind of mental
+rearranging that you'll eventually learn to do automatically from experience with analyzing circuits.
+The redrawn version makes it easier to see what's happening with the current. Charge is conserved, so
+any charge that flows past point 1 in the circuit must also flow past points 2 and 3. This would have
+been harder to reason about by applying the junction rule to the original version, which appears to have nine separate junctions.
+
+In the new version, it's also clear that the circuit has a great deal of symmetry. We could flip over each
+parallel pair of identical resistors without changing what's connected to what, so that makes it clear that the voltage
+drops and currents must be equal for the members of each pair. We can also prove this by using the loop rule.
+The loop rule says that the two voltage drops in loop 4 must be equal, and similarly for loops 5 and 6.
+Since the resistors obey Ohm's law, equal voltage drops across them also imply equal currents. That means
+that when the current at point 1 comes to the top junction, exactly half of it goes through each resistor. Then
+the current reunites at 2, splits between the next pair, and so on. We conclude that each of the six resistors
+in the circuit experiences the same voltage drop and the same current. Applying the loop rule to loop 7, we
+find that the sum of the three voltage drops across the three left-hand resistors equals the battery's
+voltage, $V$, so each resistor in the circuit experiences a voltage drop $V/3$. Letting $R$ stand for
+the resistance of one of the resistors, we find that the current through resistor B, which is the same
+as the currents through all the others, is given by $I_\zu{o}=V/3R$.
+
+We now pass to the case where the switch is closed, as shown in the third panel. The battery's voltage is
+the same as before, and each resistor's resistance is the same, so we can still use the same symbols
+$V$ and $R$ for them. It is no longer true, however, that each resistor feels a voltage drop $V/3$.
+The equivalent resistance of the whole circuit is $R/2+R/3+R/2=4R/3$, so the total current drawn from
+the battery is $3V/4R$. In the middle group of resistors, this current is split three ways, so the new current
+through B is $(1/3)(3V/4R)=V/4R=3I_\zu{o}/4$.
+
+Interpreting this result, we see that it comes from two effects that partially cancel.
+Closing the switch reduces the equivalent resistance of the circuit by giving charge another
+way to flow, and increases the amount of current drawn from the battery. Resistor B, however,
+only gets a 1/3 share of this greater current, not 1/2. The second effect turns out to be
+bigger than first, and therefore the current through resistor B is lessened
+over all.
+
+\end{eg}
+
+\begin{eg}{Getting killed by your ammeter}
+        As with a voltmeter, an ammeter can give erroneous readings
+if it is used in such a way that it changes the behavior the
+circuit. An ammeter is used in series, so if it is used to
+measure the current through a resistor, the resistor's value
+will effectively be changed to $R+ R_a$, where $R_a$ is the
+resistance of the ammeter. Ammeters are designed with very
+low resistances in order to make it unlikely that $R+ R_a$
+will be significantly different from $R$.
+
+        In fact, the real hazard is death, not a wrong reading!
+Virtually the only circuits whose resistances are significantly
+less than that of an ammeter are those designed to carry
+huge currents. An ammeter inserted in such a circuit can
+easily melt. When I was working at a laboratory funded by
+the Department of Energy, we got periodic bulletins from the
+DOE safety office about serious accidents at other sites,
+and they held a certain ghoulish fascination. One of these
+was about a DOE worker who was completely incinerated by the
+explosion created when he inserted an ordinary Radio Shack
+ammeter into a high-current circuit. Later estimates showed
+that the heat was probably so intense that the explosion was
+a ball of plasma --- a gas so hot that its atoms have been ionized.
+\end{eg}
+
+\startdq
+
+\begin{dq}
+        We have stated the loop rule in a symmetric form where a
+        series of voltage drops adds up to zero. To do this, we had
+        to define a standard way of connecting the voltmeter to the
+        circuit so that the plus and minus signs would come out
+        right. Suppose we wish to restate the junction rule in a
+        similar symmetric way, so that instead of equating the
+        current coming in to the current going out, it simply states
+        that a certain sum of currents at a junction adds up to
+        zero. What standard way of inserting the ammeter would we
+        have to use to make this work?
+\end{dq}
+
+<% end_sec('loop-rule') %>
+
+<% begin_notes %>
+
+\notetext{loop-rule-dc-necessary}{Loop rule can be violated by AC circuits}
+\notesummary{The loop rule is valid only for static fields (DC circuits), and can be violated otherwise.}
+To see why the assumption of a DC circuit is necessary, consider what happens
+in an antenna, as in figure \figref{dipole-radiation-pattern} on 
+p.~\pageref{eg:dipole-radiation-pattern}. In such an AC circuit,
+a charge can oscillate back and forth repeatedly, having negative work
+done on it in each cycle. This is not a violation of conservation of energy,
+because the energy is being pumped out into an electromagnetic wave.
+The electric field in the antenna's radiation pattern is curly (which is allowed
+by Maxwell's equations because $\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$),
+so the work done by the field is path-dependent, and the construction of the electric
+potential in \ref{sec:potential}, p.~\pageref{sec:potential}, breaks down. In the gravitational
+metaphor, there is no way to even define a notion of height.
+
+However, it still often happens that the loop rule is approximately valid, even for
+AC circuits (\notewithoutbackref{ac-circuit-loop-rule}).
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+<% end_hw_sec %>
+
+<% begin_lab("Voltage and current") %>
+
+This exercise is based on one created by Virginia Roundy.
+
+\noindent Apparatus:
+
+\begin{indentedblock}
+DC power supply
+
+1.5 volt batteries
+
+lightbulbs and holders
+
+wire
+
+highlighting pens, 3 colors
+\end{indentedblock}
+
+When you first glance at this exercise, it may look scary and intimidating --- all those
+circuits! However, all those wild-looking circuits can be analyzed using the following four
+guides to thinking:
+
+1. \emph{A circuit has to be complete\/}, i.e., it must be possible for charge to get recycled
+as it goes around the circuit. If it's not complete, then charge will build up at a dead end. This built-up
+charge will repel any other charge that tries to get in, and everything will rapidly grind to a stop.
+
+2. \emph{There is constant voltage everywhere along a piece of wire.} To apply this rule during
+this lab, I suggest you use the colored highlighting pens to mark the circuit. For instance, if there's
+one whole piece of the circuit that's all at the same voltage, you could highlight it in yellow.
+A second piece of the circuit, at some other voltage, could be highlighted in blue.
+
+3. \emph{Charge is conserved,} so charge can't ``get used up.''
+
+\pagebreak
+
+4. You can draw a \emph{rollercoaster diagram}, like the one shown below. On this
+kind of diagram, height corresponds to voltage --- that's why the wires are drawn as horizontal
+tracks.
+
+<% fig('analyzing-rollercoaster','',{'width'=>'native','float'=>false}) %>
+
+\emph{A Bulb and a Switch}
+
+Look at circuit 1, and try to predict what will happen when the switch is open, and what
+will happen when it's closed. Write both your predictions in the table on the following page
+before you build the circuit.
+When you build the circuit, you don't need an actual switch like a light switch; just 
+connect and disconnect the banana plugs. Use one of the 1.5 volt batteries as your voltage
+source.
+
+\newcommand{\circuittablestrut}{\raisebox{0mm}[0mm][24mm]{}}
+\newcommand{\circuittabletwocols}[2]{
+\begin{tabular}{|p{20mm}|p{42mm}|}
+\hline
+         & \emph{#1} \\
+\hline
+prediction & \\
+\hline
+explanation  \circuittablestrut &\\
+\hline
+observation & \\
+\hline
+explanation  & \\
+(if different) \circuittablestrut & \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|p{20mm}|p{42mm}|}
+\hline
+         & \emph{#2} \\
+\hline
+prediction & \\
+\hline
+explanation \circuittablestrut  &\\
+\hline
+observation  & \\
+\hline
+explanation  & \\
+(if different) \circuittablestrut & \\
+\hline
+\end{tabular}
+}
+\newcommand{\circuittableonecol}{
+\begin{tabular}{|l|p{50mm}|}
+\hline
+prediction  &\\
+\hline
+explanation \circuittablestrut   &\\
+\hline
+observation &\\
+\hline
+explanation  & \\
+(if different) \circuittablestrut &\\
+\hline
+\end{tabular}
+}
+
+<% fig('analyzing-simple','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 1}
+
+\vfill\pagebreak[4]
+
+\circuittabletwocols{switch open}{switch closed}
+
+Did it work the way you expected? If not, try to figure it out with the benefit of
+hindsight, and write your explanation in the table above.
+
+\vfill\pagebreak[4]
+
+<% fig('analyzing-switch-shorts','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 2 (Don't leave the switch closed for a long time!)}
+
+\circuittabletwocols{switch open}{switch closed}
+
+\vfill\pagebreak[4]
+
+<% fig('analyzing-irrelevant','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 3}
+
+\circuittabletwocols{switch open}{switch closed}
+
+\vfill\pagebreak[4]
+
+<% fig('analyzing-far-side','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 4}
+
+\circuittabletwocols{switch open}{switch closed}
+
+\vfill\pagebreak[4]
+
+\emph{Two Bulbs}
+
+Instead of a battery, use the DC power supply, set to
+2.4 volts, for circuits 5 and 6.
+Analyze this one both by highlighting and by drawing a
+rollercoaster diagram.
+
+<% fig('analyzing-series','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 5}
+
+\circuittabletwocols{bulb a}{bulb b}
+
+\vfill\pagebreak[4]\vfill
+
+<% fig('analyzing-corner','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 6}
+
+\circuittabletwocols{bulb a}{bulb b}
+
+\vfill\pagebreak[4]
+
+\emph{Two Batteries}
+
+Use batteries for circuits 7-9.
+Circuits 7 and 8 are both good candidates for rollercoaster
+diagrams. 
+
+<% fig('analyzing-two-batteries','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 7}
+
+\circuittableonecol
+
+<% fig('analyzing-reversed','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 8}
+
+\circuittableonecol
+
+\pagebreak[4]
+
+\emph{A Final Challenge}
+
+<% fig('analyzing-inside','',{'width'=>'native','float'=>false}) %>
+
+\textsf{Circuit 9}
+
+\circuittabletwocols{bulb a}{bulb b}
+
+<% end_lab %>
+
+<% end_chapter() %>

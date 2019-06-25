@@ -1,0 +1,759 @@
+<% begin_sec("Rigid-body rotation",4,'rigid-body-rotation') %>
+<% begin_sec("Kinematics") %>
+When a rigid object rotates, every part of it (every atom)
+moves in a circle, covering the same angle in the same
+amount of time, \figref{toparcs}. Every atom has a different velocity
+vector, \figref{topv}. Since all the velocities are different, we
+can't measure the speed of rotation of the top by giving a
+single velocity. We can, however, specify its speed of
+rotation consistently in terms of angle per unit time. Let
+the position of some reference point on the top be denoted
+by its angle $\theta$, measured in a circle around the axis. For
+reasons that will become more apparent shortly, we measure
+all our angles in radians. Then the change in the angular
+position of any point on the top can be written as $\der\theta$, and
+all parts of the top have the same value of $\der\theta$ over a
+certain time interval $\der t$. We define the angular velocity, $\omega$\index{angular velocity}
+(Greek omega),
+\begin{multline*}
+        \omega        =          \frac{\der\theta}{\der t}  \qquad m4_ifelse(__sn,1,[:,:],[:.:])        \\
+        \text{[definition of
+        angular velocity; $\theta$ in units of radians]}
+\end{multline*}
+m4_ifelse(__sn,1,[:which is similar to, but not the same as, the quantity $\omega$ we defined
+earlier to describe vibrations.:],[:%:])
+The relationship between $\omega$ and $t$ is
+exactly analogous to that between $x$ and $t$ for the motion of
+a particle through space.
+
+<% self_check('thetazero',<<-'SELF_CHECK'
+If two different people chose two different reference points
+on the top in order to define $\\theta\\zu{=0}$, how would their $\\theta$-$t$ graphs
+differ? What effect would this have on the angular
+velocities?
+  SELF_CHECK
+  ) %>
+
+<% marg(140) %>
+<%
+  fig(
+    'toparcs',
+    %q{The two atoms cover the same angle in a given time interval.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'topv',
+    %q{Their velocity vectors, however, differ in both magnitude and direction.}
+  )
+%>
+<% end_marg %>
+The angular velocity has units of radians per second, rad/s.
+However, radians are not really units at all. The radian
+measure of an angle is defined, as the length of the
+circular arc it makes, divided by the radius of the circle.
+Dividing one length by another gives a unitless quantity, so
+anything with units of radians is really unitless. We can
+therefore simplify the units of angular velocity, and call
+them inverse seconds, $\sunit^{-1}$.
+
+\begin{eg}{A 78-rpm record}
+\egquestion
+In the early 20th century, the standard format for
+music recordings was a plastic disk that held a single song
+and rotated at 78 rpm (revolutions per minute). What was the
+angular velocity of such a disk?
+
+\eganswer
+If we measure angles in units of revolutions and
+time in units of minutes, then 78 rpm is the angular
+velocity. Using standard physics units of radians/second,
+however, we have
+\begin{equation*}
+                \frac{78\ \zu{revolutions}}{1\ \zu{minute}}
+                \times\frac{2\pi\ \zu{radians}}{1\ \zu{revolution}}
+                \times\frac{1\ \zu{minute}}{60\ \zu{seconds}}
+                         =  8.2\ \sunit^{-1}\eqquad.
+\end{equation*}
+\end{eg}
+
+In the absence of any torque, a rigid body will rotate
+indefinitely with the same angular velocity. If the angular
+velocity is changing because of a torque, we define an
+angular acceleration,\index{angular acceleration}
+\begin{equation*}
+        \alpha        =          \frac{\der\omega}{\der t}\eqquad, \qquad        
+        \text{[definition of
+        angular acceleration]}
+\end{equation*}
+The symbol is the Greek letter alpha. The units of this
+quantity are $\zu{rad}/\zu{s}^2$, or simply $\sunit^{-2}$.
+<% marg(0) %>
+<%
+  fig(
+    'analogieskin',
+    %q{Analogies between rotational and linear quantities.}
+  )
+%>
+<% end_marg %>
+
+The mathematical relationship between $\omega$ and $\theta$ is the same as
+the one between $v$ and $x$, and similarly for $\alpha$ and $a$. We can
+thus make a system of analogies, \figref{analogieskin}, and recycle all
+the familiar kinematic equations for constant-acceleration
+motion.
+
+\begin{eg}{The synodic period}
+Mars takes nearly twice as long as the Earth to complete an orbit.
+If the two planets are alongside one another on a certain day, then one year
+later, Earth will be back at the same place, but Mars will have moved
+on, and it will take more time for Earth to finish catching up. Angular
+velocities add and subtract, just as velocity
+vectors do. If the two planets' angular velocities are $\omega_1$
+and $\omega_2$, then the angular velocity of one relative to the other
+is $\omega_1-\omega_2$. The corresponding period, $1/(1/T_1-1/T_2)$ is
+known as the synodic period.
+\end{eg}
+
+\begin{eg}{A neutron star}
+\egquestion
+A neutron star is initially observed to be
+rotating with an angular velocity of $ 2.0\ \sunit^{-1}$, determined via
+the radio pulses it emits. If its angular acceleration is a
+constant  $- 1.0\times10^{-8}\ \sunit^{-2}$, how many rotations will it
+complete before it stops? (In reality, the angular
+acceleration is not always constant; sudden changes often
+occur, and are referred to as ``starquakes!'')
+
+\eganswer
+The equation $v_{f}^2- v_{i}^2\zu{=2} a\Delta x$
+ can be translated into
+$\omega_{f}^2-\omega_i^2\zu{=2}\alpha\Delta\theta$, giving
+\begin{align*}
+        \Delta\theta        &=  (\omega_{f}^2-\omega_i^2)/2\alpha \\
+                        &        =   2.0\times10^8\ \zu{radians} \\
+                        &        =   3.2\times10^7\ \zu{rotations}\eqquad.
+\end{align*}
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Relations between angular quantities and motion of a point") %>
+It is often necessary to be able to relate the angular
+quantities to the motion of a particular point on the rotating
+object. As we develop these, we will encounter the first
+example where the advantages of radians over degrees become
+apparent.
+
+<% marg(0) %>
+<%
+  fig(
+    'vrandvt',
+    %q{%
+      We construct a coordinate system that coincides with 
+      the location and motion of the moving point of interest at a certain moment.
+    }
+  )
+%>
+<% end_marg %>
+The speed at which a point on the object moves depends on
+both the object's angular velocity $\omega$ and the point's
+distance $r$ from the axis. We
+adopt a coordinate system, \figref{vrandvt}, with an inward (radial) axis
+and a tangential axis. The length of the infinitesimal circular arc $\der s$
+traveled by the point in a time interval $\der t$ is related
+to $\der\theta$ by the definition of radian measure, $\der\theta=\der s/r$, where
+positive and negative values of $\der s$ represent the two possible
+directions of motion along the tangential axis. We then have
+$v_t = \der s/\der t = r\der\theta/\der t = \omega r$, or
+\begin{multline*}
+        v_t        =  \omega r\eqquad. \hfill
+        \shoveright{\text{[tangential velocity of a point at a}}\\
+         \text{distance $r$ from the axis of rotation]}
+\end{multline*}
+The radial component is zero, since the point is not moving
+inward or outward,
+\begin{multline*}
+                v_r        =  0\eqquad.        \hfill
+        \shoveright{\text{[radial velocity of a point at a}}\\
+        \text{distance $r$ from the axis of rotation]}
+\end{multline*}
+
+Note that we had to use the definition of radian measure in
+this derivation. Suppose instead we had used units of
+degrees for our angles and degrees per second for angular
+velocities. The relationship between $\der\theta_{degrees}$ and $\der s$ is
+$\der\theta_{degrees} = (360/2\pi)s/r$, where the extra conversion factor
+of $(360/2\pi)$ comes from that fact that there are 360
+degrees in a full circle, which is equivalent to $2\pi$
+radians. The equation for $v_t$ would then have been $v_t =
+(2\pi/360)(\omega_{degrees\ per\ second})(r)$, which would have been much
+messier. Simplicity, then, is the reason for using radians
+rather than degrees; by using radians we avoid infecting all
+our equations with annoying conversion factors.
+
+<% marg(0) %>
+<%
+  fig(
+    'aronly',
+    %q{%
+      Even if the rotating object has zero angular acceleration, 
+      every point on it has an acceleration towards the center.
+    }
+  )
+%>
+<% end_marg %>
+Since the velocity of a point on the object is directly
+proportional to the angular velocity, you might expect that
+its acceleration would be directly proportional to the
+angular acceleration. This is not true, however. Even if the
+angular acceleration is zero, i.e., if the object is rotating
+at constant angular velocity, every point on it will have an
+acceleration vector directed toward the axis, \figref{aronly}.  As derived
+on page \pageref{eg:circularaccel}, the magnitude of this
+acceleration is
+\begin{multline*}
+        a_r        =  \omega^2 r\eqquad.        \hfill \shoveright{\text{[radial acceleration of a point}}\\
+                        \text{at a distance $r$ from the axis]}
+\end{multline*}
+
+For the tangential component, any change in the angular
+velocity $\der\omega$ will lead to a change $\der\omega\cdot r$ in the tangential
+velocity, so it is easily shown that
+\begin{multline*}
+        a_t        =  \alpha r\eqquad. \hfill \shoveright{\text{[tangential acceleration of a point}}\\
+                \text{at a distance $r$ from the axis]}
+\end{multline*}
+
+<% self_check('omegasigns',<<-'SELF_CHECK'
+Positive and negative signs of $\\omega$ represent rotation in
+opposite directions. Why does it therefore make sense
+physically that $\\omega$ is raised to the first power in the
+equation for $v_t$ and to the second power in the one for $a_r$?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Radial acceleration at the surface of the Earth}
+\egquestion
+What is your radial acceleration due to the
+rotation of the earth if you are at the equator?
+
+\eganswer
+At the equator, your distance from the Earth's
+rotation axis is the same as the radius of the spherical
+Earth, $ 6.4\times10^6\ \munit$. Your angular velocity
+is
+\begin{align*}
+                \omega &= \frac{2\pi\ \zu{radians}}{1\ \zu{day}} \\
+                        &=  7.3\times10^{-5}\ \sunit^{-1}\eqquad,
+\end{align*}
+which gives an acceleration of
+\begin{align*}
+        a_{r}        &=  \omega^2 r \\
+        &=   0.034\ \munit/\sunit^2\eqquad.
+\end{align*}
+
+The angular velocity was a very small number, but the radius
+was a very big number. Squaring a very small number,
+however, gives a very very small number, so the $\omega^2$ factor
+``wins,'' and the final result is small.
+
+If you're
+standing on a bathroom scale, this small acceleration is
+provided by the imbalance between the downward force of
+gravity and the slightly weaker upward normal force of the
+scale on your foot. The scale reading is therefore a little
+lower than it should be.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Dynamics") %>
+If we want to connect all this kinematics to anything
+dynamical, we need to see how it relates to torque and
+angular momentum. Our strategy will be to tackle angular
+momentum first, since angular momentum relates to motion,
+and to use the additive property of angular momentum: the
+angular momentum of a system of particles equals the sum of
+the angular momenta of all the individual particles. The
+angular momentum of one particle within our
+rigidly rotating object, $L=mv_\perp r$, can be rewritten as
+$L=r\:p\:\sin\:\theta$, where $r$ and $p$ are the
+magnitudes of the particle's $\vc{r}$ and momentum vectors, and $\theta$
+is the angle between these two vectors. (The \vc{r} vector points
+outward perpendicularly from the axis to the particle's
+position in space.) In rigid-body rotation the angle $\theta$ is
+90\degunit, so we have simply $L=r p$. Relating this to angular
+velocity, we have $L=rp=(r)(mv)=(r)(m\omega r)=mr^2\omega$. The particle's
+contribution to the total angular momentum is proportional
+to $\omega$, with a proportionality constant $mr^2$. We refer to $mr^2$
+as the particle's contribution to the object's total \emph{moment
+of inertia},\index{moment of inertia}
+ $I$, where ``moment'' is used in the sense of
+``important,'' as in ``momentous''  --- a bigger value of $I$
+tells us the particle is more important for determining the
+total angular momentum. The total moment of inertia
+is
+\begin{multline*}
+        I        =          \sum{m_i r_i^2}\eqquad,
+                 \hfill \shoveright{\text{[definition of the moment of inertia;}} \\
+                \hfill \shoveright{\text{for rigid-body
+                rotation in a plane; $r$ is the distance}}\\
+                \hfill \shoveright{\text{from the axis, measured perpendicular
+                to the axis]}}
+\end{multline*}
+The angular momentum of a rigidly rotating body is then
+\begin{multline*}
+        L        =  I \omega\eqquad. \hfill
+                        \shoveright{\text{[angular momentum of}}\\
+        \text{rigid-body rotation in a plane]}
+\end{multline*}
+
+Since torque is defined as $\der L/\der t$, and a rigid body has
+a constant moment of inertia, we have $\tau=\der L/\der t
+=I\der\omega/\der t=I\alpha$,
+\begin{multline*}
+        \tau        =  I \alpha\eqquad,        \hfill
+                \shoveright{\text{[relationship between torque and}}\\
+        \text{angular acceleration for rigid-body rotation in a plane]}
+\end{multline*}
+which is analogous to $F=ma$.
+
+<% marg(100) %>
+<%
+  fig(
+    'analogiesdyn',
+    %q{Analogies between rotational and linear quantities.}
+  )
+%>
+<% end_marg %>
+
+The complete system of analogies between linear motion and
+rigid-body rotation is given in figure \figref{analogiesdyn}.
+
+\begin{eg}{A barbell}\label{eg:barbell}
+\egquestion
+The barbell shown in figure \figref{barbell} consists of two
+small, dense, massive balls at the ends of a very light rod.
+The balls have masses of 2.0 kg and 1.0 kg, and the length
+of the rod is 3.0 m. Find the moment of inertia of the rod
+(1) for rotation about its center of mass, and (2) for
+rotation about the center of the more massive ball.
+
+<% marg(30) %>
+<%
+  fig(
+    'barbell',
+    %q{Example \ref{eg:barbell}}
+  )
+%>
+<% end_marg %>
+
+\eganswer
+(1) The ball's center of mass lies 1/3 of the way from the
+greater mass to the lesser mass, i.e., 1.0 m from one and 2.0
+m from the other. Since the balls are small, we approximate
+them as if they were two pointlike particles. The moment of
+inertia is
+\begin{align*}
+         I        &=  \zu{(2.0\ kg)(1.0\ m)}^2 + \zu{(1.0\ kg)(2.0\ m)}^2 \\
+                &=   2.0\ \kgunit\unitdot\munit^2
+                         +  4.0\ \kgunit\unitdot\munit^2  \\
+                &=   6.0\ \kgunit\unitdot\munit^2
+\end{align*}
+Perhaps counterintuitively, the less massive ball
+contributes far more to the moment of inertia.
+
+(2) The big ball theoretically contributes a little bit to
+the moment of inertia, since essentially none of its atoms
+are exactly at $r$=0. However, since the balls are said to be
+small and dense, we assume all the big ball's atoms are so
+close to the axis that we can ignore their small
+contributions to the total moment of inertia:
+\begin{align*}
+         I                &=  \zu{(1.0\ kg)(3.0\ m)}^2 \\
+                &        =   9.0\ \kgunit\unitdot\munit^2
+\end{align*}
+This example shows that the moment of inertia depends on the
+choice of axis. For example, it is easier to wiggle a pen
+about its center than about one end.
+\end{eg}
+
+\begin{eg}{The parallel axis theorem}
+\egquestion
+Generalizing the previous example, suppose we pick
+any axis parallel to axis 1, but offset from it by a
+distance $h$. Part (2) of the previous example then
+corresponds to the special case of $h=- 1.0\ \munit$ (negative being
+to the left). What is the moment of inertia about this new
+axis?
+
+\eganswer
+The big ball's distance from the new axis is 
+$\zu{(1.0\ m)+} h$, and the small one's is $\zu{(2.0\ m)-} h$. The new moment of
+inertia is
+\begin{align*}
+         I        &=  \zu{(2.0 kg)}[\zu{(1.0 m)+} h]^2 + \zu{(1.0 kg)}[\zu{(2.0 m)}- h]^2 \\
+                &        =   6.0 \ \kgunit\unitdot\munit^2         
+                        + \zu{(4.0}\ \kgunit\unitdot\munit) h
+                        - \zu{(4.0}\ \kgunit\unitdot\munit) h
+                        + \zu{(3.0 kg)} h^2\eqquad.
+\end{align*}
+The constant term is the same as the moment of inertia about
+the center-of-mass axis, the first-order terms cancel out,
+and the third term is just the total mass multiplied by $h^2$.
+The interested reader will have no difficulty in
+generalizing this to any set of particles (problem \ref{hw:parallel-axis-theorem}, p.~\pageref{hw:parallel-axis-theorem}), resulting in the
+parallel axis theorem:\index{parallel axis theorem}
+ If an object of total mass $M$ rotates
+about a line at a distance $h$ from its center of mass, then
+its moment of inertia equals $I_{cm}+ Mh^2$, where $I_{cm}$ is the
+moment of inertia for rotation about a parallel line through
+the center of mass.
+\end{eg}
+
+\begin{eg}{Scaling of the moment of inertia}
+\egquestion
+(1) Suppose two objects have the same mass and the
+same shape, but one is less dense, and larger by a factor $k$.
+How do their moments of inertia compare? \\
+(2) What if the
+densities are equal rather than the masses?
+
+\eganswer
+(1) This is like increasing all the distances
+between atoms by a factor $k$. All the $r$'s become greater by
+this factor, so the moment of inertia is increased by a
+factor of $k^2$.\\
+(2) This introduces an increase in mass by a
+factor of $k^3$, so the moment of inertia of the bigger object
+is greater by a factor of $k^5$.
+\end{eg}
+
+<% end_sec() %>
+<% begin_sec("Iterated integrals",nil,'iterated-int') %>
+In various places in this book, starting with subsection \ref{subsec:moi-integ},
+we'll come across integrals stuck inside other integrals. These are known as
+iterated integrals, or double integrals, triple integrals, etc. Similar concepts
+crop up all the time even when you're not doing calculus, so let's start by
+imagining such an example. Suppose you want to count how many squares there are
+on a chess board, and you don't know how to multiply eight times eight. You
+could start from the upper left, count eight squares across, then continue with
+the second row, and so on, until you how counted every square, giving the result
+of 64. In slightly more formal mathematical language, we could write the following
+recipe: for each row, $r$, from 1 to 8, consider the columns, $c$, from 1 to 8,
+and add one to the count for each one of them. Using the sigma notation, this
+becomes
+\begin{equation*}
+  \sum_{r=1}^8 \sum_{c=1}^8 1\eqquad.
+\end{equation*}
+If you're familiar with computer programming, then you can think of this as
+a sum that could be calculated using a loop nested inside another loop.
+To evaluate the result (again, assuming we don't know how to multiply, so we
+have to use brute force), we can first evaluate the inside sum, which equals
+8, giving
+\begin{equation*}
+  \sum_{r=1}^8 8\eqquad.
+\end{equation*}
+Notice how the ``dummy'' variable $c$ has disappeared. Finally we do the outside
+sum, over $r$, and find the result of 64.
+
+Now imagine doing the same thing with the pixels on a TV screen. The electron
+beam sweeps across the screen, painting the pixels in each row, one at a time.
+This is really no different than the example of the chess board, but because the
+pixels are so small, you normally think of the image on a TV screen as continuous
+rather than discrete.
+This is the idea of an integral in calculus.
+Suppose we want to find the area of a rectangle of width
+$a$ and height $b$, and we don't know that we can just multiply to get the
+area $ab$. The brute force way to do this is to break up the rectangle into
+a grid of infinitesimally small squares, each having width $\der x$ and
+height $\der y$, and therefore the infinitesimal area $\der A = \der x \der y$.
+For convenience, we'll imagine that the rectangle's
+lower left corner is at the origin. Then the area is given by this integral:
+\begin{align*}
+  \text{area} &= \int_{y=0}^b \int_{x=0}^a \der A \\
+              &= \int_{y=0}^b \int_{x=0}^a \der x \der y 
+\end{align*}
+Notice how the leftmost integral sign, over $y$, and the rightmost differential, $\der y$,
+act like bookends, or the pieces of bread on a sandwich. Inside them, we have
+the integral sign that runs over $x$, and the differential $\der x$ that matches
+it on the right. Finally, on the innermost layer, we'd normally
+have the thing we're integrating, but here's it's 1, so I've omitted it. Writing the
+lower limits of the integrals with $x=$ and $y=$ helps to keep it straight which
+integral goes with which differential. The result is
+\begin{align*}
+  \text{area} &= \int_{y=0}^b \int_{x=0}^a \der A \\
+              &= \int_{y=0}^b \int_{x=0}^a \der x \der y \\
+              &= \int_{y=0}^b \left(\int_{x=0}^a \der x\right) \der y \\
+              &= \int_{y=0}^b a \der y \\
+              &= a \int_{y=0}^b \der y \\
+              &= ab\eqquad.
+\end{align*}
+
+\begin{eg}{Area of a triangle}
+\egquestion Find the area of a 45-45-90 right triangle having legs $a$.
+
+\eganswer Let the triangle's hypotenuse run from the origin to the point $(a,a)$,
+and let its legs run from the origin to $(0,a)$, and then to $(a,a)$. In other
+words, the triangle sits on top of its hypotenuse. Then the integral can be set
+up the same way as the one before, but for a particular value of $y$, values of
+$x$ only run from 0 (on the $y$ axis) to $y$ (on the hypotenuse). We then have
+\begin{align*}
+  \text{area} &= \int_{y=0}^a \int_{x=0}^y \der A \\
+              &= \int_{y=0}^a \int_{x=0}^y \der x \der y \\
+              &= \int_{y=0}^a \left(\int_{x=0}^y \der x\right) \der y \\
+              &= \int_{y=0}^a y \der y \\
+              &= \frac{1}{2}a^2
+\end{align*}
+Note that in this example, because the upper end of the $x$ values depends
+on the value of $y$, it makes a difference which order we do the integrals
+in. The $x$ integral has to be on the inside, and we have to do it first.
+\end{eg}
+
+\begin{eg}{Volume of a cube}
+\egquestion Find the volume of a cube with sides of length $a$.
+
+\eganswer This is a three-dimensional example, so we'll have integrals
+nested three deep, and the thing we're integrating is the volume
+$\der V = \der x \der y \der z$.
+
+\begin{align*}
+  \text{volume} &= \int_{z=0}^a \int_{y=0}^a \int_{x=0}^a \der x \der y \der z \\
+              &= \int_{z=0}^a \int_{y=0}^a a \der y \der z \\
+              &= a \int_{z=0}^a \int_{y=0}^a \der y \der z \\
+              &= a \int_{z=0}^a a \der z \\
+              &= a^3
+\end{align*}
+\end{eg}
+
+\begin{eg}{Area of a circle}
+\egquestion Find the area of a circle.
+
+\eganswer To make it easy, let's find the area of a semicircle and then double it.
+Let the circle's radius be $r$, and let it be centered on the origin and bounded
+below by the $x$ axis. Then the curved edge is given by the equation $r^2=x^2+y^2$,
+or $y=\sqrt{r^2-x^2}$. Since the $y$ integral's limit depends on $x$, the $x$
+integral has to be on the outside.
+The area is
+\begin{align*}
+  \text{area} &= \int_{x=-r}^r \int_{y=0}^{\sqrt{r^2-x^2}} \der y \der x\\
+              &= \int_{x=-r}^r \sqrt{r^2-x^2} \der x\\
+              &= r \int_{x=-r}^r \sqrt{1-(x/r)^2} \der x\eqquad.
+\intertext{Substituting $u=x/r$,}
+  \text{area} & = r^2 \int_{u=-1}^1 \sqrt{1-u^2} \der u \\
+\end{align*}
+The definite integral equals $\pi$, as you can
+find using a trig substitution or simply by looking it
+up in a table, and the result is, as expected, $\pi r^2/2$ for the area of
+the semicircle.
+\end{eg}
+
+ % 
+<% end_sec() %>
+<% begin_sec("Finding moments of inertia by integration",nil,'moi-integ') %>
+When calculating the moment of inertia of an ordinary-sized
+object with perhaps $10^{26}$ atoms, it would be impossible to do
+an actual sum over atoms, even with the world's fastest
+supercomputer. Calculus, however, offers a tool, the
+integral, for breaking a sum down to infinitely many small
+parts. If we don't worry about the existence of atoms, then
+we can use an integral to compute a moment of inertia as if
+the object was smooth and continuous throughout, rather than
+granular at the atomic level. Of course this granularity
+typically has a negligible effect on the result unless the
+object is itself an individual molecule. This subsection consists
+of three examples of how to do such a computation, at three
+distinct levels of mathematical complication.
+
+<% begin_sec("Moment of inertia of a thin rod") %>
+What is the moment of inertia of a thin rod of
+mass $M$ and length $L$ about a line perpendicular to the rod
+and passing through its center?
+We generalize the discrete sum
+\begin{align*}
+        I        &=          \sum{m_i r_i^2}\\
+\intertext{to a continuous one,}
+        I        &= \int r^2 \der m \\
+                &= \int_{-L/2}^{L/2} x^2\:\frac{M}{L}\der x \qquad \text{[$r=|x|$, so $r^2=x^2$]} \\
+                &= \frac{1}{12}ML^2
+\end{align*}
+
+In this example the object was one-dimensional, which made
+the math simple. The next example shows a strategy that can
+be used to simplify the math for objects that are
+three-dimensional, but possess some kind of symmetry.
+
+<% end_sec() %>
+<% begin_sec("Moment of inertia of a disk") %>
+What is the moment of inertia of a disk of radius
+$b$, thickness $t$, and mass $M$, for rotation about its central
+axis?
+
+We break the disk down into concentric circular
+rings  of thickness $\der r$. Since all the mass in a given
+circular slice has essentially the same value of $r$ (ranging
+only from $r$ to $r+\der r$), the slice's contribution to the total
+moment of inertia is simply $r^2\der m$. We then have
+\begin{align*}
+        I        &= \int r^2 \der m \\
+                &= \int r^2 \rho\der V\eqquad,
+\end{align*}
+where $V=\pi b^2 t$ is the total volume, $\rho=M/V=M/\pi b^2 t$ is the
+density, and the volume of one
+slice can be calculated as the volume enclosed by its outer
+surface minus the volume enclosed by its inner surface,
+$\der V= \pi (r+\der r)^2 t - \pi r^2 t = 2\pi tr \der r$.
+\begin{align*}
+        I        &=  \int_0^b r^2 \frac{M}{\pi b^2 t}\:2\pi t\:r\der r\\
+                &=  \frac{1}{2}Mb^2\eqquad.
+\end{align*}
+
+In the most general case where there is no symmetry about
+the rotation axis, we must use iterated integrals, as discussed
+in subsection \ref{subsec:iterated-int}. The
+example of the disk possessed two types of symmetry with
+respect to the rotation axis: (1) the disk is the same when
+rotated through any angle about the axis, and (2) all slices
+perpendicular to the axis are the same. These two symmetries
+reduced the number of layers of integrals from three to one.
+The following example possesses only one symmetry, of type
+(2), and we simply set it up as a triple integral. You may not
+have seen multiple integrals yet in a math course. If so, just
+skim this example.
+
+<% end_sec() %>
+<% begin_sec("Moment of inertia of a cube") %>
+What is the moment of inertia of a cube of side $b$,
+for rotation about an axis that passes through its center
+and is parallel to four of its faces?
+Let the origin be at the center of the cube, and
+let $x$ be the rotation axis.
+\begin{align*}
+        I        &=  \int r^2 \der m \\
+                &= \rho \int r^2 \der V \\
+                &= \rho \int_{-b/2}^{b/2} \int_{-b/2}^{b/2} \int_{-b/2}^{b/2} \left(y^2+z^2\right)
+                                         \der x\der y\der z \\
+                &= \rho b \int_{-b/2}^{b/2} \int_{-b/2}^{b/2}  \left(y^2+z^2\right)
+                                         \der y \der z 
+\end{align*}
+The fact that the last step is a trivial integral results
+from the symmetry of the problem. The integrand of the
+remaining double integral breaks down into two terms, each
+of which depends on only one of the variables, so we break
+it into two integrals,
+\begin{equation*}
+                I = \rho b \int_{-b/2}^{b/2} \int_{-b/2}^{b/2}  y^2 \der y\der z
+                        + \rho b \int_{-b/2}^{b/2} \int_{-b/2}^{b/2}  z^2 \der y\der z
+\end{equation*}
+which we know have identical results. We therefore only need
+to evaluate one of them and double the result:
+\begin{align*}
+        I        &= 2\rho b \int_{-b/2}^{b/2} \int_{-b/2}^{b/2}  z^2 \der y\der\: z \\
+                &= 2 \rho b^2 \int_{-b/2}^{b/2} z^2 \der z \\
+                &= \frac{1}{6} \rho b^5 \\
+                &= \frac{1}{6} M b^2
+\end{align*}
+
+Figure \figref{moments-of-inertia} shows the moments of inertia of some
+shapes, which were evaluated with techniques like these.\index{moment of inertia!tabulated for various shapes}
+
+<%
+  fig(
+    'moments-of-inertia',
+    %q{Moments of inertia of some geometric shapes.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{The hammer throw}
+\egquestion In the men's Olympic hammer throw, a steel ball of radius 6.1 cm is swung on the
+end of a wire of length 1.22 m. What fraction of the ball's angular momentum
+comes from its rotation, as opposed to its motion through space?
+
+\eganswer It's always important to solve problems symbolically first, and plug in numbers
+only at the end, so let the radius of the ball be $b$, and the length of the wire $\ell$.
+If the time the ball takes to go once around the circle is $T$, then
+this is also the time it takes to revolve once around its own axis. Its speed
+is $v=2\pi\ell/T$, so its angular momentum due to its motion through space
+is $mv\ell=2\pi m\ell^2/T$. Its angular momentum due to its rotation around its
+own center is $(4\pi/5)mb^2/T$. The ratio of these two angular momenta is
+$(2/5)(b/\ell)^2=1.0\times10^{-3}$. The angular momentum due to the ball's
+spin is extremely small.
+\end{eg}
+
+\begin{eg}{Toppling a rod}\label{eg:toppling-rod}
+\egquestion A rod of length $b$ and mass $m$ stands upright. We want
+to strike the rod at the bottom, causing it to fall and land flat.
+Find the momentum, $p$, that should be delivered, in terms of $m$, $b$,
+and $g$. Can this really be done without having the rod scrape on the floor?
+<% marg(0) %>
+<% fig(
+    'eg-toppling-rod',
+    'Example \ref{eg:toppling-rod}.'
+  )
+%>
+<% end_marg %>
+
+\eganswer This is a nice example of a question that can very nearly be
+answered based only on units. Since the three variables, $m$, $b$,
+and $g$, all have different units, they can't be added or subtracted.
+The only way to combine them mathematically is by multiplication or division.
+Multiplying one of them by itself is exponentiation, so in general
+we expect that the answer must be of the form
+\begin{equation*}
+  p = A m^j b^k g^l\eqquad,
+\end{equation*}
+where $A$, $j$, $k$, and $l$ are unitless constants. The result has
+to have units of $\kgunit\unitdot\munit/\sunit$. To get kilograms to
+the first power, we need
+\begin{equation*}
+  j=1\eqquad,
+\end{equation*}
+meters to the first power requires
+\begin{equation*}
+  k+l=1\eqquad,
+\end{equation*}
+and
+seconds to the power $-1$ implies
+\begin{equation*}
+  l=1/2\eqquad.
+\end{equation*}
+We find $j=1$, $k=1/2$, and $l=1/2$, so the solution must be of the form
+\begin{equation*}
+  p = A m\sqrt{bg}\eqquad.
+\end{equation*}
+Note that no physics was required!
+
+Consideration of units, however, won't help us to find the unitless constant
+$A$. Let $t$ be the time the rod takes to fall, so that $(1/2)gt^2=b/2$.
+If the rod is going to land exactly on its side, then the number of revolutions
+it completes while in the air must be 1/4, or 3/4, or 5/4,  \ldots, but all the
+possibilities greater than 1/4 would cause the head of the rod to collide with
+the floor prematurely. The rod must therefore rotate at a rate that would
+cause it to complete a full rotation in a time $T=4t$, and it has angular
+momentum $L=(\pi/6)mb^2/T$.
+
+The momentum lost by the object striking
+the rod is $p$, and by conservation of momentum, this is the amount of
+momentum, in the horizontal direction, that the rod acquires. In other words,
+the rod will fly forward a little. However, this has no effect on the solution
+to the problem. More importantly, the object striking the rod loses angular
+momentum $bp/2$, which is also transferred to the rod. Equating this to the
+expression above for $L$, we find $p=(\pi/12)m\sqrt{bg}$.
+
+Finally, we need to know whether this can really be done without having the
+foot of the rod scrape on the floor. The figure shows that the answer is no
+for this rod of finite width, but it appears that the answer would be yes for
+a sufficiently thin rod. This is analyzed further in homework problem \ref{hw:toppling-rod}
+on page \pageref{hw:toppling-rod}.
+
+\end{eg}
+
+\vfill
+
+<% end_sec() %>
+<% end_sec() %>
+<% end_sec('rigid-body-rotation') %>

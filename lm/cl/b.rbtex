@@ -1,0 +1,88 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '12',
+    %q{Simplifying the Energy Zoo},
+    'ch:energy-zoo',
+    %q{Do these forms of energy have anything in common?},
+    {'opener'=>'energy-collage','width'=>'fullpage','anonymous'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/clb)
+__incl(text/energy_zoo_summary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('negativepe') %>__incl(hw/negativepe)<% end_hw() %>
+
+<% begin_hw('maxkepe') %>__incl(hw/maxkepe)<% end_hw() %>
+
+<% begin_hw('slidingmagnets') %>__incl(hw/slidingmagnets)<% end_hw() %>
+
+<% begin_hw('boilbucket') %>__incl(hw/boilbucket)<% end_hw() %>
+
+<% begin_hw('grasshopper') %>__incl(hw/grasshopper)<% end_hw() %>
+
+<% begin_hw('bikeloop') %>__incl(hw/bikeloop)<% end_hw() %>
+
+\pagebreak[4]
+
+<% marg(0) %>
+<% fig('skater-rolls-off-pipe','Problem \ref{hw:skater-rolls-off-pipe}.') %>
+<% end_marg %>
+<% begin_hw('skater-rolls-off-pipe',2) %>__incl(hw/skater-rolls-off-pipe)<% end_hw() %>
+
+<% begin_hw('rolling-hoop',2) %>__incl(hw/rolling-hoop)<% end_hw() %>
+
+<% begin_hw('pe-ke-yin-yang') %>__incl(hw/pe-ke-yin-yang)<% end_hw() %>
+
+<% begin_hw('honeymoon') %>__incl(hw/honeymoon)<% end_hw() %>
+
+<% begin_hw('niagara-hydroelectric') %>__incl(hw/niagara-hydroelectric)<% end_hw() %>
+
+<% begin_hw('heliumcylinder') %>__incl(hw/heliumcylinder)<% end_hw() %>
+
+<% begin_hw('two-gases-leaking') %>__incl(hw/two-gases-leaking)<% end_hw() %>
+
+<% begin_hw('sweat') %>__incl(hw/sweat)<% end_hw() %>
+
+<% begin_hw('throw-down-and-up') %>__incl(hw/throw-down-and-up)<% end_hw() %>
+
+<% begin_hw('hoop',2) %>Problem \ref{hw:hoop} has been deleted.<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-atwood',
+    %q{Problem \ref{hw:atwood-energy}.},
+    {'suffix'=>'2'}
+  )
+%> 
+\spacebetweenfigs
+<%
+  fig(
+    'hw-rope-stretch',
+    %q{Problem \ref{hw:rope-stretch}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('atwood-energy') %>__incl(hw/atwood-energy)<% end_hw() %>
+
+
+<% begin_hw('rope-stretch') %>__incl(hw/rope-stretch)<% end_hw() %>
+
+<% end_hw_sec %>
+
+ %%========================================== toc decoration ===============================================
+
+<% if false then figure_in_toc("baseball-pitch") end %>
+<% end_chapter() %>

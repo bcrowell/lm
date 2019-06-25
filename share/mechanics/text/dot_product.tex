@@ -1,0 +1,82 @@
+<% begin_sec("The dot product",nil,'dot-product',{'optional'=>(__me==0)}) %>
+\index{scalar (dot) product}\index{dot product of two vectors}
+
+Up until now, we have not found any physically useful way to
+define the multiplication of two vectors. It would be
+possible, for instance, to multiply two vectors component by
+component to form a third vector, but there are no physical
+situations where such a multiplication would be useful.
+
+The equation $W= |\vc{F}| |\vc{d}| \cos \theta$ is an example of
+a sort of multiplication of vectors that is useful. The
+result is a scalar, not a vector, and this is therefore
+often referred to as the \emph{scalar product} of the
+vectors $\vc{F}$ and $\vc{d}$. There is a standard shorthand
+notation for this operation,
+\begin{multline*}
+ \vc{A}\cdot\vc{B} = |\vc{A}| |\vc{B}| \cos \theta\eqquad,
+    \hfill \shoveright{\text{[definition of the notation $\vc{A}\cdot\vc{B}$;}}\\
+    \text{$\theta$ is the angle between vectors $\vc{A}$ and $\vc{B}$]}
+\end{multline*}
+and because of this notation, a more common term for this
+operation is the \emph{dot product}. In dot product
+notation, the equation for work is simply
+\begin{equation*}
+  W = \vc{F}\cdot\vc{d}\eqquad.
+\end{equation*}
+
+ The dot product has the following geometric interpretation:
+\begin{align*}
+\vc{A}\cdot\vc{B} &= |\vc{A}|  (\text{component of $\vc{B}$ parallel to $\vc{A}$}) \\
+ &= |\vc{B}|  (\text{component of $\vc{A}$ parallel to $\vc{B}$})
+\end{align*}
+The dot product has some of the properties possessed by
+ordinary multiplication of numbers,
+\begin{align*}
+\vc{A}\cdot\vc{B} &= \vc{B}\cdot\vc{A} \\
+\vc{A}\cdot(\vc{B}+\vc{C}) &= \vc{A}\cdot\vc{B}+\vc{A}\cdot\vc{C} \\
+\left(c\vc{A}\right)\cdot\vc{B} &= c\left(\vc{A}\cdot\vc{B}\right)\eqquad,
+\end{align*}
+but it lacks one other: the ability to undo multiplication by dividing.
+
+If you know the components of two vectors, you can easily
+calculate their dot product as follows:
+\begin{equation*}
+  \vc{A}\cdot\vc{B} = A_xB_x+A_yB_y+A_zB_z\eqquad.
+\end{equation*}
+(This can be proved by first analyzing the special case where
+each vector has only an $x$ component, and the similar cases
+for $y$ and $z$. We can then use the rule 
+$\vc{A}\cdot(\vc{B}+\vc{C}) = \vc{A}\cdot\vc{B}+\vc{A}\cdot\vc{C}$
+to make a generalization
+by writing each vector as the sum of its $x$, $y$, and $z$ components.
+See homework problem \ref{hw:dot-product-by-components}.)
+\label{dot-product-by-components}
+
+        \begin{eg}{Magnitude expressed with a dot product}\label{eg:magnitudedot}
+        If we take the dot product of any vector \vc{b} with itself, we find
+        \begin{align*}        
+                \vc{b}\cdot\vc{b}        &= 
+                \left( b_{x}\hat{\vc{x}}+ b_{y}\hat{\vc{y}}+ b_z\hat{\vc{z}}\right)
+                \cdot
+                \left( b_{x}\hat{\vc{x}}+ b_{y}\hat{\vc{y}}+ b_z\hat{\vc{z}}\right) \\
+                        &=  b_{x}^2+ b_{y}^2+ b_z^2\eqquad,\\
+        \intertext{so its magnitude can be expressed as}
+                |\vc{b}| &= \sqrt{\vc{b}\cdot\vc{b}}\eqquad.
+        \end{align*}
+        We will often write $b^2$ to mean $\vc{b}\cdot\vc{b}$, when the context makes it
+        clear what is intended. For example, we could express kinetic energy as
+        $\zu{(1/2)} m|\vc{v}|^2$, $\zu{(1/2)} m\vc{v}\cdot\vc{v}$,
+        or $\zu{(1/2)} m v^2$. In the third version, nothing but context tells
+        us that $v$ really stands for the magnitude of some vector $\vc{v}$.
+        \end{eg}
+
+        \begin{eg}{Towing a barge}
+        \egquestion
+        A mule pulls a barge with a force $\vc{F}\zu{=(1100 N)}\hat{\vc{x}}+\zu{(400 N)}\hat{\vc{y}}$,
+        and the total distance it travels is $\zu{(1000 m)}\hat{\vc{x}}$. How much work does it do?
+
+        \eganswer
+        The dot product is $1.1\times10^6\ \nunit\unitdot\munit = 1.1\times10^6\ \junit$.
+        \end{eg}
+<% end_sec('dot-product') %>

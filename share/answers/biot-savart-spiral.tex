@@ -1,0 +1,17 @@
+Note that in the Biot-Savart law, the variable $\vc{r}$ is defined as a vector
+that points from the current to the point at which the field is being calculated,
+whereas in the polar coordinates used to express the equation of the spiral, the
+vector more naturally points the opposite way. This requires some fiddling with
+signs, which I'll suppress, and simply identify $\der\bell$ with $\der\vc{r}$.
+\begin{align*}
+  \vc{B} &= \frac{kI}{c^2}\int \frac{\der\bell\times\vc{r}}{r^3}
+\end{align*}
+The vector $\der\vc{r}$ has components $\der x=w(\cos\theta-\theta\sin\theta)$ and
+$\der y=w(\sin\theta+\theta\cos\theta)$. Evaluating the vector cross product, and
+substituting $\theta/w$ for $r$, we find
+\begin{align*}
+  \vc{B} &= \frac{kI}{c^2w}\int \frac{\theta(\cos\theta\sin\theta-\theta\sin^2\theta-\cos\theta\sin\theta-\theta\cos^2\theta)\der\theta}{\theta^3} \\
+         &= \frac{kI}{c^2w}\int \frac{\der\theta}{\theta} \\
+         &= \frac{kI}{c^2w}\ln\frac{\theta_2}{\theta_1} \\   
+         &= \frac{kI}{c^2w}\ln\frac{b}{a}
+\end{align*}

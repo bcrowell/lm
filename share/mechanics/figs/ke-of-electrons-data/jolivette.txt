@@ -1,0 +1,22 @@
+is paywalled, paper hoarded
+
+Measure energy of compton edge for various gamma-ray sources.
+The Compton edge occurs when gammas are scattered by 180 degrees.
+At this scattering angle, the energy of the compton edge is the
+same as the K of the electron, and electron's momentum is
+p=(2Egamma-K)/c.
+
+lowest energy was 241 Am:
+  Egamma (incident)=59.5 keV
+  K = 11.3(5) keV
+
+Infer velocity from momentum, using relativistic relation for momentum.
+
+calc -x -e "m=9.109 10^-31 kg; Eg=59.5(1000 V)e; K=11.3(1000 V)e; p=(2Eg-K)/c->kg.m/s; v=c/sqrt[1+(mc/p)^2]"
+calc -x -e "m=9.109 10^-31 kg; Eg=122.1(1000 V)e; K=39.3(1000 V)e; p=(2Eg-K)/c->kg.m/s; v=c/sqrt[1+(mc/p)^2]"
+calc -x -e "m=9.109 10^-31 kg; Eg=344.3(1000 V)e; K=196.0(1000 V)e; p=(2Eg-K)/c->kg.m/s; v=c/sqrt[1+(mc/p)^2]"
+
+source,K (MeV),v/10^8 m/s
+241Am,0.0113,0.618
+57Co,0.0393,1.116
+152Eu,0.1960,2.081

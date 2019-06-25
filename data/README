@@ -1,0 +1,41 @@
+========problems.csv========
+format:
+  book,chapter,number,label,solution
+More detailed info in ../INTERNALS.
+
+========fig_exceptional_captions========
+Normally the figures for homework problems just refer to the problem, and
+don't really need to be written by hand; for problems book, they're automatically
+generated.
+This file is used for figures where a script can't infer what caption to make up.
+An example is a figure that is used by more than one problem.
+
+========fig_exceptional_naming========
+This is for exceptions to the naming convention (e.g., figures that
+need to be duplicated in the book in more than one place). It's a hash whose keys are
+the names of problems, and whose values are the filenames. If the filename is a null
+string, this prevents a figure from being displayed even though it has a name that
+seems right.
+
+========fig_widths, fig_widths_by_hand=========
+purpose:
+  Make it easy for the problems book to be automatically generated, without having
+  to specify widths of figures in the code.
+format:
+  JSON
+  is a hash with name of fig as key, width as value, e.g., "jovian-moons":"wide"
+  if they're normal width, they're omitted from the file, so explicit widths are "medium", "wide", or "fullpage"
+  medium width is 1 column, used only in problems book, and only occurs in fig_widths_by_hand
+to regenerate it:
+  Edit /home/bcrowell/Documents/programming/eruby_util_for_books/eruby_util.rb
+  Find the block of code that refers to fig_widths
+  Do what the comments say there.
+  Make books_all
+  Change the code back.
+  sort <~/fig_widths | uniq >~/Documents/writing/books/physics/data/fig_widths
+  Delete the final comma. Add curly braces at top and bottom. It's now valid JSON.
+In a few cases, I've used something like raw_fig() in eruby, so width won't automatically
+be put in fig_widths. For these cases, there is a separate file fig_widths_by_hand.
+
+For figures in solutions, run scripts/detect_wide_solutions.rb from ~ and cut and paste
+into fig_widths_by_hand.

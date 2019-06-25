@@ -1,0 +1,33 @@
+The intensity of a beam of light is defined as the power per unit area
+incident on a perpendicular surface. Suppose that a beam of light in a
+medium with index of refraction $n$ reaches the surface of the medium,
+with air on the outside. Its incident angle with respect to the normal is $\theta$.
+(All angles are in radians.)
+Only a fraction $f$ of the energy is
+transmitted, the rest being reflected.  Because of this, we might
+expect that the transmitted ray would always be less intense than the incident one. But because
+the transmitted ray is refracted, it  becomes narrower, causing an additional
+change in intensity by a factor $g>1$. The product of these factors $I=fg$
+can be greater than one. The purpose of this problem is to estimate the maximum amount
+of intensification.\\
+We will use the small-angle approximation $\theta\ll 1$ freely, in order to make
+the math tractable. In our previous studies of waves, we have only studied the
+factor $f$ in the one-dimensional case where $\theta=0$. The generalization
+to $\theta\ne0$ is rather complicated and depends on the polarization,
+but for unpolarized light, we can use
+Schlick's approximation, 
+\begin{equation*}
+  f(\theta) = f(0)(1-\cos\theta)^5,
+\end{equation*}
+where the value of $f$ at $\theta=0$ is found as in problem \ref{hw:maxtransmission}
+on p.~\pageref{hw:maxtransmission}.\\
+(a) Using small-angle approximations, obtain an expression for $g$ of the form
+$g\approx 1+P\theta^2$, and find the constant $P$.<% hw_answer %>\hwendpart
+(b) Find an expression for $I$ that includes the two leading-order terms in $\theta$. We will
+call this expression $I_2$.
+Obtain a simple expression for the angle at which $I_2$ is maximized.
+As a check on your work, you should find that for $n=1.3$, $\theta=63\degunit$. (Trial-and-error
+maximization of $I$ gives $60\degunit$.)\hwendpart
+(c) Find an expression for the maximum value of $I_2$. You should find that for
+$n=1.3$, the maximum intensification is 31\%.
+

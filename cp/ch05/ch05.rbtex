@@ -1,0 +1,1056 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '05',
+    %q{Electricity},
+    'ch:electricity',
+    '',
+    {'opener'=>'lightning'}
+  )
+%>
+\label{lightning-photo-page}
+        \epigraph{Where the telescope ends, the microscope begins. Which of
+        the two has the grander view?}{Victor Hugo}\index{Hugo, Victor}
+
+        His father died during his mother's pregnancy. Rejected by
+        her as a boy, he was packed off to boarding school when she
+        remarried. He himself never married, but in middle age he
+        formed an intense relationship with a much younger man, a
+        relationship that he terminated when he underwent a
+        psychotic break. Following his early scientific successes,
+        he spent the rest of his professional life mostly in
+        frustration over his inability to unlock the secrets of alchemy.
+
+        The man being described is Isaac Newton, but not the
+        triumphant \index{Newton, Isaac}Newton of the standard
+        textbook hagiography. Why dwell on the sad side of his life?
+        To the modern science educator, Newton's lifelong obsession
+        with alchemy may seem an embarrassment, a distraction from
+        his main achievement, the creation of the modern science of
+        mechanics. To Newton, however, his alchemical researches
+        were naturally related to his investigations of force and
+        motion. What was radical about Newton's analysis of motion
+        was its universality: it succeeded in describing both the
+        heavens and the earth with the same equations, whereas
+        previously it had been assumed that the sun, moon, stars,
+        and planets were fundamentally different from earthly
+        objects. But Newton realized that if science was to describe
+        all of nature in a unified way, it was not enough to unite
+        the human scale with the scale of the universe: he would not
+        be satisfied until he fit the microscopic universe into
+        the picture as well.
+
+        It should not surprise us that Newton failed. Although he
+        was a firm believer in the existence of atoms, there was no
+        more experimental evidence for their existence than there
+        had been when the ancient Greeks first posited them on
+        purely philosophical grounds. \index{alchemy}Alchemy labored
+        under a tradition of secrecy and mysticism. Newton had
+        already almost single-handedly transformed the fuzzyheaded
+        field of ``natural philosophy'' into something we would
+        recognize as the modern science of physics, and it would be
+        unjust to criticize him for failing to change alchemy into
+        modern chemistry as well. The time was not ripe. The
+        microscope was a new invention, and it was cutting-edge
+        science when Newton's contemporary \index{Hooke}Hooke
+        discovered that living things were made out of cells.
+
+<% begin_sec("The quest for the atomic force",0,'quest-for-atomic-force') %>
+
+        \epigraph{Newton was not the first of the age of reason. He was the
+        last of the magicians.}{John Maynard \index{Keynes, John Maynard}Keynes}
+
+        Nevertheless it will be instructive to pick up Newton's
+        train of thought and see where it leads us with the benefit
+        of modern hindsight. In uniting the human and cosmic scales
+        of existence, he had reimagined both as stages on which the
+        actors were objects (trees and houses, planets and stars)
+        that interacted through attractions and repulsions. He was
+        already convinced that the objects inhabiting the microworld
+        were atoms, so it remained only to determine what kinds of
+        forces they exerted on each other.
+
+        His next insight was no less brilliant for his inability to
+        bring it to fruition. He realized that the many human-scale
+        forces --- friction, sticky forces, the normal forces that
+        keep objects from occupying the same space, and so on ---
+        must all simply be expressions of a more fundamental force
+        acting between atoms. Tape sticks to paper because the atoms
+        in the tape attract the atoms in the paper. My house doesn't
+        fall to the center of the earth because its atoms repel the
+        atoms of the dirt under it.
+
+        Here he got stuck. It was tempting to think that the atomic
+        force was a form of gravity, which he knew to be universal,
+        fundamental, and mathematically simple. Gravity, however, is
+        always attractive, so how could he use it to explain the
+        existence of both attractive and repulsive atomic forces?
+        The gravitational force between objects of ordinary size is
+        also extremely small, which is why we never notice cars and
+        houses attracting us gravitationally. It would be hard to
+        understand how gravity could be responsible for anything as
+        vigorous as the beating of a heart or the explosion of
+        gunpowder. Newton went on to write a million words of
+        alchemical notes filled with speculation about some other
+        force, perhaps a ``divine force'' or ``vegetative force''
+        that would for example be carried by the sperm to the egg.
+
+        Luckily, we now know enough to investigate a different
+        suspect as a candidate for the atomic force: electricity.
+        \index{electric forces}Electric forces are often observed
+        between objects that have been prepared by rubbing (or other
+        surface interactions), for instance when clothes rub against
+        each other in the dryer. A useful example is shown in figure
+        \ref{fig:twotapes}/1: stick two pieces of tape on a tabletop, and then put
+        two more pieces on top of them. Lift each pair from the
+        table, and then separate them. The two top pieces will then
+        repel each other, \ref{fig:twotapes}/2, as will the two bottom pieces. A
+        bottom piece will attract a top piece, however, \ref{fig:twotapes}/3.
+        Electrical forces like these are similar in certain ways to
+        gravity, the other force that we already know to be fundamental:
+
+        \begin{itemize}
+        \item Electrical forces are \emph{universal}. Although some
+        substances, such as fur, rubber, and plastic, respond more
+        strongly to electrical preparation than others, all matter
+        participates in electrical forces to some degree. There is
+        no such thing as a ``nonelectric'' substance. Matter is both
+        inherently gravitational and inherently electrical.
+
+        \item Experiments show that the electrical force, like the
+        gravitational force, is an \emph{inverse square} force. That
+        is, the electrical force between two spheres is proportional
+        to $1/r^2$, where $r$ is the center-to-center distance between them.
+        \end{itemize}
+
+<% marg(140) %>
+<%
+  fig(
+    '../../../share/em-general/figs/twotapes',
+    %q{%
+      Four pieces of tape are prepared, 1, as
+              described in the text. Depending on which combination is tested,
+              the interaction can be either repulsive, 2, or attractive, 3.
+    }
+  )
+%>
+\label{fig:twotapes}
+
+<% end_marg %>
+        Furthermore, electrical forces make more sense than gravity
+        as candidates for the fundamental force between atoms,
+        because we have observed that they can be either attractive or repulsive.
+
+
+<% end_sec() %>
+<% begin_sec("Charge, electricity and magnetism",0) %>
+        <% begin_sec("Charge") %>\index{charge}
+
+        ``Charge'' is the technical term used to
+        indicate that an object
+        participates in electrical forces. This is to be distinguished
+        from the common usage, in which the term is used indiscriminately
+        for anything electrical. For example, although we speak
+        colloquially of ``charging'' a battery, you may easily
+        verify that a battery has no charge in the technical sense,
+        e.g., it does not exert any electrical force on a piece of
+        tape that has been prepared as described in section \ref{sec:quest-for-atomic-force}.
+
+<% begin_sec("Two types of charge") %>
+
+        We can easily collect reams of data on electrical forces
+        between different substances that have been charged in
+        different ways. We find for example that cat fur prepared by
+        rubbing against rabbit fur will attract glass that has been
+        rubbed on silk. How can we make any sense of all this
+        information? A vast simplification is achieved by noting
+        that there are really only two types of charge. Suppose we
+        pick cat fur rubbed on rabbit fur as a representative of
+        type A, and glass rubbed on silk for type B. We will now
+        find that there is no ``type C.'' Any object electrified by
+        any method is either A-like, attracting things A attracts
+        and repelling those it repels, or B-like, displaying the
+        same attractions and repulsions as B. The two types, A and
+        B, always display opposite interactions. If A displays an
+        attraction with some charged object, then B is guaranteed
+        to undergo repulsion with it, and vice-versa.
+
+<% end_sec() %>
+<% begin_sec("The coulomb") %>\index{coulomb (unit)}
+
+        Although there are only two types of charge, each type can
+        come in different amounts. The metric unit of charge is the
+        coulomb (rhymes with ``drool on''), defined as follows:
+
+        \begin{lessimportant}
+        One Coulomb (C) is the amount of charge such that
+        a force of $9.0\times10^9$ N occurs between two pointlike
+        objects with charges of 1 C separated by a distance of 1 m.
+        \end{lessimportant}
+
+        The notation for an amount of charge is $q$. The numerical
+        factor in the definition is historical in origin, and is not
+        worth memorizing. The definition is stated for pointlike,
+        i.e., very small, objects, because otherwise different parts
+        of them would be at different distances from each other.
+
+<% end_sec() %>
+<% begin_sec("A model of two types of charged particles") %>
+
+        Experiments show that all the methods of rubbing or
+        otherwise charging objects involve two objects, and both of
+        them end up getting charged. If one object acquires a
+        certain amount of one type of charge, then the other ends up
+        with an equal amount of the other type. Various interpretations
+        of this are possible, but the simplest is that the basic
+        building blocks of matter come in two flavors, one with each
+        type of charge. Rubbing objects together results in the
+        transfer of some of these particles from one object to the
+        other. In this model, an object that has not been electrically
+        prepared may actually possesses a great deal of \emph{both}
+        types of charge, but the amounts are equal and they are
+        distributed in the same way throughout it. Since type A
+        repels anything that type B attracts, and vice versa, the
+        object will make a total force of zero on any other object.
+        The rest of this chapter fleshes out this model and
+        discusses how these mysterious particles can be understood
+        as being internal parts of atoms.
+
+<% end_sec() %>
+<% begin_sec("Use of positive and negative signs for charge") %>
+
+        Because the two types of charge tend to cancel out each
+        other's forces, it makes sense to label them using positive
+        and negative signs, and to discuss the \emph{total} charge
+        of an object. It is entirely arbitrary which type of charge
+        to call negative and which to call positive. Benjamin
+        \index{Franklin, Benjamin!definition of signs of charge}Franklin
+        decided to describe the one we've been calling ``A'' as
+        negative, but it really doesn't matter as long as everyone
+        is consistent with everyone else. An object with a total
+        charge of zero (equal amounts of both types) is referred to
+        as electrically $\index{neutral (electrically)}neutral$.
+
+        <% self_check('typesofcharge',<<-'SELF_CHECK'
+        Criticize the following statement: ``There are two types of
+        charge, attractive and repulsive.''
+          SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Coulomb's law") %>
+        \index{Coulomb's law}
+        A large body of experimental observations can be summarized as follows: 
+
+        \begin{important}
+        Coulomb's law: The magnitude of the force acting between pointlike charged
+        objects at a center-to-center distance $r$ is given by the equation
+        \begin{equation*}
+                        |\vc{F}|        =    k\frac{|q_1||q_2|}{r^2}\eqquad,  
+        \end{equation*}
+        where the constant $k$ equals $9.0\times10^9\ \zu{N}\unitdot\zu{m}^2/\zu{C}^2$.
+        The force is attractive if the charges are of different
+        signs, and repulsive if they have the same sign.
+        \end{important}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Conservation of charge") %>\index{charge!conservation of}\index{conservation!of charge}
+
+        An even more fundamental reason for using positive and
+        negative signs for electrical charge is that experiments
+        show that with the signs defined this way, the total amount of
+        charge is a conserved quantity. This is why we observe that rubbing initially
+        uncharged substances together always has the result that one
+        gains a certain amount of one type of charge, while the
+        other acquires an equal amount of the other type. Conservation
+        of charge seems natural in our model in which matter is made
+        of positive and negative particles. If the charge on each
+        particle is a fixed property of that type of particle, and
+        if the particles themselves can be neither created nor
+        destroyed, then conservation of charge is inevitable.
+
+<% end_sec() %>
+<% begin_sec("Electrical forces involving neutral objects") %>
+
+<% marg(70) %>
+<%
+  fig(
+    '../../../share/em-general/figs/scrapsofpaper',
+    %q{%
+      A charged piece of tape attracts uncharged pieces of paper
+              from a distance, and they leap up to it.
+    }
+  )
+%>
+       \label{fig:scrapsofpaper}
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    '../../../share/em-general/figs/induction',
+    %q{%
+      The paper has zero total charge, but it does have charged
+              particles in it that can move.
+    }
+  )
+%>
+       \label{fig:induction}
+<% end_marg %>
+        As shown in figure \ref{fig:scrapsofpaper}, an electrically charged object can
+        attract objects that are uncharged. How is this possible?
+        The key is that even though each piece of paper has a total
+        charge of zero, it has at least some charged particles in it
+        that have some freedom to move. Suppose that the tape is
+        positively charged, \ref{fig:induction}. Mobile particles in the paper will
+        respond to the tape's forces, causing one end of the paper to
+        become negatively charged and the other to become positive.
+        The attraction between the paper and the tape is now
+        stronger than the repulsion, because the negatively charged
+        end is closer to the tape.
+
+        <% self_check('inductionneg',<<-'SELF_CHECK'
+                  What would have happened if the tape was negatively charged?
+                  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("The atom, and subatomic particles") %>
+
+I once had a student whose father had been an electrician. He told me that his father
+had never really believed that an electrical current in a wire could be carried by
+moving electrons, because the wire was solid, and it seemed to him that physical
+particles moving through it would eventually have drilled so many holes through it
+that it would have crumbled. It may sound as though I'm trying to make fun of the father,
+but actually he was behaving very much like the model of the skeptical scientist: he didn't
+want to make hypotheses that seemed more complicated than would be necessary in order to
+explain his observations. Physicists before about 1905 were in exactly the same situation.
+They knew all about electrical circuits, and had even invented radio, but knew absolutely
+nothing about subatomic particles. In other words, it hardly ever matters that electricity
+really is made of charged particles, and it hardly ever matters what those particles are.
+Nevertheless, it may avoid some confusion to give a brief review of how an atom is put
+together:
+
+        \begin{tabular}{|l|l|p{30mm}|p{30mm}|}
+        \hline
+                        & \emph{charge}        & \emph{mass in units of the proton's mass} & \emph{location in atom} \\
+        \hline
+        proton        & $+e$        & 1                & in nucleus \\
+        \hline
+        neutron        & 0                & 1.001        & in nucleus \\
+        \hline
+        electron        & $-e$        & 1/1836        & orbiting nucleus \\
+        \hline
+        \end{tabular}
+
+\noindent The symbol $e$ in this table is an abbreviation for $1.60\times10^{-19}$ C. The physicist Robert Millikan
+discovered in 1911 that any material object (he used oil droplets) would have a charge that was a multiple
+of this number, and today we interpret that as being a consequence of the fact that matter is made of
+atoms, and atoms are made of particles whose charges are plus and minus this amount.
+
+<% marg(150) %>
+<%
+  fig(
+    '../../../share/em-general/figs/hhe',
+    %q{%
+      Examples of the construction of atoms: hydrogen (top) and
+              helium (bottom). On this scale, the electrons' orbits would be the
+              size of a college campus.
+    }
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec() %>
+<% begin_sec("Electric current") %>
+
+<% marg(0) %>
+<%
+  fig(
+    'ampere',
+    %q{Andr\'{e} Marie Amp\`{e}re (1775-1836).}
+  )
+%>
+<% end_marg %>
+         If the fundamental phenomenon is the motion of charged
+        particles, then how can we define a useful numerical
+        measurement of it? We might describe the flow of a river
+        simply by the velocity of the water, but velocity will not
+        be appropriate for electrical purposes because we need to
+        take into account how much charge the moving particles have,
+        and in any case there are no practical devices sold at Radio
+        Shack that can tell us the velocity of charged particles.
+        Experiments show that the intensity of various electrical
+        effects is related to a different quantity: the number of
+        coulombs of charge that pass by a certain point per second.
+        By analogy with the flow of water, this quantity is called
+        the \index{electric current!defined}electric \emph{current},
+        \index{current!defined} $I$.
+        Its units of coulombs/second are more conveniently
+        abbreviated as \index{ampere (unit)}amperes, \linebreak[3] 1 A=1 C/s.
+        (In informal speech, one usually says ``amps.'')
+
+
+        The main subtlety involved in this definition is how to
+        account for the two types of charge. The stream of water
+        coming from a hose is made of atoms containing charged
+        particles, but it produces none of the effects we associate
+        with electric currents. For example, you do not get an
+        electrical shock when you are sprayed by a hose. This type
+        of experiment shows that the effect created by the motion of
+        one type of charged particle can be canceled out by the
+        motion of the opposite type of charge in the same direction.
+        In water, every oxygen atom with a charge of $+8e$ is
+        surrounded by eight electrons with charges of $-e$, and
+        likewise for the hydrogen atoms. 
+
+        We therefore refine our definition of current as follows:
+
+\begin{lessimportant}[definition of electric current]
+        When charged particles are exchanged between regions of space
+        A and B, the electric current flowing from A to B is
+        \begin{equation*}
+                I = \frac{\text{change in B's charge}}{t}\eqquad,
+        \end{equation*}
+        where the transfer occurs over
+        a period of time $t$.
+\end{lessimportant}
+
+\noindent        In the garden hose example, your body picks up equal amounts
+        of positive and negative charge, resulting in no change in
+        your total charge, so the electrical current flowing into you is zero.
+
+\begin{eg}{Ions moving across a cell membrane}\label{eg:cells}
+        \egquestion
+        Figure \figref{cells} shows ions, labeled with their charges,
+        moving in or out through the membranes of four cells. If
+        the ions all cross the membranes during the same interval of
+        time, how would the currents into the cells compare with each other?
+
+        \eganswer
+        Cell A has positive current going into it because its
+        charge is increased, i.e., has a positive change in its charge.
+
+        Cell B has the same current as cell A, because by losing
+        one unit of negative charge it also ends up increasing its
+        own total charge by one unit.
+
+                Cell C's total charge is reduced by three units, so it has
+        a large negative current going into it.
+
+                Cell D loses one unit of charge, so it has a small
+        negative current into it.
+\end{eg}
+        %
+<%
+  fig(
+    'cells',
+    %q{Example \ref{eg:cells}},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+        It may seem strange to say that a negatively charged
+        particle going one way creates a current going the other
+        way, but this is quite ordinary. As we will see, currents
+        flow through metal wires via the motion of electrons, which
+        are negatively charged, so the direction of motion of the
+        electrons in a circuit is always opposite to the direction
+        of the current. Of course it would have been convenient if
+        Benjamin Franklin had defined the positive and negative
+        signs of charge the opposite way, since so many electrical
+        devices are based on metal wires.
+
+
+\begin{eg}{Number of electrons flowing through a lightbulb}
+        \egquestion
+        If a lightbulb has 1.0 A flowing through it, how
+        many electrons will pass through the filament in 1.0 s?
+
+        \eganswer
+                We are only calculating the number of electrons
+        that flow, so we can ignore the positive and negative signs. 
+        Solving for
+        $(\text{charge})= I t$ gives a charge of 1.0 C flowing in
+        this time interval. The number of electrons is
+        \begin{align*}
+                \text{number of electrons}         &=         \text{coulombs}\times\frac{\text{electrons}}{\text{coulomb}}  \\
+                         &=         \text{coulombs}/\frac{\text{coulombs}}{\text{electron}}   \\
+                         &=          1.0\ \zu{C} /  e  \\
+                         &=          6.2\times10^{18}   
+        \end{align*}
+        That's a lot of electrons!
+\end{eg}
+
+ %%----------------------------------------------
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Circuits",0) %>
+        How can we put electric currents to work? The only method of
+        controlling electric charge we have studied so far is to
+        charge different substances, e.g., rubber and fur, by rubbing
+        them against each other. Figure \ref{fig:basiccircuits}/1 shows an attempt to use
+        this technique to light a lightbulb. This method is
+        unsatisfactory. True, current will flow through the bulb,
+        since electrons can move through metal wires, and the excess
+        electrons on the rubber rod will therefore come through the
+        wires and bulb due to the attraction of the positively
+        charged fur and the repulsion of the other electrons. The
+        problem is that after a zillionth of a second of current,
+        the rod and fur will both have run out of charge. No more
+        current will flow, and the lightbulb will go out.
+
+        <% marg(70) %>
+<%
+  fig(
+    'basiccircuits',
+    %q{%
+      1. Static electricity runs out quickly. 2. A practical
+              circuit. 3. An open circuit. 4. How an ammeter works. 5. Measuring the
+              current with an ammeter.
+    }
+  )
+%>
+<% end_marg %>
+        Figure \ref{fig:basiccircuits}/2 shows a setup that works. The battery pushes
+        charge through the circuit, and recycles it over and over
+        again. (We will have more to say later in this chapter about
+        how batteries work.) This is called a \emph{\index{circuit!complete}\index{complete
+        circuit}complete \index{circuit}circuit}. Today, the
+        electrical use of the word ``circuit'' is the only one that
+        springs to mind for most people, but the original meaning
+        was to travel around and make a round trip, as when a
+        circuit court judge would ride around the boondocks,
+        dispensing justice in each town on a certain date.
+
+        Note that an example like \ref{fig:basiccircuits}/3 does not work. The wire will
+        quickly begin acquiring a net charge, because it has no way
+        to get rid of the charge flowing into it. The repulsion of
+        this charge will make it more and more difficult to send any
+        more charge in, and soon the electrical forces exerted by
+        the battery will be canceled out completely. The whole
+        process would be over so quickly that the filament would not
+        even have enough time to get hot and glow. This is known as
+        an \index{circuit!open}\index{open circuit}\emph{open circuit}.
+        Exactly the same thing would happen if the complete circuit
+        of figure \ref{fig:basiccircuits}/2 was cut somewhere with a pair of scissors, and
+        in fact that is essentially how an ordinary light switch
+        works: by opening up a gap in the circuit.
+
+        The definition of electric current we have developed has the
+        great virtue that it is easy to measure. In practical
+        electrical work, one almost always measures current, not
+        charge. The instrument used to measure current is called an
+        \index{ammeter}\emph{ammeter}.
+        A simplified ammeter, \ref{fig:basiccircuits}/4, simply
+        consists of a coiled-wire magnet whose force twists an iron
+        needle against the resistance of a spring. The greater the
+        current, the greater the force. Although the construction of
+        ammeters may differ, their use is always the same. We break
+        into the path of the electric current and interpose the
+        meter like a tollbooth on a road, \ref{fig:basiccircuits}/5. There is still a
+        complete circuit, and as far as the battery and bulb are
+        concerned, the ammeter is just another segment of wire.
+
+        Does it matter where in the circuit we place the ammeter?
+        Could we, for instance, have put it in the left side of the
+        circuit instead of the right? Conservation of charge tells
+        us that this can make no difference. Charge is not destroyed
+        or ``used up'' by the lightbulb, so we will get the same
+        current reading on either side of it. What is ``used up'' is
+        energy stored in the battery, which is being converted into
+        heat and light energy.
+<% end_sec() %>
+<% begin_sec("Voltage",0) %>\index{voltage}
+        <% begin_sec("The volt unit") %>
+
+        Electrical circuits can be used for sending signals, storing
+        information, or doing calculations, but their most common
+        purpose by far is to manipulate energy, as in the battery-and-bulb
+        example of the previous section. We know that lightbulbs are
+        rated in units of watts, i.e., how many joules per second of
+        energy they can convert into heat and light, but how would
+        this relate to the flow of charge as measured in amperes? By
+        way of analogy, suppose your friend, who didn't take
+        physics, can't find any job better than pitching bales of
+        hay. The number of calories he burns per hour will certainly
+        depend on how many bales he pitches per minute, but it will
+        also be proportional to how much mechanical work he has to
+        do on each bale. If his job is to toss them up into a
+        hayloft, he will got tired a lot more quickly than someone
+        who merely tips bales off a loading dock into trucks. In metric units,
+        \begin{equation*}
+                \frac{\text{joules}}{\text{second}}
+                 = \frac{\text{haybales}}{\text{second}}
+                         \times \frac{\text{joules}}{\text{haybale}}\eqquad.  
+        \end{equation*}
+        Similarly, the rate of energy transformation by a battery
+        will not just depend on how many coulombs per second it
+        pushes through a circuit but also on how much mechanical
+        work it has to do on each coulomb of charge:
+        \begin{equation*}
+                \frac{\text{joules}}{\text{second}}
+                 = \frac{\text{coulombs}}{\text{second}}
+                         \times \frac{\text{joules}}{\text{coulomb}}
+        \end{equation*}
+        \noindent or
+        \begin{equation*}
+                        \text{power}         =         \text{current} \times \text{work per unit charge}\eqquad.  
+        \end{equation*}
+
+<% marg(60) %>
+<%
+  fig(
+    'volta',
+    %q{Alessandro Volta (1745-1827).}
+  )
+%>
+<% end_marg %>
+        Units of joules per coulomb are abbreviated as \index{volt
+        (unit)!defined}\emph{volts}, 1 V=1 J/C, named after the Italian
+        physicist Alessandro Volta. Everyone knows that batteries are
+        rated in units of volts, but the voltage concept is more
+        general than that; it turns out that voltage is a property
+        of every point in space. 
+
+To gain more insight, let's think again about the analogy with the haybales.
+It took a certain
+number of joules of gravitational energy to lift a haybale from one level to
+another. Since we're talking about gravitational energy, it really makes more
+sense to talk about units of mass, rather than using the haybale as our measure
+of the quantity of matter. The gravitational version of voltage would then be
+joules per kilogram. Gravitational energy equals $mgh$, but if we calculate how
+much of that we have \emph{per kilogram}, we're canceling out the $m$,
+giving simply $gh$. For any point in the Earth's gravitational field, we can
+assign a number, $gh$, which tells us how hard it is to get a given amount of
+mass to that point. For instance, the top of Mount Everest would have
+a big value of $gh$, because of the big height. That tells us that it's expensive
+in terms of energy to lift a given amount of mass from some reference level
+(sea level, say) to the top of Mount Everest.
+
+Voltage does the same thing, but using electrical energy. We can visualize
+an electrical circuit as being like a roller-coaster. The battery is like the
+part of the roller-coaster where they lift you up to the top. The height of this
+initial hill is analogous to the voltage of the battery. When you roll downhill
+later, that's like a lightbulb. In the roller-coaster, the initial gravitational
+energy is turned into heat and sound as the cars go down the hill. In our circuit,
+the initial electrical energy is turned into heat by the lightbulb (and the hot
+filament of the lightbulb then glows, turning the heat into light).
+
+<% marg(0) %>
+<%
+  fig(
+    'battery',
+    %q{Example \ref{eg:milliamp-hours}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Energy stored in a battery}\label{eg:milliamp-hours}
+        \egquestion
+        The 1.2 V rechargeable battery in figure \ref{fig:battery} is labeled 1800 milliamp-hours.
+        What is the maximum amount of energy the battery can store?
+
+        \eganswer
+                An ampere-hour is a unit of current multiplied by
+        a unit of time. Current is charge per unit time, so an
+        ampere-hour is in fact a funny unit of \emph{charge}:
+        \begin{align*}
+                        \text{(1 A)(1 hour)}         &=    \text{(1 C/s)(3600 s)}  \\
+                                         &=    \text{3600 C}  
+        \end{align*}
+        \noindent 1800 milliamp-hours is therefore $1800\times10^{-3}\times 3600\ \zu{C}=6.5\times10^3\ \zu{C}$.
+        That's a huge number of charged particles, but the
+        total loss of electrical energy will just be their total
+        charge multiplied by the voltage difference across which they move:
+        \begin{align*}
+                        \text{energy}         &=    (6.5\times10^3\ \zu{C})(1.2\ \zu{V})  \\
+                                         &=    7.8\ \zu{kJ}  
+        \end{align*}
+\end{eg}
+
+Using the definition of voltage, $V$, we can rewrite the equation
+$\text{power}         =         \text{current} \times \text{work per unit charge}$ more
+concisely as $P=IV$.
+
+\begin{eg}{Units of volt-amps}
+        \egquestion
+        Doorbells are often rated in volt-amps. What does
+        this combination of units mean?
+
+        \eganswer
+                Current times voltage gives units of power,
+        $P= I  V$, so volt-amps are really just a nonstandard
+        way of writing watts. They are telling you how much power
+        the doorbell requires.
+
+\end{eg}
+\begin{eg}{Power dissipated by a battery and bulb}
+        \egquestion
+        If a 9.0-volt battery causes 1.0 A to flow through
+        a lightbulb, how much power is dissipated?
+
+        \eganswer
+                The voltage rating of a battery tells us what
+        voltage difference $\Delta  V$ it is designed to maintain
+        between its terminals.
+        \begin{align*}
+                         P         &=      I \ \Delta \zu{V}   \\
+                                 &=     9.0 \ \zu{A}\cdot\zu{V} \\
+                                 &=     9.0  \ \frac{\zu{C}}{\zu{s}}\cdot\frac{\zu{J}}{\zu{C}} \\
+                                 &=     9.0 \ \text{J/s}  \\
+                                 &=     9.0 \ \zu{W}  
+        \end{align*}
+
+        The only nontrivial thing in this problem was dealing with
+        the units. One quickly gets used to translating common
+        combinations like $\zu{A}\cdot\zu{V}$ into simpler terms.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+        In the roller-coaster metaphor, what would a high-voltage roller coaster be like? What
+        would a high-current roller coaster be like?
+\end{dq}
+ %
+\begin{dq}
+        Criticize the following statements:
+        \begin{itemize}
+                \item[] ``He touched the wire, and 10000 volts went through him.''
+                \item[]``That battery has a charge of 9 volts.''
+                \item[]``You used up the charge of the battery.''
+        \end{itemize}
+\end{dq}
+ %
+\begin{dq}\label{dq:signsofcurrent}
+        When you touch a 9-volt battery to your tongue, both
+        positive and negative ions move through your saliva.
+        Which ions go which way?
+\end{dq}
+ %
+\begin{dq}
+        I once touched a piece of physics apparatus that had been
+        wired incorrectly, and got a several-thousand-volt voltage
+        difference across my hand. I was not injured. For what
+        possible reason would the shock have had insufficient power to hurt me?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Resistance",0) %>\index{resistance}
+
+What's the physical difference between a 100-watt lightbulb and a 200-watt one?
+They both plug into a 110-volt outlet, so according to the equation
+$P=IV$, the only way to explain the
+double power of the 200-watt bulb is that it must pull in, or ``draw,''
+twice as much current. By analogy, a fire hose and a garden hose might
+be served by pumps that give the same pressure (voltage), but more water
+will flow through the fire hose, because there's simply more water in the hose
+that can flow. Likewise, a wide, deep river could flow down the same slope
+as a tiny creek, but the number of liters of water flowing through the big
+river is greater. If you look at the filaments of a 100-watt bulb and a 200-watt
+bulb, you'll see that the 200-watt bulb's filament is thicker. In the charged-particle
+model of electricity, we expect that the thicker filament will contain more
+charged particles that are available to flow. We say that the thicker
+filament has a lower electrical resistance than the thinner one.
+
+<%
+  fig(
+    'fat-and-skinny-pipes',
+    %q{%
+      A fat pipe has less resistance
+              than a skinny pipe.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+<% marg(100) %>
+<%
+  fig(
+    'ohm',
+    %q{Georg Simon Ohm (1787-1854).}
+  )
+%>
+<% end_marg %>
+Although it's harder to pump water rapidly through a garden hose than through
+a fire hose, we could always compensate by using a higher-pressure pump.
+Similarly, the amount of current that will flow through a lightbulb
+depends not just on its resistance but also on how much of a voltage difference
+is applied across it. For many substances, including the tungsten metal that
+lightbulb filaments are made of, we find that the amount of current that flows
+is proportional to the voltage difference applied to it, so that the ratio
+of voltage to current stays the same. We then use this ratio as a numerical
+definition of resistance,
+\begin{equation*}
+        R = \frac{V}{I}\eqquad,
+\end{equation*}
+which is known as Ohm's law.\index{Ohm's law}\index{ohm (unit)}
+The units of resistance are ohms, symbolized with an uppercase Greek letter
+Omega, $\Omega$. Physically, when a current flows through a resistance,
+the result is to transform electrical energy into heat. In a lightbulb filament,
+for example, the heat is what causes the bulb to glow.
+
+        Ohm's law states that many substances, including many solids
+        and some liquids, display this kind of behavior, at least
+        for voltages that are not too large. The fact that Ohm's law
+        is called a ``law'' should not be taken to mean that all
+        materials obey it, or that it has the same fundamental
+        importance as the conservation laws, for example. Materials are
+        called \index{ohmic!defined}\emph{ohmic} or \emph{nonohmic},
+        depending on whether they obey Ohm's law.
+
+        On an intuitive level, we can understand the idea of
+        resistance by making the sounds ``hhhhhh'' and ``ffffff.''
+        To make air flow out of your mouth, you use your diaphragm
+        to compress the air in your chest. The pressure difference
+        between your chest and the air outside your mouth is
+        analogous to a voltage difference. When you make the ``h''
+        sound, you form your mouth and throat in a way that allows
+        air to flow easily. The large flow of air is like a large
+        current. Dividing by a large current in the definition of
+        resistance means that we get a small resistance. We say that
+        the small resistance of your mouth and throat allows a large
+        current to flow. When you make the ``f'' sound, you increase
+        the resistance and cause a smaller current to flow. In this
+        mechanical analogy, resistance is like friction: the air rubs
+        against your lips. Mechanical friction converts 
+        mechanical forms of energy to heat, as when you rub your
+        hands together. Electrical friction --- resistance ---
+        converts electrical energy to heat.
+
+        If objects of the same size and shape made from two
+        different ohmic materials have different resistances, we can
+        say that one material is more resistive than the other, or
+        equivalently that it is less conductive. Materials, such as
+        metals, that are very conductive are said to be good
+        \index{conductor!defined}\emph{conductors}. Those that are
+        extremely poor conductors, for example wood or rubber, are
+        classified as \index{insulator!defined}\emph{insulators}. There
+        is no sharp distinction between the two classes of
+        materials. Some, such as silicon, lie midway between the two
+        extremes, and are called semiconductors.
+%
+<% begin_sec("Applications") %>
+<% begin_sec("Superconductors") %>
+All materials display some variation in resistance according
+to temperature (a fact that is used in thermostats to make a
+thermometer that can be easily interfaced to an electric
+circuit). More spectacularly, most metals have been found to
+exhibit a sudden change to \emph{zero} resistance when
+cooled to a certain critical temperature. They are then said
+to be superconductors. A current flowing through a superconductor
+doesn't create any heat at all.
+
+Theoretically, superconductors should
+make a great many exciting devices possible, for example
+coiled-wire magnets that could be used to levitate trains.
+In practice, the critical temperatures of all metals are
+very low, and the resulting need for extreme refrigeration
+has made their use uneconomical except for such specialized
+applications as particle accelerators for physics research.
+
+But scientists have recently made the surprising discovery
+that certain ceramics are superconductors at less extreme
+temperatures. The technological barrier is now in finding
+practical methods for making wire out of these brittle
+materials. Wall Street is currently investing billions of
+dollars in developing superconducting devices for cellular
+phone relay stations based on these materials. In 2001, the
+city of Copenhagen replaced a short section of its
+electrical power trunks with superconducing cables, and they
+are now in operation and supplying power to customers.
+
+There is currently no satisfactory theory of superconductivity
+in general, although superconductivity in metals is
+understood fairly well. Unfortunately I have yet to find a
+fundamental explanation of superconductivity in metals that
+works at the introductory level.
+
+<% end_sec() %>
+<% begin_sec("Constant voltage throughout a conductor") %>
+The idea of a superconductor leads us to the question of how
+we should expect an object to behave if it is made of a very
+good conductor. Superconductors are an extreme case, but
+often a metal wire can be thought of as a perfect conductor,
+for example if the parts of the circuit other than the wire
+are made of much less conductive materials. What happens if
+the resistance equals zero in the equation 
+\begin{equation*}
+        R = \frac{V}{I} \qquad ?
+\end{equation*}
+The result
+of dividing two numbers can only be zero if the number on
+top equals zero. This tells us that if we pick any two
+points in a perfect conductor, the voltage difference
+between them must be zero. In other words, the entire
+conductor must be at the same voltage. Using the water
+metaphor, a perfect conductor is like a perfectly calm
+lake or canal, whose surface is flat. If you take an
+eyedropper and deposit a drop of water anywhere on the
+surface, it doesn't flow away, because the water is still.
+In electrical terms, a charge located anywhere in the interior
+of a perfect conductor will always feel a total electrical
+force of zero.
+
+Suppose, for example, that you build up
+a static charge by scuffing your feet on a carpet, and then
+you deposit some of that charge onto a doorknob, which is a
+good conductor.  How can all that charge be in the doorknob
+without creating any electrical force at any point inside
+it? The only possible answer is that the charge moves around
+until it has spread itself into just the right configuration.
+In this configuration, the forces exerted by all the charge
+on any charged particle within the doorknob
+exactly cancel out.
+
+We can explain this behavior if we assume that the charge
+placed on the doorknob eventually settles down into a stable
+equilibrium. Since the doorknob is a conductor, the charge
+is free to move through it. If it was free to move and any
+part of it did experience a nonzero total force from the
+rest of the charge, then it would move, and we would not
+have an equilibrium.
+
+It also turns out that charge placed on a conductor, once it
+reaches its equilibrium configuration, is entirely on the
+surface, not on the interior. We will not prove this fact
+formally, but it is intuitively reasonable (see
+discussion question \ref{dq:chargeonsurface}).\label{text:chargeonsurface}
+
+<% end_sec() %>
+<% begin_sec("Short circuits") %>
+So far we have been assuming a perfect conductor. What if it's
+a good conductor, but not a perfect one? Then we can
+solve for
+\begin{equation*}
+        V=IR\eqquad.
+\end{equation*}
+An ordinary-sized current
+will make a very small result when we multiply it by the
+resistance of a good conductor such as a metal wire. The
+voltage throughout the wire will then be nearly constant.
+If, on the other hand, the current is extremely large, we
+can have a significant voltage difference. This is what
+happens in a \index{circuit!short}\index{short circuit!defined}short-circuit:
+a circuit in which a low-resistance pathway connects the two
+sides of a voltage source. Note that this is much more
+specific than the popular use of the term to indicate any
+electrical malfunction at all. If, for example, you
+short-circuit a 9-volt battery as shown in the figure, you
+will produce perhaps a thousand amperes of current, leading
+to a very large value of $P=IV$.
+The wire gets hot!
+
+<% end_sec() %>
+<% begin_sec("The voltmeter") %>
+A voltmeter is nothing more than an ammeter with an
+additional high-value resistor through which the current is
+also forced to flow, \figref{voltmeter}/1. Ohm's law relates the current through
+the resistor directly to the voltage difference
+across it, so the meter can be calibrated in units of volts
+based on the known value of the resistor. The voltmeter's
+two probes are touched to the two locations in a circuit
+between which we wish to measure the voltage difference,
+\figref{voltmeter}/2. Note how cumbersome this type of drawing is, and how
+difficult it can be to tell what is connected to what. This
+is why electrical drawing are usually shown in schematic\index{schematics}
+form. Figure \figref{voltmeter}/3 is a schematic representation of figure 
+\figref{voltmeter}/2.
+
+<% marg(120) %>
+<%
+  fig(
+    'voltmeter',
+    %q{%
+      1. A simplified diagram of how a voltmeter
+              works. 2. Measuring the voltage difference across a lightbulb.
+              3. The same setup drawn in schematic form.
+              4. The setup for measuring current is different.
+    }
+  )
+%>
+<% end_marg %>
+
+The setups for measuring current and voltage are different.
+When we're measuring current, we're finding ``how much
+stuff goes through,'' so we place the ammeter where all the
+current is forced to go through it. Voltage, however, is not
+``stuff that goes through,'' it is a measure of electrical
+energy. If an ammeter is like the meter that measures your
+water use, a voltmeter is like a measuring stick that tells
+you how high a waterfall is, so that you can determine how
+much energy will be released by each kilogram of falling
+water. We don't want to force the water to go through the
+measuring stick! The arrangement in figure \figref{voltmeter}/3 is a
+\index{circuit!parallel}\index{parallel circuit!defined}parallel
+circuit: one which in there are ``forks in the road'' where some
+of the current will flow one way and some will flow the
+other. Figure \figref{voltmeter}/4 is said to be wired in
+\index{circuit!series}\index{series circuit!defined}series:
+all the current will visit all the
+circuit elements one after the other.
+
+If you inserted a voltmeter incorrectly, in series with the
+bulb and battery, its large internal resistance would cut
+the current down so low that the bulb would go out. You
+would have severely disturbed the behavior of the circuit by
+trying to measure something about it.
+
+Incorrectly placing an ammeter in parallel is likely to be
+even more disconcerting. The ammeter has nothing but wire
+inside it to provide resistance, so given the choice, most
+of the current will flow through it rather than through the
+bulb. So much current will flow through the ammeter, in
+fact, that there is a danger of burning out the battery or
+the meter or both! For this reason, most ammeters have fuses
+or circuit breakers inside. Some models will trip their
+circuit breakers and make an audible alarm in this
+situation, while others will simply blow a fuse and stop
+working until you replace it.
+
+\startdqs
+
+ \begin{dq}
+In figure \figref{basiccircuits}/4 on page \pageref{fig:basiccircuits}, what would happen if you had
+the ammeter on the left rather than on the right?
+\end{dq}
+\begin{dq}\label{dq:chargeonsurface}
+Imagine a charged doorknob, as described on page \pageref{text:chargeonsurface}.
+Why is it intuitively reasonable to believe that all the charge will end up on the surface
+of the doorknob, rather than on the interior?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% end_sec() %>
+<% begin_hw_sec %>
+
+<% begin_hw('muonic') %>__incl(hw/muonic)<% end_hw() %>
+
+<% marg(0) %>
+<% fig('hw-many-measurements','Problems \ref{hw:many-v-measurements} and \ref{hw:many-i-measurements}.') %>
+<% end_marg %>
+
+<% begin_hw('many-v-measurements') %>
+The figure shows a circuit containing five lightbulbs connected to a battery.
+Suppose you're going to connect one probe of a voltmeter to the circuit at
+the point marked with a dot. How many unique, nonzero voltage differences
+could you measure by connecting the other probe to other wires in the circuit?
+Visualize the circuit using the same waterfall metaphor.
+<% end_hw() %>
+
+<% begin_hw('many-i-measurements') %>__incl(hw/many-i-measurements)<% end_hw() %>
+<% end_hw_sec %>
+<% end_chapter() %>

@@ -1,0 +1,102 @@
+\documentclass{simple}
+%\selectlanguage{english}
+\usepackage{lmlanguage}
+%\includeonly{ch07/ch07temp}
+\input{makefilepreamble}
+%\inputprotcode
+\input protcode.tex
+\makeindex
+\pdfmapfile{=fullembed.map} % created by the script create_fullembed_file
+\begin{document}
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+% 
+% The following is all related to margin kerning.
+% This is activated in simple.cls using the boolean wantmarginkerning.
+% The constant 1 is to allow margin kerning, but to keep it from affecting
+% line breaks.
+%\ifthenelse{\boolean{wantmarginkerning}}{
+ \setprotcode\font
+ {\it \setprotcode \font}
+ {\bf \setprotcode \font}
+ {\bf \it \setprotcode \font}
+ \pdfprotrudechars=1
+%}{}
+
+%========================= frontmatter =========================
+\formatchtoc{\Large}{}{4mm}
+\frontmatter
+\yesiwantarabic
+\renewcommand{\chapdir}{ch00}
+\include{ch00/title}
+
+\cleardoublepage
+
+\include{ch00/inside-title-page}
+
+\include{ch00/copyright}
+\yesiwantarabic
+\hbox{}\noindent\huge\bfseries\sffamily{}\vspace{30mm}\ \ Brief Contents\\
+\vspace{5mm}
+\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
+\input{brief-toc.tex}
+\end{tabular}
+\mynormaltype
+
+\tableofcontents
+%========================= main matter =========================
+\mainmatter
+%-- I want the whole book numbered sequentially, arabic:
+  \pagenumbering{arabic} 
+  \addtocounter{page}{12}
+\parafmt
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+%========================= chapters =========================
+\setcounter{chapter}{-1}
+	\renewcommand{\chapdir}{ch00}\include{ch00/ch00temp}
+	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}
+	\renewcommand{\chapdir}{ch02}\include{ch02/ch02temp}
+	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}
+	\renewcommand{\chapdir}{ch04}\include{ch04/ch04temp}
+	\renewcommand{\chapdir}{ch05}\include{ch05/ch05temp}
+	\renewcommand{\chapdir}{ch06}\include{ch06/ch06temp}
+	\renewcommand{\chapdir}{ch07}\include{ch07/ch07temp}
+	\renewcommand{\chapdir}{ch08}\include{ch08/ch08temp}
+	\renewcommand{\chapdir}{ch09}\include{ch09/ch09temp}
+	\renewcommand{\chapdir}{ch10}\include{ch10/ch10temp}
+	\renewcommand{\chapdir}{ch11}\include{ch11/ch11temp}
+	\renewcommand{\chapdir}{ch12}\include{ch12/ch12temp}
+	\renewcommand{\chapdir}{ch13}\include{ch13/ch13temp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch14}\include{ch14/ch14temp}
+%========================= backmatter =========================
+\backmatter
+\nomarginlayout
+\renewcommand{\chapdir}{ch99}
+%========================= appendices =========================
+\label{splits:appendices}\formatchtoc{\large}{\quad\contentspage}{0mm} % This has to go before first appendix.
+% essential skills
+        \include{ch99/skillstemp}
+% math review, approximations
+        \include{ch99/mathtemp}
+% python
+	\twocolumn\include{ch99/pythontemp}
+% miscellany
+	\onecolumn\include{ch99/misc}
+% acknowledgments
+%	\onecolumn\include{ch99/ack}
+% photo credits
+	\newpage\include{ch99/photocreditstemp}
+% hw hints, answers, solutions	
+	\onecolumn\include{ch99/hwanstemp}
+% data	
+	\onecolumn\include{ch99/data}
+% summary
+	\onecolumn\include{ch99/summary}
+% glossary
+%	\setlength{\parindent}{0mm}
+%	\newpage\include{ch99/glossary}
+%	\setlength{\parindent}{\normalparindent}
+%========================= index =========================
+\printindex
+
+\end{document}

@@ -1,0 +1,22 @@
+(a) Based on units, we must have $g=kG\lambda/y$, where $k$ is a unitless universal constant.\\
+(b) For the actual calculation, we have
+\begin{align*}
+  g &= \int \der g_y \\
+    &= G\int \frac{\der m}{r^2} \cos\theta,
+\end{align*}
+where $\theta$ is the angle between the perpendicular and the $\vc{r}$ vector.
+Then $\der m=\lambda \der x$, $\cos\theta=y/r$, and $r=\sqrt{x^2+y^2}$, so
+\begin{align*}
+  g &= G\int_{-\infty}^{\infty} \frac{\lambda \der x}{x^2+y^2} \cdot \frac{b}{\sqrt{x^2+y^2}} \\
+    &= G\lambda y \int_{-\infty}^{\infty} (x^2+y^2)^{-3/2}\der x.
+\end{align*}
+Even though this has limits of integration, this is an indefinite integral because it contains the variable $y$.
+It's nicer to clean this up by doing a change of variable to the unitless quantity $u=x/y$, giving
+\begin{equation*}
+  g = \frac{G\lambda}{y} \int_{-\infty}^{\infty} (u^2+1)^{-3/2}\der u.
+\end{equation*}
+The definite integral is the sort of thing that sane people these days will do using
+computer software. It equals 2. The result for the field is
+\begin{equation*}
+   g = \frac{2G\lambda}{y}.
+\end{equation*}

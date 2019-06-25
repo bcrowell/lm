@@ -1,0 +1,2 @@
+BOOK = simple
+FIRST_CHAPTER = 0

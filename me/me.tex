@@ -1,0 +1,152 @@
+% (c) 2001-2011 Ben Crowell, licensed under the Creative Commons
+% Attribution-ShareAlike license,
+% http://creativecommons.org/licenses/by-sa/1.0/
+%
+\documentclass{lmseries}
+% \let\ifpdf\relax % http://tex.stackexchange.com/questions/11414/package-ifpdf-error
+% --------> this fails with TeX Live 2013, conflicts with xparse
+%\selectlanguage{english}
+\usepackage{lmlanguage}
+%\includeonly{n1/ctemp}
+\inputprotcode
+\makeindex
+\pdfmapfile{=fullembed.map} % created by the script create_fullembed_file
+\begin{document}
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+% 
+% The following is all related to margin kerning.
+% This is activated in dp.cls using the boolean wantmarginkerning.
+% The constant 1 is to allow margin kerning, but to keep it from affecting
+% line breaks.
+\ifthenelse{\boolean{wantmarginkerning}}{
+ \setprotcode\font
+ {\it \setprotcode \font}
+ {\bf \setprotcode \font}
+ {\bf \it \setprotcode \font}
+ \pdfprotrudechars=1
+}{}
+%========================= frontmatter =========================
+\formatchtoc{\Large}{}{4mm}
+\frontmatter
+\yesiwantarabic
+\renewcommand{\chapdir}{front}
+\include{front/title}
+\yesiwantarabic
+\nomarginlayout
+\vspace{10mm}\begin{center}\bfseries\sffamily{}\noindent{}{\huge Brief Contents}\end{center}\vspace{10mm}
+
+\newcommand{\brieftocpartstyle}{\large\sffamily{}}
+\newcommand{\brieftocchstyle}{\normalsize\sffamily{}}
+\newcommand{\brieftocvert}{7mm}
+\newcommand{\brieftochoriz}{\hspace{20mm}}
+\newcommand{\brieftoctabularwidth}{90mm}
+
+\noindent\brieftochoriz\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+\brieftocentry[\hfill]{ch:intro}{Introduction and review} \\
+\brieftocentry[\hfill]{ch:scaling}{Scaling and estimation} \end{tabular}
+
+\vspace{\brieftocvert}
+
+\noindent\brieftochoriz\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+
+& \textit{\brieftocpartstyle Motion in one dimension}\\
+\brieftocentry[\hfill]{ch:motion}{Velocity and relative motion} \\
+\brieftocentry[\hfill]{ch:acceleration}{Acceleration and free fall} \\
+\brieftocentry[\hfill]{ch:newton}{Force and motion} \\
+\brieftocentry[\hfill]{ch:forces}{Analysis of forces} \end{tabular}
+
+\vspace{\brieftocvert}
+
+\noindent\brieftochoriz\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+
+& \textit{\brieftocpartstyle Motion in three dimensions}\\
+\brieftocentry[\hfill]{ch:three-d}{Newton's laws in three dimensions} \\
+\brieftocentry[\hfill]{ch:vectors}{Vectors} \\
+\brieftocentry[\hfill]{ch:vectors-and-motion}{Vectors and motion} \\
+\brieftocentry[\hfill]{ch:circular-motion}{Circular motion} \\
+\brieftocentry[\hfill]{ch:gravity}{Gravity} \end{tabular}
+
+\vspace{\brieftocvert}
+
+\noindent\brieftochoriz\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+
+& \textit{\brieftocpartstyle Conservation laws}\\
+\brieftocentry[\hfill]{ch:energy}{Conservation of energy} \\
+\brieftocentry[\hfill]{ch:energy-zoo}{Simplifying the energy zoo} \\
+\brieftocentry[\hfill]{ch:work}{Work: the transfer of mechanical energy} \\
+\brieftocentry[\hfill]{ch:momentum}{Conservation of momentum} \\
+\brieftocentry[\hfill]{ch:angular-momentum}{Conservation of  angular momentum} \\
+\end{tabular}
+
+\vspace{\brieftocvert}
+
+\noindent\brieftochoriz\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+
+& \textit{\brieftocpartstyle Vibrations}\\
+\brieftocentry[\hfill]{ch:vibrations}{Vibrations} \\
+\brieftocentry[\hfill]{ch:resonance}{Resonance} 
+\end{tabular}
+
+
+
+\onecolumn\vfill
+\mynormaltype
+
+\pagebreak[4]
+
+\vspace{0mm}
+\begin{center}
+\noindent\huge\bfseries\sffamily{}Contents\mynormaltype
+\end{center}
+\vspace{0mm}
+\begin{multicols}{2}
+  \tableofcontents
+  \setcounter{unbalance}{0}
+\end{multicols}
+\normallayout\onecolumn
+
+%========================= main matter =========================
+\mainmatter
+%-- I want the whole book numbered sequentially, arabic:
+  \pagenumbering{arabic} 
+  \addtocounter{page}{10}
+\parafmt
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+%========================= chapters =========================
+\setcounter{chapter}{-1}
+\wugga%used to be needed after preface
+    \renewcommand{\chapdir}{pr}\include{pr/atemp}
+    \renewcommand{\chapdir}{pr}\include{pr/btemp}
+    \renewcommand{\chapdir}{n1}\include{n1/atemp}
+    \renewcommand{\chapdir}{n1}\include{n1/btemp}
+    \renewcommand{\chapdir}{n1}\include{n1/ctemp}
+    \renewcommand{\chapdir}{n1}\include{n1/dtemp}
+    \renewcommand{\chapdir}{n3}\include{n3/atemp}
+    \renewcommand{\chapdir}{n3}\include{n3/btemp}
+    \renewcommand{\chapdir}{n3}\include{n3/ctemp}
+    \renewcommand{\chapdir}{n3}\include{n3/dtemp}
+    \renewcommand{\chapdir}{n3}\include{n3/etemp}
+    \renewcommand{\chapdir}{cl}\include{cl/atemp}
+    \renewcommand{\chapdir}{cl}\include{cl/btemp}
+    \renewcommand{\chapdir}{cl}\include{cl/ctemp}
+    \renewcommand{\chapdir}{cl}\include{cl/dtemp}
+    \renewcommand{\chapdir}{cl}\include{cl/etemp}
+    \renewcommand{\chapdir}{vw}\include{vw/atemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+        \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
+    \renewcommand{\chapdir}{vw}\include{vw/btemp}
+%
+    \widelayout
+    \renewcommand{\chapdir}{end}
+    \include{end/skillstemp}
+    \twocolumn\include{end/pythontemp}
+    \onecolumn\include{end/hwanstemp}
+    \onecolumn\include{end/photocreditstemp}
+%========================= index =========================
+\label{splits:index}\printindex
+%========================= data tables, etc. =========================
+        \blankchaptermarks\label{splits:data}
+	\input{end/trig}\pagebreak[4]
+	\input{end/math}\pagebreak[4]
+        \input{end/data}
+\end{document}

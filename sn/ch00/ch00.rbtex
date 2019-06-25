@@ -1,0 +1,198 @@
+
+<%
+  require "../eruby_util.rb"
+%>
+
+<% clear_answer_data %>
+
+<%
+  chapter(
+    '00',
+    %q{Introduction and Review},
+    'ch:intro',
+    %q{The Mars Climate Orbiter is prepared for its mission.
+The laws of physics are the same everywhere, even
+on Mars, so the probe could be designed based on
+the laws of physics as discovered on earth.
+There is unfortunately another reason why this
+spacecraft is relevant to the topics of this chapter: it
+was destroyed attempting to enter Mars' atmosphere
+because engineers at Lockheed Martin forgot to
+convert data on engine thrusts from pounds into the
+metric unit of force (newtons) before giving the
+information to NASA. Conversions are important!},
+    {'opener'=>'climate-orbiter','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_sec("Introduction and review") %>
+
+  __incl(text/1_intro_and_review)
+
+<% end_sec %>
+ % end intro and review
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_sec("Scaling and order-of-magnitude estimates",4,'scaling') %>
+
+  __incl(text/2_scaling_and_estimation)
+
+<% end_sec %>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('calculator') %>__incl(hw/calculator)<% end_hw() %>
+
+<% begin_hw('units') %>__incl(hw/units)<% end_hw() %>
+
+<% begin_hw('backyard') %>__incl(hw/backyard)<% end_hw() %>
+
+<% begin_hw('furlongs') %>__incl(hw/furlongs)<% end_hw() %>
+
+<% begin_hw('micrograms') %>__incl(hw/micrograms)<% end_hw() %>
+
+<% begin_hw('mg-to-kg') %>__incl(hw/mg-to-kg)<% end_hw() %>
+
+<% begin_hw('estrogen') %>__incl(hw/estrogen)<% end_hw() %>
+
+<% begin_hw('geometric-mean') %>__incl(hw/geometric-mean)<% end_hw() %>
+
+<% begin_hw('sars') %>__incl(hw/sars)<% end_hw() %>
+
+<% marg(7) %>
+<%
+  fig(
+    'pretzels',
+    %q{Problem \ref{hw:pretzels}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('pretzels') %>__incl(hw/pretzels)<% end_hw() %>
+
+<% begin_hw('horizon') %>__incl(hw/horizon)<% end_hw() %>
+
+<% begin_hw('triangle-formula') %>__incl(hw/triangle-formula)<% end_hw() %>
+
+<% marg(34) %>
+<%
+  fig(
+    'triangle-formula',
+    %q{Problem \ref{hw:triangle-formula}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('auntwanda') %>__incl(../mechanics/hw/auntwanda)<% end_hw() %>
+
+<% begin_hw('well') %>__incl(../mechanics/hw/well)<% end_hw() %>
+
+<% begin_hw('alphac',2) %>__incl(../mechanics/hw/alphac)<% end_hw() %>
+
+<% begin_hw('halftree') %>__incl(../mechanics/hw/halftree)<% end_hw() %>
+
+<% begin_hw('mars-drop-time') %>__incl(../mechanics/hw/mars-drop-time)<% end_hw() %>
+
+<% begin_hw('parachutecalc',nil,{'calc'=>true}) %>__incl(../mechanics/hw/parachutecalc)<% end_hw() %>
+
+<% begin_hw('dodge-viper') %>__incl(../mechanics/hw/dodge-viper)<% end_hw() %>
+
+<% begin_hw('railgun') %>__incl(../mechanics/hw/railgun)<% end_hw() %>
+
+<% begin_hw('alice') %>__incl(../mechanics/hw/alice)<% end_hw() %>
+
+<% begin_hw('cubicft') %>__incl(hw/cubicft)<% end_hw() %>
+
+<% begin_hw('dogbrain') %>__incl(hw/dogbrain)<% end_hw() %>
+
+<% begin_hw('lasf') %>__incl(hw/lasf)<% end_hw() %>
+
+<% begin_hw('dognose') %>__incl(hw/dognose)<% end_hw() %>
+
+<% begin_hw('grass') %>__incl(hw/grass)<% end_hw() %>
+
+<% begin_hw('chip') %>__incl(hw/chip)<% end_hw() %>
+
+<% begin_hw('apartments') %>__incl(hw/apartments)<% end_hw() %>
+
+<% begin_hw('bongoburgers') %>__incl(hw/bongoburgers)<% end_hw() %>
+
+<% begin_hw('bodyvolume') %>__incl(hw/bodyvolume)<% end_hw() %>
+
+<% begin_hw('square-mm-to-cm') %>__incl(hw/square-mm-to-cm)<% end_hw() %>
+
+<% begin_hw('light-bucket') %>__incl(hw/light-bucket)<% end_hw() %>
+
+<% begin_hw('richter') %>__incl(hw/richter)<% end_hw() %>
+
+<% begin_hw('europaper') %>__incl(hw/europaper)<% end_hw() %>
+
+<% begin_hw('hairmass') %>__incl(hw/hairmass)<% end_hw() %>
+
+<% begin_hw('et-tu') %>__incl(hw/et-tu)<% end_hw() %>
+
+<% begin_hw('mars-land-area') %>__incl(hw/mars-land-area)<% end_hw() %>
+
+<% begin_hw('martini') %>__incl(hw/martini)<% end_hw() %>
+
+<% begin_hw('cd-hole') %>__incl(hw/cd-hole)<% end_hw() %>
+
+<% begin_hw('liter-cube') %>__incl(hw/liter-cube)<% end_hw() %>
+
+<% marg(50) %>
+<%
+  fig(
+    'einstein',
+    %q{Albert Einstein, and his moustache, problem \ref{hw:hairmass}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'hw-liter-cube',
+    %q{Problem \ref{hw:liter-cube}.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<% begin_hw('great-wall') %>__incl(hw/great-wall)<% end_hw() %>
+
+<% begin_hw('e-coli') %>__incl(hw/e-coli)<% end_hw() %>
+
+<% marg(90) %>
+<%
+  fig(
+    'hw-e-coli',
+    %q{Problem \ref{hw:e-coli}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'hw-droppingballs',
+    %q{Problem \ref{hw:droppingballs}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('droppingballs') %>__incl(../mechanics/hw/droppingballs)<% end_hw() %>
+
+<% begin_hw('jelly-beans') %>__incl(hw/jelly-beans)<% end_hw() %>
+
+<% begin_hw('units-taylor') %>__incl(hw/units-taylor)<% end_hw() %>
+
+<% begin_hw('neanderthal-calories') %>__incl(hw/neanderthal-calories)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

@@ -1,0 +1,95 @@
+%-------------------- paragraph formatting -------------------
+%Have to do the \parafmt /after/ the toc, and at the end of various
+% environments that turn off paragraph indentation. See notes about
+% paragraph indentation at top of file under design.
+\newcommand{\normalparafmt}{
+	\setlength{\parindent}{\normalparindent}
+	\setlength{\parskip}{2mm}
+}
+\newcommand{\parafmt}{
+	\newlength{\normalparindent}% ...has to be after TOC to avoid extra spacing in TOC
+	\setlength{\normalparindent}{6mm}%
+	\normalparafmt
+}
+
+%-------------------- page layout dimensions -------------------
+% standard stuff, see LaTeX companion, p. 85:
+  \setlength{\hoffset}{0mm}
+  \setlength{\textwidth}{113mm}
+  \setlength{\marginparsep}{6mm}
+  \setlength{\columnsep}{6mm}
+  \setlength{\voffset}{-4mm}
+  \setlength{\textheight}{230mm}
+  \setlength{\topmargin}{-12mm}
+  \setlength{\headheight}{4mm}
+  \setlength{\headsep}{8mm}
+  \setlength{\footskip}{15mm}
+% my stuff:
+  \setlength{\oddsidemargin}{7mm}
+  \newlength{\marginfigwidth}
+  \setlength{\marginfigwidth}{52mm}
+  \newlength{\overhang}
+  \setlength{\overhang}{\marginfigwidth}
+  \addtolength{\overhang}{\columnsep}
+  \setlength{\evensidemargin}{\overhang}
+  \addtolength{\evensidemargin}{-11mm}
+  \newlength{\marginfigoverhang}
+  \setlength{\marginfigoverhang}{\overhang}
+  \newlength{\mysteriousextracolsep}
+  \setlength{\mysteriousextracolsep}{3mm}
+  \addtolength{\marginfigoverhang}{\mysteriousextracolsep}
+           %supposed to =columnsep+marginfigwidth, for wrapfig; extra few mm is empirical
+           % This seems to be right-left dependent; see \margdown macro for the fix.
+  \newlength{\pagewidth}
+  \setlength{\pagewidth}{\textwidth}
+  \addtolength{\pagewidth}{\marginparsep}
+  \addtolength{\pagewidth}{\marginfigwidth}
+% to allow changing from one layout to another:
+\newlength{\normaltextwidth}
+\setlength{\normaltextwidth}{\textwidth}
+\newlength{\normalesm}
+\setlength{\normalesm}{\evensidemargin}
+\newcommand{\normallayout}{
+	\clearpage
+	\setlength{\textwidth}{\normaltextwidth}
+	\setlength{\evensidemargin}{\normalesm}
+}
+\newcommand{\nomarginlayout}{
+	\normallayout
+	\addtolength{\textwidth}{\marginparwidth}
+	\addtolength{\textwidth}{\marginparsep}
+	\addtolength{\evensidemargin}{-\marginparwidth}
+	\addtolength{\evensidemargin}{-\marginparsep}
+}
+%---------------------------------------------------------------------------------------------------------------------------------------
+% The following are for use with \pdfsavepos, etc., and use the same coordinate system: zero in the lower left corner of physical page.
+\newlength{\evenfigminx}
+\setlength{\evenfigminx}{1in}
+\addtolength{\evenfigminx}{\hoffset}
+\addtolength{\evenfigminx}{\evensidemargin}
+\addtolength{\evenfigminx}{-\overhang}
+\addtolength{\evenfigminx}{-\mysteriousextracolsep}
+\newlength{\evenfigmaxx}
+\setlength{\evenfigmaxx}{\evenfigminx}
+\addtolength{\evenfigmaxx}{\marginfigwidth}
+\newlength{\oddfigminx}
+\setlength{\oddfigminx}{1in}
+\addtolength{\oddfigminx}{\hoffset}
+\addtolength{\oddfigminx}{\oddsidemargin}
+\addtolength{\oddfigminx}{\textwidth}
+\addtolength{\oddfigminx}{\marginparsep}
+\addtolength{\oddfigminx}{\mysteriousextracolsep}
+\newlength{\oddfigmaxx}
+\setlength{\oddfigmaxx}{\oddfigminx}
+\addtolength{\oddfigmaxx}{\marginfigwidth}
+\newlength{\figmaxy}
+\setlength{\figmaxy}{\paperheight}% Is this different from pdfpageheight?
+\addtolength{\figmaxy}{-1in}
+\addtolength{\figmaxy}{-\voffset}
+\addtolength{\figmaxy}{-\topmargin}
+\addtolength{\figmaxy}{-\headheight}
+\addtolength{\figmaxy}{-\headsep}
+\newlength{\figminy}
+\setlength{\figminy}{\figmaxy}
+\addtolength{\figminy}{-\textheight}
+\immediate\write18{echo "\the\evenfigminx,\the\evenfigmaxx,\the\oddfigminx,\the\oddfigmaxx,\the\figminy,\the\figmaxy" >geom.pos}

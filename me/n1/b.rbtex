@@ -1,0 +1,202 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '03',
+    %q{Acceleration and Free Fall},
+    'ch:acceleration',
+    %q{Galileo's contradiction of Aristotle had serious consequences. He was interrogated by the Church authorities and
+convicted of teaching that the earth went around the sun as a matter of fact and not, as he had promised previously,
+as a mere mathematical hypothesis. He was placed under permanent house arrest, and forbidden to write about or
+teach his theories. Immediately after being forced to recant his claim that the earth revolved around the sun, the old
+man is said to have muttered defiantly ``and yet it does move.''
+ The story is dramatic, but there are some omissions in the commonly taught heroic version. There was a rumor
+that the Simplicio character represented the Pope. Also, some of the ideas Galileo advocated had controversial religious
+overtones. He believed in the existence of atoms, and atomism was thought by some people to contradict the Church's
+doctrine of transubstantiation, which said that in the Catholic mass, the blessing of the bread and wine literally
+transformed them into the flesh and blood of Christ. His support for a cosmology in which the earth circled the sun
+was also disreputable because one of its supporters, Giordano Bruno, had also proposed a bizarre synthesis of Christianity
+with the ancient Egyptian religion.},
+    {'opener'=>'galileo-trial','anonymous'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n1b)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('stupid') %>__incl(hw/stupid)<% end_hw() %>
+
+<% begin_hw('caracceleration') %>__incl(hw/caracceleration)<% end_hw() %>
+
+<% begin_hw('well') %>__incl(hw/well)<% end_hw() %>
+
+<% begin_hw('honeybeeaccel',nil,{'calc'=>true}) %>__incl(hw/honeybeeaccel)<% end_hw() %>
+
+<% begin_hw('dropandthrow') %>__incl(hw/dropandthrow)<% end_hw() %>
+<% marg(-5) %>
+<%
+  fig(
+    'hw-x-graph-to-v-graph',
+    %q{Problem \ref{hw:x-graph-to-v-graph}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-two-ramps',
+    %q{Problem \ref{hw:two-ramps}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-ramp',
+    %q{Problem \ref{hw:ramp}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('x-graph-to-v-graph') %>__incl(hw/x-graph-to-v-graph)<% end_hw() %>
+
+<% begin_hw('two-ramps') %>__incl(hw/two-ramps)<% end_hw() %>
+
+<% begin_hw('graph-bouncing') %>__incl(hw/graph-bouncing)<% end_hw() %>
+
+<% begin_hw('ramp') %>__incl(hw/ramp)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('alice') %>__incl(hw/alice)<% end_hw() %>
+
+<% begin_hw('dodge-viper') %>__incl(hw/dodge-viper)<% end_hw() %>
+
+<% marg(10) %>
+<%
+  fig(
+    'hw-astronaut-jumping',
+    %q{Problem \ref{hw:astronaut-jumping}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('astronaut-jumping') %>__incl(hw/astronaut-jumping)<% end_hw() %>
+
+<% begin_hw('mars-drop-time') %>__incl(hw/mars-drop-time)<% end_hw() %>
+
+<% begin_hw('halftree') %>__incl(hw/halftree)<% end_hw() %>
+
+<% begin_hw('ramp-half-speed') %>__incl(hw/ramp-half-speed)<% end_hw() %>
+
+<% begin_hw('endofarc') %>__incl(hw/endofarc)<% end_hw() %>
+
+<% begin_hw('auntwanda') %>__incl(hw/auntwanda)<% end_hw() %>
+
+<% begin_hw('boguscardistance') %>__incl(hw/boguscardistance)<% end_hw() %>
+
+<% begin_hw('betteracceldef') %>__incl(hw/betteracceldef)<% end_hw() %>
+
+<% begin_hw('justifyvx') %>__incl(hw/justifyvx)<% end_hw() %>
+
+<% begin_hw('chipmunk') %>__incl(hw/chipmunk)<% end_hw() %>
+<% marg(10) %>
+<%
+  fig(
+    'hw-chipmunk',
+    %q{Problem \ref{hw:chipmunk}.}
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<% begin_hw('alphac',2) %>__incl(hw/alphac)<% end_hw() %>
+
+\vspace{30mm}
+
+% LaTeX insists on placing this on a special floats page, so I have to do it by brute force.
+<% raw_fig('hw-estimate-flea-accel') %>\\
+\noindent{\formatlikecaption{Problem \ref{hw:estimate-flea-accel}. This spectacular series of
+photos from a 2011 paper by Burrows and Sutton (``Biomechanics of jumping in the flea,'' J. Exp. Biology 214:836) shows the flea jumping at about a 45-degree 
+angle, but for the sake of this estimate just consider the case of a flea jumping vertically.}\label{fig:hw-estimate-flea-accel}}
+
+<% begin_hw('estimate-flea-accel') %>__incl(hw/estimate-flea-accel)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('railgun') %>__incl(hw/railgun)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('parachutecalc',nil,{'calc'=>true}) %>__incl(hw/parachutecalc)<% end_hw() %>
+
+\pagebreak
+
+<% marg(15) %>
+<%
+  fig(
+    'hw-droppingballs',
+    %q{Problem \ref{hw:droppingballs}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('droppingballs') %>__incl(hw/droppingballs)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('stride') %>__incl(hw/stride)<% end_hw() %>
+<% marg(40) %>
+<%
+  fig(
+    'hw-stride',
+    %q{Problem \ref{hw:stride}.}
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+<% begin_hw('punch') %>__incl(hw/punch)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('aircraft-carrier') %>__incl(hw/aircraft-carrier)<% end_hw() %>
+
+<% begin_hw('baseball-pitch-ratios') %>__incl(hw/baseball-pitch-ratios)<% end_hw() %>
+
+<% begin_hw('high-speed-chase') %>__incl(hw/high-speed-chase)<% end_hw() %>
+
+<% begin_hw('vee-track-minimum-time',2) %>__incl(hw/vee-track-minimum-time)<% end_hw() %>
+
+\pagebreak
+
+<% marg(40) %>
+<%
+  fig(
+    'hw-galileo-chord-of-circle',
+    %q{Problem \ref{hw:galileo-chord-of-circle}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('galileo-chord-of-circle',2) %>__incl(hw/galileo-chord-of-circle)<% end_hw() %>
+
+<% begin_hw('box-slides-to-a-stop',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/box-slides-to-a-stop)<% end_hw() %>
+
+<% begin_hw('gravitational-acceleration-planet-x',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/gravitational-acceleration-planet-x)<% end_hw() %>
+
+<% begin_hw('golf-ball-seen-through-window',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/golf-ball-seen-through-window)<% end_hw() %>
+
+<% end_hw_sec %>
+
+
+
+
+
+<% end_chapter() %>
+ %%----------------------------------------------------------
+
+<% figure_in_toc('shuttle') %>

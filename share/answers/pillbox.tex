@@ -1,0 +1,23 @@
+(a) Let the Gaussian pillbox of example \ref{eg:pillbox}, p.~\pageref{eg:pillbox}, have
+area $A$ on each flat face. Gauss's law is
+\begin{align*}
+        4\pi k q_{in}        &= \sum \vc{E}_j\cdot\vc{A}_j \\
+        4\pi k \sigma A        &= \sum |\vc{E}_j||\vc{A}_j|\eqquad.
+\end{align*}
+By symmetry, we would expect the field to be perpendicular to the plane and
+the same on both sides of the plane. This
+is a rather subtle point, which we'll come back to at the end. Assuming this to be true,
+there is no flux through the sides of the pillbox, only through the flat faces, and
+the magnitude of the field is the same everywhere on the faces, so we can take it outside the sum.
+\begin{align*}
+        &4\pi k \sigma A        = |\vc{E}|\cdot 2 A \\
+        &E = 2\pi k \sigma.
+\end{align*}
+
+Returning to the symmetry issue, the tricky point is that we could add on to our solution
+any other solution that was valid in a vacuum. For instance, we could add a uniform electric
+field that would cancel out the sheet's field on one side, while doubling it on the other.
+
+(b) The most efficient way to do this is to make use of a similar equation whose units
+we already know to be correct, such as the equation $E=kq/r^2$ for a point charge.
+Since $q/r^2$ has the same units as $\sigma$, the units do check out.

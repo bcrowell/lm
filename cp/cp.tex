@@ -1,0 +1,113 @@
+% (c) 2006 Ben Crowell, licensed under the Creative Commons
+% Attribution-ShareAlike license,
+% http://creativecommons.org/licenses/by-sa/1.0/
+% and GFDL 1.2, http://www.gnu.org/copyleft/fdl.html .
+%
+\documentclass{lmseries}
+% \let\ifpdf\relax % http://tex.stackexchange.com/questions/11414/package-ifpdf-error
+% --------> this fails with TeX Live 2013, conflicts with xparse
+%\selectlanguage{english}
+\usepackage{lmlanguage}
+%\includeonly{ch05/ch05}
+\inputprotcode
+\makeindex
+\pdfmapfile{=fullembed.map} % created by the script create_fullembed_file
+\begin{document}
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+% 
+% The following is all related to margin kerning.
+% This is activated in dp.cls using the boolean wantmarginkerning.
+% The constant 1 is to allow margin kerning, but to keep it from affecting
+% line breaks.
+\ifthenelse{\boolean{wantmarginkerning}}{
+ \setprotcode\font
+ {\it \setprotcode \font}
+ {\bf \setprotcode \font}
+ {\bf \it \setprotcode \font}
+ \pdfprotrudechars=1
+}{}
+%========================= frontmatter =========================
+\formatchtoc{\Large}{}{4mm}
+\frontmatter
+\yesiwantarabic
+\renewcommand{\chapdir}{ch00}
+\include{ch00/title}
+\yesiwantarabic
+\nomarginlayout
+\onecolumn\pagebreak[4]
+\noindent\huge\bfseries\sffamily{}\vspace{20mm}
+
+\vspace{2mm}\hbox{}
+
+\hspace{26mm}\hspace{5mm}\noindent{}Brief Contents
+
+\vspace{0mm}\hbox{}
+
+\hspace{20mm}\noindent\mynormaltype\Large\sffamily{}\begin{tabular}{rl}
+\input{brief-toc.tex}
+\end{tabular}
+
+\vspace{12mm}
+
+\mynormaltype\sffamily{}
+\noindent 
+For a semester-length course, all seven chapters can be covered.
+For a shorter course, the book is designed so that chapters 1, 2, and 5 are the only
+ones that are required for continuity; any of the others can be included or
+omitted at the instructor's discretion, with the only constraint being that
+chapter 6 requires chapter 4.
+
+\vspace{12mm}\hbox{}
+
+
+\vfill
+\mynormaltype
+
+\pagebreak[4]
+
+\vspace{0mm}
+\begin{center}
+\noindent\huge\bfseries\sffamily{}Contents\mynormaltype
+\end{center}
+\vspace{0mm}
+\begin{multicols}{2}
+  \tableofcontents
+  \setcounter{unbalance}{0}
+\end{multicols}
+\normallayout\onecolumn
+
+%========================= main matter =========================
+\mainmatter
+%-- I want the whole book numbered sequentially, arabic:
+  \pagenumbering{arabic} 
+  \addtocounter{page}{6} 
+\parafmt
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+%========================= chapters =========================
+	\renewcommand{\chapdir}{ch01}\include{ch01/ch01temp}\write18{../mv_silent all.pos ch01.pos}% 
+\wugga
+	\renewcommand{\chapdir}{ch02}\include{ch02/ch02temp}\write18{../mv_silent all.pos ch02.pos}% 
+	\renewcommand{\chapdir}{ch03}\include{ch03/ch03temp}\write18{../mv_silent all.pos ch03.pos}% 
+	\renewcommand{\chapdir}{ch04}\include{ch04/ch04temp}\write18{../mv_silent all.pos ch04.pos}% 
+	\renewcommand{\chapdir}{ch05}\include{ch05/ch05temp}\write18{../mv_silent all.pos ch05.pos}% 
+	\renewcommand{\chapdir}{ch06}\include{ch06/ch06temp}\write18{../mv_silent all.pos ch06.pos}% 
+	\renewcommand{\chapdir}{ch07}\include{ch07/ch07temp}\write18{../mv_silent all.pos ch07.pos}% 
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+	\renewcommand{\chapdir}{ch08}\include{ch08/ch08temp}\write18{../mv_silent all.pos ch08.pos}% 
+%========================= backmatter =========================
+\getreadyforbackmatter
+\backmatter
+\renewcommand{\chapdir}{ch99}
+%========================= appendices =========================
+\formatchtoc{\large}{\quad\contentspage}{0mm} % This has to go before first appendix.
+\renewcommand{\chaptermark}[1]%
+    {\markboth{\textsf{\thechapter\hspace{\myfooterspace}#1}}{}}
+% exercises
+%        \newpage\include{ch99/exercises}
+% photo credits
+	\newpage\include{ch99/photocredits}
+% hw hints, answers, solutions	
+	\onecolumn\include{ch99/hwans}
+%========================= index =========================
+\printindex
+\end{document}

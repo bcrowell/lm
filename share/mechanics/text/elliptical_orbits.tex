@@ -1,0 +1,152 @@
+<% begin_sec("Proof of Kepler's elliptical orbit law",nil,'elliptical-orbits',{'optional'=>true}) %>%
+\index{Kepler!elliptical orbit law}\index{elliptical orbit law}
+
+Kepler determined purely empirically that the planets'
+orbits were ellipses, without understanding the underlying
+reason in terms of physical law. Newton's proof of this fact
+based on his laws of motion and law of gravity was
+considered his crowning achievement both by him and by his
+contemporaries, because it showed that the same physical
+laws could be used to analyze both the heavens and the
+earth. Newton's proof was very lengthy, but by applying the
+more recent concepts of conservation of energy and angular
+momentum we can carry out the proof quite simply and
+succinctly, and without calculus.
+
+The basic idea of the proof is that we want to describe the
+shape of the planet's orbit with an equation, and then show
+that this equation is exactly the one that represents an
+ellipse. Newton's original proof had to be very complicated
+because it was based directly on his laws of motion, which
+include time as a variable. To make any statement about the
+shape of the orbit, he had to eliminate time from his
+equations, leaving only space variables. But conservation
+laws tell us that certain things don't change over time, so
+they have already had time eliminated from them.
+
+<% marg(50) %>
+<%
+  fig(
+    'proof-a',
+    %q{The $r-\varphi$ representation of a curve.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'proof-b',
+    %q{%
+      Proof that the two angles labeled 
+      $\varphi$ are in fact equal: The definition of an ellipse is that
+      the sum of the distances from the two foci stays constant. If we move a small distance
+      $\ell$ along the ellipse, then one distance shrinks by an amount 
+      $\ell\cos\varphi_1$, while the other
+      grows by $\ell\cos\varphi_2$. These are equal, so $\varphi_1=\varphi_2$.%
+      
+    }
+  )
+%>
+
+<% end_marg %>
+There are many ways of representing a curve by an equation,
+of which the most familiar is $y=ax+b$ for a line in
+two dimensions. It would be perfectly possible to describe a
+planet's orbit using an $x-y$ equation like this, but
+remember that we are applying conservation of angular
+momentum, and the space variables that occur in the equation
+for angular momentum are the distance from the axis, $r$,
+and the angle between the velocity vector and the $r$
+vector, which we will call $\varphi $. The planet will have
+$\varphi $=90\degunit when it is moving perpendicular to the $r$
+vector, i.e., at the moments when it is at its smallest or
+greatest distances from the sun. When $\varphi $ is less than
+90\degunit the planet is approaching the sun, and when it is
+greater than 90\degunit it is receding from it. Describing a
+curve with an $r-\varphi $ equation is like telling a driver in
+a parking lot a certain rule for what direction to steer
+based on the distance from a certain streetlight in
+the middle of the lot.
+
+The proof is broken into the three parts for easier
+digestion. The first part is a simple and intuitively
+reasonable geometrical fact about ellipses, whose proof we
+relegate to the caption of figure \figref{proof-b}; you will not be missing
+much if you merely absorb the result without reading the proof.
+
+(1) If we use one of the two foci of an ellipse as an axis
+for defining the variables $r$ and $\varphi $, then the angle
+between the tangent line and the line drawn to the other
+focus is the same as $\varphi $, i.e., the two angles labeled
+$\varphi $ in figure \figref{proof-b} are in fact equal.
+
+The other two parts form the meat of our proof. We state the
+results first and then prove them.
+
+(2) A planet, moving under the influence of the sun's
+gravity with less than the energy required to escape, obeys
+an equation of the form
+\begin{equation*}
+ \sin\varphi = \frac{1}{\sqrt{-pr^2+qr}}\eqquad,
+\end{equation*}
+ where $p$ and $q$  are positive constants that depend on the planet's
+ energy and angular momentum.
+
+(3) A curve is an ellipse if and only if its $r-\varphi $
+equation is of the form
+\begin{equation*}
+ \sin\varphi = \frac{1}{\sqrt{-pr^2+qr}}\eqquad,
+\end{equation*}
+where $p$ and $q$ are positive constants that depend on the size and
+shape of the ellipse.
+
+<% begin_sec("Proof of part (2)",0,'',{'toc'=>false}) %>
+The component of the planet's velocity vector that is
+perpendicular to the $\vc{r}$ vector is $v_\perp=v \sin \varphi $, so
+conservation of angular momentum tells us that $L=mrv \sin\varphi$
+is a constant. Since the planet's
+mass is a constant, this is the same as the condition
+\begin{equation*}
+                rv \sin  \varphi  =  \text{constant}\eqquad.
+\end{equation*}
+Conservation of energy gives
+\begin{equation*}
+                \frac{1}{2}mv^2-\frac{GMm}{r}          =  \text{constant}\eqquad.
+\end{equation*}
+We solve the first equation for $v$ and plug into the second
+equation to eliminate $v$. Straightforward algebra then
+leads to the equation claimed above, with the constant $p$
+being positive because of our assumption that the planet's
+energy is insufficient to escape from the sun, i.e., its
+total energy is negative.
+
+<% marg(0) %>
+<%
+  fig(
+    'proof-c',
+    %q{Proof of part (3).}
+  )
+%>
+<% end_marg %>
+<% end_sec() %>
+<% begin_sec("Proof of part (3)",0,'',{'toc'=>false}) %>
+We define the quantities $\alpha$, $d$, and $s$ as shown in
+the figure. The law of cosines gives
+\begin{equation*}
+ d^2 = r^2+s^2-2rs\cos\alpha\eqquad.
+\end{equation*}
+Using $\alpha =180\degunit-2\varphi$ and the trigonometric
+identities $\cos (180\degunit-x)=-\cos x$ and
+$\cos 2x= 1-2 \sin^2 x$, we can rewrite this as
+\begin{equation*}
+       d^2 = r^2 + s^2 - 2rs\left(2\sin^2\varphi-1\right)\eqquad.
+\end{equation*}
+Straightforward algebra transforms this into
+\begin{equation*}
+  \sin\:\varphi = \sqrt{\frac{(r+s)^2-d^2}{4rs}}\eqquad.
+\end{equation*}
+Since $r+s$ is constant, the top of the fraction is
+constant, and the denominator can be rewritten as $4rs=4r(\text{constant}-r)$,
+which is equivalent to the desired form.
+
+<% end_sec() %>
+<% end_sec() %>

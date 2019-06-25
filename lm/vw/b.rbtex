@@ -1,0 +1,77 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '18',
+    %q{Resonance},
+    'ch:resonance',
+    %q{%
+\emph{Top:\/} A series of images from a film of the Tacoma Narrows Bridge
+vibrating on the day it was to collapse. \emph{Middle:\/} The bridge immediately
+before the collapse, with the sides vibrating 8.5 meters (28 feet) up and
+down. Note that the bridge is over a mile long. \emph{Bottom:} During and
+after the final collapse. The right-hand picture gives a sense of the
+massive scale of the construction.%
+},
+    {'opener'=>'tacoma-collage','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/vwb)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+\vfill
+
+<% begin_hw('stereopower') %>__incl(hw/stereopower)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('swimbladder') %>__incl(hw/swimbladder)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('qcorrection',nil,{'calc'=>true}) %>__incl(hw/qcorrection)<% end_hw() %>
+
+\pagebreak[4]
+
+<% begin_hw('qproof') %>__incl(hw/qproof)<% end_hw() %>
+
+<% begin_hw('fwhm',2,{'calc'=>true}) %>__incl(hw/fwhm)<% end_hw() %>
+
+<%
+  fig(
+    'hw-spider-oscillations',
+    %q{Problem }+ref_workaround('hw:spider-oscillations')+%q{.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+<% begin_hw('spider-oscillations') %>__incl(hw/spider-oscillations)<% end_hw() %>
+
+
+
+<% end_hw_sec %>
+
+<% begin_ex("Resonance") %>
+1. Compare the oscillator's energies at A, B, C, and D.
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-1}
+
+2. Compare the Q values of the two oscillators.
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-2}
+
+3. Match the x-t graphs in \#2 with the amplitude-frequency graphs below.
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-3}
+
+<% end_ex %>
+ %%---------------------------------------------------------
+
+<% if false then figure_in_toc("tacoma") end %>
+<% end_chapter() %>

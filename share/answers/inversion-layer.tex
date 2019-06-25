@@ -1,0 +1,17 @@
+(a) If the expression $1+by$ is to make sense, then $by$ has to be unitless, so $b$ has units of $\munit^{-1}$.
+The input to the exponential function also has to be unitless, so $k$ also has of $\munit^{-1}$.
+The only factor with units on the right-hand side is $P_o$, so $P_o$ must have units of pressure, or Pa.\\
+(b)
+\begin{align*}
+  \der P &= \rho g \der y \\
+  \rho &= \frac{1}{g} \frac{\der P}{\der y} \\
+    &= \frac{P_o}{g} e^{-ky}(-k-kby+b)
+\end{align*}
+(c) The three terms inside the parentheses on the right all have units of $\munit^{-1}$, so it makes sense
+to add them, and the factor in parentheses has those units. The units of the result from b then look like
+\begin{align*}
+  \frac{\kgunit}{\munit^3} &= \frac{\zu{Pa}}{\munit/\sunit^2}\munit^{-1} \\
+                           &= \frac{\nunit/\munit^2}{\munit^2/\sunit^2} \\
+                           &= \frac{\kgunit\unitdot\munit^{-1}\unitdot\sunit^{-2}}{\munit^2/\sunit^2},
+\end{align*}
+which checks out.

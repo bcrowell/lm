@@ -1,0 +1,215 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '10',
+    %q{Gravity},
+    'ch:gravity',
+    %q{Gravity is the only really important force
+ on the cosmic scale. This false-color representation of Saturn's
+ rings was made from an image sent back by the Voyager 2 space
+probe.  The rings are composed of innumerable tiny ice particles orbiting in circles
+ under the influence of saturn's gravity.},
+    {'opener'=>'saturn'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n3e)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('laurie') %>__incl(hw/laurie)<% end_hw() %>
+
+<% begin_hw('eclipse') %>__incl(hw/eclipse)<% end_hw() %>
+
+<% begin_hw('moon2') %>__incl(hw/moon2)<% end_hw() %>
+
+<%
+  fig(
+    'hw-moon2',
+    %q{Problem \ref{hw:moon2}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('rocketweight') %>__incl(hw/rocketweight)<% end_hw() %>
+
+<% begin_hw('extrasolar') %>__incl(hw/extrasolar)<% end_hw() %>
+
+<% begin_hw('startrek') %>__incl(hw/startrek)<% end_hw() %>
+
+<% begin_hw('rotatinggravitatingbody') %>__incl(hw/rotatinggravitatingbody)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-mars',
+    %q{Problem \ref{hw:mars-trip}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('mars-trip') %>__incl(hw/mars-trip)<% end_hw() %>
+
+<% begin_hw('mineshaft',2) %>__incl(hw/mineshaft)<% end_hw() %>
+
+<% begin_hw('ceres') %>__incl(hw/ceres)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('prove-a-equals-g') %>__incl(hw/prove-a-equals-g)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-ida',
+    %q{Problem \ref{hw:ida}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('ida') %>__incl(hw/ida)<% end_hw() %>
+
+<% begin_hw('escapevelocity',nil,{'calc'=>true}) %>__incl(hw/escapevelocity)<% end_hw() %>
+
+<% begin_hw('galacticcenter') %>__incl(hw/galacticcenter)<% end_hw() %>
+
+<% begin_hw('upsilon-andromedae') %>__incl(hw/upsilon-andromedae)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('geosynchronous') %>__incl(hw/geosynchronous)<% end_hw() %>
+
+<% begin_hw('receding-moon') %>__incl(hw/receding-moon)<% end_hw() %>
+
+<% begin_hw('alternateuniverse') %>__incl(hw/alternateuniverse)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('alien-gangster') %>__incl(hw/alien-gangster)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('earthmooncancellation') %>__incl(hw/earthmooncancellation)<% end_hw() %>
+
+\vfill
+
+<% marg(-15) %>
+<%
+  fig(
+    'hw-uranus',
+    %q{Problem \ref{hw:uranus}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('uranus') %>__incl(hw/uranus)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('iss-g') %>__incl(hw/iss-g)<% end_hw() %>
+
+\pagebreak
+
+<%
+  fig(
+    'new-horizons',
+    %q{%
+      Problem \ref{hw:new-horizons}: New Horizons at its closest approach to Jupiter. (Jupiter's four largest moons
+are shown for illustrative purposes.) The masses are:\\\\
+sun: $1.9891\times10^{30}\ \kgunit$\\\\
+Jupiter: $1.8986\times10^{27}\ \kgunit$\\\\
+New Horizons: 465.0 kg
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+<% begin_hw('new-horizons') %>__incl(hw/new-horizons)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('ground-skimming') %>__incl(hw/ground-skimming)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('overlapping-shells',2) %>__incl(hw/overlapping-shells)<% end_hw() %>
+
+<%
+  fig(
+    'hw-overlapping-shells',
+    %q{%
+      Problem \ref{hw:overlapping-shells}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_hw('mineshaft-half-way-to-center') %>__incl(hw/mineshaft-half-way-to-center)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('earth-layers') %>__incl(hw/earth-layers)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    'hw-iss-apparent-gravity',
+    %q{%
+      Problem \ref{hw:iss-apparent-gravity}.
+    }
+  )   
+%>   
+<% end_marg %>
+
+<% begin_hw('iss-apparent-gravity') %>__incl(hw/iss-apparent-gravity)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("The shell theorem") %>
+
+This exercise is an approximate numerical test of the shell
+theorem. There are seven masses A-G, each being one
+kilogram. Masses A-F, each one meter from the center, form a
+shape like two Egyptian pyramids joined at their bases; this
+is a rough approximation to a six-kilogram spherical shell
+of mass. Mass G is five meters from the center of the main
+group. The class will divide into six groups and split up
+the work required in order to calculate the vector sum of
+the six gravitational forces exerted on mass G. Depending
+on the size of the class, more than one group may be
+assigned to deal with the contribution of the same mass to
+the total force, and the redundant groups can check
+each other's results.
+
+\includegraphics[width=78mm]{../share/mechanics/figs/ex-octahedron}
+
+1. Discuss as a class what can be done to simplify the task
+of calculating the vector sum, and how to organize things so
+that each group can work in parallel with the others.
+
+2. Each group should write its results on the board in units
+of piconewtons, retaining five significant figures of precision.
+Everyone will need to use
+the same value for the gravitational constant, $G=6.6743\times10^{-11}\ \nunit\unitdot\munit^2/\kgunit^2$.
+
+3. The class will determine the vector sum and compare with
+the result that would be obtained with the shell theorem.
+
+<% end_ex %>
+
+<% end_chapter() %>

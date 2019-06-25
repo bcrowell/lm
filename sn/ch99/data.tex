@@ -1,0 +1,238 @@
+\refstepcounter{appendixctr}\label{dataappendix}%
+\appendix\chapter{Appendix \ref{dataappendix}: Useful Data}
+
+\mysubsection[0]{Notation and terminology, compared with other books}\label{notationcompared}
+Almost all the notation and terminology in \emph{Simple Nature} is standard, but there
+are some cases where there is no universal standard, and a very few cases where
+I've intentionally deviated from a universal standard. The notation used by physicists
+is also different from that used by electrical and mechanical engineers; I use
+physics terminology and notation (notably $\sqrt{-1}=i$, not $j$, and ``torque'' rather
+than ``moment''), but employ the SI system of units used in engineering, rather than
+the cgs units favored by some physicists.
+
+\noindent Nonstandard terminology:
+\begin{description}
+	\item[Potential energy] is referred to in this book as \emph{interaction energy}, or
+		according to its type: \emph{gravitational energy}, \emph{electrical energy}, etc.
+	\item[The potential,] in an electrical context, is referred to as \emph{voltage},
+		e.g. I say that $V=kq/r$ is the voltage surrounding a point charge.
+	\item[Heat and thermal energy] are both referred to as \emph{heat}. This is in keeping
+		with casual usage among scientists, but formal written usage dictates
+		the use of ``thermal energy'' to mean the kinetic energy an object has because
+		of its molecules' random motion, while ``heat'' is
+		the transfer of thermal energy.
+\end{description}
+
+\noindent Notation for which there is no universal standard:
+\begin{description}
+	\item[Kinetic energy] is written $K$. Standard notation is $K$, $T$, or $KE$.
+	\item[Interaction energy] is written $U$. Standard notation is $U$, $V$, or $PE$.
+	\item[The unit vectors] are $\hat{\vc{x}},\hat{\vc{y}},\hat{\vc{z}}$. 
+		Standard notation is either $\hat{\vc{x}},\hat{\vc{y}},\hat{\vc{z}}$ or
+		$\hat{\vc{i}},\hat{\vc{j}},\hat{\vc{k}}$.
+	\item[Distance from an axis] in cylindrical coordinates is $R$. A more common
+		notation in math books is $\rho$, but this would conflict with the standard
+		physics notation for the charge density.
+	\item[Vibrations] do not have very well standardized terminology or notation. I use
+		``frequency'' to refer to both $f$ and $\omega$, depending on the context to
+		make it clear which is meant. The frequency of free, damped oscillations 
+		is $\omega_f$, which is only approximately the same as $\omega_\zu{o}=\sqrt{k/m}$.
+		The full width at half-maximum of the resonance peak (on a plot of energy versus
+		frequency) is $\Delta\omega$.
+	\item[The coupling constants] for electricity and magnetism are written as
+		$k$ and $k/c^2$. This is standard notation, but it would be more common in 
+		SI calculations to see everything expressed in terms of
+		$\epsilon_\zu{o}=1/4\pi k$ and $\mu_\zu{o}=4\pi k/c^2$.
+		Numerically, we have $k=8.99\times10^9\ \zu{N}\unitdot\zu{m}^2/\zu{C}^2$
+		and $k/c^2=10^{-7}\ \zu{N}/\zu{A}^2$, the latter being
+		an exact relation.
+		
+\end{description}
+ %
+
+\mysubsection[0]{Notation and units}\label{notationtable}
+\noindent\begin{tabular}{|l|l|l|}
+\hline
+quantity	& unit	& symbol \\
+\hline
+distance	& meter, m	& $x, \Delta{}x$ \\
+time	& second, s	& $t, \Delta{}t$ \\
+mass	& kilogram, kg	& $m$ \\
+density	& $\kgunit/\munit^3$	& $\rho$  \\
+force	& newton, 1 N=$1\ \kgunit\unitdot\munit/\sunit^2$	& $F$ \\
+velocity	& m/s	& $v$ \\
+acceleration	& $\munit/\sunit^2$	& $a$ \\
+gravitational field	& $\junit/\kgunit\unitdot\munit$ or $\munit/\sunit^2$	& $g$ \\
+energy	& joule, J	& $E$ (also electric field)\\
+momentum	& $\kgunit\unitdot\munit/\sunit$	& $p$ \\
+angular momentum	& $\kgunit\unitdot\munit^2/\sunit$ or $\junit\unitdot\sunit$	& $L$ (also inductance)\\
+power	& watt, 1 W = 1 J/s	& $P$ (also pressure) \\
+pressure & 1 Pa=$1\ \nunit/\munit^2$	& $P$ (also power)\\
+temperature	& K	& $T$ (also period)\\
+period	& s	& $T$ (also temperature)\\
+wavelength	& m	& $\lambda$ \\
+frequency	& $\zu{s}^{-1}$ or Hz	& $f$ \\
+charge	& coulomb, C	& $q$ \\
+voltage	& volt, 1 V = 1 J/C	& $V$ \\
+current	& ampere, 1 A = 1 C/s	& $I$ \\
+resistance	& ohm, 1 $\Omega$ = 1 V/A	& $R$ \\
+capacitance	& farad, 1 F = 1 C/V	& $C$ \\
+inductance	& henry, 1 H = 1 $\zu{V}\unitdot\sunit/\zu{A}$	& $L$ (also angular momentum)\\
+electric field	& V/m or N/C	& $E$ (also energy)\\
+magnetic field	& tesla, 1 T = 1 $\nunit\unitdot\sunit/\zu{C}\unitdot\munit$	& $B$ \\
+focal length	& m	& $f$ \\
+magnification	& unitless	& $M$ \\
+index of refraction	& unitless	& $n$ \\
+electron wavefunction	& $\munit^{-3/2}$	& $\Psi$ \\
+\hline
+\end{tabular}
+ %
+\mysubsection[0]{Fundamental constants}
+\noindent\begin{tabular}{|l|l|}
+\hline
+gravitational constant	& $G=6.67\times10^{-11}\ \junit\unitdot\munit/\kgunit^2$ \\
+Boltzmann constant      & $k=1.38\times10^{-23}\ \junit/\kunit$\\
+Coulomb constant	& $k=8.99\times10^9\ \junit\unitdot\munit/\zu{C}^2$ or $\nunit\unitdot\munit^2/\zu{C}^2$ \\
+quantum of charge	& $e=1.60\times10^{-19}\ \zu{C}$ \\
+speed of light	& $c=3.00\times10^8\ \zu{m/s}$ \\
+Planck's constant	& $h=6.63\times10^{-34}\ \junit\unitdot\sunit$ \\
+\hline
+\end{tabular}\par
+\noindent Note the use of the same notation, $k$, for both the Boltzmann constant and the Coulomb constant.
+
+
+\mysubsection[0]{Metric prefixes}\label{metricprefixestable}\index{metric system!prefixes}
+\noindent\begin{tabular}{|l|l|l|}
+\hline
+M-	& mega-			& $10^6$ \\
+k-	& kilo-			& $10^3$ \\
+m-	& milli-		& $10^{-3}$ \\
+$\mu$- (Greek mu) & micro-	& $10^{-6}$ \\
+n-	& nano-			& $10^{-9}$ \\
+p-	& pico-			& $10^{-12}$ \\
+f-	& femto-		& $10^{-15}$ \\
+\hline
+\end{tabular}
+
+\noindent{}Note that the exponents go in steps of three.
+The exception is centi-, $10^{-2}$, which is used only in the centimeter, and this
+doesn't require memorization, because a cent is $10^{-2}$ dollars.
+ %
+
+\mysubsection[0]{Nonmetric units}\label{nonmetricunits}\index{units!nonmetric}
+\noindent Nonmetric units in terms of metric ones:\\
+\noindent\begin{tabular}{|l|l|}
+\hline
+1 inch	&= 25.4 mm (by definition)\\
+1 pound (lb)	&= 4.5 newtons of force\\
+1 scientific calorie &= 4.18 J\\
+1 nutritional calorie &= $4.18\times10^3$ J\\
+1 gallon &= $3.78\times10^3\ \zu{cm}^3$\\
+1 horsepower &= 746 W\\
+\hline
+\end{tabular}
+
+\noindent{}The pound is a unit of force, so it converts to newtons, not kilograms.
+A one-kilogram mass at the earth's surface experiences a gravitational force of
+$(1\ \kgunit)(9.8\ \munit/\sunit^2)=9.8\ \zu{N}=2.2\ \zu{lb}$. The nutritional
+information on food packaging
+typically gives energies in units of calories, but those so-called calories are
+really kilocalories.
+
+\noindent Relationships among U.S. units:\\
+\noindent\begin{tabular}{|l|l|}
+\hline
+1 foot (ft)	&= 12 inches\\
+1 yard (yd) &= 3 feet \\
+1 mile (mi) &= 5280 feet\\
+1 ounce (oz) &= 1/16 pound\\
+\hline
+\end{tabular}
+
+
+
+\mysubsection[0]{The Greek alphabet}
+\noindent\begin{tabular}{|lll|lll|lll|}
+\hline
+$\alpha$	& A			& alpha	& $\iota$		& I		& iota &  $\rho$	& P		& rho \\
+$\beta$		& B			& beta	& $\kappa$	& K	& kappa & $\sigma$	& $\Sigma$	& sigma \\
+$\gamma$	& $\Gamma$	& gamma	& $\lambda$ & $\Lambda$ & lambda & $\tau$ & T & tau\\
+$\delta$	& $\Delta$		& delta	& $\mu$	& M	& mu & $\upsilon$ & Y & upsilon \\
+$\epsilon$	& E			& epsilon	& $\nu$	& N		& nu & $\phi$ & $\Phi$ & phi\\
+$\zeta$		& Z			& zeta	& $\xi$		& $\Xi$		& xi & $\chi$ & X & chi\\
+$\eta$		& H			& eta	& o	& O		& omicron & $\psi$ & $\Psi$ & psi\\
+$\theta$	& $\Theta$		& theta	& $\pi$		& $\Pi$		& pi & $\omega$ & $\Omega$ & omega\\
+\hline
+\end{tabular}
+ %
+
+
+\mysubsection[0]{Subatomic particles}\label{subatomicparticlesdata}
+\noindent\begin{tabular}{|l|l|l|l|}
+\hline
+particle	& mass (kg)	& charge	& radius (fm) \\
+\hline
+electron	& $9.109\times10^{-31}$	& $-e$	& $\lesssim0.01$\\
+proton	& $1.673\times10^{-27}$	& $+e$	& $\sim{}1.1$\\
+neutron	& $1.675\times10^{-27}$	& 0		& $\sim{}1.1$\\
+neutrino	& $\sim10^{-39}$ kg ?	& 0		& 	?\\
+\hline
+\end{tabular}
+
+\noindent{}The radii of protons and neutrons can only be given
+approximately, since they have fuzzy surfaces. For
+comparison, a typical atom is about a million fm in radius.
+ %
+
+
+
+
+\mysubsection[0]{Earth, moon, and sun}
+\noindent\begin{tabular}{|l|l|l|l|}
+\hline
+body		&	mass (kg)		&	radius (km)	&	radius of orbit (km) \\
+\hline
+earth	&	$5.97\times10^{24}$	&	$6.4\times10^{3}$	&	$1.49\times10^{8}$\\
+moon	&	$7.35\times10^{22}$	&	$1.7\times10^{3}$	&	$3.84\times10^{5}$\\
+sun		&	$1.99\times10^{30}$	&	$7.0\times10^{5}$	&	---\\
+\hline
+\end{tabular}
+ %
+
+\mysubsection[0]{The periodic table}
+\anonymousinlinefig{periodictable}
+ %
+
+\mysubsection[0]{Atomic masses}
+These atomic masses are given in atomic mass units (u), where by definition
+the mass of an atom of the isotope carbon-12 equals 12 u. One atomic
+mass unit is the same as about $1.66\times10^{-27}$ kg. Data are only
+given for naturally occurring elements.
+
+{\footnotesize
+\begin{tabular}{|ll|ll|ll|ll|}
+\hline
+Ag	& 107.9	&Eu	& 152.0	&Mo	& 95.9	&Sc	& 45.0	\\
+Al 	& 27.0 	&F	& 19.0	&N	& 14.0	&Se	& 79.0	\\
+Ar 	& 39.9	&Fe	& 55.8	&Na	& 23.0	&Si	& 28.1	\\
+As	& 74.9	&Ga	& 69.7	&Nb	& 92.9	&Sn	& 118.7	\\
+Au	& 197.0	&Gd	& 157.2	&Nd	& 144.2	&Sr	& 87.6	\\
+B	& 10.8	&Ge	& 72.6	&Ne	& 20.2	&Ta	& 180.9	\\
+Ba	& 137.3	&H	& 1.0	&Ni	& 58.7	&Tb	& 158.9	\\
+Be	& 9.0	&He	& 4.0	&O	& 16.0	&Te	& 127.6	\\
+Bi	& 209.0	&Hf	& 178.5	&Os	& 190.2	&Ti	& 47.9	\\
+Br	& 79.9	&Hg	& 200.6	&P	& 31.0	&Tl	& 204.4	\\
+C	& 12.0	&Ho	& 164.9	&Pb	& 207.2	&Tm	& 168.9	\\
+Ca	& 40.1	&In	& 114.8	&Pd	& 106.4	&U	& 238	\\
+Ce	& 140.1	&Ir	& 192.2	&Pt	& 195.1	&V	& 50.9	\\
+Cl	& 35.5	&K	& 39.1	&Pr	& 140.9	&W	& 183.8	\\
+Co	& 58.9	&Kr	& 83.8	&Rb	& 85.5	&Xe	& 131.3	\\
+Cr	& 52.0	&La	& 138.9	&Re	& 186.2	&Y	& 88.9	\\
+Cs	& 132.9	&Li	& 6.9	&Rh	& 102.9	&Yb	& 173.0	\\
+Cu	& 63.5	&Lu	& 175.0	&Ru	& 101.1	&Zn	& 65.4	\\
+Dy	& 162.5	&Mg	& 24.3	&S	& 32.1	&Zr	& 91.2 	\\
+Er	& 167.3	&Mn	& 54.9	&Sb 	& 121.8 	& & \\
+\hline
+\end{tabular}
+}
+ %

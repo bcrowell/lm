@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------- silencing unhelpful messages ---------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{silence}
+\hfuzz=999pt % reduce overfull hbox errors
+\hbadness=10000 % reduce underfull hbox errors
+% silence package:
+\WarningFilter{Fancyhdr}{\headheight is too small}
+\WarningFilter{textpos}{environment textblock}
+%---------- get rid of warnings from pdftex about inkscape pdfs -----------------
+%     http://tex.stackexchange.com/questions/183149/cant-silence-a-pdftex-pdf-inclusion-multiple-pdfs-with-page-group-error
+%     http://tex.stackexchange.com/questions/198586/conditional-based-on-the-version-of-pdflatex
+\begingroup\expandafter\expandafter\expandafter\endgroup
+\expandafter\ifx\csname pdfsuppresswarningpagegroup\endcsname\relax
+\else
+  \pdfsuppresswarningpagegroup=1\relax
+\fi
+%---------- get rid of messages about every included graphic -----------------
+%   http://tex.stackexchange.com/questions/124634/can-i-silence-pdfpages-output
+\makeatletter
+\let\GPT@error\@gobble
+\let\GPT@warn\@gobble
+\let\Gin@log\@gobble
+\let\GPT@info\@gobble
+\def\@providesfile#1[#2]{%
+  \@addtofilelist{ #2}%
+  \endgroup}
+\makeatother
+%------------------------------------------------

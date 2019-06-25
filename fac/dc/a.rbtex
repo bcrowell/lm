@@ -1,0 +1,818 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("DC circuits") %>
+
+<%
+  chapter(
+    '07',
+    %q{Electrical resistance},
+    'ch:resistance'
+  )
+%>
+
+<% begin_sec("Circuits",nil,'circuits') %>
+
+<% begin_sec("Complete circuits, open circuits",nil,'circuits-complete-and-open') %>
+How can we put electric currents to work? Figure
+\subfigref{basiccircuits-1}{1} shows an attempt to use static electricity
+to light a lightbulb. We take two substances, e.g., glass and fur, rub
+them together, and then touch them to wires connected to a lightbulb.
+This method is unsatisfactory. True, current will flow through the
+bulb, since electrons can move through metal wires, and the excess
+electrons on the glass rod will therefore come through the wires and
+bulb due to the attraction of the positively charged fur and the
+repulsion of the other electrons. The problem is that after a
+zillionth of a second of current, the rod and fur will both have run
+out of charge. No more current will flow, and the lightbulb will go
+out.
+
+<% marg() %>
+<%
+  fig(
+    'basiccircuits-1',
+    %q{%
+      1. Static electricity runs out quickly. 2. A practical
+              circuit. 3. An open circuit.
+    }
+  )
+%>
+<% end_marg %>
+Figure \subfigref{basiccircuits-1}{2} shows a setup that works. The battery pushes
+charge through the circuit, and recycles it over and over
+again. (We will have more to say later in this chapter about
+how batteries work.) This is called a \emph{\index{circuit!complete}\index{complete
+circuit}complete \index{circuit}circuit}. Today, the
+electrical use of the word ``circuit'' is the only one that
+springs to mind for most people, but the original meaning
+was to travel around and make a round trip, as when a
+circuit court judge would ride around the boondocks,
+dispensing justice in each town on a certain date.
+
+Note that an example like \subfigref{basiccircuits-1}{3} does not work. The wire will
+quickly begin acquiring a net charge, because it has no way
+to get rid of the charge flowing into it. The repulsion of
+this charge will make it more and more difficult to send any
+more charge in, and soon the electrical forces exerted by
+the battery will be canceled out completely. The whole
+process would be over so quickly that the filament would not
+even have enough time to get hot and glow. This is known as
+an \index{circuit!open}\index{open circuit}\emph{open circuit}.
+Exactly the same thing would happen if the complete circuit
+of figure \subfigref{basiccircuits-1}{2} was cut somewhere with a pair of scissors, and
+in fact that is essentially how an ordinary light switch
+works: by opening up a gap in the circuit.
+<% end_sec('circuits-complete-and-open') %>
+
+<% begin_sec("Measuring the current in a circuit",nil,'measuring-current') %>
+The measurement of potential (voltage) differences was discussed in sec.~\ref{sec:potential},
+p.~\pageref{sec:potential}.
+
+On p.~\pageref{current-defined}, we defined electric current as the rate at which electric charge
+flows across a boundary, $I=\der q/\der t$.
+This definition has the theoretical advantage that when moving charges create
+a magnetic field, the field is exactly proportional to the current, independent
+of other variables such as the velocity of the charges.
+Now that we are ready to study circuits in more detail, a second, practical
+advantage of this definition becomes apparent, which is that current is
+easy to measure compared to quantities like charge or the velocity of charges.
+The instrument used to measure current is the
+ammeter, introduced briefly on p.~\pageref{ammeter-intro}.
+A simplified ammeter, \subfigref{basiccircuits-2}{1}, simply
+consists of a coiled-wire magnet whose force twists an iron
+needle against the resistance of a spring. The greater the
+current, the greater the force. Although the construction of
+ammeters may differ, their use is always the same. We break
+into the path of the electric current and interpose the
+meter like a tollbooth on a road, \subfigref{basiccircuits-2}{2}. There is still a
+complete circuit, and as far as the battery and bulb are
+concerned, the ammeter is just another segment of wire.
+
+Does it matter where in the circuit we place the ammeter?
+Could we, for instance, have put it in the left side of the
+circuit instead of the right? Conservation of charge tells
+us that this can make no difference. Charge is not destroyed
+or ``used up'' by the lightbulb, so we will get the same
+current reading on either side of it. What is ``used up'' is
+energy stored in the battery, which is being converted into
+heat and light energy.
+
+<% marg(300) %>
+<%
+  fig(
+    'basiccircuits-2',
+    %q{%
+      1. How a simple ammeter works. 2. Measuring a
+              current with an ammeter.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'ammeter-practical',
+    %q{%
+      Practical use of a multimeter as an ammeter.
+    }
+  )
+%>
+<% end_marg %>
+
+Figure \figref{ammeter-practical} shows a typical multimeter
+used as an ammeter. As always with a multimeter, one cable is
+plugged into the COM plug. The other cable is plugged into the
+plug marked 10 A, meaning that it's used for current measurements
+and can handle large currents, up to 10 A. The rotary dial is
+turned to the corresponding A setting. The icons indicate that this
+position of the dial can be used to measure either AC or DC current,
+and the yellow button has been used to select DC, as verified
+on the LCD readout. The lines connecting the two plugs that are in
+use say ``FUSED,'' which means that if too much current flows, the
+meter will avoid damaging itself by blowing a fuse. The meter's reading
+of $4.572\ \zu{A}$ verifies that the amount of current being measured
+is appropriate for this scale. If it had been more than 10 A, the
+fuse would have blown, and the meter would be reading zero. If we were
+intending to read a current smaller than 400 mA, then we would be better
+off changing both the plug and the rotary dial to use the more sensitive
+setting, which would give us better precision (more sig figs).
+
+The following table summarizes some differences between the use of
+a voltmeter (sec.~\ref{sec:potential},
+p.~\pageref{sec:potential}) and an ammeter.
+
+\begin{tabular}{p{50mm}p{50mm}}
+\emph{voltmeter} & \emph{ammeter} \\
+Measures potential difference, $\Delta \phi$, in units of volts. &
+         Measures electric current, $I$, in units of amperes. \\
+Doesn't require a complete circuit. & Requires a complete circuit.\\
+Is used to probe the circuit without breaking it. &
+       Requires temporarily breaking the circuit in order to insert the meter. \\
+Has no fuse. & Has a fuse, which can be blown.\\
+Used in parallel. If used in series, will cause an open circuit. &
+       Used in series. If used in parallel, will cause a short circuit
+                    (sec.~\ref{subsec:short-circuit}, p.~\pageref{subsec:short-circuit})
+                    and blow the fuse. \\
+Ideally has infinite resistance (sec.~\ref{subsec:resistance}, p.~\pageref{subsec:resistance}). &
+        Ideally has zero resistance. 
+\end{tabular}
+
+\begin{eg}{Magnetic levitation}\label{eg:battery-wire-magnet}
+      In figure \figref{battery-wire-magnet}, a small, disk-shaped permanent magnet is stuck on the side of a
+      battery, and a wire is clasped loosely around the battery, shorting it.
+      A large current flows. The electrons moving through the
+      wire feel a force from the magnetic field made by the permanent magnet,
+      and this force levitates the wire.
+
+      From the photo, it's possible to find the direction of the magnetic field made by the permanent magnet.
+      The electrons in the copper wire are negatively charged, so they flow from the negative (flat) terminal
+      of the battery to the positive terminal (the one with the bump, in front). As the electrons pass by the
+      permanent magnet, we can imagine that they would experience a field either toward the magnet, or away from
+      it, depending on which way the magnet was flipped when it was stuck onto the battery.
+      If $q$ had been positive, then $q\vc{v}\times\vc{B}$ would have been in the direction of
+      $\vc{v}\times\vc{B}$, determined by the right-hand rule. Since $q<0$ here, the right-hand
+      rule flips its handedness, as shown in the bottom panel of the figure.
+      The field must be toward the battery.
+
+      This example is very similar to the design of the simplified ammeter in figure
+      \subfigref{basiccircuits-2}{1}. The main difference is that the roles of the known
+      and unknown quantities is reversed: we know something about the direction of the current,
+      and we use it to find out about the unknown direction of the magnetic field of the permanent magnet.
+\end{eg}
+
+<% marg(50) %>
+<%
+  fig(
+    'battery-wire-magnet',
+    %q{%
+      Example \ref{eg:battery-wire-magnet}.
+    }
+  )
+%>
+<% end_marg %>
+
+\startdq
+
+\begin{dq}
+What would have happened if we had analyzed example \ref{eg:battery-wire-magnet}
+by assuming that the charge carriers were positively charged? If we already knew
+the polarity of the magnet, would we be able to use this experiment to prove that
+the mobile charge carriers in a copper wire are negatively charged? What happens
+inside the battery, where both positive and negative ions may be flowing?
+\end{dq}
+
+<% end_sec('measuring-current') %>
+<% end_sec('circuits') %>
+
+<% begin_sec("Power",nil,'power') %>\index{power!DC circuit}
+Electrical circuits can be used for sending signals, storing
+information, or doing calculations, but their most common
+purpose by far is to manipulate energy, as in the battery-and-bulb
+example of the previous section. We know that lightbulbs are
+rated in units of watts, i.e., how many joules per second of
+energy they can convert into heat and light, but how would
+this relate to the flow of charge as measured in amperes? By
+way of analogy, suppose your friend, who didn't take
+physics, can't find any job better than pitching bales of
+hay. The number of calories he burns per hour will certainly
+depend on how many bales he pitches per minute, but it will
+also be proportional to how much mechanical work he has to
+do on each bale. If his job is to toss them up into a
+hayloft, he will get tired a lot more quickly than someone
+who merely tips bales off a loading dock into trucks. In metric units,
+\begin{equation*}
+        \frac{\text{joules}}{\text{second}}
+         = \frac{\text{haybales}}{\text{second}}
+                 \times \frac{\text{joules}}{\text{haybale}}\eqquad.  
+\end{equation*}
+Similarly, the rate of energy transformation by a battery
+will not just depend on how many coulombs per second it
+pushes through a circuit but also on how much mechanical
+work it has to do on each coulomb of charge:
+\begin{equation*}
+        \frac{\text{joules}}{\text{second}}
+         = \frac{\text{coulombs}}{\text{second}}
+                 \times \frac{\text{joules}}{\text{coulomb}}
+\end{equation*}
+\noindent or
+\begin{equation*}
+        \text{power}         =         \text{current} \times \text{voltage}\eqquad.  
+\end{equation*}
+\begin{eg}{Units of volt-amps}
+\egquestion
+Doorbells are often rated in volt-amps. What does
+this combination of units mean?
+
+\eganswer
+Current times voltage gives units of power,
+$P= I\Delta  V$, so volt-amps are really just a nonstandard
+way of writing watts. They are telling you how much power
+the doorbell requires.
+
+\end{eg}
+\begin{eg}{Power dissipated by a battery and bulb}
+\egquestion
+If a 9.0-volt battery causes 1.0 A to flow through
+a lightbulb, how much power is dissipated?
+
+\eganswer
+The voltage rating of a battery tells us what
+voltage difference $\Delta  V$ it is designed to maintain
+between its terminals.
+\begin{align*}
+         P         &=      I \ \Delta \zu{V}   \\
+                 &=     9.0 \ \zu{A}\cdot\zu{V} \\
+                 &=     9.0  \ \frac{\zu{C}}{\zu{s}}\cdot\frac{\zu{J}}{\zu{C}} \\
+                 &=     9.0 \ \text{J/s}  \\
+                 &=     9.0 \ \zu{W}  
+\end{align*}
+
+The only nontrivial thing in this problem was dealing with
+the units. One quickly gets used to translating common
+combinations like $\zu{A}\cdot\zu{V}$ into simpler terms.
+\end{eg}
+\startdqs
+
+\begin{dq}\label{dq:roller-coaster}
+        A roller coaster is sort of like an electric circuit, but
+        it uses gravitational forces on the cars instead of electric
+        ones. What would a high-voltage roller coaster be like? What
+        would a high-current roller coaster be like?
+\end{dq}
+ %
+\begin{dq}
+        Criticize the following statements:
+        \begin{itemize}
+                \item[] ``He touched the wire, and 10000 volts went through him.''
+                \item[]``That battery has a charge of 9 volts.''
+                \item[]``You used up the charge of the battery.''
+        \end{itemize}
+\end{dq}
+ %
+\begin{dq}\label{dq:signsofcurrent}
+        When you touch a 9-volt battery to your tongue, both
+        positive and negative ions move through your saliva.
+        Which ions go which way?
+\end{dq}
+ %
+\begin{dq}
+        I once touched a piece of physics apparatus that had been
+        wired incorrectly, and got a several-thousand-volt voltage
+        difference across my hand. I was not injured. For what
+        possible reason would the shock have had insufficient power to hurt me?
+\end{dq}
+<% end_sec('power') %>
+
+<% begin_sec("Resistance",3,'resistance') %>
+<% begin_sec("Resistance",nil,'resistance') %>
+
+So far we have simply presented it as an observed fact that
+a battery-and-bulb circuit quickly settles down to a steady
+flow, but why should it? Newton's second law, $a=F/m$, would
+seem to predict that the steady forces on the charged
+particles should make them whip around the circuit faster
+and faster. The answer is that as charged particles move
+through matter, there are always forces, analogous to
+frictional forces, that resist the motion. These forces need
+to be included in Newton's second law, which is really 
+$a=F_{total}/m$, not  $a=F/m$.  If, by analogy, you push a
+crate across the floor at constant speed, i.e., with zero
+acceleration, the total force on it must be zero. After you
+get the crate going, the floor's frictional force is exactly
+canceling out your force. The chemical energy stored in your
+body is being transformed into heat in the crate and the
+floor, and no longer into an increase in the crate's kinetic
+energy. Similarly, the battery's internal chemical energy is
+converted into heat, not into perpetually increasing the
+charged particles' kinetic energy. Changing energy into heat
+may be a nuisance in some circuits, such as a computer chip,
+but it is vital in an incandescent lightbulb, which must get hot enough to
+glow. Whether we like it or not, this kind of heating effect
+is going to occur any time charged particles move through matter.
+
+What determines the amount of heating? One flashlight bulb
+designed to work with a 9-volt battery might be labeled 1.0
+watts, another 5.0. How does this work? Even without knowing
+the details of this type of friction at the atomic level, we
+can relate the heat dissipation to the amount of current
+that flows via the equation $P=I\Delta $V. If the two
+flashlight bulbs can have two different values of $P$ when
+used with a battery that maintains the same $\Delta V$, it
+must be that the 5.0-watt bulb allows five times more
+current to flow through it.
+
+For many substances, including the tungsten from which
+lightbulb filaments are made, experiments show that the
+amount of current that will flow through it is directly
+proportional to the voltage difference placed across it. For
+an object made of such a substance, we define its electrical
+\index{resistance!defined}\emph{resistance} as follows:\index{Ohm, Georg Simon}
+<% marg(0) %>
+<%
+  fig(
+    'ohm',
+    %q{Georg Simon Ohm (1787-1854).}
+  )
+%>
+<% end_marg %>
+
+\begin{lessimportant}[definition of resistance]\index{resistance!defined}
+If an object inserted in a circuit displays a current flow 
+proportional to the voltage difference across it, then we define
+its resistance as the constant ratio
+        \begin{equation*}
+                R = \Delta V / I
+        \end{equation*}
+\end{lessimportant}
+
+\noindent The units of resistance are volts/ampere, usually abbreviated
+as ohms, symbolized with the capital Greek letter omega, $\Omega$.\index{ohm (unit)}
+
+\begin{eg}{Resistance of a lightbulb}
+\egquestion
+A flashlight bulb powered by a 9-volt battery has
+a resistance of 10 $\Omega$. How much current will it draw?
+
+        \eganswer
+        Solving the definition of resistance for $I$, we find
+        \begin{align*}
+                         I         &=    \Delta V/ R  \\
+                                 &=     0.9\ \zu{V}/\Omega   \\
+                                 &=     0.9\ \zu{V}/(\zu{V}/\zu{A})  \\
+                                 &=    \text{0.9 A}  
+        \end{align*}
+
+\end{eg}
+
+        Ohm's law\index{Ohm's law}
+states that many substances, including many solids
+and some liquids, display this kind of behavior, at least
+for voltages that are not too large. The fact that Ohm's law
+is called a ``law'' should not be taken to mean that all
+materials obey it, or that it has the same fundamental
+importance as Newton's laws, for example. Materials are
+called \index{ohmic!defined}\emph{ohmic} or \emph{nonohmic},
+depending on whether they obey Ohm's law. Although we will
+concentrate on ohmic materials in this book, it's important to keep in
+mind that a great many materials are nonohmic, and devices made from them
+are often very important. For instance, a transistor\index{transistor} is a nonohmic device
+that can be used to amplify a signal (as in a guitar amplifier) or to store and
+manipulate the ones and zeroes in a computer chip.
+
+In our previous discussion of conductors
+(sec.~\ref{sec:const-v-in-conductor},
+p.~\pageref{sec:const-v-in-conductor}), we saw that a perfect
+conductor has certain characteristics: the potential is constant
+throughout it, the electric field is perpendicular to its surface, and
+any net density of charge is present only at the surface. These
+statements are exact for a material with exactly zero resistance, and
+are often good approximations for objects like a copper wire, but in
+general there is no sharp distinction between insulators and
+conductors.  Some materials, such as silicon, lie midway between the
+two extremes, and are called semiconductors. 
+
+On an intuitive level, we can understand the idea of
+resistance by making the sounds ``hhhhhh'' and ``ffffff.''
+To make air flow out of your mouth, you use your diaphragm
+to compress the air in your chest. The pressure difference
+between your chest and the air outside your mouth is
+analogous to a voltage difference. When you make the ``h''
+sound, you form your mouth and throat in a way that allows
+air to flow easily. The large flow of air is like a large
+current. Dividing by a large current in the definition of
+resistance means that we get a small resistance. We say that
+the small resistance of your mouth and throat allows a large
+current to flow. When you make the ``f'' sound, you increase
+the resistance and cause a smaller current to flow.
+
+<% marg(40) %>
+<%
+  fig(
+    'resistance-depends-on-shape',
+    %q{%
+      Four objects made of the same substance
+              have different resistances.
+    }
+  )
+%>
+<% end_marg %>
+Note that although the resistance of an object depends on
+the substance it is made of, we cannot speak simply of the
+``resistance of gold'' or the ``resistance of wood.'' 
+Figure \ref{fig:resistance-depends-on-shape} shows four examples of objects that have had wires
+attached at the ends as electrical connections. If they were
+made of the same substance, they would all nevertheless have
+different resistances because of their different sizes and
+shapes. A more detailed discussion will be more natural in
+the context of the following chapter, but it should not be
+too surprising that the resistance of \ref{fig:resistance-depends-on-shape}/2 will be greater
+than that of \ref{fig:resistance-depends-on-shape}/1 --- the image of water flowing through a
+pipe, however incorrect, gives us the right intuition.
+Object \ref{fig:resistance-depends-on-shape}/3 will have a smaller 
+resistance than \ref{fig:resistance-depends-on-shape}/1 because
+the charged particles have less of it to get through.
+
+<% end_sec() %>
+<% begin_sec("Superconductors") %>\index{superconductor}
+
+
+All materials display some variation in resistance according
+to temperature (a fact that is used in thermostats to make a
+thermometer that can be easily interfaced to an electric
+circuit). More spectacularly, most metals have been found to
+exhibit a sudden change to \emph{zero} resistance when
+cooled to a certain critical temperature. They are then said
+to be superconductors. Currently, the most important practical
+application of superconductivity is in medical MRI (magnetic resonance imaging) scanners.
+When your
+body is inserted into one of these devices, you are being immersed in an extremely strong magnetic
+field produced by electric currents flowing through the coiled wires of an electromagnet.
+If these wires were not superconducting, they would instantly burn up because of the heat
+generated by their resistance. 
+<% marg(50) %>
+<%
+  fig(
+    'mri',
+    %q{%
+      A medical MRI scanner, which uses superconductors.
+    }
+  )
+%>
+<% end_marg %>
+
+There are many other potential applications for superconductors, but most of these, such as
+power transmission, are not currently economically feasible because of the extremely low
+temperatures required for superconductivity to occur.
+
+However, it was discovered in 1986 that
+certain ceramics are superconductors at less extreme
+temperatures. The technological barrier is now in finding
+practical methods for making wire out of these brittle
+materials. Wall Street is currently investing billions of
+dollars in developing superconducting devices for cellular
+phone relay stations based on these materials.
+
+There is currently no satisfactory theory of superconductivity
+in general, although superconductivity in metals is
+understood fairly well. Unfortunately I have yet to find a
+fundamental explanation of superconductivity in metals that
+works at the introductory level.
+
+<% end_sec() %>
+<% begin_sec("Short circuits",nil,'short-circuit') %>
+
+<% marg(0) %>
+<%
+  fig(
+    'short-circuit',
+    %q{%
+      Short-circuiting a battery. Warning: you can burn yourself this
+              way or start a fire! If you want to try this, try making the
+              connection only very briefly, use a low-voltage battery, and avoid
+              touching the battery or the wire, both of which will get hot.
+    }
+  )
+%>
+<% end_marg %>
+
+So far we have been assuming a perfect conductor. What if it
+is a good conductor, but not a perfect one? Then we can
+solve for $\Delta V=IR$. An ordinary-sized current
+will make a very small result when we multiply it by the
+resistance of a good conductor such as a metal wire. The
+voltage throughout the wire will then be nearly constant.
+If, on the other hand, the current is extremely large, we
+can have a significant voltage difference. This is what
+happens in a \index{circuit!short}\index{short circuit!defined}\emph{short-circuit:\/}
+a circuit in which a low-resistance pathway connects the two
+sides of a voltage source. Note that this is much more
+specific than the popular use of the term to indicate any
+electrical malfunction at all. If, for example, you
+short-circuit a 9-volt battery as shown in figure \ref{fig:short-circuit}, you
+will produce perhaps a thousand amperes of current, leading
+to a very large value of $P=I\Delta V$. The wire gets hot!
+
+<% self_check('killbattery',<<-'SELF_CHECK'
+What would happen to the battery in this kind of short circuit?
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+<% begin_sec("Resistors") %>
+
+Inside any electronic gadget you will see quite a few little
+circuit elements like the one shown in the photo. These \index{resistor}\emph{resistors}
+are simply a cylinder of ohmic material with wires
+attached to the end.
+<% marg() %>
+<%
+  fig(
+    'resistor-photo',
+    %q{Resistors.},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'resistorsymbol',
+    %q{The symbol used in schematics to represent a resistor.}
+  )
+%>
+<% end_marg %>
+Many electrical devices are based on electrical resistance
+and Ohm's law, even if they do not have little components in
+them that look like the usual resistor. The following are some examples.
+
+<% begin_sec("Lightbulb") %>
+
+There is nothing special about a lightbulb filament --- you
+can easily make a lightbulb by cutting a narrow waist into a
+metallic gum wrapper and connecting the wrapper across the
+terminals of a 9-volt battery. The trouble is that it will
+instantly burn out. Edison solved this technical challenge
+by encasing the filament in an evacuated bulb, which
+prevented burning, since burning requires oxygen.
+
+<% end_sec() %>
+<% begin_sec("Polygraph") %>
+
+The polygraph, or ``lie detector,'' is really just a set of
+meters for recording physical measures of the subject's
+psychological stress, such as sweating and quickened
+heartbeat. The real-time sweat measurement works on the
+principle that dry skin is a good insulator, but sweaty skin
+is a conductor. Of course a truthful subject may become
+nervous simply because of the situation, and a practiced
+liar may not even break a sweat. The method's practitioners
+claim that they can tell the difference, but you should
+think twice before allowing yourself to be polygraph tested.
+Most U.S. courts exclude all polygraph evidence, but some
+employers attempt to screen out dishonest employees by
+polygraph testing job applicants, an abuse that ranks with
+such pseudoscience as handwriting analysis.
+
+<% end_sec() %>
+
+<% marg() %>
+<%
+  fig(
+    'colorcode',
+    %q{An example of a resistor with a color code.}
+  )
+%>
+%\spacebetweenfigs %%%% makes too much space
+<%
+  fig(
+    'colorcodetable',
+    %q{Color codes used on resistors.},
+    {
+      'text'=>
+      %q{
+\begin{tabular}{ll}
+black& 0 \\\\
+brown& 1\\\\
+red& 2\\\\
+orange& 3\\\\
+yellow& 4\\\\
+green& 5\\\\
+blue& 6\\\\
+violet& 7\\\\
+gray& 8\\\\
+white& 9\\\\
+silver& $\pm 10\%$\\\\
+gold& $\pm 5\%$\\\\
+\end{tabular}
+      }
+    }
+  )
+%>
+<% end_marg %>
+
+
+<% begin_sec("Fuse") %>
+
+A fuse is a device inserted in a circuit tollbooth-style in
+the same manner as an ammeter. It is simply a piece of wire
+made of metals having a relatively low melting point. If too
+much current passes through the fuse, it melts, opening the
+circuit. The purpose is to make sure that the building's
+wires do not carry so much current that they themselves will
+get hot enough to start a fire. Most modern houses use
+circuit breakers instead of fuses, although fuses are still
+common in cars and small devices. A circuit breaker is a
+switch operated by a coiled-wire magnet, which opens the
+circuit when enough current flows. The advantage is that
+once you turn off some of the appliances that were sucking
+up too much current, you can immediately flip the switch
+closed. In the days of fuses, one might get caught without a
+replacement fuse, or even be tempted to stuff aluminum foil
+in as a replacement, defeating the safety feature.
+
+<% end_sec() %>
+
+\startdqs
+
+\begin{dq}
+        Explain why it would be incorrect to define resistance as
+        the amount of charge the resistor allows to flow.
+\end{dq}
+
+<% end_sec() %> % Resistors
+<% end_sec() %>
+
+<% begin_sec("Flow of energy",nil,'flow-of-energy') %>\index{DC circuit!flow of energy}
+
+We use ``flipping a switch'' as a metaphor for making something happen
+instantly, but it's not obvious how this happens physically in an actual
+circuit. When we turn on a light, we convert an open circuit into a complete
+circuit. Charge starts to flow through the copper wires, but if we make an order-of-magnitude
+estimate of the speed at which it needs to flow in order to carry a typical current,
+the result is on the order of centimeters per second (\note{drift-velocity}).
+This slow speed is called the drift velocity, and clearly it is much less than
+the speed at which energy flows. Figure \figref{chain-drive} shows a mechanical analogy.
+A torque applied to one wheel is transmitted to the other wheel very rapidly, at
+a speed much greater than the speed at which the links in the roller chain travel.
+If the chain is tight, the speed at which the energy travels could be similar to
+the speed of sound in the metal. In an electric circuit, we are concerned with the
+speed of light rather than the speed of sound. Relativity guarantees that the flow of energy
+and information cannot be greater than $c$, but in most cases it is some significant
+fraction of $c$.
+
+<%
+  fig(
+    'chain-drive',
+    %q{A mechanical analogy for the speed of transmission of energy in an electric circuit.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+Figure \figref{circuit-poynting} shows the results of a fairly realistic simulation of
+how the energy flows in an actual electric circuit shaped like a rectangle, with most of
+the resistance being supplied by the resistor on the right, but a smaller amount also
+present in the wires. This is a simulation of the steady state of the circuit, when the
+current has been flowing for a long time and has had time to settle down. The equipotentials
+were found by solving Laplace's equation on a computer. We see that the flow of energy,
+measured by the Poynting vector, is through the empty space surrounding the wires, not
+the wires themselves. Energy flows out of the battery and into the resistor, and we can
+also see that some flows into the wires, since the Poynting vectors near the wires are
+angled slightly inward. This flow of energy causes the wires and the resistor to heat up.
+Note that the current is sometimes in the same direction as the energy flow and sometimes
+in the opposite direction.
+
+<%
+  fig(
+    'circuit-poynting',
+    %q{The flow of energy in a DC circuit. The flow of energy (white arrows) is from the
+       battery, through empty space, and into the resistive elements.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+<% marg(-300) %>
+<%
+  fig(
+    'railroad-switches',
+    %q{%
+      A complex set of switches in a big rail yard. By analogy with an electric circuit,
+      the passengers and freight don't travel inside the rails. The rails merely guide the cars.
+    }
+  )
+%>
+<% end_marg %>
+If we were to suddenly open or close a switch in a circuit like this, the situation would
+be more complicated, but
+roughly speaking, we would expect that the changes in the energy flow would be initiated
+near the switch and then spread out through the circuit as electromagnetic waves. These
+would not be plane waves (and therefore would not travel at exactly $c$). They would
+be guided around the circuit by the wires. That is, the wires act not so much like
+pipes through which the energy flows, and more like railroad tracks that tell the cars
+where to go --- the term ``switch'' originated in railroads, where it means the mechanism
+that allows cars to be directed onto one set of tracks or another when the train comes
+to a ``Y'' (figure \figref{railroad-switches}).
+
+<% end_sec('flow-of-energy') %>
+
+
+<% begin_notes %>
+
+\notetext{drift-velocity}{Drift velocity}
+\notesummary{An order-of-magnitude estimate of the drift velocity.}
+Suppose that a copper wire contains one electron per atom that is free to move.
+Then the number density $n$ of charge carriers is the same as the number density
+of copper atoms, which is just the inverse of the volume of an atom,
+$n\sim (1\ \zu{nm})^{-3}=10^{27}\ \zu{m}^3$. When these electrons flow with
+an average velocity $v$, the absolute value of the current is $I=nevA$, where $A$
+is the wire's cross-sectional area. Putting in a typical current of 1 A and a
+cross-section area of one square millimeter, we find $v\sim1\ \zu{cm}/\sunit$.
+% calc -x -e "n=1/(1 nm)^3->m-3; I=1 A; A=1 mm2; v=I/((n)eA)->cm/s"
+%    v = 0.624150963543351 cm/s
+
+
+<% end_notes %>
+
+<% begin_lab('Electrical measurements') %>
+
+1. How many different currents could you measure in this
+circuit? Make a prediction, and then try it.
+
+<%
+  fig(
+    'how-many-currents',
+    '',
+    {'width'=>'narrow','float'=>false}
+  )
+%>
+
+What do you notice? How does this make sense in terms of the
+roller coaster metaphor introduced in discussion question
+\ref{sec:power}\ref{dq:roller-coaster} on p.~\pageref{dq:roller-coaster}?
+
+What is being \emph{used up} in the resistor?
+
+
+
+2. By connecting probes to these points, how many ways could
+you measure a voltage? How many of them would be different
+numbers? Make a prediction, and then do it.
+
+<%
+  fig(
+    'how-many-voltages',
+    '',
+    {'width'=>'narrow','float'=>false}
+  )
+%>
+
+
+What do you notice? Interpret this using the roller coaster
+metaphor, and color in parts of the circuit that represent constant voltages.
+
+
+
+3. The resistors are unequal. How many \emph{different}
+voltages and currents can you measure? Make a prediction, and then try it.
+
+<%
+  fig(
+    'series',
+    '',
+    {'width'=>'narrow','float'=>false}
+  )
+%>
+
+
+What do you notice? Interpret this using the roller coaster
+metaphor, and color in parts of the circuit that represent constant voltages.
+
+<% end_lab %>
+
+
+<% begin_hw_sec %>
+
+
+<% end_hw_sec %>
+
+
+<% end_chapter() %>
+

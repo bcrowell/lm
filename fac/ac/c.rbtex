@@ -1,0 +1,559 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '13',
+    %q{Impedance},
+    'ch:impedance'
+  )
+%>
+
+<% begin_sec("Impedance",nil,'impedance') %>\index{impedance}
+When a resistor, capacitor, or inductor is driven by an oscillating
+voltage with amplitude $V$ and frequency $\omega$, current
+will flow through it (once the steady state has been achieved) with the same frequency and with some amplitude and
+phase. If we use the idea introduced in sec.~\ref{sec:shm}, p.~\pageref{sec:shm}
+of representing a sine wave with a complex number, then we have a complex number $\mytilde{V}$
+that completely embodies the voltage we apply, and another
+complex number $\mytilde{I}$ describing the outcome. As a notational convention,
+we write these symbols with tildes on top. The tilde looks like a little sine wave
+and reminds us that we're representing a sine wave. We can then define a complex number
+\begin{equation*}
+  Z = \frac{\mytilde{V}}{\mytilde{I}}
+\end{equation*}
+called the \emph{impedance}. The impedance has units of ohms, and in the case of
+a resistor, $Z$ is a real number that equals the resistance.
+
+In the purely capacitive case, the relation $V=q/C$ lets us calculate
+$I=\frac{\der q}{\der t}=C \frac{\der V}{\der t}$.
+A capacitor does not follow Ohm's law, and it is not true that $I=V/R$, because
+taking the derivative of a sinusoidal function shifts its phase by 90 degrees.
+But we can still
+If the voltage varies as, for example, $V(t)=V_\zu{o}\sin (\omega t)$,
+then the current will be $I(t)=\omega C V_\zu{o}\cos (\omega t)$.
+We use the complex numbers 1 and $i$ represent the
+functions $\sin\omega t$ and $\cos\omega t$.
+In our example, $V(t)$
+is a sine wave multiplied by a number that gives its amplitude, so we associate that
+function with a number $\mytilde{V}$ lying on the real axis. Its magnitude, $|\mytilde{V}|$,
+gives the amplitude in units of volts, while its argument $\arg \mytilde{V}$, gives its
+phase angle, which is zero. The current is a multiple of the cosine, so we identify
+it with a number $\mytilde{I}$ lying on the imaginary axis.
+We have $\arg\mytilde{I}=90\degunit$, and $|\mytilde{I}|$ is the amplitude of the current,
+in units of amperes. But comparing with our result above, we have $|\mytilde{I}|=\omega C|\mytilde{V}|$.
+Bringing together the phase and magnitude information, we have $\mytilde{I}=i\omega C\mytilde{V}$.
+This looks very much like Ohm's law, so we write
+\begin{equation*}
+                \mytilde{I}         =    \frac{\mytilde{V}}{Z_C}\eqquad,  
+\end{equation*}
+where the quantity
+\begin{equation*}
+                Z_C    =     -\frac{i}{\omega C}\eqquad, \qquad \text{[impedance of a capacitor]}  
+\end{equation*}
+having units of ohms, is the \emph{impedance} of
+the capacitor at this frequency.
+
+<% marg(0) %>
+<%
+  fig(
+    'capvi',
+    %q{In a capacitor, the current is $90\degunit$ ahead of the voltage in phase.}
+  )
+%>
+<% end_marg %>
+
+
+It makes sense that
+the impedance becomes infinite at zero frequency. Zero
+frequency means that it would take an infinite time before
+the voltage would change by any amount. In other words, this
+is like a situation where the capacitor has been connected
+across the terminals of a battery and been allowed to settle
+down to a state where there is constant charge on both
+terminals. Since the electric fields between the plates are
+constant, there is no energy being added to or taken out of
+the field. A capacitor that can't exchange energy with any
+other circuit component is nothing more than a broken (open) circuit.
+
+<% self_check('caplabel',<<-'SELF_CHECK'
+Why can't a capacitor have its impedance printed on it along
+with its capacitance?
+  SELF_CHECK
+  ) %>
+
+<% marg(0) %>
+<%
+  fig(
+    'indvi',
+    %q{%
+      The current through an inductor lags behind the voltage by
+      a phase angle of $90\degunit$.
+    }
+  )
+%>
+<% end_marg %>
+
+Similar math (but this time with an integral instead
+of a derivative) gives
+\begin{equation*}
+                Z_L    =    i\omega L                    \qquad  \text{[impedance of an inductor]}  
+\end{equation*}
+for an inductor.\index{impedance!of an inductor} It makes sense that the inductor has lower
+impedance at lower frequencies, since at zero frequency
+there is no change in the magnetic field over time. No
+energy is added to or released from the magnetic field, so
+there are no induction effects, and the inductor acts just
+like a piece of wire with negligible resistance. The term
+``choke'' for an inductor refers to its ability to ``choke
+out'' high frequencies.
+
+The phase relationships shown in figures \figref{capvi} and \figref{indvi}
+can be remembered using the mnemonic ``eVIL,'' which shows that the voltage
+(V) leads the current (I) in an inductive circuit, while the opposite is
+true in a capacitive one.
+
+Summarizing, the impedances of resistors, capacitors, and inductors are
+        \begin{align*}
+                Z_R        &= R\\
+                Z_C &= -\frac{i}{\omega C}\\
+                Z_L &= i\omega L\eqquad.
+        \end{align*}
+
+\begin{eg}{Low-pass and high-pass filters}\label{eg:low-pass-and-high-pass}
+        An LRC circuit only responds to a certain range (band) of
+frequencies centered around its resonant frequency. As a
+filter, this is known as a bandpass filter. If you turn down
+both the bass and the treble on your stereo, you have
+created a bandpass filter.
+
+        To create a high-pass or low-pass filter, we only need to
+insert a capacitor or inductor, respectively, in series. For
+instance, a very basic surge protector for a computer could
+be constructed by inserting an inductor in series with the
+computer. The desired 60 Hz power from the wall is
+relatively low in frequency, while the surges that can
+damage your computer show much more rapid time variation.
+Even if the surges are not sinusoidal signals, we can think
+of a rapid ``spike'' qualitatively as if it was very high in
+frequency --- like a high-frequency sine wave, it changes very rapidly.
+
+        Inductors tend to be big, heavy, expensive circuit
+elements, so a simple surge protector would be more likely
+to consist of a capacitor in \emph{parallel} with the
+computer. (In fact one would normally just connect one side
+of the power circuit to ground via a capacitor.) The
+capacitor has a very high impedance at the low frequency of
+the desired 60 Hz signal, so it siphons off very little of
+the current. But for a high-frequency signal, the capacitor's
+impedance is very small, and it acts like a zero-impedance,
+easy path into which the current is diverted. 
+\end{eg}
+
+The main things to be careful about with impedance are that
+(1) the concept only applies to a circuit that is being
+driven sinusoidally, (2) the impedance of an inductor or
+capacitor is frequency-dependent.
+
+\startdq
+
+\begin{dq}
+Figure \figref{capvi} on page \pageref{fig:capvi}
+shows the voltage and current for a capacitor.
+Sketch the $q$-$t$ graph, and use it to give a physical
+explanation of the phase relationship between the voltage and current. For example,
+why is the current zero when the voltage is at a maximum or minimum?
+\end{dq}
+
+\begin{dq}
+Figure \figref{indvi} on page \pageref{fig:indvi}
+shows the voltage and current for an inductor. The power is
+considered to be positive when energy is being put into the inductor's magnetic field.
+Sketch the graph of the power, and then the graph of $U$, the energy stored in the magnetic field, and use it to give a physical
+explanation of the $P$-$t$ graph. In particular, discuss why the frequency is doubled on
+the $P$-$t$ graph.
+\end{dq}
+
+\begin{dq}
+Relate the features of the graph in figure \figref{indvi} on page \pageref{fig:indvi}
+to the story told in cartoons in figure \figref{inductor-voltage}/2-3 on page \pageref{fig:inductor-voltage}.
+\end{dq}
+
+<% end_sec() %>
+
+
+<% begin_sec("Power") %>
+
+How much power is delivered when an oscillating voltage
+is applied to an impedance? The equation $P=IV$ is generally true,
+since voltage is defined as energy per unit charge, and current is
+defined as charge per unit time: multiplying them gives energy
+per unit time. In a DC circuit, all three quantities were constant,
+but in an oscillating (AC) circuit, all three display time variation.
+
+<% begin_sec("A resistor") %>
+
+ First let's examine the case of
+a resistor. For instance, you're probably reading this book from
+a piece of paper illuminated by a glowing lightbulb, which is
+driven by an oscillating voltage with amplitude $V_\zu{o}$. 
+In the special case of a resistor, we know that $I$ and $V$ are in phase.
+For example, if $V$ varies as $V_\zu{o}\cos \omega t$, then $I$ will be a cosine as well,
+$I_\zu{o}\cos \omega t$. The power is then $I_\zu{o}V_\zu{o}\cos^2\omega t$, which
+is always positive,\footnote{A resistor always turns electrical energy into heat. It never
+turns heat into electrical energy!} and varies between 0 and $I_\zu{o}V_\zu{o}$.
+Even if the time variation was $\cos\omega t$ or $\sin(\omega t+\pi/4)$,
+we would still have a maximum power of $I_\zu{o}V_\zu{o}$, because both the voltage and the
+current would reach their maxima at the same time. In a lightbulb, the moment of maximum
+power is when the circuit is most rapidly heating the filament. At the
+instant when $P=0$, a quarter of a cycle later, no current is flowing, and no electrical
+energy is being turned into heat. Throughout the whole cycle, the filament is getting rid
+of energy by radiating light.\footnote{To many people, the word ``radiation'' implies nuclear
+contamination. Actually, the word simply means something that ``radiates'' outward.
+Natural sunlight is ``radiation.'' So is the light from a lightbulb, or the infrared light
+being emitted by your skin right now.}
+Since the circuit oscillates at a frequency\footnote{Note that this time ``frequency''
+means $f$, not $\omega$! Physicists and engineers generally use $\omega$ because it
+simplifies the equations, but electricians and technicians always use $f$. The 60 Hz
+frequency is for the U.S.} of $60\ \zu{Hz}$, the temperature doesn't really have time to
+cycle up or down very much over the 1/60 s period of the oscillation, and we don't notice
+any significant variation in the brightness of the light, even with a short-exposure
+photograph.
+
+<% marg(70) %>
+<%
+  fig(
+    'resvip',
+    %q{%
+      Power in a resistor: the rate at which electrical energy is being
+      converted into heat.
+    }
+  )
+%>
+<% end_marg %>
+
+Thus, what we really want to know is the average power, ``average'' meaning
+the average over one full cycle. Since we're covering a whole cycle with our average, it
+doesn't matter what phase we assume. Let's use a cosine. The total amount of energy
+transferred over one cycle is
+\begin{align*}
+        E        &=        \int \der E \\
+                &= \int_0^T \frac{\der E}{\der t} \der t\eqquad, \\
+\intertext{where $T=2\pi/\omega$ is the period.}
+        E        &= \int_0^T P \der t \\
+                &= \int_0^T P \der t \\
+                &= \int_0^T I_\zu{o}V_\zu{o} \cos^2\omega t \der t \\
+                &= I_\zu{o}V_\zu{o} \int_0^T  \cos^2\omega t \der t \\
+                &= I_\zu{o}V_\zu{o} \int_0^T \frac{1}{2} \left(1+\cos 2\omega t\right)  \der t \\
+\intertext{The reason for using the trig identity $\cos^2 x=(1+\cos 2 x)/2$ in the last step is that
+it lets us get the answer without doing a hard integral. Over the course of one full
+cycle, the quantity $\cos 2\omega t$ goes positive, negative, positive, and negative again,
+so the integral of it is zero. We then have}
+        E        &= I_\zu{o}V_\zu{o} \int_0^T \frac{1}{2}   \der t \\
+                &= \frac{I_\zu{o}V_\zu{o}T}{2}
+\end{align*}
+The average power is 
+\begin{align*}
+        P_{av}        &= \frac{\text{energy transferred in one full cycle}}{\text{time for one full cycle}} \\
+                        &= \frac{I_\zu{o}V_\zu{o}T/2}{T} \\
+                        &= \frac{I_\zu{o}V_\zu{o}}{2}\eqquad,\\
+\end{align*}
+i.e., the average is half the maximum. The power
+varies from $0$ to $I_\zu{o}V_\zu{o}$, and it spends equal amounts of time above and below the
+maximum, so it isn't surprising that the average power is half-way in between zero and
+the maximum. Summarizing, we have
+\begin{align*}
+        P_{av} &= \frac{I_\zu{o}V_\zu{o}}{2} \qquad \text{[average power in a resistor]}\\
+\end{align*}
+for a resistor.
+
+<% end_sec() %>
+
+<% begin_sec("RMS quantities") %>
+
+Suppose one day the electric company decided to start supplying your electricity as
+DC rather than AC. How would the DC voltage have to be related to the amplitude
+$V_\zu{o}$ of the AC voltage previously used if they wanted your lightbulbs to
+have the same brightness as before? The resistance of the bulb, $R$, is a fixed
+value, so we need to relate the power to the voltage and the resistance, eliminating
+the current. In the DC case, this gives $P=IV=(V/R)V=V^2/R$. (For DC, $P$ and $P_{av}$
+are the same.) In the AC case, $P_{av} = I_\zu{o}V_\zu{o}/2=V_\zu{o}^2/2R$.
+Since there is no factor of 1/2 in the DC case, the same power could be provided
+with a DC voltage that was smaller by a factor of $1/\sqrt{2}$. 
+Although you will hear people say that household voltage in the U.S. is 110 V,
+its amplitude is actually $(110\ \zu{V})\times\sqrt{2}\approx160\ \zu{V}$. The reason
+for referring to $V_\zu{o}/\sqrt{2}$ as ``the'' voltage is that people who are naive
+about AC circuits can plug $V_\zu{o}/\sqrt{2}$ into a familiar DC equation like
+$P=V^2/R$ and get the right \emph{average} answer. The quantity $V_\zu{o}/\sqrt{2}$
+is called the ``RMS'' voltage\index{root mean square}\index{RMS (root mean square)},
+which stands for ``root mean square.'' The idea is that if you square the function
+$V(t)$, take its average (mean) over one cycle, and then take the square root of that
+average, you get $V_\zu{o}/\sqrt{2}$. Many digital meters provide RMS readouts for
+measuring AC voltages and currents.
+
+<% end_sec() %>
+
+<% begin_sec("A capacitor") %>
+
+For a capacitor, the calculation starts out the same, but ends up with a
+twist. If the voltage varies as a cosine, $V_\zu{o}\cos \omega t$, then
+the relation $I=C\der V/\der t$ tells us that the current will be some
+constant multiplied by minus the sine, $-V_\zu{o}\sin \omega t$.
+The integral we did in the case of a resistor now becomes
+\begin{equation*}
+                E = \int_0^T -I_\zu{o}V_\zu{o} \sin \omega t \cos \omega t \der t\eqquad,\\
+\end{equation*}
+and based on figure \figref{capvip}, you can easily
+convince yourself that over the course of one full cycle, the power spends two quarter-cycles
+being negative and two being positive. In other words, the average power is zero!
+
+<% marg(50) %>
+<%
+  fig(
+    'capvip',
+    %q{%
+      Power in a capacitor: the rate at which energy is being
+      stored in (+) or removed from (-) the electric field.
+    }
+  )
+%>
+<% end_marg %>
+
+Why is this? It makes sense if you think in terms of energy. A resistor converts
+electrical energy to heat, never the other way around. A capacitor, however, merely
+stores electrical energy in an electric field and then gives it back.
+For a capacitor,
+\begin{align*}
+        P_{av} &= 0 \qquad \text{[average power in a capacitor]}\\
+\end{align*}
+Notice that although the average power is zero, the power at any given instant is
+\emph{not} typically zero, as shown in figure \figref{capvip}.
+The capacitor \emph{does}
+transfer energy: it's just that after borrowing some energy, it always pays it
+back in the next quarter-cycle. 
+
+<% end_sec() %>
+
+<% begin_sec("An inductor") %>
+
+The analysis for an inductor is similar to that for a capacitor: the power averaged
+over one cycle is zero. Again, we're merely storing energy temporarily in a field
+(this time a magnetic field) and getting it back later.
+
+ % 
+ % 
+ % 
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Impedance matching") %>
+\index{impedance matching}
+
+<% marg(0) %>
+<%
+  fig(
+    'zmatch',
+    %q{%
+      We wish to maximize the power delivered to
+      the load, $Z_\zu{o}$, by adjusting its impedance.
+    }
+  )
+%>
+<% end_marg %>
+
+Figure \figref{zmatch} shows a commonly encountered situation: we wish
+to maximize the average
+power, $P_{av}$, delivered to the load for a fixed value of $V_\zu{o}$,
+the amplitude of the oscillating driving voltage. We assume that the
+impedance of the transmission line, $Z_T$ is a fixed value, over
+which we have no control, but we are able to design the load, $Z_\zu{o}$, with any impedance
+ we like. For now, we'll also assume that both impedances are resistive. For example,
+$Z_T$ could be the resistance of a long extension cord, and 
+$Z_\zu{o}$ could be a lamp at the end of it. The result generalizes immediately,
+however, to any kind of impedance.
+For example, the load could be a stereo
+speaker's magnet coil, which is displays both inductance and resistance. (For a purely inductive
+or capacitive load, $P_{av}$ equals zero, so the problem isn't very interesting!)
+
+Since we're assuming both the load and the transmission line are resistive, their
+impedances add in series, and the amplitude of the current is given by
+\begin{align*}
+        I_\zu{o}        &= \frac{V_\zu{o}}{Z_\zu{o}+Z_T}\eqquad,\\
+\intertext{so}
+        P_{av} &= I_\zu{o}V_\zu{o}/2 \\
+                        &= I_\zu{o}^2Z_\zu{o}/2 \\
+                        &= \frac{V_\zu{o}^2Z_\zu{o}}{\left(Z_\zu{o}+Z_T\right)^2}/2\eqquad.
+\intertext{The maximum of this expression occurs where the derivative is zero,}
+        0        &= \frac{1}{2}\frac{\der}{\der Z_\zu{o}}\left[\frac{V_\zu{o}^2Z_\zu{o}}{\left(Z_\zu{o}+Z_T\right)^2}\right] \\
+        0        &= \frac{1}{2}\frac{\der}{\der Z_\zu{o}}\left[\frac{Z_\zu{o}}{\left(Z_\zu{o}+Z_T\right)^2}\right] \\
+        0        &= \left(Z_\zu{o}+Z_T\right)^{-2}-2Z_\zu{o}\left(Z_\zu{o}+Z_T\right)^{-3} \\
+        0        &= \left(Z_\zu{o}+Z_T\right)-2Z_\zu{o} \\
+        Z_\zu{o} &= Z_T 
+\end{align*}
+In other words, to maximize the power delivered to the load, we should make the load's
+impedance the same as the transmission line's. This result may seem surprising at first,
+but it makes sense if you think about it. If the load's impedance is too high, it's like
+opening a switch and breaking the circuit; no power is delivered. On the other hand, it doesn't
+pay to make the load's impedance too small. Making it smaller does give more current, but
+no matter how small we make it, the current will still be limited by the transmission line's
+impedance. As the load's impedance approaches zero, the current approaches this fixed value,
+and the the power delivered, $I_\zu{o}^2Z_\zu{o}$, decreases in proportion to $Z_\zu{o}$.
+
+Maximizing the power transmission by matching $Z_T$ to $Z_\zu{o}$ is called \emph{impedance
+matching}. For example, an 8-ohm home stereo speaker will be correctly matched to
+a home stereo amplifier with an internal impedance of 8 ohms, and 4-ohm car  speakers
+will be correctly matched to a car stereo with a 4-ohm internal impedance. You might think
+impedance matching would be unimportant because even if, for example, we used a car stereo
+to drive 8-ohm speakers, we could compensate for the mismatch simply by turning the volume
+knob higher. This is indeed one way to compensate for any impedance mismatch, but there
+is always a price to pay. When the impedances are matched, half the power is dissipated
+in the transmission line and half in the load. By connecting a 4-ohm amplifier to an
+8-ohm speaker, however, you would be setting up a situation in two watts were being dissipated
+as heat inside the amp for every amp being delivered to the speaker. In other words, you
+would be wasting energy, and perhaps burning out your amp when you turned up the volume to
+compensate for the mismatch.
+
+<% end_sec() %>
+
+<% begin_sec("Impedances in series and parallel") %>
+
+How do impedances combine in series and parallel? The beauty of treating them
+as complex numbers is that they simply combine according to the same rules you've
+already learned for resistances.
+
+\begin{eg}{Series impedance}\label{eg:series-impedance}
+\egquestion
+A capacitor and an inductor in series with each other are driven by a sinusoidally
+oscillating voltage. At what frequency is the current maximized?
+
+\eganswer
+Impedances in series, like resistances in series, add. The capacitor and inductor
+act as if they were a single circuit element with an impedance
+\begin{align*}
+         Z        &=  Z_{L}+ Z_{C}\\
+                        &=  i\omega L-\frac{ i}{\omega C}\eqquad.\\
+\intertext{The current is then}
+        \mytilde{ I} = \frac{\mytilde{ V}}{ i\omega L- i/\omega C}\eqquad.
+\end{align*}
+We don't care about the phase of the current, only its amplitude, which is
+represented by the absolute value of the complex number $\mytilde{ I}$, and
+this can be maximized by making  
+$| i\omega L- i/\omega C|$ as small as possible.
+But there is some frequency at which this quantity is \emph{zero}\/ ---
+\begin{gather*}
+        0 =  i\omega L-\frac{ i}{\omega C}\\
+        \frac{1}{\omega C} = \omega L\\
+        \omega = \frac{1}{\sqrt{ LC}}
+\end{gather*}
+At this frequency, the current is infinite! What is going on physically?
+This is an LRC circuit with $R=0$. It has a resonance at this frequency,
+and because there is no damping, the response at resonance is infinite.
+Of course, any real LRC circuit will have some damping, however small.
+\end{eg}
+\begin{eg}{Resonance with damping}\index{LRC circuit}
+\egquestion
+What is the amplitude of the current in a series LRC circuit?
+
+\eganswer
+Generalizing from  example \ref{eg:series-impedance}, we add a third, real impedance:
+\begin{align*}
+        |\mytilde{ I}| &= \frac{|\mytilde{ V}|}{| Z|} \\
+                &= \frac{|\mytilde{ V}|}{| R+ i\omega L- i/\omega C|} \\
+                &= \frac{|\mytilde{ V}|}{\sqrt{ R^2+(\omega L-1/\omega C)^2}} 
+\end{align*}
+This result would have taken pages of algebra without the complex number technique!
+\end{eg}
+
+\begin{eg}{A second-order stereo crossover filter}\label{eg:crossover}
+A stereo crossover filter ensures that the high frequencies
+go to the tweeter and the lows to the woofer. This can be
+accomplished simply by putting a single capacitor in series
+with the tweeter and a single inductor in series with the
+woofer. However, such a filter does not cut off very
+sharply. Suppose we model the speakers as resistors. (They
+really have inductance as well, since they have coils in
+them that serve as electromagnets to move the diaphragm that
+makes the sound.) Then the power they draw is $I^2 R$.
+Putting an inductor in series with the woofer, \figref{crossover}/1, gives a
+total impedance that at high frequencies is dominated by the
+inductor's, so the current is proportional to $\omega^{-1}$, and the
+power drawn by the woofer is proportional to $\omega^{-2}$.  
+
+<% marg(0) %>
+<%
+  fig(
+    'crossover',
+    %q{Example \ref{eg:crossover}.}
+  )
+%>
+<% end_marg %>
+
+A second-order filter, like \figref{crossover}/2, is one that cuts off more
+sharply: at high frequencies, the power goes like $\omega^{-4}$. To
+analyze this circuit, we first calculate the total impedance:
+\begin{equation*}
+                 Z  =   Z_{L}+( Z_{C}^{-1}+ Z_R^{-1})^{-1}  
+\end{equation*}
+All the current passes through the inductor, so if the driving voltage being supplied
+on the left is $\mytilde{ V}_d$, we have
+\begin{equation*}
+                \mytilde{ V}_d  =  \mytilde{ I}_{L} Z\eqquad,  
+\end{equation*}
+and we also have
+\begin{equation*}
+                \mytilde{ V}_{L}  =  \mytilde{ I}_{L} Z_L\eqquad.  
+\end{equation*}
+The loop rule, applied to the outer perimeter of the circuit, gives
+\begin{equation*}
+                \mytilde{ V}_{d}  = \mytilde{ V}_{L}+\mytilde{ V}_R\eqquad.  
+\end{equation*}
+Straightforward algebra now results in
+\begin{equation*}
+                \mytilde{ V}_{R}  = \frac{\mytilde{ V}_{d}}%
+                                                                {1+ Z_L/ Z_{C}+ Z_{L}/ Z_R}\eqquad.  
+\end{equation*}
+At high frequencies, the $Z_{L}/ Z_C$ term, which varies as
+$\omega^2$, dominates, so $\mytilde{ V}_R$ and $\mytilde{ I}_R$
+ are proportional to $\omega^{-2}$,
+and the power is proportional to $\omega^{-4}$.
+
+\end{eg}
+
+<% end_sec() %>
+
+<% begin_sec("Capacitors and inductors in series and parallel",nil,'l-and-c-parallel-and-series') %>
+In examples \ref{eg:l-series} and \ref{eg:c-parallel} on p.~\pageref{eg:l-series}, we found that
+inductance values add in series (just like resistors), while capacitances add in parallel.
+What about inductances in parallel and capacitances in series?
+A simple way to get at this more generally is to use our knowledge of impedances. If, for example,
+a linear circuit element acts like a capacitor for all sinusoidal signals, then it
+follows that it acts like a capacitor in all cases. That is, a linear circuit element's
+behavior is fully characterized by its behavior with sine waves (\note{fourier}). Since
+the behavior on a sine wave is completely characterized by the element's impedance, it
+follows that we can deduce the rules for parallel and series elements by looking at how
+the impedances combine. Since the impedance of resistors, capacitors, and inductors is
+proportional to $R$, $1/C$, and $L$, respectively, we find the following rules:
+
+Resistances add in series. Inverse resistances add in parallel. These facts are
+already familiar from secs.~\ref{sec:junction-rule}-\ref{sec:loop-rule},
+p.~\pageref{sec:junction-rule}).
+
+Inductances have the same parallel and series behavior as resistances.
+
+Capacitances add in parallel. Inverse capacitances add in series.
+
+<% end_sec('l-and-c-parallel-and-series') %>
+
+<% begin_notes %>
+<% end_notes %>
+
+
+
+<% begin_hw_sec %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

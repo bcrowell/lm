@@ -1,0 +1,286 @@
+\index{hydrogen atom!energies of states in}
+<% begin_sec("History") %>
+The experimental technique for measuring the energy levels
+of an atom accurately is spectroscopy: the study of the
+spectrum of light emitted (or absorbed) by the atom. Only
+photons with certain energies can be emitted or absorbed by
+a hydrogen atom, for example, since the amount of energy
+gained or lost by the atom must equal the difference in
+energy between the atom's initial and final states.
+Spectroscopy had become a highly developed art
+several decades before Einstein even proposed the photon,
+and the Swiss spectroscopist Johann \index{Balmer, Johann}Balmer
+determined in 1885 that there was a simple equation that
+gave all the wavelengths emitted by hydrogen. In modern
+terms, we think of the photon wavelengths merely as indirect
+evidence about the underlying energy levels of the atom, and
+we rework Balmer's result into an equation for these
+atomic energy levels:
+\begin{equation*}
+                E_n    =  -\frac{2.2\times10^{-18}\ \zu{J}}{n^2}\eqquad,  
+\end{equation*}
+This energy includes both
+the kinetic energy of the electron and the electrical
+energy. The zero-level of the electrical energy
+scale is chosen to be the energy of an electron and a proton
+that are infinitely far apart. With this choice, negative
+energies correspond to bound states and positive energies to unbound ones.
+
+Where does the mysterious numerical factor of $2.2\times10^{-18}\ \zu{J}$
+come from? In 1913 the Danish theorist Niels \index{Bohr, Niels}Bohr
+realized that it was exactly numerically equal to a certain
+combination of fundamental physical constants:
+\begin{equation*}
+ E_n = -\frac{mk^2e^4}{2\hbar^2}\cdot\frac{1}{n^2}\eqquad,  
+\end{equation*}
+where $m$ is the mass of the electron,  and $k$ is the Coulomb
+force constant for electric forces.
+
+Bohr was able to cook up a derivation of this equation based
+on the incomplete version of quantum physics that had been
+developed by that time, but his derivation is today mainly
+of historical interest. It assumes that the electron follows
+a circular path, whereas the whole concept of a path for a
+particle is considered meaningless in our more complete
+modern version of quantum physics. Although Bohr was able to
+produce the right equation for the energy levels, his model
+also gave various wrong results, such as predicting that the
+atom would be flat, and that the ground state would have
+$\ell=1$ rather than the correct $\ell=0$.
+<% end_sec() %>
+<% begin_sec("Approximate treatment") %>\label{start-approx-hydrogen-energies}
+m4_ifelse(__sn,1,
+[:
+  Rather than leaping straight into a full mathematical treatment, we'll start by looking for some physical insight,
+  which will lead to an approximate argument that correctly reproduces the form of the Bohr equation.
+:],[:
+  A full and correct treatment is impossible at the mathematical
+  level of this book, but we can provide a straightforward
+  explanation for the form of the equation using approximate
+  arguments. 
+:])
+A typical standing-wave pattern for the electron
+consists of a central oscillating area surrounded by a
+region in which the wavefunction tails off. As discussed in
+__subsection_or_section(schrodinger), the oscillating type of pattern is typically
+encountered in the classically allowed region, while the
+tailing off occurs in the classically forbidden region where
+the electron has insufficient kinetic energy to penetrate
+according to classical physics. We use the symbol $r$ for
+the radius of the spherical boundary between the classically
+allowed and classically forbidden regions.
+Classically, $r$ would be the distance from the proton at which
+the electron would have to stop,
+turn around, and head back in.
+
+If $r$ had the same value for every standing-wave pattern, then we'd
+essentially be solving the particle-in-a-box problem in three dimensions,
+with the box being a spherical cavity. Consider the energy levels of the particle in
+a box compared to those of the hydrogen atom, \figref{hydrogen-versus-box}.
+They're qualitatively different. The energy levels of the particle in a box
+get farther and farther apart as we go higher in energy, and this feature
+doesn't even depend on the details of whether the box is two-dimensional or three-dimensional,
+or its exact shape. The reason for the spreading is that the box is taken to be
+completely impenetrable, so its size, $r$, is fixed. A wave pattern with $n$ humps
+has a wavelength proportional to $r/n$, and therefore a momentum proportional to $n$,
+and an energy proportional to $n^2$. In the hydrogen atom, however, the force keeping
+the electron bound isn't an infinite force encountered when it bounces off of a wall, it's
+the attractive electrical force from the nucleus. If we put more energy into the electron,
+it's like throwing a ball upward with a higher energy --- it will get farther out before
+coming back down. This means that in the hydrogen atom, we expect $r$ to increase as we
+go to states of higher energy. This tends to keep the wavelengths of the high energy
+states from getting too short, reducing their kinetic energy. The closer and closer
+crowding of the energy levels in hydrogen also makes sense because we know that there
+is a certain energy that would be enough to make the electron escape completely, and
+therefore the sequence of bound states cannot extend above that energy.
+<% marg(80) %>
+<%
+  fig(
+    'hydrogen-versus-box',
+    %q{%
+      The energy levels of a particle in a box, contrasted with those of the hydrogen atom.
+    }
+  )
+%>
+<% end_marg %>
+
+
+When the electron is at the maximum classically allowed distance $r$ from the proton, it
+has zero kinetic energy.
+Thus when the
+electron is at distance $r$, its energy is purely electrical:
+\begin{equation}
+  E    = -\frac{ke^2}{r}           
+\end{equation}
+Now comes the approximation. In reality, the electron's
+wavelength cannot be constant in the classically allowed
+region, but we pretend that it is. Since $n$ is the number
+of nodes in the wavefunction, we can interpret it approximately
+as the number of wavelengths that fit across the diameter
+$2r$. We are not even attempting a derivation that would
+produce all the correct numerical factors like 2 and $\pi $
+and so on, so we simply make the approximation
+\begin{equation}
+        \lambda \sim \frac{r}{n}\eqquad.        
+\end{equation}
+Finally we assume that the typical kinetic energy of the
+electron is on the same order of magnitude as the absolute
+value of its total energy. (This is true to within a factor
+of two for a typical classical system like a planet in a
+circular orbit around the sun.) We then have
+\begin{subequations}
+\renewcommand{\theequation}{\theparentequation}
+\begin{align}
+        \text{absolute}&\text{ value of total energy} \\
+        &= \frac{ke^2}{r} \notag \\
+        &\sim K \notag \\ 
+        &= p^2/2m \notag \\
+        &= (h/\lambda)^2/2m \notag \\
+        &\sim h^2n^2/2mr^2 \notag
+\end{align}
+\end{subequations}
+We now solve the equation $ke^2/r \sim h^2n^2 / 2mr^2$ for $r$
+and throw away numerical factors we can't hope to have
+gotten right, yielding
+\begin{equation}
+        r \sim \frac{h^2n^2}{mke^2}\eqquad.
+\end{equation}
+
+Plugging $n=1$ into this equation gives $r=2$ nm, which is
+indeed on the right order of magnitude. Finally we combine
+equations [4] and [1] to find
+\begin{equation*}
+        E \sim -\frac{mk^2e^4}{h^2n^2}\eqquad,
+\end{equation*}
+which is correct except for the numerical factors we
+never aimed to find.\label{end-approx-hydrogen-energies}
+<% end_sec() %>
+
+m4_ifelse(__sn,1,[:
+<% begin_sec("Exact treatment of the ground state",nil,'exact-h-gs') %>
+The general proof of the Bohr equation for all values of $n$ is beyond the mathematical
+scope of this book, but it's fairly straightforward to verify it for a particular $n$,
+especially given a lucky guess as to what functional form to try for the wavefunction.
+The form that works for the ground state is
+\begin{equation*}
+  \Psi = ue^{-r/a}\eqquad,
+\end{equation*}
+where $r=\sqrt{x^2+y^2+z^2}$ is the electron's distance from the proton, and $u$ provides for normalization.
+In the following, the result $\partial r/\partial x=x/r$ comes in handy.
+Computing the partial derivatives that occur in the Laplacian, we obtain for the
+$x$ term
+\begin{align*}
+  \frac{\partial\Psi}{\partial x}     &= \frac{\partial \Psi}{\partial r} \frac{\partial r}{\partial x} \\
+                                      &= -\frac{x}{ar} \Psi \\
+  \frac{\partial^2\Psi}{\partial x^2} &= -\frac{1}{ar} \Psi -\frac{x}{a}\left(\frac{\partial}{\der x}\frac{1}{r}\right)\Psi+ \left( \frac{x}{ar}\right)^2 \Psi\\
+                                      &= -\frac{1}{ar} \Psi +\frac{x^2}{ar^3}\Psi+ \left( \frac{x}{ar}\right)^2 \Psi\eqquad,
+\intertext{so}
+  \nabla^2\Psi &= \left( -\frac{2}{ar} + \frac{1}{a^2} \right) \Psi\eqquad.
+\end{align*}
+The Schr\"odinger equation gives
+\begin{align*}
+  E\cdot\Psi &= -\frac{\hbar^2}{2m}\nabla^2\Psi + U\cdot\Psi \\
+             &= \frac{\hbar^2}{2m}\left( \frac{2}{ar} - \frac{1}{a^2} \right)\Psi -\frac{ke^2}{r}\cdot\Psi
+\end{align*}
+If we require this equation to hold for all $r$, then we must have equality for both the terms of the form
+$(\text{constant})\times\Psi$ and for those of the form $(\text{constant}/r)\times\Psi$. That means
+\begin{align*}
+  E &= -\frac{\hbar^2}{2ma^2} \\
+\intertext{and}
+  0 &=  \frac{\hbar^2}{mar} -\frac{ke^2}{r}\eqquad.
+\end{align*}
+These two equations can be solved for the unknowns $a$ and $E$, giving
+\begin{align*}
+  a &= \frac{\hbar^2}{mke^2} \\
+\intertext{and}
+  E &= -\frac{mk^2e^4}{2\hbar^2}\eqquad,
+\end{align*}
+where the result for the energy agrees with the Bohr equation for $n=1$.
+The calculation of the normalization constant $u$ is relegated to homework problem \ref{hw:h-atom-normalization}.
+
+<% self_check('kinky-hydrogen',<<-'SELF_CHECK'
+We've verified that the function $\Psi = he^{-r/a}$ is a solution to the Schr\"odinger equation,
+and yet it has a kink in it at $r=0$. What's going on here? Didn't I argue before that kinks are unphysical?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Wave phases in the hydrogen molecule}\label{eg:h2-details}
+In example \ref{h2-bond} on page \pageref{h2-bond}, I argued that the existence of the $\zu{H}_2$ molecule
+could essentially be explained by a particle-in-a-box argument: the molecule is a bigger box than an
+individual atom, so each electron's wavelength can be longer, its kinetic energy lower.
+Now that we're in possession of a mathematical expression for the wavefunction of the hydrogen
+atom in its ground state, we can make this argument a little more rigorous and detailed.
+Suppose that two hydrogen atoms are in a relatively cool sample of monoatomic hydrogen gas.
+Because the gas is cool, we can assume that the atoms are in their ground states. Now suppose
+that the two atoms approach one another. Making use again of the assumption that the gas is cool, it
+is reasonable to imagine that the atoms approach one another slowly. Now the atoms come a little
+closer, but still far enough apart that the region between them is classically forbidden. Each
+electron can tunnel through this classically forbidden region, but the tunneling probability is
+small. Each one is now found with, say, 99\% probability in its original home, but with 1\%
+probability in the other nucleus. Each electron is now in a state consisting of a superposition
+of the ground state of its own atom with the ground state of the other atom. There are two peaks
+in the superposed wavefunction, but one is a much bigger peak than the other.
+
+An interesting question now arises. What are the relative phases of the two electrons?
+As discussed on page \pageref{fig:electron-wave-phase}, the \emph{absolute} phase of an electron's
+wavefunction is not really a meaningful concept. Suppose atom A contains electron Alice, and
+B electron Bob. Just before the collision, Alice may have wondered, ``Is my phase
+positive right now, or is it negative? But of course I shouldn't ask myself such silly questions,''
+she adds sheepishly.
+
+<%
+  fig(
+    'h2-phase',
+    %q{%
+      Example \ref{eg:h2-details}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+But \emph{relative} phases \emph{are} well defined. As the two atoms draw closer and closer together,
+the tunneling probability rises, and eventually gets so high that each electron is spending essentially
+50\% of its time in each atom. It's now reasonable to imagine that either one of two possibilities could
+obtain. Alice's wavefunction could either look like \subfigref{h2-phase}{1}, with the two peaks in
+phase with one another, or it could look like \subfigref{h2-phase}{2}, with opposite phases. Because
+\emph{relative} phases of wavefunctions are well defined, states 1 and 2 are physically 
+distinguishable.\footnote{The reader who has studied chemistry may find it helpful to make contact
+with the terminology and notation used by chemists. The state represented by
+pictures 1 and 4 is known as a
+$\sigma$ orbital, which is a type of ``bonding orbital.'' The state in 2 and 3 is a $\sigma^*$, a kind of
+``antibonding orbital.'' Note that although we will not discuss electron spin or the Pauli exclusion
+principle until sec.~\ref{subsec:electron-spin}, p.~\pageref{subsec:electron-spin}, those considerations
+have no effect on this example, since the two electrons can have opposite spins.}
+In particular, the kinetic energy of state 2 is much higher; roughly speaking, it is like the two-hump
+wave pattern of the particle in a box, as opposed to 1, which looks roughly like the one-hump pattern
+with a much longer wavelength. Not only that, but an electron in state 1 has a large probability of being found in the
+central region, where it has a large negative electrical energy due to its interaction with both protons.
+State 2, on the other hand, has a low probability of existing in that region. Thus state 1 represents the
+true ground-state wavefunction of the $\zu{H}_2$ molecule, and putting both Alice and Bob in that state
+results in a lower energy than their total energy when separated, so the molecule is bound, and will not
+fly apart spontaneously.
+
+State \subfigref{h2-phase}{3}, on the other hand, is not physically distinguishable from \subfigref{h2-phase}{2},
+nor is \subfigref{h2-phase}{4} from \subfigref{h2-phase}{1}. Alice may say to Bob, ``Isn't it wonderful that
+we're in state 1 or 4? I love being stable like this.'' But she knows it's not meaningful to ask herself
+at a given moment which state she's in, 1 or 4.
+\end{eg}
+
+
+<% end_sec %>
+:],[::])
+
+\startdqs
+
+\begin{dq}
+States of hydrogen with $n$ greater than about 10 are
+never observed in the sun. Why might this be?
+\end{dq}
+
+\begin{dq}
+Sketch graphs of $r$ and $E$ versus $n$ for the hydrogen,
+and compare with analogous graphs for the one-dimensional particle in a box.
+\end{dq}

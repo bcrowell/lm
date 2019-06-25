@@ -1,0 +1,15 @@
+Data reverse-engineered from Marvel and Vineyard, https://arxiv.org/abs/1108.5977
+origin 135, 858
+(1000,800) 1028,189
+point 552,702 ... pm 14 in x direction
+point 974,374 ... pm 26 in x direction
+
+
+calc -x -e "x0=135; y0=858; x=1028; y=189; a=1000/(x-x0); b=800/(y-y0); xx=974; yy=374; p=a(xx-x0)e(1000 V)/c; K=b(yy-y0)e(1000 V); m=9.109 10^-31 kg; E=K+mc^2; gamma=E/(mc^2); v=sqrt(1-gamma^-2)c; pp=mgammav; EE=mgammac^2"
+
+Take p as measuring v, so that % err in p is % err in v.
+
+p/(10^-22 kg.m/s),v/(10^8 m/s),K/MeV
+
+2.50(8),2.02(5),0.187
+5.02(16),2.63(8),0.579

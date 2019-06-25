@@ -1,0 +1,692 @@
+<% begin_sec("Vector notation",0) %>
+
+The idea of components freed us from the confines of
+one-dimensional physics, but the component notation can be
+unwieldy, since every one-dimensional equation has to be
+written as a set of three separate equations in the
+three-dimensional case. Newton was stuck with the component
+notation until the day he died, but eventually someone
+sufficiently lazy and clever figured out a way of abbreviating
+three equations as one.
+
+\noindent \begin{tabular}{|llll|}
+\hline
+(a)  &  $\overrightarrow{F}_{\text{A on B}}=-\overrightarrow{F}_{\text{B on A}}$   &   stands for  &  
+  $\begin{matrix}
+    F_{\text{A on B},x} = -F_{\text{B on A},x}  \\
+    F_{\text{A on B},y} = -F_{\text{B on A},y}  \\
+    F_{\text{A on B},z} = -F_{\text{B on A},z}  \\
+  \end{matrix}$ \\
+\hline
+(b)  &  $\overrightarrow{F}_{\text{total}}=\overrightarrow{F}_1+\overrightarrow{F}_2+\ldots$   &   stands for  &  
+  $\begin{matrix}
+    F_{\text{total},x} = F_{1,x}+F_{2,x}+\ldots\\
+    F_{\text{total},y} = F_{1,y}+F_{2,y}+\ldots\\
+    F_{\text{total},z} = F_{1,z}+F_{2,z}+\ldots\\
+  \end{matrix}$ \\
+\hline
+(c)  &  $\overrightarrow{a}=\frac{\Delta \overrightarrow{v}}{\Delta t}$   &   stands for  &  
+  $\begin{matrix}
+    a_x = \Delta v_x / \Delta t \\
+    a_y = \Delta v_y / \Delta t \\
+    a_z = \Delta v_z / \Delta t \\
+  \end{matrix}$ \\
+\hline
+\end{tabular}
+
+\noindent Example (a) shows both ways of writing Newton's third law.
+Which would you rather write?
+
+\pagebreak
+
+The idea is that each of the algebra symbols with an arrow
+written on top, called a \index{vector!defined}vector, is
+actually an abbreviation for three different numbers, the
+$x$, $y$, and $z$ components. The three components are referred
+to as the components of the vector, e.g., $F_x$ is the $x$
+component of the vector $\overrightarrow{F}$. The notation with an arrow on top
+is good for handwritten equations, but is unattractive in a
+printed book, so books use boldface, $\vc{F}$, to represent
+vectors. After this point, I'll use boldface for vectors
+throughout this book.
+
+Quantities can be classified as vectors or scalars. In a phrase like
+``a \_\_\_\_\_ to the northeast,'' it makes sense to fill in the blank
+with ``force'' or ``velocity,'' which are vectors, but not with ``mass''
+or ``time,'' which are scalars.
+Any nonzero vector has both a direction and an amount.
+The amount is called its \index{magnitude of a vector!defined}\index{vector!magnitude of}
+magnitude. The notation for the magnitude of a vector $\vc{A}$
+is $|\vc{A}|$, like the absolute value sign used with scalars.
+
+Often, as in example (b), we wish to use the vector notation
+to represent adding up all the $x$ components to get a total
+$x$ component, etc. The plus sign is used between two
+vectors to indicate this type of component-by-component
+addition. Of course, vectors are really triplets of numbers,
+not numbers, so this is not the same as the use of the plus
+sign with individual numbers. But since we don't want to
+have to invent new words and symbols for this operation on
+vectors, we use the same old plus sign, and the same old
+addition-related words like ``add,'' ``sum,'' and ``total.''
+Combining vectors this way is called \index{vector!addition}vector addition.
+
+Similarly, the minus sign in example (a) was used to
+indicate negating each of the vector's three components
+individually. The equals sign is used to mean that all three
+components of the vector on the left side of an equation are
+the same as the corresponding components on the right.
+
+Example (c) shows how we abuse the division symbol in a
+similar manner. When we write the vector $\Delta \vc{v}$ divided
+by the scalar $\Delta $t, we mean the new vector formed by
+dividing each one of the velocity components by $\Delta t$.
+
+It's not hard to imagine a variety of operations that would
+combine vectors with vectors or vectors with scalars, but
+only four of them are required in order to express Newton's laws:
+
+\pagebreak
+
+\begin{tabular}{lp{60mm}}
+operation & definition \\
+$\text{\textbf{vector}}+\text{\textbf{vector}}$ & Add component by component to make a new set of three numbers.\\
+$\text{\textbf{vector}}-\text{\textbf{vector}}$ & Subtract component by component to make a new set of three numbers.\\
+$\text{\textbf{vector}}\cdot\text{scalar}$ & Multiply each component of the vector by the scalar.\\
+$\text{\textbf{vector}}/\text{scalar}$ & Divide each component of the vector by the scalar.
+\end{tabular}
+
+As an example of an operation that is not useful for
+physics, there just aren't any useful physics applications
+for dividing a vector by another vector component by
+component. In optional section \ref{sec:rotational-invariance}, we discuss in more
+detail the fundamental reasons why some vector operations
+are useful and others useless.
+
+We can do algebra with vectors, or with a mixture of vectors
+and scalars in the same equation. Basically all the normal
+rules of algebra apply, but if you're not sure if a certain
+step is valid, you should simply translate it into three
+component-based equations and see if it works.
+
+\begin{eg}{Order of addition}
+\egquestion If we are adding two force vectors, $\vc{F}+\vc{G}$, is it
+valid to assume as in ordinary algebra that $\vc{F}+\vc{G}$ is the same as $\vc{G}+\vc{F}$?
+
+\eganswer To tell if this algebra rule also applies to
+vectors, we simply translate the vector notation into
+ordinary algebra notation. In terms of ordinary numbers, the
+components of the vector $\vc{F}+\vc{G}$ would be $F_x+G_x$, $F_y+G_y$,
+and $F_z+G_z$, which are certainly the same three numbers as
+$G_x+F_x$, $G_y+F_y$, and $G_z+F_z$. Yes, $\vc{F}+\vc{G}$ is the same as $\vc{G}+\vc{F}$.
+\end{eg}
+
+It is useful to define a symbol $\vc{r}$ for the vector whose
+components are $x$, $y$, and $z$, and a symbol $\Delta\vc{r}$ made
+out of $\Delta x$, $\Delta y$, and $\Delta z$.
+
+Although this may all seem a little formidable, keep in mind
+that it amounts to nothing more than a way of abbreviating
+equations! Also, to keep things from getting too confusing
+the remainder of this chapter focuses mainly on the 
+$\Delta \vc{r}$ vector, which is relatively easy to visualize.
+
+<% self_check('translate-to-vector',<<-'SELF_CHECK'
+Translate the equations $v_x=\\Delta x/\\Delta t$, 
+$v_y=\\Delta y/\\Delta t$, and $v_z=\\Delta z/\\Delta t$ for motion with
+constant velocity into a single equation in vector notation.
+  SELF_CHECK
+  ) %>
+
+<% begin_sec("Drawing vectors as arrows",4) %>
+
+A vector in two dimensions can be easily visualized by
+drawing an arrow whose length represents its magnitude and
+whose direction represents its direction. The $x$ component
+of a vector can then be visualized as the length of the
+shadow it would cast in a beam of light projected onto the
+$x$ axis, and similarly for the $y$ component. Shadows with
+arrowheads pointing back against the direction of the
+positive axis correspond to negative components.
+<% marg(130) %>
+<%
+  fig(
+    'flashlight-shadows',
+    %q{%
+      The $x$ and $y$ components of
+      a vector can be thought of as the shadows it casts onto the $x$ and
+      $y$ axes.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'sc-scale-vector',
+    %q{%
+      Self-check \ref{sc:scale-vector}.
+    }
+  )
+%>
+<% end_marg %>
+
+In this type of diagram, the negative of a vector is the
+vector with the same magnitude but in the opposite
+direction. Multiplying a vector by a scalar is represented
+by lengthening the arrow by that factor, and similarly for division.
+
+<% self_check('scale-vector',<<-'SELF_CHECK'
+Given vector $\\vc{Q}$ represented by an arrow in figure \\figref{sc-scale-vector}, draw arrows
+representing the vectors $1.5\\vc{Q}$ and $-\\vc{Q}$.
+  SELF_CHECK
+  ) %>
+
+This leads to a way of defining vectors and scalars that reflects how physicists think
+in general about these things:
+
+\begin{important}[definition of vectors and scalars]\label{define-vector}
+A general type of measurement (force, velocity, \ldots)
+is a vector if it can be drawn as an arrow so that
+rotating the paper produces the same result as rotating the actual quantity.
+A type of quantity that never changes at all under rotation is a scalar.
+\end{important}
+
+For example, a force reverses itself under a 180-degree rotation, but a mass doesn't.
+We could have defined a vector as something that had both a magnitude and a direction,
+but that would have left out zero vectors, which don't have a direction.\index{scalar!defined}\index{vector!defined}
+A zero vector is a legitimate vector, because it behaves the same way under rotations
+as a zero-length arrow, which is simply a dot.
+<% marg(-50) %>
+<%
+  fig(
+    'playing-card',
+    %q{%
+      A playing card returns to its original state when rotated by 180 degrees.
+    }
+  )
+%>
+<% end_marg %>
+
+A remark for those who enjoy brain-teasers: not everything is a vector or a scalar.
+An American football is distorted compared to
+a sphere, and we can measure the orientation and amount of that distortion quantitatively.
+The distortion is not a vector, since
+a 180-degree rotation brings it back to its original state. Something similar happens with
+playing cards, figure \figref{playing-card}. For some subatomic particles, such as electrons, 360 degrees
+isn't even \emph{enough}; a 720-degree rotation is needed to put them back the way they were!
+
+\startdqs
+
+\begin{dq}
+You drive to your friend's house. How does the magnitude
+of your $\Delta\vc{r}$ vector compare with the distance you've
+added to the car's odometer?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Calculations with magnitude and direction",0) %>
+
+If you ask someone where Las Vegas is compared to Los
+Angeles, they are unlikely to say that the $\Delta x$ is 290
+km and the $\Delta y$ is 230 km, in a coordinate system
+where the positive $x$ axis is east and the $y$ axis points
+north. They will probably say instead that it's 370 km to
+the northeast. If they were being precise, they might
+give the direction as $38\degunit$ counterclockwise from east.
+In two dimensions, we can always specify a vector's
+direction like this, using a single angle. A magnitude plus
+an angle suffice to specify everything about the vector. The
+following two examples show how we use trigonometry and the
+Pythagorean theorem to go back and forth between the $x-y$
+and magnitude-angle descriptions of vectors.
+
+<% marg(-8) %>
+<%
+  fig(
+    'eg-la-vegas',
+    %q{Examples \ref{eg:la-vegas} and \ref{eg:la-vegas-components}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Finding magnitude and angle from components}\label{eg:la-vegas}
+\egquestion Given that the $\Delta \vc{r}$ vector from LA to Las
+Vegas has $\Delta x=290\ \zu{km}$ and $\Delta y=230\ \zu{km}$, how would
+we find the magnitude and direction of $\Delta $r?
+
+\eganswer We find the magnitude of $\Delta \vc{r}$ from the
+Pythagorean theorem:
+\begin{align*}
+        |\Delta \vc{r}|  &= \sqrt{\Delta x^2 + \Delta y^2}   \\
+             &=  370\ \zu{km}
+\end{align*}
+We know all three sides of the triangle, so the angle
+$\theta $ can be found using any of the inverse trig
+functions. For example, we know the opposite and adjacent sides, so
+\begin{align*}
+        \theta       &=  \tan^{-1}\frac{\Delta y}{\Delta x}  \\
+             &=  38\degunit\eqquad.
+\end{align*}
+\end{eg}
+
+\begin{eg}{Finding components from magnitude and angle}\label{eg:la-vegas-components}
+\egquestion Given that the straight-line distance from Los
+Angeles to Las Vegas is 370 km, and that the angle $\theta $
+in the figure is 38\degunit, how can the $x$ and $y$ components of
+the $\Delta \vc{r}$ vector be found?
+
+\eganswer The sine and cosine of $\theta $ relate the given
+information to the information we wish to find:
+\begin{align*}
+        \cos  \theta      &=  \frac{\Delta x}{|\Delta\vc{r}|}  \\
+        \sin  \theta      &=  \frac{\Delta y}{|\Delta\vc{r}|}  
+\end{align*}
+Solving for the unknowns gives
+\begin{align*}
+        \Delta x     &= |\Delta\vc{r}|\cos\theta   \\
+             &=  290\ \zu{km}  \qquad \text{and}\\
+        \Delta y     &= |\Delta\vc{r}|\sin\theta   \\
+             &=  230\ \zu{km}\eqquad.
+\end{align*}
+\end{eg}
+
+The following example shows the correct handling of the plus
+and minus signs, which is usually the main cause of mistakes.
+<% marg(-8) %>
+<%
+  fig(
+    'eg-sd-la',
+    %q{Example \ref{eg:sd-la}.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Negative components}\label{eg:sd-la}
+\egquestion San Diego is 120 km east and 150 km south of Los
+Angeles. An airplane pilot is setting course from San Diego
+to Los Angeles. At what angle should she set her course,
+measured counterclockwise from east, as shown in the figure?
+
+\eganswer If we make the traditional choice of coordinate
+axes, with $x$ pointing to the right and $y$ pointing up on
+the map, then her $\Delta x$ is negative, because her final
+$x$ value is less than her initial $x$ value. Her $\Delta y$
+is positive, so we have
+\begin{align*}
+        \Delta x      &=  -120\ \zu{km}  \\
+        \Delta y     &=  150\ \zu{km}\eqquad.
+\end{align*}
+If we work by analogy with example \ref{eg:la-vegas}, we get
+\begin{align*}
+        \theta &= \tan^{-1}\frac{\Delta y}{\Delta x} \\
+             &= \tan^{-1}(-1.25) \\
+             &=  -51\degunit\eqquad.
+\end{align*}
+According to the usual way of defining angles in trigonometry,
+a negative result means an angle that lies clockwise from
+the x axis, which would have her heading for the Baja
+California. What went wrong? The answer is that when you ask
+your calculator to take the arctangent of a number, there
+are always two valid possibilities differing by 180\degunit.
+That is, there are two possible angles whose tangents equal -1.25:
+\begin{align*}
+        \tan  129\degunit  &=  -1.25  \\
+        \tan  -51\degunit  &=  -1.25
+\end{align*}
+
+You calculator doesn't know which is the correct one, so it
+just picks one. In this case, the one it picked was the
+wrong one, and it was up to you to add 180\degunit to it to
+find the right answer.
+\end{eg}
+
+\vfill
+
+\begin{eg}{A shortcut}\label{eg:component-shortcut}
+\egquestion A split second after nine o'clock, the hour hand on a clock dial
+has moved clockwise past the nine-o'clock position by some imperceptibly small
+angle $\phi$. Let positive $x$ be to the right and positive $y$ up.
+If the hand, with length $\ell$, is represented by a $\Delta\vc{r}$ vector
+going from the dial's center to the tip of the hand,
+find this vector's $\Delta x$.
+
+\eganswer The following shortcut is the easiest way to work out examples like
+these, in which a vector's direction is known relative to one of the axes.
+We can tell that $\Delta\vc{r}$ will have a large, negative $x$ component
+and a small, positive $y$.
+Since $\Delta x<0$,  there are really only
+two logical possibilities: either $\Delta x = -\ell \cos\phi$, or
+$\Delta x = -\ell \sin\phi$. Because $\phi$ is small, $\cos\phi$ is large
+and $\sin\phi$ is small. We conclude that $\Delta x = -\ell \cos\phi$.
+
+A typical application of this technique to force vectors is given in
+example \ref{eg:layback} on p.~\pageref{eg:layback}.
+\end{eg}
+<% marg(130) %>
+<%
+  fig(
+    'eg-component-shortcut',
+    %q{%
+      Example \ref{eg:component-shortcut}.
+    }
+  )
+%>
+<% end_marg %>
+
+\vfill
+
+\startdq
+
+\begin{dq}
+In example \ref{eg:sd-la}, we dealt with \emph{components} that
+were negative. Does it make sense to classify \emph{vectors} as positive and
+negative?
+\end{dq}
+
+\vfill
+
+<% end_sec() %>
+<% begin_sec("Techniques for adding vectors",4,'vector-addition') %>
+
+Vector addition is one of the three essential mathematical skills, summarized on pp.\pageref{begin-skills}-\pageref{end-skills},
+that you need for success in this course.
+
+\vfill
+
+<% begin_sec("Addition of vectors given their components") %>\label{subsec:vector-addition-analytic}
+
+The easiest type of vector addition is when you are in
+possession of the components, and want to find the
+components of their sum.
+
+\vfill
+
+\begin{eg}{Adding components}\label{eg:sd-vegas}
+\egquestion Given the $\Delta x$ and $\Delta y$ values from
+the previous examples, find the $\Delta x$ and $\Delta y$
+from San Diego to Las Vegas.
+
+<% marg(0) %>
+<%
+  fig(
+    'eg-sd-vegas',
+    %q{Example \ref{eg:sd-vegas}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'tip-to-tail',
+    %q{%
+      Vectors can be added graphically by
+      placing them tip to tail, and then
+      drawing a vector from the tail of the
+      first vector to the tip of the second
+      vector.
+    }
+  )
+%>
+<% end_marg %>
+\eganswer
+\begin{align*}
+        \Delta x_{total}     &=  \Delta x_1 + \Delta x_2  \\
+             &=  -120\ \zu{km} + 290\ \zu{km}  \\
+             &=  170\ \zu{km}  \\
+        \Delta y_{total}     &=  \Delta y_1 + \Delta y_2  \\
+             &=  150\ \zu{km} + 230\ \zu{km}  \\
+             &=  380
+\end{align*}
+Note how the signs of the $x$ components take care of the
+westward and eastward motions, which partially cancel.
+
+\end{eg}
+
+<% end_sec() %>
+\vfill
+<% begin_sec("Addition of vectors given their magnitudes and directions") %>\label{subsec:vector-add-given-mag}
+
+In this case, you must first translate the magnitudes and
+directions into components, and the add the components.
+In our San Diego-Los Angeles-Las Vegas example, we can
+simply string together the preceding examples; this is done on p.~\pageref{skills-vector-addition}.
+
+<% end_sec() %>
+\vfill
+<% begin_sec("Graphical addition of vectors") %>\label{subsec:vector-addition-graphical}
+
+Often the easiest way to add vectors is by making a scale
+drawing on a piece of paper. This is known as graphical
+addition, as opposed to the analytic techniques discussed previously.
+(It has nothing to do with $x-y$ graphs or graph paper. ``Graphical''
+here simply means drawing. It comes from the Greek verb ``\emph{grapho},'' to write,
+like related English words including ``graphic.'')\index{vector!addition!graphical}
+
+\pagebreak
+
+\begin{eg}{LA to Vegas, graphically}\label{eg:sd-vegas-graphical}
+\egquestion Given the magnitudes and angles of the $\Delta \vc{r}$
+vectors from San Diego to Los Angeles and from Los Angeles
+to Las Vegas, find the magnitude and angle of the $\Delta \vc{r}$
+vector from San Diego to Las Vegas.
+
+\eganswer Using a protractor and a ruler, we make a careful
+scale drawing, as shown in figure \figref{eg-sd-vegas-graphical}. 
+The protractor can be conveniently aligned with the blue rules on
+the notebook paper.
+A scale of 
+$1\ \zu{mm}\rightarrow 2\ \zu{km}$ was chosen for this solution because
+it was as big as possible (for accuracy) without being so big that the
+drawing wouldn't fit on the page. With a
+ruler, we measure the distance from San Diego to Las Vegas
+to be 206 mm, which corresponds to 412 km. With a protractor,
+we measure the angle $\theta $ to be 65\degunit.
+\end{eg}
+
+<%
+  fig(
+    'eg-sd-vegas-graphical',
+    %q{Example \ref{eg:sd-vegas-graphical}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Even when we don't intend to do an actual graphical
+calculation with a ruler and protractor, it can be
+convenient to diagram the addition of vectors in this way.
+With $\Delta \vc{r}$ vectors, it intuitively makes sense to lay
+the vectors tip-to-tail and draw the sum vector from the
+tail of the first vector to the tip of the second vector. We
+can do the same when adding other vectors such as force vectors.
+
+<% self_check('subtract-vectors',<<-'SELF_CHECK'
+How would you subtract vectors graphically?
+  SELF_CHECK
+  ) %>
+
+\startdqs
+
+\begin{dq}
+If you're doing \emph{graphical} addition of vectors,
+does it matter which vector you start with and which vector
+you start from the other vector's tip?
+\end{dq}
+
+\begin{dq}
+If you add a vector with magnitude 1 to a vector of
+magnitude 2, what magnitudes are possible for the vector sum?
+\end{dq}
+
+\begin{dq}
+Which of these examples of vector addition are correct,
+and which are incorrect?
+\end{dq}
+\anonymousinlinefig{../../../share/mechanics/figs/dq-check-tip-to-tail}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Unit vector notation",nil,'unit-vector-notation',{'optional'=>true}) %>\index{unit vectors}
+
+When we want to specify a vector by its components, it can
+be cumbersome to have to write the algebra symbol for each component:
+\begin{equation*}
+   \Delta x= 290\ \zu{km},\ \Delta y=230\ \zu{km}
+\end{equation*}
+A more compact notation is to write
+\begin{equation*}
+        \Delta \vc{r}  =  (290\ \zu{km})\hat{\vc{x}} + (230\ \zu{km})\hat{\vc{y}}\eqquad,
+\end{equation*}
+where the vectors $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$, called the unit vectors, are
+defined as the vectors that have magnitude equal to 1 and
+directions lying along the $x$, $y$, and $z$ axes. In speech,
+they are referred to as ``x-hat'' and so on.
+
+A slightly different, and harder to remember, version of
+this notation is unfortunately more prevalent. In this
+version, the unit vectors are called $\hat{\vc{i}}$, $\hat{\vc{j}}$, and $\hat{\vc{k}}$:
+\begin{equation*}
+        \Delta \vc{r}  =  (290\ \zu{km})\hat{\vc{i}} + (230\ \zu{km})\hat{\vc{j}}\eqquad.
+\end{equation*}
+
+<% end_sec() %>
+<% begin_sec("Rotational invariance",4,'rotational-invariance',{'optional'=>true}) %>
+
+Let's take a closer look at why certain vector operations
+are useful and others are not. Consider the operation of
+multiplying two vectors component by component to produce a third vector:
+\begin{align*}
+        R_x    &=    P_x Q_x  \\
+        R_y    &=    P_y Q_y  \\
+        R_z    &=    P_z Q_z
+\end{align*}
+As a simple example, we choose vectors $\vc{P}$ and $\vc{Q}$ to have
+length 1, and make them perpendicular to each other, as
+shown in figure \figref{invariance}/1. If we compute the result of our new
+vector operation using the coordinate system in \figref{invariance}/2, we find:
+\begin{align*}
+        R_x    &=    0 \\
+        R_y    &=    0  \\
+        R_z    &=    0.
+\end{align*}
+The $x$ component is zero because $P_x=0$, the $y$ component
+is zero because $Q_y=0$, and the $z$ component is of course
+zero because both vectors are in the $x-y$ plane. However,
+if we carry out the same operations in coordinate system
+\figref{invariance}/3, rotated 45 degrees with respect to the previous one, we find
+\begin{align*}
+        R_x    &=    1/2  \\
+        R_y    &=    -1/2  \\
+        R_z    &=    0.
+\end{align*}
+The operation's result depends on what coordinate system we
+use, and since the two versions of $\vc{R}$ have different
+lengths (one being zero and the other nonzero), they don't
+just represent the same answer expressed in two different
+coordinate systems. Such an operation will never be useful
+in physics, because experiments show physics works the same
+regardless of which way we orient the laboratory building!
+The \emph{useful} vector operations, such as addition and
+scalar multiplication, are rotationally invariant, i.e., come
+out the same regardless of the orientation of the coordinate system.
+<% marg(150) %>
+<%
+  fig(
+    'invariance',
+    %q{%
+      Component-by-component multiplication of
+      the vectors in 1 would produce different vectors in coordinate
+      systems 2 and 3.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Calibrating an electronic compass}
+Some smart phones and GPS units contain electronic compasses that can sense the direction of the earth's magnetic
+field vector, notated $\vc{B}$. Because all vectors work according to the same rules, you don't need to know
+anything special about magnetism in order to understand this example. 
+Unlike a traditional compass that uses a magnetized needle on a bearing, an electronic compass
+has no moving parts. It contains two sensors oriented perpendicular to one another, and each sensor is only
+sensitive to the component of the earth's field that lies along its own axis. Because a choice of coordinates
+is arbitrary, we can take one of these sensors as defining the $x$ axis and the other the $y$. Given the two
+components $B_x$ and $B_y$, the device's computer chip can compute the angle of magnetic north relative to its sensors,
+$\tan^{-1}(B_y/B_x)$.
+
+All compasses are vulnerable to errors because of nearby magnetic materials, and in particular it may happen
+that some part of the compass's own housing becomes magnetized. In an electronic compass, rotational invariance
+provides a convenient way of calibrating away such effects by having the user rotate the device in a horizontal circle. 
+
+Suppose that when
+the compass is oriented in a certain way, it measures $B_x=1.00$ and $B_y=0.00$ (in certain units).
+We then expect that when it is rotated 90 degrees clockwise, the sensors will detect $B_x=0.00$ and $B_y=1.00$.
+
+But imagine instead that we get $B_x=0.20$ and $B_y=0.80$. This would violate rotational invariance, since rotating
+the coordinate system is supposed to give a different description of the \emph{same} vector. The magnitude
+appears to have changed from 1.00 to $\sqrt{0.20^2+0.80^2}=0.82$, and a vector can't change its magnitude just
+because you rotate it. The compass's computer chip figures out that some effect, possibly a slight magnetization of its housing, must
+be adding an erroneous 0.2 units to all the $B_x$ readings, because subtracting this amount from all the $B_x$ values gives
+vectors that have the same magnitude, satisfying rotational invariance.
+\end{eg}
+
+<% end_sec() %>\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{vector}{a quantity that has both an amount (magnitude) and
+a direction in space}
+
+\vocabitem{magnitude}{the ``amount'' associated with a vector}
+
+\vocabitem{scalar}{a quantity that has no direction in space, only an amount}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$\vc{A}$}{a vector with components $A_x$, $A_y$, and $A_z$}
+\notationitem{$\overrightarrow{A}$}{handwritten notation for a vector}
+\notationitem{$|\vc{A}|$}{the magnitude of vector $\vc{A}$}
+\notationitem{$\vc{r}$}{the vector whose components are $x$, $y$, and $z$}
+\notationitem{$\Delta\vc{r}$}{the vector whose components are $\Delta x$, $\Delta y$, and $\Delta z$}
+\notationitem{$\hat{\vc{x}}$, $\hat{\vc{y}}$, $\hat{\vc{z}}$}{(optional topic) unit vectors; the vectors with magnitude 1 lying along the  $x$, $y$, and $z$ axes}
+\notationitem{$\hat{\vc{i}}$, $\hat{\vc{j}}$, $\hat{\vc{k}}$}{a harder to remember notation for the unit vectors}
+\end{notation}
+
+\begin{othernotation}
+\notationitem{displacement vector}{a name for the symbol $\Delta \vc{r}$}
+\notationitem{speed}{the magnitude of the velocity vector, i.e., the
+velocity stripped of any information about its direction}
+\end{othernotation}
+\begin{summarytext}
+
+A vector is a quantity that has both a magnitude (amount)
+and a direction in space, as opposed to a scalar, which has
+no direction. The vector notation amounts simply to an
+abbreviation for writing the vector's three components.
+
+In two dimensions, a vector can be represented either by its
+two components or by its magnitude and direction. The two
+ways of describing a vector can be related by trigonometry.
+
+The two main operations on vectors are addition of a vector
+to a vector, and multiplication of a vector by a scalar.
+
+Vector addition means adding the components of two vectors
+to form the components of a new vector. In graphical terms,
+this corresponds to drawing the vectors as two arrows laid
+tip-to-tail and drawing the sum vector from the tail of the
+first vector to the tip of the second one. Vector subtraction
+is performed by negating the vector to be subtracted and then adding.
+
+Multiplying a vector by a scalar means multiplying each of
+its components by the scalar to create a new vector.
+Division by a scalar is defined similarly.
+
+m4_ifelse(__me,1,[:
+	Differentiation and integration of vectors is defined component by component.
+:])
+
+\end{summarytext}
+
+\end{summary}

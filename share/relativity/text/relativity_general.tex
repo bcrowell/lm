@@ -1,0 +1,635 @@
+<% marg(0) %>
+\noindent\emph{Postulates of Euclidean geometry:}\\
+\noindent 1. Two points determine a line.\\
+\noindent 2. Line segments can be extended.\\
+\noindent 3. A unique circle can be constructed given any point as its center and any line segment as its radius.\\
+\noindent 4. All right angles are equal to one another.\\
+\noindent 5. Given a line and a point not on the line, no more than one line
+          can be drawn through the point and parallel to the given line.
+\spacebetweenfigs
+<%
+  fig(
+    'angular-defect-propto-area',
+    %q{Noneuclidean effects, such as the discrepancy from $180\degunit$ in the sum of the angles of a triangle, are expected to be proportional to area.
+      Here, a noneuclidean equilateral triangle is cut up into four smaller equilateral triangles, each with 1/4 the area.
+      As proved in problem \ref{hw:angular-defect}, the discrepancy is quadrupled when the area is quadrupled.}
+  )
+%>
+<% end_marg %>
+
+What you've learned so far about relativity is known as the special theory of relativity, which is
+compatible with three of the four known forces of nature: electromagnetism, the strong nuclear force,
+and the weak nuclear force. Gravity, however, can't be shoehorned into the special theory. In order
+to make gravity work, Einstein had to generalize relativity. The resulting theory is known as
+the general theory of relativity.\footnote{Einstein originally described the distinction between the
+two theories by saying that the special theory applied to nonaccelerating frames of reference, while
+the general one allowed any frame at all. The modern consensus is that Einstein was misinterpreting
+his own theory, and that special relativity actually handles accelerating frames just fine.}\index{relativity!general}\index{general relativity}
+
+<% begin_sec("Our universe isn't Euclidean") %>
+
+
+Euclid proved thousands of years ago that the angles in a triangle add up to $180\degunit$.
+But what does it really mean to ``prove'' this? Euclid proved it based on certain assumptions
+(his five postulates), listed in the margin of this page. But how do we know that the postulates
+are true?\index{Euclidean geometry}
+
+Only by observation can we tell whether any of Euclid's statements are correct characterizations
+of how space actually behaves in our universe. If we draw a triangle on paper with a ruler and measure
+its angles with a protractor, we will quickly verify to pretty good precision that the sum is close to
+$180\degunit$. But of course we already knew that space was at least \emph{approximately} Euclidean.
+If there had been any gross error in Euclidean geometry, it would have
+been detected in Euclid's own lifetime. The correspondence principle tells us that if there is going
+to be any deviation from Euclidean geometry, it must be small under ordinary conditions.
+
+To improve the precision of the experiment, we need to make sure that our ruler is very straight.
+One way to check would be to sight along it by eye, which amounts to comparing its straightness to
+that of a ray of light. For that matter, we might as well throw the physical ruler in the trash and
+construct our triangle out of three laser beams. To avoid effects from the air we should do the experiment
+in outer space. Doing it in space also has the advantage of allowing us to make the triangle very
+large; as shown in figure \figref{angular-defect-propto-area}, the discrepancy
+from $180\degunit$ is expected to be proportional to the area of the triangle. 
+
+But we already know that light rays are bent by gravity. We expect it based on $E=mc^2$, which tells
+us that the energy of a light ray is equivalent to a certain amount of mass, and furthermore it has been
+verified experimentally by the deflection of starlight by the sun (example \ref{eg:eclipse}, p.~\pageref{eg:eclipse}).
+We therefore know that our universe is noneuclidean, and we gain the further insight that the level of deviation
+from Euclidean behavior depends on gravity. 
+
+Since the noneuclidean effects are bigger when the system being studied is larger, we expect them to
+be especially important in the study of cosmology, where the distance scales are very large.
+
+\begin{eg}{Einstein's ring}\index{Einstein's ring}
+An Einstein's ring, figure \figref{einsteins-ring-noneuclidean}, is formed when there is a chance alignment of a distant source with a closer gravitating body. 
+This type of gravitational lensing is direct evidence for the noneuclidean nature
+           of space. The two light rays are lines, and they violate Euclid's first postulate, that two points determine a line.
+\end{eg}
+<% marg(70) %>
+<%
+  fig(
+    'einsteins-ring-noneuclidean',
+    %q{An Einstein's ring. The distant object is a quasar, MG1131+0456, and the one in the middle is an unknown object, possibly a supermassive
+           black hole. The intermediate object's gravity focuses the rays of light from the distant one.
+           Because the entire arrangement lacks perfect axial symmetry, the ring is nonuniform; most of its brightness
+           is concentrated in two lumps on opposite sides.}
+  )
+%>
+<% end_marg %>
+
+One could protest that effects like these are just an imperfection of the light rays as physical models of straight lines.
+Maybe the noneuclidean effects would go away if we used something better and straighter than a light ray.
+But we don't know of anything straighter than a light ray. Furthermore, we observe that all measuring devices,
+not just optical ones,
+report the same noneuclidean behavior.
+<% begin_sec("Curvature") %>
+
+An example of such a non-optical measurement is the Gravity Probe B satellite, figure \figref{gravity-probe-b-geodetic}, which was launched into a polar orbit
+in 2004 and operated until 2010.\index{Gravity Probe B}
+The probe carried four gyroscopes made of quartz, which were the most perfect spheres
+ever manufactured, varying from sphericity by no more than about 40 atoms. Each gyroscope floated weightlessly
+in a vacuum, so that its rotation was perfectly steady. After 5000 orbits, the gyroscopes
+had reoriented themselves by about $2\times10^{-3}\degunit$ relative to the distant stars. This effect
+cannot be explained by Newtonian physics, since no torques acted on them. It was, however, exactly as predicted
+by Einstein's theory of general relativity. It becomes easier to see why such an effect would be expected due to the noneuclidean
+nature of space if we characterize euclidean geometry as the geometry of a flat plane as opposed to a curved one.
+On a curved surface like a sphere, figure \figref{octant}, Euclid's fifth postulate fails, and it's not hard to see that we can get triangles
+for which the sum of the angles is not $180\degunit$. By transporting a gyroscope all the way around the edges of
+such a triangle and back to its starting point, we change its orientation.
+
+<%
+  fig(
+    'octant',
+    %q{\emph{Left}: A 90-90-90 triangle. Its angles add up to more than $180\degunit$.
+       \emph{Middle}: The triangle ``pops'' off the page visually. We intuitively want to visualize it as lying on a curved surface such as the earth's.
+       \emph{Right}: A gyroscope carried smoothly around its perimeter ends up having changed its orientation when it gets back to its starting point.
+      },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+The triangle in figure \figref{octant} has angles that add up to more than $180\degunit$. This type of curvature is
+referred to as positive. It is also possible to have negative curvature, as in figure \figref{saddle}.
+
+In general relativity, curvature isn't just something caused by gravity. Gravity \emph{is} curvature, and the curvature
+involves both space and time, as may become clearer once you get to figure \figref{apple-local-frames}.
+Thus the distinction between special and general relativity is that general relativity handles curved spacetime,
+while special relativity is restricted to the case where spacetime is flat.\index{spacetime!curvature of}\index{curved spacetime}
+<% end_sec() %> % Curvature
+
+<% begin_sec("Curvature doesn't require higher dimensions") %>
+Although we often visualize curvature by imagining embedding a two-dimensional surface in a three-dimensional space,
+that's just an aid in visualization. 
+There is no evidence for any additional dimensions, nor is it necessary to hypothesize them in order to let spacetime be curved as
+described in general relativity.
+<% marg(120) %>
+<%  
+  fig(
+    'gravity-probe-b-geodetic',
+    %q{Gravity Probe B was in a polar orbit around the earth. As in the right panel of figure \figref{octant}, the orientation of the gyroscope
+       changes when it is carried around a curve and back to its starting point. Because the effect was small, it was necessary to let it accumulate
+       over the course of 5000 orbits in order to make it detectable.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'saddle',
+    %q{A triangle in a space with negative curvature has angles that add to less than $180\degunit$.}
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'pythagorean',
+    %q{Only measurements from within the plane define whether the plane is curved. It could
+       look curved when drawn embedded in three dimensions,
+       but nevertheless still be intrinsically flat.},
+    {
+      'width'=>'wide',
+    }
+  )
+%>
+
+Put yourself in the shoes of a two-dimensional being living in a two-dimensional space.
+Euclid's postulates all refer to constructions that can be performed using a compass and an unmarked straightedge. If this being can
+physically verify them all as descriptions of the space she inhabits, then she knows that her space is
+Euclidean, and that propositions such as the Pythagorean theorem are physically valid in her universe.
+But the diagram in \subfigref{pythagorean}{1} illustrating the proof of
+the Pythagorean theorem in Euclid's \emph{Elements} (proposition I.47) is equally
+valid if the page is rolled onto a cylinder, 2, or formed into a wavy corrugated shape, 3.
+These types of curvature, which can be achieved without tearing
+or crumpling the surface, are not real to her. They are simply
+side-effects of visualizing her two-dimensional universe as if
+it were embedded in a hypothetical third dimension --- which doesn't exist
+in any sense that is empirically verifiable to her.
+Of the curved surfaces in figure \figref{pythagorean}, only the sphere, 4, has curvature that she can measure;
+the diagram can't be plastered onto the sphere without folding or cutting and pasting.
+
+So the observation of curvature doesn't imply the existence of extra dimensions, nor does embedding a
+space in a higher-dimensional one so that it looks curvy always mean that there will be any curvature detectable from within the lower-dimensional
+space.
+
+
+<% end_sec() %> % Curvature doesn't require higher dimensions
+
+<% end_sec() %> % Our universe isn't Euclidean
+
+<% begin_sec("The equivalence principle") %>\index{equivalence principle}
+<% begin_sec("Universality of free-fall") %>
+Although light rays and gyroscopes seem to agree that space is curved in a gravitational field,
+it's always conceivable that we could find something else that would disagree. For example,
+suppose that there is a new and improved ray called the $\zu{StraightRay}^\zu{TM}$. The StraightRay
+is like a light ray, but when we construct a triangle out of StraightRays, we always get the Euclidean
+result for the sum of the angles. We would then have to throw away general relativity's whole idea of describing
+gravity in terms of curvature. One good way of making a StraightRay would be if we had a supply of some kind
+of exotic matter --- call it $\zu{FloatyStuff}^\zu{TM}$ --- that had the ordinary amount of inertia, but was completely unaffected by gravity.
+We could then shoot a stream of FloatyStuff particles out of a nozzle at nearly the speed of light and make a StraightRay.
+
+Normally when we release a material object in a gravitational field, it experiences a force $mg$, and
+then by Newton's second law its acceleration is $a=F/m=mg/m=g$. The $m$'s cancel, which is the reason that
+everything falls with the same acceleration (in the absence of other forces such as air resistance).
+The universality of this behavior is what allows us to interpret the gravity geometrically in general
+relativity. For example, the Gravity Probe B gyroscopes were made out of quartz, but if they had been made
+out of something else, it wouldn't have mattered.
+But if we had access to some FloatyStuff, the geometrical picture of gravity would fail, because the ``$m$'' that described
+its susceptibility to gravity would be a different ``$m$'' than the one describing its inertia.
+
+The question of the existence or nonexistence of such forms of matter turns out to be related to the
+question of what kinds of motion are relative. Let's say that alien gangsters land in a flying saucer,
+kidnap you out of your back yard, konk you on the head, and take you away. When you regain consciousness,
+you're locked up in a sealed cabin in their spaceship. You pull your keychain out of your pocket and release it,
+and you observe that it accelerates toward the floor with an acceleration that seems quite a bit slower than
+what you're used to on earth, perhaps a third of a gee. There are two possible explanations for this. One is that the aliens
+have taken you to some other planet, maybe Mars, where the strength of gravity is a third of what we have on earth.
+The other is that your keychain didn't really accelerate at all: you're still inside the flying saucer, which is
+accelerating at a third of a gee, so that it was really the deck that accelerated up and hit the keys.
+
+There is absolutely no way to tell which of these two scenarios is actually the case --- unless you happen to have
+a chunk of FloatyStuff in your other pocket. If you release the FloatyStuff and it hovers above the deck,
+then you're on another planet and experiencing genuine gravity; your keychain responded to the gravity, but
+the FloatyStuff didn't. But if you release the FloatyStuff and see it hit the deck, then the flying saucer is
+accelerating through outer space.
+
+The nonexistence of FloatyStuff in our universe is called the \emph{equivalence principle}. If the equivalence
+principle holds, then an acceleration (such as the acceleration of the flying saucer) is always equivalent to
+a gravitational field, and no observation can ever tell the difference without reference to something external.
+(And suppose you did have some external reference point --- how would you know whether \emph{it} was accelerating?)
+<% marg(0) %>
+<% fig(
+    'artificial-horizon',
+    %q{An artificial horizon.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The artificial horizon}
+The pilot of an airplane cannot always easily tell which way is up. The horizon may not be level simply because the ground has an actual slope, and
+in any case the horizon may not be visible if the weather is foggy. One might imagine that the problem could be solved simply by hanging a pendulum
+and observing which way it pointed, but by the equivalence principle the pendulum cannot tell the difference between a gravitational field and an acceleration
+of the aircraft relative to the ground --- nor can any other accelerometer, such as the pilot's inner ear. For example, when the plane is turning to the right,
+accelerometers will be tricked into believing that ``down'' is down and to the left. To get around this problem, airplanes use a device called an artificial
+horizon, which is essentially a gyroscope. The gyroscope has to be initialized when the plane is known to be oriented in a horizontal plane.
+No gyroscope is perfect, so over time it will drift. For this reason the instrument also contains an accelerometer, and the gyroscope is
+always forced into agreement with the accelerometer's average output over the preceding several minutes. If the plane is flown in circles for
+several minutes, the artificial horizon will be fooled into indicating that the wrong direction is vertical.
+\end{eg}
+<% end_sec() %> % Universality of free-fall
+<% begin_sec("Gravitational Doppler shifts and time dilation") %>\index{time dilation!gravitational}\index{gravitational time dilation}\index{Doppler shift!gravitational}
+An interesting application of the equivalence principle is the explanation of gravitational time dilation. As described
+on p.~\pageref{iijima}, experiments show that a clock at the top of a mountain runs faster than one down at its
+foot.
+
+To calculate this effect, we make use of the fact that the gravitational field in the area around the mountain
+is equivalent to an acceleration. Suppose we're in an elevator accelerating upward with acceleration $a$, and we shoot a ray of light
+from the floor up toward the ceiling, at height $h$. The time $\Delta t$ it takes the light ray to get to the ceiling is
+about $h/c$, and by the time the light ray reaches the ceiling, the elevator has sped up by $v=a\Delta t=ah/c$, so we'll
+see a red-shift in the ray's frequency. Since $v$ is small compared to $c$, we don't need to use the fancy Doppler shift equation
+from m4_ifelse(__sn,1,[:subsection \ref{subsec:doppler-light}:],[:section \ref{sec:doppler-and-clock}:]); 
+we can just approximate the Doppler shift factor as $1-v/c\approx 1-ah/c^2$.
+By the equivalence principle, we should expect that if a ray of light starts out low down and then rises up through
+a gravitational field $g$, its frequency will be Doppler shifted by a factor of $1-gh/c^2$. 
+This effect was observed in
+a famous experiment carried out by Pound and Rebka in 1959. Gamma-rays were emitted at the bottom of a 22.5-meter tower
+at Harvard and detected at the top with the Doppler shift predicted by general relativity.
+(See problem \ref{hw:pound-rebka}.)\label{pound-rebka}\index{Pound-Rebka experiment}
+<% marg(130) %>
+<%
+  fig(
+    'photon-in-elevator',
+    %q{1. A ray of light is emitted upward from the floor of the elevator. The elevator accelerates upward. 2. By the time the
+            light is detected at the ceiling, the elevator has changed its velocity, so the light is detected with a Doppler shift.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'pound-rebka-photos',
+    %q{Pound and Rebka at the top and bottom of the tower.}
+  )
+%>
+<% end_marg %>
+
+In the mountain-valley
+experiment, the frequency of the clock in the valley therefore appears to be running too slowly by a factor of $1-gh/c^2$
+when it is compared via radio with the clock at the top of the mountain. We conclude that time runs more slowly
+when one is lower down in a gravitational field, and the slow-down factor between two points is given by $1-gh/c^2$,
+where $h$ is the difference in height.
+
+We have built up a picture of light rays interacting with gravity. To confirm that this make sense, recall that
+we have already observed 
+m4_ifelse(__sn,1,[:in subsection \ref{subsec:p-four-vector}:],[:on p.~\pageref{fig:maxwellian-momentum-of-light}:])
+and in problem \ref{hw:ultrarelativistic} on p.~\pageref{hw:ultrarelativistic}
+that light has momentum.\index{light!momentum of}\index{electromagnetic wave!momentum of}\index{momentum!of light}
+The equivalence principle says that whatever has inertia must also participate in gravitational interactions.
+Therefore light waves must have weight, and must lose energy when they rise through a gravitational 
+field%
+m4_ifelse(__lm_series,1,[:(cf.~p.~\pageref{light-wave-energy-doppler}):]).
+<% end_sec() %> % Gravitational time dilation
+<% begin_sec("Local flatness") %>
+The noneuclidean nature of spacetime produces effects
+that grow in proportion to the area of the region being considered. Interpreting such effects as evidence of curvature,
+we see that this connects naturally to the idea that curvature is undetectable from close up. For example, the curvature
+of the earth's surface is not normally noticeable to us in everyday life. Locally, the earth's surface is flat,
+and the same is true for spacetime. 
+
+Local flatness turns out to be another way of stating the equivalence
+principle. In a variation on the alien-abduction story, suppose that you regain consciousness aboard the flying saucer and
+find yourself weightless. If the equivalence principle holds, then you have no way of determining from local observations,
+inside the saucer, whether you are actually weightless in deep space, or simply free-falling in apparent weightlessness,
+like the astronauts aboard the International Space Station. That means that locally, we can always adopt a free-falling
+frame of reference in which there is no gravitational field at all. If there is no gravity, then special relativity is valid,
+and we can treat our local region of spacetime as being approximately flat.
+
+In figure \figref{apple-local-frames}, an apple falls out of a tree. Its path is a ``straight'' line in spacetime, in the same sense
+that the equator is a ``straight'' line on the earth's surface.
+<% marg(150) %>
+<%
+  fig(
+    'globe-with-charts',
+    %q{The earth is flat --- locally.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'apple-local-frames',
+    %q{Spacetime is locally flat.}
+  )
+%>
+<% end_marg %>
+<% end_sec() %> % Local flatness
+<% begin_sec("Inertial frames") %>\label{inertial-frame-gr}
+In Newtonian mechanics, we have a distinction between inertial and noninertial frames of reference.
+An inertial frame according to Newton is one that has a constant velocity vector relative to the stars. But what if the stars themselves
+are accelerating due to a gravitational force from the rest of the galaxy? We could then take the galaxy's center of mass as defining
+an inertial frame, but what if something else is acting on the galaxy?
+
+<%
+  fig(
+    'inertial-frame',
+    %q{%
+      Wouldn't it be nice if we could define the meaning of a Newtonian inertial frame of reference? Newton makes it sound easy:
+      to define an inertial frame,
+      just find some object that is not accelerating because it is not being acted on by any external forces. But what object would we use?
+      The earth? The ``fixed stars?'' Our galaxy? Our supercluster of galaxies? All of these are accelerating --- relative to something.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+If we had some FloatyStuff, we could resolve the whole question. FloatyStuff isn't affected by gravity, so if we release a sample
+of it in mid-air, it will continue on a trajectory that defines a perfect Newtonian inertial frame. (We'd better have it on a tether,
+because otherwise the earth's rotation will carry the earth out from under it.) But if the equivalence principle holds, then
+Newton's definition of an inertial frame is fundamentally flawed.\index{frame of reference!inertial!in general relativity}
+
+There is a different definition of an inertial frame that works better in relativity. A Newtonian inertial frame was defined
+by an object that isn't subject to any forces, gravitational or otherwise. In general relativity, we instead define an inertial frame
+using an object that that isn't influenced by anything other than gravity. By this definition, a free-falling rock defines
+an inertial frame, but this book sitting on your desk does not.
+<% end_sec() %> % Inertial frames
+<% end_sec() %> % The equivalence principle
+
+<% begin_sec("Black holes") %>\label{sec:black-holes}\index{black hole}
+The observations described so far showed only small effects from curvature. To get a big effect, we should
+look at regions of space in which there are strong gravitational fields. The prime example is a black
+hole. The best studied examples are two objects in our own galaxy: Cygnus X-1, which is believed to be
+a black hole with about ten times the mass of our sun, and Sagittarius A*, an object near the center
+of our galaxy with about four million solar masses. m4_ifelse(__sn,1,,[:%
+(See problem \ref{hw:galacticcenter}, p.~\pageref{hw:galacticcenter} for
+how we know Sagittarius A*'s mass.):])
+
+Although a black hole is a relativistic object, we can gain some insight
+into how it works by applying Newtonian physics.
+m4_ifelse(__sn,1,[:A:],[:As shown in problem \ref{hw:escape-velocity} on p.~\pageref{hw:escape-velocity}, a:])
+spherical body of mass $M$ has an escape velocity $v=\sqrt{2GM/r}$, which is the minimum velocity that we would need to give to a projectile
+shot from a distance $r$ so that it would never fall back down.
+If $r$ is small enough, the escape velocity
+will be greater than $c$, so that even a ray of light can never escape.
+<% marg(-40) %>
+<%
+  fig(
+    'bucket-and-black-hole',
+    %q{Matter is lifted out of a Newtonian black hole with a bucket. The dashed line represents the point
+            at which the escape velocity equals the speed of light. For a real, relativistic black hole, this is impossible.}
+  )
+%>
+<% end_marg %>
+
+We can now make an educated guess as
+to what this means without having to study all the mathematics of general relativity.
+In relativity, $c$ isn't really the speed of light, it's really to be thought of as a restriction on how fast
+cause and effect can propagate through space. This suggests the correct interpretation, which is that for an object compact enough
+to be a black hole, there is no way for an event at a distance closer than $r$ to have an effect on an event far away.
+There is an invisible, spherical boundary with radius $r$, called the event horizon, and the region within that boundary is cut off from the rest of the
+universe in terms of cause and effect. If you wanted to explore that region, you could drop into it while wearing a space-suit --- but
+it would be a one-way trip, because you could never get back out to report on what you had seen.\index{event horizon}\index{black hole!event horizon}
+
+In the Newtonian description of
+a black hole, matter could be lifted out of a black hole, \figref{bucket-and-black-hole}. Would this be possible with a real-world
+black hole, which is relativistic rather than Newtonian? No, because the bucket is causally separated from the outside universe.
+No rope would be strong enough for this job (problem \ref{hw:relativity-max-tension}, p.~\pageref{hw:relativity-max-tension}).
+
+<%
+  fig(
+    'light-rays-in-schwarzschild',
+    %q{The equivalence principle tells us that spacetime locally has the same structure as in special relativity, so we can draw the
+       familiar parallelogram of $x-t$ coordinates at each point near the black hole. Superimposed on each little grid is a pair of lines
+       representing motion at the speed of light in both directions, inward and outward. Because spacetime is curved, these lines do
+       not appear to be at 45-degree angles, but to an observer in that region, they would appear to be. When light rays are emitted
+       inward and outward from a point outside the event horizon, one escapes and one plunges into the black hole. On this diagram,
+       they look like they are decelerating and accelerating, but local observers comparing them to their own coordinate grids would
+       always see them as moving at exactly $c$. When rays are emitted from a point \emph{inside} the event horizon, neither escapes;
+       the distortion is so severe that ``outward'' is really inward.
+      },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+One misleading aspect of the Newtonian analysis is that it encourages us to imagine that a light ray trying to escape from a black
+hole will slow down, stop, and then fall back in. This can't be right, because we know that any observer who sees a light ray
+flying by always measures its speed to be $c$. This was true in special relativity, and by the equivalence principle we can be assured
+that the same is true \emph{locally} in general relativity. Figure \figref{light-rays-in-schwarzschild} shows what would really happen.
+
+Although the light rays in figure \figref{light-rays-in-schwarzschild} don't speed up or slow down, they do
+experience gravitational Doppler shifts.
+If a light ray is emitted from just above the event horizon, then it will escape to an infinite distance, but
+it will suffer an extreme Doppler shift toward low frequencies. A distant observer also has the option of interpreting this
+as a gravitational time dilation that greatly lowers the frequency of the oscillating electric charges that produced the ray.
+If the point of emission is made closer and closer to the horizon,
+the frequency and energy m4_ifelse(__lm_series,1,[:(see p.~\pageref{light-wave-energy-doppler}):])
+measured by a distant observer approach zero, making the ray impossible to observe.
+
+<% begin_sec("Information paradox") %>\index{information paradox}\index{black hole!information paradox}
+Black holes have some disturbing implications for the kind of  universe that in the Age of the Enlightenment was imagined
+to have been set in motion initially and then left to run forever like clockwork. 
+
+Newton's laws have built into them the implicit assumption that omniscience is possible, at least in principle. For example,
+Newton's definition of an inertial frame of reference leads to an infinite regress, as described on p.~\pageref{inertial-frame-gr}.
+For Newton this isn't a problem,
+because in principle an omnisicient observer can know the location of every mass in the universe.
+In this conception of the cosmos, there are no theoretical
+limits on human knowledge, only practical ones; if we could gather sufficiently precise data about the state of the universe at one time,
+and if we could carry out all the calculations to extrapolate into the future, then we could know everything that would ever happen.
+(See the famous quote by Laplace on p.~\pageref{laplace-quote}.)
+
+But the existence of event horizons surrounding black holes makes it impossible for any observer to be omniscient; only an observer inside
+a particular horizon can see what's going on inside that horizon.
+
+Furthermore, a black hole has at its center an infinitely dense
+point, called a singularity, containing all its mass, and this implies that information can be destroyed and made inaccessible to \emph{any} observer at all.
+For example, suppose that astronaut Alice goes on a suicide mission to explore a black hole, free-falling in through the event horizon.
+She has a certain amount of time to collect data and satisfy her intellectual curiosity, but then she impacts the singularity and
+is compacted into a mathematical point. Now astronaut Betty decides that she will never be satisfied unless the secrets revealed to Alice
+are known to her as well --- and besides, she was Alice's best friend, and she wants to know whether Alice had any last words.
+Betty can jump through the horizon, but she can never know Alice's last words, nor can any other observer who jumps 
+in after Alice does.\index{black hole!singularity}\index{singularity!black hole}
+
+This destruction of information is known as the black hole information paradox, and it's referred to as a paradox because quantum physics
+m4_ifelse(__lm_series,1,[:(ch.~\ref{ch:randomness}-\ref{ch:qm-atom}):],[:(ch.~\ref{ch:quantum}):]) has built into its DNA the requirement that information is never lost in this sense.
+<% end_sec() %> % Information paradox
+
+<% marg(-300) %>
+<%
+  fig(
+    'globular-cluster',
+    %q{In Newtonian contexts, physicists and astronomers had a correct intuition that it's hard for things to collapse gravitationally.
+       This star cluster has been around for about 15 billion years, but it hasn't collapsed into a black hole. If any individual star
+       happens to head toward the center, conservation of angular momentum tends to cause it to swing past and fly back out. The Penrose
+       singularity theorem tells us that this Newtonian intuition is wrong when applied to an object that has collapsed past a certain point.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("Formation") %>\index{black hole!formation}
+Around 1960, as black holes and their strange properties began to be better understood and more widely discussed, many physicists
+who found these issues distressing comforted themselves with the belief that black holes would never really form
+from realistic initial conditions, such as the collapse of a massive star. Their skepticism was not entirely unreasonable, since
+it is usually very hard in astronomy to hit a gravitating target, the reason being that conservation of angular momentum tends
+to make the projectile swing past. (See problem \ref{hw:orbital-bomb} on p.~\pageref{hw:orbital-bomb} for a quantitative analysis.)
+For example, if we wanted to drop a space probe into the sun, we would have to extremely
+precisely stop its sideways orbital motion so that it would drop almost exactly straight in. Once a star started to collapse,
+the theory went, and became relatively compact, it would be such a small target that further infalling material would be unlikely to
+hit it, and the process of collapse would halt. According to this point of view, theorists who had calculated the collapse of
+a star into a black hole had been oversimplifying by assuming a star that was initially perfectly spherical and nonrotating.
+Remove the unrealistically perfect symmetry of the initial conditions, and a black hole would never actually form. 
+
+But Roger
+Penrose proved in 1964 that this was wrong. In fact, once an object collapses to a certain density, the Penrose singularity theorem guarantees mathematically that
+it will collapse further until a singularity is formed, and this singularity is surrounded by an event horizon.
+Since the brightness of an object like Sagittarius A* is far too
+low to be explained unless it has an event horizon (the interstellar gas flowing into it would glow due to frictional heating),
+we can be certain that there really is a singularity at its core.\index{Penrose, Roger}\index{Penrose singularity theorem}\index{singularity theorem!Penrose}
+<% end_sec() %> % Formation
+
+<% end_sec() %> % Black holes
+
+<% begin_sec("Cosmology") %>\label{sec:cosmology}
+<% begin_sec("The Big Bang") %>\index{Big Bang!described in general relativity}
+m4_ifelse(__lm_series,1,[:Section \ref{sec:doppler}:],[:Subsection \ref{subsec:doppler}:])
+presented the evidence, discovered by Hubble, that the universe is expanding in the aftermath of the Big Bang:
+when we observe the light from distant galaxies, it is always Doppler-shifted toward the red end of the spectrum, indicating that
+no matter what direction we look in the sky, everything is rushing away from us. This seems to go against the modern attitude,
+originated by Copernicus, that we and our planet do not occupy a special place in the universe. Why is everything rushing away from
+\emph{our} planet in particular? But general relativity shows that this anti-Copernican conclusion is wrong. General relativity
+describes space not as a rigidly defined background but as something that can curve and stretch, like a sheet of rubber.
+We imagine all the galaxies as existing on the surface of such a sheet, which then expands uniformly. The space between the galaxies
+(but not the galaxies themselves) grows at a steady rate, so that any observer, inhabiting any galaxy, will see every other galaxy
+as receding. There is therefore no privileged or special location in the universe.
+
+We might think that there would be another kind of special place, which would be the one at which the Big Bang happened. Maybe someone
+has put a brass plaque there? But general relativity doesn't describe the Big Bang as an explosion that suddenly occurred in a
+preexisting background of time and space. According to general relativity, space itself came into existence at the
+Big Bang, and the hot, dense matter of the early universe was uniformly distributed everywhere. The Big Bang happened everywhere at
+once.
+
+Observations show that the universe is very uniform on large scales, and for ease of calculation, the first
+physical models of the expanding universe were constructed with perfect uniformity. In these models, the Big Bang
+was a singularity. This singularity can't even be included as an event in spacetime, so that time itself only exists
+after the Big Bang. A Big Bang singularity also creates an even more acute version of the black hole information paradox. Whereas matter and information
+disappear \emph{into} a black hole singularity, stuff pops \emph{out} of a Big Bang singularity, and there is no physical principle
+that could predict what it would be.\index{singularity!Big Bang}
+
+As with black holes, there was considerable skepticism about whether the existence of an initial singularity in these models
+was an arifact of the unrealistically perfect uniformity assumed in the models. Perhaps in the real universe, extrapolation
+of all the paths of the galaxies backward in time would show them missing each other by millions of light-years.
+But in 1972 Stephen Hawking proved a variant on the Penrose singularity theorem that applied to Big Bang singularities.
+By the Hawking singularity theorem, the level of uniformity we see in the present-day universe is more than sufficient to prove
+that a Big Bang singularity must have existed.\index{Hawking, Stephen}\index{Hawking singularity theorem}\index{singularity theorem!Hawking}
+<% end_sec() %> % The Big Bang
+
+<% begin_sec("The cosmic censorship hypothesis") %>\index{cosmic censorship}
+It might not be too much of a philosophical jolt to imagine that information was spontaneously created in the Big Bang. 
+Setting up the initial conditions of the entire universe is traditionally the prerogative of God, not the laws of physics.
+But there is nothing fundamental in general relativity that forbids the existence of other singularities
+that act like the Big Bang, being information producers rather than information consumers.
+As John Earman of the University of Pittsburgh puts it, anything could pop out of such a singularity, including green 
+slime or your lost socks. This would eliminate any hope of finding a universal set of laws of physics that would be
+able to make a prediction given any initial situation. 
+
+That would be such a devastating defeat for the enterprise of
+physics that in 1969 Penrose proposed an alternative, humorously named the ``cosmic censorship hypothesis,''
+which states that every singularity in our universe, other than the Big Bang, is hidden behind an event horizon.
+Therefore if green slime spontaneously pops out of one, there is limited impact on the predictive ability of physics,
+since the slime can never have any causal effect on the outside world. A singularity that is not modestly cloaked behind
+an event horizon is referred to as a naked singularity. Nobody has yet been able to prove the cosmic censorship
+hypothesis.\index{naked singularity}\index{singularity!naked}
+<% end_sec() %> % The cosmic censorship hypothesis
+<% begin_sec("The advent of high-precision cosmology") %>
+We expect that if there is matter in the universe, it should have gravitational fields, and in the rubber-sheet analogy this should be represented as a
+curvature of the sheet. Instead of a flat sheet, we can have a spherical balloon, so that cosmological expansion is like inflating
+it with more and more air.  It is also possible
+to have negative curvature, as in figure \figref{saddle} on p.~\pageref{fig:saddle}. All three of these are valid,
+possible cosmologies according to relativity. The positive-curvature type happens if the average density of matter in the universe
+is above a certain critical level, the negative-curvature one if the density is below that value.
+<% marg(90) %>
+<%
+  fig(
+    'balloon-metaphor',
+    %q{An expanding universe with positive spatial curvature can be imagined as a balloon being blown up. Every galaxy's distance from
+       every other galaxy increases, but no galaxy is the center of the expansion.}
+  )
+%>
+<% end_marg %>
+
+To find out which type of universe we inhabit, we could try to take a survey of the matter in the universe and determine its
+average density.
+Historically, it has been very difficult to
+do this, even to within an order of magnitude. Most of the matter in the universe
+probably doesn't emit light, making it difficult to detect. Astronomical distance scales are also very poorly calibrated
+against absolute units such as the SI.
+
+Instead, we measure the universe's curvature, and infer the density of matter from that. It turns out that we can do this by
+observing the cosmic microwave background (CMB) radiation, which is the light left over
+from the brightly glowing early universe, which was dense and hot. As the universe has expanded, light waves that were in flight
+have expanded their wavelengths along with it. This afterglow of the big bang was originally visible light, but after billions of
+years of expansion it has shifted into the microwave radio part of the electromagnetic spectrum. The CMB is not perfectly uniform,
+and this turns out to give us a way to measure the universe's curvature. Since the CMB was emitted when the universe was only about
+400,000 years old, any vibrations or disturbances in the hot hydrogen and helium gas that filled space in that era would only have
+had time to travel a certain distance, limited by the speed of sound. We therefore expect that no feature in the CMB should be bigger
+than a certain known size.
+In a universe with negative spatial
+curvature, the sum of the interior angles of a triangle is less than the Euclidean value of 180 degrees.
+Therefore if we observe a variation in the CMB over some angle, the distance between two points on
+the sky is actually greater than would have been inferred from Euclidean geometry. The opposite happens if the
+curvature is positive.\index{cosmic microwave background}
+<% marg(0) %>
+<%
+  fig(
+    'cmb-geometry',
+    %q{The angular scale of fluctuations in the cosmic microwave background can be used to infer the curvature of the universe.}
+  )
+%>
+<% end_marg %>
+
+This observation was done by the 1989-1993 COBE probe, and its 2001-2009 successor, the Wilkinson Microwave Anisotropy Probe.
+The result is that the angular sizes are almost exactly \emph{equal} to what they should be
+according to Euclidean geometry. We therefore infer that the 
+universe is very close to having zero average spatial curvature on the cosmological scale, and this tells
+us that its average density must be within about 0.5\%
+of the critical value. The years since COBE and WMAP mark the advent of an era in which cosmology has gone from being
+a field of estimates and rough guesses to a high-precision science.
+
+If one is inclined to be skeptical about the seemingly precise answers to the mysteries of the cosmos,
+there are consistency checks that can be carried out. In the bad old days of low-precision cosmology, estimates
+of the age of the universe ranged from 10 billion to 20 billion years, and the
+low end was inconsistent with the age of the oldest star clusters. This was believed to be a problem either for
+observational cosmology or for the astrophysical models used to estimate the ages of the clusters: ``You can't be
+older than your ma.'' Current data have shown that the low estimates of the age were incorrect, so consistency is
+restored. (The best figure for the age of the universe is currently $13.8\pm0.1$ billion years.)
+<% end_sec() %> % The advent of high-precision cosmology
+<% begin_sec("Dark energy and dark matter",nil,'dark-stuff-gr') %>
+Not everything works out so smoothly, however. One surprise%
+m4_ifelse(__lm_series,1,[:, discussed in section \ref{sec:dark-energy},:]) is that
+the universe's expansion is not currently slowing down, as had been expected due to the gravitational attraction of 
+all the matter in it. Instead, it is currently speeding up. This is attributed to a variable in Einstein's equations, long
+assumed to be zero, which represents a universal gravitational repulsion of space itself, occurring even when there is no
+matter present. The current name for this is ``dark energy,'' although the fancy name is just a
+label for our ignorance about what causes it.\index{dark energy}
+
+Another surprise comes from attempts to model the formation of the elements during the era shortly after the Big Bang, before the
+formation of the first
+m4_ifelse(__lm_series,1,[:stars (section \ref{subsec:nucleosynthesis}):],[:stars:]). The observed relative abundances of hydrogen, helium, and deuterium ($^2\zu{H}$) cannot be
+reconciled with the density of low-velocity matter inferred from the observational
+data. If the inferred mass density were entirely due to normal matter (i.e., matter whose mass
+consisted mostly of protons and neutrons), then nuclear reactions in the dense early universe should have
+proceeded relatively efficiently, leading to a much higher ratio of helium to hydrogen, and a much lower
+abundance of deuterium. The conclusion is that most of the matter in the universe must be made of
+an unknown type of exotic matter, known as ``dark matter.''\index{dark matter}
+We are in the ironic position of knowing that precisely 96\% of
+the universe is something other than atoms, but knowing
+nothing about what that something is. As of 2013, there have been several experiments that have
+been carried out to attempt the direct detection of dark matter particles. These are carried out
+at the bottom of mineshafts to eliminate background radiation.
+Early claims of success appear to have been statistical flukes, and the most sensitive
+experiments have not detected 
+anything.\index{dark matter}\footnote{\url{arxiv.org/abs/1310.8214}}
+<% end_sec() %> % Dark energy and dark matter
+<% end_sec() %> % Cosmology

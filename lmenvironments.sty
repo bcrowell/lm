@@ -1,0 +1,180 @@
+% lmenvironments.sty
+%   This is meant to be used by all the books. Nothing specific to the LM
+%   series should go in here.
+%-------------------- eg environment -------------------
+\newlength{\egindent}
+\setlength{\egindent}{3mm}
+\newlength{\saveleftskip}
+\newcommand{\myindented}[2]{%
+  \setlength{\saveleftskip}{\leftskip}%
+  \addtolength{\leftskip}{#1}#2%
+ \par  \setlength{\leftskip}{\saveleftskip} \par%
+}
+\definecolor{egrulegray}{gray}{.6}
+\newlength{\egrulehspace}
+\setlength{\egrulehspace}{.5mm}
+\newlength{\egrulelen}
+\setlength{\egrulelen}{110.5mm}
+\newcommand{\egrule}[1]{\makebox[0mm][l]{\color{egrulegray}\rule{#1}{0.5pt}}}
+\newcommand{\egvrule}{\makebox[0mm][l]{\color{egrulegray}\rule{0.5pt}{2mm}}}
+\newcommand{\egbothrules}[1]{\makebox[0mm][l]{\hspace{-0.5mm}\raisebox{1.5mm}{\egvrule}\raisebox{3.5mm}{\egrule{#1}}}}
+\newcommand{\egtit}[2]{\egbothrules{#1}\textit{\hspace{\egrulehspace}#2\hfill{}\langexample{} \theegctr}}
+\newcommand{\baretit}[1]{\egbothrules{\egrulelen}\textit{\hspace{\egrulehspace}#1}}
+\newenvironment{eg}[2][3]
+	{%
+	  	\refstepcounter{egctr}%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\sffamily
+		\pagebreak[#1]\noindent\egtit{\egrulelen}{#2}\\*\noindent\myeqnspacing\protect\sansmath%
+                \indentedcorrstart% for margdown
+                \setlength{\parindent}{0mm}%undone by normalparafmt
+	}
+	{%
+                \normalparafmt
+		\lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+                \indentedcorrend%
+	}
+\newenvironment{egwide}[2][3]
+	{%
+                \noindent\begin{minipagefullpagewidth}
+	  	\refstepcounter{egctr}%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small\sffamily
+		\pagebreak[#1]\noindent\egtit{169mm}{#2}\\*\noindent\myeqnspacing\protect\sansmath%
+                \indentedcorrstart% for margdown
+                \setlength{\parindent}{0mm}%undone by normalparafmt
+	}
+	{%
+                \normalparafmt
+		\lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+                \indentedcorrend%
+                \end{minipagefullpagewidth}
+	}
+\newcommand{\xmark}{\anonymousinlinefig{x-mark}}
+\newenvironment{egnoheader}
+	{%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small\sffamily
+		\noindent\protect\sansmath\noindent%
+                \indentedcorrstart% for margdown
+                \noindent
+	}
+	{%
+		 \lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+                \indentedcorrend%
+	}
+\newcommand{\egquestion}{\noindent\ensuremath{\triangleright}\ }
+\newcommand{\eganswer}{\noindent\ensuremath{\triangleright}\ }
+\newenvironment{likeeg}
+	{%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small\sffamily\noindent
+	}
+	{%
+		 \par\setlength{\leftskip}{\saveleftskip} \par%
+	}
+\newcommand{\optionaltopictit}[1]{\egbothrules{\egrulelen}\textbf{\hspace{\egrulehspace}#1}}
+\renewcommand{\thescctr}{\Alph{scctr}}
+\newcommand{\scansref}[1]{$\triangleright$\ Answer, p. \pageref{scans:#1}}
+\newcommand{\whichsc}{}
+\newenvironment{selfcheck}[1]
+	{%
+	  	\refstepcounter{scctr}\label{sc:#1}\renewcommand{\whichsc}{#1}%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small\sffamily
+                \noindent\hspace{-1mm}%
+                %\egbothrules{\egrulelen}%
+                \hspace{\egrulehspace}%
+		\textit{\langselfcheck{}\ \thescctr}\\*\noindent\myeqnspacing\protect\sansmath%
+                \setlength{\parindent}{0mm}%undone by normalparafmt
+	}
+	{%
+                \normalparafmt
+		 \hfill\scansref{\whichsc}\normalsize\normalfont\lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+	}
+\newcommand{\worked}[2]
+	{%
+  		\small\sffamily
+		\vspace{1.5mm}\noindent\hspace{3.5mm}\hwtriangle\ \textit{Solved problem: #2\hfill{}page \pageref{hw:#1}, problem \ref{hw:#1}}
+		\lmserifmath\par\normalsize\normalfont %\par %
+	}
+% The following is meant for a long block of text appearing inside <% marg() %>...<% end_marg %>
+\newenvironment{margtopic}[1] % args is title
+	{%
+          \begin{sloppypar}
+          \small\sffamily\myeqnspacing\protect\sansmath%
+          \textbf{#1}\\
+	}
+        {%
+          \end{sloppypar}
+	  \lmserifmath\normalsize\normalfont %
+        }
+% optional topics have titles with initial caps -- not any more???
+\newenvironment{optionaltopic}[2][3]
+	{%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small\sffamily
+		\pagebreak[#1]\noindent\optionaltopictit{#2}\\*\noindent\myeqnspacing\protect\sansmath%
+	}
+	{%
+		 \lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+	}
+\newenvironment{offsettopic}[1][3]
+	{%
+	  	\pagebreak[#1]
+                \setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small\sffamily
+		\noindent\myeqnspacing\protect\sansmath%
+                \hspace{-5mm}%***************** KLUDGE *****************
+	}
+	{%
+		 \lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+	}
+\newenvironment{longquote}
+	{%
+	  	\setlength{\saveleftskip}{\leftskip}%
+  		\addtolength{\leftskip}{\egindent}%
+  		\small
+		\myeqnspacing\protect\sansmath\noindent%
+	}
+	{%
+		 \lmserifmath\par\setlength{\leftskip}{\saveleftskip} \par\myeqnspacing%
+	}
+\newenvironment{dialogline}[1]%
+	{%
+          \setlength{\saveleftskip}{\leftskip}%
+          \addtolength{\leftskip}{10mm}%
+          \noindent{}\sffamily\protect\sansmath%
+          {\scshape{#1}: }
+        }{%
+          \par  \setlength{\leftskip}{\saveleftskip} \par%
+          \lmserifmath
+	}
+\newcommand{\labelimportantintext}[1]{\textbf{#1}}
+% The optional argument is a title, which should be lowercase.
+\newenvironment{important}[1][]%
+	{\begin{shaded}\ifthenelse{\equal{#1}{}}{}{\textbf{#1}\\*}}%
+	{\end{shaded}}
+\newenvironment{lessimportant}[1][]%
+	{%
+          \setlength{\saveleftskip}{\leftskip}%
+          \addtolength{\leftskip}{10mm}%
+          \noindent\ifthenelse{\equal{#1}{}}{}{\textbf{#1}\\*}%
+        }{%
+          \par  \setlength{\leftskip}{\saveleftskip} \par%
+	}
+\newenvironment{indentedblock}%
+	{%
+          \setlength{\saveleftskip}{\leftskip}%
+          \addtolength{\leftskip}{10mm}%
+          \noindent\hspace{-1.5mm}% kludge !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        }{%
+          \par  \setlength{\leftskip}{\saveleftskip} \par%
+	}

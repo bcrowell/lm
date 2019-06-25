@@ -1,0 +1,1130 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("The Modern Revolution in Physics") %>
+
+<%
+  chapter(
+    '33',
+    %q{Rules of Randomness},
+    'ch:randomness',
+    %q{The continental U.S. got its first taste of volcanism in
+recent memory with the eruption of Mount St. Helens in 1980.},
+    {'opener'=>'volcano'}
+  )
+%>
+
+
+\epigraphlongfitbyline{Given for one instant an intelligence which could comprehend
+all the forces by which nature is animated and the
+respective positions of the things which compose it...nothing
+would be uncertain, and the future as the past would be laid
+out before its eyes.}{Pierre Simon de \index{Laplace, Pierre Simon de}Laplace, 1776}
+
+
+\epigraphlongfitbyline{The Quantum Mechanics is very imposing. But an inner voice
+tells me that it is still not the final truth. The theory
+yields much, but it hardly brings us nearer to the secret of
+the Old One. In any case, I am convinced that He does not play
+dice.}{Albert \index{Einstein, Albert}Einstein}
+
+However radical \index{Newton, Isaac!determinism}Newton's clockwork
+universe seemed to his contemporaries, by the early
+twentieth century it had become a sort of smugly accepted
+dogma. Luckily for us, this deterministic picture of the
+universe breaks down at the atomic level. The clearest
+demonstration that the laws of physics contain elements of
+randomness is in the behavior of radioactive atoms. Pick two
+identical atoms of a radioactive isotope, say the naturally
+occurring uranium 238, and watch them carefully. They will
+decay at different times, even though there was no
+difference in their initial behavior.
+
+We would be in big trouble if these atoms' behavior was as
+predictable as expected in the Newtonian world-view, because
+radioactivity is an important source of heat for our planet.
+In reality, each atom chooses a random moment at which to
+release its energy, resulting in a nice steady heating
+effect. The earth would be a much colder planet if only
+sunlight heated it and not radioactivity. Probably there
+would be no volcanoes, and the oceans would never have been
+liquid. The deep-sea \index{geothermal vents}geothermal
+vents in which life first evolved would never have existed.
+But there would be an even worse consequence if radioactivity
+was deterministic: after a few billion years of peace, all
+the uranium 238 atoms in our planet would presumably pick
+the same moment to decay. The huge amount of stored nuclear
+energy, instead of being spread out over eons, would all be
+released at one instant, blowing our whole planet to Kingdom Come.\footnote{This
+is under the assumption that all the radioactive heating comes from uranium atoms,
+and that all the atoms were created at the same time.
+In reality, both uranium and thorium atoms contribute, and they may not
+have all been created at the same time.
+We have only a general idea of the processes that created
+these heavy elements in the gas cloud from which our solar system condensed. Some portion
+of them may have come from nuclear reactions in supernova explosions in that
+particular nebula, but some may have come from previous supernova explosions throughout
+our galaxy, or from exotic events like collisions of white dwarf stars.}
+
+The new version of physics, incorporating certain kinds of
+randomness, is called quantum physics (for reasons that will
+become clear later). It represented such a dramatic break
+with the previous, deterministic tradition that everything
+that came before is considered ``\index{classical physics}classical,''
+even the theory of relativity. The remainder of this book is
+a basic introduction to \index{quantum physics}quantum physics.
+
+\startdq
+
+\begin{dq}
+I said ``Pick two identical atoms of a radioactive
+isotope.'' Are two atoms really identical? If their
+electrons are orbiting the nucleus, can we distinguish each
+atom by the particular arrangement of its electrons at
+some instant in time?
+\end{dq}
+
+<% begin_sec("Randomness isn't random",3) %>
+
+\index{Einstein, Albert!and randomness}Einstein's distaste for
+\index{randomness}randomness, and his association of
+determinism with divinity, goes back to the \index{Enlightenment}Enlightenment
+conception of the universe as a gigantic piece of clockwork
+that only had to be set in motion initially by the Builder.
+Many of the founders of quantum mechanics were interested in
+possible links between physics and Eastern and Western
+religious and philosophical thought, but every educated
+person has a different concept of religion and philosophy.
+Bertrand \index{Russell, Bertrand}Russell remarked, ``Sir
+Arthur \index{Eddington, Arthur}Eddington deduces religion
+from the fact that atoms do not obey the laws of mathematics.
+Sir James \index{Jeans, James}Jeans deduces it from the
+fact that they do.''
+
+Russell's witticism, which implies incorrectly that
+mathematics cannot describe randomness, reminds us how
+important it is not to oversimplify this question of
+randomness. You should not simply surmise, ``Well, it's all
+random, anything can happen.'' For one thing, certain things
+simply cannot happen, either in classical physics or quantum
+physics. The conservation laws of mass, energy, momentum,
+and angular momentum are still valid, so for instance
+processes that create energy out of nothing are not just
+unlikely according to quantum physics, they are impossible.
+
+A useful analogy can be made with the role of randomness in
+\index{evolution!randomness in}evolution. \index{Darwin, Charles}Darwin
+was not the first biologist to suggest that species changed
+over long periods of time. His two new fundamental ideas
+were that (1) the changes arose through random genetic
+variation, and (2) changes that enhanced the organism's
+ability to survive and reproduce would be preserved, while
+maladaptive changes would be eliminated by natural
+selection. Doubters of evolution often consider only the
+first point, about the randomness of natural variation, but
+not the second point, about the systematic action of natural
+selection. They make statements such as, ``the development
+of a complex organism like Homo sapiens via random chance
+would be like a whirlwind blowing through a junkyard and
+spontaneously assembling a jumbo jet out of the scrap
+metal.'' The flaw in this type of reasoning is that it
+ignores the deterministic constraints on the results of
+random processes. For an atom to violate conservation of
+energy is no more likely than the conquest of the world by
+chimpanzees next year.
+
+\startdq
+
+\begin{dq}
+Economists often behave like wannabe physicists, probably
+because it seems prestigious to make numerical calculations
+instead of talking about human relationships and organizations
+like other social scientists. Their striving to make
+economics work like Newtonian physics extends to a parallel
+use of mechanical metaphors, as in the concept of a market's
+supply and demand acting like a self-adjusting machine, and
+the idealization of people as economic automatons who
+consistently strive to maximize their own wealth. What
+evidence is there for randomness rather than mechanical
+determinism in economics?
+\end{dq}
+
+<% end_sec() %>
+<% begin_sec("Calculating randomness",3) %>
+
+You should also realize that even if something is random, we
+can still understand it, and we can still calculate
+probabilities numerically. In other words, physicists are
+good bookmakers. A good bookie can calculate the odds
+that a horse will win a race much more accurately that an
+inexperienced one, but nevertheless cannot predict what will
+happen in any particular race.
+
+\enlargethispage{-\baselineskip}
+
+<% begin_sec("Statistical independence") %>\index{independence!statistical}
+
+As an illustration of a general technique for calculating
+odds, suppose you are playing a 25-cent slot machine. Each
+of the three wheels has one chance in ten of coming up with
+a cherry. If all three wheels come up cherries, you win
+\$100. Even though the results of any particular trial are
+random, you can make certain quantitative predictions.
+First, you can calculate that your odds of winning on any
+given trial are $1/10\times1/10\times1/10=1/1000=0.001$. Here, I am
+representing the probabilities as numbers from 0 to 1, which
+is clearer than statements like ``The odds are 999 to 1,''
+and makes the calculations easier. A probability of 0
+represents something impossible, and a probability of 1
+represents something that will definitely happen.
+
+<% marg(50) %>
+
+<%
+  fig(
+    'slot-machine',
+    %q{%
+      The probability that one wheel will give a cherry is 1/10. The
+      probability that all three wheels will give cherries is $1/10\times1/10\times1/10$.
+    }
+  )
+%>
+
+<% end_marg %>
+Also, you can say that any given trial is equally likely to
+result in a win, and it doesn't matter whether you have won
+or lost in prior games. Mathematically, we say that each
+trial is statistically independent, or that separate games
+are uncorrelated.  Most gamblers are mistakenly convinced
+that, to the contrary, games of chance are correlated. If
+they have been playing a slot machine all day, they are
+convinced that it is ``getting ready to pay,'' and they do
+not want anyone else playing the machine and ``using up''
+the jackpot that they ``have coming.'' In other words, they
+are claiming that a series of trials at the slot machine is
+negatively correlated, that losing now makes you more likely
+to win later. Craps players claim that you should go to a
+table where the person rolling the dice is ``hot,'' because
+she is likely to keep on rolling good numbers. Craps
+players, then, believe that rolls of the dice are positively
+correlated, that winning now makes you more likely to win later.
+
+My method of calculating the probability of winning on the
+slot machine was an example of the following important rule
+for calculations based on independent probabilities:
+
+\begin{lessimportant}[the law of independent probabilities]\index{independent probabilities!law of}
+If the probability of one event happening is $P_A$, and the
+probability of a second statistically independent event
+happening is $P_B$, then the probability that they will both
+occur is the product of the probabilities, $P_AP_B$. If
+there are more than two events involved, you simply
+keep on multiplying.
+\end{lessimportant}
+
+This can be taken as the definition of statistical independence.\index{independence!statistical}
+
+Note that this only applies to independent probabilities.
+For instance, if you have a nickel and a dime in your
+pocket, and you randomly pull one out, there is a probability
+of 0.5 that it will be the nickel. If you then replace the
+coin and again pull one out randomly, there is again a
+probability of 0.5 of coming up with the nickel, because the
+probabilities are independent. Thus, there is a probability
+of 0.25 that you will get the nickel both times.
+
+Suppose instead that you do not replace the first coin
+before pulling out the second one. Then you are bound to
+pull out the other coin the second time, and there is no way
+you could pull the nickel out twice. In this situation, the
+two trials are not independent, because the result of the
+first trial has an effect on the second trial. The law of
+independent probabilities does not apply, and the probability
+of getting the nickel twice is zero, not 0.25.
+
+Experiments have shown that in the case of radioactive
+decay, the probability that any nucleus will decay during a
+given time interval is unaffected by what is happening to
+the other nuclei, and is also unrelated to how long it has
+gone without decaying. The first observation makes sense,
+because nuclei are isolated from each other at the centers
+of their respective atoms, and therefore have no physical
+way of influencing each other. The second fact is also
+reasonable, since all atoms are identical. Suppose we wanted
+to believe that certain atoms were ``extra tough,'' as
+demonstrated by their history of going an unusually long
+time without decaying. Those atoms would have to be
+different in some physical way, but nobody has ever
+succeeded in detecting differences among atoms. There is no
+way for an atom to be changed by the experiences it
+has in its lifetime.
+
+\enlargethispage{-\baselineskip}
+
+<% end_sec() %>
+<% begin_sec("Addition of probabilities") %>\index{probabilities!addition of}
+
+The law of independent probabilities tells us to use
+multiplication to calculate the probability that both A and
+B will happen, assuming the probabilities are independent.
+What about the probability of an ``or'' rather than an
+``and?'' If two events A and B are mutually exclusive,
+then the probability of one or the other occurring is the
+sum $P_A+P_B$. For instance, a bowler might have a 30\%
+chance of getting a strike (knocking down all ten pins) and
+a 20\% chance of knocking down nine of them. The bowler's
+chance of knocking down either nine pins or ten pins is therefore 50\%.
+
+It does not make sense to add probabilities of things that
+are not mutually exclusive, i.e., that could both happen. Say
+I have a 90\% chance of eating lunch on any given day, and a
+90\% chance of eating dinner. The probability that I will
+eat either lunch or dinner is not 180\%.
+
+\pagebreak[4]
+
+<% end_sec() %>
+<% begin_sec("Normalization") %>
+\index{probabilities!normalization of}\index{normalization}
+
+<% marg(11) %>
+<%
+  fig(
+    'globe',
+    %q{%
+      Normalization: the probability of picking land plus
+      the probability of picking water adds up to 1.
+    }
+  )
+%>
+<% end_marg %>
+If I spin a globe and randomly pick a point on it, I have
+about a 70\% chance of picking a point that's in an ocean
+and a 30\% chance of picking a point on land. The probability
+of picking either water or land is $70\%+30\%=100\%$. Water
+and land are mutually exclusive, and there are no other
+possibilities, so the probabilities had to add up to 100\%.
+It works the same if there are more than two possibilities
+---  if you can classify all possible outcomes into a list
+of mutually exclusive results, then all the probabilities
+have to add up to 1, or 100\%. This property of probabilities
+is known as normalization.
+
+<% end_sec() %>
+<% begin_sec("Averages") %>
+\index{averages}
+
+Another way of dealing with randomness is to take averages.
+The casino knows that in the long run, the number of times
+you win will approximately equal the number of times you
+play multiplied by the probability of winning. In the game
+mentioned above, where the probability of winning is 0.001,
+if you spend a week playing, and pay \$2500 to play 10,000
+times, you are likely to win about 10 times $(10,000\times0.001=10)$,
+and collect \$1000. On the average, the casino will make a
+profit of \$1500 from you. This is an example of the following rule.
+
+\begin{lessimportant}[rule for calculating averages]\index{averages!rule for calculating}
+If you conduct $N$ identical, statistically independent
+trials, and the probability of success in each trial is $P$,
+then on the average, the total number of successful trials
+will be $NP$. If $N$ is large enough, the relative
+error in this estimate will become small.
+\end{lessimportant}
+
+The statement that the rule for calculating averages gets
+more and more accurate for larger and larger $N$ (known
+popularly as the ``law of averages'') often provides a
+correspondence principle that connects classical and quantum
+physics. For instance, the amount of power produced by a
+nuclear power plant is not random at any detectable level,
+because the number of atoms in the reactor is so large. In
+general, random behavior at the atomic level tends to
+average out when we consider large numbers of atoms, which
+is why physics seemed deterministic before physicists
+learned techniques for studying atoms individually.
+
+We can achieve great precision with averages in quantum
+physics because we can use identical atoms to reproduce
+exactly the same situation many times. If we were betting on
+horses or dice, we would be much more limited in our
+precision. After a thousand races, the horse would be ready
+to retire. After a million rolls, the dice would be worn out.
+
+\vfill\pagebreak[4]
+
+<% self_check('independent-probabilities',<<-'SELF_CHECK'
+Which of the following things \emph{must} be independent,
+which \emph{could} be independent, and which definitely are
+\emph{not} independent?
+
+\noindent (1) the probability of successfully making two free-throws
+in a row in basketball
+
+\noindent (2) the probability that it will rain in London tomorrow and
+the probability that it will rain on the same day in a
+certain city in a distant galaxy
+
+\noindent (3) your probability of dying today and of dying tomorrow
+
+\par
+  SELF_CHECK
+  ) %>
+
+\startdqs
+
+<% marg(40) %>
+<%
+  fig(
+    'dice',
+    %q{Why are dice random?}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}
+Newtonian physics is an essentially perfect approximation
+for describing the motion of a pair of dice. If Newtonian
+physics is deterministic, why do we consider the result of
+rolling dice to be random?
+\end{dq}
+
+\begin{dq}
+Why isn't it valid to define randomness by saying that
+randomness is when all the outcomes are equally likely?
+\end{dq}
+
+\begin{dq}
+The sequence of digits 121212121212121212 seems clearly
+nonrandom, and 41592653589793 seems random. The latter
+sequence, however, is the decimal form of pi, starting with
+the third digit. There is a story about the Indian
+mathematician Ramanujan, a self-taught prodigy, that a
+friend came to visit him in a cab, and remarked that the
+number of the cab, 1729, seemed relatively uninteresting.
+Ramanujan replied that on the contrary, it was very
+interesting because it was the smallest number that could be
+represented in two different ways as the sum of two cubes.
+The Argentine author Jorge Luis Borges wrote a short story
+called ``The Library of Babel,'' in which he imagined a
+library containing every book that could possibly be written
+using the letters of the alphabet. It would include a book
+containing only the repeated letter ``a;'' all the ancient
+Greek tragedies known today, all the lost Greek tragedies,
+and millions of Greek tragedies that were never actually
+written; your own life story, and various incorrect versions
+of your own life story; and countless anthologies containing
+a short story called ``The Library of Babel.'' Of course, if
+you picked a book from the shelves of the library, it would
+almost certainly look like a nonsensical sequence of letters
+and punctuation, but it's always possible that the seemingly
+meaningless book would be a science-fiction screenplay
+written in the language of a Neanderthal tribe, or the lyrics to a set of
+incomparably beautiful love songs written in a language that
+never existed. In view of these examples, what does it
+really mean to say that something is random?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Probability distributions",4,'prob-dist') %>\index{probability distributions}
+<% marg(0) %>
+<%
+  fig(
+    'single-die',
+    %q{Probability distribution for the result of rolling a single die.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'two-dice',
+    %q{Rolling two dice and adding them up.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'human-height',
+    %q{A probability distribution for height of human adults. (Not real data.)}
+  )
+%>
+<% end_marg %>
+
+So far we've discussed random processes having only two
+possible outcomes: yes or no, win or lose, on or off. More
+generally, a random process could have a result that is a
+number. Some processes yield integers, as when you roll a
+die and get a result from one to six, but some are not
+restricted to whole numbers, for example the number of
+seconds that a uranium-238 atom will exist before undergoing radioactive decay.
+
+Consider a throw of a die. If the die is ``honest,'' then we
+expect all six values to be equally likely. Since all six
+probabilities must add up to 1, then probability of any
+particular value coming up must be 1/6. We can summarize
+this in a graph, \figref{single-die}. Areas under the curve can be
+interpreted as total probabilities. For instance, the area
+under the curve from 1 to 3 is $1/6+1/6+1/6=1/2$, so the
+probability of getting a result from 1 to 3 is 1/2. The
+function shown on the graph is called the probability distribution.
+
+Figure \figref{two-dice} shows the probabilities of various results
+obtained by rolling two dice and adding them together, as in
+the game of craps. The probabilities are not all the same.
+There is a small probability of getting a two, for example,
+because there is only one way to do it, by rolling a one and
+then another one. The probability of rolling a seven is high
+because there are six different ways to do it: 1+6, 2+5, etc.
+
+If the number of possible outcomes is large but finite, for
+example the number of hairs on a dog, the graph would start
+to look like a smooth curve rather than a ziggurat.
+
+\enlargethispage{-\baselineskip}
+
+What about probability distributions for random numbers that
+are not integers? We can no longer make a graph with
+probability on the $y$ axis, because the probability of
+getting a given exact number is typically zero. For
+instance, there is zero probability that a radioactive atom
+will last for \emph{exactly} 3 seconds, since there are
+infinitely many possible results that are close to 3 but not
+exactly three, for example 2.999999999999999996876876587658465436.
+It doesn't usually make sense, therefore, to talk
+about the probability of a single numerical result, but it
+does make sense to talk about the probability of a certain
+range of results. For instance, the probability that an atom
+will last more than 3 and less than 4 seconds is a perfectly
+reasonable thing to discuss. We can still summarize the
+probability information on a graph, and we can still
+interpret areas under the curve as probabilities.
+
+But the $y$ axis can no longer be a unitless probability
+scale. In radioactive decay, for example, we want the $x$
+axis to have units of time, and we want areas under the
+curve to be unitless probabilities. The area of a single
+square on the graph paper is then
+\begin{multline*}
+ (\text{unitless area of a square})\\
+         =  (\text{width of square with time units}) \times (\text{height of square})\eqquad.
+\end{multline*}
+If the units are to cancel out, then the height of the
+square must evidently be a quantity with units of inverse
+time. In other words, the $y$ axis of the graph is to be
+interpreted as probability per unit time, not probability.
+
+\enlargethispage{-\baselineskip}
+
+<% marg(40) %>
+<%
+  fig(
+    'human-height-tail',
+    %q{%
+      A close-up of the right-hand tail of the distribution shown
+      in the figure \figref{human-height}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'average',
+    %q{The average of a probability distribution.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'fwhm-qm',
+    %q{%
+      The full width at half maximum (FWHM) of a probability
+      distribution.
+    }
+  )
+%>
+
+<% end_marg %>
+Figure \figref{human-height} shows another example, a probability distribution
+for people's height. This kind of bell-shaped curve is quite common.
+
+<% self_check('interpret-human-height',<<-'SELF_CHECK'
+Compare the number of people with heights in the range of
+130-135 cm to the number in the range 135-140.
+  SELF_CHECK
+  ) %>
+
+%%%%%%%%%%% basketball example %%%%%%%%%%%%%
+__incl(eg/basketball)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_sec("Average and width of a probability distribution") %>
+\index{probability distributions!widths of}\index{probability distributions!averages of}
+
+If the next Martian you meet asks you, ``How tall is an
+adult human?,'' you will probably reply with a statement
+about the average human height, such as ``Oh, about 5 feet 6
+inches.'' If you wanted to explain a little more, you could
+say, ``But that's only an average. Most people are somewhere
+between 5 feet and 6 feet tall.'' Without bothering to draw
+the relevant bell curve for your new extraterrestrial
+acquaintance, you've summarized the relevant information by
+giving an average and a typical range of variation.
+
+\enlargethispage{-\baselineskip}
+
+The average of a probability distribution can be defined
+geometrically as the horizontal position at which it could
+be balanced if it was constructed out of cardboard, \figref{average}. A
+convenient numerical measure of the amount of variation
+about the average, or amount of uncertainty, is the full
+width at half maximum, or FWHM, defined in figure \figref{fwhm}. (The FWHM
+was introduced on p.~\pageref{fwhm}.)\label{fwhm-recap}
+
+A great deal more could be said about this topic, and indeed
+an introductory statistics course could spend months on ways
+of defining the center and width of a distribution. Rather
+than force-feeding you on mathematical detail or techniques
+for calculating these things, it is perhaps more relevant to
+point out simply that there are various ways of defining
+them, and to inoculate you against the misuse of certain definitions.
+
+The average is not the only possible way to say what is a
+typical value for a quantity that can vary randomly; another
+possible definition is the median, defined as the value that
+is exceeded with 50\% probability. When discussing incomes
+of people living in a certain town, the average could be
+very misleading, since it can be affected massively if a
+single resident of the town is Bill Gates. Nor is the FWHM
+the only possible way of stating the amount of random
+variation; another possible way of measuring it is the
+standard deviation (defined as the square root of the
+average squared deviation from the average value).
+
+<% end_sec() %>
+<% end_sec() %>
+<% begin_sec("Exponential decay and half-life",3,'exponential-decay') %>
+\index{decay!exponential}\index{exponential decay}
+\index{half-life}\index{radioactivity}
+
+Most people know that radioactivity ``lasts a certain amount
+of time,'' but that simple statement leaves out a lot. As an
+example, consider the following medical procedure used to
+diagnose thyroid function. A very small quantity of the
+isotope $^{131}\zu{I}$, produced in a nuclear reactor, is fed to
+or injected into the patient. The body's biochemical systems
+treat this artificial, radioactive isotope exactly the same
+as $^{127}\zu{I}$, which is the only naturally occurring type.
+(Nutritionally, iodine is a necessary trace element. Iodine
+taken into the body is partly excreted, but the rest becomes
+concentrated in the thyroid gland. Iodized salt has had
+iodine added to it to prevent the nutritional deficiency
+known as \index{goiters}goiters, in which the \index{iodine}iodine-starved
+thyroid becomes swollen.) As the $^{131}\zu{I}$ undergoes beta
+decay, it emits electrons, neutrinos, and gamma rays. The
+gamma rays can be measured by a detector passed over the
+patient's body. As the radioactive iodine becomes concentrated
+in the thyroid, the amount of gamma radiation coming from
+the thyroid becomes greater, and that emitted by the rest of
+the body is reduced. The rate at which the iodine concentrates
+in the thyroid tells the doctor about the health of the thyroid.
+
+If you ever undergo this procedure, someone will presumably
+explain a little about radioactivity to you, to allay your
+fears that you will turn into the Incredible Hulk, or that
+your next child will have an unusual number of limbs. Since
+iodine stays in your thyroid for a long time once it gets
+there, one thing you'll want to know is whether your thyroid
+is going to become radioactive forever. They may just tell
+you that the radioactivity ``only lasts a certain amount of
+time,'' but we can now carry out a quantitative derivation
+of how the radioactivity really will die out.
+
+Let $P_{surv}(t)$ be the probability that an iodine atom
+will survive without decaying for a period of at least $t$.
+It has been experimentally measured that half all $^{131}\zu{I}$
+atoms decay in 8 hours, so we have
+\begin{equation*}
+                P_{surv}(8\ \zu{hr})         =  0.5\eqquad.  
+\end{equation*}
+
+Now using the law of independent probabilities, the
+probability of surviving for 16 hours equals the probability
+of surviving for the first 8 hours multiplied by the
+probability of surviving for the second 8 hours,
+\begin{align*}
+                P_{surv}(16\ \zu{hr})         &=  0.50\times0.50  \\
+                                 &=  0.25\eqquad.  
+\end{align*}
+Similarly we have
+\begin{align*}
+                P_{surv}(24\ \zu{hr})         &=  0.50\times0.5\times0.5  \\
+                                 &=  0.125\eqquad.  
+\end{align*}
+Generalizing from this pattern, the probability of surviving
+for any time $t$ that is a multiple of 8 hours is
+\begin{equation*}
+                P_{surv}(t)                 =            0.5^{t/8\ \zu{hr}}\eqquad.
+\end{equation*}
+We now know how to find the probability of survival at
+intervals of 8 hours, but what about the points in time in
+between? What would be the probability of surviving for 4
+hours? Well, using the law of independent probabilities again, we have
+\begin{equation*}
+  P_{surv}(8\ \zu{hr})  =  P_{surv}(4\ \zu{hr}) \times P_{surv}(4\ \zu{hr})\eqquad,  
+\end{equation*}
+which can be rearranged to give
+\begin{align*}
+  P_{surv}(4\ \zu{hr})          &= \sqrt{P_{surv}(8\ \zu{hr})}   \\
+                                 &=  \sqrt{0.5}  \\
+                                 &=  0.707\eqquad.  
+\end{align*}
+This is exactly what we would have found simply by plugging
+in $P_{surv}(t)=0.5^{t/8\ \zu{hr}}$ and ignoring the restriction to
+multiples of 8 hours. Since 8 hours is the amount of time
+required for half of the atoms to decay, it is known as the
+half-life, written $t_{1/2}$. The general rule is as follows:
+
+\begin{lessimportant}{exponential decay equation}
+\begin{equation*}
+                P_{surv}(t)  =    0.5^{t/t_{1/2}}
+\end{equation*}
+\end{lessimportant}
+
+Using the rule for calculating averages, we can also find
+the number of atoms, $N(t)$, remaining in a sample at time $t\/$:
+\begin{equation*}
+                N(t)  =  N(0)    \times 0.5^{t/t_{1/2}} 
+\end{equation*}
+Both of these equations have graphs that look like dying-out
+exponentials, as in the example below.
+
+<%
+  fig(
+    'carbon-fourteen',
+    %q{Calibration of the $^{14}\zu{C}$ dating method using tree rings and
+      artifacts whose ages were known from other methods. Redrawn from
+      Emilio Segr\`{e}, \emph{Nuclei and Particles}, 1965.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+
+\begin{eg}{$^{14}\zu{C}$ \index{carbon-14 dating}Dating}
+Almost all the carbon on Earth is $^{12}\zu{C}$, but not quite.
+The isotope $^{14}\zu{C}$, with a half-life of 5600 years, is
+produced by cosmic rays in the atmosphere. It decays
+naturally, but is replenished at such a rate that the
+fraction of $^{14}\zu{C}$ in the atmosphere remains constant, at
+$1.3\times10^{-12}$ . Living plants and animals take in both
+$^{12}\zu{C}$ and $^{14}\zu{C}$ from the atmosphere and incorporate
+both into their bodies. Once the living organism dies, it no
+longer takes in C atoms from the atmosphere, and the
+proportion of $^{14}\zu{C}$ gradually falls off as it undergoes
+radioactive decay. This effect can be used to find the age
+of dead organisms, or human artifacts made from plants or
+animals. Figure \figref{carbon-fourteen}
+shows the exponential decay
+curve of $^{14}\zu{C}$ in various objects. Similar methods, using
+longer-lived isotopes, prove
+the earth was billions of years old, not a few thousand as
+some had claimed on religious grounds.
+\end{eg}
+
+\pagebreak[4]
+
+\begin{eg}{Radioactive contamination at Chernobyl}
+\egquestion One of the most dangerous radioactive isotopes
+released by the Chernobyl disaster in 1986 was $^{90}\zu{Sr}$,
+whose half-life is 28 years. (a) How long will it be before
+the contamination is reduced to one tenth of its original
+level? (b) If a total of $10^{27}$  atoms was released,
+about how long would it be before not a single atom was left?
+
+\eganswer (a) We want to know the amount of time that a
+$^{90}\zu{Sr}$ nucleus has a probability of 0.1 of surviving.
+Starting with the exponential decay formula,
+\begin{equation*}
+                P_{surv}  =    0.5^{t/t_{1/2}}\eqquad,  
+\end{equation*}
+we want to solve for $t$. Taking natural logarithms of both sides,
+\begin{equation*}
+                \ln  P  = \frac{t}{t_{1/2}}\ln 0.5\eqquad,  
+\end{equation*}
+so
+\begin{equation*}
+                t  =    \frac{t_{1/2}}{\ln 0.5}\ln P
+\end{equation*}
+Plugging in $P=0.1$ and $t_{1/2}=28$ years, we get $t=93$ years.
+
+\noindent (b) This is just like the first part, but $P=10^{-27}$ . The
+result is about 2500 years.
+\end{eg}
+
+<% begin_sec("Rate of decay") %>\index{exponential decay!rate of}\label{rate-of-decay}
+
+If you want to find how many radioactive decays occur within
+a time interval lasting from time $t$ to time $t+\Delta t$,
+the most straightforward approach is to calculate it like this:
+\begin{align*}
+        (\text{number of}&\text{ decays between } t \text{ and } t+\Delta t) \\
+                         &=  N(t) - N(t+\Delta t)  \\
+                         &=  N(0)\left[P_{surv}(t)-P_{surv}(t+\Delta t)\right]  \\
+                         &=  N(0)\left[0.5^{t/t_{1/2}}-0.5^{(t+\Delta t)/t_{1/2}}\right]  \\
+                         &=  N(0)\left[1-0.5^{\Delta t/t_{1/2}}\right]0.5^{t/t_{1/2}}
+\end{align*}
+A problem arises when $\Delta t$ is small compared to $t_{1/2}$.
+For instance, suppose you have a hunk of $10^{22}$  atoms of
+$^{235}\zu{U}$, with a half-life of 700 million years, which is
+$2.2\times10^{16}\ \zu{s}$. You want to know how many decays will
+occur in $\Delta t=1\ \sunit$. Since we're specifying the
+current number of atoms, $t=0$. As you plug in to the
+formula above on your calculator, the quantity $0.5^{\Delta t/t_{1/2}}$ comes out on
+your calculator to equal one, so the final result is zero.
+That's incorrect, though. In reality, $0.5^{\Delta t/t_{1/2}}$ should equal
+0.999999999999999968, but your calculator only gives eight
+digits of precision, so it rounded it off to one. In other
+words, the probability that a $^{235}\zu{U}$ atom will survive
+for 1 s is very close to one, but not equal to one. The
+number of decays in one second is therefore $3.2\times10^5$, not zero.
+
+Well, my calculator only does eight digits of precision,
+just like yours, so how did I know the right answer? The way
+to do it is to use the following approximation (see p.~\pageref{math-approx-exp-and-log}):
+\begin{equation*}
+         a^b \approx 1 + b\;\ln  a, \quad \text{if } b \ll 1
+\end{equation*}
+(The symbol $\ll$ means ``is much less than.'') Using it, we
+can find the following approximation:
+\begin{align*}
+        \text{(number of }&\text{decays between $t$ and $t+\Delta t$)  } \\
+       &=  N(0)\left[1-0.5^{\Delta t/t_{1/2}}\right]0.5^{t/t_{1/2}}  \\
+       &\approx  N(0)\left[1-\left(1+\frac{\Delta t}{t_{1/2}}\ln 0.5\right)\right]0.5^{t/t_{1/2}}  \\ 
+      &\approx  (\ln 2)N(0)0.5^{t/t_{1/2}}\frac{\Delta t}{t_{1/2}}  
+\end{align*}
+This also gives us a way to calculate the rate of decay,
+i.e., the number of decays per unit time. Dividing by $\Delta t$
+on both sides, we have
+\begin{multline*}
+        \text{(decays per unit time)} \approx\\
+         \frac{(\ln 2)N(0)}{t_{1/2}}0.5^{t/t_{1/2}}  \quad 
+                  , \quad \text{if $\Delta t \ll t_{1/2}$}\eqquad.
+\end{multline*}
+\label{rate-of-decay-approx}
+
+\begin{eg}{The hot potato}
+\egquestion A nuclear physicist with a demented sense of humor
+tosses you a cigar box, yelling ``hot potato.'' The label on
+the box says ``contains $10^{20}$  atoms of $^{17}\zu{F}$,
+half-life of 66 s, produced today in our reactor at 1
+p.m.'' It takes you two seconds to read the label, after
+which you toss it behind some lead bricks and run away. The
+time is 1:40 p.m. Will you die?
+
+\eganswer The time elapsed since the radioactive fluorine
+was produced in the reactor was 40 minutes, or 2400 s. The
+number of elapsed half-lives is therefore $t/t_{1/2}=  36$. The
+initial number of atoms was $N(0)=10^{20}$ . The number of
+decays per second is now about $10^7\ \zu{s}^{-1}$, so it produced
+about $2\times10^7$  high-energy electrons while you held it
+in your hands. Although twenty million electrons sounds like
+a lot, it is not really enough to be dangerous.
+\end{eg}
+
+By the way, none of the equations we've derived so far was
+the actual probability distribution for the time at which a
+particular radioactive atom will decay. That probability
+distribution would be found by substituting $N(0)=1$ into
+the equation for the rate of decay.
+
+If the sheer number of equations is starting to seem
+formidable, let's pause and think for a second. The simple
+equation for $P_{surv}$ is something you can derive easily
+from the law of independent probabilities any time you need
+it. From that, you can quickly find the exact equation for
+the rate of decay. The derivation of the approximate
+equations for $\Delta t\ll t$ is a little hairier, but note
+that except for the factors of $\ln  2$, everything in these
+equations can be found simply from considerations of logic
+and units. For instance, a longer half-life will obviously
+lead to a slower rate of decays, so it makes sense that we
+divide by it. As for the $\ln  2$ factors, they are exactly
+the kind of thing that one looks up in a book when
+one needs to know them.
+
+\startdqs
+
+\begin{dq}
+In the medical procedure involving $^{131}\zu{I}$, why is it
+the gamma rays that are detected, not the electrons or
+neutrinos that are also emitted?
+\end{dq}
+
+\begin{dq}
+For 1 s, Fred holds in his hands 1 kg of radioactive
+stuff with a half-life of 1000 years. Ginger holds 1 kg of a
+different substance, with a half-life of 1 min, for the same
+amount of time. Did they place themselves in equal danger, or not?
+\end{dq}
+
+\begin{dq}
+How would you interpret it if you calculated $N(t)$, and
+found it was less than one?
+\end{dq}
+
+\begin{dq}
+Does the half-life depend on how much of the substance
+you have? Does the expected time until the sample decays
+completely depend on how much of the substance you have?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec %>
+<% begin_sec("Applications of calculus",3,'probability-calculus',{'calc'=>true}) %>
+
+The area under the probability distribution is of course an
+integral. If we call the random number $x$ and the
+probability distribution $D(x)$, then the probability that
+$x$ lies in a certain range is given by 
+\begin{equation*}
+        \text{(probability of $a\le x \le b$)}=\int_a^b D(x) \der x\eqquad.
+\end{equation*}
+What about averages? If $x$ had a finite number of equally
+probable values, we would simply add them up and divide by
+how many we had. If they weren't equally likely, we'd make
+the weighted average $x_1P_1+x_2P_2+$... But we need to
+generalize this to a variable $x$ that can take on any of a
+continuum of values. The continuous version of a sum is an
+integral, so the average is
+\begin{equation*}
+                \text{(average value of $x$)}  = \int x D(x) \der x\eqquad,  
+\end{equation*}
+where the integral is over all possible values of $x$.
+
+\pagebreak[4]
+
+\begin{eg}{Probability distribution for radioactive decay}
+Here is a rigorous justification for the statement in 
+ section \ref{sec:exponential-decay} that the probability distribution for
+radioactive decay is found by substituting $N(0)=1$ into the
+equation for the rate of decay. We know that the probability
+distribution must be of the form
+\begin{equation*}
+                D(t)          =   k 0.5^{t/t_{1/2}}\eqquad,  
+\end{equation*}
+where $k$ is a constant that we need to determine. The atom
+is guaranteed to decay eventually, so normalization gives us
+\begin{align*}
+        \text{(probability of $0\le t < \infty$)}
+                         &=  1  \\
+                         &=  \int_0^\infty D(t) \der t\eqquad.
+\end{align*}
+The integral is most easily evaluated by converting the
+function into an exponential with $e$ as the base
+\begin{align*}
+                D(t)          &=  k \exp\left[\ln\left(0.5^{t/t_{1/2}}\right)\right]  \\
+                         &=  k \exp\left[\frac{t}{t_{1/2}}\ln 0.5\right]  \\
+                         &=  k \exp\left(-\frac{\ln 2}{t_{1/2}}t\right)\eqquad,
+\end{align*}
+which gives an integral of the familiar form $\int e^{cx}\der x=(1/c)e^{cx}$. We thus have
+\begin{equation*}
+                1         =    -\frac{kt_{1/2}}{\ln 2}\exp\left(-\frac{\ln 2}{t_{1/2}}t\right)\eqquad,  
+\end{equation*}
+which gives the desired result:
+\begin{equation*}
+                k         =   \frac{\ln 2}{t_{1/2}}\eqquad.  
+\end{equation*}
+\end{eg}
+
+\begin{eg}{Average lifetime}
+You might think that the half-life would also be the average
+lifetime of an atom, since half the atoms' lives are shorter
+and half longer. But the half whose lives are longer include
+some that survive for many half-lives, and these rare
+long-lived atoms skew the average. We can calculate the
+average lifetime as follows:
+\begin{equation*}
+        (\text{average lifetime})    = \int_0^\infty t\: D(t)\der t
+\end{equation*}
+Using the convenient base-$e$ form again, we have
+\begin{equation*}
+        (\text{average lifetime})
+                = \frac{\ln 2}{t_{1/2}}
+                         \int_0^\infty t \exp\left(-\frac{\ln 2}{t_{1/2}}t\right) \der t\eqquad.  
+\end{equation*}
+This integral is of a form that can either be attacked with
+integration by parts or by looking it up in a table. The
+result is $\int x e^{cx}\der x=\frac{x}{c}e^{cx}-\frac{1}{c^2}e^{cx}$, 
+and the first term can be ignored for our
+purposes because it equals zero at both limits of integration. We end up with
+\begin{align*}
+\text{(average lifetime)} &= \frac{\ln 2}{t_{1/2}}\left(\frac{t_{1/2}}{\ln 2}\right)^2    \\
+                         &=  \frac{t_{1/2}}{\ln 2}  \\
+                         &=  1.443 \: t_{1/2}\eqquad,  
+\end{align*}
+which is, as expected, longer than one half-life.
+\end{eg}
+
+<% end_sec() %>\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{probability}{the likelihood that something will happen,
+expressed as a number between zero and one}
+
+\vocabitem{normalization}{the property of probabilities that the sum of
+the probabilities of all possible outcomes must equal one}
+
+\vocabitem{independence}{the lack of any relationship between two random events}
+
+\vocabitem{probability distribution}{a curve that specifies the
+probabilities of various random values of a variable; areas
+under the curve correspond to probabilities}
+
+\vocabitem{FWHM}{the full width at half-maximum of a probability
+distribution; a measure of the width of the distribution}
+
+\vocabitem{half-life}{the amount of time that a radioactive atom will survive with probability 1/2 without decaying}
+
+\end{vocab}
+
+\begin{notation}
+\notationitem{$P$}{probability}
+\notationitem{$t_{1/2}$}{half-life}
+\notationitem{$D$}{a probability distribution (used only in optional section \ref{sec:probability-calculus}; not a standardized notation)}
+\end{notation}
+
+\begin{summarytext}
+
+Quantum physics differs from classical physics in many ways,
+the most dramatic of which is that certain processes at the
+atomic level, such as radioactive decay, are random rather
+than deterministic. There is a method to the madness,
+however: quantum physics still rules out any process that
+violates conservation laws, and it also offers methods for
+calculating probabilities numerically.
+
+In this chapter we focused on certain generic methods of
+working with probabilities, without concerning ourselves
+with any physical details. Without knowing any of the
+details of radioactive decay, for example, we were still
+able to give a fairly complete treatment of the relevant
+probabilities. The most important of these generic methods
+is the law of independent probabilities, which states that
+if two random events are not related in any way, then the
+probability that they will both occur equals the product of
+the two probabilities,
+\begin{multline*}
+        \text{probability of A and B}  \\=  P_AP_B  \qquad \shoveright{\text{[if A and B are independent]}\eqquad.}
+\end{multline*}
+The most important application is to radioactive decay. The
+time that a radioactive atom has a 50\% chance of surviving
+is called the half-life, $t_{1/2}$. The probability of surviving
+for two half-lives is $(1/2)(1/2)=1/4$, and so on. In
+general, the probability of surviving a time $t$ is given by
+\begin{equation*}
+                P_{surv}(t)  =    0.5^{t/t_{1/2}}\eqquad.
+\end{equation*}
+Related quantities such as the rate of decay and probability
+distribution for the time of decay are given by the same
+type of exponential function, but multiplied by certain constant factors.
+\end{summarytext}
+ %
+\end{summary}
+
+<% begin_hw_sec %>
+ %
+<% begin_hw('wholelife') %>__incl(hw/wholelife)<% end_hw() %>
+ %
+<% begin_hw('albinism') %>
+Many individuals carry the recessive gene for albinism, but they are not
+albino unless they receive the gene from both their parents. In the U.S., an individual's
+probability of receiving the gene from a given parent is about 0.014. What is the probability
+that a given child will be born albino?\answercheck
+<% end_hw() %>
+ %
+<% begin_hw('muon-halflife') %>Problem \ref{hw:muon-halflife} has been deleted.<% end_hw() %>
+ %
+<% begin_hw('exponentiationapprox') %>
+Use a calculator to check the approximation that 
+\begin{equation*}
+  a^b \approx  1+ b \ln a\eqquad,
+\end{equation*}
+if $b\ll 1$, using some arbitrary numbers.
+Then see how good the approximation is for values of $b$ that are
+not quite as small compared to one.
+<% end_hw() %>
+
+<% begin_hw('rateofdecayapprox') %>
+Make up an example of a numerical problem involving a
+rate of decay where $\Delta t \ll t_{1/2}$, but the exact expression for the rate of
+decay on page \pageref{rate-of-decay} can still be
+evaluated on a calculator without getting something that
+rounds off to zero. Check that you get approximately the same
+result using both methods on pp. \pageref{rate-of-decay}-\pageref{rate-of-decay-approx} to calculate the number of decays
+between $t$ and $t+\Delta t$.
+Keep plenty of significant
+figures in your results, in order to show the difference between them.
+<% end_hw() %>
+
+ %
+<% begin_hw('craps') %>__incl(hw/craps)<% end_hw() %>
+ %
+<% begin_hw('heightdistribution') %>__incl(hw/heightdistribution)<% end_hw() %>
+ %
+
+\vfill\pagebreak[4]
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-unknownisotopes',
+    %q{Problem \ref{hw:unknownisotopes}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('unknownisotopes') %>__incl(hw/unknownisotopes)<% end_hw() %>
+
+\vfill\pagebreak[4]
+
+<% begin_hw('lava') %>
+All helium on earth is from the decay of naturally occurring heavy radioactive elements
+ such as uranium. Each alpha particle that is emitted ends up claiming two electrons,
+ which makes it a helium atom. If the original $^{238}\zu{U}$ atom is in solid
+ rock (as opposed to the earth's molten regions), the He atoms are unable to
+ diffuse out of the rock. This problem involves dating a rock using the known
+ decay properties of uranium 238. Suppose a geologist finds a sample of hardened lava,
+ melts it in a furnace, and finds that it contains 1230 mg of uranium
+ and 2.3 mg of helium.  $^{238}\zu{U}$ decays by alpha emission, with a half-life
+ of $4.5\times10^9$ years.  The subsequent chain of alpha and electron (beta) decays involves
+ much shorter half-lives, and terminates in the 
+stable nucleus $^{206}\zu{Pb}$.  (You may want to review alpha and beta decay.) Almost all natural
+ uranium is $^{238}\zu{U}$, and the chemical composition
+ of this rock indicates that there were
+ no decay chains involved other than that of $^{238}\zu{U}$.\hwendpart
+(a) How many alphas are emitted in decay chain of a single $^{238}\zu{U}$ atom?\\ $[\text{Hint: Use conservation of mass.}]$\hwendpart
+(b) How many electrons are emitted per decay chain?\\
+  $[\text{Hint: Use conservation of charge.}]$\hwendpart
+(c) How long has it been since the lava originally hardened?\answercheck\hwendpart
+<% end_hw() %>
+ %
+<% begin_hw('bismuth') %>__incl(hw/bismuth)<% end_hw() %>
+ %
+<% begin_hw('blindfold-target',nil,{'calc'=>true}) %>__incl(hw/blindfold-target)<% end_hw() %>
+
+<% begin_hw('truncated-half-life',nil,{'calc'=>true}) %>__incl(hw/truncated-half-life)<% end_hw() %>
+ %
+<% begin_hw('maxwellian',nil,{'calc'=>true}) %>__incl(hw/maxwellian)<% end_hw() %>
+ %
+
+<% begin_hw('neutrino-wall') %>__incl(hw/neutrino-wall)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% figure_in_toc("h-wavefunction") %>
+<% if false then figure_in_toc("seurat") end %>
+<% end_chapter() %>

@@ -1,0 +1,287 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Motion in One Dimension") %>
+
+<%
+  chapter(
+    '02',
+    %q{Velocity and Relative Motion},
+    'ch:motion',
+    '',
+    {'opener'=>''}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n1a)
+<% begin_sec("Relativity",4,'relativity',{'optional'=>true}) %>
+__incl(../../share/relativity/text/relativity_kinematics)
+<% end_sec('relativity') %> % Relativity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{center of mass}{the balance point of an object}
+
+\vocabitem{velocity}{the rate of change of position; the slope of the
+tangent line on an $x-t$ graph.}
+
+\end{vocab}
+
+\begin{notation}
+
+\notationitem{$x$}{a point in space}
+\notationitem{$t$}{a point in time, a clock reading}
+\notationitem{$\Delta$}{``change in;'' the value of a variable afterwards minus its value before}
+\notationitem{$\Delta x$}{a distance, or more precisely a change in $x$, which
+may be less than the distance traveled; its plus or minus
+sign indicates direction}
+\notationitem{$\Delta t$}{a duration of time}
+\notationitem{$v$}{velocity}
+\notationitem{$v_{AB}$}{the velocity of object A relative to object B}
+\end{notation}
+
+\begin{othernotation}
+
+\notationitem{displacement}{a name for the symbol $\Delta x$}
+\notationitem{speed}{the absolute value of the velocity, i.e., the velocity
+stripped of any information about its direction}
+\end{othernotation}
+
+\begin{summarytext}
+
+An object's center of mass is the point at which it can be
+balanced. For the time being, we are studying the mathematical
+description only of the motion of an object's center of mass
+in cases restricted to one dimension. The motion of an
+object's center of mass is usually far simpler than the
+motion of any of its other parts.
+
+It is important to distinguish location, $x$, from distance,
+$\Delta x$, and clock reading, $t$, from time interval
+$\Delta t$. When an object's $x-t$ graph is linear, we
+define its velocity as the slope of the line, 
+$\Delta x/\Delta t$. When the graph is curved, we generalize the
+definition so that the velocity is the
+m4_ifelse(__me,1,[:%
+derivative $\der x/\der t$.
+:],[:%
+slope of the tangent
+line at a given point on the graph.
+:])
+
+Galileo's principle of inertia states that no force is
+required to maintain motion with constant velocity in a
+straight line, and absolute motion does not cause any
+observable physical effects. Things typically tend to reduce
+their velocity relative to the surface of our planet only
+because they are physically rubbing against the planet (or
+something attached to the planet), not because there is
+anything special about being at rest with respect to the
+earth's surface. When it seems, for instance, that a force
+is required to keep a book sliding across a table, in fact
+the force is only serving to cancel the contrary force of friction.
+
+Absolute motion is not a well-defined concept, and if two
+observers are not at rest relative to one another they will
+disagree about the absolute velocities of objects. They
+will, however, agree about relative velocities. If object A
+is in motion relative to object $B$, and $B$ is in motion
+relative to $C$, then A's velocity relative to $C$ is given
+by $v_{AC}=v_{AB}+v_{BC}$. Positive and negative signs are
+used to indicate the direction of an object's motion.
+
+Modern experiments show that space and time only approximately have the properties claimed by Galileo and Newton.
+Time and space as seen by one
+observer are distorted compared to another observer's perceptions if they are moving
+relative to each other. This distortion is quantified by the factor
+\begin{equation*}
+  \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\eqquad,
+\end{equation*}
+where $v$ is the relative velocity of the two observers, and $c$ is a universal velocity
+that is the same in all frames of reference. Light travels at $c$. A clock appears to run fastest to an
+observer who is not in motion relative to it, and appears to run too slowly by a factor of
+$\gamma$ to an observer who has a velocity $v$ relative to the clock. Similarly, a meter-stick
+appears longest to an observer who sees it at rest, and appears shorter to other observers.
+Time and space are relative, not absolute. In particular, there is no well-defined concept
+of simultaneity. Velocities don't add according to $u+v$ but rather $(u+v)/(1+uv)$ (in units
+where $c=1$).
+
+All of these strange effects, however, are very small when the relative
+velocities are small compared to $c$. This makes sense, because
+Newton's laws have already been thoroughly tested by experiments at such speeds,
+so a new theory like relativity must agree with the old one in their realm of
+common applicability. This requirement of backwards-compatibility is known as
+the correspondence principle.
+\end{summarytext}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('bounce-graph') %>__incl(hw/bounce-graph)<% end_hw() %>
+<% marg(15) %>
+<%
+  fig(
+    'hw-bounce-graph',
+    %q{Problem \ref{hw:bounce-graph}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('honeybee') %>__incl(hw/honeybee)<% end_hw() %>
+
+<% raw_fig('hw-honeybee') %>
+
+<% begin_hw('earth') %>__incl(hw/earth)<% end_hw() %>
+
+<% begin_hw('honeybeecalculus',nil,{'calc'=>true}) %>__incl(hw/honeybeecalculus)<% end_hw() %>
+
+<% begin_hw('freddifish',nil,{'calc'=>true}) %>__incl(hw/freddifish)<% end_hw() %>
+
+<% begin_hw('expanding-metal-square') %>__incl(hw/expanding-metal-square)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('observable-universe') %>__incl(hw/observable-universe)<% end_hw() %>
+
+<% begin_hw('chain-rule-units') %>__incl(hw/chain-rule-units)<% end_hw() %>
+
+<% begin_hw('eowyn') %>__incl(hw/eowyn)<% end_hw() %>
+
+<% begin_hw('cross-deck') %>__incl(hw/cross-deck)<% end_hw() %>
+
+<% begin_hw('inside-freight-train') %>__incl(hw/inside-freight-train)<% end_hw() %>
+
+<% begin_hw('decel-accel-frames') %>__incl(hw/decel-accel-frames)<% end_hw() %>
+<% marg(-300) %>
+<%
+  fig(
+    'hw-cycloid',
+    %q{Problem \ref{hw:cycloid}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('cycloid') %>__incl(hw/cycloid)<% end_hw() %>
+
+\enlargethispage{2\baselineskip}
+
+
+%----------- relativity
+
+
+<% begin_hw('agreeontime') %>__incl(../../share/relativity/hw/agreeontime)<% end_hw() %>
+
+<% begin_hw('gammafornegativev') %>__incl(../../share/relativity/hw/gammafornegativev)<% end_hw() %>
+
+<% begin_hw('voyagergamma') %>__incl(../../share/relativity/hw/voyagergamma)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('earth-lorentz-contraction') %>__incl(../../share/relativity/hw/earth-lorentz-contraction)<% end_hw() %>
+
+<% begin_hw('gamma-derivation') %>__incl(../../share/relativity/hw/gamma-derivation)<% end_hw() %>
+<% marg(50) %>
+<%
+  fig(
+    'hw-gamma-derivation',
+    %q{Problem \ref{hw:gamma-derivation}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('gammasimplefraction') %>
+(a) Show that for $v=(3/5)c$, $\gamma$ comes out to be a simple fraction.\\
+(b) Find another value of $v$ for which $\gamma$ is a simple fraction.
+<% end_hw() %>
+
+<% begin_hw('velocity-addition-double-limit') %>__incl(../../share/relativity/hw/velocity-addition-double-limit)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('six-tenths-c-twice') %>
+The figure illustrates a Lorentz transformation using the conventions employed in section \ref{subsec:x-t-distortion}.
+For simplicity, the transformation chosen is one that lengthens one diagonal by a factor of 2. Since Lorentz transformations
+preserve area, the other diagonal is shortened by a factor of 2. Let the original frame of reference, depicted with the square,
+be A, and the new one B. (a) By measuring with a ruler on the figure, show that the velocity of frame B relative to frame A is $0.6c$.
+(b) Print out a copy of the page. With a ruler, draw a third parallelogram that represents a second successive Lorentz transformation, one
+that lengthens the long diagonal by another factor of 2. Call this third frame C. Use measurements with a ruler to determine
+frame C's velocity relative to frame A. Does it equal double the velocity found in part a? Explain why it should be expected to turn
+out the way it does. A general equation for this type of calculation is derived in problem \ref{hw:me-vel-addition}.\answercheck
+% v=.6 exactly; combined v = tanh(2 atanh(.6))=.8824; verified graphically using inkscape that it's .8824
+<% end_hw() %>
+
+\vspace{30mm}
+
+<%
+  fig(   
+    'hw-six-tenths-c-twice',
+    '',
+    {
+      'width'=>'fullpage'
+      #'sidecaption'=>true
+    }
+  )
+%>
+
+\pagebreak
+
+<% begin_hw('me-vel-addition') %>
+The purpose of this problem is to prove the general result $w=(u+v)/(1+uv)$ (in units where $c=1$)
+for the kind of combination of velocities found graphically in problem \ref{hw:six-tenths-c-twice}. Suppose that we
+perform two Lorentz transformations, with velocities $u$ and $v$, one after the other.
+Representing these transformations as distortions of parallelograms, we stretch the stretching diagonals
+by factors $S(u)$ and $S(v)$ (and compress the compressing ones by the inverses of these factors), so that the combined result is a stretching by $S(u)S(v)$.
+We want to prove that $S(w)=S(u)S(v)$ gives the expression claimed above for $w$. One can easily show
+by fiddling with the result of part c of problem \ref{hw:gamma-derivation} that $S(x)=\sqrt{(1+x)/(1-x)}$.
+(a) Use these facts to write down an equation relating $u$, $v$, and $w$. (b) Solve for $w$ in terms of $u$ and $v$.
+(c) Show that your answer to part b satisfies the correspondence principle.
+(d) Show that it is consistent with the constancy of $c$.
+<% end_hw() %>
+
+<% begin_hw('door-closer',nil,{'calc'=>true}) %>__incl(hw/door-closer)<% end_hw() %>
+
+\enlargethispage{2\baselineskip}
+
+<% begin_hw('beer-stability') %>__incl(hw/beer-stability)<% end_hw() %>
+
+<% begin_hw('average-velocity-from-halves') %>__incl(hw/average-velocity-from-halves)<% end_hw() %>
+
+<% begin_hw('earth-stepwise-equator') %>__incl(hw/earth-stepwise-equator)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('earth-stepwise-fullerton') %>__incl(hw/earth-stepwise-fullerton)<% end_hw() %>
+
+<% marg(-300) %>
+<%
+  fig(
+    'passing-in-race',
+    %q{Problem \ref{hw:passing-in-race}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('passing-in-race') %>__incl(hw/passing-in-race)<% end_hw() %>
+
+\pagebreak
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-fizeau-cogwheel',
+    %q{Problem \ref{hw:fizeau-cogwheel}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('fizeau-cogwheel') %>__incl(hw/fizeau-cogwheel)<% end_hw() %>
+
+
+<% end_hw_sec %>
+<% end_chapter() %>

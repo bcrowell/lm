@@ -1,0 +1,201 @@
+<%
+  require "../eruby_util.rb"
+%>
+<%
+  chapter(
+    '09',
+    %q{Circular Motion},
+    'ch:circular-motion',
+    '',
+    {'opener'=>'tilted-wheel-ride'}
+  )
+%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/n3d)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<% begin_hw_sec %>
+
+<% begin_hw('circularaccelunits') %>__incl(hw/circularaccelunits)<% end_hw() %>
+
+<% begin_hw('loop') %>__incl(hw/loop)<% end_hw() %>
+
+<% marg(-15) %>
+<%
+  fig(
+    'hw-tilt-a-whirl',
+    %q{Problem \ref{hw:tilt-a-whirl}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('tilt-a-whirl',2) %>__incl(hw/tilt-a-whirl)<% end_hw() %>
+
+<% begin_hw('sirius-centrifugal') %>__incl(hw/sirius-centrifugal)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('off-ramp') %>__incl(hw/off-ramp)<% end_hw() %>
+<% marg(60) %>
+<%
+  fig(
+    'hw-off-ramp',
+    %q{Problem \ref{hw:off-ramp}.}
+  )
+%>
+<% end_marg %>
+
+\vspace{15mm}
+
+<% begin_hw('train') %>__incl(hw/train)<% end_hw() %>
+
+\vspace{15mm}
+
+<% begin_hw('rodent') %>__incl(hw/rodent)<% end_hw() %>
+<% marg(60) %>
+<%
+  fig(
+    'hw-rodent',
+    %q{Problem \ref{hw:rodent}.}
+  )
+%>
+<% end_marg %>
+
+\vspace{15mm}
+
+<% begin_hw('paradox') %>__incl(hw/paradox)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('mixer') %>__incl(hw/mixer)<% end_hw() %>
+
+<% marg(50) %>
+<%
+  fig(
+    'hw-mixer',
+    %q{Problem \ref{hw:mixer}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-cyclists',
+    %q{Problem \ref{hw:cyclists}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-conicalpendulum',
+    %q{Problem \ref{hw:conicalpendulum}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-circling-blocks',
+    %q{Problem \ref{hw:circling-blocks}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('cyclists') %>__incl(hw/cyclists)<% end_hw() %>
+
+
+<% begin_hw('conicalpendulum') %>__incl(hw/conicalpendulum)<% end_hw() %>
+
+<% begin_hw('circling-blocks') %>__incl(hw/circling-blocks)<% end_hw() %>
+
+
+
+\pagebreak
+
+<% begin_hw('') %>
+This problem is now number \ref{hw:jack-on-hill} in ch.~\ref{ch:energy-zoo}, p.~\pageref{hw:jack-on-hill}.
+<% end_hw() %>
+
+
+<% begin_hw('governor',2) %>__incl(hw/governor)<% end_hw() %>
+<% marg(90) %>
+<%
+  fig(
+    'hw-governor',
+    %q{Problem \ref{hw:governor}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-bead-on-vee',
+    %q{Problem \ref{hw:bead-on-vee}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-spiral-terminal-velocity',
+    %q{Problem \ref{hw:spiral-terminal-velocity}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('bead-on-vee',2) %>__incl(hw/bead-on-vee)<% end_hw() %>
+
+<% begin_hw('spiral-terminal-velocity',2) %>__incl(hw/spiral-terminal-velocity)<% end_hw() %>            
+
+
+\pagebreak
+
+<% begin_hw('wall-of-death') %>__incl(hw/wall-of-death)<% end_hw() %>
+
+<% begin_hw('bead-on-circular-wire',2) %>__incl(hw/bead-on-circular-wire)<% end_hw() %>            
+
+<% marg(80) %>
+<%
+  fig(
+    'hw-wall-of-death',  
+    %q{Problem \ref{hw:wall-of-death}.}  
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-bead-on-circular-wire',  
+    %q{Problem \ref{hw:bead-on-circular-wire}.}  
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-brick-circle',  
+    %q{Problem \ref{hw:brick-circle}.}  
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('car-top-of-hill',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/car-top-of-hill)<% end_hw() %>
+
+<% begin_hw('brick-circle',nil,{'credit'=>'B.~Shotwell'}) %>__incl(hw/brick-circle)<% end_hw() %>
+
+\pagebreak
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-gemini-heart',  
+    %q{Problem \ref{hw:gemini-heart}.}  
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('gemini-heart',nil,) %>__incl(hw/gemini-heart)<% end_hw() %>
+
+<% end_hw_sec %>
+
+
+ %%----------------------------------------------------------
+
+<% figure_in_toc("tilted-wheel-ride") %>
+<% end_chapter() %>

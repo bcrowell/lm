@@ -1,0 +1,1666 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '26',
+    %q{The Atom and E=mc$^2$},
+    'ch:atom',
+    %q{Marie and Pierre Curie were the first to purify radium in
+        significant quantities. Radium's intense radioactivity made possible
+        the experiments that led to the modern planetary model of the atom, in
+        which electrons orbit a nucleus made of protons and neutrons.},
+    {'opener'=>'curies','sidecaption'=>true}
+  )
+%>
+
+<% begin_sec("Atoms",0,'atoms') %>
+        \epigraph{I was brought up to look at the atom as a nice, hard fellow,
+        red or grey in color according to taste.}{Rutherford}
+
+  <% begin_sec("The chemical elements",nil,'chemical-elements') %>\index{elements, chemical}
+
+        How would one find out what types of atoms there were?
+        Today, it doesn't seem like it should have been very
+        difficult to work out an experimental program to classify
+        the types of atoms. For each type of atom, there should be a
+        corresponding element, i.e., a pure substance made out of
+        nothing but that type of atom. Atoms are supposed to be
+        unsplittable, so a substance like milk could not possibly be
+        elemental, since churning it vigorously causes it to split
+        up into two separate substances: butter and whey. Similarly,
+        rust could not be an element, because it can be made by
+        combining two substances: iron and oxygen. Despite its
+        apparent reasonableness, no such program was carried out
+        until the eighteenth century.
+
+        By 1900, however, chemists had done a reasonably good job of
+        finding out what the elements were. They also had determined
+        the ratios of the different atoms' masses fairly accurately.
+        A typical technique would be to measure how many grams of
+        sodium (Na) would combine with one gram of chlorine (Cl) to
+        make salt (NaCl). (This assumes you've already decided based
+        on other evidence that salt consisted of equal numbers of Na
+        and Cl atoms.) The masses of individual atoms, as opposed to
+        the mass ratios, were known only to within a few orders of
+        magnitude based on indirect evidence, and plenty of
+        physicists and chemists denied that individual atoms were
+        anything more than convenient symbols.
+<% marg(50) %>
+        \begin{minipage}[t]{52mm}
+        \begin{equation*}
+        \frac{m_\zu{He}}{m_\zu{H}}=3.97
+        \end{equation*}
+        \begin{equation*}
+        \frac{m_\zu{Ne}}{m_\zu{H}}=20.01
+        \end{equation*}
+        \begin{equation*}
+        \frac{m_\zu{Sc}}{m_\zu{H}}=44.60
+        \end{equation*}
+        \docaption{Examples of masses of atoms compared to that of hydrogen. Note
+        how some, but not all, are close to integers.} %
+        \label{fig:hmassratios} %
+        \end{minipage}
+<% end_marg %>
+
+
+
+The following
+table gives the atomic masses of all the elements, on a standard scale in which 
+the mass of hydrogen is very close to 1.0.
+The absolute calibration of the whole
+scale was only very roughly known for a long time, but was eventually tied down,
+with the mass of a hydrogen atom being determined to be about
+$1.7\times10^{-27}$ kg.
+
+{\footnotesize
+\begin{tabular}{|ll|ll|ll|ll|}
+\hline
+Ag	& 107.9	&Eu	& 152.0	&Mo	& 95.9	&Sc	& 45.0	\\
+Al 	& 27.0 	&F	& 19.0	&N	& 14.0	&Se	& 79.0	\\
+Ar 	& 39.9	&Fe	& 55.8	&Na	& 23.0	&Si	& 28.1	\\
+As	& 74.9	&Ga	& 69.7	&Nb	& 92.9	&Sn	& 118.7	\\
+Au	& 197.0	&Gd	& 157.2	&Nd	& 144.2	&Sr	& 87.6	\\
+B	& 10.8	&Ge	& 72.6	&Ne	& 20.2	&Ta	& 180.9	\\
+Ba	& 137.3	&H	& 1.0	&Ni	& 58.7	&Tb	& 158.9	\\
+Be	& 9.0	&He	& 4.0	&O	& 16.0	&Te	& 127.6	\\
+Bi	& 209.0	&Hf	& 178.5	&Os	& 190.2	&Ti	& 47.9	\\
+Br	& 79.9	&Hg	& 200.6	&P	& 31.0	&Tl	& 204.4	\\
+C	& 12.0	&Ho	& 164.9	&Pb	& 207.2	&Tm	& 168.9	\\
+Ca	& 40.1	&In	& 114.8	&Pd	& 106.4	&U	& 238	\\
+Ce	& 140.1	&Ir	& 192.2	&Pt	& 195.1	&V	& 50.9	\\
+Cl	& 35.5	&K	& 39.1	&Pr	& 140.9	&W	& 183.8	\\
+Co	& 58.9	&Kr	& 83.8	&Rb	& 85.5	&Xe	& 131.3	\\
+Cr	& 52.0	&La	& 138.9	&Re	& 186.2	&Y	& 88.9	\\
+Cs	& 132.9	&Li	& 6.9	&Rh	& 102.9	&Yb	& 173.0	\\
+Cu	& 63.5	&Lu	& 175.0	&Ru	& 101.1	&Zn	& 65.4	\\
+Dy	& 162.5	&Mg	& 24.3	&S	& 32.1	&Zr	& 91.2 	\\
+Er	& 167.3	&Mn	& 54.9	&Sb 	& 121.8 	& & \\
+\hline
+\end{tabular}
+}
+
+  <% end_sec('chemical-elements') %>
+  <% begin_sec("Making sense of the elements",nil,'making-sense-of-elements') %>
+        As the information accumulated, the challenge was to find a
+        way of systematizing it; the modern scientist's aesthetic
+        sense rebels against complication. This hodgepodge of
+        elements was an embarrassment. One contemporary observer,
+        William \index{Crookes, William}Crookes, described the
+        elements as extending ``before us as stretched the wide
+        Atlantic before the gaze of Columbus, mocking, taunting and
+        murmuring strange riddles, which no man has yet been able to
+        solve.'' It wasn't long before people started recognizing
+        that many atoms' masses were nearly integer multiples of the
+        mass of hydrogen, the lightest element. A few excitable
+        types began speculating that hydrogen was the basic building
+        block, and that the heavier elements were made of clusters
+        of hydrogen. It wasn't long, however, before their parade
+        was rained on by more accurate measurements, which showed
+        that not all of the elements had atomic masses that were
+        near integer multiples of hydrogen, and even the ones that
+        were close to being integer multiples were off by one percent or so.
+<%
+  fig(
+    'periodictable',
+    %q{%
+      A modern periodic table. Elements in the same column have
+              similar chemical properties. The modern atomic numbers, discussed on
+              p.~\pageref{subsec:atomic-number}, were not known in Mendeleev's time, since the table could be
+              flipped in various ways.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+\index{periodic table}
+
+        Chemistry professor Dmitri \index{Mendeleev, Dmitri}Mendeleev,
+        preparing his lectures in 1869, wanted to find some way to
+        organize his knowledge for his students to make it more
+        understandable. He wrote the names of all the elements on
+        cards and began arranging them in different ways on his
+        desk, trying to find an arrangement that would make sense of
+        the muddle. The row-and-column scheme he came up with is
+        essentially our modern periodic table. The columns of the
+        modern version represent groups of elements with similar
+        chemical properties, and each row is more massive than the
+        one above it. Going across each row, this almost always
+        resulted in placing the atoms in sequence by weight as well.
+        What made the system significant was its predictive value.
+        There were three places where Mendeleev had to leave gaps in
+        his checkerboard to keep chemically similar elements in the
+        same column. He predicted that elements would exist to fill
+        these gaps, and extrapolated or interpolated from other
+        elements in the same column to predict their numerical
+        properties, such as masses, boiling points, and densities.
+        Mendeleev's professional stock skyrocketed when his three
+        elements (later named gallium, scandium and germanium) were
+        discovered and found to have very nearly the properties he had predicted.
+
+        One thing that Mendeleev's table made clear was that mass
+        was not the basic property that distinguished atoms of
+        different elements. To make his table work, he had to
+        deviate from ordering the elements strictly by mass. For
+        instance, iodine atoms are lighter than tellurium, but
+        Mendeleev had to put iodine after tellurium so that it would
+        lie in a column with chemically similar elements.
+
+  <% end_sec('making-sense-of-elements') %>
+  <% begin_sec("Direct proof that atoms existed",nil,'direct-proof-of-atoms') %>
+
+        The success of the kinetic theory of heat was taken as
+        strong evidence that, in addition to the motion of any
+        object as a whole, there is an invisible type of motion all
+        around us: the random motion of atoms within each object.
+        But many conservatives were not convinced that atoms really
+        existed. Nobody had ever seen one, after all. It wasn't
+        until generations after the kinetic theory of heat was
+        developed that it was demonstrated conclusively that atoms
+        really existed and that they participated in continuous
+        motion that never died out.
+
+        The smoking gun to prove atoms were more than mathematical
+        abstractions came when some old, obscure observations were
+        reexamined by an unknown Swiss patent clerk named Albert
+        Einstein. A botanist named \index{Brownian motion}Brown,
+        using a microscope that was state of the art in 1827,
+        observed tiny grains of pollen in a drop of water on a
+        microscope slide, and found that they jumped around randomly
+        for no apparent reason. Wondering at first if the pollen
+        he'd assumed to be dead was actually alive, he tried looking
+        at particles of soot, and found that the soot particles also
+        moved around. The same results would occur with any small
+        grain or particle suspended in a liquid. The phenomenon came
+        to be referred to as Brownian motion, and its existence was
+        filed away as a quaint and thoroughly unimportant fact,
+        really just a nuisance for the microscopist.
+
+        It wasn't until 1906 that \index{Einstein, Albert!and
+        Brownian motion}Einstein found the correct interpretation
+        for Brown's observation: the water molecules were in
+        continuous random motion, and were colliding with the
+        particle all the time, kicking it in random directions.
+        After all the millennia of speculation about atoms, at last
+        there was solid proof. Einstein's calculations dispelled all
+        doubt, since he was able to make accurate predictions of
+        things like the average distance traveled by the particle in
+        a certain amount of time.  (Einstein received the Nobel
+        Prize not for his theory of relativity but for his papers on
+        Brownian motion and the photoelectric effect.)
+
+
+\startdqs
+
+\begin{dq}
+        How could knowledge of the size of an individual aluminum
+        atom be used to infer an estimate of its mass, or vice versa?
+\end{dq}
+ %
+\begin{dq}
+        How could one test Einstein's interpretation of Brownian motion by observing
+        it at different temperatures?
+\end{dq}
+
+  <% end_sec('direct-proof-of-atoms') %>
+<% end_sec('atoms') %>
+<% begin_sec("Quantization of charge",0,'charge-quantization') %>\index{quantization}\index{charge!quantization of}
+        Proving that atoms actually existed was a big accomplishment,
+        but demonstrating their existence was different from
+        understanding their properties. Note that the Brown-Einstein
+        observations had nothing at all to do with electricity, and
+        yet we know that matter is inherently electrical, and we
+        have been successful in interpreting certain electrical
+        phenomena in terms of mobile positively and negatively
+        charged particles. Are these particles atoms? Parts of
+        atoms? Particles that are entirely separate from atoms? It
+        is perhaps premature to attempt to answer these questions
+        without any conclusive evidence in favor of the charged-particle
+        model of electricity.
+
+        Strong support for the charged-particle model came from a
+        1911 experiment by physicist Robert \index{Millikan, Robert}Millikan
+        at the University of Chicago. Consider a jet
+        of droplets of perfume or some other liquid made by blowing
+        it through a tiny pinhole. The droplets emerging from the
+        pinhole must be smaller than the pinhole, and in fact most
+        of them are even more microscopic than that, since the
+        turbulent flow of air tends to break them up. Millikan
+        reasoned that the droplets would acquire a little bit of
+        electric charge as they rubbed against the channel through
+        which they emerged, and if the charged-particle model of
+        electricity was right, the charge might be split up among so
+        many minuscule liquid drops that a single drop might have a
+        total charge amounting to an excess of only a few charged
+        particles --- perhaps an excess of one positive particle on
+        a certain drop, or an excess of two negative ones on another.
+<% marg(60) %>
+<%
+  fig(
+    'millikan',
+    %q{A young Robert Millikan.}
+  )
+%>
+        \spacebetweenfigs
+        %
+<%
+  fig(
+    'oildrop',
+    %q{A simplified diagram of Millikan's apparatus.}
+  )
+%>
+        
+<% end_marg %>
+
+        Millikan's ingenious apparatus, \ref{fig:oildrop},
+        consisted of two metal plates, which could be electrically
+        charged as needed. He sprayed a cloud of oil droplets into
+        the space between the plates, and selected one drop through
+        a microscope for study. First, with no charge on the plates,
+        he would determine the drop's mass by letting it fall
+        through the air and measuring its terminal velocity, i.e.,
+        the velocity at which the force of air friction canceled out
+        the force of gravity. The force of air drag on a slowly
+        moving sphere had already been found by experiment to be
+        $bvr^2$, where $b$ was a constant.
+        Setting the total force equal to zero when the drop is at
+        terminal velocity gives
+        \begin{equation*}
+                   bvr^2 - mg = 0\eqquad,
+        \end{equation*}
+        and setting the known density of oil equal to the drop's
+        mass divided by its volume gives a second equation,
+        \begin{equation*}
+                   \rho = \frac{m}{\frac{4}{3}\pi r^3}\eqquad.
+        \end{equation*}
+        Everything in these equations can be measured directly
+        except for $m$ and $r$, so these are two equations in two
+        unknowns, which can be solved in order to determine
+        how big the drop is.
+
+        Next Millikan charged the metal plates, adjusting the amount
+        of charge so as to exactly counteract gravity and levitate
+        the drop. If, for instance, the drop being examined happened
+        to have a total charge that was negative, then positive
+        charge put on the top plate would attract it, pulling it up,
+        and negative charge on the bottom plate would repel it,
+        pushing it up. (Theoretically only one plate would be
+        necessary, but in practice a two-plate arrangement like this
+        gave electrical forces that were more uniform in strength
+        throughout the space where the oil drops were.) 
+	When the drop was being levitated, the gravitational and
+        electric forces canceled, so $qE=mg$. Since the mass of the drop,
+        the gravitational
+        field $g$, and the electric field $E$ were all known, the charge
+        $q$ could be determined.
+
+        Table \figref{millikanratios} shows a few of the results from
+        Millikan's 1911 paper. (Millikan took data on both
+        negatively and positively charged drops, but in his paper he
+        gave only a sample of his data on negatively charged drops,
+        so these numbers are all negative.) Even a quick look at the
+        data leads to the suspicion that the charges are not simply
+        a series of random numbers. For instance, the second charge
+        is almost exactly equal to half the first one. Millikan
+        explained the observed charges as all being integer
+        multiples of a single number, $1.64\times10^{-19}$ C. In the
+        second column, dividing by this constant gives numbers that
+        are essentially integers, allowing for the random errors
+        present in the experiment. Millikan states in his paper that
+        these results were a
+<% marg(80) %>
+        \begin{minipage}[t]{52mm}
+        \begin{tabular}{ll}
+                                        & $q$\\
+                                        & $/(1.64$\\
+                $q$ (C)                & $\times10^{-19}\ \zu{C})$ \\
+                \hline
+                $-1.970\times10^{-18}$        & $-12.02$ \\
+                $-0.987\times10^{-18}$        & $-6.02$ \\
+                $-2.773\times10^{-18}$        & $-16.93$ \\
+        \end{tabular}
+        \docaption{A few samples of Millikan's data.} %
+        \label{fig:millikanratios} %
+        \end{minipage}
+        
+<% end_marg %>
+
+        \begin{quote}
+        \ldots direct and tangible demonstration \ldots of the correctness of
+        the view advanced many years ago and supported by evidence
+        from many sources that all electrical charges, however
+        produced, are exact multiples of one definite, elementary
+        electrical charge, or in other words, that an electrical
+        charge instead of being spread uniformly over the charged
+        surface has a definite granular structure, consisting, in
+        fact, of \ldots specks, or atoms of electricity, all precisely
+        alike, peppered over the surface of the charged body.
+        \end{quote}
+
+        In other words, he had provided direct evidence for the
+        charged-particle model of electricity and against models in
+        which electricity was described as some sort of fluid. The
+        basic charge is notated $e$, and the modern value is
+        $e=1.60\times10^{-19}$ C.
+        The word ``\emph{quantized}'' is used in physics to describe
+        a quantity that can only have certain numerical values, and
+        cannot have any of the values between those. In this
+        language, we would say that Millikan discovered that charge
+        is quantized. The charge $e$ is referred to as the quantum of charge.
+
+        <% self_check('quantizedmoney',<<-'SELF_CHECK'
+               Is money quantized? What is the quantum of money?
+          SELF_CHECK
+  ) %>
+
+        \begin{optionaltopic}{A historical note on Millikan's fraud}
+        Very few undergraduate physics textbooks mention
+         the well-documented fact that although
+        Millikan's conclusions were correct, he was guilty of scientific
+        fraud. His technique was difficult and painstaking to perform, and his
+        original notebooks, which have been preserved, show that the data were
+        far less perfect than he claimed in his published scientific papers.
+        In his publications, he stated categorically that every single oil
+        drop observed had had a charge that was a multiple of $e$, with no
+        Exceptions or omissions. But his notebooks are replete with notations
+        such as ``beautiful data, keep,'' and ``bad run, throw out.'' Millikan,
+        then, appears to have earned his Nobel Prize by advocating a correct
+        position with dishonest descriptions of his data.
+        \end{optionaltopic}
+
+<% end_sec('charge-quantization') %> % Quantization of charge
+<% begin_sec("The electron",nil,'electron') %>
+  <% begin_sec("Cathode rays",nil,'cathode-rays') %>\index{cathode rays}
+
+        Nineteenth-century physicists spent a lot of
+        time trying to come up with wild, random ways to play with
+        electricity. The best experiments of this kind were the ones
+        that made big sparks or pretty colors of light.
+
+        One such parlor trick was the cathode ray. To produce it,
+        you first had to hire a good glassblower and find a good
+        vacuum pump. The glassblower would create a hollow tube and
+        embed two pieces of metal in it, called the electrodes,
+        which were connected to the outside via metal wires passing
+        through the glass. Before letting him seal up the whole
+        tube, you would hook it up to a vacuum pump, and spend
+        several hours huffing and puffing away at the pump's hand
+        crank to get a good vacuum inside. Then, while you were
+        still pumping on the tube, the glassblower  would melt the
+        glass and seal the whole thing shut. Finally, you would put
+        a large amount of positive charge on one wire and a large
+        amount of negative charge on the other. Metals have the
+        property of letting charge move through them easily, so the
+        charge deposited on one of the wires would quickly spread
+        out because of the repulsion of each part of it for every
+        other part. This spreading-out process would result in
+        nearly all the charge ending up in the electrodes, where
+        there is more room to spread out than there is in the wire.
+        For obscure historical reasons a negative electrode is
+        called a cathode and a positive one is an anode.
+
+        Figure \ref{fig:crt} shows the light-emitting stream that was
+        observed. If, as shown in this figure, a hole was made in
+        the anode, the beam would extend on through the hole until
+        it hit the glass. Drilling a hole in the cathode, however
+        would not result in any beam coming out on the left side,
+        and this indicated that the stuff, whatever it was, was
+        coming from the cathode. The rays were therefore christened
+        ``cathode rays.'' (The terminology is still used today in
+        the term ``cathode ray tube'' or ``CRT'' for the picture
+        tube of a TV or computer monitor.)
+
+  <% end_sec('cathode-rays') %>
+  <% begin_sec("Were cathode rays a form of light, or of matter?",nil,'nature-of-cathode-rays') %>
+
+        <% marg(10) %>
+<%
+  fig(
+    'crt',
+    %q{Cathode rays observed in a vacuum tube.}
+  )
+%>
+<% end_marg %>
+
+        Were cathode rays a form of light, or matter? At first no
+        one really cared what they were, but as their scientific
+        importance became more apparent, the light-versus-matter
+        issue turned into a controversy along nationalistic lines,
+        with the Germans advocating light and the English holding
+        out for matter. The supporters of the material interpretation
+        imagined the rays as consisting of a stream of atoms ripped
+        from the substance of the cathode.
+
+        One of our defining characteristics of matter is that
+        material objects cannot pass through each other. Experiments
+        showed that cathode rays could penetrate at least some small
+        thickness of matter, such as a metal foil a tenth of a
+        millimeter thick, implying that they were a form of light.
+
+        Other experiments, however, pointed to the contrary
+        conclusion. Light is a wave phenomenon, and one distinguishing
+        property of waves is demonstrated by speaking into one end of a
+        paper towel roll. The sound waves do not emerge from the
+        other end of the tube as a focused beam. Instead, they begin
+        spreading out in all directions as soon as they emerge. This
+        shows that waves do not necessarily travel in straight
+        lines. If a piece of metal foil in the shape of a star or a
+        cross was placed in the way of the cathode ray, then a
+        ``shadow'' of the same shape would appear on the glass,
+        showing that the rays traveled in straight lines. This
+        straight-line motion suggested that they were a stream of
+        small particles of matter. 
+
+        These observations were inconclusive, so what was really
+        needed was a determination of whether the rays had mass and
+        weight. The trouble was that cathode rays could not simply
+        be collected in a cup and put on a scale. When the cathode
+        ray tube is in operation, one does not observe any loss of
+        material from the cathode, or any crust being deposited on the anode.
+
+         Nobody could think of a good way to weigh cathode rays, so
+        the next most obvious way of settling the light/matter
+        debate was to check whether the cathode rays possessed
+        electrical charge. Light was known to be uncharged. If the
+        cathode rays carried charge, they were definitely matter and
+        not light, and they were presumably being made to jump the
+        gap by the simultaneous repulsion of the negative charge in
+        the cathode and attraction of the positive charge in the
+        anode. The rays would overshoot the anode because of their
+        momentum. (Although electrically charged particles do not
+        normally leap across a gap of vacuum, very large amounts of
+        charge were being used, so the forces were unusually intense.)
+
+  <% end_sec('nature-of-cathode-rays') %>
+  <% begin_sec("Thomson's experiments",nil,'thompson-experiment') %>\index{Thomson, J.J.!cathode ray experiments}
+        <% marg(42) %>
+<%
+  fig(
+    'thomson',
+    %q{J.J. Thomson.}
+  )
+%>
+<% end_marg %>
+        Physicist J.J. Thomson at Cambridge carried out a series of
+        definitive experiments on cathode rays around the year 1897.
+        By turning them slightly off course with electrical forces, \ref{fig:deflect},
+        he showed that they were indeed
+        electrically charged, which was strong evidence that they
+        were material. Not only that, but he proved that they had
+        mass, and measured the ratio of their mass to their charge,
+        $m/q$. Since their mass was not zero, he concluded that they
+        were a form of matter, and presumably made up of a stream of
+        microscopic, negatively charged particles. When Millikan
+        published his results fourteen years later, it was
+        reasonable to assume that the charge of one such particle
+        equaled minus one fundamental charge, $q=-e$, and from the
+        combination of Thomson's and Millikan's results one could
+        therefore determine the mass of a single cathode ray particle.
+        
+        %
+<%
+  fig(
+    'deflect',
+    %q{%
+      Thomson's experiment proving cathode rays had electric charge
+              (redrawn from his original paper). The cathode, c, and anode, A, are
+              as in any cathode ray tube. The rays pass through a slit in the anode,
+              and a second slit, B, is interposed in order to make the beam thinner
+              and eliminate rays that were not going straight. Charging plates D and
+              E shows that cathode rays have charge: they are attracted toward the
+              positive plate D and repelled by the negative plate E.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+        The basic technique for determining $m/q$ was simply to
+        measure the angle through which the charged plates bent the
+        beam. The electric force acting on a cathode ray particle
+        while it was between the plates was
+        \begin{equation*}
+                        F_{elec}        =  qE\eqquad.  
+        \end{equation*}
+        By Newton's second law, $a=F/m$, we can find
+        $m/q$:
+        \begin{equation*}
+                        \frac{m}{q}        =      \frac{E}{a}
+        \end{equation*}
+
+        There was just one catch. Thomson needed to know the cathode
+        ray particles' velocity in order to figure out their
+        acceleration. At that point, however, nobody had even an
+        educated guess as to the speed of the cathode rays produced
+        in a given vacuum tube. The beam appeared to leap across the
+        vacuum tube practically instantaneously, so it was no simple
+        matter of timing it with a stopwatch!
+
+        Thomson's clever solution was to observe the effect of both
+        electric and magnetic forces on the beam. The magnetic force
+        exerted by a particular magnet would depend on both the
+        cathode ray's charge and its speed:
+        \begin{equation*}
+                        F_{mag}        =      qvB
+        \end{equation*}
+
+        Thomson played with the electric and magnetic forces until
+        either one would produce an equal effect on the beam,
+        allowing him to solve for the speed,
+
+        \begin{equation*}
+                        v    =     \frac{E}{B}\eqquad.  
+        \end{equation*}
+
+        Knowing the speed (which was on the order of 10\% of the
+        speed of light for his setup), he was able to find the
+        acceleration and thus the mass-to-charge ratio $m/q$.
+        Thomson's techniques were relatively crude (or perhaps more
+        charitably we could say that they stretched the state of the
+        art of the time), so with various methods he came up with
+        $m/q$ values that ranged over about a factor of two, even
+        for cathode rays extracted from a cathode made of a single
+        material. The best modern value is
+        $m/q=5.69\times10^{-12}$ kg/C, which is consistent with the low
+        end of Thomson's range.
+
+  <% end_sec('thompson-experiment') %>
+  <% begin_sec("The cathode ray as a subatomic particle: the electron",nil,'cathode-rays-are-subatomic') %>\index{electron}
+        What was significant about Thomson's experiment was not the
+        actual numerical value of $m/q$, however, so much as the
+        fact that, combined with Millikan's value of the fundamental
+        charge, it gave a mass for the cathode ray particles that
+        was thousands of times smaller than the mass of even the
+        lightest atoms. Even without Millikan's results, which were
+        14 years in the future, Thomson recognized that the cathode
+        rays' $m/q$ was thousands of times smaller than the
+        $m/q$ ratios that had been measured for electrically charged
+        atoms in chemical solutions. He correctly interpreted this
+        as evidence that the cathode rays were smaller building
+        blocks --- he called them \emph{electrons} --- out of which
+        atoms themselves were formed. This was an extremely radical
+        claim, coming at a time when atoms had not yet been proven
+        to exist! Even those who used the word ``atom'' often
+        considered them no more than mathematical abstractions, not
+        literal objects. The idea of searching for structure inside
+        of ``unsplittable'' atoms was seen by some as lunacy, but
+        within ten years Thomson's ideas had been amply verified by
+        many more detailed experiments.
+
+
+\startdqs
+
+\begin{dq}
+        Thomson started to become convinced during his experiments
+        that the ``cathode rays'' observed coming from the cathodes
+        of vacuum tubes were building blocks of atoms --- what we
+        now call electrons. He then carried out observations with
+        cathodes made of a variety of metals, and found that $m/q$
+        was roughly the same in every case, considering his limited
+        accuracy. Given his suspicion, why did it make sense to try
+        different metals? How would the consistent values of $m/q$
+        test his hypothesis?
+\end{dq}
+ %
+\begin{dq}
+        My students have frequently asked whether the $m/q$ that
+        Thomson measured was the value for a single electron, or for
+        the whole beam. Can you answer this question?
+\end{dq}
+ %
+\begin{dq}
+        Thomson found that the $m/q$ of an electron was thousands
+        of times smaller than that of charged atoms in chemical
+        solutions. Would this imply that the electrons had more
+        charge? Less mass? Would there be no way to tell? Explain.
+        Remember that Millikan's results were still many years in
+        the future, so $q$ was unknown.
+\end{dq}
+ %
+\begin{dq}
+        Can you guess any practical reason why Thomson couldn't
+        just let one electron fly across the gap before disconnecting
+        the battery and turning off the beam, and then measure the
+        amount of charge deposited on the anode, thus allowing him
+        to measure the charge of a single electron directly?
+\end{dq}
+ %
+\begin{dq}
+        Why is it not possible to determine $m$ and $q$
+        themselves, rather than just their ratio, by observing
+        electrons' motion in electric and magnetic fields?
+\end{dq}
+
+ %%----------------------------------------------
+  <% end_sec('cathode-rays-are-subatomic') %>
+  <% begin_sec("The raisin cookie model",nil,'raisin-cookie') %>
+        Based on his experiments, Thomson proposed a picture of the
+        atom which became known as the \index{atom!raisin-cookie
+        model of}\index{raisin cookie model}raisin cookie model.
+        In the neutral atom, \ref{fig:raisincookie}, there are four
+        electrons with a total charge of $-4e$, sitting in a sphere
+        (the ``cookie'') with a charge of $+4e$ spread throughout
+        it. It was known that chemical reactions could not change
+        one element into another, so in Thomson's scenario, each
+        element's cookie sphere had a permanently fixed radius,
+        mass, and positive charge, different from those of other
+        elements. The electrons, however, were not a permanent
+        feature of the atom, and could be tacked on or pulled out to
+        make charged ions. Although we now know, for instance, that
+        a neutral atom with four electrons is the element beryllium,
+        scientists at the time did not know how many electrons the
+        various neutral atoms possessed.
+<% marg(0) %>
+<%
+  fig(
+    'raisincookie',
+    %q{%
+      The raisin cookie model of the atom with four units of charge,
+              which we now know to be beryllium.
+    }
+  )
+%>
+<% end_marg %>
+
+        This model is clearly different from the one you've learned
+        in grade school or through popular culture, where the
+        positive charge is concentrated in a tiny nucleus at the
+        atom's center. An equally important change in ideas about
+        the atom has been the realization that atoms and their
+        constituent subatomic particles behave entirely differently
+        from objects on the human scale. For instance, we'll see
+        later that an electron can be in more than one place at one
+        time. The raisin cookie model was part of a long tradition
+        of attempts to make mechanical models of phenomena, and
+        Thomson and his contemporaries never questioned the
+        appropriateness of building a mental model of an atom as a
+        machine with little parts inside. Today, mechanical models
+        of atoms are still used (for instance the tinker-toy-style
+        molecular modeling kits like the ones used by Watson and
+        Crick to figure out the double helix structure of DNA), but
+        scientists realize that the physical objects are only aids
+        to help our brains' symbolic and visual processes think about atoms.
+
+        Although there was no clear-cut experimental evidence for
+        many of the details of the raisin cookie model, physicists
+        went ahead and started working out its implications. For
+        instance, suppose you had a four-electron atom. All four
+        electrons would be repelling each other, but they would also
+        all be attracted toward the center of the ``cookie'' sphere.
+        The result should be some kind of stable, symmetric
+        arrangement in which all the forces canceled out. People
+        sufficiently clever with math soon showed that the electrons
+        in a four-electron atom should settle down at the vertices
+        of a pyramid with one less side than the Egyptian kind, i.e.,
+        a regular tetrahedron. This deduction turns out to be wrong
+        because it was based on incorrect features of the model, but
+        the model also had many successes, a few of which we will now discuss.
+
+\begin{eg}{Flow of electrical charge in wires}
+                One of my former students was the son of an electrician, and
+        had become an electrician himself. He related to me how his
+        father had remained refused to believe all his life that
+        electrons really flowed through wires. If they had, he
+        reasoned, the metal would have gradually become more and
+        more damaged, eventually crumbling to dust.
+
+                His opinion is not at all unreasonable based on the fact
+        that electrons are material particles, and that matter
+        cannot normally pass through matter without making a hole
+        through it. Nineteenth-century physicists would have shared
+        his objection to a charged-particle model of the flow of
+        electrical charge. In the raisin-cookie model, however,
+        the electrons are very low in mass, and therefore presumably
+        very small in size as well. It is not surprising that they
+        can slip between the atoms without damaging them.
+\end{eg}
+\begin{eg}{Flow of electrical charge across cell membranes}
+                Your nervous system is based on signals carried by charge
+        moving from nerve cell to nerve cell. Your body is
+        essentially all liquid, and atoms in a liquid are mobile.
+        This means that, unlike the case of charge flowing in a
+        solid wire, entire charged atoms can flow in your nervous system
+\end{eg}
+
+\begin{eg}{Emission of electrons in a cathode ray tube}
+                Why do electrons detach themselves from the cathode of a
+        vacuum tube? Certainly they are encouraged to do so by the
+        repulsion of the negative charge placed on the cathode and
+        the attraction from the net positive charge of the anode,
+        but these are not strong enough to rip electrons out of
+        atoms by main force --- if they were, then the entire
+        apparatus would have been instantly vaporized as every atom
+        was simultaneously ripped apart!
+
+                The raisin cookie model leads to a simple explanation. We
+        know that heat is the energy of random motion of atoms. The
+        atoms in any object are therefore violently jostling each
+        other all the time, and a few of these collisions are
+        violent enough to knock electrons out of atoms. If this
+        occurs near the surface of a solid object, the electron may
+        can come loose. Ordinarily, however, this loss of electrons
+        is a self-limiting process; the loss of electrons leaves the
+        object with a net positive charge, which attracts the lost
+        sheep home to the fold. (For objects immersed in air rather
+        than vacuum, there will also be a balanced exchange of
+        electrons between the air and the object.)
+
+                This interpretation explains the warm and friendly yellow
+        glow of the vacuum tubes in an antique radio. To encourage
+        the emission of electrons from the vacuum tubes' cathodes,
+        the cathodes are intentionally warmed up with little heater coils.
+\end{eg}
+
+
+\startdqs
+
+\begin{dq}
+        Today many people would define an ion as an atom (or
+        molecule) with missing electrons or extra electrons added
+        on. How would people have defined the word ``ion'' before
+        the discovery of the electron?
+\end{dq}
+ %
+\begin{dq}
+        Since electrically neutral atoms were known to exist,
+        there had to be positively charged subatomic stuff to cancel
+        out the negatively charged electrons in an atom. Based on
+        the state of knowledge immediately after the Millikan and
+        Thomson experiments, was it possible that the positively
+        charged stuff had an unquantized amount of charge? Could it
+        be quantized in units of +e? In units of +2e? In units of +5/7e?
+\end{dq}
+
+  <% end_sec('raisin-cookie') %> % The raisin cookie model
+<% end_sec('electron') %> % The electron
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__incl(text/nucleus)
+__incl(text/biological_effects_of_radiation)
+__incl(text/nucleosynthesis)
+marg(m4_ifelse(__lm,1,[::],[:<% end_sec('nucleus') %>:]))
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+<% begin_sec("Relativistic mass and energy",nil,'reldynamics') %>
+The radioactive decay processes described in this chapter do not conserve mass.
+For example, you're probably reading this in a building that has smoke detectors
+containing the isotope $^{241}\zu{Am}$, an alpha emitter. The decay products are
+a helium atom plus an atom of $^{237}\zu{Np}$. In units of $10^{-27}\ \kgunit$,
+the masses involved are:
+
+\noindent\begin{tabular}{lr}
+  $^{241}\zu{Am}$ & 400.28421 \\
+  $^{237}\zu{Np}$ & 393.62768 \\
+  $^4\zu{He}$     & 6.64647
+\end{tabular}
+
+The final state has a total mass of 400.27415 of these units, meaning a loss of
+0.01006. This is an example of Einstein's famous $E=mc^2$ at work: some mass has
+been converted into energy. In fact this type of mass-energy conversion is not
+just a property of nuclear decay. It is an example of a much wider set of
+phenomena in relativity. Let's see how quantities like mass, force, momentum,
+and energy behave relativistically.
+
+  <% begin_sec("Momentum",nil,'rel-momentum') %>\index{momentum!relativistic}
+Consider the following scheme for traveling faster than the speed of light.
+The basic idea can be demonstrated by dropping a ping-pong ball and a baseball
+stacked on top of each other like a snowman. They separate slightly in mid-air,
+and the baseball therefore has time to hit the floor and rebound before it
+collides with the ping-pong ball, which is still on the way down. The result is
+a surprise if you haven't seen it before: the ping-pong ball flies off at high
+speed and hits the ceiling! A similar fact is known to people who investigate the
+scenes of accidents involving pedestrians. If a car moving at 90 kilometers per
+hour hits a pedestrian, the pedestrian flies off at nearly double that speed, 180
+kilometers per hour. Now suppose the car was moving at 90 percent of the speed of
+light. Would the pedestrian fly off at 180\% of $c$?
+
+\vspace{15mm}
+
+To see why not, we have to back up a little and think about where this speed-doubling
+result comes from. 
+For any collision, there is a special frame of reference, the center-of-mass frame,
+in which the two colliding objects approach each other,
+collide, and rebound with their velocities reversed. In the center-of-mass frame,
+the total momentum of the objects is zero both before and after the collision.
+
+<%
+  fig(
+    'unequalcollision',
+    %q{%
+      An unequal collision, viewed in the center-of-mass frame, 1, and
+      in the frame where the small ball is initially at rest, 2. The motion is shown as it
+      would appear on the film of an old-fashioned movie camera, with an equal amount of time separating
+      each frame from the next. Film 1 was made by a camera that tracked the center of mass, film 2 by
+      one that was initially tracking the small ball, and kept on moving at the same speed after the collision.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \subfigref{unequalcollision}{1} shows such a frame of reference for objects of very unequal mass.
+Before the collision, the large ball is moving relatively slowly toward the top of the page, but
+because of its greater mass, its momentum cancels the momentum of the smaller ball, which is
+moving rapidly in the opposite direction. The total momentum is zero. After the collision, the
+two balls just reverse their directions of motion. We know that this is the
+right result for the outcome of the collision because
+it conserves both momentum and kinetic energy, and everything not forbidden is compulsory, i.e.,
+in any experiment, there is only one possible outcome, which is the one that obeys all the
+conservation laws.
+
+<% self_check('unequalcollisioncons',<<-'SELF_CHECK'
+How do we know that momentum and kinetic energy are conserved
+in figure \subfigref{unequalcollision}{1}?
+  SELF_CHECK
+  ) %>
+
+Let's make up some numbers as an example. Say the small ball is 1 kg, the big
+one 6 kg. In frame 1, let's make the velocities as follows:
+
+<% if is_print then
+print %q(
+\\newcommand{\\smallvelocitytable}[6]{%
+\\noindent\\hspace{5mm}\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
+\\hline
+ & before the collision
+       & after the collision  \\\\
+\\hline
+\\anonymousinlinefig{#5} & #1 & #2  \\\\
+\\anonymousinlinefig{#6} & #3 & #4  \\\\
+\\hline
+\\end{tabular}
+}
+)
+end
+%>
+
+<%
+def small_vel_table(a,b,c,d)
+if is_print then
+  return "\\smallvelocitytable{#{a}}{#{b}}{#{c}}{#{d}}{../../../share/relativity/figs/smallball}{../../../share/relativity/figs/bigball}"
+end
+if is_web then
+return %Q(
+\\noindent\\begin{tabular}{|p{4mm}|p{40mm}|p{40mm}|}
+\\hline
+ & before the collision
+       & after the collision  \\\\
+\\hline
+small ball & #{a} & #{b}  \\\\
+big ball & #{c} & #{d}  \\\\
+\\hline
+\\end{tabular}
+)
+end
+end
+%>
+
+<% print small_vel_table(-0.6,0.6,0.1,-0.1) %>
+
+Figure \subfigref{unequalcollision}{2} shows the same collision in a frame of reference where
+the small ball was initially at rest.
+ To find all the velocities in this frame, we
+just add 0.6 to all the ones in the previous table.
+
+<% print small_vel_table(0,1.2,0.7,0.5) %>
+
+\noindent In this frame, as expected, the small ball flies off with a velocity, 1.2, that
+is almost twice the initial velocity of the big ball, 0.7. In this example the ratio of the
+two balls' masses was 6, but if the ratio of the masses is made larger and larger, the ratio
+of the velocities gets closer and closer to 2.
+
+If all those velocities were in meters per second, then that's exactly what would happen. But
+what if all these velocities were in units of the speed of light? Now it's no longer a good
+approximation just to add velocities. We need to combine them according to the relativistic
+rules. For instance,  in problem \ref{hw:six-tenths-c-twice}
+on p.~\pageref{hw:six-tenths-c-twice} you showed that
+combining a velocity of 0.6 times the
+speed of light with another velocity of 0.6 results in 0.88, not 1.2. The results are very different:
+
+<% print small_vel_table(0,0.88,0.67,0.51) %>
+
+% initial velocities in cm = 0.600, .124
+
+<%
+  fig(
+    'unequalrel',
+    %q{%
+      A 6-kg ball moving at 88\% of the speed of light hits a 1-kg ball. The balls
+      appear foreshortened due to the relativistic distortion of space.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+We can interpret this as follows. Figure \subfigref{unequalcollision}{1} is one in which the
+big ball is moving fairly slowly. This is very nearly the way the scene would be seen by an
+ant standing on the big ball. According to an observer in frame \figref{unequalrel}, however,
+both balls are moving at nearly the speed of light after the collision. Because of this, the
+balls appear foreshortened, but the distance between the two balls is also shortened. To this
+observer, it seems that the small ball isn't pulling away from the big ball very fast.
+
+Now here's what's interesting about all this. The outcome shown in figure \subfigref{unequalcollision}{2}
+was supposed to be the only one possible, the only one that satisfied both conservation of energy
+and conservation of momentum. So how can the \emph{different} result shown in figure
+\figref{unequalrel} be possible? The answer is that relativistically, momentum must not equal
+$mv$. The old, familiar definition is only an approximation that's valid at low speeds. If
+we observe the behavior of the small ball in figure \figref{unequalrel}, it looks as though it
+somehow had some extra inertia. It's as though a football player tried to knock another player
+down without realizing that the other guy had a three-hundred-pound bag full of lead shot
+hidden under his uniform --- he just doesn't seem to react to the collision as much as he should.
+This extra inertia is described\footnote{See p.~\pageref{rel-momentum-proof} for a proof.} by redefining momentum as
+\begin{equation*}
+        p = m \mygamma v\eqquad.
+\end{equation*}
+At very low velocities, $\mygamma$ is close to 1, and the result is very nearly $mv$, as demanded
+by the correspondence principle. But at very high velocities, $\mygamma$ gets very big --- the
+small ball in figure \figref{unequalrel} has a $\mygamma$ of 2.1, and therefore has more than double
+the inertia that we would expect nonrelativistically.\index{correspondence principle!for relativistic momentum}
+
+This also explains the answer to another paradox often posed by beginners at relativity.
+Suppose you keep on applying a steady force to an object that's already moving at $0.9999c$.
+Why doesn't it just keep on speeding up past $c$? The answer is that force is the rate of
+change of momentum. At $0.9999c$, an object already has a $\mygamma$ of 71, and therefore
+has already sucked up 71 times the momentum you'd expect at that speed. As its velocity gets closer and
+closer to $c$, its $\mygamma$ approaches infinity. To move at $c$, it would need an infinite
+momentum, which could only be caused by an infinite force.
+
+m4_include(../share/relativity/eg/bertozzi.tex)
+
+Figure \figref{relativistic-momentum-tests} shows experimental data confirming the relativistic
+equation for momentum.
+
+<% marg(300) %>
+<%
+  fig(
+    'relativistic-momentum-tests',
+    %q{Two early high-precision tests of the relativistic equation $p=m\mygamma v$ for momentum.
+       Graphing $p/m$ rather than $p$ allows the data for electrons and protons to be placed on the same graph.
+       Natural units are used, so that the horizontal axis is the velocity in units of $c$, and
+       the vertical axis is the unitless quantity $p/mc$. The very small error bars for the data point from
+       Zrelov are represented by the height of the black rectangle.
+       }
+  )
+%>
+<% end_marg %>
+
+
+  <% end_sec('rel-momentum') %>
+  <% begin_sec("Equivalence of mass and energy",nil,'mass-energy') %>\index{energy!equivalence to mass}\index{mass!equivalence to energy}\label{mass-energy-equivalence}
+Now we're ready to see why mass and energy must be equivalent as claimed
+in the famous $E=mc^2$. So far we've only considered collisions
+in which none of the kinetic energy is converted into any other form
+of energy, such as heat or sound.
+Let's consider what happens if a blob of putty moving at
+velocity $v$ hits another blob that is initially at rest,
+sticking to it.  The nonrelativistic result is
+that to obey conservation of momentum the two blobs must fly
+off together at $v/2$. Half of the initial kinetic energy
+has been converted to heat.\footnote{A double-mass object moving
+at half the speed does not have the same kinetic energy. Kinetic
+energy depends on the square of the velocity, so cutting the velocity
+in half reduces the energy by a factor of 1/4, which, multiplied
+by the doubled mass, makes 1/2 the original energy.}
+
+Relativistically, however, an interesting thing happens. A
+hot object has more momentum than a cold object! This is
+because the relativistically correct expression for momentum
+is $m\mygamma v$, and the more rapidly moving atoms in the hot
+object have higher values of $\mygamma$.
+In our collision, the final combined blob must therefore be
+moving a little more slowly than the expected $v/2$, since
+otherwise the final momentum would have been a little
+greater than the initial momentum. To an observer who
+believes in conservation of momentum and knows only about
+the overall motion of the objects and not about their heat
+content, the low velocity after the collision would seem
+to be the result of a magical change in the mass, as if the mass
+of two combined, hot blobs of putty was more than the sum of
+their individual masses.
+
+We know that the masses of all the atoms in the blobs
+must be the same as they always were. The change is due to
+the change in $\mygamma$ with heating, not to a change in mass.
+The heat energy, however, seems to be acting as if it was
+equivalent to some extra mass. If the quantity of heat is $E$, then
+it turns out that the extra mass $m$ is such that $E=mc^2$ (proof, p.~\pageref{rel-energy-proof}).
+
+
+But this whole argument was based on the fact that heat is a
+form of kinetic energy at the atomic level. Would $E=mc^2$
+apply to other forms of energy as well? Suppose a rocket
+ship contains some electrical energy stored in a
+battery. If we believed that $E=mc^2$ applied to forms of
+kinetic energy but not to electrical energy, then
+we would have to believe that the pilot of the rocket could
+slow the ship down by using the battery to run a heater!
+This would not only be strange, but it would violate the
+principle of relativity, because the result of the
+experiment would be different depending on whether the ship
+was at rest or not. The only logical conclusion is that all
+forms of energy are equivalent to mass. Running the heater
+then has no effect on the motion of the ship, because the
+total energy in the ship was unchanged; one form of energy (electrical)
+was simply converted to another (heat).
+
+The equation $E=mc^2$
+tells us how much energy is equivalent to how much mass: the conversion factor is the square
+of the speed of light, $c$. Since $c$ a big number, you get a really really big number
+when you multiply it by itself to get $c^2$. This means that even a small amount of mass
+is equivalent to a very large amount of energy. 
+<% marg(-90) %>
+<%
+  fig(
+    'newspaper-eclipse',
+    %q{%
+      A New York Times headline from November 10, 1919, describing
+      the observations discussed in example \ref{eg:eclipse}.
+    }
+  )
+%>
+<% end_marg %>
+
+<%
+  fig(
+    'eclipse',
+    %q{Example \ref{eg:eclipse}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\begin{eg}{Gravity bending light}\label{eg:eclipse}
+Gravity is a universal attraction between things that have mass, and since the energy
+in a beam of light is equivalent to some very small amount of mass, we expect that
+light will be affected by gravity, although the effect should be very small.
+The first important experimental confirmation of relativity
+came in 1919 when stars next to the sun during a solar eclipse were
+observed to have shifted a little from their ordinary
+position. (If there was no eclipse, the glare of the sun
+would prevent the stars from being observed.) Starlight had
+been deflected by the sun's gravity. Figure \figref{eclipse} is a
+photographic negative, so the circle that appears bright is actually the
+dark face of the moon, and the dark area is really the bright corona of
+the sun. The stars, marked by lines above and below them, appeared at
+positions slightly different than their normal ones.
+\end{eg}
+
+\begin{eg}{Black holes}\index{black hole}
+A star with sufficiently strong gravity can prevent light
+from leaving. Quite a few black holes have been detected via
+their gravitational forces on neighboring stars or clouds of gas and dust.
+\end{eg}
+
+
+You've learned about conservation of mass and conservation of energy, but
+now we see that they're not even separate conservation laws.
+As a consequence of the theory of relativity,  mass and energy are equivalent, and
+are not separately conserved --- one can be converted into the other. Imagine that
+a magician waves his wand, and changes a bowl of dirt into a bowl of lettuce. You'd be
+impressed, because you were expecting that both dirt and lettuce would be conserved
+quantities. Neither one can be made to vanish, or to appear out of thin air. However,
+there are processes that can change one into the other. A farmer changes dirt into
+lettuce, and a compost heap changes lettuce into dirt. At the most fundamental
+level, lettuce and dirt aren't really different things at all; they're just collections
+of the same kinds of atoms --- carbon, hydrogen, and so on.
+Because mass and energy are like two different sides of the same coin, we may speak of
+mass-energy, a single conserved quantity, found by adding up all the mass and energy,
+with the appropriate conversion factor: $E+mc^2$.\index{mass-energy!conservation of}
+
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 0.5 MJ. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 0.5 MJ. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light is
+$c=3\times10^8$ meters per second, so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
+                         &=    6\times10^{-12}\  \text{kilograms}\eqquad.
+\end{align*}
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number.
+\end{eg}
+
+\begin{eg}{Electron-positron annihilation}\index{positron}
+Natural radioactivity in the earth produces positrons, which are like electrons but have the
+opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
+rays, a form of high-frequency light. Such a process would have been considered impossible
+before Einstein, because conservation of mass and energy were believed to be separate
+principles, and this process eliminates 100\% of the original mass. The amount of energy
+produced by annihilating 1 kg of matter with 1 kg of antimatter is
+\begin{align*}
+ E &= mc^2\\
+   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
+   &= 2\times10^{17}\ \junit\eqquad,
+\end{align*}
+which is on the same order of magnitude as a day's energy consumption for the
+entire world's population!
+
+Positron annihilation forms the basis for the medical imaging technique called
+a PET (positron emission tomography) scan, in which a positron-emitting chemical
+is injected into the patient and map\-ped by the emission of gamma rays from the parts
+of the body where it accumulates.
+\end{eg}
+<% marg(140) %>
+<%
+  fig(
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
+  )
+%>
+<% end_marg %>
+
+One commonly hears some misinterpretations of $E=mc^2$, one being that the equation tells us
+how much kinetic energy an object would have if it was moving at the speed of light. This
+wouldn't make much sense, both because the equation for kinetic energy has $1/2$ in it, $KE=(1/2)mv^2$, and
+because a material object can't be made to move at the speed of light. However, this naturally leads to the
+question of just how much mass-energy a moving object has. We know that when the object is at rest, it
+has no kinetic energy, so its mass-energy is simply equal to the energy-equivalent of its mass, $mc^2$,
+\begin{equation*}
+  \massenergy = mc^2 \ \text{when}\ v=0\eqquad,
+\end{equation*}
+where the symbol $\massenergy$ (cursive ``E'') stands for mass-energy. The point of using the new symbol is simply
+to remind ourselves that we're talking about relativity, so an object at rest has $\massenergy=mc^2$, not
+$E=0$ as we'd assume in classical physics.
+
+Suppose we start accelerating the object with a constant force. A constant force means a constant
+rate of transfer of momentum, but $p=m\mygamma v$ approaches infinity as $v$ approaches $c$, so the object
+will only get closer and closer to the speed of light, but never reach it. Now what about the work being
+done by the force? The force keeps doing work and doing work, which means that we keep on using up
+energy. Mass-energy is conserved, so the energy being expended must equal the increase in the object's
+mass-energy. We can continue this process for as long as we like, and the amount of mass-energy
+will increase without limit. We therefore conclude that an object's mass-energy approaches infinity
+as its speed approaches the speed of light,
+\begin{equation*}
+  \massenergy \rightarrow \infty\ \text{when}\ v \rightarrow c\eqquad.
+\end{equation*}
+
+\index{mass-energy!of a moving particle}
+Now that we have some idea what to expect, what is the actual equation for the mass-energy? 
+As proved in my book \emph{Simple Nature}, it is
+\begin{equation*}
+  \massenergy =m\mygamma c^2\eqquad.
+\end{equation*}
+
+<% self_check('mass-energy',<<-'SELF_CHECK'
+Verify that this equation has the two properties we wanted.
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{KE compared to $mc^2$ at low speeds}\label{eg:massenergy-low-speed}
+\egquestion An object is moving at ordinary nonrelativistic speeds. Compare its
+kinetic energy to the energy $mc^2$ it has purely because of its mass.
+
+\eganswer The speed of light is a very big number, so $mc^2$ is a huge number of
+joules. The object has a gigantic amount of energy because of its mass, and only
+a relatively small amount of additional kinetic energy because of its motion.
+
+Another way of seeing this is that at low speeds, $\mygamma$ is only a tiny bit
+greater than 1, so $\massenergy$ is only a tiny bit greater than $mc^2$.
+\end{eg}
+
+\begin{eg}{The correspondence principle for mass-energy}\index{mass-energy!correspondence principle}\index{correspondence principle!for mass-energy}
+\egquestion Show that the equation $\massenergy=m\mygamma c^2$ obeys the correspondence principle.
+
+\eganswer As we accelerate an object from rest, its mass-energy becomes greater than
+its resting value. We interpret this excess mass-energy as the object's
+kinetic energy,
+\begin{align*}
+  KE   &= \massenergy(v)-\massenergy(v=0) \\
+       &= m\mygamma c^2 - m c^2 \\
+       &= m(\mygamma-1)c^2\eqquad.
+\end{align*}
+In example \ref{eg:gamma-for-low-v} on page \pageref{eg:gamma-for-low-v}, we found
+$\mygamma\approx 1+v^2/2c^2$, so
+\begin{align*}
+  KE   &\approx m(1+\frac{v^2}{2c^2}-1)c^2 \\
+       &= \frac{1}{2}mv^2\eqquad,
+\end{align*}
+which is the nonrelativistic expression. As demanded by the correspondence principle,
+relativity agrees with nonrelativistic physics at speeds that are small compared to
+the speed of light.
+\end{eg}
+
+  <% end_sec('mass-energy') %>
+<% end_sec('reldynamics') %> % Relativistic mass and energy
+
+<% begin_sec("Proofs",nil,'rel-p-and-e-proofs',{'optional'=>true}) %>
+In section \ref{sec:reldynamics} I gave physical arguments to the effect that relativistic momentum should be greater than
+$mv$ and that an energy $E$ should be equivalent relativistically to some amount of mass $m$.
+In this section I'll prove that the relativistic equations are as claimed: $p=m\mygamma v$ and $E=mc^2$.
+The structure of the proofs is essentially the same as in two famous 1905 papers by Einstein,
+``On the electrodynamics of moving bodies'' and ``Does the inertia of a body depend upon its energy content?''
+If you're interested in reading these arguments as Einstein originally wrote them, you can find English
+translations at \verb@www.fourmilab.ch@. We start off by proving two preliminary results relating
+to Doppler shifts.
+
+  <% begin_sec("Transformation of the fields in a light wave",nil,'eb-lorentz') %>
+On p.~\pageref{subsec:doppler-light} I showed that when a light wave is observed in two different frames
+in different states of motion parallel to the wave's direction of motion, the frequency is observed to
+be Doppler-shifted by a factor $D(v)=\sqrt{(1-v)/(1+v)}$, where $c=1$ and $v$ is the relative velocity of the two frames. 
+But a change in frequency is not the only change we expect. We also expect the \emph{intensity} of the wave to
+change, since a combination of electric and magnetic fields
+observed in one frame of reference becomes some other set of fields in a different frame (p.~\pageref{relativity-requires-magnetism}).
+There are equations that express this transformation from $\vc{E}$ and $\vc{B}$ to $\vc{E}'$ and $\vc{B}'$, but they're
+a little complicated, so instead we'll just determine what happens in the special case of an electromagnetic wave.
+
+Since the transformation of $\vc{E}$ and $\vc{B}$ to $\vc{E}'$ and $\vc{B}'$ is a universal thing, we're free to
+imagine that the wave was created in any way we wish. 
+Suppose that it was created by a uniform sheet of charge in the $x$-$y$ plane, oscillating in the $y$ direction with
+amplitude $A$ and frequency $f$.
+This will clearly produce electromagnetic waves propagating in the $+z$ and $-z$ directions, and
+by an argument similar to that of problem \ref{hw:field-of-sheet-by-scaling} on p.~\pageref{hw:field-of-sheet-by-scaling},
+we know that these waves' intensity will not fall off at all with distance from the sheet. Since magnetic fields are produced
+by currents, and the currents produced by the motion of the sheet are proportional to $Af$, the amplitude of the magnetic field in the
+wave is proportional to $Af$. The oscillating magnetic field induces an electric field, and since electromagnetic waves always have
+$E=Bc$, the oscillating part of the electric field is also proportional of $Af$.
+
+An observer moving away from the sheet sees a sheet that is both oscillating more slowly ($f$ is Doppler-shifted to $fD$)
+and receding. But the recession has no effect, because the fields don't fall off with distance. Also, $A$ stays the
+same, because the Lorentz transformation has no effect on lengths perpendicular to the relative motion of the two frames.
+Since the fields are proportional to $Af$, the fields seen by the receding observer are attenuated by a factor of $D$.
+  <% end_sec('eb-lorentz') %> % Transformation of the fields in a light wave
+  <% begin_sec("Transformation of the volume of a light wave",nil,'em-vol-transformation') %>
+Since the fields in an electromagnetic wave are changed by a factor of $D$ when we change frames, we might expect that the wave's energy
+would change by a factor of $D^2$. But the square of the field only gives the energy per unit volume, and the volume
+changes as well. The following argument shows that the volume increases by a factor of $1/D$.
+
+If an electromagnetic wave-train has duration $\Delta t$, we already know that its duration changes by a factor of $1/D$ when we change to a different
+frame of reference. But the speed of light is the same for all observers, so if the length of the wave-train is
+$\Delta z$, all observers must agree on the value of $\Delta z/\Delta t$, and $1/D$ must also be the factor 
+by which $\Delta z$ scales up.\footnote{At first glance, one might think that this length-scaling factor would simply be $\mygamma$, and
+that the volume would be reduced rather than increased.
+But $\mygamma$ is only the scale-down factor for the length of a thing compared to that thing's length in a frame where it is
+at rest. Light waves don't have a frame in which they're at rest. One can also see this from 
+the geometry of figure \figref{doppler-geometry} on p.~\pageref{fig:doppler-geometry}.
+The diagram is completely symmetric with respect to its treatment of time and space, so if we flip it
+across its diagonal, interchanging the roles of $z$ and $t$, we obtain the same result for the wave-train's spatial extent $\Delta z$.}
+Since the Lorentz transformation doesn't change $\Delta x$ or $\Delta y$, the volume of the wave-train is also increased by
+a factor of $1/D$.
+
+
+  <% end_sec('em-vol-transformation') %> % Transformation of the volume of a light wave
+  <% begin_sec("Transformation of the energy of a light wave",nil,'doppler-energy') %>\label{light-wave-energy-doppler}
+Combining the two preceding results, we find that when we change frames of reference, the energy \emph{density} (per unit volume) of a light
+wave changes by a factor of $D^2$, but the volume changes by $1/D$, so the result is that the wave's energy changes by a factor of $D$.
+In Einstein's words, ``It is remarkable that the energy and the frequency of a [wave-train] vary with the state of motion of the observer in accordance with the same law,''
+i.e., that both scale by the same factor $D$. Einstein had a reason to be especially interested in this fact. In the same
+``miracle year'' of 1905, he also published a paper in which he hypothesized that light had both particle and wave properties,
+with the energy $E$ of a light-particle related to the frequency $f$ of the corresponding light-wave by $E=hf$, where $h$ was a constant. (More
+about this in ch.~\ref{ch:light-as-a-particle}.)
+If $E$ and $f$ had not both scaled by the same factor, then the relation $E=hf$ could not have held in all frames of reference.
+  <% end_sec('doppler-energy') %> % Transformation of the energy of a light wave
+  <% begin_sec("$E=mc^2$",nil,'rel-energy-proof') %>\label{rel-energy-proof}
+Suppose that a material object O, initially at rest, emits two light rays, each with energy $E$, in the $+z$ and $-z$ directions. O could be a lantern with windows
+on opposite sides, or it could be an electron and an antielectron annihilating each other to produce a pair of gamma rays.
+In this frame, O loses energy $2E$ and the light rays gain $2E$, so energy is conserved.
+
+We now switch to a new frame of reference moving at a certain velocity $v$ in the $z$ direction relative to the original frame.
+We assume that O's energy is different in this frame, but that the change in its energy amounts to multiplication by some unitless factor $x$,
+which depends only on $v$, since there is nothing else it could depend on that could allow us to form a unitless quantity. In this frame the light rays have energies $ED(v)$ and
+$ED(-v)$. If conservation of energy is to hold in the new frame as it did in the old, we must have $2xE=ED(v)+ED(-v)$.
+After some algebra, we find $x=1/\sqrt{1-v^2}$. In other words, an object with energy $E$ in its rest frame
+has energy $\mygamma E$ in a frame moving at velocity $v$ relative to the first one. Since $\mygamma$ is never zero,
+it follows that even an object at rest has some nonzero energy. We define this energy-at-rest as its mass,
+i.e., $E=m$ in units where $c=1$.
+<% end_sec('rel-energy-proof') %>
+<% begin_sec("$P=m\\mygamma v$",nil,'rel-momentum-proof') %>\label{rel-momentum-proof}
+Defining an object's energy-at-rest as its mass only works if this same mass is also a valid measure of inertia.
+More specifically, we should be able to use this mass
+to construct a self-consistent logical system in which (1) momentum is conserved, (2) conservation of momentum
+holds in all frames of reference, and (3) $p\approx mv$ for $v<<c$, satisfying the correspondence principle.
+
+Let a material object P, at rest and having mass $2E$, be completely annihilated, creating two beams of light, each with
+energy $E$, flying off in opposite directions. A real-world example would be if P consisted of an electron
+and an antielectron. As shown on p.~\pageref{fig:maxwellian-momentum-of-light}, light has momentum.
+Because beams of light can be split up or recombined without violating conservation of momentum, a light
+wave's momentum must be proportional to its energy, $|p|=yE$, where the constant of proportionality $y$ is
+found in problem \ref{hw:ultrarelativistic} on p.~\pageref{hw:ultrarelativistic} but not needed here. Let the momentum of
+a material object be $mvx$, where our goal is to prove $x=\mygamma$. In this frame of reference, $v=0$, and
+conservation of momentum follows by symmetry.
+
+We now change to a new frame of reference, moving at some speed $v$ along the line of emission of the two light rays.
+In this frame, conservation of momentum requires $2Evx=yE/D-yED$. We therefore have $vx/y=(1/D-D)/2$, which can be
+shown with a little algebra to equal $v\mygamma$. Since only $x$ can depend on $v$, not $y$, and the correspondence
+principle requires $x\approx 1$ for $v<<c$, we find that $x=\mygamma$, as claimed.
+
+Problem \ref{hw:rel-momentum-cons-frame-invariant} on p.~\pageref{hw:rel-momentum-cons-frame-invariant} checks that
+this result also works correctly for a system consisting of material particles.
+<% end_sec('rel-momentum-proof') %>
+<% end_sec('rel-p-and-e-proofs') %> % Proofs
+<% begin_sec("Two tests of Newton's third law",nil,'kreuzer',{'optional'=>true}) %>
+$E=mc^2$ states that a certain amount of energy $E$ is equivalent to a certain amount of mass $m$.
+But mass pops up in physics in several different guises:
+the mass measured
+by an object's inertia, the ``active'' gravitational mass $m_a$ that determines
+the gravitational forces it makes on other
+objects, and the ``passive'' gravitational mass $m_p$ that measures how strongly it feels
+gravity. Einstein's reason for
+predicting the same behavior for $m_a$ and $m_p$ was that anything else would have violated Newton's
+third law for gravitational
+forces.
+
+Suppose instead
+that an object's energy content contributes only to $m_p$, not to $m_a$. 
+Atomic nuclei get something like 1\% of their mass from the energy of the electric fields inside their nuclei,
+but this percentage varies with the number of protons, so if we have objects $m$ and $M$ with different chemical
+compositions, it follows that in this theory $m_p/m_a$ will not be the same as $M_p/M_a$, and in this non-Einsteinian version of relativity,
+Newton's third law is violated.
+
+This was tested in\index{Newton's laws of motion!third law!test of}
+a Princeton PhD-thesis experiment by Kreuzer\footnote{Kreuzer, Phys. Rev. 169 (1968) 1007}
+in 1966. Kreuzer carried out an experiment, figure \figref{kreuzer}, using masses made of two different substances. The first substance was teflon.
+The second substance was
+a mixture of the liquids trichloroethylene and dibromoethane, with the proportions chosen so as to give a passive-mass
+density as close as possible to that of teflon, as determined by the neutral buoyancy of the teflon masses suspended inside the liquid.
+If the active-mass densities of these substances are not strictly proportional to their passive-mass densities, then moving the chunk of
+teflon back and forth in figure \subfigref{kreuzer}{2} would change the gravitational force acting on the nearby small sphere.
+No such change was observed, and
+the results verified $m_p/m_a=M_p/M_a$ to within one part in $10^6$, in agreement with Einstein and Newton. If electrical energy had not contributed at all to
+active mass, then a violation of the third law would have been detected at the level of about one part in $10^2$.
+% my x in genrel book is deviation from unit contribution by E field to m_a; x is limited to about 10^-4, but E field only makes up only about 10^-2 of rest mass
+
+<% marg() %>
+<%
+  fig(
+    'kreuzer',
+    %q{1. A balance that measures the gravitational attraction between masses $M$ and $m$. (See section \ref{sec:weighing-the-earth} for
+          a more detailed description.) When the two masses $M$ are inserted, the fiber twists.
+       2. A simplified diagram of Kreuzer's modification. The moving teflon mass is submerged in a liquid with nearly the same density.
+       3. Kreuzer's actual apparatus.}
+  )
+%>
+<% end_marg %>
+
+
+The Kreuzer result was improved in 1986 by Bartlett and van Buren\footnote{Phys. Rev. Lett. 57 (1986) 21}
+using data gathered by bouncing laser beams off of a mirror left behind on the moon by the Apollo astronauts,
+as described p.~\pageref{sec:battat}.
+Since the moon
+has an asymmetrical distribution of iron and aluminum, a theory with $m_p/m_a \ne M_p/M_a$ would cause it to have an anomalous acceleration along
+a certain line. The lack of any such observed acceleration limits violations of
+Newton's third law to about one part in $10^{10}$.
+% not just 1/x=10^8, for same reasons as in the other comment above
+
+<% end_sec('kreuzer') %> % Two tests of Newton's third law
+\begin{summary}
+
+\begin{vocab}
+
+\vocabitem{alpha particle}{a form of radioactivity consisting of helium nuclei}
+
+\vocabitem{beta particle}{a form of radioactivity consisting of electrons}
+
+\vocabitem{gamma ray}{a form of radioactivity consisting of a very
+high-frequency form of light}
+
+\vocabitem{proton}{a positively charged particle, one of the types
+that nuclei are made of}
+
+\vocabitem{neutron}{an uncharged particle, the other types that nuclei are made of}
+
+\vocabitem{isotope}{one of the possible varieties of atoms of a given
+element, having a certain number of neutrons}
+
+\vocabitem{atomic number}{the number of protons in an atom's nucleus;
+determines what element it is}
+
+\vocabitem{atomic mass}{the mass of an atom}
+
+\vocabitem{mass number}{the number of protons plus the number of
+neutrons in a nucleus; approximately proportional to its atomic mass}
+
+\vocabitem{strong nuclear force}{the force that holds nuclei together
+against electrical repulsion}
+
+\vocabitem{weak nuclear force}{the force responsible for beta decay}
+
+\vocabitem{beta decay}{the radioactive decay of a nucleus via the
+reaction
+                $\text{n} \rightarrow \text{p} + \zu{e}^- +  \bar{\nu}$
+or
+                $\text{p} \rightarrow \text{n} + \zu{e}^+ + \nu$; so called because an electron
+or antielectron is also known as a beta particle}
+
+\vocabitem{alpha decay}{the radioactive decay of a nucleus via emission
+of an alpha particle}
+
+\vocabitem{fission}{the radioactive decay of a nucleus by splitting into two parts}
+
+\vocabitem{fusion}{a nuclear reaction in which two nuclei stick together
+to form one bigger nucleus}
+
+\vocabitem{$\mu$Sv}{a unit for measuring a person's exposure to radioactivity}
+
+\end{vocab}
+
+\begin{notation}
+\notationitem{$\text{e}^-$}{an electron}
+\notationitem{$\text{e}^+$}{an antielectron; just like an electron, but with positive charge}
+
+\notationitem{n}{a neutron}
+
+\notationitem{p}{a proton}
+
+\notationitem{$\nu$}{a neutrino}
+\notationitem{$\bar{\nu}$}{an antineutrino}
+\notationitem{$\massenergy$}{mass-energy}
+\end{notation}
+
+\pagebreak
+
+\begin{othernotation}
+
+\notationitem{$Z$}{atomic number (number of protons in a nucleus)}
+
+\notationitem{$N$}{number of neutrons in a nucleus}
+
+\notationitem{$A$}{mass number $(N+Z)$}
+
+\end{othernotation}
+
+\begin{summarytext}
+
+
+Quantization of charge: Millikan's oil drop experiment
+showed that the total charge of an object could only be an
+integer multiple of a basic unit of charge $(e)$. This
+supported the idea the the ``flow'' of electrical charge was
+the motion of tiny particles rather than the motion of some
+sort of mysterious electrical fluid.
+
+Einstein's analysis of Brownian motion was the first
+definitive proof of the existence of atoms. Thomson's
+experiments with vacuum tubes demonstrated the existence of
+a new type of microscopic particle with a very small ratio
+of mass to charge. Thomson correctly interpreted these as
+building blocks of matter even smaller than atoms: the first
+discovery of subatomic particles. These particles are called electrons.
+
+The above experimental evidence led to the first useful
+model of the interior structure of atoms, called the raisin
+ cookie model. In the raisin cookie model, an atom
+consists of a relatively large, massive, positively charged
+sphere with a certain number of negatively charged
+electrons embedded in it.
+
+Rutherford and Marsden observed that some alpha particles
+from a beam striking a thin gold foil came back at angles up
+to 180 degrees. This could not be explained in the
+then-favored raisin-cookie model of the atom, and led to
+the adoption of the planetary model of the atom, in which
+the electrons orbit a tiny, positively-charged nucleus.
+Further experiments showed that the nucleus itself was a
+cluster of positively-charged protons and uncharged neutrons.
+
+Radioactive nuclei are those that can release energy. The
+most common types of radioactivity are alpha decay (the
+emission of a helium nucleus), beta decay (the transformation
+of a neutron into a proton or vice-versa), and gamma decay
+(the emission of a type of very-high-frequency light). Stars
+are powered by nuclear fusion reactions, in which two light
+nuclei collide and form a bigger nucleus, with the release of energy.
+
+Human exposure to ionizing radiation is measured in units of
+microsieverts ($\mu$Sv). The typical person is exposed to about 2000 $\mu$Sv
+worth of natural background radiation per year.
+
+\end{summarytext}
+
+\begin{exploring}
+\begin{reading}{The First Three Minutes}{Steven Weinberg}
+This book describes the first three minutes of the universe's
+existence.
+\end{reading}
+\end{exploring}
+
+\end{summary}
+
+<% begin_hw_sec %>
+
+<% begin_hw('foodtoatoms') %>__incl(hw/foodtoatoms)<% end_hw() %>
+
+<% begin_hw('beta-decay-charge-conservation') %>__incl(hw/beta-decay-charge-conservation)<% end_hw() %>
+
+<% begin_hw('pu-decay-products') %>__incl(hw/pu-decay-products)<% end_hw() %>
+
+<% begin_hw('uelec') %>__incl(hw/uelec)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('neonaccel') %>__incl(hw/neonaccel)<% end_hw() %>
+
+<% begin_hw('hatomscancellation') %>__incl(hw/hatomscancellation)<% end_hw() %>
+
+<% marg(80) %>
+<%
+  fig(
+    'hw-cathode-ray-gun',
+    %q{Problem \ref{hw:crt-speed}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('crt-speed') %>__incl(../../share/em-dc/hw/crt-speed)<% end_hw() %>
+
+<% marg(-100) %>
+<%
+  fig(
+    'hw-tandem-accel',
+    %q{Problem \ref{hw:tandem}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('tandem') %>__incl(../../share/em-dc/hw/tandem)<% end_hw() %>    
+
+<% begin_hw('enterprise-ke') %>__incl(../../share/relativity/hw/enterprise-ke)<% end_hw() %>
+
+<% begin_hw('freeneutron') %>__incl(../../share/relativity/hw/freeneutron)<% end_hw() %>
+
+<% begin_hw('vintermsofp',2) %>__incl(../../share/relativity/hw/vintermsofp)<% end_hw() %>
+
+<% begin_hw('ultrarelativistic') %>__incl(../../share/relativity/hw/ultrarelativistic)<% end_hw() %>
+
+\enlargethispage{\baselineskip}
+
+<% begin_hw('relativity-max-tension') %>__incl(../../share/relativity/hw/relativity-max-tension)<% end_hw() %>
+
+<% begin_hw('double-voltage') %>__incl(../../share/relativity/hw/double-voltage)<% end_hw() %>
+
+<% begin_hw('rel-momentum-cons-frame-invariant',2) %>
+Problem \ref{hw:energy-frames} on p.~\pageref{hw:energy-frames} (with the solution
+given in the back of the book) demonstrates that in Newtonian mechanics, conservation of momentum is the
+necessary and sufficient condition if conservation of energy is to hold in all frames of reference. The purpose
+of this problem is to generalize that idea to relativity (in one dimension).
+
+Let a system contain two interacting particles, each with unit mass. Then if energy is conserved in a particular
+frame, we must have $\mygamma_1+\mygamma_2=\mygamma'_1+\mygamma'_2$, where the primes indicate the quantities after interaction.
+Suppose that we now change to a new frame, in motion relative to the first one at a velocity $\epsilon$ that is
+much less than 1 (in units where $c=1$).
+The velocities all change according to the result of
+problem \ref{hw:rel-vel-addition} on p.~\pageref{hw:rel-vel-addition}.
+Show that energy is conserved in the new frame if and only if momentum is conserved.
+
+Hints: (1) Since $\epsilon$ is small, you can take $1/(1+\epsilon)\approx 1-\epsilon$.
+(2) Rather than directly using the result of problem \ref{hw:rel-vel-addition}, it is easier to
+eliminate the velocities in favor of the corresponding Doppler-shift factors $D$, which simply
+multiply when the velocities are combined. (3) The identity $v\mygamma=(1/D-D)/2$ is handy here.
+<% end_hw() %>
+
+<% begin_hw('energy-to-traverse-galaxy') %>__incl(../../share/relativity/hw/energy-to-traverse-galaxy)<% end_hw() %>
+
+<% end_hw_sec %>
+
+<% begin_ex("Sports in Slowlightland","A") %>
+\noindent In Slowlightland, the speed of light is 20 mi/hr = 32 km/hr = 9 m/s. Think of an example of how
+ relativistic effects would work in sports. Things can get very complex very quickly,
+ so try to think of a simple example that focuses on just one of the following effects:
+\begin{itemize}
+\item relativistic momentum
+\item relativistic kinetic energy
+\item relativistic addition of velocities (See problem \ref{hw:rel-vel-addition}, with the answer given on p.~\pageref{soln:rel-vel-addition}.)
+\item time dilation and length contraction
+\item Doppler shifts of light (See section \ref{sec:doppler-and-clock}.)
+\item equivalence of mass and energy
+\item time it takes for light to get to an athlete's eye
+\item deflection of light rays by gravity
+\end{itemize}
+<% end_ex %>
+
+<% begin_ex("Nuclear decay","B") %>
+__incl(text/ex_chart_of_nuclei)
+<% end_ex %>
+
+<% begin_ex("Misconceptions about relativity","C") %>
+__incl(../../share/relativity/text/relativity_misconceptions)
+<% end_ex %>
+
+<% end_chapter() %>

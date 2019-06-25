@@ -1,0 +1,1668 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '02',
+    %q{Gauss's law},
+    'ch:gauss-law'
+  )
+%>
+
+<% begin_sec("Gauss's law",nil,'gauss-law') %>
+<% begin_sec("Resolving the flip-the-arrowsheads ambiguity",nil,'flip-arrowheads') %>
+Continuing the train of thought from section
+\ref{sec:energy-in-fields-and-units} and
+\notewithoutbackref{field-orientation-defined}, it would seem that by
+defining expressions for the energy density of the fields, we have
+effectively provided an operational definition for the fields,
+provided that we have some reference field somewhere that has a known
+direction. In fact, this reference field would be needed only in order
+to resolve the ambiguity that exists because we could always, e.g.,
+define some field $\vc{F}=-\vc{E}$, which is the same as the electric
+field but with the opposite direction. This would be like flipping the
+arrowheads on all of our drawings. This ``flip-the-arrowheads''
+ambiguity is entirely an arbitrary matter of definition, and for
+electric fields it was effectively fixed by Benjamin Franklin around
+1750 (although we will give a description in a form that he would
+probably not have recognized).\index{Franklin, Benjamin}
+
+<% marg() %>
+<%   
+  fig(
+    'twotapes-fields',
+    %q{1.~Place a piece of sticky tape on a tabletop, then stick another on top of it.
+       2.~Lift them off the tabletop as a unit, then separate them. The result is
+          that they attract one another.
+       3.~Interpretation of this type of experiment in terms of the fields surrounding
+          the two objects.}
+  )
+%>
+<% end_marg %>
+
+It would have been a nuisance if Franklin had had to maintain some
+physical artifact in Philadelphia that had some electric field
+surrounding it, forcing other people to come there in order to consult
+it. What he did instead was to specify a procedure that could be
+followed, using materials commonly available at the time, in order to
+reproduce his standard. His prescription was to rub a piece of amber
+with wool. (Figures \subfigref{twotapes-fields}{1} and
+\subfigref{twotapes-fields}{2} show an easy way to do a similar
+procedure using more commonly available modern materials.)  Once this
+has been done, we observe that the amber and the wool attract each
+other electrically, and we find that the attraction is about the same
+regardless of the orientations of the two objects. This suggests that
+each object must be surrounded by a sea of arrows that is
+approximately spherically symmetric, pointing either inward or
+outward, \subfigref{twotapes-fields}{3}.  Franklin arbitrarily defined
+things so that the electric field surrounding the wool would point
+outward, while the field around the amber pointed inward. 
+
+By the way, almost any pair of substances will exhibit this kind of effect
+when rubbed or touched together, but amber is particularly good at producing
+a strong field. The Greek word for amber is ``elektron,'' which is the origin
+of English words like ``electricity.''
+
+% The initial ``e'' is an eta, normally transliterated as ``e,'' which in ancient greek was like "met,"
+% later becoming like "neat." So although a modern Greek speaker would say "ilektro" or something,
+% this shouldn't be transliterated as "ilekton."
+
+\pagebreak
+
+\begin{eg}{Explaining the attraction}\label{eg:two-charges-pe}
+To explain the attraction between two objects in an observation like the one in
+figure \figref{twotapes-fields}, we can employ an
+argument very similar to the one used in the case of the two horseshoe
+magnets, example \ref{eg:horseshoe-magnets-polarity},
+p.~\pageref{eg:horseshoe-magnets-polarity}.  We idealize each of the
+two objects as a point.  When the objects are far apart, each has some
+electric field energy, and these add up to some nonzero amount $U_1$.
+For our present purposes, we do not even need to know yet the function
+$E(r)$ that gives the magnitude of the electric field as a function of
+the distance away from the object. For simplicity, we will assume that
+the two objects have fields that are equal in strength but opposite in
+magnitude.  (A qualitatively similar result is obtained even if we
+relax this requirement.)  Now suppose the two objects are brought so
+close together that they are right on top of each other. The fields
+will cancel everywhere, and we will have the energy $U_2=0$. This loss
+of electric field energy means that we can do mechanical work by
+allowing the objects to come together, or if the objects were released
+in free space, they could convert this field energy into kinetic
+energy as they accelerated toward each other. Our conclusion is that the
+force is attractive. 
+
+We have not considered the intermediate case where the distance
+between the charges is nonzero but still small enough so that the
+fields overlap appreciably, as in figure \figref{eg-two-charges-pe}.
+In the region indicated approximately by the shading in the figure,
+the superposing fields of the two charges undergo partial cancellation
+because they are in opposing directions. The energy in the shaded
+region is reduced by this effect. In the unshaded region, the fields
+reinforce, so the energy there is increased. 
+
+<% marg(300) %>
+<%   
+  fig(
+    'eg-two-charges-pe',
+    %q{Example \ref{eg:two-charges-pe}. The labels $+$ and $-$ are explained in the following subsection.}
+  )
+%>
+<% end_marg %>
+
+It would be quite a project to do the integral in order to find the
+energy gained and lost in the two regions, but it is fairly easy to
+convince oneself that the energy is less when the charges are closer,
+as expected from interpolation between $U_1$ and $U_2$. This is
+because bringing the charges together shrinks the high-energy unshaded
+region and enlarges the low-energy shaded region.
+\end{eg}
+
+<% end_sec('flip-arrowheads') %>
+
+<%
+  fig(
+    'field-line-concept',
+    %q{The sea-of-arrows and field-line representation of the field surrounding a source and 
+       a sink.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+<% begin_sec("Sources and sinks",nil,'sources-and-sinks') %>
+
+When the field lines flow out of an object,
+we call that object a source of the field, and when they flow in we call it a sink.
+The electric field has sources and sinks, but as far as we are able to tell, there
+are no magnetic sources or sinks in our universe.
+We can quantify the strength of an electric-field source
+by assigning an object a number called its electric charge,
+which is, roughly speaking, proportional to the number of field lines that begin or end on it.
+Of course the number of field lines is actually infinite, and it's just that we're
+picking a certain finite and representative sample of them to draw in our pictures,
+so a little more work is needed in order to make this into a real definition. We will
+do so later in the chapter. The SI unit of charge is the coulomb (C). Positive charges
+are conventionally assigned to sources, negative to sinks. Material particles such as
+protons and electrons have charge. The electric and magnetic fields are themselves
+uncharged, and are not made of material particles.
+
+If we consider the possibility of pointlike charged particles, then in a figure like
+\figref{field-line-concept}, we have a bunch of electric field lines that all either
+begin or end at the same point. This is not, as it might seem, in contradiction with
+our proof on p.~\pageref{field-lines-never-cross} that field lines never cross
+(\note{field-lines-terminating}).
+
+By the way, figures \figref{eg-two-charges-pe} and \figref{field-line-concept} are the
+simplest examples of a type of charge distribution called an electric \emph{dipole},\index{dipole!electric} which
+more generally is a kind of unbalanced arrangement of positive and negative charges.
+Dipoles
+will be discussed in more detail in sec.~\ref{sec:dipole}, p.~\pageref{sec:dipole}.
+
+<% end_sec('sources-and-sinks') %>
+
+
+<% begin_sec("Gauss's law for field lines, in a vacuum",nil,'gauss-field-lines-vac') %>
+It is natural to want to know how the electric field of a particle
+such as a proton falls off with distance. This would be a law of
+physics that would play a role analogous to that of Newton's law of
+gravity in the case of the gravitational field. But in fact Newton's
+law of gravity is false, and any law of this type \emph{must}
+ultimately be false (or at best be some kind of approximation), for
+the reasons described in section \ref{sec:time},
+p.~\pageref{sec:time}. It is not possible for cause and effect to
+propagate faster than $c$, so we can't really have the kind of
+instantaneous action at a distance described by Newton's law of
+gravity, which has no $t$ in it. The shortcomings of Newton's law of gravity
+turn out to be relatively inconsequential unless you're a physicist studying
+phenomena like black holes and gravitational waves, but the corresponding issues
+in electricity and magnetism are very real and practical. If electricity and magnetism
+worked the way Newton thought the universe worked, radio wouldn't exist.
+<%
+  fig(
+    'new-york-field-line-bundle',
+    %q{A bundle of gravitational field lines rise up through New York City.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+Since gravity is more familiar, let's see how we could find an
+alternative way of describing the strength of gravity that would not
+fall prey to these objections.  In figure
+\subfigref{new-york-field-line-bundle}{1}, we see a bundle of
+gravitational field lines rising up through New York City. The earth
+is the source of these field lines, but we are looking at them outside
+the earth, which means that we are contemplating the behavior of
+gravitational fields in a vacuum. (The mass of the air is negligible.)
+Because the earth is round, the field lines spread farther apart as they
+rise. At the bottom of the picture, near the streets of Manhattan, these
+lines pass through a square with a certain area, while farther up, at the
+top of the drawing, the same number of lines pass through a square with
+a larger area.
+
+Now the area of any geometrical shape is proportional to the square
+of its linear dimensions, so these areas are proportional to $r^2$, where $r$
+is the distance from the center of the earth. (If this doesn't seem clear,
+it may help to imagine the situation for complete spherical surfaces.) The density
+of the field lines is the strength of the field, so we conclude that the earth's
+gravitational field falls off as $1/r^2$, as in Newton's law of gravity.
+
+This derivation is so pat that it makes it seem a little mysterious how any
+field could \emph{not} have $1/r^2$ behavior, and in fact there are such fields,
+including the fields associated with nuclear forces. To see how this would work,
+consider figures \subfigref{new-york-field-line-bundle}{2} and \subfigref{new-york-field-line-bundle}{3}.
+In \subfigref{new-york-field-line-bundle}{2} we have just simplified
+\subfigref{new-york-field-line-bundle}{1} a little, making it easier to see
+what's going on by drawing only a single flat fan of field lines --- but the other
+ones in front and behind are still there. We can have a field that falls off faster
+than $1/r^2$, but then we would need a picture like \subfigref{new-york-field-line-bundle}{3},
+where some of the field lines simply die out, randomly, at some point in the air. In this example,
+we imagine that they are not terminating on material particles, but simply at random points in
+empty space. Figure \subfigref{new-york-field-line-bundle}{3} is not inherently silly, and
+in fact it is a pretty good representation of a nuclear field, but it is not how electric and
+magnetic fields work. We state this as a law of physics.
+
+\begin{lessimportant}[Gauss's law for field lines, in a vacuum]\index{Gauss's law!field lines, in vacuum}
+In a vacuum, electric and magnetic field lines never begin or end.
+\end{lessimportant}
+
+<% marg() %>
+<%   
+  fig(
+    'b-div-violation',
+    %q{A field that violates Gauss's law in a vacuum.}
+  )
+%>
+<% end_marg %>
+We have developed our statement and interpretation of Gauss's law for electricity and
+magnetism by exploiting the analogy with gravity.
+It seems as though Newton's law of gravity is logically equivalent to
+Gauss's law for gravity, so that it wouldn't matter much which one we
+used. But the two laws make different predictions in cases where masses
+are moving around, and they also have a very different character. Newton's law
+of gravity is \emph{global}: it says that mass \emph{here} has an
+effect right \emph{now} on mass \emph{there}, possibly very far away.
+Gauss's law, on the other hand, is \emph{local}.
+
+To see the
+distinction, consider the naughty field shown in figure
+\figref{b-div-violation}. Most of the field lines form closed loops,
+which is legal according to Gauss's law (and typical
+behavior for a magnetic field). But one of the field lines is
+disobeying Gauss's law: it starts at a point inside the tiny box
+marked 1. Even if we were restricted to a keyhold view through an
+extremely powerful microscope, we could still locate the violation if
+we carefully scanned the entire figure. 
+
+As a linguistic analogy for this distinction between local and global
+laws, consider this sentence: MY KATS EATS \reflectbox{R}ATS. There
+are three errors, but if we're restricted to looking at the letters
+one at a time, without the larger context, the only one we can detect
+is the flipped letter ``R.'' The rule against flipping letters is a
+local law. 
+
+The form of Gauss's law stated above is very specialized. Later we will
+see how it can be generalized so it describes regions of space in which
+charged matter exists. We will also learn how to state it in terms of the field
+vectors rather than the field lines.
+<% end_sec('gauss-field-lines-vac') %>
+<% end_sec('gauss-law') %>
+
+<% begin_sec("A global form of Gauss's law",nil,'gauss-global') %>\index{Gauss's law!global form}
+There are other ways to detect the violation in
+\figref{b-div-violation}. We could, for example, check the larger box
+labeled 2, and note that although no field lines pass in through the
+edges of this box, one passes out. So a local law can lead to global
+predictions, and this can be helpful.
+But because cause and effect can never propagate faster than $c$, the
+ultimate laws of physics must be local ones. A practical realization of
+this kind of global test is shown in figure \figref{gauss-law-lab}, and you will
+carry it out in Minilab \ref{ch:gauss-law}, p.~\pageref{lab:gauss-law}.
+A magnet is inside the cubical box. At one of the centimeter squares,
+we measure the component of the magnetic field perpendicular to the box.
+The intensity of the field is proportional to the number of field lines
+per $\zu{cm}^2$, so by measuring the field, we are essentially counting
+the number of field lines that exit the box through this square centimeter
+(or that enter it, if the field is inward). By adding up all of these
+measurements on a computer, for all six sides of the box,
+we get a count of the net number of field lines that exit
+the box, counting a line that enters as $-1$. Gauss's law for magnetism
+predicts that the total is zero.
+
+<% marg(300) %>
+<%   
+  fig(
+    'gauss-law-lab',
+    %q{A practical experiment that tests Gauss's law for magnetism, globally.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'avector-fac',
+    %q{An area vector can be defined for a sufficiently small part of a curved surface.}
+  )
+%>
+<% end_marg %>
+The sort of sum described above is called the \emph{flux},\index{flux}
+$\Phi$ (capital Greek letter phi). When it's
+not clear from context whether we're talking about the magnetic field's flux from the electric field's,
+we write $\Phi_E$ and $\Phi_B$. To define the flux through a surface, we break up
+the surface into small areas $A_1$, $A_2$, \ldots, such as the squares in figure
+\figref{gauss-law-lab}. For each of these areas, we define a unit normal vector $\hat{\vc{n}}_i$,
+which points outward. ``Unit'' means that $|\hat{\vc{n}}_i|=1$, and ``normal'' means that it is
+perpendicular to the surface. What the wand measures in figure \figref{gauss-law-lab} is
+the component of the magnetic field perpendicular to the box, $\vc{B}_i\cdot\hat{\vc{n}}_i$.
+The magnetic flux $\Phi_B$ is then defined as the sum
+$A_1 \vc{B}_1\cdot\hat{\vc{n}}_1+A_2 \vc{B}_2\cdot\hat{\vc{n}}_2+\ldots$.
+To make the notation less unwieldy, we can define area vectors $\vc{A}_i=A_i\hat{\vc{n}}_i$
+and use sigma notation, $\Phi_B=\sum \vc{B}_i\cdot\vc{A}_i$. Using a large number of small
+areas gives an approximation to the flux, but the exact flux is given by the limit of such an
+expression as the number of area elements goes to infinity and each area becomes very small,
+$\Phi_B = \lim \sum \vc{B}_i\cdot\vc{A}_i$. This kind of continuous sum of infinitely
+many infinitesimal things is an integral, so we notate it as one,\label{flux-defined}
+\begin{equation*}
+  \Phi_B = \int \vc{B}\cdot\der\vc{A}. \qquad \text{[definition of magnetic flux]}
+\end{equation*}
+A similar definition is used for the flux of the electric field. 
+Because the dot product is a scalar, flux is a scalar.
+Like the kind of ordinary definite integral from freshman calculus, this notation defines a number.
+(If you're used to interpreting an integral sign without limits of integration as
+an indefinite integral, then you would be misled into thinking that this was an indefinite
+integral, which would be a function rather than a number.
+Also keep in mind that the notation $\der\vc{A}$ does not mean that we're integrating
+with respect to some variable $\vc{A}$; it just means an infinitesimal area.)
+
+A closed surface is one that has no edges, like a box rather than a piece of paper.
+Gauss's law in a vacuum can be stated in terms of the field vectors, in global form, by saying that
+the magnetic flux through any closed surface is zero, 
+\begin{equation*}
+  \Phi_B = 0,\quad \Phi_E=0. \qquad \text{[Gauss's law in a vacuum]}
+\end{equation*}
+
+\begin{eg}{Flux above New York}\label{eg:flux-above-new-york}
+Often for problems that have a symmetry, we can apply Gauss's law without actually having to
+do an integral to calculate the flux. In figure \figref{new-york-field-flux} we have constructed
+a surface (a surface used for this purpose is
+referred to as a Gaussian surface) that takes advantage of the spherical symmetry of
+the earth's gravitational field $\vc{g}$. The top and bottom surfaces are sections of the spheres with
+radii $r_1$ and $r_2$, while the sides are vertical. By this construction, the field is parallel
+to the surface at the sides and perpendicular to it at the top and bottom. The flux therefore has
+contributions only from the top and bottom, not from the sides.
+
+<% marg() %>
+<%   
+  fig(
+    'new-york-field-flux',
+    %q{A Gaussian surface in the earth's gravitational field.}
+  )
+%>
+<% end_marg %>
+If we consider a small portion of the area at the
+top, the area vector $\der\vc{A}$ is parallel to the field, so for the integrand,
+$\vc{g}\cdot\der\vc{A}=|\vc{g}||\der\vc{A}|\cos0=g\der A$. When we evaluate the integral
+to find the flux over the top surface, we then have
+\begin{equation*}
+  \int_\text{top} g\der A = g_2 \int_\text{top} \der A,
+\end{equation*}
+since $g$ on the top is a constant, which we call $g_2$. But the
+remaining integral is simply the area of the top surface, $A_2$, so we can find the
+integral without actually using any of the techniques of calculus.
+The calculation at the bottom surface is similar, except that the cosine factor is $\cos180\degunit=-1$,
+so we pick up a minus sign, indicating that the flux passes in through the bottom. Adding up the
+positive flux through the top and the negative flux through the bottom, the result for the total
+flux is
+\begin{equation*}
+  \Phi_g = g_2 A_2-g_1 A_1.
+\end{equation*}
+Setting this equal to zero gives
+\begin{equation*}
+  \frac{g_2}{g_1} = \frac{A_1}{A_2} = \left(\frac{r_2}{r_1}\right)^{-2},
+\end{equation*}
+i.e., $g\propto r^{-2}$, as expected.
+\end{eg}
+
+An integral of the form $\int \ldots \cdot\der\vc{A}$ is called a surface integral.
+In example \ref{eg:flux-above-new-york}, we were able to evaluate a surface integral
+without really knowing any fancy calculus, because the integrand was basically a constant,
+and we know that for any kind of integral, we can take the constant outside the integral.
+Techniques for evaluating more complicated area integral are discussed in ch.~\ref{ch:iterated},
+p.~\pageref{ch:iterated}.
+
+<%
+  fig(
+    'dq-gauss-examples-fac',
+    %q{%
+      Discussion questions \ref{dq:gauss-example1} and \ref{dq:gauss-example2}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+\startdqs
+
+
+\begin{dq}\label{dq:gauss-example1}
+One question that might naturally occur to you about Gauss's law is
+what happens for charge that is exactly on the surface --- should it
+be counted toward the enclosed charge, or not? If charges can be
+perfect, infinitesimal points, then this could be a physically
+meaningful question. Suppose we approach this question by way of a
+limit: start with charge $q$ spread out over a sphere of finite size,
+and then make the size of the sphere approach zero.  Figure \subfigref{dq-gauss-examples-fac}{A} shows
+a uniformly charged sphere that's exactly half-way in and half-way out
+of the cubical Gaussian surface.  What is the flux through the cube,
+compared to what it would be if the charge was entirely enclosed?
+(There are at least three ways to find this flux: by direct
+integration, by Gauss's law, or by the additivity of flux by region.)
+\end{dq}
+
+\begin{dq}\label{dq:gauss-example2}
+The dipole in figure \subfigref{dq-gauss-examples-fac}{B} is completely enclosed in the cube. What does Gauss's law
+say about the flux through the cube? If you imagine the dipole's field
+pattern, can you verify that this makes sense? 
+\end{dq}
+
+
+<% end_sec('gauss-global') %>
+
+
+<% begin_sec("Field of a point charge at rest",nil,'field-of-point-charge') %>\index{Coulomb's law}
+Our argument that the earth's field was proportional to $1/r^2$ depended on
+only two ingredients, Gauss's law and spherical symmetry. The spherical symmetry existed
+because the earth is (approximately) a sphere and because we were discussing the earth in
+the frame where it is at rest. If we consider a charged particle such as an electron
+as an idealized pointlike object, and discuss it in the frame of reference where it
+is at rest, then spherical symmetry again holds, and since Gauss's law is also valid
+for electric fields, we obtain exactly the same result. The electric field surrounding
+a point charge is proportional to $1/r^2$, where $r$ is the distance from the charge. If
+the charge is $q$, then filling in the constants of proportionality gives
+\begin{equation*}
+  E = \frac{kq}{r^2} \qquad \text{[point charge at rest]}
+\end{equation*}
+for the magnitude of the field. Here $q$ is the charge in coulombs, and $k$ is the same
+Coulomb constant that we originally introduced in the context of the energy density of
+a field. It's not hard to show that the same $k$ should pop up in the way it does in
+this equation and in the equation for the energy density; proving the factors of $\pi$ and
+such is a little extra work, and will be more easily taken care of later, when we have
+other techniques at our disposal. It may sometimes be useful to express not just the magnitude
+but also the direction of the electric field in this equation. We let $\hat{\vc{r}}$ be the
+unit vector in the direction from the charge to the point at which the electric field is
+being evaluated. Then the electric field at that point is
+\begin{equation*}
+  \vc{E} = \frac{kq}{r^2}\hat{\vc{r}}.
+\end{equation*}
+In the case where $q<0$, the scalar factor is negative, and the electric field points inward.
+
+There is a subtle point about the logic leading to these equations for the field of a point
+charge, which is that we obtained them without ever using any laws of physics that described
+the point charge itself. We used the only form of Gauss's law currently at our disposal, the vacuum form,
+which applies only to the empty space \emph{around} the charge. By doing this, we found the
+proportionality $E\propto1/r^2$, and it is in some sense arbitrary that we chose to refer to
+the proportionality constant as ``charge.''
+
+<% marg(-300) %>
+<%   
+  fig(
+    'e-dipole-mid-plane',
+    %q{Example \ref{eg:e-dipole-mid-plane}.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'e-dipole-mid-plane-2',
+    ''
+  )
+%>
+<% end_marg %>
+\begin{eg}{Field of an electric dipole, in its mid-plane}\label{eg:e-dipole-mid-plane}\index{dipole!electric!field in mid-plane}
+Consider the dipole in figure \figref{e-dipole-mid-plane}.
+We wish to calculate the electric field in the dipole's mid-plane, at a point on the $x$ axis with
+coordinates $(x,0)$.
+
+The principle of superposition says that the field at this point can be found by
+adding the fields due to the two charges, and adding means vector
+addition, because the fields are vectors. In analytic addition of vectors, we add
+components. The component $E_z$, perpendicular to the page, is clearly zero by
+symmetry --- neither charge's field has any component out of the plane of the diagram.
+It would also be a waste of time to calculate the $x$ components, since these too
+are guaranteed to cancel. This means that all we really need to do is calculate the
+$y$ components and add them.
+
+The distance from the top, positive charge to our point of interest is $r=\sqrt{x^2+(\ell/2)^2}$.
+The magnitude of the field contributed by this charge is
+\begin{equation*}
+  E = \frac{kq}{r^2} 
+\end{equation*}
+In terms of the angle $\theta$ that the field vector makes with the $y$ axis, the $y$ component is
+\begin{equation*}
+  E_y = E\cos\theta = E\frac{\ell/2}{r} = \frac{kq\ell}{2r^3}.
+\end{equation*}
+The negative charge's field has an equal $E_y$, so the total field at our point is double this, or
+\begin{equation*}
+  E_y = \frac{kq\ell}{r^3}.
+\end{equation*}
+If we wished to, we could substitute in our expression for $r$ to get this in terms of $x$, but
+the expression is actually nicer in terms of $r$.
+
+
+<% marg(20) %>
+<%   
+  fig(
+    'e-dipole-mid-plane-3',
+    ''
+  )
+%>
+<% end_marg %>
+
+This result has the interesting property that for large distances, where $r\approx x$,
+it depends on the charge distribution only through the product $q\ell$, which is referred
+to as the dipole moment.
+The on-axis field of an electric dipole is calculated in problem \ref{hw:dipole-axis},
+p.~\pageref{hw:dipole-axis}. Dipoles are discussed in more detail in secs.~\ref{sec:dipole},
+p.~\pageref{sec:dipole}, and \ref{sec:b-dipole}, p.~\pageref{sec:b-dipole}.
+\end{eg}
+
+
+<% end_sec('field-of-point-charge') %>
+
+<% begin_sec("Electric force on a charge",nil,'force-on-a-charge') %>\index{force!on a charge in an electric field}
+In addition to describing the electric field made by a charge, it is natural to consider
+the action of some externally imposed field on a charge.
+We imagine that this ambient field is
+created by some other objects, and that the charge $q$ is small enough so that its own reaction
+on these other objects is not enough to disturb them. That is, the background contribution
+$\vc{E}$ to the field does not change just because we insert $q$. When $q$ is small enough
+to make this a good approximation, we call it a test charge. 
+In cases like example \ref{eg:horseshoe-force} on p.~\pageref{eg:horseshoe-force} and
+example \ref{eg:two-charges-pe} on p.~\pageref{eg:two-charges-pe}, we have been able to explain
+the force between two objects in terms of the energy of their superposed fields.
+Using a similar style of reasoning (\note{force-on-point-charge}), we find that
+the force of an electric field on a test charge is
+\begin{equation*}
+  \vc{F}= q\vc{E}.
+\end{equation*}
+If we liked, we could take this as the definition of the electric field (and most books do).
+This also explains why, in the system of units we have constructed, the units of the electric
+field can be written as newtons per coulomb (N/C). If the charge is positive, the force is
+in the direction of the field, while a negative charge feels a force in the opposite direction.
+
+\begin{eg}{A spark plug}\label{eg:spark-plug}
+\egquestion In a car with a gas-burning engine, the air-gas mixture is exploded by a spark from a spark plug.
+Suppose that the electric field required in order to create the spark is $2.0\times10^7\ \nunit/\zu{C}$.
+Estimate the acceleration of an octane molecule having a charge of $3.2\times10^{-19}\ \zu{C}$ and
+a mass of $1.9\times10^{-25}\ \kgunit$.
+
+% calc -x -e "V=20000 V; x=1 mm; E=V/x; m=(114 g->kg)/(6.0 10^23); q=2e; qE/m"
+
+\eganswer The magnitude of the force is $qE$, and by Newton's second law the resulting acceleration is
+$a=(q/m)E=3.4\times10^{13}\ \munit/\sunit^2$. This is an enormous acceleration! Note that the properties
+of the molecule influence its motion
+only through the ratio $q/m$ of its charge to its mass.
+\end{eg}
+<% marg(50) %>
+<%   
+  fig(
+    'spark-plug',
+    %q{A spark plug, example \ref{eg:spark-plug}.}
+  )
+%>
+<% end_marg %>
+
+\startdq
+
+\begin{dq}
+In figure \figref{spark-plug} we see a very small air gap between the positively and negatively charged
+electrodes. Why should it be small?
+\end{dq}
+
+<% end_sec('force-on-a-charge') %>
+
+<% begin_sec("Coulomb's law",nil,'coulomb-law') %>
+Suppose that we have \emph{two} point charges, $q_1$ and $q_2$, both at rest and separated by a distance
+$r$. The electric field is the sum of the fields contributed by the two charges. If we want to find the
+force acting on one of the charges, say 2, then it doesn't make sense to try to take into account
+the contribution to the field from charge 2 itself (\note{self-force}), just the force
+that 1 makes on 2. Let $\hat{\vc{r}}_{21}$
+be the unit vector in the direction from 1 to 2. The contribution to the field
+from charge 1, at the position of charge 2, is $\vc{E} = (kq_1/r^2)\hat{\vc{r}}_{21}$, and
+the resulting force on 2 is
+\begin{equation*}
+  \vc{F}_2 = \frac{kq_1q_2}{r^2}\hat{\vc{r}}_{21}.
+\end{equation*}
+The force is repulsive if the charges have the same sign, and attractive if they have opposite
+signs.
+For the force $\vc{F}_1$ acting on 1, we have the same expression but with
+$\hat{\vc{r}}_{21}=-\hat{\vc{r}}_{21}$. Newton's third law applies, which is not to be taken
+for granted and is not necessarily true if the charges are moving or have been moving at some time in
+the past.
+
+This equation is known as Coulomb's law. It plays the same role in electrical interactions that
+Newton's laws of gravity plays in gravity, and it has the same form, but because charge, unlike
+mass, can have either sign, electrical forces can be either attractive or repulsive.
+
+If one charge is kept fixed while another is moved toward or away from it, then the
+work done by the electric force is the definite integral of Coulomb's law, while the
+potential energy is minus the indefinite integral, or
+\begin{equation*}
+  U = \frac{kq_1q_2}{r},
+\end{equation*}   
+where the constant of integration is arbitrarily chosen to be zero, so that
+$U\rightarrow0$ as $r\rightarrow\infty$.
+
+\begin{eg}{Energy of a set of charges}\label{eg:chlorine-pentafluoride}
+\egquestion Consider the molecule shown in figure \figref{chlorine-pentafluoride}, with an atom of
+a certain element in the middle, surrounded by five atoms of a different element, arranged
+along perpendicular axes, all at equal distances $\ell$ from the central one.
+Let's take the charge of the central atom to be $5q$, and the charge of each of the
+others to be $-q$, so that the molecule is electrically neutral. If we approximate the
+atoms as point charges, what is the total electrical energy released when the atom is
+assembled, starting with its constituent parts all far away from each other?
+
+\eganswer Each charge interacts with \emph{all} the others, not just the ones shown as
+connected to it in this ball-and-stick diagram. If we number the atoms 1 through 6, then
+we have to compute an interaction for each of the combinations, such as 12, 23, and so on.
+We don't want to count the self-energies like 11 or 22, and we also don't want to double-count
+any energies, i.e., 12 and 21 are not two separate terms in the sum. In sigma notation, we
+can notate this conveniently in either of the following equivalent forms:
+\begin{equation*}
+  \sum_i \sum_{j>i} U_{ij} = \frac{1}{2} \sum_i \sum_{j\ne i}  U_{ij}.
+\end{equation*}
+In the second version, we double-count, but then divide by two at the end to compensate.
+
+This particular example has $n=6$ charges, but we can see in general, using the second
+form of the sum above, that the total number of energies will be $(n^2-n)/2$, since we have
+$n^2$ choices for the indices $i$ and $j$, $n$ of which are ruled out by the condition $i\ne j$.
+This formula, which you may want to verify for $n=1$, 2, and 3, can also be written as $n(n-1)/2$.
+It is the number of combinations of $n$ things taken 2 at a time, disregarding their order, and is
+notated $\binom{n}{2}$, also known as a binomial coefficient. In our example, we
+have $\binom{6}{2}=15$.
+
+<% marg() %>
+<%
+  fig(
+    'chlorine-pentafluoride',
+    %q{A molecule.}
+  )
+%>
+<% end_marg %>
+
+Numbering the atoms as shown in the figure, we have the following contributions to the sum:
+\begin{align*}
+  U= &  U_{12} + \text{four more similar terms, for a total of five} \\
+  +& U_{23} + \text{three more similar terms, for a total of four} \\
+  +& U_{24} + \text{one more similar terms, for a total of two} \\
+  +& U_{26} + \text{three more similar terms, for a total of four}  \\
+   &= 5U_{12}+4U_{23}+2U_{24}+4U_{26}.
+\end{align*}
+This is a total of 15 terms, which checks. Computing these explicitly, we have
+\begin{align*}
+  U &= kq^2\left(\frac{5(-5)}{r_{12}}+\frac{4}{r_{23}}+\frac{2}{r_{24}}+\frac{4}{r_{26}}\right) \\
+    &= \frac{kq^2}{\ell}\left(\frac{-25}{1}+\frac{4}{\sqrt2}+\frac{2}{2}+\frac{4}{\sqrt2}\right) \\
+    &= \frac{kq^2}{\ell}\left(-24+\frac{8}{\sqrt2}\right).
+\end{align*}
+The negative sign indicates that the system is bound with respect to complete dissociation:
+it would not be possible without an
+input of energy to pull it apart and
+separate all the ions from one another.
+
+Being able to do the calculation does not mean that this is a good model of any real-world molecule.
+There are molecules such as $\zu{ClF}_5$ that have this geometry, but our model is not consistent
+with their having this shape as a stable equilibrium, for the energy could be made more negative either by
+making $\ell$ smaller or by moving the small charges so that they were more uniformly distributed
+on the sphere, rather than clustered in a half-sphere. This is an example of a more general fact,
+which is that classical (as opposed to quantum) physics cannot explain the stability of matter.
+The electrostatic energy we have calculated \emph{does} come into play, and is roughly right for
+this molecule, but other factors are present as well.
+\end{eg}
+
+<% marg(-30) %>
+<%
+  fig(
+    'long-molecule',
+    %q{An idealized model of a long molecule.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A long molecule}\label{eg:long-molecule}
+Bulk matter, as opposed to an individual molecule, contains a large number of charges, and
+in many cases it makes sense to consider the material as infinite in extent and compute quantities
+such as electrical energy per unit of material. A simple example that has some of these
+characteristics is a long molecule, which is one-dimensional but can be idealized as
+infinite. An idealized, classical version of such a molecule is shown in figure
+\figref{long-molecule}, in which positive and negative charges alternate along a straight line.
+There are real-world long molecules, although most are not exactly
+linear (for example, DNA or a type of plastic known by the trade name Delrin), and many
+(including DNA and Delrin) cannot reasonably be modeled by this type of charge distribution.
+However, there are some compounds such as cyclopentadienyllithium that are somewhat like
+figure \figref{long-molecule}, albeit with some of the charges actually being molecules like
+pentane rather than individual atoms. In any case, let's play with this as a ``toy model''
+of bulk matter.
+% https://chemistry.stackexchange.com/questions/105183/long-linear-molecule-with-alternating-elements
+
+As in example \ref{eg:chlorine-pentafluoride}, the total energy is a sum
+\begin{equation*}
+  U = \sum_i \sum_{j>i} U_{ij}.
+\end{equation*}
+Surprisingly, this comes out to be quite a bit simpler to evaluate than
+the one in example \ref{eg:chlorine-pentafluoride}. We are actually interested
+not in the total energy, which would be infinite, but in the energy per atom.
+If we fix the index $i$ to some arbitrary value, then we have singled out one
+atom, and the inside sum
+\begin{equation*}
+  \sum_{j>i} U_{ij}
+\end{equation*}
+can be interpreted as the energy per atom. If we label each atom by an integer, in
+sequence, then the restriction of the sum to $j>i$, to avoid double-counting,
+means that we can evaluate the
+interaction of this atom only with the ones on its right. If the charges are $\pm q$ and
+the inter-atomic spacing $\ell$, then the total energy is
+\begin{equation*}
+  U_\text{per atom} = \frac{kq^2}{\ell}\left(-1+\frac{1}{2}-\frac{1}{3}+\ldots\right).
+\end{equation*}
+The sum in parentheses is a famous one with a name, the alternating harmonic series,
+and it has the value $-\ln 2$, which can be proved, if you know about Taylor series,
+by taking the Taylor series of $\ln(1+x)$ and evaluating it at $x=1$.
+The result is
+\begin{equation*}
+  U_\text{per atom} = -\frac{kq^2\ln 2}{\ell}.
+\end{equation*}
+
+Although this toy model has the same shortcomings as the one in example \ref{eg:chlorine-pentafluoride},
+it does provide some interesting insight by showing us, correctly, that the electrical energy
+of matter is not very localized, as you might have expected from ball-and-stick models.
+The sum contains contributions from pairs of atoms at arbitrarily large distances, and
+contributions from very distant terms in the series make quite big contributions --- if you
+try evaluating the alternating harmonic series on a calculator, you will find that it
+is extremely slow to converge.
+
+For a similar description of a three-dimensional solid, see Purcell, Electricity and
+Magnetism, section 1.6.
+\end{eg}
+
+\startdq
+
+\begin{dq}
+For two interacting point charges, the electrical potential energy is
+$U=kq_1q_2/r$. What is the corresponding expression for gravity?
+Explain how the signs work, and sketch graphs for the various cases.
+\end{dq}
+<% end_sec('coulomb-law') %>
+
+<% begin_sec("Charge",nil,'charge') %>
+
+<% begin_sec("Gauss's law, not in vacuum",nil,'gauss-charge') %>
+The vacuum form of Gauss's law can be generalized to handle the case where charges are present.
+In terms of field lines, Gauss's law states that field lines begin and end only on charges, and
+the number of field lines that begin or end on a charge is proportional to the charge.
+
+<% marg(-10) %>
+<%
+  fig(
+    'gauss-field-lines',
+    %q{The number of field lines coming in and out of each region depends on the total charge it encloses.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{Gauss's law with field lines and charges}
+Figure \subfigref{field-line-concept}{2} shows eight lines at each
+charge, so we know that $q_1/q_2=(-8)/8=-1$. Because lines never begin
+or end except on a charge, we can always find the total charge inside
+any given region by subtracting the number of lines that go in from
+the number that come out and multiplying by the appropriate constant
+of proportionality. Ignoring the constant, we can apply this technique
+to figure \figref{gauss-field-lines} to find $q_A=-8$, $q_B=2-2=0$,
+and $q_C=5-5=0$. 
+\end{eg}
+
+The global form of Gauss's law for electric fields says that the flux through a closed surface is
+\begin{equation*}
+  \Phi_E = 4\pi k q_\text{in},
+\end{equation*}
+where $q_\text{in}$ is the total charge inside the surface.
+
+\begin{eg}{A point charge}
+If we enclose a point charge $q$ with a spherical Gaussian surface of radius
+$r$, Gauss's law gives
+\begin{align*}
+  4\pi k q &= \int \vc{E}\cdot\der\vc{A} \\
+           &= \int \frac{kq}{r^2} \der A.
+\end{align*}
+Taking the constant factor outside, we have
+\begin{align*}
+  4\pi k q &= \frac{kq}{r^2} \int \der A \\
+           &= \frac{kq}{r^2} \cdot 4\pi r^2.
+\end{align*}
+The two sides of the equation are equal, so we have verified Gauss's law and
+proved that the proportionality constant of $4\pi k$ in Gauss's law is the
+correct one.
+\end{eg}
+
+<% end_sec('gauss-charge') %>
+
+<% begin_sec("Invariance of charge",nil,'charge-invariant') %>\index{charge!invariance}
+Ever since Galileo we have known that different observers could have frames of reference
+in motion relative to one another, and that the results of some measurements would depend
+on the frame of reference while others were not. Velocity is the classic example of a frame-dependent
+quantity. For example, your copy of this book is at rest in a frame of reference tied to your
+desk, but in the frame of reference of a Martian it's whizzing through space at high speed.
+A quantity that does not depend on the frame of reference is called invariant.
+Time is approximately invariant, but not exactly (sec.~\ref{sec:time}, p.~\pageref{sec:time}).
+
+Electric charge is, according to the best experimental evidence, perfectly invariant:
+observers agree on the charge of an object, regardless of their frame of reference.
+Another way of saying this is that when we start or stop an object's motion, its charge does
+not change at all. It is possible to do incredibly rigorous tests of this statement, because
+atoms are made of charged particles (protons and electrons), and the electrons in many atoms
+are orbiting at a significant fraction of the speed of light. If the charge of an electron depended
+on its state of motion, then dropping an electron into orbit in an atom would change its charge,
+but experiments\footnote{Marinelli and Morpugo, ``The electric neutrality of matter: A summary,''
+Physics Letters B137 (1984) 439.} rule out such a change to the incredible
+precision of one part in $10^{21}$.
+<% end_sec('charge-invariant') %>
+
+<% begin_sec("Quantization of charge",nil,'charge-quantized') %>\index{charge!quantization}\index{Millikan, Robert}
+In 1909, Robert Millikan and coworkers published experimental results showing that
+electric charge seemed to come only in integer multiples of a certain amount,
+notated $e$ and referred to as the fundamental charge. Millikan is now known to
+have fudged his data, and his result for $e$ is statistically inconsistent with
+the currently accepted value, $e=1.602\times10^{-19}\ \zu{C}$.
+
+Today, the standard model of particle physics includes particles called quarks,
+which have fractional charges $\pm (1/3)e$ and $\pm (2/3)e$. However, single quarks are never
+observed, only clusters of them, and the clusters always have charges that are
+integer multiples of $e$.
+
+We summarize these facts by saying that charge is ``quantized'' in units of $e$.
+Similarly, money in the US is quantized in units of cents, and discerning music
+listeners bewail the use of software in the studio that quantizes rhythm in the
+studio, forcing notes to land exactly on the beat rather than allowing the kinds
+of creative variation that used to be common in popular music.
+
+Sometimes we will be casual and say, for example, that a proton has ``one unit of charge,'' or
+even ``a charge of one,'' but this means $1e$, not one coulomb.
+
+If you mix baking soda and vinegar to get a fizzy chemical reaction, you don't really
+care that the number of molecules is an integer. The chemicals are, for all practical
+purposes, continuous fluids, because the number of molecules is so large.
+Similarly, quantization of charge has no consequences for
+most electrical circuits, and the charge flowing through a wire acts like a continuous
+substance. In the SI, this is expressed by the fact that $e$ is a very small number
+when measured in practical units of coulombs.
+<% end_sec('charge-quantized') %>
+
+<% begin_sec("Conservation of charge",nil,'charge-conserved') %>\index{charge!conservation}
+
+Electric charge is conserved in all known physical processes. When
+people say that their phone or laptop is ``out of charge,'' really
+it's out of \emph{energy} --- even if we wanted to, it wouldn't be
+possible to destroy or use up the electric charge in such a device.
+Usually in an electric circuit, we just send the same charge around
+and around, like the water being circulated through a fish tank or
+swimming pool by the filter pump. 
+
+As a more exotic example, consider the neutron, a subatomic particle\index{neutron}
+that is very common --- neutrons make up about half the mass of your
+body. Neutrons are never found by themselves in nature, because in a matter of minutes, a
+free neutron will spontaneously undergo the radioactive decay process
+\begin{equation*}
+  \text{neutron} \rightarrow \text{proton} + \text{electron} + \text{antineutrino}.
+\end{equation*}
+You'll be introduced to some of these particles more formally in section
+\ref{sec:models-of-matter}, but for now we just note the charges, in units of $e$,
+\begin{equation*}
+  0 = 1 - 1 + 0,
+\end{equation*}
+which satisfy conservation of charge.
+
+<% end_sec('charge-conserved') %>
+
+<% end_sec('charge') %>
+
+<% begin_sec("Models of matter",nil,'models-of-matter') %>
+
+<% begin_sec("The discovery of the electron, and the raisin cookie model",nil,'thomson') %>\index{electron!discovery}
+Static electricity experiments such as the one with the sticky tape
+(figure \figref{twotapes-fields}, p.~\pageref{fig:twotapes-fields})
+work with essentially any substance (although they do produce bigger
+effects with some substances than with others).  This suggests that
+electric charge is a built-in feature of all matter. Quantization of
+charge seems like a hint that this charge occurs because matter is
+made out of particles, and those particles have charges that are
+integer multiples of $e$.
+
+Until about 1897, it was assumed that all
+such particles were about the size and mass of an atom. But in that
+year, J.J.~Thomson did the experiment shown in figure \figref{thomson-simplified},\index{Thomson, J.J.}
+in which he produced a beam of
+charged particles in a vacuum tube, subjected them to a transverse
+electric field, and measured their deflection. The particles are
+initially accelerated from C to A, at which point
+they are moving along the $x$ axis with velocity $u$. Let's assume
+that this velocity is known, although the actual technique Thomson
+used to determine it is one that we will not describe until sec.~\ref{sec:b-force-on-current},
+p.~\pageref{sec:b-force-on-current}.
+The electric field between D and E is in the negative
+$y$ direction.  This field produces a force along the $y$ axis, but
+does not affect the $x$ motion, just as the earth's gravity does not
+affect the horizontal velocity of a baseball. To travel the length
+$\ell$ of electrodes D and E, the time required is $t=\ell/u$. Now $t$
+turns out to be many orders of magnitude too short to be detectable by
+eye, but during this interval the acceleration $a_y=qE/m$ caused by
+the electric field deflects the beam by a distance $y=(1/2)a_yt^2$.
+Since $y$ is known, we can infer the value of $q/m$. As we have seen
+in example \ref{eg:spark-plug}, p.~\pageref{eg:spark-plug} (the spark
+plug), this charge-to-mass-ratio is the \emph{only} property of a
+particle that we can ever infer from its motion in an electric field. 
+
+<%
+  fig(
+    'thomson-simplified',
+    %q{%
+      Thomson's experiment proving cathode rays had electric charge
+              (redrawn and simplified from his original paper). Panel 1 shows the
+              glass vacuum tube, metal electrodes, and electric field lines.
+              Electric charge is introduced to the electrodes through wires (not shown) that feed
+              through the nipples in the glass. This creates the electric fields.
+              Panel 2 shows the beam of electrons. Because the electrons are negatively
+              charged, they accelerate in the direction opposite to that of the electric field.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
+
+The value that Thomson found for the $q/m$ of his mystery particles
+was negative, and, more importantly, thousands of times bigger than
+the $q/m$ ratio of charged atoms (ions) as determined from chemistry
+experiments. Thomson guessed (without actually knowing for sure) that
+the charge of the particles was $-e$, and that therefore they had masses
+thousands of times smaller than the mass of an atom. He interpreted this
+as evidence that he had discovered the first subatomic particle, which
+was later named the electron.
+
+<% marg(0) %>
+<%
+  fig(
+    'raisincookie',
+    %q{%
+      The raisin cookie model of the atom with four units of charge,
+              which we now know to be beryllium.
+    }
+  )
+%>
+<% end_marg %>
+
+Based on his experiments, Thomson proposed a picture of the
+atom which became known as the raisin cookie model.\index{atom!raisin cookie model}\index{raisin cookie model}
+In the neutral atom, figure \figref{raisincookie}, there are four
+electrons with a total charge of $-4e$, sitting in a sphere
+(the ``cookie'') with a charge of $+4e$ spread throughout
+it. It was known that chemical reactions could not change
+one element into another, so in Thomson's scenario, each
+element's cookie sphere had a permanently fixed radius,
+mass, and positive charge, different from those of other
+elements. The electrons, however, were not a permanent
+feature of the atom, and could be tacked on or pulled out to
+make charged ions.
+
+<% end_sec('thomson') %>
+
+<% begin_sec("The energy scale for chemistry and atomic physics",nil,'matter-atomic-e-scale') %>\index{atom!energy scale}
+The sizes of atoms were originally estimated based on a variety of techniques,
+one example being the determination of the thinnest layer of oil that cold be
+deposited on the surface of water. The results are on the order of a fraction of
+a nanometer. The smallest atom, hydrogen, has a radius of roughly 0.05 nm.
+A hydrogen atom is composed of charges $+e$ and $-e$, so
+we can estimate the electrical potential
+energy of a hydrogen atom to be something like $5\times10^{-18}\ \junit$. To within an order 
+of magnitude, this is the energy scale of all of chemistry and atomic physics.
+For example, a human body contains some number of atoms in the form of fat molecules,
+and multiplying this by the energy scale found above results in a rough estimate
+of the size of the energy reserve we all carry around with us --- typically
+on the order of 100,000 food calories, or several months' worth of survival without food.
+<% end_sec('matter-atomic-e-scale') %>
+
+\vspace{17mm}
+
+<% begin_sec("The nucleus and the planetary model",nil,'matter-nucleus') %>\index{atom!planetary model}\index{planetary model}\index{nucleus}
+<% marg() %>
+<%
+  fig(
+    'rutherfordsetup',
+    %q{Rutherford's apparatus.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'planetarymodel',
+    %q{The planetary model of the atom.}
+  )
+%>
+<% end_marg %>
+In 1909, a new experiment by Ernest Rutherford and collaborators
+forced a revision of the raisin cookie model.\index{Rutherford, Ernest}
+As shown in figure
+\figref{rutherfordsetup}, the experiment used a lump of radium, which
+was known to emit radioactivity in a form known as alpha particles,
+another name for a helium atom that has been stripped of both its
+electrons.  The alpha particles, moving at a significant fraction of
+the speed of light, struck a very thin gold foil, and most of them
+passed almost straight through it. But some were deflected by
+measurable angles, and the experimenters found, to their great
+surprise, that some rebounded at angles approaching 180 degrees.
+Rutherford said, ``We have been able to get some of the alpha
+particles coming backwards. It was almost as incredible as if you
+fired a 15-inch shell at a piece of tissue paper and it came back to
+hit you.''
+
+This observation proved impossible to explain in the raisin cookie
+model, because the kinetic energies of the alpha particles were many
+orders of magnitude greater than the energy scale estimated in
+sec.~\ref{subsec:matter-atomic-e-scale}.  At this point, the
+Rutherford group dusted off an unpopular and neglected model of the
+atom, in which all the electrons orbited around a small, positively
+charged core or ``nucleus,'' just like the planets orbiting around the
+sun. All the positive charge and nearly all the mass of the atom would
+be concentrated in the nucleus, rather than spread throughout the atom
+as in the raisin cookie model. The positively charged alpha particles
+would be repelled by the gold atom's nucleus, but most of the alphas
+would not come close enough to any nucleus to have their paths
+drastically altered. The few that did come close to a nucleus,
+however, could rebound backwards from a single such encounter, since
+the nucleus of a heavy gold atom would be fifty times more massive
+than an alpha particle.
+
+The nucleus was later found to be a cluster of particles called
+protons, with charge $+e$, and electrically neutral particles called
+neutrons.  The number of protons is notated $Z$, and referred to as
+the atomic number. The total number of neutrons and protons is notated
+$A$, and for light, stable nuclei is usually about equal to $2Z$,
+i.e., the numbers of neutrons and protons are roughly equal.
+
+The trouble with the planetary model was that, as we will see in
+ch.~\ref{ch:radiation}, an accelerating electric charge radiates
+light. This would have caused the orbiting electrons to lose energy
+and spiral into the nucleus. The resolution of this problem would have
+to wait until the classical picture of the atom was replaced by one involving
+the new field of quantum physics.
+<% end_sec('matter-nucleus') %>
+
+\vspace{17mm}
+
+<% begin_sec("The energy scale for nuclear physics",nil,'matter-nuclear-e-scale') %>
+
+For nuclear reactions, experiments show that the energy scale is about
+$10^{-13}\ \junit$ per neutron or proton, or about 6 orders of
+magnitudes more than the scale for chemical reactions discussed in
+sec.~\ref{subsec:matter-atomic-e-scale}. Let's compare this with the
+electrical energy that we expect a nucleus to have. The radius of a
+medium-sized nucleus is on the order of $r\sim 3\times10^{-15}\
+\munit$, and we can take this as a typical distance between the
+electrically interacting protons.  Using this distance as an input, we
+can estimate (\note{estimate-elec-energy-in-nucleus}) the electrical
+energy of a nucleus, divided by the number of neutrons and protons, to
+be $\sim (+2\times 10^{-14}\ \junit)(Z-1)$. 
+
+Subject to all the crude assumptions that went into this
+order-of-magnitude estimate, this is in the right ballpark.  It would
+therefore be tempting therefore to try to interpret nuclear processes
+as involving purely electrical interactions, just like chemical
+processes. On this interpretation, the vast disparity between chemical
+and nuclear energy scales would be solely due to the very different
+values of $1/r$.
+
+But there are two things that prevent this from working.  First, we do
+observe energetic nuclear reactions and excitations that occur when
+there is only one proton on the scene, but in such cases the
+electrical energy, which is proportional to $Z-1$, would be zero ---
+there is nothing for the proton to interact with electrically.
+Second, the sign of the energy is positive, indicating that energy is
+required in order to assemble the system and could be released by
+letting it fly apart. The purely repulsive electrical interaction
+between the like charges of the protons can never explain why nuclei
+are \emph{bound}. We conclude that although electrical energy may
+often be big enough to matter in nuclear processes, there must be some
+other interaction involved as well. This is called the strong nuclear
+force. 
+
+<% end_sec('matter-nuclear-e-scale') %>
+<% end_sec('models-of-matter') %>
+
+<% begin_sec("Gauss's law when the number of dimensions is effectively less than three",4,'gauss-in-lt-3-dim') %>
+Our world is three-dimensional, but it is full of physical systems that are effectively one- or
+two-dimensional. Pool and car racing are effectively two-dimensional sports. When a
+locomotive pulls a string of freight cars up a steep grade, the situation is effectively one-dimensional.
+Figure \figref{porcupine} sketches the field of a point charge in three, two, and one dimensions.
+These occur in practice. For example, the two-dimensional field pattern in figure \figref{porcupine}
+exists in the layer of transparent insulator in figure \figref{coax}, if we take a cross-section
+perpendicular to the cable's central axis.
+
+<% marg(300) %>
+<%   
+  fig(
+    'porcupine',
+    %q{The field of a point charge in three, two, and one dimensions.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'coax',
+    %q{A coaxial cable.}
+  )
+%>
+<% end_marg %>
+
+In three dimensions, our previous analysis showed that the field of a point charge was proportional
+to $1/r^2$. This was because the field was proportional to the density of field lines, as measured
+by number of field lines per unit area, and area has units of distance squared.
+
+In two dimensions, the density of field lines is measured by the number of field lines per unit
+length, so the field of a point charge is proportional to $1/r$. If charge is spread out along a
+line, like the central wire of the cable in figure \figref{coax}, then a cross-section perpendicular
+to the wire intersects the wire only at one point, and we can therefore treat the wire as
+a point charge.
+
+The simplest analysis of all is in one dimension. Here the field lines can't spread at all --- there is
+nowhere for them to escape. The ``density'' of field lines is simply the number of field lines, and
+this doesn't change with distance from the charge. The field varies as $1/r^0$, i.e., it is constant.
+This analysis applies to the field of a flat sheet of charge.
+
+\begin{eg}{Electric field of a line of charge}\label{eg:e-line-of-charge}
+The reasoning above about proportionalitites was an extremely simple way to find the
+exponent with which the electric field varied as a function of distance in several cases.
+However, this technique will never determine unitless constants of proportionality such
+as 2 and $\pi$. In this example we apply Gauss's law in more detail to determine the
+correct numerical factors in the case of a line of charge.
+
+Consider the field of an infinitely long line of charge, holding a uniform
+charge per unit length $\lambda$. 
+The problem has two types of symmetry. The line of charge, and therefore the resulting
+field pattern, look the same if we rotate them about the line. The second symmetry
+occurs because the line is infinite: if we slide the line along its own length,
+nothing changes. This sliding symmetry, known as a translation symmetry,
+tells us that the field must point directly away from the line at any given point.
+
+Based on these symmetries, we choose the Gaussian surface shown in
+figure \figref{e-line-of-charge}. If we want to know the field at a distance $R$ from
+the line, then we choose this surface to have a radius $r$, as shown in the
+figure. The length, $L$, of the surface is irrelevant.
+
+The field is parallel to the surface on the end caps,
+and therefore perpendicular to the end caps' area vectors, so there is no
+contribution to the flux. On the long, thin strips that make up the rest of
+the surface, the field is perpendicular to the surface, and therefore parallel
+to the area vector of each strip, so that the dot product occurring in the
+definition of the flux is $\vc{E}_j\cdot\vc{A}_j=|\vc{E}_j||\vc{A}_j||\cos\ 0\degunit=|\vc{E}_j||\vc{A}_j|$.
+Gauss's law gives
+\begin{align*}
+        4\pi k q_{in}        &= \sum \vc{E}_j\cdot\vc{A}_j \\
+        4\pi k \lambda L        &= \sum |\vc{E}_j||\vc{A}_j|\eqquad.\\
+\intertext{The magnitude of the field is the same on every strip, so we can take it outside the sum.}
+        4\pi k \lambda L        &= |\vc{E}| \sum |\vc{A}_j| \\
+\intertext{In the limit where the strips are infinitely narrow, the surface becomes a
+cylinder, with (area)=(circumference)(length)=$2\pi rL$.}
+        4\pi k \lambda L        &= |\vc{E}| \times 2\pi rL \\
+        |\vc{E}|                        &= \frac{2k\lambda}{r} 
+\end{align*}
+We had already found the $1/r$ nature of the field, and the factor of $k\lambda$ has to be
+there because of units, so the only new accomplishment in this calculation to determine
+that the unitless constant was 2.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'e-line-of-charge',
+    %q{Applying Gauss's law to an infinite line of charge.}
+  )
+%>
+<% end_marg %>
+
+<% marg(0) %>
+<%
+  fig(
+    'pillbox',
+    %q{Applying Gauss's law to an infinite sheet of charge.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Field of a charged plane}\label{eg:pillbox}
+\egquestion Suppose we want to find the field of an infinite, uniformly sheet of charge, with charge
+density $\sigma$ in units of coulombs per square meter.
+As in example \ref{eg:e-line-of-charge}, we know in advance, by visualizing the
+way the field lines spread out, that the result must be of a form with a certain exponent ---
+the exponent is zero, so that the field is independent of the distance $r$. If we are
+to fix the constant of proportionality by the same technique, then we need to start by
+picking a Gaussian surface. What would be an advantageous choice?
+
+\eganswer Figure \figref{pillbox} shows a shape that works, called a Gaussian pillbox.
+It respects the planar symmetry of the problem, and is chosen so that the field on the two flat
+faces is always parallel to $\der\vc{A}$.  This calculation is completed in problem
+\ref{hw:pillbox}, p.~\pageref{hw:pillbox}.
+\end{eg}
+
+<% end_sec('gauss-in-lt-3-dim') %>
+
+<% begin_sec("Gauss's law in local form, with field vectors",nil,'gauss-div') %>\index{Gauss's law!local form}
+The laws of physics are ultimately local, but so far our only local way of stating Gauss's
+law locally is in terms of field lines: in a vacuum, they don't end.
+Reasoning about field lines is often less practical than working with field vectors,
+so we would like to have a local statement of Gauss's law that is expressed in terms of field vectors.
+
+To figure out how to translate from the field-line picture to field vectors, it will
+be helpful to simplify to one dimension and then generalize back to three dimensions
+at the end. In one dimension, field lines can't spread out because there is nowhere for
+them to escape. If multiple field lines are superposed, we have to draw them slightly
+offset so that we can see them separately. The ``density'' of field lines is simply the
+number of field lines that pass through a given point.
+
+In the example shown in figure \subfigref{field-lines-1-dim}{1}, three equal positive charges are shown
+with their field lines. The constants of proportionality are chosen such that each field
+has exactly two field lines coming out of it, and a field line ``density'' of 1 is just an
+electric field of 1 unit. In one-dimensional examples like this, it's easy to take field-line
+patterns and superpose them, as in \subfigref{field-lines-1-dim}{2}. Figure \subfigref{field-lines-1-dim}{3}
+is a graph of the field as a function of position. It looks like a staircase, with a discontinuity
+at each charge.
+
+<% marg(300) %>
+<%   
+  fig(
+    'field-lines-1-dim',
+    %q{1.~Three equal positive charges, in one dimensions, with their field lines.
+       2.~The superposition of the fields.
+       3.~A graph of the electric field, for the same example.
+       4.~A similar graph with a larger number of charges.
+       5.~The field of a continuous charge distribution.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'variable-capacitor',
+    %q{This variable capacitor acts effectively like the kind of one-dimensional system described
+       in figure \figref{field-lines-1-dim}.}
+  )
+%>
+<% end_marg %>
+
+We would like to find a local law that describes the behavior of the field at any point.
+In the vacuum regions between the charges, this is easy: the field is constant, and if
+we like, we can describe this by saying that $\der E/\der x=0$. \emph{At} a charge, this
+becomes awkward, because the field behaves badly. We therefore consider the limit as
+the number of charges becomes large, \subfigref{field-lines-1-dim}{4}, and finally
+infinite, \subfigref{field-lines-1-dim}{5}. The slope of the graph is the charge density,
+\begin{equation*}
+  \frac{\der E}{\der x} \propto \frac{\der q}{\der x}.
+\end{equation*}
+In the notation $\der q$, the $\der$ is to be interpreted as ``a little bit of,'' i.e.,
+we are talking about the infinitesimal amount of charge contained within the infinitesimal
+distance $\der x$. The idea is that if $\der q/\der x$ is large, we have a lot of densely
+packed stair steps, making the slope of the staircase $\der E/\der x$ steeper. In a region
+of vacuum, the density of charge is zero, and we get a constant field. This is the local
+form of Gauss's law, for field vectors, in one dimension.
+
+Although our main goal in developing this theory in one dimension was
+to immediately turn around and generalize it to three dimensions,
+effectively one-dimensional systems do exist in real life. For example
+in figure \figref{variable-capacitor}, charge can be deposited on the
+series of metal plates, and if the charge on one of the plates is $q$,
+then it acts as a charge density $q/h$, in units of coulombs per meter, where $h$ is the
+spacing between the plates.
+
+To visualize the meaning of the derivative $\der E/\der x$, we display in figure
+\figref{divmeter-one-d} a hypothetical device that measures this quantity. To give
+a good approximation to the derivative, we need to make the device very small.
+The extention of the springs is a measure of how much the field diverges. For example,
+if there are field lines coming out of the middle and going to the right, and also
+some field lines coming out of the middle and going to the left, then the forces on
+the two positive charges will be in opposite directions, and the spring will stretch.
+On the other hand, if the field is constant, $\der E/\der x=0$, then the two charges feel equal forces
+in the \emph{same} direction, and the spring does not stretch (although the device as a whole
+will accelerate to one side). Since this device measures how much the field diverges, we
+can refer to it as a ``div-meter'' (nobody actually uses this term), and we can also
+refer to $\der E/\der x$ as the \emph{divergence} of the electric field (people really
+do use this term).\index{divergence!one dimension}
+
+<% marg(300) %>
+<%   
+  fig(
+    'divmeter-one-d',
+    %q{The ``div-meter:'' an imaginary device
+         for measuring the divergence of the electric field, $\der E/\der x$, in one dimension.
+         Two positive charges are attached to the ends of a spring.
+         If the field has a positive divergence, then the string stretches.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'divmeter',
+    %q{A three-dimensional div-meter. The expansion of the meter's volume is a measure of the electric
+       field's divergence.}
+  )
+%>
+<% end_marg %>
+
+What about three dimensions? Conceptually, we just need to build the three-dimensional
+div-meter shown in figure \figref{divmeter}. What about a more mathematical description?
+Because the divergence is a kind of derivative,
+we want it to have the same kind of additive property that the plain old derivative has:
+the divergence of a sum should be the sum of the divergences. Physically, this is the
+only way we can guarantee that superposition will work. The following example shows that
+this essentially ties down the form of the divergence operator.\index{divergence!three dimensions}
+
+<%
+  fig(
+    'div-examples',
+    %q{Example \ref{eg:div-examples}: some diverging fields in two dimensions.},
+    {'width'=>'wide'}
+  )
+%>
+
+\begin{eg}{Superposition and rotation}\label{eg:div-examples}
+The field in figure \subfigref{div-examples}{1} is effectively one-dimensional.
+It has the form $\vc{E}=bx\hat{\vc{x}}$ (which could also be notated as
+$\langle x,0,0\rangle$ or $bx\hat{\vc{i}}$), where $b$ is a positive constant. For positive $x$,
+the field has a positive $x$ component, and conversely on the negative side. We already
+know the form of the div operator in one dimension, which is that it's simply a derivative,
+so we have $\operatorname{div}\vc{E}=\partial E_x/\partial x=b$. Here the symbol $\partial$, called a partial derivative, is like the usual $\der$ in calculus, but it
+says that only the specified variable is being differentiated with respect to, while other variables
+are held constant. That is, we hold $y$ constant while taking this derivative with respect to $x$.
+Since the divergence is constant, we conclude that this is an example in which the charge is
+distributed exactly evenly, like peanut butter spread evenly on a piece of bread.
+
+Rotating the field by 90 degrees gives \subfigref{div-examples}{2}. This example is
+also effectively one-dimensional, and we want our laws of
+physics to be rotationally invariant, so clearly the divergence must be given by
+the derivative with respect to $y$. The result for the charge distribution is the same,
+which makes sense because charge is a scalar, so it doesn't change when we rotate it.
+
+Now suppose we want the divergence to be additive. If we add the fields in the first
+two examples, we get the field shown in \subfigref{div-examples}{3}. It equals
+$bx\hat{\vc{x}}+by\hat{\vc{y}}$ (which can also be notated as $br\hat{\vc{r}}$,
+where $\hat{\vc{r}}$ is a unit vector pointing in the radial direction).
+Because electric fields obey the law of superposition, the charge distribution in this
+example must be the sum of the ones in examples 1 and 2, i.e., the divergence must be $2b$.
+\end{eg}
+
+Example \ref{eg:div-examples} makes it clear that the form of the divergence operator in three
+dimensions is fixed, up to a constant of proportionality, by superposition, rotational invariance,
+and consistency with the one-dimensional expression. Detailed calculations with
+the divergence operator are not part of the logical backbone of this book,
+so the remaining details of the discussion are relegated to a note (\note{div-three-d}).
+Filling in the necessary constant of proportionality, in SI units, the local form of Gauss's law
+reads
+\begin{equation*}
+  \operatorname{div}\vc{E} = 4\pi k\rho,
+\end{equation*}
+where $\rho$ (Greek letter ``rho,'' which makes the ``r'' sound)
+is the density of charge, in units of coulombs per cubic meter.
+
+<% marg(-7) %>
+<%   
+  fig(
+    'magnets-on-pencil',
+    %q{The magnetic repulsion between the two doughnut magnets cannot create a stable equilibrium
+       by itself. An additional constraint has to be provided by the pencil.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Earnshaw's theorem}\label{eg:earnshaw-theorem}\index{Earnshaw's theorem}
+When kids first start playing with magnets, one of the first things they usually attempt,
+unsuccessfully, is to levitate a magnet in the air, by using a second magnet either to attract
+it from above or to repel it from below.
+
+For the electrical version of this, we could place
+a negative charge in the field of figure \subfigref{div-examples}{3}. The equilibrium at the
+center is stable, because if the charge is displaced by some small distance in any direction,
+it will experience an electrical force pointing back toward the center. But Gauss's law guarantees
+that this field pattern can never exist in empty space; it can only exist when some density of
+positive charge is present. This is a special case of Earnshaw's theorem, which states that a system
+of point charges can never be in stable static equilibrium.
+
+There are more general versions of the theorem
+that apply to magnetic forces made by permanent magnets such as the ones in figure \figref{magnets-on-pencil}.
+
+If you were inclined to dismiss the raisin cookie model of the atom (sec.~\ref{subsec:thomson},
+p.~\pageref{subsec:thomson}) as silly, note that it evades Earnshaw's theorem, since it is not made
+solely out of point charges.
+\end{eg}
+
+<% end_sec('gauss-div') %>
+
+
+<% begin_notes %>
+
+\notetext{field-lines-terminating}{Field lines terminating at a point}
+\notesummary{Field lines don't cross. This is not in contradiction with the fact that multiple
+field lines can begin or end at a point charge.}
+We reasoned on p.~\pageref{field-lines-never-cross} that field lines
+can never cross at a point where the field is well defined. However,
+if we draw the field-line representation of positive and negative point charges, as in
+figure \figref{field-line-concept} on p.~\pageref{fig:field-line-concept},
+we find that the field lines begin at one point and terminate on the
+other. They do not literally cross, since they don't pass through one
+another, but our earlier logic still holds, and we find that the field
+must be undefined at these two points.  It is undefined because it is
+infinite.  At a pointlike source, the field blows up to infinity. 
+
+\notetext{force-on-point-charge}{Electric force on a test charge}
+\notesummary{The force on a test charge is $\vc{F}=q\vc{E}$.}
+When we insert a test charge in an ambient field,
+the total field at any given point in space becomes the vector sum $\vc{E}+\vc{E}_q$,
+where $\vc{E}_q$ is the field contributed by the test charge itself. The energy density at this
+point is proportional to the squared magnitude
+of this field, $(\vc{E}+\vc{E}_q)\cdot(\vc{E}+\vc{E}_q)$. Multiplying this expression
+out, we get terms $\vc{E}\cdot\vc{E}$ and $\vc{E}_q\cdot\vc{E}_q$, which are constants
+and therefore don't have any effect on our analysis, but in addition we get a term
+$2\vc{E}\cdot\vc{E}_q$. It is only this latter term than can change if we move $q$ around,
+so the force $\vc{F}$ on $q$ is proportional to it. Since $\vc{E}_q$ is proportional to $q$
+(as we can easily prove by Gauss's law), it follows that $\vc{F}$ is proportional both to
+$\vc{E}$ and to $q$. We conclude that $\vc{F}\propto q\vc{E}$. The remainder of the calculation
+is only required in order to show that the proportionality constant is 1.
+
+Although the force will only depend on the field at the point where the test charge is,
+the energy depends on the fields at all points in space. Therefore we are free to take
+the ambient field to be any field pattern we like. We could use a uniform field filling
+all of space, but then the total energy turns out to diverge. Instead, we take the test
+carge to be at the origin, and use an ambient field
+\begin{equation*}
+  \vc{E} = \begin{cases}
+    E\hat{\vc{z}} & \mbox{if } a<z<b \\
+    0 & \mbox{elsewhere},
+  \end{cases}
+\end{equation*}
+where $a<0$, $b>0$, and $E$ is a constant. Because of the symmetry of the problem under
+rotation about the $z$ axis, we use cylindrical coordinates in which $R$
+is the distance from the $z$ axis. In these coordinates, the volume of a ring of radius $R$, radial
+thickness $\der R$, and height $\der z$ is $\der v=(\text{circumference})\der R\der z=2\pi R\der R\der z$.
+The part of the energy describing the interaction is
+\begin{align*}
+  U &= \int_{z=a}^b \int_{R=0}^\infty \frac{1}{8\pi k}2\vc{E}\cdot\vc{E}_q\der v \\
+    &= \frac{E}{4\pi k} \int_{z=a}^b \int_{R=0}^\infty E_{q,z} \cdot 2\pi R\der R\der z \\
+    &= \frac{E}{2 k} \int_{z=a}^b \int_{R=0}^\infty \frac{kq}{r^2}\cos\theta\cdot R\der R\der z,
+\end{align*}
+where $r=\sqrt{R^2+z^2}$ is the distance from the origin, and $\cos\theta=z/R$. This becomes
+\begin{align*}
+  U &= \frac{Eq}{2} \int_{z=a}^b \int_{R=0}^\infty \frac{zR}{r^3} \der R\der z \\
+    &= \frac{Eq}{2} \int_{z=a}^b \int_{R=0}^\infty \frac{zR}{(R^2+z^2)^{3/2}} \der R\der z.
+\end{align*}
+This is the kind of situation where the best strategy is usually to clean up the integrand by expressing
+it in terms of a unitless variable. For the inside integral, with respect to $R$,
+let $u=R/z$, giving
+\begin{equation*}
+  U = \frac{Eq}{2} \int_{z=a}^b \int_{u=0}^{\pm\infty} \frac{u}{(u^2+1)^{3/2}} \der u\der z,
+\end{equation*}
+where the sign in the upper limit of the $u$ integral is $+$ for $z>0$ and $-$ for $z<0$.
+The indefinite integral is $-(u^2+1)^{-1/2}$, and plugging this in at the limits of integration
+gives
+\begin{align*}
+  U &= \frac{Eq}{2} \int_{z=a}^b \pm 1 \der z \\
+    &= \frac{Eq}{2} (|b|-|a|) .
+\end{align*}
+If we let $h$ be the height of the charge above the lower boundary and fix $H=|a|+|b|$,
+then $|a|=h$ and $|b|=H-h$, so $|b|-|a|=H-2h$ and $U=-Eqh+\text{const}$. Varying $h$ is equivalent
+to moving the charge up or down, so the force is $F=-\der U/\der h=Eq$, which is what we wanted to prove.
+
+\notetext{self-force}{No force on a charge from its own field}
+\notesummary{The force acting on a point charge is only that due to the field created by other charges.}
+
+In classical, as opposed to quantum, physics, an object always has a
+well-defined position in space at any given time. This book is about
+classical electromagnetism, and it is ultimately impossible to
+incorporate pointlike charged particles in such a theory. If a
+pointlike particle exists at a certain position in space, then the
+field blows up to infinity at that point, and this leads to all kinds
+of bad things. For example, the integral $\int E^2\der v$ diverges, so
+the energy of the field is infinite, and this implies via Einstein's
+$E=mc^2$ (sec.~\ref{sec:mass-energy-equivalence}, p.~\pageref{sec:mass-energy-equivalence})
+that the particle has infinite inertia, which it doesn't in
+reality.  Quantum physics eliminates these problems, for example by
+replacing a pointlike electron at a definite point in space with a
+fuzzy, probabilistic electron cloud. 
+
+It is nevertheless convenient to be able to talk about point charges
+in classical electromagnetism, and we can get away with it as long as
+we don't try to describe any phenomena below a certain length scale
+(known as the classical electron radius) and keep in mind some fairly
+common-sensical rules. One of these rules is that it certainly
+wouldn't make sense to try to calculate the force of an electric field
+on a charge without excluding the charge's own contribution to the
+field. Such a force would be infinite, and it wouldn't have a
+well-defined direction. (A less definitive argument for this rule is
+that according to Newton's third law, objects can't make forces on
+themselves. The trouble with this is that Newton's third law is in
+general false in electromagnetism. What is true is that momentum is
+conserved, and this momentum has to include the momentum of the fields
+themselves.  See sec.~\ref{subsec:momentum-of-em-fields},
+p.~\pageref{subsec:momentum-of-em-fields}.)
+
+\notetext{estimate-elec-energy-in-nucleus}{Estimate of the electrical energy in a nucleus}
+\notesummary{Starting from a rough estimate of the size of a typical nucleus, we make
+an order-of-magnitude estimate of its electrical energy.}
+To estimate
+the energy, we need to know how many pairs of protons are repelling one another.
+This is the binomial coefficient $\binom{Z}{2}=Z(Z-1)/2$, as in example
+\ref{eg:chlorine-pentafluoride}, p.~\pageref{eg:chlorine-pentafluoride}.
+
+To estimate the electrical energy of a nucleus, per neutron or proton, we can therefore calculate
+\begin{align*}
+  \frac{k[Z(Z-1)/2]e^2}{r}\cdot\frac{1}{A} &\approx \frac{ke^2}{r}\cdot\frac{Z(Z-1)}{2}\cdot\frac{1}{2Z} \\
+                     &= \frac{k(Z-1)e^2}{4r} \\
+                     &\sim (+2\times 10^{-14}\ \junit)(Z-1).
+% calc -x -e "ke^2/(4(3 10^-15 m))"
+\end{align*}
+
+\notetext{div-three-d}{Divergence operator in three dimensions}\index{divergence!component form}
+\notesummary{We present the form of the divergence operator and Gauss's law in three dimensions.}
+Example \ref{eg:div-examples} on p.~\pageref{eg:div-examples} suggests that the three-dimensional
+form of the divergence operator should be
+\begin{equation*}
+  \operatorname{div\vc{E}} =   \frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z}.
+\end{equation*}
+If the generalization of the one-dimensional operator to three dimensions exists, then it must
+have this form.  If it is to be local, then it can only depend on the field and its derivatives.
+Superposition rules out expressions such as
+$(\vc{E}\cdot\vc{E})(\partial E_x/\partial x)$ in which the field is combined with its derivatives.
+Only first derivatives are possible, because otherwise the units would not work out.
+Rotational invariance rules out derivatives such as $\partial E_x/\partial y$. There is nothing
+left to try but terms having the forms of the three terms given above in the claimed form of the
+operator. We can make linear combinations of these, such as $7\partial E_x/\partial x-3\partial E_y/\partial y$,
+but if the coefficients are unequal, it will violate rotational invariance. The only possibility left is
+the expression claimed above, or some constant multiple of it, so we arbitrarily fix the
+constant to be 1.
+
+Any three-dimensional, local version of Gauss's law must therefore have the form
+\begin{equation*}
+  \frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z} \propto \rho.
+\end{equation*}
+The constant of proportionality can only be fixed by making contact with the global form of
+Gauss's law.
+A theorem called Gauss's theorem says that the local and global forms of
+Gauss's law are equivalent, in a sense that is similar to the fundamental
+theorem of calculus. Explicitly, Gauss's theorem says that when we integrate
+the divergence of a field over a region of space, the result is the same as
+the flux through the surface of the region. To show that the constant of
+proportionality in Gauss's law is $4\pi k$, we can apply Gauss's theorem to
+a spherical region centered on a point charge.
+
+
+
+<% end_notes %>
+
+<% begin_hw_sec %>
+<% begin_hw('energy-scale',nil) %>
+Verify the calculation in sec.~\ref{subsec:matter-atomic-e-scale}, p.~\pageref{subsec:matter-atomic-e-scale},
+that estimated the energy scale for chemistry and atomic physics.
+<% end_hw() %>
+
+<% begin_hw('dipole-axis',nil) %>\index{dipole!electric!field on axis}
+Example \ref{eg:e-dipole-mid-plane} on p.~\pageref{eg:e-dipole-mid-plane} calculated the field
+of a dipole in its mid-plane. (a) Calculate its field at a point on its axis, at a distance $r$
+from the center. (b) Show that your result from part a is approximately proportional to
+$1/r^3$, as in the mid-plane.
+<% end_hw() %>
+
+<% begin_hw('pillbox',nil) %>
+Example \ref{eg:pillbox} on p.~\pageref{eg:pillbox} described the choice of a Gaussian surface
+in order to calculate the electric field of a uniformly charged plane, with charge
+density $\sigma$ in units of coulombs per square meter. (a) Complete the calculation in order
+to find the field. (b) Check that the units of your answer make sense.<% hw_solution %>
+<% end_hw() %>
+
+<% begin_hw('capacitor-field',nil) %>
+Suppose a capacitor consists of two parallel metal plates with area
+$A$, and the gap between them is $h$. The gap is small compared to the
+dimensions of the plates. Since the plates are metal, the charges on
+each plate are free to move, and will tend to cluster themselves more
+densely near the edges due to the mutual repulsion of the other
+charges in the same plate. However, it turns out that if the gap is
+small, this is a small effect, so we can get away with assuming
+uniform charge density on each plate.  Find the field between the
+plates when the charges on the plates are $q$ and $-q$. Use the result
+of problem \ref{hw:pillbox}, which has a solution in the back of the
+book.\answercheck
+<% end_hw() %>
+
+Thomson
+
+Millikan
+
+co2 molecule modeled as Q q Q, find q/Q for unstable static equilibrium [ans:-1/4], and show
+that this is impossible if the molecule is neutral
+
+
+
+<% end_hw_sec %>
+
+<% begin_lab("Gauss's law for magnetism") %>\label{lab:gauss-law}
+
+\begin{labapparatus}
+magnetic field sensor\\
+box containing unknown magnet\\
+graph paper with 1 cm grid
+\end{labapparatus}
+
+\begin{labgoal}
+Verify Gauss's law for magnetism, using an unknown magnet sealed inside a box.
+\end{labgoal}
+
+<%  
+  fig(
+    'gauss-law-lab',
+    %q{Measuring the flux through the box.},
+    {'suffix'=>'2','width'=>'narrow','float'=>true}
+  )
+%> 
+
+The unknown will be provided to you inside a cubical cardboard box about
+17 cm on a side. The magnetic field sensor is a wand like the one shown in
+figure \figref{horseshoe-magnet-components} on p.~\pageref{fig:horseshoe-magnet-components},
+which displays the component of the field parallel to the wand's axis, at a point
+near the tip, as in figure \figref{gauss-law-lab} on p.~\pageref{fig:gauss-law-lab}.
+
+The following technique can be used to determine the flux through one
+side of the box.  Orient the box with that side up. Place the graph
+paper on top of it. Watching the second hand on a clock, get a
+one-second beat going. It may be helpful to have your partner rap
+their knuckles on the table. In the software, initiate a period data
+collection preset to last 17 seconds.\footnote{If using LoggerPro, do
+this using Experiment:Data collection.} Start collecting data, and
+simultaneuosly begin scanning the sensor down the rows of the graph
+paper, covering a 1 cm by 17 cm strip in one second. Use the software
+to average the data, which gives a measure of the total
+flux.\footnote{In LoggerPro, this is done through Analyze:Statistics.}
+(Conceptually flux is really a sum, not an average, but that doesn't
+matter in this experiment because Gauss's law for magnetism doesn't
+depend on whether the fluxes are measured in different units or scaled
+by some arbitrary factor.)
+
+Adding the fluxes through all six sides of the cube provides a test of
+Gauss's law.
+
+Theoretically the validity of Gauss's law should not depend on whether
+there are additional contributions to the magnetic field from the ambient
+field in the room. However, it is easier physically to rotate the box
+rather than scanning the different sides while the box stays in one orientation.
+This means that there can be a contribution from the ambient field, which
+we need to get rid of. This can be achieved by waving the wand in the air
+where the top of the box \emph{would} be, but with the box removed.
+The result is the contribution to each flux measurement from the ambient
+field, so the final result can be corrected by subtracting six times this
+number.
+
+
+<% end_lab %>
+
+<% end_chapter() %>

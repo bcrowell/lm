@@ -1,0 +1,36 @@
+Neutron stars are the collapsed remnants of dead stars.
+They rotate quickly, and their rotation can be measured extremely
+accurately by radio astronomers. Some of them rotate at such a predictable
+rate that they can be used to count time about as accurately as the
+best atomic clocks. They do decelerate slowly, but this
+deceleration can be taken into account. One of the best-studied
+stars of this type\footnote{Verbiest \emph{et al.}, Astrophysical Journal 679 (675) 2008}
+was observed continuously over a 10-year period. As of
+the benchmark date April 5, 2001, it was found to have
+\begin{align*}
+  \omega &= 1.091313551502333\times10^{3}\ \sunit^{-1} \\
+\intertext{and}
+  \alpha &= -1.085991\times10^{-14}\ \sunit^{-2},
+\end{align*}
+where the error bars in the final digit of each number are about $\pm 1$.
+Astronomers often use the Julian year as their unit of time, where one
+Julian year is defined to be exactly $3.15576\times10^7\ \sunit$. Find the
+number of revolutions that this pulsar made over a period of 10 Julian
+years, starting from the benchmark date.\answercheck
+
+% http://iopscience.iop.org/article/10.1086/529576
+% not paywalled
+% P=5.757451924362137 ms
+% Pdot=5.729370 10^-20
+% reference epoch = 52005 (JD(?))
+%   = when j --now="2001 apr 5"
+% calc -e "P=5.757451924362139 ms; Pdot=5.729370 10^-20; omega=2pi/P->s-1; alpha=-(1/(2pi))Pdotomega^2->s-2"
+%    omega = 1.09131355150233*10^3 s-1
+%    alpha = -1.08599067863924*10^-14 s-2
+% omega calculated using WA
+%   1.0913135515023333
+%   with error bars of 2 in last digit of P =>
+%   1.0913135515023327
+% error bars on alpha:
+%   calc -e "P=5.757451924362139 ms; Pdot=5.729372 10^-20; omega=2pi/P->s-1; alpha=-(1/(2pi))Pdotomega^2->s-2"
+%    alpha = -1.08599105773526*10^-14 s-2

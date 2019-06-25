@@ -1,0 +1,72 @@
+\subsection{Fluids}
+
+In physics, the term \intro{fluid}\index{fluid}
+is used to mean either a gas or a liquid. The important
+feature of a fluid can be demonstrated by comparing with a
+cube of jello on a plate. The jello is a solid. If you shake
+the plate from side to side, the jello will respond by
+shearing, i.e., by slanting its sides, but it will tend to
+spring back into its original shape. A solid can sustain
+shear forces, but a fluid cannot. A fluid does not resist a
+change in shape unless it involves a change in volume.
+
+\subsection{Pressure}
+
+We begin by restricting ourselves to the case of fluid statics,
+in which the fluid is at rest and in equilibrium. A small
+chunk or ``parcel'' of the fluid has forces acting on it
+from the adjacent portions of the fluid. We have assumed that the parcel is
+in equilibrium, and if no external forces are present then these forces must cancel.
+By the definition
+of a fluid these forces are perpendicular to any part of the imaginary
+boundary surrounding the parcel. Since force is an additive
+quantity, the force the fluid exerts on any surface must be proportional to the
+surface's area. We therefore define the \intro{pressure}\index{pressure}
+to be the (perpendicular) force per unit area,
+\begin{equation}
+  P = \frac{F_\perp}{A}.
+\end{equation}
+If the forces are to cancel, then this force must be the
+same on all sides on an object such as a cube, so it follows that pressure
+has no direction: it is a scalar.
+The SI units of pressure are newtons per square meter, which can be
+abbreviated as pascals, $1\ \zu{Pa}=1\ \nunit/\munit^2$. The pressure
+of the earth's atmosphere at sea level is about 100 kPa.
+
+Only pressure \emph{differences} are ordinarily of any importance.
+For example, your ears hurt when you fly in an airplane because there
+is a pressure difference between your inner ear and the cabin; once the
+pressures are equalized, the pain stops.
+
+\subsection{Variation of pressure with depth}
+
+If a fluid is subjected to a gravitational field and is in equilibrium, then
+the pressure can only depend on depth (figure \ref{fig:funkycontainer}).
+
+% fig {"name":"funkycontainer","caption":"The pressure is the same at all the points marked with dots."}
+
+To find the variation with depth, we consider the vertical
+forces acting on a tiny, cubical parcel of the fluid having infinitesimal
+height $\der y$, where positive $y$ is up.
+By requiring equilibrium, we find that the difference in pressure
+between the top and bottom is
+$\der P  =  -\rho g \der y$.
+A more elegant way of writing this is in terms
+of a dot product, 
+\begin{equation}
+  \der P = \rho\vc{g}\cdot\der\vc{y}
+\end{equation}
+which automatically takes care of the plus or minus sign, and avoids
+any requirements about the coordinate system. By integrating this equation,
+we can find the change in pressure $\Delta P$ corresponding to any change
+in depth $\Delta y$.
+
+\subsection{Archimedes' principle}
+
+A helium balloon or a submarine experiences unequal pressure above and below, due to the
+variation of pressure with depth. The total force of the surrounding fluid does not vanish,
+and is called the buoyant force. In a fluid in equilibrium that does not contain any foreign object,
+any parcel of fluid evidently has its weight canceled out by the buoyant force on it. This buoyant
+force is unchanged if another object is substituted for the parcel of fluid, so
+the buoyant force on a submerged object is upward and equal to the weight of
+the displaced fluid. This is called \intro{Archimedes' principle}.\index{Archimedes' principle}

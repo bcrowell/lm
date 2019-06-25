@@ -1,0 +1,196 @@
+<% begin_sec("Damped, free motion") %>
+        <% begin_sec("Numerical treatment") %>\label{freedampednumerical}
+        An oscillator that has friction is referred to as
+        damped.\index{damped oscillations}\index{oscillations!damped}
+        Let's use numerical techniques to find the motion of a damped
+        oscillator that is released away from equilibrium, but experiences
+        no driving force after that. We can expect that the motion will consist
+        of oscillations that gradually die out.
+
+        In section \ref{sec:oscillations}, we simulated the undamped case using
+        our tried and true Python function based on conservation of energy. Now,
+        however, that approach becomes a little awkward, because it involves
+        splitting up the path to be traveled into $n$ tiny segments, but in the presence of damping,
+        each swing is a little shorter than the last one, and
+        we don't know in advance exactly how far the oscillation will get before turning around.
+        An easier technique here is to use force rather than energy.
+        Newton's second law, $a=F/m$, gives $a=(-kx-bv)/m$, where we've made use
+        of the result of example \ref{eg:springforce} for the force exerted by the spring.
+        This becomes a little prettier if we rewrite it in the form
+        \begin{equation*}
+                ma+bv+kx = 0\eqquad,
+        \end{equation*}
+        which gives symmetric treatment to three terms involving $x$ and its first and
+        second derivatives, $v$ and $a$. Now instead of calculating the time $\Delta{}t=\Delta{}x/v$
+        required to move a predetermined distance $\Delta{}x$, we pick $\Delta{}t$ and
+        determine the distance traveled in that time, $\Delta{}x=v\Delta{}t$. Also, we can
+        no longer update $v$ based on conservation of energy, since we don't have any
+        easy way to keep track of how much mechanical energy has been changed into
+        heat energy. Instead, we recalculate the velocity using $\Delta{}v=a\Delta{}t$.
+\begin{listing}{1}<%code_listing('oscillations.py',%q{
+import math
+k=39.4784        # chosen to give a period of 1 second
+m=1.
+b=0.211        # chosen to make the results simple
+x=1.
+v=0.
+t=0.
+dt=.01
+n=1000
+for j in range(n):
+  x=x+v*dt
+  a=(-k*x-b*v)/m
+  if (v>0) and (v+a*dt<0) :
+    print("turnaround at t=",t,", x=",x)
+  v=v+a*dt
+  t=t+dt
+})%>\end{listing}
+\begin{verbatim}
+turnaround at t= 0.99 , x= 0.899919262445
+turnaround at t= 1.99 , x= 0.809844934046
+turnaround at t= 2.99 , x= 0.728777519477
+turnaround at t= 3.99 , x= 0.655817260033
+turnaround at t= 4.99 , x= 0.590154191135
+turnaround at t= 5.99 , x= 0.531059189965
+turnaround at t= 6.99 , x= 0.477875914756
+turnaround at t= 7.99 , x= 0.430013546991
+turnaround at t= 8.99 , x= 0.386940256644
+turnaround at t= 9.99 , x= 0.348177318484
+\end{verbatim}
+
+        The spring constant, $k=4\pi{}=39.4784$ N/m, is designed so that
+        if the undamped equation $f=(1/2\pi)\sqrt{k/m}$ was still true, the frequency
+        would be 1 Hz. We start by noting that the addition of a small amount of damping
+        doesn't seem to have changed the period at all, or at least not to within the
+        accuracy of the calculation.\footnote{This subroutine isn't as accurate a way of
+        calculating the period as the energy-based one we used in the undamped case,
+        since it only checks whether the mass turned around at some point during the
+        time interval $\Delta{}t$.} You can check for yourself, however, that a large value
+        of $b$, say 5 $\nunit\unitdot\sunit/\munit$, does change the period significantly.
+
+        We release the mass from $x=1\ \munit$, and after one cycle, it only comes back
+        to about $x=0.9\ \munit$. I chose $b=0.211\ \nunit\unitdot\sunit/\munit$ by fiddling
+        around until I got this result, since a decrease of exactly 10\% is easy to
+        discuss. Notice how the amplitude after two cycles is about $0.81\ \munit$,
+        i.e., $1\ \munit$ times $0.9^2$: the amplitude has again dropped by exactly 10\%.
+        This pattern continues for as long as the simulation runs, e.g.,
+        for the last two cycles, we have 0.34818/0.38694=0.89982, or almost exactly 0.9
+        again.
+        It might have seemed capricious when I chose to use the unrealistic
+        equation $F=-bv$, but this is the payoff. Only with $-bv$ friction do
+        we get this kind of mathematically simple exponential decay.
+
+        Because the decay is exponential, it never dies out completely; this is different from
+        the behavior we would have had with Coulomb friction, which does make objects grind
+        completely to a stop at some point. With friction that acts like $F=-bv$, $v$ gets smaller
+        as the oscillations get smaller. The smaller and smaller force then causes them to die out at a
+        rate that is slower and slower.
+
+        <% end_sec() %>
+<% begin_sec("Analytic treatment") %>\label{freedampedanalytic}
+<% marg(0) %>
+<%
+  fig(
+    'dampedsine',
+    %q{%
+      A damped sine wave, of the form 
+              $x =  Ae^{- ct}\zu{sin} (\omega_{f} t+\delta)$.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'sc-compare-damping',
+    %q{%
+      Self-check \ref{sc:compare-damping}.
+    }
+  )
+%>
+<% end_marg %>
+
+        Taking advantage of this unexpectedly simple result, let's find an analytic solution
+        for the motion. The numerical output suggests that we assume a solution of the form
+        \begin{equation*}
+                x = Ae^{-ct}\sin (\omega{}_f t+\delta)\eqquad,
+        \end{equation*}
+        where the unknown constants
+        $\omega_f$ and $c$ will presumably be related to $m$, $b$, and $k$.
+        The constant $c$ indicates how quickly the oscillations die out. 
+         The constant
+        $\omega_f$ is, as before, defined as $2\pi$ times the frequency, with the subscript
+        $f$ to indicate a free (undriven) solution. All our equations will come out
+        much simpler if we use $\omega$s everywhere instead of $f\/$s from now on, and,
+        as physicists often do,
+        I'll generally use the word ``frequency'' to refer to $\omega$ when the context
+        makes it clear what I'm talking about.
+        The phase angle $\delta$ has no real physical
+        significance, since we can define $t=0$ to be any moment in time we like.
+
+<% self_check('compare-damping',<<-'SELF_CHECK'
+In figure \figref{sc-compare-damping}, which graph has the greater value of $c$?
+  SELF_CHECK
+  ) %>
+
+        The factor $A$ for the initial amplitude can also be omitted without loss of generality,
+        since the equation we're trying to solve, $ma+bv+kx = 0$, is linear. That is,
+        $v$ and $a$ are the first and second derivatives of $x$, and the derivative
+        of $Ax$ is simply $A$ times the derivative of $x$. Thus, if $x(t)$ is a solution of the
+        equation, then multiplying it by a constant gives an equally valid solution.
+        This is another place where we see that a damping force proportional to $v$ is the easiest to handle
+        mathematically. For a damping force proportional to $v^2$, for example, we would have
+        had to solve the equation  $ma+bv^2+kx = 0$, which is nonlinear.
+
+        For the purpose
+        of determining $\omega_f$ and $c$, the
+        most general form we need to consider is therefore
+        $x = e^{-ct}\sin \omega_f t$ ,
+        whose first and second derivatives are
+        $v = e^{-ct}\left(-c \sin \omega_f t + \omega\cos \omega_f t\right) $
+        and        $a = e^{-ct}\left(c^2 \sin \omega_f t 
+                        -2\omega_f c \cos \omega_f t 
+                        -\omega_f^2\sin \omega_f t\right)$.
+        Plugging these into the equation $ma+bv+kx = 0$ and setting the sine and
+        cosine parts equal to zero gives, after some tedious algebra,
+        \begin{align*}
+                c        &= \frac{b}{2m} \\
+        \intertext{and}
+                \omega_f        &= \sqrt{\frac{k}{m}-\frac{b^2}{4m^2}}\eqquad.
+        \end{align*}
+        Intuitively, we expect friction to ``slow down'' the motion, as when we ride a bike
+        into a big patch of mud. ``Slow down,'' however, could have more than one meaning here. It
+        could mean that the oscillator would take more time to complete each cycle, or it could
+        mean that as time went on, the oscillations would die out, thus giving smaller velocities.
+
+        Our mathematical results show that both of these things happen. 
+        The first equation says that $c$, which indicates how quickly the
+        oscillations damp out, is directly related to $b$, the strength of the damping.
+
+        The second equation, for the frequency, can be compared with the result from page
+        \pageref{shm-k-m} of $\sqrt{k/m}$ for the undamped system.
+        Let's refer to this now as $\omega_\zu{o}$, to distinguish it from the actual frequency
+        $\omega_f$ of the free oscillations when damping is present. The result for
+        $\omega_f$ will be less than $\omega_\zu{o}$, due to the presence of the $b^2/4m^2$ term.
+        This tells us that the addition of friction to the system does increase the time required
+        for each cycle. However, it is very common for the
+        $b^2/4m^2$ term to be negligible, so that $\omega_f\approx\omega_\zu{o}$.
+<% marg(0) %>
+<%
+  fig(
+    'damping-effect-on-frequency',
+    %q{%
+      A damped sine wave is compared with an undamped one, with $m$ and $k$ kept the same and only $b$ changed.
+    }
+  )
+%>
+<% end_marg %>
+
+        Figure \figref{damping-effect-on-frequency} shows an example. The damping here is quite strong:
+        after only one cycle of oscillation, the amplitude has already been reduced by a factor of 2,
+        corresponding to a factor of 4 in energy. However, the frequency of the damped oscillator is
+        only about 1\% lower than that of the undamped one; after five periods, the accumulated lag is just barely visible in the offsetting
+        of the arrows. We can see that extremely strong damping --- even stronger than this --- would have
+        been necessary in order to make $\omega_f\approx\omega_\zu{o}$ a poor approximation.
+
+<% end_sec() %>
+<% end_sec() %>

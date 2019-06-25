@@ -1,0 +1,169 @@
+% (c) 2018 Ben Crowell, licensed under the Creative Commons
+% Attribution-ShareAlike license,
+% http://creativecommons.org/licenses/by-sa/1.0/
+%
+\documentclass{lmseries}
+% \let\ifpdf\relax % http://tex.stackexchange.com/questions/11414/package-ifpdf-error
+% --------> this fails with TeX Live 2013, conflicts with xparse
+%\selectlanguage{english}
+\usepackage{lmlanguage}
+%\includeonly{n1/ctemp}
+\inputprotcode
+\makeindex
+\pdfmapfile{=fullembed.map} % created by the script create_fullembed_file
+\begin{document}
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+% 
+% The following is all related to margin kerning.
+% This is activated in dp.cls using the boolean wantmarginkerning.
+% The constant 1 is to allow margin kerning, but to keep it from affecting
+% line breaks.
+\ifthenelse{\boolean{wantmarginkerning}}{
+ \setprotcode\font
+ {\it \setprotcode \font}
+ {\bf \setprotcode \font}
+ {\bf \it \setprotcode \font}
+ \pdfprotrudechars=1
+}{}
+% Override lmcommon.cls, show subsection numbers:
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\sffamily\raggedright\protect\sansmath}{\showsecnum{\thesubsection}}{0.6em}{}   
+%========================= frontmatter =========================
+\formatchtoc{\Large}{}{4mm}
+\frontmatter
+\yesiwantarabic
+\renewcommand{\chapdir}{front}
+\include{front/title}
+\yesiwantarabic
+\nomarginlayout
+\vspace{10mm}\begin{center}\bfseries\sffamily{}\noindent{}{\huge Brief Contents}\end{center}\vspace{10mm}
+
+\newcommand{\brieftocpartstyle}{\large\sffamily{}}
+\newcommand{\brieftocchstyle}{\normalsize\sffamily{}}
+\newcommand{\brieftocvert}{7mm}
+\newcommand{\brieftochoriz}{\hspace{20mm}}
+\newcommand{\brieftoctabularwidth}{90mm}
+
+\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+ & Preface for the student \hfill \pageref{anchor-student-preface} \\
+ & Preface for the instructor \hfill \pageref{anchor-instructor-preface} \\
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle Electric and magnetic fields}\\
+\brieftocentry[\hfill]{ch:fields-intro}{The electric and magnetic fields} \\
+\brieftocentry[\hfill]{ch:gauss-law}{Gauss's law}\\
+\brieftocentry[\hfill]{ch:potential}{The electric potential}\\
+\brieftocentry[\hfill]{ch:electromagnetism}{Electromagnetism}\\
+\brieftocentry[\hfill]{ch:radiation}{Radiation}\\
+\brieftocentry[\hfill]{ch:relativity}{$\star$ More about relativity (optional)}
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle DC circuits}\\
+\brieftocentry[\hfill]{ch:resistance}{Electrical resistance}\\
+\brieftocentry[\hfill]{ch:dc-circuits}{Parallel and series circuits}
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle Iterated integrals}\\
+\brieftocentry[\hfill]{ch:iterated}{Iterated integrals}
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle Sources of magnetism}\\
+\brieftocentry[\hfill]{ch:b-superpos}{Sources of magnetism}
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle AC circuits}\\
+\brieftocentry[\hfill]{ch:oscillations}{Review of oscillations, resonance, and complex numbers}\\
+\brieftocentry[\hfill]{ch:ac}{AC circuits}\\
+\brieftocentry[\hfill]{ch:impedance}{Impedance}
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle Stokes's theorem}\\
+\brieftocentry[\hfill]{ch:stokes}{Stokes's theorem}\\
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle Electromagnetic properties of materials}\\
+\brieftocentry[\hfill]{ch:materials}{Electromagnetic properties of materials}\\
+\end{tabular}
+
+\vspace{\brieftocvert}\noindent\brieftochoriz%
+\brieftocchstyle\begin{tabular}{rp{\brieftoctabularwidth}}
+& \textit{\brieftocpartstyle Relativity}\\
+\brieftocentry[\hfill]{ch:relativity-standalone}{Relativity (optional stand-alone chapter)}\\
+\end{tabular}
+
+
+
+\onecolumn\vfill
+\mynormaltype
+
+\pagebreak[4]
+
+\vspace{0mm}
+\begin{center}
+\noindent\huge\bfseries\sffamily{}Contents\mynormaltype
+\end{center}
+\vspace{0mm}
+\begin{multicols}{2}
+  \tableofcontents
+  \setcounter{unbalance}{0}
+\end{multicols}
+\normallayout\onecolumn
+
+%========================= preface =========================
+    \include{preface/student}
+    \include{preface/instructor}
+%========================= main matter =========================
+\mainmatter
+%-- I want the whole book numbered sequentially, arabic:
+  \pagenumbering{arabic} 
+  \addtocounter{page}{10}
+\parafmt
+\myeqnspacing % Do this early and often, since it gets reset by \normalsize
+%========================= chapters =========================
+\wugga%used to be needed after preface
+    \renewcommand{\chapdir}{fields}\include{fields/atemp}
+    \renewcommand{\chapdir}{fields}\include{fields/btemp}
+    \renewcommand{\chapdir}{fields}\include{fields/ctemp}
+    \renewcommand{\chapdir}{fields}\include{fields/dtemp}
+    \renewcommand{\chapdir}{fields}\include{fields/etemp}
+    \renewcommand{\chapdir}{fields}\include{fields/ftemp}
+    \renewcommand{\chapdir}{dc}\include{dc/atemp}
+    \renewcommand{\chapdir}{dc}\include{dc/btemp}
+    \renewcommand{\chapdir}{iterated}\include{iterated/atemp}
+    \renewcommand{\chapdir}{magnetism}\include{magnetism/atemp}
+    \renewcommand{\chapdir}{ac}\include{ac/atemp}
+    \renewcommand{\chapdir}{ac}\include{ac/btemp}
+    \renewcommand{\chapdir}{ac}\include{ac/ctemp}
+    \renewcommand{\chapdir}{stokes}\include{stokes/atemp}
+    \renewcommand{\chapdir}{materials}\include{materials/atemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+    \renewcommand{\chapdir}{relativity}\include{relativity/atemp}
+        \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
+%
+    \widelayout
+    \renewcommand{\chapdir}{end}
+    \include{end/skillstemp}
+    \onecolumn\include{end/hwanstemp}
+    \include{end/mathtemp}
+    \onecolumn\include{end/photocreditstemp}
+%========================= index =========================
+\label{splits:index}\printindex
+%========================= data tables, etc. =========================
+        \blankchaptermarks\label{splits:data}
+        \input{end/data}
+\end{document}

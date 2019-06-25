@@ -1,0 +1,20 @@
+Suppose we want to send a space probe to Venus and have it
+release a balloon that can float over the landscape and collect
+data. The venerian atmosphere is hot and corrosive, so it would
+destroy the kind of mylar or rubber balloon we use on earth.
+The purpose of this problem is to get a feel for things by estimating whether an aluminum beer
+can full of helium would float on Venus. Here are some data:
+
+\noindent\begin{tabular}{p{40mm}l}
+density of atmosphere & $67\ \kgunit/\munit^3$ \\
+density of helium & $6.0\ \kgunit/\munit^3$ \\
+mass of beer can & 15 g \\
+volume of beer can & $330\ \zu{cm}^3$
+\end{tabular}
+
+\noindent Find the ratio $F_B/F_g$ of the buoyant force to the can's weight. Does it float?\answercheck\hwendpart
+
+% density of helium:
+% calc -x -e "P=9.2 MPa; mp=1.67 10^-27 kg; m=4mp; T=740; rho=mP/(kBT)->kg/m3; ~->g/cm3"
+%     rho = 6.01518477881062 kg/m3
+%    6.01518477881062*10^-3 g/cm3

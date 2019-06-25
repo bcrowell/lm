@@ -1,0 +1,80 @@
+Energy exists in various forms, such a the energy of sunlight,
+gravitational energy, and the energy of a moving object,
+called kinetic energy.
+Because it exists in so many forms, it is a tricky concept to
+define. By analogy, an amount of money can be expressed in terms
+of dollars, euros, or various other currencies, but modern governments
+no longer even attempt to define the value of their currencies in absolute
+terms such as ounces of gold. If we make radio contact with aliens someday,
+they will presumably not agree with us on how many units of energy there
+are in a liter of gasoline. We could, however, pick something arbitrary
+like a liter of gas as a standard of comparison.
+
+% fig {"name":"tractor-and-black-box","caption":"Work."}
+
+Figure \ref{fig:tractor-and-black-box} shows a train of thought leading
+to a standard that turns out to be more convenient. In panel 1,
+the tractor raises the weight over
+      the pulley. Gravitational energy is stored in the weight, and this energy could be released
+      later by dropping or lowering the weight. In 2, the tractor accelerates the trailer,
+      increasing its kinetic energy.
+In 3, the tractor pulls a plow. Energy is
+      expended in frictional heating of the
+      plow and the dirt, and in breaking dirt
+      clods and lifting dirt up to the sides of
+      the furrow.
+In all three examples, the energy of the gas in the tractor's tank is converted
+into some other form, and in all three examples there is a force $F$ involved,
+and the tractor travels some distance $d$ as it applies the force.
+
+Now imagine a black box, panel 4, containing a gasoline-powered
+engine, which is designed to reel in a steel cable, exerting a force $F$.
+The box only communicates with the outside world via the hole through which its
+cable passes, and therefore the amount of energy transferred out through the cable
+can only depend on $F$ and $d$. Since force and energy are both additive, this
+energy must be proportional to $F$, and since the energy transfer is additive
+as we reel in one section of cable and then a further section, the energy
+must also be proportional to $d$. As an arbitrary standard, we pick the constant
+of proportionality to be 1, so that the energy transferred, notated $W$ for \intro{work},
+is given by
+\begin{equation}\label{eqn:work}
+  W = Fd.
+\end{equation}
+This equation implicitly defines the SI unit of energy to be $\kgunit\unitdot\munit^2/\sunit^2$,
+and we abbreviate this as one joule, $1\ \junit=1\ \kgunit\unitdot\munit^2/\sunit^2$.
+
+In general, we define \intro{work}\index{work} as the transfer of energy by a macroscopic force, with a plus sign if energy
+is flowing from the object exerting the force to the object on which the force is exerted.
+(In examples such as heat conduction, the forces are forces that occur in the collisions between atoms,
+which are not measurable by macroscopic devices such as spring scales and force probes.)
+Equation \eqref{eqn:work} is a correct rule for computing work in the special case when the force is
+exerted at a single well-defined point of contact, that point moves along a line, the force and the
+motion are parallel, and the force is constant. The distance $d$ is a signed quantity.
+
+When the force and the motion are not parallel, we have the generalization
+\begin{equation}
+  W = \vc{F}\cdot\Delta \vc{x},
+\end{equation}
+in which $\cdot$ is the vector dot product. When force and motion are along the same line,
+but the force is not constant,
+\begin{equation}
+  W = \int F \der x.
+\end{equation}
+Applying both of these generalizations at once gives
+\begin{equation}
+  W = \int \vc{F} \cdot \der \vc{x},
+\end{equation}
+which is an example of the line integral from vector calculus.
+
+The rate at which energy is transferred or transformed is the \intro{power},\index{power}
+\begin{equation}
+  P = \frac{\der E}{\der t}.
+\end{equation}
+The units of power can be abbreviated as watts, $1\ \zu{W}=1\ \junit/\sunit$.
+For the conditions under which $W = \int F \der x$ is valid, we can use the
+fundamental theorem of calculus to find $F=\der W/\der x$, and since
+$\der W/\der t=(\der K/\der x)(\der x/\der t)$, the power transmitted by the
+force is
+\begin{equation}
+  P = Fv.
+\end{equation}
