@@ -89,10 +89,12 @@ m4_define(__hw_fac_1_proveanticommutative,16)m4_dnl
 m4_define(__hw_fac_1_xnotassociative,17)m4_dnl
 m4_define(__hw_fac_1_perp-in-plane,18)m4_dnl
 m4_define(__hw_fac_1_vector-plus-scalar-fac,19)m4_dnl
-m4_define(__hw_fac_2_energy-scale,1)m4_dnl
-m4_define(__hw_fac_2_dipole-axis,2)m4_dnl
-m4_define(__hw_fac_2_pillbox,3)m4_dnl
-m4_define(__hw_fac_2_capacitor-field,4)m4_dnl
+m4_define(__hw_fac_2_asteroid-electrostatic,1)m4_dnl
+m4_define(__hw_fac_2_inkjet,2)m4_dnl
+m4_define(__hw_fac_2_energy-scale,3)m4_dnl
+m4_define(__hw_fac_2_dipole-axis,4)m4_dnl
+m4_define(__hw_fac_2_pillbox,5)m4_dnl
+m4_define(__hw_fac_2_capacitor-field,6)m4_dnl
 m4_define(__hw_fac_3_lightning-rod,1)m4_dnl
 m4_define(__hw_fac_10_helmholtzcoil-center,1)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl

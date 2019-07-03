@@ -1,0 +1,19 @@
+% Estimate reasonable numbers based on https://arxiv.org/abs/1002.2478 :
+%   calc -x -e "rho=5 g/cm3; R=100 m; E=9 V/m; phi=4.4 V; r=sqrt(Ephi/(kGrho^2R)); m=rhor^3; M=rhoR^3; g=GM/R^2; q=phir/k"
+% Check that forces are of the same order of magnitude:
+%   calc -e "m=10^-8 kg; g=10^-5 m/s2; q=10^-13 C; E=10 V/m; mg; qE"
+%
+The gravitational field $g$ of a typical asteroid is so weak that it is just a loose pile
+of rubble, gravel, and dust. In this environment, the ambient electric field
+$E$ can make a strong enough force on a small  particle of dust so that it competes
+on fairly even terms with gravity.\\
+(a) Suppose that a particle of mass $m$ and charge $q$
+is disturbed so that it is shot upward from the surface with initial velocity $v$.
+Find the height $h$ to which it rises. Use a coordinate system in which up is
+positive, so that $g$ will be negative, $v$ and $h$ positive, and $E$ either positive or
+negative depending on the direction of the field.\answercheck\hwendpart
+(b) Evaluate your result for $v=1.0\times10^{-1}\ \munit/\sunit$ and
+the following data, which are meant to be fairly
+realistic for an asteroid the size of a football field: $g=-1.0\times10^{-4}\ \munit/\sunit^2$,
+$E=40\ \zu{V}/\munit$, $m=1.0\times10^{-8}\ \kgunit$, $q=1.0\times10^{-14}\ \zu{C}$.\answercheck\hwendpart
+
