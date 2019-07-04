@@ -1564,11 +1564,33 @@ a spherical region centered on a point charge.
 <% begin_hw_sec %>
 <% begin_hw('asteroid-electrostatic',nil) %>__incl(hw/asteroid-electrostatic)<% end_hw() %>
 
+<% marg() %>
+<%   
+  fig(
+    'hw-inkjet',
+    %q{Problem \ref{hw:inkjet}.}
+  )
+%>
+<% end_marg %>
+
 <% begin_hw('inkjet',nil) %>__incl(hw/inkjet)<% end_hw() %>
 
 <% begin_hw('energy-scale',nil) %>
 Verify the calculation in sec.~\ref{subsec:matter-atomic-e-scale}, p.~\pageref{subsec:matter-atomic-e-scale},
 that estimated the energy scale for chemistry and atomic physics.
+<% end_hw() %>
+
+<% begin_hw('co2-equilibrium',nil) %>
+A carbon dioxide has a symmetrical, straight shape, with the carbon atom sitting at the midpoint between the
+two oxygens. Suppose that we model this as a set of three point charges, like this:
+$Q$ --- $q$ --- $Q$.
+Find the ratio $q/Q$ that produces a static equilibrium, and show that the total charge is nonzero.\answercheck
+
+\hwremark{This is not a satisfactory model for several reasons. The $\zu{CO}_2$ molecules
+in our environment are normally electrically neutral and are nevertheless stable. The equilibrium
+would also be unstable (determinable directly, or from Earnshaw's theorem without the need for
+a calculation). This is an example of the fact that classical theories of matter fail, and we need
+quantum physics.}
 <% end_hw() %>
 
 <% begin_hw('dipole-axis',nil) %>\index{dipole!electric!field on axis}
@@ -1598,15 +1620,6 @@ plates when the charges on the plates are $q$ and $-q$. Use the result
 of problem \ref{hw:pillbox}, which has a solution in the back of the
 book.\answercheck
 <% end_hw() %>
-
-Thomson
-
-Millikan
-
-co2 molecule modeled as Q q Q, find q/Q for unstable static equilibrium [ans:-1/4], and show
-that this is impossible if the molecule is neutral
-
-
 
 <% end_hw_sec %>
 
