@@ -868,7 +868,7 @@ swimming pool by the filter pump.
 As a more exotic example, consider the neutron, a subatomic particle\index{neutron}
 that is very common --- neutrons make up about half the mass of your
 body. Neutrons are never found by themselves in nature, because in a matter of minutes, a
-free neutron will spontaneously undergo the radioactive decay process
+free neutron will spontaneously undergo the radioactive decay process\label{neutron-beta-decay}
 \begin{equation*}
   \text{neutron} \rightarrow \text{proton} + \text{electron} + \text{antineutrino}.
 \end{equation*}
@@ -1594,6 +1594,24 @@ that estimated the energy scale for chemistry and atomic physics.
 
 <% begin_hw('co2-equilibrium',nil) %>__incl(hw/co2-equilibrium)<% end_hw() %>
 
+<% begin_hw('muonic',nil) %>m4_include(../share/em-general/hw/muonic.tex)<% end_hw() %>
+
+<% begin_hw('electron-capture-fac',nil) %>
+The radioactive decay of the neutron was discussed on p.~\pageref{neutron-beta-decay}. A similar process is
+electron capture,
+\begin{equation*}
+  \text{proton} + \text{electron} \rightarrow \text{neutron} + \text{neutrino}.
+\end{equation*}
+The only particle here that has not been previously mentioned is the neutrino, but as you might
+guess, it's electrically neutral, just like the antineutrino. Verify that electric charge is
+conserved in this type of decay.
+
+\hwremark{Luckily for us, this process doesn't occur spontaneously in the hydrogen atom --- it requires
+an input of energy to make it go. It does occur spontaneously, however, for some nuclei.}
+<% end_hw() %>
+
+<% begin_hw('exponentialwire',nil) %>m4_include(../share/em-general/hw/exponentialwire.tex)<% end_hw() %>
+
 <% begin_hw('dipole-axis',nil) %>\index{dipole!electric!field on axis}
 Example \ref{eg:e-dipole-mid-plane} on p.~\pageref{eg:e-dipole-mid-plane} calculated the field
 of a dipole in its mid-plane. (a) Calculate its field at a point on its axis, at a distance $r$
@@ -1620,6 +1638,29 @@ uniform charge density on each plate.  Find the field between the
 plates when the charges on the plates are $q$ and $-q$. Use the result
 of problem \ref{hw:pillbox}, which has a solution in the back of the
 book.\answercheck
+
+<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
+
+<% marg() %>   
+<%
+  fig(
+    'hw-nacl',
+    %q{Problem \ref{hw:nacl}.}
+  )
+%>
+\spacebetweenfigs
+<% 
+  fig( 
+    'hw-charge-swings-up',
+    %q{Problem \ref{hw:charge-swings-up}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('escaping-charge',2) %>m4_include(../share/em-general/hw/escaping-charge.tex)<% end_hw() %>
+
+<% begin_hw('charge-swings-up',2) %>m4_include(../share/em-general/hw/charge-swings-up.tex)<% end_hw() %>
+
 <% end_hw() %>
 
 <% end_hw_sec %>
