@@ -1570,11 +1570,40 @@ a spherical region centered on a point charge.
     %q{Problem \ref{hw:conducting-sphere-in-uniform-field}.}
   )
 %>
+\spacebetweenfigs
+<%   
+  fig(
+    'hw-flux-through-cube-uniform-field',
+    %q{Problem \ref{hw:flux-through-cube-uniform-field}.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
+    'hw-div-nonsense',
+    %q{Problem \ref{hw:div-nonsense}.}
+  )
+%>
 <% end_marg %>
 
 <% begin_hw('conducting-sphere-in-uniform-field',nil) %>__incl(hw/conducting-sphere-in-uniform-field)<% end_hw() %>
 
+<% begin_hw('flux-through-cube-uniform-field',nil) %>
+The figure shows a uniform electric field of magnitude $E$, and a side view of a cubical imaginary surface with
+sides of length $h$.\\
+(a) Find the flux through the top of the cube.\answercheck\hwendpart
+(b) Find the flux through each side of the cube.\answercheck\hwendpart
+(c) Find the flux through the bottom of the cube.\answercheck\hwendpart
+(d) Find the total flux through the cube.\answercheck\hwendpart
+(e) Find the electric charge contained inside the cube.\answercheck\hwendpart
+<% end_hw() %>
+
+
+<% begin_hw('div-nonsense',nil) %>__incl(hw/div-nonsense)<% end_hw() %>
+
 <% begin_hw('asteroid-electrostatic',nil) %>__incl(hw/asteroid-electrostatic)<% end_hw() %>
+
+
 
 <% marg() %>
 <%   
@@ -1595,6 +1624,8 @@ that estimated the energy scale for chemistry and atomic physics.
 <% begin_hw('co2-equilibrium',nil) %>__incl(hw/co2-equilibrium)<% end_hw() %>
 
 <% begin_hw('muonic',nil) %>m4_include(../share/em-general/hw/muonic.tex)<% end_hw() %>
+
+
 
 <% begin_hw('electron-capture-fac',nil) %>
 The radioactive decay of the neutron was discussed on p.~\pageref{neutron-beta-decay}. A similar process is
@@ -1638,6 +1669,9 @@ uniform charge density on each plate.  Find the field between the
 plates when the charges on the plates are $q$ and $-q$. Use the result
 of problem \ref{hw:pillbox}, which has a solution in the back of the
 book.\answercheck
+<% end_hw() %>
+
+
 
 <% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
 
@@ -1660,8 +1694,6 @@ book.\answercheck
 <% begin_hw('escaping-charge',2) %>m4_include(../share/em-general/hw/escaping-charge.tex)<% end_hw() %>
 
 <% begin_hw('charge-swings-up',2) %>m4_include(../share/em-general/hw/charge-swings-up.tex)<% end_hw() %>
-
-<% end_hw() %>
 
 <% end_hw_sec %>
 
