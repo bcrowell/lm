@@ -1601,6 +1601,22 @@ sides of length $h$.\\
 
 <% begin_hw('div-nonsense',nil) %>__incl(hw/div-nonsense)<% end_hw() %>
 
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'hw-neuron',
+    %q{%
+      Problem \ref{hw:neuron-stick}. Top: A realistic picture
+      of a neuron. Bottom: A simplified diagram of one segment of the tail (axon).
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('neuron-stick') %>__incl(../../share/em-general/hw/neuron-stick)<% end_hw() %>
+
 <% begin_hw('asteroid-electrostatic',nil) %>__incl(hw/asteroid-electrostatic)<% end_hw() %>
 
 
@@ -1620,6 +1636,8 @@ sides of length $h$.\\
 Verify the calculation in sec.~\ref{subsec:matter-atomic-e-scale}, p.~\pageref{subsec:matter-atomic-e-scale},
 that estimated the energy scale for chemistry and atomic physics.
 <% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('co2-equilibrium',nil) %>__incl(hw/co2-equilibrium)<% end_hw() %>
 
@@ -1671,18 +1689,41 @@ of problem \ref{hw:pillbox}, which has a solution in the back of the
 book.\answercheck
 <% end_hw() %>
 
-
-
-<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
-
-<% marg() %>   
+<% marg() %>
+<%
+  fig(
+    'hw-heline',
+    %q{Problem \ref{hw:heline}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-hetriangle',
+    %q{Problem \ref{hw:hetriangle}.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'hw-nacl',
     %q{Problem \ref{hw:nacl}.}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+
+<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
+
+<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
+
+<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
+
+
+<% begin_hw('escaping-charge',2) %>m4_include(../share/em-general/hw/escaping-charge.tex)<% end_hw() %>
+
+\pagebreak
+
+<% marg %>
 <% 
   fig( 
     'hw-charge-swings-up',
@@ -1690,8 +1731,6 @@ book.\answercheck
   )
 %>
 <% end_marg %>
-
-<% begin_hw('escaping-charge',2) %>m4_include(../share/em-general/hw/escaping-charge.tex)<% end_hw() %>
 
 <% begin_hw('charge-swings-up',2) %>m4_include(../share/em-general/hw/charge-swings-up.tex)<% end_hw() %>
 
