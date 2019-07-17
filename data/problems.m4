@@ -108,7 +108,12 @@ m4_define(__hw_fac_2_hetriangle,16)m4_dnl
 m4_define(__hw_fac_2_nacl,17)m4_dnl
 m4_define(__hw_fac_2_escaping-charge,18)m4_dnl
 m4_define(__hw_fac_2_charge-swings-up,19)m4_dnl
-m4_define(__hw_fac_3_lightning-rod,1)m4_dnl
+m4_define(__hw_fac_3_two-climbing-routes,1)m4_dnl
+m4_define(__hw_fac_3_work-two-squares,2)m4_dnl
+m4_define(__hw_fac_3_aaa-battery-field,3)m4_dnl
+m4_define(__hw_fac_3_eink,4)m4_dnl
+m4_define(__hw_fac_3_dipole-vs-solenoid,5)m4_dnl
+m4_define(__hw_fac_3_lightning-rod,6)m4_dnl
 m4_define(__hw_fac_10_helmholtzcoil-center,1)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_agreeontime,2)m4_dnl
