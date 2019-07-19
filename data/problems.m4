@@ -119,6 +119,7 @@ m4_define(__hw_fac_3_vacuum-tube-potential,7)m4_dnl
 m4_define(__hw_fac_3_line-charge-field-to-potential,8)m4_dnl
 m4_define(__hw_fac_3_dipole-vs-solenoid,9)m4_dnl
 m4_define(__hw_fac_3_lightning-rod,10)m4_dnl
+m4_define(__hw_fac_4_molecular-dipoles,1)m4_dnl
 m4_define(__hw_fac_10_helmholtzcoil-center,1)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_agreeontime,2)m4_dnl
