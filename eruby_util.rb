@@ -1147,7 +1147,7 @@ def handle_m4_in_answer_file(text)
   File.open(temp_file_name,'w') { |f|
     f.print text
   }
-  cmd = "#{run_m4} #{temp_file_name} dummy ."
+  cmd = "#{run_m4} #{temp_file_name} #{ENV['BK']} ."
   result = `#{cmd}`
   if result=='' then $stderr.print "error in handle_m4_in_answer_file, result is null string" end
   File.delete(temp_file_name)

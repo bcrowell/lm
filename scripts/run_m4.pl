@@ -29,6 +29,7 @@ if ($book_dir) {
   push @prepend_m4_files,"$book_dir/../lm.m4";
 }
 if ($book eq 'sn') {push @prepend_m4_files,"$book_dir/sn.m4"}
+if ($book eq 'fac') {push @prepend_m4_files,"$book_dir/fac.m4"}
 if ($book eq 'me') {push @prepend_m4_files,"$book_dir/me.m4"}
 if ($book eq 'lm') {push @prepend_m4_files,"$book_dir/../lmseries.m4"}
 push @prepend_m4_files,"$book_dir/book.m4";
@@ -39,6 +40,7 @@ foreach my $f(@prepend_m4_files) {if (-e $f) {push @p,$f}}
 my $prepend_m4_files = join(' ',@p);
 
 my $cmd = "m4 -P $prepend_m4_files $file";
+#print STDERR "========in run_m4.pl, book=$book command = $cmd\n"; # qwe
 do_system($cmd,$file,'m4');
 
 sub do_system {

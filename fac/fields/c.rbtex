@@ -782,7 +782,9 @@ Gauss's law forbids this negative divergence from being created by external sour
 
 <% begin_hw('climbing-analogy-two-slopes') %>__incl(hw/climbing-analogy-two-slopes)<% end_hw() %>
 
-\pagebreak
+<% begin_hw('screened') %>__incl(hw/screened)<% end_hw() %>
+
+<% begin_hw('potential-to-e-with-constants-easy') %>__incl(hw/potential-to-e-with-constants-easy)<% end_hw() %>
 
 <% begin_hw('voltmeter-and-battery') %>m4_include(../share/em-general/hw/voltmeter-and-battery.tex)<% end_hw() %>
 
@@ -793,6 +795,10 @@ Gauss's law forbids this negative divergence from being created by external sour
     {'width'=>'fullpage'}
   )
 %>
+
+<% begin_hw('chargemotioninfield',nil) %>__incl(hw/chargemotioninfield)<% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('work-two-squares') %>__incl(hw/work-two-squares)<% end_hw() %>
 
@@ -806,16 +812,20 @@ Gauss's law forbids this negative divergence from being created by external sour
 
 <% begin_hw('aaa-battery-field') %>__incl(hw/aaa-battery-field)<% end_hw() %>
 
-\pagebreak
-
-<% marg(300) %>
+<% marg() %>
 <%   
   fig(
     'hw-eink',
     %q{Problem \ref{hw:eink}.}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+
+<% begin_hw('eink') %>__incl(hw/eink)<% end_hw() %>
+
+\pagebreak
+
+<% marg() %>
 <%
   fig(
     'spark-plug',
@@ -832,13 +842,13 @@ Gauss's law forbids this negative divergence from being created by external sour
 %>
 <% end_marg %>
 
-<% begin_hw('eink') %>__incl(hw/eink)<% end_hw() %>
-
 <% begin_hw('spark-plug-conceptual') %>__incl(hw/spark-plug-conceptual)<% end_hw() %>
 
 <% begin_hw('dipole-potential-fac') %>__incl(hw/dipole-potential-fac)<% end_hw() %>
 
 <% begin_hw('vacuum-tube-potential') %>__incl(hw/vacuum-tube-potential)<% end_hw() %>
+
+<% begin_hw('neuronenergy') %>__incl(hw/neuronenergy)<% end_hw() %>
 
 <% begin_hw('line-charge-field-to-potential') %>__incl(hw/line-charge-field-to-potential)<% end_hw() %>
 
@@ -869,6 +879,33 @@ is $q_a/q_b=a/b$. (b) Show that the density of charge (charge per unit area)
 is the other way around: the charge density on the smaller sphere is \emph{greater}
 than that on the larger sphere in the ratio $a/b$.
 <% end_hw() %>
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    '../../../share/em-general/figs/hw-nacl',
+    %q{Problem \ref{hw:vnacl}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('vnacl',2) %>m4_include(../share/em-dc/hw/vnacl.tex)<% end_hw() %>
+
+<% begin_hw('image-charge-unstable') %>__incl(hw/image-charge-unstable)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    'hw-image-charge-corner',
+    %q{Problem \ref{hw:image-charge-corner}.},
+    'suffix'=>'2'
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('image-charge-corner',2) %>__incl(hw/image-charge-corner)<% end_hw() %>
 
 <% end_hw_sec() %>
 
