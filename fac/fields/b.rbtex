@@ -561,7 +561,8 @@ a mass of $1.9\times10^{-25}\ \kgunit$.
 \eganswer The magnitude of the force is $qE$, and by Newton's second law the resulting acceleration is
 $a=(q/m)E=3.4\times10^{13}\ \munit/\sunit^2$. This is an enormous acceleration! Note that the properties
 of the molecule influence its motion
-only through the ratio $q/m$ of its charge to its mass.
+only through the ratio $q/m$ of its charge to its mass. We'll learn more about the spark plug in
+problem \ref{hw:spark-plug-conceptual}, p.~\pageref{hw:spark-plug-conceptual}.
 \end{eg}
 <% marg(50) %>
 <%   
@@ -785,7 +786,7 @@ The global form of Gauss's law for electric fields says that the flux through a 
 \end{equation*}
 where $q_\text{in}$ is the total charge inside the surface.
 
-\begin{eg}{A point charge}
+\begin{eg}{A point charge}\label{eg:gauss-law-point-charge}
 If we enclose a point charge $q$ with a spherical Gaussian surface of radius
 $r$, Gauss's law gives
 \begin{align*}
@@ -800,6 +801,69 @@ Taking the constant factor outside, we have
 The two sides of the equation are equal, so we have verified Gauss's law and
 proved that the proportionality constant of $4\pi k$ in Gauss's law is the
 correct one.
+\end{eg}
+
+\begin{eg}{A uniform sphere of charge}\label{eg:gauss-law-uniform-sphere}
+Consider a sphere of radius $b$ containing electric charge with a uniform density $\rho$,
+in units of $\zu{C}/\munit^3$, so that the total charge is
+$q=(\text{volume})\rho=(4\pi b^3\rho/3)$.
+
+This can't be a metal sphere like a door knob, because charge can move easily
+through a metal, and the repulsion would then cause it all to spread to the
+surface rather than remaining uniformly spread throughout the interior. This
+is, however, a reasonable model of an atomic nucleus, which has a finite size
+and is usually spherical or approximately spherical (p.~\pageref{nucleus-finite-size}).
+
+Let's find the electric field of this charge distribution.
+
+<% marg() %>
+<%
+  fig(
+    'eg-gauss-law-uniform-sphere',
+    %q{Example \ref{eg:gauss-law-uniform-sphere}. 1.~A spherical Gaussian surface with $r>b$. 2.~A surface with $r<b$.}
+  )
+%>
+<% end_marg %>
+
+By symmetry, the field points purely in the radial direction, and must also go to
+zero at the center. For any point outside the sphere, the calculation of example
+\ref{eg:gauss-law-point-charge} carries through as before. We can turn around the logic
+of that example and treat $E$ as the unknown, and the result will be as before,
+$E=kq/r^2=(4\pi k b^3\rho/3)/r^2$. So from the outside,
+we can't even tell that the sphere has a finite size, and the field has a $1/r^2$
+form, exactly as for a point charge.
+
+Inside the sphere, we will have a different result. We certainly can't have
+a $1/r^2$ field there, for that would give an infinite field at the center, and
+we've already found that the field at the center must be zero. The calculation
+of example \ref{eg:gauss-law-point-charge} doesn't apply here, because if we make
+a spherical Gaussian surface with a radius $r<b$, then the charge $q_\text{in}$ enclosed by the
+surface is smaller than $q$. For example, if we take $r=b/2$, then the volume enclosed
+is 1/8 of the total (because volume is proportional to the cube of the linear dimensions),
+and $q_\text{in}=q/8$. In general, a sphere of radius $r<b$ will enclose an amount
+of charge $q_\text{in}=(\text{volume})\rho=(4\pi r^3\rho/3)$. Since the field on our surface ia
+constant in magnitude and always perpendicular to the surface, the calculation
+from example \ref{eg:gauss-law-point-charge} requires only this modification of replacing
+$q_\text{in}$ with this smaller value. Completing the algebra results in
+$E=(4\pi k\rho/3)r$.
+
+Let's do some checks and interpretation. We expected by symmetry to have $E=0$ at the center,
+and this does work out. The reason that the result is a simple proportionality to $r$ (as opposed
+to a proportionality to some other power of $r$) is that there was a factor of $r^3$ for the
+enclosed charge, but a factor of $r^{-2}$ because electricity is an inverse-square force.
+Connecting with your knowledge of Newtonian gravity, this result is also the one we would
+expect from the shell theorem: the shells at radii greater than $r$ do not contribute to the
+field inside them. The analogy between electric and gravitational fields is exact in this
+example because they both go like $1/r^2$. We also see that $b$ does not appear in our expression
+for the interior field. This is not an accidental cancellation. Gauss's law tells us that
+the flux through the surface at $r<b$ only depends on the charge inside that surface. It doesn't
+matter at all whether there is charge on the outside. 
+
+The technique demonstrated in this example can also be applied to other examples with a special
+symmetry, for example the field of a uniformly charged cylinder (problem \ref{hw:solidchargedcylinder},
+p.~\pageref{solidchargedcylinder}). The idea is to try to choose a Gaussian surface whose symmetry
+matches that of the problem, so that the field anywhere on the surface is of the same magnitude
+and perpendicular to the surface.
 \end{eg}
 
 <% end_sec('gauss-charge') %>
@@ -1063,7 +1127,13 @@ For nuclear reactions, experiments show that the energy scale is about
 $10^{-13}\ \junit$ per neutron or proton, or about 6 orders of
 magnitudes more than the scale for chemical reactions discussed in
 sec.~\ref{subsec:matter-atomic-e-scale}. Let's compare this with the
-electrical energy that we expect a nucleus to have. The radius of a
+electrical energy that we expect a nucleus to have.
+
+
+Often, as in figure \figref{planetarymodel}, p.~\pageref{fig:planetarymodel}, we visualize
+the nucleus of an atom as a tiny dot, a point with no size. But this is impossible,
+because then the electrical potential energy of the protons would be infinite.\label{nucleus-finite-size}
+Actually, the radius of a
 medium-sized nucleus is on the order of $r\sim 3\times10^{-15}\
 \munit$, and we can take this as a typical distance between the
 electrically interacting protons.  Using this distance as an input, we
@@ -1716,8 +1786,9 @@ book.\answercheck
 
 <% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
 
-<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
+<% begin_hw('solidchargedcylinder') %>__incl(hw/solidchargedcylinder)<% end_hw() %>
 
+<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
 
 <% begin_hw('escaping-charge',2) %>m4_include(../share/em-general/hw/escaping-charge.tex)<% end_hw() %>
 
