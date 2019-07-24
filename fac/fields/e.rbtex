@@ -39,9 +39,9 @@ these waves, it's important to understand that in mathematics and the
 hard sciences, a ``why'' question can have more than one answer. It's
 different in other fields such as religion. If you ask a
 theologically well-informed Christian why humans have to endure pain
-and suffering, there is one definite answer, which is that that it's a
+and suffering, there is one definite answer, which is that it's a
 punishment for Eve's original sin of obtaining an unauthorized
-education from a professorial serpent. Done. Explained.  But in math
+education from a serpent. Done. Explained.  But in math
 and science, we have the problem of how to prove things rigorously
 without ever being allowed to appeal to some supernatural authority
 for basic principles to use as starting points. We do this by
@@ -221,12 +221,15 @@ Requiring conservation of energy in both examples, we have $U_\vc{E}+U_\vc{B}=U_
 but since the two vector addition problems involve the same angle, we must have $U_\vc{E}=U_\vc{B}$,
 as claimed.
 
-Since the energy densities are $(1/8\pi k)E^2$ and $(c^2/8\pi k)B^2$, it follows that
-$E=cB$. With a couple of centuries of hindsight, it would have been better if we had constructed
-a system of units in which $E$ and $B$ had the same units, and in fact they do have the same
-units in the cgs system. In the SI their units are different, but ignoring the factor of $c$,
-we can say that this means the magnitudes of the electric and magnetic fields in a plane wave
-are ``equal.''
+Since the energy densities are $(1/8\pi k)E^2$ and $(c^2/8\pi k)B^2$,
+it follows that $E=cB$. (This was problem \ref{hw:morally-equal-eb},
+p.~\pageref{hw:morally-equal-eb}). With a couple of centuries of
+hindsight, it would have been better if we had constructed a system of
+units in which $E$ and $B$ had the same units, and in fact they do
+have the same units in the cgs system. In the SI their units are
+different, but ignoring the factor of $c$, we can say that this means
+the magnitudes of the electric and magnetic fields in a plane wave are
+``equal.''
 
 <% end_sec('e-b-equal-energy') %>
 
@@ -310,9 +313,79 @@ which we will show on p.~\pageref{em-waves-propagate-at-c} is $c$. They are nond
 a plane wave glides along rigidly as in figure \figref{plane-wave-propagating}, without changing shape.
 <% end_sec('propagation-at-c') %>
 
+<% begin_sec("The electromagnetic spectrum",nil,'em-spectrum') %>
+
+Heinrich \index{Hertz, Heinrich}Hertz (for whom the unit of
+frequency is named) verified Maxwell's ideas experimentally.
+Hertz was the first to succeed in producing, detecting, and
+studying electromagnetic waves in detail using antennas and
+electric circuits. To produce the waves, he had to make
+electric currents oscillate very rapidly in a circuit. In
+fact, there was really no hope of making the current reverse
+directions at the frequencies of $10^{15}$ Hz possessed by
+visible light. The fastest electrical oscillations he could
+produce were $10^9$ Hz. He succeeded in showing that, just like visible light,
+the waves he produced were polarizable, and could be
+reflected and refracted (i.e., bent, as by a lens), and he
+built devices such as parabolic mirrors that worked
+according to the same optical principles as those employing
+light. Hertz's results were convincing evidence that light
+and electromagnetic waves were one and the same.
+
+Together, the experimentalist Hertz and the theorist Maxwell
+(sec.~\ref{sec:maxwell-vacuum}), showed that electromagnetic
+waves were in fact the structure underlying a variety of
+apparently disparate phenomena, including visible light, radio
+waves, and other phenomena such as x-rays. All of these types
+of radiation differ only in their frequency, and they lie along
+a unified electromagnetic spectrum (figure below)
+in which the visible rainbow spectrum is only a narrow slice.
+
+<%
+ fig(
+   'em-spectrum',
+   '',
+   {'width'=>'fullpage'}
+ )
+%>
+
+An electromagnetic wave can be characterized either by its
+frequency or by its wavelength $\lambda$ (Greek letter lambda, which
+makes the ``L'' sound). On a sinusoidal wave, the
+wavelength is the distance in space between one crest and the next.
+These are not two independent parameters. During one cycle of
+vibration, which takes time $1/f$, one wavelength $\lambda$ travels past a fixed point in space.
+We therefore have $c=(\text{distance})/(\text{time})=\lambda f$.
+A higher frequency corresponds to a shorter wavelength.
+
+The terminology for the various parts of the spectrum is
+worth memorizing, and is most easily learned by recognizing
+the logical relationships between the wavelengths and the
+properties of the waves with which you are already familiar.
+ Radio waves have wavelengths that are comparable to the
+size of a radio antenna, i.e., meters to tens of meters.
+Microwaves were named that because they have much shorter
+wavelengths than radio waves; when food heats unevenly in a
+microwave oven, the small distances between neighboring hot
+and cold spots is half of one wavelength of the standing
+wave the oven creates. The infrared, visible, and
+ultraviolet obviously have much shorter wavelengths, because
+otherwise the wave nature of light would have been as
+obvious to humans as the wave nature of ocean waves. To
+remember that ultraviolet, x-rays, and gamma rays all lie on
+the short-wavelength side of visible, recall that all three
+of these can cause cancer. (As you'll see when you learn about quantum physics,
+there is a basic physical reason why the cancer-causing
+disruption of DNA can only be caused by very short-wavelength
+electromagnetic waves. Contrary to popular belief,
+microwaves cannot cause cancer, which is why we have
+microwave ovens and not x-ray ovens!)
+
+<% end_sec('em-spectrum') %>
+
 <% begin_sec("Momentum and rate of energy flow",nil,'p-and-energy-flow') %>
 <% begin_sec("Momentum of a plane wave",nil,'p-plane-wave') %>\index{electromagnetic wave!momentum}
-Recalling the relations $\der\vc{p}/\der v =(1/4\pi k)$,
+Recalling the relations $\der\vc{p}/\der v =(1/4\pi k)\vc{E}\times\vc{B}$,
 $\der U_E/\der v=(1/8\pi k)E^2$, and $\der U_B/\der v=(c^2/8\pi k)B^2$, it is
 straightforward to show that for a plane wave, the energy and momentum are related
 by
@@ -357,6 +430,13 @@ coincidence, because the vector \emph{points} in the direction of the momentum
 and energy flow. The magnitude of the Poynting vector is power per unit 
 area.\index{Poynting, John Henry}\index{Poynting vector}
 
+It makes sense that the momentum density and the rate of energy flow differ by
+the factor $c^2$, which is huge in SI units. SI units were chosen so that their
+sizes would be of a convenient order of magnitude in everyday life. We know from
+ordinary experience that the energy flux of a shaft of sunlight can be physically
+staggering, whereas the momentum of the same sunlight is totally undetectable
+in everyday life.
+
 <%
   fig(
     'wave-poynting',
@@ -386,7 +466,7 @@ fast as it flows out (\note{static-poynting}).
 <% end_sec('poynting') %>
 <% end_sec('p-and-energy-flow') %>
 
-<% begin_sec("Maxwell's equations in a vacuum",4,'maxwell-vacuum') %>\index{Maxwell's equations!in vacuum}
+<% begin_sec("Maxwell's equations in a vacuum",nil,'maxwell-vacuum') %>\index{Maxwell's equations!in vacuum}
 <% marg() %>
 <%
   fig(
@@ -530,7 +610,7 @@ arising from the minus sign.
 
 <% begin_sec("Einstein's motorcycle",nil,'einstein-motorcycle') %>\index{Einstein, Albert}
 It seems as though we have a nice, tidy picture of electromagnetism all wrapped up. There should
-only be only a few loose ends to tie up, such as how to incorporate charges and currents into
+only be a few loose ends to tie up, such as how to incorporate charges and currents into
 Maxwell's equations, and how to connect Maxwell's equations to
 some practical problem-solving, such as the computation of the field of a solenoid.
 
@@ -596,12 +676,80 @@ things so as to create a Poynting vector in that direction.)
 
 <% begin_hw_sec %>
 
+<% begin_hw('reflected-poynting-and-p') %>
+An electromagnetic plane wave has is electric field in the $+y$ direction
+and its magnetic field in the $-z$ direction. Find the direction in which
+it is propagating.
+<% end_hw() %>
+
+<% begin_hw('plane-wave-find-b') %>
+At a particular point in time and space, 
+an electromagnetic plane wave has an energy flux $\vc{S}=a\hat{\vc{z}}$
+and an electric field in the $+x$ direction.
+Find the magnitude and direction of its magnetic field.\answercheck
+<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    'hw-colliding-zero-poynting',
+    %q{Problem \ref{hw:colliding-zero-poynting}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-solar-constant-momentum',
+    %q{Problem \ref{hw:solar-constant-momentum}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('colliding-zero-poynting') %>__incl(hw/colliding-zero-poynting)<% end_hw() %>
+
+<% begin_hw('solar-constant-momentum') %>__incl(hw/solar-constant-momentum)<% end_hw() %>
+
+<% begin_hw('reflected-poynting-and-p') %>
 A flash of light (say a short-duration pulse from a laser)
 strikes a mirror perpendicularly, and is competely reflected.
 Compare the Poynting vectors of the incident and reflected pulses,
 and give an interpretation (a) if we think of the Poynting vector
 as an energy flux, and (b) if we think of it as a momentum density.
 Address conservation of energy and momentum.
+<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('radiation-field-scaling-with-r') %>
+Figure \figref{inversesquare} shows a candle flame.  The light from
+the flame spreads out in all directions. We pick four representative
+rays from among those that happen to pass through the nearer square.
+Of these four, only one passes through the square of equal area at
+twice the distance. If the two equal-area squares were people's eyes,
+then only one fourth of the light would go into the more distant
+person's eye. In other words, the energy flux from a point source goes
+like $1/r^2$. If the energy flux is an electromagnetic wave, determine
+the dependence of the electric and magnetic fields on $r$.<% hw_solution %>
+<% end_hw() %>
+
+
+<%
+  fig(
+    'inversesquare',
+    %q{Problem \ref{hw:radiation-field-scaling-with-r}.},
+    {'width'=>'wide'}
+  )
+%>
+
+<% begin_hw('incoherent-poynting',2) %>
+Our intuition is that if we combine two beams of light into a single beam, traveling
+in the same direction, the intensities should add. But it is not so obvious how this
+can be, since the fields should add linearly, and the Poynting vector is proportional
+to the \emph{square} of the fields. Suppose we superimpose two plane waves that are 
+traveling in the same direction, but with random polarizations. Show that, on the average,
+the intensities do add.
+<% end_hw() %>
+
 
 <% end_hw_sec() %>
 
