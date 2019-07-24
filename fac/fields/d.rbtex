@@ -513,7 +513,7 @@ vertical direction, but this is in the wrong direction to produce any effect on 
 charges, which are separated from each other horizontally.
 
 In  \subfigref{two-charges-pressure-and-tension}{2}, the highlighted area
-between the two positive charges contains field lines that vertical pressure,
+between the two positive charges contains field lines that exhibit vertical pressure,
 causing a repulsion between the charges, along with a horizontal tension which
 has no effect on them.
 
@@ -642,7 +642,7 @@ Figure \figref{compass-misaligned-field-lines} shows the superposition
 of a compass needle's magnetic field (essentially the field of figure
 \figref{bar-magnet-field-lines}, p.~\pageref{fig:bar-magnet-field-lines})
 with the earth's magnetic field. The compass is not aligned with the earth's
-field, and from what we know about magnetic compasses we expect that there will
+field, and from what we know about magnetic compasses we expect that there will now
 be a torque that will tend to bring it into alignment.
 It could in principle be very difficult to find this torque, since the magnetic field
 pattern is so complicated. But by using the visual techniques of section
@@ -781,7 +781,7 @@ This is what happens, for example, with molecules that have nonzero dipole momen
 
 The universal form of electric dipole fields at large distances also holds for magnetic dipoles,
 as discussed on p.~\pageref{e-b-dipole-same}. In mini-lab \ref{lab:bar-magnet-b-vs-r} you probably
-found that the field went approximately like $1/r^2$ at the larger 
+found that the field went approximately like $1/r^3$ at the larger 
 distances.\index{dipole!far field!universality of}
 
 \begin{eg}{Molecules with zero and nonzero dipole moments}\label{eg:molecular-dipoles}
@@ -862,7 +862,7 @@ We then have
   F_x = -\frac{\partial }{\partial x}(\vc{D}\cdot\vc{E}) = \vc{D}\cdot\frac{\partial \vc{E}}{\partial x},
 \end{equation*}
 which depends on the dipole's properties only through $\vc{D}$. Similar expressions apply for the $y$ and $z$
-components.\index{dipole!force in nonuniform field}
+components.\index{dipole!force in nonuniform field}\label{force-on-dipole-in-nonuniform-field}
 
 This principle can be used as a way of measuring the unknown dipole
 moments of a beam of particles, as in figure
@@ -1148,6 +1148,97 @@ which is proportional to the cosine of the angle between the two factors.
 
 <% begin_hw_sec %>
 
+<% marg(-10) %>
+<%
+  fig(
+    'hw-sample-radiation',
+    %q{Problem \ref{hw:sample-radiation}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('sample-radiation') %>
+The figure depicts the electric fields in
+the radiation pattern of a certain type of radio antenna, shown in the photo superimposed
+in the background. Consider the small region of space indicated by the white square.
+As the waves pass through this area, spreading out like ripples from the antenna, they are moving up and to the right. We therefore
+expect that their momentum density should be up and to the right. For the reasons discussed on
+p.~\pageref{waves-not-pure-e-or-b}, the radio wave cannot be purely electric; it
+must contain a magnetic field as well. For convenience in discussion, a coordinate system
+is given below the diagram, with the $x$ axis pointing in the direction of propagation.
+Consider the following six possibilities
+for the direction of the magnetic field in the area of the white square: $+x$, $-x$,
+$+y$, $-y$, $+z$, and $-z$. Of these, which are not possible because they don't
+produce a momentum density in the $+x$ direction?
+<% end_hw() %>
+
+<% begin_hw('spherical-magnets') %>__incl(hw/spherical-magnets)<% end_hw() %>
+
+<%
+  fig(
+    'hw-spherical-magnets',
+    %q{Problem \ref{hw:spherical-magnets}.},
+    {'width'=>'wide'}
+  )
+%>
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'hw-spherical-magnets-tilted',
+    %q{Problem \ref{hw:spherical-magnets-tilted}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('spherical-magnets-tilted') %>__incl(hw/spherical-magnets-tilted)<% end_hw() %>
+
+
+<% begin_hw('ebforce') %>__incl(hw/ebforce)<% end_hw() %>
+<% begin_hw('velocityfilter') %>__incl(hw/velocityfilter)<% end_hw() %>
+<% begin_hw('moveandcurve') %>__incl(hw/moveandcurve)<% end_hw() %>
+<% begin_hw('describemotioninb') %>__incl(hw/describemotioninb)<% end_hw() %>
+<% begin_hw('ambiguousb') %>__incl(hw/ambiguousb)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ebnotpure') %>__incl(hw/ebnotpure)<% end_hw() %>
+<% begin_hw('findeandb') %>__incl(hw/findeandb)<% end_hw() %>
+<% begin_hw('ebexperiment') %>__incl(hw/ebexperiment)<% end_hw() %>
+<% begin_hw('cyclotron') %>__incl(hw/cyclotron)<% end_hw() %>
+
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'lineandsquaredipoles',
+    %q{Problem \ref{hw:lineandsquaredipoles}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('lineandsquaredipoles') %>__incl(hw/lineandsquaredipoles)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('dipole-in-nonuniform-field') %>__incl(hw/dipole-in-nonuniform-field)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('dipole-swivels-avg-vel') %>__incl(hw/dipole-swivels-avg-vel)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('electron-b-double-distance') %>__incl(hw/electron-b-double-distance)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('molecular-dipoles') %>__incl(hw/molecular-dipoles)<% end_hw() %>
+
 <%
   fig(
     'hw-molecular-dipoles',
@@ -1156,9 +1247,19 @@ which is proportional to the cosine of the angle between the two factors.
   )
 %>
 
-<% begin_hw('molecular-dipoles') %>__incl(hw/molecular-dipoles)<% end_hw() %>
+\pagebreak
 
-calculate dipole field on axis --- how is this different from the problem in ch. 2?
+<% marg(0) %>
+<%
+  fig(
+    'hw-sector-mass-spectrometer',
+    %q{Problem \ref{hw:sector-mass-spectrometer}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('sector-mass-spectrometer',2) %>__incl(hw/sector-mass-spectrometer)<% end_hw() %>
+
 
 <% end_hw_sec() %>
 

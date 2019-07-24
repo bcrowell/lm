@@ -1775,23 +1775,36 @@ book.\answercheck
 \spacebetweenfigs
 <%
   fig(
+    'hw-esquare',
+    %q{Problem \ref{hw:esquare}.}
+  )
+%>
+<% end_marg %>
+
+
+<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
+
+<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
+
+<% begin_hw('esquare') %>__incl(hw/esquare)<% end_hw() %>
+
+
+<% begin_hw('solidchargedcylinder') %>__incl(hw/solidchargedcylinder)<% end_hw() %>
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
     'hw-nacl',
     %q{Problem \ref{hw:nacl}.}
   )
 %>
 <% end_marg %>
 
-<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
-
-<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
-
-<% begin_hw('solidchargedcylinder') %>__incl(hw/solidchargedcylinder)<% end_hw() %>
-
 <% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
 
 <% begin_hw('escaping-charge',2) %>m4_include(../share/em-general/hw/escaping-charge.tex)<% end_hw() %>
-
-\pagebreak
 
 <% marg %>
 <% 
