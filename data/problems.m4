@@ -160,6 +160,14 @@ m4_define(__hw_fac_5_solar-constant-momentum,4)m4_dnl
 m4_define(__hw_fac_5_reflected-poynting-and-p,5)m4_dnl
 m4_define(__hw_fac_5_radiation-field-scaling-with-r,6)m4_dnl
 m4_define(__hw_fac_5_incoherent-poynting,7)m4_dnl
+m4_define(__hw_fac_6_pure-e-b-lorentz-graphical,1)m4_dnl
+m4_define(__hw_fac_6_agreeontime,2)m4_dnl
+m4_define(__hw_fac_6_gammafornegativev,3)m4_dnl
+m4_define(__hw_fac_6_voyagergamma,4)m4_dnl
+m4_define(__hw_fac_6_earth-lorentz-contraction,5)m4_dnl
+m4_define(__hw_fac_6_gammasimplefraction,6)m4_dnl
+m4_define(__hw_fac_6_gamma-taylor-fac,7)m4_dnl
+m4_define(__hw_fac_6_doppler-taylor-fac,8)m4_dnl
 m4_define(__hw_fac_10_helmholtzcoil-center,1)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_agreeontime,2)m4_dnl

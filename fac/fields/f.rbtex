@@ -19,7 +19,7 @@ And what if he rode \emph{at} the speed of light?\index{Einstein, Albert}
 
 It would seem that in the case where he rode at $c$, he should be at
 rest with respect to the wave, so that in his frame of reference the
-fields would don't change with time. But this violates Maxwell's
+fields don't change with time. But this violates Maxwell's
 equations.  With the benefit of hindsight, let's untangle this paradox
 that Einstein only finally resolved five years later, with the
 publication of his special theory of relativity. 
@@ -123,7 +123,7 @@ The form of the transformation is now completely determined, and algebra shows i
   cB_y' &= -\frac{v}{c}\mygamma E_x + \mygamma cB_y ,
 \end{align*}
 where $\mygamma$ (Greek letter gamma, which gakes the `g' sound) is shorthand for
-$1/\sqrt{1-(v/c)^2}$. The form of these equations is pretty rather simple if you
+$1/\sqrt{1-(v/c)^2}$. The form of these equations is pretty simple if you
 ignore all the factors of $c$ and realize that there is just an over-all factor of $\gamma$.
 The factors of $c$ occur in front of every magnetic field, and also under every $v$, so
 that all velocities are being measured as a fraction of the speed of 
@@ -378,7 +378,8 @@ finds its length to be reduced by a factor of $\mygamma$.
 
 Figure \figref{gamma-graph-small} shows how $\mygamma$ depends on $v/c$. Because it is a smooth,
 even function of $v$, its derivative vanishes at $v=0$, and the lowest-order varying term in its Taylor
-series is one proportional to $(v/c)^2$. This explains why we don't normally notice length contraction
+series is one proportional to $(v/c)^2$ (problem \ref{hw:gamma-taylor-fac}, p.~\pageref{hw:gamma-taylor-fac}).\label{gamma-taylor-claim}
+This explains why we don't normally notice length contraction
 in everyday life. The velocities we normally experience are small compared to $c$, so $v/c$ is small,
 and $(v/c)^2$ is even smaller.
 <% marg(40) %>
@@ -637,9 +638,51 @@ must be the same, giving $1-u=1-v/c$, which is the desired result.
 
 <% begin_hw_sec %>
 
-field that is purely B in one frame, purely E in another
+<% begin_hw('pure-e-b-lorentz-graphical') %>__incl(hw/pure-e-b-lorentz-graphical)<% end_hw() %>
 
-<% end_hw_sec() %>
+<% begin_hw('agreeontime') %>m4_include(../share/relativity/hw/agreeontime.tex)<% end_hw() %>
 
+<% begin_hw('gammafornegativev') %>m4_include(../share/relativity/hw/gammafornegativev.tex)<% end_hw() %>
+
+<% begin_hw('voyagergamma') %>m4_include(../share/relativity/hw/voyagergamma.tex)<% end_hw() %>
+
+<% begin_hw('earth-lorentz-contraction') %>m4_include(../share/relativity/hw/earth-lorentz-contraction.tex)<% end_hw() %>
+
+<% begin_hw('gammasimplefraction') %>m4_include(../share/relativity/hw/gammasimplefraction.tex)<% end_hw() %>
+
+<% begin_hw('gamma-taylor-fac') %>
+The relativistic factor
+\begin{equation*} 
+  \gamma = \frac{1}{\sqrt{1-v^2}},
+\end{equation*} 
+introduced in the text, gives the amount of length contraction and time dilation.
+We express it here in units in which $c=1$. Find the first two nonvanishing terms
+in its Taylor series, and show that, as claimed on p.~\pageref{gamma-taylor-claim},
+the first non-constant term is of order $v^2$.
+<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('doppler-taylor-fac') %>
+Example \ref{eg:doppler}, p.~\pageref{eg:doppler}, discussed the Doppler effect.
+The function $D$ discussed in that example is given by
+\begin{equation*}
+  D(v) = \sqrt{\frac{1+v}{1-v}},
+\end{equation*}
+where the velocity $v$ is expressed as a fraction of $c$.
+Expand this function in a Taylor series, and find the
+first two nonvanishing terms. Show that these two terms agree with the
+nonrelativistic expression $1+v$, so that any relativistic effect is of higher
+order in $v$.
+<% end_hw() %>
+
+
+
+
+
+
+
+
+<% end_hw_sec %>
 
 <% end_chapter() %>
