@@ -111,8 +111,9 @@ m4_define(__hw_fac_2_hetriangle,16)m4_dnl
 m4_define(__hw_fac_2_esquare,17)m4_dnl
 m4_define(__hw_fac_2_solidchargedcylinder,18)m4_dnl
 m4_define(__hw_fac_2_nacl,19)m4_dnl
-m4_define(__hw_fac_2_escaping-charge,20)m4_dnl
-m4_define(__hw_fac_2_charge-swings-up,21)m4_dnl
+m4_define(__hw_fac_2_croquet,20)m4_dnl
+m4_define(__hw_fac_2_escaping-charge,21)m4_dnl
+m4_define(__hw_fac_2_charge-swings-up,22)m4_dnl
 m4_define(__hw_fac_3_two-climbing-routes,1)m4_dnl
 m4_define(__hw_fac_3_climbing-analogy-two-slopes,2)m4_dnl
 m4_define(__hw_fac_3_screened,3)m4_dnl
@@ -168,6 +169,12 @@ m4_define(__hw_fac_6_earth-lorentz-contraction,5)m4_dnl
 m4_define(__hw_fac_6_gammasimplefraction,6)m4_dnl
 m4_define(__hw_fac_6_gamma-taylor-fac,7)m4_dnl
 m4_define(__hw_fac_6_doppler-taylor-fac,8)m4_dnl
+m4_define(__hw_fac_7_hail-an-electron-cab,1)m4_dnl
+m4_define(__hw_fac_7_bulbresistance,2)m4_dnl
+m4_define(__hw_fac_7_measure-on-printed-circuit,3)m4_dnl
+m4_define(__hw_fac_7_jouleheating,4)m4_dnl
+m4_define(__hw_fac_7_drier,5)m4_dnl
+m4_define(__hw_fac_7_battery-and-bulb,6)m4_dnl
 m4_define(__hw_fac_10_helmholtzcoil-center,1)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_agreeontime,2)m4_dnl
