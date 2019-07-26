@@ -907,25 +907,70 @@ to apply the rules to this example.
 <% end_sec('surface-integrals-general') %>
 <% end_sec('surface-integrals') %>
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-applications of 3-d integration:
-
-energy, momentum, charge, dipole moment
-
-applications of 2-d integration:
-
-flux, field and potential of a strip
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-<% begin_notes %>
-
-<% end_notes %>
+% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+%
+% applications of 3-d integration:
+%   energy, momentum, charge, dipole moment
+%   applications of 2-d integration:
+%   flux, field and potential of a strip
+% xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 <% begin_hw_sec %>
 
-uniformly charged arc of a circle, find field at center of circle
+<% begin_hw('centrifuge') %>m4_include(../share/mechanics/hw/centrifuge.tex)<% end_hw() %>
+
+<% begin_hw('ring-moi-about-diameter') %>m4_include(../share/mechanics/hw/ring-moi-about-diameter.tex)<% end_hw() %>
+
+<% begin_hw('field-of-arc') %>__incl(hw/field-of-arc)<% end_hw() %>
+
+<% begin_hw('boxmoi') %>m4_include(../share/mechanics/hw/boxmoi.tex)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    '../../../share/mechanics/figs/da-polar',
+    %q{Problem \ref{hw:conemoi}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('conemoi') %>m4_include(../share/mechanics/hw/conemoi.tex)<% end_hw() %>
+
+<% begin_hw('galaxy-mass') %>__incl(hw/galaxy-mass)<% end_hw() %>            
+
+<% begin_hw('triangle-moment-of-inertia',2) %>m4_include(../share/mechanics/hw/triangle-moment-of-inertia.tex)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    'halfinfinitecylinder',
+    %q{Problem \ref{hw:halfinfinitecylinder}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('halfinfinitecylinder') %>__incl(hw/halfinfinitecylinder)<% end_hw() %>            
+
+<% begin_hw('epointinfty') %>__incl(hw/epointinfty)<% end_hw() %>            
+
+<% marg() %>
+<%
+  fig(
+    'hw-infinite-strip',
+    %q{Problem \ref{hw:infinite-strip-fac}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('infinite-strip-fac') %>__incl(hw/infinite-strip-fac)<% end_hw() %>            
+
+<% begin_hw('charged-solid-cyl') %>__incl(hw/charged-solid-cyl)<% end_hw() %>            
+
+<% begin_hw('vedgedisk') %>__incl(hw/vedgedisk)<% end_hw() %>            
+
+<% begin_hw('charged-long-box') %>__incl(hw/charged-long-box)<% end_hw() %>            
+
+<% begin_hw('charge-gun') %>__incl(hw/charge-gun)<% end_hw() %>            
+
 
 <% end_hw_sec %>
 
