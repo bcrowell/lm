@@ -858,6 +858,8 @@ Gauss's law forbids this negative divergence from being created by external sour
 
 <% begin_hw('uniform-sphere-potential-to-field') %>__incl(hw/uniform-sphere-potential-to-field)<% end_hw() %>
 
+\pagebreak
+
 <% begin_hw('dipole-vs-solenoid') %>
 The figure shows field patterns 1 and 2. They are similar in some ways, especially
 at larger distances from the center.\\
@@ -875,7 +877,6 @@ at larger distances from the center.\\
   )
 %>
 
-
 <% begin_hw('lightning-rod') %>
 In example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod}, suppose that the
 larger sphere has radius $a$, the smaller one $b$. (a) Show that the ratio of the charges on the two spheres
@@ -884,7 +885,31 @@ is the other way around: the charge density on the smaller sphere is \emph{great
 than that on the larger sphere in the ratio $a/b$.
 <% end_hw() %>
 
+
+
+<% begin_hw('equilateralcharges') %>m4_include(../share/em-dc/hw/equilateralcharges.tex)<% end_hw() %>
+
+<% marg() %>
+<%
+  fig(
+    '../../../share/em-dc/figs/hw-cathode-ray-gun',
+    %q{Problem \ref{hw:electrongun}.}
+  )
+%>
+<% end_marg %>
+
 \pagebreak
+
+<% marg() %>
+<%
+  fig(
+    '../../../share/em-dc/figs/hw-tandem-accel',
+    %q{Problem \ref{hw:tandem}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('tandem') %>m4_include(../share/em-dc/hw/tandem.tex)<% end_hw() %>    
 
 <% marg() %>
 <%
