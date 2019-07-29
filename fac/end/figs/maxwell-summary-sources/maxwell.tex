@@ -1,0 +1,21 @@
+\documentclass[extrafontsizes,25pt]{memoir}
+% works with 9-12pt, 14pt, 17pt, 20pt, 25pt, 30pt, 36pt, 48pt 60pt
+\usepackage{amsmath,graphicx,nopageno}
+\begin{document}
+
+% https://tex.stackexchange.com/questions/502029/mixing-font-sizes-inside-the-same-equation
+\newcommand{\micro}[1]{\scalebox{0.5}{$#1$}}
+
+$$ \operatorname{div} \textbf{E} = \micro{4\pi k} \rho %
+\qquad %
+\operatorname{div} \textbf{B} = 0  $$
+
+
+
+$$ \qquad \operatorname{curl} \textbf{E} = -\frac{\partial\textbf{B}}{\partial t} %
+\qquad %
+\operatorname{curl} \textbf{B} = \micro{\frac{1}{c^2}}\frac{\partial\textbf{E}}{\partial t} + \micro{\frac{4\pi k}{c^2}}\textbf{j} $$
+
+
+
+\end{document}
