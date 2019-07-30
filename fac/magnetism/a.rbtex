@@ -224,6 +224,28 @@ had a coming together without a speeding up, we would violate the equation of
 continuity.
 \end{eg}
 
+\pagebreak
+
+\startdq
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-continuity-traffic',
+    %q{Discussion question \ref{dq:continuity-traffic}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:continuity-traffic}
+The figure shows a freeway on which we'll say that the cars are all initially uniformly spaced and moving at the same velocity.
+We now consider two different ways in which the traffic could speed up. (1) Every car begins accelerating
+at the same time and with the same acceleration. (2) As each car passes a certain point (perhaps a cop
+making a traffic stop, making people rubberneck until they go past), it begins to accelerate starting at that
+point in space. In each situation, describe how the continuity equation is satisfied.
+\end{dq}
+
 <% end_sec('continuity') %>
 
 <% begin_sec("Transformation properties (optional)",nil,'j-transformation',{'optional'=>true}) %>
@@ -265,7 +287,7 @@ p.~\pageref{subsec:length-contraction}).
 
 <% end_sec('current-density') %>
 
-<% begin_sec("Maxwell's equations",nil,'maxwell-full') %>
+<% begin_sec("Maxwell's equations",4,'maxwell-full') %>
 <% begin_sec("Adding a current term",nil,'maxwell-current') %>
 
 In sec.~\ref{sec:maxwell-vacuum} we studied Maxwell's equations in a vacuum. Now we wish to
@@ -506,7 +528,7 @@ have the identity
   \frac{q}{m}\cdot\frac{|\vc{L}|}{|\vc{m}|} = 2
 \end{equation*}
 (where $\vc{m}$ is the dipole moment, while $m$ is the mass). The left-hand side
-is called the $g$ factor. We expect $g=2$
+is called the $g$ factor.\index{g factor} We expect $g=2$
 for a single orbiting particle.
 
 Now suppose that we have a collection of particles with identical values of $q/m$ (or
@@ -977,6 +999,53 @@ is the same as $U=-\vc{m}\cdot\vc{B}$.
 
 <% begin_hw_sec %>
 
+<% marg(-10) %>
+<%
+  fig(
+    'hw-transmission-line',
+    %q{Problem \ref{hw:transmission-line}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('transmission-line') %>__incl(hw/transmission-line)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('dipole-dipole-energy') %>__incl(hw/dipole-dipole-energy)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('deuteron-g-factor') %>__incl(hw/deuteron-g-factor)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-dipole-gears',
+    %q{Problem \ref{hw:dipole-gears}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('dipole-gears') %>__incl(hw/dipole-gears)<% end_hw() %>
+
+\vfill
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-block-house',
+    %q{Problem \ref{hw:block-house}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('block-house') %>__incl(hw/block-house)<% end_hw() %>
+
+\vfill
+
 <% marg(0) %>
 <%
   fig(
@@ -987,6 +1056,44 @@ is the same as $U=-\vc{m}\cdot\vc{B}$.
 <% end_marg %>
 
 <% begin_hw('helmholtzcoil-center') %>__incl(hw/helmholtzcoil-center)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-nested-wire-loops',
+    %q{Problem \ref{hw:wireloops}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('wireloops') %>__incl(hw/wireloops)<% end_hw() %>
+
+<%
+  fig(
+    'hw-wire-box',
+    %q{Problem \ref{hw:wire-box}.},
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+<% begin_hw('wire-box') %>__incl(hw/wire-box)<% end_hw() %>
+
+<% begin_hw('biotsavartwire') %>__incl(hw/biotsavartwire)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-biot-savart-spiral',
+    %q{Problem \ref{hw:biot-savart-spiral}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('biot-savart-spiral') %>__incl(hw/biot-savart-spiral)<% end_hw() %>
 
 <% end_hw_sec %>
 

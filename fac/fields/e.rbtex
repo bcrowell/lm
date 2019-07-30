@@ -447,6 +447,8 @@ in everyday life.
   )
 %>
 
+\vfill
+
 \begin{eg}{Poynting vector of a plane wave}\label{eg:wave-poynting}
 Figure \figref{wave-poynting} shows the Poynting vector, in the sea-of-arrows representation,
 for the example of a sinusoidal plane wave. In a coordinate system where $+z$ is to the right, frozen at one
@@ -454,6 +456,8 @@ point in time, this wave could be described by $\vc{E}=A\hat{\vc{x}}\sin kz$
 and $c\vc{B}=A\hat{\vc{y}}\sin kz$, so that $\vc{S}=(A^2c/4\pi k)\hat{\vc{z}}\sin^2 kz$.
 The figure shows examples of regions that have a net flow of energy in or out.
 \end{eg}
+
+\vfill
 
 In example \ref{eg:wave-poynting}, we have regions of space that are
 gaining energy, and others that are losing it. It's because there are
@@ -463,10 +467,29 @@ Poynting vector is nonzero, but there is no physically observable flow
 of energy, because every region of space is having energy flow in as
 fast as it flows out (\note{static-poynting}).
 
+\vfill
+
+\startdq
+
+<% marg() %>
+<%
+  fig(
+    'dq-field-momentum',
+    %q{Discussion question \ref{dq:field-momentum}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:field-momentum}
+Positive charges 1 and 2 are moving as shown. What electric and magnetic forces do they exert on each other?
+What does this imply for conservation of momentum?
+\end{dq}
+
 <% end_sec('poynting') %>
 <% end_sec('p-and-energy-flow') %>
 
-<% begin_sec("Maxwell's equations in a vacuum",nil,'maxwell-vacuum') %>\index{Maxwell's equations!in vacuum}
+<% begin_sec("Maxwell's equations in a vacuum",4,'maxwell-vacuum') %>\index{Maxwell's equations!in vacuum}
 <% marg() %>
 <%
   fig(
@@ -517,6 +540,8 @@ on p.~\pageref{fig:attracting-induced-electric-and-magnetic-dipoles}). A changin
 magnetic field induces a curly electric field, and a changing electric field
 induces a curly magnetic field. This has many important technological applications,
 but since those are not our topic right now, we give two qualitative examples.
+
+\pagebreak
 
 \begin{eg}{The generator}\index{generator}
 A generator, \figref{generator}, consists of a permanent magnet that
@@ -606,10 +631,29 @@ second and fourth columns match up except for the flipped direction
 arising from the minus sign.
 \end{eg}
 
+\startdq
+
+<% marg() %>
+<%
+  fig(
+    'maxwellwave-gray',
+    %q{Discussion question \ref{dq:direction-of-propagation}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:direction-of-propagation}
+The diagram shows an electric field pattern frozen at one moment in time. Let's imagine
+that it's the electric part of an electromagnetic wave. Consider four possible directions in which
+it could be propagating: left, right, up, and down. Determine whether each of these is consistent
+with Maxwell's equations. If so, infer the direction of the magnetic field.
+\end{dq}
+
 
 <% end_sec('maxwell-vacuum') %>
 
-<% begin_sec("Einstein's motorcycle",nil,'einstein-motorcycle') %>\index{Einstein, Albert}
+<% begin_sec("Einstein's motorcycle",4,'einstein-motorcycle') %>\index{Einstein, Albert}
 It seems as though we have a nice, tidy picture of electromagnetism all wrapped up. There should
 only be a few loose ends to tie up, such as how to incorporate charges and currents into
 Maxwell's equations, and how to connect Maxwell's equations to

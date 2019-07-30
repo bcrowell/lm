@@ -215,7 +215,16 @@ m4_define(__hw_fac_9_charged-solid-cyl,11)m4_dnl
 m4_define(__hw_fac_9_vedgedisk,12)m4_dnl
 m4_define(__hw_fac_9_charged-long-box,13)m4_dnl
 m4_define(__hw_fac_9_charge-gun,14)m4_dnl
-m4_define(__hw_fac_10_helmholtzcoil-center,1)m4_dnl
+m4_define(__hw_fac_10_transmission-line,1)m4_dnl
+m4_define(__hw_fac_10_dipole-dipole-energy,2)m4_dnl
+m4_define(__hw_fac_10_deuteron-g-factor,3)m4_dnl
+m4_define(__hw_fac_10_dipole-gears,4)m4_dnl
+m4_define(__hw_fac_10_block-house,5)m4_dnl
+m4_define(__hw_fac_10_helmholtzcoil-center,6)m4_dnl
+m4_define(__hw_fac_10_wireloops,7)m4_dnl
+m4_define(__hw_fac_10_wire-box,8)m4_dnl
+m4_define(__hw_fac_10_biotsavartwire,9)m4_dnl
+m4_define(__hw_fac_10_biot-savart-spiral,10)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_enterprise-ke,2)m4_dnl
 m4_define(__hw_fac_16_gamma-derivation,3)m4_dnl
