@@ -225,6 +225,16 @@ m4_define(__hw_fac_10_wireloops,7)m4_dnl
 m4_define(__hw_fac_10_wire-box,8)m4_dnl
 m4_define(__hw_fac_10_biotsavartwire,9)m4_dnl
 m4_define(__hw_fac_10_biot-savart-spiral,10)m4_dnl
+m4_define(__hw_fac_11_complex-trig,1)m4_dnl
+m4_define(__hw_fac_11_addition-theorem-for-sine,2)m4_dnl
+m4_define(__hw_fac_11_cube-roots-of-unity,3)m4_dnl
+m4_define(__hw_fac_11_complex-cube-root,4)m4_dnl
+m4_define(__hw_fac_11_visualize-diffeq-in-complex-plane,5)m4_dnl
+m4_define(__hw_fac_11_complex-hundredth-derivative,6)m4_dnl
+m4_define(__hw_fac_11_factor-cubic,7)m4_dnl
+m4_define(__hw_fac_11_i-to-the-i,8)m4_dnl
+m4_define(__hw_fac_11_swimbladder,9)m4_dnl
+m4_define(__hw_fac_11_spider-oscillations,10)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_enterprise-ke,2)m4_dnl
 m4_define(__hw_fac_16_gamma-derivation,3)m4_dnl

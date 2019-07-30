@@ -428,7 +428,7 @@ of exact mathematical analogies.
 %>
 <% end_marg %>
 
-\begin{tabular}{p{40mm}p{60mm}}
+\begin{tabular}{p{40mm}p{60mm}}\label{table-of-complex-plane-analogies}
 \emph{sine waves} & \emph{complex plane} \\
 amplitude            & magnitude \\
 phase                & argument \\
@@ -603,16 +603,65 @@ is often described using the full width at half-maximum, or FWHM, defined in fig
 \figref{fwhm}. The FWHM is approximately equal to $1/Q$ times the resonant frequency,
 the approximation being a good one when $Q$ is large.\index{$Q$ (quality factor)}\index{FWHM (full width at half maximum)}
 
+\startdqs
+
+\begin{dq}\label{dq:compare-q}
+Compare the $Q$ values of the two oscillators in the figures below.
+\end{dq}
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-2}
+
+\pagebreak
+
+\begin{dq} 
+Match the $x$-$t$ graphs in discussion question \ref{dq:compare-q} with the amplitude-frequency graphs below.
+\end{dq}
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-3}
+
+
 <% end_sec('resonance') %>
 
-<% begin_notes %>
-
-
-<% end_notes %>
-
-
-
 <% begin_hw_sec %>
+
+<% begin_hw('complex-trig') %>__incl(hw/complex-trig)<% end_hw() %>
+
+<% begin_hw('addition-theorem-for-sine') %>__incl(hw/addition-theorem-for-sine)<% end_hw() %>
+
+<% begin_hw('cube-roots-of-unity') %>__incl(hw/cube-roots-of-unity)<% end_hw() %>
+
+<% marg(-15) %>
+<%
+  fig(
+    'hw-complex-cube-root',
+    %q{Problem \ref{hw:complex-cube-root}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('complex-cube-root') %>__incl(hw/complex-cube-root)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('visualize-diffeq-in-complex-plane') %>__incl(hw/visualize-diffeq-in-complex-plane)<% end_hw() %>
+
+<% begin_hw('complex-hundredth-derivative') %>__incl(hw/complex-hundredth-derivative)<% end_hw() %>
+
+<% begin_hw('factor-cubic') %>__incl(hw/factor-cubic)<% end_hw() %>
+
+<% begin_hw('i-to-the-i',2) %>__incl(hw/i-to-the-i)<% end_hw() %>
+
+<% begin_hw('swimbladder') %>m4_include(../share/mechanics/hw/swimbladder.tex)<% end_hw() %>
+
+<% begin_hw('spider-oscillations') %>m4_include(../share/mechanics/hw/spider-oscillations.tex)<% end_hw() %>
+
+<%
+  fig(
+    '../../../share/mechanics/figs/hw-spider-oscillations',
+    %q{Problem \ref{hw:spider-oscillations}.},
+    {'width'=>'wide'}
+  )
+%>
 
 <% end_hw_sec %>
 
