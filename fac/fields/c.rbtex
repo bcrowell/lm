@@ -656,6 +656,45 @@ the surface of a conductor.
 
 A common type of problem in electrostatics is that one is given boundary conditions in which
 the potential is specified at certain conductors.
+
+<% marg(0) %>
+<%
+  fig(
+    'sphericalcap',
+    %q{%
+      Example \ref{eg:spherical-capacitor-field-given-voltage}. Part of the
+              outside sphere has been drawn as if it is transparent, in order to
+              show the inside sphere.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A spherical capacitor}\label{eg:spherical-capacitor-field-given-voltage}
+\egquestion A spherical capacitor, figure \figref{sphericalcap}, consists of concentric, conducting spheres
+with radii $a$ and $b$.
+Find the electric field for $a\le r\le b$ when the potential difference between the spheres
+$\phi_b-\phi_a$ equals $\Delta\phi$.
+
+\eganswer By symmetry, we expect the field to be purely in the radial direction, and to have
+constant strength on any spherical surface concentric with the capacitor. If we take such
+a sphere as a Gaussian surface, then Gauss's law tells us that the field will be the same
+as that of a point charge $q$ at the origin, $E=kq/r^2$, where $q$ is the charge on the inner sphere.
+
+We would be done now, except that the problem is not stated in terms of $q$ but  in terms of the potential difference,
+which is what we would actually measure and control in a real-world capacitor. Integrating along a radius, we have
+\begin{align*}
+  \Delta\phi &= -\int_a^b E\:\der r \\
+             &= kq\left(\frac{1}{b}-\frac{1}{a}\right).
+\end{align*}
+Eliminating $q$ gives
+\begin{equation*}
+  E = -\frac{\Delta\phi}{\frac{1}{a}-\frac{1}{b}},
+\end{equation*}
+where the minus sign indicates that if $\phi_b>\phi_a$, the field is inward.
+At $r=a$ and $b$, this field is perpendicular to both conducting surfaces.
+\end{eg}
+
 <% end_sec('no-e-parallel-to-surface') %>
 
 <% begin_sec("The method of images",nil,'electrostatics-images') %>\index{images!method of}
@@ -911,6 +950,10 @@ than that on the larger sphere in the ratio $a/b$.
 
 <% begin_hw('tandem') %>m4_include(../share/em-dc/hw/tandem.tex)<% end_hw() %>    
 
+<% begin_hw('coax-field') %>__incl(hw/coax-field)<% end_hw() %>
+
+\pagebreak
+
 <% marg() %>
 <%
   fig(
@@ -920,7 +963,9 @@ than that on the larger sphere in the ratio $a/b$.
 %>
 <% end_marg %>
 
+
 <% begin_hw('vnacl',2) %>m4_include(../share/em-dc/hw/vnacl.tex)<% end_hw() %>
+
 
 <% begin_hw('image-charge-unstable') %>__incl(hw/image-charge-unstable)<% end_hw() %>
 

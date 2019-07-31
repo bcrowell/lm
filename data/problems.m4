@@ -134,9 +134,10 @@ m4_define(__hw_fac_3_dipole-vs-solenoid,17)m4_dnl
 m4_define(__hw_fac_3_lightning-rod,18)m4_dnl
 m4_define(__hw_fac_3_equilateralcharges,19)m4_dnl
 m4_define(__hw_fac_3_tandem,20)m4_dnl
-m4_define(__hw_fac_3_vnacl,21)m4_dnl
-m4_define(__hw_fac_3_image-charge-unstable,22)m4_dnl
-m4_define(__hw_fac_3_image-charge-corner,23)m4_dnl
+m4_define(__hw_fac_3_coax-field,21)m4_dnl
+m4_define(__hw_fac_3_vnacl,22)m4_dnl
+m4_define(__hw_fac_3_image-charge-unstable,23)m4_dnl
+m4_define(__hw_fac_3_image-charge-corner,24)m4_dnl
 m4_define(__hw_fac_4_sample-radiation,1)m4_dnl
 m4_define(__hw_fac_4_spherical-magnets,2)m4_dnl
 m4_define(__hw_fac_4_spherical-magnets-tilted,3)m4_dnl
@@ -235,6 +236,10 @@ m4_define(__hw_fac_11_factor-cubic,7)m4_dnl
 m4_define(__hw_fac_11_i-to-the-i,8)m4_dnl
 m4_define(__hw_fac_11_swimbladder,9)m4_dnl
 m4_define(__hw_fac_11_spider-oscillations,10)m4_dnl
+m4_define(__hw_fac_12_fmradiolrc,1)m4_dnl
+m4_define(__hw_fac_12_oscilloscope-square-wave,2)m4_dnl
+m4_define(__hw_fac_12_earthcap-fac,3)m4_dnl
+m4_define(__hw_fac_12_lc-e-sharing,4)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_enterprise-ke,2)m4_dnl
 m4_define(__hw_fac_16_gamma-derivation,3)m4_dnl

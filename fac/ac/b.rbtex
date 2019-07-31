@@ -17,7 +17,7 @@ In a mechanical oscillation, energy is exchanged repetitively
 between potential and kinetic forms, and may also be
 siphoned off in the form of heat dissipated by friction. In
 an electrical circuit, resistors are the circuit elements
-that dissipate heat. What are the electrical analogs of
+that dissipate heat. In a circuit like a radio receiver, what are the electrical analogs of
 storing and releasing the potential and kinetic energy of a
 vibrating object? When you think of energy storage in an
 electrical circuit, you are likely to imagine a battery, but
@@ -35,8 +35,8 @@ An inductor does the same with magnetic fields.
 
 <% begin_sec("Capacitors") %>
 
-A capacitor's energy exists in its surrounding electric
-fields. It is proportional to the square of the field
+A capacitor's energy exists in the electric
+fields near its electrodes. The energy is proportional to the square of the field
 strength, which is proportional to the charges on the
 plates. If we assume the plates carry charges that are the
 same in magnitude, $+q$ and $-q$, then the energy stored in
@@ -156,7 +156,7 @@ factor of 1/2, which is purely a matter of definition. The
 quantity $L$ is called the \emph{inductance}\index{inductance!defined} of the
 inductor, and we see that its units must be joules per
 ampere squared. This clumsy combination of units is more
-commonly abbreviated as the henry, 1 henry = 1 $\zu{J}/\zu{A}^2$.
+commonly abbreviated as the henry, 1 H = 1 $\zu{J}/\zu{A}^2$.
 Rather than memorizing this definition, it makes more sense
 to derive it when needed from the definition of inductance.
 
@@ -796,7 +796,7 @@ discussion question \ref{dq:gauss-examples-induction1} show the resolution to th
 
 <% begin_sec("Decay") %>
 
-Up until now I've soft-pedaled the fact that by changing the
+Up until now I've avoided talking about the fact that by changing the
 characteristics of an oscillator, it is possible to produce
 non-oscillatory behavior. For example, imagine taking the
 mass-on-a-spring system and making the spring weaker and
@@ -1029,6 +1029,46 @@ to try to make them work. An example of such a generalization is the Dirac delta
 
 
 <% begin_hw_sec %>
+
+<% begin_hw('fmradiolrc') %>__incl(hw/fmradiolrc)<% end_hw() %>
+
+<% begin_hw('lr-units') %>__incl(hw/lr-units)<% end_hw() %>
+
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-oscilloscope-square-wave',
+    %q{%
+      Problem \ref{hw:oscilloscope-square-wave}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'sphericalcap',
+    %q{%
+      Problem \ref{hw:earthcap-fac}. Part of the
+              outside sphere has been drawn as if it is transparent, in order to
+              show the inside sphere.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('oscilloscope-square-wave') %>__incl(hw/oscilloscope-square-wave)<% end_hw() %>
+
+<% begin_hw('cap-energy-in-terms-of-v') %>__incl(hw/cap-energy-in-terms-of-v)<% end_hw() %>
+
+<% begin_hw('cap-vary-gap') %>__incl(hw/cap-vary-gap)<% end_hw() %>
+
+<% begin_hw('earthcap-fac') %>__incl(hw/earthcap-fac)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('lc-e-sharing',1) %>__incl(hw/lc-e-sharing)<% end_hw() %>
+
 
 <% end_hw_sec %>
 
