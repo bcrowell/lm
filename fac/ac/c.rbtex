@@ -30,7 +30,7 @@ In the purely capacitive case, the relation $V=q/C$ lets us calculate
 $I=\frac{\der q}{\der t}=C \frac{\der V}{\der t}$.
 A capacitor does not follow Ohm's law, and it is not true that $I=V/R$, because
 taking the derivative of a sinusoidal function shifts its phase by 90 degrees.
-But we can still
+But we can still define an impedance.
 If the voltage varies as, for example, $V(t)=V_\zu{o}\sin (\omega t)$,
 then the current will be $I(t)=\omega C V_\zu{o}\cos (\omega t)$.
 We use the complex numbers 1 and $i$ represent the
@@ -209,10 +209,7 @@ current would reach their maxima at the same time. In a lightbulb, the moment of
 power is when the circuit is most rapidly heating the filament. At the
 instant when $P=0$, a quarter of a cycle later, no current is flowing, and no electrical
 energy is being turned into heat. Throughout the whole cycle, the filament is getting rid
-of energy by radiating light.\footnote{To many people, the word ``radiation'' implies nuclear
-contamination. Actually, the word simply means something that ``radiates'' outward.
-Natural sunlight is ``radiation.'' So is the light from a lightbulb, or the infrared light
-being emitted by your skin right now.}
+of energy by radiating light.
 Since the circuit oscillates at a frequency\footnote{Note that this time ``frequency''
 means $f$, not $\omega$! Physicists and engineers generally use $\omega$ because it
 simplifies the equations, but electricians and technicians always use $f$. The 60 Hz
@@ -412,7 +409,7 @@ knob higher. This is indeed one way to compensate for any impedance mismatch, bu
 is always a price to pay. When the impedances are matched, half the power is dissipated
 in the transmission line and half in the load. By connecting a 4-ohm amplifier to an
 8-ohm speaker, however, you would be setting up a situation in two watts were being dissipated
-as heat inside the amp for every amp being delivered to the speaker. In other words, you
+as heat inside the amp for every watt being delivered to the speaker. In other words, you
 would be wasting energy, and perhaps burning out your amp when you turned up the volume to
 compensate for the mismatch.
 
@@ -547,12 +544,35 @@ Capacitances add in parallel. Inverse capacitances add in series.
 
 <% end_sec('l-and-c-parallel-and-series') %>
 
-<% begin_notes %>
-<% end_notes %>
-
-
 
 <% begin_hw_sec %>
+
+<% begin_hw('lc-phase') %>__incl(hw/lc-phase)<% end_hw() %>
+
+<% begin_hw('rc-par-impedance') %>__incl(hw/rc-par-impedance)<% end_hw() %>
+
+<% begin_hw('lrc-z-plot') %>__incl(hw/lrc-z-plot)<% end_hw() %>
+
+<% begin_hw('series-to-parallel') %>__incl(hw/series-to-parallel)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-whole-body-impedance',
+    %q{%
+      Problem \ref{hw:whole-body-impedance}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('whole-body-impedance') %>__incl(hw/whole-body-impedance)<% end_hw() %>
+
+<% begin_hw('capacitor-paradox') %>__incl(hw/capacitor-paradox)<% end_hw() %>
+
+<% begin_hw('lc-e-sharing',2) %>__incl(hw/lc-e-sharing)<% end_hw() %>
 
 <% end_hw_sec %>
 

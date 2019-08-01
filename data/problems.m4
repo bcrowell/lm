@@ -237,9 +237,13 @@ m4_define(__hw_fac_11_i-to-the-i,8)m4_dnl
 m4_define(__hw_fac_11_swimbladder,9)m4_dnl
 m4_define(__hw_fac_11_spider-oscillations,10)m4_dnl
 m4_define(__hw_fac_12_fmradiolrc,1)m4_dnl
-m4_define(__hw_fac_12_oscilloscope-square-wave,2)m4_dnl
-m4_define(__hw_fac_12_earthcap-fac,3)m4_dnl
-m4_define(__hw_fac_12_lc-e-sharing,4)m4_dnl
+m4_define(__hw_fac_12_lr-units,2)m4_dnl
+m4_define(__hw_fac_12_oscilloscope-square-wave,3)m4_dnl
+m4_define(__hw_fac_12_cap-energy-in-terms-of-v,4)m4_dnl
+m4_define(__hw_fac_12_cap-vary-gap,5)m4_dnl
+m4_define(__hw_fac_12_earthcap-fac,6)m4_dnl
+m4_define(__hw_fac_12_lc-e-sharing,7)m4_dnl
+m4_define(__hw_fac_13_whole-body-impedance,1)m4_dnl
 m4_define(__hw_fac_16_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_16_enterprise-ke,2)m4_dnl
 m4_define(__hw_fac_16_gamma-derivation,3)m4_dnl
