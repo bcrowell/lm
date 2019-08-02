@@ -284,7 +284,7 @@ of wire there, and we connect it to a voltmeter or an oscilloscope, we will meas
 a voltage, given by the integral defining the circulation
 of the electric field. The figure only shows a two-dimensional picture of a small
 number of magnetic field lines, but subject to this crude approximation, we could say that
-the number of field lines passing through the disk has doubled, from 2 to 4. This tells us
+the number of field lines passing through the disk has gone up from 2 to 4. This tells us
 how much the magnetic flux has increased.
 
 The only way for this number of field lines to change is if the
@@ -348,7 +348,7 @@ want to. Figure \figref{bear-paws} shows the transformation of a single loop to 
 During this process, the surface is like a soap
 bubble suspended across the wire that forms the boundary. The surface is never torn or glued together.
 Although I find it a little difficult to visualize the final ``soap bubble'' surface, it is clearly
-true that each field line will pass through the surface twice, producing twice the flux compared to
+true that each field line perpendicular to the page will now pass through the surface twice, producing twice the flux compared to
 a single circular loop with the same circumference.
 
 When we obtained Faraday's law from Maxwell's equations and Stokes's theorem, we assumed
@@ -539,16 +539,100 @@ find the field $B$ at point P.\\
 
 <% end_sec('faradays-law') %>
 
-<% begin_notes %>
-
-
-<% end_notes %>
-
 
 
 <% begin_hw_sec %>
 
-find field of straight wire using ampere's law and compare with previous result
+<% begin_hw('b-wire-ampere-fac') %>
+The equation $B=(k/c^2)\cdot 2kI/r$ for the magnetic field of a long, straight wire was derived in
+in examples \ref{eg:field-of-wire}, p.~\pageref{eg:field-of-wire}, (the form of the equation) and
+\ref{eg:b-wire}, p.~\pageref{eg:b-wire} (the factor of 2).\index{magnetic field!long, straight wire!found using Amp\`{e}re's law}
+Derive the equation using Amp\`{e}re's law. (Cf.~also problem \ref{hw:biotsavartwire}, p.~\pageref{hw:biotsavartwire}, using the Biot-Savart law.)
+<% end_hw() %>
+
+<% marg(-8) %>
+<%
+  fig(
+    'hw-sheet-b',
+    %q{Problem \ref{hw:sheet-b}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('sheet-b') %>
+The figure shows a sheet of current coming out of the page. Such a sheet can be characterized by a current density $\eta$, which has
+units of A/m. The figure shows magnetic field vectors in the $\pm x$ directions, with equal magnitudes above and below the sheet.
+In general, however, this symmetry need not exist.
+We could always add a constant magnetic field to the whole field pattern and get another equally valid solution
+of Maxwell's equations. The only thing we can actually determine is $\Delta B_x$, the difference in the horizontal field between the
+top and bottom of the sheet.\\
+(a) Find $\Delta B_x$ in terms of $\eta$.\answercheck\hwendpart
+(b) In the symmetric case shown in the figure,
+what can you say about the pressure or tension experienced by the sheet, using the visual modes of reasoning
+from sec.~\ref{subsec:pressure-of-em-fields}, p.~\pageref{subsec:pressure-of-em-fields}? If the sheet has no
+structural strength, what will it do?
+<% end_hw() %>
+
+<% marg(-8) %>
+<%
+  fig(
+    'hw-rolling-wire',
+    %q{Problem \ref{hw:rolling-wire-fac}.}
+  )
+%>
+<% end_marg %>
+<% begin_hw('rolling-wire-fac') %>
+A U-shaped wire makes electrical contact with a second, straight wiref, of length $\ell$, which rolls along it to the
+right at velocity $v$,
+as shown in the figure. The whole thing is immersed in a uniform magnetic field $B$, which is
+perpendicular to the plane of the circuit. The resistance $R$ of the rolling wire is much
+greater than that of the U.\\
+(a) Use Amp\`{e}re's law to find the current through the wire.\answercheck\hwendpart
+(b) Use conservation of energy to find the direction of the force on the wire.\hwendpart
+(c) Verify the direction of the force using right-hand rules.\hwendpart
+(d) Find the magnitude of the force acting on the wire.\answercheck\hwendpart
+(e) Consider how the answer to part a would have changed if the direction of the field had been
+reversed, and also do the case where the direction of the rolling wire's motion is reversed.
+Verify that this is in agreement with your answer to part c.
+
+<% end_hw() %>
+
+
+\pagebreak
+
+<% marg(50) %>
+<%
+  fig(
+    'circularcap',
+    %q{Problem \ref{hw:circularcap}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-dropping-circuit',
+    %q{Problem \ref{hw:dropping-circuit}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-amperian-rectangle',
+    %q{Problem \ref{hw:amperian-rectangle}.}
+  )
+%>
+<% end_marg %>
+
+
+<% begin_hw('circularcap') %>__incl(hw/circularcap)<% end_hw() %>
+
+\emph{Problems \ref{hw:dropping-circuit}-\ref{hw:amperian-rectangle} require enough knowledge of vector calculus to
+evaluate line and surface integrals with integrands that aren't constant.}
+
+<% begin_hw('dropping-circuit') %>__incl(hw/dropping-circuit)<% end_hw() %>
+
+<% begin_hw('amperian-rectangle') %>__incl(hw/amperian-rectangle)<% end_hw() %>
+
 
 <% end_hw_sec %>
 
