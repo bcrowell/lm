@@ -150,7 +150,7 @@ prepress:
 	# Now that should no longer be necessary, because recent versions of pdftex embed all fonts, and fullembed.map prevents subsetting.
 	# See meki:computer:apps:ghostscript, scripts/create_fullembed_file, and http://tex.stackexchange.com/questions/24002/turning-off-font-subsetting-in-pdftex
 	../scripts/preflight_pdf.pl $(BOOK).pdf
-	perl -e 'if ("$(BOOK)" eq 'cp' || "$(BOOK)" eq 'me') {system("make prepress_single_vol")} else {system("make prepress_splits")}'
+	perl -e 'if ("$(BOOK)" eq 'cp' || "$(BOOK)" eq 'me' || "$(BOOK)" eq 'fac') {system("make prepress_single_vol")} else {system("make prepress_splits")}'
 	
 prepress_single_vol:
 	# Don't use this directly; just do a 'make prepress'.

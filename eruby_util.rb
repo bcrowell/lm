@@ -1211,8 +1211,8 @@ def begin_lab(title,columns=2,suffix='',type='mini',number='')
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
   label = $ch+suffix
   full_label = "activity-#{type}:"+label
-  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = t+"\\normalcaptions\\zapcounters"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
@@ -1227,11 +1227,11 @@ def end_lab
 end
 
 def begin_notes(columns=2)
+  full_label = "notes:#{$ch}"
   title = "Notes for chapter \\thechapter"
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
-  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = "\\begin{activity}{}{#{title}}{#{column_command}}{}"
-  full_label = "notes:#{$ch}"
+  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
   else

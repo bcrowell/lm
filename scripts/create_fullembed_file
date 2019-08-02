@@ -42,6 +42,7 @@ while ($log =~ /{([^}]+\.enc)}/g) {
 
 #print "pfbs:\n";
 my @pfb = ();
+$log =~ s/\n//g;
 while ($log =~ /<([^>]+\.pfb)>/g) {
   my $pfb = $1;
   $pfb =~ s/\n//g;
