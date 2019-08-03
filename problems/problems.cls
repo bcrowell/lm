@@ -17,7 +17,7 @@
 %%%%%%%%%%%%%%%%% math %%%%%%%%%%%%%%%%%%%
 \newcommand{\eqquad}{}
 \renewcommand{\mygamma}{\gamma}
-\newcommand{\eqnimage}[1]{\raisebox{-.2\height}{\includegraphics[resolution=300]{utility-figs/#1}}}
+\newcommand{\eqnimage}[1]{\raisebox{-.2\height}{\includegraphics{utility-figs/#1}}}
 % used in two-point-five-kids
 % also defined in SN ch. 14
 %%%%%%%%%%%%%%%%% figures %%%%%%%%%%%%%%%%%%%
