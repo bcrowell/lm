@@ -11,14 +11,17 @@ The figure shows a simplified diagram of an electron
         (a) If the voltage difference
         between the electrodes is $\Delta V$, what is the velocity
         of an electron as it emerges at B? Assume that its initial
-        velocity, at A, is negligible, and that the velocity is nonrelativistic. 
+        velocity, at A, is negligible%
+m4_ifelse(__sn,1,[:%
+, and that the velocity is nonrelativistic.
         (If you haven't read ch.~7 yet, don't worry about the remark about
-        relativity.)
+        relativity.):],
+[:.:])
         \answercheck\hwendpart
         (b) Evaluate your
         expression numerically for the case where $\Delta V$=10 kV,
         and compare to the speed of light.
-        m4_ifelse(__problems,1,[:%:],[:If you've read ch.~7 already,
+        m4_ifelse(__sn,1,[:If you've read ch.~7 already,
         comment on whether the assumption
         of nonrelativistic motion was justified.:])%
         <% hw_solution %>\answercheck
