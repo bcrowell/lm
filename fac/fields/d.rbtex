@@ -1003,6 +1003,19 @@ practical technique. This is because the square of the speed
 of light is such a large number.
 \end{eg}
 
+<% marg() %>
+<%
+  fig(
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
+  )
+%>
+<% end_marg %>
+
 \begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus}\index{positron}
 Natural radioactivity in the earth produces positrons, which are like electrons but have the
 opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
@@ -1023,20 +1036,77 @@ a PET (positron emission tomography) scan, in which a positron-emitting chemical
 is injected into the patient and map\-ped by the emission of gamma rays from the parts
 of the body where it accumulates.
 \end{eg}
-<% marg(200) %>
-<%
-  fig(
-    'pet',
-    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
-       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
-       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
-       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
-       an abnormal medical condition.}
-  )
-%>
-<% end_marg %>
 
 <% end_sec('mass-energy-equiv-for-fields') %>
+
+<% begin_sec("A naughty infinity",nil,'epointinfty-implications') %>
+In this subsection we discuss a theoretical issue that ends up having far-reaching implications.
+The reader who doesn't find this side-trip interesting can skip it.
+
+Your mental picture of an electron may be either a point or a small sphere.
+Which is right? Suppose that we think of it as a sphere
+of finite radius $r$, containing a uniformly distributed charge $q$.
+Its electric field contains some amount of energy $E$, and it
+follows from units that this energy equals $kq^2/r$, multiplied by
+some unitless constant. The unitless constant is calculated in problem
+\ref{hw:epointinfty}, p.~\pageref{hw:epointinfty}, but all that matters
+for our present purposes is that it's  positive, since the energy density
+is everywhere positive, and the integral of something positive must be positive.
+
+Now clearly bad things will happen if we set $r=0$. The energy of the electric
+field will blow up to infinity. Before Einstein, we could have said that this
+was not necessarily a cosmic catastrophe. A physicist of the 19th century would
+probably have sniggered and told us patronizingly that the energy $E$ would be
+of no consequence in any case, because almost all of it was locked up in the
+part of the field very close to the electron, and was therefore basically a constant
+and fixed contribution to the total energy of the universe. Adding any constant, no
+matter how large, to the total energy of the universe has no observable consequences.
+Worrying about whether $r$ is truly \emph{exactly} zero, our supercilious friend
+tells us, is something that can never be tested experimentally, and is therefore
+a meaningless thing to discuss, like how many angels can dance on the head of a pin.
+
+But Einstein's $E=mc^2$ tells us that the issue cannot be waved away so easily.
+The field's energy is equivalent to a certain amount of mass. It should contribute
+to the electron's inertia. Now we know what the mass is, so the energy in the field
+must be $\lesssim mc^2$. This results in $r\gtrsim r_0=ke^2/mc^2$, where $r_0$ is called
+the classical electron radius, although it doesn't just apply to
+electrons.\index{electron!size}\index{electron!classical radius}\index{classical electron radius}
+Furthermore, there are processes that
+create electron-antielectron pairs, and these processes don't require
+infinite energy. The energy required to create such a pair should only
+be $2mc^2$, which is finite.
+In general, classical electromagnetism becomes an
+inconsistent theory if you consider point particles with $r\lesssim
+r_0$.
+
+Thus relativity seems to suggest that charged particles can't be pointlike,
+and that there should be a lower bound on their sizes.
+For an electron, $r_0$ is on the order of $10^{-15}$ meters. Particle
+physics experiments became good enough decades ago to search for
+internal structure in the electron at this scale, and they tell us that it doesn't
+exist, in the sense that the electron cannot be a composite particle
+at this scale. (For comparison, they tell us that a proton \emph{is} composite --- it turns out to be made of quarks.)
+
+One could imagine that the electron had a finite size without being composed of
+smaller particles, which would be consistent with the particle physics
+experiments, because they basically test whether things can be broken up
+or internally manipulated, like taking a mechanical pocketwatch and hitting it
+with a hammer. Maybe there is size without any dynamical internal structure, just a rigid charge distribution.
+Physicists around 1900 did put great effort into constructing such models of
+the electron, but they never succeeded. With hindsight, we can see that this approach, too, was
+doomed because of relativity. Relativity doesn't allow perfectly rigid objects.
+In such an object, vibrations would propagate as sound waves at infinite speed, but relativity doesn't
+allow speeds greater than $c$.
+
+So in the end, if we want to describe the charge and
+electric field of an electron at scales below $r_0$, we need some
+other theory of nature than classical electricity and magnetism. That theory is quantum
+mechanics. In nonrigorous language, quantum mechanics describes the
+scene at this scale in terms of rapid, random quantum fluctuations,
+with particle-antiparticle pairs springing into existence and then
+reannihilating.
+<% end_sec('epointinfty-implications') %>
+
 
 <% begin_sec("Summary of relativity",nil,'summary-of-relativity') %>
 

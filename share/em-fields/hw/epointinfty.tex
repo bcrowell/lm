@@ -4,16 +4,20 @@
         (b) Now calculate the energy in the electric field of a uniformly
         charged sphere with radius $b$. Based on the shell theorem,
         it can be shown that the field for $r>b$ is the same as for
-        a point charge, while the field for $r<b$ is $kqr/b^3$. (Example
-        \ref{eg:divsphere} shows this using a different technique.)\\
+        a point charge, while the field for $r<b$ is $kqr/b^3$.
+m4_ifelse(__sn,1,[:(Example \ref{eg:divsphere} shows this using a different technique.)\\:],[:%:])
+m4_ifelse(__fac,1,
+[:
+  \hwremark{The implications of this blow-up were sketched in section
+  \ref{epointinfty-implications:epointinfty-implications}, p.~\pageref{subsec:epointinfty-implications}.}
+:],
+[:%
         \hwremark{The calculation in part a seems to show that infinite energy
         would be required in order to create a charged, pointlike particle.
         However, there are processes that, for example,
         create electron-positron pairs, and these processes don't require
         infinite energy. According to Einstein's famous equation
         $E=mc^2$, the energy required to create such a pair should only
-        be $2mc^2$, which is finite. One way out of this difficulty is to
-        assume that no particle is really pointlike, and this is in fact the
-        main motivation behind a speculative physical theory called string
-        theory, which posits that charged particles are actually tiny loops,
-        not points.}\answercheck
+        be $2mc^2$, which is finite.}
+:])
+\answercheck
