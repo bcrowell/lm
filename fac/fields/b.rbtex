@@ -1341,6 +1341,8 @@ packed stair steps, making the slope of the staircase $\der E/\der x$ steeper. I
 of vacuum, the density of charge is zero, and we get a constant field. This is the local
 form of Gauss's law, for field vectors, in one dimension.
 
+\pagebreak
+
 Although our main goal in developing this theory in one dimension was
 to immediately turn around and generalize it to three dimensions,
 effectively one-dimensional systems do exist in real life. For example
@@ -1349,10 +1351,11 @@ series of metal plates, and if the charge on one of the plates is $q$,
 then it acts as a charge density $q/h$, in units of coulombs per meter, where $h$ is the
 spacing between the plates.
 
+\vfill
+
 To visualize the meaning of the derivative $\der E/\der x$, we display in figure
-\figref{divmeter-one-d} a hypothetical device that measures this quantity. To give
-a good approximation to the derivative, we need to make the device very small.
-The extention of the springs is a measure of how much the field diverges. For example,
+\figref{divmeter-one-d} a hypothetical device that measures this quantity. 
+The extension of the springs is a measure of how much the field diverges. For example,
 if there are field lines coming out of the middle and going to the right, and also
 some field lines coming out of the middle and going to the left, then the forces on
 the two positive charges will be in opposite directions, and the spring will stretch.
@@ -1376,12 +1379,31 @@ do use this term).\index{divergence!one dimension}
 \spacebetweenfigs
 <%   
   fig(
+    'brick-arch',
+    %q{A misguided attempt at accurately measuring the slope of an old brick arch using a cell phone's leveling app.}
+  )
+%>
+\spacebetweenfigs
+<%   
+  fig(
     'divmeter',
     %q{A three-dimensional div-meter. The expansion of the meter's volume is a measure of the electric
        field's divergence.}
   )
 %>
 <% end_marg %>
+
+\vfill
+
+We want our div-meter to be very small, because what it's measuring is a kind of derivative, and
+derivatives are local things. As an example
+from a more familiar context, we might want to measure the angle or slope of some brickwork, which
+amounts to measuring the derivative of a function. This doesn't
+really work if, as shown in figure \figref{brick-arch}, our measuring device is bigger than the bricks.
+Similarly, we can get wrong results from the div-meter unless we shrink it down so small that any
+irregularities in the electric field vanish, and the field becomes smooth and well-behaved.
+
+\vfill
 
 What about three dimensions? Conceptually, we just need to build the three-dimensional
 div-meter shown in figure \figref{divmeter}. What about a more mathematical description?
@@ -1390,6 +1412,8 @@ we want it to have the same kind of additive property that the plain old derivat
 the divergence of a sum should be the sum of the divergences. Physically, this is the
 only way we can guarantee that superposition will work. The following example shows that
 this essentially ties down the form of the divergence operator.\index{divergence!three dimensions}
+
+\pagebreak
 
 <%
   fig(
@@ -1468,6 +1492,59 @@ If you were inclined to dismiss the raisin cookie model of the atom (sec.~\ref{s
 p.~\pageref{subsec:thomson}) as silly, note that it evades Earnshaw's theorem, since it is not made
 solely out of point charges.
 \end{eg}
+
+<% marg() %>
+<%
+  fig(
+    'gauss-tidal',
+    %q{Example \ref{eg:gauss-tidal}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Gauss's law for gravity}\label{eg:gauss-tidal}
+Because Coulomb's law has the same form as Newton's law of gravity, Gauss's law holds for gravitational
+fields as well as electric fields, with the charge density replaced by a mass density.
+The figure shows a set of masses (white dots) released from rest at some distance from the earth.
+They function as a div-meter.
+As the cloud of masses free-falls, it becomes distorted. The waist gets narrower, because all the masses
+are converging on the center of the earth. But the opposite happens in the radial direction: the cloud
+becomes elongated, because the mass that was closest to the earth felt a stronger force, and the farthest
+mass a weaker one. The result is that the cloud's volume stays exactly the same. This makes sense, because
+the cloud is in a region of vacuum, where the density of mass is zero.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+For practical reasons, the experiment in example \ref{eg:gauss-tidal} can't be done inside the earth.
+But suppose we could. What would happen if we released a set of masses all around the earth's surface,
+and they were able to free fall without being blocked by the dirt? Is this consistent with Gauss's law?
+\end{dq}
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'dq-divmeter-paradox',
+    %q{Discussion question \ref{dq:divmeter-paradox}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:divmeter-paradox}
+The figure shows a div-meter next to a charge. All the charges in the
+figure are positive. A superficial analysis makes it seem as though the result of
+this experiment could plausibly be consistent with Gauss's law. (Do this analysis.)
+But what about the following counter-argument? The charge on the right is at some distance
+$r$ from the nearest charge in the div-meter. If we make $r$ small enough, we can make the
+force between these two charges grow to any desired size. But the interaction with the
+other five charges in the div-meter \emph{doesn't} blow up in the limit as $r\rightarrow0$.
+Doesn't this guarantee that Gauss's law will be violated when $r$ is small?
+\end{dq}
 
 <% end_sec('gauss-div') %>
 

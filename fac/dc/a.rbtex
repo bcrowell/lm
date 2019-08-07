@@ -857,9 +857,14 @@ metaphor, and color in parts of the circuit that represent constant voltages.
 
 <% begin_hw('drier') %>__incl(hw/drier)<% end_hw() %>
 
-<% begin_hw('battery-and-bulb') %>__incl(hw/battery-and-bulb)<% end_hw() %>
-
-<% marg() %>
+<% marg(-30) %>
+<%
+  fig(
+    'hw-battery-and-bulb',
+    %q{Problem \ref{hw:battery-and-bulb}.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'hw-lpcurrent',
@@ -867,6 +872,8 @@ metaphor, and color in parts of the circuit that represent constant voltages.
   )
 %>
 <% end_marg %>
+
+<% begin_hw('battery-and-bulb') %>__incl(hw/battery-and-bulb)<% end_hw() %>
 
 <% begin_hw('lpcurrent') %>__incl(hw/lpcurrent)<% end_hw() %>
 

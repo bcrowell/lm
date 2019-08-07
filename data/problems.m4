@@ -158,7 +158,7 @@ m4_define(__hw_fac_4_electron-b-double-distance,16)m4_dnl
 m4_define(__hw_fac_4_molecular-dipoles,17)m4_dnl
 m4_define(__hw_fac_4_freeneutron,18)m4_dnl
 m4_define(__hw_fac_4_sector-mass-spectrometer,19)m4_dnl
-m4_define(__hw_fac_5_reflected-poynting-and-p,1)m4_dnl
+m4_define(__hw_fac_5_easy-em-plane-wave-geometry,1)m4_dnl
 m4_define(__hw_fac_5_plane-wave-find-b,2)m4_dnl
 m4_define(__hw_fac_5_colliding-zero-poynting,3)m4_dnl
 m4_define(__hw_fac_5_solar-constant-momentum,4)m4_dnl
