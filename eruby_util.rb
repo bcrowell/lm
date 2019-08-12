@@ -1549,6 +1549,7 @@ def chapter(number,title,label,caption='',options={})
     'very_short_title'=>nil,  # used in running headers; if omitted, taken from short_title
     'optional'=>false
   }
+  insert_into_chapter_title_list(number.to_i,label,title)
   $section_level += 1
   $ch = number
   $label_counter = 0
@@ -1650,6 +1651,19 @@ def chapter_print(number,raw_title,label,caption,options)
   end
   print sectioning_command_with_href(result,0,bare_label,'ch',raw_title,options['optional'])
   #print "#{result}\\label{#{label}}\n"
+end
+
+def insert_into_chapter_title_list(number,label,title)
+  file = "chapters.json"
+  data = []
+  if FileTest.exist?(file) then
+    json_data = ''
+    File.open(file,'r') { |f| json_data = f.gets(nil) }
+    if json_data == '' then $stderr.print "Error reading file #{file} in eruby_util.rb"; exit(-1) end
+    data = JSON.parse(json_data)
+  end
+  data[number] = {'label'=>label.sub(/ch:/,''),'title'=>title}
+  File.open(file,'w') { |f| f.print JSON.pretty_generate(data) }
 end
 
 $photo_credits = []

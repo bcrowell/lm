@@ -20,6 +20,8 @@ SPLIT_BOOK = ../scripts/split_book.pl
 HANDHELD_TEMP = handheld_temp
 GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --toc-filter="[0-9]\.[0-9]"
 PROBLEMS_CSV = ../data/problems.csv
+SPOTTER_ANSWERS = /home/bcrowell/Documents/programming/spotter/answers
+SPOTTER_M4_FILE = $(SPOTTER_ANSWERS)/$(BOOK).m4
 
 MAKEINDEX = makeindex $(BOOK).idx >/dev/null
 
@@ -108,9 +110,19 @@ book:
 	@$(RM_CLS)
 	@perl -e 'if (-e "eruby_complaints") {system "cat eruby_complaints"}'
 	make update_problems
+	make update_spotter
 
 update_problems:
 	../scripts/merge_problems_data.rb $(BOOK) ../data
+
+update_spotter:
+	../scripts/generate_spotter_file.rb $(PROBLEMS_CSV) $(SPOTTER_ANSWERS) >temp_spotter.m4
+	@if ! [ -e $(SPOTTER_M4_FILE) ] ; then \
+	  cp temp_spotter.m4 $(SPOTTER_M4_FILE) ; \
+	fi
+	@if !(cmp -s temp_spotter.m4 $(SPOTTER_M4_FILE)) ; then \
+	    echo "Files temp_spotter.m4 and $(SPOTTER_M4_FILE) differ, consider overwriting"  ; \
+	fi
 
 web:
 	# To make html versions for blind people, don't do this; do 'make blind.'
@@ -175,7 +187,7 @@ clean:
 	# Cleaning...
 	@$(RM_TEMP)
 	@$(RM_CLS)
-	@rm -f temp.tex
+	@rm -f temp.tex temp_spotter.m4
 	@rm -f bk*lulu.pdf simple1.pdf simple2.pdf # lulu files
 	@rm -f */*.pos geom.pos report.pos marg.pos makefilepreamble 
 	@rm -f figfeedback*

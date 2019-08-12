@@ -1,12 +1,22 @@
 #!/usr/bin/ruby
 
 require 'fileutils'
+require 'json'
 
-$spotter_dir = "/home/bcrowell/Documents/programming/spotter/answers"
-$shared_dir = "/home/bcrowell/Documents/writing/books/physics/share/"
-$problems_csv = "/home/bcrowell/Documents/writing/books/physics/data/problems.csv"
-$book_title = "Fields and Circuits"
-$book_label = "fac"
+$problems_csv = ARGV[0]
+$spotter_dir = ARGV[1]
+$shared_dir = "../share/"
+$book_title = ""
+$chapter_titles = "chapters.json"
+$titles = {}
+$ch = -1
+
+def read_json(file)
+  json_data = ''
+  File.open(file,'r') { |f| json_data = f.gets(nil) }
+  if json_data == '' then  fatal_error("Error reading file #{file}") end
+  return JSON.parse(json_data)
+end
 
 def init(book_title)
   $n_missing_checks = 0  
@@ -19,6 +29,21 @@ def init(book_title)
   ["answers","end","toc"].each { |x|
     $files_list.delete($shared_dir+x+"/")
   }
+  $titles = get_chapter_titles($chapter_titles)
+  $book_title,$book_label = get_book_title("this.config")
+end
+
+def get_book_title(file)
+  x = read_json(file)
+  return [x["title"],x["book"]]
+end
+
+def get_chapter_titles(file)
+  return read_json(file)
+end
+
+def get_chapter_title(ch)
+  return $titles[ch]['title']
 end
 
 def do_problems(problems_csv,book_to_do)
@@ -35,13 +60,22 @@ def do_problems(problems_csv,book_to_do)
 end
 
 def start_chapter(ch,ch_title)
-  $spotter1 = $spotter1+"\n\n<!-- ch #{ch}, -->\n\n"
-  $spotter2 = $spotter2+"\n\n<toc type=\"chapter\" num=\"#{ch}\" title=\"#{ch_title}\">\n\n"
+  $spotter1 = $spotter1+"\n\n<!-- ch #{ch} -->\n\n"
+  if $ch== -1 then # this is the first chapter
+   $spotter2 = $spotter2+"\n\n"+'<toc_level level="0" type="chapter"/>'
+  else
+    $spotter2 = $spotter2+'</toc>'
+  end
+  $spotter2 = $spotter2+"\n\n<toc type=\"chapter\" num=\"#{ch}\" title=\"#{ch_title}\">\n"
 end
 
 def add_problem(ch,prob,label)
   # prob = symbolic name of problem
   # label = problem number
+  if ch>$ch then
+    start_chapter(ch,get_chapter_title(ch))
+    $ch = ch
+  end
   file,err = find_file(prob)
   if !err.nil? then
     warning(err)
@@ -109,16 +143,16 @@ XML
 end
 
 def fatal_error(message)
-  $stderr.print "generate_problems.rb: #{$verb} fatal error: #{message}\n"
+  $stderr.print "generate_spotter_file.rb: #{$verb} fatal error: #{message}\n"
   exit(-1)
 end
 
 def warning(message)
-  $stderr.print "generate_problems.rb: #{$verb} warning: #{message}\n"
+  $stderr.print "generate_spotter_file.rb: #{$verb} warning: #{message}\n"
 end
 
 def informational_message(message)
-  $stderr.print "generate_problems.rb: #{$verb} informational message: #{message}\n"
+  $stderr.print "generate_spotter_file.rb: #{$verb} informational message: #{message}\n"
 end
 
 # returns contents or nil on error; for more detailed error reporting, see slurp_file_with_detailed_error_reporting()
@@ -173,6 +207,12 @@ end
 
 #===========================================
 
+if ! File.directory?($spotter_dir) then
+  fatal_error("Spotter answer file directory #{$spotter_dir} does not exist, no spotter file template will be written.")
+end
 init($book_title)
 do_problems($problems_csv,$book_label)
+$spotter2 = $spotter2+"</toc>\n\n</spotter>\n"
+print $spotter1
+print $spotter2
 
