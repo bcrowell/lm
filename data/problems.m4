@@ -226,7 +226,7 @@ m4_define(__hw_fac_10_block-house,5)m4_dnl
 m4_define(__hw_fac_10_helmholtzcoil-center,6)m4_dnl
 m4_define(__hw_fac_10_wireloops,7)m4_dnl
 m4_define(__hw_fac_10_wire-box,8)m4_dnl
-m4_define(__hw_fac_10_biotsavartwire,9)m4_dnl
+m4_define(__hw_fac_10_biot-savart-wire-stepwise,9)m4_dnl
 m4_define(__hw_fac_10_biot-savart-spiral,10)m4_dnl
 m4_define(__hw_fac_11_complex-trig,1)m4_dnl
 m4_define(__hw_fac_11_addition-theorem-for-sine,2)m4_dnl
@@ -2026,9 +2026,10 @@ m4_define(__hw_problems_18_nestedsolenoids,a21)m4_dnl
 m4_define(__hw_problems_18_solenoid-sex,a22)m4_dnl
 m4_define(__hw_problems_18_sandwich,a23)m4_dnl
 m4_define(__hw_problems_18_mystery-magnet,a24)m4_dnl
-m4_define(__hw_problems_18_biotsavartwire,d1)m4_dnl
-m4_define(__hw_problems_18_biot-savart-spiral,d2)m4_dnl
-m4_define(__hw_problems_18_biot-savart-log-spiral,d3)m4_dnl
+m4_define(__hw_problems_18_biot-savart-wire-stepwise,d1)m4_dnl
+m4_define(__hw_problems_18_biot-savart-regular-polygon,d2)m4_dnl
+m4_define(__hw_problems_18_biot-savart-spiral,d3)m4_dnl
+m4_define(__hw_problems_18_biot-savart-log-spiral,d4)m4_dnl
 m4_define(__hw_problems_18_amperes-law-find-i,g1)m4_dnl
 m4_define(__hw_problems_18_amperian-rectangle,g2)m4_dnl
 m4_define(__hw_problems_19_rolling-wire,a1)m4_dnl

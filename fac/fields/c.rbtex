@@ -661,6 +661,43 @@ where $a$ and $b$ are constants.
 <% end_sec('e-v-three-dim') %>
 <% end_sec('e-related-to-potential') %>
 
+<% begin_sec("Summary of div, grad, and curl",nil,'derivative-roundup') %>
+At this point in the text, we have encountered all three of the important derivative operators of vector calculus,
+described in visual terms. We also know how to calculate two of them explicitly for a given field. 
+This book is designed so that you can follow all the ideas and do all the problems while concurrently taking a one-semester vector calculus
+course. The details are mostly delayed until the end of this book, so that you shouldn't be overwhelmed
+by the math even if, as often happens, your vector calculus course doesn't get to the good stuff until the last few weeks.
+Here is a summary of how the derivative operators differ from each other:
+
+\begin{tabular}{lllp{50mm}}
+\emph{operator} & \emph{input} & \emph{output} & \emph{measures}\\
+$\operatorname{div}$ & vector field & scalar & how much the field spreads out from a point\\
+$\operatorname{curl}$ & vector field & vector & how much the field rotates \\
+gradient, $\nabla$    & scalar field & vector & how fast the field changes, and the direction of steepest change
+\end{tabular}
+
+Because they're all derivatives, they also all have some properties in common:
+\begin{itemize}
+\item When you apply them to a constant, they give zero.
+\item They have the additive or  ``linear'' property that the derivative of a sum is the sum of the derivatives.
+\end{itemize}
+
+These three operators are the only possible spatial derivative operators\index{There is also the
+time derivative $\partial/\partial t$.} that are rotationally invariant
+(sec.~\ref{subsec:rotational-invariance}, p.~\pageref{subsec:rotational-invariance}), meaning that
+if you rotate your coordinate system, the output will be the same result, just reexpressed in the
+new coordinate system. Because coordinate systems are just a human choice, any physically meaningful
+derivative operator has to have this property, and therefore the fundamental laws of electricity and
+magnetism can only be expressed in terms of these three operators. These laws of
+physics are called Maxwell's equations, and are summarized on p.~\pageref{fig:maxwell-summary}.
+
+By the end of this book, we will have fleshed out our picture of vector calculus a little more, and
+this more complete picture is summarized in sec.~\ref{sec:vector-calc-roundup}, p.~\pageref{sec:vector-calc-roundup}.
+
+\vfill
+
+<% end_sec('derivative-roundup') %>
+
 <% begin_sec("Boundary conditions on a conductor",4,'bc-conductor') %>
 
 <% begin_sec("No component of the electric field parallel to the surface",nil,'no-e-parallel-to-surface') %>

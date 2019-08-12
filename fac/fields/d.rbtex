@@ -113,7 +113,7 @@ p.~\pageref{sec:einstein-motorcycle2}. However,
 one thing we can say about the transformations is that they must be
 \emph{additive}, because the laws of physics obey the principle of
 superposition, and we want the laws of physics to be equally valid in
-all frames of reference.
+all frames of reference.\label{eb-transform-linear}
 
 <% marg(300) %>
 <%
@@ -213,6 +213,13 @@ and is defined formally as\label{current-defined}
   I = \frac{\der q}{\der t}.
 \end{equation*}
 Its units are normally abbreviated as amperes (``amps''), 1 A=1 C/s.\index{ampere (unit)}
+
+<% self_check('b-wire-field-line-spacing',<<-'SELF_CHECK'
+Why are the field lines in figure \figref{field-lines-of-wire}
+unevenly spaced?
+  SELF_CHECK
+  ) %>
+
 
 <% marg() %>
 <%
@@ -349,7 +356,7 @@ electron beam moves at extremely high speeds (perhaps $10^6\
 \munit/\sunit$); the energy is enough to make a bright image on the
 screen, but the device doesn't recoil from the beam's momentum when we
 turn it on, nor does it shake and rattle as the the beam is steered
-back and forth across the screen to paint the picture.  Although the
+back and forth across the screen to paint the picture.  Although
 the equations above do not actually hold in detail for light (the
 final result ends up being off by a factor of 2, as shown in sec.~\ref{subsec:p-plane-wave},
 p.~\pageref{subsec:p-plane-wave}), it still makes sense
@@ -882,6 +889,13 @@ of the electron.
   )
 %>
 
+<% self_check('dipole-spectrometer-sense-making',<<-'SELF_CHECK'
+In figure \figref{dipole-spectrometer-sideways}, one of the dipoles
+is shown emerging from the spectrometer after being deflected
+upward. Why does it make sense, given its orientation,
+that this particular dipole was deflected in this direction?
+  SELF_CHECK
+  ) %>
 
 
 <% end_sec('dipole') %>
@@ -931,7 +945,9 @@ then set the box in motion, the energy of the
 fields and the mass we infer change by equal factors. For example, if
 we increase the electric field by a factor of 3, then the energy goes
 up by a factor of 9. But when the box is moving, this also has the
-effect of multiplying $\vc{B}$ by a factor of 3, so $\vc{E}\times\vc{B}$ goes up
+effect of multiplying $\vc{B}$ by a factor of 3
+(because the transformation of the fields is linear,
+p.~\pageref{eb-transform-linear}), so $\vc{E}\times\vc{B}$ goes up
 by a factor of 9. This means that the momentum goes up by 9 times, and so does
 the mass that we infer at a given velocity.
 <% end_sec('fields-carry-inertia') %>

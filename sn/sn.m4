@@ -4,6 +4,7 @@ m4_define([:__cp:],0)m4_dnl
 m4_define([:__sn:],1)m4_dnl
 m4_define([:__me:],0)m4_dnl
 m4_define([:__fac:],0)m4_dnl
+m4_define([:__problems:],0)m4_dnl
 m4_define([:__pe:],U)m4_dnl
 m4_define([:__pageref_section_or_chapter:],[:\pageref{sec:$1}:])m4_dnl
 m4_define([:__pageref_subsection_or_section:],[:\pageref{subsec:$1}:])m4_dnl
