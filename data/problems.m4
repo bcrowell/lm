@@ -227,7 +227,9 @@ m4_define(__hw_fac_10_helmholtzcoil-center,6)m4_dnl
 m4_define(__hw_fac_10_wireloops,7)m4_dnl
 m4_define(__hw_fac_10_wire-box,8)m4_dnl
 m4_define(__hw_fac_10_biot-savart-wire-stepwise,9)m4_dnl
-m4_define(__hw_fac_10_biot-savart-spiral,10)m4_dnl
+m4_define(__hw_fac_10_biot-savart-square,10)m4_dnl
+m4_define(__hw_fac_10_biot-savart-regular-polygon,11)m4_dnl
+m4_define(__hw_fac_10_biot-savart-spiral,12)m4_dnl
 m4_define(__hw_fac_11_complex-trig,1)m4_dnl
 m4_define(__hw_fac_11_addition-theorem-for-sine,2)m4_dnl
 m4_define(__hw_fac_11_cube-roots-of-unity,3)m4_dnl

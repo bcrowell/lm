@@ -722,18 +722,9 @@ things so as to create a Poynting vector in that direction.)
 
 <% begin_hw_sec %>
 
-<% begin_hw('easy-em-plane-wave-geometry') %>
-An electromagnetic plane wave has is electric field in the $+y$ direction
-and its magnetic field in the $-z$ direction. Find the direction in which
-it is propagating.
-<% end_hw() %>
+<% begin_hw('easy-em-plane-wave-geometry') %>__incl(hw/easy-em-plane-wave-geometry)<% end_hw() %>
 
-<% begin_hw('plane-wave-find-b') %>
-At a particular point in time and space, 
-an electromagnetic plane wave has an energy flux $\vc{S}=a\hat{\vc{z}}$
-and an electric field in the $+x$ direction.
-Find the magnitude and direction of its magnetic field.\answercheck
-<% end_hw() %>
+<% begin_hw('plane-wave-find-b') %>__incl(hw/plane-wave-find-b)<% end_hw() %>
 
 <% marg() %>
 <%
@@ -755,28 +746,11 @@ Find the magnitude and direction of its magnetic field.\answercheck
 
 <% begin_hw('solar-constant-momentum') %>__incl(hw/solar-constant-momentum)<% end_hw() %>
 
-<% begin_hw('disprove-em-wave-fac') %>
-<% hw_solution %> A plane electromagnetic wave is supposed to have its electric and magnetic fields
-perpendicular to each other.
-Suppose someone claims they can make an electromagnetic wave in which the electric
-and magnetic fields are perpendicular to the direction of propagation, but parallel to each other.
-We have already ruled out such a possibility on p.~\pageref{subsec:e-b-perp} based on conservation of energy.
-Give a different proof by using Maxwell's equations.
-<% end_hw() %>
+<% begin_hw('disprove-em-wave-fac') %>__incl(hw/disprove-em-wave-fac)<% end_hw() %>
 
 \pagebreak
 
-<% begin_hw('radiation-field-scaling-with-r') %>
-Figure \figref{inversesquare} shows a candle flame.  The light from
-the flame spreads out in all directions. We pick four representative
-rays from among those that happen to pass through the nearer square.
-Of these four, only one passes through the square of equal area at
-twice the distance. If the two equal-area squares were people's eyes,
-then only one fourth of the light would go into the more distant
-person's eye. In other words, the energy flux from a point source goes
-like $1/r^2$. If the energy flux is an electromagnetic wave, determine
-the dependence of the electric and magnetic fields on $r$.<% hw_solution %>
-<% end_hw() %>
+<% begin_hw('radiation-field-scaling-with-r') %>__incl(hw/radiation-field-scaling-with-r)<% end_hw() %>
 
 
 <%
@@ -787,14 +761,7 @@ the dependence of the electric and magnetic fields on $r$.<% hw_solution %>
   )
 %>
 
-<% begin_hw('incoherent-poynting',2) %>
-Our intuition is that if we combine two beams of light into a single beam, traveling
-in the same direction, the intensities should add. But it is not so obvious how this
-can be, since the fields should add linearly, and the Poynting vector is proportional
-to the \emph{square} of the fields. Suppose we superimpose two plane waves that are 
-traveling in the same direction, but with random polarizations. Show that, on the average,
-the intensities do add.
-<% end_hw() %>
+<% begin_hw('incoherent-poynting',2) %>__incl(hw/incoherent-poynting)<% end_hw() %>
 
 
 <% end_hw_sec() %>
