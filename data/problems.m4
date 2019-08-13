@@ -2733,8 +2733,6 @@ m4_define(__hw_sn_12_best-precision-n,63)m4_dnl
 m4_define(__hw_sn_12_real-image-conditions,64)m4_dnl
 m4_define(__hw_sn_13_wholelife,1)m4_dnl
 m4_define(__hw_sn_13_snakeeyes,2)m4_dnl
-m4_define(__hw_sn_13_exponentiationapprox,3)m4_dnl
-m4_define(__hw_sn_13_rateofdecayapprox,4)m4_dnl
 m4_define(__hw_sn_13_heightdistribution,5)m4_dnl
 m4_define(__hw_sn_13_unknownisotopes,6)m4_dnl
 m4_define(__hw_sn_13_craps,7)m4_dnl
