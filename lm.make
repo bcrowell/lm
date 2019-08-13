@@ -20,6 +20,7 @@ SPLIT_BOOK = ../scripts/split_book.pl
 HANDHELD_TEMP = handheld_temp
 GENERIC_OPTIONS_FOR_CALIBRE =  --authors "Benjamin Crowell" --language en --toc-filter="[0-9]\.[0-9]"
 PROBLEMS_CSV = ../data/problems.csv
+# The following won't work on other people's setups, see notes under "update_spotter" target.
 SPOTTER_ANSWERS = /home/bcrowell/Documents/programming/spotter/answers
 SPOTTER_M4_FILE = $(SPOTTER_ANSWERS)/$(BOOK).m4
 
@@ -116,6 +117,8 @@ update_problems:
 	../scripts/merge_problems_data.rb $(BOOK) ../data
 
 update_spotter:
+	# This stuff should should really be in scripts/custom, but that gets run before rather than after compiling, so would
+	# need some software work to get it to work right.
 	../scripts/generate_spotter_file.rb $(PROBLEMS_CSV) $(SPOTTER_ANSWERS) >temp_spotter.m4
 	@if ! [ -e $(SPOTTER_M4_FILE) ] ; then \
 	  cp temp_spotter.m4 $(SPOTTER_M4_FILE) ; \
