@@ -2745,7 +2745,7 @@ m4_define(__hw_sn_13_lava,11)m4_dnl
 m4_define(__hw_sn_13_mirrorphotons,12)m4_dnl
 m4_define(__hw_sn_13_pelightsensor,13)m4_dnl
 m4_define(__hw_sn_13_cancer,14)m4_dnl
-m4_define(__hw_sn_13_comparephotons,15)m4_dnl
+m4_define(__hw_sn_13_compare-four-photons,15)m4_dnl
 m4_define(__hw_sn_13_wavespeedingup,16)m4_dnl
 m4_define(__hw_sn_13_projector,17)m4_dnl
 m4_define(__hw_sn_13_pe,18)m4_dnl

@@ -121,7 +121,7 @@ update_spotter:
 	  cp temp_spotter.m4 $(SPOTTER_M4_FILE) ; \
 	fi
 	@if !(cmp -s temp_spotter.m4 $(SPOTTER_M4_FILE)) ; then \
-	    echo "Files temp_spotter.m4 and $(SPOTTER_M4_FILE) differ, consider overwriting"  ; \
+	    echo "Files temp_spotter.m4 and $(SPOTTER_M4_FILE) differ, consider overwriting; then do a make physics in that directory, and copy the file to the appropriate directory on the server."  ; \
 	fi
 
 web:

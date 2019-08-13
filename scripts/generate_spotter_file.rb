@@ -19,23 +19,26 @@ def read_json(file)
 end
 
 def init(book_title)
+  $book_title,$book_label = get_book_title("this.config")
   $n_missing_checks = 0  
+  $n_missing_marks = 0  
   $missing_checks_file = "#{Dir.pwd}/missing_checks"
+  $missing_marks_file = "#{Dir.pwd}/missing_marks"
   $spotter1 = spotter_header() # header info for spotter .xml file
   $spotter2 = '' # body of spotter .xml file
-  $spotter1 = $spotter1 + "<spotter title=\"#{book_title}\">\n<log_file ext=\"log\"/>\n"
+  $spotter1 = $spotter1 + "<spotter title=\"#{$book_title}\">\n<log_file ext=\"log\"/>\n"
   $spotter2 = ''
   $files_list = Dir[$shared_dir+'*/']
   ["answers","end","toc"].each { |x|
     $files_list.delete($shared_dir+x+"/")
   }
   $titles = get_chapter_titles($chapter_titles)
-  $book_title,$book_label = get_book_title("this.config")
 end
 
 def get_book_title(file)
   x = read_json(file)
-  return [x["title"],x["book"]]
+  t = [x["title"],x["book"]]
+  return t
 end
 
 def get_chapter_titles(file)
@@ -51,7 +54,7 @@ def do_problems(problems_csv,book_to_do)
     f.each_line { |line|
       if line=~/\A([^,]*),([^,]*),([^,]*),([^,]*),([^,\n]*)/ then
         book,chapter,number,label,solution = [$1,$2.to_i,$3,$4,$5]
-        next if label=="deleted"
+        next if label=="deleted" or label=="dummy"
         next unless book==book_to_do
         add_problem(chapter,label,number)
       end
@@ -77,11 +80,14 @@ def add_problem(ch,prob,label)
     $ch = ch
   end
   file,err = find_file(prob)
+  tex = ''
+  tex_file_exists = false
   if !err.nil? then
     warning(err)
-    return
+  else
+    tex = slurp_file(file)
+    tex_file_exists = true
   end
-  tex = slurp_file(file)
   bogus_xml_filename = "#{$spotter_dir}/xml/#{prob}.tex" # misnaming it .tex, which I always do by mistake
   if File.exist?(bogus_xml_filename) then fatal_error("File #{bogus_xml_filename} exists, should end in .xml, not .tex") end
   xml_fragment = "#{$spotter_dir}/xml/#{prob}.xml"
@@ -92,8 +98,8 @@ def add_problem(ch,prob,label)
     $spotter2 = $spotter2 + "m4_include(xml/#{prob}.xml)\n"
     die_if_bogus_xml(xml_fragment,prob)
   end
-  if check_exists && !claims_check_exists then
-    log_warning('check',"missing \\answercheck for #{prob}, #{ch}-#{label}","problem #{prob} has an answer check in #{xml_fragment},\n  but file #{file} doesn't have \\answercheck")
+  if check_exists && !claims_check_exists && tex_file_exists then
+    log_warning("mark","missing \\answercheck for #{prob}, #{ch}-#{label}","problem #{prob} has an answer check in #{xml_fragment},\n  but file #{file} doesn't have \\answercheck")
   end
   if !check_exists && claims_check_exists then
     log_warning('check',"missing answer check for #{ch}-#{label}, #{prob}","missing answer check for #{ch}-#{label}, #{prob}")
@@ -187,9 +193,17 @@ def log_warning(type,brief,message)
     $n_missing_checks = $n_missing_checks+1
     n = $n_missing_checks
   end
+  if type=='mark' then
+    file = $missing_marks_file
+    $n_missing_marks = $n_missing_marks+1
+    n = $n_missing_marks
+  end
+  if file.nil? then fatal_error("undefined type #{type} in log_warning") end
   if n==1 then warning(brief) end
   if n==2 then warning("There are additional missing #{type}s recorded in the file #{File.basename(file)}.") end
-  File.open(file,'a') { |f| f.print message+"\n" }
+  File.open(file,'a') {
+    |f| f.print message+"\n" 
+  }
 end
 
 def die_if_bogus_xml(xml_file,prob)

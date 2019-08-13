@@ -14,7 +14,6 @@ my $book = $ARGV[0];
 my $csv_file = $ARGV[1];
 my $xml_fragment_file = "spotter_labels"; # created in cwd, which is the main dir, not scripts/custom
 my $book_name_for_xml_file = $book;
-if ($book eq 'simple') {$book_name_for_xml_file='sn'}
 my $book_name_for_csv_file = $book;
 if ($book eq 'simple') {$book_name_for_csv_file='sn'}
 my $xml_file = "/home/bcrowell/Documents/programming/spotter/answers/$book_name_for_xml_file.xml";
