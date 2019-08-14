@@ -6,7 +6,9 @@
   chapter(
     '03',
     %q{Models of matter},
-    'ch:matter'
+    'ch:matter',
+    %q{A salt crystal, and a model of its structure at the atomic level.},
+    {'opener'=>'opener-salt-crystal','sidecaption'=>false,'anonymous'=>true,'width'=>'fullpage'}
   )
 %>
 
@@ -237,6 +239,11 @@ elements. The electrons, however, were not a permanent
 feature of the atom, and could be tacked on or pulled out to
 make charged ions.
 
+If you're inclined to dismiss the raisin cookie model as silly, note
+that it evades Earnshaw's theorem (example \ref{eg:earnshaw-theorem},
+p.~\pageref{eg:earnshaw-theorem}), since it is not made solely out of
+point charges.\index{Earnshaw's theorem!raisin cookie model evades}
+
 <% end_sec('thomson') %>
 
 <% begin_sec("The energy scale for chemistry and atomic physics",nil,'matter-atomic-e-scale') %>\index{atom!energy scale}
@@ -291,7 +298,7 @@ hit you.''
 This observation proved impossible to explain in the raisin cookie
 model, because the kinetic energies of the alpha particles were many
 orders of magnitude greater than the energy scale estimated in
-sec.~\ref{subsec:matter-atomic-e-scale}.  At this point, the
+sec.~\ref{sec:matter-atomic-e-scale}.  At this point, the
 Rutherford group dusted off an unpopular and neglected model of the
 atom, in which all the electrons orbited around a small, positively
 charged core or ``nucleus,'' just like the planets orbiting around the
@@ -312,7 +319,9 @@ the atomic number. The total number of neutrons and protons is notated
 $A$, and for light, stable nuclei is usually about equal to $2Z$,
 i.e., the numbers of neutrons and protons are roughly equal.
 
-The trouble with the planetary model was that, as we will see in
+There is a problem with the stability of the planetary model. Although it evades
+Earnshaw's theorem, because the electrons are orbiting rather than sitting
+in equilibrium, there is still a problem because, as we will see in
 ch.~\ref{ch:radiation}, an accelerating electric charge radiates
 light. This would have caused the orbiting electrons to lose energy
 and spiral into the nucleus. The resolution of this problem would have
@@ -327,7 +336,7 @@ the new field of quantum physics.
 For nuclear reactions, experiments show that the energy scale is about
 $10^{-13}\ \junit$ per neutron or proton, or about 6 orders of
 magnitudes more than the scale for chemical reactions discussed in
-sec.~\ref{subsec:matter-atomic-e-scale}. Let's compare this with the
+sec.~\ref{sec:matter-atomic-e-scale}. Let's compare this with the
 electrical energy that we expect a nucleus to have.
 
 
@@ -407,22 +416,20 @@ To estimate the electrical energy of a nucleus, per neutron or proton, we can th
     %q{Problem \ref{hw:heline}.}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+
+<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
+
+\pagebreak
+
+<% marg() %>
 <%
   fig(
     'hw-hetriangle',
     %q{Problem \ref{hw:hetriangle}.}
   )
 %>
-<% end_marg %>
-
-
-<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
-
-<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
-
-
-<% marg() %>
+\spacebetweenfigs
 <%
   fig(
     'hw-nacl',
@@ -431,68 +438,12 @@ To estimate the electrical energy of a nucleus, per neutron or proton, we can th
 %>
 <% end_marg %>
 
+<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
+
 <% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
 
 
 <% end_hw_sec %>
 
-<% begin_lab("Gauss's law for magnetism") %>\label{lab:gauss-law}
-
-\begin{labapparatus}
-magnetic field sensor\\
-box containing unknown magnet\\
-graph paper with 1 cm grid
-\end{labapparatus}
-
-\begin{labgoal}
-Verify Gauss's law for magnetism, using an unknown magnet sealed inside a box.
-\end{labgoal}
-
-<%  
-  fig(
-    'gauss-law-lab',
-    %q{Measuring the flux through the box.},
-    {'suffix'=>'2','width'=>'narrow','float'=>true}
-  )
-%> 
-
-The unknown will be provided to you inside a cubical cardboard box about
-17 cm on a side. The magnetic field sensor is a wand like the one shown in
-figure \figref{horseshoe-magnet-components} on p.~\pageref{fig:horseshoe-magnet-components},
-which displays the component of the field parallel to the wand's axis, at a point
-near the tip, as in figure \figref{gauss-law-lab} on p.~\pageref{fig:gauss-law-lab}.
-
-The following technique can be used to determine the flux through one
-side of the box.  Orient the box with that side up. Place the graph
-paper on top of it. Watching the second hand on a clock, get a
-one-second beat going. It may be helpful to have your partner rap
-their knuckles on the table. In the software, initiate a period data
-collection preset to last 17 seconds.\footnote{If using LoggerPro, do
-this using Experiment:Data collection.} Start collecting data, and
-simultaneuosly begin scanning the sensor down the rows of the graph
-paper, covering a 1 cm by 17 cm strip in one second. Use the software
-to average the data, which gives a measure of the total
-flux.\footnote{In LoggerPro, this is done through Analyze:Statistics.}
-(Conceptually flux is really a sum, not an average, but that doesn't
-matter in this experiment because Gauss's law for magnetism doesn't
-depend on whether the fluxes are measured in different units or scaled
-by some arbitrary factor.)
-
-Adding the fluxes through all six sides of the cube provides a test of
-Gauss's law.
-
-Theoretically the validity of Gauss's law should not depend on whether
-there are additional contributions to the magnetic field from the ambient
-field in the room. However, it is easier physically to rotate the box
-rather than scanning the different sides while the box stays in one orientation.
-This means that there can be a contribution from the ambient field, which
-we need to get rid of. This can be achieved by waving the wand in the air
-where the top of the box \emph{would} be, but with the box removed.
-The result is the contribution to each flux measurement from the ambient
-field, so the final result can be corrected by subtracting six times this
-number.
-
-
-<% end_lab %>
 
 <% end_chapter() %>
