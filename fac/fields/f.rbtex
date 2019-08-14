@@ -5,664 +5,855 @@
 <%
   chapter(
     '06',
-    %q{More about relativity (optional)},
-    'ch:relativity',
-    nil,
-    {'optional'=>true}
+    %q{Radiation},
+    'ch:radiation',
+    '',
+    {'opener'=>'../../../share/optics/figs/crepuscular-rays','width'=>'fullpage'}
   )
 %>
-<% begin_sec("Einstein's motorcycle: the resolution",nil,'einstein-motorcycle2') %>
-When we left our youthful protagonist at the end of
-chapter \ref{ch:radiation}, he was asking himself what he would observe if he
-rode a motorcycle inside an electromagnetic wave, chasing the wave at nearly the speed of light.
-And what if he rode \emph{at} the speed of light?\index{Einstein, Albert}
 
-It would seem that in the case where he rode at $c$, he should be at
-rest with respect to the wave, so that in his frame of reference the
-fields don't change with time. But this violates Maxwell's
-equations.  With the benefit of hindsight, let's untangle this paradox
-that Einstein only finally resolved five years later, with the
-publication of his special theory of relativity. 
+Way back at the beginning of this book, on the second page of the very
+first chapter, we proved, based only on experiments demonstrating the
+relative nature of time, that the universe could not operate as
+envisioned in Newton's picture of instantaneous action at a distance.
+Electromagnetic forces must propagate as wave disturbances in the
+fields. Later we saw that the only sensible\footnote{i.e., rotationally invariant} way of finding the
+direction of propagation of such a wave was the vector cross product
+$\vc{E}\times\vc{B}$, and argued (p.~\pageref{waves-not-pure-e-or-b})
+that therefore these wave disturbances must contain oscillations of
+both the electric and magnetic field.  In this chapter we will take up
+the description of these electromagnetic waves in more 
+detail.\index{radiation|see {electromagnetic wave}}\index{wave, electromagnetic|see {electromagnetic wave}}
 
-We'll approach this by examining how the mix of electric and magnetic
-fields in one frame of reference compares with what is measured by an observer
-in a different frame of reference. In case this is all a little too abstract,
-let's start with some practice in visualizing this kind of thing using a graph.
-An avocado has about twice as many grams of fat as carbohydrates, whereas
-if you eat a half-bagel slice with a thin shmear of cream cheese, the ratio
-is the other way around. Figure \figref{bagels} shows a way of converting
-back and forth between $(\text{avocado},\text{bagel})$ coordinates and
-$(\text{fat},\text{carbs})$. The dot represents the two halves of a bagel,
-with half an avocado split between them to make avocado toast. The result
-is that we get about 30 g of fat and 45 g of carbs.
+<% marg(-300) %>
+<%
+  fig(
+    'eve',
+    %q{``Why?''}
+  )
+%>
+<% end_marg %>
 
-Now let's get back to Einstein's motorcycle paradox.
-The field that we observe, as we move in the $z$ direction with
-velocity $v$, has nonzero components $E_x$ and $B_y$. On a graph with
-$E_x$ and $cB_y$ on its axes, figure \figref{lorentz-1}, a particular
-spot in the field pattern of an electromagnetic wave is represented by
-a point on the diagonal that runs through the origin with a slope of
-1. (The factors of $c$ that occur in this discussion are only because
-of the inconvenience of the SI. Ignore them as you read. I'll say
-things like ``the $E$ field and the $B$ field are equal,'' with the
-understanding that this is really only true if the factors of $c$ are
-filled in.) A pure electric field is a point on the horizontal axis,
-and pure magnetic field is a point on the vertical axis. 
+By the way, although I'm offering answers to ``why'' questions about
+these waves, it's important to understand that in mathematics and the
+hard sciences, a ``why'' question can have more than one answer. It's
+different in other fields such as religion. If you ask a
+theologically well-informed Christian why humans have to endure pain
+and suffering, there is one definite answer, which is that it's a
+punishment for Eve's original sin of obtaining an unauthorized
+education from a serpent. Done. Explained.  But in math
+and science, we have the problem of how to prove things rigorously
+without ever being allowed to appeal to some supernatural authority
+for basic principles to use as starting points. We do this by
+explicitly stating some set of assumptions, and making it clear that
+all our later reasoning holds only \emph{conditionally}, \emph{if}
+those assumptions are true. 
+
+A familiar example is the question of why the distance between two
+points in space is given by $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$. There is more
+than one answer to this ``why'' question. One is that if we accept Euclid's
+postulates, then it follows as a theorem, the Pythagorean theorem. But
+in the Cartesian approach, this formula for the distance is taken as
+an assumption, and some of Euclid's postulates become theorems that can be
+proved. These are two totally different answers to the same ``why'' question,
+and they are both valid.
+
+The point of this digression, in the context of our study of electromagnetism,
+is that if you look in different books, you will find different logical
+developments of the subject, starting from different sets of assumptions.
+In this book, we start from some of the assumptions described above,
+derive facts about electromagnetic waves, and then end up using those facts
+to infer the full set of physical laws for electromagnetism, known as Maxwell's
+equations (summarized on p.~\pageref{fig:maxwell-summary}). Other books might take Maxwell's equations as assumptions (perhaps
+with some experimental or logical justification) and use them to prove the
+properties of electromagnetic waves. By p.~\pageref{maxwell-logic-roundup}, we'll
+finish making all the connections, and it will become clear there is a system of
+tightly interlocking logical relationships, very much like the Euclidean/Cartesian 
+example.\label{maxwell-logic-promise}
+
+<% begin_sec("Wave patterns",nil,'wave-patterns') %>\index{wave!spherical}\index{wave!plane}
+
+Waves spread out in all directions from every point on the disturbance
+that created them, and this is why we refer to electromagnetic
+``radiation'' --- the wave radiates out in all directions. 
+
+If such a wave disturbance is small, we may consider it as a single
+point, and in the case of water waves the resulting wave pattern is
+the familiar circular ripple, \figref{wave-patterns}/1. If, on the
+other hand, we lay a pole on the surface of the water and wiggle it up
+and down, we create a linear wave pattern, \figref{wave-patterns}/2.
+For a three-dimensional wave such as a sound wave, the analogous
+patterns would be spherical waves and plane waves,
+\figref{wave-patterns-three-d}. 
+
+
+<% marg(-300) %>
+<%
+  fig(
+    'wave-patterns',
+    %q{Circular and linear wave patterns.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'wave-patterns-three-d',
+    %q{Plane and spherical wave patterns.}
+  )
+%>
+<% end_marg %>
+
+All kinds of wave patterns are possible, but linear or plane
+waves are often the simplest to analyze, because the
+velocity vector is in the same direction no matter what part
+of the wave we look at. Because of the geometrical relationship
+of the momentum density to $\vc{E}\times\vc{B}$, we need a full
+three dimensions in order to describe an electromagnetic wave,
+so there is no hope of treating anything as effectively two-dimensional,
+and the simplest wave pattern is therefore the plane wave.
+
+For convenience throughout this chapter, we will always take our
+waves to be propagating along the $z$ axis. The definition of a
+plane wave then becomes very simple: it is an electromagnetic field
+pattern in which the fields are both functions only of $z$ and $t$,
+$\vc{E}=\vc{E}(t,z)$ and $\vc{B}=\vc{B}(t,z)$.
+
+<% end_sec('wave-patterns') %>
+
+<% begin_sec("What it is that waves",nil,'what-vibrates') %>\index{electromagnetic wave!not a vibration of a medium}
+
+<% marg(-8) %>
+<%
+  fig(
+    'coil-spring-pulse',
+    %q{A force acts on a coil spring at the left end, producing a mechanical wave pulse that propagates to
+       the right.}
+  )
+%>
+<% end_marg %>
+
+In a vibration, such as the motion of a pendulum or a mass on a
+spring, we would define the amplitude either as the position of the
+object relative to equilibrium, or as some other, closely related
+quantity such as the object's velocity. In these examples, position
+and velocity are not independent measures of amplitide. They are
+closely related, and we can't change one without changing the other
+proportionately.  A wave is a kind of vibration that exists across a
+whole region of space, so the same ideas recur. For example, the
+amplitude of a sound wave could be defined in multiple ways: in terms
+of the displacement of the air, its velocity, or the pressure or
+density. Again, all of these things are related and cannot be
+controlled independently.
+
+In the case of an electromagnetic wave, we could define the amplitude
+in terms of either the electric field or the magnetic field. We have
+already seen that in an electromagnetic wave we can't have one of
+these be zero while the other is nonzero.  Shortly we will see that in
+a plane wave, they are in fact directly proportional to each other. 
+
+An electromagnetic wave, unlike a sound wave or the waves on a coil
+spring in figure \figref{coil-spring-pulse}, is not a mechanical wave,
+i.e., it isn't a vibration of any material medium such as the air or
+the spring. What vibrates is the fields --- invisible, intangible, and
+massless. We will see that electromagnetic waves are transverse, i.e.,
+they vibrate from side to side (like the waves on a spring) rather
+than along the direction of propagation (like a sound wave). But
+because they are not vibrations of a material medium, this vibration
+doesn't mean that anything is actually \emph{traveling} from side to
+side. A bug sitting on the spring in figure \figref{coil-spring-pulse}
+moves to the side and then back as the pulse passes through, but nothing
+analogous happens in an electromagnetic wave. The bug would simply notice
+a change in the fields over time, but would not move.
+
+Early physicists working on the description of electromagnetic
+radiation had never had any previous experience with waves that were
+not mechanical vibrations of a physical medium. James Clerk Maxwell
+gave a complete and correct mathematical description of
+electromagnetism in 1865, and his equations worked just fine as a
+description of radiation purely in terms of non-material fields. But
+old habits died hard, and as late as the 1930's, it was common to hear
+physicists referring to electromagnetic waves as vibrations in a
+mysterious medium called the ``aether.''\index{aether}
+
+<% end_sec('what-vibrates') %>
+
+<% begin_sec("Geometry of a plane wave",nil,'plane-wave-geom') %>\index{electromagnetic wave!geometry}
+
+<% begin_sec("$\\vc{E}$ and $\\vc{B}$ perpendicular to the direction of propagation",nil,'e-b-perp-p') %>
+The momentum density $(1/4\pi k)\vc{E}\times\vc{B}$ is proportional
+to the momentum density of our plane wave,
+and therefore points in the direction of propagation. Since a vector cross product is perpendicular
+to both of the vectors, it follows that both fields lie in the plane perpendicular to the direction
+of propagation.
+<% end_sec('e-b-perp-p') %>
+
+<% begin_sec("$\\vc{E}$ and $\\vc{B}$ equal in energy",nil,'e-b-equal-energy') %>\index{electromagnetic wave!energy}
 
 <% marg() %>
 <%
   fig(
-    'bagels',
-    %q{A graphical method for visualizing the conversion between
-       $(\text{avocado},\text{bagel})$ and $(\text{fat},\text{carbs})$ coordinates.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'lorentz-1',
-    %q{Two electromagnetic field configurations represented as dots on a graph of $B_y$ versus $E_x$.
-       (To avoid clutter, factors of $c$ are suppressed; the vertical axis should really be $cB_y$ in
-       SI units.)}
+    'e-b-equal-energy',
+    %q{Are these possible fields for electromagnetic plane waves?}
   )
 %>
 <% end_marg %>
-We already know that if we change our frame of reference, a particular
-combination of electric and magnetic fields looks like some other set
-of fields. We know that these transformations are linear, and we also
-know from examples like figure \figref{field-transformation-cartoon}
-on p.~\pageref{fig:field-transformation-cartoon}, involving a line of
-charges, what happens to a point on the horizontal axis. We could
-represent this kind of information by drawing pictures of how the
-points move around on a fixed graph-paper grid, but it turns out to be
-much easier to keep the points fixed and move the axes, as in figure
-\figref{lorentz-2}. The slope of the new $E_x'$ axis turns out to be $v/c$, where
-$v$ is the velocity of the new frame relative to the old one as it
-moves in the $z$ direction. We'll justify this claim in more detail later, but
-for now we note that clearly this makes sense when $v=0$, since then there is
-no change in our frame of reference, and the axis shouldn't tilt at all.
+Figure \figref{e-b-equal-energy} shows two examples of electric and magnetic fields that
+we imagine as possible fields in an electromagnetic plane wave. We draw the arrows for the
+$\vc{E}$ and $\vc{B}$ vectors with equal lengths on the page, which suggests that they are
+``equal'' in the sense of carrying equal energy, which we are now going to prove. The angle
+$\phi$ is drawn as an arbitrary angle, although we will prove later that it must be a right
+angle. The first example is drawn with $\vc{E}$ clockwise from $\vc{B}$, so that by the right-hand
+rule, the direction of propagation is out of the page. The second example has been flipped around
+so that the momentum vector is into the page, and has also been rotated in the plane of the page.
 
-For practice, let's interpret the two points in figure \figref{lorentz-2}. The bottom point is a purely
-electric field in the original frame of reference. For an observer moving in the positive $z$ direction
-at velocity $v$, we use the $(E_x',B_y')$ axes to determine the fields. Although we haven't yet marked
-in tick marks, so we can't tell whether $E_x'$ is bigger or smaller than $E_x$, we can
-see that the dot is below the new ``horizontal'' axis, so $B_y'<0$, and this is consistent with
-our earlier analysis of figure \figref{field-transformation-cartoon}
-on p.~\pageref{fig:field-transformation-cartoon}.
+Our argument for equal energy sharing between the electric and magnetic fields works by
+colliding these two waves head-on. Before the waves collide, they each carry energy $U_\vc{E}+U_\vc{B}$,
+for a total energy of $2U_\vc{E}+2U_\vc{B}$. Now suppose that the rotation is chosen as in the figure,
+so that when the waves superpose, the electric fields cancel. At this moment, the total energy
+is $U_{\vc{B}'}$, where $\vc{B}'$ is the result of vector addition of the two magnetic field vectors
+at an angle of $\pi-2\phi$ relative to each other.
 
-The other point lies on the diagonal, so it's a combination of fields that we could have in
-a plane wave propagating in the $z$ direction. An electromagnetic wave that obeys the laws of
-physics in one frame should also obey the laws of physics in another frame, and therefore
-it makes sense that in the tilted axes representing $(E_x',B_y')$, it again lies on the diagonal.
-To make this part of the example come out right, we are forced to make the two axes tilt by equal
-angles, like the blades of a pair of scissors as they close in from both sides.
+That was one possible choice of the rotation. But we can also choose the rotation such that
+the \emph{magnetic} fields cancel, so that the total energy is $U_{\vc{E}'}$, where $\vc{E}'$ is the
+result of a similar vector addition problem involving the same angle.
 
-<% marg(300) %>
+Requiring conservation of energy in both examples, we have $U_\vc{E}+U_\vc{B}=U_{\vc{B}'}=U_{\vc{E}'}$,
+but since the two vector addition problems involve the same angle, we must have $U_\vc{E}=U_\vc{B}$,
+as claimed.
+
+Since the energy densities are $(1/8\pi k)E^2$ and $(c^2/8\pi k)B^2$,
+it follows that $E=cB$. (This was problem \ref{hw:morally-equal-eb},
+p.~\pageref{hw:morally-equal-eb}). With a couple of centuries of
+hindsight, it would have been better if we had constructed a system of
+units in which $E$ and $B$ had the same units, and in fact they do
+have the same units in the cgs system. In the SI their units are
+different, but ignoring the factor of $c$, we can say that this means
+the magnitudes of the electric and magnetic fields in a plane wave are
+``equal.'' (See problem \ref{hw:morally-equal-eb}, p.~\pageref{hw:morally-equal-eb}.)
+
+<% end_sec('e-b-equal-energy') %>
+
+<% begin_sec("$\\vc{E}$ and $\\vc{B}$ perpendicular to each other",nil,'e-b-perp') %>
+<% marg() %>
 <%
   fig(
-    'lorentz-2',
-    %q{Changing between two frames of reference.}
+    'e-b-perpendicular',
+    %q{The geometry of a plane wave, with $\phi=90\degunit$.}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+Continuing the analysis of the colliding waves, we find that the angle $\phi$
+between $\vc{E}$ and $\vc{B}$ must be a right angle. We have four units of energy
+before the waves collide: one unit in each wave's electric field, and one unit in each
+magnetic field. When the waves collide in an orientation such that the electric fields
+cancel, then $U_{\vc{B}'}$ has a value, in these units, of $4\sin^2\phi$, which gives
+conservation of energy only if $\phi$ is a right angle. We arrive at the geometry shown
+in figure \figref{e-b-perpendicular}.
+
+Because the angle $\phi$ is fixed at $90\degunit$, it's not a property like color or brightness
+that can distinguish one light wave from another. But we are always free to take a diagram
+like figure \figref{e-b-perpendicular} and simply spin the whole book around by an angle $\theta$.
+This is referred to as the polarization of the wave.
+<% end_sec('e-b-perp') %>
+
+<% end_sec('plane-wave-geom') %>
+
+<% marg(-300) %>
 <%
   fig(
-    'boost',
-    %q{How a square on the $(E_x,B_y)$ graph paper changes as we change frames of reference.
-       The area stays the same.}
+    'vacuum-dispersion',
+    %q{Arrival times of waves with different frequencies from gamma-ray burst 160625B, from
+       Wei \emph{et. al}, 2018. In this histogram, the vertical axis is a count of the
+       number of wave pulses arriving per unit time.}
   )
 %>
 <% end_marg %>
 
-We still haven't specified how much the axes stretch or shrink, i.e., how far apart the tick marks
-should be. It's fairly straightforward to prove that the area of a square on the original
-graph paper must keep the same area as we distort it into a parallelogram on the new graph paper.
-The form of the transformation is now completely determined, and algebra shows it to be\label{transformation-e-b}
+<% begin_sec("Propagation at a fixed velocity",nil,'propagation-at-c') %>\index{electromagnetic wave!propagation at $c$}
+If we look at the speed of waves in general, we see two main types of behavior. In one type,
+exemplified by sound waves or waves on a coil spring as in figure \figref{coil-spring-pulse},
+all waves travel at the same speed, regardless of their amplitude or frequency.
+Water waves are a good example of another type, called a dispersive wave. A dispersive
+wave travels at different velocities depending on its frequency. Only a perfect sine wave
+has a definite frequency, so typically if we generate a wave with some randomly chosen
+shape, it will act like a mixture of different frequencies. (There is a mathematical theorem
+called Fourier's theorem that says we can always analyze any wave as a superposition of sine
+waves.) These different frequencies will travel at different speeds, so the wave acts like
+a bunch of runners over the course of a long-distance race: at the start they're all crowded
+together, but as time goes on, the faster ones pull ahead, the slower ones fall behind, and
+the pack spreads out in space, often to the point where people are running all alone and can't
+see their competitors. In a wave, this causes the wave pattern to spread out, or disperse. We
+can tell that the wave pulse on the coil spring in figure \figref{coil-spring-pulse} is propagating
+nondispersively, because it maintains its shape as it moves.
+
+We know on both theoretical and empirical grounds that
+electromagnetic waves are nondispersive when they travel in a vacuum.
+Figure \figref{vacuum-dispersion} shows some astronomical evidence that is
+extremely impressive for its accuracy. Electromagnetic waves (gamma rays) with different frequencies,
+spanning several orders of magnitude, were generated, probably by matter falling into a black hole.
+These waves then traveled for 9 billion years before reaching earth, where the different frequencies
+arrived within seconds of one another.
+<%
+  fig(
+    'plane-wave-propagating',
+    %q{A plane wave propagating to the right, shown at one time (top) and a later one (bottom).},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+Theoretically, we have the following argument. In general, the ratio of an object's energy to its
+momentum depends on its speed (cf.~p.~\pageref{energy-momentum-ratio}). But the geometrical facts
+we've found about electromagnetic waves guarantee that the energy and momentum scale up and down
+with amplitude in exactly the same way, and are independent of the shape of the wave. For example,
+if the angle $\phi$ between the $\vc{E}$ and $\vc{B}$ vectors could vary, or if $|\vc{E}|$ and
+$|\vc{B}|$ could vary independently, then we could get different momenta for the same energy --- but
+these things are \emph{not} independently variable. Since electromagnetic waves have a fixed ratio
+of energy to momentum, they must travel at a fixed speed,\label{em-waves-fixed-v}
+which we will show on p.~\pageref{em-waves-propagate-at-c} is $c$. They are nondispersive, so
+a plane wave glides along rigidly as in figure \figref{plane-wave-propagating}, without changing shape.
+<% end_sec('propagation-at-c') %>
+
+<% begin_sec("The electromagnetic spectrum",nil,'em-spectrum') %>
+
+Heinrich \index{Hertz, Heinrich}Hertz (for whom the unit of
+frequency is named) verified Maxwell's ideas experimentally.
+Hertz was the first to succeed in producing, detecting, and
+studying electromagnetic waves in detail using antennas and
+electric circuits. To produce the waves, he had to make
+electric currents oscillate very rapidly in a circuit. In
+fact, there was really no hope of making the current reverse
+directions at the frequencies of $10^{15}$ Hz possessed by
+visible light. The fastest electrical oscillations he could
+produce were $10^9$ Hz. He succeeded in showing that, just like visible light,
+the waves he produced were polarizable, and could be
+reflected and refracted (i.e., bent, as by a lens), and he
+built devices such as parabolic mirrors that worked
+according to the same optical principles as those employing
+light. Hertz's results were convincing evidence that light
+and electromagnetic waves were one and the same.
+
+Together, the experimentalist Hertz and the theorist Maxwell
+(sec.~\ref{sec:maxwell-vacuum}), showed that electromagnetic
+waves were in fact the structure underlying a variety of
+apparently disparate phenomena, including visible light, radio
+waves, and other phenomena such as x-rays. All of these types
+of radiation differ only in their frequency, and they lie along
+a unified electromagnetic spectrum (figure below)
+in which the visible rainbow spectrum is only a narrow slice.
+
+<%
+ fig(
+   'em-spectrum',
+   '',
+   {'width'=>'fullpage'}
+ )
+%>
+
+An electromagnetic wave can be characterized either by its
+frequency or by its wavelength $\lambda$ (Greek letter lambda, which
+makes the ``L'' sound). On a sinusoidal wave, the
+wavelength is the distance in space between one crest and the next.
+These are not two independent parameters. During one cycle of
+vibration, which takes time $1/f$, one wavelength $\lambda$ travels past a fixed point in space.
+We therefore have $c=(\text{distance})/(\text{time})=\lambda f$.
+A higher frequency corresponds to a shorter wavelength.
+
+The terminology for the various parts of the spectrum is
+worth memorizing, and is most easily learned by recognizing
+the logical relationships between the wavelengths and the
+properties of the waves with which you are already familiar.
+ Radio waves have wavelengths that are comparable to the
+size of a radio antenna, i.e., meters to tens of meters.
+Microwaves were named that because they have much shorter
+wavelengths than radio waves; when food heats unevenly in a
+microwave oven, the small distances between neighboring hot
+and cold spots is half of one wavelength of the standing
+wave the oven creates. The infrared, visible, and
+ultraviolet obviously have much shorter wavelengths, because
+otherwise the wave nature of light would have been as
+obvious to humans as the wave nature of ocean waves. To
+remember that ultraviolet, x-rays, and gamma rays all lie on
+the short-wavelength side of visible, recall that all three
+of these can cause cancer. (As you'll see when you learn about quantum physics,
+there is a basic physical reason why the cancer-causing
+disruption of DNA can only be caused by very short-wavelength
+electromagnetic waves. Contrary to popular belief,
+microwaves cannot cause cancer, which is why we have
+microwave ovens and not x-ray ovens!)
+
+<% end_sec('em-spectrum') %>
+
+<% begin_sec("Momentum and rate of energy flow",nil,'p-and-energy-flow') %>
+<% begin_sec("Momentum of a plane wave",nil,'p-plane-wave') %>\index{electromagnetic wave!momentum}
+Recalling the relations $\der\vc{p}/\der v =(1/4\pi k)\vc{E}\times\vc{B}$,
+$\der U_E/\der v=(1/8\pi k)E^2$, and $\der U_B/\der v=(c^2/8\pi k)B^2$, it is
+straightforward to show that for a plane wave, the energy and momentum are related
+by
+\begin{equation*}
+  \der U = c \der p.
+\end{equation*}
+This turns out to be a more general relation that, according to relativity, applies
+to anything without mass.
+<% end_sec('p-plane-wave') %>
+<% begin_sec("Rate of energy flow",nil,'poynting') %>
+Intuitively we feel that sunlight \emph{flows} through a window. We have been focusing
+on the momentum density as a measure of this rate of flow, but it would be equally valid
+to quantify it in units of power per unit area ($\text{watts}/\text{meter}^2$). These
+two figures must somehow be equivalent, since we can't change one without changing the
+other by the same factor. The relationship between them is
+\begin{equation*}
+  \frac{\text{power}}{\text{area}} = \frac{\text{momentum}}{\text{volume}} \times c^2.
+\end{equation*}
+To see this, consider an imaginary rectangular box of length $\ell$, with the window
+of area $A$ forming one end. Its volume is $v=\ell A$. Let's say the light is flowing
+directly along the length of this box, striking the window flat-on. At a given instant, the box contains
+momentum $p$ and energy $cp$. The time it will take for this entire box worth of light to
+flow through the window is $t=\ell/c$, so that the power per unit area is
+$(cp/t)/A=c^2p/(\ell A)=(p/v)c^2$.
+
+<% marg(30) %>
+<%
+  fig(
+    'window-flux',
+    %q{Light fills an imaginary rectangular box, flowing through a window of area $A$.}
+  )
+%>
+<% end_marg %>
+
+Summarizing, we find that the vector cross product $\vc{E}\times\vc{B}$ can be interpreted
+either as a measure of momentum density or as a measure of the rate of flow of energy.
+
+The quantity $(c^2/4\pi k)\vc{E}\times\vc{B}$, which is just the momentum density
+multiplied by $c^2$, is often notated $\vc{S}$, and
+is referred to as the Poynting vector, after John Henry Poynting --- a wonderful
+coincidence, because the vector \emph{points} in the direction of the momentum
+and energy flow. The magnitude of the Poynting vector is power per unit 
+area.\index{Poynting, John Henry}\index{Poynting vector}
+
+It makes sense that the momentum density and the rate of energy flow differ by
+the factor $c^2$, which is huge in SI units. SI units were chosen so that their
+sizes would be of a convenient order of magnitude in everyday life. We know from
+ordinary experience that the energy flux of a blast of desert sun can be physically
+staggering, whereas the momentum of the same sunlight is totally undetectable
+in everyday life.
+
+<%
+  fig(
+    'wave-poynting',
+    %q{The Poynting vector of a sinusoidal plane wave, example \ref{eg:wave-poynting}.
+       There is a net flow of energy out of region A, and a net
+       flow into B.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+\vfill
+
+\begin{eg}{Poynting vector of a plane wave}\label{eg:wave-poynting}
+Figure \figref{wave-poynting} shows the Poynting vector, in the sea-of-arrows representation,
+for the example of a sinusoidal plane wave. In a coordinate system where $+z$ is to the right, frozen at one
+point in time, this wave could be described by $\vc{E}=A\hat{\vc{x}}\sin kz$
+and $c\vc{B}=A\hat{\vc{y}}\sin kz$, so that $\vc{S}=(A^2c/4\pi k)\hat{\vc{z}}\sin^2 kz$.
+The figure shows examples of regions that have a net flow of energy in or out.
+\end{eg}
+
+\vfill
+
+In example \ref{eg:wave-poynting}, we have regions of space that are
+gaining energy, and others that are losing it. It's because there are
+``winners and losers'' that these energy flows are physically
+observable.  As a technical aside, it is also possible to have examples in which the
+Poynting vector is nonzero, but there is no physically observable flow
+of energy, because every region of space is having energy flow in as
+fast as it flows out (\note{static-poynting}).
+
+\vfill
+
+\startdq
+
+<% marg() %>
+<%
+  fig(
+    'dq-field-momentum',
+    %q{Discussion question \ref{dq:field-momentum}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:field-momentum}
+Positive charges 1 and 2 are moving as shown. What electric and magnetic forces do they exert on each other?
+What does this imply for conservation of momentum?
+\end{dq}
+
+<% end_sec('poynting') %>
+<% end_sec('p-and-energy-flow') %>
+
+<% begin_sec("Maxwell's equations in a vacuum",4,'maxwell-vacuum') %>
+<% marg() %>
+<%
+  fig(
+    'bug-in-plane-wave',
+    %q{A bug makes local observations of the leading edge of the wave from figure
+       \figref{plane-wave-propagating}. The wave is moving to the right, and the
+        magnetic field is perpendicular to the page.}
+  )
+%>
+<% end_marg %>
+The laws of physics are local, so if we zoom in on an electromagnetic wave, as in
+figure \figref{bug-in-plane-wave}, and take on the role of the bug, we must be able
+to make sense of the evolution of the wave pattern as time goes on. The structure of
+the laws of physics for electromagnetism is that they talk about the curl and divergence
+of the fields. It's not arbitrary that they have this structure, because the curl and
+divergence are the only rotationally invariant derivative operators we can define that take
+a vector-valued field as an input.
+
+What the bug observes at this moment in time is that the electric field has a curl
+that points into the page. (You should verify this yourself by visualization, using the
+right-hand rule, if necessary referring to the drawing of the curl-meter in
+figure \figref{curlmeter-fac} on p.~\pageref{fig:curlmeter-fac}.) She also observes that
+the magnetic field's curl is up. For static fields, we're supposed to have
+$\operatorname{curl}\vc{E}=0$ and $\operatorname{curl}\vc{B}=0$, so this would be impossible.
+But this is not a static field, it's a field that is changing over time.
+The bug needs some laws of physics that relate the time-varying nature of the fields to their
+curls. With this motivation, we state Maxwell's equations\footnote{The full version of Maxwell's equations, including matter, are
+summarized on p.~\pageref{fig:maxwell-summary}.} in a vacuum:\index{Maxwell's equations!in a vacuum}
 \begin{align*}
-  E_x' &=  \quad \mygamma E_x - \frac{v}{c}\mygamma cB_y  \\
-  cB_y' &= -\frac{v}{c}\mygamma E_x + \mygamma cB_y ,
+  \operatorname{div}\vc{E} &=  0 \\
+  \operatorname{div}\vc{B} &=  0 \\
+  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
+  \operatorname{curl}\vc{B} &=  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}.
 \end{align*}
-where $\mygamma$ (Greek letter gamma, which gakes the `g' sound) is shorthand for
-$1/\sqrt{1-(v/c)^2}$. The form of these equations is pretty simple if you
-ignore all the factors of $c$ and realize that there is just an over-all factor of $\gamma$.
-The factors of $c$ occur in front of every magnetic field, and also under every $v$, so
-that all velocities are being measured as a fraction of the speed of 
-light.\index{electric field!transformation between frames of reference}\index{magnetic field!transformation between frames of reference}
+There is not much else we could write down that would satisfy the bug's
+requirements. The signs are the ones that make the geometry of figure \figref{bug-in-plane-wave}
+work.\footnote{The fact that the two signs are opposite is what gives us solutions that are oscillating
+waves, rather than exponential freak-outs. We could make the signs $+$ and $-$ rather than $-$ and $+$,
+but this would be equivalent to redefining the magnetic field like $\vc{B}\rightarrow-\vc{B}$.}
+The factor of $1/c^2$ has to be there because of units.
+We could throw in other unitless
+factors and change the $1/c^2$ to $7/c^2$, for example, but $1/c^2$ is the choice that turns out to make the
+wave propagate at $c$ (\note{maxwell-c}).
 
-\begin{eg}{The trivial transformation}\label{eg:trivial-e-b-trans}
-In the case where $v=0$, we have $\gamma=1$, and the transformations become
-$E_x'=E_x$ and $B_y'=B_y$, i.e., nothing changes. This makes sense, because we haven't actually
-changed our frame of reference.
+The physics embodied in these two new terms of Maxwell's equations is referred to as
+induction (a different usage of the term than the one introduced for static fields
+on p.~\pageref{fig:attracting-induced-electric-and-magnetic-dipoles}). A changing
+magnetic field induces a curly electric field, and a changing electric field
+induces a curly magnetic field. This has many important technological applications,
+but since those are not our topic right now, we give only two qualitative examples.
+Further quantitative material is presented in ch.~\ref{ch:stokes}.
+
+\pagebreak
+
+\begin{eg}{The generator}\index{generator}
+A generator, \figref{generator}, consists of a permanent magnet that
+rotates within a coil of wire. The magnet is turned by a
+motor or crank, (not shown). As it spins, the nearby
+magnetic field changes. This changing magnetic field results in an
+electric field, which has a curly pattern. This electric
+field pattern creates a current that whips around the coils
+of wire, and we can tap this current to light the lightbulb.
+\end{eg}
+<% marg(33) %>
+<%
+  fig(
+    'generator',
+    %q{A generator.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Radiation from a dipole antenna}\label{eg:dipole-radiation-pattern}
+Figure \figref{dipole-radiation-pattern} depicts the electric fields in
+the radiation pattern of an antenna, shown in the photo superimposed
+in the background. This type of antenna is called a dipole antenna,
+meaning that as a source, it acts like an electric dipole whose dipole
+vector oscillates sinusoidally. The magnetic field is perpendicular to
+the page and is shown only at six arbitrarily chosen points in the
+midplane. Let's verify that this pattern appears to satisfy 
+Maxwell's equations in a vacuum. 
+
+The electric field lines 
+never begin or end at any point in the air surrounding on the antenna, only at points on the antenna,
+which means that they satisfy $\operatorname{div}\vc{E}=0$ everwhere that they should. (And where they reach
+the antenna, which is a conductor, they are perpendicular to the surface.)
+<%
+  fig(
+    'dipole-radiation-pattern',
+    %q{The radiation pattern emitted by a dipole antenna, example \ref{eg:dipole-radiation-pattern}.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+Although the magnetic field lines are not shown, they are simply circles centered on the dipole axis
+and perpendicular to it. Each magnetic field vector shown on the left wraps around and connects to the
+symmetrically placed field vector on the right. Because these circles close on themselves, there are
+no magnetic sources or sinks, as required by $\operatorname{div}\vc{B}=0$.
+
+In order to check $\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$, we pick points A, B, and C,
+of which only B coincides with a point where the magnetic field was drawn. Here is a table, to be justified
+afterward, describing the behavior of the fields and their derivatives at these points.
+
+\begin{tabular}{lllll}
+    & $\vc{E}$ & $\operatorname{curl}\vc{E}$ & $\vc{B}$ & $\partial\vc{B}/\partial t$ \\
+A   & 0        & max (out)                   & 0        & max (in) \\
+B   & max (up) & 0                           & max (in) & 0 \\
+C   & 0        & max (in)                    & 0        & max (out)
+\end{tabular}
+
+Points A, B, and C are chosen to be ones at which the electric field
+is at a zero, a maximum, and a minimum, hence the values in the first
+column. We can tell, for example, that $\vc{E}$ is small at A because
+the field lines are far apart, and we know that $\vc{E}=0$ must occur
+somewhere near A because as the field pattern has been
+spreading outward, the field has been changing from down to (soon) up. 
+
+The second column comes from visualizing a curl-meter inserted in the figure. The curl is nearly zero at
+B because the curl is flipping directions near there at this time.
+
+The third column comes from our expectation that the Poynting vector
+should point outward, which requires that $\vc{E}$ and $\vc{B}$ reach
+their maxima at similar times, i.e., be at least approximately in
+phase, as in example \ref{eg:wave-poynting} on
+p.~\pageref{eg:wave-poynting} (Poynting vector of a plane
+wave).\footnote{This expectation cannot be valid everywhere on the
+figure. Close up to the antenna, we can find places where the electric
+field points directly inward or outward, so that the Poynting vector
+cannot be straight outward. However, far from the antenna
+the pattern begins to look locally more and more like a plane wave, so
+this kind of thing can't happen.}
+
+The fourth column follows from the fact that the time variation of the wave
+is sinusoidal, and the derivative of a sine wave is also a sine wave, shifted
+90 degrees forward in phase (e.g., $\sin'=\cos$).
+
+We can now verify that these estimates are consistent with
+$\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$ since the
+second and fourth columns match up except for the flipped direction
+arising from the minus sign.
 \end{eg}
 
-\begin{eg}{The motorcycle at 3\% of $c$}\label{eg:motorcycle-3-percent-of-c}
-Suppose that Einstein rides his motorcycle through an electromagnetic plane wave
-at 3\% of $c$. (He'd better not hit anything at
-this speed, because he has more kinetic energy than is released in a nuclear explosion.)
-Because $v/c$ is small, we have $\mygamma=1.0004$, which means that to an excellent approximation
-we can ignore all the factors of $\mygamma$. This is an electromagnetic wave he's riding
-through, so $E_x=cB_y$, i.e., the electric and magnetic fields are ``the same'' when we
-ignore factors of $c$.
+\startdq
 
-The result of the transformation of the fields is straightforward:
-each field is reduced by almost exactly 3\%. This makes sense intuitively by comparison with
-material objects. For example, running in the same direction as the wind makes the wind feel
-less intense.
-
-The fact that both fields are reduced by the same 3\% is important. They need to
-obey the laws of physics in the new frame as well as the old one, and the laws of
-physics require the electric and magnetic fields to be equal to each other in a plane wave.
-
-<% marg(300) %>
+<% marg() %>
 <%
   fig(
-    'boost-em-wave',
-    %q{The dot represents the fields in an electromagnetic plane wave. Changing to a frame
-       of reference moving at 60\% of $c$ cuts the fields in half, but they are still equal
-       to one another, as required for a plane wave. This is similar to, but easier to see,
-       than the 3\% velocity of example \ref{eg:motorcycle-3-percent-of-c}.}
+    'maxwellwave-gray',
+    %q{Discussion question \ref{dq:direction-of-propagation}.},
+    {'anonymous'=>true}
   )
 %>
 <% end_marg %>
 
-We can also see that this makes sense graphically. A velocity this small is hard to draw
-clearly, but figure \figref{boost-em-wave} shows what happens with a somewhat higher speed.
-\end{eg}
-
-\begin{eg}{The motorcycle at 99\% of $c$}
-The velocity in example \ref{eg:motorcycle-3-percent-of-c} was
-small compared to $c$, but by extrapolating
-to higher speeds, we can imagine that this example helps to solve the mystery of the motorcycle
-in the case where we let the velocity approach $c$. We expect the strength of the fields to
-keep going down, and we can guess that they will approach zero and become undetectable,
-nullifying the paradox.
-
-To check this, let's redo the calculation of example \ref{eg:motorcycle-3-percent-of-c},
-but now with $v/c=0.99$. It's no longer a good approximation to take $\mygamma\approx1$;
-we now have $\mygamma\approx 7$. The reduction in the intensity of each field is a factor
-of $(1-v/c)\gamma=0.07$, which checks out with our guess (and one can indeed prove 
-that $\lim_{x\rightarrow1}(1-x)(1-x^2)^{-1/2}=0$.)
-\end{eg}
-
-Earlier I claimed that we could think of $v/c$ as being the same thing as the
-slope of the tilted horizontal axis on the graph, and again we see that this
-makes sense in the case of the trivial transformation, example \ref{eg:trivial-e-b-trans}.
-This claim is justified in more detail in note \note{slope-is-v}.
+\begin{dq}\label{dq:direction-of-propagation}
+The diagram shows an electric field pattern frozen at one moment in time. Let's imagine
+that it's the electric part of an electromagnetic wave. Consider four possible directions in which
+it could be propagating: left, right, up, and down. Determine whether each of these is consistent
+with Maxwell's equations. If so, infer the direction of the magnetic field.
+\end{dq}
 
 
-<% end_sec('einstein-motorcycle2') %>
+<% end_sec('maxwell-vacuum') %>
 
-<% begin_sec("Implications for the structure of space and time",nil,'spacetime') %>
-<% begin_sec("Combination of velocities",nil,'v-addition') %>
-These apparently innocuous ideas now lead us to some extremely subversive conclusions
-about time and space. We are now led back, full circle, to the starting point of this
-book, in which we began by considering the nature of time.
+<% begin_sec("Einstein's motorcycle",4,'einstein-motorcycle') %>\index{Einstein, Albert}
+It seems as though we have a nice, tidy picture of electromagnetism all wrapped up. There should
+only be a few loose ends to tie up, such as how to incorporate charges and currents into
+Maxwell's equations, and how to connect Maxwell's equations to
+some practical problem-solving, such as the computation of the field of a solenoid.
 
-<% marg(-10) %>
-<%
-  fig(
-    'two-boosts',
-    %q{Transforming twice in a row by $3/5$ of $c$. The slope of the bottom edge of each
-       parallelogram is its velocity, in units of $c$.}
-  )
-%>
-<% end_marg %>
-Figure \figref{two-boosts} shows the result of doing two transformations in a row,
-each represented by its effect on a square of the original graph paper.
-For covenience, each of these is chosen to be a transformation that lengthens
-one diagonal by a factor of two, while cutting the other in half. With a little
-arithmetic, it can be shown that each of these corresponds to a velocity change $v$ equal to $3/5$ of
-$c$. That is, we have our original frame A, a frame B that moves at $v$ relative to A
-and another frame C that moves at $v$ relative to B. According to the conception of
-space and time created by Galileo and Newton, velocities should add, so the result should
-be $3/5+3/5=6/5$, i.e., a speed 20\% greater than the speed of light. But this isn't
-what we actually see in the diagram. In each of the three parallelograms, the slope
-of the bottom edge represents that frame's velocity in units of $c$. The first slope
-is 0, and the second is $3/5$, but the third is clearly less than 1.
+But at the Swiss Federal Polytechnic school, a physics student, about 20 years old,
+was sitting in the back of a classroom, absorbing a lecture on material similar to this,
+when he came back to a troubling, half-formed fantasy that he had originally imagined
+at the age of 16. Suppose, Albert Einstein daydreamed, that I ride on a motorcycle
+at nearly the speed of light, chasing a light wave as it passes over me. What would I
+observe? And what would happen if I rode \emph{at} the speed of light? We take up this
+train of thought again in ch.~\ref{ch:relativity}.
 
-Einstein
-recalled that this was the point that had prevented him from putting together the
-special theory of relativity for several years. He had been assuming that velocities
-had to add. It turns out that they don't. Addition is just an approximation, which happens
-to work at velocities that are small compared to $c$.
-
-This was also the resolution of the motorcycle paradox that had been
-bothering him for years. Any continuous process of acceleration acts
-like figure \figref{two-boosts}.  The motorcycle can speed up and
-speed up, but it will never reach the speed of light.  Let's not
-detour into a detailed description right now, but the rider sees the
-wave reduced in amplitude, as in example
-\ref{eg:motorcycle-3-percent-of-c},
-p.~\pageref{eg:motorcycle-3-percent-of-c}. He also sees the wave's
-oscillations slowed down in time, an effect called the Doppler shift
-(example \ref{eg:doppler}). 
-
-Slopes on these diagrams represent velocities, in units of $c$, but the only slopes that
-stay the same when we change frames of reference are the $\pm 1$ slopes of the diagonals.
-We therefore find that all observers agree on $c$. Since we've already shown on
-p.~\pageref{em-waves-fixed-v} that electromagnetic waves travel at a fixed speed, it follows
-that this speed must be $c$, and this is why $c$ is often referred to as the speed 
-of light.\label{em-waves-propagate-at-c}
-
-<% marg %>
-<%
-  fig(
-    'electrons-limiting-speed',
-    %q{Example \ref{eg:bertozzi-graph}.}
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{Accelerating electrons}\label{eg:bertozzi-graph}
-Figure \figref{electrons-limiting-speed} shows the results of a 1964 experiment by Bertozzi in which
-electrons were accelerated by the static electric field $E$ of an accelerator of
-length $\ell_1$. They were then allowed to fly down a beamline of length $\ell_2=8.4\ \munit$
-without being acted on by any force. The time of flight $t_2$ was used to find the final
-velocity $v=\ell_2/t_2$ to which they had been accelerated. (To make the
-low-energy portion of the graph legible, Bertozzi's highest-energy
-data point is omitted.)
-
-If we believed in Newton's laws, then the electrons would have an
-acceleration $a_N=Ee/m$, which would be constant if, as we pretend for
-the moment, the field $E$ were uniform. (The electric field inside
-this type of accelerator is not really quite uniform, but this will
-turn out not to matter.) The Newtonian prediction for the time over
-which this acceleration occurs is $t_N=\sqrt{2m\ell_1/eE}$.  An
-acceleration $a_N$ acting for a time $t_N$ should produce a final
-velocity $a_N t_N=\sqrt{2e\Delta\phi/m}$, where $\Delta\phi=E\ell_1$ is the potential
-difference. (By conservation of energy, this equation holds even if
-the field is not constant.) The solid line in the graph shows the
-prediction of Newton's laws, which is that a constant force exerted
-steadily over time will produce a velocity that rises linearly and
-without limit. 
-
-The experimental data, shown as black dots, clearly tell a different story. The velocity asymptotically
-approaches a limit, which we identify as $c$. The dashed line shows the predictions of special relativity,
-which we are not yet ready to calculate because we haven't yet seen how kinetic energy depends on
-velocity at speeds comparable to $c$.
-\end{eg}
-
-<% marg(3) %>
-<%
-  fig(
-    'doppler',
-    %q{%
-      The pattern of waves made by a point source moving to the right
-      across the water. Because the wave crests on the right side are closer together, they
-      pass over a fixed point more frequently than if the source had been at rest. This
-      increase in frequency is the Doppler effect.
-    }
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'ives-stilwell',
-    %q{A schematic drawing of the experiment in example \ref{eg:doppler}.}
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{An ultra-high-precision test of relativity}\label{eg:doppler}
-I briefly mentioned above that an observer chasing an electromagnetic wave observes an
-increase in the wave's period, which is called the Doppler effect. Let's notate the factor
-by which the period increases as $D$. 
-The Doppler effect also occurs for other waves such as water waves (figure \figref{doppler}) and sound waves, but
-the math in these cases actually works out to be more complicated because there are two
-velocities involved: the wave's velocity relative to the medium and the observer's velocity
-relative to the medium. Because electromagnetic waves are not vibrations of a medium,
-their Doppler shifts can depend on only a single parameter $v$, which is the velocity of
-one observer relative to another observer. The Doppler shift factor $D$ turns out to be
-exactly the factor by which the long diagonal is stretched in figures like \figref{boost}
-and \figref{two-boosts}. When we change frames of reference more than once, as in
-figure \figref{two-boosts}, the stretch factors just multiply, so it is a firm prediction
-of relativity that Doppler shifts must multiply in this way, and this is different from
-the predictions of nonrelativistic theories such as ones in which light is a vibration of
-the ether.
-
-
-This has led to one of the most high-precision tests to which a scientific theory has
-ever been subjected. Suppose that a source, moving at velocity
-$v$ to the right relative to the laboratory, emits electromagnetic waves in both the forward
-and backward directions. Relativity predicts that the forward and backward Doppler shifts must
-be such that $D_1D_2=1$. The first test of this type was carried out by Ives and Stilwell
-in 1938, and a particularly exquisite higher-precision update was carried out
-in 2003 by Saat\-hoff \emph{et al.} The electromagnetic waves were provided by positively
-charged lithium ions accelerated to $v/c=0.064$ in a circular accelerator.
-The result was $D_1D_2=0.999999999$, with error bars of about $\pm 1$ in the final decimal place.
-The spectacular agreement with theory has made this experiment a lightning rod for
-anti-relativity kooks.
-
-Ether theories predict, in the case where the lab is at rest relative
-to the ether, that $D_1D_2$ differs from one. This is easiest to see conceptually
-in the case where the source moves at $c$, which is not prohibited in ether
-theories. In this situation, the forward-going wave crests are all superimposed
-on top of each other, giving $D_1=\infty$, while $D_2$ is finite. For smaller
-velocities, such as the ones used in the Saathoff experiment, a calculation shows that
-$D_1D_2$ differs from 1 by $-(v/c)^2$, which is grossly inconsistent with the data.
-\end{eg}
-
-<% end_sec('v-addition') %>
-
-<% begin_sec("Length contraction",nil,'length-contraction') %>\index{length contraction}
-<% marg(-5) %>
-<%
-  fig(
-    'boost-line-of-charge',
-    %q{A line of charge creates an electric field.}
-  )
-%>
-<% end_marg %>
-The nonlinear way that velocities combine is not compatible with our ordinary assumptions
-about how space and time work, but a more direct and obvious violation of our intuition arises
-if we consider figure \figref{boost-line-of-charge}. A line of charges parallel to the $z$ axis
-creates an electric field pattern. We pick a point on the right side of the line, where the
-electric field $E_x$ has some positive value. If we now change to a frame of reference moving at velocity
-$v$ in the positive $z$ direction, then the equations for the transformation of the fields give
-us $E_x'=\mygamma E_x$ and $B_y'=-(v\mygamma/c^2)E_x$. The magnetic field is no surprise ---
-a current exists in the new frame, and it makes a magnetic field (see example \ref{eg:e-line-of-charge} below).
-
-But the electric field has been intensified by a factor $\mygamma$,
-which is greater than 1. What is going on here? Based on Gauss's law,
-this is the field that we expect if the line of charge had a greater number of coulombs per meter.
-But charge is invariant when we change frames
-of reference (sec.~\ref{subsec:charge-invariant}, p.~\pageref{subsec:charge-invariant}).
-The only possible conclusion is that to the observer who is moving relative to the line of charges,
-the distances along the line have all been contracted by a factor of $\mygamma$.
-
-\begin{lessimportant}[Length contraction]
-A measuring stick has the greatest length according to an observer at rest relative to
-the stick. An observer in motion relative to the stick, in the direction parallel to it,
-finds its length to be reduced by a factor of $\mygamma$.
-\end{lessimportant}
-
-Figure \figref{gamma-graph-small} shows how $\mygamma$ depends on $v/c$. Because it is a smooth,
-even function of $v$, its derivative vanishes at $v=0$, and the lowest-order varying term in its Taylor
-series is one proportional to $(v/c)^2$ (problem \ref{hw:gamma-taylor-fac}, p.~\pageref{hw:gamma-taylor-fac}).\label{gamma-taylor-claim}
-This explains why we don't normally notice length contraction
-in everyday life. The velocities we normally experience are small compared to $c$, so $v/c$ is small,
-and $(v/c)^2$ is even smaller.
-<% marg(40) %>
-<%
-  fig(
-    'gamma-graph-small',
-    %q{A graph of $\mygamma$ as a function of $v/c$.}
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{Magnetic field of a straight wire}\label{eg:b-wire}\index{magnetic field!long, straight wire}
-Although it's not our main topic right now, we now know enough physics to determine a fairly
-useful result for the magnetic field of a long, straight wire. In 
-example \ref{eg:e-line-of-charge} on p.~\pageref{eg:e-line-of-charge}, we worked out the \emph{electric} field
-of a long line of charge with a density of $\lambda$ in units of Coulombs per meter. The
-result was $E=2k\lambda/r$ in the radial direction. In example \ref{eg:field-of-wire} on
-p.~\pageref{eg:field-of-wire}, we discussed such a line of charge in a frame of reference moving
-along its length. In this frame there is an electric current, which makes a magnetic field.
-In that example we inferred that since $E\propto 1/r$ for the line of charge, $B\propto 1/r$ for
-the magnetic field of a current-carrying wire, and we also found the geometry of the magnetic field,
-which is recapitulated in figure \figref{field-lines-of-wire2}.
-
-<% marg(20) %>
-<%
-  fig(
-    'field-lines-of-wire',
-    %q{Example \ref{eg:b-wire}, the magnetic field of a current-carrying wire, with the current coming out
-       of the page.
-       The field pattern is shown in the plane perpendicular
-       to the wire.
-       The white circle at the center is the cross-section of the wire. The orientation differs
-       by 90 degrees from that in figure \figref{boost-line-of-charge}.},
-    {'suffix'=>'2'}
-  )
-%>
-<% end_marg %>
-
-We can now find the full equation for the magnetic field of the current-carrying wire, which
-we model as a moving line of charge.
-In the frame moving relative to the charges  at velocity $v$ into the page, they are length-contracted,
-so their density becomes $\mygamma\lambda$. In a time interval $\der t$, the charges move
-a distance $v\der t$, and the charge contained in this length is $\der q = \mygamma\lambda v \der t$.
-The current is therefore $I=\der q/\der t=\mygamma\lambda v$.
-
-The magnitude of the magnetic field, as discussed at the beginning of this section, is 
-$B=(v/c^2)\mygamma E$, which works out to be $B=(v/c^2)\mygamma(2k\lambda/r)=(2k/c^2)I/r$.
-All of the factors except for the 2 have to be there because of units. The fact that no $\mygamma$
-occurs in the result is an example of a more general fact that when moving charges create a magnetic
-field, the field depends only on the current, not on any other details of the motion of the charges.
-
-Real wires in electric circuits are not moving lines of charge. They are electrically neutral over
-all. In a copper wire, for example, there are positively charged copper nuclei, each with charge
-$+29e$, and also 29 electrons per atom, giving a charge of $-29e$. We could worry about whether
-this means that our calculation above is wrong, but again, it never ends up mattering how
-a current is created when we calculate a magnetic field. The \emph{electric} field discussed
-above is wrong for a real wire --- it should be zero --- but the \emph{magnetic} field is
-still right. If we wished, we could redo the calculation of $B$ using \emph{two} superposed
-lines of charge, a positive one and a negative one, but $B$ would be the same.
-\end{eg}
-
-<% end_sec('length-contraction') %>
-
-<% begin_sec("Time dilation",nil,'time-dilation') %>\index{time dilation}
-Alice stays on earth while her twin Betty
-heads off in a spaceship for Tau Ceti, a nearby star. Tau Ceti is 12 light-years
-away, so even though Betty travels at 87\% of the speed of light, it will take
-her a long time to get there: 14 years, according to Alice.
-
-<%
-  fig('interstellar-road-trip',
-    %q{Betty's interstellar road trip.},
-    {
-      'width'=>'wide',
-      'sidecaption'=>true
-    }
-  )
-%>
-
-Betty is moving relative to the stars, so in her frame of reference, the length
-of the trip is length-contracted. At this speed, her $\mygamma$ is 2.0, so that the voyage will
-seem half as long, and to her it will only last 7 years. 
-
-This example shows that the relativistic effect on length must be accompanied by
-a similar effect on time.
-
-\begin{lessimportant}[Time dilation]
-A clock seems to run fastest according to an observer at rest relative to
-the clock. An observer in motion relative to the clock
-finds its speed to be reduced by a factor of $\mygamma$.
-\end{lessimportant}
-
-We began this book with evidence that time was not absolute, and then used this
-as evidence that electromagnetism should be a theory of fields, not instantaneous
-interaction at a distance. We have now circled back and used our understanding of
-fields to infer a more detailed and quantitative description of the relative nature
-of time.
-
-Before passing to a description of two laboratory tests of time dilation in examples
-\ref{eg:chou} and \ref{eg:cern-muons}, we note that relativistic time dilation is
-these days a part of everyday life. The GPS system used in phones would not work at
-all if it didn't take into account the time dilation of the GPS satellites, which
-are moving at $v/c\sim10^{-10}$. GPS was originally a military system, and legend has it that
-the general in charge of the project in the 1980's demanded that the scientists include an
-``off'' switch for the relativistic effects, just in case Einstein was wrong.
-
-<% marg(-20) %>
-<%
-  fig(
-    'atomic-clock-gamma',
-    %q{Example \ref{eg:chou}, time dilation measured with an atomic clock at low speeds. The theoretical curve, shown with a dashed line,
-       is calculated from $\mygamma=1/\sqrt{1-(v/c)^2}$. This graph corresponds to an extreme close-up view of the lower left corner of 
-       figure \figref{gamma-graph-small}.  The error bars on the experimental points are about the same size as the dots.}
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{A moving atomic clock}\label{eg:chou}
-When
-$v$ is small, relativistic effects are approximately proportional to $v^2$, so it is very
-difficult to observe them at low speeds. For example, a car on
-the freeway travels at about 1/10 the speed of a passenger jet, so the resulting
-time dilation is only 1/100 as much. For this reason, it was not until four decades after Hafele and Keating
-that anyone did a conceptually simple atomic clock experiment
-in which the only effect was motion, not gravity; it is difficult to
-move a clock at a high enough velocity without putting it in some kind of aircraft, which then has to fly at some
-altitude. In 2010, however, Chou \emph{et al.}\footnote{Science 329 (2010) 1630} succeeded in building an atomic
-clock accurate enough to detect time dilation at speeds as low
-as 10 m/s. Figure \figref{atomic-clock-gamma} shows their results.
-Since it was not practical to move the entire clock, the experimenters only moved the aluminum atoms inside the
-clock that actually made it ``tick.''
-\end{eg}
-
-\begin{eg}{Large time dilation}\label{eg:cern-muons}
-The time dilation effect in the Hafele-Keating experiment was very small. If we want to see a large time dilation
-effect, we can't do it with something the size of the atomic clocks they used; the kinetic energy would be
-greater than the total megatonnage of all the world's nuclear arsenals. We can, however, accelerate subatomic particles
-to speeds at which $\mygamma$ is large. For experimental particle physicists, relativity is something you do all day
-before heading home and stopping off at the store for milk. An early, low-precision experiment of this kind was
-performed by Rossi and Hall in 1941, using naturally occurring cosmic rays. 
-
-<%
-  fig(
-    'cern-muon-storage-ring',
-    %q{Apparatus used for the test of relativistic time dilation described in example \ref{eg:cern-muons}. 
-       The prominent black and white blocks are large magnets surrounding a circular pipe
-       with a vacuum inside. \linebreak (c) 1974 by CERN.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>true,
-      'sidepos'=>'t'
-    }
-  )
-%>
-
-
-<% marg(-20) %>
-<%
-  fig(
-    'cern-muon-graph',
-    %q{Example \ref{eg:cern-muons}: Muons accelerated to nearly $c$ undergo radioactive decay much more slowly than they would according to
-       an observer at rest with respect to the muons. The first two data-points (unfilled circles) were subject
-       to large systematic errors.},
-    {
-      'anaonymous'=>true
-    }
-  )
-%>
-<% end_marg %>
-
-Figure \figref{cern-muon-storage-ring} shows a 1974
-experiment\footnote{Bailey at al., Nucl. Phys. B150(1979) 1} of a
-similar type which verified the time dilation predicted by relativity
-to a precision of about one part per thousand.  Particles called muons
-(named after the Greek letter $\mu$, ``myoo'') were produced by an
-accelerator at CERN, near Geneva. A muon is essentially a heavier
-version of the electron. Muons undergo radioactive decay, lasting an
-average of only 2.197 $\mu\sunit$ before they evaporate into an
-electron and two neutrinos.  The 1974 experiment was actually built in
-order to measure the magnetic properties of muons, but it produced a
-high-precision test of time dilation as a byproduct. Because muons
-have the same electric charge as electrons, they can be trapped using
-magnetic fields. Muons were injected into the ring shown in figure
-\figref{cern-muon-storage-ring}, circling around it until they
-underwent radioactive decay.  At the speed at which these muons were
-traveling, they had $\mygamma=29.33$, so on the average they lasted
-29.33 times longer than the normal lifetime. In other words, they were
-like tiny alarm clocks that self-destructed at a randomly selected
-time. Figure \figref{cern-muon-graph} shows the number of radioactive
-decays counted, as a function of the time elapsed after a given stream
-of muons was injected into the storage ring. The two dashed lines show
-the rates of decay predicted with and without relativity. The
-relativistic line is the one that agrees with experiment. 
-\end{eg}
-
-<% end_sec('time-dilation') %>
-
-
-
-<% end_sec('spacetime') %>
-
+<% end_sec('einstein-motorcycle') %>
 
 <% begin_notes %>
 
-\notetext{slope-is-v}{Slope on $(E_x,B_y)$ plot related to $v/c$}
-\notesummary{When we change frames of reference, the horizontal axis on a graph of $B_y$ versus $E_x$ is
-to give it a slope equal to $v/c$, where $v$ is the velocity with which the new frame moves in the $z$ direction.}
-Let's call the slope $u$ and the velocity $v$. Our goal is to prove that $u=v/c$. Clearly this equation holds
-when $v=0$, because there is then no difference between the two frames of reference, so the axis shouldn't
-tilt, which means $u=0$.
+\notetext{static-poynting}{Unobservable Poynting vectors}
+\notesummary{Cases exist where the Poynting vector is nonzero, but there is no
+flow of energy that is actually observable.}
+One such example would be the static field of a
+bar magnet immersed in a uniform ambient magnetic field along the
+magnet's axis. If you work out the right-hand rule for yourself at
+various points in space, you should be able to convince yourself that
+the energy flow goes in circles, like a game of musical chairs. Thus
+although it seems weird that a static field can ``have'' momentum and
+a flow of energy, there are no observable consequences because no
+region of space can gather up the energy. It's a bit like the
+situation of a rich teenager who ``has'' a few million dollars in a
+trust fund, but can't touch it until she's 21. 
 
-We can also tell several things from the example of figure
-\figref{field-transformation-cartoon} on
-p.~\pageref{fig:field-transformation-cartoon}: (1) If $v\ne0$, then
-$u\ne0$, i.e., if we change to a frame of reference that really is
-different, then we really do see a different combination of fields.
-(2) By symmetry, $u$ should be an odd function of $v$. (3) For small
-velocities, the current in this example is proportional to $v$, and
-therefore $u$ must be proportional to $v$, or at least approximately
-so for small velocities. The smallness of the velocities matters at
-this point because at larger velocities, $\mygamma$ could differ
-significantly from 1, and this would make all of our arguments quite a
-bit more complicated. Although $u=v/c$ is really exactly true at all
-velocities, we'll content ourselves here with proving it in the
-low-velocity approximation.  (4) Based on units, the constant of
-proportionality between $u$ and $v$ has to be $1/c$ multiplied by a
-unitless constant. We want to show that this unitless constant is 1. 
+\notetext{maxwell-c}{Maxwell's equations and propagation at $c$}
+\notesummary{Maxwell's equations give electromagnetic waves that propagate at $c$.}
+As in the main text, we take a wave of the form
+\begin{align*}
+  E_x &= f(z-vt) \\
+  B_y &= (1/c)f(z-vt) .
+\end{align*}
+This is the most general form of a plane wave, with any shape defined by the function
+$f$, propagating in the positive $z$ direction at velocity $v$. To see this consider
+what happens if we want to increase $t$ by $\Delta t$ while keeping the input to the function $f$
+the same: we must increase $z$ by $v\Delta t$.
 
-Having figured out roughly what we expect, we now proceed to fix the
-relationship between $u$ and $v$ by requiring that if Maxwell's
-equations held in the original frame, they hold as well in the new
-frame. It's sufficient just to consider the equation
-$\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$. 
+The divergence vanishes, as required by Maxwell's equations,
+since neither component has a nonvanishing partial derivative
+with respect to $x$ or $y$.
 
-Suppose Einstein is chasing the electromagnetic wave at a $v$ that is
-small, e.g., 3\% of the speed of light, as in example \ref{eg:motorcycle-3-percent-of-c}
-on p.~\pageref{eg:motorcycle-3-percent-of-c}. Then
-$\partial\vc{B}/\partial t$ will be multiplied by approximately $1-v/c$, i.e., reduced by
-just about 3\% in this example, because the amount of the wave
-that is passing over him in a given time is reduced by that amount. (If he could
-travel at $v=c$, then this factor would be $1-v/c=0$, i.e., none of the wave would
-pass over him.)
+We now need to evaluate the curl, which we do by using the componentwise expressions
+from note \notewithoutbackref{curl-component-form}.
+\begin{align*}
+  (\operatorname{curl}\vc{E})_y &= \frac{\partial E_x}{\partial z} = f' \\
+  (\operatorname{curl}\vc{B})_x &= \frac{\partial B_y}{\partial z} = -(1/c)f' 
+\end{align*}
+Maxwell's equations require these to equal the time derivatives
+\begin{align*}
+  -\frac{\partial B_y}{\partial t} &= (v/c)f' \qquad \text{and} \\
+  \frac{1}{c^2}\frac{\partial E_x}{\partial t} &= -(v/c^2)f'.
+\end{align*}
+Equating these to each other as required by the two curl equations in Maxwell's
+equations, we find $1=v/c$ and $-1/c=-v/c^2$. These two equations are both satisfied
+if and only if $v=c$. (To get propagation with $v=-c$ we would have had to rearrange
+things so as to create a Poynting vector in that direction.)
 
-At the same time, the electric field is reduced according to 
-$E_x' = \mygamma E_x - (u/c)\mygamma cB_y$, which becomes
-$E_x' \approx E_x-(u/c)cB_y$ for small velocities. But this is
-an electromagnetic wave, so $E_x=cB_y$, and therefore $E_x$ is
-multiplied by the factor $1-u$. This means that $\operatorname{curl}\vc{E}$
-is also cut down by this amount.
-
-If Maxwell's equation $\operatorname{curl}\vc{E}=-\partial\vc{B}/\partial t$ is
-to hold in the new frame, then the factors by which the two sides are reduced
-must be the same, giving $1-u=1-v/c$, which is the desired result.
 <% end_notes %>
 
 <% begin_hw_sec %>
 
-<% begin_hw('pure-e-b-lorentz-graphical') %>__incl(hw/pure-e-b-lorentz-graphical)<% end_hw() %>
+<% begin_hw('easy-em-plane-wave-geometry') %>__incl(hw/easy-em-plane-wave-geometry)<% end_hw() %>
 
-<% begin_hw('agreeontime') %>m4_include(../share/relativity/hw/agreeontime.tex)<% end_hw() %>
+<% begin_hw('plane-wave-find-b') %>__incl(hw/plane-wave-find-b)<% end_hw() %>
 
-<% begin_hw('gammafornegativev') %>m4_include(../share/relativity/hw/gammafornegativev.tex)<% end_hw() %>
+<% marg() %>
+<%
+  fig(
+    'hw-colliding-zero-poynting',
+    %q{Problem \ref{hw:colliding-zero-poynting}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-solar-constant-momentum',
+    %q{Problem \ref{hw:solar-constant-momentum}.}
+  )
+%>
+<% end_marg %>
 
-<% begin_hw('voyagergamma') %>m4_include(../share/relativity/hw/voyagergamma.tex)<% end_hw() %>
+<% begin_hw('colliding-zero-poynting') %>__incl(hw/colliding-zero-poynting)<% end_hw() %>
 
-<% begin_hw('earth-lorentz-contraction') %>m4_include(../share/relativity/hw/earth-lorentz-contraction.tex)<% end_hw() %>
+<% begin_hw('solar-constant-momentum') %>__incl(hw/solar-constant-momentum)<% end_hw() %>
 
-<% begin_hw('gammasimplefraction') %>m4_include(../share/relativity/hw/gammasimplefraction.tex)<% end_hw() %>
-
-<% begin_hw('gamma-taylor-fac') %>m4_include(../share/relativity/hw/gamma-taylor-fac.tex)<% end_hw() %>
+<% begin_hw('disprove-em-wave-fac') %>__incl(hw/disprove-em-wave-fac)<% end_hw() %>
 
 \pagebreak
 
-<% begin_hw('doppler-taylor-fac') %>m4_include(../share/relativity/hw/doppler-taylor-fac.tex)<% end_hw() %>
+<% begin_hw('radiation-field-scaling-with-r') %>__incl(hw/radiation-field-scaling-with-r)<% end_hw() %>
 
 
+<%
+  fig(
+    'inversesquare',
+    %q{Problem \ref{hw:radiation-field-scaling-with-r}.},
+    {'width'=>'wide'}
+  )
+%>
+
+<% begin_hw('incoherent-poynting',2) %>__incl(hw/incoherent-poynting)<% end_hw() %>
 
 
+<% end_hw_sec() %>
 
+<% begin_lab("Polarization") %>\label{lab:polarization}
+\begin{labapparatus}
+sodium gas discharge tube\\
+2 polarizing films\\
+photovoltaic cell and collimator\\
+protractor
+\end{labapparatus}
 
+\begin{labgoal}
+Test quantitatively the hypothesis that polarization
+relates to the direction of the field vectors in an
+electromagnetic wave.
+\end{labgoal}
 
+Turn on the sodium gas discharge tube immediately so that it starts
+warming up. This tube acts as a lamp emitting bright light in little
+isolated pulses, each of which has a randomly oriented polarization.
 
-<% end_hw_sec %>
+The polarizing films are essentially transparent pieces of plastic
+with microscopic parallel lines on them.  If you hold one of the
+polarizing films up to your eye and look around, you will see that in
+general it reduces the brightness of what you see.  But if you make
+more detailed observation, you will see that more is going on. For
+some light sources, such as the sodium discharge tube, the orientation
+of the film makes no difference, but for other sources the orientation
+does have an effect. Two good examples are the light from a cell
+phone's LCD screen and light that has undergone a glancing reflection
+from a glossy tabletop. These are polarized sources of light, and the
+film preferentially transmits different polarizations.
+
+It would not make sense for the film simply to throw away any waves
+that were not perfectly aligned with it, because a field oriented on a
+slant can be analyzed into two vector components, at 0 and
+$90\degunit$ with respect to the film. Even if one component is
+entirely absorbed, the other component should still be transmitted. 
+
+Based on these considerations, now think about what will
+happen if you look through two polarizing films at an angle
+to each other, as shown in the figure above. What will
+happen as you change the angle $\theta $?
+
+<%  
+  fig(
+    'crossed-polaroids',
+    %q{Two polarizing films oriented at an angle $\theta$ relative to each other.},
+    {'width'=>'narrow','float'=>true}
+  )
+%> 
+
+The idea of this lab is to make numerical measurements of the
+transmission of initially unpolarized light transmitted through two
+polarizing films at an angle $\theta$ to each other. To measure the
+intensity of the light that gets through, you will use a photocell,
+which is a device that converts light energy into a potential difference. 
+
+You will use a voltmeter to measure the potential across the
+photocell when light is shining on it. A photovoltaic cell is
+a complicated nonlinear device, but I've found empirically
+that under the conditions we're using in this experiment,
+the potential is proportional to the power of the light striking
+the cell: twice as much light results in twice the potential.
+
+This measurement requires a source of light that is
+unpolarized, constant in intensity, and comes from a
+specific direction so it can't get to the photocell without
+going through the polaroids. The ambient light in the room
+is nearly unpolarized, but varies randomly as people walk in
+front of the light fixtures, etc. A suitable source of light is the
+sodium gas discharge tube. Make sure you have allowed it to
+warm up for at least 15-20 minutes before using it; before
+it warms up, it makes a reddish light, and the polarizing films do
+not work very well on that color.
+
+Each group will be assigned an angle $\theta$.
+Measure the power $P(\theta)$ of the light
+transmitted through the two polarizing films, 
+and also measure $P(0)$ for comparison, and tabulate
+your result for $P(\theta)/P(0)$ on the board.
+Don't assume that the notches
+on the plastic housing of the polarizing films are a good
+indication of the orientation of the films themselves.
+
+Calculate a theoretical value for $P(\theta)/P(0)$ based
+on a model in which the polaroid passes only the component
+of the field vectors along a certain axis.
+
+Compare the class's results with theory.
+
+<% end_lab %>
 
 <% end_chapter() %>

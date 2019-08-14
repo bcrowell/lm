@@ -5,855 +5,1420 @@
 <%
   chapter(
     '05',
-    %q{Radiation},
-    'ch:radiation',
-    '',
-    {'opener'=>'../../../share/optics/figs/crepuscular-rays','width'=>'fullpage'}
+    %q{Electromagnetism},
+    'ch:electromagnetism',
+    %q{A tower and cables of the Golden Gate Bridge. The pressure and tension in the tower and
+       cables are properties of the electric and magnetic fields at the atomic level.},
+    {'opener'=>'bridge-tower','sidecaption'=>false,'anonymous'=>true,'width'=>'fullpage'}
   )
 %>
 
-Way back at the beginning of this book, on the second page of the very
-first chapter, we proved, based only on experiments demonstrating the
-relative nature of time, that the universe could not operate as
-envisioned in Newton's picture of instantaneous action at a distance.
-Electromagnetic forces must propagate as wave disturbances in the
-fields. Later we saw that the only sensible\footnote{i.e., rotationally invariant} way of finding the
-direction of propagation of such a wave was the vector cross product
-$\vc{E}\times\vc{B}$, and argued (p.~\pageref{waves-not-pure-e-or-b})
-that therefore these wave disturbances must contain oscillations of
-both the electric and magnetic field.  In this chapter we will take up
-the description of these electromagnetic waves in more 
-detail.\index{radiation|see {electromagnetic wave}}\index{wave, electromagnetic|see {electromagnetic wave}}
+<% begin_sec("Current and magnetic fields",nil,'current-and-b') %>
+At this stage, you understand roughly as much about the classification
+of interactions as physicists understood around the year 1800. There
+appear to be three fundamentally different types of interactions:
+gravitational, electrical, and magnetic. Many types of interactions
+that appear superficially to be distinct --- stickiness, chemical
+interactions, the energy an archer stores in a bow --- are really the
+same: they're manifestations of electrical interactions between atoms.
+Is there any way to shorten the list any further? The prospects seem
+dim at first. For instance, we find that if we rub a piece of fur on a
+rubber rod, the fur does not attract or repel a magnet.  The fur has
+an electric field, and the magnet has a magnetic field. The two are
+completely separate, and don't seem to affect one another. Likewise we
+can test whether magnetizing a piece of iron changes its weight. The
+weight doesn't seem to change by any measurable amount, so magnetism
+and gravity seem to be unrelated. 
 
-<% marg(-300) %>
+That was where things stood until 1820, when the Danish physicist Hans
+Christian\index{Oersted, Hans Christian} Oersted was delivering a
+lecture at the University of Copenhagen, and he wanted to give his
+students a demonstration that would illustrate the cutting edge of
+research. He used a battery to make charge flow through a wire, and
+held the wire near a magnetic compass. The ideas was to give an
+example of how one could search for a previously undiscovered link
+between electricity (the charge flowing in the wire) and magnetism.
+One never knows how much to believe from these dramatic legends, but
+the story is that the experiment he'd expected to turn out negative
+instead turned out positive: when he held the wire near the compass,
+the charge flowing through the wire caused the compass to twist!
+
+Oersted was led to the conclusion that when matter creates magnetic
+fields, it happens because the matter contains moving charges.  A
+permanent magnet, he inferred, contained moving charges on a microscopic
+scale, but their motion simply wasn't practical to detect using
+human-scale measuring devices in the lab. Today
+this seems natural to us based on the planetary model of the atom. As
+shown in figure \figref{magnetized}, a magnetized piece of iron is
+different from an unmagnetized piece because the atoms in the
+unmagnetized piece are jumbled in random orientations, whereas the
+atoms in the magnetized piece are at least partially organized to face
+in a certain direction. 
+
+<% marg(300) %>
 <%
   fig(
-    'eve',
-    %q{``Why?''}
-  )
-%>
-<% end_marg %>
-
-By the way, although I'm offering answers to ``why'' questions about
-these waves, it's important to understand that in mathematics and the
-hard sciences, a ``why'' question can have more than one answer. It's
-different in other fields such as religion. If you ask a
-theologically well-informed Christian why humans have to endure pain
-and suffering, there is one definite answer, which is that it's a
-punishment for Eve's original sin of obtaining an unauthorized
-education from a serpent. Done. Explained.  But in math
-and science, we have the problem of how to prove things rigorously
-without ever being allowed to appeal to some supernatural authority
-for basic principles to use as starting points. We do this by
-explicitly stating some set of assumptions, and making it clear that
-all our later reasoning holds only \emph{conditionally}, \emph{if}
-those assumptions are true. 
-
-A familiar example is the question of why the distance between two
-points in space is given by $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$. There is more
-than one answer to this ``why'' question. One is that if we accept Euclid's
-postulates, then it follows as a theorem, the Pythagorean theorem. But
-in the Cartesian approach, this formula for the distance is taken as
-an assumption, and some of Euclid's postulates become theorems that can be
-proved. These are two totally different answers to the same ``why'' question,
-and they are both valid.
-
-The point of this digression, in the context of our study of electromagnetism,
-is that if you look in different books, you will find different logical
-developments of the subject, starting from different sets of assumptions.
-In this book, we start from some of the assumptions described above,
-derive facts about electromagnetic waves, and then end up using those facts
-to infer the full set of physical laws for electromagnetism, known as Maxwell's
-equations (summarized on p.~\pageref{fig:maxwell-summary}). Other books might take Maxwell's equations as assumptions (perhaps
-with some experimental or logical justification) and use them to prove the
-properties of electromagnetic waves. By p.~\pageref{maxwell-logic-roundup}, we'll
-finish making all the connections, and it will become clear there is a system of
-tightly interlocking logical relationships, very much like the Euclidean/Cartesian 
-example.\label{maxwell-logic-promise}
-
-<% begin_sec("Wave patterns",nil,'wave-patterns') %>\index{wave!spherical}\index{wave!plane}
-
-Waves spread out in all directions from every point on the disturbance
-that created them, and this is why we refer to electromagnetic
-``radiation'' --- the wave radiates out in all directions. 
-
-If such a wave disturbance is small, we may consider it as a single
-point, and in the case of water waves the resulting wave pattern is
-the familiar circular ripple, \figref{wave-patterns}/1. If, on the
-other hand, we lay a pole on the surface of the water and wiggle it up
-and down, we create a linear wave pattern, \figref{wave-patterns}/2.
-For a three-dimensional wave such as a sound wave, the analogous
-patterns would be spherical waves and plane waves,
-\figref{wave-patterns-three-d}. 
-
-
-<% marg(-300) %>
-<%
-  fig(
-    'wave-patterns',
-    %q{Circular and linear wave patterns.}
+    'oersted',
+    %q{1.~When no charge flows through the wire, and the magnet is
+       unaffected. It points in the direction of the Earth's magnetic field.
+       2.~Charge flows through the wire. There is a strong effect on the magnet, which turns almost perpendicular
+       to it. If the earth's field could be removed entirely, the compass would point exactly perpendicular to the
+       wire; this is the direction of the wire's field.}
   )
 %>
 \spacebetweenfigs
 <%
   fig(
-    'wave-patterns-three-d',
-    %q{Plane and spherical wave patterns.}
+    'magnetized',
+    %q{A schematic representation of an unmagnetized material, 1, and a magnetized one, 2.}
   )
 %>
 <% end_marg %>
 
-All kinds of wave patterns are possible, but linear or plane
-waves are often the simplest to analyze, because the
-velocity vector is in the same direction no matter what part
-of the wave we look at. Because of the geometrical relationship
-of the momentum density to $\vc{E}\times\vc{B}$, we need a full
-three dimensions in order to describe an electromagnetic wave,
-so there is no hope of treating anything as effectively two-dimensional,
-and the simplest wave pattern is therefore the plane wave.
+Not until later in this book will we get into the mathematical
+and geometrical details of the magnetic fields created by moving charges.
+However, we can immediately make some far-reaching conclusions. Figure
+\subfigref{field-transformation-cartoon}{1} shows, in a cartoonish way,
+the fact that a line of positive charges, at rest, makes an electric field
+in the surrounding space. If we approximate the charges as a continuous line
+with no gaps, then the electric field is one we have already studied in sec.~\ref{sec:gauss-in-lt-3-dim},
+p.~\pageref{sec:gauss-in-lt-3-dim}: it points outward, and its magnitude is
+proportional to $1/r$, where $r$ is the distance from the line.
 
-For convenience throughout this chapter, we will always take our
-waves to be propagating along the $z$ axis. The definition of a
-plane wave then becomes very simple: it is an electromagnetic field
-pattern in which the fields are both functions only of $z$ and $t$,
-$\vc{E}=\vc{E}(t,z)$ and $\vc{B}=\vc{B}(t,z)$.
+But now let's switch to a different frame of reference, as in figure
+\subfigref{field-transformation-cartoon}{2}. In this frame, the charges are moving,
+so there is both an electric field and a magnetic field. We are led to the following
+important conclusion:
 
-<% end_sec('wave-patterns') %>
+\begin{important}[Electromagnetism]
+A certain mixture of electric and magnetic fields will be measured as a different
+mixture by an observer in a different state of motion.
+\end{important}
 
-<% begin_sec("What it is that waves",nil,'what-vibrates') %>\index{electromagnetic wave!not a vibration of a medium}
+This shows that electric and magnetic fields are not entirely separate things, but
+are instead two sides of the same coin. The conclusion holds regardless of whether
+matter is present. For these reasons, the entire subject of electricity and magnetism is
+often referred to by the term electromagnetism. We often refer loosely to ``the electromagnetic
+field,'' meaning both $\vc{E}$ and $\vc{B}$ collectively.
 
-<% marg(-8) %>
+In the language of section \ref{subsec:charge-invariant}, p.~\pageref{subsec:charge-invariant}, the fields
+are not invariant quantities. They depend on the frame of reference,
+as do other more familiar quantities such as velocity. When we want to
+convert a velocity vector from one frame of reference to another, we
+have a rule for doing so, which is simple vector addition. In fancy
+language, this is called ``transforming'' the velocity vector. The
+rules for transforming electric and magnetic fields are more
+complicated, and we will postpone discussing them until sec.~\ref{sec:einstein-motorcycle2},
+p.~\pageref{sec:einstein-motorcycle2}. However,
+one thing we can say about the transformations is that they must be
+\emph{additive}, because the laws of physics obey the principle of
+superposition, and we want the laws of physics to be equally valid in
+all frames of reference.\label{eb-transform-linear}
+
+<% marg(300) %>
 <%
   fig(
-    'coil-spring-pulse',
-    %q{A force acts on a coil spring at the left end, producing a mechanical wave pulse that propagates to
-       the right.}
+    'field-transformation-cartoon',
+    %q{1.~A line of positive charges is at rest. There is an electric field.
+       2.~In a different frame of reference, the same charges are seen as moving to the right.
+          There is both an electric field and a magnetic field.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'salt-crystal',
+    %q{A salt crystal, example \ref{eg:salt-crystal}.}
   )
 %>
 <% end_marg %>
 
-In a vibration, such as the motion of a pendulum or a mass on a
-spring, we would define the amplitude either as the position of the
-object relative to equilibrium, or as some other, closely related
-quantity such as the object's velocity. In these examples, position
-and velocity are not independent measures of amplitide. They are
-closely related, and we can't change one without changing the other
-proportionately.  A wave is a kind of vibration that exists across a
-whole region of space, so the same ideas recur. For example, the
-amplitude of a sound wave could be defined in multiple ways: in terms
-of the displacement of the air, its velocity, or the pressure or
-density. Again, all of these things are related and cannot be
-controlled independently.
 
-In the case of an electromagnetic wave, we could define the amplitude
-in terms of either the electric field or the magnetic field. We have
-already seen that in an electromagnetic wave we can't have one of
-these be zero while the other is nonzero.  Shortly we will see that in
-a plane wave, they are in fact directly proportional to each other. 
+By the way, the concepts that we are describing using the words ``superposition''
+and ``additive'' are usually referred to by mathematicians using the terms
+``linearity'' and ``linear.'' For example, a mathematician would describe
+the derivative rule $(f+g)'=f'+g'$ from freshman calculus as the linearity
+of the derivative.
 
-An electromagnetic wave, unlike a sound wave or the waves on a coil
-spring in figure \figref{coil-spring-pulse}, is not a mechanical wave,
-i.e., it isn't a vibration of any material medium such as the air or
-the spring. What vibrates is the fields --- invisible, intangible, and
-massless. We will see that electromagnetic waves are transverse, i.e.,
-they vibrate from side to side (like the waves on a spring) rather
-than along the direction of propagation (like a sound wave). But
-because they are not vibrations of a material medium, this vibration
-doesn't mean that anything is actually \emph{traveling} from side to
-side. A bug sitting on the spring in figure \figref{coil-spring-pulse}
-moves to the side and then back as the pulse passes through, but nothing
-analogous happens in an electromagnetic wave. The bug would simply notice
-a change in the fields over time, but would not move.
+\begin{eg}{Throwing salt doesn't make a magnet}\label{eg:salt-crystal}
+Figure \figref{salt-crystal} shows a salt crystal. The smaller, darker
+spheres are sodium atoms.  Bigger, lighter ones are chlorine. When
+these disparate atoms assemble themselves into a solid, some charge
+is transferred from the chlorines to the sodiums. This is essentially
+the same thing that is going on in static electricity examples such as
+the sticky tape in figure \figref{twotapes-fields}, p.~\pageref{fig:twotapes-fields}:
+different substances ``like electrons'' to different extents, so when they are
+put in contact, one steals from the other.
 
-Early physicists working on the description of electromagnetic
-radiation had never had any previous experience with waves that were
-not mechanical vibrations of a physical medium. James Clerk Maxwell
-gave a complete and correct mathematical description of
-electromagnetism in 1865, and his equations worked just fine as a
-description of radiation purely in terms of non-material fields. But
-old habits died hard, and as late as the 1930's, it was common to hear
-physicists referring to electromagnetic waves as vibrations in a
-mysterious medium called the ``aether.''\index{aether}
+In the frame of reference where the crystal is at rest, it has an outward electric
+field $\vc{E}_1$ due to the sodiums and an inward field $\vc{E}_2$ from the chlorines.
+These two fields are theoretically incredibly intense, but due to superposition,
+they almost exactly cancel at the macroscopic scale, and cannot be detected outside
+the crystal. (At the microscopic scale, where it is evident that the positive and
+negative charge distributions aren't exactly the same, the cancellation fails, and
+there are intense fields. These fields are what hold the crystal together.)
 
-<% end_sec('what-vibrates') %>
-
-<% begin_sec("Geometry of a plane wave",nil,'plane-wave-geom') %>\index{electromagnetic wave!geometry}
-
-<% begin_sec("$\\vc{E}$ and $\\vc{B}$ perpendicular to the direction of propagation",nil,'e-b-perp-p') %>
-The momentum density $(1/4\pi k)\vc{E}\times\vc{B}$ is proportional
-to the momentum density of our plane wave,
-and therefore points in the direction of propagation. Since a vector cross product is perpendicular
-to both of the vectors, it follows that both fields lie in the plane perpendicular to the direction
-of propagation.
-<% end_sec('e-b-perp-p') %>
-
-<% begin_sec("$\\vc{E}$ and $\\vc{B}$ equal in energy",nil,'e-b-equal-energy') %>\index{electromagnetic wave!energy}
-
-<% marg() %>
-<%
-  fig(
-    'e-b-equal-energy',
-    %q{Are these possible fields for electromagnetic plane waves?}
-  )
-%>
-<% end_marg %>
-Figure \figref{e-b-equal-energy} shows two examples of electric and magnetic fields that
-we imagine as possible fields in an electromagnetic plane wave. We draw the arrows for the
-$\vc{E}$ and $\vc{B}$ vectors with equal lengths on the page, which suggests that they are
-``equal'' in the sense of carrying equal energy, which we are now going to prove. The angle
-$\phi$ is drawn as an arbitrary angle, although we will prove later that it must be a right
-angle. The first example is drawn with $\vc{E}$ clockwise from $\vc{B}$, so that by the right-hand
-rule, the direction of propagation is out of the page. The second example has been flipped around
-so that the momentum vector is into the page, and has also been rotated in the plane of the page.
-
-Our argument for equal energy sharing between the electric and magnetic fields works by
-colliding these two waves head-on. Before the waves collide, they each carry energy $U_\vc{E}+U_\vc{B}$,
-for a total energy of $2U_\vc{E}+2U_\vc{B}$. Now suppose that the rotation is chosen as in the figure,
-so that when the waves superpose, the electric fields cancel. At this moment, the total energy
-is $U_{\vc{B}'}$, where $\vc{B}'$ is the result of vector addition of the two magnetic field vectors
-at an angle of $\pi-2\phi$ relative to each other.
-
-That was one possible choice of the rotation. But we can also choose the rotation such that
-the \emph{magnetic} fields cancel, so that the total energy is $U_{\vc{E}'}$, where $\vc{E}'$ is the
-result of a similar vector addition problem involving the same angle.
-
-Requiring conservation of energy in both examples, we have $U_\vc{E}+U_\vc{B}=U_{\vc{B}'}=U_{\vc{E}'}$,
-but since the two vector addition problems involve the same angle, we must have $U_\vc{E}=U_\vc{B}$,
-as claimed.
-
-Since the energy densities are $(1/8\pi k)E^2$ and $(c^2/8\pi k)B^2$,
-it follows that $E=cB$. (This was problem \ref{hw:morally-equal-eb},
-p.~\pageref{hw:morally-equal-eb}). With a couple of centuries of
-hindsight, it would have been better if we had constructed a system of
-units in which $E$ and $B$ had the same units, and in fact they do
-have the same units in the cgs system. In the SI their units are
-different, but ignoring the factor of $c$, we can say that this means
-the magnitudes of the electric and magnetic fields in a plane wave are
-``equal.'' (See problem \ref{hw:morally-equal-eb}, p.~\pageref{hw:morally-equal-eb}.)
-
-<% end_sec('e-b-equal-energy') %>
-
-<% begin_sec("$\\vc{E}$ and $\\vc{B}$ perpendicular to each other",nil,'e-b-perp') %>
-<% marg() %>
-<%
-  fig(
-    'e-b-perpendicular',
-    %q{The geometry of a plane wave, with $\phi=90\degunit$.}
-  )
-%>
-<% end_marg %>
-Continuing the analysis of the colliding waves, we find that the angle $\phi$
-between $\vc{E}$ and $\vc{B}$ must be a right angle. We have four units of energy
-before the waves collide: one unit in each wave's electric field, and one unit in each
-magnetic field. When the waves collide in an orientation such that the electric fields
-cancel, then $U_{\vc{B}'}$ has a value, in these units, of $4\sin^2\phi$, which gives
-conservation of energy only if $\phi$ is a right angle. We arrive at the geometry shown
-in figure \figref{e-b-perpendicular}.
-
-Because the angle $\phi$ is fixed at $90\degunit$, it's not a property like color or brightness
-that can distinguish one light wave from another. But we are always free to take a diagram
-like figure \figref{e-b-perpendicular} and simply spin the whole book around by an angle $\theta$.
-This is referred to as the polarization of the wave.
-<% end_sec('e-b-perp') %>
-
-<% end_sec('plane-wave-geom') %>
-
-<% marg(-300) %>
-<%
-  fig(
-    'vacuum-dispersion',
-    %q{Arrival times of waves with different frequencies from gamma-ray burst 160625B, from
-       Wei \emph{et. al}, 2018. In this histogram, the vertical axis is a count of the
-       number of wave pulses arriving per unit time.}
-  )
-%>
-<% end_marg %>
-
-<% begin_sec("Propagation at a fixed velocity",nil,'propagation-at-c') %>\index{electromagnetic wave!propagation at $c$}
-If we look at the speed of waves in general, we see two main types of behavior. In one type,
-exemplified by sound waves or waves on a coil spring as in figure \figref{coil-spring-pulse},
-all waves travel at the same speed, regardless of their amplitude or frequency.
-Water waves are a good example of another type, called a dispersive wave. A dispersive
-wave travels at different velocities depending on its frequency. Only a perfect sine wave
-has a definite frequency, so typically if we generate a wave with some randomly chosen
-shape, it will act like a mixture of different frequencies. (There is a mathematical theorem
-called Fourier's theorem that says we can always analyze any wave as a superposition of sine
-waves.) These different frequencies will travel at different speeds, so the wave acts like
-a bunch of runners over the course of a long-distance race: at the start they're all crowded
-together, but as time goes on, the faster ones pull ahead, the slower ones fall behind, and
-the pack spreads out in space, often to the point where people are running all alone and can't
-see their competitors. In a wave, this causes the wave pattern to spread out, or disperse. We
-can tell that the wave pulse on the coil spring in figure \figref{coil-spring-pulse} is propagating
-nondispersively, because it maintains its shape as it moves.
-
-We know on both theoretical and empirical grounds that
-electromagnetic waves are nondispersive when they travel in a vacuum.
-Figure \figref{vacuum-dispersion} shows some astronomical evidence that is
-extremely impressive for its accuracy. Electromagnetic waves (gamma rays) with different frequencies,
-spanning several orders of magnitude, were generated, probably by matter falling into a black hole.
-These waves then traveled for 9 billion years before reaching earth, where the different frequencies
-arrived within seconds of one another.
-<%
-  fig(
-    'plane-wave-propagating',
-    %q{A plane wave propagating to the right, shown at one time (top) and a later one (bottom).},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
-
-Theoretically, we have the following argument. In general, the ratio of an object's energy to its
-momentum depends on its speed (cf.~p.~\pageref{energy-momentum-ratio}). But the geometrical facts
-we've found about electromagnetic waves guarantee that the energy and momentum scale up and down
-with amplitude in exactly the same way, and are independent of the shape of the wave. For example,
-if the angle $\phi$ between the $\vc{E}$ and $\vc{B}$ vectors could vary, or if $|\vc{E}|$ and
-$|\vc{B}|$ could vary independently, then we could get different momenta for the same energy --- but
-these things are \emph{not} independently variable. Since electromagnetic waves have a fixed ratio
-of energy to momentum, they must travel at a fixed speed,\label{em-waves-fixed-v}
-which we will show on p.~\pageref{em-waves-propagate-at-c} is $c$. They are nondispersive, so
-a plane wave glides along rigidly as in figure \figref{plane-wave-propagating}, without changing shape.
-<% end_sec('propagation-at-c') %>
-
-<% begin_sec("The electromagnetic spectrum",nil,'em-spectrum') %>
-
-Heinrich \index{Hertz, Heinrich}Hertz (for whom the unit of
-frequency is named) verified Maxwell's ideas experimentally.
-Hertz was the first to succeed in producing, detecting, and
-studying electromagnetic waves in detail using antennas and
-electric circuits. To produce the waves, he had to make
-electric currents oscillate very rapidly in a circuit. In
-fact, there was really no hope of making the current reverse
-directions at the frequencies of $10^{15}$ Hz possessed by
-visible light. The fastest electrical oscillations he could
-produce were $10^9$ Hz. He succeeded in showing that, just like visible light,
-the waves he produced were polarizable, and could be
-reflected and refracted (i.e., bent, as by a lens), and he
-built devices such as parabolic mirrors that worked
-according to the same optical principles as those employing
-light. Hertz's results were convincing evidence that light
-and electromagnetic waves were one and the same.
-
-Together, the experimentalist Hertz and the theorist Maxwell
-(sec.~\ref{sec:maxwell-vacuum}), showed that electromagnetic
-waves were in fact the structure underlying a variety of
-apparently disparate phenomena, including visible light, radio
-waves, and other phenomena such as x-rays. All of these types
-of radiation differ only in their frequency, and they lie along
-a unified electromagnetic spectrum (figure below)
-in which the visible rainbow spectrum is only a narrow slice.
-
-<%
- fig(
-   'em-spectrum',
-   '',
-   {'width'=>'fullpage'}
- )
-%>
-
-An electromagnetic wave can be characterized either by its
-frequency or by its wavelength $\lambda$ (Greek letter lambda, which
-makes the ``L'' sound). On a sinusoidal wave, the
-wavelength is the distance in space between one crest and the next.
-These are not two independent parameters. During one cycle of
-vibration, which takes time $1/f$, one wavelength $\lambda$ travels past a fixed point in space.
-We therefore have $c=(\text{distance})/(\text{time})=\lambda f$.
-A higher frequency corresponds to a shorter wavelength.
-
-The terminology for the various parts of the spectrum is
-worth memorizing, and is most easily learned by recognizing
-the logical relationships between the wavelengths and the
-properties of the waves with which you are already familiar.
- Radio waves have wavelengths that are comparable to the
-size of a radio antenna, i.e., meters to tens of meters.
-Microwaves were named that because they have much shorter
-wavelengths than radio waves; when food heats unevenly in a
-microwave oven, the small distances between neighboring hot
-and cold spots is half of one wavelength of the standing
-wave the oven creates. The infrared, visible, and
-ultraviolet obviously have much shorter wavelengths, because
-otherwise the wave nature of light would have been as
-obvious to humans as the wave nature of ocean waves. To
-remember that ultraviolet, x-rays, and gamma rays all lie on
-the short-wavelength side of visible, recall that all three
-of these can cause cancer. (As you'll see when you learn about quantum physics,
-there is a basic physical reason why the cancer-causing
-disruption of DNA can only be caused by very short-wavelength
-electromagnetic waves. Contrary to popular belief,
-microwaves cannot cause cancer, which is why we have
-microwave ovens and not x-ray ovens!)
-
-<% end_sec('em-spectrum') %>
-
-<% begin_sec("Momentum and rate of energy flow",nil,'p-and-energy-flow') %>
-<% begin_sec("Momentum of a plane wave",nil,'p-plane-wave') %>\index{electromagnetic wave!momentum}
-Recalling the relations $\der\vc{p}/\der v =(1/4\pi k)\vc{E}\times\vc{B}$,
-$\der U_E/\der v=(1/8\pi k)E^2$, and $\der U_B/\der v=(c^2/8\pi k)B^2$, it is
-straightforward to show that for a plane wave, the energy and momentum are related
-by
-\begin{equation*}
-  \der U = c \der p.
-\end{equation*}
-This turns out to be a more general relation that, according to relativity, applies
-to anything without mass.
-<% end_sec('p-plane-wave') %>
-<% begin_sec("Rate of energy flow",nil,'poynting') %>
-Intuitively we feel that sunlight \emph{flows} through a window. We have been focusing
-on the momentum density as a measure of this rate of flow, but it would be equally valid
-to quantify it in units of power per unit area ($\text{watts}/\text{meter}^2$). These
-two figures must somehow be equivalent, since we can't change one without changing the
-other by the same factor. The relationship between them is
-\begin{equation*}
-  \frac{\text{power}}{\text{area}} = \frac{\text{momentum}}{\text{volume}} \times c^2.
-\end{equation*}
-To see this, consider an imaginary rectangular box of length $\ell$, with the window
-of area $A$ forming one end. Its volume is $v=\ell A$. Let's say the light is flowing
-directly along the length of this box, striking the window flat-on. At a given instant, the box contains
-momentum $p$ and energy $cp$. The time it will take for this entire box worth of light to
-flow through the window is $t=\ell/c$, so that the power per unit area is
-$(cp/t)/A=c^2p/(\ell A)=(p/v)c^2$.
-
-<% marg(30) %>
-<%
-  fig(
-    'window-flux',
-    %q{Light fills an imaginary rectangular box, flowing through a window of area $A$.}
-  )
-%>
-<% end_marg %>
-
-Summarizing, we find that the vector cross product $\vc{E}\times\vc{B}$ can be interpreted
-either as a measure of momentum density or as a measure of the rate of flow of energy.
-
-The quantity $(c^2/4\pi k)\vc{E}\times\vc{B}$, which is just the momentum density
-multiplied by $c^2$, is often notated $\vc{S}$, and
-is referred to as the Poynting vector, after John Henry Poynting --- a wonderful
-coincidence, because the vector \emph{points} in the direction of the momentum
-and energy flow. The magnitude of the Poynting vector is power per unit 
-area.\index{Poynting, John Henry}\index{Poynting vector}
-
-It makes sense that the momentum density and the rate of energy flow differ by
-the factor $c^2$, which is huge in SI units. SI units were chosen so that their
-sizes would be of a convenient order of magnitude in everyday life. We know from
-ordinary experience that the energy flux of a blast of desert sun can be physically
-staggering, whereas the momentum of the same sunlight is totally undetectable
-in everyday life.
-
-<%
-  fig(
-    'wave-poynting',
-    %q{The Poynting vector of a sinusoidal plane wave, example \ref{eg:wave-poynting}.
-       There is a net flow of energy out of region A, and a net
-       flow into B.},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
-
-\vfill
-
-\begin{eg}{Poynting vector of a plane wave}\label{eg:wave-poynting}
-Figure \figref{wave-poynting} shows the Poynting vector, in the sea-of-arrows representation,
-for the example of a sinusoidal plane wave. In a coordinate system where $+z$ is to the right, frozen at one
-point in time, this wave could be described by $\vc{E}=A\hat{\vc{x}}\sin kz$
-and $c\vc{B}=A\hat{\vc{y}}\sin kz$, so that $\vc{S}=(A^2c/4\pi k)\hat{\vc{z}}\sin^2 kz$.
-The figure shows examples of regions that have a net flow of energy in or out.
+If we throw the salt crystal, then the field $\vc{E}_1$ of the sodiums
+transforms to some mixture of an electric field plus a magnetic field
+$\vc{B}_1$, and similarly we have a $\vc{B}_2$ from the chlorines. 
+But because $\vc{E}_1+\vc{E}_2=0$, and because the transformation is
+additive, we have $\vc{B}_1+\vc{B}_2=0$ as well, and no observable magnetic
+field is produced.
 \end{eg}
 
-\vfill
+\begin{eg}{Magnetic field of a wire}\label{eg:field-of-wire}\index{magnetic field!long, straight wire}
+Since the electric field in
+\subfigref{field-transformation-cartoon}{1} is proportional to $1/r$ (sec.~\ref{sec:gauss-in-lt-3-dim}
+and example \ref{eg:e-line-of-charge}, p.~\pageref{eg:e-line-of-charge}), the electric
+and magnetic fields in \subfigref{field-transformation-cartoon}{2} are also proportional to $1/r$.
 
-In example \ref{eg:wave-poynting}, we have regions of space that are
-gaining energy, and others that are losing it. It's because there are
-``winners and losers'' that these energy flows are physically
-observable.  As a technical aside, it is also possible to have examples in which the
-Poynting vector is nonzero, but there is no physically observable flow
-of energy, because every region of space is having energy flow in as
-fast as it flows out (\note{static-poynting}).
+Now consider a wire such as the one in figure \subfigref{oersted}{2}. Such a wire is electrically neutral,
+containing equal numbers of positive and negative charges. In the condition where charge
+is flowing, the charges of one sign are standing still while the ones with the other
+sign move. (In a metal wire, the moving charges are the electrons and the stationary
+ones are the nuclei.) This is essentially the situation in figure
+\subfigref{field-transformation-cartoon}{2}, except that the electric fields cancel out,
+leaving a purely magnetic field. We conclude that when charges flow through a wire, the
+magnetic field surrounding the wire is proportional to $1/r$. We'll work out the 
+constants of proportionality in example \ref{eg:b-wire} on p.~\pageref{eg:b-wire}.
 
-\vfill
-
-\startdq
-
-<% marg() %>
+<% marg(55) %>
 <%
   fig(
-    'dq-field-momentum',
-    %q{Discussion question \ref{dq:field-momentum}.},
-    {'anonymous'=>true}
+    'field-lines-of-wire',
+    %q{Example \ref{eg:field-of-wire}, the magnetic field of a wire with charge flowing through it.
+       The field pattern is shown in the plane perpendicular
+       to the wire. The orientation is rotated by 90 degrees relative to
+       figure \figref{field-transformation-cartoon}.
+       The white circle at the center is the cross-section of the wire.}
   )
 %>
 <% end_marg %>
 
-\begin{dq}\label{dq:field-momentum}
-Positive charges 1 and 2 are moving as shown. What electric and magnetic forces do they exert on each other?
-What does this imply for conservation of momentum?
-\end{dq}
+What is the direction of this field? 
+It is not hard to show based on symmetry arguments that the radial component of the field
+must be zero (\note{b-wire-not-radial}), and this is also suggested by
+Oersted's experimental evidence
+(figure \figref{oersted}, p.~\pageref{fig:oersted}).
+Rather, the magnetic field circulates around the wire as shown in figure \figref{field-lines-of-wire}.
+\end{eg}
 
-<% end_sec('poynting') %>
-<% end_sec('p-and-energy-flow') %>
+In cases such as example \ref{eg:field-of-wire}, we find that the magnetic field
+depends only (\note{b-propto-i}) on an electrical quantity called the \emph{current},\index{current}
+defined as the number of coulombs per second that flow past a given point.
+As with a river or a pipe carrying water, the same current could be created by a large amount
+of charge moving slowly, or a small amount with a high velocity. Current is notated $I$,
+and is defined formally as\label{current-defined}
+\begin{equation*}
+  I = \frac{\der q}{\der t}.
+\end{equation*}
+Its units are normally abbreviated as amperes (``amps''), 1 A=1 C/s.\index{ampere (unit)}
 
-<% begin_sec("Maxwell's equations in a vacuum",4,'maxwell-vacuum') %>
+<% self_check('b-wire-field-line-spacing',<<-'SELF_CHECK'
+Why are the field lines in figure \figref{field-lines-of-wire}
+unevenly spaced?
+  SELF_CHECK
+  ) %>
+
+
 <% marg() %>
 <%
   fig(
-    'bug-in-plane-wave',
-    %q{A bug makes local observations of the leading edge of the wave from figure
-       \figref{plane-wave-propagating}. The wave is moving to the right, and the
-        magnetic field is perpendicular to the page.}
+    'solenoid',
+    %q{A solenoid, and its magnetic field pattern. Connections on the right,
+       not shown, are required in order to complete the circuit and provide
+       a source of energy such as a battery.}
   )
 %>
 <% end_marg %>
-The laws of physics are local, so if we zoom in on an electromagnetic wave, as in
-figure \figref{bug-in-plane-wave}, and take on the role of the bug, we must be able
-to make sense of the evolution of the wave pattern as time goes on. The structure of
-the laws of physics for electromagnetism is that they talk about the curl and divergence
-of the fields. It's not arbitrary that they have this structure, because the curl and
-divergence are the only rotationally invariant derivative operators we can define that take
-a vector-valued field as an input.
+A straight wire like the one in figure \figref{field-lines-of-wire} is not
+usually a very efficient or compact way of making a strong magnetic field.
+A more practical device is a solenoid, figure \figref{solenoid}. When very
+strong fields are required, the field can be increased by an additional large
+factor by adding a core made of a magnetic material such as iron. The mathematics
+for calculating such fields will be deferred to later in this course.
 
-What the bug observes at this moment in time is that the electric field has a curl
-that points into the page. (You should verify this yourself by visualization, using the
-right-hand rule, if necessary referring to the drawing of the curl-meter in
-figure \figref{curlmeter-fac} on p.~\pageref{fig:curlmeter-fac}.) She also observes that
-the magnetic field's curl is up. For static fields, we're supposed to have
-$\operatorname{curl}\vc{E}=0$ and $\operatorname{curl}\vc{B}=0$, so this would be impossible.
-But this is not a static field, it's a field that is changing over time.
-The bug needs some laws of physics that relate the time-varying nature of the fields to their
-curls. With this motivation, we state Maxwell's equations\footnote{The full version of Maxwell's equations, including matter, are
-summarized on p.~\pageref{fig:maxwell-summary}.} in a vacuum:\index{Maxwell's equations!in a vacuum}
+The creation of magnetic fields is not the only effect associated with
+currents.  For example, a current normally causes heating, as in an
+electric heater or an old-fashioned incandescent lightbulb. Currents
+can carry information.  Your nervous system operates using electric
+currents carried by ions in your nerve cells.  So current is of great
+practical interest in electrical circuits, which we will study more
+intensively later in this course.  To measure current, there is a
+device called an ammeter. (Today, people usually use a device called a
+multimeter, which has multiple functions including working as an
+ammeter.)\label{ammeter-intro} We will discuss the ammeter and its use
+in more detail in sec.~\ref{subsec:measuring-current},
+p.~\pageref{subsec:measuring-current}, when we begin our study of
+electric circuits. 
+
+Currents are formed by matter, and are \emph{not} the same thing as
+electromagnetic fields, which can exist in a vacuum. For example, the
+current in a copper wire is carried by electrons, whereas sunlight, an
+electromagnetic wave, travels to the earth through outer space, which
+is a vacuum.
+
+When the current in an electric circuit is constant, so that charge is
+flowing at a constant rate, this is referred to as direct current, or
+DC.\index{direct current (DC)}\index{DC|see {direct current}}\index{alternating current (AC)!defined}\index{AC|see {alternating current}}
+Household wall sockets are alternating current, AC, meaning that
+the current oscillates as a function of time. In the US, electrical
+power is transmitted as a sine wave with a frequency of 60 Hz. Radio
+transmitting antennas use AC currents to create an electromagnetic
+wave, and receiving antennas change the radio signal back to a
+current. The frequency used in a cell phone is typically about $10^9\
+\zu{Hz}$. 
+
+<% end_sec('current-and-b') %>
+
+<% begin_sec("Energy, pressure, tension, and momentum in fields",nil,'stress-energy') %>
+<% begin_sec("Momentum",nil,'momentum-of-em-fields') %>\index{momentum!of electromagnetic fields}
+Material objects can have energy, momentum, pressure, and tension.  We
+have already seen that electric and magnetic fields have energy, and
+we will soon see that they carry the other properties on this list as
+well. Indeed, for an object like the suspension bridge in the photo on
+p.~\pageref{ch:electromagnetism}, it is an illusion that the pressure
+in the towers and the tension in the cables are provided by the steel.
+Matter is essentially empty space with a sprinkling of pointlike subatomic
+particles, and the pressure and tension in the bridge are in fact
+properties of the electric and magnetic fields that exist in this
+empty space. (Try not to think about this the next time you drive across
+a bridge.)
+
+There is a reason that we discussed the energy density of fields way
+back in chapter \ref{ch:fields-intro}, but are only now getting to the
+momentum density. This is because, for straightforward mathematical
+reasons, momentum can never be carried by a pure electric or pure
+magnetic field, but only by a combination of both. That is, the
+momentum density is an electromagnetic property. To see this, consider
+the fact that we have only two ways of multiplying vectors: the dot
+product, which is a scalar, and the cross product, which is a vector.
+(These operations were reviewed in sec.~\ref{subsec:dot-and-cross-product},
+p.~\pageref{subsec:dot-and-cross-product}.)
+Energy is a scalar, so it makes sense that the energy in the fields
+goes like $\vc{E}\cdot\vc{E}$ and $\vc{B}\cdot\vc{B}$, i.e., like the
+squared magnitudes of the fields. Momentum is a vector, so the
+momentum density must be a cross product of the fields. But the cross
+product of parallel vectors is always zero, so expressions like
+$\vc{E}\times\vc{E}$ and $\vc{B}\times\vc{B}$ vanish identically and
+are useless for our purposes. The momentum density must therefore be
+proportional to $\vc{E}\times\vc{B}$, so it is a joint property of the
+two fields. Filling in the correct constant of proportionality, which we'll come back
+to in a moment, it turns
+out that the momentum is given by
+\begin{equation*}
+  \der\vc{p} = \frac{1}{4\pi k} \vc{E}\times\vc{B} \der v.
+\end{equation*}
+
+<% marg(300) %>
+<%
+  fig(
+    'summary-of-e-p-densities',nil,
+    {
+      'title'=>'Summary of energy and momentum densities',
+      'text'=>%q{
+        \begin{align*}
+          \der U_E &= \frac{1}{8\pi k} E^2 \der v \\\\
+          \der U_B &= \frac{c^2}{8\pi k} B^2 \der v \\\\
+          \der\vc{p} &= \frac{1}{4\pi k} \vc{E}\times\vc{B} \der v
+        \end{align*}
+      }
+    }
+  )
+%>
+<% end_marg %>%
+
+The argument given above only demonstrated that the momentum density
+had to be proportional to $\vc{E}\times\vc{B}$, but it didn't fix the
+proportionality constant of $c^2/4\pi k$. The $c^2/k$ has to be there
+because of units, but we might wonder why the unitless factor isn't
+simply zero rather than $1/4\pi$.  After all, we don't notice this
+momentum in everyday life; for example, when we turn on a flashlight,
+it doesn't recoil like a gun. The answer is that the physical quantities
+on the list we've been discussing --- energy, momentum, pressure, and tension --- are
+not independent things. They're all intimately related.
+For example, if we want to change the kinetic energy
+of a car, we have to change its momentum as well (\note{p-related-to-ke}).
+If a radio signal comes along and pumps kinetic energy into the electrons
+in the antenna of your phone, then it's also transferring momentum to them,
+and therefore it must have some momentum itself.
+
+It is in fact plausible that the proportionality constant occurring in
+the equation for the momentum density is such that the momentum of
+light is too small to notice in everyday life. For material objects
+moving at speeds small compared to $c$, the kinetic energy and
+momentum are given by $K=(1/2)mv^2$ and $p=mv$, so that the ratio of
+momentum to energy is $p/K=2/v$.\label{energy-momentum-ratio}
+Therefore objects moving very fast
+have very little momentum in proportion to their energy. We see this,
+for example, in an old-fashioned CRT television tube, in which the
+electron beam moves at extremely high speeds (perhaps $10^6\
+\munit/\sunit$); the energy is enough to make a bright image on the
+screen, but the device doesn't recoil from the beam's momentum when we
+turn it on, nor does it shake and rattle as the the beam is steered
+back and forth across the screen to paint the picture.  Although
+the equations above do not actually hold in detail for light (the
+final result ends up being off by a factor of 2, as shown in sec.~\ref{subsec:p-plane-wave},
+p.~\pageref{subsec:p-plane-wave}), it still makes sense
+that the momentum-to-energy ratio is extremely small, because the
+speed, $c$, is so big.
+
+\begin{eg}{A comet's tail}\label{eg:halley}\index{Halley's comet}\index{comet}
+Halley's comet, shown
+in figure \figref{halley}, has a very elongated elliptical orbit, like those of
+many other comets. About once per century, its orbit brings
+it close to the sun. The comet's head, or nucleus, is
+composed of dirty ice, so the energy deposited by the
+intense sunlight gradually removes ice from the surface and turns it into water vapor.
+
+The sunlight does not just carry energy, however. If it only carried
+energy, then the water vapor would just form a spherical halo that
+would surround the nucleus and travel along with it.  The light also
+carries momentum. Once the steam comes off, the momentum of the
+sunlight impacting on it pushes it away from the sun, forming a tail
+as shown in in the top image.  (Some comets also have a second tail,
+which is propelled by electrical forces rather than by the momentum of
+sunlight.)
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'halley',
+    %q{%
+      Halley's comet, example \ref{eg:halley}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'nichols-radiometer',          
+    %q{Example \ref{eg:nichols-radiometer}.}
+  )
+%>
+<% end_marg %>%
+\begin{eg}{The Nichols radiometer}\label{eg:nichols-radiometer}
+Figure \figref{nichols-radiometer} shows a simplified drawing of the
+1903 experiment by Nichols and Hull that verified the predicted
+momentum of light waves. Two circular mirrors were hung from a fine
+quartz fiber, inside an evacuated bell jar. A 150 mW beam of light was
+shone on one of the mirrors for 6 s, producing a tiny rotation, which
+was measurable by an optical lever (not shown). The force was within
+0.6\% of the theoretically predicted value of $0.001\
+\mu\nunit$.\index{Nichols-Hull experiment on momentum of light} For
+comparison, a short clipping of a human hair weighs $\sim 1\
+\mu\nunit$. 
+\end{eg}
+
+Because the momentum of light waves is so small in cases like examples
+\ref{eg:halley} and \ref{eg:nichols-radiometer}, one might wonder why
+we should even bother discussing it. Is it purely an impractical and
+theoretical consideration? The answer is that it is very practical in
+the sense that it helps us to understand important practical facts
+about these waves. 
+
+One such fact is that disturbances in the electric and magnetic fields
+are never purely electric waves or magnetic waves. They carry
+momentum, and therefore they must contain an oscillation of both
+fields. This is why phenomena like light and radio waves are referred
+to as electromagnetic waves.\label{waves-not-pure-e-or-b}
+
+We can also see that such waves must have fields with nonvanishing
+components perpendicular to the direction in which the wave is
+traveling, because the cross product $\vc{E}\times\vc{B}$ is
+perpendicular to both $\vc{E}$ and $\vc{B}$.  In fact, for the simplest
+wave patterns (such as a laser beam or a small enough piece of sunlight),
+we will see that the fields are purely perpendicular to the direction
+of propagation --- they have no component at all parallel to the momentum.
+<% end_sec('momentum-of-em-fields') %>
+<% begin_sec("Pressure and tension",nil,'pressure-of-em-fields') %>\index{pressure!of fields}\index{tension|see {pressure}}
+Pressure is defined as the force per unit area, applied perpendicular to the
+area. It has units of newtons per square meter, which can also be abbreviated
+as pascals, 1 Pa=1 N/m. The earth's atmospheric pressure is about 100 kPa, and
+car tires are usually inflated to about 250 kPa over atmospheric pressure.
+
+Whenever momentum is transferred from one region of space to another,
+pressure is involved, and in fact this is an equally valid definition
+of pressure. For example, when a bat hits a baseball, the rate at which
+momentum is transferred into the ball, per unit area, is the pressure.
+
+Some materials can sustain tension, which is negative pressure. For example,
+a rod can sustain either tension or pressure, but a rope can only sustain
+tension --- you can't push with a rope.
+
+In all of the examples above involving material objects, the pressure and tension
+are in fact properties not of the objects but of the electric and magnetic fields,
+which are the glue holding the atoms together. Although it is possible to give
+formulas for the pressure and tension in the electromagnetic field, we will find
+it more useful in this course to develop some visual rules for making accurate
+inferences based on pictures of the fields.
+
+<% marg() %>
+<%
+  fig(
+    'capacitor-pressure-and-tension',
+    %q{%
+      Pressure and tension in the field of a parallel-plate capacitor. Side view.
+    }
+  )
+%>
+<% end_marg %>
+
+As a simple first example of these visual rules, consider the
+arrangement in figure \figref{capacitor-pressure-and-tension}, in
+which positive and negative charges are spread across two parallel
+metal plates. This is called a capacitor.  The field is drawn by hand
+to have roughly the features we would find if we added up the fields
+of a large number of point charges on the two plates. The field lines
+begin on the positive charges, which are the sources of the electric
+field, and end on the negative ones, which are the sinks. The field is
+nearly uniform on the interior and nearly zero on the exterior. To
+understand the reason for this behavior, recall that for an infinite
+plane of charge, the field is constant on both sides
+(sec.~\ref{sec:gauss-in-lt-3-dim},
+p.~\pageref{sec:gauss-in-lt-3-dim}). Since the two plates are
+finite, their individual contributions to the total field are nearly
+constant on either side of each one. If they were infinite, then these
+fields would be exactly constant, and their sum would exactly cancel
+on the exterior, while reinforcing on the interior.
+
+We know from Coulomb's law that the positive and negative charges are
+attracting one another, so the plates are being pulled toward each other.
+The capacitor wants to collapse, and must be prevented from doing so
+by some external structure (not shown). This is a tension in the vertical
+direction. The field lines act like taut ropes.
+
+We also know that within each plate, the like charges are all repelling
+each other, and this would cause the plate to explode in the horizontal
+direction, except that again there must be something else holding it together.
+This is a kind of pressure. We see that pressure is exerted in the direction
+perpendicular to the field lines, as if they were physical objects trying to
+stay away from one another.
+
+These are general rules, which apply to both the electric and the magnetic fields:
+field lines sustain tension parallel to themselves, and pressure in the perpendicular
+direction. Pressure and tension only produce mechanical effects when there is a
+\emph{difference} in pressure or tension. For example, a car with a flat tire has
+air pressure inside the tire, but there is no difference capable of creating
+a net outward mechanical force on the rubber. In figure \figref{capacitor-pressure-and-tension},
+the mechanical stresses on the capacitor exist because there is no field on the outside.
+
+<%
+  fig(
+    'two-charges-pressure-and-tension',
+    %q{Tension and pressure, for two-charge systems.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+Figure \figref{two-charges-pressure-and-tension} shows two examples. In
+\subfigref{two-charges-pressure-and-tension}{1}, the highlighted area between the
+opposite charges contains field lines oriented horizontally, which create tension
+in that direction. The charges attract one another. There is also pressure in the
+vertical direction, but this is in the wrong direction to produce any effect on the
+charges, which are separated from each other horizontally.
+
+In  \subfigref{two-charges-pressure-and-tension}{2}, the highlighted area
+between the two positive charges contains field lines that exhibit vertical pressure,
+causing a repulsion between the charges, along with a horizontal tension which
+has no effect on them.
+
+In both examples in figure \figref{two-charges-pressure-and-tension}, we have highlighted
+an area between the charges, but it also matters that there is a difference between the
+pressure or tension in this area and that on the outside.
+
+To see the advantage of this mode of reasoning, compare with the much
+more complicated logic that we had to do on
+p.~\pageref{fig:eg-two-charges-pe} in order to analyze
+the situation \subfigref{two-charges-pressure-and-tension}{1} by talking about the change in the
+fields' energy that would have occurred if they were moved closer together or farther apart.
+(Cf.~also the complicated handling of the limits of integration in
+note \notewithoutbackref{force-on-point-charge}.)
+
+\begin{eg}{Magnetostriction}\label{eg:joule-magnetostriction}
+The examples discussed above involved pressure and tension made by electric fields,
+but an exactly analogous effect occurs for magnetism.
+If you've ever heard a transformer buzzing, you've observed it.
+
+Figure \figref{joule-magnetostriction} shows part of a sensitive experiment carried
+out by James Joule in 1842 which discovered the effect. Joule writes, ``About the close of the year
+1841, Mr.~F.D.~Arstall, an ingenious machinist of this town, suggested to me a new form
+of electro-magnetic engine. He was of the opinion that a bar of iron experienced an increase
+of bulk by receiving the magnetic condition.'' Joule first constructed a delicate experiment
+to look for a change in the length of an iron bar when it was used as the core of a solenoid.
+In an iron bar about half a meter tall, he found a \emph{decrease} in length of a little more than one
+part per million, with the strongest field he could make. This effect is called
+magnetostriction.
+
+This would suggest a decrease in volume as well, but there was no sufficiently accurate way to
+measure the small diameter of the bar. Therefore Joule created the apparatus in figure
+\figref{joule-magnetostriction}, in which the bar was submerged in water, with a thin capillary
+tube at the top to take the volume of any small displacement of water and amplify it
+into a visible change in height. The result was no detectable volume change.
+
+These results seem natural in view of our picture of fields as carrying tension in the longitudinal
+direction and pressure in the transverse direction. 
+The interior field of the solenoid, as shown in figure \figref{solenoid}, runs in the vertical direction.
+The lengthwise tension reduced the length of the
+bar, but the transverse pressure expanded its diameter, and the result was that the volume stayed the same.
+
+In the more familiar modern example of the
+buzzing transformer, an AC current at 60 Hz creates oscillations at a frequency of 120 Hz.
+This doubling of the frequency occurs
+because the energy, pressure, and tension of a field all depend on the square
+of the field, so that for a magnetic field, $\vc{B}$ produces the same effect as $-\vc{B}$. This means that
+the maximum magnetostriction occurs twice per cycle, at both the peak and the trough of
+the sine wave.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'joule-magnetostriction',
+    %q{Example \ref{eg:joule-magnetostriction}. The apparatus was about half a meter tall.}
+  )
+%>
+<% end_marg %>
+
+
+
+<% end_sec('pressure-of-em-fields') %>
+<% end_sec('stress-energy') %>
+
+<% begin_sec("Force of a magnetic field on a charge",4,'b-force-on-current') %>
+
+<% marg() %>
+<%
+  fig(
+    'wire-in-uniform-field',
+    %q{A uniform magnetic field superposed on the field of a wire carrying current into the page.}
+  )
+%>
+<% end_marg %>
+Figure \figref{wire-in-uniform-field} shows the superposition of two magnetic fields. 
+One is a uniform field pointing to the left, and the other is the field of a wire carrying
+a current that flows into the page. (The circle with a cross is a standard way of indicating
+a direction into the page, meant to evoke the tail feathers of an arrow. A circle with a dot
+would mean a direction out of the page.) To construct this diagram, we only needed vector
+addition plus the facts about the magnetic field of a wire proved in example \ref{eg:field-of-wire}
+on p.~\pageref{eg:field-of-wire}. Since that example did not include any derivation of the
+constant of proportionality in the relationship $B\propto 1/r$, we can't say, in any particular
+set of units, what is the current in the wire that would produce exactly this field pattern.
+
+Since the pressure is greater below the wire than above
+it, there is an upward force on the wire. Summarizing the geometrical relationship, we have:
 \begin{align*}
-  \operatorname{div}\vc{E} &=  0 \\
-  \operatorname{div}\vc{B} &=  0 \\
-  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
-  \operatorname{curl}\vc{B} &=  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}.
+  &\text{current into the page} \\
+  &\text{$\vc{B}$ to the left} \\
+  &\text{force up}.
 \end{align*}
-There is not much else we could write down that would satisfy the bug's
-requirements. The signs are the ones that make the geometry of figure \figref{bug-in-plane-wave}
-work.\footnote{The fact that the two signs are opposite is what gives us solutions that are oscillating
-waves, rather than exponential freak-outs. We could make the signs $+$ and $-$ rather than $-$ and $+$,
-but this would be equivalent to redefining the magnetic field like $\vc{B}\rightarrow-\vc{B}$.}
-The factor of $1/c^2$ has to be there because of units.
-We could throw in other unitless
-factors and change the $1/c^2$ to $7/c^2$, for example, but $1/c^2$ is the choice that turns out to make the
-wave propagate at $c$ (\note{maxwell-c}).
+This is a right-hand rule, which smells like a cross product.
+Since the cross product is the only rotationally invariant way to multiply two
+vectors in order to get a third vector, the only possible force law consistent
+with these observations is that
+when a charged particle moves with velocity $\vc{v}$
+through a magnetic field $\vc{B}$, the force acting on the particle is proportional
+to $q\vc{v}\times\vc{B}$. The constant of proportionality has to be unitless,
+and although we haven't yet proved it, this constant equals 1. Taking into account
+the possibility that the particle is also acted on by an electric field, we have
+\begin{equation*}
+  \vc{F} = q\vc{E}+q\vc{v}\times\vc{B},
+\end{equation*}
+which is known as the Lorentz force law.\index{Lorentz force law}\index{force!on a charge in a magnetic field}
 
-The physics embodied in these two new terms of Maxwell's equations is referred to as
-induction (a different usage of the term than the one introduced for static fields
-on p.~\pageref{fig:attracting-induced-electric-and-magnetic-dipoles}). A changing
-magnetic field induces a curly electric field, and a changing electric field
-induces a curly magnetic field. This has many important technological applications,
-but since those are not our topic right now, we give only two qualitative examples.
-Further quantitative material is presented in ch.~\ref{ch:stokes}.
+As an application, we can now describe how Thomson was able to measure the velocity
+of the electrons in the experiment in which he discovered the electron. As
+described in sec.~\ref{subsec:thomson}, p~\pageref{subsec:thomson}, he measured the
+deflection of the electrons in an electric field, but he also determined how much
+magnetic field, applied perpendicular to the beam, was necessary in order to produce
+the same deflection. He then had $v=E/B$.
 
-\pagebreak
+<% end_sec('b-force-on-current') %>
 
-\begin{eg}{The generator}\index{generator}
-A generator, \figref{generator}, consists of a permanent magnet that
-rotates within a coil of wire. The magnet is turned by a
-motor or crank, (not shown). As it spins, the nearby
-magnetic field changes. This changing magnetic field results in an
-electric field, which has a curly pattern. This electric
-field pattern creates a current that whips around the coils
-of wire, and we can tap this current to light the lightbulb.
-\end{eg}
-<% marg(33) %>
-<%
-  fig(
-    'generator',
-    %q{A generator.}
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{Radiation from a dipole antenna}\label{eg:dipole-radiation-pattern}
-Figure \figref{dipole-radiation-pattern} depicts the electric fields in
-the radiation pattern of an antenna, shown in the photo superimposed
-in the background. This type of antenna is called a dipole antenna,
-meaning that as a source, it acts like an electric dipole whose dipole
-vector oscillates sinusoidally. The magnetic field is perpendicular to
-the page and is shown only at six arbitrarily chosen points in the
-midplane. Let's verify that this pattern appears to satisfy 
-Maxwell's equations in a vacuum. 
-
-The electric field lines 
-never begin or end at any point in the air surrounding on the antenna, only at points on the antenna,
-which means that they satisfy $\operatorname{div}\vc{E}=0$ everwhere that they should. (And where they reach
-the antenna, which is a conductor, they are perpendicular to the surface.)
-<%
-  fig(
-    'dipole-radiation-pattern',
-    %q{The radiation pattern emitted by a dipole antenna, example \ref{eg:dipole-radiation-pattern}.},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
-
-Although the magnetic field lines are not shown, they are simply circles centered on the dipole axis
-and perpendicular to it. Each magnetic field vector shown on the left wraps around and connects to the
-symmetrically placed field vector on the right. Because these circles close on themselves, there are
-no magnetic sources or sinks, as required by $\operatorname{div}\vc{B}=0$.
-
-In order to check $\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$, we pick points A, B, and C,
-of which only B coincides with a point where the magnetic field was drawn. Here is a table, to be justified
-afterward, describing the behavior of the fields and their derivatives at these points.
-
-\begin{tabular}{lllll}
-    & $\vc{E}$ & $\operatorname{curl}\vc{E}$ & $\vc{B}$ & $\partial\vc{B}/\partial t$ \\
-A   & 0        & max (out)                   & 0        & max (in) \\
-B   & max (up) & 0                           & max (in) & 0 \\
-C   & 0        & max (in)                    & 0        & max (out)
-\end{tabular}
-
-Points A, B, and C are chosen to be ones at which the electric field
-is at a zero, a maximum, and a minimum, hence the values in the first
-column. We can tell, for example, that $\vc{E}$ is small at A because
-the field lines are far apart, and we know that $\vc{E}=0$ must occur
-somewhere near A because as the field pattern has been
-spreading outward, the field has been changing from down to (soon) up. 
-
-The second column comes from visualizing a curl-meter inserted in the figure. The curl is nearly zero at
-B because the curl is flipping directions near there at this time.
-
-The third column comes from our expectation that the Poynting vector
-should point outward, which requires that $\vc{E}$ and $\vc{B}$ reach
-their maxima at similar times, i.e., be at least approximately in
-phase, as in example \ref{eg:wave-poynting} on
-p.~\pageref{eg:wave-poynting} (Poynting vector of a plane
-wave).\footnote{This expectation cannot be valid everywhere on the
-figure. Close up to the antenna, we can find places where the electric
-field points directly inward or outward, so that the Poynting vector
-cannot be straight outward. However, far from the antenna
-the pattern begins to look locally more and more like a plane wave, so
-this kind of thing can't happen.}
-
-The fourth column follows from the fact that the time variation of the wave
-is sinusoidal, and the derivative of a sine wave is also a sine wave, shifted
-90 degrees forward in phase (e.g., $\sin'=\cos$).
-
-We can now verify that these estimates are consistent with
-$\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$ since the
-second and fourth columns match up except for the flipped direction
-arising from the minus sign.
-\end{eg}
-
-\startdq
+<% begin_sec("The dipole",4,'dipole') %>\index{dipole}
 
 <% marg() %>
 <%
   fig(
-    'maxwellwave-gray',
-    %q{Discussion question \ref{dq:direction-of-propagation}.},
-    {'anonymous'=>true}
+    'compass-misaligned-field-lines',
+    %q{A compass needle in the earth's field.}
+  )
+%>
+<% end_marg %>
+Figure \figref{compass-misaligned-field-lines} shows the superposition
+of a compass needle's magnetic field (essentially the field of figure
+\figref{bar-magnet-field-lines}, p.~\pageref{fig:bar-magnet-field-lines})
+with the earth's magnetic field. The compass is not aligned with the earth's
+field, and from what we know about magnetic compasses we expect that there will now
+be a torque that will tend to bring it into alignment.
+It could in principle be very difficult to find this torque, since the magnetic field
+pattern is so complicated. But by using the visual techniques of section
+\ref{subsec:pressure-of-em-fields}, it's pretty easy to get the right answer for its sign.
+There is tension at the top right and bottom left of the needle because of the
+densely packed field lines. This tension will create a counterclockwise torque.
+
+A real-world hiking compass is usually filled with water in order to create friction.
+The needle vibrates about an equilibrium, but this friction rapidly kills the oscillations,
+and it ends up in a state of lowest energy, in which it is aligned with the earth's
+field (\note{compass-energy}). If we were to redraw figure \figref{compass-misaligned-field-lines}
+for the equilibrium condition, it would have a left-right mirror symmetry, so the
+torque must vanish, and this is consistent with equilibrium.
+
+The reason we can treat the earth's field as uniform in this example is that the compass
+is so small compared the earth. In this approximation, which is an excellent one in this
+example, we can think of the compass as an idealized, very small object which feels no
+net force from the field, only a torque.\footnote{To get a nonvanishing force from the earth's
+magnetic field, we would have to have an isolated ``magnetic charge,'' and the apparent
+nonexistence of such things is expressed by Gauss's law for magnetism.}
+Such an idealized object is called a \emph{dipole}. There can be both electric and magnetic
+dipoles. An electric dipole tends to align itself with the electric field.
+
+If we change the orientation of a dipole, say a magnetic one, then its own contribution
+to the field, $\vc{B}_1$ rotates along with it. Meanwhile, the external field
+$\vc{B}_2$ remains constant. For a given orientation, the superposition of the two fields may be
+something complicated like figure \figref{compass-misaligned-field-lines}. But regardless
+of how complicated it is, the total energy of this field will always vary with orientation
+in a very simple way: it is proportional to the cosine of the angle between the external field
+and an axis, such as the long axis of the compass needle, determined by the structure of the
+dipole (proof \note{dipole-energy-proof}). This is the behavior of a vector dot product, so
+we have for the energy
+\begin{equation*}
+  U = -\vc{m}\cdot\vc{B},
+\end{equation*}
+where $\vc{m}$ is a vector called the dipole moment, and the minus sign is a matter of 
+convention.\index{dipole!energy due to orientation}
+
+A mechanical analogy is that if a pendulum has length $\ell$ and mass $M$ at the end, then
+we can define a vector with magnitude $\ell M$ and direction pointing from the axis
+to the mass, and an identical expression holds for the energy of the pendulum in the
+earth's gravitational field, since the height of the mass is just $-\ell\cos\theta$,
+where $\theta$ is the displacement from equilibrium. But there is no such thing as
+a pure gravitational dipole, because any material object in a gravitational field will
+experience a net force as well as a torque.
+
+We could try to be whimsical and get around this by putting a mass at one end of a stick
+and a helium balloon at the other, tuning up the setup so that the whole thing was
+neutrally buoyant. Less whimsically, this is similar to the simplest way of making an
+\emph{electric} dipole: attach  charges $q$ and $-q$ to opposite ends of a stick of length $\ell$.
+The result is an electric dipole moment, notated $\vc{D}$, with magnitude $\ell q$ and energy
+\begin{equation*}
+  U = -\vc{D}\cdot\vc{E}
+\end{equation*}
+in an external electric field.
+
+\begin{eg}{Dipole moment of a molecule of NaCl gas}
+        \egquestion
+        In a molecule of NaCl gas (cf.~example \ref{eg:salt-crystal}, p.~\pageref{eg:salt-crystal}), the center-to-center
+        distance between the two atoms is about 0.24 nm. Assuming
+        that the chlorine completely steals one of the sodium's
+        electrons, compute the magnitude of this molecule's dipole moment.
+
+        \eganswer
+        The total charge is zero, so it doesn't matter where we choose the
+        origin of our coordinate system. For convenience, let's choose
+        it to be at one of the atoms, so that the charge on that atom 
+        doesn't contribute to the dipole moment.
+         The magnitude of the dipole moment is then
+        \begin{align*}
+                         D         &=    (2.4\times10^{-10}\ \zu{m})( e)  \\
+                                 &=    (2.4\times10^{-10}\ \zu{m})( 1.6\times10^{-19}\ \zu{C})  \\
+                                 &\approx    4\times10^{-29}\ \zu{C}\cdot\zu{m}.
+        \end{align*}
+        The experimentally measured value is $3.0\times10^{-29}\ \zu{C}\cdot\zu{m}$, which shows
+        that the electron is not completely ``stolen.''
+% McCaffrey, https://www.era.lib.ed.ac.uk/bitstream/1842/2601/2/McCaffrey%20PD%20thesis%2007.pdf
+% someone else's measurement, quoted on p. 167 of pdf
+% 8.97 Debye units; 1 D=10^-18 statC.cm
+% calc -e "d=3.3 10^-30 C.m; 8.97d"
+\end{eg}
+
+<% marg() %>
+<%
+  fig(
+    'dipoles-add',
+    %q{Dipoles add like vectors. When a two-charge dipole is superposed on another two-charge dipole,
+       we can cancel two of the charges, and the result is that the displacement vectors add.}
+  )
+%>
+<% end_marg %>
+Because the dot product has the linear property
+$(\vc{D}_1+\vc{D}_2)\cdot\vc{E}=\vc{D}_1\cdot\vc{E}+\vc{D}_2\cdot\vc{E}$, it follows
+from our definition of the dot product that dipole moments add like vectors (and otherwise
+it would not have been legitimate to call them vectors).\footnote{This does not necessarily
+hold for cases with infinitely many charges, as in example \ref{eg:long-molecule},
+p.~\pageref{eg:long-molecule}.} Figure \figref{dipoles-add} shows a less abstract
+justification for this, using electric dipoles made of charges $\pm q$. For the remainder
+of this section, we'll focus on electric dipoles, returning to magnetic dipoles in
+sec.~\ref{sec:b-dipole}, p.~\pageref{sec:b-dipole}.
+
+Of course a complicated set of charges really is complicated, when you see it up close.
+Figure \subfigref{dipole-zoomed-out}{1} shows the field pattern made by two positive charges
+and two negative ones. It's very complicated, and it's not the same as the field pattern of
+any two-charge dipole. But when we see it from far away, \subfigref{dipole-zoomed-out}{2}, it looks
+very simple. It's common sense that you can't easily see the internal structure of an object
+when you only look at it from far away.
+
+<%
+  fig(
+    'dipole-zoomed-out',
+    %q{1.~The field pattern made by two positive and two negative charges.
+       2.~Seen from 10 times far away, the pattern looks much simpler. This is what the
+          generic, distant field of any dipole looks like.
+          The dashed rectangle shows the field of view from the left-hand panel.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+So it's believable that all electric dipoles should have a similar field pattern at large distances
+(taking into account their dipole moment and orientation), but what is that field pattern?
+We've already seen in example \ref{eg:e-dipole-mid-plane} on p.~\pageref{eg:e-dipole-mid-plane}
+and problem \ref{hw:dipole-axis} on p.~\pageref{hw:dipole-axis} that the field of a two-charge
+dipole varies like $1/r^3$ at large distances, both in the mid-plane and on the axis.
+This also holds true along any line through the dipole, not just lines like these that
+are oriented in symmetrical ways. (To see this, express the dipole moment as a sum of components
+perpendicular and parallel to the line.)
+
+So in general, if we throw a bunch of charged particles in a sock, their field at large distances will
+be proportional to the total charge, and will fall off like $1/r^2$, as we expect from Couolomb's
+law. There will also be a dipole
+field, but it falls off more quickly at large distances, so the Coulomb part dominates. But if we
+happen to throw particles in the sock whose total charge is zero, then there is no $1/r^2$ part,
+and the dominant field at large distance is the $1/r^3$ dipole field.
+This is what happens, for example, with molecules that have nonzero dipole moments.
+
+The universal form of electric dipole fields at large distances also holds for magnetic dipoles,
+as discussed on p.~\pageref{e-b-dipole-same}. In mini-lab \ref{lab:bar-magnet-b-vs-r} you probably
+found that the field went approximately like $1/r^3$ at the larger 
+distances.\index{dipole!far field!universality of}
+
+\begin{eg}{Molecules with zero and nonzero dipole moments}\label{eg:molecular-dipoles}
+It can be useful to know whether or not a molecule is polar, i.e., has a nonzero dipole moment.
+A polar molecule such as water is readily heated in a microwave oven, while a nonpolar one is not.
+Polar molecules are attracted to one another, so polar substances dissolve in other polar substances,
+but not in nonpolar substances, i.e., ``like dissolves like.'' 
+
+<%
+  fig(
+    'molecular-dipoles',
+    %q{%
+      Example \ref{eg:molecular-dipoles}. The positive $x$ axis is to the right, $y$ is up,
+      and $z$ is out of the page. Dark gray atoms are carbon, and the small light gray ones are hydrogen.
+      Some other elements are labeled when their identity would otherwise not be clear.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+In a symmetric molecule such as carbon disulfide, figure
+\subfigref{molecular-dipoles}{1}, the dipole moment vanishes.
+For if we rotate the molecule by 180 degrees about any one
+of the three coordinate axes defined in the caption of the figure, the molecule is unchanged, which means
+that its dipole moment is unchanged. The only vector that has these properties is
+the zero vector.
+
+Similar symmetry arguments show that sulfur hexafluoride, \subfigref{molecular-dipoles}{2}, and
+benzene \subfigref{molecular-dipoles}{3}, have vanishing dipole moments.
+
+The formaldehyde molecule, \subfigref{molecular-dipoles}{4}, does not have enough symmetry to guarantee
+that its dipole moment must vanish, but it does have enough to dictate it must be equivalent
+to a two-charge dipole lying along the left-right axis.
+Chloroform, \subfigref{molecular-dipoles}{5}, is a front-to-back dipole for the
+orientation drawn in the figure.
+
+From these considerations we can tell, for example, that
+carbon disulfide will be soluble in benzene, but chloroform will not.
+
+Symmetry arguments are not enough to determine, for example, whether 
+formaldehyde's dipole moment points to the left or to the right in the
+figure. That requires some knowledge of
+chemistry and the periodic table.
+\end{eg}
+
+<% marg() %>
+<%
+  fig(
+    'attracting-induced-electric-and-magnetic-dipoles',
+    %q{1.~A charged piece of plastic pipe attracts an uncharged piece of paper.
+       2.~The mechanism for the effect.
+       3.~The analogous magnetic effect.}
+  )
+%>
+<% end_marg %>
+Often we observe static electrical interactions between a charged object and an object
+that has zero total charge, \subfigref{attracting-induced-electric-and-magnetic-dipoles}{1}.
+The mechanism is shown in figure \subfigref{attracting-induced-electric-and-magnetic-dipoles}{2}.
+Although the scrap of paper has zero total charge, it does contain charges that can move.
+The positive charges in the pipe attract the negative charges and repel the positive one,
+turning the paper into a dipole. This is called an induced dipole moment.
+The attraction is stronger than the repulsion, due to the
+shorter distance, so the net force is attractive.\index{induction!static electric and magnetic}
+
+A fancier mathematical treatment of the effect is as follows.
+If a dipole with zero total charge is placed in a uniform field, it may experience a torque, but
+it will not experience any \emph{force}. The situation changes if the field is nonuniform.
+The force in the $x$ direction is
+\begin{equation*}
+  F_x = -\frac{\partial U}{\partial x}.
+\end{equation*}
+We then have
+\begin{equation*}
+  F_x = -\frac{\partial }{\partial x}(\vc{D}\cdot\vc{E}) = \vc{D}\cdot\frac{\partial \vc{E}}{\partial x},
+\end{equation*}
+which depends on the dipole's properties only through $\vc{D}$. Similar expressions apply for the $y$ and $z$
+components.\index{dipole!force in nonuniform field}\label{force-on-dipole-in-nonuniform-field}
+
+This principle can be used as a way of measuring the unknown dipole
+moments of a beam of particles, as in figure
+\figref{dipole-spectrometer-sideways}.  A magnetic version of this device was
+used in the historic Stern-Gerlach experiment\index{Stern-Gerlach experiment} that discovered the spin
+of the electron.
+
+<%
+  fig(
+    'dipole-spectrometer-sideways',
+    %q{An electric dipole spectrometer. A beam of randomly oriented dipoles is shot through a ``croquet hoop''
+       consisting of two fixed positive charges. Although the field along the central axis of symmetry equals zero,
+       the field is nonuniform, and therefore the dipoles feel a nonvanishing force, and are sorted out according
+       to their orientations.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+<% self_check('dipole-spectrometer-sense-making',<<-'SELF_CHECK'
+In figure \figref{dipole-spectrometer-sideways}, one of the dipoles
+is shown emerging from the spectrometer after being deflected
+upward. Why does it make sense, given its orientation,
+that this particular dipole was deflected in this direction?
+  SELF_CHECK
+  ) %>
+
+
+<% end_sec('dipole') %>
+
+<% begin_sec("E=mc$^2$",nil,'mass-energy-equivalence') %>
+<% begin_sec("Fields carry inertia",nil,'fields-carry-inertia') %>\index{field!inertia of}
+<% marg() %>
+<%
+  fig(
+    'mass-energy',
+    %q{The black box has electromagnetic fields inside. If we shake it, it has inertia.}
+  )
+%>
+<% end_marg %>
+Suppose you're given a black box, figure \figref{mass-energy}. You're not allowed to open it, but you're able
+shake it around and measure its momentum.
+By trial and error, you find that there is some frame in which 
+its momentum is zero. (If there are things moving around inside, this
+may not be the frame in which the externally visible cardboard sides of the
+box are at rest.) This is what we might as well call the box's rest frame,
+the frame in which it is at rest, in some over-all sense.
+
+Next you can measure its nonzero momentum $p$ when you shake it around at various
+velocities. Knowing $p$ at a particular $v$ allows you to infer the mass, $m=p/v$.
+
+Now suppose you do this, not knowing that inside the box is an
+electromagnetic field, which has \emph{zero} mass. The energies and
+momenta you measure are those of the \emph{fields} alone.  You will
+find a frame in which the momentum is zero. This could be a frame in
+which the field is purely electric. If you now set the box in motion,
+the original electric field pattern turns into a new electric field
+plus a magnetic field pattern.\footnote{We assume that the fields are
+transported with the cardboard box, so that the result of moving the
+box at velocity $v$ is the same as if we left the box unaccelerated
+and simply took our measurements while \emph{we} were moving at $v$.
+In reality the results of accelerating the box would depend on the details of how the fields were
+created and sustained.}  These electric and magnetic fields have some
+momentum density, proportional to $\vc{E}\times\vc{B}$.  You measure
+the total momentum. You infer a certain mass. 
+
+Hm. This seems like mass without mass. There are no material particles inside the box,
+and yet the box acts like it has mass.
+
+Suppose that the field is purely electric in the box's rest frame, and we have
+a way to make this electric field stronger or weaker.  When we do this and
+then set the box in motion, the energy of the
+fields and the mass we infer change by equal factors. For example, if
+we increase the electric field by a factor of 3, then the energy goes
+up by a factor of 9. But when the box is moving, this also has the
+effect of multiplying $\vc{B}$ by a factor of 3
+(because the transformation of the fields is linear,
+p.~\pageref{eb-transform-linear}), so $\vc{E}\times\vc{B}$ goes up
+by a factor of 9. This means that the momentum goes up by 9 times, and so does
+the mass that we infer at a given velocity.
+<% end_sec('fields-carry-inertia') %>
+
+<% begin_sec("Equivalence of mass and energy",nil,'mass-energy-equiv-for-fields') %>\index{energy!equivalence to mass}
+In this example, energy and mass are \emph{equivalent}. Based on
+units, the relation must be of the form $E=(\text{constant})mc^2$,
+where the constant is unitless.  Einstein showed that the unitless
+constant was equal to 1, and was the same for any system, regardless
+of what type or types of energy are involved.\footnote{Here the
+``system'' has to be an isolated one. If the system is not isolated,
+then it can be exchanging energy and momentum with the outside world.
+The analysis then gets more complicated, and $E=mc^2$ can be false.} This is the famous $E=mc^2$,
+which states that mass and energy are equivalent.
+
+The equation $E=mc^2$ tells us how much energy is equivalent to how
+much mass: the conversion factor is the square of the speed of light,
+$c$. Since $c$ a big number, you get a really really big number when
+you multiply it by itself to get $c^2$. This means that even a small
+amount of mass is equivalent to a very large amount of energy.
+Conversely, an ordinary amount of energy corresponds to an extremely
+small mass (example \ref{eg:rustingnail}), and this is why nobody
+discovered mass-energy equivalence experimentally hundreds of years before
+Einstein.
+
+A full treatment of this topic would be outside the scope of this
+book, but it's fairly easy to see that if mass is equivalent to one
+form of energy, then it must be equivalent to all other forms of
+energy, with the same conversion factor.  Let's take heat as an
+example.  Suppose a rocket ship contains some electrical energy stored
+in a battery. What if we believed that $E=mc^2$ applied to electromagnetic
+energy but not to heat. Then the pilot of the rocket could use a battery
+to run a heater, decreasing the mass of the ship. Since momentum $p=mv$ is conserved,
+this would require that the ship speed up!
+
+This would not only be strange, but it would violate the principle
+that motion is relative, because the result of the experiment would be
+different depending on whether the ship was at rest or not. The only
+logical conclusion is that all forms of energy are equivalent to mass.
+Running the heater then has no effect on the motion of the ship,
+because the total energy in the ship was unchanged; one form of energy
+(electrical) was simply converted to another (heat).
+
+A somewhat different, and equally valid, way of looking at $E=mc^2$ is that
+energy and mass are not separately conserved. Therefore we can have processes
+that convert one to the other.
+
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 0.5 MJ. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 0.5 MJ. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light is
+$c=3\times10^8$ meters per second, so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
+                         &=    6\times10^{-12}\  \text{kilograms}\eqquad.
+\end{align*}
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number.
+\end{eg}
+
+<% marg() %>
+<%
+  fig(
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
   )
 %>
 <% end_marg %>
 
-\begin{dq}\label{dq:direction-of-propagation}
-The diagram shows an electric field pattern frozen at one moment in time. Let's imagine
-that it's the electric part of an electromagnetic wave. Consider four possible directions in which
-it could be propagating: left, right, up, and down. Determine whether each of these is consistent
-with Maxwell's equations. If so, infer the direction of the magnetic field.
-\end{dq}
+\begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus}\index{positron}
+Natural radioactivity in the earth produces positrons, which are like electrons but have the
+opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
+rays, a form of high-frequency light. Such a process would have been considered impossible
+before Einstein, because conservation of mass and energy were believed to be separate
+principles, and this process eliminates 100\% of the original mass. The amount of energy
+produced by annihilating 1 kg of matter with 1 kg of antimatter is
+\begin{align*}
+ E &= mc^2\\
+   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
+   &= 2\times10^{17}\ \junit\eqquad,
+\end{align*}
+which is on the same order of magnitude as a day's energy consumption for the
+entire world's population!
+
+Positron annihilation forms the basis for the medical imaging technique called
+a PET (positron emission tomography) scan, in which a positron-emitting chemical
+is injected into the patient and map\-ped by the emission of gamma rays from the parts
+of the body where it accumulates.
+\end{eg}
+
+<% end_sec('mass-energy-equiv-for-fields') %>
+
+<% begin_sec("A naughty infinity",nil,'epointinfty-implications') %>
+In this subsection we discuss a theoretical issue that ends up having far-reaching implications.
+The reader who doesn't find this side-trip interesting can skip it.
+
+Your mental picture of an electron may be either a point or a small sphere.
+Which is right? Suppose that we think of it as a sphere
+of finite radius $r$, containing a uniformly distributed charge $q$.
+Its electric field contains some amount of energy $E$, and it
+follows from units that this energy equals $kq^2/r$, multiplied by
+some unitless constant. The unitless constant is calculated in problem
+\ref{hw:epointinfty}, p.~\pageref{hw:epointinfty}, but all that matters
+for our present purposes is that it's  positive, since the energy density
+is everywhere positive, and the integral of something positive must be positive.
+
+Now clearly bad things will happen if we set $r=0$. The energy of the electric
+field will blow up to infinity. Before Einstein, we could have said that this
+was not necessarily a cosmic catastrophe. A physicist of the 19th century would
+probably have sniggered and told us patronizingly that the energy $E$ would be
+of no consequence in any case, because almost all of it was locked up in the
+part of the field very close to the electron, and was therefore basically a constant
+and fixed contribution to the total energy of the universe. Adding any constant, no
+matter how large, to the total energy of the universe has no observable consequences.
+Worrying about whether $r$ is truly \emph{exactly} zero, our supercilious friend
+tells us, is something that can never be tested experimentally, and is therefore
+a meaningless thing to discuss, like how many angels can dance on the head of a pin.
+
+But Einstein's $E=mc^2$ tells us that the issue cannot be waved away so easily.
+The field's energy is equivalent to a certain amount of mass. It should contribute
+to the electron's inertia. Now we know what the mass is, so the energy in the field
+must be $\lesssim mc^2$. This results in $r\gtrsim r_0=ke^2/mc^2$, where $r_0$ is called
+the classical electron radius, although it doesn't just apply to
+electrons.\index{electron!size}\index{electron!classical radius}\index{classical electron radius}
+Furthermore, there are processes that
+create electron-antielectron pairs, and these processes don't require
+infinite energy. The energy required to create such a pair should only
+be $2mc^2$, which is finite.
+In general, classical electromagnetism becomes an
+inconsistent theory if you consider point particles with $r\lesssim
+r_0$.
+
+Thus relativity seems to suggest that charged particles can't be pointlike,
+and that there should be a lower bound on their sizes.
+For an electron, $r_0$ is on the order of $10^{-15}$ meters. Particle
+physics experiments became good enough decades ago to search for
+internal structure in the electron at this scale, and they tell us that it doesn't
+exist, in the sense that the electron cannot be a composite particle
+at this scale. (For comparison, they tell us that a proton \emph{is} composite --- it turns out to be made of quarks.)
+
+One could imagine that the electron had a finite size without being composed of
+smaller particles, which would be consistent with the particle physics
+experiments, because they basically test whether things can be broken up
+or internally manipulated, like taking a mechanical pocketwatch and hitting it
+with a hammer. Maybe there is size without any dynamical internal structure, just a rigid charge distribution.
+Physicists around 1900 did put great effort into constructing such models of
+the electron, but they never succeeded. With hindsight, we can see that this approach, too, was
+doomed because of relativity. Relativity doesn't allow perfectly rigid objects.
+In such an object, vibrations would propagate as sound waves at infinite speed, but relativity doesn't
+allow speeds greater than $c$.
+
+So in the end, if we want to describe the charge and
+electric field of an electron at scales below $r_0$, we need some
+other theory of nature than classical electricity and magnetism. That theory is quantum
+mechanics. In nonrigorous language, quantum mechanics describes the
+scene at this scale in terms of rapid, random quantum fluctuations,
+with particle-antiparticle pairs springing into existence and then
+reannihilating.
+<% end_sec('epointinfty-implications') %>
 
 
-<% end_sec('maxwell-vacuum') %>
+<% begin_sec("Summary of relativity",nil,'summary-of-relativity') %>
 
-<% begin_sec("Einstein's motorcycle",4,'einstein-motorcycle') %>\index{Einstein, Albert}
-It seems as though we have a nice, tidy picture of electromagnetism all wrapped up. There should
-only be a few loose ends to tie up, such as how to incorporate charges and currents into
-Maxwell's equations, and how to connect Maxwell's equations to
-some practical problem-solving, such as the computation of the field of a solenoid.
+Summarizing what we know so far about relativity, we have the following:
 
-But at the Swiss Federal Polytechnic school, a physics student, about 20 years old,
-was sitting in the back of a classroom, absorbing a lecture on material similar to this,
-when he came back to a troubling, half-formed fantasy that he had originally imagined
-at the age of 16. Suppose, Albert Einstein daydreamed, that I ride on a motorcycle
-at nearly the speed of light, chasing a light wave as it passes over me. What would I
-observe? And what would happen if I rode \emph{at} the speed of light? We take up this
-train of thought again in ch.~\ref{ch:relativity}.
+\begin{itemize}
+\item Time is relative. The rate at which a clock runs is greatest in the frame where the clock is at rest.
+\item For consistency with item 1, nothing can go faster than $c$.
+\item Mass and energy are equivalent, $E=mc^2$.
+\end{itemize}
+<% end_sec('summary-of-relativity') %>
 
-<% end_sec('einstein-motorcycle') %>
+<% end_sec('mass-energy-equivalence') %>
 
 <% begin_notes %>
+\notetext{b-wire-not-radial}{Direction of the magnetic field of a wire}
+\notesummary{The magnetic field of a current-carrying wire has no radial component.}
+Let a line of charge, with constant positive charge density, lie along the $x$ axis,
+at rest in frame of reference 1. In frame 1, at a certain point on the $y$
+axis, there is a radial electric field $E_y$ and no magnetic field.
 
-\notetext{static-poynting}{Unobservable Poynting vectors}
-\notesummary{Cases exist where the Poynting vector is nonzero, but there is no
-flow of energy that is actually observable.}
-One such example would be the static field of a
-bar magnet immersed in a uniform ambient magnetic field along the
-magnet's axis. If you work out the right-hand rule for yourself at
-various points in space, you should be able to convince yourself that
-the energy flow goes in circles, like a game of musical chairs. Thus
-although it seems weird that a static field can ``have'' momentum and
-a flow of energy, there are no observable consequences because no
-region of space can gather up the energy. It's a bit like the
-situation of a rich teenager who ``has'' a few million dollars in a
-trust fund, but can't touch it until she's 21. 
+Now let frame 2 be moving to the right with speed $u$,
+and suppose that the magnetic field this point did have a nonzero radial
+component $B_y$ in this frame.
 
-\notetext{maxwell-c}{Maxwell's equations and propagation at $c$}
-\notesummary{Maxwell's equations give electromagnetic waves that propagate at $c$.}
-As in the main text, we take a wave of the form
+Or, reversing the direction of motion, let frame 3 be moving with velocity $-u$ in the $x$ direction.
+Because the magnetic field is proportional to the current, the magnetic field
+at our point of interest must be $-B_y$, as described by an observer in this frame.
+
+But this is untenable, because the transformation of the fields must take as its inputs
+only the vectors $\vc{E}$ and $\vc{u}$, the velocity of the frame of reference relative to
+the original frame. The vector $\vc{u}$ could have any direction in the $x$-$z$ plane, and
+there is not enough information in these inputs to determine, by any rotationally
+invariant function, the sign of $B_y$.
+
+
+\notetext{b-propto-i}{Proportionality of magnetic field to current}
+\notesummary{The magnetic field created by a current is exactly proportional to the current.}
+It is not surprising that the magnetic field of a current-carrying wire, as in example
+\ref{eg:field-of-wire}, p.~\pageref{eg:field-of-wire}, is approximately proportional to
+the current. This must be so based on the fact that the transformation of the fields
+is additive and is smooth as a function of the velocity. What is more remarkable is
+that this proportionality to the current is \emph{exact} at all velocities. We will
+see later that there is theoretical justification for this fact.
+
+\notetext{p-related-to-ke}{Newtonian relation between momentum and kinetic energy}
+\notesummary{As an example of the intimate relationship between momentum and kinetic
+energy, the momentum of material objects must be conserved in Newtonian mechanics if
+conservation of energy is to hold in all frames of reference.}
+The basic insight can be extracted from the special case where there
+are only two particles interacting, and they only move in one dimension,
+Conservation of energy says
+\begin{equation*}
+        K_{1i}+K_{2i}+U_i = K_{1f}+K_{2f}+U_f\eqquad.
+\end{equation*}
+For simplicity, let's assume that the interactions start after the time we're calling
+initial, and end before the instant we choose as final. Then there is no change in
+potential energy, $U_i=U_f$, and we can subtract the
+potential energies from both sides, giving.
 \begin{align*}
-  E_x &= f(z-vt) \\
-  B_y &= (1/c)f(z-vt) .
+        K_{1i}+K_{2i} &= K_{1f}+K_{2f}  \\
+        \frac{1}{2}m_1v_{1i}^2+\frac{1}{2}m_2v_{2i}^2 
+                        &= \frac{1}{2}m_1v_{1f}^2+\frac{1}{2}m_2v_{2f}^2\eqquad.
 \end{align*}
-This is the most general form of a plane wave, with any shape defined by the function
-$f$, propagating in the positive $z$ direction at velocity $v$. To see this consider
-what happens if we want to increase $t$ by $\Delta t$ while keeping the input to the function $f$
-the same: we must increase $z$ by $v\Delta t$.
+In a frame of reference moving at velocity $u$
+relative to the first one, the velocities all have $u$ added onto them:
+\begin{multline*}
+                        \frac{1}{2}m_1(v_{1i}+u)^2+\frac{1}{2}m_2(v_{2i}+u)^2 \\
+                                = \frac{1}{2}m_1(v_{1f}+u)^2+\frac{1}{2}m_2(v_{2f}+u)^2 
+\end{multline*}
+When we square a quantity like $(v_{1i}+u)^2$, we get the same $v_{1i}^2$ that
+occurred in the original frame of reference, plus two $u$-dependent terms,
+$2v_{1i}u+u^2$. Subtracting the original conservation of energy equation
+from the  version in the new frame of reference, we have
+        \begin{align*}
+                m_1v_{1i}u+m_2v_{2i}u = m_1v_{1f}u+m_2v_{2f}u\eqquad, \\
+                \intertext{or, dividing by $u$,}
+                m_1v_{1i}+m_2v_{2i} = m_1v_{1f}+m_2v_{2f}\eqquad.
+        \end{align*}
+This is a statement of conservation of momentum.
 
-The divergence vanishes, as required by Maxwell's equations,
-since neither component has a nonvanishing partial derivative
-with respect to $x$ or $y$.
+\notetext{compass-energy}{Minimizing the energy of a compass needle}
+\notesummary{We discuss the minimization of the energy in the magnetic field of a compass needle.}
+The result of our analysis of figure \figref{compass-misaligned-field-lines} on
+p.~\pageref{fig:compass-misaligned-field-lines} tells us that the compass needle will
+tend to align itself so that its own internal field is in the same direction as the
+ambient field. This is a little surprising, since the energy stored in the magnetic
+field on the interior is then increased. However, the needle also contributes to the
+field \emph{outside} itself, and this field is predominantly in the opposite direction
+compared to the interior field. It's true but not obvious that this smaller exterior
+field, integrated over the large exterior volume, ends up being the dominant effect.
 
-We now need to evaluate the curl, which we do by using the componentwise expressions
-from note \notewithoutbackref{curl-component-form}.
-\begin{align*}
-  (\operatorname{curl}\vc{E})_y &= \frac{\partial E_x}{\partial z} = f' \\
-  (\operatorname{curl}\vc{B})_x &= \frac{\partial B_y}{\partial z} = -(1/c)f' 
-\end{align*}
-Maxwell's equations require these to equal the time derivatives
-\begin{align*}
-  -\frac{\partial B_y}{\partial t} &= (v/c)f' \qquad \text{and} \\
-  \frac{1}{c^2}\frac{\partial E_x}{\partial t} &= -(v/c^2)f'.
-\end{align*}
-Equating these to each other as required by the two curl equations in Maxwell's
-equations, we find $1=v/c$ and $-1/c=-v/c^2$. These two equations are both satisfied
-if and only if $v=c$. (To get propagation with $v=-c$ we would have had to rearrange
-things so as to create a Poynting vector in that direction.)
+\notetext{dipole-energy-proof}{Dipole's energy proportional to cosine of an angle}
+\notesummary{We prove that the energy of a dipole in an external field is proportional
+to the cosine of the angle between the field and some internal axis determined by the structure of the
+dipole.}
+In the notation introduced in the main text, $\vc{B}_1$ is the field of the dipole,
+$\vc{B}_2$ the uniform external field. The  energy density of the total magnetic field at
+any given point is proportional to $(\vc{B}_1+\vc{B}_2)\cdot(\vc{B}_1+\vc{B}_2)$, with the
+only variation occurring because the whole field pattern represented by $\vc{B}_1$ can be
+rigidly rotated. Multiplying out the factors of the dot product, and discarding constant
+terms, we have $2\vc{B}_1\cdot\vc{B}_2$. The variable part of the
+total energy is found by integrating this expression over all space, but $\vc{B}_2$ is a constant,
+so we can take it outside the integral, the result being $\vc{B}_2\int \ldots \der v$, where $\ldots$
+represents whatever field is going on inside the dipole. This has the form of a vector dot product,
+which is proportional to the cosine of the angle between the two factors.
 
 <% end_notes %>
 
 <% begin_hw_sec %>
 
-<% begin_hw('easy-em-plane-wave-geometry') %>__incl(hw/easy-em-plane-wave-geometry)<% end_hw() %>
-
-<% begin_hw('plane-wave-find-b') %>__incl(hw/plane-wave-find-b)<% end_hw() %>
-
-<% marg() %>
+<% marg(-10) %>
 <%
   fig(
-    'hw-colliding-zero-poynting',
-    %q{Problem \ref{hw:colliding-zero-poynting}.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'hw-solar-constant-momentum',
-    %q{Problem \ref{hw:solar-constant-momentum}.}
+    'hw-sample-radiation',
+    %q{Problem \ref{hw:sample-radiation}.}
   )
 %>
 <% end_marg %>
 
-<% begin_hw('colliding-zero-poynting') %>__incl(hw/colliding-zero-poynting)<% end_hw() %>
+<% begin_hw('sample-radiation') %>__incl(hw/sample-radiation)<% end_hw() %>
 
-<% begin_hw('solar-constant-momentum') %>__incl(hw/solar-constant-momentum)<% end_hw() %>
-
-<% begin_hw('disprove-em-wave-fac') %>__incl(hw/disprove-em-wave-fac)<% end_hw() %>
-
-\pagebreak
-
-<% begin_hw('radiation-field-scaling-with-r') %>__incl(hw/radiation-field-scaling-with-r)<% end_hw() %>
-
+<% begin_hw('spherical-magnets') %>__incl(hw/spherical-magnets)<% end_hw() %>
 
 <%
   fig(
-    'inversesquare',
-    %q{Problem \ref{hw:radiation-field-scaling-with-r}.},
+    'hw-spherical-magnets',
+    %q{Problem \ref{hw:spherical-magnets}.},
     {'width'=>'wide'}
   )
 %>
 
-<% begin_hw('incoherent-poynting',2) %>__incl(hw/incoherent-poynting)<% end_hw() %>
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'hw-spherical-magnets-tilted',
+    %q{Problem \ref{hw:spherical-magnets-tilted}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('spherical-magnets-tilted') %>__incl(hw/spherical-magnets-tilted)<% end_hw() %>
+
+
+<% begin_hw('ebforce') %>__incl(hw/ebforce)<% end_hw() %>
+<% begin_hw('velocityfilter') %>__incl(hw/velocityfilter)<% end_hw() %>
+<% begin_hw('moveandcurve') %>__incl(hw/moveandcurve)<% end_hw() %>
+<% begin_hw('describemotioninb') %>__incl(hw/describemotioninb)<% end_hw() %>
+<% begin_hw('ambiguousb') %>__incl(hw/ambiguousb)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('ebnotpure') %>__incl(hw/ebnotpure)<% end_hw() %>
+<% begin_hw('findeandb') %>__incl(hw/findeandb)<% end_hw() %>
+<% begin_hw('ebexperiment') %>__incl(hw/ebexperiment)<% end_hw() %>
+<% begin_hw('cyclotron') %>__incl(hw/cyclotron)<% end_hw() %>
+
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'lineandsquaredipoles',
+    %q{Problem \ref{hw:lineandsquaredipoles}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('lineandsquaredipoles') %>__incl(hw/lineandsquaredipoles)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('dipole-in-nonuniform-field') %>__incl(hw/dipole-in-nonuniform-field)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('dipole-swivels-avg-vel') %>__incl(hw/dipole-swivels-avg-vel)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('electron-b-double-distance') %>__incl(hw/electron-b-double-distance)<% end_hw() %>
+
+\vfill
+
+<% begin_hw('molecular-dipoles') %>__incl(hw/molecular-dipoles)<% end_hw() %>
+
+<%
+  fig(
+    'hw-molecular-dipoles',
+    %q{Problem \ref{hw:molecular-dipoles}.},
+    {'width'=>'wide'}
+  )
+%>
+
+\pagebreak
+
+<% begin_hw('freeneutron') %>m4_include(../share/relativity/hw/freeneutron.tex)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-sector-mass-spectrometer',
+    %q{Problem \ref{hw:sector-mass-spectrometer}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('sector-mass-spectrometer',2) %>__incl(hw/sector-mass-spectrometer)<% end_hw() %>
 
 
 <% end_hw_sec() %>
 
-<% begin_lab("Polarization") %>\label{lab:polarization}
+<% begin_lab("The dipole and superposition") %>\label{lab:dipole}
 \begin{labapparatus}
-sodium gas discharge tube\\
-2 polarizing films\\
-photovoltaic cell and collimator\\
-protractor
+6 Nd magnets\\
+2 solenoids\\
+1.5 V battery\\
+battery holder\\
+stopwatch\\
+string\\
+scissors\\
+alligator clips\\
+330 $\Omega$ resistor
 \end{labapparatus}
 
 \begin{labgoal}
-Test quantitatively the hypothesis that polarization
-relates to the direction of the field vectors in an
-electromagnetic wave.
+Measure the change in the period of oscillation of a magnetic dipole as the
+external field is doubled, and compare with theory.
 \end{labgoal}
-
-Turn on the sodium gas discharge tube immediately so that it starts
-warming up. This tube acts as a lamp emitting bright light in little
-isolated pulses, each of which has a randomly oriented polarization.
-
-The polarizing films are essentially transparent pieces of plastic
-with microscopic parallel lines on them.  If you hold one of the
-polarizing films up to your eye and look around, you will see that in
-general it reduces the brightness of what you see.  But if you make
-more detailed observation, you will see that more is going on. For
-some light sources, such as the sodium discharge tube, the orientation
-of the film makes no difference, but for other sources the orientation
-does have an effect. Two good examples are the light from a cell
-phone's LCD screen and light that has undergone a glancing reflection
-from a glossy tabletop. These are polarized sources of light, and the
-film preferentially transmits different polarizations.
-
-It would not make sense for the film simply to throw away any waves
-that were not perfectly aligned with it, because a field oriented on a
-slant can be analyzed into two vector components, at 0 and
-$90\degunit$ with respect to the film. Even if one component is
-entirely absorbed, the other component should still be transmitted. 
-
-Based on these considerations, now think about what will
-happen if you look through two polarizing films at an angle
-to each other, as shown in the figure above. What will
-happen as you change the angle $\theta $?
 
 <%  
   fig(
-    'crossed-polaroids',
-    %q{Two polarizing films oriented at an angle $\theta$ relative to each other.},
-    {'width'=>'narrow','float'=>true}
+    'dipole-lab',
+    %q{The stack of neodymium magnets hangs by a thread in the end-plane of the solenoid.
+        Cross-sectional side view.},
+    {'width'=>'column','float'=>true}
   )
 %> 
 
-The idea of this lab is to make numerical measurements of the
-transmission of initially unpolarized light transmitted through two
-polarizing films at an angle $\theta$ to each other. To measure the
-intensity of the light that gets through, you will use a photocell,
-which is a device that converts light energy into a potential difference. 
+The figure shows a cross-sectional side view of a solenoid. The central axis
+runs from left to right. The idea of this lab is to hang a permanent magnet, which
+acts as a magnetic dipole, from a string, precisely located in the end-plane of
+the solenoid. The oscillation of the magnet about the solenoid's axis is exactly
+mathematically equivalent to the motion of a pendulum, so the period $T$ and
+the magnetic field $B$ supplied by the solenoid are related by $T\propto B^{-1/2}$.
+If superposition holds, then
+the field can be precisely doubled by bringing in a second solenoid, oriented the
+same way, so that one of its end-planes coincides with the dipole as well.
 
-You will use a voltmeter to measure the potential across the
-photocell when light is shining on it. A photovoltaic cell is
-a complicated nonlinear device, but I've found empirically
-that under the conditions we're using in this experiment,
-the potential is proportional to the power of the light striking
-the cell: twice as much light results in twice the potential.
+In order to create the magnetic field of the solenoid, a current is needed.
+When this current is established, and the magnetic field pops up, the field takes
+in some energy. This energy comes from a 1.5 V battery. In addition, once the circuit is hooked
+up, there is a continuous slow dissipation of energy to heat as the current flows
+through the copper wires, and the battery supplies this energy as well. The rate
+of heat dissipation is only about a milliwatt, so there is no danger that the battery
+will die. To make this work, you need to make a \emph{complete circuit}, meaning that
+there is a closed loop of wire going from one terminal of the battery to one terminal
+of the solenoid, through the solenoid, back through another wire, and ending up
+at the other terminal of the battery.
 
-This measurement requires a source of light that is
-unpolarized, constant in intensity, and comes from a
-specific direction so it can't get to the photocell without
-going through the polaroids. The ambient light in the room
-is nearly unpolarized, but varies randomly as people walk in
-front of the light fixtures, etc. A suitable source of light is the
-sodium gas discharge tube. Make sure you have allowed it to
-warm up for at least 15-20 minutes before using it; before
-it warms up, it makes a reddish light, and the polarizing films do
-not work very well on that color.
+In order to keep the current exactly constant, it is necessary to hook up both
+solenoids to the battery throughout the whole lab, not just when the second solenoid
+is needed. The cables are long enough so that it can be put far enough away (half a
+meter or so) so that its small external field will have no effect on the results
+when only the original solenoid's field is desired.
 
-Each group will be assigned an angle $\theta$.
-Measure the power $P(\theta)$ of the light
-transmitted through the two polarizing films, 
-and also measure $P(0)$ for comparison, and tabulate
-your result for $P(\theta)/P(0)$ on the board.
-Don't assume that the notches
-on the plastic housing of the polarizing films are a good
-indication of the orientation of the films themselves.
+The solenoids should be wired
+in \emph{series}, so that any charge that passes through one must also pass through
+the other. A series circuit is like a necklace with beads on it. The opposite of
+a series circuit is a parallel circuit, which has junctions giving the electrons
+choices about which way to go at certain points.
 
-Calculate a theoretical value for $P(\theta)/P(0)$ based
-on a model in which the polaroid passes only the component
-of the field vectors along a certain axis.
+Furthermore, the oscillations of the permanent magnet are rather fast and rapidly
+damped unless the current is reduced a little. We will do this by adding a component
+called a resistor to the circuit. The resistor dissipates additional energy as heat.
 
-Compare the class's results with theory.
+So, including all the parts, your series circuit will look like a necklace with the
+following ``beads'' around its circumference: battery, resistor, solenoid, solenoid,
+and back to the battery again. The order of the circuit elements in the loop actually
+has no effect on the results; because charge is conserved, it is not possible for charge
+to get lost or used up on its way around the circuit.
+
+A complication comes from the ambient field in the room, which is a combination of the
+earth's field and the field of the building materials. This field is a fraction of that
+of the solenoids, but still significant enough to affect the results. To deal with this,
+we will intentionally align the solenoids with the horizontal component of the ambient field, so that the
+vector addition of the horizontal fields is equivalent to addition of real numbers.
+Then we will take data with the current flowing in both directions, so that in one
+cases the ambient field adds to the field of the solenoid(s) and in the other it subtracts.
+Averaging the periods in these two conditions eliminates the effect of the ambient field.
 
 <% end_lab %>
+
 
 <% end_chapter() %>

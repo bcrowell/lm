@@ -5,1124 +5,494 @@
 <%
   chapter(
     '03',
-    %q{The electric potential},
-    'ch:potential'
+    %q{Models of matter},
+    'ch:matter'
   )
 %>
 
-<% begin_sec("Something is missing",nil,'something-is-missing') %>
-Sometimes in physics, as in life, we may not realize that there is a piece
-missing from a puzzle. To see that there is such a missing piece in our
-description of the electric field, consider the following seemingly minor
-technical issue. In figures \subfigref{capacitor-possible-and-impossible}{1}
-and \subfigref{capacitor-possible-and-impossible}{2}, we have two fields, either
-of which we could imagine was the correct field for a parallel-plate capacitor
-in a state of static equilibrium. 
+<% begin_sec("Binding energy of matter: two examples",nil,'binding') %>
+We know from everyday life that energy is required to break a stick, boil water,
+or drive photosynthesis in plants. In all of these examples, we have atoms or
+molecules stuck together with electrical forces, and separating them requires
+an increase in potential energy. The following two examples demonstrate how
+we can model this energy by using what we know about electrical potential energy.
 
-<% marg() %>
-<%
-  fig(
-    'capacitor-possible-and-impossible',
-    %q{%
-      Which is the correct electric field for the parallel-plate capacitor?
-    }
-  )
-%>
-<% end_marg %>
+\begin{eg}{Energy of a set of charges}\label{eg:chlorine-pentafluoride}
+\egquestion Consider the molecule shown in figure \figref{chlorine-pentafluoride}, with an atom of
+a certain element in the middle, surrounded by five atoms of a different element, arranged
+along perpendicular axes, all at equal distances $\ell$ from the central one.
+Let's take the charge of the central atom to be $5q$, and the charge of each of the
+others to be $-q$, so that the molecule is electrically neutral. If we approximate the
+atoms as point charges, what is the total electrical energy released when the atom is
+assembled, starting with its constituent parts all far away from each other?
 
-We would expect some physical law to tell us which was correct, but either
-is consistent with Gauss's law, because the field lines begin on positive
-charges and end on negative ones. This is a hint that we need some additional
-law of physics if we are to be able to fully predict the behavior of electric
-fields.
-
-Experiments show that \subfigref{capacitor-possible-and-impossible}{2}
-is right and \subfigref{capacitor-possible-and-impossible}{1} is
-wrong, and a hint as to what's going on is provided by the following
-argument. Suppose we take a positive test charge and move it around
-the rectangular closed path ABCDA, shown in figure
-\subfigref{capacitor-possible-and-impossible}{3} superimposed on the
-simpler-looking field pattern from
-\subfigref{capacitor-possible-and-impossible}{1}, in which the field is zero
-outside the capacitor. The field does positive
-work on the charge from B to C, but zero work along the other edges of
-the rectangle. Energy is released, but nothing has changed about the field
-pattern, so we can repeat the cycle as many times as we like. This is
-a perpetual motion machine, and it violates conservation of energy.
-
-The field in figure \subfigref{capacitor-possible-and-impossible}{2}
-fixes the problem. Although the field is weaker outside the capacitor, it does
-some negative work along DA. Furthermore, the field has horizontal components
-that do negative work along AB and CD. The field has been carefully contrived
-so that the total work done by the field around the rectangle is zero.
-
-For a static field, i.e., one that doesn't change as a function of time,
-we want this to be true in general:
-
-\begin{lessimportant}\label{zero-work-around-closed-loop}\index{electric field!static!conservative}
-The work done by a static electric field on a test charge, as the charge
-moves around a closed loop, is always zero.
-\end{lessimportant}
-
-A field that satisfies this criterion is referred to as conservative or,
-for reasons that will become clear soon, irrotational.
-
-Non-static electric fields do not have to be conservative. For
-example, when you go out in the sun on a hot day, the sunlight heats
-your skin. As the light wave oscillates, it does work on the charged
-particles in your body, and it does so over and over again, for as
-long as you continue your sunbath. Although we refer to this electric
-field as ``nonconservative,'' there is no violation of conservation of
-energy. The energy gained by your body as heat is balanced by the loss
-of the electric and magnetic energy of the light waves, which pass
-into nonexistence as they are absorbed.
-
-For the rest of this chapter we restrict our attention to static
-electric fields, which are conservative.  We expect the laws of
-physics to be expressible in a way that is purely local, so it should
-be good enough if the conservative property of a static electric field
-holds in the limit of very small closed loops. In fact, we will see
-that if the conservative property holds for small loops, then it is
-also automatically satisfied for large ones as well. This is
-guaranteed by a theorem which, in its various flavors and levels of
-generality, is usually called Stokes's theorem or Green's theorem.
-Stokes's theorem looks scary when expressed in fancy mathematical
-notation, but expresses a fact that turns out to be visually obvious. 
-
-<% marg() %>
-<%
-  fig(
-    'curlmeter-fac',
-    %q{%
-      The curl-meter, and the right-hand rule for making its reading into a vector.
-    }
-  )
-%>
-<% end_marg %>
-
-To make these ideas more concrete, we define an imaginary device called the
-curl-meter, shown in figure \figref{curlmeter-fac}.\index{curl}
-A set of positive charges
-is mounted around the circumference of a wheel, and a coil spring connects
-the wheel to its supporting axle, so that in the absence of any electrical
-forces, the wheel turns to a certain equilibrium orientation. If the curl-meter
-is immersed in a nonconservative electric field, then it may respond by rotating, and
-the torque that it measures is an indication of how badly nonconservative
-the field is. This is obviously not a practical, real-world device, but it is
-easy to make one in the real world out of an oscilloscope and a coil of wire.
-The basic idea of such devices is that they are like paddlewheels that will spin
-if inserted in a whirlpool.
-
-The reading on the curl-meter, called the ``curl'' of the field,
-depends on its orientation, and this suggests that
-its reading is a vector, not a scalar like the divergence.
-Indeed, in the physical realization of figure \figref{curlmeter-fac}, the
-reading comes out as a torque, and torque is a vector. Therefore we have
-a right-hand rule for expressing the curl, which is the same as the right-hand
-rule for torques. It is possible to express the curl in terms of the partial
-derivatives of the field's components, but detailed mathematical manipulations
-in that style are not necessary in order to follow the logical backbone of the
-presentation in this book, so we relegate this material to a note
-(\note{curl-component-form}). Figure \figref{div-and-curl-examples} shows some visual examples.
-<%
-  fig(
-    'div-and-curl-examples',
-    %q{Some electric fields with zero and nonzero divergences and curls.},
-    {'width'=>'wide'}
-  )
-%>
-
-In turns of the curl, we have the following local law of physics:
-
-\begin{lessimportant}
-For a static electric field, $\operatorname{curl}\vc{E}=0$.
-\end{lessimportant}
-
-\noindent This means that the work done around any \emph{small} closed loop is zero.
-Let's see how this generalizes to large loops. Stokes's theorem\index{Stokes's theorem!for zero curl}
-comes in a variety of
-versions and different levels of generality (e.g., there is a version that works in
-four dimensions, which is helpful in relativity, where time is treated as a dimension).
-For now we'll content ourselves with the special case that covers two dimensions, in the case
-where the curl is zero. (More general versions of Stokes's theorem tell us interesting
-things in the more general case where the curl can be nonzero.) For a field in a two-dimensional
-plane, the curl would point in the direction perpendicular to the plane, but we're now
-talking about the case where the curl is zero, so that issue doesn't arise.
-
-<% marg() %>
-<%
-  fig(
-    'green-simple',
-    %q{%
-      A basic version of Stokes's theorem. The electric field in the background is just
-      an example; any static field would work.
-    }
-  )
-%>
-<% end_marg %>
-In figure \figref{green-simple}, we construct the small square path ABCDA. This is small
-enough so that our local law $\operatorname{curl}\vc{E}=0$ guarantees, to good enough
-precision, that the work done on a charge around this path is zero. This approximation can
-be made as good as desired by making the squares small enough. The same thing works for
-the adjoining square DCEFD, using the same counterclockwise direction of motion.
-Now when we join the two squares together to make the rectangle ABEFA, something
-nice happens: the work done around the rectangle equals the \emph{sum} of the works done
-around the two squares. The reason this is true is that in the first square we go up from C to
-D, while in the other we go down, so when we add the works for the two squares, these two
-contributions cancel. By the way, there is nothing special about squares --- this holds for
-any shapes having an adjoining boundary.
-
-It is now clear that we can continue in this way and construct a grid that covers a piece
-of the plane of unlimited size, so that, for example, we know there is zero work done around
-the perimeter of the irregular shape shown in the figure. By making the grid fine enough,
-we can approximate any shape to the desired level of approximation, so the work done around any
-closed path is zero.
-
-Although our main topic in this chapter is the electric field, it is also true that
-static magnetic fields in a vacuum obey the same equations: 
-$\operatorname{div} \vc{B}=0$ and $\operatorname{curl}\vc{B}=0$. This is the underlying reason
-why, at large distances, electric dipole and magnetic dipole fields have the same universal form:
-the same equations have the same solutions.\label{e-b-dipole-same}
-The magnetic dipole is discussed in more detail in sec.~\ref{sec:b-dipole}, p.~\pageref{sec:b-dipole}.
-
-<%
-  fig(
-    'curl-cube',
-    %q{An electric field pattern, discussion question \ref{dq:curl-cube}.},
-    {'width'=>'wide','sidecaption'=>true,'sidepos'=>'b'}
-  )
-%>
-
-\startdq
-
-\begin{dq}\label{dq:curl-cube}
-Figure \figref{curl-cube} shows a field pattern in three dimensions, represented using field lines. A coordinate system
-is defined for reference. Discuss the signs and relative sizes of the curl's $x$, $y$, and $z$ components.
-\end{dq}
-
-<% end_sec('something-is-missing') %>
-
-
-<% begin_sec("The electric potential",nil,'potential') %>\index{potential}
-The earth's gravitational field has zero curl, and this is why it makes sense to define the
-gravitational potential energy of a test mass in the earth's field.
-If we lift the ball in figure \figref{path-independent-gravity} along path 1, then
-lower it by completing the loop along path 2, the total work done by the
-gravitational field is zero. This implies that if we lift along path 2, reversing
-the sign of the work, the amount of work done is the same as along path 1. That is,
-the work done by gravity is \emph{path-independent}. We can therefore pick some reference point,
-such as the lower position, define the ball's gravitational potential energy to be
-zero there, and define the potential energy at any other point to be the work done by
-the hand to get from the reference point to that point. The definition is unambiguous
-because its result does not depend on the path taken.
-
-<% marg() %>
-<%
-  fig(
-    'path-independent-gravity',
-    %q{%
-      The work done by gravity along paths 1 and 2 is the same.
-    }
-  )
-%>
-<% end_marg %>
-
-In the context of the gravitational field, it is of interest to define the gravitational
-potential energy per unit mass; we don't need a special scientific name for this, because
-it is simply the height relative to the reference point.
-
-Making the analogy with static electric fields, we define an electric
-potential $\phi$, which is the energy per unit charge required in
-order to move a test charge to a certain point, from a reference point. It has units
-of joules per coulomb, which can be abbreviated as volts, 1 V=1 J/C.
-In real-life electrical work, we may take the reference point to be a
-convenient object such as a water pipe. In theoretical contexts, it is
-often convenient to take the reference point to be infinitely far
-away. In informal contexts, people often refer to potential as voltage,
-and the notation $V$ can also be used instead of $\phi$.
-
-\begin{eg}{Potential surrounding a point charge}
-Given a point charge $Q$, the potential energy of a test charge $q$ at a distance
-$r$ is $kQq/r$. Dividing by the test charge, we find that the potential is
+\eganswer Each charge interacts with \emph{all} the others, not just the ones shown as
+connected to it in this ball-and-stick diagram. If we number the atoms 1 through 6, then
+we have to compute an interaction for each of the combinations, such as 12, 23, and so on.
+We don't want to count the self-energies like 11 or 22, and we also don't want to double-count
+any energies, i.e., 12 and 21 are not two separate terms in the sum. In sigma notation, we
+can notate this conveniently in either of the following equivalent forms:
 \begin{equation*}
-  \phi = \frac{kQ}{r}.
+  \sum_i \sum_{j>i} U_{ij} = \frac{1}{2} \sum_i \sum_{j\ne i}  U_{ij}.
 \end{equation*}
+In the second version, we double-count, but then divide by two at the end to compensate.
+
+This particular example has $n=6$ charges, but we can see in general, using the second
+form of the sum above, that the total number of energies will be $(n^2-n)/2$, since we have
+$n^2$ choices for the indices $i$ and $j$, $n$ of which are ruled out by the condition $i\ne j$.
+This formula, which you may want to verify for $n=1$, 2, and 3, can also be written as $n(n-1)/2$.
+It is the number of combinations of $n$ things taken 2 at a time, disregarding their order, and is
+notated $\binom{n}{2}$, also known as a binomial coefficient. In our example, we
+have $\binom{6}{2}=15$.
+
+<% marg() %>
+<%
+  fig(
+    'chlorine-pentafluoride',
+    %q{A molecule.}
+  )
+%>
+<% end_marg %>
+
+Numbering the atoms as shown in the figure, we have the following contributions to the sum:
+\begin{align*}
+  U= &  U_{12} + \text{four more similar terms, for a total of five} \\
+  +& U_{23} + \text{three more similar terms, for a total of four} \\
+  +& U_{24} + \text{one more similar terms, for a total of two} \\
+  +& U_{26} + \text{three more similar terms, for a total of four}  \\
+   &= 5U_{12}+4U_{23}+2U_{24}+4U_{26}.
+\end{align*}
+This is a total of 15 terms, which checks. Computing these explicitly, we have
+\begin{align*}
+  U &= kq^2\left(\frac{5(-5)}{r_{12}}+\frac{4}{r_{23}}+\frac{2}{r_{24}}+\frac{4}{r_{26}}\right) \\
+    &= \frac{kq^2}{\ell}\left(\frac{-25}{1}+\frac{4}{\sqrt2}+\frac{2}{2}+\frac{4}{\sqrt2}\right) \\
+    &= \frac{kq^2}{\ell}\left(-24+\frac{8}{\sqrt2}\right).
+\end{align*}
+The negative sign indicates that the system is bound with respect to complete dissociation:
+it would not be possible without an
+input of energy to pull it apart and
+separate all the ions from one another.
+
+Being able to do the calculation does not mean that this is a good model of any real-world molecule.
+There are molecules such as $\zu{ClF}_5$ that have this geometry, but our model is not consistent
+with their having this shape as a stable equilibrium, for the energy could be made more negative either by
+making $\ell$ smaller or by moving the small charges so that they were more uniformly distributed
+on the sphere, rather than clustered in a half-sphere. This is an example of a more general fact,
+which is that classical (as opposed to quantum) physics cannot explain the stability of matter.
+The electrostatic energy we have calculated \emph{does} come into play, and is roughly right for
+this molecule, but other factors are present as well.
 \end{eg}
 
-A battery is a device that maintains a desired potential difference between
-its two terminals.
-
+<% marg(-30) %>
 <%
   fig(
-    'using-voltmeter',
-    %q{A multimeter set up to be used as a voltmeter, and a person using such a meter.},
-    {'width'=>'wide'}
+    'long-molecule',
+    %q{An idealized model of a long molecule.}
   )
 %>
+<% end_marg %>
 
-The instrument for measuring electric potentials is called a\index{voltmeter}\index{multimeter}
-voltmeter (these days usually implemented as one of the functions of
-a multimeter). The voltmeter has no way of knowing what mental choice we had
-in mind as our reference potential, so all it can do is tell us the
-potential \emph{difference} between two points,
+\begin{eg}{A long molecule}\label{eg:long-molecule}
+Bulk matter, as opposed to an individual molecule, contains a large number of charges, and
+in many cases it makes sense to consider the material as infinite in extent and compute quantities
+such as electrical energy per unit of material. A simple example that has some of these
+characteristics is a long molecule, which is one-dimensional but can be idealized as
+infinite. An idealized, classical version of such a molecule is shown in figure
+\figref{long-molecule}, in which positive and negative charges alternate along a straight line.
+There are real-world long molecules, although most are not exactly
+linear (for example, DNA or a type of plastic known by the trade name Delrin), and many
+(including DNA and Delrin) cannot reasonably be modeled by this type of charge distribution.
+However, there are some compounds such as cyclopentadienyllithium that are somewhat like
+figure \figref{long-molecule}, albeit with some of the charges actually being molecules like
+pentane rather than individual atoms. In any case, let's play with this as a ``toy model''
+of bulk matter.
+% https://chemistry.stackexchange.com/questions/105183/long-linear-molecule-with-alternating-elements
+
+As in example \ref{eg:chlorine-pentafluoride}, the total energy is a sum
 \begin{equation*}
-  \Delta\phi = \frac{\Delta U}{q}.
+  U = \sum_i \sum_{j>i} U_{ij}.
 \end{equation*}
-The meter has two plugs, which can be connected with wires to the two
-points of interest. The meter allows a tiny trickle of charge to flow
-in one wire, through the meter, and out the other, and it measures the
-work done by the electric field along this path. The potential difference
-$\Delta\phi$ is then minus the work divided by the charge.
+Surprisingly, this comes out to be quite a bit simpler to evaluate than
+the one in example \ref{eg:chlorine-pentafluoride}. We are actually interested
+not in the total energy, which would be infinite, but in the energy per atom.
+If we fix the index $i$ to some arbitrary value, then we have singled out one
+atom, and the inside sum
+\begin{equation*}
+  \sum_{j>i} U_{ij}
+\end{equation*}
+can be interpreted as the energy per atom. If we label each atom by an integer, in
+sequence, then the restriction of the sum to $j>i$, to avoid double-counting,
+means that we can evaluate the
+interaction of this atom only with the ones on its right. If the charges are $\pm q$ and
+the inter-atomic spacing $\ell$, then the total energy is
+\begin{equation*}
+  U_\text{per atom} = \frac{kq^2}{\ell}\left(-1+\frac{1}{2}-\frac{1}{3}+\ldots\right).
+\end{equation*}
+The sum in parentheses is a famous one with a name, the alternating harmonic series,
+and it has the value $-\ln 2$, which can be proved, if you know about Taylor series,
+by taking the Taylor series of $\ln(1+x)$ and evaluating it at $x=1$.
+The result is
+\begin{equation*}
+  U_\text{per atom} = -\frac{kq^2\ln 2}{\ell}.
+\end{equation*}
 
-Figure \figref{using-voltmeter} shows a multimeter set up to be used as a
-voltmeter, and a person using such a meter to measure a potential difference.
-In the close-up, we see that one wire has been plugged into the COM plug
-(so called because it is used for all functions of the meter), while the
-other wire is plugged into the one marked V. The rotary dial is turned to V
-for a voltage measurement. (The position marked V with the sine wave icon would be used for
-measuring an alternating current, i.e., a voltage that was oscillating over
-time rather than static. The one marked mV would be used for measuring small voltages.)
-The digital readout reads the potential difference (V plug minus COM plug), in units
-of volts.
-Such meters are more or less standardized, so this description applies to all multimeters,
-with minor variations such as the possible use of an analog display with a needle, or
-pushbuttons rather than a rotary dial.
+Although this toy model has the same shortcomings as the one in example \ref{eg:chlorine-pentafluoride},
+it does provide some interesting insight by showing us, correctly, that the electrical energy
+of matter is not very localized, as you might have expected from ball-and-stick models.
+The sum contains contributions from pairs of atoms at arbitrarily large distances, and
+contributions from very distant terms in the series make quite big contributions --- if you
+try evaluating the alternating harmonic series on a calculator, you will find that it
+is extremely slow to converge.
 
-In the right-hand side of figure \figref{using-voltmeter}, the woman using the
-voltmeter is touching the metal tips of the two probes to two different points,
-a piece of exposed wire in the rat's nest of wiring, and a point on the chassis.
-The reading on the meter will be the difference in electric potential between these
-two points.
+For a similar description of a three-dimensional solid, see Purcell, Electricity and
+Magnetism, section 1.6.
+\end{eg}
 
-<% end_sec('potential') %>
+<% end_sec('binding') %>
 
-<% begin_sec("Constant potential throughout a conductor",nil,'const-v-in-conductor') %>
-In figure \figref{using-voltmeter}, the woman is using a point on the metal chassis of the
-electrical box as a reference. It looks like she's chosen a screw hole as a convenient
-place to make good electrical contact. This choice of a reference potential is arbitrary, and so
-we might imagine that although it would be equally valid to pick some other point on the chassis
-as a reference, the readings might then all be offset by some constant. In fact, we would find
-that the readings were all the same, because there will be no difference in potential between one
-point on the box and another.
+<% begin_sec("The discovery of the electron, and the raisin cookie model",nil,'thomson') %>\index{electron!discovery}
+Static electricity experiments such as the one with the sticky tape
+(figure \figref{twotapes-fields}, p.~\pageref{fig:twotapes-fields})
+work with essentially any substance (although they do produce bigger
+effects with some substances than with others).  This suggests that
+electric charge is a built-in feature of all matter. Quantization of
+charge seems like a hint that this charge occurs because matter is
+made out of particles, and those particles have charges that are
+integer multiples of $e$.
 
-The reason for this has to do with the fact that a metal contains a
-large number of electrons that are free to move.  A substance like
-this that has many free charge carriers is called a
-\emph{conductor},\index{conductor!defined} the opposite being an
-insulator.\index{conductor}
-The living cells in your body are pretty good conductors,
-because they have free charge carriers such as positively charged
-sodium ions and negatively charged chlorine ions, coming from the salt
-in your body.  The outer layer of your skin is an insulator because it
-consists of dry, dead cells in which ions are not free to move because
-the material is a solid rather than a liquid. These distinctions between
-conductors and insulators are quantitative rather than absolute, as we
-will see in more detail in section \ref{sec:resistance}, p.~\pageref{sec:resistance}.
-
-A good
-conductor cannot sustain a potential difference between different
-points within itself. If such a difference were set up, the charges
-would immediately begin to flow. Any positive charges would move
-toward the lower potential (as water, with positive mass, flows
-downhill), while negative charges would flow toward the higher
-potential. The system would rapidly reach an equilibrium in which the
-potential differences were eliminated. In the study of electrostatics,
-there are by definition no currents or time-varying fields, and
-therefore all charges must be in equilibrium, and this would be
-impossible if there were any differences in potential within a
-conductor.
+Until about 1897, it was assumed that all
+such particles were about the size and mass of an atom. But in that
+year, J.J.~Thomson did the experiment shown in figure \figref{thomson-simplified},\index{Thomson, J.J.}
+in which he produced a beam of
+charged particles in a vacuum tube, subjected them to a transverse
+electric field, and measured their deflection. The particles are
+initially accelerated from C to A, at which point
+they are moving along the $x$ axis with velocity $u$. Let's assume
+that this velocity is known, although the actual technique Thomson
+used to determine it is one that we will not describe until sec.~\ref{sec:b-force-on-current},
+p.~\pageref{sec:b-force-on-current}.
+The electric field between D and E is in the negative
+$y$ direction.  This field produces a force along the $y$ axis, but
+does not affect the $x$ motion, just as the earth's gravity does not
+affect the horizontal velocity of a baseball. To travel the length
+$\ell$ of electrodes D and E, the time required is $t=\ell/u$. Now $t$
+turns out to be many orders of magnitude too short to be detectable by
+eye, but during this interval the acceleration $a_y=qE/m$ caused by
+the electric field deflects the beam by a distance $y=(1/2)a_yt^2$.
+Since $y$ is known, we can infer the value of $q/m$. As we have seen
+in example \ref{eg:spark-plug}, p.~\pageref{eg:spark-plug} (the spark
+plug), this charge-to-mass-ratio is the \emph{only} property of a
+particle that we can ever infer from its motion in an electric field. 
 
 <%
   fig(
-    'doorknob',
+    'thomson-simplified',
     %q{%
-      1. The finger deposits charges on the solid, spherical, metal doorknob and is then withdrawn.
-      2. Almost instantaneously, the charges' mutual repulsion makes them redistribute themselves
-         uniformly on the surface of the sphere. The only \emph{excess} charge is on the surface;
-         charges do exist in the atoms that form the interior of
-         the sphere, but they are balanced. Charges on
-         the interior feel zero total electrical force from the ones at the surface. Charges at the surface
-         experience a net outward repulsion, but this is canceled out by the force that keeps them from
-         escaping into the air.
-      3. A voltmeter shows zero difference in voltage between any two points
-         on the interior or surface of the sphere. If the voltage difference wasn't
-         zero, then energy could be released by the flow of charge from one point to the other; this
-         only happens before equilibrium is reached.
+      Thomson's experiment proving cathode rays had electric charge
+              (redrawn and simplified from his original paper). Panel 1 shows the
+              glass vacuum tube, metal electrodes, and electric field lines.
+              Electric charge is introduced to the electrodes through wires (not shown) that feed
+              through the nipples in the glass. This creates the electric fields.
+              Panel 2 shows the beam of electrons. Because the electrons are negatively
+              charged, they accelerate in the direction opposite to that of the electric field.
     },
     {
       'width'=>'wide',
-      'sidecaption'=>false,
-      'sidepos'=>'t'
+      'sidecaption'=>false
     }
   )
 %>
 
-        Excess charge placed on a conductor, once it
-        reaches its equilibrium configuration, is entirely on the
-        surface, not on the interior (proof \note{no-charge-on-interior}). This should be intuitively reasonable
-        in figure \figref{doorknob}, for example, since the charges are all
-        repelling each other. 
+The value that Thomson found for the $q/m$ of his mystery particles
+was negative, and, more importantly, thousands of times bigger than
+the $q/m$ ratio of charged atoms (ions) as determined from chemistry
+experiments. Thomson guessed (without actually knowing for sure) that
+the charge of the particles was $-e$, and that therefore they had masses
+thousands of times smaller than the mass of an atom. He interpreted this
+as evidence that he had discovered the first subatomic particle, which
+was later named the electron.
 
-\begin{eg}{The lightning rod}\label{eg:lightning-rod}
- Suppose you have a pear-shaped conductor like the one
-        in figure \subfigref{lightning-rod}{1}.  Since the pear is a conductor,
-        there are free charges everywhere inside it. Panels 1 and 2 of the figure show
-        a computer simulation with 100 identical electric charges. In 1, the charges
-        are released at random positions inside the pear. Repulsion causes them all
-        to fly outward onto the surface and then settle down into an orderly but nonuniform
-        pattern. 
-
-        We might not have been able to guess the pattern in advance, but we can
-        verify that some of its features make sense. For example, charge A has more neighbors
-        on the right than on the left, which would tend to make it accelerate off to the left.
-        But when we look at the picture as a whole, it appears reasonable that this is prevented
-        by the larger number of more distant charges on its left than on its right.
-
-        There also seems to be a pattern to the nonuniformity: the charges collect more
-        densely in areas like B, where the surface is strongly curved, and less densely in flatter areas like C.
-<% marg(130) %>
+<% marg(0) %>
 <%
   fig(
-    'lightning-rod',
+    'raisincookie',
     %q{%
-      Example \ref{eg:lightning-rod}. In 1 and 2, charges that are visible on the front surface of the conductor
-      are shown as solid dots; the others would have to be seen through the conductor, which we
-      imagine is semi-transparent.
+      The raisin cookie model of the atom with four units of charge,
+              which we now know to be beryllium.
     }
   )
 %>
 <% end_marg %>
 
-To understand the reason for this pattern, consider \subfigref{lightning-rod}{3}.
-Two conducting spheres are connected by a conducting wire. Since the whole apparatus
-is conducting, it must all be at one voltage. As shown in problem \ref{hw:lightning-rod}
-on p.~\pageref{hw:lightning-rod}, the density of charge is greater on the smaller
-sphere. This is an example of a more general fact observed in \subfigref{lightning-rod}{2}, which is that the charge on
-a conductor packs itself more densely in areas that are more sharply curved.
+Based on his experiments, Thomson proposed a picture of the
+atom which became known as the raisin cookie model.\index{atom!raisin cookie model}\index{raisin cookie model}
+In the neutral atom, figure \figref{raisincookie}, there are four
+electrons with a total charge of $-4e$, sitting in a sphere
+(the ``cookie'') with a charge of $+4e$ spread throughout
+it. It was known that chemical reactions could not change
+one element into another, so in Thomson's scenario, each
+element's cookie sphere had a permanently fixed radius,
+mass, and positive charge, different from those of other
+elements. The electrons, however, were not a permanent
+feature of the atom, and could be tacked on or pulled out to
+make charged ions.
 
-Similar reasoning shows why Benjamin Franklin used a sharp
-        tip when he invented the lightning rod. The charged stormclouds
-        induce positive and negative charges to move to opposite
-        ends of the rod.  At the pointed upper end of the rod, the
-        charge tends to concentrate at the point, and this charge
-        attracts the lightning. The same effect can sometimes be seen when
-        a scrap of aluminum foil is inadvertently put in a microwave oven. Modern experiments (Moore \emph{et al.},
-        Journal of Applied Meteorology 39 (1999) 593) show that although
-        a sharp tip is best at starting a spark, a more moderate curve,
-        like the right-hand tip of the pear in this example, is better
-        at successfully sustaining the spark for long enough to connect
-        a discharge to the clouds.
+<% end_sec('thomson') %>
 
-\end{eg}
+<% begin_sec("The energy scale for chemistry and atomic physics",nil,'matter-atomic-e-scale') %>\index{atom!energy scale}
+The sizes of atoms were originally estimated based on a variety of techniques,
+one example being the determination of the thinnest layer of oil that cold be
+deposited on the surface of water. The results are on the order of a fraction of
+a nanometer. The smallest atom, hydrogen, has a radius of roughly 0.05 nm.
+A hydrogen atom is composed of charges $+e$ and $-e$, so
+we can estimate the electrical potential
+energy of a hydrogen atom to be something like $5\times10^{-18}\ \junit$. To within an order 
+of magnitude, this is the energy scale of all of chemistry and atomic physics.
+For example, a human body contains some number of atoms in the form of fat molecules,
+and multiplying this by the energy scale found above results in a rough estimate
+of the size of the energy reserve we all carry around with us --- typically
+on the order of 100,000 food calories, or several months' worth of survival without food.
+<% end_sec('matter-atomic-e-scale') %>
 
-<% end_sec('const-v-in-conductor') %>
+\vspace{17mm}
 
-
-<% begin_sec("Potential related to field",nil,'e-related-to-potential') %>\index{potential!related to field}\index{electric field!related to potential}
-<% begin_sec("One dimension",nil,'e-v-one-dim') %>
-Work equals force times distance, $\der W=F\der x$, so when the electric field does work
-on a test charge, the energy lost by the field is $\der U = -Eq\der x$,
-and dividing by $q$ and solving for $E$ gives
-\begin{equation*}
-  E = -\frac{\der\phi}{\der x}.
-\end{equation*}
-The minus sign reflects the plumber's basic aphorism that shit flows downhill:
-if we release a positive charge at rest in an electric field, the field will
-accelerate the charge in the direction of lower $\phi$ --- lower ``height.''
-In a different gravitational analogy, the two skateboarders in figure
-\figref{skaters-on-different-slopes} will have very different net forces
-acting on them. The one on the steep positive slope will be accelerated
-much more rapidly in the negative direction.
-
-<% marg(40) %>
+<% begin_sec("The nucleus and the planetary model",nil,'matter-nucleus') %>\index{atom!planetary model}\index{planetary model}\index{nucleus}
+<% marg() %>
 <%
   fig(
-    'skaters-on-different-slopes',
-    %q{%
-      The potential is analogous to the height, and the electric field to the slope.
-    }
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{Field generated by an electric eel}
-\egquestion
-Suppose an electric eel is 1 m long, and
-generates a voltage difference of 1000 volts between its
-head and tail. What is the electric field in the water around it?
-
-\eganswer
-We are only calculating the amount of field, not
-its direction, so we ignore positive and negative signs.
-The field is probably not constant, but we don't have enough information to take
-that into account, so let's say it's constant. In general, a derivative 
-$\der\ldots/\der\ldots$ can always be approximated by an expression of the
-form $\Delta\ldots/\Delta\ldots$ when the value of the derivative is constant, i.e.,
-you don't need calculus to find a rate of change that is constant. Therefore we have
-\begin{align*}
- |E| &\approx \frac{\Delta \phi}{\Delta  x} \\
-     &=    1000\ \zu{V/m}.
-\end{align*}
-\end{eg}
-
-\begin{eg}{Weighing an electron}\label{eg:tolman-stewart}
-J.J.~Thomson (p.~\pageref{subsec:thomson}) is considered to have
-discovered the electron because he measured its charge-to-mass ratio
-$q/m$ and found it to be much larger than that of an ionized atom,
-interpreting this as evidence that he was seeing a subatomic particle
-with a mass much small than an atom's.  But not only is the electron's
-$q/m$ relatively large compared to that of an atom, it is simply a
-huge number ($\sim-10^{11}\ \zu{C}/\kgunit$) when expressed in SI
-units. SI units are designed for human scales of experience, so this
-suggests that in everyday life we should expect it to be very
-difficult to detect any effect from the weight or inertia of an
-electron. 
-
-As an example, suppose that a metal rod of length $L$ is oriented
-upright. The conduction electrons are free to move, so they would tend
-to drop to the bottom of the rod. Electrical forces will however
-resist this segregation of positive and negative charges. To estimate
-how hard it would be to observe such an effect, let us imagine
-connecting the probes of a voltmeter to the ends of the rod. In
-equilibrium, the electrical and gravitational fields must have effects
-on an electron that cancel out. Setting the magnitudes of these forces
-equal to each other, we have $eE=mg$, and since (ignoring signs) $E=\Delta \phi/L$, we
-predict a potential difference $\Delta \phi=(m/q)gL$. For a one-meter rod,
-the predicted effect is $\sim10^{-10}\ \zu{V}$. 
-% calc -x -e "m=9.1 10^-31 kg; g=9.8 m/s2; L=1 m; V=(m/e)gL->V"
-%    V = 5.56617829287959*10^-11 V
-
-This is quite small, but not impossible to measure, and the
-theoretical prediction was confirmed for a similar experiment by
-Tolman and Stewart in a 1916 experiment at Berkeley.  This was the
-first direct evidence that the charge carriers inside a metal wire are
-in fact electrons.  Similarly, we do expect mechanical side-effects in
-any electrical circuit, e.g., a slight twitching of a flashlight when
-we turn it on or off, but these will be much too small to notice
-except with exceptionally delicate and sensitive
-tools.\index{Tolman-Stewart experiment}
-It is surprising that we can get information about the microscopic structure of a metal merely by measuring
-its bulk electrical properties in this way.
-\end{eg}
-
-In a vacuum in one dimension, Gauss's law is that $\der E/\der x=0$, and since $E=-\der\phi/\der x$,
-we have
-\begin{equation*}
-  \frac{\der^2 \phi}{\der x^2} = 0. \qquad \text{[vacuum, one dimension]}
-\end{equation*}
-This is the simplest form of various equations known as Laplace's equation (or Poisson's equation, in
-a generalized version where charges are present).
-The second derivative is a measure of curvature, so this equation states that the graph
-of the potential as a function of position is a straight line. Another
-nice ways of saying this is that the potential at a certain point is equal to the average
-of its values at nearby points on either side.
-
-Figure \figref{need-boundary-conditions} shows two examples (left and right columns) in which
-there are essentially the same charges present: a vertical strip of positive charges (black),
-and a strip of negative ones (white). This is effectively a one-dimensional problem.
-In both cases, Gauss's law is obeyed, because the field lines begin on positive charges and
-end on negative ones.
-<%
-  fig(
-    'need-boundary-conditions',
-    %q{Two different fields for essentially the same charge distribution.},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
-
-Even though the charges are the same, the fields are different. This shows that problems in
-electrostatics may not have unique solutions if we are only told about the distribution of
-charge and nothing else. As an even simpler example, we could have simply used a region of
-vacuum, with no charges at all, and any uniform field (including a zero field) would have been
-a solution.
-
-In each example, there are three regions of vacuum, and in each of these we can observe that
-the function $\phi(x)$ is a straight line. In the regions where there are charges, $\phi(x)$
-is a curve, and $\der^2\phi/\der x^2\ne 0$. In terms of the potentials, the difference between
-the two cases is that $\phi_2-\phi_1$ is a linear function. The second derivative of a linear
-function is zero, so both are consistent with Laplace's equation.
-
-In terms of the fields, $E_2-E_1$ is a uniform field.
-
-To get a unique solution to this type of electrostatics problem, we need to specify some
-\emph{boundary conditions}.\index{boundary conditions}
-For example, if we required that the field be zero at large distances
-(as $x\rightarrow\pm\infty$), then we would have uniquely specified $E_1$ as a solution.
-
-If you haven't already had a course in differential equations, you may not have heard of
-boundary conditions, but they are omnipresent in the physical sciences and engineering, and you
-have already been using them without knowing it. As a simple
-example, suppose that a hockey puck is gliding frictionless across some ice. There is a law of
-physics, Newton's second law, stating that $\der^2x/\der t^2=0$. Any linear function would be
-a solution of this equation, since the puck can move at any constant speed, in either direction.
-However, if we specify the puck's position at two times, then the linear function is uniquely
-determined. The two given positions are two points on the graph of $x(t)$, and if we connect
-them with a line segment, they are the segments left and right boundaries.
-
-Boundary conditions can have a variety of forms, and the word ``boundary''
-isn't always literal. For example, we could have given the hockey puck's
-initial position and velocity rather than its initial and final positions.
-
-In electrostatics, no physically verifiable boundary conditions can
-ever completely fix the potential, since only differences in potential
-are measurable. Another way of saying this is that it is the electric
-field that is measurable, and therefore the indefinite integral
-$\phi=-\int E\der x$ will always have an arbitrary constant of
-integration. We might wish, for example, to set $\phi=0$ at some chosen point,
-and there is nothing wrong with this boundary condition, but neither
-does it correspond to anything physically observable. 
-
-<% end_sec('e-v-one-dim') %>
-<% begin_sec("Two or three dimensions",nil,'e-v-three-dim') %>
-The topographical map in figure \figref{topo} suggests a good
-way to visualize the relationship between field and potential
-in two dimensions. Each contour on the map is a line of
-constant height; some of these are labeled with their
-elevations in units of feet. Height is related to gravitational
-energy, so in a gravitational analogy, we can
-think of height as representing potential. Where the contour
-lines are far apart, as in the town, the slope is gentle.
-Lines close together indicate a steep slope.
-<% marg(30) %>
-<%
-  fig(
-    'topo',
-    %q{%
-      A topographical map of Shelburne Falls,
-      Massachusetts.
-    }
+    'rutherfordsetup',
+    %q{Rutherford's apparatus.}
   )
 %>
 \spacebetweenfigs
 <%
   fig(
-    'voltageofpointcharge',
-    %q{%
-      The equipotentials surrounding a point charge.
-      Near the charge, the curves are so closely spaced that they blend
-      together on this drawing due to the finite width with which they were
-      drawn. Some electric fields are shown as arrows.
-    }
+    'planetarymodel',
+    %q{The planetary model of the atom.}
   )
 %>
 <% end_marg %>
+In 1909, a new experiment by Ernest Rutherford and collaborators
+forced a revision of the raisin cookie model.\index{Rutherford, Ernest}
+As shown in figure
+\figref{rutherfordsetup}, the experiment used a lump of radium, which
+was known to emit radioactivity in a form known as alpha particles,
+another name for a helium atom that has been stripped of both its
+electrons.  The alpha particles, moving at a significant fraction of
+the speed of light, struck a very thin gold foil, and most of them
+passed almost straight through it. But some were deflected by
+measurable angles, and the experimenters found, to their great
+surprise, that some rebounded at angles approaching 180 degrees.
+Rutherford said, ``We have been able to get some of the alpha
+particles coming backwards. It was almost as incredible as if you
+fired a 15-inch shell at a piece of tissue paper and it came back to
+hit you.''
 
-If we walk along a straight line, say straight east from the
-town, then height (potential) is a function of the east-west
-coordinate $x$. The slope along such a line is
-$\der \phi/\der x$ (the rise over the run), and the electric
-field is minus this derivative.
+This observation proved impossible to explain in the raisin cookie
+model, because the kinetic energies of the alpha particles were many
+orders of magnitude greater than the energy scale estimated in
+sec.~\ref{subsec:matter-atomic-e-scale}.  At this point, the
+Rutherford group dusted off an unpopular and neglected model of the
+atom, in which all the electrons orbited around a small, positively
+charged core or ``nucleus,'' just like the planets orbiting around the
+sun. All the positive charge and nearly all the mass of the atom would
+be concentrated in the nucleus, rather than spread throughout the atom
+as in the raisin cookie model. The positively charged alpha particles
+would be repelled by the gold atom's nucleus, but most of the alphas
+would not come close enough to any nucleus to have their paths
+drastically altered. The few that did come close to a nucleus,
+however, could rebound backwards from a single such encounter, since
+the nucleus of a heavy gold atom would be fifty times more massive
+than an alpha particle.
 
-What if everything isn't confined to a straight line? Water
-flows downhill. Notice how the streams on the map cut
-perpendicularly through the lines of constant height.
+The nucleus was later found to be a cluster of particles called
+protons, with charge $+e$, and electrically neutral particles called
+neutrons.  The number of protons is notated $Z$, and referred to as
+the atomic number. The total number of neutrons and protons is notated
+$A$, and for light, stable nuclei is usually about equal to $2Z$,
+i.e., the numbers of neutrons and protons are roughly equal.
 
-It is possible to map potentials in the same way, as shown in
-figure \figref{voltageofpointcharge}. Each curve is a line of constant
-potential, called an equipotential. In the full three-dimensional representation,
-the equipotentials would be surfaces. Moving along an equipotential is like
-walking along a hillside without moving up or down. The electric field is strongest where the
-equipotentials are closest together, and the
-electric field vectors always point perpendicular to the
-equipotentials. Figure \figref{dipole-equipotentials} shows a representation in this style
-for the field of a dipole, overlaid with the field lines.
+The trouble with the planetary model was that, as we will see in
+ch.~\ref{ch:radiation}, an accelerating electric charge radiates
+light. This would have caused the orbiting electrons to lose energy
+and spiral into the nucleus. The resolution of this problem would have
+to wait until the classical picture of the atom was replaced by one involving
+the new field of quantum physics.
+<% end_sec('matter-nucleus') %>
 
-<%
-  fig(
-    'dipole-equipotentials',
-    %q{The field lines (solid) and equipotentials (dashed lines) of a dipole.},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
+\vspace{17mm}
 
-The one-dimensional relationship $E=-\der \phi/\der x$ generalizes
-to three dimensions as follows: 
-\begin{align*}
-  E_x  &=  -\frac{\partial \phi}{\partial x}  \\
-  E_y  &=  -\frac{\partial \phi}{\partial y}  \\
-  E_z  &=  -\frac{\partial \phi}{\partial z}  
-\end{align*}
-This can be notated using the symbol $\nabla$, called the gradient operator,\index{gradient}
-\begin{equation*}
-  \vc{E} = -\nabla \phi.
-\end{equation*}
+<% begin_sec("The energy scale for nuclear physics",nil,'matter-nuclear-e-scale') %>
 
-\begin{eg}{A uniform field}
-\egquestion Find the electric field corresponding to the potential $\phi=ax+by$,
-where $a$ and $b$ are constants.
-
-\eganswer The gradient of $\phi$ has $x$ and $y$ components $a$ and $b$, so
-\begin{align*}
-  E_x &= -a \qquad \text{and} \\
-  E_y &= -b.
-\end{align*}
-\end{eg}
-
-<% end_sec('e-v-three-dim') %>
-<% end_sec('e-related-to-potential') %>
-
-<% begin_sec("Summary of div, grad, and curl",nil,'derivative-roundup') %>
-At this point in the text, we have encountered all three of the important derivative operators of vector calculus,
-described in visual terms. We also know how to calculate two of them explicitly for a given field. 
-This book is designed so that you can follow all the ideas and do all the problems while concurrently taking a one-semester vector calculus
-course. The details are mostly delayed until the end of this book, so that you shouldn't be overwhelmed
-by the math even if, as often happens, your vector calculus course doesn't get to the good stuff until the last few weeks.
-Here is a summary of how the derivative operators differ from each other:
-
-\begin{tabular}{lllp{50mm}}
-\emph{operator} & \emph{input} & \emph{output} & \emph{measures}\\
-$\operatorname{div}$ & vector field & scalar & how much the field spreads out from a point\\
-$\operatorname{curl}$ & vector field & vector & how much the field rotates \\
-gradient, $\nabla$    & scalar field & vector & how fast the field changes, and the direction of steepest change
-\end{tabular}
-
-Because they're all derivatives, they also all have some properties in common:
-\begin{itemize}
-\item When you apply them to a constant, they give zero.
-\item They have the additive or  ``linear'' property that the derivative of a sum is the sum of the derivatives.
-\end{itemize}
-
-These three operators are the only possible spatial derivative operators\index{There is also the
-time derivative $\partial/\partial t$.} that are rotationally invariant
-(sec.~\ref{subsec:rotational-invariance}, p.~\pageref{subsec:rotational-invariance}), meaning that
-if you rotate your coordinate system, the output will be the same result, just reexpressed in the
-new coordinate system. Because coordinate systems are just a human choice, any physically meaningful
-derivative operator has to have this property, and therefore the fundamental laws of electricity and
-magnetism can only be expressed in terms of these three operators. These laws of
-physics are called Maxwell's equations, and are summarized on p.~\pageref{fig:maxwell-summary}.
-
-By the end of this book, we will have fleshed out our picture of vector calculus a little more, and
-this more complete picture is summarized in sec.~\ref{sec:vector-calc-roundup}, p.~\pageref{sec:vector-calc-roundup}.
-
-\vfill
-
-<% end_sec('derivative-roundup') %>
-
-<% begin_sec("Boundary conditions on a conductor",4,'bc-conductor') %>
-
-<% begin_sec("No component of the electric field parallel to the surface",nil,'no-e-parallel-to-surface') %>
-If a charge is located at the surface of a conductor, then moving it by an infinitesimal distance
-in any direction parallel to the surface leaves it at the same potential, so that no work is
-done by the electric field. Therefore the electric field never has any component parallel to
-the surface of a conductor.
-
-A common type of problem in electrostatics is that one is given boundary conditions in which
-the potential is specified at certain conductors.
-
-<% marg(0) %>
-<%
-  fig(
-    'sphericalcap',
-    %q{%
-      Example \ref{eg:spherical-capacitor-field-given-voltage}. Part of the
-              outside sphere has been drawn as if it is transparent, in order to
-              show the inside sphere.
-    }
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{A spherical capacitor}\label{eg:spherical-capacitor-field-given-voltage}
-\egquestion A spherical capacitor, figure \figref{sphericalcap}, consists of concentric, conducting spheres
-with radii $a$ and $b$.
-Find the electric field for $a\le r\le b$ when the potential difference between the spheres
-$\phi_b-\phi_a$ equals $\Delta\phi$.
-
-\eganswer By symmetry, we expect the field to be purely in the radial direction, and to have
-constant strength on any spherical surface concentric with the capacitor. If we take such
-a sphere as a Gaussian surface, then Gauss's law tells us that the field will be the same
-as that of a point charge $q$ at the origin, $E=kq/r^2$, where $q$ is the charge on the inner sphere.
-
-We would be done now, except that the problem is not stated in terms of $q$ but  in terms of the potential difference,
-which is what we would actually measure and control in a real-world capacitor. Integrating along a radius, we have
-\begin{align*}
-  \Delta\phi &= -\int_a^b E\:\der r \\
-             &= kq\left(\frac{1}{b}-\frac{1}{a}\right).
-\end{align*}
-Eliminating $q$ gives
-\begin{equation*}
-  E = -\frac{\Delta\phi}{\frac{1}{a}-\frac{1}{b}},
-\end{equation*}
-where the minus sign indicates that if $\phi_b>\phi_a$, the field is inward.
-At $r=a$ and $b$, this field is perpendicular to both conducting surfaces.
-\end{eg}
-
-<% end_sec('no-e-parallel-to-surface') %>
-
-<% begin_sec("The method of images",nil,'electrostatics-images') %>\index{images!method of}
-A car's radio antenna is usually in the form of a whip sticking up above its metal roof.
-This is an example involving radio waves, which are time-varying electric and magnetic fields,
-but a similar, simpler electrostatic example is the following. Suppose that we position a charge $q>0$
-at a distance $\ell$ from a conducting plane. What is the resulting electric field? The conductor has
-charges that are free to move, and due to the field of the charge $q$, we will end up with a
-net concentration of negative charge in the part of the plane near $q$. The field in the vacuum surrounding
-$q$ will be a sum of fields due to $q$ and fields due to these charges in the conducting plane.
-The problem can be stated as that of finding a solution to Poisson's equation with the boundary
-condition that $V=0$ at the conducting plane. Figure \subfigref{method-of-images}{1} shows the
-kind of field lines we expect.
-
-<% marg(0) %>
-<%
-  fig(
-    'method-of-images',
-    %q{The method of images.}
-  )
-%>
-<% end_marg %>
+For nuclear reactions, experiments show that the energy scale is about
+$10^{-13}\ \junit$ per neutron or proton, or about 6 orders of
+magnitudes more than the scale for chemical reactions discussed in
+sec.~\ref{subsec:matter-atomic-e-scale}. Let's compare this with the
+electrical energy that we expect a nucleus to have.
 
 
-This looks like a very complicated problem, but there is trick that allows us to find
-a simple solution. We can convert the problem into an equivalent one in which the conductor
-isn't present, but a fictitious \emph{image} charge $-q$ is placed at an equal distance behind
-the plane, like a reflection in a mirror, as in figure
-\subfigref{method-of-images}{2}. The field is then simply the sum of the fields of the
-charges $q$ and $-q$, so we can either add the field vectors or add the potentials. By symmetry, the
-field lines are perpendicular to the plane, so the plane is an surface of constant potential, as required.
-<% end_sec('electrostatics-images') %>
+Often, as in figure \figref{planetarymodel}, p.~\pageref{fig:planetarymodel}, we visualize
+the nucleus of an atom as a tiny dot, a point with no size. But this is impossible,
+because then the electrical potential energy of the protons would be infinite.\label{nucleus-finite-size}
+Actually, the radius of a
+medium-sized nucleus is on the order of $r\sim 3\times10^{-15}\
+\munit$, and we can take this as a typical distance between the
+electrically interacting protons.  Using this distance as an input, we
+can estimate (\note{estimate-elec-energy-in-nucleus}) the electrical
+energy of a nucleus, divided by the number of neutrons and protons, to
+be $\sim (+2\times 10^{-14}\ \junit)(Z-1)$. 
 
-<% end_sec('bc-conductor') %>
+Subject to all the crude assumptions that went into this
+order-of-magnitude estimate, this is in the right ballpark.  It would
+therefore be tempting therefore to try to interpret nuclear processes
+as involving purely electrical interactions, just like chemical
+processes. On this interpretation, the vast disparity between chemical
+and nuclear energy scales would be solely due to the very different
+values of $1/r$.
+
+But there are two things that prevent this from working.  First, we do
+observe energetic nuclear reactions and excitations that occur when
+there is only one proton on the scene, but in such cases the
+electrical energy, which is proportional to $Z-1$, would be zero ---
+there is nothing for the proton to interact with electrically.
+Second, the sign of the energy is positive, indicating that energy is
+required in order to assemble the system and could be released by
+letting it fly apart. The purely repulsive electrical interaction
+between the like charges of the protons can never explain why nuclei
+are \emph{bound}. We conclude that although electrical energy may
+often be big enough to matter in nuclear processes, there must be some
+other interaction involved as well. This is called the strong nuclear
+force. 
+
+<% end_sec('matter-nuclear-e-scale') %>
 
 <% begin_notes %>
-\notetext{curl-component-form}{The curl operator in terms of the field's components}\index{curl!component form}
-\notesummary{Fixing a Cartesian coordinate system, we find how to express the curl's components in terms
-of the derivatives of the field's components with respect to the coordinates.}
-Because we want the curl to be a kind of first derivative operator, we expect it to depend
-only on the derivatives of the field's components with respect to the coordinates. 
-The field has three components, and there are three coordinates that we can differentiate
-with respect to, so there are nine possible partial derivatives that could consider.
-Because the curl is intended to be a kind of derivative, and derivatives are additive,
-we can isolate these partial derivatives from each other and add them. E.g., it's
-conceivable (although not true, as we'll see shortly) that the $y$ component of the
-curl is $3\partial E_x/\partial x-7\partial E_y/\partial z$, but we don't have to
-consider possibilities such as $\sin(\partial E_y/\partial x)$.
 
-The partial derivative $\partial E_x/\partial x$ contributes to the
-divergence, but it can't contribute to the curl because of symmetry.
-For example, in the field $x\hat{\vc{x}}$, this is the only partial
-derivative that would be nonzero, but by symmetry the curl-meter won't
-rotate when placed in this field. By rotational invariance, we can
-immediately conclude that there is no contribution from the other
-``self'' terms, $\partial E_y/\partial y$ and $\partial E_z/\partial z$.
+\notetext{estimate-elec-energy-in-nucleus}{Estimate of the electrical energy in a nucleus}
+\notesummary{Starting from a rough estimate of the size of a typical nucleus, we make
+an order-of-magnitude estimate of its electrical energy.}
+To estimate
+the energy, we need to know how many pairs of protons are repelling one another.
+This is the binomial coefficient $\binom{Z}{2}=Z(Z-1)/2$, as in example
+\ref{eg:chlorine-pentafluoride}, p.~\pageref{eg:chlorine-pentafluoride}.
 
-Visualizing the field $y\hat{\vc{z}}$ with a curl-meter and applying the
-right-hand rule, we can tell that its curl must have a positive $x$ component.
-Up until now we have never specified the units of the curl-meter, but
-now we need to decide. We define the curl so that the result in this case
-is $+1$, so that $\partial E_z/\partial y$ occurs in the expression for the
-$x$ component of the curl. Similar reasoning produces the term $-\partial E_y/\partial z$.
-
-
-<%
-  fig(
-    'cyclicperm',
-    %q{A cyclic permutation of $x$, $y$, and $z$.},
-    {'width'=>'narrow','float'=>true}
-  )
-%>
-
-The remainder of the result follows from rotational invariance.
-It is possible to take the $x$, $y$, and $z$ axes and rotate them rigidly
-in the manner shown in the figure, called a cyclic permutation. Therefore
-if a derivative like $\partial E_z/\partial y$ occurs in the $x$ component of
-the curl, then we must have the others obtained from it by cyclic permutation,
-such as $\partial E_x/\partial z$ in the $y$ component. The result is:
-
+To estimate the electrical energy of a nucleus, per neutron or proton, we can therefore calculate
 \begin{align*}
-                (\operatorname{curl}\,\vc{E})_x &= \frac{\partial E_z}{\partial y}-\frac{\partial E_y}{\partial z} \\ 
-                (\operatorname{curl}\,\vc{E})_y &= \frac{\partial E_x}{\partial z}-\frac{\partial E_z}{\partial x}  \\ 
-                (\operatorname{curl}\,\vc{E})_z &= \frac{\partial E_y}{\partial x}-\frac{\partial E_x}{\partial y}.
+  \frac{k[Z(Z-1)/2]e^2}{r}\cdot\frac{1}{A} &\approx \frac{ke^2}{r}\cdot\frac{Z(Z-1)}{2}\cdot\frac{1}{2Z} \\
+                     &= \frac{k(Z-1)e^2}{4r} \\
+                     &\sim (+2\times 10^{-14}\ \junit)(Z-1).
+% calc -x -e "ke^2/(4(3 10^-15 m))"
 \end{align*}
 
 
-\notetext{no-charge-on-interior}{No charge on the interior of a conductor}
-\notesummary{For a conductor in equilibrium, any charge is on its surface, never in its interior.}
-The proof of this assertion is essentially Earnshaw's theorem (example \ref{eg:earnshaw-theorem},
-p.~\pageref{eg:earnshaw-theorem}).
-Suppose that a charge $q$ in the conductor. For concreteness, let's say $q$ is positive.
-By assumption, this charge is in a stable equilibrium.
-If the charge is at the surface, then this equilibrium can be created by
-both (1) the electric field, and (2) the force that keeps charges from getting out
-through the surface. But if the charge is in the interior, then only electrical
-forces can be involved, not other forces of type 2; this is essentially what we mean
-by saying that the substance is a conductor. The electric field acting on $q$ would be
-the field contributed by all the other charges, not by $q$ itself
-(\notewithoutbackref{self-force}). But now everything plays out as in the original
-argument proving Earnshaw's theorem: a stable equilibrium would require $\operatorname{div}\vc{E}<0$,
-Gauss's law forbids this negative divergence from being created by external sources.
+
 <% end_notes %>
 
 <% begin_hw_sec %>
 
-<% marg(300) %>
-<%   
-  fig(
-    'hw-two-climbing-routes',
-    %q{Problem \ref{hw:two-climbing-routes}.}
-  )
-%>
-\spacebetweenfigs
-<%   
-  fig(
-    'hw-climbing-analogy-two-slopes',
-    %q{Problem \ref{hw:climbing-analogy-two-slopes}.}
-  )
-%>
-<% end_marg %>
 
-<% begin_hw('two-climbing-routes') %>__incl(hw/two-climbing-routes)<% end_hw() %>
+<% begin_hw('energy-scale',nil) %>__incl(hw/energy-scale)<% end_hw() %>
 
-<% begin_hw('climbing-analogy-two-slopes') %>__incl(hw/climbing-analogy-two-slopes)<% end_hw() %>
+<% begin_hw('co2-equilibrium',nil) %>__incl(hw/co2-equilibrium)<% end_hw() %>
 
-<% begin_hw('screened') %>__incl(hw/screened)<% end_hw() %>
+<% begin_hw('muonic',nil) %>m4_include(../share/em-general/hw/muonic.tex)<% end_hw() %>
 
-<% begin_hw('potential-to-e-with-constants-easy') %>__incl(hw/potential-to-e-with-constants-easy)<% end_hw() %>
+<% begin_hw('electron-capture-fac',nil) %>__incl(hw/electron-capture-fac)<% end_hw() %>
 
-<% begin_hw('voltmeter-and-battery') %>m4_include(../share/em-general/hw/voltmeter-and-battery.tex)<% end_hw() %>
-
-<%
-  fig(
-    '../../../share/em-general/figs/hw-voltmeter-and-battery',
-    %q{Problem \ref{hw:voltmeter-and-battery}.},
-    {'width'=>'fullpage'}
-  )
-%>
-
-
-\pagebreak
-
-<% begin_hw('work-two-squares') %>__incl(hw/work-two-squares)<% end_hw() %>
-
-<%
-  fig(
-    'hw-work-two-squares',
-    %q{Problem \ref{hw:work-two-squares}.},
-    {'width'=>'wide'}
-  )
-%>
-
-<% begin_hw('aaa-battery-field') %>__incl(hw/aaa-battery-field)<% end_hw() %>
-
-<% marg() %>
-<%   
-  fig(
-    'hw-eink',
-    %q{Problem \ref{hw:eink}.}
-  )
-%>
-<% end_marg %>
-
-<% begin_hw('eink') %>__incl(hw/eink)<% end_hw() %>
-
-\pagebreak
 
 <% marg() %>
 <%
   fig(
-    'spark-plug',
-    %q{A spark plug, problem \ref{hw:spark-plug-conceptual}.},
-    'suffix'=>'2'
+    'hw-heline',
+    %q{Problem \ref{hw:heline}.}
   )
 %>
 \spacebetweenfigs
 <%
   fig(
-    'hw-vacuum-tube-potential',
-    %q{Problem \ref{hw:vacuum-tube-potential}.}
+    'hw-hetriangle',
+    %q{Problem \ref{hw:hetriangle}.}
   )
 %>
 <% end_marg %>
 
-<% begin_hw('spark-plug-conceptual') %>__incl(hw/spark-plug-conceptual)<% end_hw() %>
 
-<% begin_hw('dipole-potential-fac') %>__incl(hw/dipole-potential-fac)<% end_hw() %>
+<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
 
-<% begin_hw('carbondioxide') %>__incl(hw/carbondioxide)<% end_hw() %>
-
-<% begin_hw('vacuum-tube-potential') %>__incl(hw/vacuum-tube-potential)<% end_hw() %>
-
-\pagebreak
-
-<% marg(110) %>
-<%
-  fig(
-    '../../../share/em-general/figs/hw-neuron',
-    %q{Problem \ref{hw:neuronenergy}.},
-    {'suffix'=>3}
-  )
-%>
-<% end_marg %>
-
-<% begin_hw('neuronenergy') %>__incl(hw/neuronenergy)<% end_hw() %>
-
-<% begin_hw('line-charge-field-to-potential') %>__incl(hw/line-charge-field-to-potential)<% end_hw() %>
-
-<% begin_hw('uniform-sphere-potential-to-field') %>__incl(hw/uniform-sphere-potential-to-field)<% end_hw() %>
-
-\pagebreak
-
-<% begin_hw('dipole-vs-solenoid') %>__incl(hw/dipole-vs-solenoid)<% end_hw() %>
-
-<%
-  fig(
-    'hw-dipole-vs-solenoid',
-    %q{Problem \ref{hw:dipole-vs-solenoid}.},
-    {'width'=>'wide'}
-  )
-%>
-
-\vfill
-
-<% begin_hw('lightning-rod') %>
-In example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod}, suppose that the
-larger sphere has radius $a$, the smaller one $b$. (a) Show that the ratio of the charges on the two spheres
-is $q_a/q_b=a/b$. (b) Show that the density of charge (charge per unit area)
-is the other way around: the charge density on the smaller sphere is \emph{greater}
-than that on the larger sphere in the ratio $a/b$.
-<% end_hw() %>
-
-\vfill
-
-<% begin_hw('equilateralcharges') %>m4_include(../share/em-dc/hw/equilateralcharges.tex)<% end_hw() %>
-
-\pagebreak
+<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
 
 
 <% marg() %>
 <%
   fig(
-    '../../../share/em-dc/figs/hw-cathode-ray-gun',
-    %q{Problem \ref{hw:electrongun}.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    '../../../share/em-dc/figs/hw-tandem-accel',
-    %q{Problem \ref{hw:tandem}.}
+    'hw-nacl',
+    %q{Problem \ref{hw:nacl}.}
   )
 %>
 <% end_marg %>
 
-<% begin_hw('electrongun') %>m4_include(../share/em-dc/hw/electrongun.tex)<% end_hw() %>
+<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
 
 
-<% begin_hw('tandem') %>m4_include(../share/em-dc/hw/tandem.tex)<% end_hw() %>    
+<% end_hw_sec %>
 
-<% begin_hw('coax-field') %>__incl(hw/coax-field)<% end_hw() %>
+<% begin_lab("Gauss's law for magnetism") %>\label{lab:gauss-law}
 
-
-<% marg() %>
-<%
-  fig(
-    '../../../share/em-general/figs/hw-nacl',
-    %q{Problem \ref{hw:vnacl}.}
-  )
-%>
-<% end_marg %>
-
-
-<% begin_hw('vnacl',2) %>m4_include(../share/em-dc/hw/vnacl.tex)<% end_hw() %>
-
-
-<% begin_hw('image-charge-unstable') %>__incl(hw/image-charge-unstable)<% end_hw() %>
-
-<% marg() %>
-<%
-  fig(
-    'hw-image-charge-corner',
-    %q{Problem \ref{hw:image-charge-corner}.},
-    'suffix'=>'2'
-  )
-%>
-<% end_marg %>
-
-<% begin_hw('image-charge-corner',2) %>__incl(hw/image-charge-corner)<% end_hw() %>
-
-<% end_hw_sec() %>
-
-<% begin_lab("Mapping electric fields") %>\label{lab:e-field}
 \begin{labapparatus}
-board and U-shaped probe\\
-DC power supply\\
-multimeter\\
-stencils for drawing electrode shapes on paper
+magnetic field sensor\\
+box containing unknown magnet\\
+graph paper with 1 cm grid
 \end{labapparatus}
 
 \begin{labgoal}
-Visualize electric fields using equipotential curves.
-
-Test approximately whether the fringing fields of a capacitor are such that the
-curl of the electric field is zero.
+Verify Gauss's law for magnetism, using an unknown magnet sealed inside a box.
 \end{labgoal}
 
 <%  
   fig(
-    'e-field-lab-schematic',
-    %q{Circuit diagram.},
-    {'width'=>'column','float'=>true}
+    'gauss-law-lab',
+    %q{Measuring the flux through the box.},
+    {'suffix'=>'2','width'=>'narrow','float'=>true}
   )
 %> 
 
-<%  
-  fig(
-    'e-field-lab-photo',
-    %q{Photo of the apparatus, showing a different electrode pattern (two point charges).},
-    {'width'=>'column','float'=>true}
-  )
-%> 
+The unknown will be provided to you inside a cubical cardboard box about
+17 cm on a side. The magnetic field sensor is a wand like the one shown in
+figure \figref{horseshoe-magnet-components} on p.~\pageref{fig:horseshoe-magnet-components},
+which displays the component of the field parallel to the wand's axis, at a point
+near the tip, as in figure \figref{gauss-law-lab} on p.~\pageref{fig:gauss-law-lab}.
 
-Figure \figref{e-field-lab-schematic} shows a circuit diagram of the apparatus. The
-power supply provides an 8 V potential difference between the two metal
-electrodes, drawn in black.  A voltmeter measures the potential
-difference between an arbitrary reference voltage and a point of
-interest in the gray area around the electrodes. The result will be
-somewhere between 0 and 8 V.
+The following technique can be used to determine the flux through one
+side of the box.  Orient the box with that side up. Place the graph
+paper on top of it. Watching the second hand on a clock, get a
+one-second beat going. It may be helpful to have your partner rap
+their knuckles on the table. In the software, initiate a period data
+collection preset to last 17 seconds.\footnote{If using LoggerPro, do
+this using Experiment:Data collection.} Start collecting data, and
+simultaneuosly begin scanning the sensor down the rows of the graph
+paper, covering a 1 cm by 17 cm strip in one second. Use the software
+to average the data, which gives a measure of the total
+flux.\footnote{In LoggerPro, this is done through Analyze:Statistics.}
+(Conceptually flux is really a sum, not an average, but that doesn't
+matter in this experiment because Gauss's law for magnetism doesn't
+depend on whether the fluxes are measured in different units or scaled
+by some arbitrary factor.)
 
-The photo in figure \figref{e-field-lab-photo} shows the actual apparatus. The electrodes are painted with
-silver paint on a detachable board, which goes underneath the big
-board. What you actually see on top is just a piece of paper on which
-you'll trace the equipotentials with a pen. The voltmeter is connected
-to a U-shaped probe with a metal contact that slides underneath the
-board, and a hole in the top piece for your pen. 
+Adding the fluxes through all six sides of the cube provides a test of
+Gauss's law.
 
-Turn your large board upside down. Find the small detachable board
-with the parallel-plate capacitor pattern on it, and screw it to the underside of the
-equipotential board, with the silver-painted side facing down toward
-the tabletop. Use the washers to protect the silver paint so that it
-doesn't get scraped off when you tighten the screws. Now connect the
-voltage source (using the provided wires) to the two large screws on
-either side of the board. Connect the multimeter so that you can
-measure the voltage difference across the terminals of the voltage
-source. Adjust the voltage source to give 8 volts. 
-
-If you press down on the board, you can slip the paper
-between the board and the four buttons you see at the
-corners of the board. Tape the paper to your board, because the buttons aren't
-very dependable. There are plastic stencils in some of the envelopes,
-and you can use these to draw the electrodes accurately onto your paper
-so you know where they are. The photo, for example, shows a pattern
-with two point charges
-traced onto the paper.
-
-Each group will be assigned to trace one equipotential curve. Let's
-say yours is 1.0 V.
-Now put the U-probe in place so that
-the top is above the equipotential board and the bottom of
-it is below the board. You will first be looking for places
-on the pattern board where the voltage is one volt --- look
-for places where the meter reads 1.0 and mark them through
-the hole on the top of your U-probe with a pencil or pen.
-You should find a whole bunch of places there the voltage
-equals one volt, so that you can draw a nice constant-voltage
-curve connecting them. (If the line goes very far or curves
-strangely, you may have to do more.) 
-
-If you're using the PRO-100 meters, they will try to outsmart you by automatically
-choosing a range. Most people find this annoying. To defeat this misfeature,
-press the RANGE button, and you'll see the AUTO indicator on the screen turn off.
+Theoretically the validity of Gauss's law should not depend on whether
+there are additional contributions to the magnetic field from the ambient
+field in the room. However, it is easier physically to rotate the box
+rather than scanning the different sides while the box stays in one orientation.
+This means that there can be a contribution from the ambient field, which
+we need to get rid of. This can be achieved by waving the wand in the air
+where the top of the box \emph{would} be, but with the box removed.
+The result is the contribution to each flux measurement from the ambient
+field, so the final result can be corrected by subtracting six times this
+number.
 
 
 <% end_lab %>
-
 
 <% end_chapter() %>

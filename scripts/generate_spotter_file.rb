@@ -24,6 +24,8 @@ def init(book_title)
   $n_missing_marks = 0  
   $missing_checks_file = "#{Dir.pwd}/missing_checks"
   $missing_marks_file = "#{Dir.pwd}/missing_marks"
+  File.open($missing_checks_file,'w') {    |f|   } # make it empty
+  File.open($missing_marks_file,'w') {    |f|   } # make it empty
   $spotter1 = spotter_header() # header info for spotter .xml file
   $spotter2 = '' # body of spotter .xml file
   $spotter1 = $spotter1 + "<spotter title=\"#{$book_title}\">\n<log_file ext=\"log\"/>\n"

@@ -608,136 +608,6 @@ potential energy is minus the indefinite integral, or
 where the constant of integration is arbitrarily chosen to be zero, so that
 $U\rightarrow0$ as $r\rightarrow\infty$.
 
-\begin{eg}{Energy of a set of charges}\label{eg:chlorine-pentafluoride}
-\egquestion Consider the molecule shown in figure \figref{chlorine-pentafluoride}, with an atom of
-a certain element in the middle, surrounded by five atoms of a different element, arranged
-along perpendicular axes, all at equal distances $\ell$ from the central one.
-Let's take the charge of the central atom to be $5q$, and the charge of each of the
-others to be $-q$, so that the molecule is electrically neutral. If we approximate the
-atoms as point charges, what is the total electrical energy released when the atom is
-assembled, starting with its constituent parts all far away from each other?
-
-\eganswer Each charge interacts with \emph{all} the others, not just the ones shown as
-connected to it in this ball-and-stick diagram. If we number the atoms 1 through 6, then
-we have to compute an interaction for each of the combinations, such as 12, 23, and so on.
-We don't want to count the self-energies like 11 or 22, and we also don't want to double-count
-any energies, i.e., 12 and 21 are not two separate terms in the sum. In sigma notation, we
-can notate this conveniently in either of the following equivalent forms:
-\begin{equation*}
-  \sum_i \sum_{j>i} U_{ij} = \frac{1}{2} \sum_i \sum_{j\ne i}  U_{ij}.
-\end{equation*}
-In the second version, we double-count, but then divide by two at the end to compensate.
-
-This particular example has $n=6$ charges, but we can see in general, using the second
-form of the sum above, that the total number of energies will be $(n^2-n)/2$, since we have
-$n^2$ choices for the indices $i$ and $j$, $n$ of which are ruled out by the condition $i\ne j$.
-This formula, which you may want to verify for $n=1$, 2, and 3, can also be written as $n(n-1)/2$.
-It is the number of combinations of $n$ things taken 2 at a time, disregarding their order, and is
-notated $\binom{n}{2}$, also known as a binomial coefficient. In our example, we
-have $\binom{6}{2}=15$.
-
-<% marg() %>
-<%
-  fig(
-    'chlorine-pentafluoride',
-    %q{A molecule.}
-  )
-%>
-<% end_marg %>
-
-Numbering the atoms as shown in the figure, we have the following contributions to the sum:
-\begin{align*}
-  U= &  U_{12} + \text{four more similar terms, for a total of five} \\
-  +& U_{23} + \text{three more similar terms, for a total of four} \\
-  +& U_{24} + \text{one more similar terms, for a total of two} \\
-  +& U_{26} + \text{three more similar terms, for a total of four}  \\
-   &= 5U_{12}+4U_{23}+2U_{24}+4U_{26}.
-\end{align*}
-This is a total of 15 terms, which checks. Computing these explicitly, we have
-\begin{align*}
-  U &= kq^2\left(\frac{5(-5)}{r_{12}}+\frac{4}{r_{23}}+\frac{2}{r_{24}}+\frac{4}{r_{26}}\right) \\
-    &= \frac{kq^2}{\ell}\left(\frac{-25}{1}+\frac{4}{\sqrt2}+\frac{2}{2}+\frac{4}{\sqrt2}\right) \\
-    &= \frac{kq^2}{\ell}\left(-24+\frac{8}{\sqrt2}\right).
-\end{align*}
-The negative sign indicates that the system is bound with respect to complete dissociation:
-it would not be possible without an
-input of energy to pull it apart and
-separate all the ions from one another.
-
-Being able to do the calculation does not mean that this is a good model of any real-world molecule.
-There are molecules such as $\zu{ClF}_5$ that have this geometry, but our model is not consistent
-with their having this shape as a stable equilibrium, for the energy could be made more negative either by
-making $\ell$ smaller or by moving the small charges so that they were more uniformly distributed
-on the sphere, rather than clustered in a half-sphere. This is an example of a more general fact,
-which is that classical (as opposed to quantum) physics cannot explain the stability of matter.
-The electrostatic energy we have calculated \emph{does} come into play, and is roughly right for
-this molecule, but other factors are present as well.
-\end{eg}
-
-<% marg(-30) %>
-<%
-  fig(
-    'long-molecule',
-    %q{An idealized model of a long molecule.}
-  )
-%>
-<% end_marg %>
-
-\begin{eg}{A long molecule}\label{eg:long-molecule}
-Bulk matter, as opposed to an individual molecule, contains a large number of charges, and
-in many cases it makes sense to consider the material as infinite in extent and compute quantities
-such as electrical energy per unit of material. A simple example that has some of these
-characteristics is a long molecule, which is one-dimensional but can be idealized as
-infinite. An idealized, classical version of such a molecule is shown in figure
-\figref{long-molecule}, in which positive and negative charges alternate along a straight line.
-There are real-world long molecules, although most are not exactly
-linear (for example, DNA or a type of plastic known by the trade name Delrin), and many
-(including DNA and Delrin) cannot reasonably be modeled by this type of charge distribution.
-However, there are some compounds such as cyclopentadienyllithium that are somewhat like
-figure \figref{long-molecule}, albeit with some of the charges actually being molecules like
-pentane rather than individual atoms. In any case, let's play with this as a ``toy model''
-of bulk matter.
-% https://chemistry.stackexchange.com/questions/105183/long-linear-molecule-with-alternating-elements
-
-As in example \ref{eg:chlorine-pentafluoride}, the total energy is a sum
-\begin{equation*}
-  U = \sum_i \sum_{j>i} U_{ij}.
-\end{equation*}
-Surprisingly, this comes out to be quite a bit simpler to evaluate than
-the one in example \ref{eg:chlorine-pentafluoride}. We are actually interested
-not in the total energy, which would be infinite, but in the energy per atom.
-If we fix the index $i$ to some arbitrary value, then we have singled out one
-atom, and the inside sum
-\begin{equation*}
-  \sum_{j>i} U_{ij}
-\end{equation*}
-can be interpreted as the energy per atom. If we label each atom by an integer, in
-sequence, then the restriction of the sum to $j>i$, to avoid double-counting,
-means that we can evaluate the
-interaction of this atom only with the ones on its right. If the charges are $\pm q$ and
-the inter-atomic spacing $\ell$, then the total energy is
-\begin{equation*}
-  U_\text{per atom} = \frac{kq^2}{\ell}\left(-1+\frac{1}{2}-\frac{1}{3}+\ldots\right).
-\end{equation*}
-The sum in parentheses is a famous one with a name, the alternating harmonic series,
-and it has the value $-\ln 2$, which can be proved, if you know about Taylor series,
-by taking the Taylor series of $\ln(1+x)$ and evaluating it at $x=1$.
-The result is
-\begin{equation*}
-  U_\text{per atom} = -\frac{kq^2\ln 2}{\ell}.
-\end{equation*}
-
-Although this toy model has the same shortcomings as the one in example \ref{eg:chlorine-pentafluoride},
-it does provide some interesting insight by showing us, correctly, that the electrical energy
-of matter is not very localized, as you might have expected from ball-and-stick models.
-The sum contains contributions from pairs of atoms at arbitrarily large distances, and
-contributions from very distant terms in the series make quite big contributions --- if you
-try evaluating the alternating harmonic series on a calculator, you will find that it
-is extremely slow to converge.
-
-For a similar description of a three-dimensional solid, see Purcell, Electricity and
-Magnetism, section 1.6.
-\end{eg}
 
 \startdq
 
@@ -930,8 +800,8 @@ free neutron will spontaneously undergo the radioactive decay process\label{neut
 \begin{equation*}
   \text{neutron} \rightarrow \text{proton} + \text{electron} + \text{antineutrino}.
 \end{equation*}
-You'll be introduced to some of these particles more formally in section
-\ref{sec:models-of-matter}, but for now we just note the charges, in units of $e$,
+You'll be introduced to some of these particles more formally in chapter
+\ref{ch:matter}, but for now we just note the charges, in units of $e$,
 \begin{equation*}
   0 = 1 - 1 + 0,
 \end{equation*}
@@ -941,224 +811,6 @@ which satisfy conservation of charge.
 
 <% end_sec('charge') %>
 
-<% begin_sec("Models of matter",nil,'models-of-matter') %>
-
-<% begin_sec("The discovery of the electron, and the raisin cookie model",nil,'thomson') %>\index{electron!discovery}
-Static electricity experiments such as the one with the sticky tape
-(figure \figref{twotapes-fields}, p.~\pageref{fig:twotapes-fields})
-work with essentially any substance (although they do produce bigger
-effects with some substances than with others).  This suggests that
-electric charge is a built-in feature of all matter. Quantization of
-charge seems like a hint that this charge occurs because matter is
-made out of particles, and those particles have charges that are
-integer multiples of $e$.
-
-Until about 1897, it was assumed that all
-such particles were about the size and mass of an atom. But in that
-year, J.J.~Thomson did the experiment shown in figure \figref{thomson-simplified},\index{Thomson, J.J.}
-in which he produced a beam of
-charged particles in a vacuum tube, subjected them to a transverse
-electric field, and measured their deflection. The particles are
-initially accelerated from C to A, at which point
-they are moving along the $x$ axis with velocity $u$. Let's assume
-that this velocity is known, although the actual technique Thomson
-used to determine it is one that we will not describe until sec.~\ref{sec:b-force-on-current},
-p.~\pageref{sec:b-force-on-current}.
-The electric field between D and E is in the negative
-$y$ direction.  This field produces a force along the $y$ axis, but
-does not affect the $x$ motion, just as the earth's gravity does not
-affect the horizontal velocity of a baseball. To travel the length
-$\ell$ of electrodes D and E, the time required is $t=\ell/u$. Now $t$
-turns out to be many orders of magnitude too short to be detectable by
-eye, but during this interval the acceleration $a_y=qE/m$ caused by
-the electric field deflects the beam by a distance $y=(1/2)a_yt^2$.
-Since $y$ is known, we can infer the value of $q/m$. As we have seen
-in example \ref{eg:spark-plug}, p.~\pageref{eg:spark-plug} (the spark
-plug), this charge-to-mass-ratio is the \emph{only} property of a
-particle that we can ever infer from its motion in an electric field. 
-
-<%
-  fig(
-    'thomson-simplified',
-    %q{%
-      Thomson's experiment proving cathode rays had electric charge
-              (redrawn and simplified from his original paper). Panel 1 shows the
-              glass vacuum tube, metal electrodes, and electric field lines.
-              Electric charge is introduced to the electrodes through wires (not shown) that feed
-              through the nipples in the glass. This creates the electric fields.
-              Panel 2 shows the beam of electrons. Because the electrons are negatively
-              charged, they accelerate in the direction opposite to that of the electric field.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>false
-    }
-  )
-%>
-
-The value that Thomson found for the $q/m$ of his mystery particles
-was negative, and, more importantly, thousands of times bigger than
-the $q/m$ ratio of charged atoms (ions) as determined from chemistry
-experiments. Thomson guessed (without actually knowing for sure) that
-the charge of the particles was $-e$, and that therefore they had masses
-thousands of times smaller than the mass of an atom. He interpreted this
-as evidence that he had discovered the first subatomic particle, which
-was later named the electron.
-
-<% marg(0) %>
-<%
-  fig(
-    'raisincookie',
-    %q{%
-      The raisin cookie model of the atom with four units of charge,
-              which we now know to be beryllium.
-    }
-  )
-%>
-<% end_marg %>
-
-Based on his experiments, Thomson proposed a picture of the
-atom which became known as the raisin cookie model.\index{atom!raisin cookie model}\index{raisin cookie model}
-In the neutral atom, figure \figref{raisincookie}, there are four
-electrons with a total charge of $-4e$, sitting in a sphere
-(the ``cookie'') with a charge of $+4e$ spread throughout
-it. It was known that chemical reactions could not change
-one element into another, so in Thomson's scenario, each
-element's cookie sphere had a permanently fixed radius,
-mass, and positive charge, different from those of other
-elements. The electrons, however, were not a permanent
-feature of the atom, and could be tacked on or pulled out to
-make charged ions.
-
-<% end_sec('thomson') %>
-
-<% begin_sec("The energy scale for chemistry and atomic physics",nil,'matter-atomic-e-scale') %>\index{atom!energy scale}
-The sizes of atoms were originally estimated based on a variety of techniques,
-one example being the determination of the thinnest layer of oil that cold be
-deposited on the surface of water. The results are on the order of a fraction of
-a nanometer. The smallest atom, hydrogen, has a radius of roughly 0.05 nm.
-A hydrogen atom is composed of charges $+e$ and $-e$, so
-we can estimate the electrical potential
-energy of a hydrogen atom to be something like $5\times10^{-18}\ \junit$. To within an order 
-of magnitude, this is the energy scale of all of chemistry and atomic physics.
-For example, a human body contains some number of atoms in the form of fat molecules,
-and multiplying this by the energy scale found above results in a rough estimate
-of the size of the energy reserve we all carry around with us --- typically
-on the order of 100,000 food calories, or several months' worth of survival without food.
-<% end_sec('matter-atomic-e-scale') %>
-
-\vspace{17mm}
-
-<% begin_sec("The nucleus and the planetary model",nil,'matter-nucleus') %>\index{atom!planetary model}\index{planetary model}\index{nucleus}
-<% marg() %>
-<%
-  fig(
-    'rutherfordsetup',
-    %q{Rutherford's apparatus.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'planetarymodel',
-    %q{The planetary model of the atom.}
-  )
-%>
-<% end_marg %>
-In 1909, a new experiment by Ernest Rutherford and collaborators
-forced a revision of the raisin cookie model.\index{Rutherford, Ernest}
-As shown in figure
-\figref{rutherfordsetup}, the experiment used a lump of radium, which
-was known to emit radioactivity in a form known as alpha particles,
-another name for a helium atom that has been stripped of both its
-electrons.  The alpha particles, moving at a significant fraction of
-the speed of light, struck a very thin gold foil, and most of them
-passed almost straight through it. But some were deflected by
-measurable angles, and the experimenters found, to their great
-surprise, that some rebounded at angles approaching 180 degrees.
-Rutherford said, ``We have been able to get some of the alpha
-particles coming backwards. It was almost as incredible as if you
-fired a 15-inch shell at a piece of tissue paper and it came back to
-hit you.''
-
-This observation proved impossible to explain in the raisin cookie
-model, because the kinetic energies of the alpha particles were many
-orders of magnitude greater than the energy scale estimated in
-sec.~\ref{subsec:matter-atomic-e-scale}.  At this point, the
-Rutherford group dusted off an unpopular and neglected model of the
-atom, in which all the electrons orbited around a small, positively
-charged core or ``nucleus,'' just like the planets orbiting around the
-sun. All the positive charge and nearly all the mass of the atom would
-be concentrated in the nucleus, rather than spread throughout the atom
-as in the raisin cookie model. The positively charged alpha particles
-would be repelled by the gold atom's nucleus, but most of the alphas
-would not come close enough to any nucleus to have their paths
-drastically altered. The few that did come close to a nucleus,
-however, could rebound backwards from a single such encounter, since
-the nucleus of a heavy gold atom would be fifty times more massive
-than an alpha particle.
-
-The nucleus was later found to be a cluster of particles called
-protons, with charge $+e$, and electrically neutral particles called
-neutrons.  The number of protons is notated $Z$, and referred to as
-the atomic number. The total number of neutrons and protons is notated
-$A$, and for light, stable nuclei is usually about equal to $2Z$,
-i.e., the numbers of neutrons and protons are roughly equal.
-
-The trouble with the planetary model was that, as we will see in
-ch.~\ref{ch:radiation}, an accelerating electric charge radiates
-light. This would have caused the orbiting electrons to lose energy
-and spiral into the nucleus. The resolution of this problem would have
-to wait until the classical picture of the atom was replaced by one involving
-the new field of quantum physics.
-<% end_sec('matter-nucleus') %>
-
-\vspace{17mm}
-
-<% begin_sec("The energy scale for nuclear physics",nil,'matter-nuclear-e-scale') %>
-
-For nuclear reactions, experiments show that the energy scale is about
-$10^{-13}\ \junit$ per neutron or proton, or about 6 orders of
-magnitudes more than the scale for chemical reactions discussed in
-sec.~\ref{subsec:matter-atomic-e-scale}. Let's compare this with the
-electrical energy that we expect a nucleus to have.
-
-
-Often, as in figure \figref{planetarymodel}, p.~\pageref{fig:planetarymodel}, we visualize
-the nucleus of an atom as a tiny dot, a point with no size. But this is impossible,
-because then the electrical potential energy of the protons would be infinite.\label{nucleus-finite-size}
-Actually, the radius of a
-medium-sized nucleus is on the order of $r\sim 3\times10^{-15}\
-\munit$, and we can take this as a typical distance between the
-electrically interacting protons.  Using this distance as an input, we
-can estimate (\note{estimate-elec-energy-in-nucleus}) the electrical
-energy of a nucleus, divided by the number of neutrons and protons, to
-be $\sim (+2\times 10^{-14}\ \junit)(Z-1)$. 
-
-Subject to all the crude assumptions that went into this
-order-of-magnitude estimate, this is in the right ballpark.  It would
-therefore be tempting therefore to try to interpret nuclear processes
-as involving purely electrical interactions, just like chemical
-processes. On this interpretation, the vast disparity between chemical
-and nuclear energy scales would be solely due to the very different
-values of $1/r$.
-
-But there are two things that prevent this from working.  First, we do
-observe energetic nuclear reactions and excitations that occur when
-there is only one proton on the scene, but in such cases the
-electrical energy, which is proportional to $Z-1$, would be zero ---
-there is nothing for the proton to interact with electrically.
-Second, the sign of the energy is positive, indicating that energy is
-required in order to assemble the system and could be released by
-letting it fly apart. The purely repulsive electrical interaction
-between the like charges of the protons can never explain why nuclei
-are \emph{bound}. We conclude that although electrical energy may
-often be big enough to matter in nuclear processes, there must be some
-other interaction involved as well. This is called the strong nuclear
-force. 
-
-<% end_sec('matter-nuclear-e-scale') %>
-<% end_sec('models-of-matter') %>
 
 <% begin_sec("Gauss's law when the number of dimensions is effectively less than three",4,'gauss-in-lt-3-dim') %>
 Our world is three-dimensional, but it is full of physical systems that are effectively one- or
@@ -1649,21 +1301,6 @@ conserved, and this momentum has to include the momentum of the fields
 themselves.  See sec.~\ref{subsec:momentum-of-em-fields},
 p.~\pageref{subsec:momentum-of-em-fields}.)
 
-\notetext{estimate-elec-energy-in-nucleus}{Estimate of the electrical energy in a nucleus}
-\notesummary{Starting from a rough estimate of the size of a typical nucleus, we make
-an order-of-magnitude estimate of its electrical energy.}
-To estimate
-the energy, we need to know how many pairs of protons are repelling one another.
-This is the binomial coefficient $\binom{Z}{2}=Z(Z-1)/2$, as in example
-\ref{eg:chlorine-pentafluoride}, p.~\pageref{eg:chlorine-pentafluoride}.
-
-To estimate the electrical energy of a nucleus, per neutron or proton, we can therefore calculate
-\begin{align*}
-  \frac{k[Z(Z-1)/2]e^2}{r}\cdot\frac{1}{A} &\approx \frac{ke^2}{r}\cdot\frac{Z(Z-1)}{2}\cdot\frac{1}{2Z} \\
-                     &= \frac{k(Z-1)e^2}{4r} \\
-                     &\sim (+2\times 10^{-14}\ \junit)(Z-1).
-% calc -x -e "ke^2/(4(3 10^-15 m))"
-\end{align*}
 
 \notetext{div-three-d}{Divergence operator in three dimensions}\index{divergence!component form}
 \notesummary{We present the form of the divergence operator and Gauss's law in three dimensions.}
@@ -1768,21 +1405,7 @@ a spherical region centered on a point charge.
 
 <% begin_hw('inkjet',nil) %>__incl(hw/inkjet)<% end_hw() %>
 
-<% begin_hw('energy-scale',nil) %>__incl(hw/energy-scale)<% end_hw() %>
-
-\pagebreak
-
 <% begin_hw('chargemotioninfield',nil) %>__incl(hw/chargemotioninfield)<% end_hw() %>
-
-<% begin_hw('co2-equilibrium',nil) %>__incl(hw/co2-equilibrium)<% end_hw() %>
-
-<% begin_hw('muonic',nil) %>m4_include(../share/em-general/hw/muonic.tex)<% end_hw() %>
-
-
-
-<% begin_hw('electron-capture-fac',nil) %>__incl(hw/electron-capture-fac)<% end_hw() %>
-
-\pagebreak
 
 <% begin_hw('exponentialwire',nil) %>m4_include(../share/em-general/hw/exponentialwire.tex)<% end_hw() %>
 
@@ -1795,30 +1418,12 @@ a spherical region centered on a point charge.
 <% marg() %>
 <%
   fig(
-    'hw-heline',
-    %q{Problem \ref{hw:heline}.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'hw-hetriangle',
-    %q{Problem \ref{hw:hetriangle}.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
     'hw-esquare',
     %q{Problem \ref{hw:esquare}.}
   )
 %>
 <% end_marg %>
 
-
-<% begin_hw('heline') %>__incl(../../share/em-general/hw/heline)<% end_hw() %>
-
-<% begin_hw('hetriangle') %>__incl(../../share/em-general/hw/hetriangle)<% end_hw() %>
 
 <% begin_hw('esquare') %>__incl(hw/esquare)<% end_hw() %>
 
@@ -1835,8 +1440,6 @@ a spherical region centered on a point charge.
   )
 %>
 <% end_marg %>
-
-<% begin_hw('nacl',2) %>m4_include(../share/em-general/hw/nacl.tex)<% end_hw() %>
 
 <% begin_hw('croquet') %>m4_include(../share/em-general/hw/croquet.tex)<% end_hw() %>
 
