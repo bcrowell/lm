@@ -12,12 +12,17 @@
   )
 %>
 
+\vspace{20mm}
+
 <% begin_sec("Binding energy of matter: two examples",nil,'binding') %>
 We know from everyday life that energy is required to break a stick, boil water,
-or drive photosynthesis in plants. In all of these examples, we have atoms or
-molecules stuck together with electrical forces, and separating them requires
+or drive photosynthesis in plants. In all of these examples, we have atoms 
+or molecules bound together with electrical forces, and separating or
+rearranging them requires
 an increase in potential energy. The following two examples demonstrate how
 we can model this energy by using what we know about electrical potential energy.
+
+\pagebreak
 
 \begin{eg}{Energy of a set of charges}\label{eg:chlorine-pentafluoride}
 \egquestion Consider the molecule shown in figure \figref{chlorine-pentafluoride}, with an atom of
@@ -25,14 +30,14 @@ a certain element in the middle, surrounded by five atoms of a different element
 along perpendicular axes, all at equal distances $\ell$ from the central one.
 Let's take the charge of the central atom to be $5q$, and the charge of each of the
 others to be $-q$, so that the molecule is electrically neutral. If we approximate the
-atoms as point charges, what is the total electrical energy released when the atom is
+atoms as point charges, what is the total electrical energy released when the molecule is
 assembled, starting with its constituent parts all far away from each other?
 
 \eganswer Each charge interacts with \emph{all} the others, not just the ones shown as
 connected to it in this ball-and-stick diagram. If we number the atoms 1 through 6, then
 we have to compute an interaction for each of the combinations, such as 12, 23, and so on.
 We don't want to count the self-energies like 11 or 22, and we also don't want to double-count
-any energies, i.e., 12 and 21 are not two separate terms in the sum. In sigma notation, we
+any energies, e.g., 12 and 21 are not two separate terms in the sum. In sigma notation, we
 can notate this conveniently in either of the following equivalent forms:
 \begin{equation*}
   \sum_i \sum_{j>i} U_{ij} = \frac{1}{2} \sum_i \sum_{j\ne i}  U_{ij}.
@@ -47,7 +52,7 @@ It is the number of combinations of $n$ things taken 2 at a time, disregarding t
 notated $\binom{n}{2}$, also known as a binomial coefficient. In our example, we
 have $\binom{6}{2}=15$.
 
-<% marg() %>
+<% marg(30) %>
 <%
   fig(
     'chlorine-pentafluoride',
@@ -60,7 +65,7 @@ Numbering the atoms as shown in the figure, we have the following contributions 
 \begin{align*}
   U= &  U_{12} + \text{four more similar terms, for a total of five} \\
   +& U_{23} + \text{three more similar terms, for a total of four} \\
-  +& U_{24} + \text{one more similar terms, for a total of two} \\
+  +& U_{24} + \text{one more similar term, for a total of two} \\
   +& U_{26} + \text{three more similar terms, for a total of four}  \\
    &= 5U_{12}+4U_{23}+2U_{24}+4U_{26}.
 \end{align*}
@@ -261,24 +266,9 @@ of the size of the energy reserve we all carry around with us --- typically
 on the order of 100,000 food calories, or several months' worth of survival without food.
 <% end_sec('matter-atomic-e-scale') %>
 
-\vspace{17mm}
+\pagebreak
 
 <% begin_sec("The nucleus and the planetary model",nil,'matter-nucleus') %>\index{atom!planetary model}\index{planetary model}\index{nucleus}
-<% marg() %>
-<%
-  fig(
-    'rutherfordsetup',
-    %q{Rutherford's apparatus.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'planetarymodel',
-    %q{The planetary model of the atom.}
-  )
-%>
-<% end_marg %>
 In 1909, a new experiment by Ernest Rutherford and collaborators
 forced a revision of the raisin cookie model.\index{Rutherford, Ernest}
 As shown in figure
@@ -294,6 +284,23 @@ Rutherford said, ``We have been able to get some of the alpha
 particles coming backwards. It was almost as incredible as if you
 fired a 15-inch shell at a piece of tissue paper and it came back to
 hit you.''
+
+<% marg(-300) %>
+<%
+  fig(
+    'rutherfordsetup',
+    %q{Rutherford's apparatus.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'planetarymodel',
+    %q{The planetary model of the atom.}
+  )
+%>
+<% end_marg %>
+
 
 This observation proved impossible to explain in the raisin cookie
 model, because the kinetic energies of the alpha particles were many
@@ -328,8 +335,6 @@ and spiral into the nucleus. The resolution of this problem would have
 to wait until the classical picture of the atom was replaced by one involving
 the new field of quantum physics.
 <% end_sec('matter-nucleus') %>
-
-\vspace{17mm}
 
 <% begin_sec("The energy scale for nuclear physics",nil,'matter-nuclear-e-scale') %>
 

@@ -285,6 +285,7 @@ def end_marg
 end
 
 def marg(delta_y=0)
+  # positive is up
   if $in_marg then die('(marg)','marg, but already in a marg') end
   $n_marg = $n_marg+1
   $in_marg = true
