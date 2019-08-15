@@ -359,10 +359,6 @@ A complete statement of Maxwell's equations in the presence of electric and magn
     \Gamma_H &= \frac{\der \Phi_D}{\der t} + I_\text{free}
 \end{align*}
 
-Comparison with the vacuum case shows that the speed of an electromagnetic wave moving through a substance described by
-permittivity and permeability $\epsilon$ and $\mu$ is $1/\sqrt{\epsilon\mu}$. For most substances, $\mu\approx\mu_\zu{o}$, and
-$\epsilon$ is highly frequency-dependent.
-
 Suppose we have a boundary between two substances.
 By constructing a Gaussian or Amp\`{e}rian surface that extends across the boundary, we can arrive at various
 constraints on how the fields must behave as me move from one substance into the other, when there are no free currents or charges present, and the fields are static.
@@ -535,6 +531,82 @@ for an electric version of such a spectrometer.
 <% end_marg %>
 
 <% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Electromagnetic waves in matter") %>
+In example \ref{eg:dispersion-complex},
+p.~\pageref{eg:dispersion-complex}, we gave an explanation of why
+electromagnetic waves traveling through matter are \emph{dispersive}
+(sec.~\ref{sec:propagation-at-c}), i.e., their speed depends on their
+frequency. The concept is that when an electromagnetic wave enters a
+material such as a glass windowpane, charges inside the material
+oscillate in response to the wave. The charges have a resonant
+frequency (or, in real-world materials, several different resonant
+frequencies), so the amplitude and phase of their oscillation depends
+on the frequency of the driving wave.  The oscillating charges in turn
+re-emit their own wave, which superposes on top of the original wave.
+The superposition may either lead or lag behind the original wave, so
+its crests arrive early or late. The effect is identical to what we
+would expect if the speed of the wave had some other value than $c$.
+
+In that explanation, we focused on the phases and the trend of the
+effect with changing frequency, ignoring real constants. Fortunately,
+it turns out that the effect of all those ignored constants can be
+summarized in a simple way in terms of the bulk properties of the
+material.  If we compare Maxwell's equations in matter with their
+vacuum version, we see that the speed of an electromagnetic wave
+moving through a substance described by permittivity and permeability
+$\epsilon$ and $\mu$ is $1/\sqrt{\epsilon\mu}$. 
+
+For most substances, we observe that $\epsilon$ is highly frequency-dependent,
+and this is well explained by our earlier analysis in terms of
+the excitation of oscillating charges, where the behavior changes dramatically
+as the frequency passes through a resonant frequency.
+
+The possibility of $\mu\ne\mu_\zu{o}$ corresponds microscopically to a
+picture in which dipoles flip their orientation back and forth in
+response to the wave. For most substances we find that this
+isn't a signficiant effect, and 
+$\mu\approx\mu_\zu{o}$.
+
+\begin{eg}{Color interference}
+The colorful image on the cover of this book was created by
+taking two polarizing films, as in example \ref{eg:crossed-polaroids}, p.~\pageref{eg:crossed-polaroids},
+and minilab \ref{lab:polarization}, p.~\pageref{lab:polarization}, and placing
+between them a calcium sulfate crystal. At the atomic level, the crystal is a lattice of
+atoms, and the lattice is asymmetric, so that it has two distinguishable axes. Let's call these axes $x$ and $y$,
+and describe the polarization of electromagnetic waves by the direction of the electric fields.
+If a wave has a polarization in the $x$ direction, the permittivity has some value $\epsilon_x$,
+but a wave with its polarization in the $y$ direction experiences some other $\epsilon_y$. Both
+of these depend on frequency.
+
+Let's analyze the simplest possible example that elucidates the physics.
+Suppose that we orient the first polarizing film at a $45\degunit$ angle with respect to the axes,
+so that the light entering the crystal is (ignoring unitful constant factors)
+\begin{equation*}
+  \vc{E}_1 = \hat{\vc{x}}+\hat{\vc{y}}.
+\end{equation*}
+As the wave emerges from the crystal, the difference in velocity for the two components will
+put them out of phase. Let's say that the result is to reverse the phase of the $y$ component
+compared to the $x$,
+\begin{equation*}
+  \vc{E}_2 = \hat{\vc{x}}-\hat{\vc{y}}.
+\end{equation*}
+This is a 90-degree rotation compared to $\vc{E}_1$. Now suppose that the second polarizing film
+is oriented in the same direction as the first film. Then although $\vc{E}_1$ was in exactly
+the right direction to pass through, the direction of $\vc{E}_2$ is precisely wrong. The light
+is completely blocked.
+
+But this phase relationship depends not just on the thickness of the crystal and the values
+of $\epsilon_x$ and $\epsilon_y$, but also on frequency. For some other frequency of light,
+the phase of the $x$ and $y$ polarizations in $\vc{E}_2$ could end up the same as in $\vc{E}_1$, in which
+case the light would be entirely transmitted through the second filter. Of course all of the intermediate
+possibilities occur as well. For this reason, some colors are more strongly transmitted through
+this setup and some more strongly absorbed.
+\end{eg}
+
+\vfill
 
 <% end_sec() %>
 

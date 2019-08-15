@@ -1,4 +1,26 @@
 =================================================================
+troubleshooting, bugs, and workarounds
+=================================================================
+If you modify a file between compiles, it may cause ruby errors.
+  Workaround: recompile from scratch.
+  I think this may happen if your edits change which figure groups exist.
+Figures are positioned on the wrong side of the page, as if odd and even
+are confused. This continues through the end of the chapter.
+  This happened to me in May '08 with ch. 10 of SN. Doing a
+  make clean && make book to start fresh didn't help. However,
+  when I got up the next morning and tried again, it didn't happen!
+  This may be a problem where iterations of pdflatex don't converge
+  on pagination.
+Narrowfigwidecaption doesn't reliably detect even/odd page.
+Goofy typesetting of symbols at end of hw in SN.
+  Don't use \hwendpart macro at the very end of a problem.
+Figure positioning doesn't work, no feedback loop.
+  This has two possible causes:
+  (1) There is no end_chapter in the rbtex file.
+  (2) Two figures have the same name.
+
+====================
+=================================================================
 how it works
 =================================================================
 The books are written in LaTeX. There are two things that make the

@@ -242,6 +242,16 @@ the magnitudes of the electric and magnetic fields in a plane wave are
   )
 %>
 <% end_marg %>
+
+<% marg(-300) %>
+<%
+  fig(
+    'crossed-polaroids-photos',
+    %q{Example \ref{eg:crossed-polaroids}.}
+  )
+%>
+<% end_marg %>
+
 Continuing the analysis of the colliding waves, we find that the angle $\phi$
 between $\vc{E}$ and $\vc{B}$ must be a right angle. We have four units of energy
 before the waves collide: one unit in each wave's electric field, and one unit in each
@@ -254,26 +264,49 @@ Because the angle $\phi$ is fixed at $90\degunit$, it's not a property like colo
 that can distinguish one light wave from another. But we are always free to take a diagram
 like figure \figref{e-b-perpendicular} and simply spin the whole book around by an angle $\theta$.
 This is referred to as the polarization of the wave.
+
+
+\begin{eg}{Crossed polarizing films}\label{eg:crossed-polaroids}
+A polarizing filter is one that passes light that has its polarization oriented in a certain
+direction, while blocking it if the polarization is in the perpendicular direction.
+The photos show two polarizing filters that overlap, with the light coming from the back being
+a random mixture of small wave-trains with random polarizations.
+
+At the first filter, light with the ``right'' orientation gets through, while
+light with the ``wrong'' orientation is blocked. Of course, a randomly chosen angle will not
+be at exactly $0\degunit$ or $90\degunit$. A wave with an intermediate angle of polarization
+can be broken down into \emph{components} (say the components of $\vc{E}$, although it doesn't
+matter in principle whether we talk about $\vc{E}$ or $\vc{B}$, since their orientations are
+fixed relative to each other). On the average, these components are equal in energy, so
+half the light is transmitted.
+
+The filters overlap, so the light now has to pass through the second filter.
+In the top photo, the two filters have been oriented the same way, so that in principle
+any light that passes through the first filter should also get through the second without
+any reduction in intensity. Because the filters are nonideal, we do observe some further
+reduction in brightness where the filters overlap, but not very much.
+
+In the bottom photo, one filter has been rotated by $90\degunit$. Any component that
+passes the first filter is in exactly the wrong direction to get through the second,
+so we see black where the filters overlap.
+\end{eg}
+
+\startdq
+\begin{dq}
+Suppose someone tells you that a beam of light consists of a stream of electrons
+moving through space. Use the experiment in example \ref{eg:crossed-polaroids}
+to convince them that they're wrong.
+\end{dq}
+
 <% end_sec('e-b-perp') %>
 
 <% end_sec('plane-wave-geom') %>
-
-<% marg(-300) %>
-<%
-  fig(
-    'vacuum-dispersion',
-    %q{Arrival times of waves with different frequencies from gamma-ray burst 160625B, from
-       Wei \emph{et. al}, 2018. In this histogram, the vertical axis is a count of the
-       number of wave pulses arriving per unit time.}
-  )
-%>
-<% end_marg %>
 
 <% begin_sec("Propagation at a fixed velocity",nil,'propagation-at-c') %>\index{electromagnetic wave!propagation at $c$}
 If we look at the speed of waves in general, we see two main types of behavior. In one type,
 exemplified by sound waves or waves on a coil spring as in figure \figref{coil-spring-pulse},
 all waves travel at the same speed, regardless of their amplitude or frequency.
-Water waves are a good example of another type, called a dispersive wave. A dispersive
+Water waves are a good example of another type, called a dispersive wave.\index{dispersion}\label{dispersion-introduced} A dispersive
 wave travels at different velocities depending on its frequency. Only a perfect sine wave
 has a definite frequency, so typically if we generate a wave with some randomly chosen
 shape, it will act like a mixture of different frequencies. (There is a mathematical theorem
@@ -286,6 +319,18 @@ see their competitors. In a wave, this causes the wave pattern to spread out, or
 can tell that the wave pulse on the coil spring in figure \figref{coil-spring-pulse} is propagating
 nondispersively, because it maintains its shape as it moves.
 
+<% marg(80) %>
+<%
+  fig(
+    'vacuum-dispersion',
+    %q{Arrival times of waves with different frequencies from gamma-ray burst 160625B, from
+       Wei \emph{et. al}, 2018. In this histogram, the vertical axis is a count of the
+       number of wave pulses arriving per unit time.}
+  )
+%>
+<% end_marg %>
+
+
 We know on both theoretical and empirical grounds that
 electromagnetic waves are nondispersive when they travel in a vacuum.
 Figure \figref{vacuum-dispersion} shows some astronomical evidence that is
@@ -297,7 +342,7 @@ arrived within seconds of one another.
   fig(
     'plane-wave-propagating',
     %q{A plane wave propagating to the right, shown at one time (top) and a later one (bottom).},
-    {'width'=>'wide','sidecaption'=>true}
+    {'width'=>'wide','sidecaption'=>false,'sidepos'=>'b'}
   )
 %>
 
@@ -311,6 +356,13 @@ these things are \emph{not} independently variable. Since electromagnetic waves 
 of energy to momentum, they must travel at a fixed speed,\label{em-waves-fixed-v}
 which we will show on p.~\pageref{em-waves-propagate-at-c} is $c$. They are nondispersive, so
 a plane wave glides along rigidly as in figure \figref{plane-wave-propagating}, without changing shape.
+
+By the way, all of this applies only to a vacuum. For example, there
+is dispersion when light travels through glass: we observe that blue travels more
+slowly than red by about 1\%. The theoretical argument about energy and momentum
+doesn't apply here because there are transfers of energy and momentum
+between the light and the glass while the light is passing through.
+
 <% end_sec('propagation-at-c') %>
 
 <% begin_sec("The electromagnetic spectrum",nil,'em-spectrum') %>
@@ -383,7 +435,7 @@ microwave ovens and not x-ray ovens!)
 
 <% end_sec('em-spectrum') %>
 
-<% begin_sec("Momentum and rate of energy flow",nil,'p-and-energy-flow') %>
+<% begin_sec("Momentum and rate of energy flow",4,'p-and-energy-flow') %>
 <% begin_sec("Momentum of a plane wave",nil,'p-plane-wave') %>\index{electromagnetic wave!momentum}
 Recalling the relations $\der\vc{p}/\der v =(1/4\pi k)\vc{E}\times\vc{B}$,
 $\der U_E/\der v=(1/8\pi k)E^2$, and $\der U_B/\der v=(c^2/8\pi k)B^2$, it is
@@ -447,8 +499,6 @@ in everyday life.
   )
 %>
 
-\vfill
-
 \begin{eg}{Poynting vector of a plane wave}\label{eg:wave-poynting}
 Figure \figref{wave-poynting} shows the Poynting vector, in the sea-of-arrows representation,
 for the example of a sinusoidal plane wave. In a coordinate system where $+z$ is to the right, frozen at one
@@ -457,8 +507,6 @@ and $c\vc{B}=A\hat{\vc{y}}\sin kz$, so that $\vc{S}=(A^2c/4\pi k)\hat{\vc{z}}\si
 The figure shows examples of regions that have a net flow of energy in or out.
 \end{eg}
 
-\vfill
-
 In example \ref{eg:wave-poynting}, we have regions of space that are
 gaining energy, and others that are losing it. It's because there are
 ``winners and losers'' that these energy flows are physically
@@ -466,8 +514,6 @@ observable.  As a technical aside, it is also possible to have examples in which
 Poynting vector is nonzero, but there is no physically observable flow
 of energy, because every region of space is having energy flow in as
 fast as it flows out (\note{static-poynting}).
-
-\vfill
 
 \startdq
 
@@ -489,7 +535,7 @@ What does this imply for conservation of momentum?
 <% end_sec('poynting') %>
 <% end_sec('p-and-energy-flow') %>
 
-<% begin_sec("Maxwell's equations in a vacuum",4,'maxwell-vacuum') %>
+<% begin_sec("Maxwell's equations in a vacuum",nil,'maxwell-vacuum') %>
 <% marg() %>
 <%
   fig(
@@ -541,8 +587,6 @@ magnetic field induces a curly electric field, and a changing electric field
 induces a curly magnetic field. This has many important technological applications,
 but since those are not our topic right now, we give only two qualitative examples.
 Further quantitative material is presented in ch.~\ref{ch:stokes}.
-
-\pagebreak
 
 \begin{eg}{The generator}\index{generator}
 A generator, \figref{generator}, consists of a permanent magnet that

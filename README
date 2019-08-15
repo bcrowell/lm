@@ -57,25 +57,5 @@ to install calibre.
 Once you've done this, you can use this command:
   make web
 
-=================================================================
-troubleshooting, bugs, and workarounds
-=================================================================
-If you modify a file between compiles, it may cause ruby errors.
-  Workaround: recompile from scratch.
-  I think this may happen if your edits change which figure groups exist.
-Figures are positioned on the wrong side of the page, as if odd and even
-are confused. This continues through the end of the chapter.
-  This happened to me in May '08 with ch. 10 of SN. Doing a
-  make clean && make book to start fresh didn't help. However,
-  when I got up the next morning and tried again, it didn't happen!
-  This may be a problem where iterations of pdflatex don't converge
-  on pagination.
-Narrowfigwidecaption doesn't reliably detect even/odd page.
-Goofy typesetting of symbols at end of hw in SN.
-  Don't use \hwendpart macro at the very end of a problem.
-Figure positioning doesn't work, no feedback loop.
-  This can happen because there is no end_chapter in the rbtex file.
-
-====================
 
 More technical details about the software setup are in INTERNALS.
