@@ -250,9 +250,10 @@ m4_define(__hw_fac_14_lc-phase,1)m4_dnl
 m4_define(__hw_fac_14_rc-par-impedance,2)m4_dnl
 m4_define(__hw_fac_14_lrc-z-plot,3)m4_dnl
 m4_define(__hw_fac_14_series-to-parallel,4)m4_dnl
-m4_define(__hw_fac_14_whole-body-impedance,5)m4_dnl
-m4_define(__hw_fac_14_capacitor-paradox,6)m4_dnl
-m4_define(__hw_fac_14_lc-e-sharing,7)m4_dnl
+m4_define(__hw_fac_14_notch-filter,5)m4_dnl
+m4_define(__hw_fac_14_whole-body-impedance,6)m4_dnl
+m4_define(__hw_fac_14_capacitor-paradox,7)m4_dnl
+m4_define(__hw_fac_14_lc-e-sharing,8)m4_dnl
 m4_define(__hw_fac_15_b-wire-ampere-fac,1)m4_dnl
 m4_define(__hw_fac_15_sheet-b,2)m4_dnl
 m4_define(__hw_fac_15_rolling-wire-fac,3)m4_dnl

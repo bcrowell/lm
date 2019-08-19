@@ -525,6 +525,15 @@ fast as it flows out (\note{static-poynting}).
     {'anonymous'=>true}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'bug-in-plane-wave',
+    %q{A bug makes local observations of the leading edge of the wave from figure
+       \figref{plane-wave-propagating}. The wave is moving to the right, and the
+        magnetic field is perpendicular to the page.}
+  )
+%>
 <% end_marg %>
 
 \begin{dq}\label{dq:field-momentum}
@@ -536,16 +545,6 @@ What does this imply for conservation of momentum?
 <% end_sec('p-and-energy-flow') %>
 
 <% begin_sec("Maxwell's equations in a vacuum",nil,'maxwell-vacuum') %>
-<% marg() %>
-<%
-  fig(
-    'bug-in-plane-wave',
-    %q{A bug makes local observations of the leading edge of the wave from figure
-       \figref{plane-wave-propagating}. The wave is moving to the right, and the
-        magnetic field is perpendicular to the page.}
-  )
-%>
-<% end_marg %>
 The laws of physics are local, so if we zoom in on an electromagnetic wave, as in
 figure \figref{bug-in-plane-wave}, and take on the role of the bug, we must be able
 to make sense of the evolution of the wave pattern as time goes on. The structure of
