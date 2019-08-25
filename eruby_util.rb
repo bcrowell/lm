@@ -1198,7 +1198,7 @@ def end_ex
 end
 
 # The following are used in FAC:
-def begin_lab(title,columns=2,suffix='',type='mini',number='')
+def begin_lab(title,columns:2,suffix:'',type:'mini',number:'')
   # suffix is, e.g., B for ex. 3B in ch. 3
   title = alter_titlecase(title,1)
   if type=='mini' then
