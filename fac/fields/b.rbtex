@@ -273,8 +273,7 @@ There are other ways to detect the violation in
 labeled 2, and note that although no field lines pass in through the
 edges of this box, one passes out. So a local law can lead to global
 predictions, and this can be helpful.
-But because cause and effect can never propagate faster than $c$, the
-ultimate laws of physics must be local ones. A practical realization of
+A practical realization of
 this kind of global test is shown in figure \figref{gauss-law-lab}, and you will
 carry it out in Minilab \ref{ch:gauss-law}, p.~\pageref{lab:gauss-law}.
 A magnet is inside the cubical box. At one of the centimeter squares,
@@ -295,7 +294,44 @@ predicts that the total is zero.
     %q{A practical experiment that tests Gauss's law for magnetism, globally.}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+
+The sort of sum described above is called the \emph{flux},\index{flux}
+$\Phi$ (capital Greek letter phi). When it's
+not clear from context whether we're talking about the magnetic field's flux from the electric field's,
+we write $\Phi_E$ and $\Phi_B$.
+
+
+<%
+  fig(
+    'flux-examples',
+    %q{Two examples of flux from contexts other than electromagnetism.},
+    {'width'=>'wide','sidecaption'=>'true'}
+  )
+%>
+
+
+Before stating formal definitions of electric and magnetic flux, let's
+build some intuition with two examples of the concept of a
+flux in other contexts.  ``Flux'' is just the Latin word for ``flow.''
+In figure \subfigref{flux-examples}{1}, the men dueling with pistols
+stand sideways. This is to minimize the flux of bullets entering
+through the fronts of their chests.  In \subfigref{flux-examples}{2},
+parallel rays of sunlight hit a planet.  The effect of the sun's
+heating on a particular square kilometer of land is proportional to
+the number of rays intercepted, and this is different at different
+latitudes.  At the poles, the land area is turned sideways to the
+sun's rays, as in the example of the duelers. (We should also note
+some ways in which these examples are \emph{not} quite analogous to
+electromagnetic fluxes.  Both the bullets and the sunbeams tend to be
+absorbed when they hit the object's surface; if they could pass
+through and reemerge from the other side, then the ingoing and
+outgoing fluxes would cancel --- at least mathematically --- the dueler
+would still probably be dead. And although these two examples
+involve things physically moving through space, electric and magnetic
+field lines do not represent stuff moving from place to place.)
+
+<% marg() %>
 <%   
   fig(
     'avector-fac',
@@ -303,10 +339,7 @@ predicts that the total is zero.
   )
 %>
 <% end_marg %>
-The sort of sum described above is called the \emph{flux},\index{flux}
-$\Phi$ (capital Greek letter phi). When it's
-not clear from context whether we're talking about the magnetic field's flux from the electric field's,
-we write $\Phi_E$ and $\Phi_B$. To define the flux through a surface, we break up
+To more formally define the flux through a surface, we break up
 the surface into small areas $A_1$, $A_2$, \ldots, such as the squares in figure
 \figref{gauss-law-lab}. For each of these areas, we define a unit normal vector $\hat{\vc{n}}_i$,
 which points outward. ``Unit'' means that $|\hat{\vc{n}}_i|=1$, and ``normal'' means that it is
@@ -338,6 +371,8 @@ the magnetic flux through any closed surface is zero,
 \begin{equation*}
   \Phi_B = 0,\quad \Phi_E=0. \qquad \text{[Gauss's law in a vacuum]}
 \end{equation*}
+
+\pagebreak
 
 \begin{eg}{Flux above New York}\label{eg:flux-above-new-york}
 Often for problems that have a symmetry, we can apply Gauss's law without actually having to
@@ -388,6 +423,29 @@ and we know that for any kind of integral, we can take the constant outside the 
 Techniques for evaluating more complicated area integral are discussed in ch.~\ref{ch:iterated},
 p.~\pageref{ch:iterated}.
 
+\pagebreak
+
+\startdqs
+
+<% marg() %>
+<%   
+  fig(
+    'snowplow',
+    %q{Discussion question \ref{dq:snowplow}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:snowplow}
+Describe the duelers in figure \subfigref{flux-examples}{1}, p.~\pageref{fig:flux-examples},
+in terms of area vectors. Do the same for the snowplow in the figure, whose blade is angled. How does the rate of plowing
+(volume of snow per unit time)
+depend on the angle, if the vehicle moves at a fixed speed?
+\end{dq}
+
+\vfill
+
 <%
   fig(
     'dq-gauss-examples-fac',
@@ -401,8 +459,7 @@ p.~\pageref{ch:iterated}.
   )
 %>
 
-\startdqs
-
+\vfill
 
 \begin{dq}\label{dq:gauss-example1}
 One question that might naturally occur to you about Gauss's law is
@@ -419,6 +476,8 @@ compared to what it would be if the charge was entirely enclosed?
 integration, by Gauss's law, or by the additivity of flux by region.)
 \end{dq}
 
+\vfill
+
 \begin{dq}\label{dq:gauss-example2}
 The dipole in figure \subfigref{dq-gauss-examples-fac}{B} is completely enclosed in the cube. What does Gauss's law
 say about the flux through the cube? If you imagine the dipole's field
@@ -429,7 +488,7 @@ pattern, can you verify that this makes sense?
 <% end_sec('gauss-global') %>
 
 
-<% begin_sec("Field of a point charge at rest",nil,'field-of-point-charge') %>\index{Coulomb's law}
+<% begin_sec("Field of a point charge at rest",4,'field-of-point-charge') %>\index{Coulomb's law}
 Our argument that the earth's field was proportional to $1/r^2$ depended on
 only two ingredients, Gauss's law and spherical symmetry. The spherical symmetry existed
 because the earth is (approximately) a sphere and because we were discussing the earth in
@@ -463,7 +522,9 @@ which applies only to the empty space \emph{around} the charge. By doing this, w
 proportionality $E\propto1/r^2$, and it is in some sense arbitrary that we chose to refer to
 the proportionality constant $q$ as ``charge.''
 
-<% marg(-300) %>
+\pagebreak
+
+<% marg() %>
 <%   
   fig(
     'e-dipole-mid-plane',
@@ -529,7 +590,7 @@ p.~\pageref{sec:dipole}, and \ref{sec:b-dipole}, p.~\pageref{sec:b-dipole}.
 
 <% end_sec('field-of-point-charge') %>
 
-<% begin_sec("Electric force on a charge",nil,'force-on-a-charge') %>\index{force!on a charge in an electric field}
+<% begin_sec("Electric force on a charge",4,'force-on-a-charge') %>\index{force!on a charge in an electric field}
 In addition to describing the electric field made by a charge, it is natural to consider
 the action of some externally imposed field on a charge.
 We imagine that this ambient field is
@@ -767,8 +828,8 @@ integer multiples of $e$.
 
 We summarize these facts by saying that charge is ``quantized'' in units of $e$.
 Similarly, money in the US is quantized in units of cents, and discerning music
-listeners bewail the use of software in the studio that quantizes rhythm in the
-studio, forcing notes to land exactly on the beat rather than allowing the kinds
+listeners bewail the use of software in the recording studio that quantizes rhythm,
+forcing notes to land exactly on the beat rather than allowing the kinds
 of creative variation that used to be common in popular music.
 
 Sometimes we will be casual and say, for example, that a proton has ``one unit of charge,'' or
@@ -812,7 +873,7 @@ which satisfy conservation of charge.
 <% end_sec('charge') %>
 
 
-<% begin_sec("Gauss's law when the number of dimensions is effectively less than three",4,'gauss-in-lt-3-dim') %>
+<% begin_sec("Gauss's law when the number of dimensions is effectively less than three",nil,'gauss-in-lt-3-dim') %>
 Our world is three-dimensional, but it is full of physical systems that are effectively one- or
 two-dimensional. Pool and car racing are effectively two-dimensional sports. When a
 locomotive pulls a string of freight cars up a steep grade, the situation is effectively one-dimensional.
@@ -851,6 +912,8 @@ The simplest analysis of all is in one dimension. Here the field lines can't spr
 nowhere for them to escape. The ``density'' of field lines is simply the number of field lines, and
 this doesn't change with distance from the charge. The field varies as $1/r^0$, i.e., it is constant.
 This analysis applies to the field of a flat sheet of charge.
+
+\pagebreak
 
 \begin{eg}{Electric field of a line of charge}\label{eg:e-line-of-charge}
 The reasoning above about proportionalitites was an extremely simple way to find the
@@ -987,8 +1050,6 @@ packed stair steps, making the slope of the staircase $\der E/\der x$ steeper. I
 of vacuum, the density of charge is zero, and we get a constant field. This is the local
 form of Gauss's law, for field vectors, in one dimension.
 
-\pagebreak
-
 Although our main goal in developing this theory in one dimension was
 to immediately turn around and generalize it to three dimensions,
 effectively one-dimensional systems do exist in real life. For example
@@ -996,8 +1057,6 @@ in figure \figref{variable-capacitor}, charge can be deposited on the
 series of metal plates, and if the charge on one of the plates is $q$,
 then it acts as a charge density $q/h$, in units of coulombs per meter, where $h$ is the
 spacing between the plates.
-
-\vfill
 
 To visualize the meaning of the derivative $\der E/\der x$, we display in figure
 \figref{divmeter-one-d} a hypothetical device that measures this quantity. 
@@ -1039,8 +1098,6 @@ do use this term).\index{divergence!one dimension}
 %>
 <% end_marg %>
 
-\vfill
-
 We want our div-meter to be very small, because what it's measuring is a kind of derivative, and
 derivatives are local things. As an example
 from a more familiar context, we might want to measure the angle or slope of some brickwork, which
@@ -1049,8 +1106,6 @@ really work if, as shown in figure \figref{brick-arch}, our measuring device is 
 Similarly, we can get wrong results from the div-meter unless we shrink it down so small that any
 irregularities in the electric field vanish, and the field becomes smooth and well-behaved.
 
-\vfill
-
 What about three dimensions? Conceptually, we just need to build the three-dimensional
 div-meter shown in figure \figref{divmeter}. What about a more mathematical description?
 Because the divergence is a kind of derivative,
@@ -1058,8 +1113,6 @@ we want it to have the same kind of additive property that the plain old derivat
 the divergence of a sum should be the sum of the divergences. Physically, this is the
 only way we can guarantee that superposition will work. The following example shows that
 this essentially ties down the form of the divergence operator.\index{divergence!three dimensions}
-
-\pagebreak
 
 <%
   fig(
@@ -1167,8 +1220,6 @@ For practical reasons, the experiment in example \ref{eg:gauss-tidal} can't be d
 But suppose we could. What would happen if we released a set of masses all around the earth's surface,
 and they were able to free fall without being blocked by the dirt? Is this consistent with Gauss's law?
 \end{dq}
-
-\pagebreak
 
 <% marg() %>
 <%

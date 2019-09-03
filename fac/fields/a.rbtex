@@ -701,7 +701,7 @@ then understood as the infinitesimal energy contained within this volume.
 If we had the luxury of being the first people to define the units for
 the fields, we would be free to choose $k=1$, or even $1/8\pi k=1$,
 which would simplify these expressions; the electric field would then
-have units of $\zu{J}^{1/2}/\munit^3$. However, in the SI we have
+have units of $\zu{J}^{1/2}/\munit^{3/2}$. However, in the SI we have
 units for $\vc{E}$ and $\vc{B}$ that result in a value for $k$ that
 has both nontrivial units and a nontrivial numerical value. Although
 this is a disadvantage when calculating energies, it does simplify
@@ -982,7 +982,18 @@ $\vc{E}$ relative to $\vc{E}_\zu{o}$.
 <% begin_lab('Magnetic interactions and energy',number:'0') %>
 This lab is designed to be done on the first day of class, without any prior reading or instruction.
 At the end of each part, the instuctor will discuss the results with the class, and the different
-groups can compare notes.
+groups can compare notes. The general idea is to make observations using magnets. Based on your previous
+experience with magnets, any of the following might sound like possible mental pictures of how one magnet
+interacts with another:
+
+(a) They interact through instantaneous action at a distance.
+
+(b) The electromagnet makes a magnetic field, which affects the bar magnet.
+
+(c) Both objects make fields. The fields overlap in space and interact.
+
+
+By the end of this activity, we will be able to say something about which of these is right.
 
 \begin{labapparatus}
 bar magnet\\
@@ -994,15 +1005,7 @@ compass
 
 \noindent 1. To start off with, we'll use two magnets: a bar magnet (permanent magnet) and an electromagnet, which
 is a hollow helical coil of wire. The electromagnet requires an external power supply. You will find
-that these two magnets interact with each other. Playing with them might lead you to any one of the
-following mental pictures:
-
-(a) They interact through instantaneous action at a distance.
-
-(b) The electromagnet makes a magnetic field, which affects the bar magnet.
-
-(c) Both objects make fields. The fields overlap in space and interact.
-
+that these two magnets interact with each other.
 Observe the interaction by holding the bar magnet delicately in your fingers, in various positions
 and orientations relative to the electromagnet. For sensitivity, you can also try hanging the bar
 magnet from a piece of string.
@@ -1019,8 +1022,9 @@ compass for the bar magnet. Try breaking the circuit rather than using the on-of
 \noindent 4. Can you find a way to map out the magnetic effects in the space around the
 electromagnet? Around the bar magnet? What is a good way to represent these effects visually?
 
-\noindent 5. Put the apparatus in the configuration shown in the figure. What happens as you
-vary the distance shown with the arrow? Can you explain this quantitatively?
+\noindent 5. Put the apparatus in the configuration shown in the figure. Use books or other materials
+to get the compass and bar magnet up at the same height as the solenoid's axis.  What happens as you
+vary the distance shown with the arrow? 
 
 <%  
   fig(
@@ -1029,6 +1033,10 @@ vary the distance shown with the arrow? Can you explain this quantitatively?
     {'suffix'=>'2','width'=>'narrow','float'=>true}
   )
 %> 
+
+Class discussion: How would we set up a calculation to explain these observations quantitatively?
+
+Carry out the calculation.
 
 \vfill
 
@@ -1076,7 +1084,8 @@ For your first point, find the
 distance $r$ at which the deflection is 70 degrees; this angle is chosen because
 it's about as big as it can be without giving very poor relative precision 
 in the determination of the magnetic field. For your second data-point,
-use twice that distance. Using the result of prelab question P2, by what factor does the field decrease
+use twice that distance. Using the result of homework problem \ref{hw:perpendicular-b-fields-fac},
+p.~\pageref{hw:perpendicular-b-fields-fac}, by what factor does the field decrease
 when you double $r$?
 
 You will probably find that the ambient field in the room is strongly
