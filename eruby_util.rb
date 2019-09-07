@@ -1210,10 +1210,10 @@ def begin_lab(title,columns:2,suffix:'',type:'mini',number:'')
     number = "\\thechapter"    
   end
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
-  label = $ch+suffix
+  label = number+suffix
   full_label = "activity-#{type}:"+label
   t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
-  if is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
+  if not is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = t+"\\normalcaptions\\zapcounters"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"

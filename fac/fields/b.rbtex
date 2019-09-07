@@ -1527,14 +1527,20 @@ figure \figref{horseshoe-magnet-components} on p.~\pageref{fig:horseshoe-magnet-
 which displays the component of the field parallel to the wand's axis, at a point
 near the tip, as in figure \figref{gauss-law-lab} on p.~\pageref{fig:gauss-law-lab}.
 
+The sensor has two scales, selected using a switch on the wand. You probably need it to be on the less sensitive scale
+in order to avoid overloading it in this experiment.
+
+With the box moved far away, hold the sensor in the air, oriented vertically, in
+the position shown in the figure, and use the software to zero the sensor.\footnote{If using LoggerPro, this
+is done using the blue zero icon.} This
+means that the sensor will now consider the vertical component of the ambient field in the room to be zero.
+
 The following technique can be used to determine the flux through one
 side of the box.  Orient the box with that side up. Place the graph
-paper\footnote{An editable version of the graph paper can be found at
-\url{github.com/bcrowell/lm/tree/master/share/em-fields/figs/gauss-law-lab-grid.svg},
-and a version ready to print at a similar URL ending in jpg.} on top of it. Watching the second hand on a clock, get a
+paper on top of it. Watching the second hand on a clock, get a
 one-second beat going. It may be helpful to have your partner rap
 their knuckles on the table. In the software, initiate a period data
-collection preset to last 17 seconds.\footnote{If using LoggerPro, do
+collection preset to last 17 seconds.\footnote{In LoggerPro, do
 this using Experiment:Data collection.} Start collecting data, and
 simultaneuosly begin scanning the sensor down the rows of the graph
 paper, covering a 1 cm by 17 cm strip in one second. Use the software
@@ -1552,8 +1558,11 @@ Theoretically the validity of Gauss's law should not depend on whether
 there are additional contributions to the magnetic field from the ambient
 field in the room. However, it is easier physically to rotate the box
 rather than scanning the different sides while the box stays in one orientation.
-This means that there can be a contribution from the ambient field, which
-we need to get rid of. This can be achieved by waving the wand in the air
+This means that there can be a contribution from the ambient field. Zeroing
+the sensor approximately gets rid of this, but only on the assumption that the
+ambient field is uniform. Because the ambient field is mostly from building materials
+and magnetic materials inside the lab benches, the field is not exactly uniform.
+To do a more thorough job of getting rid of the effect, you can wave the wand in the air
 where the top of the box \emph{would} be, but with the box removed.
 The result is the contribution to each flux measurement from the ambient
 field, so the final result can be corrected by subtracting six times this
