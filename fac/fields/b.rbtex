@@ -650,12 +650,31 @@ problem \ref{hw:spark-plug-conceptual}, p.~\pageref{hw:spark-plug-conceptual}.
     %q{A spark plug, example \ref{eg:spark-plug}.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-point-charge-in-capacitor',
+    %q{Discussion question \ref{dq:point-charge-in-capacitor}.}
+  )
+%>
 <% end_marg %>
 
+\startdqs
+
+\begin{dq}\label{dq:point-charge-in-capacitor}
+The figure shows a positive charge in the gap between two
+capacitor plates. First make a large drawing of the field
+pattern that would be formed by the capacitor itself,
+without the extra charge in the middle. Next, show how the
+field pattern changes when you add the particle at these two
+positions. Compare the energy of the electric fields in the
+two cases. Does this agree with what you would have expected
+based on your knowledge of electrical forces?
+\end{dq}
 
 <% end_sec('force-on-a-charge') %>
 
-<% begin_sec("Coulomb's law",nil,'coulomb-law') %>
+<% begin_sec("Coulomb's law",4,'coulomb-law') %>
 Suppose that we have \emph{two} point charges, $q_1$ and $q_2$, both at rest and separated by a distance
 $r$. The electric field is the sum of the fields contributed by the two charges. If we want to find the
 force acting on one of the charges, say 2, then it doesn't make sense to try to take into account
@@ -697,7 +716,7 @@ Explain how the signs work, and sketch graphs for the various cases.
 \end{dq}
 <% end_sec('coulomb-law') %>
 
-<% begin_sec("Charge",nil,'charge') %>
+<% begin_sec("Charge",4,'charge') %>
 
 <% begin_sec("Gauss's law, not in vacuum",nil,'gauss-charge') %>
 The vacuum form of Gauss's law can be generalized to handle the case where charges are present.
@@ -745,6 +764,8 @@ The two sides of the equation are equal, so we have verified Gauss's law and
 proved that the proportionality constant of $4\pi k$ in Gauss's law is the
 correct one.
 \end{eg}
+
+\pagebreak
 
 \begin{eg}{A uniform sphere of charge}\label{eg:gauss-law-uniform-sphere}
 Consider a sphere of radius $b$ containing electric charge with a uniform density $\rho$,
@@ -891,7 +912,7 @@ which satisfy conservation of charge.
 <% end_sec('charge') %>
 
 
-<% begin_sec("Gauss's law when the number of dimensions is effectively less than three",nil,'gauss-in-lt-3-dim') %>
+<% begin_sec("Gauss's law when the number of dimensions is effectively less than three",4,'gauss-in-lt-3-dim') %>
 Our world is three-dimensional, but it is full of physical systems that are effectively one- or
 two-dimensional. Pool and car racing are effectively two-dimensional sports. When a
 locomotive pulls a string of freight cars up a steep grade, the situation is effectively one-dimensional.
@@ -930,8 +951,6 @@ The simplest analysis of all is in one dimension. Here the field lines can't spr
 nowhere for them to escape. The ``density'' of field lines is simply the number of field lines, and
 this doesn't change with distance from the charge. The field varies as $1/r^0$, i.e., it is constant.
 This analysis applies to the field of a flat sheet of charge.
-
-\pagebreak
 
 \begin{eg}{Electric field of a line of charge}\label{eg:e-line-of-charge}
 The reasoning above about proportionalitites was an extremely simple way to find the
@@ -1024,7 +1043,7 @@ offset so that we can see them separately. The ``density'' of field lines is sim
 number of field lines that pass through a given point.
 
 In the example shown in figure \subfigref{field-lines-1-dim}{1}, three equal positive charges are shown
-with their field lines. The constants of proportionality are chosen such that each field
+with their field lines. The constants of proportionality are chosen such that each charge
 has exactly two field lines coming out of it, and a field line ``density'' of 1 is just an
 electric field of 1 unit. In one-dimensional examples like this, it's easy to take field-line
 patterns and superpose them, as in \subfigref{field-lines-1-dim}{2}. Figure \subfigref{field-lines-1-dim}{3}
@@ -1304,7 +1323,10 @@ charge to be at the origin, and use an ambient field
     0 & \mbox{elsewhere},
   \end{cases}
 \end{equation*}
-where $a<0$, $b>0$, and $E$ is a constant. Because of the symmetry of the problem under
+where $a<0$, $b>0$, and $E$ is a constant. This is the field we would get from a parallel-plate
+capacitor, as in discussion question \ref{dq:point-charge-in-capacitor} on p.~\pageref{dq:point-charge-in-capacitor}.
+
+Because of the symmetry of the problem under
 rotation about the $z$ axis, we use cylindrical coordinates in which $R$
 is the distance from the $z$ axis. In these coordinates, the volume of a ring of radius $R$, radial
 thickness $\der R$, and height $\der z$ is $\der v=(\text{circumference})\der R\der z=2\pi R\der R\der z$.
