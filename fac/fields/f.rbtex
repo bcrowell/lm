@@ -513,7 +513,35 @@ gaining energy, and others that are losing it. It's because there are
 observable.  As a technical aside, it is also possible to have examples in which the
 Poynting vector is nonzero, but there is no physically observable flow
 of energy, because every region of space is having energy flow in as
-fast as it flows out (\note{static-poynting}).
+fast as it flows out (\note{static-poynting}). 
+
+<%
+  fig(
+    'point-charge-in-capacitor-poynting',
+    %q{The energy flow for a point charge released from rest in a capacitor. The $\vc{E}$, $\vc{B}$, and $\vc{S}$ vectors
+       are shown at four sample points.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+
+\begin{eg}{A charge accelerated inside a capacitor}\label{eg:point-charge-in-capacitor-poynting}
+In discussion question \ref{dq:point-charge-in-capacitor}, p.~\pageref{dq:point-charge-in-capacitor},
+we convinced ourselves that if a charge was released inside a capacitor, the kinetic energy it gained
+could be properly accounted for by the energy lost from the electric field. We also calculated this
+quantitatively in note \notewithoutbackref{force-on-point-charge}. Figure \figref{point-charge-in-capacitor-poynting}
+shows how this plays out in terms of the Poynting vector. The setup is recapitulated in \subfigref{point-charge-in-capacitor-poynting}{1}.
+The electric field, \subfigref{point-charge-in-capacitor-poynting}{2}, is the superposition of the capacitor's
+nearly uniform downward field and the outward field pattern of the particle. As the particle moves downward, it
+creates a magnetic field, \subfigref{point-charge-in-capacitor-poynting}{3}, similar to that of a current-carrying wire.
+Taking the vector cross product $\vc{E}\times\vc{B}$ gives us the Poynting vector $\vc{S}$ (ignoring constants of proportionality).
+We see that the energy flow is out of the electric field in the top of the capacitor, and into the center, where the
+particle is.
+\end{eg}
+
+It is also interesting to consider the case where the capacitor in example \ref{eg:point-charge-in-capacitor-poynting}
+is infinite in size, i.e., we simply fill the whole universe with a uniform electric field. In this
+case, the Poynting vector tells us that the energy flow comes from infinity (\note{charge-in-infinite-uniform-field-poynting}).
 
 \startdq
 
@@ -728,6 +756,53 @@ a flow of energy, there are no observable consequences because no
 region of space can gather up the energy. It's a bit like the
 situation of a rich teenager who ``has'' a few million dollars in a
 trust fund, but can't touch it until she's 21. 
+
+\notetext{charge-in-infinite-uniform-field-poynting}{A point charge in an infinite, uniform electric field}
+\notesummary{In this example, energy flows from infinity.}
+
+If a charged particle is released inside a capacitor, energy flows out
+of the electric field and into the particle as kinetic energy. We have
+discussed this energy transformation in discussion question
+\ref{dq:point-charge-in-capacitor},
+p.~\pageref{dq:point-charge-in-capacitor}, in example
+\ref{eg:point-charge-in-capacitor-poynting},
+p.~\pageref{eg:point-charge-in-capacitor-poynting}, and in note
+\notewithoutbackref{force-on-point-charge}. In the quantitative
+analysis of note \notewithoutbackref{force-on-point-charge}, I avoided
+the simplest electric field pattern, which would have been a uniform
+field stretching out to infinity, with the excuse that the total
+energy would then have been infinite. By doing that, I also
+conveniently sidestepped the following apparent paradox.
+
+Suppose that
+the electric field \emph{is} uniform out to an infinite distance.
+After some time, the particle will have gained some kinetic energy. We can then
+allow it to hit something and stop, at which point its energy will be
+converted into heat. (Something similar happens when the beam of an
+old-fashioned CRT monitor hits the phosphor-coated glass in the front,
+with part of the energy also being converted into visible light.)  But
+where has this energy come from? If the electric field is truly
+filling the entire universe uniformly, then it seems that the total
+energy in the universe's electric field can't possibly have changed.
+For a field of this kind, superimposing the field of a point charge at
+one point or another produces exactly the same electric field pattern,
+just shifted rigidly through space.
+
+We can make the excuse that
+the original energy was $\infty$, and so is the final energy, and
+$\infty-\infty$ doesn't have to be zero --- it's an indeterminate
+form. But this isn't as satisfying as an analysis of the actual energy
+flows.
+
+Such an analysis can be provided simply by letting the
+capacitor in figure \figref{point-charge-in-capacitor-poynting},
+p.~\pageref{fig:point-charge-in-capacitor-poynting}, approach infinite
+size.  The flows of energy are still qualitatively like the ones shown
+in figure \subfigref{point-charge-in-capacitor-poynting}{4}, but the
+sources of this flow are now ``off stage'' at infinity. This seems like
+a perfectly natural resolution of the paradox, which we created in the first place by moving
+the plates of the capacitor off stage to infinity.
+
 
 \notetext{maxwell-c}{Maxwell's equations and propagation at $c$}
 \notesummary{Maxwell's equations give electromagnetic waves that propagate at $c$.}
