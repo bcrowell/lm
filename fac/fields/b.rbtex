@@ -1585,12 +1585,9 @@ collection preset to last 17 seconds.\footnote{In LoggerPro, do
 this using Experiment:Data collection.} Start collecting data, and
 simultaneuosly begin scanning the sensor down the rows of the graph
 paper, covering a 1 cm by 17 cm strip in one second. Use the software
-to average the data, which gives a measure of the total
-flux.\footnote{In LoggerPro, this is done through Analyze:Statistics.}
-(Conceptually flux is really a sum, not an average, but that doesn't
-matter in this experiment because Gauss's law for magnetism doesn't
-depend on whether the fluxes are measured in different units or scaled
-by some arbitrary factor.)
+to average the data, which gives a measure of the average flux
+per unit area.\footnote{In LoggerPro, this is done through Analyze:Statistics.}
+Multiplying by the area gives the flux.
 
 Adding the fluxes through all six sides of the cube provides a test of
 Gauss's law.
@@ -1609,6 +1606,13 @@ The result is the contribution to each flux measurement from the ambient
 field, so the final result can be corrected by subtracting six times this
 number.
 
+To estimate the experimental uncertainty, pick one side and do a series of
+measurements. The spread $\sigma$ among these numbers gives an estimate of the uncertainty
+which is probably reasonable to apply independently to each of the six faces. Since it is the squares of
+errors that add in propagation of errors, the total error is $\sqrt{6}\sigma$.
+
+If you have time, it's also a good idea to do additional measurements of all six
+fluxes, so as to be able to detect mistakes.
 
 <% end_lab %>
 
