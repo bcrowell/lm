@@ -689,7 +689,9 @@ if you rotate your coordinate system, the output will be the same result, just r
 new coordinate system. Because coordinate systems are just a human choice, any physically meaningful
 derivative operator has to have this property, and therefore the fundamental laws of electricity and
 magnetism can only be expressed in terms of these three operators. These laws of
-physics are called Maxwell's equations, and are summarized on p.~\pageref{fig:maxwell-summary}.
+physics are called Maxwell's equations,\index{Maxwell's equations!restricted to electrostatics} and are summarized on p.~\pageref{fig:maxwell-summary}.
+When we restrict to the case of electrostatics, Maxwell's equations are $\operatorname{div}\vc{E}=4\pi k\rho$ and
+$\operatorname{curl}\vc{E}=0$.
 
 By the end of this book, we will have fleshed out our picture of vector calculus a little more, and
 this more complete picture is summarized in sec.~\ref{sec:vector-calc-roundup}, p.~\pageref{sec:vector-calc-roundup}.
@@ -1051,8 +1053,7 @@ stencils for drawing electrode shapes on paper
 \begin{labgoal}
 Visualize electric fields using equipotential curves.
 
-Test approximately whether the fringing fields of a capacitor are such that the
-curl of the electric field is zero.
+Test Maxwell's equations in the special case of electrostatics.
 \end{labgoal}
 
 <%  
@@ -1121,6 +1122,30 @@ If you're using the PRO-100 meters, they will try to outsmart you by automatical
 choosing a range. Most people find this annoying. To defeat this misfeature,
 press the RANGE button, and you'll see the AUTO indicator on the screen turn off.
 
+\labsection{Analysis}
+
+In the case of electrostatics, Maxwell's equations are $\operatorname{div}\vc{E}=4\pi k\rho$ and
+$\operatorname{curl}\vc{E}=0$. The pattern of equipotentials that you measure in this lab cannot
+serve as a test of the zero curl, since we assumed in constructing it that a potential existed,
+which is equivalent to an assumption of zero curl. However, we do have several ways in which we
+can test Maxwell's equations with our data.  With boundary conditions that $\vc{E}=0$ at infinity, and
+the potential set to fixed values on the electrodes, Maxwell's
+equations have a unique solution, which has certain properties.
+
+\begin{enumerate}
+\item There is no way for charge to go anywhere on the apparatus except the electrodes, so we should
+  have $\operatorname{div}\vc{E}=0$ everywhere else, i.e., no field lines should begin or end in empty space.
+\item The potential should be constant on each electrode (which is one of our boundary conditions).
+\item The field should have the same two symmetries as the electrodes under reflection across the two axes.
+\item Because the charges within each plate repel one another, the equilibrium state should be one in which the charges
+  are more dense near the ends of each plate.
+\item As discussed in example \ref{eg:lightning-rod} on p.~\pageref{eg:lightning-rod} and problem \ref{hw:lightning-rod}, p.~\pageref{hw:lightning-rod},
+  the charge density should be high near the sharp corners of the electrodes.
+\item The voltmeter measures the work done per unit charge on a trickle of charge that it allows to flow through \emph{itself}. If
+  the electric field had a nonzero curl, then this work would not necessarily equal the work done along any particular across the surface
+  of the board, and it could depend on the details of how we positioned the voltmeter and the wires running to it. If, on the other
+  hand, we do see consistent readings on the meter, this supports the assumption that a well-defined potential exists.
+\end{enumerate}
 
 <% end_lab %>
 
@@ -1200,6 +1225,8 @@ A charge distribution is given by
 
 (1) Find the electric field. As a boundary condition, we let $\vc{E}=0$ at $z=0$, as suggested by the symmetry pf
 the charge distribution. Without this boundary condition, we could add any uniform field and get a different solution.
+
+To save time, it is not necessary to explicitly write out the field in both region A and region C. They are related by symmetry.
 
 (2) Check your result by verifying that $\operatorname{div}\vc{E}=4\pi k\rho$.
 
