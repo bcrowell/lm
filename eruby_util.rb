@@ -1201,24 +1201,22 @@ end
 def begin_lab(title,columns:2,suffix:'',type:'mini',number:'')
   # suffix is, e.g., B for ex. 3B in ch. 3
   title = alter_titlecase(title,1)
-  if type=='mini' then
-    typename = 'Minilab'
-  else
-    typename = 'Lab'
-  end
+  typename = 'Lab'
+  if type=='mini' then typename = 'Minilab' end
+  if type=='ex'   then typename = 'Exercise' end
   if number==''
-    number = "\\thechapter"    
+    number = "\\thechapter{}"
   end
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn")
   label = number+suffix
   full_label = "activity-#{type}:"+label
-  t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}: }"
+  t = "\\begin{activity}{#{suffix}}{#{title}}{#{column_command}}{#{typename} #{number}#{suffix}: }"
   if not is_prepress then t = t + "\\anchor{anchor-#{full_label}}" end
   t = t+"\\normalcaptions\\zapcounters"
   if is_prepress then
     t = t + "\\addcontentsline{toc}{section}{#{title}}"
   else
-    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}: #{title}}}"
+    t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}#{suffix}: #{title}}}"
   end
   print t
 end

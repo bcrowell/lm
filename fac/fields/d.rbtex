@@ -838,7 +838,7 @@ such as $\partial E_x/\partial z$ in the $y$ component. The result is:
 \notesummary{For a conductor in equilibrium, any charge is on its surface, never in its interior.}
 The proof of this assertion is essentially Earnshaw's theorem (example \ref{eg:earnshaw-theorem},
 p.~\pageref{eg:earnshaw-theorem}).
-Suppose that a charge $q$ in the conductor. For concreteness, let's say $q$ is positive.
+Suppose that a particle with charge $q$ is in the conductor. For concreteness, let's say $q$ is positive.
 By assumption, this charge is in a stable equilibrium.
 If the charge is at the surface, then this equilibrium can be created by
 both (1) the electric field, and (2) the force that keeps charges from getting out
@@ -1124,5 +1124,92 @@ press the RANGE button, and you'll see the AUTO indicator on the screen turn off
 
 <% end_lab %>
 
+<% begin_lab("A preview of the electric potential and measurement of voltages",type:'ex',suffix:'A') %>
+
+This exercise is meant to be done before reading ch.~\ref{ch:potential}.
+
+For certain types of electric fields, including fields that don't change over time, we can
+define an electric potential, $\phi$, which is a measure of electrical potential energy per unit charge.
+It has units of volts, 1 V=1 J/C. In a circuit, we can make an analogy with the behavior of a fluid
+flowing through pipes: the flow is the \emph{current}, while the pressure causing the flow is the \emph{voltage}.
+
+See figure \figref{using-voltmeter}, p.~\pageref{fig:using-voltmeter}, for instructions on how to use a
+meter to measure the \emph{difference} in potential between two points, $\Delta\phi=\phi_2-\phi_1$. Details
+differ, but meters are basically standardized.
+
+(1) Use the meter to measure the voltage of a battery. The battery is like a pump that creates a pressure difference.
+
+(2) What happens when you do the following things?
+
+\begin{itemize}
+\item Reverse the connections.
+\item Connect both leads to the same terminal of the battery.
+\item Only connect one lead.
+\end{itemize}
+
+(3) Put two batteries in series:
+
+<%  
+  fig(
+    'ex-preview-of-potential-1',
+    '',
+    {'width'=>'column'}
+  )
+%> 
+
+This is most easily done using battery holders, alligator clips, and banana-plug cables. Measure the
+$\Delta\phi$ between the ends. The two cables from the voltmeter can simply be touched to the two ends,
+using them like probes; it is not necessary to make hard connections every time you measure a voltage.
+
+(4) Obtain three resistors with different values. A resistor is like a narrow pipe that resists the flow of a fluid
+when a pressure difference is applied. Build this circuit and measure all 5 of the potential differences
+across the individual components.
+
+<%  
+  fig(
+    'ex-preview-of-potential-2',
+    '',
+    {'width'=>'column'}
+  )
+%> 
+
+Walk the meter around the circuit so that the V plug is always counterclockwise from the COM plug.
+Can you find any pattern or relationship in the five numbers?
+
+
+<% end_lab %>
+
+<% begin_lab("Charge density, field, and potential",type:'ex',suffix:'B') %>
+
+A charge distribution is given by
+\begin{equation*}
+  \rho = \begin{cases}
+        -a, & z>b \\
+        +a, & -b<z<b \\
+        -a, & a<-b
+  \end{cases}
+\end{equation*}
+
+<%  
+  fig(
+    'ex-rho-e-phi',
+    '',
+    {'width'=>'column'}
+  )
+%> 
+
+(1) Find the electric field. As a boundary condition, we let $\vc{E}=0$ at $z=0$, as suggested by the symmetry pf
+the charge distribution. Without this boundary condition, we could add any uniform field and get a different solution.
+
+(2) Check your result by verifying that $\operatorname{div}\vc{E}=4\pi k\rho$.
+
+(3) Find the potential. You will have three constants of integration, two of which can be determined by
+requiring that $\phi$ be a continuous function.
+
+(4) Sketch $\rho$, $E_z$, and $\phi$ as functions of $z$. Classify these functions as even or odd.
+
+
+
+<% end_lab %>
 
 <% end_chapter() %>
