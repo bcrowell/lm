@@ -877,6 +877,8 @@ Gauss's law forbids this negative divergence from being created by external sour
 
 <% begin_hw('screened') %>__incl(hw/screened)<% end_hw() %>
 
+\pagebreak
+
 <% begin_hw('potential-to-e-with-constants-easy') %>__incl(hw/potential-to-e-with-constants-easy)<% end_hw() %>
 
 <% begin_hw('voltmeter-and-battery') %>m4_include(../share/em-general/hw/voltmeter-and-battery.tex)<% end_hw() %>
@@ -1124,7 +1126,11 @@ press the RANGE button, and you'll see the AUTO indicator on the screen turn off
 
 \labsection{Analysis}
 
-In the case of electrostatics, Maxwell's equations are $\operatorname{div}\vc{E}=4\pi k\rho$ and
+Once you have your field pattern, make copies for your whole group, and then use a pencil to superimpose
+a sea-of-arrows representation of the field.
+
+In addition to getting some direct experience with the electric field, the other goal of this lab is
+to test Maxwell's equations. In the case of electrostatics, Maxwell's equations are $\operatorname{div}\vc{E}=4\pi k\rho$ and
 $\operatorname{curl}\vc{E}=0$. The pattern of equipotentials that you measure in this lab cannot
 serve as a test of the zero curl, since we assumed in constructing it that a potential existed,
 which is equivalent to an assumption of zero curl. However, we do have several ways in which we
@@ -1206,12 +1212,12 @@ Can you find any pattern or relationship in the five numbers?
 
 <% begin_lab("Charge density, field, and potential",type:'ex',suffix:'B') %>
 
-A charge distribution is given by
+(1) A charge distribution is given by
 \begin{equation*}
   \rho = \begin{cases}
         -a, & z>b \\
         +a, & -b<z<b \\
-        -a, & a<-b
+        -a, & z<-b
   \end{cases}
 \end{equation*}
 
@@ -1223,19 +1229,31 @@ A charge distribution is given by
   )
 %> 
 
-(1) Find the electric field. As a boundary condition, we let $\vc{E}=0$ at $z=0$, as suggested by the symmetry pf
+(a) Find the electric field. As a boundary condition, we let $\vc{E}=0$ at $z=0$, as suggested by the symmetry pf
 the charge distribution. Without this boundary condition, we could add any uniform field and get a different solution.
 
 To save time, it is not necessary to explicitly write out the field in both region A and region C. They are related by symmetry.
 
-(2) Check your result by verifying that $\operatorname{div}\vc{E}=4\pi k\rho$.
+(b) Check your result by verifying that $\operatorname{div}\vc{E}=4\pi k\rho$.
 
-(3) Find the potential. You will have three constants of integration, two of which can be determined by
+(c) Find the potential. You will have three constants of integration, two of which can be determined by
 requiring that $\phi$ be a continuous function.
 
-(4) Sketch $\rho$, $E_z$, and $\phi$ as functions of $z$. Classify these functions as even or odd.
+(d) Sketch $\rho$, $E_z$, and $\phi$ as functions of $z$. Classify these functions as even or odd.
 
+<%  
+  fig(
+    'ex-rho-e-phi-2',
+    '',
+    {'width'=>'column'}
+  )
+%> 
 
+(2) A sphere of radius $R$ has charge $q$ distributed uniformly throughout its volume.
+
+(a) Find the electric field. (The boundary condition is that $\vc{E}=0$ at infinity.)
+
+(b) Find the potential.
 
 <% end_lab %>
 
