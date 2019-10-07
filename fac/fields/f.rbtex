@@ -884,7 +884,107 @@ things so as to create a Poynting vector in that direction.)
 
 <% end_hw_sec() %>
 
-<% begin_lab("Polarization") %>\label{lab:polarization}
+<% begin_lab("Polarization",type:'ex',suffix:'A') %>\label{ex:polarization-qualitative}
+\begin{labapparatus}
+calcite crystal\\
+polarizing film
+\end{labapparatus}
+
+1. Lay the crystal on a piece of paper that has print on it.
+You will observe a double image. See what happens if
+you rotate the crystal.
+
+	Evidently the crystal does something to the light that
+passes through it on the way from the page to your eye. One
+beam of light enters the crystal from underneath, but two
+emerge from the top; by conservation of energy the energy of
+the original beam must be shared between them. Consider the
+following three possible interpretations of what you have observed:
+
+(a) The two new beams differ from each other, and from the
+original beam, only in energy. Their other properties are the same.
+
+(b) The crystal adds to the light some mysterious new
+property (not energy), which comes in two flavors, X and
+Y. Ordinary light doesn't have any of either. One beam
+that emerges from the crystal has some X added to it, and
+the other beam has Y.
+
+(c) There is some mysterious new property that is possessed
+by all light. It comes in two flavors, X and Y, and most
+ordinary light sources make an equal mixture of type X and
+type Y light. The original beam is an even mixture of both
+types, and this mixture is then split up by the crystal into
+the two purified forms.
+
+In parts 2 and 3 you'll make observations that will allow
+you to figure out which of these is correct.
+
+2. Now place a polaroid film over the crystal and see what
+you observe. What happens when you rotate the film in the
+horizontal plane? Does this observation allow you to rule
+out any of the three interpretations?
+
+3. Now put the polaroid film under the crystal and try the
+same thing. Putting together all your observations, which
+interpretation do you think is correct?
+
+4. Look at an overhead light fixture through the polaroid,
+and try rotating it. What do you observe? What does this
+tell you about the light emitted by the lightbulb?
+
+5. Now position yourself so that you can observe a glancing
+reflection of a light source from a shiny surface, such as a glossy
+tabletop. You'll see the lamp's reflection. Observe this reflection
+through the polaroid, and try rotating it.
+<% end_lab %>
+
+
+<% begin_lab("Maxwell's equations applied to a plane wave",type:'ex',suffix:'B',columns:1) %>\label{ex:wave-maxwell}
+
+<%
+ fig(
+   'ex-wave-maxwell',
+   '',
+   {'width'=>'wide'}
+ )
+%>
+
+1. The figure shows a sea-of-arrows representation of a vector field, along with a coordinate system. Suppose that this is the
+electric field of a plane wave propagating in the positive $x$ direction. Determine the magnetic field.
+
+2. As in discussion question \ref{dq:curl-cube}, p.~\pageref{dq:curl-cube}, figure out the direction and approximate relative strength
+of $\operatorname{curl}\vc{E}$ at various points along the $x$ axis. Describe this in terms such as ``small +$y$.'' Do the same thing
+for the other functions.
+
+\vspace{4mm}
+
+$\operatorname{curl}\vc{E}$ \rule[1ex]{140mm}{0.5pt}
+
+\vspace{10mm}
+
+$\partial\vc{B}/\partial t$ \rule[1ex]{140mm}{0.5pt}
+
+\vspace{10mm}
+
+$\operatorname{curl}\vc{B}$ \rule[1ex]{140mm}{0.5pt}
+
+\vspace{10mm}
+
+$\partial\vc{E}/\partial t$ \rule[1ex]{140mm}{0.5pt}
+
+\vspace{10mm}
+
+3. Verify qualitatively that
+\begin{align*}
+\operatorname{curl}\vc{E} &= -\frac{\partial\vc{B}}{\partial t} \qquad \text{and} \\
+\operatorname{curl}\vc{B} &= \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}. \\
+\end{align*}
+
+<% end_lab %>
+
+
+<% begin_lab("A polarizing filter") %>\label{lab:polarization}
 \begin{labapparatus}
 sodium gas discharge tube\\
 2 polarizing films\\
