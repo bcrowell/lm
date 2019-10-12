@@ -581,7 +581,34 @@ the sine wave.
 %>
 <% end_marg %>
 
+<% marg(-20) %>
+<%
+  fig(
+    'jello-shear',
+    %q{A mechanical example of shear forces. If the plate of jello is disturbed horizontally, internal shear forces bring it back to equilibrium.}
+  )
+%>
+<% end_marg %>
 
+It is beyond the scope of this book to work out fully general equations for the pressure and tension
+in the fields. In the most general case, when both an electric and a magnetic field are present, this
+gets a little complicated, and one needs to consider not just pressure and tension but also \emph{shear} forces,\index{shear}
+figure \figref{jello-shear}. However, when only one field is present, we can make a few simple observations.
+Let's say this is an electric field.
+Symmetry prevents the existence of any shear forces, so we can only have tension in the direction parallel
+to the field and pressure along the two axes perpendicular to it. Symmetry requires that the pressures along these two
+axes be equal. Furthermore, if the only quantities we have handy are $k$ and $E$, then units require that
+the pressure and tension be proportional $E^2$ (problem \ref{hw:field-pressure-units}, p.~\pageref{hw:field-pressure-units}),\label{claim-p-t-units}
+as we would have expected, since rotational invariance
+requires that the pressure remain unchanged if we replace $\vc{E}$ with $-\vc{E}$.
+It also turns out that the pressures are equal to the tension in absolute value. Summarizing:
+
+% re |P|=|T|, see https://physics.stackexchange.com/questions/507364/interpretation-of-equal-absolute-values-of-pressure-and-tension-in-the-electric
+
+\begin{itemize}
+\item There are only pressure $P$ and tension $T$, not shear, and both are proportional to the square of the field.
+\item $|P|=|T|$\label{p-t-equal}
+\end{itemize}
 
 <% end_sec('pressure-of-em-fields') %>
 <% end_sec('stress-energy') %>
@@ -1346,6 +1373,9 @@ which is proportional to the cosine of the angle between the two factors.
 <% end_marg %>
 
 <% begin_hw('sector-mass-spectrometer') %>__incl(hw/sector-mass-spectrometer)<% end_hw() %>
+
+
+<% begin_hw('field-pressure-units') %>__incl(hw/field-pressure-units)<% end_hw() %>
 
 
 <% end_hw_sec() %>
