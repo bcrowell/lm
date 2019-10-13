@@ -601,9 +601,7 @@ axes be equal. Furthermore, if the only quantities we have handy are $k$ and $E$
 the pressure and tension be proportional $E^2$ (problem \ref{hw:field-pressure-units}, p.~\pageref{hw:field-pressure-units}),\label{claim-p-t-units}
 as we would have expected, since rotational invariance
 requires that the pressure remain unchanged if we replace $\vc{E}$ with $-\vc{E}$.
-It also turns out that the pressures are equal to the tension in absolute value. Summarizing:
-
-% re |P|=|T|, see https://physics.stackexchange.com/questions/507364/interpretation-of-equal-absolute-values-of-pressure-and-tension-in-the-electric
+It also turns out that the pressures are equal to the tension in absolute value (\note{p-t-equal}). Summarizing:
 
 \begin{itemize}
 \item There are only pressure $P$ and tension $T$, not shear, and both are proportional to the square of the field.
@@ -1264,6 +1262,50 @@ total energy is found by integrating this expression over all space, but $\vc{B}
 so we can take it outside the integral, the result being $\vc{B}_2\int \ldots \der v$, where $\ldots$
 represents whatever field is going on inside the dipole. This has the form of a vector dot product,
 which is proportional to the cosine of the angle between the two factors.
+
+\notetext{p-t-equal}{In a pure electric field, $|P|=|T|$}
+\notesummary{We prove that in a pure electric field, the pressure and tension at a given point
+are equal in absolute value. Although we won't prove it here, the same holds for the magnetic field.}
+
+In the case of a purely electric field, we expect
+the pressure and tension to depend only on the square of the field. Therefore, we
+only need one concrete example in which we know the answer in order to
+show that the two constants of proportionality are equal.
+
+Physically, the simplest example of this type would be the interaction
+between two point charges. However, the math turns out a little simpler if
+we instead consider two parallel lines of charge.
+
+First consider the attractive
+case, with the two lines of charge having opposite densities $\lambda$
+and $-\lambda$ of charge per unit length. These are parallel to the $y$ axis and located at equal distances
+above and below the $x$-$y$ plane, at $z=\pm h$. Their attraction per unit length is
+proportional to the integral of the tension over the plane that is
+equidistant from the two lines. Each one contributes a field proportional to $1/r$,
+and the vector sum of the two fields is perpendicular to the plane and has a magnitude proportional to
+$r^{-1}\cos\theta$, where $\theta$ is the angle between the the $z$ axis and the radial line to
+the point being considered.  Since the tension is proportional to
+the square of the field, the attractive force per unit length is proportional to the
+integral $\int_{-\infty}^\infty \left(r^{-1}\cos\theta\right)^2\der x$. Doing a change of variable
+to a unitless $u=x/h$, and expressing $r$, $\theta$, and $x$ in terms of $u$, we end up with the
+definite integral
+\begin{equation*}
+  \int_{-\infty}^\infty \frac{\der u}{(1+u^2)^2} = \frac{\pi}{2}.
+\end{equation*}
+
+Now we consider two lines of charge $\lambda$ and $\lambda$, with the same sign, so that they
+repel one another. The combined field is now proportional to $r^{-1}\sin\theta$. Discarding all the
+same constant factors in the same way, but preserving the factors that actually depend on $u$, we get
+the integral
+\begin{equation*}
+  \int_{-\infty}^\infty \frac{u^2 \der u}{(1+u^2)^2} = \frac{\pi}{2}.
+\end{equation*}
+
+The forces are supposed to be equal, and the two definite integrals are equal. We therefore
+find we have equal constants of proportionality in the relation for the pressure and tension
+in terms of the field.
+
+% See https://physics.stackexchange.com/questions/507364/interpretation-of-equal-absolute-values-of-pressure-and-tension-in-the-electric .
 
 <% end_notes %>
 
