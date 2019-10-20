@@ -662,9 +662,25 @@ they should be. A skilled player compensates by reducing the force.
 % Dot product is here and not optional for Mechanics, later in chapter and optional for LM.
 <% begin_if(__me) %>
   m4_include(__share/text/dot_product.tex)
+
+% Putting the following figure inside dot_product.tex, where it belongs, causes an error. I think
+% This is because it's then an M4 include nested inside another include.
+m4_ifelse(__me,1,[:
+<% marg(130) %>
+<%
+  fig(
+    'eg-zero-work-around-closed-path',
+    %q{Example \ref{eg:zero-work-around-closed-path}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+:])
+
 <% end_if %>
 
-<% begin_sec("Varying force") %>\index{work!done by a varying force}
+
+<% begin_sec("Varying force",m4_ifelse(__me,1,4,0)) %>\index{work!done by a varying force}
 
 Up until now we have done no actual calculations of work in
 cases where the force was not constant. 
@@ -1317,3 +1333,4 @@ m4_ifelse(__me,1,[:
         to give a vector.)
 <% end_sec() %> % Uniqueness of the dot product
 :])
+

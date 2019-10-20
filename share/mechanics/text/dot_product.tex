@@ -79,4 +79,32 @@ See homework problem \ref{hw:dot-product-by-components}.)
         \eganswer
         The dot product is $1.1\times10^6\ \nunit\unitdot\munit = 1.1\times10^6\ \junit$.
         \end{eg}
+
+\begin{eg}{Zero work done by a constant force around a closed path}\label{eg:zero-work-around-closed-path}
+The figure shows a chain of $\Delta\vc{r}$ vectors $\vc{d}_1$, \ldots $\vc{d}_n$ that form a closed
+path, so that
+\begin{equation*}
+  \sum_{i=1}^n \vc{d}_i = 0.
+\end{equation*}
+Suppose that work is done along this path by a constant force. For example, the earth's gravitational
+force on an object would be nearly constant as long as the region of space in the figure was small
+compared to the size of the earth. The total work done is then
+\begin{equation*}
+  W = \sum_{i=1}^n \vc{F}\cdot\vc{d}_i.
+\end{equation*}
+But because the dot product has the property $\vc{A}\cdot(\vc{B}+\vc{C}) = \vc{A}\cdot\vc{B}+\vc{A}\cdot\vc{C}$,
+we can take the constant factor $\vc{F}$ outside the sum, giving
+\begin{equation*}
+  W = \vc{F}\cdot\sum_{i=1}^n \vc{d}_i,
+\end{equation*}
+and this equals zero because the sum of the $\vc{d}$ vectors is zero. In the case of the earth's gravitational field,
+this makes sense, because the earth is unaffected by the motion of the object, so the whole system ends up
+with the same potential energy that it originally had. Any other result would violate conservation of energy,
+e.g., by allowing us to harvest some kinetic energy every time the mass made the round trip. This would be
+a kind of perpetual motion machine.
+\end{eg}
+
+% The figure is invoked in clc.tex. Putting it inside this file, where it belongs, causes an error. I think
+% This is because it's then an M4 include nested inside another include.
+
 <% end_sec('dot-product') %>
