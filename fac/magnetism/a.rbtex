@@ -433,7 +433,7 @@ Estimate the conductivity of human flesh.
 \egquestion If the arm has length $L$ and cross-sectional area $A$, then $E=\Delta V/L$ and $j=I/A$.
 We then have $\sigma=j/E=L/AR$. Taking a human arm to have a diameter of 7 cm and a length of 60 cm,
 $\sigma$ comes out to be about $0.5\ \Omega^{-1}\unitdot\munit^{-1}$, or eight orders
-of magnitude less than the conductivity of copper.
+of magnitude less than the conductivity of copper. Cf.~problem \ref{hw:whole-body-impedance}, p.~\pageref{hw:whole-body-impedance}.
 \end{eg}
 
 % calc -e "d=7 cm; r=d/2; A=pir^2; L=60 cm; R=300 ohm; L/(AR)->m-1ohm-1"
@@ -1319,6 +1319,66 @@ you'll know you didn't forget to measure something
 important, and that your result is reasonable compared to
 the currently accepted value.
 
+<% end_lab %>
+
+<% begin_lab("The magnetic field of twin-lead cable",type:'ex') %>
+
+In section \ref{sec:sum-dipoles}, p.~\pageref{sec:sum-dipoles}, we used a trick to find
+the field of a circular loop of twin-lead cable, and then the field of a single circular loop of current.
+In this exercise you will use the same technique to find the field of a long, straight piece of
+twin-lead cable, and then the field of a single, long, straight wire. This can the be checked against
+the result of example \ref{eg:b-wire}, p.~\pageref{eg:b-wire}.
+
+<%
+  fig(
+    'ex-twin-lead',
+    %q{A piece of twin lead cable.},
+    {'width'=>'column','float'=>false}
+  )
+%>
+
+The figure shows the setup. The two conductors are separated by a distance $b$ which is small compared to $h$, and they extend infinitely
+far to the left and right. We wish to find the field $B$ at the point indicated in the figure.
+To start out with, we imagine, as in section \ref{sec:sum-dipoles}, dividing up the space between the conductors
+into little rectangles, and we then set up an integral for the field in which we integrate over these tiny rectangles:
+\begin{equation*}
+  B = -\int \frac{k}{c^2r^3} \der m.
+\end{equation*}
+
+1. Use the relation $\der m=I\der A$ to make this into an integral over the area between the conductors.
+Then let the width of each little rectangle be $\der x$, and make this into an integral over $x$.
+
+\vspace{20mm}
+
+2. This integral is not yet really a definite integral, because it has the parameter $y$ inside.
+Change to a new, unitless variable $u=x/h$ and rewrite the result in terms of an actual definite integral,
+with other parameters appearing outside the integral as a single multiplicative factor.
+
+\vspace{20mm}
+
+3. You should find that the definite integral has the form $\int_{-\infty}^\infty (1+u^2)^{-3/2}\der u$.
+It's a waste of time to do an integral like this by hand. There is a nice piece of open-source software
+called Maxima that can do this kind of thing. You can download it for free, but for now we'll find it
+more convenient to use it through a web interface on a server, at \url{maxima.cesga.es}. 
+Your definite integral will look like this: \texttt{integrate((1+u\textasciicircum{}2)\textasciicircum{}(-3/2),u,-inf,inf);} (note
+the semicolon). Find its
+value and complete the calculation of the field of the twin lead cable.
+
+\vspace{20mm}
+
+<%
+  fig(
+    'ex-twin-lead-wire',
+    %q{Superimposing infinitely many twin-lead wires to fill the entire half-plane $y<0$. },
+    {'width'=>'column','float'=>false}
+  )
+%>
+
+4. Now, as shown in the second figure, we superimpose infinitely many twin-lead wires, with the result that the
+only current that doesn't cancel out with a neighbor is the one on the $x$ axis. The role previously played
+by $b$ is now played by $\der y$, and $h$ is now to be replaced with $h-y$, so that the result from part 3
+is now $\der B$, the infinitesimal field contributed by one of the strips. Integrate to find the field of
+a wire on the $x$ axis, and compare with the result of example \ref{eg:b-wire}, p.~\pageref{eg:b-wire}.
 <% end_lab %>
 
 <% end_chapter() %>
