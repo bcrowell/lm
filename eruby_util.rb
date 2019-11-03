@@ -592,7 +592,7 @@ def fig(name,caption=nil,options={})
     'floatpos'=>'h',       # standard latex positioning parameter for floating figures
     'narrowfigwidecaption'=>false, # currently only supported with float and !anonymous
     'suffix'=>'',          # for use when a figure is used in more than one place, and we need to make the label unique;
-                           #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second
+                           #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second; label is 'foo2', not 'foo-2'
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
                            # For an example of how to do this, see SN ch. 3, "Gory details of the proof..."

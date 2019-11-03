@@ -138,7 +138,7 @@ although it would tend to spin and be swept downstream, it would not change its 
 which is how a div-meter registers a divergence. Therefore 
 $\operatorname{div}\vc{j}=0$ in this example, and by conservation of charge
 we find that $\partial\rho/\partial t=0$, i.e., charge is not being stored or taken
-out of storage anywhere in the wire.
+out of storage anywhere in the wire. Skin depth is discussed further in example \ref{eg:skin-depth-maxwell}, p.~\pageref{eg:skin-depth-maxwell}.
 \end{eg}
 
 <%
@@ -184,7 +184,7 @@ But this is $b-b=0$, so this \emph{is} a possible steady flow of charges.
   fig(
     'einzel-lens',
     %q{%
-      An einzel lens, example \ref{eg:einzel-lens}.
+      An einzel lens, example \ref{eg:einzel-lens}. The silhouette of the beam of electrons is shown as a white highlight.
     },
     {
       'width'=>'wide',
@@ -204,10 +204,9 @@ lines on the left are the top and bottom of the left-hand cylinder,
 and similarly in the middle and right.
 The left and right cylinders
 are kept at the ground potential, while the one in the middle
-is at a different potential $\phi<0$.
+is at a different potential $\phi>0$.
 
-The silhouette of the beam of electrons is shown as a white highlight
-in the figure.  As the electrons enter from the left side, they first
+As the electrons enter from the left side, they first
 encounter strong electric fields when they reach the gap between the
 left and middle cylinders. If we consider an electron at the top edge
 of the beam, the field initially decelerates it and moves it away
@@ -215,13 +214,14 @@ from the axis, to point A. Continuing from A to B, the electron is reaccelerated
 and deflected toward a point on the right at which the beam reaches a
 focus on the axis. 
 
-It might seem like an accident that the electron speeds up as it travels from
-A to B, but in fact this this required by the equation of continuity.
+It's no accident that the electron speeds up as it travels from
+A to B.
 The physics is identical to that of the faucet in figure \figref{faucet}, and
-to right-hand portion of figure \subfigref{div-focusing}{3}. In all of these
-examples, the speeding-up and the coming-together are logically related. If we
+to figure \subfigref{div-focusing}{3}.
+The speeding-up and the coming-together are logically related. If we
 had a coming together without a speeding up, we would violate the equation of
-continuity.
+continuity. Note that it only matters that the flow is \emph{steady}, not
+whether it's compressible or incompressible (as for the water).
 \end{eg}
 
 \pagebreak
@@ -409,6 +409,79 @@ even if we try to make up for it somewhere else.
 <% end_sec('maxwell-round-up') %>
 
 <% end_sec('maxwell-full') %>
+
+<% begin_sec("Ohm's law in local form",nil,'ohms-law-local') %>
+If we could look inside a resistor with a DC current flowing through it, and zoom in to a very small scale,
+then the only things we would be able to probe locally through measurements --- the only ``observables'' ---
+would be the electric field $\vc{E}$ and the current density $\vc{j}$. Whereas at a global scale we would
+say that the voltage drop $\Delta V$ causes a current $I$, locally it must be that $\vc{E}$ causes $\vc{j}$.
+To get the strict proportionality in Ohm's law, with no nonlinearity for an idealized ohmic material, we must
+have $\vc{j}=\sigma\vc{E}$, for some constant of proportionality $\sigma$, called the conductivity. This
+is the local form of Ohm's law.
+
+The conducticity depends on the material, and generally tells us how many free charge carriers are available,
+as well as the frequency of collisions that stop the charge carriers.
+For a perfect conductor, the conductivity is infinite, but electric fields are excluded, so the product $\sigma\vc{E}$
+becomes the indeterminate form $\infty\cdot 0$.
+The units of conductivity can be expressed as $1/(\Omega\unitdot\munit)$. An example of a good conductor is
+copper, which has $\sigma\approx 6\times10^7\ \Omega^{-1}\unitdot\munit^{-1}$. 
+
+\begin{eg}{Conductivity of flesh}
+\egquestion The DC resistance of a human arm, measured from end to end, is about $300\ \Omega$.
+Estimate the conductivity of human flesh.
+
+\egquestion If the arm has length $L$ and cross-sectional area $A$, then $E=\Delta V/L$ and $j=I/A$.
+We then have $\sigma=j/E=L/AR$. Taking a human arm to have a diameter of 7 cm and a length of 60 cm,
+$\sigma$ comes out to be about $0.5\ \Omega^{-1}\unitdot\munit^{-1}$, or eight orders
+of magnitude less than the conductivity of copper.
+\end{eg}
+
+% calc -e "d=7 cm; r=d/2; A=pir^2; L=60 cm; R=300 ohm; L/(AR)->m-1ohm-1"
+%    0.519689610095985 ohm-1m-1
+
+\pagebreak
+
+\begin{eg}{Skin depth's dependence on frequency}\label{eg:skin-depth-maxwell}
+Figure \figref{skin-depth2} is a copy of the one from example \ref{eg:skin-depth}, p.~\pageref{eg:skin-depth},
+in which we said that the arrows represented the current density, and used the equation of continuity to
+find out that $\partial\rho/\partial t=0$, i.e., charge is not being stored or taken
+out of storage anywhere in the wire. We can now use Maxwell's equations to see why this phenomenon occurs only for AC circuits.
+
+By $\vc{j}=\sigma\vc{E}$, we see that the figure can be taken as a drawing of either the current or the electric field.
+The only difference would be the constant scalar factor $\sigma$, which is irrelevant since we haven't defined a numerical scale
+for the length of the arrows. The figure shows a pretty strong skin depth effect, but we could imagine making it either stronger
+or weaker than this. If it were much stronger, then appreciable fields and currents would exist only near the surface, like a skin. If it were
+much weaker, or nonexistent, then we would see a nearly uniform condition throughout the cross-section of the wire. We will
+argue that the effect must depend on the \emph{frequency} of the current. In some common examples from everyday life,
+this frequency is zero for a DC circuit such as a flashlight, 60 Hz for most household appliances in the US,
+and $\sim1\ \zu{GHz}$ for a cell phone. In the case of 60 Hz, the current is switching directions back and forth 60 times per second,
+with a sinusoidal variation.
+
+We apply the following two Maxwell's equations:
+\begin{align*}
+  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
+  \operatorname{curl}\vc{B} &=  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}+\frac{4\pi k}{c^2}\vc{j}.
+\end{align*}
+In the DC limit, all the time derivatives must vanish, and therefore $\operatorname{curl}\vc{E}=0$. If we imagine
+inserting a curl-meter for the electric field into figure \figref{skin-depth2}, we can see that a skin depth effect
+requires a nonzero $\operatorname{curl}\vc{E}$. Therefore the skin effect cannot occur at DC, i.e., the skin depth
+goes to infinity as the frequency $f$ approaches zero. Since the only unitful quantities available are
+$\sigma$, $f$, and the fundamental constants $k$ and $c$, there is only one way in which the skin depth
+can depend on frequency: it must be proportional to $(\sigma\ f k)^{-1/2}c$.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'skin-depth',
+    %q{Example \ref{eg:skin-depth-maxwell}. The cross-section of a wire with an AC current flowing through it.},
+    {'suffix'=>'2'}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('ohms-law-local') %>
+
 
 <% begin_sec("The magnetic dipole",nil,'b-dipole') %>\index{dipole!magnetic!further properties}
 
@@ -603,7 +676,7 @@ the special cases of $\theta=\pi/2$ (example \ref{eg:e-dipole-mid-plane},
 p.~\pageref{eg:e-dipole-mid-plane}) and $\theta=0$ (problem \ref{hw:dipole-axis},
 p.~\pageref{hw:dipole-axis}).\index{dipole!far field!equations}
 
-<% marg() %>
+<% marg(300) %>
 <%
   fig(
     'field-of-point-dipole',
