@@ -101,6 +101,35 @@ for thicker wires. This is presumably because a thicker wire has a smaller surfa
 and therefore cannot get rid of its heat as quickly.
 \end{eg}
 
+\pagebreak
+
+\startdq
+
+<% marg(-15) %>
+<%
+  fig(
+    'dq-square-wire',
+    %q{Discussion question \ref{dq:square-wire}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:square-wire}
+Each of the four figures shows a short section of a long current-carrying copper bar, whose cross-section is a square with sides of
+length $b$. In this side view, the height of the bar is $b$. The current density $\vc{j}$ is constant and is in the
+direction shown by the white arrows. In example 1, the black line shows a surface cutting perpendicularly through the
+wire. We define the orientation of this surface to be to the right, as shown by the black arrow. Integrating
+both sides of $\der I=\vc{j}\cdot\der\vc{A}$, we obtain $I=jb^2$.
+\begin{enumerate}
+  \item If we wanted to compare this calculation to reality by a measurement with a real ammeter, what would we actually have to do?
+  \item Suppose we flip the orientation of the $\vc{A}$ vector. What would this mean in terms of actual measurements?
+  \item We now tilt the surface by 45 degrees. Recalculate  $I$.
+  \item Suppose the surface is now a sphere of diameter $b$. Find the error in the following calculation:
+          $I=4\pi (b/2)^2j=\pi b^2$.
+\end{enumerate}
+\end{dq}
+
 <% end_sec('current-density-def') %>
 
 <% begin_sec("Continuity equation",nil,'continuity') %>\index{charge!conservation!continuity equation}
@@ -180,6 +209,49 @@ we have $\operatorname{div}(\vc{j}_1+\vc{j}_2)=\operatorname{div}\vc{j}_1+\opera
 But this is $b-b=0$, so this \emph{is} a possible steady flow of charges.
 \end{eg}
 
+\startdqs
+
+<%
+  fig(
+    'continuity-capacitor',
+    %q{%
+      Discussion question \ref{dq:continuity-capacitor}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{dq}\label{dq:continuity-capacitor}
+The sea-of-arrows diagram in figure \figref{continuity-capacitor} represents
+a current density $\vc{j}$. The portions with the slanting arrows are identical to pieces
+of figure \subfigref{div-focusing}{3}. Imagine putting a div-meter at each of the marked
+points, and determine whether the divergence is positive, negative, or zero.
+Describe what is happening to the charge. If a positive charge enters from the right,
+where does it end up?
+\end{dq}
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-continuity-traffic',
+    %q{Discussion question \ref{dq:continuity-traffic}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:continuity-traffic}
+The figure shows a freeway on which we'll say that the cars are all initially uniformly spaced and moving at the same velocity.
+We now consider two different ways in which the traffic could speed up. (1) Every car begins accelerating
+at the same time and with the same acceleration. (2) As each car passes a certain point (perhaps a cop
+making a traffic stop, making people rubberneck until they go past), it begins to accelerate starting at that
+point in space. For each situation, sketch the current density $\vc{j}$
+and describe how the continuity equation is satisfied.
+\end{dq}
+
 <%
   fig(
     'einzel-lens',
@@ -224,27 +296,6 @@ continuity. Note that it only matters that the flow is \emph{steady}, not
 whether it's compressible or incompressible (as for the water).
 \end{eg}
 
-\pagebreak
-
-\startdq
-
-<% marg(0) %>
-<%
-  fig(
-    'dq-continuity-traffic',
-    %q{Discussion question \ref{dq:continuity-traffic}.},
-    {'anonymous'=>true}
-  )
-%>
-<% end_marg %>
-
-\begin{dq}\label{dq:continuity-traffic}
-The figure shows a freeway on which we'll say that the cars are all initially uniformly spaced and moving at the same velocity.
-We now consider two different ways in which the traffic could speed up. (1) Every car begins accelerating
-at the same time and with the same acceleration. (2) As each car passes a certain point (perhaps a cop
-making a traffic stop, making people rubberneck until they go past), it begins to accelerate starting at that
-point in space. In each situation, describe how the continuity equation is satisfied.
-\end{dq}
 
 <% end_sec('continuity') %>
 
@@ -540,8 +591,11 @@ moments add as vectors, and that the dipole moment is proportional to
 the area of the loop. You should take a moment and verify using the right-hand
 rule that the torque in figure \figref{squaretorque-fac} is in the direction
 that tends to align the dipole vector with the magnetic field. A calculation
-(\note{b-dipole-torque}) shows that the dipole moment is $\vc{m}=I\vc{A}$, where
-$I$ is the current and $\vc{A}$ is the area vector.
+(\note{b-dipole-torque}) shows that the dipole moment is
+\begin{equation*}
+  \vc{m}=I\vc{A},
+\end{equation*}
+where $I$ is the current and $\vc{A}$ is the area vector.
 
 \begin{eg}{The magnetic dipole moment of an atom}\label{eg:estimate-atomic-dipole}
 Let's make an order-of-magnitude estimate of the magnetic dipole moment of an atom.
@@ -824,6 +878,13 @@ much smaller than the interior field.\index{solenoid!magnetic field}
 Some other cases of interest can be solved by superposing the fields
 above. An example is the Helmholtz coil (problem \ref{hw:helmholtzcoil-center},
 p.~\pageref{hw:helmholtzcoil-center}).
+
+<% self_check('sketch-field-wire-and-loop',<<-'SELF_CHECK'
+1.~Let a current-carrying wire lie along the $x$ axis, carrying current in the positive $x$ direction.
+At points on the $y$ axis, which component of the field is nonzero? Sketch this component as a function of $y$.\\\\
+2.~Sketch the function $B_z(z)$ for a circular loop as described above.
+  SELF_CHECK
+  ) %>
 
 <% end_sec('b-fields-practical') %>
 
@@ -1350,7 +1411,7 @@ Then let the width of each little rectangle be $\der x$, and make this into an i
 
 \vspace{20mm}
 
-2. This integral is not yet really a definite integral, because it has the parameter $y$ inside.
+2. This integral is not yet really a definite integral, because it has the parameter $h$ inside.
 Change to a new, unitless variable $u=x/h$ and rewrite the result in terms of an actual definite integral,
 with other parameters appearing outside the integral as a single multiplicative factor.
 

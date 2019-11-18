@@ -1503,6 +1503,26 @@ waterwheel? (Such a waterwheel is known as a Pelton wheel.)\label{dq:pelton}
   )
 %>
 
+m4_ifelse(__lm,1,[:\pagebreak:])
+
+\begin{dq}\label{dq:colliding-balls-p}
+In problem \ref{hw:colliding-balls}, p.~\pageref{hw:colliding-balls}, we analyzed a multiflash photograph collision between two
+steel balls to check for conservation of energy. The photo is reproduced below. Check conservation of momentum as well.
+\end{dq}
+
+<%
+  fig(
+    'hw-colliding-balls',
+    %q{Discussion question \ref{dq:colliding-balls-p}.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>true,
+      'suffix'=>'2'
+    }
+  )
+%>
+
 <% end_sec() %>
 <% end_sec('momentum-in-3d') %>
 <% begin_sec("Applications of calculus",3,'momentum-calc-applications',{'calc'=>true}) %>
