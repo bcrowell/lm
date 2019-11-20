@@ -656,35 +656,34 @@ Figure \figref{resonance-fac} shows how the response depends on the driving freq
 The peak in the graph of $|A|$ demonstrates that there is a resonance. Increasing $Q$,
 i.e., decreasing damping, makes the response at resonance greater, which is intuitively
 reasonable. What is a little more surprising is that it also changes the \emph{shape}
-of the resonance peak, making it narrower and spikier. The width of the resonance peak
+of the resonance peak, making it narrower and spikier, as shown in figure \figref{resonance-varying-q}. The width of the resonance peak
 is often described using the full width at half-maximum, or FWHM, defined in figure
 \figref{fwhm}. The FWHM is approximately equal to $1/Q$ times the resonant frequency,
 the approximation being a good one when $Q$ is large.\index{$Q$ (quality factor)}\index{FWHM (full width at half maximum)}
 
-<% marg() %>
+<% marg(300) %>
+<%
+  fig(
+    'resonance-varying-q',
+    %q{Increasing $Q$ increases the response and makes the peak narrower. In this graph, frequencies are 
+       in units of the natural frequency, and the response is the energy of the steady state,
+       on an arbitrary scale.To make the comparison
+       more visually clear, the curve for $Q=2$ is multiplied by 5. Without this boost in scale,
+       the $Q=2$ curve would always lie below the one for $Q=10$.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'fwhm',
     %q{Definition of the FWHM of the resonance peak.}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'dispersion-graph-closeup',
-    %q{Example \ref{eg:dispersion-complex}. In the top panel, the speed of light waves in silica glass ($c/v$ running from 3 to 0)
-       is graphed for increasing frequency and decreasing wavelength ($\lambda$ from 15 $\mu\munit$ to 1 $\mu\munit$).
-       The bottom panel shows a physical explanation in which the original light wave excites the charges in the glass,
-       which reemit a secondary wave. The secondary wave is observed superposed with the original one.
-       Redrawn from Kitamura, Pilon, and Jonasz, Applied Optics 46 (2007) 8118,
-       reprinted online at \url{http://www.seas.ucla.edu/~pilon/Publications/AO2007-1.pdf}.}
-  )
-%>
 <% end_marg %>
 
 \begin{eg}{Dispersion of light in glass}\label{eg:dispersion-complex}\index{dispersion}
 A surprising and cool application is the explanation of why electromagnetic waves traveling through
-matter are \emph{dispersive} (sec.~\ref{sec:propagation-at-c}), i.e., their speed depends on their
+matter are \emph{dispersive} (section \ref{sec:propagation-at-c}), i.e., their speed depends on their
 frequency. Figure \subfigref{dispersion-graph-closeup}{1} shows a typical observation, in which clearly
 something special is happening at a certain frequency. This is a resonance of the charged particles
 in the glass, which vibrate in response to the electric field of the incoming wave.
@@ -722,6 +721,21 @@ Consulting figure \figref{resonance-fac}, we see that for frequencies somewhat b
 small and its phase approximately real-positive. Therefore $1-iA$ is in the fourth quadrant, somewhat below
 the real axis. This represents a transmitted wave that is behind the original wave in terms of phase.
 The effect is as if the wave were arriving late, i.e., traveling at lower than normal speed.
+
+
+<% marg(300) %>
+<%
+  fig(
+    'dispersion-graph-closeup',
+    %q{Example \ref{eg:dispersion-complex}. In the top panel, the speed of light waves in silica glass ($c/v$ running from 3 to 0)
+       is graphed for increasing frequency and decreasing wavelength ($\lambda$ from 15 $\mu\munit$ to 1 $\mu\munit$).
+       The bottom panel shows a physical explanation in which the original light wave excites the charges in the glass,
+       which reemit a secondary wave. The secondary wave is observed superposed with the original one.
+       Redrawn from Kitamura, Pilon, and Jonasz, Applied Optics 46 (2007) 8118,
+       reprinted online at \url{http://www.seas.ucla.edu/~pilon/Publications/AO2007-1.pdf}.}
+  )
+%>
+<% end_marg %>
 
 Increasing the frequency, we expect that as we hit resonance, $A$ will should be large and positive-imaginary.
 Now the quantity $1-iA$ becomes positive and real, the real phase indicating that the transmitted wave
