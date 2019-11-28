@@ -833,14 +833,6 @@ units of seconds, and you can check for yourself that this
 is correct. $RC$ is therefore referred to as the time
 constant of the circuit.\index{RC time constant}\index{time constant!RC}
 
-<% marg(30) %>
-<%
-  fig(
-    'rc',
-    %q{An RC circuit.}
-  )
-%>
-<% end_marg %>
 
 
 How exactly do $I$ and $q$ vary with time? Rewriting $I$ as
@@ -858,7 +850,14 @@ our solution is
                 q = q_\zu{o}\exp\left(-\frac{t}{RC}\right)\eqquad.
 \end{equation*}
 
-<% marg(0) %>
+<% marg(30) %>
+<%
+  fig(
+    'rc',
+    %q{An RC circuit.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'rcdecay',
@@ -868,9 +867,7 @@ our solution is
     }
   )
 %>
-
 \spacebetweenfigs
-
 <%
   fig(
     'rl',
@@ -1075,6 +1072,24 @@ to try to make them work. An example of such a generalization is the Dirac delta
 <% end_marg %>
 
 <% begin_hw('earthcap-fac') %>__incl(hw/earthcap-fac)<% end_hw() %>
+
+<% begin_hw('rc-oscilloscope') %>__incl(hw/rc-oscilloscope)<% end_hw() %>
+
+<%
+  fig(
+    'hw-rc-oscilloscope',
+    %q{%
+      Problem \ref{hw:rc-oscilloscope}.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+<% begin_hw('lr-energy-e-fold') %>__incl(hw/lr-energy-e-fold)<% end_hw() %>
+
+<% begin_hw('lc-ratios') %>__incl(hw/lc-ratios)<% end_hw() %>
 
 <% end_hw_sec %>
 

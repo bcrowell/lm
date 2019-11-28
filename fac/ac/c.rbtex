@@ -542,6 +542,24 @@ Inductances have the same parallel and series behavior as resistances.
 
 Capacitances add in parallel. Inverse capacitances add in series.
 
+\startdq
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-simplify-rc',
+    %q{Discussion question \ref{dq:simplify-rc}.},
+    {'anonymous'=>true}  
+  )
+%>
+<% end_marg %>
+
+
+\begin{dq}\label{dq:simplify-rc}
+Simplify the circuit element shown in the figure.
+\end{dq}
+
+
 <% end_sec('l-and-c-parallel-and-series') %>
 
 
@@ -575,6 +593,21 @@ Capacitances add in parallel. Inverse capacitances add in series.
 <% begin_hw('capacitor-paradox') %>__incl(hw/capacitor-paradox)<% end_hw() %>
 
 <% begin_hw('lc-e-sharing',2) %>__incl(hw/lc-e-sharing)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('impedance-order') %>__incl(hw/impedance-order)<% end_hw() %>
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-impedance-order',
+    %q{%
+      Problem \ref{hw:impedance-order}.
+    }
+  )
+%>
+<% end_marg %>
 
 <% end_hw_sec %>
 
