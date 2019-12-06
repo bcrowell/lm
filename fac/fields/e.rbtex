@@ -220,6 +220,33 @@ unevenly spaced?
   SELF_CHECK
   ) %>
 
+<% marg() %>
+<%
+  fig(
+    'field-lines-of-wire-handedness',
+    %q{Right-hand rule for the direction of the magnetic field created by the current in a straight wire.}
+  )
+%>
+<% end_marg %>
+
+In figure \figref{field-lines-of-wire}, there was no obvious reason why the magnetic field should have
+been counterclockwise rather than clockwise. This depends on the direction of the current, as shown
+in figure \figref{field-lines-of-wire-handedness}. The fact that we use a right-hand rule for this is
+clearly nothing basic about physics --- the right hand was chosen because humans are mostly right-handed.
+There are actually two arbitrary conventions behind this, which we encountered in
+sec.~\ref{subsec:flip-arrowheads}, p.~\pageref{subsec:flip-arrowheads}.
+First, Ben Franklin arbitrarily choose one type of charge $q$ to call positive and one to call negative,
+and this also implies a definition of the sign of the current $\der q/\der t$.
+Second, someone had to resolve the ambiguity between defining the magnetic field to be our civilization's
+$\vc{B}$, or instead $-\vc{B}$. Given these two arbitrary choices, we get the right-hand rule illustrated
+in the figure.
+
+A straight wire like the one in figure \figref{field-lines-of-wire} is not
+usually a very efficient or compact way of making a strong magnetic field.
+A more practical device is a solenoid, figure \figref{solenoid}. When very
+strong fields are required, the field can be increased by an additional large
+factor by adding a core made of a magnetic material such as iron. The mathematics
+for calculating such fields will be deferred to later in this course.
 
 <% marg() %>
 <%
@@ -231,12 +258,6 @@ unevenly spaced?
   )
 %>
 <% end_marg %>
-A straight wire like the one in figure \figref{field-lines-of-wire} is not
-usually a very efficient or compact way of making a strong magnetic field.
-A more practical device is a solenoid, figure \figref{solenoid}. When very
-strong fields are required, the field can be increased by an additional large
-factor by adding a core made of a magnetic material such as iron. The mathematics
-for calculating such fields will be deferred to later in this course.
 
 The creation of magnetic fields is not the only effect associated with
 currents.  For example, a current normally causes heating, as in an
@@ -536,6 +557,8 @@ fields' energy that would have occurred if they were moved closer together or fa
 (Cf.~also the complicated handling of the limits of integration in
 note \notewithoutbackref{force-on-point-charge}.)
 
+\vfill
+
 \begin{eg}{Magnetostriction}\label{eg:joule-magnetostriction}
 The examples discussed above involved pressure and tension made by electric fields,
 but an exactly analogous effect occurs for magnetism.
@@ -581,14 +604,7 @@ the sine wave.
 %>
 <% end_marg %>
 
-<% marg(-20) %>
-<%
-  fig(
-    'jello-shear',
-    %q{A mechanical example of shear forces. If the plate of jello is disturbed horizontally, internal shear forces bring it back to equilibrium.}
-  )
-%>
-<% end_marg %>
+\pagebreak
 
 It is beyond the scope of this book to work out fully general equations for the pressure and tension
 in the fields. In the most general case, when both an electric and a magnetic field are present, this
@@ -602,6 +618,15 @@ the pressure and tension be proportional $E^2$ (problem \ref{hw:field-pressure-u
 as we would have expected, since rotational invariance
 requires that the pressure remain unchanged if we replace $\vc{E}$ with $-\vc{E}$.
 It also turns out that the pressures are equal to the tension in absolute value (\note{p-t-equal}). Summarizing:
+
+<% marg(300) %>
+<%
+  fig(
+    'jello-shear',
+    %q{A mechanical example of shear forces. If the plate of jello is disturbed horizontally, internal shear forces bring it back to equilibrium.}
+  )
+%>
+<% end_marg %>
 
 \begin{itemize}
 \item There are only pressure $P$ and tension $T$, not shear, and both are proportional to the square of the field.

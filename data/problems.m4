@@ -242,6 +242,8 @@ m4_define(__hw_fac_12_factor-cubic,7)m4_dnl
 m4_define(__hw_fac_12_i-to-the-i,8)m4_dnl
 m4_define(__hw_fac_12_swimbladder,9)m4_dnl
 m4_define(__hw_fac_12_spider-oscillations,10)m4_dnl
+m4_define(__hw_fac_12_simple-complex-inverse,11)m4_dnl
+m4_define(__hw_fac_12_arg-of-inverse-conjugate,12)m4_dnl
 m4_define(__hw_fac_13_fmradiolrc,1)m4_dnl
 m4_define(__hw_fac_13_lr-units,2)m4_dnl
 m4_define(__hw_fac_13_oscilloscope-square-wave,3)m4_dnl
@@ -252,6 +254,7 @@ m4_define(__hw_fac_13_rc-oscilloscope,7)m4_dnl
 m4_define(__hw_fac_13_lr-energy-e-fold,8)m4_dnl
 m4_define(__hw_fac_13_lc-ratios,9)m4_dnl
 m4_define(__hw_fac_13_l-solenoid,10)m4_dnl
+m4_define(__hw_fac_13_q-from-graph-of-lrc,11)m4_dnl
 m4_define(__hw_fac_14_lc-phase,1)m4_dnl
 m4_define(__hw_fac_14_rc-par-impedance,2)m4_dnl
 m4_define(__hw_fac_14_lrc-z-plot,3)m4_dnl
