@@ -1444,6 +1444,17 @@ in terms of the field.
 
 <% begin_hw('field-pressure-units') %>__incl(hw/field-pressure-units)<% end_hw() %>
 
+<% marg(0) %>
+<%
+  fig(
+    'hw-right-hand-b-wire-practice',
+    %q{Problem \ref{hw:right-hand-b-wire-practice}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('right-hand-b-wire-practice') %>__incl(hw/right-hand-b-wire-practice)<% end_hw() %>
+
 
 <% end_hw_sec() %>
 
@@ -1457,7 +1468,8 @@ stopwatch\\
 string\\
 scissors\\
 alligator clips\\
-330 $\Omega$ resistor
+270 $\Omega$ resistor\\
+compass
 \end{labapparatus}
 
 \begin{labgoal}
@@ -1528,5 +1540,35 @@ Averaging the periods in these two conditions eliminates the effect of the ambie
 
 <% end_lab %>
 
+<% begin_lab("Tension in the electric field",columns:1,type:'ex') %>
+
+1. Warm-up: Compare the charge on the terrier to the charges on the viola and the shoe.
+
+<%  
+  fig(
+    'ex-tension-in-e-warmup',
+    '',
+    {'width'=>'column'}
+  )
+%> 
+
+2. Suppose that a metal plate is immersed in a uniform external electric field $E_\text{ext}$.
+This field superposes with any field due to charge $q$ on the plate itself.
+The force acting on the plate will depend on the product $qE_\text{ext}$.
+
+For the following examples, compare the forces, including both their direction and a quantitative measure
+of their strength.
+
+<%  
+  fig(
+    'ex-tension-in-e-main',
+    '',
+    {'width'=>'wide'}
+  )
+%> 
+
+3. Can you find a way to express these results in a simpler form, or make a rule that explains the results?
+
+<% end_lab %>
 
 <% end_chapter() %>
