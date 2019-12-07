@@ -557,7 +557,27 @@ fields' energy that would have occurred if they were moved closer together or fa
 (Cf.~also the complicated handling of the limits of integration in
 note \notewithoutbackref{force-on-point-charge}.)
 
-\vfill
+<% marg(300) %>
+<%
+  fig(
+    'sphere-tension',
+    %q{Tension in the electric field surrounding a charged sphere.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'joule-magnetostriction',
+    %q{Example \ref{eg:joule-magnetostriction}. The apparatus was about half a meter tall.}
+  )
+%>
+<% end_marg %>
+
+Figure \figref{sphere-tension} shows the example of a charged, conducting sphere. The charge
+distributes itself uniformly on the surface, and the field is zero on the inside.
+The surface of the sphere wants to explode because of the electrical repulsion. We confirm this
+because there is tension on the outside of the sphere, but none on the inside. This imbalance
+causes any piece of the surface to feel a net outward force.
 
 \begin{eg}{Magnetostriction}\label{eg:joule-magnetostriction}
 The examples discussed above involved pressure and tension made by electric fields,
@@ -571,7 +591,7 @@ of electro-magnetic engine. He was of the opinion that a bar of iron experienced
 of bulk by receiving the magnetic condition.'' Joule first constructed a delicate experiment
 to look for a change in the length of an iron bar when it was used as the core of a solenoid.
 In an iron bar about half a meter tall, he found a \emph{decrease} in length of a little more than one
-part per million, with the strongest field he could make. This effect is called
+part per million, with the strongest field he could make. This is called
 magnetostriction.
 
 This would suggest a decrease in volume as well, but there was no sufficiently accurate way to
@@ -595,14 +615,6 @@ the maximum magnetostriction occurs twice per cycle, at both the peak and the tr
 the sine wave.
 \end{eg}
 
-<% marg(300) %>
-<%
-  fig(
-    'joule-magnetostriction',
-    %q{Example \ref{eg:joule-magnetostriction}. The apparatus was about half a meter tall.}
-  )
-%>
-<% end_marg %>
 
 \pagebreak
 
@@ -617,7 +629,9 @@ axes be equal. Furthermore, if the only quantities we have handy are $k$ and $E$
 the pressure and tension be proportional $E^2$ (problem \ref{hw:field-pressure-units}, p.~\pageref{hw:field-pressure-units}),\label{claim-p-t-units}
 as we would have expected, since rotational invariance
 requires that the pressure remain unchanged if we replace $\vc{E}$ with $-\vc{E}$.
-It also turns out that the pressures are equal to the tension in absolute value (\note{p-t-equal}). Summarizing:
+It also turns out that the pressures are equal to the tension in absolute value (\note{p-t-equal}). 
+
+Summarizing, we find that when the field is purely electric or purely magnetic:
 
 <% marg(300) %>
 <%
