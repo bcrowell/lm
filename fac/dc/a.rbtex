@@ -826,6 +826,168 @@ cross-section area of one square millimeter, we find $v\sim1\ \zu{cm}/\sunit$.
 <% end_hw_sec %>
 
 
+<% begin_lab('Measuring voltage, current, and resistance',type:'ex') %>
+
+As shown in the figure, measuring current and voltage requires
+hooking the meter into the circuit in two completely different
+ways.
+
+<%
+  fig(
+    'ex-measuring-i-v-r',
+    '',
+    {'width'=>'column'}
+  )
+%>
+
+
+The arrangement for the ammeter is called a series circuit,
+because every charged particle that travels the circuit has
+to go through each component, one after another.
+The series circuit is arranged like beads on a necklace.
+
+The setup for the voltmeter is an example of a parallel
+circuit. A charged particle flowing, say, clockwise
+around the circuit passes through the power supply and
+then reaches a fork in the road, where it has a choice
+of which way to go. Some particles will pass through the
+bulb, others (not as many) through the meter; all of them
+are reunited when they reach the junction on the right.
+
+Students tend to have a mental block against setting up the
+ammeter correctly in series, because it involves breaking the circuit
+apart in order to insert the meter. To drive home this point,
+we will act out the process using students to represent
+the circuit components. If you hook up the ammeter incorrectly,
+in parallel rather than in series, the meter provides an easy path for the flow
+of current, so a large amount of current will flow. To protect the meter
+from this surge, there is a fuse inside, which will blow, and the meter
+will stop working. This is not a huge tragedy;
+just ask your instructor for a replacement fuse and open up the
+meter to replace it.
+
+Unscrew your lightbulb from its holder and look closely at it. Note
+that it has two separate electrical contacts: one at its tip and
+one at the metal screw threads.
+
+Turn the power supply's off-on switch to the off position, and
+turn its knob to zero.
+Set up the basic lightbulb circuit without any meter in it.
+There is a rack of cables in the back of the room with banana-plug
+connectors on the end, and
+most of your equipment accepts these plugs.
+To connect to the two brass screws on the lightbulb's base, you'll
+need to stick alligator clips on the banana plugs. 
+
+Check your basic circuit with your instructor, then turn on the power
+switch and \emph{slowly} turn up the knob until the bulb 
+lights.\footnote{On the power supplies we use at Fullerton College,
+the knob is uncalibrated and highly nonlinear; as you turn it up,
+the voltage it produces goes zerozerozerozerozero\emph{six!}
+To light the bulb without burning it out, you will need to
+find a position for the knob in the narrow range where it
+rapidly ramps up from 0 to 6 V.}
+
+Once you have your bulb lit, do not mess with the knob on the
+power supply anymore. You do not even need to switch the power
+supply off while rearranging the circuit for the two measurements
+with the meter; the voltage that lights the bulb is only about
+a volt or a volt and a half (similar to a battery), so it can't
+hurt you.
+
+We have a single meter that plays both the role of the voltmeter
+and the role of the ammeter in this lab. Because it can do both
+these things, it is referred to as a multimeter. Multimeters are
+highly standardized, and the following instructions are generic
+ones that will work with whatever meters you happen to be using
+in this lab.
+
+\emph{Voltage difference}
+
+Two wires connect the meter to the circuit. 
+At the places where three wires come together at
+one point, you can plug a banana plug into the back of
+another banana plug. At the meter, make one connection
+at the ``common'' socket (``COM'') and the other at the
+socket labeled ``V'' for volts. The common plug is called
+that because it is used for every measurement, not just for
+voltage.
+
+Many multimeters have more than one scale for
+measuring a given thing. For instance, a meter may have a
+millivolt scale and a volt scale. One is used for measuring
+small voltage differences and the other for large ones. You may not
+be sure in advance what scale is appropriate, but that's not
+a big problem --- once everything is hooked up, you can try
+different scales and see what's appropriate. Use the switch
+or buttons on the front to select one of the voltage scales.
+By trial and error, find the most precise scale that doesn't
+cause the meter to display an error message about being overloaded.
+
+Write down your measurement, with the units of volts, and stop
+for a moment to think about what it is that you've measured.
+Imagine holding your breath and trying to make your eyeballs
+pop out with the pressure. 
+Intuitively, the voltage difference is like the pressure difference
+between the inside and outside of your body.
+
+What do you think will happen if you unscrew the bulb, leaving
+an air gap, while the
+power supply and the voltmeter are still going? Try it.
+Interpret your observation in terms of the breath-holding
+metaphor.
+
+\emph{Current}
+
+The procedure for measuring the current differs only because
+you have to hook the meter up in series and because you have
+to use the ``A'' (amps) plug on the meter and select a current
+scale.
+
+In the breath-holding metaphor, the number you're measuring
+now is like the rate at which air flows 
+through your lips as you let it hiss out. Based on this
+metaphor, what do you think will happen to the reading when
+you unscrew the bulb? Try it.
+
+Discuss with your group and check with your instructor:\\
+(1) What \emph{goes through} the wires? Current? Voltage? Both?\\
+(2) Using the breath-holding metaphor, explain why the voltmeter
+needs \emph{two} connections to the circuit, not just one.
+What about the ammeter?\\
+While waiting for your instructor to come around and discuss
+these questions with you, you can go on to the next part of
+the lab.
+
+\emph{Resistance}
+
+The ratio of voltage difference to current is called the resistance
+of the bulb, $R=\Delta V/I$. Its units of volts per amp can be
+abbreviated as ohms, $\Omega$ (capital Greek letter omega).
+
+Calculate the resistance of your lightbulb. Resistance is the
+electrical equivalent of kinetic friction. Just as rubbing
+your hands together heats them up, objects that have
+electrical resistance produce heat when a current is passed
+through them. This is why the bulb's filament gets hot enough
+to heat up.
+
+When you unscrew the bulb, leaving an air gap, what is the
+resistance of the air?
+
+Ohm's law is a generalization about the electrical properties
+of a variety of materials. It states that the resistance is
+constant, i.e., that when you increase the voltage difference,
+the flow of current increases exactly in proportion.
+If you have time, test whether Ohm's law holds for your
+lightbulb, by cutting the voltage to half of what you had
+before and checking whether the current drops by the same factor.
+(In this condition, the bulb's filament doesn't get
+hot enough to create enough visible light for your eye to see,
+but it does emit infrared light.)
+
+<% end_lab %>
+
 <% begin_lab('Electrical measurements') %>
 
 1. How many different currents could you measure in this
