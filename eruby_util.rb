@@ -32,6 +32,7 @@ $hw_freeze = 0
 $tex_points_to_mm = (25.4)/(65536.*72.27)
 $n_marg = 0
 $in_marg = false
+$normal_column_setup = true # gets set to false when we're in a two-column layout or a one-column layout with no margin for figures
 $geom_file = "geom.pos"
 $checked_geom = false
 $geom_exists = nil
@@ -585,7 +586,8 @@ def fig(name,caption=nil,options={})
                            # default is false, except if caption is a null string, in which case it defaults to true
     'width'=>'narrow',     # 'native'=whatever the figure says it is, 'narrow'=52 mm, 'column'=76.5 mm,
                            #   'wide'=113 mm, 'fullpage'=171 mm
-                           #   refers to graphic, not graphic plus caption (which is greater for sidecaption option)
+                           #   Refers to graphic, not graphic plus caption (which is greater for sidecaption option).
+                           #   If fullpage figure ends up positioned incorrectly, see below re debugging.
     'sidecaption'=>false,
     'sidepos'=>'t',        # positioning of the side caption relative to the figure; can also be b, c
     'float'=>'default',    # defaults to false for narrow, true for wide or fullpage (because I couldn't get odd-even to work reliably for those if not floating)
@@ -601,6 +603,9 @@ def fig(name,caption=nil,options={})
     'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
+    # Debugging incorrect placement on the page:
+    #   If a fullpage width figure is in a page that doesn't have the standard layout, and is positioned incorrectly, see
+    #      logic about the flag $normal_column_setup. E.g., maybe this flag didn't get set.
     # not yet implemeted: 
     #    translated=false
     #      or just have the script autodetect whether a translated version exists!
@@ -835,11 +840,22 @@ def fig_print(name,caption,options,dir)
       if has_caption then
         die(name,"the combination of options fullpage+anonymous+caption is not currently supported")
       else
-        spit("\\fullpagewidthfignocaption[#{dir}]{#{name}}\n")
+        if $normal_column_setup then
+          #die(name,"fullpage figure used on a page without the normal layout")
+          spit("\\fullpagewidthfignocaption[#{dir}]{#{name}}\n")
+        else
+          raw_fig(name) # recurses
+        end
       end
     else # not anonymous
       if has_caption then
-        spit("\\fullpagewidthfig[#{dir}]{#{name}}{%\n#{caption}}\n")
+        if $normal_column_setup then
+          spit("\\fullpagewidthfig[#{dir}]{#{name}}{%\n#{caption}}\n")
+        else
+          save_complaint("****** warning: figure #{name} with caption, full page width and used in layout that is not the normal one; this feature is untested")
+          raw_fig(name) # recurses
+          spit("\\\\formatlikecaption{#{caption}}")
+        end
       else
         die(name,"no caption, but not anonymous")
       end
@@ -1191,10 +1207,12 @@ def begin_ex(title,label='',columns=1)
   title = alter_titlecase(title,1)
   column_command = (columns==1 ? "\\onecolumn" : "\\twocolumn");
   print "\\begin{handson}{#{label}}{#{title}}{#{column_command}}"
+  $normal_column_setup = false
 end
 
 def end_ex
   print "\\end{handson}"
+  $normal_column_setup = true
 end
 
 # The following are used in FAC:
@@ -1219,10 +1237,12 @@ def begin_lab(title,columns:2,suffix:'',type:'mini',number:'')
     t = t + "\\addcontentsline{toc}{section}{\\protect\\link{#{full_label}}{#{typename} #{number}#{suffix}: #{title}}}"
   end
   print t
+  $normal_column_setup = false
 end
 
 def end_lab
   print "\\end{activity}"
+  $normal_column_setup = true
 end
 
 def begin_notes(columns=2)
