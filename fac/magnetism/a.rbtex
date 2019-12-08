@@ -588,7 +588,9 @@ embodiment of a magnetic dipole would be something like the current
 loop shown in figure \figref{current-loop}.  Figure
 \figref{adddipoles} shows an example of why it makes sense that dipole
 moments add as vectors, and that the dipole moment is proportional to
-the area of the loop. You should take a moment and verify using the right-hand
+the area of the loop.
+In exercise \label{lab:currents-and-magnetic-fields}, p.~\pageref{lab:currents-and-magnetic-fields}, we will
+verify using the right-hand
 rule that the torque in figure \figref{squaretorque-fac} is in the direction
 that tends to align the dipole vector with the magnetic field. A calculation
 (\note{b-dipole-torque}) shows that the dipole moment is
@@ -1240,9 +1242,18 @@ is the same as $U=-\vc{m}\cdot\vc{B}$.
     %q{Problem \ref{hw:biot-savart-spiral}.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-finite-solenoid',
+    %q{Problem \ref{hw:finite-solenoid}.}
+  )
+%>
 <% end_marg %>
 
 <% begin_hw('biot-savart-spiral',2) %>__incl(hw/biot-savart-spiral)<% end_hw() %>
+
+<% begin_hw('finite-solenoid',2) %>__incl(hw/finite-solenoid)<% end_hw() %>
 
 <% end_hw_sec %>
 
@@ -1411,9 +1422,20 @@ them using the given coordinate systems, e.g., ``$+x$.''
 
 \vfill
 
-\hfill\emph{Turn the page.}
+3. The diagrams below show side views of a square current loop immersed in an external magnetic field.
+The first one (reproduced from fig.~\figref{squaretorque-fac}, p.~\pageref{fig:squaretorque-fac}) shows the
+loop's dipole moment. The second one labels the currents along the four sides of the square.
+
+<% raw_fig('ex-square-torque') %>
+
+(a) Find the orientation that would minimize the energy $U=-\vc{m}\cdot\vc{B}$.\\
+(b) Use the right-hand rule to find the force on each of the four edges.\\
+(c) Verify that the total force is zero.\\
+(d) Verify that the direction of the total torque is such that it would tend to align the loop's dipole moment with the field.
 
 \vfill
+
+\hfill\emph{Turn the page.}
 
 \pagebreak
 
