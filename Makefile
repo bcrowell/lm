@@ -28,6 +28,7 @@ very_clean_all:
 	cd cp && make very_clean && cd ..
 	cd sn && make very_clean && cd ..
 	cd me && make very_clean && cd ..
+	cd fac && make very_clean && cd ..
 	cd problems/calc && make clean && cd -
 
 prepress_all:

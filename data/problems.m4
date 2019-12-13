@@ -233,6 +233,7 @@ m4_define(__hw_fac_11_biot-savart-wire-stepwise,9)m4_dnl
 m4_define(__hw_fac_11_biot-savart-square,10)m4_dnl
 m4_define(__hw_fac_11_biot-savart-regular-polygon,11)m4_dnl
 m4_define(__hw_fac_11_biot-savart-spiral,12)m4_dnl
+m4_define(__hw_fac_11_finite-solenoid,13)m4_dnl
 m4_define(__hw_fac_12_complex-trig,1)m4_dnl
 m4_define(__hw_fac_12_addition-theorem-for-sine,2)m4_dnl
 m4_define(__hw_fac_12_cube-roots-of-unity,3)m4_dnl
