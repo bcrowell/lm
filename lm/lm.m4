@@ -7,4 +7,5 @@ m4_define([:__shotwell:],[:m4_ifelse(__problems,1,[::],[: {[Problem by B.~Shotwe
 m4_define([:__widmann:],Problem by P.~Widmann.)m4_dnl                                        
 m4_define([:__problems:],0)m4_dnl
 m4_define([:__fac:],0)m4_dnl
+m4_define([:__mod:],0)m4_dnl
 m4_define([:__sn:],0)m4_dnl

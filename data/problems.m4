@@ -272,6 +272,7 @@ m4_define(__hw_fac_15_rolling-wire-fac,3)m4_dnl
 m4_define(__hw_fac_15_circularcap,4)m4_dnl
 m4_define(__hw_fac_15_dropping-circuit,5)m4_dnl
 m4_define(__hw_fac_15_amperian-rectangle,6)m4_dnl
+m4_define(__hw_fac_15_b-coaxial-pipes,7)m4_dnl
 m4_define(__hw_fac_17_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_17_enterprise-ke,2)m4_dnl
 m4_define(__hw_fac_17_gamma-derivation,3)m4_dnl

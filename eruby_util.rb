@@ -1047,6 +1047,7 @@ def read_answer_data()
   if ! File.exist?($answer_data_file) then return end
   File.open($answer_data_file,'r') { |f|
     a = f.gets(nil) # nil means read whole file
+    if a.nil? then return end
     a.scan(/(\d+),(.*),(.*)/) { |ch,name,type|
       $answer_data.push([ch.to_i,name,type])
     }
