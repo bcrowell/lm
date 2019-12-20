@@ -9,16 +9,487 @@
 <%
   chapter(
     '01',
-    %q{Waves},
-    'ch:waves'
+    %q{Time},
+    'ch:time'
   )
 %>
 
-<% begin_sec("Introduction",nil,'intro') %>
+This type of physics course can easily seem to the student like a random grab-bag of
+topics, consisting of everything that didn't fit in the earlier semesters on mechanics
+and electromagnetism. But there is a clear organizing principle for most of what we'll
+be studying. It has to do with two surprising facts about time. In particular, one of
+these facts leads us to the conclusion that light and matter can't really be made of particles,
+as envisioned by Isaac Newton's grand vision of the universe --- they must be made of waves.
 
-blah
+<% marg() %>
+<%
+  fig(
+    'football-causality',
+    %q{The football could travel in either direction while obeying Newton's laws.}
+  )
+%>
+<% end_marg %>
 
-<% end_sec('intro') %>
+<% begin_sec("Time-reversal symmetry",nil,'t-symm') %>
+
+The first of these facts about time is that the laws of physics we have studied so far
+never distinguish the past from the future.  We can take a video of
+the football pass in figure \figref{football-causality}, reverse it in
+time, and then check the motion of the ball to see if it still
+complies with Newton's laws. It does. Mathematically, this is because
+Newton's laws predict accelerations, and since acceleration is a
+second derivative, $\der^2 x/\der t^2$, it doesn't change when we
+mirror-image the $x(t)$ graph, interchanging the positive and negative
+$t$ axes. For example, a negative second derivative means that the
+graph is concave down, and it's still concave down after we
+mirror-image it.\index{time!symmetry of the laws of physics under reversal}
+
+This time-reversal symmetry also holds for electromagnetism. As a
+simple example, Gauss's law tells us, in the special case of an
+electric field in a vacuum, that the field lines can't begin or end at
+a point.  (They can only begin or end on charges, whch don't exist in
+a vacuum.) This law doesn't even refer to time explicitly, so clearly
+nothing goes wrong if we reverse time. Some of the other
+electromagnetic quantities, such as currents, reverse themselves in a
+time-reversed world, but this can all be handled in a consistent way,
+if we adopt certain rules for which things flip and which ones don't.
+For an example in the same spirit as the football pass, we can reverse
+the current through an electromagnet. The magnetic field reverses
+itself, but the time-reversed version of the experiment still
+satisfies the rules we've learned about electromagnetism.
+
+The mystery, then, is why there are certain phenomena that, unlike the
+football pass or the electromagnet, seem impossible to act out in reverse.
+The concrete sidewalk in front of my house was wet when it was first
+poured. Then the concrete hardened. When it rains, the
+concrete doesn't reverse the chemical reaction and become soft again,
+nor will it do so even if I apply some heat, although it would be
+consistent with conservation of energy if it did so.
+
+There are many other phenomena that are irreversible. Candles don't
+unburn.  Eggs don't unscramble.  We can't remember what the stock
+market will do tomorrow. Any one of these could be used to define an
+``arrow of time,'' e.g., the future is the direction in which there
+are more scrambled eggs and fewer unscrambled ones. All of these
+arrows of time seem to be consistent with each other, which suggests
+that they have some common underlying explanation. But this
+explanation does not seem to be in the laws that govern atoms and
+light waves.\footnote{There is one obscure instance in nuclear physics in which
+the basic laws \emph{do} violate time-reversal symmetry, but as far as we
+can tell this has nothing to do with all the other phenomena, which don't
+involve this very specific type of nuclear decay.} We will see in our study of \emph{thermodynamics}, later
+in this course, that the explanation comes from statistics and cosmology.
+
+<% end_sec('t-symm') %>
+
+<% begin_sec("Relativity of time",nil,'time-is-relative') %>
+
+The second of our two strange facts about time relates directly to our upcoming topic of waves, and it
+also forms the basis for our discussion of relativity, which will be a thread running through the whole course.
+A colorful experiment demonstrating this fact was done by
+Hafele and Keating in 1971 (figure \figref{hk-in-cabin2}).\index{Hafele-Keating experiment}\index{atomic clock}\label{hafele-keating}
+The two
+physicists brought atomic clocks with them on round-the-world flights
+aboard commercial passenger jets, then compared the clocks with other
+clocks that had been left at home. When the clocks were reunited, they
+\emph{disagreed} by $\sim 100\ \zu{ns}$. The results were consistent
+with Einstein's 1915 theory of relativity, and were interpreted as a
+combined effect from motion and gravity. Because it's difficult to
+move a clock very fast without putting it on an airplane, it wasn't
+until 2010 that Chou \emph{et al.}\footnote{Science 329 (2010) 1630}
+succeeded in carrying out a conceptually simpler tabletop experiment
+in which a clock was simply moved around (at speeds on the order of 10
+m/s) without taking it to high elevation, thus isolating the effect of
+motion from the gravitational effect. It is the effect of motion that
+will be of interest to us here.
+
+<% marg(50) %>
+<%   
+  fig(
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
+  )
+%>
+<% end_marg %>
+
+It would be natural to try to explain this effect of motion as
+arising from the clocks' sensitivity to noise, cabin pressure, or
+vibration. But exactly the same effect is observed with other,
+completely different types of clocks under completely different
+circumstances, and even with processes such as the decay of elementary
+particles moving at high speeds --- the radioactive half-life is
+prolonged if the particles are in motion. 
+
+The conclusion is that \emph{time itself} is not absolute.\index{time!not absolute}
+If we synchronize two clocks side by side, then move them in different ways, and
+finally reunite them, we will in general see that they disagree. In experiments
+of this type, we find that time interval is greatest for a clock that moves
+\emph{inertially}, i.e., without accelerating. Any other motion results in a smaller
+time. The direction of the effect is easily remembered by thinking of the Planet of the Apes
+movies, in which human astronauts return to earth and find themselves in a distant
+future, in which chimpanzees, gorillas, and orangutans have dominion over the
+planet. \emph{Less} time passes for the astronauts, who undergo the violent accelerations
+of space travel.
+
+<% end_sec('time-is-relative') %>
+
+<% begin_sec("Spacetime",nil,'spacetime') %>
+
+We can visualize what's going on using \emph{spacetime diagrams} like the ones 
+in figure \figref{spacetime-cow-car-and-ball}. In \subfigref{spacetime-cow-car-and-ball}{1},
+we follow the soccer ball's motion as we go up the page. It moves to the right, is decelerated
+by the frictional force from the grass, and comes to a stop. This is essentially a graph of
+the ball's position as a function of time, but tilted sideways. The graph is curved, which
+shows that the ball's motion is noninertial. 
+
+<%
+  fig(
+    'spacetime-cow-car-and-ball',
+    %q{1.~The ball's world-line is noninertial. 2.~As time passes, the cow says that the car moves. 3.~In the driver's frame, it's the cow that moves.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+Aristotle would have accepted figure \subfigref{spacetime-cow-car-and-ball}{2}, but
+not \subfigref{spacetime-cow-car-and-ball}{3}, which is drawn in the driver's
+frame of reference, according to which the cow and the landscape are moving to the
+left. Aristotle believed in the absolute nature of notions such as distance and
+whether or not two events happen in the same place. Galileo taught us that these
+things are relative rather than absolute. Looking at the initial and final images of the car,
+we can't necessarily say how far apart in space they are from each other.
+According to \subfigref{spacetime-cow-car-and-ball}{2}, they're several meters apart,
+but \subfigref{spacetime-cow-car-and-ball}{3} says they're in the same place.
+
+Einstein extended this relativeness to time as well. 
+We accept Einstein's view because of evidence such as the atomic clock
+experiment described on p.~\pageref{hafele-keating}. We will see shortly that
+relativity makes different observers disagree not just on the lengths of time
+intervals, as shown in the atomic clock experiment, but also on whether or not two things happen simultaneously.
+What Galileo did to the notion of ``same place,'' Einstein did to ``same time.''
+
+One of the reasons that nineteenth-century Europeans found Marxism alarming was because it
+was atheistic, and they felt that without the framework of religion, there could be no basis
+for morality. For similar reasons, I was deeply disoriented when I first encountered relativity.
+The idea had been firmly inculcated that the universe was described by mathematical functions,
+and the natural habitat of those functions was graph paper. The graph paper provided what seemed
+like a necessary framework. For a position-time graph, the vertical lines meant ``same time,''
+and the horizontal ones ``same place.'' Somehow it didn't bother me much when Galileo
+erased the same-place lines (or at least relegated them to subjectivity), but without the same-time
+lines I felt lost, as if I were wandering in a landscape of Hieronymus Bosch's hell or
+Dali's melting watches.
+
+
+<% marg(50) %>
+<%
+  fig(
+    'bosch',
+    %q{Hell, according to Hieronymus Bosch (1450-1516).}
+  )
+%>
+<% end_marg %>
+  
+One of the disorienting things about this vision of the universe is that it takes away the notion
+that we can have a literal ``vision'' of the universe. We no longer have the idea of a
+snapshot of the landscape at a certain moment frozen in time. The sense of vision is merely
+a type of optical measurement, in which we receive signals that have traveled to our eyes
+at some finite speed (the speed of light). What relativity substitutes for the Galilean
+instantaneous snapshot is the concept of \emph{spacetime}, which is like the graph paper
+when its lines have been erased. Every point on the paper is called an \emph{event}. How can we
+even agree on the existence of an event, or define which one we are talking about, if we can't
+necessarily agree on its time or position? The relativist's attitude is that if a firecracker
+pops, that's an event, everyone agrees that it's an event, and $x$ and $t$ coordinates are just
+an optional and arbitrary name or label for the event. Labeling an event with coordinates is like
+God asking Adam to name all the birds and animals: the animals weren't consulted and didn't care.
+%       Genesis 20:19, "Out of the ground Yahweh God formed every animal of the field,
+%       and every bird of the sky, and brought them to the man to see what he would call
+%       them. Whatever the man called every living creature became its name." -- http://ebible.org/web/GEN02.htm#V0
+
+
+My grandparents' German shepherd lived for a certain amount of time, so he was
+not just a pointlike event
+in spacetime. We know how to represent the motion of such things
+as curves on an $x$-$t$ graph. From the point of view of relativity, the curve \emph{is} the thing ---
+we make no distinction between the dog and the dog's track through spacetime. Such a track is called
+a \emph{world-line}.\index{world-line} A world-line is a set of events strung together continuously:
+the dog as a puppy in Walnut Creek in 1964, the dog dozing next to the TV in 1970, and so on. The
+strange terminology is translated from German, and is supposed to be a description of the idea that
+the line is the thing's track \emph{through} the world, i.e., through spacetime.
+
+
+Sometimes if we want to describe an event, we can describe it as the beginning or end of a world-line:
+the dog's birth, or the firecracker's self-destruction. More commonly, we pick out an event of interest
+as the intersection of two world-lines, as in figure \figref{cell-phone-signal-sideways}. In this figure, as is
+common in relativity, we omit any indications of the axes, since the idea is that events and world-lines
+are primary, and coordinates secondary. In this book we will use the convention that
+time progresses from the bottom of the diagram to the top, which means that a spacetime diagram is
+turned sideways compared to a graph of $x(t)$. This is the standard convention in relativity.
+
+
+<% self_check('grandparents-house-sideways',<<-'SELF_CHECK'
+Here is a spacetime graph for an empty object such as a house:
+\anonymousinlinefig{../../../share/relativity/figs/grandparents-house-1-sideways}. Explain why
+it looks like this. My grandparents had a dog door with a flap cut into their back door, so
+that their dog could come in and out. Draw a spacetime diagram showing the dog going out into
+the back yard. Can an observer using another frame of reference say  that the dog didn't go outside?
+  SELF_CHECK
+  ) %>
+
+<% marg(300) %>
+<%
+  fig(
+    'cell-phone-signal-sideways',
+    %q{A phone transmits a 1 or 0 to a cell tower. The phone, the tower, and the signal
+       all have world-lines. Two events, corresponding to the transmission and reception of
+       the signal, can be defined by the intersections of the world-lines.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec('spacetime') %>
+
+<% begin_sec("The spacetime interval",nil,'interval') %>
+
+<% marg(-30) %>
+<%
+  fig(
+    'interval',
+    %q{A clock measures the interval from A to B.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hafele-keating-and-simplification',
+    %q{The atomic clock experiment shown in simplified form (1) and in even more simplified form (2).}
+  )
+%>
+<% end_marg %>
+
+Suppose that a clock has an inertial world-line that extends from event A to event B, as in figure \figref{interval}. Given A and B,
+there is only one possible motion for the clock, because two points determine a line in spacetime, just
+as in Euclidean geometry. On a spacetime diagram, we have a line segment AB, and the clock gives us
+a measure of how ``long'' this line segment is.
+We define the spacetime interval $\interval$ (script ``I'') as
+\begin{equation*}
+  \interval^2 = (\text{time elapsed on clock})^2.
+\end{equation*}
+The squares may seem unnecessary. But without them, we would be defining a quantity that had a plus or
+minus sign, depending on whether B was after A or before. As we've seen in section
+\ref{sec:t-symm}, the laws of physics don't actually define what is the past and what is the future,
+so if we are only given the world-line AB, we don't expect to be able to say whether it measures up as positive or negative.
+The equation only defines the absolute value of $\interval$, not its sign, which kind of makes sense.
+We'll see later that other things also come out simpler with this style of definition.
+
+
+Now let's see how this plays out in a semi-realistic context. Figure \subfigref{hafele-keating-and-simplification}{1}
+shows the general idea of how the experiment on p.~\pageref{hafele-keating} was done. There were three sets of
+atomic clocks. Some stayed in the lab, on the surface of the earth, while others went around the world, either to
+the east or to the west, while the planet spun on its axis. That's pretty complicated, so let's consider the
+simplified version in figure \subfigref{hafele-keating-and-simplification}{2}.
+One clock moves inertially while the other does an out-and-back trip. The diagram is drawn in the frame of reference
+of the laboratory where the first clock remains. The result is a diagram that looks like a triangle
+
+Now suppose, as in figure
+\figref{hafele-keating-triangle},
+that the distance traveled by the plane, as measured in the lab frame, is $d$. The time measured by the lab clock
+over the bottom half of the diagram is $t$. There will be some spacetime interval $\interval$ measured by the
+flying clock during this half of its journey.
+
+Although the slanting world-line with $\interval$ written next to it looks longer than the one with $t$ next
+to it, we actually have $\interval<t$. If time worked the way Galileo and Newton believed it did, then
+we would simply have $\interval=t$. Keep in mind that this is basically just an $x(t)$ graph, and diagonal
+distances measured literally on such a graph never actually mean anything.
+
+<% marg(300) %>
+<%
+  fig(
+    'hafele-keating-triangle',
+    %q{Time dilation in the atomic clock experiment.}
+  )
+%>
+<% end_marg %>
+
+
+The fact that $\interval$ is less than $t$ is referred to as time dilation. We say that time dilation is
+a ``relativistic'' effect, meaning an effect that nobody expected until Einstein's theory of relativity
+came along.
+
+Now we expect, for the reasons discussed above, that things will
+come out nicer if we talk about $\interval^2$ and $t^2$ rather than $\interval$ and $t$. We
+also know that $\interval^2$ will be at its greatest when $d=0$. In general, when we look at
+any smooth function near a maximum, we expect it to look like a concave-down parabola, so we should have
+\begin{equation*}
+  \interval^2 \approx t^2 - (\text{const.})d^2.
+\end{equation*}
+We happen to have had the historical hindsight to have known that it would be more convenient in the long run
+to express this in terms of the squares, but as long as $d$ is small, that's not a substantive assumption whose failure
+would invalidate the result. We would just have an equation analogous to this one, but without the squares on
+$\interval$ and $t$, and with a different value for the constant.
+
+<% self_check('interval-d-zero-and-neg',<<-'SELF_CHECK'
+What would figure \figref{hafele-keating-triangle} look like for $d=0$, and how would $\interval$ turn out?
+Does this make sense? What about $d<0$?
+  SELF_CHECK
+  ) %>
+
+<% end_sec('interval') %>
+
+<% begin_sec("The correspondence principle",nil,'correspondence-principle') %>
+
+Now what is this mysterious constant in our equation for $\interval$? One thing we can tell is that it must be very small when
+written in everyday units, because
+we don't notice these relativistic effects on time in everyday life.
+Furthermore, the units of the variables occurring in the equation show that the constant
+must also have units of $\sunit^2/\munit^2$, or one over velocity squared. In other words, we could write it as
+$1/c^2$, where $c$ is some universal constant that has units of speed. The velocity of the plane, relative to the
+lab, is $d/t$, and so we can say that relativistic effects are small when the velocities are small compared to $c$.
+
+It makes sense that relativistic effects like time dilation are small in everyday life.
+Newton's laws have already been thoroughly tested by experiments under a wide variety of conditions,
+so a new theory like relativity must agree with Newton's to a good approximation, within the Newtonian theory's
+realm of applicability. This requirement of backward-compatibility is known as
+the \emph{correspondence principle}.\index{correspondence principle!for time dilation}\index{correspondence principle!defined}
+Newton lived in an era when the fastest
+mode of transportation was a galloping horse, and the best
+pendulum clocks would accumulate errors of perhaps a minute over the course of several days.
+A horse is much slower than a jet plane, so the
+distortion of time would have had a relative size of only $\sim10^{-15}$ --- much smaller than the clocks were capable of detecting.
+At the speed of a passenger jet, the effect is about $10^{-12}$,
+and state-of-the-art atomic clocks in 1971 were capable of measuring that.
+A GPS satellite travels much faster than a jet airplane, and the effect on the satellite
+turns out to be $\sim10^{-10}$. The general idea here is that all physical laws are approximations, and
+approximations aren't simply right or wrong in different situations. Approximations are better or worse
+in different situations, and the question is whether a particular approximation is good enough in a given
+situation to serve a particular purpose. The faster the motion, the worse the Newtonian approximation of
+absolute time. Whether the approximation is good enough depends on what you're trying to accomplish.
+The correspondence principle says that the approximation must have been good enough to explain
+all the experiments done in the centuries before Einstein came up with relativity.
+
+<% marg(300) %>
+<%
+  fig(
+    'correspondence-dramatized',
+    %q{The correspondence principle requires that the relativistic distortion of time become small for small velocities.}
+  )
+%>
+<% end_marg %>
+
+
+<% end_sec('correspondence-principle') %>
+
+
+<% begin_sec("A universal speed limit $c$",nil,'speed-limit-c') %>
+
+We have only given an argument that our equation for the interval should be valid for small velocities, but in fact
+experiments show that it is valid at all speeds, so we have
+\begin{equation*}
+  \interval^2 = t^2 - \frac{d^2}{c^2}.
+\end{equation*}
+One thing we can see from this equation is that something goes very wrong if the speeds get too high.
+If the plane could travel faster than $c$, then we would have $d=vt>ct$, and the right-hand side would
+be negative. The interval would then be the square root of a negative number, which wouldn't seem to
+make sense. This suggests that $c$ can be interpreted as a sort of universal speed
+limit for the motion of any material object.
+
+Experiments confirm this.
+This maximum speed 
+has the numerical value of about $3.0\times10^8\ \munit/\sunit$.
+We often refer to it as the speed of light, since visible light
+travels at $c$.  Light is a wave disturbance in the electric and
+magnetic fields, and the visible spectrum from red to violet
+constitutes one part of a much larger electromagnetic spectrum, which
+includes phenomena as apparently disparate as radio waves and x-rays.
+Different parts of the spectrum are distinguished either by their
+frequency (the number of vibrations per unit time) or, equivalently,
+by their wavelength (the distance between successive wave crests).
+Fundamentally, it's best to think of $c$ not as the speed of light but
+as a speed limit, or as a sort of conversion
+factor between time and space units.\index{light!electromagnetic wave}\index{light!speed}
+
+As an example of the kind of experimental work that has tested these claims,
+there was a dramatic incident in 2011 in which particle physicists believed
+they had detected signals at a laboratory near Rome that had been emitted in
+an accelerator experiment in the Alps at a distance of 731.296 km (measured with GPS), and that these signals
+had arrived with a time delay of 2.43928 ms. The speed implied by these measurements
+exceeded $c$ by 0.002\%. Although this might seem like only a tiny discrepancy, the
+theory it violated had by then been so firmly established by decades of
+experiments that the claim set off a frenzy of theoretical and experimental
+work to try to disprove it, explain it, or use it as evidence for new theories
+of physics. A year later, the scientific collaboration that had found the
+observed result announced publicly, and with considerable embarrassment, that
+they had found the result to be due to two mistakes: a loose cable and a faulty
+electronic clock.
+<% end_sec('speed-limit-c') %>
+
+<% begin_sec("A speed limit for cause and effect",nil,'speed-limit-causality') %>
+
+<% marg() %>
+<%
+  fig(
+    'twin-symmetry',
+    %q{A small portion of a time-dilation experiment.}
+  )
+%>
+<% end_marg %>
+
+Figure \subfigref{twin-symmetry}{1} shows a time-dilation experiment
+like the ones we've been considering. Alice moves inertially on
+world-line A, along with her clock, while her twin sister Betty takes
+the noninertial path B.  The time elapsed on Alice's clock will be
+greater, because her world-line is the inertial one.  But suppose we
+focus on the smaller part of spacetime shown in
+\subfigref{twin-symmetry}{2}.  During this time, Betty isn't
+undergoing any accelerations. \emph{Both} twins' motion is inertial.
+
+Now suppose that during the time shown in \subfigref{twin-symmetry}{2} they pull out their phones and get in contact. We
+might imagine that they could now establish whose time was slower than
+normal and whose is faster.  Will Alice hear Betty's voice as
+slowed-down and Darth Vadery, while Betty complains that Alice sounds
+like a chipmunk? But no, this is impossible because of the perfect
+symmetry in \subfigref{twin-symmetry}{2}.  Alice is free to choose her
+own ship as a frame of reference, in which case she considers herself
+to be at rest while Betty moves.  But the situation is completely
+symmetrical, so Betty can say the same thing. Because motion is
+relative, we can't say who is ``really'' moving and who is ``really''
+at rest. And yet they can't both say that the other's time is normal,
+because then there would be no way for any discrepancy to accumulate by
+the time they were reunited --- as we see in the actual experiment.
+
+The key to resolving this paradox is that the description of the
+scenario contains a hidden assumption, that communication using cell
+phones is instantaneous. It isn't. A cell phone is a kind of radio,
+and its signals are encoded as radio waves, which propagate at $c$.
+This example shows that logical consistency cannot be preserved if
+there is some mechanism for sending signals instantaneously, as in the
+``subspace radio'' of the Star Trek universe.
+
+We therefore have an unexpected link between the nature of time and
+the way in which fields of force propagate across the universe.
+Force laws like Coulomb's law $F=kq_1q_2/r^2$ and Newton's law of gravity $F=Gm_1m_2/r^2$ look like
+they imply instantaneous action at a distance. There is no $t$ in either
+equation. But this can't be how things actually operate, because it leads
+to the paradox of Alice and Betty. 
+
+<% marg() %>
+<%   
+  fig(
+    'ripples',
+    %q{Circular ripples propagate outward in a puddle at a fixed, finite speed.}
+  )
+%>
+<% end_marg %>
+
+Switching from Star Trek to Star Wars for our metaphors, we find that
+if there is a ``disturbance in the force,'' then it must propagate at
+some finite speed, like ripples on a pond, figure \figref{ripples}.
+This leads us to a far-reaching conclusion: that the universe must
+really be made out of waves (or particles that also have wave
+properties, as we'll see when we take up our study of quantum physics
+at the end of this book).
+
+<% end_sec('speed-limit-causality') %>
+
 
 <% begin_notes %>
 
