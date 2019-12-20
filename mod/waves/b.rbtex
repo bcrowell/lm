@@ -6,7 +6,7 @@
 
 <%
   chapter(
-    '06',
+    '02',
     %q{Waves},
     'ch:waves',
     %q{The vibrations of this electric bass string are
@@ -16,38 +16,13 @@ to vibrations of our eardrums.},
   )
 %>
 
- % 
-Dandelion. Cello. Read those two words, and your brain instantly
-conjures a stream of associations, the most prominent of which have to
-do with vibrations. Our mental category of ``dandelion-ness'' is strongly
-linked to the color of light waves that vibrate about half a million
-billion times a second: yellow. The velvety throb of a cello has as its
-most obvious characteristic a relatively low musical pitch --- the note
-you're spontaneously imagining right now might be one whose sound
-vibrations repeat at a rate of a hundred times a second.
+At the end of ch.~\ref{ch:time}, we saw that because of the way time works in our
+universe, it is not possible for light and matter to be made out of particles,
+as envisioned by Isaac Newton. Instead, our universe must be made out of waves
+(or, as we'll see when we study quantum physics at the end of this course,
+things that have both particle and wave characteristics).
 
-Evolution seems to have
-designed our two most important senses around the assumption that our
-environment is made of waves, whereas
-up until now, we've mostly taken the view that Nature can be understood
-by breaking her down into smaller and smaller parts, ending up with
-particles as her most fundamental building blocks. Does that work
-for light and sound? Sound waves are disturbances in air, which is made
-of atoms, but light, on the other hand,
- isn't a vibration of atoms. Light, unlike sound, can travel through
-a vacuum: if you're reading this by sunlight, you're taking advantage of
-light that had to make it through
-millions of miles of vacuum to get to you. Waves, then, are not just a trick
-that vibrating atoms can do. Waves are one of the basic phenomena
-of the universe. At the end of this book, we'll even see that the things
-we've been calling particles, such as electrons, are really waves!\footnote{Speaking
-more carefully, I should say that every basic building block of light and matter
-has both wave and particle properties.}
- % 
-
-<% begin_sec("Free waves",0) %>
-
- % 
+\pagebreak
 
 <% begin_sec("Wave motion",nil,'wave-motion') %>
 
@@ -65,7 +40,7 @@ has both wave and particle properties.}
 <% end_marg %>
 
 Let's start with an intuition-building exercise that deals with waves in
-matter, since they're easier than light waves to get your hands on. Put your
+matter. Put your
 fingertip in the middle of a cup of water and then remove it
 suddenly. You'll have noticed two results that are
 surprising to most people. First, the flat surface of the
@@ -115,7 +90,7 @@ the motion of objects made of matter.
   )
 %>
 
-<% begin_sec("1. Superposition") %>
+<% begin_sec("Superposition") %>
 \index{waves!superposition of}\index{superposition!of waves}
 If you watched the water in the cup carefully, you noticed the
 ghostlike behavior of the
@@ -157,6 +132,8 @@ principle of superposition in the case of light waves. For
 other types of waves, it is typically a very good
 approximation for low-energy waves.
 
+\pagebreak
+
 <%
   fig(
     'pete',
@@ -172,7 +149,7 @@ approximation for low-energy waves.
 
 <% end_sec() %>
 
-<% begin_sec("2. The medium is not transported with the wave.") %>
+<% begin_sec("The medium is not transported with the wave.") %>
 \index{waves!medium not transported with}
 The sequence of three photos in figure \figref{pete} shows a series of water
 waves before it has reached a rubber duck (left), having
@@ -186,7 +163,7 @@ the motion of the medium (water in this case) and the motion
 of the wave pattern through the medium. The medium vibrates;
 the wave progresses through space.
 
-<% marg(80) %>
+<% marg() %>
 <%
   fig(
     'ribbon-on-spring',
@@ -196,6 +173,16 @@ the wave progresses through space.
       not carried along. The motion of the wave pattern is to the
       right, but the medium (spring) is moving from side to side,
       not to the right. \photocredit{PSSC Physics}
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'surfing-hand-drag',
+    %q{%
+      Example \ref{eg:surfing}. The
+      surfer is dragging his hand in the water.
     }
   )
 %>
@@ -211,8 +198,6 @@ spring? Other than the flat parts, do any parts of the
 spring have zero velocity?
   SELF_CHECK
   ) %>
-
-__incl(eg/worm)
 
 \begin{eg}{Surfing}\label{eg:surfing}
 The incorrect belief that the medium moves with the wave is
@@ -234,21 +219,13 @@ wave would quickly part company.
 
 <% end_sec() %>
 
-<% begin_sec("3. A wave's velocity depends on the medium.") %>
+\pagebreak
+
+<% begin_sec("A wave's velocity depends on the medium.") %>
 \index{waves!velocity of}
 
-<% marg(49) %>
-<%
-  fig(
-    'surfing-hand-drag',
-    %q{%
-      Example \ref{eg:surfing}. The
-      surfer is dragging his hand in the water.
-    }
-  )
-%>
 
-\spacebetweenfigs
+<% marg() %>
 
 <%
   fig(
@@ -328,6 +305,22 @@ them more streamlined --- they are also long so that their
 hull speeds will be high.
 \end{eg}
 
+<% end_sec() %>
+
+<% begin_sec("Wave patterns") %>
+\index{waves!patterns}
+If the magnitude of a wave's velocity vector is preordained,
+what about its direction? Waves spread out in all directions
+from every point on the disturbance that created them. If
+the disturbance is small, we may consider it as a single
+point, and in the case of water waves the resulting wave
+pattern is the familiar circular ripple, \figref{wave-patterns}/1. If, on the other
+hand, we lay a pole on the surface of the water and wiggle
+it up and down, we create a linear wave pattern, \figref{wave-patterns}/2. For a
+three-dimensional wave such as a sound wave, the analogous
+patterns would be spherical waves and plane waves,
+\figref{wave-patterns-three-d}.
+
 <% marg(70) %>
 <%
   fig(
@@ -345,22 +338,6 @@ hull speeds will be high.
   )
 %>
 <% end_marg %>
-
-<% end_sec() %>
-
-<% begin_sec("Wave patterns") %>
-\index{waves!patterns}
-If the magnitude of a wave's velocity vector is preordained,
-what about its direction? Waves spread out in all directions
-from every point on the disturbance that created them. If
-the disturbance is small, we may consider it as a single
-point, and in the case of water waves the resulting wave
-pattern is the familiar circular ripple, \figref{wave-patterns}/1. If, on the other
-hand, we lay a pole on the surface of the water and wiggle
-it up and down, we create a linear wave pattern, \figref{wave-patterns}/2. For a
-three-dimensional wave such as a sound wave, the analogous
-patterns would be spherical waves and plane waves,
-\figref{wave-patterns-three-d}.
 
 Infinitely many patterns are possible, but linear or plane
 waves are often the simplest to analyze, because the
@@ -422,7 +399,7 @@ it can be done without too much complication.
 \index{waves!on a string}
 So far you've learned some counterintuitive things about
 the behavior of waves, but intuition can be trained. The
-first half of this subsection aims to build your intuition by
+first half of this section aims to build your intuition by
 investigating a simple, one-dimensional type of wave: a wave
 on a string. If you have ever stretched a string between the
 bottoms of two open-mouthed cans to talk to a friend, you
@@ -668,8 +645,6 @@ by
 
 <% end_sec() %>
 
-<% begin_sec("Sound and light waves") %>
-
 <% begin_sec("Sound waves") %>
 \index{waves!sound}\index{sound!waves}
 The phenomenon of sound is easily found to have all the
@@ -714,61 +689,6 @@ apparently very sensitive instruments. In a vacuum, there is
 no medium for the sound waves, and so they cannot exist. The
 roars and whooshes of space ships in Hollywood movies are
 fun, but scientifically wrong.
-
-<% end_sec() %>
-
-<% begin_sec("Light waves") %>
-\index{light!waves}\index{waves!light}
-Entirely similar observations lead us to believe that light
-is a wave, although the concept of light as a wave had a
-long and tortuous history.  It is interesting to note that
-Isaac Newton very influentially advocated a contrary idea
-about light. The belief that matter was made of atoms was
-stylish at the time among radical thinkers (although there
-was no experimental evidence for their existence), and it
-seemed logical to Newton that light as well should be made
-of tiny particles, which he called corpuscles (Latin for
-``small objects''). Newton's triumphs in the science of
-mechanics, i.e., the study of matter, brought him such great
-prestige that nobody bothered to question his incorrect
-theory of light for 150 years. One persuasive proof that
-light is a wave is that according to Newton's theory, two
-intersecting beams of light should experience at least some
-disruption because of collisions between their corpuscles.
-Even if the corpuscles were extremely small, and collisions
-therefore very infrequent, at least some dimming should have
-been measurable. In fact, very delicate experiments have
-shown that there is no dimming.
-
-The wave theory of light was entirely successful up until
-the 20th century, when it was discovered that not all the
-phenomena of light could be explained with a pure wave
-theory. It is now believed that both light and matter are
-made out of tiny chunks which have both wave and particle
-properties. For now, we will content ourselves with the wave
-theory of light, which is capable of explaining a great many
-things, from cameras to rainbows.
-
-If light is a wave, what is waving? What is the medium that
-wiggles when a light wave goes by? It isn't air. A vacuum is
-impenetrable to sound, but light from the stars travels
-happily through zillions of miles of empty space. Light
-bulbs have no air inside them, but that doesn't prevent the
-light waves from leaving the filament. For a long time,
-physicists assumed that there must be a mysterious medium
-for light waves, and they called it the ether (not to be
-confused with the chemical). Supposedly the ether existed
-everywhere in space, and was immune to vacuum pumps. The
-details of the story are more fittingly reserved for later
-in this course, but the end result was that a long series of
-experiments failed to detect any evidence for the ether, and
-it is no longer believed to exist. Instead, light can be
-explained as a wave pattern made up of electrical and
-magnetic fields.
-
- % 
-
-<% end_sec() %>
 
 <% end_sec() %>
 
@@ -1168,229 +1088,8 @@ compared to the wave velocities, the Doppler shifts of the
 wavelength and frequency are about the same.)
 \end{eg}
 
-\begin{eg}{Doppler shift of the light emitted by a race car}
-\egquestion
-What is the percent shift in the wavelength of the
-light waves emitted by a race car's headlights?
-
-\eganswer
-Looking up the speed of light in the back of the
-book, $v= 3.0\times10^8\ \zu{m/s}$, we find
-\begin{equation*}
-        1-\frac{ u}{ v} \zu{=  0.99999983}\eqquad,
-\end{equation*}
-i.e., the percentage shift is only 0.000017\%.
-\end{eg}
-
-The second example shows that under ordinary earthbound
-circumstances, Doppler shifts of light are negligible
-because ordinary things go so much slower than the speed of
-light. It's a different story, however, when it comes to
-stars and galaxies, and this leads us to a story that has
-profound implications for our understanding of the origin of
-the universe.
-
-<% marg(100) %>
-<%
-  fig(
-    'm51',
-    %q{%
-      The galaxy M100 in the constellation Coma Berenices. Under
-      higher magnification, the milky clouds reveal themselves to
-      be composed of trillions of stars.
-    }
-  )
-%>
-
-\spacebetweenfigs
-
-<%
-  fig(
-    'mount-wilson',
-    %q{The telescope at Mount Wilson used by Hubble.}
-  )
-%>
-<% end_marg %>
-
-<% begin_sec("The Big Bang",nil,'hubble') %>
-\label{bigbang}\index{Big Bang!evidence for}
-As soon as astronomers began looking at the sky through
-telescopes, they began noticing certain objects that looked
-like clouds in deep space. The fact that they looked the
-same night after night meant that they were beyond the
-earth's atmosphere. Not knowing what they really were, but
-wanting to sound official, they called them ``nebulae,'' a
-Latin word meaning ``clouds'' but sounding more impressive.
-In the early 20th century, astronomers realized that
-although some really were clouds of gas (e.g., the middle
-``star'' of Orion's sword, which is visibly fuzzy even to
-the naked eye when conditions are good), others were what we
-now call galaxies: virtual island universes consisting of
-trillions of stars (for example the Andromeda Galaxy, which
-is visible as a fuzzy patch through binoculars). Three
-hundred years after Galileo had resolved the Milky Way into
-individual stars through his telescope, astronomers realized
-that the universe is made of galaxies of stars, and the
-Milky Way is simply the visible part of the flat disk of our
-own galaxy, seen from inside.
-
-This opened up the scientific study of cosmology, the
-structure and history of the universe as a whole, a field
-that had not been seriously attacked since the days of
-Newton. Newton had realized that if gravity was always
-attractive, never repulsive, the universe would have a
-tendency to collapse. His solution to the problem was to
-posit a universe that was infinite and uniformly populated
-with matter, so that it would have no geometrical center.
-The gravitational forces in such a universe would always
-tend to cancel out by symmetry, so there would be no
-collapse. By the 20th century, the belief in an unchanging
-and infinite universe had become conventional wisdom in
-science, partly as a reaction against the time that had been
-wasted trying to find explanations of ancient geological
-phenomena based on catastrophes suggested by biblical events
-like Noah's flood.
-
-In the 1920's astronomer Edwin Hubble began studying the\index{Hubble, Edwin}
-Doppler shifts of the light emitted by galaxies. A former
-college football player with a serious nicotine addiction,
-Hubble did not set out to change our image of the beginning
-of the universe. His autobiography seldom even mentions the
-cosmological discovery for which he is now remembered. When
-astronomers began to study the Doppler shifts of galaxies,
-they expected that each galaxy's direction and velocity of
-motion would be essentially random. Some would be
-approaching us, and their light would therefore be
-Doppler-shifted to the blue end of the spectrum, while an
-equal number would be expected to have red shifts. What
-Hubble discovered instead was that except for a few very
-nearby ones, all the galaxies had red shifts, indicating
-that they were receding from us at a hefty fraction of the
-speed of light. Not only that, but the ones farther away
-were receding more quickly. The speeds were directly
-proportional to their distance from us.
-
-Did this mean that the earth (or at least our galaxy) was
-the center of the universe? No, because Doppler shifts of
-light only depend on the relative motion of the source and
-the observer. If we see a distant galaxy moving away from us
-at 10\% of the speed of light, we can be assured that the
-astronomers who live in that galaxy will see ours receding
-from them at the same speed in the opposite direction. The
-whole universe can be envisioned as a rising loaf of raisin
-bread. As the bread expands, there is more and more space
-between the raisins. The farther apart two raisins are, the
-greater the speed with which they move apart.
-
-<% marg(110) %>
-<%
-  fig(
-    'sirius',
-    %q{%
-      How do astronomers know what mixture of wavelengths a star
-      emitted originally, so that they can tell how much the
-      Doppler shift was? This image (obtained by the author with
-      equipment costing about \$5, and no telescope) shows the
-      mixture of colors emitted by the star Sirius. (If you have
-      the book in black and white, blue is on the left and red on
-      the right.) The star appears white or bluish-white to the
-      eye, but any light looks white if it contains roughly an
-      equal mixture of the rainbow colors, i.e., of all the pure
-      sinusoidal waves with wavelengths lying in the visible
-      range. Note the black ``gap teeth.'' These are the fingerprint
-      of hydrogen in the outer atmosphere of Sirius. These
-      wavelengths are selectively absorbed by hydrogen. Sirius is
-      in our own galaxy, but similar stars in other galaxies would
-      have the whole pattern shifted toward the red end,
-      indicating they are moving away from us.
-    }
-  )
-%>
-<% end_marg %>
-
-The universe's expansion is presumably decelerating because
-of gravitational attraction among the galaxies. We do not
-presently know whether there is enough mass in the universe
-to cause enough attraction to halt the expansion eventually.
-But perhaps more interesting than the distant future of the
-universe is what its present expansion implies about its
-past. Extrapolating backward in time using the known laws of
-physics, the universe must have been denser and denser at
-earlier and earlier times. At some point, it must have been
-extremely dense and hot, and we can even detect the
-radiation from this early fireball, in the form of microwave
-radiation that permeates space. The phrase Big Bang was
-originally coined by the doubters of the theory to make it
-sound ridiculous, but it stuck, and today essentially all
-astronomers accept the Big Bang theory based on the very
-direct evidence of the red shifts and the cosmic microwave
-background radiation.
-
-Finally it should be noted what the Big Bang theory is not.
-It is not an explanation of \emph{why} the universe exists. Such
-questions belong to the realm of religion, not science.
-Science can find ever simpler and ever more fundamental
-explanations for a variety of phenomena, but ultimately
-science takes the universe as it is according to
-observations.
-
-Furthermore, there is an unfortunate tendency, even among
-many scientists, to speak of the Big Bang theory as a
-description of the very first event in the universe, which
-caused everything after it. Although it is true that time
-may have had a beginning (Einstein's theory of general
-relativity admits such a possibility), the methods of
-science can only work within a certain range of conditions
-such as temperature and density. Beyond a temperature of
-about $10^9$ K, the random thermal motion of subatomic
-particles becomes so rapid that its velocity is comparable
-to the speed of light. Early enough in the history of the
-universe, when these temperatures existed, Newtonian physics
-becomes less accurate, and we must describe nature using the
-more general description given by Einstein's theory of
-relativity, which encompasses Newtonian physics as a special
-case. At even higher temperatures, beyond about $10^{33}$
-degrees, physicists know that Einstein's theory as well
-begins to fall apart, but we don't know how to construct the
-even more general theory of nature that would work at those
-temperatures. No matter how far physics progresses, we will
-never be able to describe nature at infinitely high
-temperatures, since there is a limit to the temperatures we
-can explore by experiment and observation in order to guide
-us to the right theory. We are confident that we understand
-the basic physics involved in the evolution of the universe
-starting a few minutes after the Big Bang, and we may be
-able to push back to milliseconds or microseconds after it,
-but we cannot use the methods of science to deal with the
-beginning of time itself.
-
-<% end_sec() %>
-
-<% begin_sec("A note on Doppler shifts of light") %>
-
-If Doppler shifts depend only on the relative motion of
-the source and receiver, then there is no way for a person
-moving with the source and another person moving with the
-receiver to determine who is moving and who isn't. Either
-can blame the Doppler shift entirely on the other's motion
-and claim to be at rest herself. This is entirely in
-agreement with the principle stated originally by Galileo
-that all motion is relative.
-
-On the other hand, a careful analysis of the Doppler shifts
-of water or sound waves shows that it is only approximately
-true, at low speeds, that the shifts  just depend on the
-relative motion of the source and observer. For instance, it
-is possible for a jet plane to keep up with its own sound
-waves, so that the sound waves appear to stand still to the
-pilot of the plane. The pilot then knows she is moving at
-exactly the speed of sound. The reason this doesn't disprove
-the relativity of motion is that the pilot is not really
-determining her absolute motion but rather her motion
-relative to the air, which is the medium of the sound waves.
-
 <% marg(70) %>
-<%
+<% 
   fig(
     'shock-wave',
     %q{%
@@ -1408,26 +1107,12 @@ relative to the air, which is the medium of the sound waves.
     %q{%
       This fighter
       jet has just accelerated past the speed of sound. The
-      sudden decompression of the air causes water droplets to
+      sudden decompression of the air causes water droplets to   
       condense, forming a cloud.
     }
   )
 %>
 <% end_marg %>
-
-Einstein realized that this solved the problem for sound or
-water waves, but would not salvage the principle of relative
-motion in the case of light waves, since light is not a
-vibration of any physical medium such as water or air.
-Beginning by imagining what a beam of light would look like
-to a person riding a motorcycle alongside it, Einstein
-eventually came up with a radical new way of describing the
-universe, in which space and time are distorted as measured
-by observers in different states of motion. As a consequence
-of this Theory of Relativity, he showed that light waves
-would have Doppler shifts that would exactly, not just
-approximately, depend only on the relative motion of the
-source and receiver.\index{Doppler effect!in relativity}
 
 \startdqs
 
@@ -1453,11 +1138,6 @@ you see in figures \figref{shock-wave} and
         \end{dq}
 
 <% end_sec() %>
-
-<% end_sec() %>
-
-<% end_sec %>
-
 
 <% begin_notes %>
 
