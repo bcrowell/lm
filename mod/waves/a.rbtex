@@ -299,7 +299,9 @@ flying clock during this half of its journey.
 Although the slanting world-line with $\interval$ written next to it looks longer than the one with $t$ next
 to it, we actually have $\interval<t$. If time worked the way Galileo and Newton believed it did, then
 we would simply have $\interval=t$. Keep in mind that this is basically just an $x(t)$ graph, and diagonal
-distances measured literally on such a graph never actually mean anything.
+distances measured literally on such a graph never actually mean anything. If it helps your intuition, you can
+think of the line segments as roads, and the quantities $t$ and $\interval$ as indications of how many gas stations
+you pass on those roads. In this particular diagram, the longer road just happens to have fewer gas stations.
 
 <% marg(300) %>
 <%
@@ -324,7 +326,7 @@ any smooth function near a maximum, we expect it to look like a concave-down par
 \end{equation*}
 We happen to have had the historical hindsight to have known that it would be more convenient in the long run
 to express this in terms of the squares, but as long as $d$ is small, that's not a substantive assumption whose failure
-would invalidate the result. We would just have an equation analogous to this one, but without the squares on
+would invalidate the approximation. We would just have an equation analogous to this one, but without the squares on
 $\interval$ and $t$, and with a different value for the constant.
 
 <% self_check('interval-d-zero-and-neg',<<-'SELF_CHECK'
@@ -379,7 +381,7 @@ all the experiments done in the centuries before Einstein came up with relativit
 <% end_sec('correspondence-principle') %>
 
 
-<% begin_sec("A universal speed limit $c$",nil,'speed-limit-c') %>
+<% begin_sec("A universal speed limit",nil,'speed-limit-c') %>
 
 We have only given an argument that our equation for the interval should be valid for small velocities, but in fact
 experiments show that it is valid at all speeds, so we have
@@ -392,8 +394,8 @@ be negative. The interval would then be the square root of a negative number, wh
 make sense. This suggests that $c$ can be interpreted as a sort of universal speed
 limit for the motion of any material object.
 
-Experiments confirm this.
-This maximum speed 
+Experiments confirm this. In SI units,
+this maximum speed 
 has the numerical value of about $3.0\times10^8\ \munit/\sunit$.
 We often refer to it as the speed of light, since visible light
 travels at $c$.  Light is a wave disturbance in the electric and
@@ -421,6 +423,79 @@ observed result announced publicly, and with considerable embarrassment, that
 they had found the result to be due to two mistakes: a loose cable and a faulty
 electronic clock.
 <% end_sec('speed-limit-c') %>
+
+<% begin_sec("Natural units",nil,'natural-units') %>
+Because $c$ can be thought of as a conversion factor between the units for time and distance,
+we can save work by using a system of units in which the units of time and distance are the same.
+As an example, astronomers often use the year as the unit of time, and the light-year as their measure of distance.
+A light-year is the distance traveled by light in one year.
+The distance from the sun to the nearest star is about four light-years. In these units, $c$ equals 1 ---
+one light-year per year. In these units, our equation for the spacetime interval is simply
+\begin{equation*}
+  \interval^2 = t^2 - d^2,
+\end{equation*}
+which is a lot simpler than the form of the equation we were writing before.
+We don't have to use light-years and year. For example, we could also use seconds and light-seconds,
+or, to better than 2\% precision, feet and nanoseconds. Units in which
+$c=1$ are called emph{natural} units.\index{units!natural relativistic}\index{natural units}\label{natural-units}
+In natural units, velocities are always unitless. For example, $v=0.5$ means a velocity equal to have the
+speed of light.
+
+Using natural units for relativity is, well, natural. Because spacetime doesn't have natural ``graph-paper lines''
+built in, space and time aren't completely separate from each other in relativity. That's why we talk about
+spacetime instead of ``space and time.'' There is a good analogy with our energy units. James Joule demonstrated
+with a paddlewheel experiment in 1876 that heat and mechanical work were things that could be converted into each
+other. We would say today that they are both measures of energy, and we would use units of joules for both.
+Given this insight, it would be a kind of masochism to keep on using different units for the different types of energy.
+
+Written in the natural-units form $\interval^2 = t^2 - d^2$, our equation for the interval looks very much like the
+Pythagorean theorem, and it does a similar job: measuring ``how far'' two points are. The only difference in the
+forms of the equations is the minus sign. Using different units for $t$ and $d$ would be like going out to survey
+a plot of land and using different units for east-west and north-south coordinates.
+
+Even if we intend to use data expressed in SI units,
+often it is easier to do all of our algebra in natural units, which are simpler because $c=1$, and
+all factors of $c$ can therefore be omitted. Then at the very end we reinsert factors of $c$ so that the
+units make sense in SI.
+
+\begin{eg}{Motion of a ray of light}\label{eg:natural-to-si}
+\egquestion The motion of a certain ray of light is given by the equation $x=-t$. Is this expressed in
+natural units, or in SI units? Convert to the other system.
+
+\eganswer The equation is in natural units. It wouldn't make sense in SI units, because we would have
+meters on the left and seconds on the right. To convert to SI units, we insert a factor of $c$ in the only
+possible place that will cause the equation to make sense: $x=-ct$.
+\end{eg}
+
+\begin{eg}{Planet of the Apes}
+\egquestion In the original movie version of \emph{Planet of the Apes}, the human astronauts find that they have
+returned to earth after $2.006\times10^3$ years, but the time interval seems to them to have been only 1.5 years.
+How fast did their spaceship go?
+
+\eganswer Let $t$ be the time on earth as they do the outward leg of their trip and $\interval$ the time they
+experience on this leg. These times are half the quantities for the whole trip. In natural units, we have
+$\interval^2 = t^2 - d^2$, so $d=\sqrt{t^2-\interval^2}$, and their speed was $v=d/t$, or
+\begin{equation*}
+  v = \sqrt{1-\left(\frac{\interval}{t}\right)^2}.
+\end{equation*}
+If we needed any reminding that this was in natural units rather than SI, we would notice that because
+clearly the equation doesn't make sense in SI. The left-hand side would have units of $\munit/\sunit$,
+while the right-hand side is unitless. There is only one way to fix the units by inserting factors of $c$,
+and that's to write
+\begin{equation*}
+  v = c\sqrt{1-\left(\frac{\interval}{t}\right)^2}.
+\end{equation*}
+This is what we would have gotten if we had done the whole calculation in SI, but the algebra would have
+been messier. Plugging in numbers, we get $2.9979234\times 10^8\ \munit/\sunit$, which is just a tad
+less than $c=2.9979246\times 10^8\ \munit/\sunit$. The numerical result is in fact easier to read and more
+informative in natural units: $v=0.99999960$.
+% calc -x -e "I=1.8; t=2006; csqrt(1-(I/t)^2)"
+\end{eg}
+
+Spacetime diagrams are conventionally drawn in natural units, so that motion at $c$ appears as a world-line
+with a slope of 1.
+
+<% end_sec('natural-units') %>
 
 <% begin_sec("A speed limit for cause and effect",nil,'speed-limit-causality') %>
 
@@ -460,10 +535,33 @@ The key to resolving this paradox is that the description of the
 scenario contains a hidden assumption, that communication using cell
 phones is instantaneous. It isn't. A cell phone is a kind of radio,
 and its signals are encoded as radio waves, which propagate at $c$.
-This example shows that logical consistency cannot be preserved if
-there is some mechanism for sending signals instantaneously, as in the
-``subspace radio'' of the Star Trek universe.
 
+<%
+  fig(
+    'symmetric-signals',
+    %q{%
+      Signals don't resolve the dispute over who is really slow.
+    },
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
+
+Figure \figref{symmetric-signals} shows what actually happens to Alice and Betty if, for example, one twin makes two hand claps
+near her phone, separated by a one-second interval. If the two signals traveled at infinite speed, then
+their world-lines would be horizontal --- they would be received at the same time they were sent. But because
+they actually travel at $c$, which is finite,
+they are sent at one time and arrive at some later time, and
+the signals' world-lines have some slope. We use natural units on our diagrams
+so that this is a 45-degree angle. We can see on the diagram that when Alice sends the two hand claps, Betty
+receives them at times that are spread to more than one second apart, but exactly the same thing happens when
+we flip the diagram. The situation is completely symmetric, and each twin perceives the other's transmission as
+having been slowed down.
+
+The parable of Alice and Betty shows that logical consistency is preserved --- but \emph{only} if
+there is no mechanism for sending signals instantaneously, as in the
+``subspace radio'' of the Star Trek universe.
 We therefore have an unexpected link between the nature of time and
 the way in which fields of force propagate across the universe.
 Force laws like Coulomb's law $F=kq_1q_2/r^2$ and Newton's law of gravity $F=Gm_1m_2/r^2$ look like

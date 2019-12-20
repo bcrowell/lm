@@ -8,6 +8,8 @@ books_all:
 	cd sn && make book && cd ..
 	cd cp && make book && cd ..
 	cd me && make book && cd ..
+	cd fac && make book && cd ..
+	cd mod && make book && cd ..
 
 setup:
 	chmod +x scripts/* eruby_util.rb fruby mv_silent process_geom_file.pl ./*.rb ./*.pl problems/*.rb
@@ -22,6 +24,8 @@ clean_all:
 	cd cp && make clean && cd ..
 	cd sn && make clean && cd ..
 	cd me && make clean && cd ..
+	cd fac && make clean && cd ..
+	cd mod && make clean && cd ..
 
 very_clean_all:
 	cd lm && make very_clean && cd ..
@@ -29,6 +33,7 @@ very_clean_all:
 	cd sn && make very_clean && cd ..
 	cd me && make very_clean && cd ..
 	cd fac && make very_clean && cd ..
+	cd mod && make very_clean && cd ..
 	cd problems/calc && make clean && cd -
 
 prepress_all:
