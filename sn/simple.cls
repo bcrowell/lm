@@ -78,7 +78,7 @@
 %     This is also in lmcommon.sty.
 
 \RequirePackage{makeidx,wrapfig,fancyhdr,calc,titlesec,titletoc,amssymb,moreverb,ifthen,framed,alphalph,
-                cancel,learn-cmd-syntax,url,xstring,comment,navigator,dutchcal,multirow}
+                cancel,learn-cmd-syntax,url,xstring,comment,navigator,dutchcal,multirow,mathrsfs}
 % dutchcal is for lowercase mathcal, used in SN 4 for \fmat
 %   https://tex.stackexchange.com/questions/231322/how-to-get-the-lowercase-calligraphic-symbols
 \RequirePackage{color}%see pdftex mailing list, 2004 May 22-23
