@@ -1,0 +1,978 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '03',
+    %q{Electromagnetic waves},
+    'ch:em-waves',
+    '',
+    {'opener'=>'../../../share/optics/figs/crepuscular-rays','width'=>'fullpage'}
+  )
+%>
+
+In ch.~\pageref{ch:time} we saw that, because of the relative nature
+of time, the universe cannot work according to Isaac Newton's vision
+of instantaneous action at a distance, as claimed by force laws like
+Coulomb's law $F=kq_1q_2/r^2$ and Newton's law of gravity
+$F=Gm_1m_2/r^2$.  Instead, a ``disturbance in the force'' must
+propagate outward from the source as a wave.  In
+ch.~\pageref{ch:waves} we learned about general properties of waves,
+using mechanical waves as our examples because they were concrete and
+easy to conceptualize. We now turn to electromagnetic waves, which are
+one of the \emph{fundamental} kinds of waves that the universe is
+ultimately composed of.
+
+
+<% begin_sec("Energy and momentum of electric and magnetic fields",nil,'e-b-energy-momentum') %>
+
+<% begin_sec("A thought experiment",nil,'e-b-energy-momentum-thought-expt') %>
+
+The following argument shows that electric and magnetic fields must
+contain both energy (as you probably already knew) and momentum.
+In figure \subfigref{e-field-energy-argument}{1}, Andy and Bob hold
+positive charges A and B at some distance from one another. If Andy
+chooses to move his charge closer to Bob's,
+\subfigref{e-field-energy-argument}{2}, Andy will have to do some
+mechanical work against the electrical repulsion, burning off some of
+the calories from that chocolate cheesecake he had at lunch.  This
+reduction in his body's chemical energy is offset by a corresponding
+increase in the electrical potential energy $q\Delta\phi$.  Not only
+that, but Andy feels the resistance stiffen as the charges get closer
+together and the repulsion strengthens.  He has to do a little extra
+work, but this is all properly accounted for in the electrical
+potential energy.
+
+<% marg(20) %>
+<%
+  fig(
+    'e-field-energy-argument',
+    %q{Fields carry energy.}
+  )
+%>
+<% end_marg %>
+
+Furthermore, we know that Newton's third law holds for the ordinary
+contact forces, such as normal and frictional forces, with which we
+have experience in mechanics. Therefore when Andy's hand makes a force
+on his charge, the charge makes a force back on his hand that is equal
+in strength and opposite in direction. In the mechanical context that
+we have experience with, this balance of forces is what ensures
+conservation of momentum. Andy recoils slightly, absorbing some
+leftward momentum from the charge. (This momentum may be transmitted
+through his feet to the earth, which then recoils at some very small
+velocity.)
+
+But now suppose, \subfigref{e-field-energy-argument}{3}, that Bob
+decides to play a trick on Andy by tossing charge B far away just as
+Andy is getting ready to move charge A.  We have already established
+that Andy can't feel charge B's motion instantaneously, so the force
+on B must actually be propagated through some kind of ``force ripples.''
+Of course this experiment is utterly impractical, but
+suppose for the sake of argument that the time it takes the effect
+to propagate across the diagram is long enough so
+that Andy can complete his motion before he feels the effect of B's
+disappearance. He is still getting stale information about B's
+position. As he moves A to the right, he feels a repulsion, because
+the field in his region of space is still the field caused by B in its
+\emph{old} position. He has burned some chocolate cheesecake calories,
+and it appears that conservation of energy has been violated, because
+these calories can't be properly accounted for by any interaction with
+B, which is long gone. Conservation of momentum is also violated.
+
+If we hope to preserve the laws of conservation of energy and
+momentum, then the only possible conclusion is that the field ripples themselves
+carry away the cheesecake energy, as well as the momentum. In fact, this example
+represents an impractical method of transmitting radio waves. Andy
+does work on charge A, and that energy goes into the radio waves. Even
+if B had never existed, the radio waves would still have carried
+energy and momentum.
+
+<% end_sec('e-b-energy-momentum-thought-expt') %>
+
+<% begin_sec("Expressions for the energy and momentum density",nil,'e-b-energy-momentum-eqns') %>
+
+From your previous study of electromagnetism, you know that a
+time-varying electric field will induce a curly magnetic field, so in
+an electromagnetic wave we expect both an $\vc{E}$ and a $\vc{B}$ to
+exist. In fact, if we hadn't already known this fact about induction,
+we could have inferred it at this point. In Andy and Bob's experiment,
+we should be able to look at the empty space in the middle of the
+diagram, measure the fields, and infer not just their energy content,
+which is a scalar, but also their momentum and direction of
+propagation, which have directions in space. If only an electric field
+existed, then the only direction we could infer would be the direction
+of $\vc{E}$, but that can't be the right way to tell which direction
+the wave is traveling. For example, we could do the experiment twice,
+once with charges A and B both positive, then again with both charges
+negative. In both cases the wave should propagate to the right, but
+all the electric fields would have flipped.
+
+This problem is resolved by the presence of the magnetic field. Given
+two vectors $\vc{E}$ and $\vc{B}$, we can form the vector
+cross product $\vc{E}\times\vc{B}$. This is the \emph{only} such
+vector we can form, so it must be the one that tells us the direction
+of the wave's momentum and the direction it's going. We thus infer that
+there is no such thing as an electric wave or a magnetic wave, only
+electromagnetic waves containing both fields.
+
+<% self_check('e-cross-e',<<-'SELF_CHECK'
+  Why can't we use $\vc{E}\times\vc{E}$ or $\vc{B}\times\vc{B}$ for this purpose?
+  SELF_CHECK
+  ) %>
+
+Since energy is a scalar, similar arguments lead to the conclusion that the
+energy content of the fields must depend on $\vc{E}\cdot\vc{E}$ and
+$\vc{B}\cdot\vc{B}$, i.e., on the squared magnitudes of the fields.
+(We could in principle have an energy that went like $\vc{E}\cdot\vc{B}$, but this
+would lead to effects that we don't observe, such as the deflection of a magnetic
+compass when we place it next to a battery.)
+
+The energy and momentum densities go like this:
+        \begin{align*}
+          \der U_E &= \frac{1}{8\pi k} E^2 \der v \\
+          \der U_B &= \frac{c^2}{8\pi k} B^2 \der v \\
+          \der\vc{p} &= \frac{1}{4\pi k} \vc{E}\times\vc{B} \der v
+        \end{align*}
+Here $U$ stands for energy (to avoid a notational clash with $\vc{E}$
+for the electric field), $k$ is the Coulomb constant (sometimes also
+written as $1/4\pi\epsilon_\zu{o}$), $c$ is the speed of light, and
+$v$ indicates volume. The ``$\der$'' notation looks like the Leibniz
+notation for a derivative, but these are not derivatives.  In these
+expressions d just means ``a little bit of.'' The reason for the
+$\der$'s is that in general the fields are nonuniform, so that we
+can't speak of ``the'' value of $E^2$ or $B^2$ over some large volume.
+Only by taking an infinitesimal volume near one point can we speak of
+the field as having a definite value. The quantity $\der U$ is then
+understood as the infinitesimal energy contained within this volume.
+
+We have already justified the structure of these expressions, but not
+the constant factors in front.  The factors of $1/k$ and $c^2$ have to
+be there because of units.  In natural units, the $c^2$ wouldn't
+exist. Its presence here tells us that there is a relativistic link
+between $\vc{E}$ and $\vc{B}$. We'll see this in more detail later,
+but it's not particularly surprising. For example, an electric charge
+has only an $\vc{E}$ field according to an observer in the frame of
+reference where the charge is at rest, but observers in other frames
+will say that the charge is moving, and therefore it will have a
+$\vc{B}$ field as well.
+
+<% end_sec('e-b-energy-momentum-eqns') %>
+
+<% end_sec('e-b-energy-momentum') %>
+
+
+<% begin_sec("Examples of the momentum",nil,'momentum-of-em-fields-examples') %>\index{momentum!of electromagnetic fields}
+
+You have probably already learned about $U_E$ and $U_B$, and also
+experienced them directly. For example, in an oscillating LC circuit,
+these are the energies that are being shuffled back and forth between
+the inductor and the capacitor. But you have probably never directly
+experienced the momentum of the fields.
+
+It is in fact plausible that the proportionality constant occurring in
+the equation for the momentum density is such that the momentum of
+light is too small to notice in everyday life. For material objects
+moving at speeds small compared to $c$, the kinetic energy and
+momentum are given by $K=(1/2)mv^2$ and $p=mv$, so that the ratio of
+momentum to energy is $p/K=2/v$.\label{energy-momentum-ratio}
+Therefore objects moving very fast
+have very little momentum in proportion to their energy. We see this,
+for example, in an old-fashioned CRT television tube, in which the
+electron beam moves at extremely high speeds (perhaps $10^6\
+\munit/\sunit$); the energy is enough to make a bright image on the
+screen, but the device doesn't recoil from the beam's momentum when we
+turn it on, nor does it shake and rattle as the the beam is steered
+back and forth across the screen to paint the picture.  Although
+the equations above do not actually hold in detail for light (the
+final result ends up being off by a factor of 2, as shown in sec.~\ref{subsec:p-plane-wave},
+p.~\pageref{subsec:p-plane-wave}), it still makes sense
+that the momentum-to-energy ratio is extremely small, because the
+speed, $c$, is so big.
+
+\begin{eg}{A comet's tail}\label{eg:halley}\index{Halley's comet}\index{comet}
+Halley's comet, shown
+in figure \figref{halley}, has a very elongated elliptical orbit, like those of
+many other comets. About once per century, its orbit brings
+it close to the sun. The comet's head, or nucleus, is
+composed of dirty ice, so the energy deposited by the
+intense sunlight gradually removes ice from the surface and turns it into water vapor.
+
+The sunlight does not just carry energy, however. If it only carried
+energy, then the water vapor would just form a spherical halo that
+would surround the nucleus and travel along with it.  The light also
+carries momentum. Once the steam comes off, the momentum of the
+sunlight impacting on it pushes it away from the sun, forming a tail
+as shown in in the top image.  (Some comets also have a second tail,
+which is propelled by electrical forces rather than by the momentum of
+sunlight.)
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'halley',
+    %q{%
+      Halley's comet, example \ref{eg:halley}.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'nichols-radiometer',          
+    %q{Example \ref{eg:nichols-radiometer}.}
+  )
+%>
+<% end_marg %>%
+\begin{eg}{The Nichols radiometer}\label{eg:nichols-radiometer}
+Figure \figref{nichols-radiometer} shows a simplified drawing of the
+1903 experiment by Nichols and Hull that verified the predicted
+momentum of light waves. Two circular mirrors were hung from a fine
+quartz fiber, inside an evacuated bell jar. A 150 mW beam of light was
+shone on one of the mirrors for 6 s, producing a tiny rotation, which
+was measurable by an optical lever (not shown). The force was within
+0.6\% of the theoretically predicted value of $0.001\
+\mu\nunit$.\index{Nichols-Hull experiment on momentum of light} For
+comparison, a short clipping of a human hair weighs $\sim 1\
+\mu\nunit$. 
+\end{eg}
+
+Because the momentum of light waves is so small in cases like examples
+\ref{eg:halley} and \ref{eg:nichols-radiometer}, one might wonder why
+we should even bother discussing it. Is it purely an impractical and
+theoretical consideration? The answer is that it is very practical in
+the sense that it helps us to understand important practical facts
+about these waves. One such fact is that, as we have already seen,
+wave disturbances in the field must be both electric and magnetic.
+
+We can also see that such waves must have fields with nonvanishing
+components perpendicular to the direction in which the wave is
+traveling, because the cross product $\vc{E}\times\vc{B}$ is
+perpendicular to both $\vc{E}$ and $\vc{B}$.  In fact, for the simplest
+wave patterns (such as a laser beam or a small enough piece of sunlight),
+we will see that the fields are purely perpendicular to the direction
+of propagation --- they have no component at all parallel to the momentum.
+Such a wave is referred to as a transverse wave, as opposed to a longitudinal wave.
+In the examples in ch.~\ref{ch:waves}, the waves on a string are transverse, while
+sound waves are longitudinal.
+<% end_sec('momentum-of-em-fields-examples') %>
+
+<% begin_sec("What it is that waves",nil,'what-vibrates') %>\index{electromagnetic wave!not a vibration of a medium}
+
+In a vibration, such as the motion of a pendulum or a mass on a
+spring, we would define the amplitude either as the position of the
+object relative to equilibrium, or as some other, closely related
+quantity such as the object's velocity. In these examples, position
+and velocity are not independent measures of amplitide. They are
+closely related, and we can't change one without changing the other
+proportionately.  A wave is a kind of vibration that exists across a
+whole region of space, so the same ideas recur. For example, the
+amplitude of a sound wave could be defined in multiple ways: in terms
+of the displacement of the air, its velocity, or the pressure or
+density. Again, all of these things are related and cannot be
+controlled independently.
+
+In the case of an electromagnetic wave, we could define the amplitude
+in terms of either the electric field or the magnetic field. We have
+already seen that in an electromagnetic wave we can't have one of
+these be zero while the other is nonzero.  Shortly we will see that in
+a plane wave, they are in fact directly proportional to each other. 
+
+An electromagnetic wave, unlike the mechanical waves in ch.~\ref{ch:waves},
+isn't a vibration of any material medium such as air or
+a piece of string. What vibrates is the fields --- invisible, intangible, and
+massless. Electromagnetic waves are transverse. But
+because they are not vibrations of a material medium, this 
+doesn't mean that anything is actually \emph{traveling} from side to
+side. In an example like the photos of the coil spring in figure \figref{ribbon-on-spring}, p.~\pageref{ribbon-on-spring},
+we could imagine a bug
+sitting on the spring. The bug
+moves to the side and then back as the pulse passes through, but nothing
+analogous happens in an electromagnetic wave. The bug would simply notice
+a change in the fields over time, but would not move.
+
+Early physicists working on the description of electromagnetic
+radiation had never had any previous experience with waves that were
+not mechanical vibrations of a physical medium. James Clerk Maxwell
+gave a complete and correct mathematical description of
+electromagnetism in 1865, and his equations worked just fine as a
+description of radiation purely in terms of non-material fields. But
+old habits died hard, and as late as the 1930's, it was common to hear
+physicists referring to electromagnetic waves as vibrations in a
+mysterious medium called the ``aether.''\index{aether}
+
+<% end_sec('what-vibrates') %>
+
+<% begin_sec("Geometry of a plane wave",nil,'plane-wave-geom') %>\index{electromagnetic wave!geometry}
+
+<% begin_sec("$\\vc{E}$ and $\\vc{B}$ perpendicular to the direction of propagation",nil,'e-b-perp-p') %>
+The momentum density $(1/4\pi k)\vc{E}\times\vc{B}$ is proportional
+to the momentum density of our plane wave,
+and therefore points in the direction of propagation. Since a vector cross product is perpendicular
+to both of the vectors, it follows that both fields lie in the plane perpendicular to the direction
+of propagation.
+<% end_sec('e-b-perp-p') %>
+
+<% begin_sec("$\\vc{E}$ and $\\vc{B}$ equal in energy",nil,'e-b-equal-energy') %>\index{electromagnetic wave!energy}
+
+<% marg() %>
+<%
+  fig(
+    'e-b-equal-energy',
+    %q{Are these possible fields for electromagnetic plane waves?}
+  )
+%>
+<% end_marg %>
+Figure \figref{e-b-equal-energy} shows two examples of electric and magnetic fields that
+we imagine as possible fields in an electromagnetic plane wave. We draw the arrows for the
+$\vc{E}$ and $\vc{B}$ vectors with equal lengths on the page, which suggests that they are
+``equal'' in the sense of carrying equal energy, which we are now going to prove. The angle
+$\phi$ is drawn as an arbitrary angle, although we will prove later that it must be a right
+angle. The first example is drawn with $\vc{E}$ clockwise from $\vc{B}$, so that by the right-hand
+rule, the direction of propagation is out of the page. The second example has been flipped around
+so that the momentum vector is into the page, and has also been rotated in the plane of the page.
+
+Our argument for equal energy sharing between the electric and magnetic fields works by
+colliding these two waves head-on. Before the waves collide, they each carry energy $U_\vc{E}+U_\vc{B}$,
+for a total energy of $2U_\vc{E}+2U_\vc{B}$. Now suppose that the rotation is chosen as in the figure,
+so that when the waves superpose, the electric fields cancel. At this moment, the total energy
+is $U_{\vc{B}'}$, where $\vc{B}'$ is the result of vector addition of the two magnetic field vectors
+at an angle of $\pi-2\phi$ relative to each other.
+
+That was one possible choice of the rotation. But we can also choose the rotation such that
+the \emph{magnetic} fields cancel, so that the total energy is $U_{\vc{E}'}$, where $\vc{E}'$ is the
+result of a similar vector addition problem involving the same angle.
+
+Requiring conservation of energy in both examples, we have $U_\vc{E}+U_\vc{B}=U_{\vc{B}'}=U_{\vc{E}'}$,
+but since the two vector addition problems involve the same angle, we must have $U_\vc{E}=U_\vc{B}$,
+as claimed.
+
+Since the energy densities are $(1/8\pi k)E^2$ and $(c^2/8\pi k)B^2$,
+it follows that $E=cB$. (This was problem \ref{hw:morally-equal-eb},
+p.~\pageref{hw:morally-equal-eb}). With a couple of centuries of
+hindsight, it would have been better if we had constructed a system of
+units in which $E$ and $B$ had the same units, and in fact they do
+have the same units in the cgs system. In the SI their units are
+different, but ignoring the factor of $c$, we can say that this means
+the magnitudes of the electric and magnetic fields in a plane wave are
+``equal.'' (See problem \ref{hw:morally-equal-eb}, p.~\pageref{hw:morally-equal-eb}.)
+
+<% end_sec('e-b-equal-energy') %>
+
+<% begin_sec("$\\vc{E}$ and $\\vc{B}$ perpendicular to each other",nil,'e-b-perp') %>
+<% marg() %>
+<%
+  fig(
+    'e-b-perpendicular',
+    %q{The geometry of a plane wave, with $\phi=90\degunit$.}
+  )
+%>
+<% end_marg %>
+
+<% marg(-300) %>
+<%
+  fig(
+    'crossed-polaroids-photos',
+    %q{Example \ref{eg:crossed-polaroids}.}
+  )
+%>
+<% end_marg %>
+
+Continuing the analysis of the colliding waves, we find that the angle $\phi$
+between $\vc{E}$ and $\vc{B}$ must be a right angle. We have four units of energy
+before the waves collide: one unit in each wave's electric field, and one unit in each
+magnetic field. When the waves collide in an orientation such that the electric fields
+cancel, then $U_{\vc{B}'}$ has a value, in these units, of $4\sin^2\phi$, which gives
+conservation of energy only if $\phi$ is a right angle. We arrive at the geometry shown
+in figure \figref{e-b-perpendicular}.
+
+Because the angle $\phi$ is fixed at $90\degunit$, it's not a property like color or brightness
+that can distinguish one light wave from another. But we are always free to take a diagram
+like figure \figref{e-b-perpendicular} and simply spin the whole book around by an angle $\theta$.
+This is referred to as the polarization of the wave.
+
+
+\begin{eg}{Crossed polarizing films}\label{eg:crossed-polaroids}
+A polarizing filter is one that passes light that has its polarization oriented in a certain
+direction, while blocking it if the polarization is in the perpendicular direction.
+The photos show two polarizing filters that overlap, with the light coming from the back being
+a random mixture of small wave-trains with random polarizations.
+
+At the first filter, light with the ``right'' orientation gets through, while
+light with the ``wrong'' orientation is blocked. Of course, a randomly chosen angle will not
+be at exactly $0\degunit$ or $90\degunit$. A wave with an intermediate angle of polarization
+can be broken down into \emph{components} (say the components of $\vc{E}$, although it doesn't
+matter in principle whether we talk about $\vc{E}$ or $\vc{B}$, since their orientations are
+fixed relative to each other). On the average, these components are equal in energy, so
+half the light is transmitted.
+
+The filters overlap, so the light now has to pass through the second filter.
+In the top photo, the two filters have been oriented the same way, so that in principle
+any light that passes through the first filter should also get through the second without
+any reduction in intensity. Because the filters are nonideal, we do observe some further
+reduction in brightness where the filters overlap, but not very much.
+
+In the bottom photo, one filter has been rotated by $90\degunit$. Any component that
+passes the first filter is in exactly the wrong direction to get through the second,
+so we see black where the filters overlap.
+\end{eg}
+
+\startdq
+\begin{dq}
+Suppose someone tells you that a beam of light consists of a stream of electrons
+moving through space. Use the experiment in example \ref{eg:crossed-polaroids}
+to convince them that they're wrong.
+\end{dq}
+
+<% end_sec('e-b-perp') %>
+
+<% end_sec('plane-wave-geom') %>
+
+<% begin_sec("Propagation at a fixed velocity",nil,'propagation-at-c') %>\index{electromagnetic wave!propagation at $c$}
+If we look at the speed of waves in general, we see two main types of behavior. In one type,
+exemplified by sound waves or waves on a coil spring as in figure \figref{coil-spring-pulse},
+all waves travel at the same speed, regardless of their amplitude or frequency.
+Water waves are a good example of another type, called a dispersive wave.\index{dispersion}\label{dispersion-introduced} A dispersive
+wave travels at different velocities depending on its frequency. Only a perfect sine wave
+has a definite frequency, so typically if we generate a wave with some randomly chosen
+shape, it will act like a mixture of different frequencies. (There is a mathematical theorem
+called Fourier's theorem that says we can always analyze any wave as a superposition of sine
+waves.) These different frequencies will travel at different speeds, so the wave acts like
+a bunch of runners over the course of a long-distance race: at the start they're all crowded
+together, but as time goes on, the faster ones pull ahead, the slower ones fall behind, and
+the pack spreads out in space, often to the point where people are running all alone and can't
+see their competitors. In a wave, this causes the wave pattern to spread out, or disperse. We
+can tell that the wave pulse on the coil spring in figure \figref{coil-spring-pulse} is propagating
+nondispersively, because it maintains its shape as it moves.
+
+<% marg(80) %>
+<%
+  fig(
+    'vacuum-dispersion',
+    %q{Arrival times of waves with different frequencies from gamma-ray burst 160625B, from
+       Wei \emph{et. al}, 2018. In this histogram, the vertical axis is a count of the
+       number of wave pulses arriving per unit time.}
+  )
+%>
+<% end_marg %>
+
+
+We know on both theoretical and empirical grounds that
+electromagnetic waves are nondispersive when they travel in a vacuum.
+Figure \figref{vacuum-dispersion} shows some astronomical evidence that is
+extremely impressive for its accuracy. Electromagnetic waves (gamma rays) with different frequencies,
+spanning several orders of magnitude, were generated, probably by matter falling into a black hole.
+These waves then traveled for 9 billion years before reaching earth, where the different frequencies
+arrived within seconds of one another.
+<%
+  fig(
+    'plane-wave-propagating',
+    %q{A plane wave propagating to the right, shown at one time (top) and a later one (bottom).},
+    {'width'=>'wide','sidecaption'=>false,'sidepos'=>'b'}
+  )
+%>
+
+Theoretically, we have the following argument. In general, the ratio of an object's energy to its
+momentum depends on its speed (cf.~p.~\pageref{energy-momentum-ratio}). But the geometrical facts
+we've found about electromagnetic waves guarantee that the energy and momentum scale up and down
+with amplitude in exactly the same way, and are independent of the shape of the wave. For example,
+if the angle $\phi$ between the $\vc{E}$ and $\vc{B}$ vectors could vary, or if $|\vc{E}|$ and
+$|\vc{B}|$ could vary independently, then we could get different momenta for the same energy --- but
+these things are \emph{not} independently variable. Since electromagnetic waves have a fixed ratio
+of energy to momentum, they must travel at a fixed speed,\label{em-waves-fixed-v}
+which we will show on p.~\pageref{em-waves-propagate-at-c} is $c$. They are nondispersive, so
+a plane wave glides along rigidly as in figure \figref{plane-wave-propagating}, without changing shape.
+
+By the way, all of this applies only to a vacuum. For example, there
+is dispersion when light travels through glass: we observe that blue travels more
+slowly than red by about 1\%. The theoretical argument about energy and momentum
+doesn't apply here because there are transfers of energy and momentum
+between the light and the glass while the light is passing through.
+
+<% end_sec('propagation-at-c') %>
+
+<% begin_sec("The electromagnetic spectrum",nil,'em-spectrum') %>
+
+Heinrich \index{Hertz, Heinrich}Hertz (for whom the unit of
+frequency is named) verified Maxwell's ideas experimentally.
+Hertz was the first to succeed in producing, detecting, and
+studying electromagnetic waves in detail using antennas and
+electric circuits. To produce the waves, he had to make
+electric currents oscillate very rapidly in a circuit. In
+fact, there was really no hope of making the current reverse
+directions at the frequencies of $10^{15}$ Hz possessed by
+visible light. The fastest electrical oscillations he could
+produce were $10^9$ Hz. He succeeded in showing that, just like visible light,
+the waves he produced were polarizable, and could be
+reflected and refracted (i.e., bent, as by a lens), and he
+built devices such as parabolic mirrors that worked
+according to the same optical principles as those employing
+light. Hertz's results were convincing evidence that light
+and electromagnetic waves were one and the same.
+
+Together, the experimentalist Hertz and the theorist Maxwell
+(sec.~\ref{sec:maxwell-vacuum}), showed that electromagnetic
+waves were in fact the structure underlying a variety of
+apparently disparate phenomena, including visible light, radio
+waves, and other phenomena such as x-rays. All of these types
+of radiation differ only in their frequency, and they lie along
+a unified electromagnetic spectrum (figure below)
+in which the visible rainbow spectrum is only a narrow slice.
+
+<%
+ fig(
+   'em-spectrum',
+   '',
+   {'width'=>'fullpage'}
+ )
+%>
+
+An electromagnetic wave can be characterized either by its
+frequency or by its wavelength $\lambda$ (Greek letter lambda, which
+makes the ``L'' sound). On a sinusoidal wave, the
+wavelength is the distance in space between one crest and the next.
+These are not two independent parameters. During one cycle of
+vibration, which takes time $1/f$, one wavelength $\lambda$ travels past a fixed point in space.
+We therefore have $c=(\text{distance})/(\text{time})=\lambda f$.
+A higher frequency corresponds to a shorter wavelength.
+
+The terminology for the various parts of the spectrum is
+worth memorizing, and is most easily learned by recognizing
+the logical relationships between the wavelengths and the
+properties of the waves with which you are already familiar.
+ Radio waves have wavelengths that are comparable to the
+size of a radio antenna, i.e., meters to tens of meters.
+Microwaves were named that because they have much shorter
+wavelengths than radio waves; when food heats unevenly in a
+microwave oven, the small distances between neighboring hot
+and cold spots is half of one wavelength of the standing
+wave the oven creates. The infrared, visible, and
+ultraviolet obviously have much shorter wavelengths, because
+otherwise the wave nature of light would have been as
+obvious to humans as the wave nature of ocean waves. To
+remember that ultraviolet, x-rays, and gamma rays all lie on
+the short-wavelength side of visible, recall that all three
+of these can cause cancer. (As you'll see when you learn about quantum physics,
+there is a basic physical reason why the cancer-causing
+disruption of DNA can only be caused by very short-wavelength
+electromagnetic waves. Contrary to popular belief,
+microwaves cannot cause cancer, which is why we have
+microwave ovens and not x-ray ovens!)
+
+<% end_sec('em-spectrum') %>
+
+<% begin_sec("Momentum and rate of energy flow",4,'p-and-energy-flow') %>
+<% begin_sec("Momentum of a plane wave",nil,'p-plane-wave') %>\index{electromagnetic wave!momentum}
+Recalling the relations $\der\vc{p}/\der v =(1/4\pi k)\vc{E}\times\vc{B}$,
+$\der U_E/\der v=(1/8\pi k)E^2$, and $\der U_B/\der v=(c^2/8\pi k)B^2$, it is
+straightforward to show that for a plane wave, the energy and momentum are related
+by
+\begin{equation*}
+  \der U = c \der p.
+\end{equation*}
+This turns out to be a more general relation that, according to relativity, applies
+to anything without mass.
+<% end_sec('p-plane-wave') %>
+<% begin_sec("Rate of energy flow",nil,'poynting') %>
+Intuitively we feel that sunlight \emph{flows} through a window. We have been focusing
+on the momentum density as a measure of this rate of flow, but it would be equally valid
+to quantify it in units of power per unit area ($\text{watts}/\text{meter}^2$). These
+two figures must somehow be equivalent, since we can't change one without changing the
+other by the same factor. The relationship between them is
+\begin{equation*}
+  \frac{\text{power}}{\text{area}} = \frac{\text{momentum}}{\text{volume}} \times c^2.
+\end{equation*}
+To see this, consider an imaginary rectangular box of length $\ell$, with the window
+of area $A$ forming one end. Its volume is $v=\ell A$. Let's say the light is flowing
+directly along the length of this box, striking the window flat-on. At a given instant, the box contains
+momentum $p$ and energy $cp$. The time it will take for this entire box worth of light to
+flow through the window is $t=\ell/c$, so that the power per unit area is
+$(cp/t)/A=c^2p/(\ell A)=(p/v)c^2$.
+
+<% marg(30) %>
+<%
+  fig(
+    'window-flux',
+    %q{Light fills an imaginary rectangular box, flowing through a window of area $A$.}
+  )
+%>
+<% end_marg %>
+
+Summarizing, we find that the vector cross product $\vc{E}\times\vc{B}$ can be interpreted
+either as a measure of momentum density or as a measure of the rate of flow of energy.
+
+The quantity $(c^2/4\pi k)\vc{E}\times\vc{B}$, which is just the momentum density
+multiplied by $c^2$, is often notated $\vc{S}$, and
+is referred to as the Poynting vector, after John Henry Poynting --- a wonderful
+coincidence, because the vector \emph{points} in the direction of the momentum
+and energy flow. The magnitude of the Poynting vector is power per unit 
+area.\index{Poynting, John Henry}\index{Poynting vector}
+
+It makes sense that the momentum density and the rate of energy flow differ by
+the factor $c^2$, which is huge in SI units. SI units were chosen so that their
+sizes would be of a convenient order of magnitude in everyday life. We know from
+ordinary experience that the energy flux of a blast of desert sun can be physically
+staggering, whereas the momentum of the same sunlight is totally undetectable
+in everyday life.
+
+<%
+  fig(
+    'wave-poynting',
+    %q{The Poynting vector of a sinusoidal plane wave, example \ref{eg:wave-poynting}.
+       There is a net flow of energy out of region A, and a net
+       flow into B.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+\begin{eg}{Poynting vector of a plane wave}\label{eg:wave-poynting}
+Figure \figref{wave-poynting} shows the Poynting vector, in the sea-of-arrows representation,
+for the example of a sinusoidal plane wave. In a coordinate system where $+z$ is to the right, frozen at one
+point in time, this wave could be described by $\vc{E}=A\hat{\vc{x}}\sin kz$
+and $c\vc{B}=A\hat{\vc{y}}\sin kz$, so that $\vc{S}=(A^2c/4\pi k)\hat{\vc{z}}\sin^2 kz$.
+The figure shows examples of regions that have a net flow of energy in or out.
+\end{eg}
+
+In example \ref{eg:wave-poynting}, we have regions of space that are
+gaining energy, and others that are losing it. It's because there are
+``winners and losers'' that these energy flows are physically
+observable.  As a technical aside, it is also possible to have examples in which the
+Poynting vector is nonzero, but there is no physically observable flow
+of energy, because every region of space is having energy flow in as
+fast as it flows out (\note{static-poynting}). 
+
+<%
+  fig(
+    'point-charge-in-capacitor-poynting',
+    %q{The energy flow for a point charge released from rest in a capacitor. The $\vc{E}$, $\vc{B}$, and $\vc{S}$ vectors
+       are shown at four sample points.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+
+\begin{eg}{A charge accelerated inside a capacitor}\label{eg:point-charge-in-capacitor-poynting}
+In discussion question \ref{dq:point-charge-in-capacitor}, p.~\pageref{dq:point-charge-in-capacitor},
+we convinced ourselves that if a charge was released inside a capacitor, the kinetic energy it gained
+could be properly accounted for by the energy lost from the electric field. We also calculated this
+quantitatively in note \notewithoutbackref{force-on-point-charge}. Figure \figref{point-charge-in-capacitor-poynting}
+shows how this plays out in terms of the Poynting vector. The setup is recapitulated in \subfigref{point-charge-in-capacitor-poynting}{1}.
+The electric field, \subfigref{point-charge-in-capacitor-poynting}{2}, is the superposition of the capacitor's
+nearly uniform downward field and the outward field pattern of the particle. As the particle moves downward, it
+creates a magnetic field, \subfigref{point-charge-in-capacitor-poynting}{3}, similar to that of a current-carrying wire.
+Taking the vector cross product $\vc{E}\times\vc{B}$ gives us the Poynting vector $\vc{S}$ (ignoring constants of proportionality).
+We see that the energy flow is out of the electric field in the top of the capacitor, and into the center, where the
+particle is.
+\end{eg}
+
+It is also interesting to consider the case where the capacitor in example \ref{eg:point-charge-in-capacitor-poynting}
+is infinite in size, i.e., we simply fill the whole universe with a uniform electric field. In this
+case, the Poynting vector tells us that the energy flow comes from infinity (\note{charge-in-infinite-uniform-field-poynting}).
+
+\startdq
+
+<% marg() %>
+<%
+  fig(
+    'dq-field-momentum',
+    %q{Discussion question \ref{dq:field-momentum}.},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'bug-in-plane-wave',
+    %q{A bug makes local observations of the leading edge of the wave from figure
+       \figref{plane-wave-propagating}. The wave is moving to the right, and the
+        magnetic field is perpendicular to the page.}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:field-momentum}
+Positive charges 1 and 2 are moving as shown. What electric and magnetic forces do they exert on each other?
+(To find the directions of the relevant
+magnetic fields, you can pretend that the charges are wires, and you will need to use the right-hand rule illustrated in
+figure \figref{field-lines-of-wire-handedness},
+p.~\pageref{fig:field-lines-of-wire-handedness}.)
+What does this imply for conservation of momentum?
+\end{dq}
+
+<% end_sec('poynting') %>
+<% end_sec('p-and-energy-flow') %>
+
+<% begin_sec("Maxwell's equations in a vacuum",nil,'maxwell-vacuum') %>
+The laws of physics are local, so if we zoom in on an electromagnetic wave, as in
+figure \figref{bug-in-plane-wave}, and take on the role of the bug, we must be able
+to make sense of the evolution of the wave pattern as time goes on. The structure of
+the laws of physics for electromagnetism is that they talk about the curl and divergence
+of the fields. It's not arbitrary that they have this structure, because the curl and
+divergence are the only rotationally invariant derivative operators we can define that take
+a vector-valued field as an input.
+
+What the bug observes at this moment in time is that the electric field has a curl
+that points into the page. (You should verify this yourself by visualization, using the
+right-hand rule, if necessary referring to the drawing of the curl-meter in
+figure \figref{curlmeter-fac} on p.~\pageref{fig:curlmeter-fac}.) She also observes that
+the magnetic field's curl is up. For static fields, we're supposed to have
+$\operatorname{curl}\vc{E}=0$ and $\operatorname{curl}\vc{B}=0$, so this would be impossible.
+But this is not a static field, it's a field that is changing over time.
+The bug needs some laws of physics that relate the time-varying nature of the fields to their
+curls. With this motivation, we state Maxwell's equations\footnote{The full version of Maxwell's equations, including matter, are
+summarized on p.~\pageref{fig:maxwell-summary}.} in a vacuum:\index{Maxwell's equations!in a vacuum}
+\begin{align*}
+  \operatorname{div}\vc{E} &=  0 \\
+  \operatorname{div}\vc{B} &=  0 \\
+  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
+  \operatorname{curl}\vc{B} &=  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}.
+\end{align*}
+There is not much else we could write down that would satisfy the bug's
+requirements. The signs are the ones that make the geometry of figure \figref{bug-in-plane-wave}
+work.\footnote{The fact that the two signs are opposite is what gives us solutions that are oscillating
+waves, rather than exponential freak-outs. We could make the signs $+$ and $-$ rather than $-$ and $+$,
+but this would be equivalent to redefining the magnetic field like $\vc{B}\rightarrow-\vc{B}$.}
+The factor of $1/c^2$ has to be there because of units.
+We could throw in other unitless
+factors and change the $1/c^2$ to $7/c^2$, for example, but $1/c^2$ is the choice that turns out to make the
+wave propagate at $c$ (\note{maxwell-c}).
+
+The physics embodied in these two new terms of Maxwell's equations is referred to as
+induction (a different usage of the term than the one introduced for static fields
+on p.~\pageref{fig:attracting-induced-electric-and-magnetic-dipoles}). A changing
+magnetic field induces a curly electric field, and a changing electric field
+induces a curly magnetic field. This has many important technological applications,
+but since those are not our topic right now, we give only two qualitative examples.
+Further quantitative material is presented in ch.~\ref{ch:stokes}.
+
+\begin{eg}{The generator}\index{generator}
+A generator, \figref{generator}, consists of a permanent magnet that
+rotates within a coil of wire. The magnet is turned by a
+motor or crank, (not shown). As it spins, the nearby
+magnetic field changes. This changing magnetic field results in an
+electric field, which has a curly pattern. This electric
+field pattern creates a current that whips around the coils
+of wire, and we can tap this current to light the lightbulb.
+\end{eg}
+<% marg(33) %>
+<%
+  fig(
+    'generator',
+    %q{A generator.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Radiation from a dipole antenna}\label{eg:dipole-radiation-pattern}
+Figure \figref{dipole-radiation-pattern} depicts the electric fields in
+the radiation pattern of an antenna, shown in the photo superimposed
+in the background. This type of antenna is called a dipole antenna,
+meaning that as a source, it acts like an electric dipole whose dipole
+vector oscillates sinusoidally. The magnetic field is perpendicular to
+the page and is shown only at six arbitrarily chosen points in the
+midplane. Let's verify that this pattern appears to satisfy 
+Maxwell's equations in a vacuum. 
+
+The electric field lines 
+never begin or end at any point in the air surrounding on the antenna, only at points on the antenna,
+which means that they satisfy $\operatorname{div}\vc{E}=0$ everwhere that they should. (And where they reach
+the antenna, which is a conductor, they are perpendicular to the surface.)
+<%
+  fig(
+    'dipole-radiation-pattern',
+    %q{The radiation pattern emitted by a dipole antenna, example \ref{eg:dipole-radiation-pattern}.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+Although the magnetic field lines are not shown, they are simply circles centered on the dipole axis
+and perpendicular to it. Each magnetic field vector shown on the left wraps around and connects to the
+symmetrically placed field vector on the right. Because these circles close on themselves, there are
+no magnetic sources or sinks, as required by $\operatorname{div}\vc{B}=0$.
+
+In order to check $\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$, we pick points A, B, and C,
+of which only B coincides with a point where the magnetic field was drawn. Here is a table, to be justified
+afterward, describing the behavior of the fields and their derivatives at these points.
+
+\begin{tabular}{lllll}
+    & $\vc{E}$ & $\operatorname{curl}\vc{E}$ & $\vc{B}$ & $\partial\vc{B}/\partial t$ \\
+A   & 0        & max (out)                   & 0        & max (in) \\
+B   & max (up) & 0                           & max (in) & 0 \\
+C   & 0        & max (in)                    & 0        & max (out)
+\end{tabular}
+
+Points A, B, and C are chosen to be ones at which the electric field
+is at a zero, a maximum, and a minimum, hence the values in the first
+column. We can tell, for example, that $\vc{E}$ is small at A because
+the field lines are far apart, and we know that $\vc{E}=0$ must occur
+somewhere near A because as the field pattern has been
+spreading outward, the field has been changing from down to (soon) up. 
+
+The second column comes from visualizing a curl-meter inserted in the figure. The curl is nearly zero at
+B because the curl is flipping directions near there at this time.
+
+The third column comes from our expectation that the Poynting vector
+should point outward, which requires that $\vc{E}$ and $\vc{B}$ reach
+their maxima at similar times, i.e., be at least approximately in
+phase, as in example \ref{eg:wave-poynting} on
+p.~\pageref{eg:wave-poynting} (Poynting vector of a plane
+wave).\footnote{This expectation cannot be valid everywhere on the
+figure. Close up to the antenna, we can find places where the electric
+field points directly inward or outward, so that the Poynting vector
+cannot be straight outward. However, far from the antenna
+the pattern begins to look locally more and more like a plane wave, so
+this kind of thing can't happen.}
+
+The fourth column follows from the fact that the time variation of the wave
+is sinusoidal, and the derivative of a sine wave is also a sine wave, shifted
+90 degrees forward in phase (e.g., $\sin'=\cos$).
+
+We can now verify that these estimates are consistent with
+$\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$ since the
+second and fourth columns match up except for the flipped direction
+arising from the minus sign.
+\end{eg}
+
+\startdq
+
+<% marg() %>
+<%
+  fig(
+    'maxwellwave-gray',
+    %q{Discussion question \ref{dq:direction-of-propagation}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:direction-of-propagation}
+The diagram shows an electric field pattern frozen at one moment in time. Let's imagine
+that it's the electric part of an electromagnetic wave. Consider four possible directions in which
+it could be propagating: left, right, up, and down. Determine whether each of these is consistent
+with Maxwell's equations. If so, infer the direction of the magnetic field.
+\end{dq}
+
+
+<% end_sec('maxwell-vacuum') %>
+
+<% begin_sec("Einstein's motorcycle",4,'einstein-motorcycle') %>\index{Einstein, Albert}
+It seems as though we have a nice, tidy picture of electromagnetism all wrapped up. There should
+only be a few loose ends to tie up, such as how to incorporate charges and currents into
+Maxwell's equations, and how to connect Maxwell's equations to
+some practical problem-solving, such as the computation of the field of a solenoid.
+
+But at the Swiss Federal Polytechnic school, a physics student, about 20 years old,
+was sitting in the back of a classroom, absorbing a lecture on material similar to this,
+when he came back to a troubling, half-formed fantasy that he had originally imagined
+at the age of 16. Suppose, Albert Einstein daydreamed, that I ride on a motorcycle
+at nearly the speed of light, chasing a light wave as it passes over me. What would I
+observe? And what would happen if I rode \emph{at} the speed of light? We take up this
+train of thought again in ch.~\ref{ch:relativity}.
+
+<% end_sec('einstein-motorcycle') %>
+
+<% begin_notes %>
+
+\notetext{static-poynting}{Unobservable Poynting vectors}
+\notesummary{Cases exist where the Poynting vector is nonzero, but there is no
+flow of energy that is actually observable.}
+One such example would be the static field of a
+bar magnet immersed in a uniform ambient magnetic field along the
+magnet's axis. If you work out the right-hand rule for yourself at
+various points in space, you should be able to convince yourself that
+the energy flow goes in circles, like a game of musical chairs. Thus
+although it seems weird that a static field can ``have'' momentum and
+a flow of energy, there are no observable consequences because no
+region of space can gather up the energy. It's a bit like the
+situation of a rich teenager who ``has'' a few million dollars in a
+trust fund, but can't touch it until she's 21. 
+
+\notetext{charge-in-infinite-uniform-field-poynting}{A point charge in an infinite, uniform electric field}
+\notesummary{In this example, energy flows from infinity.}
+
+If a charged particle is released inside a capacitor, energy flows out
+of the electric field and into the particle as kinetic energy. We have
+discussed this energy transformation in discussion question
+\ref{dq:point-charge-in-capacitor},
+p.~\pageref{dq:point-charge-in-capacitor}, in example
+\ref{eg:point-charge-in-capacitor-poynting},
+p.~\pageref{eg:point-charge-in-capacitor-poynting}, and in note
+\notewithoutbackref{force-on-point-charge}. In the quantitative
+analysis of note \notewithoutbackref{force-on-point-charge}, I avoided
+the simplest electric field pattern, which would have been a uniform
+field stretching out to infinity, with the excuse that the total
+energy would then have been infinite. By doing that, I also
+conveniently sidestepped the following apparent paradox.
+
+Suppose that
+the electric field \emph{is} uniform out to an infinite distance.
+After some time, the particle will have gained some kinetic energy. We can then
+allow it to hit something and stop, at which point its energy will be
+converted into heat. (Something similar happens when the beam of an
+old-fashioned CRT monitor hits the phosphor-coated glass in the front,
+with part of the energy also being converted into visible light.)  But
+where has this energy come from? If the electric field is truly
+filling the entire universe uniformly, then it seems that the total
+energy in the universe's electric field can't possibly have changed.
+For a field of this kind, superimposing the field of a point charge at
+one point or another produces exactly the same total electric field pattern,
+just shifted rigidly through space.
+
+We can make the excuse that
+the original energy was $\infty$, and so is the final energy, and
+$\infty-\infty$ doesn't have to be zero --- it's an indeterminate
+form. But this isn't as satisfying as an analysis of the actual energy
+flows.
+
+Such an analysis can be provided simply by letting the
+capacitor in figure \figref{point-charge-in-capacitor-poynting},
+p.~\pageref{fig:point-charge-in-capacitor-poynting}, approach infinite
+size.  The flows of energy are still qualitatively like the ones shown
+in figure \subfigref{point-charge-in-capacitor-poynting}{4}, but the
+sources of this flow are now ``off stage'' at infinity. This seems like
+a perfectly natural resolution of the paradox, which we created in the first place by moving
+the plates of the capacitor off stage to infinity.
+
+
+\notetext{maxwell-c}{Maxwell's equations and propagation at $c$}
+\notesummary{Maxwell's equations give electromagnetic waves that propagate at $c$.}
+As in the main text, we take a wave of the form
+\begin{align*}
+  E_x &= f(z-vt) \\
+  B_y &= (1/c)f(z-vt) .
+\end{align*}
+This is the most general form of a plane wave, with any shape defined by the function
+$f$, propagating in the positive $z$ direction at velocity $v$. To see this consider
+what happens if we want to increase $t$ by $\Delta t$ while keeping the input to the function $f$
+the same: we must increase $z$ by $v\Delta t$.
+
+The divergence vanishes, as required by Maxwell's equations,
+since neither component has a nonvanishing partial derivative
+with respect to $x$ or $y$.
+
+We now need to evaluate the curl, which we do by using the componentwise expressions
+from note \notewithoutbackref{curl-component-form}.
+\begin{align*}
+  (\operatorname{curl}\vc{E})_y &= \frac{\partial E_x}{\partial z} = f' \\
+  (\operatorname{curl}\vc{B})_x &= \frac{\partial B_y}{\partial z} = -(1/c)f' 
+\end{align*}
+Maxwell's equations require these to equal the time derivatives
+\begin{align*}
+  -\frac{\partial B_y}{\partial t} &= (v/c)f' \qquad \text{and} \\
+  \frac{1}{c^2}\frac{\partial E_x}{\partial t} &= -(v/c^2)f'.
+\end{align*}
+Equating these to each other as required by the two curl equations in Maxwell's
+equations, we find $1=v/c$ and $-1/c=-v/c^2$. These two equations are both satisfied
+if and only if $v=c$. (To get propagation with $v=-c$ we would have had to rearrange
+things so as to create a Poynting vector in that direction.)
+
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+<% end_hw_sec() %>
+
+
+<% end_chapter() %>
