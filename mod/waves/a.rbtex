@@ -5,11 +5,28 @@
 <% clear_answer_data %>
 
 
+
 <%
   chapter(
     '01',
     %q{Time},
-    'ch:time'
+    'ch:time',
+    '',
+    {'preface'=>%q{
+\noindent \emph{A note on the notes}\\\\
+Since the book is free online, I've tried to format it so that it's
+easy to hop around in it conveniently on a laptop. The blue text in the
+table of contents is hyperlinked. Sometimes there are mathematical details or technical notes that
+are not likely to be of much interest to you on the first read through.
+These are relegated to the end of each chapter. In the main text, they're
+marked with blue hyperlinked symbols that look like this: 
+\dangerousbend{}137. On a computer, you can click through if you want to
+read the note, and then click on a similar-looking link to get back to
+the main text. The numbers are page numbers, so if you're using the book in print,
+you can also get back and forth efficiently.
+    }
+    }
+
   )
 %>
 
@@ -83,10 +100,19 @@ in this course, that the explanation comes from statistics and cosmology.
 
 <% begin_sec("Relativity of time",nil,'time-is-relative') %>
 
+<% marg() %>
+<%   
+  fig(
+    'hk-in-cabin',
+    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
+  )
+%>
+<% end_marg %>
+
 The second of our two strange facts about time relates directly to our upcoming topic of waves, and it
 also forms the basis for our discussion of relativity, which will be a thread running through the whole course.
 A colorful experiment demonstrating this fact was done by
-Hafele and Keating in 1971 (figure \figref{hk-in-cabin2}).\index{Hafele-Keating experiment}\index{atomic clock}\label{hafele-keating}
+Hafele and Keating in 1971 (figure \figref{hk-in-cabin}).\index{Hafele-Keating experiment}\index{atomic clock}\label{hafele-keating}
 The two
 physicists brought atomic clocks with them on round-the-world flights
 aboard commercial passenger jets, then compared the clocks with other
@@ -102,14 +128,6 @@ m/s) without taking it to high elevation, thus isolating the effect of
 motion from the gravitational effect. It is the effect of motion that
 will be of interest to us here.
 
-<% marg(50) %>
-<%   
-  fig(
-    'hk-in-cabin',
-    %q{The clock took up two seats, and two tickets were bought for it under the name of ``Mr.~Clock.''}
-  )
-%>
-<% end_marg %>
 
 It would be natural to try to explain this effect of motion as
 arising from the clocks' sensitivity to noise, cabin pressure, or
@@ -383,7 +401,7 @@ all the experiments done in the centuries before Einstein came up with relativit
 <% begin_sec("A universal speed limit",nil,'speed-limit-c') %>
 
 We have only given an argument that our equation for the interval should be valid for small velocities, but in fact
-experiments show that it is valid at all speeds, so we have
+experiments show that it is valid at all speeds,\footnote{See also p.~\pageref{lorentz-interval-consistency}.} so we have
 \begin{equation*}
   \interval^2 = t^2 - \frac{d^2}{c^2}.
 \end{equation*}
@@ -508,7 +526,8 @@ with a slope of 1.
 <% end_marg %>
 
 Figure \subfigref{twin-symmetry}{1} shows a time-dilation experiment
-like the ones we've been considering. Alice moves inertially on
+like the ones we've been considering.\label{twins-speed-limit}
+Alice moves inertially on
 world-line A, along with her clock, while her twin sister Betty takes
 the noninertial path B.  The time elapsed on Alice's clock will be
 greater, because her world-line is the inertial one.  But suppose we

@@ -58,6 +58,7 @@
   }
   \newcommand{\mychapter}[3]{\mychaptercmdsa\chapter[#1]{#3}\mychaptercmdsb}
        %...ignore #2 because only memoir supports it
+  \newcommand{\mychapterwithpreface}[4]{\mychaptercmdsa{}{\par{\small\begin{indentedblock}#4\end{indentedblock}}\par}\chapter[#1]{#3}\mychaptercmdsb}
   \newcommand{\mychapterwithopener}[3]{%
          \mychaptercmdsa%
          \noindent\widefignocaptionnofloat{#1}%

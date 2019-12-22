@@ -1567,7 +1567,8 @@ def chapter(number,title,label,caption='',options={})
     'special_width'=>nil,  # used in CL4, to let part of the figure hang out into the margin
     'short_title'=>nil,      # used in TOC; if omitted, taken from title
     'very_short_title'=>nil,  # used in running headers; if omitted, taken from short_title
-    'optional'=>false
+    'optional'=>false,
+    'preface'=>nil         # prefatory text, appearing above the chapter heading, as in Modern Physics ch. 1; not supported with opener
   }
   insert_into_chapter_title_list(number.to_i,label,title)
   $section_level += 1
@@ -1628,7 +1629,11 @@ def chapter_print(number,raw_title,label,caption,options)
     end
   }
   if !has_opener then
-    result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
+    if options['preface'].nil? then
+      result = "\\mychapter{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}#{append}"
+    else
+      result = "\\mychapterwithpreface{#{options['short_title']}}{#{options['very_short_title']}}{#{title}}{#{options['preface']}}#{append}"
+    end
   else
     opener=~/([^\/]+)$/     # opener could be, e.g., ../../../9share/optics/figs/crepuscular-rays
     opener_label = $1

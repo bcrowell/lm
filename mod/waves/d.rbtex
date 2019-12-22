@@ -1,0 +1,368 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '04',
+    %q{The Lorentz transformation},
+    'ch:lorentz'
+  )
+%>
+
+<% begin_sec("Relativity of simultaneity",nil,'simult') %>
+
+When we left our hero Albert Einstein on p.~\pageref{motorcycle-aether}, he was struggling
+with a stubborn paradox. What would happen, he wondered, if I rode on a motorcycle at nearly the
+speed of light, chasing a light wave as it passed over me. What would I
+observe? And what would happen if I rode \emph{at} the speed of light?
+
+<% marg(20) %>
+<%
+  fig(
+    'pushmi-pullyu',
+    %q{The pushmi-pullyu.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+Maxwell's equations are the fundamental laws of physics governing
+electricity and magnetism, and they do predict the existence of
+electromagnetic waves that act as we described in
+ch.~\ref{ch:em-waves}. Maxwell's equations contain induction terms,
+which tell us that a changing magnetic field induces an electric
+field, and conversely a changing electric field creates a magnetic
+one. Each field helps the other along, sort of like Doctor Dolittle's
+pushmi-pullyu.
+
+But all of this breaks down in the frame of reference in which
+Einstein surfs the wave.  In that frame, the wave is not moving, so
+the fields have no time variation. Therefore no induction can take
+place. In this frame, the wave is \emph{not} a solution of Maxwell's
+equations.
+
+His university teachers were probably still clinging to aether
+theories, so if he had asked them about this they might have given him
+the following answer. Young man, stop being so silly, because
+motorcycles don't go that fast. And in any case, Maxwell's equations
+don't work in just any old frame you choose. They're only correct in
+the frame of reference of the aether.
+
+This might have been an acceptable answer in 1899, but we now know
+that it won't work.  As we've seen, $c$ is not just a speed at which a
+certain type of wave happens to travel.  It's woven directly into the
+fabric of space and time, cause and effect. If $c$ is some number,
+then it should should be the same number in all frames of reference.
+
+And yet this seems impossible, since we expect velocities to add and
+subtract in relative motion. If a dog is running away from me at 5 m/s
+relative to the sidewalk, and I run after it at 3 m/s, the dog's
+velocity in my frame of reference is 2 m/s.  According to everything
+we have learned about motion, the dog must have different speeds in
+the two frames: 5 m/s in the sidewalk's frame and 2 m/s in mine.
+
+Einstein later recalled struggling with this on and off for years.
+The breakthrough came one day when he was visiting with his friend Michele Besso.
+
+\begin{quote}
+One beautiful day, I visited him and said, I have a
+problem that I have been totally unable to solve. We then had extensive discussions, and suddenly I realized the
+solution. The very next day, I visited him again and said,
+``Thanks to you, I have completely solved my problem.''
+
+My solution concerned the concept of time. Namely, time
+cannot be absolutely defined by itself, and there is an unbreakable
+connection between time and the velocity of a signal.
+
+Using this idea, I could now resolve the great difficulty that I
+previously felt. After I had this inspiration, it took only five weeks
+to complete what is now known as the special theory of
+relativity.\footnote{Paraphrased from a translation by John Stachel of a lecture by Einstein in Kyoto, 1922. The lecture was probably
+given in German and transcribed into Japanese.}
+\end{quote}
+
+Let's work this out with the benefit of hindsight, taking advantage of what we know from ch.~\ref{ch:time} about
+the behavior of time. If we want to know how fast something is going, we need to know how far it
+went and how much time it took. In Einstein's era, clocks in different towns were just starting to
+be systematically synchronized, so if you took a train from Zurich to Bern, you might have trouble
+figuring out the train's speed, because the clock in the railroad station in Zurich might be off by fifteen minutes
+or an hour compared to the one in Bern. So in order to get started, we need some method of figuring out
+whether two events are \emph{simultaneous}.
+
+<% marg() %>
+<%
+  fig(
+    'synchronization-triangle',
+    %q{Determining that B and D are simultaneous.}
+  )
+%>
+<% end_marg %>
+
+Figure \figref{synchronization-triangle} shows one method for doing this. AC is
+the world-line of an observer, Amy, and we draw it straight up and down because we're imagining
+this in her frame of reference. She sends a cannonball at some velocity from event A
+to event B, which is later in time and some distance away from her. It doesn't really
+matter what this velocity is. It can be anything at all. She hires a helper to be present
+at B and swat the cannonball back with the same velocity, and she gets it back at event C.
+If there is any doubt about whether the return velocity was the same, there are methods by which
+she can easily check. For example, she can attach a clock to the cannonball and ask her
+helper to write down the clock reading at B. If the velocities are equal, then the interval
+from A to B should be the same as the one from B to C. Meanwhile, she has been patiently
+watching her own clock, which stays with her. She measures the time from A to C on her
+own inertially moving clock and divides by two, which tells her the time at which event D
+occurred. Amy has now established that B and D are simultaneous.
+
+Of course this method for synchronization is not very practical. It's just meant to be
+conceptually simple. A practical example from everyday life is the synchronization of the clock
+on a phone, figure \figref{gps-on-bike}, with the atomic clock aboard a GPS satellite. But the
+point is that we do have ways of doing synchronization. There are in fact many ways of doing
+clock synchronization. Another way that works is simply to synchronize our clocks side by side,
+and then make sure that when we move one, we only move it very slowly, rather than at the speed
+of a passenger jet or a rocket ship. Since relativistic effects on time are proportional to $(v/c)^2$,
+we can in principle always make these effects as small as desired by making $v$ sufficiently small.
+
+<% marg() %>
+<%
+  fig(
+    'gps-on-bike',
+    %q{This Global Positioning System (GPS) system, running on a smartphone attached to a bike's handlebar,
+       depends on Einstein's theory of relativity. Time flows at a different rates aboard a GPS satellite than
+       it does on the bike, and the GPS software has to take this into account.}
+  )
+%>
+<% end_marg %>
+
+When we carry out this kind of synchronization experiment, we find out two things:
+
+\begin{enumerate}
+\item All of the methods give consistent results.
+\item The results depend on the state of motion of the observer.
+\end{enumerate}
+
+Bad news first. Observation 2 tells us that simultaneity is
+observer-dependent. That is, we can only say that events D and B are
+simultaneous \emph{in Amy's frame of reference}. That's not so bad. We
+probably would have suspected this based on the parable of Alice and
+Betty (p.~\pageref{twins-speed-limit}), which showed that we couldn't
+send signals instantaneously.
+
+The good news is that according to observation 1, we are learning
+something about spacetime itself, and there is at least \emph{some} notion of
+simultaneity that makes sense in relativity. 
+
+<%
+  fig(
+    'simultaneity-scissors',
+    %q{Observers Amy and Bill, in different states of motion, disagree on what is simultaneous.},
+    {'width'=>'wide','sidecaption'=>true,'sidepos'=>'b'}
+  )
+%>
+
+What we end up with is the situation
+shown in figure \figref{simultaneity-scissors}. Amy considers herself to be at rest, so
+she draws her own world-line straight up and down. Events like B and D, which are simultaneous,
+lie along a horizontal line. If Amy was graphing spacetime on graph paper, these would be the
+axes of the graph, the way she would draw them.
+
+Bill is in motion relative to Amy, so his world-line is slanted a
+little compared to hers. We've already established that his line of
+simultaneity can't be the same as hers, so we slant it as well (\note{direction-of-slant}).
+
+We can now see the resolution of the puzzle that gave Einstein such a hard time.
+Suppose that Amy sits at home while Bill blasts off in a rocket ship. He accelerates, then cruises
+for a while and moves inertially. While he takes a bathroom break, the ship's automatic systems
+take measurements and establish a new inertial frame of reference. Now he starts up the engines again,
+accelerates to an even higher speed, and then eats some oreos while the hard-working ship
+again consults its atomic clocks and surveys spacetime.\label{continuous-acceleration}
+
+<%
+  fig(
+    'continuous-acceleration',
+    %q{Bill keeps up a process of acceleration.},
+    {'width'=>'fullpage'}
+  )
+%>
+
+As far as Bill and his ship's computer are concerned, every set of axes they construct is
+at a nice 90-degree angle. But figure \figref{continuous-acceleration} how these appear to
+Amy. The $x$ and $t$ axes close in on each other like a pair of scissors. The line they're
+converging to is a line with a slope of $c$, which equals 1 because I've chosen to draw these
+diagrams in natural units. We find that: ---
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Velocities don't just add in relativity. Addition is a nonrelativistic approximation.
+\item No continuous process of acceleration can bring a material object from $<c$ to $\ge c$.
+\end{enumerate}
+
+<% end_sec('simult') %>
+
+<% begin_sec("The Lorentz transformation",4,'lorentz') %>
+We've seen how the $x$ and $t$ axes of spacetime change when we change frames of reference.
+Often it's convenient to know how the whole graph-paper grid changes. We can tell already that
+if we start with squares they'll become parallelograms, and we know that the diagonals with slopes of $\pm 1$,
+representing $c$, have to stay the same. It's not hard to prove that the areas have to stay the
+same (\note{area-conserved}). This is enough information to completely determine the result,
+which is shown in figure \subfigref{lorentz-visual-convention}{1}. This
+is called the Lorentz transformation.
+
+<%
+  fig(
+    'lorentz-visual-convention',
+    %q{1.~The Lorentz transformation. 2.~The same transformation with a simplifying visual convention applied. 3.~The Galilean transformation.},
+    {'width'=>'wide','sidecaption'=>true,'sidepos'=>'b'}
+  )
+%>
+
+This is a little messy visually because of all the intersecting lines, which create a headachy
+Moir\'e-pattern effect. For that reason, this book consistently employs the convention shown
+in \subfigref{lorentz-visual-convention}{2}, where the original square grid is replaced by
+a gray rectangle.
+
+For comparison, \subfigref{lorentz-visual-convention}{3} shows the transformation
+as everyone before Einstein imagined it worked. This is called the Galilean transformation.
+It doesn't change the horizontal lines, so that all observers agree on simultaneity.
+
+<% marg() %>
+<%
+  fig(
+    'velocity-as-slope',
+    %q{Turn the book sideways, and the velocity of one observer relative to the other is
+       the slope shown in the figure.}
+  )
+%>
+<% end_marg %>
+
+In both the Lorentz transformation and the Galilean transformation, there is the same way of
+interpreting a slope on the spacetime diagram as a velocity. Figure \figref{velocity-as-slope}
+shows an example. If you turn the book sideways, then what you're looking at can be interpreted
+in freshman physics terms simply as the corner of a piece of gray graph paper, with a graph of
+B's motion, the function $x(t)$. The slope of this graph is B's velocity relative to A, which happens
+to be about $-0.58$ in this example. B says that A's velocity is $+0.58$.
+
+For logical consistency,\label{lorentz-interval-consistency}
+we need the spacetime interval $\interval$ to come out the same regardless of whether we use one set of coordinates
+or the other.\footnote{Some books actually use this as the definition of the Lorentz transformation.} There is a nice
+analogy here with Euclidean geometry. In Euclidean geometry, we have a measure of distance between points that is
+given by $d^2=x^2+y^2$, and this distance stays the same even if we rotate our $x$ and $y$ axes. Similarly in the
+$x$-$t$ plane of spacetime, we have $\interval^2=t^2-d^2$, and this stays the same even if we change our frame
+of reference. Example \ref{eg:interval-graphs} shows that this works out correctly with some sample numbers.
+
+<% marg() %>
+<%
+  fig(
+    'eg-interval-graphs-trimmed',
+    %q{Example \ref{eg:interval-graphs}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Invariance of the spacetime interval}\label{eg:interval-graphs}
+Figure \figref{eg-interval-graphs-trimmed} shows two frames of reference in motion relative to one another
+at $v=3/5$. Events are marked at coordinates that in the frame represented by the square are
+\begin{align*}
+  (t,x) & = (0,0) \qquad \text{and} \\
+  (t,x) &=  (13,11)\eqquad.
+\end{align*}
+The squared interval between these events is $\interval^2 = 13^2-11^2=48$. In the frame represented by the parallelogram, the same
+two events lie at coordinates
+\begin{align*}
+  (t',x') & = (0,0) \qquad \text{and} \\
+  (t',x') &=  (8,4)\eqquad.
+\end{align*}
+Calculating the interval using these values, the result is \linebreak[4]
+$\interval^2 = 8^2-4^2=48$, which comes out the same as in the other frame.
+\end{eg}
+
+<% end_sec('lorentz') %>
+
+<% begin_sec("The diagonal stretch factor and two of its applications",nil,'diagonal-stretch') %>
+<% begin_sec("Definition of the stretch factor",nil,'def-diagonal-stretch') %>
+When we take a square and subject it to a Lorentz transformation, turning it into a parallelogram, we stretch one
+axis and shrink the other. For example, if one axis is doubled in length, then the other one must be cut in half,
+since the area has to stay the same. We call this diagonal stretch factor $D$. It's a very handy tool, and we'll
+also see in a moment that it has a direct physical interpretation as a Doppler shift factor. Algebra shows that
+it is related to the relative velocity $v$ of the two frames of reference by
+\begin{equation*}
+  D = \sqrt{\frac{1+v}{1-v}}.
+\end{equation*}
+For $v=3/5$, we happen to get $D=2$, and this is why I'll often make up examples with this velocity, so that
+numbers come out simple.
+<% end_sec('def-diagonal-stretch') %>
+
+<% begin_sec("Combination of velocities",nil,'combination-of-vel') %>
+An application of $D$ is to figure out how to combine velocities. In our example on p.~\pageref{continuous-acceleration},
+Bill did a series of accelerations, and we saw visually how the effect of these successive Lorentz transformations was
+to bring his $x$ and $t$ axes closer and closer together, like the blades of a pair of scissors that never quite meet.
+When we boost an object's speed like this, we sometimes refer to the transformation as a Lorentz boost, or simply a boost.
+Those drawings were constructed using successive boosts equal to 40\% of the speed of light. If velocities added
+as in Galilean relativity, then Bill's velocity would have gone 0.4, 0.8, 1.2, \ldots Let's see what actually happens.
+The stretch factor for $v=0.4$ is $D=1.53$. If we do two of these boosts in a row, then the long diagonal of one of our
+squares will get stretched by a factor of $1.53^2=2.33$. If we now solve for $v$ in terms of $D$ (problem \ref{hw:v-in-terms-of-d},
+p.~\pageref{hw:v-in-terms-of-d}), and plug in $D=2.33$, we get $v=0.69$. A third boost gives $v=0.85$. Rather than
+surpassing the speed of light, we're just approaching it.
+% calc -e "v=0.4; D=sqrt((1+v)/(1-v)); a=D^2; v=(a^2-1)/(a^2+1); a=D^3; v=(a^2-1)/(a^2+1)"
+
+Some notes on streamlining this type of calculation are relegated to a note (\note{combine-v}).
+<% end_sec('combination-of-vel') %>
+
+<% end_sec('diagonal-stretch') %>
+
+<% begin_sec("The relativistic Doppler shift",nil,'rel-doppler') %>
+<% end_sec('rel-doppler') %>
+
+
+<% begin_notes %>
+
+\notetext{direction-of-slant}{Which direction to slant the $x$ axis in a Lorentz transformation}
+\notesummary{In a Lorentz transformation, the $x$ and $t$ axes counterrotate like the blades of a pair of scissors.}
+In the reasoning leading up to the Lorentz transformation,
+how did we know in figure \figref{simultaneity-scissors}
+to rotate the line of simultaneity counterclockwise, so that the two lines would close on each other
+like a pair of scissors? One way to see this is that if we rotated
+\emph{both} lines clockwise, then it would be just like taking the
+page and rotated it by some angle. But then as we went to higher and
+higher velocities for Bill relative to Amy, eventually we would get to
+a 180-degree rotation, and Bill's time axis would be pointing
+downward, opposite to Amy's. This isn't what we see happening in reality,
+and leads to time-travel paradoxes, such as Bill's being able to go back
+into the past and kill Amy's grandfather when he was a child.
+
+\notetext{area-conserved}{Conservation of area in a Lorentz transformation}
+\notesummary{In a Lorentz transformation, area in the $x$-$t$ plane is conserved.}
+Suppose that a Lorentz transformation for a velocity $v$ increases the area of
+a region in the $x$-$t$ plane by a factor $R_v$. We want to show that $R_v=1$.
+By symmetry, we expect that $R_v=R_{-v}$. We also know that if we do a Lorentz
+transformation for $v$ and then another for $-v$, they undo each other,
+so $R_vR_{-v}=1$. From these two equations we find that $R_v=\pm 1$. Since
+$R_v$ should be a continuous function of $v$, and $R_0=1$, we must have $R_v=1$ for
+all $v$. Note that this result also holds for the Galilean transformation, since
+we never employed any assumptions that would have distinguished Galilean relativity
+from Einstein's relativity.
+
+\notetext{combine-v}{Combination of velocities}
+\notesummary{We present some shortcuts for combining velocities}
+When we do two boosts, the diagonal stretch factors multiply, $D=D_1D_2$.
+This implicitly relates $v_1$ and $v_2$ to the combined velocity $v$.
+Usually we prefer to deal with additive rather than multiplicative
+quantities, so it can be useful to define the \emph{rapidity}\index{rapidity}
+$\eta=\ln D$. (The symbol $\eta$ is Greek letter ``eta''). For small velocities,
+$\eta\approx v$, so velocities are approximately additive.
+
+Sometimes we would rather just work with velocities rather than with $D$'s and $\eta$'s.
+One can then show that
+\begin{equation*}
+  v = \frac{v_1+v_2}{1+v_1v_2}.
+\end{equation*}
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+<% begin_hw('v-in-terms-of-d') %>m4_include(../share/relativity/hw/v-in-terms-of-d.tex)<% end_hw() %>
+
+
+<% end_hw_sec() %>
+
+
+<% end_chapter() %>

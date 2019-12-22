@@ -160,9 +160,6 @@ $\vc{B}$ field as well.
 
 <% end_sec('e-b-energy-momentum-eqns') %>
 
-<% end_sec('e-b-energy-momentum') %>
-
-
 <% begin_sec("Examples of the momentum",nil,'momentum-of-em-fields-examples') %>\index{momentum!of electromagnetic fields}
 
 You have probably already learned about $U_E$ and $U_B$, and also
@@ -259,51 +256,10 @@ In the examples in ch.~\ref{ch:waves}, the waves on a string are transverse, whi
 sound waves are longitudinal.
 <% end_sec('momentum-of-em-fields-examples') %>
 
-<% begin_sec("What it is that waves",nil,'what-vibrates') %>\index{electromagnetic wave!not a vibration of a medium}
+<% end_sec('e-b-energy-momentum') %>
 
-In a vibration, such as the motion of a pendulum or a mass on a
-spring, we would define the amplitude either as the position of the
-object relative to equilibrium, or as some other, closely related
-quantity such as the object's velocity. In these examples, position
-and velocity are not independent measures of amplitide. They are
-closely related, and we can't change one without changing the other
-proportionately.  A wave is a kind of vibration that exists across a
-whole region of space, so the same ideas recur. For example, the
-amplitude of a sound wave could be defined in multiple ways: in terms
-of the displacement of the air, its velocity, or the pressure or
-density. Again, all of these things are related and cannot be
-controlled independently.
 
-In the case of an electromagnetic wave, we could define the amplitude
-in terms of either the electric field or the magnetic field. We have
-already seen that in an electromagnetic wave we can't have one of
-these be zero while the other is nonzero.  Shortly we will see that in
-a plane wave, they are in fact directly proportional to each other. 
 
-An electromagnetic wave, unlike the mechanical waves in ch.~\ref{ch:waves},
-isn't a vibration of any material medium such as air or
-a piece of string. What vibrates is the fields --- invisible, intangible, and
-massless. Electromagnetic waves are transverse. But
-because they are not vibrations of a material medium, this 
-doesn't mean that anything is actually \emph{traveling} from side to
-side. In an example like the photos of the coil spring in figure \figref{ribbon-on-spring}, p.~\pageref{fig:ribbon-on-spring},
-we could imagine a bug
-sitting on the spring. The bug
-moves to the side and then back as the pulse passes through, but nothing
-analogous happens in an electromagnetic wave. The bug would simply notice
-a change in the fields over time, but would not move.
-
-Early physicists working on the description of electromagnetic
-radiation had never had any previous experience with waves that were
-not mechanical vibrations of a physical medium. James Clerk Maxwell
-gave a complete and correct mathematical description of
-electromagnetism in 1865, and his equations worked just fine as a
-description of radiation purely in terms of non-material fields. But
-old habits died hard, and as late as the 1930's, it was common to hear
-physicists referring to electromagnetic waves as vibrations in a
-mysterious medium called the ``aether.''\index{aether}
-
-<% end_sec('what-vibrates') %>
 
 <% begin_sec("Geometry of a plane wave",nil,'plane-wave-geom') %>\index{electromagnetic wave!geometry}
 
@@ -704,174 +660,227 @@ What does this imply for conservation of momentum?
 <% end_sec('poynting') %>
 <% end_sec('p-and-energy-flow') %>
 
-<% begin_sec("Maxwell's equations in a vacuum",nil,'maxwell-vacuum') %>
-The laws of physics are local, so if we zoom in on an electromagnetic wave, as in
-figure \figref{bug-in-plane-wave}, and take on the role of the bug, we must be able
-to make sense of the evolution of the wave pattern as time goes on. The structure of
-the laws of physics for electromagnetism is that they talk about the curl and divergence
-of the fields. It's not arbitrary that they have this structure, because the curl and
-divergence are the only rotationally invariant derivative operators we can define that take
-a vector-valued field as an input.
+<% begin_sec("Relativistic consequences",nil,'em-wave-relativity') %>
 
-What the bug observes at this moment in time is that the electric field has a curl
-that points into the page. (You should verify this yourself by visualization, using the
-right-hand rule, if necessary referring to the drawing of the curl-meter in
-figure \figref{curlmeter-fac} on p.~\pageref{fig:curlmeter-fac}.) She also observes that
-the magnetic field's curl is up. For static fields, we're supposed to have
-$\operatorname{curl}\vc{E}=0$ and $\operatorname{curl}\vc{B}=0$, so this would be impossible.
-But this is not a static field, it's a field that is changing over time.
-The bug needs some laws of physics that relate the time-varying nature of the fields to their
-curls. With this motivation, we state Maxwell's equations\footnote{The full version of Maxwell's equations, including matter, are
-summarized on p.~\pageref{fig:maxwell-summary}.} in a vacuum:\index{Maxwell's equations!in a vacuum}
-\begin{align*}
-  \operatorname{div}\vc{E} &=  0 \\
-  \operatorname{div}\vc{B} &=  0 \\
-  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
-  \operatorname{curl}\vc{B} &=  \frac{1}{c^2}\frac{\partial\vc{E}}{\partial t}.
-\end{align*}
-There is not much else we could write down that would satisfy the bug's
-requirements. The signs are the ones that make the geometry of figure \figref{bug-in-plane-wave}
-work.\footnote{The fact that the two signs are opposite is what gives us solutions that are oscillating
-waves, rather than exponential freak-outs. We could make the signs $+$ and $-$ rather than $-$ and $+$,
-but this would be equivalent to redefining the magnetic field like $\vc{B}\rightarrow-\vc{B}$.}
-The factor of $1/c^2$ has to be there because of units.
-We could throw in other unitless
-factors and change the $1/c^2$ to $7/c^2$, for example, but $1/c^2$ is the choice that turns out to make the
-wave propagate at $c$ (\note{maxwell-c}).
 
-The physics embodied in these two new terms of Maxwell's equations is referred to as
-induction (a different usage of the term than the one introduced for static fields
-on p.~\pageref{fig:attracting-induced-electric-and-magnetic-dipoles}). A changing
-magnetic field induces a curly electric field, and a changing electric field
-induces a curly magnetic field. This has many important technological applications,
-but since those are not our topic right now, we give only two qualitative examples.
-Further quantitative material is presented in ch.~\ref{ch:stokes}.
-
-\begin{eg}{The generator}\index{generator}
-A generator, \figref{generator}, consists of a permanent magnet that
-rotates within a coil of wire. The magnet is turned by a
-motor or crank, (not shown). As it spins, the nearby
-magnetic field changes. This changing magnetic field results in an
-electric field, which has a curly pattern. This electric
-field pattern creates a current that whips around the coils
-of wire, and we can tap this current to light the lightbulb.
-\end{eg}
-<% marg(33) %>
+<% begin_sec("E=mc$^2$",nil,'mass-energy-equivalence') %>
+<% begin_sec("Fields carry inertia",nil,'fields-carry-inertia') %>\index{field!inertia of}
+<% marg() %>
 <%
   fig(
-    'generator',
-    %q{A generator.}
+    'mass-energy',
+    %q{The black box has electromagnetic fields inside. If we shake it, it has inertia.}
   )
 %>
 <% end_marg %>
+Suppose you're given a black box, figure \figref{mass-energy}. You're not allowed to open it, but you're able
+shake it around and measure its momentum.
+By trial and error, you find that there is some frame in which 
+its momentum is zero. (If there are things moving around inside, this
+may not be the frame in which the externally visible cardboard sides of the
+box are at rest.) This is what we might as well call the box's rest frame,
+the frame in which it is at rest, in some over-all sense.
 
-\begin{eg}{Radiation from a dipole antenna}\label{eg:dipole-radiation-pattern}
-Figure \figref{dipole-radiation-pattern} depicts the electric fields in
-the radiation pattern of an antenna, shown in the photo superimposed
-in the background. This type of antenna is called a dipole antenna,
-meaning that as a source, it acts like an electric dipole whose dipole
-vector oscillates sinusoidally. The magnetic field is perpendicular to
-the page and is shown only at six arbitrarily chosen points in the
-midplane. Let's verify that this pattern appears to satisfy 
-Maxwell's equations in a vacuum. 
+Next you can measure its nonzero momentum $p$ when you shake it around at various
+velocities. Knowing $p$ at a particular $v$ allows you to infer the mass, $m=p/v$.
 
-The electric field lines 
-never begin or end at any point in the air surrounding on the antenna, only at points on the antenna,
-which means that they satisfy $\operatorname{div}\vc{E}=0$ everwhere that they should. (And where they reach
-the antenna, which is a conductor, they are perpendicular to the surface.)
-<%
-  fig(
-    'dipole-radiation-pattern',
-    %q{The radiation pattern emitted by a dipole antenna, example \ref{eg:dipole-radiation-pattern}.},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
+Now suppose you do this, not knowing that inside the box is an
+electromagnetic field, which has \emph{zero} mass. The energies and
+momenta you measure are those of the \emph{fields} alone.  You will
+find a frame in which the momentum is zero. This could be a frame in
+which the field is purely electric. If you now set the box in motion,
+the original electric field pattern turns into a new electric field
+plus a magnetic field pattern.\footnote{We assume that the fields are
+transported with the cardboard box, so that the result of moving the
+box at velocity $v$ is the same as if we left the box unaccelerated
+and simply took our measurements while \emph{we} were moving at $v$.
+In reality the results of accelerating the box would depend on the details of how the fields were
+created and sustained.}  These electric and magnetic fields have some
+momentum density, proportional to $\vc{E}\times\vc{B}$.  You measure
+the total momentum. You infer a certain mass. 
 
-Although the magnetic field lines are not shown, they are simply circles centered on the dipole axis
-and perpendicular to it. Each magnetic field vector shown on the left wraps around and connects to the
-symmetrically placed field vector on the right. Because these circles close on themselves, there are
-no magnetic sources or sinks, as required by $\operatorname{div}\vc{B}=0$.
+Hm. This seems like mass without mass. There are no material particles inside the box,
+and yet the box acts like it has mass.
 
-In order to check $\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$, we pick points A, B, and C,
-of which only B coincides with a point where the magnetic field was drawn. Here is a table, to be justified
-afterward, describing the behavior of the fields and their derivatives at these points.
+Suppose that the field is purely electric in the box's rest frame, and we have
+a way to make this electric field stronger or weaker.  When we do this and
+then set the box in motion, the energy of the
+fields and the mass we infer change by equal factors. For example, if
+we increase the electric field by a factor of 3, then the energy goes
+up by a factor of 9. But when the box is moving, this also has the
+effect of multiplying $\vc{B}$ by a factor of 3
+(because the transformation of the fields is linear,
+p.~\pageref{eb-transform-linear}), so $\vc{E}\times\vc{B}$ goes up
+by a factor of 9. This means that the momentum goes up by 9 times, and so does
+the mass that we infer at a given velocity.
+<% end_sec('fields-carry-inertia') %>
 
-\begin{tabular}{lllll}
-    & $\vc{E}$ & $\operatorname{curl}\vc{E}$ & $\vc{B}$ & $\partial\vc{B}/\partial t$ \\
-A   & 0        & max (out)                   & 0        & max (in) \\
-B   & max (up) & 0                           & max (in) & 0 \\
-C   & 0        & max (in)                    & 0        & max (out)
-\end{tabular}
+<% begin_sec("Equivalence of mass and energy",nil,'mass-energy-equiv-for-fields') %>\index{energy!equivalence to mass}
+In this example, energy and mass are \emph{equivalent}. Based on
+units, the relation must be of the form $E=(\text{constant})mc^2$,
+where the constant is unitless.  Einstein showed that the unitless
+constant was equal to 1, and was the same for any system, regardless
+of what type or types of energy are involved.\footnote{Here the
+``system'' has to be an isolated one. If the system is not isolated,
+then it can be exchanging energy and momentum with the outside world.
+The analysis then gets more complicated, and $E=mc^2$ can be false.} This is the famous $E=mc^2$,
+which states that mass and energy are equivalent.
 
-Points A, B, and C are chosen to be ones at which the electric field
-is at a zero, a maximum, and a minimum, hence the values in the first
-column. We can tell, for example, that $\vc{E}$ is small at A because
-the field lines are far apart, and we know that $\vc{E}=0$ must occur
-somewhere near A because as the field pattern has been
-spreading outward, the field has been changing from down to (soon) up. 
+The equation $E=mc^2$ tells us how much energy is equivalent to how
+much mass: the conversion factor is the square of the speed of light,
+$c$. Since $c$ a big number, you get a really really big number when
+you multiply it by itself to get $c^2$. This means that even a small
+amount of mass is equivalent to a very large amount of energy.
+Conversely, an ordinary amount of energy corresponds to an extremely
+small mass (example \ref{eg:rustingnail}), and this is why nobody
+discovered mass-energy equivalence experimentally hundreds of years before
+Einstein.
 
-The second column comes from visualizing a curl-meter inserted in the figure. The curl is nearly zero at
-B because the curl is flipping directions near there at this time.
+It's fairly easy to see that if mass is equivalent to one
+form of energy, then it must be equivalent to all other forms of
+energy, with the same conversion factor.  Let's take heat as an
+example.  Suppose a rocket ship contains some electrical energy stored
+in a battery. What if we believed that $E=mc^2$ applied to electromagnetic
+energy but not to heat. Then the pilot of the rocket could use a battery
+to run a heater, decreasing the mass of the ship. Since momentum $p=mv$ is conserved,
+this would require that the ship speed up!
 
-The third column comes from our expectation that the Poynting vector
-should point outward, which requires that $\vc{E}$ and $\vc{B}$ reach
-their maxima at similar times, i.e., be at least approximately in
-phase, as in example \ref{eg:wave-poynting} on
-p.~\pageref{eg:wave-poynting} (Poynting vector of a plane
-wave).\footnote{This expectation cannot be valid everywhere on the
-figure. Close up to the antenna, we can find places where the electric
-field points directly inward or outward, so that the Poynting vector
-cannot be straight outward. However, far from the antenna
-the pattern begins to look locally more and more like a plane wave, so
-this kind of thing can't happen.}
+This would not only be strange, but it would violate the principle
+that motion is relative, because the result of the experiment would be
+different depending on whether the ship was at rest or not. The only
+logical conclusion is that all forms of energy are equivalent to mass.
+Running the heater then has no effect on the motion of the ship,
+because the total energy in the ship was unchanged; one form of energy
+(electrical) was simply converted to another (heat).
 
-The fourth column follows from the fact that the time variation of the wave
-is sinusoidal, and the derivative of a sine wave is also a sine wave, shifted
-90 degrees forward in phase (e.g., $\sin'=\cos$).
+A somewhat different, and equally valid, way of looking at $E=mc^2$ is that
+energy and mass are not separately conserved. Therefore we can have processes
+that convert one to the other.
 
-We can now verify that these estimates are consistent with
-$\operatorname{curl}\vc{E} = -\partial\vc{B}/\partial t$ since the
-second and fourth columns match up except for the flipped direction
-arising from the minus sign.
+\begin{eg}{A rusting nail}\label{eg:rustingnail}
+\egquestion
+An iron nail is left in a cup of water
+until it turns entirely to rust. The energy released is
+about 0.5 MJ. In theory, would a sufficiently
+precise scale register a change in mass? If so, how much?
+
+\eganswer
+ The energy will appear as heat, which will be lost
+to the environment. The total mass-energy of the cup,
+water, and iron will indeed be lessened by 0.5 MJ. (If it
+had been perfectly insulated, there would have been no
+change, since the heat energy would have been trapped in the
+cup.) The speed of light is
+$c=3\times10^8$ meters per second, so converting to mass units, we have
+\begin{align*}
+                m         &=    \frac{E}{c^2}  \\
+                        &= \frac{0.5\times10^6\ \junit}{\left(3\times10^8\ \munit/\sunit\right)^2} \\
+                         &=    6\times10^{-12}\  \text{kilograms}\eqquad.
+\end{align*}
+The change in mass is too small to measure with any
+practical technique. This is because the square of the speed
+of light is such a large number.
 \end{eg}
-
-\startdq
 
 <% marg() %>
 <%
   fig(
-    'maxwellwave-gray',
-    %q{Discussion question \ref{dq:direction-of-propagation}.},
-    {'anonymous'=>true}
+    'pet',
+    %q{Top: A PET scanner. Middle: Each positron annihilates with an electron, producing two gamma-rays that fly off back-to-back.
+       When two gamma rays are observed simultaneously in the ring of detectors, they are assumed to come from the same
+       annihilation event, and the point at which they were emitted must lie on the line connecting the two detectors.
+       Bottom: A scan of a person's torso. The body has concentrated the radioactive tracer around the stomach, indicating
+       an abnormal medical condition.}
   )
 %>
 <% end_marg %>
 
-\begin{dq}\label{dq:direction-of-propagation}
-The diagram shows an electric field pattern frozen at one moment in time. Let's imagine
-that it's the electric part of an electromagnetic wave. Consider four possible directions in which
-it could be propagating: left, right, up, and down. Determine whether each of these is consistent
-with Maxwell's equations. If so, infer the direction of the magnetic field.
-\end{dq}
+\begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus}\index{positron}
+Natural radioactivity in the earth produces positrons, which are like electrons but have the
+opposite charge. A form of antimatter, positrons annihilate with electrons to produce gamma
+rays, a form of high-frequency light. Such a process would have been considered impossible
+before Einstein, because conservation of mass and energy were believed to be separate
+principles, and this process eliminates 100\% of the original mass. The amount of energy
+produced by annihilating 1 kg of matter with 1 kg of antimatter is
+\begin{align*}
+ E &= mc^2\\
+   &= (2\ \kgunit)\left(3.0\times10^8\ \munit/\sunit\right)^2\\
+   &= 2\times10^{17}\ \junit\eqquad,
+\end{align*}
+which is on the same order of magnitude as a day's energy consumption for the
+entire world's population!
 
+Positron annihilation forms the basis for the medical imaging technique called
+a PET (positron emission tomography) scan, in which a positron-emitting chemical
+is injected into the patient and map\-ped by the emission of gamma rays from the parts
+of the body where it accumulates.
+\end{eg}
 
-<% end_sec('maxwell-vacuum') %>
+<% end_sec('mass-energy-equiv-for-fields') %>
 
-<% begin_sec("Einstein's motorcycle",4,'einstein-motorcycle') %>\index{Einstein, Albert}
-It seems as though we have a nice, tidy picture of electromagnetism all wrapped up. There should
-only be a few loose ends to tie up, such as how to incorporate charges and currents into
-Maxwell's equations, and how to connect Maxwell's equations to
-some practical problem-solving, such as the computation of the field of a solenoid.
+<% end_sec('mass-energy-equivalence') %>
 
-But at the Swiss Federal Polytechnic school, a physics student, about 20 years old,
-was sitting in the back of a classroom, absorbing a lecture on material similar to this,
+<% begin_sec("Einstein's motorcycle",nil,'einstein-motorcycle') %>
+
+In a vibration, such as the motion of a pendulum or a mass on a
+spring, we would define the amplitude either as the position of the
+object relative to equilibrium, or as some other, closely related
+quantity such as the object's velocity. In these examples, position
+and velocity are not independent measures of amplitide. They are
+closely related, and we can't change one without changing the other
+proportionately.  A wave is a kind of vibration that exists across a
+whole region of space, so the same ideas recur. For example, the
+amplitude of a sound wave could be defined in multiple ways: in terms
+of the displacement of the air, its velocity, or the pressure or
+density. Again, all of these things are related and cannot be
+controlled independently.
+
+In the case of an electromagnetic wave, we could define the amplitude
+in terms of either the electric field or the magnetic field. We have
+already seen that in an electromagnetic wave we can't have one of
+these be zero while the other is nonzero.  Shortly we will see that in
+a plane wave, they are in fact directly proportional to each other. 
+
+An electromagnetic wave, unlike the mechanical waves in ch.~\ref{ch:waves},
+isn't a vibration of any material medium such as air or
+a piece of string. What vibrates is the fields --- invisible, intangible, and
+massless. Electromagnetic waves are transverse. But
+because they are not vibrations of a material medium, this 
+doesn't mean that anything is actually \emph{traveling} from side to
+side. In an example like the photos of the coil spring in figure \figref{ribbon-on-spring}, p.~\pageref{fig:ribbon-on-spring},
+we could imagine a bug
+sitting on the spring. The bug
+moves to the side and then back as the pulse passes through, but nothing
+analogous happens in an electromagnetic wave. The bug would simply notice
+a change in the fields over time, but would not move.
+
+Early physicists working on the description of electromagnetic
+radiation had never had any previous experience with waves that were
+not mechanical vibrations of a physical medium. James Clerk Maxwell
+gave a complete and correct mathematical description of
+electromagnetism in 1865, and his equations worked just fine as a
+description of radiation purely in terms of non-material fields. But
+old habits died hard, and as late as the 1930's, it was common to hear
+physicists referring to electromagnetic waves as vibrations in a
+mysterious medium called the ``aether.''\index{aether}
+
+We can laugh at the silly people who believed in the aether, but getting rid of it
+might seem to cause more problems than it solves.
+At the Swiss Federal Polytechnic school, a physics student, about 20 years old,
+was sitting in the back of a classroom, absorbing a lecture on electromagnetism,
 when he came back to a troubling, half-formed fantasy that he had originally imagined
 at the age of 16. Suppose, Albert Einstein daydreamed, that I ride on a motorcycle
 at nearly the speed of light, chasing a light wave as it passes over me. What would I
-observe? And what would happen if I rode \emph{at} the speed of light? We take up this
-train of thought again in ch.~\ref{ch:relativity}.
+observe? And what would happen if I rode \emph{at} the speed of light? Physicists
+at that point in history didn't have a valid answer to these questions unless there
+was something like the aether. We take up this
+train of thought again in ch.~\ref{ch:lorentz}.\label{motorcycle-aether}
 
 <% end_sec('einstein-motorcycle') %>
+
+<% end_sec('em-wave-relativity') %>
+
+
 
 <% begin_notes %>
 
