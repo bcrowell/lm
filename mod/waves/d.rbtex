@@ -211,7 +211,7 @@ is called the Lorentz transformation.
   fig(
     'lorentz-visual-convention',
     %q{1.~The Lorentz transformation. 2.~The same transformation with a simplifying visual convention applied. 3.~The Galilean transformation.},
-    {'width'=>'wide','sidecaption'=>true,'sidepos'=>'b'}
+    {'width'=>'wide','sidecaption'=>false,'sidepos'=>'b'}
   )
 %>
 
@@ -224,6 +224,14 @@ For comparison, \subfigref{lorentz-visual-convention}{3} shows the transformatio
 as everyone before Einstein imagined it worked. This is called the Galilean transformation.
 It doesn't change the horizontal lines, so that all observers agree on simultaneity.
 
+
+In both the Lorentz transformation and the Galilean transformation, there is the same way of
+interpreting a slope on the spacetime diagram as a velocity. Figure \figref{velocity-as-slope}
+shows an example. If you turn the book sideways, then what you're looking at can be interpreted
+in freshman physics terms simply as the corner of a piece of gray graph paper, with a graph of
+B's motion, the function $x(t)$. The slope of this graph is B's velocity relative to A, which happens
+to be about $-0.58$ in this example. B says that A's velocity is $+0.58$.
+
 <% marg() %>
 <%
   fig(
@@ -232,14 +240,32 @@ It doesn't change the horizontal lines, so that all observers agree on simultane
        the slope shown in the figure.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'lorentz-negative-v',
+    %q{Example \ref{eg:lorentz-negative-v}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'lorentz-more-quadrants',
+    %q{Example \ref{eg:lorentz-more-quadrants}.}
+  )
+%>
 <% end_marg %>
 
-In both the Lorentz transformation and the Galilean transformation, there is the same way of
-interpreting a slope on the spacetime diagram as a velocity. Figure \figref{velocity-as-slope}
-shows an example. If you turn the book sideways, then what you're looking at can be interpreted
-in freshman physics terms simply as the corner of a piece of gray graph paper, with a graph of
-B's motion, the function $x(t)$. The slope of this graph is B's velocity relative to A, which happens
-to be about $-0.58$ in this example. B says that A's velocity is $+0.58$.
+\begin{eg}{Motion in the opposite direction}\label{eg:lorentz-negative-v}
+Figure \figref{lorentz-negative-v} shows the case where the observer whose frame is represented by the grid is moving to
+the left relative to the one whose frame is represented by the gray square.
+\end{eg}
+
+\begin{eg}{Other quadrants}\label{eg:lorentz-more-quadrants}
+So far I've been arbitrarily choosing to draw only the first quadrant of each coordinate system.
+Figure \figref{lorentz-more-quadrants} shows a region that includes all four quadrants.
+\end{eg}
+
 
 For logical consistency,\label{lorentz-interval-consistency}
 we need the spacetime interval $\interval$ to come out the same regardless of whether we use one set of coordinates
@@ -275,6 +301,33 @@ Calculating the interval using these values, the result is \linebreak[4]
 $\interval^2 = 8^2-4^2=48$, which comes out the same as in the other frame.
 \end{eg}
 
+\startdq
+
+\begin{dq}
+The figure shows a famous thought experiment devised by Einstein. A train is moving at
+constant velocity to the right when bolts of lightning strike the ground near its front and
+back. Alice, standing on the dirt at the midpoint of the flashes, observes that the light
+from the two flashes arrives simultaneously, so she says the two strikes must have occurred
+simultaneously. Bob, meanwhile, is sitting aboard the train, at its middle. 
+He passes by Alice at the moment when Alice later figures out that the flashes happened.
+Later, he receives flash 2, and then flash 1. He infers that since both flashes traveled
+half the length of the train, flash 2 must have occurred first.
+How can this be reconciled with Alice's belief that the flashes were simultaneous?
+Explain using a spacetime diagram.
+\end{dq}
+
+<%
+ fig(
+   'einstein-train',
+   '',
+   {
+     'width'=>'wide',
+     'sidecaption'=>true,
+     'anonymous'=>true
+   }
+ )
+%>
+
 <% end_sec('lorentz') %>
 
 <% begin_sec("The diagonal stretch factor and two of its applications",nil,'diagonal-stretch') %>
@@ -289,6 +342,11 @@ it is related to the relative velocity $v$ of the two frames of reference by
 \end{equation*}
 For $v=3/5$, we happen to get $D=2$, and this is why I'll often make up examples with this velocity, so that
 numbers come out simple.
+
+<% self_check('d-natural',<<-'SELF_CHECK'
+  Is the relation $D=\sqrt{(1+v)/(1-v)}$ expressed in natural units, or in SI units?
+  SELF_CHECK
+  ) %>
 <% end_sec('def-diagonal-stretch') %>
 
 <% begin_sec("Combination of velocities",nil,'combination-of-vel') %>
@@ -307,10 +365,214 @@ surpassing the speed of light, we're just approaching it.
 Some notes on streamlining this type of calculation are relegated to a note (\note{combine-v}).
 <% end_sec('combination-of-vel') %>
 
+<% begin_sec("The relativistic Doppler shift",nil,'rel-doppler') %>
+
+Figure \figref{symmetric-doppler} shows an elaboration on the story of Alice and Betty, p.~\pageref{twins-speed-limit},
+in which the twins send radio signals back and forth in an effort to decide who is really slow and who is really
+fast. The situation is totally symmetric, and the outcome is the same regardless of whether Alice receives Betty's
+signals, \subfigref{symmetric-doppler}{1}, or the other way around, \subfigref{symmetric-doppler}{2}. The only real
+difference from the earlier figure is that now I have the twins sending a steady series of beeps. It may not look
+like it visually, but the time between transmission of the beeps is the same before and after Alice and Betty passy by each other.
+(It's a bit of an optical illusion. Try measuring with a ruler.)
+We can see that the beeps are \emph{received} close together during the approach, but far apart as the twins recede from each
+other. This is in fact a Doppler shift. If we like, we can say that instead of a series of beeps, these are just the crests of
+a radio wave.
+
+<%
+  fig(   
+    'symmetric-doppler',
+    %q{%
+      Doppler shifts in signals transmitted from Alice to Betty or Betty to Alice.
+    },
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
+
+In fact, it's not hard to show (\note{doppler-proof}) that the Doppler shift in this situation is exactly the factor $D=\sqrt{(1+v)/(1-v)}$,
+\begin{equation*}
+  f' = Df.
+\end{equation*}
+This can be contrasted with the nonrelativistic Doppler frequency shift for a moving source,
+\begin{equation*}
+  f' = \frac{f}{1-v},
+\end{equation*}
+which we obtain from the expression on p.~\pageref{nonrel-doppler} by setting the wave speed equal to 1.
+The two expressions turn out to be approximately equal for $v\ll c$, as demanded by the correspondence
+principle. The relativistic Doppler shift is actually conceptually simpler than the nonrelativistic one.
+Since there is no medium for the waves, the result can only depend on the velocity of the received
+relative to the source, whereas the Doppler shift for something like a sound wave can in general depend on the
+relative velocities of all three things: the source, the received, and the medium.
+
+By the way, throughout this treatment
+of relativity, I've been avoiding complications by discussing only a single spatial dimension $x$, so that
+spacetime is the space of points labeled by coordinates $(t,x)$. Relativists call this 1+1 dimensions:
+1 dimension of space and 1 of time. We actually live in 3+1 dimensions. For the most part nothing especially
+interesting or complicated happens when we add the $y$ and $z$ dimensions, but in the case of the
+Doppler shift it should be noted that this expression applies only when the motion is parallel to the
+line between the source and receiver. In relativity, unlike nonrelativistic physics, we can also have
+a \emph{transverse} Doppler shift, which occurs when the motion is perpendicular to this line. This
+is interpreted as a pure time dilation effect, and is therefore of order $(v/c)^2$ and negligible
+when $v\ll c$.
+
+\begin{eg}{Radial velocity of the Andromeda Galaxy}
+Atoms in stars and nebulae emit and absorb light at certain discrete frequencies, which are properties of
+the atoms they contain. By comparing with the frequencies observed in the laboratory, we can infer Doppler
+shifts. Light from the Andromeda Galaxy shows a Doppler shift such that the fractional shift $\Delta f/f$ is
+$D-1=+0.001001$, i.e., a shift that happens to be almost exactly a tenth of a percent towards higher frequencies
+(a ``blue-shift'').
+Solving for the velocity, we find $v=1.000\times10^{-3}$. The positive sign means that
+this galaxy's radial motion is toward us. In other words, the velocity is
+small compared to the speed of light, so that the fractional Doppler shift is essentially the same as
+$v/c$, as we would expect from the equation for the nonrelativistic Doppler shift.
+\end{eg}
+
+<% marg(60) %>
+<%
+  fig(
+    'sirius',
+    %q{The visible-light spectrum of the star Sirius. The dark lines are due to absorption of light at certain frequencies
+       in the star's outer atmosphere.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('rel-doppler') %>
+
 <% end_sec('diagonal-stretch') %>
 
-<% begin_sec("The relativistic Doppler shift",nil,'rel-doppler') %>
-<% end_sec('rel-doppler') %>
+<% begin_sec("Length contraction",nil,'length-contraction') %>
+One of the earliest tests of relativity was an experiment by Rossi and Hall in 1941, in which
+they observed a certain type of subatomic particle, called a muon, produced by cosmic rays
+as they enter the upper atmosphere of the earth.
+A muon is essentially a heavier version of the electron. Muons undergo radioactive decay, lasting an average of
+only 2.197 microseconds before they evaporate into an electron and two neutrinos.
+The earth's atmosphere is several miles thick, so even traveling at near the speed of light
+a muon takes about ten or twenty microseconds to reach the ground. This is much longer than their
+average lifetime, so almost none should have gotten to Rossi and Hall's detectors.
+In fact they found found a much higher flux of muons than should have been expected
+nonrelativistically. This was interpreted as a result of relativistic time dilation. Although ten or twenty
+microseconds passes for us, a much shorter time passes for the muons, which are going close to $c$.
+
+Now what if we consider this from the point of view of the poor little muon? Newly born, it sees a
+planet's surface approaching. Maybe some inhabitant of this planet will love and cherish it. But
+wait. ``Planetary atmosphere are several miles thick,'' it thinks to itself. ``Even at nearly the speed
+of light, I won't make it through that in less than ten or twenty microseconds, which is much longer
+than I expect to live.''
+
+This seems to be a paradox, since the collision of the muon with the detector is an event, and
+all observers agree on whether events exist. But according to the muon, it's at rest, so it
+doesn't experience time dilation. So how can its survival be explained? Our conclusion is that
+the distance in the muon's frame must be shorter than the distance in the earth's frame. This
+can be confirmed from an analysis of the Lorentz transformation. An easier shortcut to get the
+result is to equate the time dilation effect seen in the earth's frame to the length contraction
+factor seen in the muon's. If we let $\interval^2=t^2-d^2$, set $d=vt$, and solve for $t$, we find
+that the time dilation factor $t/\interval$ is
+\begin{equation*}
+  \frac{1}{\sqrt{1-v^2}}.
+\end{equation*}
+A common notation for this quantity is $\mygamma$ (Greek letter gamma, which makes the ``g'' sound).
+We therefore conclude that the length contraction is by the same factor gamma, i.e., that if
+a meter-stick has length $L$ in its own frame of reference, then in a frame moving relative to
+it at speed $v$, its length is reduced to $L/\mygamma=L\sqrt{1-v^2}$.
+
+<% end_sec('length-contraction') %>
+
+<% begin_sec("Magnetism as a relativistic effect",nil,'rel-magnetism') %>
+Magnetism is an interaction between moving charges and moving charges. But how
+can that be?
+Relativity tells us that
+motion is a matter of opinion. Consider figure \figref{fulfill}. In this figure and in figure
+\figref{magrelativity}, the dark and light coloring of the particles represents the fact that
+one particle has positive charge and the other negative.
+Observer \figref{fulfill}/2 sees the two particles as flying through space side by side, so they
+would interact both electrically (simply because they're charged) and magnetically
+(because they're charges in motion). But an observer moving along with them,  \figref{fulfill}/1, would
+say they were both at rest, and would expect only an electrical interaction. This seems
+like a paradox.
+Magnetism, however, comes not to destroy relativity but to fulfill it. Magnetic interactions
+        \emph{must} exist according to the theory of relativity. To understand how this can be,
+        consider how time and space behave in relativity. Observers in different frames of reference
+        disagree about the lengths of measuring sticks and the speeds of clocks, but the laws
+        of physics are valid and self-consistent in either frame of reference.
+        Similarly, observers in different frames of reference disagree about what electric and magnetic
+        fields there are, but they agree about concrete physical events.
+        An observer in frame of reference \figref{fulfill}/1
+        says there are electric fields around the particles, and predicts that as time goes on, the
+        particles will begin to accelerate towards one another, eventually colliding. She explains the
+        collision as being due to the electrical attraction between the particles.
+        A different observer, \figref{fulfill}/2, says the particles are moving. This observer
+        also predicts that the particles will collide, but explains their motion in terms of both
+        an electric field and a magnetic field. The
+        magnetic field is \emph{required} in order to maintain consistency between the predictions made
+        in the two frames of reference.
+        
+<% marg(40) %>
+<%
+  fig(
+    'fulfill',
+    %q{One observer sees an electric field, while the other sees both an electric field and a magnetic one.}
+  )
+%>
+\spacebetweenfigs
+<% fig(
+    'magrelativity',
+     %q{A model of a charged particle and a current-carrying wire, seen in
+        two different frames of reference. The relativistic length contraction is highly
+        exaggerated. The force on the lone particle is purely
+        magnetic in 1, and purely electric in 2.}
+   )
+%>
+<% end_marg %>
+        To see how this really works out, consider figure \figref{magrelativity}.
+        We have
+        two long lines of charges moving in opposite directions. Note that
+        the currents of the two lines of charges do not cancel out. The dark and light balls represent particles with
+        opposite charges. Because of this, the total current in
+        the ``wire'' is double what it would be if we took away one line.
+
+        What electrical force does the lone particle in figure \figref{magrelativity}/1 feel? Since the
+        density of ``traffic'' on the two sides of the ``road'' is equal, there is zero overall
+        electrical force on the lone particle. Each ``car'' that attracts the lone particle is paired with a partner on the other
+        side of the road that repels it. If we didn't know about magnetism, we'd think this
+        was the whole story: the lone particle feels no force at all from the wire.
+
+        Figure \figref{magrelativity}/2
+        shows what we'd see if we were observing all this from a frame of reference moving
+        along with the lone charge.
+        Here's where the relativity comes in. Relativity tells us that moving objects
+        appear contracted to an observer who is not moving along with them.
+        Both lines of charge are in motion in both frames of reference, but in frame 1
+        they were moving at equal speeds, so their contractions were equal.
+        In frame 2, however, their speeds are unequal. The dark
+        charges are moving more slowly than in frame 1, so in frame 2 they are less contracted.
+        The light-colored charges are moving more quickly, so their contraction is greater now.
+        The ``cars'' on the two sides of the ``road'' are no longer paired off, so the electrical
+        forces on the lone particle no longer cancel out as they did in \figref{magrelativity}/1.
+        The lone particle is attracted to the wire, because the particles attracting it are more
+        dense than the ones repelling it. Furthermore, the attraction felt
+        by the lone charge must be purely electrical, since the lone charge is at rest in this
+        frame of reference, and magnetic effects occur only between moving charges and other
+        moving charges.
+
+        Now observers in frames 1 and 2 disagree about many things, but they do agree on
+        concrete events. Observer 2 is going to see the lone particle drift toward the wire
+        due to the wire's electrical attraction, gradually speeding up, and eventually hit
+        the wire. If 2 sees this collision, then 1 must as well. But 1 knows that the total
+        electrical force on the lone particle is exactly zero. There must be some new type
+        of force. She invents a name for this new type of force: magnetism. This was a particularly
+        simple example, because the force was purely magnetic in one frame of reference, and
+        purely electrical in another. In general, an observer in a certain frame of reference
+        will measure a mixture of electric and magnetic fields, while an observer in another
+        frame, in motion with respect to the first, says that the same volume of space contains a different mixture.
+
+We therefore arrive at the conclusion that electric and magnetic phenomena aren't
+separate. They're different sides of the same coin. We refer to electric and magnetic interactions
+collectively as electromagnetic interactions. Our list of the fundamental interactions
+of nature now has two items on it instead of three: gravity and electromagnetism.\index{magnetism!related to electricity}\index{electromagnetism}
+<% end_sec('rel-magnetism') %>
 
 
 <% begin_notes %>
@@ -355,6 +617,21 @@ One can then show that
 \begin{equation*}
   v = \frac{v_1+v_2}{1+v_1v_2}.
 \end{equation*}
+
+\notetext{doppler-proof}{The Doppler shift is $D$}
+\notesummary{We prove that the diagonal stretch factor $D$ is the same as the relativistic Doppler shift.}
+Suppose A emits a wave with a certain frequency, which is then received by both B and C. A, B, and C
+can all be in motion relative to one another. Since the aether doesn't exist, the only velocities that
+can determine the relevant Doppler shifts are the velocities of A, B, and C \emph{relative to each other}.
+Suppose, for clarity of exposition, that the wave passes by B first and then later gets to C.
+That is, the situation is just as if B received the wave and then retransmitted it. Then the Doppler
+shifts for B relative to A and C relative to B must multiply. Now we also know that the $D$ factors
+behave multiplicatively, so we must have $(\text{Doppler shift})=D^\alpha$ for some exponent $\alpha$.
+But we need the relativistic Doppler shifts to match up with the nonrelativistic equations for $v\ll c$,
+so this fixes $\alpha$. A comparison of the Taylor series shows that in order to get agreement to
+first order in $v$, we need $\alpha=1$.
+
+
 <% end_notes %>
 
 <% begin_hw_sec %>
