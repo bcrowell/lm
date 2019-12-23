@@ -4,7 +4,7 @@
 
 <% clear_answer_data %>
 
-
+<% part_title("Waves and relativity") %>
 
 <%
   chapter(
@@ -484,7 +484,7 @@ meters on the left and seconds on the right. To convert to SI units, we insert a
 possible place that will cause the equation to make sense: $x=-ct$.
 \end{eg}
 
-\begin{eg}{Planet of the Apes}
+\begin{eg}{Planet of the Apes}\label{eg:natural-to-si-2}
 \egquestion In the original movie version of \emph{Planet of the Apes}, the human astronauts find that they have
 returned to earth after $2.006\times10^3$ years, but the time interval seems to them to have been only 1.5 years.
 How fast did their spaceship go?
@@ -614,6 +614,16 @@ at the end of this book).
 
 <% begin_hw_sec %>
 
+<% marg(-10) %>
+<%
+  fig(
+    'hw-canis-major',
+    %q{Problem \ref{hw:canis-major}. The brightest star is Sirius, which is the dog's head. The hind foot is Adhara.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('canis-major') %>m4_include(../share/relativity/hw/canis-major.tex)<% end_hw() %>
 
 
 <% end_hw_sec %>

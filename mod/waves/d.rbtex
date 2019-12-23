@@ -439,6 +439,40 @@ $v/c$, as we would expect from the equation for the nonrelativistic Doppler shif
 %>
 <% end_marg %>
 
+\begin{eg}{Ives-Stilwell experiments}\index{Ives-Stilwell experiments}\label{ives-stilwell}
+Measurements of Doppler shifts have provided some of the most precise tests of special relativity,
+with the aid of the following trick. The relativistic
+expression $D(v) = \sqrt{(1+v)/(1-v)}$ for the Doppler shift has the property that $D(v)D(-v)=1$,
+which differs from the
+nonrelativistic result of $1/[(1+v)(1-v)]=1/(1-v^2)$.
+Suppose we accelerate an ion up to a relativistic speed. (Ions are easier to manipulate than neutral atoms,
+because we can operate on them with electrical and magnetic forces.) If the ion emits an electromagnetic
+wave with a known frequency, we can then measure
+both the forward Doppler shifted frequency $f_f$ and the backward one  $f_b$, and compute $\sqrt{f_ff_b}$. According
+to relativity, this should exactly equal the frequency $f_\zu{o}$ measured in the ion's rest frame.
+
+The earliest test using this idea was done by Ives and Stilwell in 1938.
+In a particularly exquisite modern version, Saathoff
+\emph{et al.}~circulated $\zu{Li}^+$ ions at $v=.064$ in a storage ring.  Since the identity $D(v)D(-v)=1$
+is independent of $v$, it was not necessary to measure $v$ to the same incredible precision as the frequencies;
+it was only necessary that it be stable and well-defined.  The resulting frequencies, in units of MHz, were:
+
+\begin{tabular}{rl}
+$f_f$ & =          $582490203.44 \pm .09$ \\
+$f_b$ & =          $512671442.9  \pm 0.5$ \\
+$\sqrt{f_ff_b}$ &= $546466918.6  \pm 0.3$ \\
+$f_\zu{o}$ &=      $546466918.8  \pm 0.4$ (from previous experimental work) 
+\end{tabular}
+
+\noindent The spectacular agreement with theory has made this experiment a lightning rod for
+anti-relativity kooks.
+
+If one is searching for small deviations from the predictions of special relativity, a natural place to look
+is at high velocities. Ives-Stilwell experiments have been performed at velocities as high as $0.84$, and
+they also confirm special relativity.
+\end{eg}
+
+
 <% end_sec('rel-doppler') %>
 
 <% end_sec('diagonal-stretch') %>
@@ -464,9 +498,23 @@ than I expect to live.''
 
 This seems to be a paradox, since the collision of the muon with the detector is an event, and
 all observers agree on whether events exist. But according to the muon, it's at rest, so it
-doesn't experience time dilation. So how can its survival be explained? Our conclusion is that
+doesn't experience time dilation. So how can its survival be explained?
+
+<% marg(20) %>
+<%
+  fig(
+    'ruler-gamma',
+    %q{The ruler is shorter in the frame of the square graph paper, 1, than in its own frame 2.
+       This happens because the observer in frame 1 judges the distance between two events that
+       they say are simultaneous, but in the ruler's frame, the event at the tail end of the
+       ruler is later, and therefore has had longer to travel and lies farther to the right.}
+  )
+%>
+<% end_marg %>
+
+Our conclusion is that
 the distance in the muon's frame must be shorter than the distance in the earth's frame. This
-can be confirmed from an analysis of the Lorentz transformation. An easier shortcut to get the
+can be confirmed from an analysis of the Lorentz transformation, figure \figref{ruler-gamma}. An easier shortcut to get the
 result is to equate the time dilation effect seen in the earth's frame to the length contraction
 factor seen in the muon's. If we let $\interval^2=t^2-d^2$, set $d=vt$, and solve for $t$, we find
 that the time dilation factor $t/\interval$ is
@@ -477,6 +525,11 @@ A common notation for this quantity is $\mygamma$ (Greek letter gamma, which mak
 We therefore conclude that the length contraction is by the same factor gamma, i.e., that if
 a meter-stick has length $L$ in its own frame of reference, then in a frame moving relative to
 it at speed $v$, its length is reduced to $L/\mygamma=L\sqrt{1-v^2}$.
+
+<% self_check('length-contraction-at-v-zero',<<-'SELF_CHECK'
+  What happens to the equation for length contraction at $v=0$? Why does this make sense?
+  SELF_CHECK
+  ) %>
 
 <% end_sec('length-contraction') %>
 
