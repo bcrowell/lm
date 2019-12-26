@@ -1,0 +1,462 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '05',
+    %q{Waves done medium well},
+    'ch:media',
+    %q{A diver photographed this fish, and its reflection, from underwater. The reflection is the one on top, and is formed
+     by light waves that went up to the surface of the water, but were then reflected back down into the water.},
+    {'opener'=>'fish-reflection'}
+  )
+%>
+
+So far we've implicitly assumed that our waves lived in a medium that
+was as uniform and boring as a housing tract in South Orange County,
+California. We don't usually encounter media with such simple
+properties. Nature doesn't make such a medium common.  She makes such
+a medium rare. Instead of describing a wave's environment in such a
+bad and oversimplified way, we will now try to describe our medium
+well.
+
+As we consider a variety of waves and their media, we will find that
+many of the same phenomena pop up over and over again in similar ways.
+This happens not just for mechanical waves but also for
+electromagnetic waves, which might seem strange because an
+electromagnetic wave can exist in a vacuum, and is not a vibration of
+any material substance such as the mythical aether.  But light waves
+do pass through substances such as air, water, or the lens of your
+eye. We can consider these as media for the electromagnetic wave, with
+a vacuum being just one more ``medium'' --- the one that is there in
+the case where nothing is actually there. The speed of an
+electromagnetic wave in a medium is less than $c$, so when we
+characterize $c$ as ``the speed of light,'' we really mean the speed
+of light in a vacuum.
+
+<% begin_sec("Measures of amplitude",nil,'measures-amplitude') %>
+We would use completely different units to measure the amplitude of a
+light wave than the ones we would use for a sound wave. Even when we
+fix our attention on a particular type of wave and a particular medium,
+we very commonly find that there are exactly two different measures of
+amplitude that would both seem equally sensible. Here are some examples:
+
+\noindent\begin{tabular}{lll}\label{wave-amplitude-examples}
+sound waves       & pressure                      & displacement \\
+waves on a string & $y$ (transverse displ.) & $v_y$ (transverse vel.) \\
+light waves       & $\vc{E}$                      & $\vc{B}$
+\end{tabular}
+
+\noindent The reason we see this situation repeatedly seems to be that
+energy has to be conserved when waves superpose, as in the example of
+sec.~\ref{subsec:e-b-equal-energy}, p.~\pageref{subsec:e-b-equal-energy},
+where two electromagnetic waves collide head-on. If there were only one
+amplitude to talk about, and only one form of energy, then the energy would
+have to vanish when the waves canceled. Instead, we have waves with two
+types of energy, such as electrical and magnetic energy, or potential and
+kinetic energy. Just as we never see plants and
+animals in nature that have no way of reproducing, we never see waves that
+lack some such mechanism of conserving energy when they superpose.
+<% end_sec('measures-amplitude') %>
+
+<% begin_sec("Impedance",nil,'wave-impedance') %>
+When we have more than one measure of the amplitude of a wave, they are not
+totally independent things. For example, the electric and magnetic fields of
+a sinusoidal plane wave, in vacuum, have essentially the \emph{same} amplitude,
+assuming we ignore a factor of $c$, which is there only in a system of units like the SI where $c\ne1$.
+If we take the same wave and transplant it into some other medium, such as glass,
+then the ratio of the fields will still be fixed, but it will have some other value.
+We call such a ratio the \emph{impedance} $Z$ of the medium. The word and symbol are
+recycled from the study of electric circuits, but we apply them in cases like
+sound where there is nothing electrical going on. In the case of sound waves, the implied analogy is
+physically appealing:  pressure is like voltage, and flow rate is like current.
+As in the electrical case, the wave impedance only makes sense when we talk about
+sine waves with a specific frequency.
+
+We always have two different ways
+we can flip the ratio that defines the impedance. For example, in a sound wave we could define it either as
+the pressure divided by the flow rate, or the flow rate divided by the pressure.
+This is usually just a matter of convention, and not worth memorizing.
+
+When a wave is transporting energy, we can define an energy flux, such as the Poynting vector $\vc{S}$
+introduced on p.~\pageref{poynting-vector} for electromagnetic waves. A loud sound or a big ocean wave
+has a big S. The energy density of
+the wave is proportional to the square of the wave's amplitude, with some constant of proportionality
+that depends on the medium. For example, a one-meter-high wave in a pool of water will have less
+energy than a wave of the same height in a pool of mercury. The energy flux is proportional to
+the energy density, but also to the wave's speed. Putting all of these factors together, we generally
+get something that can be expressed like either
+\begin{equation*}
+  S = (\text{const.})ZA_1^2
+\end{equation*}
+or
+\begin{equation*}
+  S = (\text{const.})\frac{1}{Z}A_2^2,
+\end{equation*}
+where $A_1$ and $A_2$ are our two different measures of amplitude, and the ``const.'' factors are the same in the two cases.
+
+\begin{eg}{The Poynting vector in a vacuum}\label{eg:poynting-impedance}
+The magnitude of the Poynting vector for an electromagnetic plane wave in vacuum is 
+\begin{equation*}
+  \frac{c^2}{4\pi k}EB,
+\end{equation*}
+and since $B=E/c$, this can be expressed as either
+\begin{equation*}
+  (\text{const.})cB^2
+\end{equation*}
+or
+\begin{equation*}
+  (\text{const.})\frac{1}{c}E^2.
+\end{equation*}
+Thus if we take our two measures of amplitude to be $E$ and $B$, then
+we can define the impedance of the vacuum to be either the speed of light or one over the speed of light.
+\end{eg}
+
+In example \ref{eg:poynting-impedance}, the impedance basically works out to be the speed (or its inverse),
+and this is very common. In the great majority of cases we can treat ``impedance'' and ``wave speed'' as
+synonyms for describing the properties of a medium. As an example where this fails, it will not work
+when describing an electromagnetic wave in a medium such as iron that has magnetic properties.
+
+The table on p.~\pageref{wave-amplitude-examples} listed some examples of measures of amplitude
+that are familiar and easy to measure.
+If we want to get the most full and detailed possible use of the system of analogies for the different
+types of waves, then in some cases we need to use variables that differ from that list. Since this
+kind of thing will probably not be of interest to most readers, I've relegated it to a note, \note{wave-impedance-defs}.
+
+<% end_sec('wave-impedance') %>
+
+<% begin_sec("Reflection",nil,'reflection') %>
+<% begin_sec("Why reflection happens",nil,'why-reflection') %>
+We frequently observe reflection of waves in everyday life. Examples include echoes of sound and
+the reflection of light from a lake. Let's consider the simplest geometry,
+where the wave comes in along a line perpendicular to the surface. For concreteness, let's say that
+this is a light wave of sunlight coming straight down and hitting the surface of some water. The wave starts in one medium, air, and
+then enters another one, water. To keep the equations simple, we'll say that the amplitude of the incident wave, arriving through
+the air, is just a unitless 1, i.e., all other amplitudes will be expressed relative to this one.
+
+Why do we get reflection? Let's see what goes wrong if we assume there is none. The wave is simply transmitted into the
+water, where it has some amplitude $T$. In almost all cases, we have some measure of amplitude that we expect to be
+a continuous function at the boundary. In this particular example, it's not hard to show using Faraday's law that the
+electric field must be continuous, so let's use that as our measure of amplitude. (A simpler example would be a wave on
+a string, for which clearly the wave's height must be continuous, if the string hasn't broken.)  Continuity requires that we
+have
+\begin{equation*}
+  1 = T. \qquad \text{[wrong]}
+\end{equation*}
+We also need conservation of energy. If there is no reflection, then 100\% of the energy of this wave must
+pass on into the water, i.e., the energy flux must be equal on both sides of the boundary. But this is a different
+condition than $1=T$, since the energy flux depends not just on the squared amplitude but also on the medium.
+Since water and air are nonmagnetic substances, the impedance here is really the same as the speed of the wave.
+Let subscript 1 stand for air and 2 for water, and $\alpha=v_1/v_2=Z_1/Z_2$. Then conservation of energy requires
+\begin{equation*}
+  1 = \alpha T^2. \qquad \text{[wrong]}
+\end{equation*}
+It is impossible to satisfy these two equations simultaneously, because waves with the same amplitude have
+\emph{different} energy fluxes.
+
+<%
+  fig(
+    'unphysical-transmission',
+    %q{%
+      This is impossible. A sine wave is completely transmitted from the heavy rope into the skinny one. The
+      skinny rope has 1/4 the mass per unit length. The amplitude of the transverse velocity is the same in
+      both ropes, because otherwise a discontinuity would develop at the boundary. This means that the kinetic
+      energy density is 1/4 as much. The same is true for the potential energy density. There is a change in the
+      energy flux by a factor of 1/2, since $\text{energy/time}=(\text{energy/distance})(\text{distance/time})$.
+      The result is that half the energy has disappeared, violating conservation of energy.
+    },
+    {
+      'width'=>'wide','sidecaption'=>true,'sidepos'=>'b'
+    }
+  )
+%>
+
+<% end_sec('why-reflection') %>
+<% begin_sec("How much reflection?",nil,'how-much-reflection') %>
+
+Only by putting in a partial reflection of the wave's energy do we get equations that have an actual solution.
+Let the amplitude of the reflected wave be $R$. Then the reflected and incident waves superpose in the air just
+above the water's surface, and continuity gives
+\begin{equation*}
+  1+R = T.
+\end{equation*}
+Conservation of energy now reads as
+\begin{equation*}
+  1 = \alpha T^2+R^2,
+\end{equation*}
+where the left-hand side is the energy arriving at the surface and the right-hand side is the energy departing in the upward and downward
+directions.
+We now have two equations in two unknowns, which means we should expect a solution to exist.
+The result turns out to be
+\begin{align*}
+  R = \frac{\alpha-1}{\alpha+1} \qquad \text{and} \qquad T=\frac{2\alpha}{\alpha+1}.
+\end{align*}
+
+<% self_check('no-reflection',<<-'SELF_CHECK'
+  What happens in these equations when $\alpha=1$, and why does this make sense physically?
+  SELF_CHECK
+  ) %>
+
+
+\begin{eg}{Fish have internal ears.}\label{eg:fish-ears}
+Why don't fish have ear-holes? The speed of sound waves in a
+fish's body is not much different from their speed in water,
+so sound waves are not strongly reflected from a fish's
+skin. They pass right through its body, so fish can have internal ears.
+\end{eg}
+
+
+<% end_sec('how-much-reflection') %>
+<% begin_sec("Inverting and uninverting reflections",nil,'inversion') %>
+
+<% marg(50) %>
+<%
+  fig(
+    'rope-reflections',
+    %q{%
+      1. An uninverted reflection. The reflected pulse is reversed front
+      to back, but is not upside-down.\\
+      2. An inverted reflection. The reflected pulse is reversed both front to back and top
+      to bottom.
+    }
+  )
+%>
+<% end_marg %>
+
+When $\alpha<1$, we get $R<0$. This is called an inverting reflection. The reflected wave comes
+back with its amplitude reversed in sign, i.e., the wave is upside-down. In general when we define
+$Z$ and $\alpha$, our definitions depend on which measure of amplitude we pick. If we pick
+the other measure of amplitude, then both of these flip.
+ In our example
+of the light wave hitting the lake, the speed of light in the water is lower than in the air,
+so $\alpha>1$ and the electric field is not inverted. But if we had picked the magnetic field as
+our measure, then we would have had $\alpha=v_2/v_1=Z_2/Z_1<1$ and $R<0$. This tells us that
+in this example, the reflected light wave has an uninverted electric field and an inverted magnetic
+field. This makes sense, because the wave propagates in the direction of the Poynting vector
+$\vc{S}\propto\vc{E}\times\vc{B}$. The reflected wave, rising back up toward the sun, needs to
+have an upward $\vc{S}$, i.e., it needs to be flipped relative to the $\vc{S}$ of the wave that
+came down originally.
+
+Figure \figref{rope-reflections} shows idealized cartoons of how this plays out for a wave
+on a string, which is easy to visualize. Figure \figref{coil-spring-reflections} shows snapshots of
+a real-world experiment.
+
+<% marg(80) %>
+<%
+  fig(
+    'pulse-reflected-from-fixed-end',
+    %q{A wave on a spring, initially traveling to the left, is reflected from the fixed end.}
+  )
+%>
+<% end_marg %>
+
+<% self_check('reflected-energy',<<-'SELF_CHECK'
+In figure \\figref{pulse-reflected-from-fixed-end}, the reflected pulse is upside-down, but
+its depth is just as big as the original pulse's height. How
+does the energy of the reflected pulse compare with
+that of the original?
+  SELF_CHECK
+  ) %>
+
+<%
+  fig(
+    'coil-spring-reflections',
+    %q{%
+      1. A wave in the lighter spring, where the wave speed is greater, travels to the
+      left and is then partly reflected and partly transmitted at the boundary with the heavier coil spring, which has a lower
+      wave speed. The reflection is inverted. 2. A wave moving to the right in the heavier spring is partly reflected at the
+      boundary with the lighter spring. The reflection is uninverted.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% end_sec('inversion') %>
+
+<% begin_sec("Total reflection",nil,'total-reflection') %>
+In the limit of very dissimilar media, we get total reflection. But there are actually two different versions of
+this limit: the one where $\alpha=Z_2/Z_1\rightarrow 0$ and the one where $\alpha\rightarrow \infty$. As an example,
+sound waves in steel experience an impedance that is greater than the impedance of air by a factor of about $10^5$,
+so when we calculate the reflection coefficient $R=(\alpha-1)/(\alpha+1)$ for sound waves at a boundary between air and steel, we will
+get something either very close to $1$ or very close to $-1$. All of the energy is reflected, and the reflection is either inverted or not.
+
+In the case of $R=-1$, the reflected wave will exactly cancel the incident wave at the boundary.
+This happens, for example, at the end of a guitar string if we use the displacement $y$ as a measure of amplitude.
+The end of the string is tied down, so it can't move.
+
+In the case of $R=1$, the amplitude achieves a \emph{maximum} at the boundary. To see this, consider a wave propagating
+along the $x$ axis, with amplitude $y$. The reflection flips the function $y(x)$ in the left-right direction, which
+causes the derivative $y'$ to flip its sign. The derivatives of the incident and reflected wave cancel, so $y'=0$.
+We know from calculus that this is the condition for $y$ to be at an extremum.
+<% end_sec('total-reflection') %>
+
+<% end_sec('reflection') %>
+
+<% begin_sec("Symmetric and asymmetric standing wave patterns",nil,'standing-waves-symm-and-asymm') %>
+
+We discussed standing waves in sec.~\ref{sec:refl-and-standing-waves}, p.~\pageref{sec:refl-and-standing-waves}, but
+there we only considered the case where $R=-1$ at both ends. Actually we can have standing waves with all the
+different combinations: $R=-1$ at both ends, $R=1$ at both ends, or the asymmetric case with $R=1$ at one end
+and $R=-1$ at the other. An important application is to the physics of wind instruments.
+
+Some organ pipes are closed at both ends. The speed of sound is different
+in metal than in air, so there is a strong reflection at the closed ends,
+and we can have standing waves. These reflections are both density-noninverting,
+so we get symmetric standing-wave patterns, such as the one shown in figure
+\subfigref{lowest-modes-of-air-column}{1}.
+<% marg(80) %>
+<%
+  fig(
+    'shakuhachi',
+    %q{%
+      Surprisingly, sound waves undergo partial reflection at the open ends
+      of tubes as well as closed ones.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'lowest-modes-of-air-column',
+    %q{%
+      Graphs of excess density versus position for the lowest-frequency
+      standing waves of three types of air columns. Points on the axis have
+      normal air density.
+    }
+  )
+%>
+<% end_marg %>
+
+Figure \figref{shakuhachi} shows the sound waves in and around a bamboo
+Japanese flute called a shakuhachi, which is \emph{open} at both ends of the air
+column. We can only have a standing wave pattern if there are reflections at the
+ends, but that is very counterintuitive --- why is there any reflection at all,
+if the sound wave is free to emerge into open space, and
+there is no change in medium? 
+The wave
+is adjusting from being a plane wave to being a spherical wave, and the
+impedance is unequal for these two cases, because the amount of flow for
+a given pressure is not the same for the tube as for open space.
+The reflections at
+the open ends are density-inverting, \subfigref{lowest-modes-of-air-column}{2},
+so the wave pattern is pinched off at the ends.
+
+Comparing panels 1 and 2 of the figure, we see that although the wave patterns
+are different, in both cases the wavelength is the same: in the lowest-frequency
+standing wave, half a wavelength fits inside the tube. Thus, it isn't necessary
+to memorize which type of reflection is inverting and which is uninverting. It's
+only necessary to know that the tubes are symmetric.
+
+Finally, we can have an asymmetric tube: closed at one end and open at the
+other. A common example is the pan pipes, \figref{pan-pipes}, which are closed
+at the bottom and open at the top. The
+standing wave with the lowest frequency
+is therefore one in which 1/4 of a wavelength
+fits along the length of the tube, as shown in figure \subfigref{lowest-modes-of-air-column}{3}.
+
+Sometimes an instrument's physical appearance can be misleading. A concert flute,
+\figref{flute}, is closed at the mouth end and open at the other, so we would expect it
+to behave like an asymmetric air column; in reality, it behaves like a symmetric
+air column open at both ends, because the embouchure hole (the hole the player blows
+over) acts like an open end. The clarinet and the saxophone look similar,
+having a mouthpiece and reed at one end and an open end at the other, but they act
+different. In fact the clarinet's air column has patterns of vibration that are asymmetric, the
+saxophone symmetric. The discrepancy comes from the difference between the conical
+tube of the sax and the cylindrical tube of the clarinet. The adjustment of the wave
+pattern from a plane wave to a spherical wave is more gradual at the flaring bell
+of the saxophone.
+
+<% self_check('fish-pattern',<<-'SELF_CHECK'
+Draw a graph of density versus position for the first
+overtone of the air column in a tube open at one end and
+closed at the other. This will be the next-to-longest
+possible wavelength that allows for a point of maximum
+vibration at one end and a point of no vibration at the
+other. How many times shorter will its wavelength be
+compared to the wavelength of the lowest-frequency standing
+wave, shown in the figure? Based on this, how many times
+greater will its frequency be?
+  SELF_CHECK
+  ) %>
+<% marg(80) %>
+<%
+  fig(
+    'pan-pipes',
+    %q{%
+      A pan pipe is an asymmetric air column, open at the top and closed at the bottom.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'flute',
+    %q{%
+      A concert flute looks like an asymmetric air column, open at the mouth end and closed at the other.
+      However, its patterns of vibration are symmetric, because the embouchure hole acts like an open end.
+    }
+  )
+%>
+<% end_marg %>
+
+
+
+<% end_sec('standing-waves-symm-and-asymm') %>
+
+
+<% begin_notes %>
+
+\notetext{wave-impedance-defs}{Definitions relating to impedance}
+\notesummary{The table on p.~\pageref{wave-amplitude-examples} listed some examples of measures of amplitude
+that are familiar and easy to measure.
+If we want to get the most full and detailed possible use of the system of analogies for the different
+types of waves, then in some cases we need to use variables that differ from that list. Here we consider
+the relevant definitions for the three types of waves used as examples in the main text: the electromagnetic
+wave, the wave on a string, and the sound wave.}
+
+There is quite a bit of freedom in defining what variables we want to consider.
+Often, as in section \ref{sec:reflection}, we're interested in the situation where a wave encounters
+a sharp boundary between two different media. In these cases, it's convenient to consider variables
+that remain continuous across the boundary.
+
+In the case of an \emph{electromagnetic wave}, this suggests
+not using the magnetic field $\vc{B}$ but rather the auxiliary field $\vc{H}=\vc{B}/\mu$, where $\mu$ is
+the magnetic permeability. For a wave coming in along the normal, the fields are parallel to the boundary,
+and one can then show from Faraday's law that $\vc{H}$ is what is continuous, not $\vc{B}$.
+For electromagnetic waves, we therefore define our two measures of amplitude as $E$ and $H$.
+We then have the choice of defining the impedance as $E/H$ or $H/E$.
+Defining $Z=E/H$ is nice because it gives $Z$ units of ohms. In a vacuum, $Z=377\ \Omega$.
+This does \emph{not} mean that a vacuum acts like a resistor with this resistance. The energy
+density is $(1/2)\epsilon E^2+(1/2)\mu H^2$, where $\epsilon$ is the permittivity. The energy
+flux per unit area is the Poynting vector $\vc{S}=\vc{E}\times\vc{H}$.
+
+For a wave on a string, we take our two measures of amplitude to be the transverse velocity and
+transverse force $v_y$ and $F_y$. Because Newton's second law relates force to acceleration, not
+velocity, there is in general no relationship between these two variables. But in the case of
+a sinusoidal wave, their amplitudes $\tilde{F}$ and $\tilde{v}$
+are related by $Z=\tilde{F}_y/\tilde{v}_y$, where $Z=\sqrt{\mu T}$, $\mu$ is
+the mass per unit length, and $T$ is the tension. The variable $v_y$ must be continuous at a boundary
+such as the one shown in figure \figref{unphysical-transmission}, p.~\pageref{fig:unphysical-transmission},
+since otherwise the function $y(x)$ would develop a discontinuity, which would describe a break in
+the string. We also expect $F_y$ to be continuous, because otherwise the infinitesimal mass element at the boundary
+would have an infinite acceleration in the $y$ direction. The energy flux is $S=F_yv_y$; because the string is
+one-dimensional, this is really just a measure of power, with units of watts.
+
+In the case of sound waves, we take our measures of amplitude to be the pressure $p$ and volume flow rate $u$.
+The latter has units of cubic meters per second. These quantities can also be defined on a per-unit-area basis.
+The acoustic impedance is $Z=p/u$, and equals $\rho v$, where $\rho$ is the density of the medium and
+$v$ is the speed of the waves. The energy flux per unit area for a plane wave is $S=Pu$.
+
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+
+<% end_hw_sec() %>
+
+
+<% end_chapter() %>

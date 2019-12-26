@@ -323,6 +323,16 @@ would attenuate the differential-mode signals as well as the common-mode ones. T
 a purely magnetic effect, so it vanishes in differential mode.
 \end{eg}
 
+<% marg() %>
+<%
+  fig(
+    'levitating-frog',
+    %q{A frog is levitated diamagnetically by the nonuniform field inside a powerful magnet. Evidently frog has $\mu<\mu_\zu{o}$.}
+  )
+%>
+<% end_marg %>
+
+
 Surprisingly, some materials have magnetic permeabilities less than $\mu_\zu{o}$. This cannot be accounted for in the model
 above, and although there are semiclassical arguments that can explain it to some extent, it is fundamentally a quantum mechanical effect.
 Materials with $\mu>\mu_\zu{o}$ are called paramagnetic, while those with $\mu<\mu_\zu{o}$ are referred to as diamagnetic.
@@ -331,16 +341,25 @@ contamination from a paramagnetic material. Diamagnetic materials have the inter
 of strong magnetic field, and it is therefore possible to levitate a diamagnetic object above a magnet, as in figure \figref{levitating-frog}.
 \index{diamagnetism}\index{paramagnetism}
 
-<% marg(20) %>
+
+<% marg(300) %>
 <%
   fig(
-    'levitating-frog',
-    %q{A frog is levitated diamagnetically by the nonuniform field inside a powerful magnet. Evidently frog has $\mu<\mu_\zu{o}$.}
+    'summary-aux-relations-maxwell',nil,
+    {
+      'title'=>'Summary of auxiliary equations and definitions',
+      'text'=>%q{
+        \begin{align*}
+          \vc{H} &= \frac{\vc{B}}{\mu} \\\\
+          \vc{D} &= \epsilon\vc{E} \\\\
+          \mu_\zu{o} &= \frac{4\pi k}{c^2} \\\\
+          \epsilon_\zu{o} &= \frac{1}{4\pi k}
+        \end{align*}
+      }
+    }
   )
 %>
-
 \spacebetweenfigs
-
 <%
   fig(
     'permeability-boundary',
@@ -348,15 +367,30 @@ of strong magnetic field, and it is therefore possible to levitate a diamagnetic
        surface, which implies a discontinuity in the parallel component of the magnetic field $\vc{B}$.}
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'maxwell-bdy',nil,
+    {
+      'title'=>'Variables that are continuous at a boundary',
+      'text'=>%q{
+        \begin{align*}
+          \vc{E}_\parallel \qquad \vc{D}_\perp \\\\
+          \vc{H}_\parallel \qquad \vc{B}_\perp 
+        \end{align*}
+      }
+    }
+  )
+%>
 <% end_marg %>
 
 A complete statement of Maxwell's equations in the presence of electric and magnetic materials is as follows:
 
-\begin{align*}
-    \Phi_D &= q_\text{free} \\
-    \Phi_B &= 0 \\
-    \Gamma_E &= -\frac{\der \Phi_B}{\der t} \\
-    \Gamma_H &= \frac{\der \Phi_D}{\der t} + I_\text{free}
+\begin{align*}\index{Maxwell's equations!in matter}
+  \operatorname{div}\vc{D} &=  \rho \\
+  \operatorname{div}\vc{B} &=  0 \\
+  \operatorname{curl}\vc{E} &=  -\frac{\partial\vc{B}}{\partial t} \\
+  \operatorname{curl}\vc{H} &=  \frac{\partial\vc{D}}{\partial t}+\vc{j}.
 \end{align*}
 
 Suppose we have a boundary between two substances.
