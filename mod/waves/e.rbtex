@@ -74,14 +74,15 @@ physically appealing:  pressure is like voltage, and flow rate is like current.
 As in the electrical case, the wave impedance only makes sense when we talk about
 sine waves with a specific frequency.
 
-We always have two different ways
-we can flip the ratio that defines the impedance. For example, in a sound wave we could define it either as
-the pressure divided by the flow rate, or the flow rate divided by the pressure.
-This is usually just a matter of convention, and not worth memorizing.
+If we have two different measures of amplitude, $A_1$ and $A_2$, then
+there will be two different ways
+we can flip the ratio that defines the impedance: $A_1/A_2$ or $A_2/A_1$.
+Most of the interesting physics doesn't depend on this choice, and I don't have
+it memorized for the different types of waves.
 
 When a wave is transporting energy, we can define an energy flux, such as the Poynting vector $\vc{S}$
 introduced on p.~\pageref{poynting-vector} for electromagnetic waves. A loud sound or a big ocean wave
-has a big S. The energy density of
+has a big $S$. The energy density of
 the wave is proportional to the square of the wave's amplitude, with some constant of proportionality
 that depends on the medium. For example, a one-meter-high wave in a pool of water will have less
 energy than a wave of the same height in a pool of mercury. The energy flux is proportional to
@@ -94,7 +95,7 @@ or
 \begin{equation*}
   S = (\text{const.})\frac{1}{Z}A_2^2,
 \end{equation*}
-where $A_1$ and $A_2$ are our two different measures of amplitude, and the ``const.'' factors are the same in the two cases.
+where $A_1$ and $A_2$ are our two different measures of amplitude, $Z=A_2/A_1$, and the ``const.'' factors are the same in the two cases.
 
 \begin{eg}{The Poynting vector in a vacuum}\label{eg:poynting-impedance}
 The magnitude of the Poynting vector for an electromagnetic plane wave in vacuum is 
@@ -114,7 +115,7 @@ we can define the impedance of the vacuum to be either the speed of light or one
 \end{eg}
 
 In example \ref{eg:poynting-impedance}, the impedance basically works out to be the speed (or its inverse),
-and this is very common. In the great majority of cases we can treat ``impedance'' and ``wave speed'' as
+and this is very common. In many cases we can treat ``impedance'' and ``wave speed'' as
 synonyms for describing the properties of a medium. As an example where this fails, it will not work
 when describing an electromagnetic wave in a medium such as iron that has magnetic properties.
 
@@ -126,7 +127,7 @@ kind of thing will probably not be of interest to most readers, I've relegated i
 
 <% end_sec('wave-impedance') %>
 
-<% begin_sec("Reflection",nil,'reflection') %>
+<% begin_sec("Reflection",4,'reflection') %>
 <% begin_sec("Why reflection happens",nil,'why-reflection') %>
 We frequently observe reflection of waves in everyday life. Examples include echoes of sound and
 the reflection of light from a lake. Let's consider the simplest geometry,
@@ -215,11 +216,16 @@ skin. They pass right through its body, so fish can have internal ears.
   fig(
     'rope-reflections',
     %q{%
-      1. An uninverted reflection. The reflected pulse is reversed front
-      to back, but is not upside-down.\\
-      2. An inverted reflection. The reflected pulse is reversed both front to back and top
-      to bottom.
+      1. An uninverted reflection.\\
+      2. An inverted reflection.
     }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'pulse-reflected-from-fixed-end',
+    %q{A wave on a spring, initially traveling to the left, is reflected from the fixed end.}
   )
 %>
 <% end_marg %>
@@ -242,14 +248,6 @@ Figure \figref{rope-reflections} shows idealized cartoons of how this plays out 
 on a string, which is easy to visualize. Figure \figref{coil-spring-reflections} shows snapshots of
 a real-world experiment.
 
-<% marg(80) %>
-<%
-  fig(
-    'pulse-reflected-from-fixed-end',
-    %q{A wave on a spring, initially traveling to the left, is reflected from the fixed end.}
-  )
-%>
-<% end_marg %>
 
 <% self_check('reflected-energy',<<-'SELF_CHECK'
 In figure \\figref{pulse-reflected-from-fixed-end}, the reflected pulse is upside-down, but
@@ -282,7 +280,7 @@ In the limit of very dissimilar media, we get total reflection. But there are ac
 this limit: the one where $\alpha=Z_2/Z_1\rightarrow 0$ and the one where $\alpha\rightarrow \infty$. As an example,
 sound waves in steel experience an impedance that is greater than the impedance of air by a factor of about $10^5$,
 so when we calculate the reflection coefficient $R=(\alpha-1)/(\alpha+1)$ for sound waves at a boundary between air and steel, we will
-get something either very close to $1$ or very close to $-1$. All of the energy is reflected, and the reflection is either inverted or not.
+get something either very close to $1$ or very close to $-1$. $R^2=1$, so all of the energy is reflected.
 
 In the case of $R=-1$, the reflected wave will exactly cancel the incident wave at the boundary.
 This happens, for example, at the end of a guitar string if we use the displacement $y$ as a measure of amplitude.
@@ -305,10 +303,10 @@ and $R=-1$ at the other. An important application is to the physics of wind inst
 
 Some organ pipes are closed at both ends. The speed of sound is different
 in metal than in air, so there is a strong reflection at the closed ends,
-and we can have standing waves. These reflections are both density-noninverting,
+and we can have standing waves. These reflections are both pressure-noninverting,
 so we get symmetric standing-wave patterns, such as the one shown in figure
 \subfigref{lowest-modes-of-air-column}{1}.
-<% marg(80) %>
+<% marg(30) %>
 <%
   fig(
     'shakuhachi',
@@ -323,9 +321,9 @@ so we get symmetric standing-wave patterns, such as the one shown in figure
   fig(
     'lowest-modes-of-air-column',
     %q{%
-      Graphs of excess density versus position for the lowest-frequency
+      Graphs of excess pressure versus position for the lowest-frequency
       standing waves of three types of air columns. Points on the axis have
-      normal air density.
+      normal air pressure.
     }
   )
 %>
@@ -342,14 +340,14 @@ is adjusting from being a plane wave to being a spherical wave, and the
 impedance is unequal for these two cases, because the amount of flow for
 a given pressure is not the same for the tube as for open space.
 The reflections at
-the open ends are density-inverting, \subfigref{lowest-modes-of-air-column}{2},
+the open ends are pressure-inverting, \subfigref{lowest-modes-of-air-column}{2},
 so the wave pattern is pinched off at the ends.
 
 Comparing panels 1 and 2 of the figure, we see that although the wave patterns
 are different, in both cases the wavelength is the same: in the lowest-frequency
-standing wave, half a wavelength fits inside the tube. Thus, it isn't necessary
-to memorize which type of reflection is inverting and which is uninverting. It's
-only necessary to know that the tubes are symmetric.
+standing wave, half a wavelength fits inside the tube. In fact, 1 and 2 could be
+two different representations of the same wave, if we used two different measures
+of amplitude.
 
 Finally, we can have an asymmetric tube: closed at one end and open at the
 other. A common example is the pan pipes, \figref{pan-pipes}, which are closed
@@ -371,7 +369,7 @@ pattern from a plane wave to a spherical wave is more gradual at the flaring bel
 of the saxophone.
 
 <% self_check('fish-pattern',<<-'SELF_CHECK'
-Draw a graph of density versus position for the first
+Draw a graph of pressure versus position for the first
 overtone of the air column in a tube open at one end and
 closed at the other. This will be the next-to-longest
 possible wavelength that allows for a point of maximum
