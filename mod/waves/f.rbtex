@@ -1,0 +1,218 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '06',
+    %q{Relativistic energy and momentum},
+    'ch:rel-dynamics'
+  )
+%>
+
+<% begin_sec("Mystery stuff",nil,'mystery-stuff') %>
+Over the years, physicists have run into various kinds of mystery stuff, and have
+always assigned names as soon as possible. They discovered x-rays, and didn't know
+what they were, so they happily labeled them x-rays --- as in $x$ for an unknown. They discovered
+three types of radiation coming from the spontaneous decay of atoms, and since they
+didn't know what they were, they labeled them A, B, and C --- except that they wanted
+to sound more scientific, so they used the first three letters of the \emph{Greek} alphabet,
+alpha, beta, and gamma. Today, we have ``dark matter,'' so called because --- you guessed
+it --- it doesn't emit light.
+
+Let's make this into a game with rules. Someone waves a magic wand, and a stream of particles of
+mystery stuff comes out. As the person playing the game, you then have to figure out something
+about the stuff. One thing you can do is to let the particles ram into a target. This deposits
+their energy in the target, heating it up. By measuring the temperature increase, you can indirectly
+find the energy, and if you then divide by the number of particles you can infer
+the kinetic energy $K$ of each particle. By similar measurements of the target's recoil from the
+hit, you can find the momentum $p$ per particle.
+
+According to Newton's version of the laws of physics, the game seems pretty easy to win.
+Given $K$ and $p$, you can do a little algebra and find the mass $m$ of the mystery particle. It equals $p^2/2K$.
+This mass is a built-in property of the particle, which is the kind of thing you wanted to find.
+But your opponent can make you lose by playing a trick on you. They can let the particles
+come out of the wand with zero velocity. Sadly, you measure $p=0$ and $K=0$, which gives you absolutely
+no information about the particles. You lose.
+
+It may console you to know that when the game is played by Einstein's rules, you can always win.
+As we saw in sec.~\ref{subsec:mass-energy-equivalence}, p.~\pageref{subsec:mass-energy-equivalence}, mass
+and energy are equivalent in relativity.
+Even if your opponent tries to play their dirty trick of releasing the particles at rest,
+you can measure their energy $E$, and also observe that they have $p=0$. Because $p=0$, you can
+tell they're at rest, and therefore the only energy they have is the energy-equivalent of their mass
+(sometimes called the rest energy). From this you infer their mass, $m=E$. Yay, you win!
+
+<% self_check('m-equals-e-si',<<-'SELF_CHECK'
+  This is in natural units. Insert the necessary factors of $c$ to get $m$ in terms of $E$ using SI units.
+  SELF_CHECK
+  ) %>
+
+Another way of describing this is that in relativity, if we're given the pair of numbers $(E,p)$ for
+an object in a certain frame of reference, we can always find the values of these quantities
+$(E',p')$ in any other frame of reference. This failed in Newtonian physics because $(0,0)$ didn't
+give enough information, but we don't have that problem in relativity. In relativity, a $(0,0)$ is
+like Dr.~Seuss's description of a Wasn't: ``A Wasn't just isn't. He just isn't present.''
+
+The $(E,p)$ pair has other pleasant properties. The two numbers, which have different units in
+Newtonian physics, have the \emph{same} natural units.
+Furthermore, we saw in sec.~\ref{sec:p-and-energy-flow}, p.~\pageref{sec:p-and-energy-flow},
+that for a light wave, $p=E$ (which means in SI units that $p=E/c$, so that the momentum of
+light is too small to notice in everyday life, since $c$ is big).
+
+<% marg() %>
+<%
+  fig(
+    'e-p-plane-2',
+    %q{The $E$-$p$ plane.}
+  )
+%>
+<% end_marg %>
+The situation ends up looking like the one sketched in figure \figref{e-p-plane-2}.
+A flash of light lies along one of the diagonals with slopes of $\pm 1$. A material object at rest
+lies straight up on the vertical axis.
+
+This looks exactly like something we've seen before. On a spacetime diagram, the world-line
+a flash of light lies along one of the diagonals. On a spacetime diagram, the world-line
+of a material object at rest runs straight up and down. The pattern we're seeing here can
+be expressed in a gratifyingly simple way if we think of a $(E,p)$ pair as the components
+of a vector lying in the $p$-$E$ plane. We call this the energy-momentum vector $\vc{p}$. Then: ---
+
+\begin{important}
+  The energy-momentum vector of a thing is always parallel to its world-line.
+\end{important}
+
+<% self_check('double-e-p',<<-'SELF_CHECK'
+  Figure \figref{e-p-plane-2} includes a dot representing a flash of light. If we had a flash of light
+  twice as bright, where would its dot be?
+  SELF_CHECK
+  ) %>
+
+Up until now we've been confining ourselves almost solely to relativity in 1+1 dimensions, but with all three
+spatial dimensions present, we have a spacetime displacement vector with components that look like
+\begin{equation*}
+  \Delta\vc{r} = (\Delta t,\Delta x,\Delta y,\Delta z),
+\end{equation*}
+and a momentum vector
+\begin{equation*}
+  \vc{p} = (E,p_x,p_y,p_z).
+\end{equation*}
+These can be referred to as four-vectors in order to distinguish them from the familiar three-vectors of
+Newtonian mechanics. Just as all three-vectors have a consistent set of rules for addition, magnitudes,
+rotation, and so forth, all four-vectors behave by a consistent set of rules. Let's flesh out some of these
+analogies.
+
+\formatlikesubsubsection{Lorentz transformation:} As far as a mathematician is concerned, we can always create
+a list of numbers and call it a ``vector,'' e.g., an expression like $(G,d)$, where $G$ is the current price of
+gold and $d$ is the number of dogs in Montana. Physicists are not so casual. For a three-vector, we want the
+components to behave as expected under a rotation (which $(G,d)$ doesn't, since rotating a gold bar or a dog
+still leaves it as one bar or one dog). For a four-vector, we would like this behavior under rotations to apply
+to the three spatial components, and we would also like the components to behave as described by the Lorentz
+transformation when we do a boost. Experiments do show that the energy-momentum four-vector $\vc{p}$
+behaves this way. If it didn't, then we would probably violate the principle that $\vc{p}$ is always
+parallel to $\Delta\vc{r}$ along the world-line of an object --- the two four-vectors might be parallel in
+one frame, but if we treated them inconsistently, then after a boost, they would probably not be parallel anymore.
+
+<% marg() %>
+<%
+  fig(
+    'e-p-lorentz',
+    %q{Examples \ref{eg:e-p-lorentz} and \ref{eg:spaceship-invariant-m}.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{A Lorentz transformation in the $E$-$p$ plane}\label{eg:e-p-lorentz}
+The figure shows two points in the energy-momentum plane, representing a spaceship and a ray of light.
+
+In the white frame of reference, the spaceship has $E=5$ units, which is a combination of its mass and its kinetic
+energy. Its momentum is $p=3$ units. In the black frame of reference, which is moving at $v=0.6$ relative to the
+white one, the ship has $p=0$ --- this is the ship's
+rest frame. This tells us that the ship was moving at $v=0.6$ in the white frame.
+
+In the white frame, the ray of light has $E=2$ and $p=2$. In the black frame, it has been Doppler shifted down
+to $E=1$ and $p=1$.
+\end{eg}
+
+\formatlikesubsubsection{Magnitudes:} The magnitude of a spacetime displacement $\Delta\vc{r}$ is what we've been calling the interval $\interval$.
+We can notate this as $|\Delta\vc{r}|^2=\interval^2$. In terms of the components, the rule that
+we've been notating in 1+1 dimensions as 
+$\interval^2=t^2-d^2$ can be written as $\interval^2=\Delta t^2-\Delta x^2-\Delta y^2-\Delta z^2$. In other words, we have
+an expression like the Pythagorean theorem, except that we have signs that go like $+---$. Reverting to 1+1 dimensions
+for compactness, $\interval^2=\Delta t^2-\Delta x^2$. The analogous expression for the momentum vector's squared magnitude
+is $|\vc{p}|^2=E^2-p^2$. If we consider an object at rest, as in figure \figref{e-p-plane-2}, then this equals the square of its mass.
+Since the magnitude of a four-vector is invariant, this is equally true in frames of reference where the object is not at rest,
+and we have the extremely important and useful relation
+\begin{equation*}
+  m^2 = E^2-p^2.
+\end{equation*}
+We take this to be the \emph{definition} of mass.
+
+<% self_check('e-p-si',<<-'SELF_CHECK'
+  The relation $m^2 = E^2-p^2$ is in natural units. Insert the necessary factors of $c$ to express this in SI units.
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{The mass of a spaceship}\label{eg:spaceship-invariant-m}
+Returning to the spaceship of figure \figref{e-p-lorentz}, we saw previously that the black frame, which is the ship's rest frame,
+it had $(E,p)=(4,0)$, and its energy was equal to its rest mass, so $m=4$. 
+
+In the white frame, the ship has $(E,p)=(5,3)$. We then have $m^2=5^2-3^2=16$, so again $m=4$. The result is the same
+in both frames, because the mass is invariant.
+\end{eg}
+
+\begin{eg}{A ray of light has zero mass}
+We've already seen that a ray of light or an electromagnetic plane wave has $E=p$, so that its energy-momentum
+vector in 1+1 dimensions looke like $(E,E)$. The magnitude of this is
+\begin{equation*}
+  E^2-E^2=0,
+\end{equation*}
+which means that the mass is zero.\footnote{An gotcha is that this need not be true for other electromagnetic wave patterns. For example,
+a standing wave could consist of a superposition of two electromagnetic plane waves traveling in opposite directions. The two
+energy-momentum vectors are then $(E,E)$ and $(E,-E)$, which adds up to $(2E,0)$, and therefore has a nonzero mass of $2E$.}
+\end{eg}
+
+Because $m$ is invariant, it doesn't change when we accelerate an object. That is, its mass is a permanent
+property of it. Since the energy-momentum vector is parallel to the object's world-line, a material object,
+with $m^2=|\vc{p}|^2>0$, must always move along a world-line with $|\Delta\vc{r}|^2>0$, i.e., it must have
+a speed less than $c$. Conversely, a ray of light has zero mass, so it always $|\Delta\vc{r}|^2=0$ and moves at $c$ --- like
+Lewis Carroll's Red Queen, it \emph{has} to keep moving. 
+
+If we had objects in our universe that could go faster than $c$, then
+they would have to have $m^2<0$, i.e., their masses would have to be
+imaginary numbers. So for example if you want your spaceship to go
+faster than $c$, then it has to be made not out of ordinary matter but
+of some exotic form of matter that has imaginary mass, and you can't
+ride in it unless you're also made this form of matter.  Hypothetical
+subatomic particles with these properties are called tachyons
+(``TACK-y-ons,'' from a Greek word meaning ``fast''). Experimentalists
+have failed to find tachyons in searches using nuclear reactions
+(Alvager, 1968) and cosmic ray showers (Clay, 1988). On p.~\pageref{cern-debacle} I described
+a 2011 experiment in which neutrinos were believed to have been seen moving at a speed slightly
+greater than $c$. The experiment turned out to be a mistake, but if it had been correct, then
+it would have proved that neutrinos were tachyons.
+
+The reason we care about the energy-momentum four-vector is that it's conserved.
+
+
+already talked about transformation of e,p; say now that it's lorentz, give example; same rules for all
+
+theoretical justification: D, cons of area
+
+Incorporate material from LM 26.5, e.g., americium decay.
+
+<% end_sec('mystery-stuff') %>
+
+
+<% begin_notes %>
+
+
+<% end_notes %>
+
+<% begin_hw_sec %>
+
+
+<% end_hw_sec() %>
+
+
+<% end_chapter() %>

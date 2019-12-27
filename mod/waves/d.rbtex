@@ -363,6 +363,36 @@ surpassing the speed of light, we're just approaching it.
 % calc -e "v=0.4; D=sqrt((1+v)/(1-v)); a=D^2; v=(a^2-1)/(a^2+1); a=D^3; v=(a^2-1)/(a^2+1)"
 
 Some notes on streamlining this type of calculation are relegated to a note (\note{combine-v}).
+
+We can also check that all of this is consistent with the fact that $c$ is invariant, i.e., the same in all
+frames of reference. We have $\lim_{v\rightarrow+11}D=\infty$, which we can describe in words by saying that the stretch factor
+for $v=+1$ is $D=\infty$. If we switch frames of reference, then this infinite $D$ will get multiplied by some other,
+finite $D$, but it will still be infinite. Thus $v=+1$ combined with any sub-light velocity will still be $v=+1$, i.e., $c$.
+
+<% self_check('v-minus-1-invariant',<<-'SELF_CHECK'
+  Carry through the same kind of reasoning for $v=-1$.
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{An experimental test}
+Relativity predicts that when a source emits light, the speed of the light should be independent of the velocity of
+the source relative to the observer who observes the light's speed. A sensitive test was performed by 
+Alvager \emph{et al}. A particle accelerator produced a beam of $\pi^0$ particles moving at
+$v=0.99975$ ($D=90$). These particles are unstable and
+rapidly undergo radioactive decay into a pair of gamma rays. Gamma-rays are a form of high-frequency
+electromagnetic radiation, so relativity predicts that they move at $c$, whereas according to Galilean relativity
+one might expect forward-emitted gammas to move at $v+c$, i.e., almost twice the speed of light. The experimentalists
+measured the time of flight of the gammas along a vacuum pipe having a length of 31.450 m. The resulting speed
+was $0.99993\pm0.00013$, which is nowhere near the Galilean prediction of 2, and is consistent with
+special relativity to within the experimental error.
+% calc -x -e "v=(2.9977 10^8 m/s)/c; v2=(2.9977+.0004)(10^8 m/s)/c; v-v2"
+%    v = 0.999925088175502
+%    -1.33425638079165*10^-4
+% calc -x -e "gamma=45; v=sqrt(1-gamma^-2); D=sqrt((1+v)/(1-v))"
+%    v = 0.999753055929066
+%    D = 89.9888875167961
+\end{eg}
+
 <% end_sec('combination-of-vel') %>
 
 <% begin_sec("The relativistic Doppler shift",nil,'rel-doppler') %>
@@ -690,6 +720,8 @@ first order in $v$, we need $\alpha=1$.
 <% begin_hw_sec %>
 
 <% begin_hw('v-in-terms-of-d') %>m4_include(../share/relativity/hw/v-in-terms-of-d.tex)<% end_hw() %>
+
+<% begin_hw('d-approx') %>m4_include(../share/relativity/hw/d-approx.tex)<% end_hw() %>
 
 
 <% end_hw_sec() %>

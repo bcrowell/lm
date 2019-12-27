@@ -400,18 +400,113 @@ all the experiments done in the centuries before Einstein came up with relativit
 
 <% begin_sec("A universal speed limit",nil,'speed-limit-c') %>
 
+<% begin_sec("Theoretical argument",nil,'speed-limit-c-theory') %>
 We have only given an argument that our equation for the interval should be valid for small velocities, but in fact
-experiments show that it is valid at all speeds,\footnote{See also p.~\pageref{lorentz-interval-consistency}.} so we have
+experiments show that it is valid at all speeds,\footnote{This also ends up being necessary to make the theoretical
+framework fit together. See p.~\pageref{lorentz-interval-consistency}.} so we have
 \begin{equation*}
   \interval^2 = t^2 - \frac{d^2}{c^2}.
 \end{equation*}
 One thing we can see from this equation is that something goes very wrong if the speeds get too high.
-If the plane could travel faster than $c$, then we would have $d=vt>ct$, and the right-hand side would
+If a clock could travel faster than $c$, then we would have $d=vt>ct$, and the right-hand side would
 be negative. The interval would then be the square root of a negative number, which wouldn't seem to
 make sense. This suggests that $c$ can be interpreted as a sort of universal speed
-limit for the motion of any material object.
+limit for the motion of any material object. For something moving exactly at $c$, we have $\interval=0$
+between any two points on its world-line.
+<% end_sec('speed-limit-c-theory') %>
 
-Experiments confirm this. In SI units,
+<% begin_sec("Experimental evidence",nil,'speed-limit-c-exp') %>
+Experiments confirm this. As with the Hafele-Keating airplane experiment, the best educational example
+is neither the first historically nor the latest and most recent one. The clearest example I know of was
+done by Bertozzi in 1964.\footnote{Bertozzi, "Speed and kinetic energy of relativistic electrons," Am.~J.~Phys. 32 (1964) 551}
+Figure \ref{electrons-limiting-speed} shows his data, supplemented by some
+data at lower speeds from a later, similar experiment.\footnote{Marvel and Jolivette, open access
+at \url{arxiv.org/abs/1108.5977}} If you find this kind of thing mind-blowing or hard to believe, you
+may find it interesting to watch the half-hour educational video made by Bertozzi, in which every part of the
+experimental setup is demonstrated and explained.\footnote{\url{https://tinyurl.com/bertozziexperiment}}
+
+This experiment directly acts out a scenario often proposed by beginners at relativity who find this
+sort of thing paradoxical. Suppose we use a force to accelerate an object such as a spaceship to a speed very close to $c$,
+say 99.999% of $c$. Then we keep on applying the force for a little longer. Doesn't the object go faster than $c$?
+Doing anything like this with a human-scale object like a spaceship is impractical because of the vast amounts
+of energy that would be required (problem \ref{hw:enterprise-ke-tenth-c}, p.~\pageref{hw:enterprise-ke-tenth-c}).\label{rel-spaceship-impractical}
+Bertozzi used electrons. The electrons were accelerated by an electric field $E$ through a distance
+$\ell_1$.
+Applying Newton's laws
+gives Newtonian predictions $a_N$ for the acceleration and $t_N$ for the time
+required.\footnote{Newton's second law gives
+$a_N=F/m=eE/m$. The constant-acceleration
+equation $\Delta x=(1/2)at^2$ then gives $t_N=\sqrt{2m\ell_1/eE}$.}
+
+The electrons were then allowed to fly down a pipe for a further distance $\ell_2=8.4\ \munit$
+without being acted on by any force. The time of flight $t_2$ for this second distance
+was used to find the final
+velocity $v=\ell_2/t_2$ to which they had actually been accelerated.
+
+Figure \figref{electrons-limiting-speed} shows the results.\footnote{To make the
+low-energy portion of the graph legible, Bertozzi's highest-energy
+data point is omitted.}
+According to Newton, an acceleration $a_N$ acting for a time $t_N$ should produce a final velocity
+$a_N t_N$. The solid line in the
+graph shows the prediction of Newton's laws, which is that a constant force exerted steadily over
+time will produce a velocity that rises linearly and without limit.
+
+The experimental data, shown as black dots, clearly tell a different story. The velocity never goes
+above a certain maximum value,
+which we identify as $c$. The dashed line shows the predictions of special relativity (ch.~\ref{ch:rel-dynamics}), which
+are in good agreement with the experimental results.
+
+
+<% marg() %>
+<%
+  fig(
+    'electrons-limiting-speed',
+    %q{Example \ref{eg:bertozzi-graph}.}
+  )
+%>
+<% end_marg %>
+
+
+As another example of the kind of experimental work that has tested relativity's claims about $c$,
+there was a dramatic incident in 2011 in which particle physicists believed
+they had detected signals at a laboratory near Rome that had been emitted in
+an accelerator experiment in the Alps at a distance of 731.296 km (measured with GPS), and that these signals
+had arrived with a time delay of 2.43928 ms. The speed implied by these measurements
+exceeded $c$ by 0.002\%. Although this might seem like only a tiny discrepancy, the
+theory it violated had by then been so firmly established by decades of
+experiments that the claim set off a frenzy of theoretical and experimental
+work to try to disprove it, explain it, or use it as evidence for new theories
+of physics. A year later, the scientific collaboration that had found the
+observed result announced publicly, and with considerable embarrassment, that
+they had found the result to be due to two mistakes: a loose cable and a faulty
+electronic clock.\label{cern-debacle}
+<% end_sec('speed-limit-c-exp') %>
+
+<% begin_sec("Invariance of c",nil,'speed-limit-c-invariant') %>
+Based on your knowledge of physics according to Galileo and Newton, you might think that it would
+not make sense for there to be a universal constant that was interpreted as a velocity, since
+velocities have different values depending on one's frame of reference. We'll take this up
+in more detail in sec.~\ref{subsec:einstein-motorcycle}, p.~\pageref{subsec:einstein-motorcycle}, but
+basically the straight addition of velocities in relative motion turns out to be a low-velocity approximation.
+At high velocities this addition rule becomes inaccurate, and as we approach $c$ it breaks down completely.
+(For more detail on this, see sec.~\ref{subsec:combination-of-vel}, p.~\pageref{subsec:combination-of-vel}.)
+
+We describe this by saying that $c$ is \emph{invariant}, i.e., it is the same in all frames of reference. Another good example
+of an invariant quantity is electric charge: if charge were not invariant, then, for example, the hydrogen atom
+would not be electrically neutral, as we observe it to be in experiments. The interval $\interval$ is also
+invariant, because it's defined with reference to an actual measuring device: a clock that travels along a certain
+world-line. If the clock is, for example, an hourglass, then every observer is forced to agree that at event
+A the sand was all still in the top, and at event B the last grain fell down to the bottom.
+
+In the logical framework used by Einstein in his original 1905 paper on relativity, the invariance of $c$ is
+one of the two basic postulates that he uses as logical foundations to derive everything else. If we instead
+take it as a postulate that the interval is invariant and behaves according to $\interval^2=t^2-d^2/c^2$, then
+something moving at $c$ has $\interval=0$, and since $\interval$ is invariant, it follows that motion at $c$ is
+an invariant fact.
+<% end_sec('speed-limit-c-invariant') %>
+
+<% begin_sec("Speed of light",nil,'speed-limit-c-light') %>
+ In SI units,
 this maximum speed 
 has the numerical value of about $3.0\times10^8\ \munit/\sunit$.
 We often refer to it as the speed of light, since visible light
@@ -425,20 +520,7 @@ by their wavelength (the distance between successive wave crests).
 Fundamentally, it's best to think of $c$ not as the speed of light but
 as a speed limit, or as a sort of conversion
 factor between time and space units.\index{light!electromagnetic wave}\index{light!speed}
-
-As an example of the kind of experimental work that has tested these claims,
-there was a dramatic incident in 2011 in which particle physicists believed
-they had detected signals at a laboratory near Rome that had been emitted in
-an accelerator experiment in the Alps at a distance of 731.296 km (measured with GPS), and that these signals
-had arrived with a time delay of 2.43928 ms. The speed implied by these measurements
-exceeded $c$ by 0.002\%. Although this might seem like only a tiny discrepancy, the
-theory it violated had by then been so firmly established by decades of
-experiments that the claim set off a frenzy of theoretical and experimental
-work to try to disprove it, explain it, or use it as evidence for new theories
-of physics. A year later, the scientific collaboration that had found the
-observed result announced publicly, and with considerable embarrassment, that
-they had found the result to be due to two mistakes: a loose cable and a faulty
-electronic clock.
+<% end_sec('speed-limit-c-light') %>
 <% end_sec('speed-limit-c') %>
 
 <% begin_sec("Natural units",nil,'natural-units') %>
@@ -454,16 +536,16 @@ one light-year per year. In these units, our equation for the spacetime interval
 which is a lot simpler than the form of the equation we were writing before.
 We don't have to use light-years and year. For example, we could also use seconds and light-seconds,
 or, to better than 2\% precision, feet and nanoseconds. Units in which
-$c=1$ are called emph{natural} units.\index{units!natural relativistic}\index{natural units}\label{natural-units}
-In natural units, velocities are always unitless. For example, $v=0.5$ means a velocity equal to have the
+$c=1$ are called \emph{natural} units.\index{units!natural relativistic}\index{natural units}\label{natural-units}
+In natural units, velocities are always unitless. For example, $v=0.5$ means a velocity equal to half the
 speed of light.
 
 Using natural units for relativity is, well, natural. Because spacetime doesn't have natural ``graph-paper lines''
 built in, space and time aren't completely separate from each other in relativity. That's why we talk about
-spacetime instead of ``space and time.'' There is a good analogy with our energy units. James Joule demonstrated
+``spacetime'' instead of just ``space and time.'' There is a good analogy with our energy units. James Joule demonstrated
 with a paddlewheel experiment in 1876 that heat and mechanical work were things that could be converted into each
 other. We would say today that they are both measures of energy, and we would use units of joules for both.
-Given this insight, it would be a kind of masochism to keep on using different units for the different types of energy.
+Given this insight, it would be masochism to keep on using different units for the different types of energy.
 
 Written in the natural-units form $\interval^2 = t^2 - d^2$, our equation for the interval looks very much like the
 Pythagorean theorem, and it does a similar job: measuring ``how far'' two points are. The only difference in the
@@ -512,11 +594,25 @@ informative in natural units: $v=0.99999960$.
 Spacetime diagrams are conventionally drawn in natural units, so that motion at $c$ appears as a world-line
 with a slope of 1.
 
+<% self_check('c-world-line',<<-'SELF_CHECK'
+  Of the three world-lines in the figure, which could represent a material object? Which could represent
+  a flash of light? Are these things moving inertially, or non-inertially?
+  SELF_CHECK
+  ) %>
+
 <% end_sec('natural-units') %>
 
 <% begin_sec("A speed limit for cause and effect",nil,'speed-limit-causality') %>
 
 <% marg() %>
+<%
+  fig(
+    'sc-c-world-line',
+    %q{Self-check \ref{sc:c-world-line}.},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'twin-symmetry',
@@ -623,7 +719,10 @@ at the end of this book).
 %>
 <% end_marg %>
 
+<% begin_hw('enterprise-ke-tenth-c') %>m4_include(../share/relativity/hw/enterprise-ke-tenth-c.tex)<% end_hw() %>
+
 <% begin_hw('canis-major') %>m4_include(../share/relativity/hw/canis-major.tex)<% end_hw() %>
+
 
 
 <% end_hw_sec %>

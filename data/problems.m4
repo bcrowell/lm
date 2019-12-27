@@ -1372,8 +1372,10 @@ m4_define(__hw_me_17_spider-oscillations,5)m4_dnl
 m4_define(__hw_me_17_maxampatdc,6)m4_dnl
 m4_define(__hw_me_17_fwhm,7)m4_dnl
 m4_define(__hw_me_17_qsix,8)m4_dnl
-m4_define(__hw_mod_1_canis-major,1)m4_dnl
+m4_define(__hw_mod_1_enterprise-ke-tenth-c,1)m4_dnl
+m4_define(__hw_mod_1_canis-major,2)m4_dnl
 m4_define(__hw_mod_4_v-in-terms-of-d,1)m4_dnl
+m4_define(__hw_mod_4_d-approx,2)m4_dnl
 m4_define(__hw_problems_1_mg-to-kg,a1)m4_dnl
 m4_define(__hw_problems_1_micrograms,a2)m4_dnl
 m4_define(__hw_problems_1_estrogen,a3)m4_dnl
