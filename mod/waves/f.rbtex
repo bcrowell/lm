@@ -53,6 +53,9 @@ an object in a certain frame of reference, we can always find the values of thes
 $(E',p')$ in any other frame of reference. This failed in Newtonian physics because $(0,0)$ didn't
 give enough information, but we don't have that problem in relativity. In relativity, a $(0,0)$ is
 like Dr.~Seuss's description of a Wasn't: ``A Wasn't just isn't. He just isn't present.''
+<% end_sec('mystery-stuff') %>
+
+<% begin_sec("The energy-momentum vector",nil,'e-p-vector') %>
 
 The $(E,p)$ pair has other pleasant properties. The two numbers, which have different units in
 Newtonian physics, have the \emph{same} natural units.
@@ -82,9 +85,16 @@ of a vector lying in the $p$-$E$ plane. We call this the energy-momentum vector 
   The energy-momentum vector of a thing is always parallel to its world-line.
 \end{important}
 
+\noindent As a consequence of this, we have the handy fact that $v=p/E$, since the slope on either plot is the same.
+
 <% self_check('double-e-p',<<-'SELF_CHECK'
   Figure \figref{e-p-plane-2} includes a dot representing a flash of light. If we had a flash of light
   twice as bright, where would its dot be?
+  SELF_CHECK
+  ) %>
+
+<% self_check('v-e-p',<<-'SELF_CHECK'
+  If you couldn't remember whether the rule was $v=p/E$ or $v=E/p$, how could you tell which one would make sense?
   SELF_CHECK
   ) %>
 
@@ -124,11 +134,14 @@ one frame, but if we treated them inconsistently, then after a boost, they would
 
 \begin{eg}{A Lorentz transformation in the $E$-$p$ plane}\label{eg:e-p-lorentz}
 The figure shows two points in the energy-momentum plane, representing a spaceship and a ray of light.
+Turning the book sideways, we see that the slope of the black energy axis is $-0.6$. Therefore
+the black frame's velocity relative to the white frame is $0.6$.
 
 In the white frame of reference, the spaceship has $E=5$ units, which is a combination of its mass and its kinetic
 energy. Its momentum is $p=3$ units. In the black frame of reference, which is moving at $v=0.6$ relative to the
 white one, the ship has $p=0$ --- this is the ship's
-rest frame. This tells us that the ship was moving at $v=0.6$ in the white frame.
+rest frame. This tells us that the ship was moving at $v=0.6$ in the white frame. We can verify this
+because in the white frame, $v=p/E=3/5$.
 
 In the white frame, the ray of light has $E=2$ and $p=2$. In the black frame, it has been Doppler shifted down
 to $E=1$ and $p=1$.
@@ -161,16 +174,26 @@ In the white frame, the ship has $(E,p)=(5,3)$. We then have $m^2=5^2-3^2=16$, s
 in both frames, because the mass is invariant.
 \end{eg}
 
-\begin{eg}{A ray of light has zero mass}
+\begin{eg}{A ray of light has zero mass}\label{eg:light-has-zero-mass}
 We've already seen that a ray of light or an electromagnetic plane wave has $E=p$, so that its energy-momentum
 vector in 1+1 dimensions looke like $(E,E)$. The magnitude of this is
 \begin{equation*}
   E^2-E^2=0,
 \end{equation*}
-which means that the mass is zero.\footnote{An gotcha is that this need not be true for other electromagnetic wave patterns. For example,
+which means that the mass is zero.\footnote{A gotcha is that mass is not additive in special relativity.
+Therefore the result of this example need not be true for other electromagnetic wave patterns. For example,
 a standing wave could consist of a superposition of two electromagnetic plane waves traveling in opposite directions. The two
 energy-momentum vectors are then $(E,E)$ and $(E,-E)$, which adds up to $(2E,0)$, and therefore has a nonzero mass of $2E$.}
 \end{eg}
+
+If you look in a math book at a discussion of the magnitude of a vector, whether at the level of high-school trigonometry or
+a college course in linear algebra, you will usually find a statement of the following property of the magnitude: if $\vc{A}$
+is a vector, and $|\vc{A}|=\vc{0}$, then $\vc{A}$ is the zero vector, meaning that it has components that are all zero, and
+adding it to any other vector gives back the same vector, $\vc{B}+\vc{A}=\vc{B}$. In relativity, this is \emph{not} true.
+In example, \ref{eg:light-has-zero-mass}, our ray of light has an energy-momentum vector $\vc{p}$ with a magnitude of zero, $|\vc{p}|=0$,
+but it is \emph{not} true that $\vc{p}=0$ --- if the light ray hits you, it warms you up. This is just a difference in terminology.
+When scientists and engineers communicate with mathematicians, they just have to keep in mind that they mean different things
+by words like ``magnitude.''
 
 Because $m$ is invariant, it doesn't change when we accelerate an object. That is, its mass is a permanent
 property of it. Since the energy-momentum vector is parallel to the object's world-line, a material object,
@@ -193,15 +216,108 @@ greater than $c$. The experiment turned out to be a mistake, but if it had been 
 it would have proved that neutrinos were tachyons.
 
 The reason we care about the energy-momentum four-vector is that it's conserved.
+Figure \figref{higgs-production} shows a somewhat realistic depiction of an example. This is a head-on
+collision of two subatomic particles called quarks, such as occurs at the Large Hadron Collider near Geneva,
+Switzerland. The quarks are
+actually parts of larger particles --- protons --- but on this scale we only see one quark from one proton colliding
+with one quark from another proton. We don't actually know if quarks are pointlike or have a finite size, but
+I've drawn them here as having some bulk to them, and as ovals rather than circles to represent the effect of
+Lorentz contraction. In this example, some of the energy of the incoming quarks happens to produce something called
+a Higgs particle. That is, energy has been converted into matter via $E=mc^2$. The Higgs particle was predicted
+to exist in the 1960s, and the LHC finally confirmed its detection in 2012. When the LHC was being designed, it was
+expected to be almost certain to find the Higgs. In fact, the fear was that the Higgs was the only thing it would
+find at all, and that appears to be what has happened. If so, then many particle physicists will be very depressed,
+but no doubt they will use it as a justification for another project, even larger and more expensive than the LHC.
 
+<%
+  fig(
+    'higgs-production',
+    %q{%
+      Production of a Higgs particle in an accelerator experiment, showing the world-lines (left) and the
+      energy-momentum vectors (right). Energy is conserved: the sum of the vectors after the reaction equals
+      the sum before.
+    },
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
 
-already talked about transformation of e,p; say now that it's lorentz, give example; same rules for all
+<% marg() %>
+<%
+  fig(
+    'relativistic-momentum-tests',
+    %q{Two early high-precision tests of the relativistic equation $p=m\mygamma v$ for momentum.
+       Graphing $p/m$ rather than $p$ allows the data for electrons and protons to be placed on the same graph.
+       Natural units are used, so that the horizontal axis is the velocity in units of $c$, and
+       the vertical axis is the unitless quantity $p/mc$. The very small error bars for the data point from
+       Zrelov are represented by the height of the black rectangle.
+       }
+  )
+%>
+<% end_marg %>
 
-theoretical justification: D, cons of area
+\begin{eg}{Finding momentum given $m$ and $v$}\label{eg:p-is-m-gamma-v}
+It can be useful to be able to find a particle's momentum given its mass and velocity. We have
+\begin{align*}
+  m^2 &= E^2-p^2 \\
+\intertext{and}
+  v &= \frac{p}{E}.
+\end{align*}
+Eliminating $E$ and solving for $p$, we find that
+\begin{align*}
+  p &= mv\left(1-v^2\right)^{-1/2} \\
+    &= m\mygamma v,
+\end{align*}
+where we recall that $\mygamma=1/\sqrt{1-v^2}$.
+In other words, the momentum is greater than the Newtonian value $mv$ by a factor of $\mygamma$.
+Figure \figref{relativistic-momentum-tests} shows some experimental data testing this result.
+At low velocities, $\mygamma\approx 1$, so we recover the Newtonian approximation. This makes
+sense because of the correspondence principle.
+\end{eg}
 
-Incorporate material from LM 26.5, e.g., americium decay.
+\begin{eg}{Electron-positron annihilation}\label{eg:eplus-eminus-2}
+In example \ref{eg:eplus-eminus}, p.~\pageref{eg:eplus-eminus}, we discussed electron-positron annihilation.
+Recall that a positron is a form of antimatter, like an electron but with positive charge. If this process is
+to occur, then it must satisfy both conservation of charge and conservation of energy-momentum. If we only
+had to satisfy conservation of charge, then we could have a process like
+\begin{equation*}
+  e^- + e^+ \rightarrow \mygamma,
+\end{equation*}
+in which an electron and a positron annihilate and produce a single gamma ray. The electric charge on the left
+adds up to zero, and the gamma ray is also uncharged, since it's a form of electromagnetic radiation.
 
-<% end_sec('mystery-stuff') %>
+But now let's
+consider conservation of energy-momentum. Let $m$ be the mass of an electron or positron, and consider the annihilation
+process in the center-of-mass frame, i.e., the frame in which the total three-momentum is initially zero, so that the
+electron and positron are approaching each other symmetrically in a head-on collision. For simplicity, we consider the
+case where their kinetic energies are small; this tends to be true in most real-world examples, since a positron entering
+a piece of matter usually has time to slow down before being annihilated.
+
+In the center-of-mass frame, with the electron and positron essentially at rest, we have initial energy-momentum vectors
+$(E,p)=(m,0)$ and $(m,0)$, adding up to $(2m,0)$. This has a magnitude of $2m$. But the gamma ray must have an energy-momentum
+vector with a magnitude of zero, i.e., in 1+1 dimensions, something like $(E,E)$ or $(E,-E)$. We can appreciate this problem even
+without all the fancy four-vectors. If we know that light has plain old momentum, then clearly the gamma ray has to go in some direction
+and have some momentum in that direction. But this is impossible if the initial momentum is zero.
+
+For this reason, the simplest electron-positron annihilation process is
+\begin{equation*}
+  e^- + e^+ \rightarrow 2\mygamma.
+\end{equation*}
+With the emission of \emph{two} gamma rays, we can satisfy conservation of energy-momentum. The initial energy-momentum vector
+is $(2m,0)$. We can match this in the final state if we let one gamma ray have energy-momentum $(m,m)$, and the other one
+$(m,-m)$, so that the sum is again $(2m,0)$. Conveting back into SI units, we find that the energy of each gamma ray is $mc^2$,
+where $m$ is the mass of the electron. This is the classic signature of matter-antimatter annihilation: back-to-back gamma rays,
+each with an energy equal to the mass (times $c^2$) of one of the annihilating particles.
+
+This is the key to medical PET scans (p.~\pageref{pet-scan}), in which the patient is injected with a radioactive tracer that
+emits positrons. When one of these positrons annihilates with an electron, back-to-back gamma rays are emitted. These are
+detected, and the two points at which they are detected define a line. In the most recent systems, the difference in arrival
+times for the two gammas can be determined accurately enough to allow the device to determine at the point on the line from
+which the emission occurred.
+\end{eg}
+
+<% end_sec('e-p-vector') %>
 
 
 <% begin_notes %>
@@ -211,6 +327,7 @@ Incorporate material from LM 26.5, e.g., americium decay.
 
 <% begin_hw_sec %>
 
+have them do a calculation like eg:p-is-m-gamma-v to find E=mgamma
 
 <% end_hw_sec() %>
 
