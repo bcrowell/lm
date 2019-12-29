@@ -269,7 +269,7 @@ Figure \figref{lorentz-more-quadrants} shows a region that includes all four qua
 
 For logical consistency,\label{lorentz-interval-consistency}
 we need the spacetime interval $\interval$ to come out the same regardless of whether we use one set of coordinates
-or the other.\footnote{Some books actually use this as the definition of the Lorentz transformation.} There is a nice
+or the other.\footnote{Some books actually use this as the defining property of a Lorentz transformation.} There is a nice
 analogy here with Euclidean geometry. In Euclidean geometry, we have a measure of distance between points that is
 given by $d^2=x^2+y^2$, and this distance stays the same even if we rotate our $x$ and $y$ axes. Similarly in the
 $x$-$t$ plane of spacetime, we have $\interval^2=t^2-d^2$, and this stays the same even if we change our frame
@@ -327,8 +327,79 @@ Explain using a spacetime diagram.
    }
  )
 %>
-
 <% end_sec('lorentz') %>
+
+
+<% begin_sec("The light cone",nil,'light-cone') %>
+
+In figure \subfigref{light-cone}{1}, a light bulb blinks on momentarily and then back off. Flashes of light spread out from
+it at $c$ to the right and left, tracing lines which, because of our choice of units, 
+make 45-degree angles.
+These lines form a geometrical figure, which is called the \emph{light cone}, for reasons that may be more
+clear from figure \subfigref{light-cone}{2}, which attempts to represent two dimensions of space as well as the time dimension.
+
+We can draw a light cone centered on any event, such as the one
+labeled $\star$ in figure \figref{light-cone-conical}. If $\star$ is the Russian Revolution, then events inside
+$\star$'s future light cone can be described as all the ones that we could reach, starting from the
+Russian Revolution, by traveling at less than the speed of light. A signal could be sent from $\star$ to any of these
+events, and $\star$ could be the \emph{cause} of any of these events.
+
+<%
+ fig(
+   'light-cone',
+   '1.~A spacetime diagram in 1+1 dimensions, showing the light cone formed by a flash of light emitted by the bulb. 
+    2.~The light cone in 2+1 dimensions.',
+   {
+     'width'=>'wide',
+     'sidecaption'=>false,
+     'anonymous'=>false
+   }
+ )
+%>
+
+<% marg() %>
+<%
+  fig(
+    'light-cone-conical',
+    %q{The light cone divides up spacetime into three categories in terms of possible cause-and-effect relationships
+       with the event $\star$.}
+  )
+%>
+<% end_marg %>
+
+Events inside $\star$'s light cone are said to have a \emph{timelike} relation to $\star$, because they are separated
+from it by more time than space. For example, one of these events could be separated in time from $\star$ by
+100 years, but in space by only 50 light-years.
+Then a spaceship could get  there by going at half the speed of light.
+Events are timelike in relation to each other if they have $\interval^2>0$ for the interval between them.
+Timelike relationships can be future-timelike or past-timelike. Events outside $\star$'s light cone, with $\interval^2<0$, are
+said to be \emph{spacelike} in relation to $\star$, and events on the surface of the light cone,
+$\interval^2=0$, are \emph{lightlike}.
+
+In Einstein's theory of space and time, the light cone plays the same fundamental geometrical role
+as the circle in Euclidean geometry. A circle looks the same regardless of how we rotate our frame of
+reference. The light cone looks the same regardless of our state of motion. 
+We can see that all observers will agree on the light cone, because it can be defined in terms of
+the interval, which is invariant.
+
+<% marg() %>
+<%
+  fig(
+    'ftl-causality',
+    %q{In the original frame, B's time is greater than A's. In the new frame, it's the other way around.}
+  )
+%>
+<% end_marg %>
+
+The light cone is fundamentally important because it tells us about the cause-and-effect structure of spacetime.
+Bad things happen if we have cause-and-effect relationships between events that are \emph{spacelike}
+in relation to each other, like events A and B in figure \figref{ftl-causality}. We can then do a Lorentz boost
+that causes the time-order of the events to be reversed. Say A is Captain Kirk sending a subspace radio
+distress call, and B is Starfleet receiving it and initiating a rescue mission. In the second frame of
+reference, represented by the parallelogram grid, B comes before A, and
+we have the paradoxical situation in which the rescue mission causes the distress call.
+
+<% end_sec('light-cone') %>
 
 <% begin_sec("The diagonal stretch factor and two of its applications",nil,'diagonal-stretch') %>
 <% begin_sec("Definition of the stretch factor",nil,'def-diagonal-stretch') %>
