@@ -97,7 +97,8 @@ of a vector lying in the $p$-$E$ plane. We call this the energy-momentum vector 
   If you couldn't remember whether the rule was $v=p/E$ or $v=E/p$, how could you tell which one would make sense?
   SELF_CHECK
   ) %>
-
+<% end_sec('e-p-vector') %>
+<% begin_sec("Four-vectors in general",nil,'four-vectors') %>
 Up until now we've been confining ourselves almost solely to relativity in 1+1 dimensions, but with all three
 spatial dimensions present, we have a spacetime displacement vector with components that look like
 \begin{equation*}
@@ -153,7 +154,12 @@ we've been notating in 1+1 dimensions as
 $\interval^2=t^2-d^2$ can be written as $\interval^2=\Delta t^2-\Delta x^2-\Delta y^2-\Delta z^2$. In other words, we have
 an expression like the Pythagorean theorem, except that we have signs that go like $+---$. Reverting to 1+1 dimensions
 for compactness, $\interval^2=\Delta t^2-\Delta x^2$. The analogous expression for the momentum vector's squared magnitude
-is $|\vc{p}|^2=E^2-p^2$. If we consider an object at rest, as in figure \figref{e-p-plane-2}, then this equals the square of its mass.
+is $|\vc{p}|^2=E^2-p^2$.
+
+<% end_sec('four-vectors') %>
+<% begin_sec("Mass",nil,'mass') %>
+If we consider an object at rest, as in figure \figref{e-p-plane-2}, then $p=0$ and
+the squared magnitude of the energy-momentum vector, $|\vc{p}|^2=E^2-p^2$, equals the square of its mass.
 Since the magnitude of a four-vector is invariant, this is equally true in frames of reference where the object is not at rest,
 and we have the extremely important and useful relation
 \begin{equation*}
@@ -165,6 +171,12 @@ We take this to be the \emph{definition} of mass.
   The relation $m^2 = E^2-p^2$ is in natural units. Insert the necessary factors of $c$ to express this in SI units.
   SELF_CHECK
   ) %>
+
+Because $m$ is invariant, it doesn't change when we accelerate an object. That is, its mass is a permanent
+property of it. Since the energy-momentum vector is parallel to the object's world-line, a material object,
+with $m^2=|\vc{p}|^2>0$, must always move along a world-line with $|\Delta\vc{r}|^2>0$, i.e., it must have
+a speed less than $c$. Conversely, a ray of light has zero mass, so it always $|\Delta\vc{r}|^2=0$ and moves at $c$ --- like
+Lewis Carroll's Red Queen, it \emph{has} to keep moving. 
 
 \begin{eg}{The mass of a spaceship}\label{eg:spaceship-invariant-m}
 Returning to the spaceship of figure \figref{e-p-lorentz}, we saw previously that the black frame, which is the ship's rest frame,
@@ -195,39 +207,47 @@ but it is \emph{not} true that $\vc{p}=0$ --- if the light ray hits you, it warm
 When scientists and engineers communicate with mathematicians, they have to keep in mind that they mean different things
 by words like ``magnitude.''
 
-Because $m$ is invariant, it doesn't change when we accelerate an object. That is, its mass is a permanent
-property of it. Since the energy-momentum vector is parallel to the object's world-line, a material object,
-with $m^2=|\vc{p}|^2>0$, must always move along a world-line with $|\Delta\vc{r}|^2>0$, i.e., it must have
-a speed less than $c$. Conversely, a ray of light has zero mass, so it always $|\Delta\vc{r}|^2=0$ and moves at $c$ --- like
-Lewis Carroll's Red Queen, it \emph{has} to keep moving. 
+<%
+  fig(
+    'vectors-and-light-cone',
+    '',
+    {
+      'width'=>'wide','sidecaption'=>true,'anonymous'=>true
+    }
+  )
+%>
 
-If we had objects in our universe that could go faster than $c$, then
-they would have to have $m^2<0$, i.e., their masses would have to be
-imaginary numbers. So for example if you want your spaceship to go
-faster than $c$, then it has to be made not out of ordinary matter but
-of some exotic form of matter that has imaginary mass, and you can't
-ride in it unless you're also made this form of matter.  Hypothetical
-subatomic particles with these properties are called tachyons
-(``TACK-y-ons,'' from a Greek word meaning ``fast''). Experimentalists
-have failed to find tachyons in searches using nuclear reactions
-(Alvager, 1968) and cosmic ray showers (Clay, 1988). On p.~\pageref{cern-debacle} I described
-a 2011 experiment in which neutrinos were believed to have been seen moving at a speed slightly
-greater than $c$. The experiment turned out to be a mistake, but if it had been correct, then
-it would have proved that neutrinos were tachyons.
+<% end_sec('mass') %>
+
+<% begin_sec("Applications",nil,'e-p-applications') %>
 
 The reason we care about the energy-momentum four-vector is that it's conserved.
-Figure \figref{higgs-production} shows a somewhat realistic depiction of an example. This is a head-on
-collision of two subatomic particles called quarks, such as occurs at the Large Hadron Collider near Geneva,
-Switzerland. The quarks are
-actually parts of larger particles --- protons --- but on this scale we only see one quark from one proton colliding
-with one quark from another proton. We don't actually know if quarks are pointlike or have a finite size, but
-I've drawn them here as having some bulk to them, and as ovals rather than circles to represent the effect of
-Lorentz contraction. In this example, some of the energy of the incoming quarks happens to produce something called
-a Higgs particle. That is, energy has been converted into matter via $E=mc^2$. The Higgs particle was predicted
-to exist in the 1960s, and the LHC finally confirmed its detection in 2012. When the LHC was being designed, it was
-expected to be almost certain to find the Higgs. In fact, the fear was that the Higgs was the only thing it would
-find at all, and that appears to be what has happened. If so, then many particle physicists will be very depressed,
-but no doubt they will use it as a justification for another project, even larger and more expensive than the LHC.
+Figure \figref{pool-balls-energy-momentum} shows a collision between two pool balls, with a diagram
+showing how their energy-momentum vectors add up. As actually happens in this kind of head-on shot (unless you use
+a lot of spin on the cue-ball), the cue ball stops dead, transferring all of its motion to the ball it hits.
+(The diagram is actually a little unrealistic, because I've
+drawn the balls moving at about 20\% of $c$, which would not only destroy them on impact but also kill everyone
+within a considerable radius.)
+
+
+<%
+  fig(
+    'pool-balls-energy-momentum',
+    'The energy-momentum vector is conserved in the collision of two pool balls.',
+    {
+      'width'=>'wide','sidecaption'=>true
+    }
+  )
+%>
+
+One way to check that energy-momentum is conserved here is to set up each pair
+of vectors tip-to-tail. An easier way to verify this is that the two sides of the equation are
+the same except that the order of the things being added up has been reversed; this has no effect
+on the result because addition of four-vectors
+is commutative, just like addition of three-vectors.
+
+Most of what we see in this diagram is simply the mass of the balls. The moving ball does however have a little bit
+of kinetic energy (extra height) and some momentum (leaning to the right, so that its spacelike part isn't zero).
 
 <%
   fig(
@@ -242,6 +262,28 @@ but no doubt they will use it as a justification for another project, even large
     }
   )
 %>
+
+Figure \figref{higgs-production} is a diagram of a somewhat more
+realistic example, one that really requires relativity.  This is a
+head-on collision of two subatomic particles called quarks, such as
+occurs at the Large Hadron Collider near Geneva, Switzerland. The
+quarks are actually parts of larger particles --- protons --- but on
+this scale we only see one quark from one proton colliding with one
+quark from another proton. We don't actually know if quarks are
+pointlike or have a finite size, but I've drawn them here as having
+some bulk to them, and as ovals rather than circles to represent the
+effect of Lorentz contraction. In this example, some of the energy of
+the incoming quarks happens to produce something called a Higgs
+particle. That is, energy has been converted into matter via $E=mc^2$.
+The Higgs particle was predicted to exist in the 1960s, and the LHC
+finally confirmed its detection in 2012. When the LHC was being
+designed, it was expected to be almost certain to find the Higgs. In
+fact, the fear was that the Higgs was the only thing it would find at
+all, and that appears to be what has happened. If so, then many
+particle physicists will be very depressed, but no doubt they will use
+it as a justification for another project, even larger and more
+expensive than the LHC.
+
 
 <% marg() %>
 <%
@@ -317,8 +359,57 @@ times for the two gammas can be determined accurately enough to allow the device
 which the emission occurred.
 \end{eg}
 
-<% end_sec('e-p-vector') %>
+<% end_sec('e-p-applications') %>
 
+<% begin_sec("Tachyons",nil,'tachyons',{'optional'=>true}) %>
+If we had objects in our universe that could go faster than $c$, then their energy-momentum vectors would be
+spacelike. The squared magnitude of a spacelike vector is negative, so such objects
+would have to have $m^2<0$, i.e., their masses would have to be
+imaginary numbers. Hypothetical
+subatomic particles with these properties are called tachyons
+(``TACK-y-ons,'' from a Greek word meaning ``fast'').
+
+In section \ref{sec:simult}, p.~\pageref{no-accel-past-c}, we saw a theoretical 
+argument that no continuous process of acceleration can boost a material object past $c$,
+and this is also confirmed by experiments such as the one described in sec.~\ref{subsec:speed-limit-c-exp},
+p.~\pageref{subsec:speed-limit-c-exp}. That doesn't, however,
+address the question of whether one could surpass $c$ through some discontinuous process, such as the
+``jump to hyperspace'' in Star Wars. This loophole now appears to be closed off. We observe that mass is a permanent,
+fixed property of a material object, and it therefore seems that a material object like the Millenium Falcon
+could not go faster than $c$, or else it would have to be transformed into a cloud of tachyons, along with
+its passengers. However, if tachyons existed, then we could use them to communicate faster than the speed
+of light (which seems cool), and also to send information back into the past (p.~\pageref{ftl-causality-argument}).
+
+But do tachyons exist? This is a question that can only be answered by searching experimentally.
+The most obvious experimental signature of tachyons would be motion at speeds greater than $c$.
+Negative results were reported by Murthy and later in 1988 by 
+Clay, who studied showers of particles created in the earth's atmosphere by cosmic rays, looking
+for precursor particles that arrived before the first gamma rays.
+One could also look for
+particles with spacelike energy-mom\-ent\-um vectors. Alvager and Erman, in a 1965 experiment, studied the radioactive decay
+of thulium-170, and found that no such particles were emitted at the level of 1 per 10,000 decays.
+
+Some subatomic particles, such as dark matter and neutrinos, don't interact strongly with matter, and are therefore
+difficult to detect directly.
+It's possible that tachyons exist but don't interact strongly with matter, in which case they would not have been
+detectable in the experiments described above. In this scenario,
+it might still be possible to infer their existence indirectly through missing energy-momentum
+in nuclear reactions. This is how the neutrino was first discovered.
+An accelerator experiment by Baltay in 1970 searched for reactions in which the missing energy-momentum
+was spacelike, and found no such events. They put an upper limit of 1 in 1,000 on the probability of
+such reactions under their experimental conditions.
+
+For a long time after the discovery of the neutrino, very little was known about its mass, so
+it was consistent with the experimental evidence to imagine that one or more species of neutrinos were tachyons, and
+Chodos \emph{et al.} made such speculations in 1985.
+On p.~\pageref{cern-debacle} I described
+a 2011 experiment in which neutrinos were believed to have been seen moving at a speed slightly
+greater than $c$. The experiment turned out to be a mistake, but if it had been correct, then
+it would have proved that neutrinos were tachyons.
+An experiment called KATRIN, currently nearing the start of operation at Karlsruhe, will
+provide the first direct measurement of the mass of the neutrino, by measuring very precisely the
+missing energy-momentum in the decay of hydrogen-3.
+<% end_sec('tachyons') %>
 
 <% begin_notes %>
 

@@ -419,7 +419,7 @@ between any two points on its world-line.
 Experiments confirm this. As with the Hafele-Keating airplane experiment, the best educational example
 is neither the first historically nor the latest and most recent one. The clearest example I know of was
 done by Bertozzi in 1964.\footnote{Bertozzi, "Speed and kinetic energy of relativistic electrons," Am.~J.~Phys. 32 (1964) 551}
-Figure \ref{electrons-limiting-speed} shows his data, supplemented by some
+Figure \figref{electrons-limiting-speed} shows his data, supplemented by some
 data at lower speeds from a later, similar experiment.\footnote{Marvel and Jolivette, open access
 at \url{arxiv.org/abs/1108.5977}} If you find this kind of thing mind-blowing or hard to believe, you
 may find it interesting to watch the half-hour educational video made by Bertozzi, in which every part of the
@@ -427,7 +427,7 @@ experimental setup is demonstrated and explained.\footnote{\url{https://tinyurl.
 
 This experiment directly acts out a scenario often proposed by beginners at relativity who find this
 sort of thing paradoxical. Suppose we use a force to accelerate an object such as a spaceship to a speed very close to $c$,
-say 99.999% of $c$. Then we keep on applying the force for a little longer. Doesn't the object go faster than $c$?
+say 99.999\% of $c$. Then we keep on applying the force for a little longer. Doesn't the object go faster than $c$?
 Doing anything like this with a human-scale object like a spaceship is impractical because of the vast amounts
 of energy that would be required (problem \ref{hw:enterprise-ke-tenth-c}, p.~\pageref{hw:enterprise-ke-tenth-c}).\label{rel-spaceship-impractical}
 Bertozzi used electrons. The electrons were accelerated by an electric field $E$ through a distance
@@ -443,6 +443,15 @@ without being acted on by any force. The time of flight $t_2$ for this second di
 was used to find the final
 velocity $v=\ell_2/t_2$ to which they had actually been accelerated.
 
+<% marg() %>
+<%
+  fig(
+    'electrons-limiting-speed',
+    %q{Electrons subjected to a constant force do not have constant acceleration and never surpass $c$.}
+  )
+%>
+<% end_marg %>
+
 Figure \figref{electrons-limiting-speed} shows the results.\footnote{To make the
 low-energy portion of the graph legible, Bertozzi's highest-energy
 data point is omitted.}
@@ -455,17 +464,6 @@ The experimental data, shown as black dots, clearly tell a different story. The 
 above a certain maximum value,
 which we identify as $c$. The dashed line shows the predictions of special relativity (ch.~\ref{ch:rel-dynamics}), which
 are in good agreement with the experimental results.
-
-
-<% marg() %>
-<%
-  fig(
-    'electrons-limiting-speed',
-    %q{Example \ref{eg:bertozzi-graph}.}
-  )
-%>
-<% end_marg %>
-
 
 As another example of the kind of experimental work that has tested relativity's claims about $c$,
 there was a dramatic incident in 2011 in which particle physicists believed
