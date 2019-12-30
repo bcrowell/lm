@@ -399,6 +399,37 @@ distress call, and B is Starfleet receiving it and initiating a rescue mission. 
 reference, represented by the parallelogram grid, B comes before A, and
 we have the paradoxical situation in which the rescue mission causes the distress call.
 
+<%
+  fig(
+    'galaxies-signaling-mod',
+    %q{Discussion question \ref{dq:galaxies-signaling}.  
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'anonymous'=>false,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+\begin{dq}\label{dq:galaxies-signaling}
+Figure \figref{galaxies-signaling-mod} is spacetime diagram showing three galaxies.
+As astronomers often do, I've depicted them as photographic negatives, so that the black background of outer space looks white.
+The axes are drawn according to an observer at rest relative to
+the galaxy 2, so that that galaxy is always at the same $x$ coordinate.
+Intelligent species in the three different galaxies develop radio technology independently,
+and at some point each begins to actively send out signals in an attempt to communicate with other civilizations.
+Events a, b, and c mark the points at which these
+signals begin spreading out across the universe at the speed of light. Find the events
+at which the inhabitants of galaxy 2 detect
+the signals from galaxies 1 and 3. According to 2, who developed radio
+first, 1 or 3? On top of the diagram,
+draw a new pair of position and time axes, for the frame in which galaxy 3 is at rest.
+According to 3, in what order did events a, b, and c happen?
+\end{dq}
+
+
 <% end_sec('light-cone') %>
 
 <% begin_sec("The diagonal stretch factor and two of its applications",nil,'diagonal-stretch') %>
@@ -517,13 +548,13 @@ a \emph{transverse} Doppler shift, which occurs when the motion is perpendicular
 is interpreted as a pure time dilation effect, and is therefore of order $(v/c)^2$ and negligible
 when $v\ll c$.
 
-\begin{eg}{Radial velocity of the Andromeda Galaxy}
+\begin{eg}{Radial velocity of the Andromeda Galaxy}\label{eg:andromeda}
 Atoms in stars and nebulae emit and absorb light at certain discrete frequencies, which are properties of
 the atoms they contain. By comparing with the frequencies observed in the laboratory, we can infer Doppler
 shifts. Light from the Andromeda Galaxy shows a Doppler shift such that the fractional shift $\Delta f/f$ is
 $D-1=+0.001001$, i.e., a shift that happens to be almost exactly a tenth of a percent towards higher frequencies
 (a ``blue-shift'').
-Solving for the velocity, we find $v=1.000\times10^{-3}$. The positive sign means that
+Solving for the velocity (problem \ref{hw:v-in-terms-of-d}, p.~\pageref{hw:v-in-terms-of-d}), we find $v=1.000\times10^{-3}$. The positive sign means that
 this galaxy's radial motion is toward us. In other words, the velocity is
 small compared to the speed of light, so that the fractional Doppler shift is essentially the same as
 $v/c$, as we would expect from the equation for the nonrelativistic Doppler shift.
@@ -619,7 +650,7 @@ can be confirmed from an analysis of the Lorentz transformation, figure \figref{
 result is to equate the time dilation effect seen in the earth's frame to the length contraction
 factor seen in the muon's. If we let $\interval^2=t^2-d^2$, set $d=vt$, and solve for $t$, we find
 that the time dilation factor $t/\interval$ is
-\begin{equation*}
+\begin{equation*}\label{gamma-factor-defined}
   \frac{1}{\sqrt{1-v^2}}.
 \end{equation*}
 A common notation for this quantity is $\mygamma$ (Greek letter gamma, which makes the ``g'' sound).
@@ -793,6 +824,8 @@ first order in $v$, we need $\alpha=1$.
 <% begin_hw('v-in-terms-of-d') %>m4_include(../share/relativity/hw/v-in-terms-of-d.tex)<% end_hw() %>
 
 <% begin_hw('d-approx') %>m4_include(../share/relativity/hw/d-approx.tex)<% end_hw() %>
+
+<% begin_hw('gamma-taylor-mod') %>m4_include(../share/relativity/hw/gamma-taylor-mod.tex)<% end_hw() %>
 
 
 <% end_hw_sec() %>

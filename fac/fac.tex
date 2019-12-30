@@ -28,6 +28,17 @@
 % Override lmcommon.cls, show subsection numbers:
 \titleformat{\subsection}
   {\normalfont\normalsize\bfseries\sffamily\raggedright\protect\sansmath}{\showsecnum{\thesubsection}}{0.6em}{}   
+% Override lmcommon.cls, show subsection numbers:
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\sffamily\raggedright\protect\sansmath}{\showsecnum{\thesubsection}}{0.6em}{}
+% Override lmcommon.cls, no special label for calculus-based problems:
+\renewcommand{\hwtopboilerplate}{%
+  \noindent\formatlikesubsection{\langkey}\\*
+  \begin{tabular}{lll}
+    \hwcheckmark & A computerized answer check is available online. \\
+    \displayhwdifficulty{2} & A difficult problem.
+  \end{tabular}
+}
 %========================= frontmatter =========================
 \formatchtoc{\Large}{}{4mm}
 \frontmatter

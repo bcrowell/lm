@@ -1376,6 +1376,10 @@ m4_define(__hw_mod_1_enterprise-ke-tenth-c,1)m4_dnl
 m4_define(__hw_mod_1_canis-major,2)m4_dnl
 m4_define(__hw_mod_4_v-in-terms-of-d,1)m4_dnl
 m4_define(__hw_mod_4_d-approx,2)m4_dnl
+m4_define(__hw_mod_4_gamma-taylor-mod,3)m4_dnl
+m4_define(__hw_mod_6_congruent-four-vectors-2,1)m4_dnl
+m4_define(__hw_mod_6_e-m-gamma-mod,2)m4_dnl
+m4_define(__hw_mod_6_p-rel-taylor-mod,3)m4_dnl
 m4_define(__hw_problems_1_mg-to-kg,a1)m4_dnl
 m4_define(__hw_problems_1_micrograms,a2)m4_dnl
 m4_define(__hw_problems_1_estrogen,a3)m4_dnl

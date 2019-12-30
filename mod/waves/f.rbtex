@@ -190,9 +190,9 @@ If you look in a math book at a discussion of the magnitude of a vector, whether
 a college course in linear algebra, you will usually find a statement of the following property of the magnitude: if $\vc{A}$
 is a vector, and $|\vc{A}|=\vc{0}$, then $\vc{A}$ is the zero vector, meaning that it has components that are all zero, and
 adding it to any other vector gives back the same vector, $\vc{B}+\vc{A}=\vc{B}$. In relativity, this is \emph{not} true.
-In example, \ref{eg:light-has-zero-mass}, our ray of light has an energy-momentum vector $\vc{p}$ with a magnitude of zero, $|\vc{p}|=0$,
+In example \ref{eg:light-has-zero-mass}, our ray of light has an energy-momentum vector $\vc{p}$ with a magnitude of zero, $|\vc{p}|=0$,
 but it is \emph{not} true that $\vc{p}=0$ --- if the light ray hits you, it warms you up. This is just a difference in terminology.
-When scientists and engineers communicate with mathematicians, they just have to keep in mind that they mean different things
+When scientists and engineers communicate with mathematicians, they have to keep in mind that they mean different things
 by words like ``magnitude.''
 
 Because $m$ is invariant, it doesn't change when we accelerate an object. That is, its mass is a permanent
@@ -327,7 +327,21 @@ which the emission occurred.
 
 <% begin_hw_sec %>
 
-have them do a calculation like eg:p-is-m-gamma-v to find E=mgamma
+<% marg() %>
+<%
+  fig(
+    'hw-congruent-four-vectors-2',
+    %q{Problem \ref{hw:congruent-four-vectors-2}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('congruent-four-vectors-2') %>m4_include(../share/relativity/hw/congruent-four-vectors-2.tex)<% end_hw() %>
+
+<% begin_hw('e-m-gamma-mod') %>m4_include(../share/relativity/hw/e-m-gamma-mod.tex)<% end_hw() %>
+
+<% begin_hw('p-rel-taylor-mod') %>m4_include(../share/relativity/hw/p-rel-taylor-mod.tex)<% end_hw() %>
+
 
 <% end_hw_sec() %>
 
