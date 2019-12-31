@@ -1364,6 +1364,53 @@ greater will its frequency be?
 
 <% begin_hw_sec %>
 
+<% begin_hw('middlec') %>__incl(hw/middlec)<% end_hw() %>
+
+<% begin_hw('changesinewave') %>__incl(hw/changesinewave)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-water-wave-pulse',
+    %q{Problem \ref{hw:reversepulse}}
+  )
+%>
+<% end_marg %>
+ % reversepulse
+
+<% begin_hw('reversepulse') %>__incl(hw/reversepulse)<% end_hw() %>
+
+<% begin_hw('sinwavekinem') %>__incl(hw/sinwavekinem)<% end_hw() %>
+
+\pagebreak
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-sine-single-period',
+    %q{Problem \ref{hw:sinexva}.}
+  )
+%>
+<% end_marg %>
+ % sinexva
+
+<% begin_hw('sinexva') %>__incl(hw/sinexva)<% end_hw() %>
+
+<% begin_hw('dopplerf',0) %>__incl(hw/dopplerf)<% end_hw() %>
+
+<% begin_hw('exptinexactsuperpos') %>__incl(hw/exptinexactsuperpos)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'lasso',
+    %q{Problem \ref{hw:lasso}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('lasso',2) %>__incl(hw/lasso)<% end_hw() %>
+
 <% begin_hw('relativity-max-tension') %>m4_include(../share/relativity/hw/relativity-max-tension.tex)<% end_hw() %>
 
 
