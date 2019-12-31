@@ -148,6 +148,16 @@ future, in which chimpanzees, gorillas, and orangutans have dominion over the
 planet. \emph{Less} time passes for the astronauts, who undergo the violent accelerations
 of space travel.
 
+\startdq
+
+\begin{dq}
+Mechanical clocks can be affected by motion. For example,
+it was a significant technological achievement to build a
+clock that could sail aboard a ship and still keep accurate
+time, allowing longitude to be determined. How is this
+similar to or different from relativistic time dilation?
+\end{dq}
+
 <% end_sec('time-is-relative') %>
 
 <% begin_sec("Spacetime",nil,'spacetime') %>
@@ -398,7 +408,7 @@ all the experiments done in the centuries before Einstein came up with relativit
 <% end_sec('correspondence-principle') %>
 
 
-<% begin_sec("A universal speed limit",nil,'speed-limit-c') %>
+<% begin_sec("A universal speed limit",4,'speed-limit-c') %>
 
 <% begin_sec("Theoretical argument",nil,'speed-limit-c-theory') %>
 We have only given an argument that our equation for the interval should be valid for small velocities, but in fact
@@ -499,7 +509,7 @@ A the sand was all still in the top, and at event B the last grain fell down to 
 In the logical framework used by Einstein in his original 1905 paper on relativity, the invariance of $c$ is
 one of the two basic postulates that he uses as logical foundations to derive everything else. If we instead
 take it as a postulate that the interval is invariant and behaves according to $\interval^2=t^2-d^2/c^2$, then
-something moving at $c$ has $\interval=0$, and since $\interval$ is invariant, it follows that motion at $c$ is
+something moving at $c$ has $\interval=0$, and since $\interval$ is invariant, we reach the same conclusion that motion at $c$ is
 an invariant fact.
 <% end_sec('speed-limit-c-invariant') %>
 
@@ -602,7 +612,7 @@ with a slope of 1.
 
 <% begin_sec("A speed limit for cause and effect",nil,'speed-limit-causality') %>
 
-<% marg() %>
+<% marg(80) %>
 <%
   fig(
     'sc-c-world-line',
@@ -643,7 +653,17 @@ at rest. And yet they can't both say that the other's time is normal,
 because then there would be no way for any discrepancy to accumulate by
 the time they were reunited --- as we see in the actual experiment.
 
-The key to resolving this paradox is that the description of the
+One way to try to resolve this paradox would be to give up on the
+idea that motion is always relative, which was an assumption that we
+had to appeal to explicitly. As described in more detail in sec.~\ref{sec:simult},
+p.~\pageref{sec:simult}, this was the consensus when Einstein was
+a university student, around 1896. Einstein rejected this idea and retained
+as a central pillar of his description of spacetime the idea that motion is
+relative. This is why the theory is called \emph{relativity}. The version of
+the theory that doesn't include gravity is called special relativity, and the
+later version with gravity is general relativity.
+
+In relativity, the key to resolving this paradox is that the description of the
 scenario contains a hidden assumption, that communication using cell
 phones is instantaneous. It isn't. A cell phone is a kind of radio,
 and its signals are encoded as radio waves, which propagate at $c$.
@@ -698,13 +718,16 @@ really be made out of waves (or particles that also have wave
 properties, as we'll see when we take up our study of quantum physics
 at the end of this book).
 
+\startdq
+
+\begin{dq}
+Mechanical clocks can be affected by motion. For example, it was
+a significant technological achievement to build a clock that could sail
+aboard a ship and still keep accurate time, allowing longitude to be deter-
+mined. How is this similar to or different from relativistic time dilation?
+\end{dq}
+
 <% end_sec('speed-limit-causality') %>
-
-
-<% begin_notes %>
-
-<% end_notes %>
-
 
 <% begin_hw_sec %>
 
@@ -725,6 +748,39 @@ at the end of this book).
 
 <% end_hw_sec %>
 
+<% begin_lab("Spacetime",columns:1,type:'ex',suffix:'A') %>\label{lab:spacetime}
+
+The following paper-and-pencil exercises involve spacetime diagrams.
+Tracks on them are called world-lines. As in the other examples in
+this book, a time axis is always closer to vertical, and a position
+axis closer to horizontal, and natural units are used, so that
+the universal speed $c$ is a slope of $+1$ or $-1$.
+
+Draw spacetime diagrams of: (1) a box with a particle bouncing back
+and forth inside it, (2) a ray of light being absorbed by a leaf on a
+tree, (3) an atomic nucleus splitting up into two parts (fissioning),
+(4) a cloud of gas collapsing gravitationally to form our solar system.
+
+<%
+  fig(
+    'ex-spacetime-mod-1',
+    '',
+    {
+      'width'=>'fullpage','anonymous'=>true
+    }
+  )
+%>
+
+5. Event A is given. Mark examples of events B-F that satisfy these
+criteria. A material object travels from A to B. An object traveled
+from C to A. A ray of light emitted at A is received at D. A ray of
+light emitted at E is received at A. F can have no possible
+cause-and-effect relationship with A.
+
+
+\anonymousinlinefig{ex-spacetime-mod-2}
+
+<% end_lab %>
 
 <% end_chapter() %>
 

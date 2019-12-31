@@ -186,6 +186,7 @@ foreach (<$d/*.rbtex>) {
   if ($book eq 'me') {push @prepend_m4_files,"me.m4"; $calc="1"}
   if ($book eq 'lm') {push @prepend_m4_files,"../lmseries.m4"}
   if ($book eq 'fac') {push @prepend_m4_files,"fac.m4"; $calc="1"}
+  if ($book eq 'mod') {push @prepend_m4_files,"mod.m4"; $calc="1"}
   $book =~ /\d(.*)/;
   push @prepend_m4_files,"book.m4";
   push @prepend_m4_files,"$d/chapter.m4";

@@ -411,11 +411,6 @@ provide the first direct measurement of the mass of the neutrino, by measuring v
 missing energy-momentum in the decay of hydrogen-3.
 <% end_sec('tachyons') %>
 
-<% begin_notes %>
-
-
-<% end_notes %>
-
 <% begin_hw_sec %>
 
 <% marg() %>
@@ -427,7 +422,11 @@ missing energy-momentum in the decay of hydrogen-3.
 %>
 <% end_marg %>
 
+<% begin_hw('freeneutron') %>m4_include(../share/relativity/hw/freeneutron.tex)<% end_hw() %>
+
 <% begin_hw('congruent-four-vectors-2') %>m4_include(../share/relativity/hw/congruent-four-vectors-2.tex)<% end_hw() %>
+
+<% begin_hw('vintermsofp') %>m4_include(../share/relativity/hw/vintermsofp.tex)<% end_hw() %>
 
 <% begin_hw('e-m-gamma-mod') %>m4_include(../share/relativity/hw/e-m-gamma-mod.tex)<% end_hw() %>
 
@@ -436,5 +435,28 @@ missing energy-momentum in the decay of hydrogen-3.
 
 <% end_hw_sec() %>
 
+<% begin_lab("Sports in slowlightland",columns:1,type:'ex',suffix:'A') %>\label{lab:slowlightland}
+In Slowlightland, the speed of light is 20 mi/hr  $\approx$ 32 km/hr $\approx$ 
+9 m/s. Think of an example of how relativistic effects would
+work in sports. Things can get very complex very quickly, so
+try to think of a simple example that focuses on just one of
+the following effects:
+
+- relativistic momentum
+
+- relativistic kinetic energy
+
+- relativistic addition of velocities
+
+- time dilation and length contraction
+
+- Doppler shifts of light
+
+- equivalence of mass and energy
+
+- time it takes for light to get to an athlete's eye
+
+- deflection of light rays by gravity
+<% end_lab %>
 
 <% end_chapter() %>

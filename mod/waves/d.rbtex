@@ -607,6 +607,16 @@ they also confirm special relativity.
 
 <% end_sec('rel-doppler') %>
 
+\startdq
+
+\begin{dq}
+A person in a spaceship moving at 99.99999999\% of the
+speed of light relative to Earth shines a flashlight forward
+through dusty air, so the beam is visible. What does she
+see? What would it look like to an observer on Earth?
+\end{dq}
+
+
 <% end_sec('diagonal-stretch') %>
 
 <% begin_sec("Length contraction",nil,'length-contraction') %>
@@ -653,7 +663,7 @@ that the time dilation factor $t/\interval$ is
 \begin{equation*}\label{gamma-factor-defined}
   \frac{1}{\sqrt{1-v^2}}.
 \end{equation*}
-A common notation for this quantity is $\mygamma$ (Greek letter gamma, which makes the ``g'' sound).
+The standard notation for this quantity is $\mygamma$ (Greek letter gamma, which makes the ``g'' sound).
 We therefore conclude that the length contraction is by the same factor gamma, i.e., that if
 a meter-stick has length $L$ in its own frame of reference, then in a frame moving relative to
 it at speed $v$, its length is reduced to $L/\mygamma=L\sqrt{1-v^2}$.
@@ -662,6 +672,45 @@ it at speed $v$, its length is reduced to $L/\mygamma=L\sqrt{1-v^2}$.
   What happens to the equation for length contraction at $v=0$? Why does this make sense?
   SELF_CHECK
   ) %>
+
+\startdq
+
+\begin{dq}
+On a spaceship moving at relativistic speeds, would a   
+lecture seem even longer and more boring than normal?
+\end{dq}
+
+\begin{dq}\label{dq:rhic}
+Figure \figref{rhic} shows an
+artist's rendering of the length contraction for the collision of two
+gold nuclei at relativistic speeds in the RHIC accelerator\index{RHIC accelerator}
+in Long Island, New York.
+The gold nuclei would appear nearly spherical (or just
+slightly lengthened like an American football) in frames
+moving along with them, but in the laboratory's frame, they
+both appear drastically foreshortened as they approach the
+point of collision. The later pictures show the nuclei
+merging to form a hot soup, observed at RHIC in 2010,
+in which the quarks are no longer confined inside the protons and neutrons.
+
+What would the shapes of the two nuclei
+look like to a microscopic observer riding on the
+left-hand nucleus? To an observer riding on the right-hand
+one? Can they agree on what is happening? If not, why not
+--- after all, shouldn't they see the same thing if they
+both compare the two nuclei side-by-side at the same instant in time?
+\end{dq}
+
+<%
+  fig(
+    'rhic',
+    %q{Discussion question \ref{dq:rhic}: colliding nuclei show relativistic length contraction.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
 
 <% end_sec('length-contraction') %>
 
@@ -821,6 +870,39 @@ first order in $v$, we need $\alpha=1$.
 
 <% begin_hw_sec %>
 
+<% begin_hw('six-tenths-c-twice') %>
+The figure illustrates a Lorentz transformation using the conventions
+employed in section \ref{sec:lorentz}.
+For simplicity, the
+transformation chosen is one that lengthens one diagonal by a factor
+of 2. Since Lorentz transformations preserve area, the other diagonal
+is shortened by a factor of 2. Let the original frame of reference,
+depicted with the square, be A, and the new one B. 
+%
+(a) By measuring with a ruler on the figure, show that the velocity of frame B relative to frame A is $0.6c$.
+%
+(b) Print out a copy of the page. With a ruler, draw a third parallelogram that represents a second successive Lorentz transformation, one
+that lengthens the long diagonal by another factor of 2. Call this third frame C. Use measurements with a ruler to determine
+frame C's velocity relative to frame A. Does it equal double the velocity found in part a? Explain why it should be expected to turn
+out the way it does.\answercheck
+% v=.6 exactly; combined v = tanh(2 atanh(.6))=.8824; verified graphically using inkscape that it's .8824
+<% end_hw() %>
+
+\vfill
+
+<%
+  fig(
+    'hw-six-tenths-c-twice',
+    '',
+    {
+      'width'=>'fullpage'
+      #'sidecaption'=>true
+    }
+  )
+%>
+
+\pagebreak
+
 <% begin_hw('v-in-terms-of-d') %>m4_include(../share/relativity/hw/v-in-terms-of-d.tex)<% end_hw() %>
 
 <% begin_hw('d-approx') %>m4_include(../share/relativity/hw/d-approx.tex)<% end_hw() %>
@@ -830,5 +912,37 @@ first order in $v$, we need $\alpha=1$.
 
 <% end_hw_sec() %>
 
+<% begin_lab("The Lorentz transformation",columns:1,type:'ex',suffix:'A') %>\label{lab:lorentz}
+
+1. These are five pairs of spacetime diagrams, organized so that there
+is some resemblance between the left and right of each pair.  In each
+case, decide whether the two could actually be the same thing
+represented in a different inertial frame of reference. Write yes or
+no, and explain why.
+
+\anonymousinlinefig{ex-lorentz-1}
+
+2. The diagram shows three events and two frames of reference.
+Describe the time-ordering of the events in these frames. Is any other
+time-ordering possible in any other frame?
+
+\anonymousinlinefig{ex-lorentz-2}
+
+\vspace{10mm}\hfill\emph{Turn the page.}
+
+\pagebreak
+
+3. The figure shows three events and a square representing the $t$ and
+$x$ axes of a frame of reference. In this frame, the time-ordering of
+the events is ABC. If we switch to another frame, what other
+orderings, if any, are possible? 
+
+\anonymousinlinefig{ex-lorentz-3}
+
+4. The figure  shows the motion of an object, with two different frames of reference superimposed. Is anything strange going on?
+
+\anonymousinlinefig{ex-lorentz-4}
+
+<% end_lab() %>
 
 <% end_chapter() %>
