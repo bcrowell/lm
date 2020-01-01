@@ -29,6 +29,7 @@ $hw_has_solution = []
 $hw_trailing = []
 $hw_names_referred_to = []
 $hw_freeze = 0
+$hw_inside_group = false # see begin_hw_group()
 $tex_points_to_mm = (25.4)/(65536.*72.27)
 $n_marg = 0
 $in_marg = false
@@ -1125,6 +1126,27 @@ end
 def end_hw()
   print $hw_trailing[$hw_number]
   print "\\end{homeworkforcelabel}"
+  hw_vfill()
+end
+
+def hw_vfill()
+  if $hw_vfill and !$hw_inside_group then
+    print "\n\\vspace{\\fill}\n" # using \vspace{\fill} rather than \vfill makes the space not appear if at end of a page
+  end
+end
+
+# The following is used when the $hw_vfill tag is turned on and we have a wide figure that we want to keep close to the text of the
+# problem. See, e.g., Mod 3 (waves/c.rbtex).
+def begin_hw_group
+  if $hw_inside_group then fatal_error("begin_hw_group() used when already inside a group") end
+  if !$hw_vfill then fatal_error("begin_hw_group() used, but vfill option was not turned on in begin_hw_sec") end
+  $hw_inside_group = true
+end
+
+def end_hw_group
+  if !$hw_inside_group then fatal_error("end_hw_group() used when not already inside a group") end
+  $hw_inside_group = false
+  hw_vfill()
 end
 
 def hint_text(label,text=nil)
@@ -1344,7 +1366,7 @@ def begin_sec(title,pagebreak=nil,label='',options={})
   #$stderr.print "in begin_sec(), eruby_util.rb: level=#{$section_level}, title=#{title}, macro=#{macro}\n"
 end
 
-def begin_hw_sec(title='Problems')
+def begin_hw_sec(title:'Problems',vfill:false)
   label = "hw-#{$ch}-#{title.downcase.gsub(/\s+/,'_')}"
   t = <<-TEX
     \\anchor{anchor-#{label}}% navigator_package
@@ -1357,6 +1379,7 @@ def begin_hw_sec(title='Problems')
   end
   print t
   $inside_hw_sec = true
+  $hw_vfill = vfill
 end
 
 def end_hw_sec

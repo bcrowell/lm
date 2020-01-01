@@ -272,6 +272,28 @@ In the examples in ch.~\ref{ch:waves}, the waves on a string are transverse, whi
 sound waves are longitudinal.
 <% end_sec('momentum-of-em-fields-examples') %>
 
+<% marg(50) %>
+<%
+  fig(
+    'dq-point-charge-in-capacitor',
+    %q{Discussion question \ref{dq:point-charge-in-capacitor}.}
+  )
+%>
+<% end_marg %>
+
+\startdq 
+
+\begin{dq}\label{dq:point-charge-in-capacitor}
+The figure shows a positive charge in the gap between two
+capacitor plates. First make a large drawing of the field
+pattern that would be formed by the capacitor itself,
+without the extra charge in the middle. Next, show how the
+field pattern changes when you add the particle at these two
+positions. Compare the energy of the electric fields in the
+two cases. Does this agree with what you would have expected
+based on your knowledge of electrical forces?
+\end{dq}
+
 <% end_sec('e-b-energy-momentum') %>
 
 
@@ -322,14 +344,14 @@ but since the two vector addition problems involve the same angle, we must have 
 as claimed.
 
 Since the energy densities are $(1/8\pi k)E^2$ and $(c^2/8\pi k)B^2$,
-it follows that $E=cB$. (This was problem \ref{hw:morally-equal-eb},
+it follows that $E=cB$ (problem \ref{hw:morally-equal-eb},
 p.~\pageref{hw:morally-equal-eb}). With a couple of centuries of
 hindsight, it would have been better if we had constructed a system of
 units in which $E$ and $B$ had the same units, and in fact they do
 have the same units in the cgs system. In the SI their units are
 different, but ignoring the factor of $c$, we can say that this means
 the magnitudes of the electric and magnetic fields in a plane wave are
-``equal.'' (See problem \ref{hw:morally-equal-eb}, p.~\pageref{hw:morally-equal-eb}.)
+``equal.''
 
 <% end_sec('e-b-equal-energy') %>
 
@@ -999,7 +1021,71 @@ things so as to create a Poynting vector in that direction.)
 
 <% end_notes %>
 
-<% begin_hw_sec %>
+<% begin_hw_sec(vfill:true) %>
+
+<% begin_hw('morally-equal-eb') %>m4_include(../share/em-fields/hw/morally-equal-eb.tex)<% end_hw() %>
+
+<% begin_hw('h3-vs-he3-e-field-energy-fac') %>m4_include(../share/em-fields/hw/h3-vs-he3-e-field-energy-fac.tex)<% end_hw() %>
+
+<% begin_hw('easy-em-plane-wave-geometry') %>m4_include(../share/em-fields/hw/easy-em-plane-wave-geometry.tex)<% end_hw() %>
+
+<% marg(-10) %>
+<%
+  fig(
+    'hw-sample-radiation',
+    %q{Problem \ref{hw:sample-radiation}.}
+  )
+%>
+<% end_marg %>
+
+
+<% begin_hw('sample-radiation') %>m4_include(../share/em-fields/hw/sample-radiation.tex)<% end_hw() %>
+
+<% begin_hw('plane-wave-find-b') %>m4_include(../share/em-fields/hw/plane-wave-find-b.tex)<% end_hw() %>
+
+\pagebreak
+
+<% marg() %>
+<%
+  fig(
+    'hw-colliding-zero-poynting',
+    %q{Problem \ref{hw:colliding-zero-poynting}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hw-solar-constant-momentum',
+    %q{Problem \ref{hw:solar-constant-momentum}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('colliding-zero-poynting') %>m4_include(../share/em-fields/hw/colliding-zero-poynting.tex)<% end_hw() %>
+
+<% begin_hw('solar-constant-momentum') %>m4_include(../share/em-fields/hw/solar-constant-momentum.tex)<% end_hw() %>
+
+<% begin_hw('freeneutron') %>m4_include(../share/relativity/hw/freeneutron.tex)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw_group %>
+
+<% begin_hw('radiation-field-scaling-with-r') %>m4_include(../share/em-fields/hw/radiation-field-scaling-with-r.tex)<% end_hw() %>
+
+<%
+  fig(
+    'inversesquare',
+    %q{Problem \ref{hw:radiation-field-scaling-with-r}.},
+    {'width'=>'wide'}
+  )
+%>
+
+<% end_hw_group %>
+
+<% begin_hw('incoherent-poynting',2) %>m4_include(../share/em-fields/hw/incoherent-poynting.tex)<% end_hw() %>
+
+
 
 <% end_hw_sec() %>
 

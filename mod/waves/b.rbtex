@@ -951,7 +951,7 @@ as a superposition of sine waves with frequencies
 $f,\ 2f,\ 3f,\ \ldots$ In this sense, sine waves are the basic, pure building
 blocks of all waves. (Fourier's result so surprised the
 mathematical community of France that he was ridiculed the
-first time he publicly presented his theorem.)\index{Fourier's theorem}
+first time he publicly presented his theorem.)\index{Fourier's theorem}\label{fourier-thm}
 
 However, what definition to use is really a matter of
 convenience. Our sense of hearing perceives any two sounds
@@ -1130,11 +1130,11 @@ you see in figures \figref{shock-wave} and
 
 <% end_sec() %>
 
-<% begin_sec("Reflection and standing waves",nil,'refl-and-standing-waves') %>
+<% begin_sec("Reflection and standing waves",nil,'refl-and-standing-waves-basic') %>
 
 <% begin_sec("Reflection of waves",nil,'wave-reflection') %>
 Reflection of light from a mirror and echoes of sound are familiar examples
-of the phenomenon of wave reflection. We will see later in more mathematical detail
+of the phenomenon of wave reflection. In ch.~\ref{ch:media} we will see in more mathematical detail
 that whenever a wave encounters a change of medium, it is partially reflected back into the original medium and partially
 transmitted into the new one. 
 
@@ -1147,6 +1147,16 @@ transmitted into the new one.
     }
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'add-sine-and-square',
+    %q{%
+      Sine waves add to make
+      sine waves. Other functions don't have this property.
+    }
+  )
+%>
 <% end_marg %>
 
 Figure \figref{simple-reflection} shows a water wave being reflected from a wall.
@@ -1155,15 +1165,8 @@ particularly simple because the medium simply ends at the wall. Therefore there 
 no transmitted wave, and 100\% of the incident energy is reflected.
 
 Reflections can sometimes be \emph{inverted}, meaning that the amplitude reverses
-its sign. A good example is provided if you walk up to a taut rope such as a clothesline
-and give it a karate chop at one end. The pulse travels to the other end and then
-returns upside-down. This reflection has to be inverting because the rope is attached
-at the ends, so it can't move there. The reflected wave superposes with the incident
-wave and cancels it at that point, giving zero motion.
+its sign. We will discuss this in more detail in sec.~\ref{subsec:inversion}.
 
-We can see that in figure \figref{simple-reflection}, on the other hand, the reflection is
-\emph{uninverting}, since the crests and troughs (black and white) don't cancel and give zero (gray) at the
-wall.
 <% end_sec('wave-reflection') %>
 
 <% begin_sec("Standing waves",nil,'standing-waves') %>
@@ -1204,22 +1207,32 @@ sum appears to stand still. As each wave gets to the end of the rope, it
 is reflected, so our supply of waves is always being
 replenished.
 
-<% marg() %>
-<%
-  fig(
-    'add-sine-and-square',
-    %q{%
-      Sine waves add to make
-      sine waves. Other functions don't have this property.
-    }
-  )
-%>
-<% end_marg %>
-
-
 Standing wave patterns are rather important, since atoms are
 really standing-wave patterns of electron waves. You
 are a standing wave!
+
+In this chapter we will consider only the standing-wave patterns obtained
+when the wave's amplitude is zero at the ends, which is the case for an example
+like figure \figref{standing-waves-on-floor} because the spring is fixed at the ends. We will consider more general
+standing-wave patterns in one dimension in sec.~\ref{sec:standing-waves-symm-and-asymm}.
+
+The wavelength in a standing wave can only have a certain
+set of values. If the velocity is fixed, then this gives a list of
+possible frequencies. For the standing wave patterns described in this
+chapter, the pattern of these frequencies is $f_\zu{o}$, $2f_\zu{o}$, $3f_\zu{o}$, \ldots
+(We'll see in sec.~\ref{sec:standing-waves-symm-and-asymm} that for other types of
+standing wave patterns, the pattern of frequencies can be different from this.)
+The frequencies in this set are called the \emph{harmonics} of $f_\zu{o}$.
+If you walk up to the spring in figure \figref{standing-waves-on-floor} and
+distort it into some random shape, then by Fourier's theorem (p.~\pageref{fourier-thm}),
+this can be analyzed into a superposition of standing wave patterns.
+When you release the spring, it  will begin vibrating in a
+\emph{superposition} of all of the harmonic frequencies. This happens with all musical
+instruments, and also with the human voice, but the ear-brain system is adapted to recognizing the pattern
+and perceives it as a single fused sensation, not as separate musical notes.
+The relative strengths of the harmonics is what makes vowels sound different from
+each other, and is also one of the factors that makes one instrument sound
+different from another. (Other factors are actually usually more important.)
 
 \begin{eg}{Harmonics on string instruments}\label{eg:viola-harmonic}
 Figure \figref{viola-harmonic} shows a violist playing what string players
@@ -1237,7 +1250,7 @@ corresponds to raising the pitch by an octave. The technique can be used
 in order to make it easier to play high notes in rapid passages, or for
 its own sake, because of the change in timbre.
 \end{eg}
-<% marg(-300) %>
+<% marg(300) %>
 <%
   fig(
     'viola-harmonic',
@@ -1249,122 +1262,15 @@ its own sake, because of the change in timbre.
 
 
 <% end_sec('standing-waves') %>
-<% begin_sec("Standing-wave patterns of air columns",nil,'air-columns') %>
-
-The air column inside a wind instrument 
-behaves very much like the wave-on-a-string example
-we've been concentrating on so far, the main difference
-being that we may have either inverting or noninverting
-reflections at the ends.
-
-Some organ pipes are closed at both ends. The speed of sound is different
-in metal than in air, so there is a strong reflection at the closed ends,
-and we can have standing waves. These reflections are both density-noninverting,
-so we get symmetric standing-wave patterns, such as the one shown in figure
-\subfigref{lowest-modes-of-air-column}{1}.
-<% marg(80) %>
-<%
-  fig(
-    'shakuhachi',
-    %q{%
-      Surprisingly, sound waves undergo partial reflection at the open ends
-      of tubes as well as closed ones.
-    }
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'lowest-modes-of-air-column',
-    %q{%
-      Graphs of excess density versus position for the lowest-frequency
-      standing waves of three types of air columns. Points on the axis have
-      normal air density.
-    }
-  )
-%>
-<% end_marg %>
-
-Figure \figref{shakuhachi} shows the sound waves in and around a bamboo
-Japanese flute called a shakuhachi, which is \emph{open} at both ends of the air
-column. We can only have a standing wave pattern if there are reflections at the
-ends, but that is very counterintuitive --- why is there any reflection at all,
-if the sound wave is free to emerge into open space, and
-there is no change in medium? Recall the reason why we got reflections at
-a change in medium: because the wavelength changes, so the wave has to
-readjust itself from one pattern to another, and the only way it can do
-that without developing a kink is if there is a reflection.
-Something similar is happening here. The only difference is that the wave
-is adjusting from being a plane wave to being a spherical wave.
-The reflections at
-the open ends are density-inverting, \subfigref{lowest-modes-of-air-column}{2},
-so the wave pattern is pinched off at the ends.
-Comparing panels 1 and 2 of the figure, we see that although the wave patterns
-are different, in both cases the wavelength is the same: in the lowest-frequency
-standing wave, half a wavelength fits inside the tube. Thus, it isn't necessary
-to memorize which type of reflection is inverting and which is uninverting. It's
-only necessary to know that the tubes are symmetric.
-
-Finally, we can have an asymmetric tube: closed at one end and open at the
-other. A common example is the pan pipes, \figref{pan-pipes}, which are closed
-at the bottom and open at the top. The
-standing wave with the lowest frequency
-is therefore one in which 1/4 of a wavelength
-fits along the length of the tube, as shown in figure \subfigref{lowest-modes-of-air-column}{3}.
-
-Sometimes an instrument's physical appearance can be misleading. A concert flute,
-\figref{flute}, is closed at the mouth end and open at the other, so we would expect it
-to behave like an asymmetric air column; in reality, it behaves like a symmetric
-air column open at both ends, because the embouchure hole (the hole the player blows
-over) acts like an open end. The clarinet and the saxophone look similar,
-having a mouthpiece and reed at one end and an open end at the other, but they act
-different. In fact the clarinet's air column has patterns of vibration that are asymmetric, the
-saxophone symmetric. The discrepancy comes from the difference between the conical
-tube of the sax and the cylindrical tube of the clarinet. The adjustment of the wave
-pattern from a plane wave to a spherical wave is more gradual at the flaring bell
-of the saxophone.
-
-<% self_check('fish-pattern',<<-'SELF_CHECK'
-Draw a graph of density versus position for the first
-overtone of the air column in a tube open at one end and
-closed at the other. This will be the next-to-longest
-possible wavelength that allows for a point of maximum
-vibration at one end and a point of no vibration at the
-other. How many times shorter will its wavelength be
-compared to the wavelength of the lowest-frequency standing
-wave, shown in the figure? Based on this, how many times
-greater will its frequency be?
-  SELF_CHECK
-  ) %>
-<% marg(80) %>
-<%
-  fig(
-    'pan-pipes',
-    %q{%
-      A pan pipe is an asymmetric air column, open at the top and closed at the bottom.
-    }
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'flute',
-    %q{%
-      A concert flute looks like an asymmetric air column, open at the mouth end and closed at the other.
-      However, its patterns of vibration are symmetric, because the embouchure hole acts like an open end.
-    }
-  )
-%>
-<% end_marg %>
-
-<% end_sec('air-columns') %>
-<% end_sec('refl-and-standing-waves') %>
+<% end_sec('refl-and-standing-waves-basic') %>
 
 
 
-<% begin_hw_sec %>
+<% begin_hw_sec(vfill:true) %>
 
-<% begin_hw('middlec') %>__incl(hw/middlec)<% end_hw() %>
+<% begin_hw('middlec',0) %>__incl(hw/middlec)<% end_hw() %>
+
+<% begin_hw('dopplersing',0) %>__incl(hw/dopplersing)<% end_hw() %>
 
 <% begin_hw('changesinewave') %>__incl(hw/changesinewave)<% end_hw() %>
 
@@ -1380,9 +1286,9 @@ greater will its frequency be?
 
 <% begin_hw('reversepulse') %>__incl(hw/reversepulse)<% end_hw() %>
 
-<% begin_hw('sinwavekinem') %>__incl(hw/sinwavekinem)<% end_hw() %>
-
 \pagebreak
+
+<% begin_hw('sinwavekinem') %>__incl(hw/sinwavekinem)<% end_hw() %>
 
 <% marg(0) %>
 <%
@@ -1400,6 +1306,12 @@ greater will its frequency be?
 
 <% begin_hw('exptinexactsuperpos') %>__incl(hw/exptinexactsuperpos)<% end_hw() %>
 
+\pagebreak
+
+<% begin_hw('harp-string') %>__incl(hw/harp-string)<% end_hw() %>
+
+<% begin_hw('relativity-max-tension') %>m4_include(../share/relativity/hw/relativity-max-tension.tex)<% end_hw() %>
+
 <% marg(0) %>
 <%
   fig(
@@ -1409,10 +1321,9 @@ greater will its frequency be?
 %>
 <% end_marg %>
 
+\pagebreak
+
 <% begin_hw('lasso',2) %>__incl(hw/lasso)<% end_hw() %>
-
-<% begin_hw('relativity-max-tension') %>m4_include(../share/relativity/hw/relativity-max-tension.tex)<% end_hw() %>
-
 
 <% end_hw_sec %>
 
