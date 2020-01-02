@@ -391,13 +391,19 @@ the interval, which is invariant.
 %>
 <% end_marg %>
 
-The light cone is fundamentally important because it tells us about the cause-and-effect structure of spacetime.
-Bad things happen if we have cause-and-effect relationships between events that are \emph{spacelike}
-in relation to each other, like events A and B in figure \figref{ftl-causality}. We can then do a Lorentz boost
-that causes the time-order of the events to be reversed. Say A is Captain Kirk sending a subspace radio
-distress call, and B is Starfleet receiving it and initiating a rescue mission. In the second frame of
-reference, represented by the parallelogram grid, B comes before A, and
-we have the paradoxical situation in which the rescue mission causes the distress call.\label{ftl-causality-argument}
+The light cone is fundamentally important because it tells us about
+the cause-and-effect structure of spacetime.  Bad things happen if we
+have cause-and-effect relationships between events that are
+\emph{spacelike} in relation to each other, like events A and B in
+figure \figref{ftl-causality}. We can then do a Lorentz boost that
+causes the time-order of the events to be reversed. Say A is Captain
+Kirk sending a subspace radio distress call, and B is Starfleet
+receiving it and initiating a rescue mission. In the second frame of
+reference, represented by the parallelogram grid, B comes before A,
+and we have the paradoxical situation in which the rescue mission
+causes the distress call. (This is stronger conclusion than our
+earlier one about $c$ as a speed limit on cause and effect,
+\note{cf-ftl-causality-argument}.)\label{ftl-causality-argument}\index{c@$c$!as speed limit for cause and effect}
 
 <%
   fig(
@@ -466,7 +472,9 @@ surpassing the speed of light, we're just approaching it.
 
 Some notes on streamlining this type of calculation are relegated to a note (\note{combine-v}).
 
-We can also check that all of this is consistent with the fact that $c$ is invariant, i.e., the same in all
+We can also check that all of this is consistent with the fact that $c$ is invariant (sec.~\ref{subsec:speed-limit-c-invariant},    
+p.~\pageref{subsec:speed-limit-c-invariant}),\index{c@$c$!invariance}
+i.e., the same in all
 frames of reference. We have $\lim_{v\rightarrow+1}D=\infty$, which we can describe in words by saying that the stretch factor
 for $v=+1$ is $D=\infty$. If we switch frames of reference, then this infinite $D$ will get multiplied by some other,
 finite $D$, but it will still be infinite. Thus $v=+1$ combined with any sub-light velocity will still be $v=+1$, i.e., $c$.
@@ -861,6 +869,33 @@ $R_v$ should be a continuous function of $v$, and $R_0=1$, we must have $R_v=1$ 
 all $v$. Note that this result also holds for the Galilean transformation, since
 we never employed any assumptions that would have distinguished Galilean relativity
 from Einstein's relativity.
+
+\notetext{cf-ftl-causality-argument}{$c$ as a speed limit on cause and effect}
+\notesummary{We compare two different arguments leading to stronger and weaker conclusions about $c$ as a speed limit on cause and effect.}
+On p.~\pageref{original-ftl-cause-and-effect} we made
+a simple argument that led to a weaker form of this conclusion.
+There we argued that if observers A and B are in motion relative to one another,
+and if all frames of reference are equally valid, then time dilation leads to
+paradoxes if there is instantaneous communication. If A and B can communicate instantaneously,
+then they can establish whose time is actually faster, even when they are far apart. This
+breaks the symmetry between them, and contradicts the assumption that all frames of reference are
+equally valid.
+
+At that point we had not yet discussed the fact that simultaneity is relative. Knowing this,
+we can now see that the notion of ``instantaneous'' communication is not even well defined.
+Instantaneous communication would mean sending a signal from event P to event Q when P and
+Q are simultaneous. But different observers do not even agree on whether this is the case.
+So the argument on p.~\pageref{original-ftl-cause-and-effect} was really more like an argument
+that there should be no frame of reference that has special status, such as the frame of the
+aether. Such a special frame of reference is referred to as a \emph{preferred} frame of reference.
+In relativity, there is no preferred frame.\index{frame of reference!none preferred in relativity}
+
+The argument on p.~\pageref{ftl-causality-argument} leads to a stronger conclusion. There we
+argued that if the displacement between events P and Q is spacelike, then there will be some frames of reference in which
+P happens before Q, some in which they are simultaneous, and some in which Q happens before P.
+Therefore we get paradoxes about cause and effect if P causes Q or Q causes P. This is a stronger
+conclusion because it prohibits not just instantaneous cause-and-effect at a distance, but
+any propagation of cause and effect at a speed greater than $c$.
 
 \notetext{combine-v}{Combination of velocities}
 \notesummary{We present some shortcuts for combining velocities}
