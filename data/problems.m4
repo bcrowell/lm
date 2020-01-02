@@ -1383,8 +1383,9 @@ m4_define(__hw_mod_2_sinexva,6)m4_dnl
 m4_define(__hw_mod_2_dopplerf,7)m4_dnl
 m4_define(__hw_mod_2_exptinexactsuperpos,8)m4_dnl
 m4_define(__hw_mod_2_harp-string,9)m4_dnl
-m4_define(__hw_mod_2_relativity-max-tension,10)m4_dnl
-m4_define(__hw_mod_2_lasso,11)m4_dnl
+m4_define(__hw_mod_2_symmetric-standing-wave,10)m4_dnl
+m4_define(__hw_mod_2_relativity-max-tension,11)m4_dnl
+m4_define(__hw_mod_2_lasso,12)m4_dnl
 m4_define(__hw_mod_3_morally-equal-eb,1)m4_dnl
 m4_define(__hw_mod_3_h3-vs-he3-e-field-energy-fac,2)m4_dnl
 m4_define(__hw_mod_3_easy-em-plane-wave-geometry,3)m4_dnl
@@ -1399,6 +1400,15 @@ m4_define(__hw_mod_4_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_mod_4_v-in-terms-of-d,2)m4_dnl
 m4_define(__hw_mod_4_d-approx,3)m4_dnl
 m4_define(__hw_mod_4_gamma-taylor-mod,4)m4_dnl
+m4_define(__hw_mod_5_airwaterrefl,1)m4_dnl
+m4_define(__hw_mod_5_half-reflected,2)m4_dnl
+m4_define(__hw_mod_5_freaknotes,3)m4_dnl
+m4_define(__hw_mod_5_flute,4)m4_dnl
+m4_define(__hw_mod_5_asymmetric-standing-wave,5)m4_dnl
+m4_define(__hw_mod_5_dissonance,6)m4_dnl
+m4_define(__hw_mod_5_wave-on-hanging-string,7)m4_dnl
+m4_define(__hw_mod_5_fabryperot,8)m4_dnl
+m4_define(__hw_mod_5_maxtransmission,9)m4_dnl
 m4_define(__hw_mod_6_freeneutron,1)m4_dnl
 m4_define(__hw_mod_6_congruent-four-vectors-2,2)m4_dnl
 m4_define(__hw_mod_6_vintermsofp,3)m4_dnl
