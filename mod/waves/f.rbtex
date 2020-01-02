@@ -31,6 +31,8 @@ hit, you can find the momentum $p$ per particle.
 According to Newton's version of the laws of physics, the game seems pretty easy to win.
 Given $K$ and $p$, you can do a little algebra and find the mass $m$ of the mystery particle. It equals $p^2/2K$.
 This mass is a built-in property of the particle, which is the kind of thing you wanted to find.
+Yay, you win!
+
 But your opponent can make you lose by playing a trick on you. They can let the particles
 come out of the wand with zero velocity. Sadly, you measure $p=0$ and $K=0$, which gives you absolutely
 no information about the particles. You lose.
@@ -413,6 +415,8 @@ missing energy-momentum in the decay of hydrogen-3.
 
 <% begin_hw_sec(vfill:true) %>
 
+<% begin_hw('freeneutron') %>m4_include(../share/relativity/hw/freeneutron.tex)<% end_hw() %>
+
 <% marg() %>
 <%
   fig(
@@ -422,9 +426,9 @@ missing energy-momentum in the decay of hydrogen-3.
 %>
 <% end_marg %>
 
-<% begin_hw('freeneutron') %>m4_include(../share/relativity/hw/freeneutron.tex)<% end_hw() %>
-
 <% begin_hw('congruent-four-vectors-2') %>m4_include(../share/relativity/hw/congruent-four-vectors-2.tex)<% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('vintermsofp') %>m4_include(../share/relativity/hw/vintermsofp.tex)<% end_hw() %>
 
