@@ -1,0 +1,284 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '07',
+    %q{Statistics and the ideal gas},
+    'ch:stat',
+    %q{A flame is used to fill a balloon with hot air.},
+    {'opener'=>'hot-air-balloon-large'}
+  )
+%>
+
+<% marg() %>
+<%
+  fig(
+    'humpty-dumpty',
+    %q{Humpty Dumpty.}
+  )
+%>
+<% end_marg %>
+
+Looking at the two drawings in figure \figref{humpty-dumpty}, you
+shouldn't have any trouble figuring out which came first in time and
+which happened later. As we saw in sec.~\ref{sec:t-symm},
+p.~\pageref{sec:t-symm}, this kind of seemingly common-sense
+observation is hard to explain when we consider that the laws of
+physics are completely symmetric with respect to time-reversal.  There
+is something going on that has to do with randomness. Scrambling an
+egg seems to randomize it, in the same way that shaking up a box full
+of pennies makes it into some random combination of heads and tails.
+If someone had carefully arranged the pennies in the box so that they
+were all heads up, then a thorough shaking would eliminate that
+orderly pattern, and further shaking would be unlikely to restore it.
+
+Although this seems like a step toward an explanation of time's arrow,
+it is not yet a complete explanation. For one thing, we could time-reverse
+the motion of the pennies, and then they would unscramble themselves
+while again obeying Newton's laws. It does seem like it would be very
+difficult to set up the time-reversed motion in exactly the right way,
+but why is it that that sort of thing is so difficult?
+
+In order to pursue this train of thought, we'll need some basic ideas
+about probability and statistics.
+
+<% begin_sec("Basics of probability and statistics",nil,'basic-prob') %>
+
+Even if something is random, we
+can still understand it, and we can still calculate
+probabilities numerically.
+
+<% begin_sec("Statistical independence",nil,'independence') %>
+\index{independence!statistical}
+As an illustration of one general technique for calculating
+probabilities, suppose you are playing a 25-cent slot machine. Each
+of the three wheels has one chance in ten of coming up with
+a cherry. If all three wheels come up cherries, you win
+\$100. Even though the results of any particular trial are
+random, you can make certain quantitative predictions.
+First, you can calculate that your odds of winning on any
+given trial are $1/10\times1/10\times1/10=1/1000=0.001$.\label{slot-machine-game}
+Here, I am
+representing the probabilities as numbers from 0 to 1, which
+is clearer than statements like ``The odds are 999 to 1,''
+and makes the calculations easier. A probability of 0
+represents something impossible, and a probability of 1
+represents something that will definitely happen.  
+
+<% marg(50) %>
+<%
+  fig(
+    'slot-machine',
+    %q{%
+      The probability that one wheel will give a cherry is 1/10. The
+      probability that all three wheels will give cherries is $1/10\times1/10\times1/10$.
+    }
+  )
+%>
+<% end_marg %>
+
+
+This calculation was based on the following principle:
+
+\index{independent probabilities!law of}\label{statistical-independence}
+\begin{lessimportant}[the law of independent probabilities]
+If the probability of one event happening is $P_A$, and the
+probability of a second statistically independent event
+happening is $P_B$, then the probability that they will both
+occur is the product of the probabilities, $P_AP_B$.
+\end{lessimportant}
+
+This can be taken as the definition of statistical independence.\index{independence!statistical}
+
+Note that this only applies to independent probabilities.
+For example, if $P_M$ is the probability that a randomly chosen
+American owns a motorcycle, and $P_K$ is the probability that a person from the same population
+gets killed in a motorcycle accident, then the probability of both M and K is \emph{much}
+greater than the product $P_MP_K$. This is because when K happens, it's usually \emph{because}
+M was true (the exceptions being cases like people who take a ride on their friend's bike).
+<% end_sec('independence') %>
+
+<% begin_sec("Addition of probabilities",nil,'addition-of-prob') %>
+\index{probabilities!addition of}
+
+The law of independent probabilities tells us to use
+multiplication to calculate the probability that both A and
+B will happen, assuming the probabilities are independent.
+What about the probability of an ``or'' rather than an
+``and''? If two events A and $B$ are mutually exclusive,
+then the probability of one or the other occurring is the
+sum $P_A+P_B$. For instance, a bowler might have a 30\%
+chance of getting a strike (knocking down all ten pins) and
+a 20\% chance of knocking down nine of them. The bowler's
+chance of knocking down either nine pins or ten pins is therefore 50\%.
+
+It does not make sense to add probabilities of things that
+are not mutually exclusive, i.e., that could both happen. Say
+I have a 90\% chance of eating lunch on any given day, and a
+90\% chance of eating dinner. The probability that I will
+eat either lunch or dinner is not 180\%.  
+
+<% end_sec('addition-of-prob') %>
+
+<% begin_sec("Normalization",nil,'normalization') %>
+\index{probabilities!normalization of}\index{normalization}
+If I spin a globe and randomly pick a point on it, I have
+about a 70\% chance of picking a point that's in an ocean
+and a 30\% chance of picking a point on land. The probability
+of picking either water or land is $70\%+30\%=100\%$. Water
+and land are mutually exclusive, and there are no other
+possibilities, so the probabilities had to add up to 100\%.
+It works the same if there are more than two possibilities
+---  if you can classify all possible outcomes into a list
+of mutually exclusive results, then all the probabilities
+have to add up to 1, or 100\%. This property of probabilities
+is known as normalization.
+
+<% marg(20) %>
+<%
+  fig(
+    'globe',
+    %q{%
+      Normalization: the probability of picking land plus
+      the probability of picking water adds up to 1.
+    }
+  )
+%>
+<% end_marg %>
+
+\index{averages}
+<% end_sec('normalization') %>
+
+<% begin_sec("Averages",nil,'averages') %>
+
+Another way of dealing with randomness is to take averages.
+The casino knows that in the long run, the number of times
+you win will approximately equal the number of times you
+play multiplied by the probability of winning. In the slot-machine game
+described on page \pageref{slot-machine-game}, where the probability of winning is 0.001,
+if you spend a week playing, and pay \$2500 to play 10,000
+times, you are likely to win about 10 times $(10,000\times0.001=10)$,
+and collect \$1000. On the average, the casino will make a
+profit of \$1500 from you. This is an example of the following rule.
+
+\index{averages!rule for calculating}
+\begin{lessimportant}[Rule for Calculating Averages]
+If you conduct $N$ identical, statistically independent
+trials, and the probability of success in each trial is $P$,
+then on the average, the total number of successful trials
+will be $NP$. If $N$ is large enough, the relative
+error in this estimate will become small.
+\end{lessimportant}
+
+The statement that the rule for calculating averages gets
+more and more accurate for larger and larger $N$ (known
+popularly as the ``law of averages'') often provides a
+correspondence principle that connects classical and quantum
+physics. For instance, the amount of power produced by a
+nuclear power plant is not random at any detectable level,
+because the number of atoms in the reactor is so large. In
+general, random behavior at the atomic level tends to
+average out when we consider large numbers of atoms, which
+is why physics seemed deterministic before physicists
+learned techniques for studying atoms individually.
+
+<% marg(300) %>
+<% fig('kolmogorov','',{__incl(../../share/quantum/text/kolmogorov)})%>
+<% end_marg %>
+
+We can achieve great precision with averages in quantum
+physics because we can use identical atoms to reproduce
+exactly the same situation many times. If we were betting on
+horses or dice, we would be much more limited in our
+precision. After a thousand races, the horse would be ready
+to retire. After a million rolls, the dice would be worn out.
+
+When the number of trials is large, the accuracy of averages follows
+from the fact that the frequency of an event gets close to its
+probability. This is known as the law of large numbers. 
+
+The sidebar summarizes five basic facts 
+that form the basis of probability theory.
+
+<% self_check('independence',<<-'SELF_CHECK'
+Which of the following things \emph{must} be independent,
+which \emph{could} be independent, and which definitely are
+\emph{not} independent?
+(1) the probability of successfully making two free-throws
+in a row in basketball; (2) the probability that it will rain in London tomorrow and
+the probability that it will rain on the same day in a
+certain city in a distant galaxy; 
+(3) your probability of dying today and of dying tomorrow.
+  SELF_CHECK
+  ) %>
+
+\startdqs
+
+\begin{dq}
+Newtonian physics is an essentially perfect approximation
+for describing the motion of a pair of dice. If Newtonian
+physics is deterministic, why do we consider the result of
+rolling dice to be random?
+\end{dq}
+
+<% marg(-300) %>
+
+<%
+  fig(
+    'dice',
+    %q{Why are dice random?}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}
+Why isn't it valid to define randomness by saying that
+randomness is when all the outcomes are equally likely?
+\end{dq}
+
+\begin{dq}\label{dq:meaning-of-randomness}
+The sequence of digits 121212121212121212 seems clearly
+nonrandom, and 41592653589793 seems random. The latter
+sequence, however, is the decimal form of pi, starting with
+the third digit. There is a story about the Indian
+mathematician Ramanujan, a self-taught prodigy, that a
+friend came to visit him in a cab, and remarked that the
+number of the cab, 1729, seemed relatively uninteresting.
+Ramanujan replied that on the contrary, it was very
+interesting because it was the smallest number that could be
+represented in two different ways as the sum of two cubes.
+The Argentine author Jorge Luis Borges wrote a short story
+called ``The Library of Babel,'' in which he imagined a
+library containing every book that could possibly be written
+using the letters of the alphabet. It would include a book
+containing only the repeated letter ``a;'' all the ancient
+Greek tragedies known today, all the lost Greek tragedies,
+and millions of Greek tragedies that were never actually
+written; your own life story, and various incorrect versions
+of your own life story; and countless anthologies containing
+a short story called ``The Library of Babel.'' Of course, if
+you picked a book from the shelves of the library, it would
+almost certainly look like a nonsensical sequence of letters
+and punctuation, but it's always possible that the seemingly
+meaningless book would be a science-fiction screenplay
+written in the language of a Neanderthal tribe, or the lyrics to a set of
+incomparably beautiful love songs written in a language that
+never existed. In view of these examples, what does it
+really mean to say that something is random?
+\end{dq}
+
+<% end_sec('averages') %>
+
+<% end_sec('basic-prob') %>
+
+<% begin_notes %>
+<% end_notes %>
+
+
+<% begin_hw_sec(vfill:true) %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>
