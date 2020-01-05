@@ -153,14 +153,12 @@ is known as normalization.
     }
   )
 %>
-\spacebetweenfigs
-<% fig('kolmogorov','',{__incl(../../share/quantum/text/kolmogorov)})%>
 <% end_marg %>
 
-\index{averages}
 <% end_sec('normalization') %>
 
 <% begin_sec("Averages",nil,'averages') %>
+\index{averages}
 
 Another way of dealing with randomness is to take averages.
 The casino knows that in the long run, the number of times
@@ -199,19 +197,11 @@ certain city in a distant galaxy;
 \startdqs
 
 \begin{dq}
-Newtonian physics is an essentially perfect approximation
-for describing the motion of a pair of dice. If Newtonian
-physics is deterministic, why do we consider the result of
-rolling dice to be random?
-\end{dq}
-
-
-\begin{dq}
 Why isn't it valid to define randomness by saying that
 randomness is when all the outcomes are equally likely?
 \end{dq}
 
-<% marg() %>
+<% marg(300) %>
 <%
   fig(
     'dice',
@@ -220,35 +210,11 @@ randomness is when all the outcomes are equally likely?
 %>
 <% end_marg %>
 
-\begin{dq}\label{dq:meaning-of-randomness}
-The sequence of digits 121212121212121212 seems clearly
-nonrandom, and 41592653589793 seems random. The latter
-sequence, however, is the decimal form of pi, starting with
-the third digit. There is a story about the Indian
-mathematician Ramanujan, a self-taught prodigy, that a
-friend came to visit him in a cab, and remarked that the
-number of the cab, 1729, seemed relatively uninteresting.
-Ramanujan replied that on the contrary, it was very
-interesting because it was the smallest number that could be
-represented in two different ways as the sum of two cubes.
-The Argentine author Jorge Luis Borges wrote a short story
-called ``The Library of Babel,'' in which he imagined a
-library containing every book that could possibly be written
-using the letters of the alphabet. It would include a book
-containing only the repeated letter ``a;'' all the ancient
-Greek tragedies known today, all the lost Greek tragedies,
-and millions of Greek tragedies that were never actually
-written; your own life story, and various incorrect versions
-of your own life story; and countless anthologies containing
-a short story called ``The Library of Babel.'' Of course, if
-you picked a book from the shelves of the library, it would
-almost certainly look like a nonsensical sequence of letters
-and punctuation, but it's always possible that the seemingly
-meaningless book would be a science-fiction screenplay
-written in the language of a Neanderthal tribe, or the lyrics to a set of
-incomparably beautiful love songs written in a language that
-never existed. In view of these examples, what does it
-really mean to say that something is random?
+\begin{dq}
+Newtonian physics is an essentially perfect approximation
+for describing the motion of a pair of dice. If Newtonian
+physics is deterministic, why do we consider the result of
+rolling dice to be random?
 \end{dq}
 
 <% end_sec('averages') %>
@@ -256,7 +222,7 @@ really mean to say that something is random?
 <% end_sec('basic-prob') %>
 
 
-<% begin_sec("A statistical argument for irreversible processes",4,'stat-irreversible') %>
+<% begin_sec("A statistical argument for irreversible processes",nil,'stat-irreversible') %>
 
 We can now apply our knowledge of probability to begin to flesh out
 our statistical explanation of why certain processes are irreversible.
@@ -270,7 +236,7 @@ reached a state, \figref{free-expansion}/3, that seems like a typical
 one that we would observe if the gas hadn't been prepared in any
 special way.
 
-<% marg(79) %>
+<% marg(10) %>
 <%
   fig(
     'free-expansion',
@@ -347,6 +313,7 @@ toward the big bang.
 
 
 <% begin_sec("Sizes of fluctuations",nil,'fluctuations') %>
+
 In the thought experiment of the atoms bouncing around between the two sides of the box, we've
 considered only two cases: the typical case, where about half the atoms are in each side,
 and the extreme case where all are on one side. The real world isn't like either of these
@@ -356,23 +323,27 @@ the typical sizes of fluctuations. Suppose that we have three atoms in our box, 
 them A, B, and C. Then we can have A on the left or right, which is two possibilities, and
 similarly for B and C. This makes a total of $2\times2\times2=8$ possibilities, which is
 not too many to list by hand. Let $r$ be the number of atoms on the right. Then we have the
-following possibilities:
+eight possibilities listed in table \figref{atoms-list}.
 
-\begin{center}
-\begin{tabular}{lll}
-$r$ & \emph{atoms on the left} & \emph{atoms on the right} \\
-0 & A, B, C & none \\
-1 & B, C & A \\
-1 & A, C & B \\
-1 & A, B & C \\
-2 & A & B, C\\
-2 & B & A, C \\
-2 & C & A, B \\
+<% marg() %>
+<% fig('atoms-list','A list of the possible ways of putting atoms A, B, and C on the two sides of the box.',{'text'=>%q{
+\begin{shaded}
+\begin{tabular}{lp{20mm}p{20mm}}
+$r$ & \emph{atoms on the left} & \emph{atoms on the right} \\\\
+0 & A, B, C & none \\\\
+1 & B, C & A \\\\
+1 & A, C & B \\\\
+1 & A, B & C \\\\
+2 & A & B, C\\\\
+2 & B & A, C \\\\
+2 & C & A, B \\\\
 3 & none & A, B C
 \end{tabular}
-\end{center}
+\end{shaded}
+}}) %>
+<% end_marg %>
 
-\noindent Counting up all the possibilities for each value of $r$, we have the following for
+Counting up all the possibilities for each value of $r$, we have the following for
 the total number of possibilities $M$ at each value of $r$:
 
 \begin{center}
@@ -385,24 +356,36 @@ $r$ & $M$ \\
 \end{tabular}
 \end{center}
 
-\noindent Thus the probability of $r=0$ is $P(0)=1/8$, and so on. As a check on our work, we see
-that the normalization works out, $1/8+3/8+3/8+1/8=1$.
+\noindent Thus the probability of $r=0$ is $P(0)=1/8$, and so on.
+
+As a check on our work, we see
+that the normalization works out, $1/8+3/8+3/8+1/8=1$. Furthermore, it makes
+sense that the probabilities form a symmetric pattern above and below the value $1.5$,
+because our rule for calculating averages predicts that the average value of $r$
+should be $3\times\frac{1}{2}$.
+
+<% marg() %>
+<%
+  fig(
+    'binomial',
+    %q{Probability of finding $r$ out of $n=100$ balls on the right-hand side of the box. Two values that are too
+       small to see are labeled with numbers.}
+  )
+%>
+<% end_marg %>
 
 We see that in our example, the extreme values of $r$ are considerably less likely than the
-extremes, with $P(0)/P(1)=3$. For larger values of $n$, this trend becomes extreme, and the
-typical size of the fluctuations in $r$ become very small compared to $r$. For example,
-when $n=100$, if we count up the total number of ways of getting $r=70$, we find that it's
-$M=29372339821610944823963760$. (Obviously this wasn't done by making a list. For more on how this kind of
-thing is calculated, look up ``binomial coefficient.'') This is certainly a large number, but
-it's not normalized. The \emph{total} number of states for the system is $2^{100}$, which is
-\emph{much} larger. The probability of getting $r=70$ is only
-\begin{equation*}
-  \frac{29372339821610944823963760}{2^{100}} = 2.3\times 10^{-5},
-\end{equation*}
-which is very small. Thus for $n=100$, even a 20\% fluctuation in $r$ is rare. For real-world
+moderate values,  with probabilities that are one third as big. For larger values of $n$, this trend becomes more pronounced, and the
+typical size of the fluctuations in $r$ become very small compared to $r$.
+
+For example,
+when $n=100$, we find (\note{binomial}) that the probability of
+getting $r=70$ is only $2.3\times 10^{-5}$,
+which is very small. Thus for $n=100$, even a 20\% fluctuation in $r$ is rare. In the graph in figure
+\figref{binomial}, not only is the central peak of the bell-shaped curve fairly narrow, but its ``tails'' represent extremely
+small probabilities, as shown by the labels for the invisibly small numbers. And this was only for $n=100$. For real-world
 quantities of atoms, we often have $n\sim 10^{23}$, which means that fluctuations will be
 immeasurably smaller still.
-
 
 <% end_sec('fluctuations') %>
 
@@ -458,14 +441,15 @@ equipartition still holds.
 
 Heat is the random motion of atoms. In a hot substance, the average energy of an atom
 will be higher. Equipartition gives us a natural way to define temperature,
-as something like the average kinetic energy per degree of freedom. Of course, this
+as something like the average energy per degree of freedom. Of course, this
 number comes out to be inconveniently small in SI units, and in any case there was
 a preexisting system of temperature units, so we define a scale of temperature $T$ with
 a fudge factor, notated $k/2$, such that equipartition comes out like this:
 
 \begin{important}[Equipartition]
-When a system has an energy that can be expressed in the way described above (as a sum
-of terms that look like a constant times the square of something), and the system is in equilibrium, each of these
+Suppose that a system has an energy that can be expressed in the way described above (as a sum
+of terms that look like the squares of $x$'s and/or $p$'s), and the system is in equilibrium.
+Then each of these
 degrees of freedom has, on average, an energy equal to $\frac{1}{2}kT$.
 \end{important}
 
@@ -544,7 +528,8 @@ For an ideal gas,
 \end{equation*}
 where $P$ is the pressure, $V$ is the volume, $n$ is the number of molecules, and $T$ is the absolute pressure.
 \end{important}
-(You may have seen this
+
+\noindent (You may have seen this
 written elsewhere as $PV=NRT$, where $N=n/N_A$ is the number of
 moles of atoms, $R=kN_A$, and $N_A=6.0\times10^{23}$, called
 Avogadro's number, is essentially the number of hydrogen
@@ -574,6 +559,38 @@ or a 9\% increase.
 
 <% begin_notes %>
 
+\notetext{binomial}{Calculating probabilities for the two-sided box when $n$ is large}
+\notesummary{We demonstrate techniques that make it possible to calculate these probabilities for large $n$.}
+In the text, we explicitly listed all the possibilities for distributing $n=3$ atoms between the two sides
+of the box. This becomes impractical for large $n$. A mathematical technique that is more practical involves
+the use of numbers called binomial coefficients, which you may have encountered before in the context of algebra. In the case of $n=3$,
+consider what happens when we calculate $(1+x)^3=1+3x+3x^2+x^3$. The set of numbers 1, 3, 3, 1 is the same one we computed
+by listing possibilities for our atoms. The idea is that when we multiply out the cube, we have to go through all the combinations
+of 1's and $x$'s in the three factors. This is why these numbers are called binomial coefficients.\index{binomial coefficient}
+
+The binomial coefficient ${n \choose r}$ is defined as the number of ways of choosing $r$ things from among $n$ objects, with
+the order of the choices not being significant.
+For example, ${3 \choose 2}=3$, because we can choose A and B, B and C, or A and C. (But we don't consider ``A and C'' to be
+a different choice than ``C and A.'')
+
+A binomial coefficient can be computed in terms of the factorial function defined by $m!=1\times2\times\ldots m$,
+as ${n \choose r}=n!/r!(n-r)!$. This works because we have $n$ choices for the first object, $n-1$ for the second, and so on, down to
+$n-r+1$ choices for the final one. The product of these factors is the same as $n!/(n-r)!$. But this number counts possibilities more
+than once if they occur in a different order. Each possibility will be counted $r!$ times. Therefore we divide by $r!$ to get rid of
+the overcounting. For the example in the text, we have
+\begin{equation*}
+  {100 \choose 70} = 29372339821610944823963760,
+\end{equation*}
+which produces the probability
+\begin{equation*}
+  \frac{29372339821610944823963760}{2^{100}} = 2.3\times 10^{-5}.
+\end{equation*}
+
+Calculators and computers will often spit out overflow errors when we ask them to calculate large binomial coefficients
+like this one. A good way of dealing with this problem is to work with the logarithms of the numbers, and to
+employ the approximation $\ln n!\approx n\ln n-n$, known as Stirling's formula, which comes from approximating the sum
+$\sum_{j=1}^n \ln j$ as $\int_1^n \ln x \der x$.\index{Stirling's formula}
+
 \notetext{p-not-v}{Why we use $p$ rather than $v$ for our statistics}
 To describe the state of a system of particles (in one dimension, for simplicity), we could
 give either the list of numbers $(x_1,v_1,x_2,v_2,\ldots)$ or the list
@@ -584,16 +601,18 @@ grid with $x_1$ on one axis and $p_1$ on the other. Then a mathematical result c
 Liouville's theorem shows that a reasonable initial guess about
 probabilities is to assign equal probability to each square on the grid.
 
-Although the full
-statement of Liouville's theorem is beyond the scope of this book, it's not hard to see
-what goes wrong if we try to use velocities instead. When object of different mass collide,
-they cannot transfer energy in an arbitrary way while still obeying conservation of momentum.
-For example, if you throw a golf ball with an energy of 10 joules, and the golf ball hits
-a bowling ball, it is not possible for the bowling ball to absorb all 10 joules of energy
-from the golf ball. The result is that statistically, in such collisions, there is a tendency
-for the less massive object to undergo bigger accelerations and have larger velocities.
-This means that it is not reasonable to assign the same probability per unit \emph{velocity}
-to the golf ball as to the bowling ball.
+Although the full statement of Liouville's theorem is beyond the scope
+of this book, it's not hard to see what goes wrong if we try to use
+velocities instead. When object of different mass collide, they cannot
+transfer energy in an arbitrary way while still obeying conservation
+of momentum.  For example, if you throw a golf ball with an energy of
+10 joules, and the golf ball hits a bowling ball, it is not possible
+for the bowling ball to absorb all 10 joules of energy from the golf
+ball in the form of kinetic energy. The result is that statistically,
+in such collisions, there is a tendency for the less massive object to
+undergo bigger accelerations and have larger velocities.  This means
+that it is not reasonable to assign the same probability per unit
+\emph{velocity} to the golf ball as to the bowling ball.
 
 <% end_notes %>
 

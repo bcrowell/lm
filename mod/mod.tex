@@ -63,6 +63,7 @@
 \brieftocentry[\hfill]{ch:rel-dynamics}{Relativistic energy and momentum} \\
 & \textit{\brieftocpartstyle Thermodynamics}\\
 \brieftocentry[\hfill]{ch:stat}{Statistics and the ideal gas} \\
+\brieftocentry[\hfill]{ch:macro}{The macroscopic picture} \\
 \end{tabular}
 
 
@@ -99,8 +100,9 @@
     \renewcommand{\chapdir}{waves}\include{waves/dtemp}
     \renewcommand{\chapdir}{waves}\include{waves/etemp}
     \renewcommand{\chapdir}{waves}\include{waves/ftemp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
     \renewcommand{\chapdir}{thermo}\include{thermo/atemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+    \renewcommand{\chapdir}{thermo}\include{thermo/btemp}
         \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
 %
     \widelayout

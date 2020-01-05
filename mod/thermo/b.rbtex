@@ -1,0 +1,352 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '08',
+    %q{The macroscopic picture},
+    'ch:macro'
+  )
+%>
+
+In ch.~\ref{ch:stat}, we began our study of thermodynamics by taking an abrupt deep dive into
+the microscopic world. Historically, this was not how the subject was developed, nor do people
+necessarily need to know anything about atoms and molecules when they check the pressure in their
+car's tires or take their child's temperature with a fever thermometer. Actually, the best way to
+operate is to develop some fluency with both the microscopic and macroscopic (i.e., human-scale)
+descriptions, and be able to switch back and forth between them whenever it's convenient.
+
+You've
+already seen an example of the advantages of this ``bilingual'' approach in your study of electromagnetism.
+On the one hand, your ammeter displays certain behavior and obeys certain rules, such as Kirchoff's
+junction rule, which apply equally well regardless of whether we believe that it's effectively
+counting subatomic particles known as electrons. On the other hand, there are times when it is
+far more convenient to able to appeal to our microscopic knowledge. It would have been awkward
+to go through an entire semester of electromagnetism without ever using words like ``particle''
+or ``electron.''
+
+In this chapter, we will investigate some of the purely macroscopic concepts of thermodynamics.
+We start by taking another look at temperature and pressure.
+Pressure and temperature were fairly well understood in the
+age of Newton and Galileo, hundreds of years before there
+was any firm evidence that atoms and molecules even existed.
+
+Unlike the conserved quantities such as mass-energy, momentum,
+and angular momentum, neither pressure nor temperature is
+additive. Two cups of coffee have twice the heat
+energy of a single cup, but they do not have twice the
+temperature. Likewise, the painful pressure on your eardrums
+at the bottom of a pool is not affected if you insert or
+remove a partition between the two halves of the pool.
+
+We restrict ourselves to a discussion of pressure in fluids
+at rest and in equilibrium. In physics, the term ``fluid''
+is used to mean either a gas or a liquid. The important
+feature of a fluid can be demonstrated by comparing with a
+cube of jello on a plate. The jello is a solid. If you shake
+the plate from side to side, the jello will respond by
+shearing, i.e., by slanting its sides, but it will tend to
+spring back into its original shape. A solid can sustain
+shear forces, but a fluid cannot. A fluid does not resist a
+change in shape unless it involves a change in volume.
+
+<% begin_sec("Pressure") %>
+
+If you're at the bottom of a pool, you can't relieve the
+pain in your ears by turning your head. The water's
+force on your eardrum is always the same, and is always
+perpendicular to the surface where the eardrum contacts the water. If your
+ear is on the east side of your head, the water's force is
+to the west. If you keep your ear in the same spot while turning
+around so your ear is on the north, the force will still be the same in
+magnitude, and it will change its direction so that it is
+still perpendicular to the eardrum: south. This shows that
+pressure has no direction in space, i.e., it is a scalar. The direction
+of the force is determined by the orientation of the surface on which
+the pressure acts, not by the pressure itself. A fluid flowing over a surface can also
+exert frictional forces, which are parallel to the surface, but the present
+discussion is restricted to fluids at rest.
+
+Experiments also show that a fluid's force on a surface is
+proportional to the surface area. The vast force of the water
+behind a dam, for example, in proportion to the
+dam's great surface area. (The bottom of the dam experiences
+a higher proportion of its force.)
+
+Based on these experimental results, it appears that the
+useful way to define pressure is as follows.
+The pressure of a fluid at a given point is defined as $F_\perp/A$,
+where $A$ is the area of a small surface inserted in the fluid
+at that point, and $F_\perp$ is the component of the fluid's force on
+the surface which is perpendicular to the surface.
+(In the case of a moving fluid,
+fluid friction forces can act parallel to the
+surface, but we're only dealing with stationary fluids, so there is
+only an $F_\perp$.)
+
+<% marg(30) %>
+<%
+  fig(
+    'pressuregauge',
+    %q{%
+      A simple pressure gauge consists of a cylinder open at one
+      end, with a piston and a spring inside. The depth to which
+      the spring is depressed is a measure of the pressure. To
+      determine the absolute pressure, the air needs to be pumped
+      out of the interior of the gauge, so that there is no air
+      pressure acting outward on the piston. In many practical
+      gauges, the back of the piston is open to the atmosphere, so
+      the pressure the gauge registers equals the pressure of the
+      fluid minus the pressure of the atmosphere.
+    }
+  )
+%>
+<% end_marg %>
+
+This is essentially how a pressure gauge works. The reason
+that the surface must be small is so that there will not be
+any significant difference in pressure between one part of it
+and another part.  The SI units
+of pressure are evidently $\nunit/\munit^2$, and this combination
+can be abbreviated as the pascal, 1 Pa=1 $\nunit/\munit^2$.\index{pascal!unit} The
+pascal turns out to be an inconveniently small unit, so car
+tires, for example, normally have pressures imprinted on
+them in units of kilopascals.
+
+\begin{eg}{Pressure in U.S. units}
+In U.S. units, the unit of force is the pound, and the unit
+of distance is the inch. The unit of pressure is therefore
+pounds per square inch, or p.s.i. (Note that the pound is
+not a unit of mass.)
+\end{eg}
+
+\begin{eg}{Atmospheric pressure in U.S. and metric units}
+\egquestion
+A figure that many people in the U.S. remember is
+that atmospheric pressure is about 15 pounds per square
+inch. What is this in metric units?
+
+\eganswer
+\begin{align*}
+        (\text{15 lb})/(\text{1 in}^2)
+                &= \frac{68\ \nunit}{(0.0254\ \munit)^2}\\
+                 &=   1.0\times10^5\ \nunit/\munit^2 \\
+                 &=  100\ \zu{kPa}
+\end{align*}
+\end{eg}
+
+<% begin_sec("Only pressure differences are normally significant.") %>
+
+If you spend enough time on an airplane,
+the pain in your ears subsides. This is because your body
+has gradually been able to admit more air into the cavity
+behind the eardrum. Once the pressure inside is equalized
+with the pressure outside, the inward and outward forces on
+your eardrums cancel out, and there is no physical sensation
+to tell you that anything unusual is going on. For this
+reason, it is normally only pressure differences that have
+any physical significance. Thus deep-sea fish are perfectly
+healthy in their habitat because their bodies have enough
+internal pressure to cancel the pressure from the water in
+which they live; if they are caught in a net and brought to
+the surface rapidly, they explode because their internal
+pressure is so much greater than the low pressure outside.
+
+\begin{eg}{Getting killed by a pool pump}
+\egquestion
+My house has a pool, which I maintain myself. A
+pool always needs to have its water circulated through a
+filter for several hours a day in order to keep it clean.
+The filter is a large barrel with a strong clamp that holds
+the top and bottom halves together. My filter has a
+prominent warning label that warns me not to try to open the
+clamps while the pump is on, and it shows a cartoon of a
+person being struck by the top half of the pump. The
+cross-sectional area of the filter barrel is 0.25 $\zu{m}^2$. Like
+most pressure gauges, the one on my pool pump actually reads
+the difference in pressure between the pressure inside the
+pump and atmospheric pressure. The gauge reads 90 kPa. What
+is the force that is trying to pop open the filter?
+
+\eganswer
+If the gauge told us the absolute pressure of the
+water inside, we'd have to find the force of the water
+pushing outward and the force of the air pushing inward, and
+subtract in order to find the total force. Since air
+surrounds us all the time, we would have to do such a
+subtraction every time we wanted to calculate anything
+useful based on the gauge's reading. The manufacturers of
+the gauge decided to save us from all this work by making it
+read the difference in pressure between inside and outside,
+so all we have to do is multiply the gauge reading by the
+cross-sectional area of the filter:
+\begin{align*}
+         F         &=  PA\\
+                        &=  (90\times10^3\ \nunit/\munit^2)( 0.25\ \munit^2)\\                        &= 22000\ \nunit
+\end{align*}
+That's a lot of force!
+\end{eg}
+
+The word ``suction'' and other related words contain a
+hidden misunderstanding related to this point about pressure
+differences. When you suck
+water up through a straw, there is nothing in your mouth
+that is attracting the water upward. The force that lifts
+the water is from the pressure of the water in the cup. By
+creating a partial vacuum in your mouth, you decreased the
+air's downward force on the water so that it no longer
+exactly canceled the upward force.
+
+<% end_sec() %>
+
+<% begin_sec("Variation of pressure with depth") %>
+
+The pressure within a fluid in equilibrium can only depend
+on depth, due to gravity. If the pressure could vary from
+side to side, then a piece of the fluid in between, \figref{sidetoside},
+would be subject to unequal forces from the parts of the
+fluid on its two sides. Since fluids do not exhibit shear
+forces, there would be no other force that could keep this
+piece of fluid from accelerating. This contradicts the
+assumption that the fluid was in equilibrium.
+
+<% marg(0) %>
+<%
+  fig(
+    'sidetoside',
+    %q{%
+      This doesn't happen. If pressure could vary horizontally
+      in equilibrium, the cube of water would accelerate
+      horizontally. This is a contradiction, since we assumed the
+      fluid was in equilibrium.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'funkycontainer',
+    %q{%
+      The pressure is the same at all the points marked with
+      dots.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'toptobottom',
+    %q{%
+      This does happen. The sum of the forces from the
+      surrounding parts of the fluid is upward, canceling the
+      downward force of gravity.
+    }
+  )
+%>
+<% end_marg %>
+
+<% self_check('solidspressureside',<<-'SELF_CHECK'
+How does this proof fail for solids?
+  SELF_CHECK
+  ) %>
+
+To find the variation with depth, we consider the vertical
+forces acting on a tiny, imaginary cube of the fluid having infinitesimal
+height $\der y$ and areas $\der A$ on the top and bottom. Using positive
+numbers for upward forces, we have
+\begin{align*}
+        P_{bottom}\der A - P_{top}\der A - F_g  =  0\eqquad.
+\end{align*}
+The weight of the fluid is $F_g = mg = \rho Vg = \rho\der A\der y\:g$, where $\rho$ is
+the density of the fluid, so the difference in pressure is
+\begin{multline*}
+        \der P  =  -\rho g \der y\eqquad. 
+\hfill\shoveright{\text{[variation in pressure with depth for}}\\
+\hfill\shoveright{\text{a fluid of density $\rho$ in equilibrium;}}\\
+\hfill\shoveright{\text{positive $y$ is up.]}}
+\end{multline*}
+A more elegant way of writing this is in terms
+of a dot product, $\der P = \rho\vc{g}\cdot\der\vc{y}$, which automatically
+takes care of the plus or minus sign, depending on the relative
+directions of the \vc{g} and $\der\vc{y}$ vectors, and avoids
+any requirements about the coordinate system.
+
+The factor of $\rho$ explains why we notice the difference in
+pressure when diving 3 m down in a pool, but not when going
+down 3 m of stairs. The equation only tells us the
+difference in pressure, not the absolute pressure. The
+pressure at the surface of a swimming pool equals the
+atmospheric pressure, not zero, even though the depth is
+zero at the surface. The blood in your body does not even
+have an upper surface.
+
+In cases where $g$ and $\rho$ are independent of depth, we can
+integrate both sides of the equation to get everything in terms of
+finite differences rather than differentials: $\Delta P  =  -\rho g \Delta y$.
+
+<% self_check('pressureconst',<<-'SELF_CHECK'
+In which of the following situations is the equation 
+$\Delta  P  =  -\rho  g \Delta  y$ valid? Why?\\
+(1) difference in pressure between a tabletop and the feet
+(i.e., predicting the pressure of the feet on the floor)\\
+(2) difference in air pressure between the top and bottom of
+a tall building\\
+(3) difference in air pressure between the top and bottom of
+Mt. Everest\\
+(4) difference in pressure between the top of the earth's
+mantle and the center of the earth\\
+(5) difference in pressure between the top and bottom of an
+airplane's wing
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Pressure of lava underneath a volcano}
+\egquestion
+A volcano has just finished erupting, and a pool
+of molten lava is lying at rest in the crater. The lava has
+come up through an opening inside the volcano that connects
+to the earth's molten mantle. The density of the lava is 4.1
+$\zu{g}/\zu{cm}^3$. What is the pressure in the lava underneath the base
+of the volcano, 3000 m below the surface of the pool?
+
+\eganswer
+\begin{align*}
+        \Delta P         &=  \rho g\Delta y\\
+                        &= ( 4.1\times10^3\ \zu{kg}/\zu{m}^3)
+                                        ( 9.8\ \munit/\sunit^2)(3000\ \zu{m})\\
+                        &= 1.2\times10^8\ \zu{Pa}
+\end{align*}
+This is the difference between the pressure we want to find and
+atmospheric pressure at the surface. The latter, however, is tiny compared
+to the $\Delta P$ we just calculated, so what we've found is essentially the
+pressure, $P$.
+\end{eg}
+
+\begin{eg}{Atmospheric pressure}
+Gases, unlike liquids, are quite compressible, and it follows from the ideal gas law that, at a given temperature, the
+density of a gas is approximately proportional to the pressure. To keep the writing simple, let's just call the
+constant of proportionality $\beta$, $\rho= \beta P$. Using this fact, we can find the variation of
+atmospheric pressure with altitude, assuming constant temperature:
+\begin{align*}
+        \der P &= -\rho g\der y = - \beta Pg\der y\\
+        \frac{\der P}{ P} &= - \beta g\der y\\
+        \zu{ln}\: P &= - \beta gy+\text{constant} \qquad \text{[integrating both sides]}\\
+         P &= (\text{constant}) e^{- \beta gy} \qquad \text{[exponentiating both sides]}
+\end{align*}
+Pressure falls off exponentially with height. There is no sharp cutoff to the
+atmosphere, but the exponential factor gets extremely small by the time you're
+ten or a hundred miles up.
+\end{eg}
+
+ % 
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+

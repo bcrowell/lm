@@ -598,9 +598,9 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second; label is 'foo2', not 'foo-2'
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
-                           # For an example of how to do this, see SN ch. 3, "Gory details of the proof..."
-                           # Tables and align* don't work in text, nor does \\, but paragraph breaks work;
-                           # may be able to get around this with minipage.
+                           # For an example of how to do this, Mod 7. Tables do work (as in that example).
+                           # Align* doesn't work in text, nor does \\, but paragraph breaks work;
+                           # may be able to get around this with minipage. To make it gray bg, use shaded environment.
     'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
     'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
@@ -741,7 +741,8 @@ def fig_print(name,caption,options,dir)
       spit("\\startmargintextbox{#{name}}{#{caption}}\n#{text}\n\\finishmargintextbox{#{name}}\n")
     else
       if has_caption then m = "finishtextfig" else m = "finishtextfignocaption" end
-      spit("\\starttextfig{#{name}}#{text}\n\\#{m}{#{name}}{%\n#{caption}}\n")
+      spit("\\starttextfig{#{name}}#{text}\n\\vspace{-10mm}\\#{m}{#{name}}{%\n#{caption}}\n")
+      # The -10mm is ad hoc. If it looks wrong in the output, can put an additional positive or negative vspace in the text itself.
     end
   end
   #----------------------- native ----------------------
