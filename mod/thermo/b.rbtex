@@ -51,7 +51,7 @@ spring back into its original shape. A solid can sustain
 shear forces, but a fluid cannot. A fluid does not resist a
 change in shape unless it involves a change in volume.
 
-<% begin_sec("Pressure") %>
+<% begin_sec("Pressure",nil,'pressure') %>
 
 If you're at the bottom of a pool, you can't relieve the
 pain in your ears by turning your head. The water's
@@ -347,6 +347,315 @@ ten or a hundred miles up.
 
 <% end_sec() %>
 
+<% end_sec('pressure') %>
+
+
+<% begin_sec("Temperature",0,'temperature') %>
+
+<% begin_sec("Thermal equilibrium") %>
+
+We saw in sec.~\ref{sec:equipartition}, p.~\pageref{sec:equipartition},
+that for a system in equilibrium, we can define temperature is a measure
+of the average energy $\bar{E}$ per degree of freedom, $\bar{E}=\frac{1}{2}kT$.
+But when we do macroscopic measurements, we never explicitly see microscopic
+degrees of freedom such as the component $p_x$ of a particular atom's momentum
+in the $x$ direction. We can, however, say that
+temperature is a measure of how
+concentrated the heat energy is in an object. A large,
+massive object with very little heat energy in it has a low
+temperature. Of course, we can keep in mind our microscopic insight that
+the size and mass of the object matter because they relate to the number
+of microscopic degrees of freedom that it has.
+
+If we're not going to focus on those microscopic degrees of freedom, then
+we should admit that we haven't really defined anything by saying that
+temperature measures ``how concentrated'' the energy is. A good way of
+handling this is to use an  operational definition, i.e.,
+definition of how to measure the thing in question. This is effectively
+what we did in ch.~\ref{ch:time}, where we effectively defined time as
+what a clock measures.\index{operational definition}
+
+So how do
+we measure temperature? One common feature of all
+temperature-measuring devices is that they must be left for
+a while in contact with the thing whose temperature is being
+measured. When you take your temperature with a fever
+thermometer, you are waiting for the mercury inside to come
+up to the same temperature as your body. The thermometer
+actually tells you the temperature of its own working fluid
+(in this case the mercury). In general, the idea of
+temperature depends on the concept of thermal equilibrium.
+When you mix cold eggs from the refrigerator with flour that
+has been at room temperature, they rapidly reach a
+compromise temperature. What determines this compromise
+temperature is conservation of energy, and the amount of
+energy required to heat or cool each substance by one
+degree. But without even having constructed a temperature
+scale, we can see that the important point is the phenomenon
+of thermal equilibrium itself: two objects left in contact
+will approach the same temperature. We also assume that if
+object A is at the same temperature as object B, and B is at
+the same temperature as C, then A is at the same temperature
+as C. This statement is sometimes known as the zeroth law of
+thermodynamics,\index{thermodynamics!zeroth law of}\label{zeroth-law-of-thermodynamics}
+so called because after the first, second, and third
+laws had been developed, it was realized that there was
+another law that was even more fundamental.
+
+<% marg(10) %>
+<%
+  fig(
+    'otters',
+    %q{%
+      Thermal equilibrium can be prevented. Otters
+      have a coat of fur that traps air bubbles for insulation.
+      If a swimming otter was in thermal equilibrium with cold water, it would be dead.
+      Heat is still conducted from the otter's body to the water, but much more slowly than
+      it would be in a warm-blooded animal that didn't have this special adaptation.
+    }
+  )
+%>
+<% end_marg %>
+
+Although we can understand the zeroth law and the operational definition of
+temperature without appealing to anything microsopic, they are compatible
+with the microscopic picture established in ch.~\ref{ch:stat}. Equilibrium
+occurs when the energy per degree of freedom --- or, roughly speaking, the energy
+per atom --- is equalized between the two
+objects, and a thermometer works by equilibrating its own working fluid with
+the thing being measured.
+
 <% end_sec() %>
 
+<% begin_sec("Thermal expansion") %>
 
+The familiar mercury thermometer operates on the principle
+that the mercury, its working fluid, expands when heated and
+contracts when cooled. In general, all substances expand and
+contract with changes in temperature. The zeroth law of
+thermodynamics guarantees that we can construct a
+comparative scale of temperatures that is independent of
+what type of thermometer we use. If a thermometer gives a
+certain reading when it's in thermal equilibrium with
+object A, and also gives the same reading for object B, then
+A and B must be the same temperature, regardless of the
+details of how the thermometers works.
+
+What about constructing a temperature scale in which every
+degree represents an equal step in temperature? The Celsius
+scale has 0 as the freezing point of water and 100 as its
+boiling point. The hidden assumption behind all this is that
+since two points define a line, any two thermometers that
+agree at two points must agree at all other points. In
+reality if we calibrate a mercury thermometer and an alcohol
+thermometer in this way, we will find that a graph of one
+thermometer's reading versus the other is not a perfectly
+straight $y=x$ line. The subtle inconsistency becomes a
+drastic one when we try to extend the temperature scale
+through the points where mercury and alcohol boil or freeze.
+Gases, however, are much more consistent among themselves in
+their thermal expansion than solids or liquids, and the
+noble gases like helium and neon are more consistent with
+each other than gases in general. Continuing to search for
+consistency, we find that noble gases are more consistent
+with each other when their pressure is very low.
+
+As an idealization, we imagine a gas in which the atoms interact only
+with the sides of the container, not with each other. Such a gas is perfectly
+nonreactive (as the noble gases very nearly are), and never
+condenses to a liquid (as the noble gases do only at
+extremely low temperatures). Its atoms take up a negligible
+fraction of the available volume. Any gas can be made to behave very much
+like this if the pressure is extremely low, so that the atoms hardly ever
+encounter each other. Such a gas is called an ideal gas, and we define
+the Celsius scale in terms of the volume of the gas in a thermometer
+whose working substance is an ideal gas maintained at a
+fixed (very low) pressure, and which is calibrated at 0 and
+100 degrees according to the melting and boiling points of
+water. The Celsius scale is not just a comparative scale but
+an additive one as well: every step in temperature is equal,
+and it makes sense to say that the difference in temperature
+between 18 and $28\degcunit$ is the same as the difference between 48
+and 58.
+
+<% marg(90) %>
+<%
+  fig(
+    'gasthermometer',
+    %q{%
+      A simplified version of an ideal gas thermometer. The
+      whole instrument is allowed to come into thermal equilibrium
+      with the substance whose temperature is to be measured, and
+      the mouth of the cylinder is left open to standard pressure.
+      The volume of the noble gas gives an indication of
+      temperature.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'abszeroextrap',
+    %q{%
+      The volume of 1 kg of neon gas as a function of
+      temperature (at standard pressure). Although neon would
+      actually condense into a liquid at some point, extrapolating
+      the graph gives to zero volume gives the same temperature as
+      for any other gas: absolute zero.
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+
+<% begin_sec("Absolute zero and the kelvin scale") %>
+
+We find that if we extrapolate a graph of volume versus
+temperature, the volume becomes zero at nearly the same
+temperature for all gases: $-273\degcunit$. Real gases will all
+condense into liquids at some temperature above this, but an
+ideal gas would achieve zero volume at this temperature,
+known as absolute zero. At the macroscopic level, this is
+the justification for constructing the kelvin scale, introduced on p.~\pageref{kelvin}
+\index{temperature!macroscopic definition}
+\index{thermometer}
+
+Scientists use
+the celsius scale only for comparisons or when a change in
+temperature is all that is required for a calculation. Only
+on the kelvin scale does it make sense to discuss ratios of
+temperatures, e.g., to say that one temperature is twice as
+hot as another.
+
+\begin{eg}{Which temperature scale to use}
+\egquestion
+You open an astronomy book and encounter the
+equation
+\begin{equation*}
+        (\text{light emitted}) = (\text{constant}) \times  T^ 4
+\end{equation*}
+for the light emitted by a star as a function of its surface
+temperature. What temperature scale is implied?
+
+\eganswer
+The equation tells us that doubling the
+temperature results in the emission of 16 times as much
+light. Such a ratio only makes sense if the Kelvin scale is
+used.
+\end{eg}
+
+<% end_sec() %>
+
+<% end_sec('temperature') %>
+
+<% begin_sec("Heat",0,'heat') %>
+\index{heat}
+``Heat,'' notated $Q$, is used in thermodynamics as a term for an
+amount of thermal energy that is transferred. When you put a bite of food in your mouth that is too hot,
+the pain is caused by the heat transferred from the food to your
+mouth. People discussing the weather may say ``What about this heat
+today?'' or ``What about this temperature today?'' as if the words
+were synonyms, but to a physicist they are distinct. Temperature is
+not additive, but heat is: two sips of hot coffee have the same
+temperature as one, but two sips will transfer twice the heat to your
+mouth. Temperature is measured in degrees, heat in joules. 
+
+If I give you an object, you can measure its temperature ---
+physicists call temperature a ``property of state,'' i.e., you can
+tell what it is from the current state of the object. Heat is a
+description of a \emph{process} of energy transfer, not a property of
+state. 
+
+It's relatively easy to detect and measure a \emph{transfer} of thermal energy
+(the hot bite of food), but to say how much thermal energy an object
+\emph{has} is much harder --- sometimes even impossible in principle.
+
+Heat is distinguished from mechanical work because work is the transfer of energy by a
+macroscopically measurable force, e.g., the force of a baseball bat on
+the ball. No such force is needed in order to melt an ice cube; the
+forces are in microscopic collisions of water molecules with ice molecules.
+
+Heat, like the flow of money or water, is a signed quantity, but the
+sign is a matter of definition. The bank's debit 
+is the customer's withdrawal. It is an arbitrary choice whether to
+call $Q$ positive when it flows from object A to object B or from B to
+A, and likewise for the work $W$.  Similar choices arise in the
+description of flowing fluids  or electric currents.
+We will usually adopt
+definitions such that as many heats and works as possible are
+positive. So by our definition, a cute 19th-century steam locomotive takes
+in positive heat from its boiler, does positive work to pull the cars,
+and spews out positive heat through its smokestack.
+When only a single object is being discussed, such as a cylinder of
+compressed air, we define a heat input as positive and a work output
+as positive, which is again in accord with the picture of the cute steam engine.
+No universally consistent convention is possible, since, e.g., if objects A, B,
+and C all interact, we will always have opposite signs for A's work on B and B's
+work on A, etc.\label{thermo-sign-conventions}
+
+\startdqs
+
+\begin{dq}\label{dq:heat-cond-propto}
+Figure \subfigref{dq-heat-cond-propto}{1} shows objects 1 and 2, each with a certain temperature $T$
+and a certain amount of thermal energy $E$. They are connected by a
+thin rod, so that eventually they will reach thermal equilibrium.
+We expect that the rate at which heat is transferred into object 1
+will be given by some equation $\der E_1/\der t=k(\ldots)$, where
+$k$ is a positive constant of proportionality and ``$\ldots$'' is some expression that depends
+on the temperatures. Suppose that the following six forms are
+proposed for the ``\ldots'' in $\der E_1/\der t=k(\ldots)$.
+\begin{enumerate}
+\item $T_1$
+\item $T_2$
+\item $T_1-T_2$
+\item $T_2-T_1$
+\item $T_1/T_2$
+\item $T_2/T_1$
+\end{enumerate}
+Give physical reasons why five of these are not possible.
+\end{dq}
+
+<% marg(100) %>
+<%
+  fig(
+    'dq-heat-cond-propto',
+    %q{%
+      Discussion questions \ref{dq:heat-cond-propto}-\ref{dq:heat-cond-series}.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{dq}
+How should the rate of heat conduction in \subfigref{dq-heat-cond-propto}{2} compare with
+the rate in \subfigref{dq-heat-cond-propto}{1}?
+\end{dq}
+
+\begin{dq}\label{dq:heat-cond-series}
+The example in \subfigref{dq-heat-cond-propto}{3} is different from the preceding ones
+because when we add the third object in the middle, we don't necessarily know the intermediate temperature. We could
+in fact set up this third object with any desired initial temperature.
+Suppose, however, that the flow of heat is \emph{steady}. For example, the $36\degunit$ object could
+be a human body, the $0\degunit$ object could be the air on a cold day, and the object in between could
+be a simplified physical model of the insulation provided by clothing or
+body fat. Under this assumption, what is the intermediate temperature?
+How does the rate of heat conduction compare in the two cases?
+\end{dq}
+
+\begin{dq}
+Based on the conclusions of questions \ref{dq:heat-cond-propto}-\ref{dq:heat-cond-series}, how should the rate
+of heat conduction through an object depend on its length and cross-sectional area? If all the linear dimensions
+of the object are doubled, what happens to the rate of heat conduction through it? How would this apply if we
+compare an elephant to a shrew?
+\end{dq}
+
+<% end_sec %>
+
+<% begin_hw_sec(vfill:true) %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>
