@@ -1461,10 +1461,10 @@ which ones keep the same entropy. During which of the four strokes do these chan
 To understand why the second law of thermodynamics is always true, we need
 to see what entropy really means at the microscopic level. An example that is
 easy to visualize is the free expansion of a monoatomic
-gas. Figure \figref{freeexpansion}/1 shows a box
+gas. Figure \figref{free-expansion}/1 shows a box
 in which all the atoms of the gas are confined on one side. We very quickly remove
-the barrier between the two sides, \figref{freeexpansion}/2, and some time later, the
-system has reached an equilibrium, \figref{freeexpansion}/3. Each snapshot
+the barrier between the two sides, \figref{free-expansion}/2, and some time later, the
+system has reached an equilibrium, \figref{free-expansion}/3. Each snapshot
 shows both the positions and the momenta of the atoms, which is enough
 information to allow us in theory to extrapolate the behavior of the system into the future,
 or the past. However, with a realistic number of atoms, rather than just six, this
@@ -1476,7 +1476,7 @@ later on.}
 <% marg(79) %>
 <%
   fig(
-    'freeexpansion',
+    'free-expansion',
     %q{A gas expands freely, doubling its volume.}
   )
 %>
@@ -1485,18 +1485,18 @@ later on.}
 
 <%
   fig(
-    'fluctuation',
+    'fluctuation-in-free-expansion',
     %q{%
       An unusual fluctuation in the distribution of the atoms
       between the two sides of the box. There has been no external manipulation
-      as in figure \figref{freeexpansion}/1.
+      as in figure \figref{free-expansion}/1.
     }
   )
 %>
 <% end_marg %>
 
 But suppose
-we show figure \figref{freeexpansion}/2 to a friend without any further information,
+we show figure \figref{free-expansion}/2 to a friend without any further information,
 and ask her what she can say about the system's behavior in the future. She doesn't
 know how the system was prepared. Perhaps, she thinks, it was just a strange
 coincidence that all the atoms happened to be in the right half of the box
@@ -1508,19 +1508,19 @@ happened in the past. She doesn't know about the barrier, so as far as she's con
 extrapolation into the past is exactly the same kind of problem as extrapolation into
 the future. We just have to imagine reversing all the momentum vectors, and then
 all our reasoning works equally well for backwards extrapolation. She would conclude,
-then, that the gas in the box underwent an unusual fluctuation, \figref{fluctuation},
+then, that the gas in the box underwent an unusual fluctuation, \figref{fluctuation-in-free-expansion},
 and she knows that
 the fluctuation is very unlikely to exist very far into the future, or to have existed very
 far into the past.
 
-What does this have to do with entropy? Well, state \figref{freeexpansion}/3
-has a greater entropy than state \figref{freeexpansion}/2. It would be easy to
-extract mechanical work from \figref{freeexpansion}/2, for instance by letting
+What does this have to do with entropy? Well, state \figref{free-expansion}/3
+has a greater entropy than state \figref{free-expansion}/2. It would be easy to
+extract mechanical work from \figref{free-expansion}/2, for instance by letting
 the gas expand while pressing on a piston rather than simply releasing it suddenly
-into the void. There is no way to extract mechanical work from state \figref{freeexpansion}/3.
+into the void. There is no way to extract mechanical work from state \figref{free-expansion}/3.
 Roughly speaking, our microscopic description of entropy relates to the \emph{number
-of possible states}. There are a lot more states like \figref{freeexpansion}/3 than there
-are states like \figref{freeexpansion}/2. Over long enough periods of time --- long
+of possible states}. There are a lot more states like \figref{free-expansion}/3 than there
+are states like \figref{free-expansion}/2. Over long enough periods of time --- long
 enough for equilibration to occur --- the system gets mixed up, and is about equally
 likely to be in any of its possible states, regardless of what state it was initially in.
 We define some number that describes an interesting property of the whole system,
@@ -1555,7 +1555,7 @@ a low-entropy value like $R=0$ or $R=6$.
 There is a problem with making this description of entropy into a mathematical
 definition. The problem is that it refers to the number of possible states, but that number
 is theoretically infinite. To get around the problem, we coarsen our description of the
-system. For the atoms in figure \figref{freeexpansion}, we don't really care exactly where
+system. For the atoms in figure \figref{free-expansion}, we don't really care exactly where
 each atom is. We only care whether it is in the right side or the left side. If a particular atom's
 left-right position is described by a coordinate $x$, then the set of all possible values
 of $x$ is a line segment along the $x$ axis, containing an infinite number of points.
@@ -1976,7 +1976,7 @@ Boltzmann constant $k$). We can conclude that each atom in the solid,
 on average, has $\frac{1}{2}kT$ of energy in the electrical energy due
 to its $x$ displacement along the $x$ axis, and equal amounts for $y$
 and $z$. Thus for a solid, we expect there to be a total of \emph{six}
-energies per atom (three kinetic energies and six interaction energies),
+energies per atom (three kinetic energies and three interaction energies),
 each of which carries an average energy $\frac{1}{2}kT$, for a total
 of $3kT$. In other words, a solid should have twice the heat capacity
 of a monoatomic gas. This was discovered empirically by Dulong and Petit
@@ -2157,8 +2157,8 @@ Now that we have a microscopic understanding of entropy, what does that tell us 
 the second law of thermodynamics? The second law
 defines a forward direction to time, ``time's arrow.'' The microscopic
 treatment of entropy, however, seems to have mysteriously sidestepped
-that whole issue. A graph like figure \figref{fluctuation} on page
-\pageref{fig:fluctuation}, showing a fluctuation
+that whole issue. A graph like figure \figref{fluctuation-in-free-expansion} on page
+\pageref{fig:fluctuation-in-free-expansion}, showing a fluctuation
 away from equilibrium, would look just as natural if we flipped it over to
 reverse the direction of time. After all, the basic laws of physics are
 conservation laws, which don't distinguish between past and future.

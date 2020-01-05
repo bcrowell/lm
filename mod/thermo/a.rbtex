@@ -2,10 +2,12 @@
   require "../eruby_util.rb"
 %>
 
+<% part_title("Thermodynamics") %>
+
 <%
   chapter(
     '07',
-    %q{Statistics and the ideal gas},
+    %q{Statistics, equilibrium, and energy sharing},
     'ch:stat',
     %q{A flame is used to fill a balloon with hot air.},
     {'opener'=>'hot-air-balloon-large'}
@@ -23,11 +25,16 @@
 
 Looking at the two drawings in figure \figref{humpty-dumpty}, you
 shouldn't have any trouble figuring out which came first in time and
-which happened later. As we saw in sec.~\ref{sec:t-symm},
+which happened later. This process is \emph{irreversible:\/} eggs don't
+unscamble.
+
+As we saw in sec.~\ref{sec:t-symm},
 p.~\pageref{sec:t-symm}, this kind of seemingly common-sense
 observation is hard to explain when we consider that the laws of
-physics are completely symmetric with respect to time-reversal.  There
-is something going on that has to do with randomness. Scrambling an
+physics are completely symmetric with respect to time-reversal. Why,
+then, aren't all physical processes \emph{reversible}?
+
+There is something going on that has to do with randomness. Scrambling an
 egg seems to randomize it, in the same way that shaking up a box full
 of pennies makes it into some random combination of heads and tails.
 If someone had carefully arranged the pennies in the box so that they
@@ -146,6 +153,8 @@ is known as normalization.
     }
   )
 %>
+\spacebetweenfigs
+<% fig('kolmogorov','',{__incl(../../share/quantum/text/kolmogorov)})%>
 <% end_marg %>
 
 \index{averages}
@@ -172,33 +181,6 @@ will be $NP$. If $N$ is large enough, the relative
 error in this estimate will become small.
 \end{lessimportant}
 
-The statement that the rule for calculating averages gets
-more and more accurate for larger and larger $N$ (known
-popularly as the ``law of averages'') often provides a
-correspondence principle that connects classical and quantum
-physics. For instance, the amount of power produced by a
-nuclear power plant is not random at any detectable level,
-because the number of atoms in the reactor is so large. In
-general, random behavior at the atomic level tends to
-average out when we consider large numbers of atoms, which
-is why physics seemed deterministic before physicists
-learned techniques for studying atoms individually.
-
-<% marg(300) %>
-<% fig('kolmogorov','',{__incl(../../share/quantum/text/kolmogorov)})%>
-<% end_marg %>
-
-We can achieve great precision with averages in quantum
-physics because we can use identical atoms to reproduce
-exactly the same situation many times. If we were betting on
-horses or dice, we would be much more limited in our
-precision. After a thousand races, the horse would be ready
-to retire. After a million rolls, the dice would be worn out.
-
-When the number of trials is large, the accuracy of averages follows
-from the fact that the frequency of an event gets close to its
-probability. This is known as the law of large numbers. 
-
 The sidebar summarizes five basic facts 
 that form the basis of probability theory.
 
@@ -223,8 +205,13 @@ physics is deterministic, why do we consider the result of
 rolling dice to be random?
 \end{dq}
 
-<% marg(-300) %>
 
+\begin{dq}
+Why isn't it valid to define randomness by saying that
+randomness is when all the outcomes are equally likely?
+\end{dq}
+
+<% marg() %>
 <%
   fig(
     'dice',
@@ -232,11 +219,6 @@ rolling dice to be random?
   )
 %>
 <% end_marg %>
-
-\begin{dq}
-Why isn't it valid to define randomness by saying that
-randomness is when all the outcomes are equally likely?
-\end{dq}
 
 \begin{dq}\label{dq:meaning-of-randomness}
 The sequence of digits 121212121212121212 seems clearly
@@ -273,7 +255,346 @@ really mean to say that something is random?
 
 <% end_sec('basic-prob') %>
 
+
+<% begin_sec("A statistical argument for irreversible processes",4,'stat-irreversible') %>
+
+We can now apply our knowledge of probability to begin to flesh out
+our statistical explanation of why certain processes are irreversible.
+Figure \figref{free-expansion}/1 shows a box in which all the atoms of
+the gas are confined on one side. We very quickly remove the barrier
+between the two sides, \figref{free-expansion}/2.  Each snapshot shows
+both the positions and the momenta of the atoms, which is enough
+information to allow us in theory to extrapolate the behavior of the
+system into the future, or the past.  After some time, the system has
+reached a state, \figref{free-expansion}/3, that seems like a typical
+one that we would observe if the gas hadn't been prepared in any
+special way.
+
+<% marg(79) %>
+<%
+  fig(
+    'free-expansion',
+    %q{A gas expands freely, doubling its volume.}
+  )
+%>
+<% end_marg %>
+
+Let $n$ be the number of atoms in the gas. In figure \figref{free-expansion}, $n=6$.
+If we pick a state of the system
+completely at random, then by symmetry any atom's probability of being on
+the right is $1/2$. If each atom's probability is independent of the others,\footnote{Independence is an approximation. The atoms have some size,
+so there will be a tendency for them to crowd each other out. But for this to be a significant effect, we would need to consider
+gases under considerable compression. In an extreme case, the gas could be
+very close to the point at it would condense into a liquid or solid. Under such conditions, independence would be a very poor approximation.}
+then the probability of finding \emph{all} the atoms
+on the right is $2^{-n}$. When $n$ is a relatively small number like 6, this
+will actually happen once in a while, as in figure \figref{fluctuation-in-free-expansion}.
+
+Suppose
+we show figure \figref{free-expansion}/2 to a friend without any further information,
+and ask her what she can say about the system's behavior in the future. She doesn't
+know how the system was prepared. Perhaps, she thinks, it was just a strange
+coincidence that all the atoms happened to be in the right half of the box
+at this particular moment. In any case, she knows that this unusual situation
+won't last for long. She can predict that after the passage of any significant amount of time,
+a surprise inspection is likely to show roughly
+half the atoms on each side. The same is true if you ask her to say what
+happened in the past. She doesn't know about the barrier, so as far as she's concerned,
+extrapolation into the past is exactly the same kind of problem as extrapolation into
+the future. We just have to imagine reversing all the momentum vectors, and then
+all our reasoning works equally well for backwards extrapolation. She would conclude,
+then, that the gas in the box underwent an unusual fluctuation, \figref{fluctuation-in-free-expansion},
+and she knows that
+the fluctuation is unlikely to exist very far into the future, or to have existed very
+far into the past.
+
+<% marg() %>
+<%
+  fig(
+    'fluctuation-in-free-expansion',
+    %q{%
+      An unusual fluctuation in the distribution of the atoms
+      between the two sides of the box. There has been no external manipulation
+      as in figure \figref{free-expansion}/1.
+    }
+  )
+%>
+<% end_marg %>
+
+Now $2^{-6}\approx0.015$ is not really all that small. But suppose we have $n=100$ atoms, which is
+still a very small number. A one-liter chamber with only 100 atoms in it would still qualify as an
+exceptionally good laboratory vacuum. We have $2^{-100}\approx 10^{-30}$, which is very, very small.
+Our friend feels that we've played a trick on her. If she could check once every millisecond, then she
+would expect to find such a fluctuation only once in about $10^{20}$ years, which is many orders of
+magnitude more than her lifetime.
+
+% calc -e "cpy=(365)(24)(3600)(1000); p=2^-100; 1/(pcpy)"
+%    4.01969368413315*10^19
+
+So when $n$ is even somewhat large, and your friend looks at the system and sees all $n$ of the atoms
+on the right side of the box, she will infer that this is not a fluctuation. She can tell
+that you've played a trick on her by preparing the system in a special way.
+
+Now when we look around our universe, we see that the distribution of matter is far from uniform.
+There are vast voids between the galaxies, with only about one molecule on the average in a volume
+the size of a bus. There are also obviously regions with a lot more matter, such as the region you're
+occupying right now. If the universe's state soon after the big bang had been chosen at random
+from among all possible states, then its current state would be absurdly unlikely. We can therefore
+conclude that our big bang was not a very typical one compared to all possible big bangs.
+This provides our best current explanation of the ``arrow of time'' --- the past is the direction
+toward the big bang.
+<% end_sec('stat-irreversible') %>
+
+
+<% begin_sec("Sizes of fluctuations",nil,'fluctuations') %>
+In the thought experiment of the atoms bouncing around between the two sides of the box, we've
+considered only two cases: the typical case, where about half the atoms are in each side,
+and the extreme case where all are on one side. The real world isn't like either of these
+extremes. We expect to see fluctuations, just not huge ones.
+It's instructive to consider a simple example in which we can easily estimate the
+the typical sizes of fluctuations. Suppose that we have three atoms in our box, and we label
+them A, B, and C. Then we can have A on the left or right, which is two possibilities, and
+similarly for B and C. This makes a total of $2\times2\times2=8$ possibilities, which is
+not too many to list by hand. Let $r$ be the number of atoms on the right. Then we have the
+following possibilities:
+
+\begin{center}
+\begin{tabular}{lll}
+$r$ & \emph{atoms on the left} & \emph{atoms on the right} \\
+0 & A, B, C & none \\
+1 & B, C & A \\
+1 & A, C & B \\
+1 & A, B & C \\
+2 & A & B, C\\
+2 & B & A, C \\
+2 & C & A, B \\
+3 & none & A, B C
+\end{tabular}
+\end{center}
+
+\noindent Counting up all the possibilities for each value of $r$, we have the following for
+the total number of possibilities $M$ at each value of $r$:
+
+\begin{center}
+\begin{tabular}{ll}
+$r$ & $M$ \\
+0 & 1 \\
+1 & 3 \\
+2 & 3 \\
+3 & 1
+\end{tabular}
+\end{center}
+
+\noindent Thus the probability of $r=0$ is $P(0)=1/8$, and so on. As a check on our work, we see
+that the normalization works out, $1/8+3/8+3/8+1/8=1$.
+
+We see that in our example, the extreme values of $r$ are considerably less likely than the
+extremes, with $P(0)/P(1)=3$. For larger values of $n$, this trend becomes extreme, and the
+typical size of the fluctuations in $r$ become very small compared to $r$. For example,
+when $n=100$, if we count up the total number of ways of getting $r=70$, we find that it's
+$M=29372339821610944823963760$. (Obviously this wasn't done by making a list. For more on how this kind of
+thing is calculated, look up ``binomial coefficient.'') This is certainly a large number, but
+it's not normalized. The \emph{total} number of states for the system is $2^{100}$, which is
+\emph{much} larger. The probability of getting $r=70$ is only
+\begin{equation*}
+  \frac{29372339821610944823963760}{2^{100}} = 2.3\times 10^{-5},
+\end{equation*}
+which is very small. Thus for $n=100$, even a 20\% fluctuation in $r$ is rare. For real-world
+quantities of atoms, we often have $n\sim 10^{23}$, which means that fluctuations will be
+immeasurably smaller still.
+
+
+<% end_sec('fluctuations') %>
+
+<% begin_sec("Equipartition",nil,'equipartition') %>\label{equipartition}
+Betsy Salazar of Redwood Cove, California, has 37 pet raccoons, which
+is theoretically illegal. She admits that she has trouble telling them
+apart, but she tries to give them all plenty of care and affection
+(which they reciprocate). There are only so many hours in a day, so
+there is a fixed total amount of love. The raccoons share this love
+unequally on any given day, but \emph{on the average} they all get the
+same amount. This kind of
+equal-sharing-on-the-average-out-of-some-total-amount is more
+concisely described using the term \emph{equipartition}, meaning equal
+partitioning, or equal sharing. If Betsy did keep track of how much
+love she lavished on each animal, using some numerical scale, we would
+have 37 numbers to keep track of. We say that the love is partitioned
+among 37 \emph{degrees of freedom}.
+
+By analogy with the raccoons, we've seen that physical systems don't like to
+put all their eggs in one basket. In our example of the atoms in a box, it
+is overwhelmingly likely, for real-world quantities of atoms, that the atoms
+will be shared almost equally between the two sides.
+
+We haven't yet discussed the energy of the atoms, but it's in connection
+with energy that we normally use the term equipartition. Consider a system
+consisting of only two atoms, and let the atoms, like the raccoons, differ in size.
+One has mass $M$ and other other $m$. For simplicity, we take the system to be
+one-dimensional. Then the total kinetic energy of the two atoms is
+$  \frac{1}{2}MV^2+\frac{1}{2}mv^2$,
+where $V$ is the velocity of the big atom and $v$ the velocity of the little one.
+In thermodynamics we actually usually prefer to discuss momenta rather than velocities (\note{p-not-v}),
+so using the identity $K=p^2/2m$, we have for the energy
+\begin{equation*}
+  \frac{P^2}{2M}+\frac{p^2}{2m}.
+\end{equation*}
+This total energy is conserved, but it can be shared (``partitioned'') in various ways
+between the two atoms. It can be proved that, on the average, each atom has an equal
+share of the energy, regardless of the unequal masses. 
+
+If we consider all three dimensions of space, then equipartition says that on the average,
+an equal amount of energy goes to each dimension. For example, a particular atom will
+have some amount of kinetic energy in the form of its $x$ motion, and on the average
+this will be the \emph{same} as the amount in its $y$ and $z$ motions. In fancy
+language, each of these three ``degrees of freedom'' gets an equal share of energy on the
+average.
+
+Equipartition holds even if the energy
+isn't kinetic energy or if the system isn't a gas. For example, in a solid, the atoms
+are stuck near certain positions, and they can't move freely. They can only oscillate about
+these positions, like masses on little springs. The potential energy of a spring is
+$(1/2)kx^2$, and because this is a constant multiplied by the square of something,
+equipartition still holds.
+
+Heat is the random motion of atoms. In a hot substance, the average energy of an atom
+will be higher. Equipartition gives us a natural way to define temperature,
+as something like the average kinetic energy per degree of freedom. Of course, this
+number comes out to be inconveniently small in SI units, and in any case there was
+a preexisting system of temperature units, so we define a scale of temperature $T$ with
+a fudge factor, notated $k/2$, such that equipartition comes out like this:
+
+\begin{important}[Equipartition]
+When a system has an energy that can be expressed in the way described above (as a sum
+of terms that look like a constant times the square of something), and the system is in equilibrium, each of these
+degrees of freedom has, on average, an energy equal to $\frac{1}{2}kT$.
+\end{important}
+
+\noindent The constant $k$ is called the Boltzmann constant, and in SI units it equals
+$1.38\times10^{-23}\ \junit/\zu{K}$. Here K stands for the kelvin, a unit of temperature.
+One degree kelvin is the same temperature difference as one degree celsius, but the zero
+of the kelvin scale is absolute zero, the coldest possible temperature, at which all
+molecular motion ceases.
+
+Equipartition gives us a straightforward way to estimate the \emph{heat capacities}
+of various substances, meaning how much energy it takes to raise their temperature by
+a certain amount.
+
+\begin{eg}{Heating helium}\label{eg:heating-helium}
+Helium is a monatomic gas, so it has three degrees of freedom: motion in the $x$, $y$, and $z$
+directions. (Diatomic and polyatomic gases have more degrees of freedom, because they can also
+rotate, and possibly vibrate.) A liter of helium contains $n=2.5\times10^{22}$ atoms. Each atom
+has an average kinetic energy of $(3/2)kT$, for a total of $(3/2)nkT$. The amount of heat required
+to raise its temperature by one degree is
+\begin{equation*}
+  \frac{3}{2}nk(1\ \zu{K})=0.51\ \junit.
+\end{equation*}
+This is the heat capacity at constant volume for this volume of gas. Many other, related quantities
+can be defined. One can, for example, define the heat capacity per unit mass, the capacity per mole, or
+the capacity at constant pressure (meaning that the gas must be allowed to expand, and therefore
+use up some of the input energy by doing work on the walls of the container).
+\end{eg}
+
+% calc -x -e "T=293; V=10^-3 m3; P=10^5 N/m2; PV/(kBT)"
+%    2.47200179862853*10^22
+
+<% marg() %>
+<%
+  fig(
+    'dulong-petit',
+    %q{%
+      Heat capacities of solids cluster around $3kT$ per atom. The notation $\bar{E}$ means the average energy.
+      The elemental solids plotted are the ones originally
+      used by Dulong and Petit to infer empirically that the heat capacity of solids per atom was constant.
+      (Modern data.)\index{Dulong-Petit law}
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Heating solids} 
+For a solid, we expect there to be a total of \emph{six}
+energies per atom: the three kinetic energies, plus potential energies due to its displacement in the $x$, $y$, and $z$ directions.
+Each of these carries an average energy $\frac{1}{2}kT$, for a total
+of $3kT$. In other words, a solid should have twice the heat capacity found in example \ref{eg:heating-helium}
+for a monoatomic gas. This was discovered empirically by Dulong and Petit
+in 1819, as shown in figure \figref{dulong-petit}.\index{specific heat!solids}
+\end{eg}
+
+<% end_sec('equipartition') %>
+
+<% begin_sec("The ideal gas law",nil,'ideal-gas') %>
+Suppose that we take a liter of helium gas and get it very hot, increasing its absolute temperature by
+a factor of 4. This increases the average kinetic energy per atom by a factor of 4, and since
+kinetic energy depends on the square of the velocity, the typical speed is twice as big as before.
+This gas exerts a pressure on the sides of its container. The pressure is the force per unit area,
+measured in SI units of $\nunit/\munit^2$, which can be abbreviated as pascals, $1\ \zu{Pa}=1 \nunit/\munit^2$.
+For two different reasons, the doubling of the speeds of the atoms will now lead to an increase in the pressure.
+First, the frequency of collisions with the wall has been doubled. Second, the typical momentum of each atom has
+also been doubled. Since force is the rate of transfer of momentum, $F=\Delta p/\Delta t$, this means that
+the force is quadrupled. Our conclusion is that when we heat the gas by a factor of 4, while keeping
+the volume constant, the pressure goes up by a factor of 4. That is, the pressure of an ideal gas is
+proportional to its temperature. (By an ideal gas, we mean one whose atoms take up negligible space and
+do not interact with one another, e.g., by condensing to form droplets.) A straightforward extension of
+these arguments leads to the following law.
+
+\begin{important}[Ideal gas law]\index{ideal gas law}
+For an ideal gas,
+\begin{equation*}
+        PV        =  nkT,
+\end{equation*}
+where $P$ is the pressure, $V$ is the volume, $n$ is the number of molecules, and $T$ is the absolute pressure.
+\end{important}
+(You may have seen this
+written elsewhere as $PV=NRT$, where $N=n/N_A$ is the number of
+moles of atoms, $R=kN_A$, and $N_A=6.0\times10^{23}$, called
+Avogadro's number, is essentially the number of hydrogen
+atoms in 1 g of hydrogen.)\index{Avogadro's number}
+
+\begin{eg}{Pressure in a car tire}
+\egquestion
+After driving on the freeway for a while, the air
+in your car's tires heats up from $10\degcunit$ to $35\degcunit$. How much
+does the pressure increase?
+
+\eganswer
+The tires may expand a little, but we assume this
+effect is small, so the volume is nearly constant. From the
+ideal gas law, the ratio of the pressures is the same as the
+ratio of the absolute temperatures,
+\begin{align*}
+          P_2/ P_1
+                &= T_2/ T_1\\
+                &=(308\ \kunit)/(283\ \kunit)\\
+                &= 1.09\eqquad,\\
+\end{align*}
+or a 9\% increase.
+\end{eg}
+
+<% end_sec('ideal-gas') %>
+
 <% begin_notes %>
+
+\notetext{p-not-v}{Why we use $p$ rather than $v$ for our statistics}
+To describe the state of a system of particles (in one dimension, for simplicity), we could
+give either the list of numbers $(x_1,v_1,x_2,v_2,\ldots)$ or the list
+$(x_1,p_1,x_2,p_2,\ldots)$ If the particles all have the same mass, then it makes no
+difference which description we use. But if the particles have different masses, then
+the latter description is preferable, for the following reason. Suppose we make a graph-paper
+grid with $x_1$ on one axis and $p_1$ on the other. Then a mathematical result called
+Liouville's theorem shows that a reasonable initial guess about
+probabilities is to assign equal probability to each square on the grid.
+
+Although the full
+statement of Liouville's theorem is beyond the scope of this book, it's not hard to see
+what goes wrong if we try to use velocities instead. When object of different mass collide,
+they cannot transfer energy in an arbitrary way while still obeying conservation of momentum.
+For example, if you throw a golf ball with an energy of 10 joules, and the golf ball hits
+a bowling ball, it is not possible for the bowling ball to absorb all 10 joules of energy
+from the golf ball. The result is that statistically, in such collisions, there is a tendency
+for the less massive object to undergo bigger accelerations and have larger velocities.
+This means that it is not reasonable to assign the same probability per unit \emph{velocity}
+to the golf ball as to the bowling ball.
+
 <% end_notes %>
 
 

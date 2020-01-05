@@ -1409,11 +1409,10 @@ m4_define(__hw_mod_5_dissonance,6)m4_dnl
 m4_define(__hw_mod_5_wave-on-hanging-string,7)m4_dnl
 m4_define(__hw_mod_5_fabryperot,8)m4_dnl
 m4_define(__hw_mod_5_maxtransmission,9)m4_dnl
-m4_define(__hw_mod_6_freeneutron,1)m4_dnl
-m4_define(__hw_mod_6_congruent-four-vectors-2,2)m4_dnl
-m4_define(__hw_mod_6_vintermsofp,3)m4_dnl
-m4_define(__hw_mod_6_e-m-gamma-mod,4)m4_dnl
-m4_define(__hw_mod_6_p-rel-taylor-mod,5)m4_dnl
+m4_define(__hw_mod_6_congruent-four-vectors-2,1)m4_dnl
+m4_define(__hw_mod_6_vintermsofp,2)m4_dnl
+m4_define(__hw_mod_6_e-m-gamma-mod,3)m4_dnl
+m4_define(__hw_mod_6_p-rel-taylor-mod,4)m4_dnl
 m4_define(__hw_problems_1_mg-to-kg,a1)m4_dnl
 m4_define(__hw_problems_1_micrograms,a2)m4_dnl
 m4_define(__hw_problems_1_estrogen,a3)m4_dnl
