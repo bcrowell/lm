@@ -503,7 +503,8 @@ def figure_exists_in_this_dir?(name,d)
 end
 
 # returns a directory (possibly with LaTeX macros in it) or nil if we can't find the figure
-def find_directory_where_figure_is(name)
+def find_directory_where_figure_is(name,topic)
+  if !topic.nil? then return "../share/#{topic}/figs" end
   if figure_exists_in_my_own_dir?(name) then return dir = "\\figprefix\\chapdir/figs" end
   # bug: doesn't support \figprefix
   s = shared_figs()
@@ -558,7 +559,7 @@ def eqn_image(name,hardcoded_dir=nil)
   # Used in SN 14 and FAC ac/b.
   dir = hardcoded_dir
   if hardcoded_dir.nil? then
-    dir = find_directory_where_figure_is(name)
+    dir = find_directory_where_figure_is(name,nil)
     if dir.nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}, ch=#{$ch}") end
   end
   file = "#{dir}/#{name}"
@@ -598,12 +599,14 @@ def fig(name,caption=nil,options={})
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second; label is 'foo2', not 'foo-2'
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
-                           # For an example of how to do this, Mod 7. Tables do work (as in that example).
+                           # For an example of how to do this, Mod 7. Tables do work (as in that example). Adjust spacing using textgap.
                            # Align* doesn't work in text, nor does \\, but paragraph breaks work;
                            # may be able to get around this with minipage. To make it gray bg, use shaded environment.
+    'textgap'=>0,          # Additional space in mm between text figure and caption. Often needs to be -10 with table/shading?
     'title'=>nil,          # for use with 'text', goes above the text
     'raw'=>false,          # used for anonymous inline figures, e.g., check marks; generates a raw call to includegraphics
-    'textbox'=>false       # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
+    'textbox'=>false,      # marginbox(), as used in Fund.; won't work in other books, which don't have the macros in their cls files
+    'topic'=>nil           # e.g., set to 'optics' if this is in a share/optics and is not in topic_map; don't hardcode "../../../share/..."
     # Debugging incorrect placement on the page:
     #   If a fullpage width figure is in a page that doesn't have the standard layout, and is positioned incorrectly, see
     #      logic about the flag $normal_column_setup. E.g., maybe this flag didn't get set.
@@ -654,7 +657,7 @@ def fig(name,caption=nil,options={})
   if options['anonymous']=='default' then
     options['anonymous']=!has_caption
   end
-  dir = find_directory_where_figure_is(name)
+  dir = find_directory_where_figure_is(name,options['topic'])
   if dir.nil? && options['text'].nil? then fatal_error("figure #{name} not found in #{dir()}/figs or #{shared_figs()}, ch=#{$ch}") end
   #------------------------------------------------------------
   if is_print then fig_print(name,caption,options,dir) end
@@ -741,7 +744,8 @@ def fig_print(name,caption,options,dir)
       spit("\\startmargintextbox{#{name}}{#{caption}}\n#{text}\n\\finishmargintextbox{#{name}}\n")
     else
       if has_caption then m = "finishtextfig" else m = "finishtextfignocaption" end
-      spit("\\starttextfig{#{name}}#{text}\n\\vspace{-10mm}\\#{m}{#{name}}{%\n#{caption}}\n")
+      textgap = options['textgap']
+      spit("\\starttextfig{#{name}}#{text}\n\\vspace{#{textgap}mm}\\#{m}{#{name}}{%\n#{caption}}\n")
       # The -10mm is ad hoc. If it looks wrong in the output, can put an additional positive or negative vspace in the text itself.
     end
   end

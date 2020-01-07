@@ -1408,7 +1408,8 @@ m4_define(__hw_mod_5_asymmetric-standing-wave,5)m4_dnl
 m4_define(__hw_mod_5_dissonance,6)m4_dnl
 m4_define(__hw_mod_5_wave-on-hanging-string,7)m4_dnl
 m4_define(__hw_mod_5_fabryperot,8)m4_dnl
-m4_define(__hw_mod_5_maxtransmission,9)m4_dnl
+m4_define(__hw_mod_5_diamond,9)m4_dnl
+m4_define(__hw_mod_5_maxtransmission,10)m4_dnl
 m4_define(__hw_mod_6_congruent-four-vectors-2,1)m4_dnl
 m4_define(__hw_mod_6_vintermsofp,2)m4_dnl
 m4_define(__hw_mod_6_e-m-gamma-mod,3)m4_dnl

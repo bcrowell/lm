@@ -127,10 +127,11 @@ kind of thing will probably not be of interest to most readers, I've relegated i
 
 <% end_sec('wave-impedance') %>
 
-<% begin_sec("Reflection",4,'reflection') %>
+<% begin_sec("More about reflection and transmission",4,'reflection') %>
 <% begin_sec("Why reflection happens",nil,'why-reflection') %>
 We frequently observe reflection of waves in everyday life. Examples include echoes of sound and
-the reflection of light from a lake. Let's consider the simplest geometry,
+the reflection of light from a lake. In this section we'll go into a little more mathematical
+detail on these phenomena, which were only briefly described in sec.~\ref{sec:refl-and-standing-waves-basic}. Let's consider the simplest geometry,
 where the wave comes in along a line perpendicular to the surface. For concreteness, let's say that
 this is a light wave of sunlight coming straight down and hitting the surface of some water. The wave starts in one medium, air, and
 then enters another one, water. To keep the equations simple, we'll say that the amplitude of the incident wave, arriving through
@@ -320,6 +321,11 @@ In the case of $R=1$, the amplitude achieves a \emph{maximum} at the boundary. T
 along the $x$ axis, with amplitude $y$. The reflection flips the function $y(x)$ in the left-right direction, which
 causes the derivative $y'$ to flip its sign. The derivatives of the incident and reflected wave cancel, so $y'=0$.
 We know from calculus that this is the condition for $y$ to be at an extremum.
+
+When a standing-wave pattern has a point that doesn't vibrate, like the ends of the guitar string, we call that
+point a \emph{node}. Harmonics above the first have nodes at additional points in the middle of the string, so that, e.g., the
+pattern \anonymousinlinefig{double-hump-standing-wave} has a total of three. An extremum of the vibration is
+called an \emph{antinode}, and the pattern we were just discussing has two of these.
 <% end_sec('total-reflection') %>
 
 <% end_sec('reflection') %>
@@ -331,22 +337,13 @@ there we only considered the case where $R=-1$ at both ends. Actually we can hav
 different combinations: $R=-1$ at both ends, $R=1$ at both ends, or the asymmetric case with $R=1$ at one end
 and $R=-1$ at the other. An important application is to the physics of wind instruments.
 
-Some organ pipes are closed at both ends. The speed of sound is different
+Some organ pipes are closed at both ends. The impedance is very different
 in metal than in air, so there is a strong reflection at the closed ends,
 and we can have standing waves. These reflections are both pressure-noninverting,
 so we get symmetric standing-wave patterns, such as the one shown in figure
-\subfigref{lowest-modes-of-air-column}{1}.
+\subfigref{lowest-modes-of-air-column}{1}. This is the longest possible wavelength,
+having the lowest possible frequency $f_\zu{o}$. 
 <% marg(30) %>
-<%
-  fig(
-    'shakuhachi',
-    %q{%
-      Surprisingly, sound waves undergo partial reflection at the open ends
-      of tubes as well as closed ones.
-    }
-  )
-%>
-\spacebetweenfigs
 <%
   fig(
     'lowest-modes-of-air-column',
@@ -354,6 +351,16 @@ so we get symmetric standing-wave patterns, such as the one shown in figure
       Graphs of excess pressure versus position for the lowest-frequency
       standing waves of three types of air columns. Points on the axis have
       normal air pressure.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'shakuhachi',
+    %q{%
+      Surprisingly, sound waves undergo partial reflection at the open ends
+      of tubes as well as closed ones.
     }
   )
 %>
@@ -372,12 +379,16 @@ a given pressure is not the same for the tube as for open space.
 The reflections at
 the open ends are pressure-inverting, \subfigref{lowest-modes-of-air-column}{2},
 so the wave pattern is pinched off at the ends.
+As we saw in sec.~\ref{sec:refl-and-standing-waves-basic},
+there will be higher harmonics like \anonymousinlinefig{recap-standing-waves}, with successively shorter
+wavelengths and higher frequencies. The frequencies form the pattern $f_\zu{o}$, $2f_\zu{o}$,  $3f_\zu{o}$, \ldots
 
 Comparing panels 1 and 2 of the figure, we see that although the wave patterns
 are different, in both cases the wavelength is the same: in the lowest-frequency
 standing wave, half a wavelength fits inside the tube. In fact, 1 and 2 could be
 two different representations of the same wave, if we used two different measures
-of amplitude.
+of amplitude. This just interchanges the nodes and antinodes, without changing the
+sequence of wavelengths or the pattern of the frequencies $f_\zu{o}$, $2f_\zu{o}$,  $3f_\zu{o}$, \ldots
 
 Finally, we can have an asymmetric tube: closed at one end and open at the
 other. A common example is  pan pipes, which are closed
@@ -385,6 +396,9 @@ at the bottom and open at the top. The
 standing wave with the lowest frequency
 is therefore one in which 1/4 of a wavelength
 fits along the length of the tube, as shown in figure \subfigref{lowest-modes-of-air-column}{3}.
+The standing wave patterns for the asymmetric tube are \emph{not} at all equivalent to the symmetric case,
+nor is the pattern of frequencies the same. This is left as an exercise in self-check \ref{sc:fish-pattern}
+and problem \ref{hw:asymmetric-standing-wave}.
 
 Sometimes an instrument's physical appearance can be misleading. A concert flute,
 \figref{flute}, is closed at the mouth end and open at the other, so we would expect it
@@ -485,6 +499,320 @@ dissonance and consonance.
 
 <% end_sec('dissonance') %>
 
+<% begin_sec("Refraction and reflection in two dimensions",nil,'refraction') %>
+<% begin_sec("Snell's law",nil,'snell') %>
+Up until now we've been considering only the case in which a wave approaches a boundary along the direction
+perpendicular to it. A line perpendicular to the boundary is called a normal (``normal'' being just a fancy
+word for ``perpendicular,'' as in the normal force from first-semester mechanics). For normal incidence,
+the problem of describing reflection and transmission is essentially a one-dimensional one. It's natural
+to consider what happens if the incident wave instead comes in at some nonzero angle $\theta_1$ with respect to
+the normal. Figure \figref{refr-derivation} shows an example with water waves.
+
+<%
+  fig(
+    'refr-derivation',
+    %q{A derivation of Snell's law.},
+    {
+      'width'=>'fullpage',
+      'topic'=>'optics'
+    }
+  )
+%>
+
+The picture breaks down into four quadrants \anonymousinlinefig{inline-text-refraction-quadrants},
+with the incident wave 1 coming in from one quadrant and the transmitted wave 2 and reflected wave $\star$
+heading out into two others, \anonymousinlinefig{inline-text-refraction-waves}.
+
+The reflected
+wave is faint and hard to see in this picture, which is all right because we'll concentrate
+on the transmitted one. We just note in passing that the direction of propagation of the
+reflected wave is at an angle with respect to the normal that is equal to $\theta_1$, but on
+the other side of the normal.
+
+Concentrating on the transmitted wave, we see that its wavefronts are crowded closer together, i.e.,
+its wavelength is shortened. This is because the velocity $v_2$ of the waves in the new medium is
+lower than the original velocity $v_1$. Since the frequency doesn't change, $\lambda\propto v$.
+We can also see that the wavefronts are \emph{bent} at the boundary. They have to be, because
+the transmitted wavefronts have to join up continuously with the incident ones, whose vibration
+is after all what is causing them. This bending is called \emph{refraction},\index{refraction}
+from the same root as the word ``fracture,'' as in a fractured bone.
+
+Usually we're actually
+interested in the direction of propagation of the wave, which is perpendicular to the
+wavefronts.
+As shown by the arrows in the close-up in figure \figref{refr-derivation}, there
+is also a refraction of this direction --- it twists by the same amount as the wavefronts.
+We now want to find the direction $\theta_2$ of the refracted ray.
+In the close-up view, the dashed lines are normals to the
+interface. The two marked angles on the right side are both equal to
+$\theta_1$, and the two on the left to $\theta_2$.
+Trigonometry gives
+\begin{align*}
+\sin \theta_1 &= \lambda_1/h \qquad  \text{and} \\
+\sin \theta_2 &= \lambda_2/h\eqquad,
+\end{align*}
+and combining this with $\lambda\propto v$ gives
+\begin{equation*}
+ \frac{\sin\theta_1}{\sin\theta_2}=\frac{v_1}{v_2}\eqquad,
+\end{equation*}
+which is known as Snell's law.\index{Snell's law}
+
+\begin{eg}{Ocean waves near and far from shore}
+Ocean waves are formed by winds, typically on the open sea,
+and the wavefronts are perpendicular to the direction of the
+wind that formed them. At the beach, however, you have
+undoubtedly observed that waves tend come in with their
+wavefronts very nearly (but not exactly) parallel to the
+shoreline. This is because the speed of water waves in
+shallow water depends on depth: the shallower the water, the
+slower the wave. Although the change from the fast-wave
+region to the slow-wave region is gradual rather than
+abrupt, there is still refraction, and the wave motion is
+nearly perpendicular to the normal in the slow region.
+\end{eg}
+
+\pagebreak
+
+Refraction occurs with any wave, but refraction of light waves is particularly
+important, since it is the physical principle behind the lens. You're reading
+this book through the lenses of your eyes. This kind of optical application is inherently
+three-dimensional, unlike the case of surface waves on water. Usually in optics
+we can ignore the wave nature of light and model it instead as a ray, like the
+beam of a pen-pointer laser. Taking the emission of light from a candle flame as
+an example, the ray model would describe it not as concentric spherical wavefronts
+but rather as a porcupine of rays spreading out in all directions from the source.
+Considering refraction in the ray model, in three dimensions, we have a plane
+of incidence, \figref{refr-3-rays}, which contains the incident ray and the normal.
+The reflected and transmitted rays also lie in this plane. Figure \figref{refr-angles}
+shows how the angles $\theta_1$ and $\theta_2$ occur in diagonally opposite quadrants
+of this plane. Refraction is time-reversal symmetric, \figref{refr-t-reversal}, so
+that it doesn't matter which medium we take to be which in Snell's law.
+
+<% marg %>
+<%
+  fig(
+    'refr-3-rays',
+    %q{%
+      The incident, reflected, and transmitted (refracted) rays
+      all lie in a plane that includes the normal (dashed line).
+    },
+    {'topic'=>'optics'}
+  )
+%>
+\smspacebetweenfigs
+<%
+  fig(
+    'refr-angles',
+    %q{%
+      The angles $\theta_1$ and $\theta_2$ are related to
+      each other, and also depend on the properties of the two media. Because
+      refraction is time-reversal symmetric, there is no need to label the rays
+      with arrowheads.
+    },
+    {'topic'=>'optics'}
+  )
+%>
+\smspacebetweenfigs
+<%
+  fig(
+    'refr-t-reversal',
+    %q{%
+      Refraction has time-reversal symmetry. Regardless of
+      whether the light is going into or out of the water, the relationship
+      between the two angles is the same, and the ray is closer to the normal
+      while in the water.
+    },
+    {'topic'=>'optics'}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('snell') %>
+
+<% begin_sec("The index of refraction",nil,'index-of-refraction') %>
+During Snell's lifetime (1580-1626), it had not even been established that light was a wave or that it had
+a finite speed. It's impressive with historical hindsight that anything at all could have been done to probe
+something as fast as the motion of light, decades before anyone even invented the pendulum clock. At the time,
+people like Snell simply used data on refraction to characterize different substances, and they did it using
+a variable that we would today define as $n=c/v$. By this definition, we have $n=1$ for a vacuum, and larger
+values of $n$ in matter. Usually (not always), substances with a higher mass density have higher values of $n$, so can we refer
+to $n$ as the optical density of the medium. It is also called the index of refraction.\index{index of refraction}
+The index of refraction tells us about the (inverse) speed of light in a medium, but only in relative terms,
+not in any units such as $\sunit/\munit$.
+The index of refraction of air at normal atmospheric
+pressure is 1.0003, so for most purposes it is a good
+approximation to assume that air has $n=1$.
+
+When we write Snell's law in terms of the indices of refraction, we usually express it as
+\begin{equation*}
+n_1 \sin \theta_1=n_2 \sin \theta_2,
+\end{equation*}
+which makes us less likely to get the 1's and 2's mixed up.
+
+\pagebreak
+
+\begin{eg}{Finding an angle using Snell's law}\label{eg:yellow-submarine}
+\egquestion A submarine shines its searchlight up toward the
+surface of the water. What is the angle $\alpha $ shown in the figure?
+
+\eganswer The tricky part is that Snell's law refers to the
+angles with respect to the normal. Forgetting this is a very
+common mistake. The beam is at an angle of $30\degunit$ with
+respect to the normal in the water. Let's refer to the air
+as medium 1 and the water as 2. Solving Snell's law
+for $\theta_1$, we find
+\begin{equation*}
+                \theta_1         = \sin^{-1}\left(\frac{n_2}{n_1}\sin\theta_2\right)\eqquad.
+\end{equation*}
+As mentioned above, air has an index of refraction very
+close to 1, and water's is about 1.3, so we find $\theta_1=40\degunit$.
+The angle $\alpha $ is therefore $50\degunit$.
+\end{eg}
+<% marg(50) %>
+<%
+  fig(
+    'eg-yellow-submarine',
+    %q{Example \ref{eg:yellow-submarine}.},
+    {'topic'=>'optics'}
+  )
+%>
+<% end_marg %>
+
+For nonmagnetic substances, the impedance is the same as the speed (or its inverse, depending on what
+you call $A_1$ and what you call $A_2$). Therefore the ratio of the indices of refraction can be used
+to find the impedance ratio $\alpha$. The relations like $R=(\alpha-1)/(\alpha+1)$ derived in
+section \ref{sec:how-much-reflection} apply only for normal incidence, but they do correctly predict
+most trends and qualitative facts when the incidence is not normal. The complete expressions for $R$
+and $T$ for an electromagnetic wave, with non-normal incidence, are called Fresnel's equations, and
+we will not study them here. They depend on the polarization of the wave, which is why reflection of
+a light wave usually produces partial reflection. Such relations for electromagnetic waves apply to
+insulators --- for a perfect conductor, there is always 100\% reflection, since electric fields cannot
+exist in its interior.
+
+
+\startdqs
+
+\begin{dq}
+What index of refraction should a fish have in order to
+be invisible to other fish?
+\end{dq}
+
+\begin{dq}
+The earth's atmosphere gets thinner and thinner as you go
+higher in altitude. If a ray of light comes from a star
+that is below the zenith, what will happen to it as it comes
+into the earth's atmosphere?
+\end{dq}
+
+\begin{dq}
+A denser sample of a gas has a higher index of refraction
+than a less dense sample (i.e., a sample under lower
+pressure), but why would it not make sense for the index of
+refraction of a gas to be proportional to density?
+Hint: What the graph of a proportionality look like?
+\end{dq}
+
+
+<% end_sec('index-of-refraction') %>
+
+<% begin_sec("Total internal reflection",4,'total-internal-refl') %>
+For normal incidence, we can get 100\% reflection if the ratio of the impedances of our two media is $0$ or $\infty$, but this
+is only an idealization. But for non-normal incidence,
+it is possible to have
+situations where no possible angle for the refracted ray can
+satisfy Snell's law. Solving Snell's law for $\theta_2$, we find
+\begin{equation*}
+ \theta_2 = \sin^{-1}\left(\frac{n_1}{n_2}\sin\theta_1\right)\eqquad,
+\end{equation*}
+and if $n_1$ is greater than $n_2$, then there will be large
+values of $\theta_1$ for which the quantity $(n_1/n_2)\sin\theta $
+ is greater than one, meaning that your calculator
+will flash an error message at you when you try to take the
+inverse sine. What can happen physically in such a
+situation? The answer is that all the light is reflected, so
+there is no refracted ray.        This phenomenon is known as
+\index{total internal reflection}\emph{total internal reflection},
+and is used in the fiber-optic cables that nowadays carry
+almost all long-distance telephone calls. The electrical
+signals from your phone travel to a switching center, where
+they are converted from electricity into light. From there,
+the light is sent across the country in a thin transparent
+fiber. The light is aimed straight into the end of the
+fiber, and as long as the fiber never goes through any turns
+that are too sharp, the light will always encounter the edge
+of the fiber at an angle sufficiently oblique to give total
+internal reflection. If the fiber-optic cable is thick
+enough, one can see an image at one end of whatever the
+other end is pointed at.
+
+<% marg() %>
+<%
+  fig(
+    'total-internal-cable',
+    %q{%
+      Total internal reflection in a fiber-optic
+      cable.
+    },
+    {'topic'=>'optics'}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'total-internal-endoscope',
+    %q{%
+      A simplified drawing of a surgical
+      endoscope. The first lens forms a real image at one end of a bundle
+      of optical fibers. The light is transmitted through the bundle, and
+      is finally magnified by the eyepiece.
+    },
+    {'topic'=>'optics'}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'ulcer',
+    %q{Endoscopic images of a duodenal ulcer.},
+    {'topic'=>'optics'}
+  )
+%>
+
+<% end_marg %>
+
+Alternatively, a bundle of cables can be used, since a
+single thick cable is too hard to bend. This technique for
+seeing around corners is useful for making surgery less
+traumatic. Instead of cutting a person wide open, a surgeon
+can make a small ``keyhole'' incision and insert a bundle of
+fiber-optic cable (known as an \index{endoscope}endoscope) into the body.
+
+Since rays at sufficiently large angles with respect to the
+normal may be completely reflected, it is not surprising
+that the relative amount of reflection changes depending on
+the angle of incidence, and is greatest for large angles of incidence.
+
+\startdqs
+
+\begin{dq}
+Does a surgeon using an endoscope need a source of light
+inside the body cavity? If so, how could this be done
+without inserting a light bulb through the incision?
+\end{dq}
+
+
+
+\begin{dq}
+Does total internal reflection occur when light in a
+denser medium encounters a less dense medium, or the other
+way around? Or can it occur in either case?
+\end{dq}
+
+<% end_sec('total-internal-refl') %>
+
+<% end_sec('refraction') %>
+
+
 <% begin_notes %>
 
 \notetext{wave-impedance-defs}{Definitions relating to impedance}
@@ -580,6 +908,10 @@ $v$ is the speed of the waves. The energy flux per unit area for a plane wave is
   )
 %>
 <% end_marg %>
+
+<% begin_hw('diamond') %>m4_include(../share/optics/hw/diamond.tex)<% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('maxtransmission',2) %>__incl(hw/maxtransmission)<% end_hw() %>
 
