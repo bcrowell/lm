@@ -1,0 +1,307 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<% part_title("Optics") %>
+
+<%
+  chapter(
+    '11',
+    %q{Images, qualitatively},
+    'ch:images-1',
+    '',
+    {'opener'=>'crepuscular-rays','width'=>'fullpage'}
+  )
+%>
+
+<% begin_sec("Vision and the nature of light",nil,'vision') %>
+Our eyes are light sensors. When we look at a luminous object such as a candle flame or a cell phone's screen,
+light comes from the object to us. When we look at a nonluminous object, we see it because it reflects light,
+which then reaches our eye. Either way, you can't see anything unless light goes in your eye.
+
+Many people might disagree if you told them that light was
+reflected from the book to the eye, because they think of
+reflection as something that mirrors do, not something that
+a book does. They associate reflection with the formation of
+a reflected image, which does not seem to appear in a piece of paper.
+
+Imagine that you are looking at your reflection in a nice
+smooth piece of aluminum foil, fresh off the roll. You
+perceive a face, not a piece of metal. Perhaps you also see
+the bright reflection of a lamp over your shoulder behind
+you. Now imagine that the foil is just a little bit less
+smooth. The different parts of the image are now a little
+bit out of alignment with each other. Your brain can still
+recognize a face and a lamp, but it's a little scrambled,
+like a Picasso painting. Now suppose you use a piece of
+aluminum foil that has been crumpled up and then flattened
+out again. The parts of the image are so scrambled that you
+cannot recognize an image. Instead, your brain tells you
+you're looking at a rough, silvery surface.
+<% marg(55) %>
+<%
+  fig(
+    'selfportraits',
+    %q{%
+      Two self-portraits of the author, one taken in a mirror
+      and one with a piece of aluminum foil.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'specular-and-diffuse-reflection',
+    %q{Specular and diffuse reflection.}
+  )
+%>
+<% end_marg %>
+
+Mirror-like reflection at a specific angle is known as
+specular reflection, and random reflection in many
+directions is called \index{diffuse reflection}\index{reflection!diffuse}diffuse
+reflection. Diffuse reflection is how we see nonluminous
+objects. Specular reflection only allows us to see images of
+objects other than the one doing the reflecting. In top part
+of figure \figref{selfportraits}, imagine that the rays of light are coming
+from the sun. If you are looking down at the reflecting
+surface, there is no way for your eye-brain system to tell
+that the rays are not really coming from a sun down below you.
+
+The differences among white, black, and the various shades
+of gray in between is a matter of what percentage of the
+light they absorb and what percentage they reflect. That's
+why light-colored clothing is more comfortable in the
+summer, and light-colored upholstery in a car stays cooler
+that dark upholstery.
+
+<% end_sec('vision') %>
+
+<% begin_sec("The ray model of light",3,'ray-model') %>\index{ray model of light}\index{light!ray model of}
+
+\index{particle model of light}\index{light!particle model
+of}\index{wave model of light}\index{light!wave model of}
+<% begin_sec("Models of light") %>
+
+Note how I've been casually diagramming the motion of light
+with pictures showing light rays as lines on the page. More
+formally, this is known as the ray model of light. The ray
+model of light seems natural once we convince ourselves that
+light travels through space, and observe phenomena like
+sunbeams coming through holes in clouds. Having already been
+introduced to the concept of light as an electromagnetic
+wave, you know that the ray model is not the ultimate truth
+about light, but the ray model is simpler, and in any case
+science always deals with models of reality, not the
+ultimate nature of reality. Table \figref{three-models-of-light} summarizes
+three models of light.
+
+<%
+  fig(
+    'three-models-of-light',
+    %q{Three models of light.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The ray model is a generic one. By using it we
+can discuss the path taken by the light, without committing
+ourselves to any specific description of what it is that is
+moving along that path. We will use the nice simple ray
+model for most of our treatment of optics, and with it we can analyze a
+great many devices and phenomena. Not until ch.~\ref{ch:wave-optics}
+will we concern ourselves specifically with wave optics,
+although in the intervening chapters I will sometimes
+analyze the same phenomenon using both the ray model and the wave model.
+
+Note that the statements about the applicability of the
+various models are only rough guides. For instance, wave
+interference effects are often detectable, if small, when
+light passes around an obstacle that is quite a bit bigger
+than a wavelength. Also, the criterion for when we need the
+particle model really has more to do with energy scales than
+distance scales, although the two turn out to be related.
+
+The alert reader may have noticed that the wave model is
+required at scales smaller than a wavelength of light (on
+the order of a micrometer for visible light), and the
+particle model is demanded on the atomic scale or lower (a
+typical atom being a nanometer or so in size). This implies
+that at the smallest scales we need \emph{both} the wave
+model and the particle model. They appear incompatible, so
+how can we simultaneously use both? The answer is that they
+are not as incompatible as they seem. Light is both a wave
+and a particle, but a full understanding of this apparently
+nonsensical statement is a topic for ch.~\ref{ch:light-as-a-particle}.
+
+
+<%
+  fig(
+    'sample-ray-diagrams',
+    %q{Examples of ray diagrams.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\index{ray diagrams}
+<% end_sec() %>
+<% begin_sec("Ray diagrams") %>
+
+Without even knowing how to use the ray model to calculate
+anything numerically, we can learn a great deal by drawing
+ray diagrams. For instance, if you want to understand how
+eyeglasses help you to see in focus, a ray diagram is the
+right place to start. Many students under-utilize ray
+diagrams in optics and instead rely on rote memorization or
+plugging into formulas. The trouble with memorization and
+plug-ins is that they can obscure what's really going on,
+and it is easy to get them wrong. Often the best plan is to
+do a ray diagram first, then do a numerical calculation,
+then check that your numerical results are in reasonable
+agreement with what you expected from the ray diagram.
+
+<%
+  fig(
+    'fish',
+    %q{%
+      %
+      1. Correct.
+      2. Incorrect: implies that diffuse reflection only gives
+      one ray from each reflecting point.
+      3. Correct, but unnecessarily complicated
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \figref{fish} shows some guidelines for using ray
+diagrams effectively. The light rays bend when they pass out
+through the surface of the water (a phenomenon that we'll
+discuss in more detail later). The rays appear to have come
+from a point above the goldfish's actual location, an effect
+that is familiar to people who have tried spear-fishing.
+
+\begin{itemize}
+\item A stream of light is not really confined to a finite
+number of narrow lines. We just draw it that way. In \figref{fish}/1, it
+has been necessary to choose a finite number of rays to draw
+(five), rather than the theoretically infinite number of
+rays that will diverge from that point.
+
+\item There is a tendency to conceptualize rays incorrectly as
+objects. In his Optics, Newton goes out of his way to
+caution the reader against this, saying that some people
+``consider ... the refraction of ... rays to be the bending
+or breaking of them in their passing out of one medium into
+another.'' But a ray is a record of the path traveled by
+light, not a physical thing that can be bent or broken.
+
+\item In theory, rays may continue infinitely far into the past
+and future, but we need to draw lines of finite length. In
+\figref{fish}/1, a judicious choice has been made as to where to begin
+and end the rays. There is no point in continuing the rays
+any farther than shown, because nothing new and exciting is
+going to happen to them. There is also no good reason to
+start them earlier, before being reflected by the fish,
+because the direction of the diffusely reflected rays is
+random anyway, and unrelated to the direction of the
+original, incoming ray.
+
+\item When representing diffuse reflection in a ray diagram,
+many students have a mental block against drawing many rays
+fanning out from the same point. Often, as in example \figref{fish}/2,
+the problem is the misconception that light can only be
+reflected in one direction from one point.
+
+\item Another difficulty associated with diffuse reflection,
+example \figref{fish}/3, is the tendency to think that in addition to
+drawing many rays coming out of one point, we should also be
+drawing many rays coming from many points. In \figref{fish}/1, drawing
+many rays coming out of one point gives useful information,
+telling us, for instance, that the fish can be seen from any
+angle. Drawing many sets of rays, as in \figref{fish}/3, does not give
+us any more useful information, and just clutters up the
+picture in this example. The only reason to draw sets of
+rays fanning out from more than one point would be if
+different things were happening to the different sets.
+\end{itemize}
+
+\startdq
+
+\begin{dq}
+Suppose an intelligent tool-using fish is spear-hunting for
+humans. Draw a ray diagram to show how the fish has to
+correct its aim. Note that although the rays are now passing
+from the air to the water, the same rules apply (sec.~\ref{sec:refraction}, p.~\pageref{sec:refraction}): the rays
+are closer to being perpendicular to the surface when they
+are in the water, and rays that hit the air-water interface
+at a shallow angle are bent the most.
+\end{dq}
+
+<% marg(0) %>
+<%
+  fig(
+    'dq-radar-corner-2d',
+    %q{Discussion question \ref{dq:radar-corner-2d}.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-radar-corner-3d',
+    %q{Discussion question \ref{dq:radar-corner-3d}.}
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:reflect-one-component}
+If a light ray has a velocity vector with components
+$c_x$ and $c_y$, what will happen when it is reflected from
+a surface that lies along the $y$ axis? Make sure your
+answer does not imply a change in the ray's speed.
+\end{dq}
+
+\begin{dq}\label{dq:radar-corner-2d}
+Generalizing your reasoning from discussion question 
+\ref{dq:reflect-one-component},
+what will happen to the velocity components of a light ray
+that hits a corner, as shown in the figure, and undergoes two reflections?
+\end{dq}
+
+\begin{dq}\label{dq:radar-corner-3d}
+Three pieces of sheet metal arranged perpendicularly as
+shown in the figure form what is known as a radar corner.
+Let's assume that the radar corner is large compared to the
+wavelength of the radar waves, so that the ray model makes
+sense. If the radar corner is bathed in radar rays, at least
+some of them will undergo three reflections. Making a
+further generalization of your reasoning from the two
+preceding discussion questions, what will happen to the
+three velocity components of such a ray? What would the
+radar corner be useful for?
+\end{dq}
+
+<% end_sec() %>
+<% end_sec('ray-model') %>
+
+
+<% begin_notes %>
+
+
+<% end_notes %>
+
+
+<% begin_hw_sec(vfill:true) %>
+
+<% end_hw_sec %>
+
+<% end_chapter() %>

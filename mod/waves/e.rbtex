@@ -510,8 +510,9 @@ the normal. Figure \figref{refr-derivation} shows an example with water waves.
 
 <%
   fig(
-    'refr-derivation',
-    %q{A derivation of Snell's law.},
+    'refr-derivation-mod',
+    %q{A derivation of Snell's law. The figure shows a series of successive zooms. 1.~A simulation of the incident, reflected, and transmitted waves.
+       2.~A close-up near the boundary. 3.~A further zoom in, showing a single wavelength.},
     {
       'width'=>'fullpage',
       'topic'=>'optics'
@@ -520,7 +521,7 @@ the normal. Figure \figref{refr-derivation} shows an example with water waves.
 %>
 
 The picture breaks down into four quadrants \anonymousinlinefig{inline-text-refraction-quadrants},
-with the incident wave 1 coming in from one quadrant and the transmitted wave 2 and reflected wave $\star$
+with the incident wave I coming in from one quadrant and the transmitted wave T and reflected wave R
 heading out into two others, \anonymousinlinefig{inline-text-refraction-waves}.
 
 The reflected
@@ -648,6 +649,28 @@ When we write Snell's law in terms of the indices of refraction, we usually expr
 n_1 \sin \theta_1=n_2 \sin \theta_2,
 \end{equation*}
 which makes us less likely to get the 1's and 2's mixed up.
+
+The
+mechanical model shown in figure \figref{mechanical-model} is a helpful way to remember the qualitative result
+of Snell's law. Suppose medium 2 is thick, sticky mud, which   
+slows down the car. The car's right wheel hits the mud
+first, causing the right side of the car to slow down. This
+will cause the car to turn to the right until it moves far
+enough forward for the left wheel to cross into the mud.
+After that, the two sides of the car will once again be
+moving at the same speed, and the car will go straight.  The result of this model is always
+the same as the result of Snell's law: the ray is closer to the normal in the more optically dense medium.
+
+<% marg(40) %>
+<%
+  fig(
+    'mechanical-model',
+    %q{A mechanical model of refraction.},
+    {'topic'=>'optics'}
+  )
+%>
+<% end_marg %>
+
 
 \pagebreak
 

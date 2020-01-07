@@ -66,6 +66,8 @@
 \brieftocentry[\hfill]{ch:macro}{The macroscopic picture} \\
 \brieftocentry[\hfill]{ch:entropy}{Entropy} \\
 \brieftocentry[\hfill]{ch:atom}{The atom and the nucleus} \\
+& \textit{\brieftocpartstyle Optics}\\
+\brieftocentry[\hfill]{ch:images-1}{Images, qualitatively} \\
 \end{tabular}
 
 
@@ -105,8 +107,9 @@
     \renewcommand{\chapdir}{thermo}\include{thermo/atemp}
     \renewcommand{\chapdir}{thermo}\include{thermo/btemp}
     \renewcommand{\chapdir}{thermo}\include{thermo/ctemp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
     \renewcommand{\chapdir}{thermo}\include{thermo/dtemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+    \renewcommand{\chapdir}{thermo}\include{optics/atemp}
         \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
 %
     \widelayout
