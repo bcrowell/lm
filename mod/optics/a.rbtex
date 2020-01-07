@@ -294,6 +294,450 @@ radar corner be useful for?
 <% end_sec('ray-model') %>
 
 
+
+<% begin_sec("A virtual image",0,'virtual-image') %>\index{images!formed by plane mirrors}\index{images!virtual}
+
+Infants are always fascinated by the antics of the Baby in
+the Mirror. Now if you want to know something about mirror
+images that most people don't understand, try this. First
+bring this page closer and closer to your eyes, until you
+can no longer focus on it without straining. Then go in the
+bathroom and see how close you can get your face to the
+surface of the mirror before you can no longer easily focus
+on the image of your own eyes. You will find that the
+shortest comfortable eye-mirror distance is much less than
+the shortest comfortable eye-paper distance. This demonstrates
+that the image of your face in the mirror acts as if it had
+depth and existed in the space \emph{behind} the mirror. If
+the image was like a flat picture in a book, then you
+wouldn't be able to focus on it from such a short distance.
+
+<% marg(0) %>
+<%
+  fig(
+    'flat-mirror',
+    %q{An image formed by a mirror.}
+  )
+%>
+<% end_marg %>
+We can understand a mirror image using a ray diagram. Figure \figref{flat-mirror}
+ shows several light rays, 1, that originated by
+diffuse reflection at the person's nose. They bounce off the
+mirror, producing new rays, 2. To anyone whose eye is in
+the right position to get one of these rays, they appear to
+have come from a behind the mirror, 3, where they would
+have originated from a single point. This point is where the
+tip of the image-person's nose appears to be. A similar
+analysis applies to every other point on the person's face,
+so it looks as though there was an entire face behind the
+mirror. The customary way of describing the situation
+requires some explanation:
+
+\begin{description}
+
+\item[Customary description in physics:] There is an image of the
+face behind the mirror.
+
+\item[Translation:] The pattern of rays coming from the mirror is
+exactly the same as it would be if there were a face behind
+the mirror. Nothing is really behind the mirror.
+
+\end{description}
+
+This is referred to as a \emph{virtual} image, because the
+rays do not actually cross at the point behind the mirror.
+They only appear to have originated there.
+
+<% self_check('move-object-laterally',<<-'SELF_CHECK'
+
+Imagine that the person in figure \figref{flat-mirror} moves his face down
+quite a bit --- a couple of feet in real life, or a few
+inches on this scale drawing. The mirror stays where it is. Draw a new ray diagram. Will
+there still be an image? If so, where is it visible from?
+
+  SELF_CHECK
+  ) %>
+
+The geometry of specular reflection tells us that rays 1 and
+2 are at equal angles to the normal (the imaginary
+perpendicular line piercing the mirror at the point of
+reflection). This means that ray 2's imaginary continuation,
+3, forms the same angle with the mirror as ray 1. Since
+each ray of type 3 forms the same angles with the mirror
+as its partner of type 1, we see that the distance of the
+image from the mirror is the same as that of the actual face from
+the mirror, and it lies directly across from it. The image
+therefore appears to be the same size as the actual face.
+
+<%
+  fig(
+    'eg-eye-chart',
+    'Example \ref{eg:eye-chart}.',
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+\begin{eg}{An eye exam}\label{eg:eye-chart}
+Figure \figref{eg-eye-chart} shows a typical setup in an optometrist's examination room.
+The patient's vision is supposed to be tested at a distance of 6 meters (20 feet in the U.S.),
+but this distance is larger than the amount of space available in the room. Therefore a mirror is
+used to create an image of the eye chart behind the wall.
+\end{eg}
+
+\begin{eg}{The Praxinoscope}\index{praxinoscope}
+Figure \figref{praxinoscope} shows an old-fashioned device called
+a praxinoscope, which displays an animated picture when spun.
+The removable strip of paper with the pictures printed on it has twice
+the radius of the inner circle made of flat mirrors, so each picture's
+virtual image is at the center. As the wheel spins, each picture's image
+is replaced by the next.
+\end{eg}
+
+<% marg(30) %>
+<%
+  fig(
+    'praxinoscope',
+    'The praxinoscope.'
+  )
+%>
+<% end_marg %>
+
+\vfill\pagebreak[4]
+
+\startdq
+
+\begin{dq}
+The figure shows an object that is off to one side of a
+mirror. Draw a ray diagram. Is an image formed? If so, where
+is it, and from which directions would it be visible?
+
+\end{dq}
+
+<%
+  fig(
+    'dq-image-off-on-side',
+    '',
+    {'anonymous'=>true,'width'=>'fullpage','float'=>false}
+  )
+%>
+
+<% end_sec('virtual-image') %>
+<% begin_sec("Curved mirrors",nil,'curved-mirrors') %>\index{images!formed by curved mirrors}
+
+<% marg(0) %>
+<%
+  fig(
+    'virtual',
+    %q{An image formed by a curved mirror.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'curved-mirror-mag',
+    %q{%
+      The image is magnified by the same factor in
+      depth and in its other dimensions.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'lion',
+    %q{%
+      Increased magnification always comes at the expense of decreased field of view.
+    }
+  )
+%>
+<% end_marg %>
+An image in a flat mirror is a pretechnological example:
+even animals can look at their reflections in a calm pond.
+We now pass to our first nontrivial example of the
+manipulation of an image by technology: an image in a
+curved mirror. Before we dive in, let's consider why this is
+an important example. If it was just a question of
+memorizing a bunch of facts about curved mirrors, then you
+would rightly rebel against an effort to spoil the beauty of
+your liberally educated brain by force-feeding you
+technological trivia. The reason this is an important
+example is not that curved mirrors are so important in and
+of themselves, but that the results we derive for curved
+bowl-shaped mirrors turn out to be true for a large class of
+other optical devices, including mirrors that bulge outward
+rather than inward, and lenses as well. A microscope or a
+telescope is simply a combination of lenses or mirrors or
+both. What you're really learning about here is the basic
+building block of all optical devices from movie projectors to octopus eyes.
+
+Because the mirror in figure \figref{virtual} is curved, it bends the
+rays back closer together than a flat mirror would: we
+describe it as \index{converging}\emph{converging}. Note that the
+term refers to what it does to the light rays, not to the
+physical shape of the mirror's surface . (The surface itself
+would be described as \emph{concave}. The term is not all
+that hard to remember, because the hollowed-out interior of
+the mirror is like a cave.) It is surprising but true that
+all the rays like 3 really do converge on a point, forming
+a good image. We will not prove this fact, but it is true
+for any mirror whose curvature is gentle enough and that is
+symmetric with respect to rotation about the perpendicular
+line passing through its center (not asymmetric like a
+potato chip). The old-fashioned method of making mirrors and
+lenses is by grinding them in grit by hand, and this
+automatically tends to produce an almost perfect spherical surface.
+
+Bending a ray like 2 inward implies bending its imaginary
+continuation 3 outward, in the same way that raising one
+end of a seesaw causes the other end to go down. The image
+therefore forms deeper behind the mirror. This doesn't just
+show that there is extra distance between the image-nose and
+the mirror; it also implies that the image itself is bigger
+from front to back. It has been \index{magnification!by a converging mirror}\emph{magnified} in the front-to-back direction.
+
+It is easy to prove that the same magnification also applies
+to the image's other dimensions. Consider a point like E
+in figure \figref{curved-mirror-mag}. The trick is that out of all the rays
+diffusely reflected by E, we pick the one that happens to
+head for the mirror's center, C. The equal-angle property
+of specular reflection plus a little straightforward
+geometry easily leads us to the conclusion that triangles
+ABC and CDE are the same shape, with ABC being simply a
+scaled-up version of CDE. The magnification of depth equals
+the ratio BC/CD, and the up-down magnification is AB/DE. A
+repetition of the same proof shows that the magnification in
+the third dimension (out of the page) is also the same. This
+means that the image-head is simply a larger version of the
+real one, without any distortion. The scaling factor is
+called the magnification, $M$. The image in the figure is
+magnified by a factor $M=1.9$.
+
+Note that we did not explicitly specify whether the mirror
+was a sphere, a paraboloid, or some other shape. However, we
+assumed that a focused image would be formed, which would
+not necessarily be true, for instance, for a mirror that was
+asymmetric or very deeply curved.
+
+<% end_sec('curved-mirrors') %>
+
+<% begin_sec("A real image",0,'real-image') %>\index{images!real}
+
+If we start by placing an object very close to the mirror,
+\subfigref{real-and-virtual}{1}, and then move it farther and farther away, the image at
+first behaves as we would expect from our everyday
+experience with flat mirrors, receding deeper and deeper
+behind the mirror. At a certain point, however, a dramatic
+change occurs. When the object is more than a certain
+distance from the mirror, \subfigref{real-and-virtual}{2}, the image appears upside-down
+and in \emph{front} of the mirror.
+
+<%
+  fig(
+    'real-and-virtual',
+    %q{%
+      1. A virtual image. 2. A real image. 
+      As you'll verify in homework problem \ref{hw:invertedforehead}, the image is upside-down
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Here's what's happened. The mirror bends light rays inward,
+but when the object is very close to it, as in \subfigref{real-and-virtual}{1}, the rays
+coming from a given point on the object are too strongly
+diverging (spreading) for the mirror to bring them back
+together. On reflection, the rays are still diverging, just
+not as strongly diverging. But when the object is sufficiently
+far away, \subfigref{real-and-virtual}{2}, the mirror is only intercepting the rays that
+came out in a narrow cone, and it is able to bend these
+enough so that they will reconverge.
+
+Note that the rays shown in the figure, which both
+originated at the same point on the object, reunite when
+they cross. The point where they cross is the image of the
+point on the original object. This type of image is called a
+\emph{real image}, in contradistinction to the virtual
+images we've studied before. 
+
+\begin{important}
+Definition: A real image is one where rays actually cross.
+A virtual image is a point from which rays only appear to have come.
+\end{important}
+
+The use of the word ``real'' is
+perhaps unfortunate. It sounds as though we are saying the
+image was an actual material object, which of course it is not.
+
+The distinction between a real image and a virtual image is
+an important one, because a real image can be projected onto a
+screen or photographic film. If a piece of paper is inserted
+in figure \subfigref{real-and-virtual}{2} at the location of the image, the image will
+be visible on the paper (provided the object is bright and
+the room is dark). Your eye uses a lens to make a real image
+on the \index{retina}retina.
+
+<% self_check('real-do-and-di',<<-'SELF_CHECK'
+Sketch another copy of the face in figure \subfigref{real-and-virtual}{1}, even farther
+from the mirror, and draw a ray diagram. What has happened
+to the location of the image?
+  SELF_CHECK
+  ) %>
+
+<% end_sec('real-image') %>
+
+<% begin_sec("Images of images",nil,'images-of-images') %>\index{images!of images}
+
+If you are wearing glasses right now, then the light rays
+from the page are being manipulated first by your glasses
+and then by the lens of your eye. You might think that it
+would be extremely difficult to analyze        this, but in fact it
+is quite easy. In any series of optical elements (mirrors or
+lenses or both), each element works on the rays furnished by
+the previous element in exactly the same manner as if the
+image formed by the previous element was an actual object.
+<% marg(0) %>
+<%
+  fig(
+    'newtonian-telescope',
+    %q{A Newtonian telescope being used with a camera. }
+  )
+%>
+<% end_marg %>
+
+Figure \figref{newtonian-telescope} shows an example involving only mirrors. The
+Newtonian telescope,\index{telescope} invented by Isaac \index{Newton, Isaac!Newtonian telescope}
+Newton, consists of a large curved mirror, plus a
+second, flat mirror that brings the light out of the tube.
+(In very large telescopes, there may be enough room to put a
+camera or even a person inside the tube, in which case the
+second mirror is not needed.) The tube of the telescope is
+not vital; it is mainly a structural element, although it
+can also be helpful for blocking out stray light. The lens
+has been removed from the front of the camera body, and is
+not needed for this setup. Note that the two sample rays
+have been drawn parallel, because an astronomical telescope
+is used for viewing objects that are extremely far away.
+These two ``parallel'' lines actually meet at a certain
+point, say a crater on the moon, so they can't actually be
+perfectly parallel, but they are parallel for all practical
+purposes since we would have to follow them upward for a
+quarter of a million miles to get to the point where they intersect.
+<% marg(35) %>
+<%
+  fig(
+    'newtonian-telescope-eye',
+    %q{%
+      A Newtonian telescope being used for visual rather than
+      photographic observing. In real life, an eyepiece lens is normally used for
+      additional magnification, but this simpler setup will also work.
+    }
+  )
+%>
+<% end_marg %>
+
+The large curved mirror by itself would form an image $\zu{I}$, but
+the small flat mirror creates an image of the image, $\zu{I}'$. The
+relationship between $\zu{I}$ and $\zu{I}'$ is exactly the same as it
+would be if $\zu{I}$ was an actual object rather than an image: $\zu{I}$
+and $\zu{I}'$ are at equal distances from the plane of the mirror,
+and the line between them is perpendicular to the plane of the mirror.
+
+One surprising wrinkle is that whereas a flat mirror used by
+itself forms a virtual image of an object that is real, here
+the mirror is forming a real image of virtual image $\zu{I}$. This
+shows how pointless it would be to try to memorize lists of
+facts about what kinds of images are formed by various
+optical elements under various circumstances. You are better
+off simply drawing a ray diagram.
+
+
+<%
+  fig(
+    'angular-size',
+    %q{%
+      The angular size of the flower depends on its
+      distance from the eye.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true,
+      'sidepos'=>'b'
+    }
+  )
+%>
+
+Although the main point here was to give an example of an
+image of an image, figure \figref{newtonian-telescope-eye} also shows an interesting case where we
+need to make the distinction between \emph{magnification}
+and \emph{angular magnification}\index{angular magnification}\index{magnification!angular}.
+$\zu{I}$f you are looking at the moon through this telescope, then
+the images $\zu{I}$ and $\zu{I}'$ are much \emph{smaller} than the actual
+moon. Otherwise, for example, image $\zu{I}$ would not fit inside
+the telescope! However, these images are very close to your
+eye compared to the actual moon. The small size of the image
+has been more than compensated for by the shorter distance.
+The important thing here is the amount of \emph{angle}
+within your field of view that the image covers, and it is
+this angle that has been increased. The factor by which it
+is increased is called the \emph{angular magnification}, $M_a$.
+
+\pagebreak[4]
+
+<%
+  fig(
+    'ladybug',
+    %q{%
+      The person uses a mirror to get a view of both sides of the ladybug. Although the flat mirror
+      has $M=1$, it doesn't give an angular magnification of 1.
+      The image is farther from the eye than the object, so the angular magnification
+      $M_a=\alpha_i/\alpha_o$ is less than one.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\startdqs
+
+\begin{dq}\label{dq:parallel-mirrors}
+Locate the images of you that will be formed if you
+stand between two parallel mirrors.
+\end{dq}
+
+  % couldn't get this to lay out properly using eruby-style figures
+\fullpagewidthfignocaption{dq-parallel-mirrors}
+
+\pagebreak
+
+
+\begin{dq}
+Locate the images formed by two perpendicular mirrors, as
+in the figure. What happens if the mirrors are not
+perfectly perpendicular?
+\end{dq}
+
+  % couldn't get this to lay out properly using eruby-style figures
+\fullpagewidthfignocaption{dq-perpendicular-mirrors}
+
+\pagebreak[4]
+
+\begin{dq}
+Locate the images formed by the periscope.
+\end{dq}
+
+  % couldn't get this to lay out properly using eruby-style figures
+\fullpagewidthfignocaption{dq-periscope}
+
+\pagebreak
+
+<% end_sec('images-of-images') %>
+
+
 <% begin_notes %>
 
 
