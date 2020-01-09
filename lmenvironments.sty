@@ -178,3 +178,11 @@
         }{%
           \par  \setlength{\leftskip}{\saveleftskip} \par%
 	}
+% Anything within this environment is kept on one page:
+%    https://tex.stackexchange.com/a/94702/6853
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+

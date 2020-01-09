@@ -181,7 +181,7 @@ object and image distances shown in figure \figref{di-and-do}:
 \begin{equation*}
                 \tan  \theta_o = 1/d_o \qquad \qquad        \tan  \theta_i  =  1/d_i
 \end{equation*}
-Ever since chapter 2, we've been assuming small angles. For
+Ever since the beginning of this chapter, we've been assuming small angles. For
 small angles, we can use the small-angle approximation 
 $\tan x\approx x$ (for $x$ in radians), giving simply
 \begin{equation*}
@@ -283,6 +283,7 @@ meters ($\munit^{-1}$), also known as diopters (1 D=1 $\munit^{-1}$).\index{diop
 \end{eg}
 
 <% end_sec() %>
+
 <% begin_sec("Magnification") %>
 
 We have already discussed in the previous chapter how to
@@ -292,11 +293,9 @@ the proof, which is very similar. In our new notation, the
 result is $M=d_i/d_o$. A numerical example is given in
 sec.~\ref{sec:other-curved-mirrors}.
 
-\vspace{0mm plus 1mm}
-
 <% end_sec() %>
 <% end_sec() %>
-<% begin_sec("Other cases with curved mirrors",0,'other-curved-mirrors') %>
+<% begin_sec("Other cases with curved mirrors",nil,'other-curved-mirrors') %>
 
 The equation $d_i=(1/f-1/d_o)^{-1}$ can easily produce a negative result,
 but we have been thinking of $d_i$ as a distance, and
@@ -414,23 +413,41 @@ than memorizing these signs, we start with the generic equations
 and then determine the signs by a two-step method that
 depends on ray diagrams. There are really only two signs to
 determine, not four; the signs in the two equations match up
-in the way you'd expect. The method is as follows:
+in the way you'd expect. The following algorithm can be used to find the signs:
 
-1. Use ray diagrams to decide whether $\theta_o$ and
+\begin{absolutelynopagebreak}
+\begin{shaded}
+
+1. Use one of the following methods (your choice --- either one works)
+to determine whether the two signs in the angle equation are the same
+or opposite. 
+
+\begin{indentedblock}
+a. \emph{Long, straightforward method:\/} Use ray diagrams to decide whether $\theta_o$ and
 $\theta_i$ vary in the same way or in opposite ways. (In
 other words, decide whether making $\theta_o$ greater
 results in a greater value of $\theta_i$ or a smaller one.)
 Based on this, decide whether the two signs in the angle
-equation are the same or opposite. If the signs are
-opposite, go on to step 2 to determine which is positive
-and which is negative.
+equation are the same or opposite.
+
+\noindent b. \emph{Shorcut method using time-reversal:\/} Check whether the image and object can be interchanged
+by time-reversing the ray diagram, figure \figref{image-time-reversal-shortcut}. (This happens for real images.) If so, then by symmetry the signs
+have to be the same. In all other cases, it turns out that the signs are opposite.
+\end{indentedblock}
+
+\noindent If the signs are the same, they're both positive, and you're
+done. If the signs are opposite, go on to step 2 to determine
+which is positive and which is negative.
 
 2. If the signs are opposite, we need to decide which is the
 positive one and which is the negative. Since the focal
 angle is never negative, the smaller angle must be the
 one with a minus sign.
 
-In step 1, many students have trouble drawing the ray
+\end{shaded}
+\end{absolutelynopagebreak}
+
+In step 1a, many students have trouble drawing the ray
 diagram correctly. For simplicity, you should always do your
 diagram for a point on the object that is on the axis of the
 mirror, and let one of your rays be the one that is emitted
@@ -445,6 +462,19 @@ fan out or fan in, like opening or closing a book. Once
 you've drawn this effect, you should easily be able to tell
 whether $\theta_o$ and $\theta_i$ change in the same way
 or in opposite ways.
+
+<% marg(100) %>
+<%
+  fig(
+    'image-time-reversal-shortcut',
+    %q{%
+      1.~In the case of a real image, time reversal (flipping the arrowheads on the rays) interchanges
+      the roles of object and image. 2.~For a virtual image, no such symmetry exists.
+    }
+  )
+%>
+<% end_marg %>
+
 
 Although focal lengths are always positive in the method
 used in this book, you should be aware that diverging
@@ -474,8 +504,8 @@ As shown in ray diagram \figref{eg-shoplifting-mirror}/1, $d_i$ is less than
 $d_o$. The magnification, $M= d_i/d_o$, will be less than
 one, i.e., the image is actually reduced rather than magnified.
 
-Apply the method outlined above for determining the
-plus and minus signs. Step 1: 
+Apply the method above for determining the
+plus and minus signs. Step 1 (version a): 
 The object is the point on the
 opposite wall. As an experiment, \subfigref{eg-shoplifting-mirror}{2}, move the
 object closer. I did these drawings using illustration
@@ -534,19 +564,172 @@ i.e., it is smaller by 70\%.
   )
 %>
 
-\begin{eg}{A shortcut for real images}
-In the case of a real image, there is a shortcut for step 1,
-the determination of the signs. In a real image, the rays
-cross at both the object and the image. We can therefore
-time-reverse the ray diagram, so that all the rays are
-coming from the image and reconverging at the object. Object
-and image swap roles. Due to this time-reversal symmetry,
-the object and image cannot be treated differently in any of
-the equations, and they must therefore have the same signs.
-They are both positive, since they must add up to a positive result.
-\end{eg}
+<% end_sec() %>
+<% begin_sec("Images formed by lenses",nil,'lens-image') %>\index{lens}
+<% begin_sec("Lenses",nil,'lenses') %>\index{lens}
+
+Figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2} show examples of lenses forming images.
+There is essentially nothing for you to learn about imaging
+with lenses that is truly new. You already know how to
+construct and use ray diagrams, and you know about real and
+virtual images. The concept of the focal length of a lens is
+the same as for a curved mirror. The equations for locating
+images and determining magnifications are of the same form.
+It's really just a question of flexing your mental muscles
+on a few examples. The following self-checks and discussion
+questions will get you started.
+
+<%
+  fig(
+    'sc-lenses-flame',
+    %q{%
+      1. A converging lens forms an image
+      of a candle flame. 2. A diverging lens.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% self_check('lenses-flame',<<-'SELF_CHECK'
+(1) In figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2}, classify the images as real or virtual.
+
+(2) Glass has an index of refraction that is greater than
+that of air. Consider the topmost ray in figure \subfigref{sc-lenses-flame}{1}. Explain
+why the ray makes a slight left turn upon entering the lens,
+and another left turn when it exits.
+
+(3) If the flame in figure \subfigref{sc-lenses-flame}{2} was moved closer to the lens,
+what would happen to the location of the image?
+  SELF_CHECK
+  ) %>
+
+\startdqs
+
+\begin{dq}\label{dq:lens-no-bending-at-waist}
+In figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2}, the front and back surfaces are
+parallel to each other at the center of the lens. What will
+happen to a ray that enters near the center, but not
+necessarily along the axis of the lens? Draw a BIG ray diagram,
+and show a ray that comes from off axis.
+\end{dq}
+
+\emph{In discussion questions \ref{dq:real-image-symmetry}-\ref{dq:rose-image-focus}, don't draw ultra-detailed
+ray diagrams as in \ref{dq:lens-no-bending-at-waist}.}
+
+\begin{dq}\label{dq:real-image-symmetry}
+Suppose you wanted to change the setup in figure \subfigref{sc-lenses-flame}{1} so
+that the location of the actual flame in the figure would
+instead be occupied by an image of a flame. Where would you
+have to move the candle to achieve this? What about in \subfigref{sc-lenses-flame}{2}?
+\end{dq}
+
+\begin{dq}\label{dq:lens-image-types}
+There are three qualitatively different types of image
+formation that can occur with lenses, of which figures \subfigref{sc-lenses-flame}{1}
+and \subfigref{sc-lenses-flame}{2} exhaust only two. Figure out what the third
+possibility is. Which of the three possibilities can result
+in a magnification greater than one? Cf.~problem \ref{hw:listmirrorimages}, p.~\pageref{hw:listmirrorimages}.
+\end{dq}
+
+m4_ifelse(__sn,1,[:\pagebreak:],[::])
+
+\begin{dq}
+Classify the examples shown in figure \figref{rose} according to
+the types of images delineated in discussion question \ref{dq:lens-image-types}.
+\end{dq}
+
+\begin{dq}
+In figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2}, the only rays drawn were those
+that happened to enter the lenses. Discuss this in
+relation to figure \figref{rose}.
+\end{dq}
+
+\begin{dq}\label{dq:rose-image-focus}
+In the right-hand side of figure \figref{rose}, the image viewed
+through the lens is in focus, but the side of the rose that
+sticks out from behind the lens is not. Why?
+\end{dq}
+
+<%
+  fig(
+    'rose',
+    %q{Two images of a rose created by the same lens and recorded with the same camera.},
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+<% end_sec('lenses') %>
+<% begin_sec("The lensmaker's equation",nil,'',{'optional'=>true}) %>\index{lensmaker's equation}
+
+<% marg(m4_ifelse(__sn,1,[:-50:],[:5:])) %>
+<%
+  fig(
+    'radii-of-curvature',
+    %q{The radii of curvature appearing in the lensmaker's equation.}
+  )
+%>
+<% end_marg %>
+The focal length of a spherical mirror is simply $r/2$, but
+we cannot expect the focal length of a lens to be given by
+pure geometry, since it also depends on the index of
+refraction of the lens. Suppose we have a lens whose front
+and back surfaces are both spherical. (This is no great loss
+of generality, since any surface with a sufficiently shallow
+curvature can be approximated with a sphere.) Then if the
+lens is immersed in a medium with an index of refraction of
+1, its focal length is given approximately by
+\begin{equation*}
+ f = \left[(n-1)\left|\frac{1}{r_1}\pm\frac{1}{r_2}\right|\right]^{-1}\eqquad,
+\end{equation*}
+where $n$ is the index of refraction and $r_1$ and $r_2$ are
+the radii of curvature of the two surfaces of the lens. This
+is known as the lensmaker's equation. In my opinion it is
+not particularly worthy of memorization. The positive sign
+is used when both surfaces are curved outward or both are
+curved inward; otherwise a negative sign applies. The proof
+of this equation is left as an exercise to those readers who
+are sufficiently brave and motivated.
 
 <% end_sec() %>
+
+
+<% begin_sec("Dispersion",nil,'optical-dispersion') %>\index{wave!dispersive}\index{dispersion}
+For most materials, we observe that the index of refraction depends slightly on wavelength,
+being highest at the blue end of the visible spectrum and lowest at the red. For example,
+white light disperses into a rainbow when it passes through a prism,
+\figref{dispersion-by-prism}. This is the reason for the terminology introduced
+on p.~\pageref{dispersion-introduced}, that any dependence of wave speed on wavelength is referred to
+as dispersion.\index{dispersion} Dispersion inside spherical raindrops is responsible for
+the creation of rainbows in the sky, and in an optical instrument such as the eye or a camera it
+is responsible for a type of aberration called chromatic aberration 
+(sec.~\ref{sec:aberration} and problem \ref{hw:refractorvsreflector}).\index{aberration!chromatic}
+Dispersion causes a wave that is not a pure
+sine wave to have its shape distorted as it travels (p.~\pageref{dispersion-introduced}).
+As we'll see in sec.~\ref{sec:dispersive-waves}, 
+it also causes the speed at which energy and information are
+transported by the wave to be different from what one might expect from a naive calculation.
+The microscopic reasons for dispersion of light in matter are discussed in optional
+section \ref{sec:microscopic-refraction}.
+<% marg() %>
+<%
+  fig(
+    'dispersion-by-prism',
+    %q{Dispersion of white light by a prism. White light is a mixture of all the wavelengths of the
+       visible spectrum. Waves of different wavelengths undergo different amounts of refraction.}
+  )
+%>
+<% end_marg %>
+
+<% end_sec() %>
+<% end_sec('lens-image') %>
+
+
+
 <% begin_sec("Aberrations",nil,'aberration',{'optional'=>true}) %>\index{aberration}
 
 An imperfection or distortion in an image is called an
@@ -672,176 +855,144 @@ types of aberrations.
   )
 %>
 
-<% begin_sec("Lenses",3) %>\index{lens}
-
-Figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2} show examples of lenses forming images.
-There is essentially nothing for you to learn about imaging
-with lenses that is truly new. You already know how to
-construct and use ray diagrams, and you know about real and
-virtual images. The concept of the focal length of a lens is
-the same as for a curved mirror. The equations for locating
-images and determining magnifications are of the same form.
-It's really just a question of flexing your mental muscles
-on a few examples. The following self-checks and discussion
-questions will get you started.
-
-<%
-  fig(
-    'sc-lenses-flame',
-    %q{%
-      1. A converging lens forms an image
-      of a candle flame. 2. A diverging lens.
-    },
-    {
-      'width'=>'wide',
-      'sidecaption'=>true
-    }
-  )
-%>
-
-<% self_check('lenses-flame',<<-'SELF_CHECK'
-(1) In figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2}, classify the images as real or virtual.
-
-(2) Glass has an index of refraction that is greater than
-that of air. Consider the topmost ray in figure \subfigref{sc-lenses-flame}{1}. Explain
-why the ray makes a slight left turn upon entering the lens,
-and another left turn when it exits.
-
-(3) If the flame in figure \subfigref{sc-lenses-flame}{2} was moved closer to the lens,
-what would happen to the location of the image?
-  SELF_CHECK
-  ) %>
-
-\startdqs
-
-\begin{dq}\label{dq:lens-no-bending-at-waist}
-In figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2}, the front and back surfaces are
-parallel to each other at the center of the lens. What will
-happen to a ray that enters near the center, but not
-necessarily along the axis of the lens? Draw a BIG ray diagram,
-and show a ray that comes from off axis.
-\end{dq}
-
-\emph{In discussion questions \ref{dq:real-image-symmetry}-\ref{dq:rose-image-focus}, don't draw ultra-detailed
-ray diagrams as in \ref{dq:lens-no-bending-at-waist}.}
-
-\begin{dq}\label{dq:real-image-symmetry}
-Suppose you wanted to change the setup in figure \subfigref{sc-lenses-flame}{1} so
-that the location of the actual flame in the figure would
-instead be occupied by an image of a flame. Where would you
-have to move the candle to achieve this? What about in \subfigref{sc-lenses-flame}{2}?
-\end{dq}
-
-\begin{dq}\label{dq:lens-image-types}
-There are three qualitatively different types of image
-formation that can occur with lenses, of which figures \subfigref{sc-lenses-flame}{1}
-and \subfigref{sc-lenses-flame}{2} exhaust only two. Figure out what the third
-possibility is. Which of the three possibilities can result
-in a magnification greater than one? Cf.~problem \ref{hw:listmirrorimages}, p.~\pageref{hw:listmirrorimages}.
-\end{dq}
-
-m4_ifelse(__sn,1,[:\pagebreak:],[::])
-
-\begin{dq}
-Classify the examples shown in figure \figref{rose} according to
-the types of images delineated in discussion question \ref{dq:lens-image-types}.
-\end{dq}
-
-\begin{dq}
-In figures \subfigref{sc-lenses-flame}{1} and \subfigref{sc-lenses-flame}{2}, the only rays drawn were those
-that happened to enter the lenses. Discuss this in
-relation to figure \figref{rose}.
-\end{dq}
-
-\begin{dq}\label{dq:rose-image-focus}
-In the right-hand side of figure \figref{rose}, the image viewed
-through the lens is in focus, but the side of the rose that
-sticks out from behind the lens is not. Why?
-\end{dq}
-
-<%
-  fig(
-    'rose',
-    %q{Two images of a rose created by the same lens and recorded with the same camera.},
-    {
-      'width'=>'fullpage'
-    }
-  )
-%>
-
-<% end_sec() %>
-<% begin_sec("The lensmaker's equation",nil,'',{'optional'=>true}) %>\index{lensmaker's equation}
-
-<% marg(m4_ifelse(__sn,1,[:-50:],[:5:])) %>
-<%
-  fig(
-    'radii-of-curvature',
-    %q{The radii of curvature appearing in the lensmaker's equation.}
-  )
-%>
-<% end_marg %>
-The focal length of a spherical mirror is simply $r/2$, but
-we cannot expect the focal length of a lens to be given by
-pure geometry, since it also depends on the index of
-refraction of the lens. Suppose we have a lens whose front
-and back surfaces are both spherical. (This is no great loss
-of generality, since any surface with a sufficiently shallow
-curvature can be approximated with a sphere.) Then if the
-lens is immersed in a medium with an index of refraction of
-1, its focal length is given approximately by
-\begin{equation*}
- f = \left[(n-1)\left|\frac{1}{r_1}\pm\frac{1}{r_2}\right|\right]^{-1}\eqquad,
-\end{equation*}
-where $n$ is the index of refraction and $r_1$ and $r_2$ are
-the radii of curvature of the two surfaces of the lens. This
-is known as the lensmaker's equation. In my opinion it is
-not particularly worthy of memorization. The positive sign
-is used when both surfaces are curved outward or both are
-curved inward; otherwise a negative sign applies. The proof
-of this equation is left as an exercise to those readers who
-are sufficiently brave and motivated.
-
-<% end_sec() %>
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-m4_ifelse(__sn,1,[:\vfill:],[::])
-<% begin_sec("Dispersion",nil,'optical-dispersion') %>\index{wave!dispersive}\index{dispersion}
-For most materials, we observe that the index of refraction depends slightly on wavelength,
-being highest at the blue end of the visible spectrum and lowest at the red. For example,
-white light disperses into a rainbow when it passes through a prism,
-\figref{dispersion-by-prism}. Even when the waves involved aren't light waves, and even when
-refraction isn't of interest, the dependence of wave speed on wavelength is referred to
-as dispersion.\index{dispersion} Dispersion inside spherical raindrops is responsible for
-the creation of rainbows in the sky, and in an optical instrument such as the eye or a camera it
-is responsible for a type of aberration called chromatic aberration 
-sec.~\ref{sec:aberration} and problem \ref{hw:refractorvsreflector}).\index{aberration!chromatic}
-As we'll see in sec.~\ref{sec:dispersive-waves}, dispersion causes a wave that is not a pure
-sine wave to have its shape distorted as it travels, and also causes the speed at which energy and information are
-transported by the wave to be different from what one might expect from a naive calculation.
-m4_ifelse(__sn,0,[:%:],[:The microscopic reasons for dispersion of light in matter are discussed in optional
-section \ref{sec:microscopic-refraction}.:])
-<% marg() %>
-<%
-  fig(
-    'dispersion-by-prism',
-    %q{Dispersion of white light by a prism. White light is a mixture of all the wavelengths of the
-       visible spectrum. Waves of different wavelengths undergo different amounts of refraction.}
-  )
-%>
-<% end_marg %>
-
-<% end_sec() %>
-
-<% end_sec() %>
-
-
-<% begin_notes %>
-
-
-<% end_notes %>
+<% end_sec('aberration') %>
 
 
 <% begin_hw_sec(vfill:true) %>
 
+<% begin_hw('flatmirrormagnification') %>__incl(hw/flatmirrormagnification)<% end_hw() %>
+
+<% begin_hw('hear-your-own-whisper') %>__incl(hw/hear-your-own-whisper)<% end_hw() %>
+
+<% begin_hw('virtual-image-location') %>__incl(hw/virtual-image-location)<% end_hw() %>
+
+<% begin_hw('focal-length-by-ray-tracing') %>__incl(hw/focal-length-by-ray-tracing)<% end_hw() %>
+
+<% marg(47) %>
+<%
+  fig(
+    'hw-rank-focal-lengths',
+    %q{Problem \ref{hw:rank-focal-lengths}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('rank-focal-lengths') %>__incl(hw/rank-focal-lengths)<% end_hw() %>
+
+<% begin_hw('image-combinations') %>__incl(hw/image-combinations)<% end_hw() %>
+
+<% begin_hw('magnificationdependsondistance') %>__incl(hw/magnificationdependsondistance)<% end_hw() %>
+
+<% begin_hw('infinitemagnification') %>__incl(hw/infinitemagnification)<% end_hw() %>
+
+<% begin_hw('listmirrorimages') %>__incl(hw/listmirrorimages)<% end_hw() %>
+
+<% begin_hw('telescopemovehead') %>__incl(hw/telescopemovehead)<% end_hw() %>
+
+<% marg(0) %>
+<%
+  fig(
+    'hw-soldier',
+    %q{Problem \ref{hw:soldier}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('range-of-magnifications') %>__incl(hw/range-of-magnifications)<% end_hw() %>
+
+<% begin_hw('image-of-dropping-object',nil,{'calc'=>true}) %>__incl(hw/image-of-dropping-object)<% end_hw() %>
+
+<% begin_hw('underwaterlens') %>__incl(hw/underwaterlens)<% end_hw() %>
+
+<% begin_hw('refractorvsreflector') %>__incl(hw/refractorvsreflector)<% end_hw() %>
+
+<% begin_hw('explainlens') %>__incl(hw/explainlens)<% end_hw() %>
+
+<% begin_hw('camera') %>__incl(hw/camera)<% end_hw() %>
+
+<% begin_hw('goggles') %>__incl(hw/goggles)<% end_hw() %>
+
+<% begin_hw('imagelocation1') %>__incl(hw/imagelocation1)<% end_hw() %>
+
+<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
+
+<% marg(80) %>
+<%
+  fig(
+    'hw-funkylenses',
+    %q{Problem \ref{hw:funkylenses}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('imagelocation2') %>__incl(hw/imagelocation2)<% end_hw() %>
+
+<% begin_hw('imagelocation3') %>__incl(hw/imagelocation3)<% end_hw() %>
+
+<% begin_hw('field-of-view') %>__incl(hw/field-of-view)<% end_hw() %>
+
+<% begin_hw('nearsighted') %>__incl(hw/nearsighted)<% end_hw() %>
+
+<% begin_hw('flatworm') %>__incl(hw/flatworm)<% end_hw() %>
+
+<% begin_hw('eyeglasses-no-mag') %>__incl(hw/eyeglasses-no-mag)<% end_hw() %>
+
+<% begin_hw('soldier',2) %>__incl(hw/soldier)<% end_hw() %>
+
 <% end_hw_sec %>
+
+
+<% begin_lab("Object and image distances",columns:1,type:'ex',suffix:'A') %>\label{lab:object-and-image-distances}
+__incl(text/object_and_image_distances)
+<% end_lab %>
+
+<% begin_lab("How strong are your glasses?",columns:1,type:'ex',suffix:'B') %>\label{lab:glasses-strength}
+This exercise was created by Dan MacIsaac.
+
+\noindent Equipment:
+
+\begin{indentedblock}
+        eyeglasses
+
+        diverging lenses for students who don't wear glasses, or
+who use  glasses with converging lenses
+
+rulers and metersticks
+
+scratch paper
+
+        marking pens
+\end{indentedblock}
+
+Most people who wear glasses have glasses whose lenses are
+outbending, which allows them to focus on objects far away.
+Such a lens cannot form a real image, so its focal length
+cannot be measured as easily as that of a converging lens.
+In this exercise you will determine the focal length of your
+own glasses by taking them off, holding them at a distance
+from your face, and looking through them at a set of
+parallel lines on a piece of paper. The lines will be
+reduced (the lens's magnification is less than one), and by
+adjusting the distance between the lens and the paper, you
+can make the magnification equal 1/2 exactly, so that two
+spaces between lines as seen through the lens fit into one
+space as seen simultaneously to the side of the lens. This
+object distance can be used in order to find the focal length of the lens.
+
+1. Use a marker to draw three evenly spaced parallel lines
+on the paper. (A spacing of a few cm works well.)
+
+2. Does this technique really measure magnification or does
+it measure angular magnification? What can you do in your
+experiment in order to make these two quantities nearly the
+same, so the math is simpler?
+
+3. Before taking any numerical data, use algebra to find the
+focal length of the lens in terms of $d_o$, the object
+distance that results in a magnification of 1/2.
+
+4. Measure the object distance that results in a magnification
+of 1/2, and determine the focal length of your lens.
+<% end_lab %>
 
 <% end_chapter() %>
