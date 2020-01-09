@@ -661,18 +661,6 @@ After that, the two sides of the car will once again be
 moving at the same speed, and the car will go straight.  The result of this model is always
 the same as the result of Snell's law: the ray is closer to the normal in the more optically dense medium.
 
-<% marg(40) %>
-<%
-  fig(
-    'mechanical-model',
-    %q{A mechanical model of refraction.},
-    {'topic'=>'optics'}
-  )
-%>
-<% end_marg %>
-
-
-\pagebreak
 
 \begin{eg}{Finding an angle using Snell's law}\label{eg:yellow-submarine}
 \egquestion A submarine shines its searchlight up toward the
@@ -691,7 +679,15 @@ As mentioned above, air has an index of refraction very
 close to 1, and water's is about 1.3, so we find $\theta_1=40\degunit$.
 The angle $\alpha $ is therefore $50\degunit$.
 \end{eg}
-<% marg(50) %>
+<% marg(150) %>
+<%
+  fig(
+    'mechanical-model',
+    %q{A mechanical model of refraction.},
+    {'topic'=>'optics'}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'eg-yellow-submarine',
