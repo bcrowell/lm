@@ -121,6 +121,7 @@ Macros I define:
   __pe         U,PE                sn.m4, lmseries.m4
 Conditionals:
   m4_ifelse(__calc,1,[:calculus:],[:no, calculus is scary:])
+  m4_ifelse(m4_eval(__problems || __mod),[:...:],[:...:])
   m4_ifelse(__pe,PE,[:magnetic potential energy:],[:magnetic energy:])
   I have a separate mechanism for doing conditional includes, described below.
 Includes:

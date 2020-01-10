@@ -1,7 +1,7 @@
 Estimate the pressure at the center of the Earth,
 assuming it is of constant density throughout. 
-m4_ifelse(__problems,1,[:%
-The gravitational field $g$ is not constant with repsect to
+m4_ifelse(m4_eval(__problems || __mod),1,[:%
+The gravitational field $g$ is not constant with respect to
 depth. It equals $Gmr/b^3$ for $r$, the distance from the center,
 less than $b$, the earth's radius. Here $m$ is the mass of the earth, and
 $G$ is Newton's universal gravitational constant, which has units

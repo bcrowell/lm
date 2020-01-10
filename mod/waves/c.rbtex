@@ -107,7 +107,7 @@ of $\vc{E}$, but that can't be the right way to tell which direction
 the wave is traveling. For example, we could do the experiment twice,
 once with charges A and B both positive, then again with both charges
 negative. In both cases the wave should propagate to the right, but
-all the electric fields would have flipped.
+all the electric fields would have flipped.\label{waves-not-pure-e-or-b}
 
 This problem is resolved by the presence of the magnetic field. Given
 two vectors $\vc{E}$ and $\vc{B}$, we can form the vector
@@ -1037,39 +1037,6 @@ in figure \subfigref{point-charge-in-capacitor-poynting}{4}, but the
 sources of this flow are now ``off stage'' at infinity. This seems like
 a perfectly natural resolution of the paradox, which we created in the first place by moving
 the plates of the capacitor off stage to infinity.
-
-
-\notetext{maxwell-c}{Maxwell's equations and propagation at $c$}
-\notesummary{Maxwell's equations give electromagnetic waves that propagate at $c$.}
-As in the main text, we take a wave of the form
-\begin{align*}
-  E_x &= f(z-vt) \\
-  B_y &= (1/c)f(z-vt) .
-\end{align*}
-This is the most general form of a plane wave, with any shape defined by the function
-$f$, propagating in the positive $z$ direction at velocity $v$. To see this consider
-what happens if we want to increase $t$ by $\Delta t$ while keeping the input to the function $f$
-the same: we must increase $z$ by $v\Delta t$.
-
-The divergence vanishes, as required by Maxwell's equations,
-since neither component has a nonvanishing partial derivative
-with respect to $x$ or $y$.
-
-We now need to evaluate the curl, which we do by using the componentwise expressions
-from note \notewithoutbackref{curl-component-form}.
-\begin{align*}
-  (\operatorname{curl}\vc{E})_y &= \frac{\partial E_x}{\partial z} = f' \\
-  (\operatorname{curl}\vc{B})_x &= \frac{\partial B_y}{\partial z} = -(1/c)f' 
-\end{align*}
-Maxwell's equations require these to equal the time derivatives
-\begin{align*}
-  -\frac{\partial B_y}{\partial t} &= (v/c)f' \qquad \text{and} \\
-  \frac{1}{c^2}\frac{\partial E_x}{\partial t} &= -(v/c^2)f'.
-\end{align*}
-Equating these to each other as required by the two curl equations in Maxwell's
-equations, we find $1=v/c$ and $-1/c=-v/c^2$. These two equations are both satisfied
-if and only if $v=c$. (To get propagation with $v=-c$ we would have had to rearrange
-things so as to create a Poynting vector in that direction.)
 
 <% end_notes %>
 
