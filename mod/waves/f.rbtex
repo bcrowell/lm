@@ -143,7 +143,7 @@ Newtonian mechanics. Just as all three-vectors have a consistent set of rules fo
 rotation, and so forth, all four-vectors behave by a consistent set of rules. Let's flesh out some of these
 analogies.
 
-\formatlikesubsubsection{Lorentz transformation:} As far as a mathematician is concerned, we can always create
+\formatlikesubsubsection{Lorentz transformation:} As far as a mathematician is concerned (see sec.~\ref{sec:linear-algebra}), we can always create
 a list of numbers and call it a ``vector,'' e.g., an expression like $(G,d)$, where $G$ is the current price of
 gold and $d$ is the number of dogs in Montana. Physicists are not so casual. For a three-vector, we want the
 components to behave as expected under a rotation (which $(G,d)$ doesn't, since rotating a gold bar or a dog
@@ -391,6 +391,128 @@ which the emission occurred.
 
 <% end_sec('e-p-applications') %>
 
+<% begin_sec("A tiny bit of linear algebra",nil,'linear-algebra') %>
+
+With four-vectors, we have generalized the idea of a vector beyond
+anything that would have been recognized by, for example, my
+great-great grandfather, who was a steel salesman around 1900.
+Generalizations can actually be easier than the things they
+generalize, because when we make a generalization, we're basically
+throwing away some of the information.  If my ancestor had been a
+general commodities salesman, then he might not have had to know all the
+specifics of grades of steel, carbon steel, stainless steel, and so on
+--- he could have gotten away with only knowing basics like the fact
+that steel is heavy and durable.  The mathematician's ultimate
+generalization of the idea of a vector is still more general than what
+we have considered so far, and it may be helpful at this point to understand
+what it is, so as to put things in perspective and make life easier.
+This subject goes by the name of linear algebra, and
+many students taking this type of physics course are either taking linear algebra
+concurrently with it, or have already taken it. If this is true for you, then you may just want
+to skim the following for review.
+
+A \emph{vector space} is a set of objects, which we refer to as
+vectors,\index{vector space}\label{lin-alg-vector-space} along with
+operations of addition and scalar multiplication defined on the
+vectors. The scalars may be the real numbers or the complex
+numbers.\footnote{It will probably not be obvious at this point why
+anyone would want to use complex numbers as scalars, but we will see
+when we study quantum physics that when a particle like an electron
+travels from A to B, it has a wave amplitude and wave phase that are
+most conveniently expressed as a complex number, while the ``vector''
+is actually a description of the electron's over-all state.} We
+require that the addition and scalar multiplication operations have
+the properties that addition is commutative
+($\vc{u}+\vc{v}=\vc{v}+\vc{u}$), that we have an additive identity
+$\vc{0}$ and additive inverses ($\vc{v}+(-\vc{v})=\vc{0}$), and that
+both operations are associative and distributive in the ways that we
+would expect from the notation.  The prototypical example of a vector
+space is vectors in three-dimensional space, with the scalars being
+the real numbers.
+
+
+\begin{eg}{The vector space of polynomials}
+Consider the set of all polynomials.
+If we define addition of polynomials and multiplication of a polynomial by a real
+number in the obvious ways, then these functions are a vector space. Note that
+there is no well-defined division operation, since dividing
+a polynomial by a polynomial typically does not give a polynomial.
+\end{eg}
+
+A set of vectors is said to be \emph{linearly independent} if it is not possible to form
+the zero vector as a linear combination of them. 
+For vectors in three-dimensional
+space, a set of three vectors is not linearly independent if they lie in the same plane.
+The set of polynomials $\{1,x\}$ is
+linearly independent, but the set $\{P,Q,R\}$, where $P=1$, $Q=1-x$, and $R=1+x$,
+is not, because $-2P+Q+R=0$.\index{linear independence} 
+
+A \emph{basis}\index{basis for a vector space}\label{lin-alg-basis}
+for a vector space is a linearly independent set of
+vectors, called basis vectors, such that any vector can be formed as a
+linear combination of basis vectors. The standard basis for vectors in
+two-dimensional space is $\{\hat{x},\hat{y}\}$, while a possible basis
+for the polynomials is the infinite set $\{1,x,x^2,x^3,\ldots\}$.  
+A basis exists for any vector space, and in fact there are normally
+many different bases to choose from, with none being preferred. In the
+plane, for example, we can choose to rotate the standard $\{\hat{x},\hat{y}\}$ basis by any angle we like.
+Every basis for a given vector space has the same number of elements, and this number is
+called the \emph{dimension} of the vector space. The plane is a two-dimensional
+vector space. The polynomials are an infinite-dimensional 
+vector space.\index{basis of a vector space}\index{dimension of a vector space}
+
+A \emph{linear operator} is a function $\mathcal{O}$ that takes a vector as an
+input and gives a vector as an output, with the properties
+$\mathcal{O}(\vc{u}+\vc{v})=\mathcal{O}(\vc{u})+\mathcal{O}(\vc{v})$ and
+$\mathcal{O}(\alpha\vc{u})=\alpha\mathcal{O}(\vc{u})$.\index{linear operator}\label{lin-alg-linear-operator}
+A rotation in the plane is a linear operator.
+
+\begin{eg}{Differentiation as a linear operator}
+Consider the set of all differentiable functions, taken as a vector space over either
+the real numbers or the complex numbers. Then the derivative is a linear operator,
+as is the second derivative.
+\end{eg}
+
+For vectors in three-dimensional space, we have a dot product, which is a function
+that takes two vectors as inputs and gives a scalar as its output. 
+A vector space
+may or may not come equipped with such an operation. If it does, we call the
+operation an \emph{inner product}.\footnote{We also require that the inner product be
+linear, $\vc{u}\cdot(\alpha\vc{v}+\beta\vc{w})=\alpha\vc{u}\cdot\vc{v}+\beta\vc{u}\cdot\vc{w}$.
+Often we want $\vc{u}\cdot\vc{u}>0$, but this is not a requirement we want to impose on four-vectors,
+because their squared magnitudes can be negative.}
+
+If we have an inner product, then we automatically get a notion of magnitude, whose square
+we get by taking the dot product of a vector with itself $|\vc{v}|^2=\vc{v}\cdot\vc{v}$.
+Conversely, if we have a way of defining a magnitude, then we get an inner product for
+free, since $|\vc{u}+\vc{v}|^2=|\vc{u}|^2+|\vc{v}|^2+2\vc{u}\cdot\vc{v}$ can be used to
+define $\vc{u}\cdot\vc{v}$.
+
+The inner product can often be described as a measure of how similar two vectors are.
+For example, in the Euclidean plane, vectors that are perpendicular to each other have
+a dot product of zero, which tells you that they lie along lines that are completely different.
+When two vectors have an inner product of zero, we say that they are \emph{orthogonal}.
+
+\begin{eg}{Inner product on four-vectors}
+In this language, we could describe the squared interval $\interval^2$ as the inner product of
+a displacement four-vector with itself. If a certain frame of reference in relativity has
+unit vectors $\hat{\vc{t}}$, $\hat{\vc{x}}$, $\hat{\vc{y}}$, and $\hat{\vc{z}}$, then
+each of these is orthogonal to the other three. The orthogonality $\hat{\vc{x}}\cdot\hat{\vc{y}}=0$ says
+that the $x$ and $y$ axes have a 90-degree angle between them. The orthogonality $\hat{\vc{t}}\cdot\hat{\vc{x}}=0$
+says that an observer whose time axis is $t$ considers events along the $x$ axis to be simultaneous
+(figure \figref{simultaneity-scissors}, p.~\pageref{fig:simultaneity-scissors}).
+\end{eg}
+
+When a vector space is finite-dimensional and a basis has been chosen, then if we wish we can represent
+vectors in column vector notation. For example, in the space of first-order polynomials
+with the basis $\{1,x\}$, the polynomial $3+5x$ can be represented by
+$\left(\begin{smallmatrix} 3 \\ 5 \end{smallmatrix}\right)$. Linear operators can
+similarly be represented by matrices, but we will seldom find this possible or useful in this
+book. For example, we can't represent the derivative as a matrix, because the vector space
+is infinite-dimensional.\label{lin-alg-column-vec-notation}
+
+<% end_sec('linear-algebra') %>
+
 <% begin_sec("Tachyons",nil,'tachyons',{'optional'=>true}) %>
 If we had objects in our universe that could go faster than $c$, then their energy-momentum vectors would be
 spacelike. The squared magnitude of a spacelike vector is negative, so such objects
@@ -454,14 +576,19 @@ missing energy-momentum in the decay of hydrogen-3.
 
 <% begin_hw('congruent-four-vectors-2') %>m4_include(../share/relativity/hw/congruent-four-vectors-2.tex)<% end_hw() %>
 
-\pagebreak
-
 <% begin_hw('vintermsofp') %>m4_include(../share/relativity/hw/vintermsofp.tex)<% end_hw() %>
 
 <% begin_hw('e-m-gamma-mod') %>m4_include(../share/relativity/hw/e-m-gamma-mod.tex)<% end_hw() %>
 
 <% begin_hw('p-rel-taylor-mod') %>m4_include(../share/relativity/hw/p-rel-taylor-mod.tex)<% end_hw() %>
 
+<% begin_hw('lin-alg-basis-or-not') %>m4_include(../share/quantum/hw/lin-alg-basis-or-not.tex)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('lin-alg-vector-space-or-not') %>m4_include(../share/quantum/hw/lin-alg-vector-space-or-not.tex)<% end_hw() %>
+
+<% begin_hw('lin-alg-units') %>m4_include(../share/quantum/hw/lin-alg-units.tex)<% end_hw() %>
 
 <% end_hw_sec() %>
 

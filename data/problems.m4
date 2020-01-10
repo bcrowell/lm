@@ -1414,6 +1414,9 @@ m4_define(__hw_mod_6_congruent-four-vectors-2,1)m4_dnl
 m4_define(__hw_mod_6_vintermsofp,2)m4_dnl
 m4_define(__hw_mod_6_e-m-gamma-mod,3)m4_dnl
 m4_define(__hw_mod_6_p-rel-taylor-mod,4)m4_dnl
+m4_define(__hw_mod_6_lin-alg-basis-or-not,5)m4_dnl
+m4_define(__hw_mod_6_lin-alg-vector-space-or-not,6)m4_dnl
+m4_define(__hw_mod_6_lin-alg-units,7)m4_dnl
 m4_define(__hw_mod_7_stpvol,1)m4_dnl
 m4_define(__hw_mod_7_work-pdv,2)m4_dnl
 m4_define(__hw_mod_7_cracking-gas-molecules,3)m4_dnl
@@ -1431,6 +1434,10 @@ m4_define(__hw_mod_9_heart-efficiency,1)m4_dnl
 m4_define(__hw_mod_9_entropy-stirring-coffee,2)m4_dnl
 m4_define(__hw_mod_9_half-brick,3)m4_dnl
 m4_define(__hw_mod_9_airconditioner,4)m4_dnl
+m4_define(__hw_mod_10_pu-decay-products,1)m4_dnl
+m4_define(__hw_mod_10_leadbound,2)m4_dnl
+m4_define(__hw_mod_10_electroncapture,3)m4_dnl
+m4_define(__hw_mod_10_molecule-in-beta-decay,4)m4_dnl
 m4_define(__hw_mod_11_diffuse,1)m4_dnl
 m4_define(__hw_mod_11_stealth,2)m4_dnl
 m4_define(__hw_mod_11_alien-pool,3)m4_dnl
