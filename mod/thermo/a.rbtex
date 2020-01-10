@@ -502,11 +502,70 @@ For a solid, we expect there to be a total of \emph{six}
 energies per atom: the three kinetic energies, plus potential energies due to its displacement in the $x$, $y$, and $z$ directions.
 Each of these carries an average energy $\frac{1}{2}kT$, for a total
 of $3kT$. In other words, a solid should have twice the heat capacity found in example \ref{eg:heating-helium}
-for a monoatomic gas. This was discovered empirically by Dulong and Petit
+for a monatomic gas. This was discovered empirically by Dulong and Petit
 in 1819, as shown in figure \figref{dulong-petit}.\index{specific heat!solids}
 \end{eg}
 
 <% end_sec('equipartition') %>
+
+<% begin_sec("Heat capacities of gases",nil,'heat-capacity-gases') %>
+Examples \ref{eg:heating-helium} and \ref{eg:dulong-petit} show that by measuring the heat capacity of a substance, we can
+find out how many microscopic degrees of freedom it has. As a surprising example of how far this can carry us,
+consider the three types of molecules shown in figure \figref{molecular-shapes}.
+
+<%
+  fig(
+    'molecular-shapes',
+    %q{% 
+         The differing shapes of a helium atom (1), a nitrogen molecule (2), and a difluoroethane molecule (3) have surprising
+         macroscopic effects.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+If the gas is monatomic, then we know from the result of example \ref{eg:heating-helium} that 
+the relationship between its temperature and its
+internal energy is $E=(3/2)nkT$, so that to heat it by one degree, we the amount of heat we need to
+add\footnote{This is called the specific heat capacity, or specific heat, per atom. In practical work it is
+more common to multiply by Avogadro's number, which gives the specific heat per mole.} is $(3/2)nk$.
+Here the factor of 3 came ultimately from the fact that the gas was in a
+three-dimensional space, \subfigref{molecular-shapes}{1}. Moving in this space, each molecule can have momentum in the x, y, and
+z directions. It has three degrees of freedom.
+
+What if the gas is not monatomic? Air, for example, is made of diatomic molecules,
+\subfigref{molecular-shapes}{2}. There is a subtle difference between the two cases. An individual atom of
+a monatomic gas is a perfect sphere, so it is exactly the same no matter how it is oriented. Because of this perfect symmetry, there is
+thus no way to tell whether it is spinning or not, and in fact we find that it can't rotate.\footnote{Later in this
+course, we'll see in more detail that this is a consequence of how quantum physics describes motion}
+The diatomic gas, on the other hand,
+can rotate end over end about the $x$ or $y$ axis, but cannot rotate about the $z$ axis, which is its axis of symmetry.
+It has a total of five degrees of freedom. A polyatomic molecule with a more complicated, asymmetric shape,
+\subfigref{molecular-shapes}{3}, can rotate about all three axis, so it has a total of six degrees of freedom.
+Summarizing, we have
+\begin{equation*}
+  \alpha = \begin{cases}
+    3, \text{monatomic gas} \\
+    5, \text{diatomic gas} \\
+    6, \text{polyatomic gas},
+  \end{cases}
+\end{equation*}
+for the number of degrees of freedom per molecule $\alpha$, and the specific heat per molecule, at constant volume, is $(\alpha/2)nk$.
+
+
+In 1819, Cl\'{e}ment and Desormes did a simple experiment that we
+would today interpret as measuring this heat capacity for air. Its
+correct interpretation, in comparison with other gases, requires
+talking about the shapes of molecules. This was in a time when the
+periodic table hadn't been invented, and the existence of atoms and
+molecules was considered a mere hypothesis.  Who would have dreamed
+that such simple observations, correctly interpreted, could give us
+this kind of glimpse of the microcosm?
+
+<% end_sec('heat-capacity-gases') %>
 
 <% begin_sec("The ideal gas law",nil,'ideal-gas') %>
 Suppose that we take a liter of helium gas and get it very hot, increasing its absolute temperature by
@@ -621,6 +680,19 @@ that it is not reasonable to assign the same probability per unit
 
 <% begin_hw_sec(vfill:true) %>
 
+<% begin_hw('stpvol',0) %>__incl(hw/stpvol)<% end_hw() %>
+
+<% begin_hw('work-pdv') %>__incl(hw/work-pdv)<% end_hw() %>
+
+<% begin_hw('cracking-gas-molecules') %>__incl(hw/cracking-gas-molecules)<% end_hw() %>
+
+<% begin_hw('sun-heating',0) %>__incl(hw/sun-heating)<% end_hw() %>
+
+<% begin_hw('igm') %>__incl(hw/igm)<% end_hw() %>
+
+<% begin_hw('fusion') %>__incl(hw/fusion)<% end_hw() %>
+
+<% begin_hw('electron-speed-in-metal') %>__incl(hw/electron-speed-in-metal)<% end_hw() %>
 
 <% end_hw_sec %>
 

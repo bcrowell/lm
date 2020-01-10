@@ -654,8 +654,8 @@ fast as it flows out (\note{static-poynting}).
 \begin{eg}{A charge accelerated inside a capacitor}\label{eg:point-charge-in-capacitor-poynting}
 In discussion question \ref{dq:point-charge-in-capacitor}, p.~\pageref{dq:point-charge-in-capacitor},
 we convinced ourselves that if a charge was released inside a capacitor, the kinetic energy it gained
-could be properly accounted for by the energy lost from the electric field. We also calculated this
-quantitatively in note \notewithoutbackref{force-on-point-charge}. Figure \figref{point-charge-in-capacitor-poynting}
+could be properly accounted for by the energy lost from the electric field. This can also be calculated
+quantitatively \note{force-on-point-charge}. Figure \figref{point-charge-in-capacitor-poynting}
 shows how this plays out in terms of the Poynting vector. The setup is recapitulated in \subfigref{point-charge-in-capacitor-poynting}{1}.
 The electric field, \subfigref{point-charge-in-capacitor-poynting}{2}, is the superposition of the capacitor's
 nearly uniform downward field and the outward field pattern of the particle. As the particle moves downward, it
@@ -679,23 +679,12 @@ case, the Poynting vector tells us that the energy flow comes from infinity (\no
     {'anonymous'=>true}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'bug-in-plane-wave',
-    %q{A bug makes local observations of the leading edge of the wave from figure
-       \figref{plane-wave-propagating}. The wave is moving to the right, and the
-        magnetic field is perpendicular to the page.}
-  )
-%>
 <% end_marg %>
 
 \begin{dq}\label{dq:field-momentum}
 Positive charges 1 and 2 are moving as shown. What electric and magnetic forces do they exert on each other?
 (To find the directions of the relevant
-magnetic fields, you can pretend that the charges are wires, and you will need to use the right-hand rule illustrated in
-figure \figref{field-lines-of-wire-handedness},
-p.~\pageref{fig:field-lines-of-wire-handedness}.)
+magnetic fields, you can pretend that the charges are wires, and you will need to use the right-hand rule.)
 What does this imply for conservation of momentum?
 \end{dq}
 
@@ -751,8 +740,7 @@ fields and the mass we infer change by equal factors. For example, if
 we increase the electric field by a factor of 3, then the energy goes
 up by a factor of 9. But when the box is moving, this also has the
 effect of multiplying $\vc{B}$ by a factor of 3
-(because the transformation of the fields is linear,
-p.~\pageref{eb-transform-linear}), so $\vc{E}\times\vc{B}$ goes up
+(because the transformation of the fields is linear), so $\vc{E}\times\vc{B}$ goes up
 by a factor of 9. This means that the momentum goes up by 9 times, and so does
 the mass that we infer at a given velocity.
 <% end_sec('fields-carry-inertia') %>
@@ -941,6 +929,68 @@ a flow of energy, there are no observable consequences because no
 region of space can gather up the energy. It's a bit like the
 situation of a rich teenager who ``has'' a few million dollars in a
 trust fund, but can't touch it until she's 21. 
+
+\notetext{force-on-point-charge}{Electric force on a test charge}
+\notesummary{The force on a test charge is $\vc{F}=q\vc{E}$.}
+When we insert a test charge in an ambient field,
+the total field at any given point in space becomes the vector sum $\vc{E}+\vc{E}_q$,
+where $\vc{E}_q$ is the field contributed by the test charge itself. The energy density at this
+point is proportional to the squared magnitude
+of this field, $(\vc{E}+\vc{E}_q)\cdot(\vc{E}+\vc{E}_q)$. Multiplying this expression
+out, we get terms $\vc{E}\cdot\vc{E}$ and $\vc{E}_q\cdot\vc{E}_q$, which are constants
+and therefore don't have any effect on our analysis, but in addition we get a term
+$2\vc{E}\cdot\vc{E}_q$. It is only this latter term than can change if we move $q$ around,
+so the force $\vc{F}$ on $q$ is proportional to it. Since $\vc{E}_q$ is proportional to $q$
+(as we can easily prove by Gauss's law), it follows that $\vc{F}$ is proportional both to
+$\vc{E}$ and to $q$. We conclude that $\vc{F}\propto q\vc{E}$. The remainder of the calculation
+is only required in order to show that the proportionality constant is 1.
+
+Although the force will only depend on the field at the point where the test charge is,
+the energy depends on the fields at all points in space. Therefore we are free to take
+the ambient field to be any field pattern we like. We could use a uniform field filling
+all of space, but then the total energy turns out to diverge. (This is discussed further in note
+\notewithoutbackref{charge-in-infinite-uniform-field-poynting}.) Instead, we take the test
+charge to be at the origin, and use an ambient field
+\begin{equation*}
+  \vc{E} = \begin{cases}
+    E\hat{\vc{z}} & \mbox{if } a<z<b \\
+    0 & \mbox{elsewhere},
+  \end{cases}
+\end{equation*}
+where $a<0$, $b>0$, and $E$ is a constant. This is the field we would get from a parallel-plate
+capacitor, as in discussion question \ref{dq:point-charge-in-capacitor} on p.~\pageref{dq:point-charge-in-capacitor}.
+
+Because of the symmetry of the problem under
+rotation about the $z$ axis, we use cylindrical coordinates in which $R$
+is the distance from the $z$ axis. In these coordinates, the volume of a ring of radius $R$, radial
+thickness $\der R$, and height $\der z$ is $\der v=(\text{circumference})\der R\der z=2\pi R\der R\der z$.
+The part of the energy describing the interaction is
+\begin{align*}
+  U &= \int_{z=a}^b \int_{R=0}^\infty \frac{1}{8\pi k}2\vc{E}\cdot\vc{E}_q\der v \\
+    &= \frac{E}{4\pi k} \int_{z=a}^b \int_{R=0}^\infty E_{q,z} \cdot 2\pi R\der R\der z \\
+    &= \frac{E}{2 k} \int_{z=a}^b \int_{R=0}^\infty \frac{kq}{r^2}\cos\theta\cdot R\der R\der z,
+\end{align*}
+where $r=\sqrt{R^2+z^2}$ is the distance from the origin, and $\cos\theta=z/R$. This becomes
+\begin{align*}
+  U &= \frac{Eq}{2} \int_{z=a}^b \int_{R=0}^\infty \frac{zR}{r^3} \der R\der z \\
+    &= \frac{Eq}{2} \int_{z=a}^b \int_{R=0}^\infty \frac{zR}{(R^2+z^2)^{3/2}} \der R\der z.
+\end{align*}
+This is the kind of situation where the best strategy is usually to clean up the integrand by expressing
+it in terms of a unitless variable. For the inside integral, with respect to $R$,
+let $u=R/z$, giving
+\begin{equation*}
+  U = \frac{Eq}{2} \int_{z=a}^b \int_{u=0}^{\pm\infty} \frac{u}{(u^2+1)^{3/2}} \der u\der z,
+\end{equation*}
+where the sign in the upper limit of the $u$ integral is $+$ for $z>0$ and $-$ for $z<0$.
+The indefinite integral is $-(u^2+1)^{-1/2}$, and plugging this in at the limits of integration
+gives
+\begin{align*}
+  U &= \frac{Eq}{2} \int_{z=a}^b \pm 1 \der z \\
+    &= \frac{Eq}{2} (|b|-|a|) .
+\end{align*}
+If we let $h$ be the height of the charge above the lower boundary and fix $H=|a|+|b|$,
+then $|a|=h$ and $|b|=H-h$, so $|b|-|a|=H-2h$ and $U=-Eqh+\text{const}$. Varying $h$ is equivalent
+to moving the charge up or down, so the force is $F=-\der U/\der h=Eq$, which is what we wanted to prove.
 
 \notetext{charge-in-infinite-uniform-field-poynting}{A point charge in an infinite, uniform electric field}
 \notesummary{In this example, energy flows from infinity.}

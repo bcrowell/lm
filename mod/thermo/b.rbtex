@@ -655,7 +655,134 @@ compare an elephant to a shrew?
 
 <% end_sec %>
 
+<% begin_sec("Adiabatic expansion of a gas",0,'adiabatic-processes') %>
+When you pop the cap off of a bottle of beer, you may see a cloud of mist. This is because the air and carbon
+dioxide inside the bottle are under pressure, and as they expand, they push on the surrounding air and
+do work. By conservation of energy, this work can only come at the expense of some loss of the gas's own
+thermal energy. It cools, and the cooling produces condensation of water vapor.
+
+As an idealization of this type of process, we consider the expansion of a sealed sample of gas inside
+a cylinder, as it pushes a piston out. We assume that there is no heat conduction through the walls of
+the cylinder, either because the cylinder is well insulated or because the process is too fast for
+much heat conduction to occur. Classic examples of this is the expansion stroke of a steam engine,
+or the compression stroke of a gasoline engine.
+When this kind of process occurs, with no possibility of heat conduction, we refer to it as an \emph{adiabatic} process.\index{adiabatic}
+
+As the volume of the cylinder increases by an infinitesimal amount $\der V$, we have from the result
+of problem \ref{hw:work-pdv}, p.~\pageref{hw:work-pdv}, that it does work $\der W=P\der V$.
+Conservation of energy tells us that this will cool the gas by some amount $\der T$, decreasing the
+gas's thermal energy $E$. This internal energy equals $(\alpha/2)nkT$, where $\alpha=3,$ 5, or 6 is
+the number of degrees of freedom, depending on whether the gas is monatomic, diatomic, or polyatomic
+(sec.~\ref{sec:heat-capacity-gases}, p.~\pageref{sec:heat-capacity-gases}). We therefore have
+$(\alpha/2)nk\der T+P\der V=0$. All three variables, $T$, $P$, and $V$, are changing simultaneously,
+but they are not independent of one another, because the ideal gas law constrains them to $PV=nkT$.
+We can use this constraint to eliminate any one of the variables. Let's use it to eliminate $T$. Using
+the product rule, $nk\der T=P\der V+V\der P$, and separation of variables gives
+\begin{equation*}
+  \frac{\der P}{P} = -\mygamma\frac{\der V}{V},
+\end{equation*}
+where $\mygamma=1+2/\alpha$. Integrating both sides gives $\ln P=-\mygamma\ln V+\text{const}$, or
+\begin{equation*}
+  P \propto V^{-\mygamma}.
+\end{equation*}
+
+\begin{eg}{Measuring $\gamma$ using the ``spring of air''}\label{eg:gamma-spring-of-air}
+Figure \figref{gamma-spring-of-air} shows an experiment that can be used to measure the $\gamma$ of a gas.
+When the mass $m$ is inserted into bottle's neck, which has cross-sectional area $A$, the mass
+drops until it compresses the air enough so that the pressure is enough to support its weight.
+The observed frequency $\omega$ of oscillations about this equilibrium position $y_\zu{o}$ can be used to extract the
+$\gamma$ of the gas.
+\begin{align*}
+  \omega^2 &= \frac{k}{m} \\
+         &= \left.-\frac{1}{m}\:\frac{\der F}{\der y}\right|_{y_\zu{o}} \\
+         &= \left.-\frac{A}{m}\:\frac{\der P}{\der y}\right|_{y_\zu{o}} \\
+         &= \left.-\frac{A^2}{m}\:\frac{\der P}{\der V}\right|_{V_\zu{o}} 
+\end{align*}
+We make the bottle big enough so that its large surface-to-volume ratio prevents the
+conduction of any significant amount of heat through its walls during one cycle, so $P\propto V^{-\gamma}$,
+and $\der P/\der V=-\gamma P/V$. Thus,
+\begin{align*}
+  \omega^2 &= \gamma\frac{A^2}{m}\:\frac{P_\zu{o}}{V_\zu{o}}
+\end{align*}
+\end{eg}
+
+<% marg(50) %>
+<%
+  fig(
+    'gamma-spring-of-air',
+    %q{Example \ref{eg:gamma-spring-of-air}.}
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{The Helmholtz resonator}\label{eg:helmholtz-resonator}\index{Helmholtz resonator}
+When you blow over the top of a beer bottle, you produce a pure tone.
+As you drink more of the beer, the pitch goes down. This is similar to
+example \ref{eg:gamma-spring-of-air}, except that instead of a solid mass
+$m$ sitting inside the neck of the bottle, the moving mass is the air itself.
+As air rushes in and out of the bottle, its velocity is highest at the bottleneck,
+and since kinetic energy is proportional to the square of the velocity, essentially
+all of the kinetic energy is that of the air that's in the neck. In other words,
+we can replace $m$ with $AL\rho$, where $L$ is the length of the neck, and $\rho$ is
+the density of the air. Substituting into the earlier result, we find that the
+resonant frequency is
+\begin{align*}
+  \omega^2 &= \gamma\frac{P_\zu{o}}{\rho}\:\frac{A}{LV_\zu{o}}\eqquad.
+\end{align*}
+This is known as a Helmholtz resonator.
+As shown in figure \figref{stradivarius}, a violin or an acoustic guitar has a Helmholtz resonance,
+since air can move in and out through the f-holes. 
+\end{eg}
+
+<%
+  fig(
+    'stradivarius',
+    'The resonance curve of a 1713 Stradivarius violin, measured by
+     Carleen Hutchins. There are a number of different resonance peaks, some strong and some weak;
+     the ones near 200 and 400 Hz are vibrations of the wood, but the one near 300 Hz is a resonance
+     of the air moving in and out through those holes shaped like the letter F.
+     The white lines show the frequencies of the four strings.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+\begin{eg}{The speed of sound}\label{eg:speed-of-sound}\index{sound!speed of}
+We can get a rough and ready derivation of the equation for the speed of
+sound by analyzing the standing waves in a cylindrical air column as a special type of
+Helmholtz resonance (example \ref{eg:helmholtz-resonator}),
+in which the cavity happens to have the same cross-sectional area as the neck. Roughly speaking,
+the regions of maximum density variation act like the cavity. The regions of minimum density
+variation, on the other hand, are the places where the velocity of the air is varying the most;
+these regions throttle back the speed of the vibration, because of the inertia of the moving air.
+If the cylinder has cross-sectional area $A$, then the ``cavity'' and ``neck'' parts of the wave
+both have lengths of something like $\lambda/2$, and the volume of the ``cavity'' is about
+$A\lambda/2$. We get $v=f\lambda=(\ldots)\sqrt{\gamma P_\zu{o}/\rho}$, where the factor
+$(\ldots)$ represents numerical stuff that we can't possibly hope to have gotten right with
+such a crude argument. The correct result is in fact $v=\sqrt{\gamma P_\zu{o}/\rho}$. Isaac
+Newton attempted the same calculation, but didn't understand the thermodynamic effects involved,
+and therefore got a result that didn't have the correct factor of $\sqrt{\gamma}$.
+\end{eg}
+
+<% end_sec('adiabatic-processes') %>
+
 <% begin_hw_sec(vfill:true) %>
+
+<% begin_hw('challenger-deep') %>__incl(hw/challenger-deep)<% end_hw() %>
+
+<% begin_hw('inversion-layer') %>__incl(hw/inversion-layer)<% end_hw() %>
+
+<% begin_hw('steam-engine') %>__incl(hw/steam-engine)<% end_hw() %>
+
+<% begin_hw('adiabatic-t-p') %>__incl(hw/adiabatic-t-p)<% end_hw() %>
+
+<% begin_hw('centerofearth') %>__incl(hw/centerofearth)<% end_hw() %>
+
+<% begin_hw('fluorocarbon') %>__incl(hw/fluorocarbon)<% end_hw() %>
+
 
 <% end_hw_sec %>
 
