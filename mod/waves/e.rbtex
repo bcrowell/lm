@@ -866,7 +866,12 @@ the capacitor, while the inductor acts back on the circuit through induced elect
 <% end_sec('complex-motiv') %>
 
 <% begin_sec("Complex numbers",nil,'complex-numbers') %>\index{complex numbers}
-This discussion assumes that you've had some previous exposure to the complex number system.
+The complex number system gives us an efficient way of describing both positive and negative feedback.
+Complex numbers are a vital part of the day-to-day toolbox of the working engineer.
+We will also use them extensively in our study of quantum physics later in this course.
+This discussion assumes that you've had some previous exposure to the complex number system,
+but you may find that the techniques and applications laid out here are very different
+than the ones in a typical presentation in a trigonometry or precalculus class.
 For a more detailed treatment of complex numbers, see ch.~3 of
 James Nearing's free book at \url{physics.miami.edu/~nearing/mathmethods}.
 
@@ -947,8 +952,6 @@ magnitudes (their distances from the origin), but two distinct complex numbers m
 have the same magnitude, so, for example, we can't say whether $1$ is greater than
 $i$ or $i$ is greater than $1$.
 
-\pagebreak
-
 \begin{eg}{A square root of $i$}\label{eg:sqrt-i}
 \egquestion Prove that $1/\sqrt{2}+i/\sqrt{2}$ is a square root of $i$.
 
@@ -1017,6 +1020,8 @@ is 30 degrees, then we could say $\bar{z}$'s was -30, but we could also call it
 %>
 <% end_marg %>
 
+\pagebreak
+
 This whole system was built up in order to make every number have square roots.
 What about cube roots, fourth roots, and so on? Does it get even more weird when
 you want to do those as well? No. The complex number system we've already discussed
@@ -1074,7 +1079,7 @@ From these, find the real and imaginary parts of $1/(1+i)$.
 
 <% end_sec() %>
 
-<% begin_sec("Euler's formula",nil,'euler-formula') %>
+<% begin_sec("Euler's formula",4,'euler-formula') %>
 \index{Euler's formula}\index{Euler, Leonhard}
 Having expanded our horizons to include the complex numbers, it's natural to want to extend
 functions we knew and loved from the world of real numbers so that they can also operate on
@@ -1135,6 +1140,8 @@ since $\cos(-\theta)=\cos\theta$, and $\sin(-\theta)=-\sin\theta$.
   \sin x &= \frac{e^{ix}-e^{-ix}}{2i} 
 \end{align*}
 \end{eg}
+
+\pagebreak
 
 \begin{eg}{A hard integral made easy}
 \egquestion Evaluate
@@ -1264,16 +1271,22 @@ addition             & addition \\
 differentiation      & multiplication by $i\omega$
 \end{tabular}
 
+\pagebreak
+
 \begin{eg}{Sine compared to cosine}
 The sine function is the same as a cosine that has been delayed in phase by a quarter
 of a cycle, or 90 degrees. The two functions correspond to the complex numbers
 1 and $i$, which have the same magnitude but differ by 90 degrees in their arguments.
 \end{eg}
 
+\vfill
+
 \begin{eg}{Adding two sine waves}\label{eg:sinpluscos}
 The trigonometric fact $\sin\omega t+\cos\omega t=\sqrt{2}\sin(\omega t+\pi/4)$
 is visualized in figure \figref{sinpluscos-fac}.
 \end{eg}
+
+\vfill
 
 \begin{eg}{A function's first and second derivative}
 Differentiating $\sin 3x$ gives $3\cos 3x$. In terms of the complex plane, the function
@@ -1284,10 +1297,14 @@ Differentiating a second time gives $(\sin 3x)''=-9\sin 3x$.
 In terms of complex numbers, this is $1(3i)(3i)=-9$.
 \end{eg}
 
+\vfill
+
 <% self_check('represent-as-complex',<<-'SELF_CHECK'
 Which of the following functions can be represented in this way? $\cos(6t-4)$, $\cos^2t$, $\tan t$
   SELF_CHECK
   ) %>
+
+\vfill
 
 If we apply this system of analogies the the equation of motion $mx''+kx = 0$, for a solution
 with amplitude $A$, we get $(-m\omega^2+k)A=0$, and if $A$ is nonzero, this means that
@@ -1298,6 +1315,8 @@ This is a big win, because now instead of solving a differential equation, we ju
 analyze an equation using algebra. If $A$ is nonzero, then the factor in parentheses has to be
 zero, and that gives $\omega=\sqrt{k/m}$. (We could use the negative square root, but that doesn't
 actually give different solutions.)\label{end-sec-shm}
+
+\pagebreak
 
 \startdq
 

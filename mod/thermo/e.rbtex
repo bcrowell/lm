@@ -1,0 +1,333 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '11',
+    %q{Probability distributions, variance, and radioactive decay curves},
+    'ch:decay'
+  )
+%>
+
+<% begin_sec("Probability distributions",0,'continuous-prob') %>
+In ch.~\ref{ch:stat}, we considered random variables such as the number of gas molecules $r$ on
+the right-hand side of the box in figure \figref{free-expansion}, p.~\pageref{fig:free-expansion}. This variable is discrete rather than
+continuous, so we can speak meaningfully of the probability that the integer $r$ has some particular value.
+On the other hand, the time $t$ at which a particular unstable nucleus decays is a
+\emph{continuous} variable. For such a variable, there is an infinite number of possible
+values, and the probability of any particular value is typically zero.
+
+How do we handle this mathematically? Let's start finite and sneak up on the infinity.
+
+Consider a throw of a die. If the die is ``honest,'' then we
+expect all six values to be equally likely. Since all six
+probabilities must add up to 1, then probability of any
+particular value coming up must be 1/6. We can summarize
+this in a graph, \figref{single-die}. Areas under the curve can be
+interpreted as total probabilities. For instance, the area
+under the curve from 1 to 3 is $1/6+1/6+1/6=1/2$, so the
+probability of getting a result from 1 to 3 is 1/2. The
+function shown on the graph is called the probability distribution.
+
+Figure \figref{two-dice} shows the probabilities of various results
+obtained by rolling two dice and adding them together, as in
+the game of craps. The probabilities are not all the same.
+There is a small probability of getting a two, for example,
+because there is only one way to do it, by rolling a one and
+then another one. The probability of rolling a seven is high
+because there are six different ways to do it: 1+6, 2+5, etc.
+
+<% marg(0) %>
+<%
+  fig(
+    'single-die',
+    %q{Probability distribution for the result of rolling a single die.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'two-dice',
+    %q{Rolling two dice and adding them up.}
+  )
+%>
+<% end_marg %>
+
+If the number of possible outcomes is large but finite, for
+example the number of hairs on a dog, the graph would start
+to look like a smooth curve rather than a ziggurat.
+
+In these examples, the probability that the result will fall within some
+\emph{range} is proportional to the area under the bar graph. In other words,
+we're talking about an integral. Passing to the case of a continuous variable,
+we use this as our definition of the concept of a \emph{probability distribution}.\index{probability distribution}
+If $x$ is a random number, the probability distribution $D(x)$ is defined
+so that the probability that $x$ lies between $a$ and $b$ is equal to
+\begin{equation*}
+  P(a \le x \le b) = \int_a^b D(x) dx  .
+\end{equation*}
+You've probably heard about ``the bell curve,'' and seen people draw it with a pencil.
+When they do this,  the function they're drawing is an example of one of these probability distributions. If you've heard of
+the idea that an electron in an atom is like a probability cloud, what is being
+described qualitatively is actually the function $D$ (which in this case depends on
+three coordinates, $x$, $y$, and $z$).
+
+Normalization is the requirement that the total probability for $x$ to have
+\emph{some} value must be one,
+\begin{equation*}
+  \int_{-\infty}^\infty D(x) dx = 1  .
+\end{equation*}
+For a random variable that is discrete rather than continuous, we just do a sum rather than an integral,
+$\sum P(x) = 1$.
+
+<% marg(30) %>
+<%
+  fig(
+    'human-height',
+    %q{%
+      A probability distribution for height of human adults 
+      (not real data).
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'human-height-tail',
+    %q{Example \ref{eg:basketball}.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'average',
+    %q{The average of a probability distribution.}
+  )
+%>
+<% end_marg %>
+
+Figure \figref{human-height} shows another example, a probability distribution
+for people's height. This kind of bell-shaped curve is quite common.
+
+<% self_check('rangeofheights',<<-'SELF_CHECK'
+
+Compare the number of people with heights in the range of
+130-135 cm to the number in the range 135-140.
+  SELF_CHECK
+  ) %>
+
+%%%%%%%%%%% basketball example %%%%%%%%%%%%%
+m4_include(../share/quantum/eg/basketball.tex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The average value of $x$ is given by
+\begin{equation*}
+  (\text{average of $x$}) = \langle x \rangle = \bar{x} = \int_a^b x D(x) dx  .
+\end{equation*}
+The notation $\langle\ldots\rangle$ means ``the average of \ldots,''
+and the bar in $\bar{x}$ means the same thing.
+We can think of the average of a probability distribution
+geometrically as the horizontal position at which it could
+be balanced if it was constructed out of cardboard, figure \figref{average}.
+For a discrete variable, we again just switch the integral to a probability-weighted sum,
+$\bar{x}=\sum xP(x)$.
+
+The average is not the only possible way to say what is a
+typical value for a quantity that can vary randomly; another
+possible definition is the median,\index{median} defined as the value that
+is exceeded with 50\% probability. When discussing incomes
+of people living in a certain town, the average could be
+very misleading, since it can be affected massively if a
+single resident of the town is Mark Zuckerberg.
+
+<% end_sec('continuous-prob') %>
+
+<% begin_sec("The variance and standard deviation",nil,'variance') %>
+If the next Martian you meet asks you, ``How tall is an
+adult human?,'' you will probably reply with a statement
+about the average human height, such as ``Oh, about 5 feet 6
+inches.'' If you wanted to explain a little more, you could
+say, ``But that's only an average. Most people are somewhere
+between 5 feet and 6 feet tall.'' Without bothering to draw
+the relevant bell curve for your new extraterrestrial
+acquaintance, you've summarized the relevant information by
+giving an average and a typical range of variation.  
+
+Just as an average is not the only way of defining a central value
+of a distribution, there are many possible ways of measuring the amount
+of variation about that center. But a method that is common and has nice
+mathematical properties is the following. We define the \emph{variance}
+of a probability distribution as follows:
+\begin{equation*}
+  \text{(variance of $x$)} = \langle (x-\bar{x})^2 \rangle.
+\end{equation*}
+In other words, we consider the difference between $x$ and its average value $\bar{x}$, and
+we take the average of the square of that difference. If $x$ always had exactly its average
+value, then $x-\bar{x}$ would always be zero, and the variance would be zero.
+It would not make sense to define
+the variance without the square, because, for example, a symmetrical probability distribution
+would have a variance of zero --- the negative values of $x-\bar{x}$ would cancel the positive
+ones.
+
+The big mathematical advantage of the variance is that it is additive: the variance of $x+y$ is
+the same as the sum of the variances, provided that $x$ and $y$ are not correlated to one another.
+For instance, if Susan has two bartending jobs, bringing
+in two different incomes $x$ and $y$, then this week's variation $x-\bar{x}$ in her tips at Hipster Lounge X is probably
+not related to the variation $y-\bar{y}$ in what she gets from the tip jar at Y Bar and Grill. One
+can then plug in to the definition of the variance and show that the variances do add; this works out because
+the cross-term $\langle (x-\bar{x})(y-\bar{y}) \rangle$ is zero.
+
+The only unfortunate thing about the variance is that its units aren't the same as the units
+of the variable such as $x$. For example, if $x$ has units of dollars, then the variance of
+$x$ has units of dollars squared. For this reason, we define the standard deviation
+\begin{equation*}
+  \text{(standard deviation of $x$)} = \sigma_x = \sqrt{\langle (x-\bar{x})^2 \rangle}.
+\end{equation*}
+When people give error bars in science experiments, or ranges of error in an opinion poll,
+they are usually quoting a standard deviation. If someone gives you a number like $137\pm 5\ \zu{kg}$,
+then the 5 certainly can't be the variance, since the variance would have units of $\zu{kg}^2$, not kg.
+The standard deviation's name comes from its interpretation as a typical or standard amount by
+which $x$ deviates from $\bar{x}$.
+In the context of AC circuits, you have probably encountered the idea of an r.m.s. (root-mean-square)
+value, which is exactly a standard deviation (in the case where $\bar{x}=0$).
+
+<% marg() %>
+<%
+  fig(
+    'two-sided-box-1-and-5-atoms',
+    %q{A two-sided box with one atom (top) and five atoms (bottom).}
+  )
+%>
+<% end_marg %>
+As an example, consider the simplest possible case of the gas atoms in\label{two-sided-box-std-dev}
+the two-sided box.  Let the total number of atoms be
+one (figure \figref{two-sided-box-1-and-5-atoms}, top), so that the number $r$ of atoms on the right-hand side is either
+0 or 1, with equal probability. By normalization, each of these
+probabilities is 1/2, and $\bar{r}=1/2$ as well.  A calculation
+(\note{sd-one-atom}) shows that the standard deviation is also $1/2$,
+which makes sense: 1/2 is not just a typical value for how much $r$
+differs from $\bar{r}$, it is \emph{always} the size of that
+deviation.
+
+We now have an easy way to estimate the sizes of fluctuations in $r$ when the number of atoms is
+larger. (On p.~\pageref{two-sided-box-simple} we did this by a technique that was a lot more work.)
+Say there are $n=5$ atoms, as in the bottom of figure \figref{two-sided-box-1-and-5-atoms}. If this
+is an ideal gas, then the atoms don't interact with each other often enough to matter, and there should
+be no correlation between finding one atom on the right and another atom there. Therefore the
+variances add. The variance
+in $r$ contributed by one atom is $(1/2)^2=1/4$. Therefore the total variance for 5 atoms is
+$5/4$, and the standard deviation of $r$ is $\sqrt{5}/2$.
+
+This is the justification for our claim on
+p.~\pageref{two-sided-box-simple} that when $n$ is large, the fluctuations in $r$ are negligible compared to $r$.
+For the relative size of the fluctuations,
+we should typically have $\sigma_r/\bar{r}=(\sqrt{n}/2)/(n/2)=1/\sqrt{n}$. When $n$ is $10^{22}$, for example,
+the relative size of the fluctuations should be $10^{-11}$, which is much too small to measure in any
+experiment. This is similar to the idea of the ``law of averages,'' which decrees that the casino always
+makes a profit by the end of the month.\label{sd-root-n}
+
+<% end_sec('variance') %>
+
+<% begin_sec("Errors in random counts: Poisson statistics",0,'poisson') %>
+If you do a lab experiment as part of this course in which you count radioactive decays with a Geiger
+counter, the number of counts $N$ in a fixed time period will have some standard deviation $\sigma_N$.
+This is an example of a more generally occurring situation in statistics, which is that we
+we have a large number of things that may happen, each with some small
+probability, and we count them up. The total number of them that do happen, $N$, is called a Poisson (``Pwa-SAN'') random variable.
+For example, the number of houses burglarized in Fullerton
+this year is a Poisson random variable. When you count the number of nuclear decays in
+a certain time interval, the result is Poisson. The helpful thing to know is that when
+a Poisson variable has an average value $N$, its statistical uncertainty is $\sqrt{N}$.
+So for example if your Geiger counter counts 100 clicks in one minute, this is $100\pm10$.
+We could anticipate based on almost the same reasoning as in section \ref{sec:variance}, p.~\pageref{sd-root-n},
+that the standard deviation would be proportional to $\sqrt{N}$. It just so happens that the constant of
+proportionality for a Poisson random variable equals one.
+<% end_sec('poisson') %>
+
+<% begin_notes %>
+
+\notetext{sd-one-atom}{Standard deviation of $r$ with one atom}
+\notesummary{For a single atom in a box, the standard deviation of the number of atoms on the right is 1/2.}
+We have a single atom in a box, with $r=1$ if the atom is in the right half and $r=0$ otherwise.
+Because $r$ is discrete, the variance $\langle (r-\bar{r})^2 \rangle$
+can be computed as a probability-weighted sum,
+\begin{align*}
+  \text{(variance of $r$)} &= \langle \left(r-\frac{1}{2}\right)^2 \rangle \\
+                           &= P(r=0)\left(0-\frac{1}{2}\right)^2 \\
+                           & \qquad \qquad +P(r=1)\left(1-\frac{1}{2}\right)^2 \\
+                           &= \frac{1}{4}.
+\end{align*}
+The standard deviation of $r$ is then $\sqrt{1/4}=1/2$, as expected.
+
+<% end_notes %>
+
+<% begin_hw_sec(vfill:true) %>
+
+
+<% end_hw_sec %>
+
+<% begin_lab("Probability distributions",columns:1,type:'ex') %>\label{lab:prob-dist}
+
+Questions 1-3 involve the useful concept of the \emph{cumulative distribution} (not introduced in the text).
+Let $P(x)=\int_{-\infty}^x D(x') dx'$ be the probability of finding a value
+for the random number that is less than or equal to $x$. The function $P$ is referred to as
+the cumulative distribution. 
+
+1. Using the fundamental theorem of calculus, express $D$ in terms of $P$
+
+2. Suppose that $x$ has some units such as kilograms. Use one of the relations between $D$ and $P$ to
+determine the units of both functions, and then check that it also works out according to the other relation.
+
+3. Sketch the functions $D$ and $P$ for the
+following random variables: (a) a random real number that has a uniform probability
+of lying anywhere in the interval from 0 to 1; (b) the time $t$ at which an atom of
+a radioactive isotope decays; (c) a random number that follows the standard ``bell
+curve,'' shown below, with an average value of 0 and a standard deviation of 1; (d) the result of
+a die roll. You will not find that both $D$ and $P$ are well defined in all cases.
+
+\anonymousinlinefig{../../../share/quantum/figs/bell-curve}
+
+\emph{Pause.} I'll walk you through the following problem on the 
+board. A certain electron wave confined to a box of length $L$ has a probability distribution given by
+\begin{equation*}
+D(x) = \begin{cases}
+A \sin^2 (2\pi x/L) & \text{if} \ 0 \le x \le L \\
+0             & \text{elsewhere}
+\end{cases}
+\end{equation*}
+Sketch the function. Infer the units of $A$. What would go wrong if the sine function wasn't squared?
+Determine $A$ from the requirement of normalization.
+
+4. The earth is constantly exposed to neutrinos from outer space. Most neutrinos pass through the
+entire planet without interacting, but a small fraction of them are absorbed. These absorption events
+are distributed uniformly within the spherical volume of the earth, which is of radius $b$. Let $r$
+be the distance from the center at which one of these events occurs, so that $0 \le r \le b$.\\
+(a) Show that the probability distribution $D(r)$ is of the form $kr^p$, where $k$ and $p$ are
+constants, and determine $p$. Hint: consider the volume of the infinitesimally thin shell that
+stretches from $r$ to $r+dr$.\\
+(b) Determine $k$.\\
+(c) Find the average value of $r$.
+
+\emph{Pause.} Let $x$ be a random variable with a known distribution $D(x)$, and let $y=f(x)$ be
+a function of $x$. I'll show you how to use the chain rule to determine the probability distribution
+$D^*(y)$, where the star indicates that $D^*$ is a different function from $D$.
+
+5. A drunk guy in a bar offers you the following bet. He holds a sharp razor blade facing up,
+and you toss a stick of uncooked spaghetti up in the air so that when it comes down, the blade breaks
+it at a random point. The spaghetti is 1 foot long, and the break point is a random variable $x$.
+He offers to pay you $y=1/x$ in units of dollars. You want to determine whether this is
+a sucker bet and the guy is a scammer. Find the amount of money you should be willing to
+pay in return for the expected payout.
+ 
+
+<% end_lab %>
+
+
+<% end_chapter() %>
