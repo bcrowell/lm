@@ -1385,10 +1385,12 @@ m4_define(__hw_mod_2_exptinexactsuperpos,8)m4_dnl
 m4_define(__hw_mod_2_harp-string,9)m4_dnl
 m4_define(__hw_mod_2_symmetric-standing-wave,10)m4_dnl
 m4_define(__hw_mod_2_phase-vel-units,11)m4_dnl
-m4_define(__hw_mod_2_bogus-laplacian-mod,12)m4_dnl
-m4_define(__hw_mod_2_easy-laplacian,13)m4_dnl
-m4_define(__hw_mod_2_relativity-max-tension,14)m4_dnl
-m4_define(__hw_mod_2_lasso,15)m4_dnl
+m4_define(__hw_mod_2_easy-laplacian,12)m4_dnl
+m4_define(__hw_mod_2_bogus-laplacian-mod,13)m4_dnl
+m4_define(__hw_mod_2_laplacian-traveling-wave,14)m4_dnl
+m4_define(__hw_mod_2_square-membrane-frequency-ratio,15)m4_dnl
+m4_define(__hw_mod_2_relativity-max-tension,16)m4_dnl
+m4_define(__hw_mod_2_lasso,17)m4_dnl
 m4_define(__hw_mod_3_morally-equal-eb,1)m4_dnl
 m4_define(__hw_mod_3_h3-vs-he3-e-field-energy-fac,2)m4_dnl
 m4_define(__hw_mod_3_easy-em-plane-wave-geometry,3)m4_dnl

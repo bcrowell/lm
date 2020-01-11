@@ -1314,18 +1314,60 @@ is
   v = \frac{\omega}{|\vc{k}|}.
 \end{equation*}
 
-<% marg(0) %>
 <%
   fig(
-    'car-crash-fem',
-    %q{A car crashes into the corner of a building. Waves from the impact propagate toward the back of the car through the sheet metal.}
+    'square-membrane-patterns',
+    %q{%
+      Three standing-wave patterns of a square membrane, example \ref{eg:square-membrane-patterns} and problem
+      \ref{hw:square-membrane-frequency-ratio}, p.~\pageref{hw:square-membrane-frequency-ratio}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
   )
 %>
-<% end_marg %>
 
-Sometimes we get waves that simply aren't sine waves. One example is the wave disturbances in
+\begin{eg}{Standing waves on a square membrane}\label{eg:square-membrane-patterns}
+\egquestion Figure \subfigref{square-membrane-patterns}{2} is a more economical way to represent the pattern of vibrations
+originally drawn in figure \figref{square-membrane}, and the other two panels of the figure are to be interpreted
+similarly. Let $\omega_1$, $\omega_2$, and $\omega_3$ be the frequencies of vibration. Find $\omega_2/\omega_1$.
+
+\egquestion The wave-vector in \subfigref{square-membrane-patterns}{2} was found earlier. Call this $\vc{k}_2$.
+To cut down on writing, let $k_0=2\pi/2b$, so that in $x$-$y$ component form we have $\vc{k}_2 = k_0(2,1)$, with magnitude
+\begin{equation*}
+  k_2 = k_0 \sqrt5.
+\end{equation*}
+A similar calculation for \subfigref{square-membrane-patterns}{1} gives
+\begin{equation*}
+  k_1 = k_0 \sqrt2.
+\end{equation*}
+The result is
+\begin{equation*}
+  \frac{\omega_2}{\omega_1} = \frac{k_2 v}{k_1 v} = \sqrt{\frac{5}{2}}.
+\end{equation*}
+The calculation of $\omega_3/\omega_1$ is problem \ref{hw:square-membrane-frequency-ratio}.
+\end{eg}
+
+<%
+  fig(
+    'chladni-guitar',
+    %q{%
+      Standing-wave patterns on a guitar. Each pattern is labeled with its frequency $f=\omega/2\pi$.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Sometimes we get waves that simply aren't sine waves. 
+An example is figure \figref{chladni-guitar}, where the shape of the body prevents simple patterns like the ones
+in figure \figref{square-membrane-patterns} from existing.
+Similar examples from civil and mechanical engineering are the wave disturbances in
 structures such as bridges and cars, which wiggle and vibrate in complicated ways when subjected to forces (figure \figref{car-crash-fem}).
-Another example is the electron waves that occur inside atoms. In these cases, we can't just write down a single
+A third type of example is the electron waves that occur inside atoms. In all these cases, we can't just write down a single
 wave-vector for the whole wave pattern, and we have
 to solve some kind of wave equation. A typical wave equation in \emph{one} dimension is the equation we found for
 waves on a string, p.~\pageref{wave-on-a-string}, which can be written as
@@ -1349,6 +1391,16 @@ the potential $\phi$ in a region of vacuum must be a solution of the equation $\
 Like the second derivative, the Laplacian is essentially a measure of curvature.
 Or, as shown in figure \figref{laplacian-geometrical-mod}, we can think of it as a measure of how much the value
 of a function at a certain point differs from the average of its value on nearby points (which amounts ot the same thing).
+
+<% marg(120) %>
+<%
+  fig(
+    'car-crash-fem',
+    %q{A car crashes into the corner of a building. Waves from the impact propagate toward the back of the car through the sheet metal.}
+  )
+%>
+<% end_marg %>
+
 
 <%
   fig(
@@ -1447,6 +1499,10 @@ down and equal in magnitude, the function is considered to have zero concavity o
 \pagebreak
 
 <% begin_hw('bogus-laplacian-mod') %>m4_include(../share/quantum/hw/bogus-laplacian-mod.tex)<% end_hw() %>
+
+<% begin_hw('laplacian-traveling-wave') %>__incl(hw/laplacian-traveling-wave)<% end_hw() %>
+
+<% begin_hw('square-membrane-frequency-ratio') %>__incl(hw/square-membrane-frequency-ratio)<% end_hw() %>
 
 <% begin_hw('relativity-max-tension') %>m4_include(../share/relativity/hw/relativity-max-tension.tex)<% end_hw() %>
 
