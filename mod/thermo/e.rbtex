@@ -67,13 +67,19 @@ we use this as our definition of the concept of a \emph{probability distribution
 If $x$ is a random number, the probability distribution $D(x)$ is defined
 so that the probability that $x$ lies between $a$ and $b$ is equal to
 \begin{equation*}
-  P(a \le x \le b) = \int_a^b D(x) dx  .
+  P(a \le x \le b) = \int_a^b D(x) \der x  .
 \end{equation*}
 You've probably heard about ``the bell curve,'' and seen people draw it with a pencil.
 When they do this,  the function they're drawing is an example of one of these probability distributions. If you've heard of
 the idea that an electron in an atom is like a probability cloud, what is being
 described qualitatively is actually the function $D$ (which in this case depends on
 three coordinates, $x$, $y$, and $z$).
+
+Suppose that $x$ has some units such as seconds.
+Then $\der x$, which represents a small change in $x$, also has units of seconds, and since
+$P$ is unitless, it follows that $D$ has units of $\sunit^{-1}$. That is, $D$ represents
+the probability per unit of time. The same kind of thing occurs for random variables with
+other units: whatever units $x$ has, $D$ has the inverse of those units.
 
 Normalization is the requirement that the total probability for $x$ to have
 \emph{some} value must be one,
@@ -250,6 +256,292 @@ We could anticipate based on almost the same reasoning as in section \ref{sec:va
 that the standard deviation would be proportional to $\sqrt{N}$. It just so happens that the constant of
 proportionality for a Poisson random variable equals one.
 <% end_sec('poisson') %>
+
+<% begin_sec("Exponential decay",nil,'exp-decay') %>
+
+\index{decay!exponential}\index{exponential decay}
+
+<% begin_sec("Half-life",nil,'half-life') %>
+\index{half-life}
+Most people know that radioactivity ``lasts a certain amount
+of time,'' but that simple statement leaves out a lot. As an
+example, consider the following medical procedure used to
+diagnose thyroid function. A very small quantity of the
+isotope $^{131}\zu{I}$, produced in a nuclear reactor, is fed to
+or injected into the patient. The body's biochemical systems
+treat this artificial, radioactive isotope exactly the same
+as $^{127}\zu{I}$, which is the only naturally occurring type.
+(Nutritionally, iodine is a necessary trace element. Iodine
+taken into the body is partly excreted, but the rest becomes
+concentrated in the thyroid gland. Iodized salt has had
+iodine added to it to prevent the nutritional deficiency
+known as \index{goiters}goiters, in which the \index{iodine}iodine-starved
+thyroid becomes swollen.) As the $^{131}\zu{I}$ undergoes beta
+decay, it emits electrons, neutrinos, and gamma rays. The
+gamma rays can be measured by a detector passed over the
+patient's body. As the radioactive iodine becomes concentrated
+in the thyroid, the amount of gamma radiation coming from
+the thyroid becomes greater, and that emitted by the rest of
+the body is reduced. The rate at which the iodine concentrates
+in the thyroid tells the doctor about the health of the thyroid.
+
+If you ever undergo this procedure, someone will presumably
+explain a little about radioactivity to you, to allay your
+fears that you will turn into the Incredible Hulk, or that
+your next child will have an unusual number of limbs. Since
+iodine stays in your thyroid for a long time once it gets
+there, one thing you'll want to know is whether your thyroid
+is going to become radioactive forever. They may just tell
+you that the radioactivity ``only lasts a certain amount of
+time,'' but we can now carry out a quantitative derivation
+of how the radioactivity really will die out.
+
+Let $P(t)$ be the probability that an iodine atom
+will survive without decaying for a period of at least $t$.
+It has been experimentally measured that half all $^{131}\zu{I}$
+atoms decay in 8 hours, so we have
+\begin{equation*}
+                P(8\ \zu{hr})         =  0.5 .  
+\end{equation*}
+
+Now using the law of independent probabilities, the
+probability of surviving for 16 hours equals the probability
+of surviving for the first 8 hours multiplied by the
+probability of surviving for the second 8 hours,
+\begin{align*}
+                P(16\ \zu{hr})         &=  0.50\times0.50  \\
+                                 &=  0.25 .  
+\end{align*}
+Similarly we have
+\begin{align*}
+                P(24\ \zu{hr})         &=  0.50\times0.5\times0.5  \\
+                                 &=  0.125 .  
+\end{align*}
+Generalizing from this pattern, the probability of surviving
+for any time $t$ that is a multiple of 8 hours is
+\begin{equation*}
+                P(t)                 =            0.5^{t/8\ \zu{hr}} .
+\end{equation*}
+We now know how to find the probability of survival at
+intervals of 8 hours, but what about the points in time in
+between? What would be the probability of surviving for 4
+hours? Well, using the law of independent probabilities again, we have
+\begin{equation*}
+  P(8\ \zu{hr})  =  P(4\ \zu{hr}) \times P(4\ \zu{hr}) ,  
+\end{equation*}
+which can be rearranged to give
+\begin{align*}
+  P(4\ \zu{hr})          &= \sqrt{P(8\ \zu{hr})}   \\
+                                 &=  \sqrt{0.5}  \\
+                                 &=  0.707 .  
+\end{align*}
+This is exactly what we would have found simply by plugging
+in $P(t)=0.5^{t/8\ \zu{hr}}$ and ignoring the restriction to
+multiples of 8 hours. Since 8 hours is the amount of time
+required for half of the atoms to decay, it is known as the
+half-life, written $t_{1/2}$. The general rule is then the exponential decay equation
+\begin{equation*}
+  P(t)  =    2^{-t/t_{1/2}}. \qquad \text{[probability of survival for time $t$]}
+\end{equation*}
+<% end_sec('half-life') %>
+
+<% begin_sec("A first glimpse of quantum physics",nil,'glimpse-quantum') %>
+Let's step back and think for a moment about the physics underlying this derivation.
+Back around 1900, when the nucleus and radioactivity were first discovered, there
+were no clear principles underlying this sort of thing. In observations, it
+\emph{seemed} like nuclear decay was random, and observations \emph{seemed} to
+show that a nucleus's probability of decaying during a certain time interval
+was statistically independent of its previous history. Nobody had any idea \emph{why}
+these things were true. One might expect that any answers to questions like these
+would be very technical, and would have to await a deeper understanding of the nucleus.
+
+Actually these facts about nuclear decay require even less detailed technical
+knowledge of nuclear physics than you have from sec.~\ref{sec:nucleus}.
+They arise from basic facts about quantum physics.
+Let's preview these facts.
+
+\begin{enumerate}
+\item \emph{Totalitarian principle:} Everything not forbidden is compulsory. That is, if a process \emph{can} take place
+         without violating a conservation law, it \emph{will} take place, with some probability.
+\item \emph{Ground state:} Every system has a lower bound on its energy. This is some number such that no state has any energy lower than that number.
+In many cases, there is exactly one state, called the ground state, that has this energy.
+\item \emph{State fundamentalism:} There is nothing more that can be known about a system than its state.
+\end{enumerate}
+
+The first principle is \emph{the} fundemental difference between quantum physics and
+classical physics (i.e., all the physical theories that came before). In classical physics,
+pigs can't fly, particles can't transmute themselves into other particles, and a marble locked
+inside a box can't get out unless we open the lid. In quantum physics, we have to ask ourselves
+whether there is some conservation law that prevents these things from happening, and if there isn't
+such a law, we expect that the process will happen, albeit possibly at a rate that is too low to measure.
+I suspect that flying pigs probably do violate conservation of energy (sorry, pigs), but particles do
+transmute themselves in various ways, and the marble definitely can get out of the box through a process
+called quantum tunneling, although we can estimate the rate, and it is very low.
+
+The second principle, a lower bound on energies, seems to be true because we see forms of matter in our
+universe that seem to be either relatively stable or even (apparently) completely stable. Examples include
+the proton (if isolated rather than inside a
+nucleus) and black holes. If there was always some lower-energy state to decay to, then based on the
+totalitarian principle, every system would have something that it could decay to without violating
+conservation of energy, and therefore no system would be stable.
+
+The third principle says that, whatever these ``states'' are, that's all there is. There is nothing
+else to know, no higher reality, no deeper insight to be gained, nothing else that can be measured
+or observed about the system. This principle is what allows us to assert that a nucleus's probability
+of decay is independent of its history, as assumed in our derivation of the exponential decay
+equation. When we see a nucleus that's been sitting around for a while, it's normally in its ground state.
+Therefore there is nothing else to know about it besides the fact that it's in its ground state.
+It can't have cracks and strain that show it's about to decay, nor can we see that it must be a really
+tough little nucleus because it's survived for such a long time.
+<% end_sec('glimpse-quantum') %>
+
+<% begin_sec("Calculations for exponential decay",nil,'decay-calc') %>
+We'll see that all our formulas come out simpler if we state them in terms of the average
+lifetime $\tau$ rather than the half-life $t_{1/2}$. These are related by $\tau=t_{1/2}/\ln 2$.
+
+Also, it's a little awkward doing exponentials with base 2. Usually
+we prefer to get everything in terms of base $e$. This has
+advantages, for example, when we do calculus, because it's
+easy to differentiate or integrate $e^x$, but hard to do those
+things with $2^x$. Using the identity $2^x=\exp(\ln 2^x)=e^{x \ln 2}$,
+we find that the probability of survival is given by
+\begin{equation*}
+  P(t)  =    e^{-t/\tau}. \qquad \text{[probability of survival for time $t$]}   
+\end{equation*}
+
+We would like to know the probability distribution $D(t)$ for the time at which decay occurs.
+Since the survival probability is $P(t)=\int_t^\infty D(t')\der t'$, the fundamental theorem of calculus gives
+$D(t)=-\der P/\der t$, or
+\begin{equation*}
+  D(t)  =    \frac{1}{\tau}e^{-t/\tau}. \qquad \text{[prob.~dist.~of the time of decay $t$]}
+\end{equation*}
+We can see that the units of this equation make sense, since the probability distribution for a random
+variable withunits of seconds must itself have units of inverse seconds.
+
+If you're fiddling around with a hunk of plutonium and want to know how badly your chromosomes are
+getting nuked, then you're interested in the rate of decay, i.e., the number of decays per second,
+$\der N/\der t$. As the cumulative number of decays goes up, the number of survivors goes down,
+so $\der N=N_0D(t)\der t$, where $N_0$ is the initial number of nuclei in your sample, and
+\begin{equation*}
+  \frac{\der N}{\der t}  =    \frac{N_0}{\tau}e^{-t/\tau}. \qquad \text{[rate of decay]}
+\end{equation*}
+
+Note that the three functions above are all basically the same exponential function, just with
+different constant factors out in front. This is because they're integrals and derivatives
+of each other, and integrating or differentiating $e^{bx}$ gives back the same function with
+a factor of $b$ or $1/b$.
+
+\begin{eg}{Radioactive contamination at Chernobyl}
+\egquestion One of the most dangerous radioactive isotopes
+released by the Chernobyl disaster in 1986 was $^{90}\zu{Sr}$,
+whose half-life is 28 years. (a) How long will it be before
+the contamination is reduced to one tenth of its original
+level? (b) If a total of $10^{27}$  atoms was released,
+about how long would it be before not a single atom was left?
+
+\eganswer (a) We want to know the amount of time that a
+$^{90}\zu{Sr}$ nucleus has a probability of 0.1 of surviving.
+Starting with the exponential decay formula,
+\begin{equation*}
+                P  =    0.5^{t/t_{1/2}} ,  
+\end{equation*}
+we want to solve for $t$. Taking natural logarithms of both sides,
+\begin{equation*}
+                \ln  P  = \frac{t}{t_{1/2}}\ln 0.5 ,  
+\end{equation*}
+so
+\begin{equation*}
+                t  =    \frac{t_{1/2}}{\ln 0.5}\ln P
+\end{equation*}
+Plugging in $P=0.1$ and $t_{1/2}=28$ years, we get $t=93$ years.
+
+(b) This is just like the first part, but $P=10^{-27}$ . The
+result is about 2500 years.
+\end{eg}
+
+<%
+  fig(
+    'carbon-fourteen',
+    %q{%
+      Calibration of the $^{14}\zu{C}$ dating method using
+      tree rings and artifacts whose ages were known from
+      other methods. Redrawn from Emilio Segr\`{e}, \textbf{Nuclei and Particles}, 1965.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\begin{eg}{$^{14}\zu{C}$ \index{carbon-14 dating}Dating}
+Almost all the carbon on Earth is $^{12}\zu{C}$, but not quite.
+The isotope $^{14}\zu{C}$, with a half-life of 5600 years, is
+produced by cosmic rays in the atmosphere. It decays
+naturally, but is replenished at such a rate that the
+fraction of $^{14}\zu{C}$ in the atmosphere remains constant, at
+$1.3\times10^{-12}$ . Living plants and animals take in both
+$^{12}\zu{C}$ and $^{14}\zu{C}$ from the atmosphere and incorporate
+both into their bodies. Once the living organism dies, it no
+longer takes in C atoms from the atmosphere, and the
+proportion of $^{14}\zu{C}$ gradually falls off as it undergoes
+radioactive decay. This effect can be used to find the age
+of dead organisms, or human artifacts made from plants or
+animals. Figure \figref{carbon-fourteen} on page
+\pageref{fig:carbon-fourteen} shows the exponential decay
+curve of $^{14}\zu{C}$ in various objects. Similar methods, using
+longer-lived isotopes, provided the first firm proof that
+the earth was billions of years old, not a few thousand as
+some had claimed on religious grounds.
+\end{eg}
+
+\begin{eg}{The hot potato}
+\egquestion A nuclear physicist with a demented sense of humor
+tosses you a cigar box, yelling ``hot potato.'' The label on
+the box says ``contains $10^{20}$  atoms of $^{17}\zu{F}$,
+half-life of 66 s, produced today in our reactor at 1
+p.m.'' It takes you two seconds to read the label, after
+which you toss it behind some lead bricks and run away. The
+time is 1:40 p.m. Will you die?
+
+\eganswer The time elapsed since the radioactive fluorine
+was produced in the reactor was 40 minutes, or 2400 s. The
+number of elapsed half-lives is therefore $t/t_{1/2}=  36$. The
+initial number of atoms was $N(0)=10^{20}$ . The number of
+decays per second is now about $10^7\ \zu{s}^{-1}$, so it produced
+about $2\times10^7$  high-energy electrons while you held it
+in your hands. Although twenty million electrons sounds like
+a lot, it is not really enough to be dangerous.
+\end{eg}
+
+\startdqs
+
+\begin{dq}
+In the medical procedure involving $^{131}\zu{I}$, why is it
+the gamma rays that are detected, not the electrons or
+neutrinos that are also emitted?
+\end{dq}
+
+\begin{dq}
+For 1 s, Fred holds in his hands 1 kg of radioactive
+stuff with a half-life of 1000 years. Ginger holds 1 kg of a
+different substance, with a half-life of 1 min, for the same
+amount of time. Did they place themselves in equal danger, or not?
+\end{dq}
+
+\begin{dq}
+How would you interpret it if you calculated $N(t)$, and
+found it was less than one?
+\end{dq}
+
+\begin{dq}
+Does the half-life depend on how much of the substance
+you have? Does the expected time until the sample decays
+completely depend on how much of the substance you have?
+\end{dq}
+
+<% end_sec('decay-calc') %>
+
+<% end_sec('exp-decay') %>
 
 <% begin_notes %>
 
