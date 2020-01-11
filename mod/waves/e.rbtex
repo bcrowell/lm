@@ -831,6 +831,752 @@ way around? Or can it occur in either case?
 
 <% end_sec('refraction') %>
 
+<% begin_sec("Review of resonance and complex numbers",nil,'resonance-and-complex') %>\index{complex numbers}
+Light isn't a vibration of a physical medium at all. Why, then, does it have a different speed in different media?
+Explaining this in a satisfying way turns out to be an excellent application of concepts about resonance and complex numbers.
+
+<% begin_sec("Physical motivation for use of complex numbers: feedback systems",nil,'complex-motiv') %>
+For most of us the word feedback evokes an
+image of Jimi Hendrix
+intentionally creating earsplitting screeches, or of the
+school principal doing the same inadvertently in the
+auditorium. In the guitar example, the musician stands in
+front of the amp and turns it up so high that the sound
+waves coming from the speaker come back to the guitar string
+and make it shake harder. This is an example of \emph{positive}
+feedback: the harder the string vibrates, the stronger the
+sound waves, and the stronger the sound waves, the harder
+the string vibrates. The only limit is the power-handling
+ability of the amplifier.
+
+Negative feedback is equally important. Your thermostat, for
+example, provides negative feedback by kicking the heater
+off when the house gets warm enough, and by firing it up
+again when it gets too cold. This causes the house's
+temperature to oscillate back and forth within a certain
+range. Just as out-of-control exponential freak-outs are a
+characteristic behavior of positive-feedback systems,
+oscillation is typical in cases of negative feedback.
+
+In mechanics, a pendulum is the classic example of negative feedback, while
+a good example of positive feedback is the unstable equilibrium we get when we try to balance
+a pencil on its tip. In electromagnetism, a series LC circuit oscillates because of feedback
+that occurs because charge flowing through the inductor accumulates on the plates of
+the capacitor, while the inductor acts back on the circuit through induced electric fields.
+<% end_sec('complex-motiv') %>
+
+<% begin_sec("Complex numbers",nil,'complex-numbers') %>\index{complex numbers}
+This discussion assumes that you've had some previous exposure to the complex number system.
+For a more detailed treatment of complex numbers, see ch.~3 of
+James Nearing's free book at \url{physics.miami.edu/~nearing/mathmethods}.
+
+We assume there is a number, $i$, such that $i^2=-1$.
+The square roots of $-1$ are then $i$ and $-i$. (In electrical engineering work,
+where $i$ stands for current, $j$ is sometimes used instead.) This gives rise
+to a number system, called the complex numbers, which contain the real numbers as a subset.
+
+If we calculate successive powers of $i$, we get the following:
+\begin{align*}
+  i^0 &= \quad 1 \qquad \text{[true for any base]} \\
+  i^1 &= \quad i \\
+  i^2 &= \, -1 \qquad \text{[definition of $i$]} \\
+  i^3 &= \, -i \\
+  i^4 &= \quad 1.
+\end{align*}
+By repeatedly multiplying $i$ by itself, we have wrapped around, returning
+to 1 after four iterations. If we keep going like this, we'll keep cycling around.
+This is how the complex number system models oscillations, which result from
+negative feedback. For a mechanical system such as a mass on a spring, the farther
+the mass gets to the right of equilibrium
+
+To model exponential behavior in the complex number system, we also use repeated
+multiplication. For example, if interest payments on your credit card debt cause
+it to double every decade (a positive feedback cycle), then your debt goes like
+$2^0=1$, $2^1=2$, $2^2=4$, and so on.
+
+Any complex number $z$ can be written in the form $z=a+bi$, where $a$ and $b$ are
+real, and $a$ and $b$ are then referred to as the real and imaginary parts of $z$.
+A number with a zero real part is called an imaginary number.
+The complex numbers can be visualized as a plane, with the real number line placed
+horizontally like the $x$ axis of the familiar $x-y$ plane, and the imaginary numbers running
+along the $y$ axis. The complex numbers are complete in a way that the real numbers
+aren't: every nonzero complex number has two square roots. For example, 1 is
+a real number, so it is also a member of the complex numbers, and its square roots
+are $-1$ and 1. Likewise, $-1$ has square roots $i$ and $-i$, and the number $i$
+has square roots $1/\sqrt{2}+i/\sqrt{2}$ and $-1/\sqrt{2}-i/\sqrt{2}$.
+
+Complex numbers can be added and subtracted by adding or subtracting their real
+and imaginary parts. Geometrically, this is the same as vector addition.
+
+<% marg(50) %>
+<%
+  fig(
+    'complex-numbers',
+    %q{Visualizing complex numbers as points in a plane.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'complex-addition',
+    %q{%
+      Addition of complex numbers is just like addition of vectors,
+      although the real and imaginary axes don't actually represent directions in space.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'complex-conjugate',
+    %q{A complex number and its conjugate.}
+  )
+%>
+<% end_marg %>
+
+The complex numbers $a+bi$ and $a-bi$, lying at equal distances above and below the
+real axis, are called complex conjugates. The results of the quadratic formula
+are either both real, or complex conjugates of each other.
+The complex conjugate of a number $z$ is notated as $\bar{z}$ or
+$z^*$.
+
+The complex numbers obey all the same rules of arithmetic as the reals, except that
+they can't be ordered along a single line. That is, it's not possible to say whether
+one complex number is greater than another. We can compare them in terms of their
+magnitudes (their distances from the origin), but two distinct complex numbers may
+have the same magnitude, so, for example, we can't say whether $1$ is greater than
+$i$ or $i$ is greater than $1$.
+
+\pagebreak
+
+\begin{eg}{A square root of $i$}\label{eg:sqrt-i}
+\egquestion Prove that $1/\sqrt{2}+i/\sqrt{2}$ is a square root of $i$.
+
+\eganswer Our proof can use any ordinary rules of arithmetic, except for
+ordering.
+\begin{align*}
+   (\frac{1}{\sqrt{2}}+\frac{i}{\sqrt{2}})^2 
+    & = \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}
+       +\frac{1}{\sqrt{2}}\cdot\frac{i}{\sqrt{2}}
+       +\frac{i}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}
+       +\frac{i}{\sqrt{2}}\cdot\frac{i}{\sqrt{2}} \\
+    &= \frac{1}{2}(1+i+i-1) \\
+    &= i
+\end{align*}
+\end{eg}
+
+Example \ref{eg:sqrt-i} showed one method of multiplying complex numbers.
+However, there is another nice interpretation of complex multiplication.
+We define the argument of a complex number as its angle in the complex plane, measured
+counterclockwise from the positive real axis.
+Multiplying two complex numbers then corresponds to multiplying their magnitudes,
+and adding their arguments.
+
+<% self_check('complex-square-root',<<-'SELF_CHECK'
+Using this interpretation of multiplication, how could you find the
+square roots of a complex number?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{An identity} 
+The magnitude $|z|$ of a complex number $z$ obeys
+the identity $|z|^2=z\bar{z}$. To prove this, we first note that $\bar{z}$
+has the same magnitude as $z$, since flipping it to the other side of the
+real axis doesn't change its distance from the origin. Multiplying $z$ by
+$\bar{z}$ gives a result whose magnitude is found by multiplying their
+magnitudes, so the magnitude of
+$z\bar{z}$ must therefore equal  $|z|^2$. Now we just have to prove that
+$z\bar{z}$ is a positive real number. But if, for example, $z$ lies counterclockwise
+from the real axis, then $\bar{z}$ lies clockwise from it. If $z$ has a positive
+argument, then $\bar{z}$ has a negative one, or vice-versa. The sum of their arguments is therefore
+zero, so the result has an argument of zero, and is on the positive real axis.
+\footnote{I cheated a little. If $z$'s argument
+is 30 degrees, then we could say $\bar{z}$'s was -30, but we could also call it
+330. That's OK, because 330+30 gives 360, and an argument of
+360 is the same as an argument of zero.}
+\end{eg}
+
+<% marg(50) %>
+<%
+  fig(
+    'complex-polar',
+    %q{%
+      A complex number can be described in terms of its magnitude and
+      argument.
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'complex-multiplication',
+    %q{The argument of $uv$ is the sum of the arguments of $u$ and $v$.}
+  )
+%>
+<% end_marg %>
+
+This whole system was built up in order to make every number have square roots.
+What about cube roots, fourth roots, and so on? Does it get even more weird when
+you want to do those as well? No. The complex number system we've already discussed
+is sufficient to handle all of them. The nicest way of thinking about it is in terms
+of roots of polynomials. In the real number system, the polynomial $x^2-1$ has
+two roots, i.e., two values of $x$ (plus and minus one) that we can plug in to the
+polynomial and get zero. Because it has these two real roots, we can rewrite the
+polynomial as $(x-1)(x+1)$. However, the polynomial $x^2+1$ has no real roots. It's
+ugly that in the real number system, some second-order polynomials have two
+roots, and can be factored, while others can't. In the complex number system,
+they all can. For instance, $x^2+1$ has roots $i$ and $-i$, and can be factored
+as $(x-i)(x+i)$. In general, the fundamental theorem of algebra\index{fundamental theorem of algebra}
+states that in the complex number system,
+any nth-order polynomial can be factored completely
+into $n$ linear factors, and we can also say that it has $n$ complex roots,
+with the understanding that some of the roots may be the same. For instance,
+the fourth-order polynomial $x^4+x^2$ can be factored as $(x-i)(x+i)(x-0)(x-0)$,
+and we say that it has four roots, $i$, $-i$, 0, and 0, two of which happen to be
+the same. This is a sensible way to think about it, because in real life, numbers are
+always approximations anyway, and if we make tiny, random changes
+to the coefficients of this polynomial,
+it will have four distinct roots, of which two just happen to be very close
+to zero.
+
+\startdqs
+
+\begin{dq}
+Find $\arg i$, $\arg(-i)$, and $\arg 37$, where $\arg z$ denotes the argument of the complex number $z$.
+\end{dq}
+
+\begin{dq}
+Visualize the following multiplications in the complex plane using the interpretation of multiplication
+in terms of multiplying magnitudes and adding arguments: $(i)(i)=-1$, $(i)(-i)=1$, $(-i)(-i)=-1$.
+\end{dq}
+
+\begin{dq}
+If we visualize $z$ as a point in the complex plane, how should we visualize $-z$? What does this mean
+in terms of arguments? Give similar interpretations for $z^2$ and $\sqrt{z}$.
+\end{dq}
+
+\begin{dq}
+Find four different complex numbers $z$ such that $z^4=1$.
+\end{dq}
+
+\begin{dq}
+Compute the following. For the final two, use the magnitude and argument, not the real and imaginary parts.
+\begin{equation*}
+|1+i| \quad , \quad
+ \arg(1+i) \quad , \quad
+ \left|\frac{1}{1+i}\right| \quad , \quad
+ \arg\left(\frac{1}{1+i}\right) \quad , \quad
+\end{equation*}
+From these, find the real and imaginary parts of $1/(1+i)$.
+\end{dq}
+
+<% end_sec() %>
+
+<% begin_sec("Euler's formula",nil,'euler-formula') %>
+\index{Euler's formula}\index{Euler, Leonhard}
+Having expanded our horizons to include the complex numbers, it's natural to want to extend
+functions we knew and loved from the world of real numbers so that they can also operate on
+complex numbers. The only really natural way to do this in general is to use Taylor series.
+A particularly beautiful thing happens with the functions $e^x$, $\sin x$, and $\cos x$:
+\begin{align*}
+  e^x    &= 1 + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \ldots \\
+  \cos x &= 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 - \ldots \\
+  \sin x &= x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 - \ldots 
+\end{align*}
+If $x=i\phi$ is an imaginary number, we have
+\begin{equation*}
+  e^{i\phi} = \cos \phi + i \sin \phi\eqquad,
+\end{equation*}
+a result known as Euler's formula.\index{Euler's formula}
+The geometrical interpretation in the complex
+plane is shown in figure \figref{euler}.
+
+Although the result may seem like something out of a freak show at first,
+applying the definition of the exponential function
+makes it clear how natural it is:
+\begin{align*}
+  e^x = \lim_{n\rightarrow \infty} \left(1+\frac{x}{n}\right)^n\eqquad.
+\end{align*}
+When $x=i\phi$ is imaginary, the quantity $(1+i\phi/n)$ represents a number
+lying just above 1 in the complex plane. For large $n$, $(1+i\phi/n)$
+becomes very close to the unit circle, and its argument is the small
+angle $\phi/n$. Raising this number to the nth power multiplies its
+argument by $n$, giving a number with an argument of $\phi$.
+
+<% marg(100) %>
+<%
+  fig(
+    'euler',
+    'The complex number $e^{i\phi}$ lies on the unit circle.'
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'euler-portrait',
+    'Leonhard Euler (1707-1783)'
+  )
+%>
+<% end_marg %>
+
+Euler's formula is used frequently in physics and engineering.
+
+\begin{eg}{Trig functions in terms of complex exponentials}
+\egquestion Write the sine and cosine functions in terms of exponentials.
+
+\eganswer Euler's formula for $x=-i\phi$ gives $\cos \phi - i \sin \phi$,
+since $\cos(-\theta)=\cos\theta$, and $\sin(-\theta)=-\sin\theta$.
+\begin{align*}
+  \cos x &= \frac{e^{ix}+e^{-ix}}{2} \\
+  \sin x &= \frac{e^{ix}-e^{-ix}}{2i} 
+\end{align*}
+\end{eg}
+
+\begin{eg}{A hard integral made easy}
+\egquestion Evaluate
+\begin{equation*}
+  \int e^x \cos x \der x
+\end{equation*}
+
+\eganswer This seemingly impossible integral becomes easy if we rewrite
+the cosine in terms of exponentials:
+\begin{align*}
+  \int e^x & \cos x \der x \\
+      &= \int e^x \left(\frac{e^{ix}+e^{-ix}}{2}\right) \der x \\
+      &= \frac{1}{2} \int (e^{(1+i)x}+e^{(1-i)x})\der x \\
+      &= \frac{1}{2} \left( \frac{e^{(1+i)x}}{1+i}+\frac{e^{(1-i)x}}{1-i} \right)+ c
+\end{align*}
+
+Since this result is the integral of a real-valued function, we'd like it to be
+real, and in fact it is, since the first and second terms are complex conjugates of
+one another. If we wanted to, we could use Euler's theorem to convert it back to
+a manifestly real result.\footnote{In general, the use of complex number techniques to
+do an integral could result in a complex number, but that complex number would
+be a constant, which could be subsumed within the usual constant of integration.}
+
+\end{eg}
+
+<% end_sec('euler-formula') %>
+
+<% begin_sec("Simple harmonic motion and the LC circuit",nil,'shm') %>\index{simple harmonic motion}
+The simple harmonic oscillator and the LC circuit should already be familiar to you. Here we show how
+complex numbers apply to these topics.
+
+Figure \subfigref{mass-on-spring}{1} shows a mass vibrating on a
+spring. If there is no friction, then the mass vibrates forever, and
+energy is transferred repeatedly back and forth between kinetic energy
+in the mass and potential energy in the spring. If we add friction,
+then the oscillations will dissipate these forms of energy into heat
+over time. 
+
+Figure \subfigref{mass-on-spring}{2}
+shows the electrical analog.
+Energy cycles back and forth between electrical energy in the field of
+the capacitor and magnetic energy in the field of the coil. The
+electrical analog of friction is the resistance, which dissipates the
+energy of the oscillations into heat.
+
+<% marg(50) %>
+<%
+  fig(
+    'mass-on-spring',
+    %q{1.~A mass vibrating on a spring. 2.~A circuit displaying analogous electrical oscillations.},
+    {'topic'=>'mechanics'}
+  )
+%>
+<% end_marg %>
+
+The dissipation of energy into heat is referred to as damping.
+This section covers simple harmonic motion, which is the case without
+damping. We consider the more general damped case in sec.~\ref{subsec:damping}.
+
+
+The system of analogous variables for these two systems is as follows:
+
+\begin{tabular}{lp{50mm}p{70mm}}
+\emph{mechanical} & \emph{electrical} \\
+$x=\text{position}$ & $q=\text{charge on one plate}$ \\
+$v=x'=\text{velocity}$ & $I=q'=\text{current}$ \\
+$a=x''=\text{acceleration}$ & $I'=\text{rate of change of current}$ 
+\end{tabular}
+
+Since this system of analogies is perfect, we'll discuss the behavior
+of the more concrete mechanical system. The mass is acted on by a force
+$-kx$ from the spring.
+Newton's second law can be written as
+\begin{equation*}
+  mx''+kx = 0.
+\end{equation*}
+An equation like this, which relates a function to its own derivatives, is
+called a \emph{differential equation}. This one is a \emph{linear} differential
+equation, meaning that if $x_1(t)$ and $x_2(t)$ are both solutions, then
+so is any linear combination of them, $c_1x_1(t)+c_2x_2(t)$.
+It's not hard to guess what the solutions are: sines and cosines
+work as solutions, because the sine and cosine are functions whose second derivative
+is the same as the original function, except for a sign flip. The most general
+solution is of the form
+\begin{equation*}
+  c_1\sin\omega t+c_2\cos\omega t,
+\end{equation*}
+where the frequency is $\omega=\sqrt{k/m}$.
+It makes sense that there are two adjustable constants, because if we're given some
+the initial position and velocity of the mass, those are two numbers that we want
+to produce, and typically two equations in two unknowns will have a solution. Mathematically,
+this happens because the highest derivative in the differential equation is a second derivative.
+
+But we would like to have some more specific and convenient way of organizing our thoughts
+about the physical interpretation of the constants $c_1$ and $c_2$. Suppose we write down
+some examples of solutions on scraps of papers and then put them on a table and shuffle them
+around to try to see them in an organized way. As a loose analogy, this was how Mendeleev
+came up with the periodic table of the elements. Figure \figref{sine-wave-paper-scraps}
+shows what we might come up with for our ``periodic table of the sine waves.'' What we've
+created is a system in which the solution $c_1\sin+c_2\cos$ is represented as a square on
+a checkerboard or, more generally, a point in the plane. Beautiful things happen if we
+think of this plane as being the complex plane, as laid out in the following table
+of exact mathematical analogies.
+<% marg(50) %>
+<%
+  fig(
+    'sine-wave-paper-scraps',
+    %q{Organizing some solutions to the equations of motion for simple harmonic motion.},
+    {'topic'=>'em-fields'}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'sinpluscos-fac',
+    %q{Example \ref{eg:sinpluscos}.},
+    {'topic'=>'em-fields'}
+  )
+%>
+<% end_marg %>
+
+\begin{tabular}{p{40mm}p{60mm}}\label{table-of-complex-plane-analogies}
+\emph{sine waves} & \emph{complex plane} \\
+amplitude            & magnitude \\
+phase                & argument \\
+addition             & addition \\
+differentiation      & multiplication by $i\omega$
+\end{tabular}
+
+\begin{eg}{Sine compared to cosine}
+The sine function is the same as a cosine that has been delayed in phase by a quarter
+of a cycle, or 90 degrees. The two functions correspond to the complex numbers
+1 and $i$, which have the same magnitude but differ by 90 degrees in their arguments.
+\end{eg}
+
+\begin{eg}{Adding two sine waves}\label{eg:sinpluscos}
+The trigonometric fact $\sin\omega t+\cos\omega t=\sqrt{2}\sin(\omega t+\pi/4)$
+is visualized in figure \figref{sinpluscos-fac}.
+\end{eg}
+
+\begin{eg}{A function's first and second derivative}
+Differentiating $\sin 3x$ gives $3\cos 3x$. In terms of the complex plane, the function
+$\sin 3x$ is represented by 1. Differentiating it corresponds to multiplying this complex
+number by $3i$, which gives $3i$, and $3i$ represents the function $3\cos 3x$ in our system.
+
+Differentiating a second time gives $(\sin 3x)''=-9\sin 3x$.
+In terms of complex numbers, this is $1(3i)(3i)=-9$.
+\end{eg}
+
+<% self_check('represent-as-complex',<<-'SELF_CHECK'
+Which of the following functions can be represented in this way? $\cos(6t-4)$, $\cos^2t$, $\tan t$
+  SELF_CHECK
+  ) %>
+
+If we apply this system of analogies the the equation of motion $mx''+kx = 0$, for a solution
+with amplitude $A$, we get $(-m\omega^2+k)A=0$, and if $A$ is nonzero, this means that
+\begin{equation*}
+  -m\omega^2+k=0.
+\end{equation*}
+This is a big win, because now instead of solving a differential equation, we just have to
+analyze an equation using algebra. If $A$ is nonzero, then the factor in parentheses has to be
+zero, and that gives $\omega=\sqrt{k/m}$. (We could use the negative square root, but that doesn't
+actually give different solutions.)\label{end-sec-shm}
+
+\startdq
+
+\begin{dq}
+Interpret the following math facts visually using the figure below.
+\begin{align*}
+  (\sin t)' &= \cos t \\
+  (\cos t)' &= -\sin t \\
+  (-\sin t)' &= -\cos t \\
+  (-\cos t)' &= \sin t \\
+  (2\sin t)' &= 2\cos t \\
+  0' &= 0 \\
+  (\cos 2t)' &= -2\sin 2t \\
+  (\cos 3t)' &= -3\sin 3t 
+\end{align*}
+\end{dq}
+
+<%
+  fig(
+    'dq-differentiation-complex-plane',
+    '',
+    {'width'=>'wide','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+
+<% end_sec('shm') %>
+
+<% begin_sec("Damped oscillations",nil,'damping') %>
+We now extend the discussion to include damping.  If you haven't
+learned about damped oscillations before, you may want to look first
+at a treatment that doesn't use complex numbers, such as the one in
+ch.~15 of OpenStax University Physics, volume 1, which is free online. 
+
+In the mechanical case, we will assume for mathematical convenience
+that the frictional force is proportional to velocity. Although this
+is not realistic for the friction of a solid rubbing against a solid,
+it is a reasonable approximation for some forms of friction, and 
+anyhow it has the advantage of making the mechanical and electrical
+systems in figure \figref{mass-on-spring} exactly analogous
+mathematically.
+
+With this assumption, we add in to Newton's second law
+a frictional force $-bv$, where $b$ is a constant. The equation of motion
+is now
+\begin{equation*}
+  mx''+bx'+kx = 0.
+\end{equation*}
+Applying the trick with the complex-number analogy, this becomes
+$-m\omega^2+i\omega b+k=0$, which says that $\omega$ is a root of a polynomial.
+Since we're used to dealing with polynomials that have real coefficients,
+it's helpful to switch to the variable $s=i\omega$, which means that we're
+looking for solutions of the form $Ae^{st}$. In terms of this variable,
+\begin{equation*}
+  ms^2+bs+k=0.
+\end{equation*}
+The most common case is one where $b$ is fairly small, so that the
+quadratic formula produces two solutions for $r$ that are complex
+conjugates of each other. As a simple example without units, let's say
+that these two roots are $s_1=-1+i$ and $s_2=-1-i$. Then if $A=1$, our
+solution corresponding to $s_1$ is $x_1=e^{(-1+i)t}=e^{-t}e^{it}$.
+The $e^{it}$ factor spins in the complex plane, representing an oscillation,
+while the $e^{-t}$ makes it die out exponentially due to
+friction.  In reality, our solution should be a real number, and if we
+like, we can make this happen by adding up combinations, e.g.,
+$x_1+x_2=2e^{-t}\cos t$, but it's usually easier just to write down
+the $x_1$ solution and interpret it as a decaying oscillation. Figure
+\figref{sc-strongly-damped} shows an example.
+
+
+<% marg(0) %>
+<%
+  fig(
+    'sc-strongly-damped',
+    %q{The amplitude is halved with each cycle.},
+    {'topic'=>'mechanics'}
+  )
+%>
+<% end_marg %>
+<% self_check('damping-energy',<<-'SELF_CHECK'
+Figure \figref{sc-strongly-damped} shows an x-t graph for a strongly damped
+vibration, which loses half of its amplitude with every
+cycle. What fraction of the energy is lost in each cycle?
+  SELF_CHECK
+  ) %>
+
+It is often convenient to describe the amount of damping in terms of the
+unitless \emph{quality factor} $Q=\sqrt{km}/b$,\index{$Q$ (quality factor)!mechanical oscillator}%
+\index{quality factor ($Q$)!mechanical oscillator}
+which can be interpreted as the
+number of oscillations required for the energy to fall off by a factor of
+$e^{2\pi}\approx535$.\label{q-mechanical}
+
+<% end_sec('damping') %>
+
+<% begin_sec("Resonance",nil,'resonance') %>\index{resonance}
+When a sinusoidally oscillating external driving force is applied to
+our system, it will respond by settling into a pattern of vibration in
+which it oscillates at the driving frequency. A mother pushing her kid
+on a playground swing is a mechanical example (not quite a rigorous
+one, since her force as a function of time is not a sine wave).  An
+electrical example is a radio receiver driven by a signal picked up
+from the antenna. In both of these examples, it matters whether we
+pick the right driving force.  In the example of the playground swing,
+Mom needs to push in rhythm with the swing's pendulum frequency. In
+the radio receiver, we tune in a specific frequency and reject others.
+These are examples of resonance: the system responds most strongly to
+driving at its natural frequency of oscillation. If you haven't had
+a previous introduction to resonance in the mechanical context, this
+review will not be adequate, and you will first want to look at another book,
+such as OpenStax University Physics.
+
+
+<%
+  fig(
+    'resonance-fac',
+    %q{%
+      Dependence of the amplitude and phase angle
+              on the driving frequency. The undamped case is $Q=\infty$,
+              and the other curves represent $Q$=1, 3, and 10. $\mytilde{F}$, $m$, and $\omega_\zu{o}=\sqrt{k/m}$
+              are all set to 1.  
+    },
+    {'width'=>'wide','sidecaption'=>true,'topic'=>'em-fields'}
+  )
+%>
+
+With the addition of a driving force $F$, the equation of motion for the
+damped oscillator becomes
+\begin{equation*}
+  mx''+bx'+kx = F,
+\end{equation*}
+where $F$ is a function of time. In terms of complex amplitudes, this is
+$(-\omega^2m+i\omega b+k)A=\mytilde{F}$. Here we introduce the notation $\mytilde{F}$, which
+looks like a little sine wave above the $F$, to mean the complex number representing $F$'s
+amplitude. The result for the steady-state response of the oscillator is
+\begin{equation*}
+  A = \frac{\mytilde{F}}{-\omega^2m+i\omega b+k}.
+\end{equation*}
+To see that this makes sense, consider the case where $b=0$. Then by setting $\omega$
+equal to the natural frequency $\sqrt{k/m}$ we can make $A$ blow up to infinity. This
+is exactly what would happen if Mom pushed Baby on the swing and there was no friction
+to keep the oscillations from building up indefinitely.
+
+
+Figure \figref{resonance-fac} shows how the response depends on the driving frequency.
+The peak in the graph of $|A|$ demonstrates that there is a resonance. Increasing $Q$,
+i.e., decreasing damping, makes the response at resonance greater, which is intuitively
+reasonable. What is a little more surprising is that it also changes the \emph{shape}
+of the resonance peak, making it narrower and spikier, as shown in figure \figref{resonance-varying-q}. The width of the resonance peak
+is often described using the full width at half-maximum, or FWHM, defined in figure
+\figref{fwhm}. The FWHM is approximately equal to $1/Q$ times the resonant frequency,
+the approximation being a good one when $Q$ is large.\index{$Q$ (quality factor)}\index{FWHM (full width at half maximum)}
+
+<%
+  fig(
+    'resonance-varying-q',
+    %q{Increasing $Q$ increases the response and makes the peak narrower. In this graph, frequencies are 
+       in units of the natural frequency, and the response is the energy of the steady state,
+       on an arbitrary scale.To make the comparison
+       more visually clear, the curve for $Q=2$ is multiplied by 5. Without this boost in scale,
+       the $Q=2$ curve would always lie below the one for $Q=10$.},
+    {'topic'=>'mechanics','narrowfigwidecaption'=>true}
+  )
+%>
+
+<% marg(300) %>
+<%
+  fig(
+    'fwhm',
+    %q{Definition of the FWHM of the resonance peak.},
+    {'topic'=>'mechanics'}
+  )
+%>
+<% end_marg %>
+
+<% end_sec('resonance') %>
+
+<% begin_sec("Dispersion",nil,'dispersion-em') %>\index{dispersion}
+A surprising and cool application is the explanation of why electromagnetic waves traveling through
+matter are \emph{dispersive} (section \ref{sec:propagation-at-c}), i.e., their speed depends on their
+frequency. We take glass as an example of our medium.
+Figure \figref{dispersion-graph-split-1} shows a typical observation, in which clearly
+something special is happening at a certain frequency. This is a resonance of the charged particles
+in the glass, which vibrate in response to the electric field of the incoming wave.
+
+<% marg(-300) %>
+<%
+  fig(
+    'dispersion-graph-split-1',
+    %q{The speed of light waves in silica glass ($c/v$ running from 3 to 0)
+       is graphed for increasing frequency and decreasing wavelength ($\lambda$ from 15 $\mu\munit$ to 1 $\mu\munit$).
+    },
+    {'topic'=>'em-fields'}
+  )
+%>
+<% end_marg %>
+
+To see how this works out, let's say that the incident wave has an electric field with a certain
+amplitude and phase. Ignoring units for convenience, let's
+arbitrarily take it to be $\sin\omega t$, so that in our complex-number setup, we represent it as
+\begin{equation*}
+  \text{original wave} = 1.
+\end{equation*}
+This causes a charged particle in the glass to oscillate. Its position as a function of time is some other
+sinusoidal wave with some phase and amplitude, represented by
+\begin{equation*}
+  \text{displacement of particle} = A.
+\end{equation*}
+This $A$ will be a complex number, with magnitude and phase behaving as in figure \figref{resonance-fac}.
+The motion of these charges produces a current. Their velocity is the time derivative of their position,
+and we've seen that taking a time derivative can be represented in terms of complex numbers as multiplication
+by $i\omega$. For our present purposes it would be too much of a distraction to keep track of all the
+real-valued factors, such as $\omega$, the number of charges, and so on. Omitting all of those, we have
+\begin{equation*}
+  \text{current} = iA.
+\end{equation*}
+Currents create magnetic fields, and this oscillating current will create an oscillating magnetic field,
+which will be part of a reemitted secondary wave, also traveling to the right,
+\begin{equation*}
+  \text{secondary wave} = -iA,
+\end{equation*}
+where the extra minus sign comes from Faraday's law.
+On the right side of the glass, we observe the superposition of the original wave and the secondary wave,
+\begin{equation*}
+  \text{transmitted wave} = 1-iA.
+\end{equation*}
+Consulting figure \figref{resonance-fac}, we see that for frequencies somewhat below the resonance, $A$ is
+small and its phase approximately real-positive. Therefore $1-iA$ is in the fourth quadrant, somewhat below
+the real axis. This represents a transmitted wave that is behind the original wave in terms of phase.
+The effect is as if the wave were arriving late, i.e., traveling at lower than normal speed.
+
+<% marg() %>
+<%
+  fig(
+    'dispersion-graph-split-2',
+    %q{A physical explanation in which the original light wave excites the charges in the glass,
+       which reemit a secondary wave. The secondary wave is observed superposed with the original one.
+       Redrawn from Kitamura, Pilon, and Jonasz, Applied Optics 46 (2007) 8118,
+       reprinted online at \url{http://www.seas.ucla.edu/~pilon/Publications/AO2007-1.pdf}.},
+    {'topic'=>'em-fields'}
+  )
+%>
+<% end_marg %>
+
+Increasing the frequency, we expect that as we hit resonance, $A$ will should be large and positive-imaginary.
+Now the quantity $1-iA$ becomes positive and real, the real phase indicating that the transmitted wave
+neither leads nor lags the original wave. This is the point in the middle of the graph where the velocity
+is back to normal.
+
+Farther to the right, at frequencies above resonance, $A$ is near the negative real axis,
+$1-iA$ is above the real axis, and the transmitted
+wave leads the original one. The velocity is faster than normal --- in fact, it can be faster than $c$!
+Unfortunately this does not give us a way of violating relativity. Our calculations of $A$ were all
+calculations of the \emph{steady state} response of the resonator. If we turn on our incident wave at
+some point in time, there will be a delay before the steady-state response is achieved, and this is more
+than enough to reduce the actual speed of propagation of the signal, called the \emph{group velocity}, to less than $c$.
+The velocity that is greater than $c$ is the \emph{phase velocity},\index{group velocity}\index{phase velocity}
+and is not the speed at which energy and information propagate.
+
+\pagebreak
+
+\startdqs
+
+\begin{dq}\label{dq:compare-q}
+Compare the $Q$ values of the two oscillators in the figures below.
+\end{dq}
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-2}
+
+\begin{dq} 
+Match the $x$-$t$ graphs in discussion question \ref{dq:compare-q} with the amplitude-frequency graphs below.
+\end{dq}
+
+\widefignocaptionnofloat{../../../share/mechanics/figs/ex-resonance-3}
+
+
+<% end_sec('dispersion-em') %>
+
+<% end_sec('resonance-and-complex') %>
 
 <% begin_notes %>
 
@@ -935,6 +1681,40 @@ $v$ is the speed of the waves. The energy flux per unit area for a plane wave is
 <% begin_hw('maxtransmission',2) %>__incl(hw/maxtransmission)<% end_hw() %>
 
 
+<% begin_hw('complex-trig') %>m4_include(../share/em-fields/hw/complex-trig.tex)<% end_hw() %>
+
+<% begin_hw('addition-theorem-for-sine') %>m4_include(../share/em-fields/hw/addition-theorem-for-sine.tex)<% end_hw() %>
+
+<% begin_hw('cube-roots-of-unity') %>m4_include(../share/em-fields/hw/cube-roots-of-unity.tex)<% end_hw() %>
+
+<% begin_hw('visualize-diffeq-in-complex-plane') %>m4_include(../share/em-fields/hw/visualize-diffeq-in-complex-plane.tex)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('complex-cube-root') %>m4_include(../share/em-fields/hw/complex-cube-root.tex)<% end_hw() %>
+
+<% marg(300) %>
+<%
+  fig(
+    'hw-complex-cube-root',
+    %q{Problem \ref{hw:complex-cube-root}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('complex-hundredth-derivative') %>m4_include(../share/em-fields/hw/complex-hundredth-derivative.tex)<% end_hw() %>
+
+<% begin_hw('factor-cubic') %>m4_include(../share/em-fields/hw/factor-cubic.tex)<% end_hw() %>
+
+<% begin_hw('i-to-the-i',2) %>m4_include(../share/em-fields/hw/i-to-the-i.tex)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('swimbladder') %>m4_include(../share/mechanics/hw/swimbladder.tex)<% end_hw() %>
+
+<% begin_hw('simple-complex-inverse') %>m4_include(../share/em-fields/hw/simple-complex-inverse.tex)<% end_hw() %>
+
+<% begin_hw('arg-of-inverse-conjugate') %>m4_include(../share/em-fields/hw/arg-of-inverse-conjugate.tex)<% end_hw() %>
 
 <% end_hw_sec() %>
 

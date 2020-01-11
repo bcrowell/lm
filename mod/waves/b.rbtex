@@ -695,7 +695,7 @@ fun, but scientifically wrong.
 
 <% end_sec() %>
 
-<% begin_sec("Periodic waves") %>
+<% begin_sec("Periodic waves",nil,'periodic-waves') %>
 \index{waves!period of}\index{waves!frequency of}%
 \index{period!of waves}\index{frequency!of waves}
 
@@ -979,14 +979,48 @@ colors) only if it is a sine wave.
     'dq-beats',
     %q{Discussion question \ref{dq:beats}.},
     {
-      'width'=>'wide'
+      'width'=>'wide','anonymous'=>true
     }
   )
 %>
 
 <% end_sec() %>
 
-<% end_sec() %>
+<% begin_sec("The wavenumber",nil,'wavenumber') %>\index{wavenumber}\label{wavenumber}
+When discussing vibrations, it's conventional to define both a freqency $f$ (cycles per second)
+and a frequency $\omega=2\pi f$ (radians per second). It's convenient to work with $\omega$ because
+it's easier to write expressions like $\sin\omega t$ than $\sin 2\pi f t$, and $\omega=\sqrt{k/m}$
+rather than $f=(1/2\pi)\sqrt{k/m}$ for the frequency of a harmonic oscillator.
+
+For similar reasons, when discussing sinusoidal waves, we define a variable $k$, called the wavenumber,
+which is the number of radians per meter, $k=2\pi/\lambda$. 
+The wavenumber  has the same relationship to the wavelength as the angular frequency $\omega$ has to the period.
+In terms of the wavenumber, we have
+a compact way of writing the amplitude as a function of position and time for a traveling sinusoidal wave,
+\begin{equation*}
+  u = A\sin(kx-\omega t+\delta),
+\end{equation*}
+where $\delta$ is a constant phase. The wavenumber has units of radians per meter, and since radians aren't really units, this is the same
+as $\munit^{-1}$. 
+When the direction of propagation is not limited to the $x$ axis, we can generalize $k$ to make a vector,
+the wave-vector, p.~\pageref{wave-vector}. The wavenumber is the $x$ component of that vector, and a positive
+wavenumber indicates propagation in the positive $x$ direction.
+
+If we surf the wave while it moves forward one wavelength,\label{phase-vel-omega-k}
+then the $kx$ term in the equation above increases by $2\pi$. Since the input to the sine function (the phase
+of the wave) stays constant for the surfer, $\omega t$ must also change by $2\pi$ during this time.
+With some simple algebra (problem \ref{hw:wavenumber-algebra}, p.~\pageref{hw:wavenumber-algebra}), we find
+that the speed of the wave\footnote{We will see later in this course that for waves whose velocity depends on wavelength, it is necessary to
+distinguish this velocity, called the phase velocity, from a different velocity called the group velocity.}
+is
+\begin{equation*}
+  v = \frac{\omega}{k}.
+\end{equation*}
+
+<% end_sec('wavenumber') %>
+
+<% end_sec('periodic-waves') %>
+
 
 <% begin_sec("The Doppler effect",nil,'doppler') %>
 \index{Doppler shift}
@@ -1079,30 +1113,18 @@ compared to the wave velocities, the Doppler shifts of the
 wavelength and frequency are about the same.)
 \end{eg}
 
-<% marg(70) %>
-<% 
+
+<% marg(-10) %>
+<%
   fig(
     'shock-wave',
     %q{%
-      Shock waves are created by the X-15
+      Sound waves are created by the X-15
       rocket plane, flying at 3.5 times the speed of sound.
     }
   )
 %>
 
-\spacebetweenfigs
-
-<%
-  fig(
-    'sonic-boom',
-    %q{%
-      This fighter
-      jet has just accelerated past the speed of sound. The
-      sudden decompression of the air causes water droplets to   
-      condense, forming a cloud.
-    }
-  )
-%>
 <% end_marg %>
 
 \startdqs
@@ -1112,8 +1134,8 @@ If an airplane travels at exactly the speed of sound,
 what would be the wavelength of the forward-emitted part of
 the sound waves it emitted? How should this be interpreted,
 and what would actually happen? What happens if it's going
-faster than the speed of sound? Can you use this to explain what
-you see in figures \figref{shock-wave} and
+faster than the speed of sound? Sketch spherical wavefronts in the style
+of figure \figref{doppler}.
 \figref{sonic-boom}?
                 \end{dq}
 
@@ -1124,7 +1146,7 @@ you see in figures \figref{shock-wave} and
         \end{dq}
 
         \begin{dq}
-        If someone inside a plane is talking to you, should their
+        If someone inside a plane is talking to you, will their
         speech be Doppler shifted?
         \end{dq}
 
@@ -1234,6 +1256,15 @@ The relative strengths of the harmonics is what makes vowels sound different fro
 each other, and is also one of the factors that makes one instrument sound
 different from another. (Other factors are actually usually more important.)
 
+<% marg() %>
+<%
+  fig(
+    'viola-harmonic',
+    %q{Example \ref{eg:viola-harmonic}.}
+  )
+%>
+<% end_marg %>
+
 \begin{eg}{Harmonics on string instruments}\label{eg:viola-harmonic}
 Figure \figref{viola-harmonic} shows a violist playing what string players
 refer to as a natural harmonic. The term ``harmonic'' is used here in a
@@ -1246,20 +1277,10 @@ stationary points at the center of the string, but not at
 the odd multiples $f_\zu{o}, 3f_\zu{o}, \ldots$. Since all the
 overtones are multiples of $2f_\zu{o}$, the ear perceives $2f_\zu{o}$ as
 the basic frequency of the note. In musical terms, doubling the frequency
-corresponds to raising the pitch by an octave. The technique can be used
-in order to make it easier to play high notes in rapid passages, or for
-its own sake, because of the change in timbre.
+corresponds to raising the pitch by an octave.
 \end{eg}
-<% marg(300) %>
-<%
-  fig(
-    'viola-harmonic',
-    %q{Example \ref{eg:viola-harmonic}.}
-  )
-%>
-<% end_marg %>
 
-
+\enlargethispage{\baselineskip}
 
 <% end_sec('standing-waves') %>
 <% end_sec('refl-and-standing-waves-basic') %>
@@ -1280,7 +1301,7 @@ dependence, then the shape of this wave can be written as
 \end{equation*}
 where $u$ is the height of the membrane at a certain point.
 
-<% marg(-300) %>
+<% marg(50) %>
 <%
   fig(
     'square-membrane',
@@ -1289,10 +1310,9 @@ where $u$ is the height of the membrane at a certain point.
 %>
 <% end_marg %>
 
-To make the writing easier, we define a quantity $\vc{k}$, called the wave-vector,\index{wave-vector}
-which has the same relationship to the wavelength as the angular frequency $\omega$ has to the period.
-The wave-vector has units of radians per meter, and since radians aren't really units, this is the same
-as $\munit^{-1}$. As implied by the name, the wave-vector is a vector. In terms of $\vc{k}$'s components,
+To make the writing easier, we generalize the wavenumber (p.~\pageref{wavenumber})
+to define a vector quantity $\vc{k}$, called the wave-vector,\index{wave-vector}\label{wave-vector}
+In terms of $\vc{k}$'s components,
 our example becomes
 \begin{equation*}
   u = A\sin k_x x \sin k_y y,
@@ -1304,15 +1324,10 @@ A traveling sine wave has a beautifully simple form when written in terms of the
   u = A\sin(\vc{k}\cdot\vc{r}-\omega t+\delta),
 \end{equation*}
 where $\vc{r}=(x,y)$ is the position vector, and $\delta$ is a constant phase. The vector $\vc{k}$
-points in the direction of propagation. If we surf the wave while it moves forward one wavelength,
-then the $\vc{k}\cdot\vc{r}$ term increases by $2\pi$. Since the input to the sine function (the phase
-of the wave) stays constant for the surfer, $\omega t$ must also change by $2\pi$ during this time.
-We find that the speed of the wave\footnote{We will see later in this course that for waves whose velocity depends on wavelength, it is necessary to
-distinguish this velocity, called the phase velocity, from a different velocity called the group velocity.}
-is
-\begin{equation*}
-  v = \frac{\omega}{|\vc{k}|}.
-\end{equation*}
+points in the direction of propagation, and its magnitude is the wavenumber $k$.
+We recall that $v=\omega/k$ (which is the phase velocity, not the group velocity).
+
+\pagebreak
 
 <%
   fig(
@@ -1363,7 +1378,7 @@ The calculation of $\omega_3/\omega_1$ is problem \ref{hw:square-membrane-freque
 %>
 
 Sometimes we get waves that simply aren't sine waves. 
-An example is figure \figref{chladni-guitar}, where the shape of the body prevents simple patterns like the ones
+An example is figure \figref{chladni-guitar}, where the shape of the guitar's body prevents simple patterns like the ones
 in figure \figref{square-membrane-patterns} from existing.
 Similar examples from civil and mechanical engineering are the wave disturbances in
 structures such as bridges and cars, which wiggle and vibrate in complicated ways when subjected to forces (figure \figref{car-crash-fem}).
@@ -1392,7 +1407,7 @@ Like the second derivative, the Laplacian is essentially a measure of curvature.
 Or, as shown in figure \figref{laplacian-geometrical-mod}, we can think of it as a measure of how much the value
 of a function at a certain point differs from the average of its value on nearby points (which amounts ot the same thing).
 
-<% marg(120) %>
+<% marg(300) %>
 <%
   fig(
     'car-crash-fem',
@@ -1401,6 +1416,13 @@ of a function at a certain point differs from the average of its value on nearby
 %>
 <% end_marg %>
 
+In a simulation like the one in figure \figref{car-crash-fem}, a computer breaks down a continuous body such as 
+a piece of sheet metal into a grid of squares or triangles. It can find a numerical approximation to the Laplacian
+by finding the difference between the position of one node on the grid and the average position of its neighboring
+nodes. This produces a prediction of the acceleration, which is then used to evolve the motion forward in time
+as the simulation goes on.
+
+\pagebreak
 
 <%
   fig(
@@ -1443,6 +1465,7 @@ Since its curvature along one axis is concave up, but the curvature along the ot
 down and equal in magnitude, the function is considered to have zero concavity over all.
 \end{eg}
 
+
 <% end_sec('laplacian') %>
 
 
@@ -1468,7 +1491,11 @@ down and equal in magnitude, the function is considered to have zero concavity o
 
 \pagebreak
 
+<% begin_hw('wavenumber-algebra') %>__incl(hw/wavenumber-algebra)<% end_hw() %>
+
 <% begin_hw('sinwavekinem') %>__incl(hw/sinwavekinem)<% end_hw() %>
+
+<% begin_hw('wave-data-to-equation') %>__incl(hw/wave-data-to-equation)<% end_hw() %>
 
 <% marg(0) %>
 <%
@@ -1491,8 +1518,6 @@ down and equal in magnitude, the function is considered to have zero concavity o
 <% begin_hw('harp-string') %>__incl(hw/harp-string)<% end_hw() %>
 
 <% begin_hw('symmetric-standing-wave') %>__incl(hw/symmetric-standing-wave)<% end_hw() %>
-
-<% begin_hw('phase-vel-units') %>__incl(hw/phase-vel-units)<% end_hw() %>
 
 <% begin_hw('easy-laplacian') %>m4_include(../share/quantum/hw/easy-laplacian.tex)<% end_hw() %>
 
