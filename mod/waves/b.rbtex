@@ -610,7 +610,7 @@ for a partial derivative, e.g., $\partial/\partial x$ means
 a derivative with respect to $x$ that is evaluated while treating $t$ as a constant. The
 acceleration is then $a =\der F/\der m$, or, substituting
 $\der m=\mu \der x$,
-\begin{equation*}
+\begin{equation*}\label{wave-on-a-string}
         \frac{\partial^2y}{\partial t^2}        = \frac{T}{\mu}\:\frac{\partial^2y}{\partial x^2}\eqquad.
 \end{equation*}
 The second derivative with respect to time is related to the
@@ -1264,6 +1264,134 @@ its own sake, because of the change in timbre.
 <% end_sec('standing-waves') %>
 <% end_sec('refl-and-standing-waves-basic') %>
 
+<% begin_sec("Waves in two or three dimensions",nil,'laplacian') %>
+Up until now we've concentrated on waves in one dimension, a category that is elastic
+enough to include examples like a plane wave or a transverse wave on a string, since they propagate in a single
+direction. As a simple example of a wave that really does have to be treated as fully two-dimensional,
+let's consider a square, elastic membrane, figure \figref{square-membrane}, with sides of length $b$.
+Vibrations like this can be made with soap bubble films.
+
+The example I've drawn has an upward
+bulge at the back left side, and a trough at the front right. It is visually plausible to say that this
+wave has two different wavelengths, $b$ along the $x$ axis and and $2b$ along $y$. If we ignore the time
+dependence, then the shape of this wave can be written as
+\begin{equation*}
+  u = A\sin \left(\frac{2\pi}{b}x\right)\sin \left(\frac{2\pi}{2b}y\right),
+\end{equation*}
+where $u$ is the height of the membrane at a certain point.
+
+<% marg(-300) %>
+<%
+  fig(
+    'square-membrane',
+    %q{A standing wave pattern on an elastic membrane, attached at its edges on a square frame.}
+  )
+%>
+<% end_marg %>
+
+To make the writing easier, we define a quantity $\vc{k}$, called the wave-vector,\index{wave-vector}
+which has the same relationship to the wavelength as the angular frequency $\omega$ has to the period.
+The wave-vector has units of radians per meter, and since radians aren't really units, this is the same
+as $\munit^{-1}$. As implied by the name, the wave-vector is a vector. In terms of $\vc{k}$'s components,
+our example becomes
+\begin{equation*}
+  u = A\sin k_x x \sin k_y y,
+\end{equation*}
+where $k_x=2\pi/b$ and $k_y=2\pi/2b$.
+
+A traveling sine wave has a beautifully simple form when written in terms of the wave-vector,
+\begin{equation*}
+  u = A\sin(\vc{k}\cdot\vc{r}-\omega t+\delta),
+\end{equation*}
+where $\vc{r}=(x,y)$ is the position vector, and $\delta$ is a constant phase. The vector $\vc{k}$
+points in the direction of propagation. If we surf the wave while it moves forward one wavelength,
+then the $\vc{k}\cdot\vc{r}$ term increases by $2\pi$. Since the input to the sine function (the phase
+of the wave) stays constant for the surfer, $\omega t$ must also change by $2\pi$ during this time.
+We find that the speed of the wave\footnote{We will see later in this course that for waves whose velocity depends on wavelength, it is necessary to
+distinguish this velocity, called the phase velocity, from a different velocity called the group velocity.}
+is
+\begin{equation*}
+  v = \frac{\omega}{|\vc{k}|}.
+\end{equation*}
+
+<% marg(0) %>
+<%
+  fig(
+    'car-crash-fem',
+    %q{A car crashes into the corner of a building. Waves from the impact propagate toward the back of the car through the sheet metal.}
+  )
+%>
+<% end_marg %>
+
+Sometimes we get waves that simply aren't sine waves. One example is the wave disturbances in
+structures such as bridges and cars, which wiggle and vibrate in complicated ways when subjected to forces (figure \figref{car-crash-fem}).
+Another example is the electron waves that occur inside atoms. In these cases, we can't just write down a single
+wave-vector for the whole wave pattern, and we have
+to solve some kind of wave equation. A typical wave equation in \emph{one} dimension is the equation we found for
+waves on a string, p.~\pageref{wave-on-a-string}, which can be written as
+\begin{equation*}\label{wave-on-a-string}
+        \text{acceleration}     = v^2\:\frac{\partial^2u}{\partial x^2}.
+\end{equation*}
+This is basically an expression of Newton's second law. The left-hand side is the acceleration, and the right-hand side is the
+unbalanced force that acts because of the curvature of the string (figure \figref{ball-and-spring-model},
+p.~\pageref{fig:ball-and-spring-model}). We would get waves that were not sine waves
+when $v^2$ was not constant. In more than one dimension, we need to replace $\partial^2u/\partial^2 x$ with
+\begin{equation*}
+  \frac{\partial^2u}{\partial^2 x} + \frac{\partial^2u}{\partial^2 y}
+\end{equation*}
+(adding a third term for $z$ if the wave was in three dimensions).
+This operation
+on the function $u$ is notated $\nabla^2 u$, and the derivative-like
+operator $\nabla^2=\partial^2/\partial x^2+ \partial^2/\partial y^2$ is called the Laplacian.\index{Laplacian}\label{laplacian-qm}
+It occurs in many places in physics.
+For example, in electrostatics,
+the potential $\phi$ in a region of vacuum must be a solution of the equation $\nabla^2\phi=0$.
+Like the second derivative, the Laplacian is essentially a measure of curvature.
+Or, as shown in figure \figref{laplacian-geometrical-mod}, we can think of it as a measure of how much the value
+of a function at a certain point differs from the average of its value on nearby points (which amounts ot the same thing).
+
+<%
+  fig(
+    'laplacian-geometrical-mod',
+    %q{%
+      1.~The one-dimensional version of the Laplacian is the second derivative. It is positive here
+          because the average of the two nearby points is greater than the value at the center.
+      2.~The Laplacian of the function $A$ in example \ref{eg:laplacian-2d} is positive because
+         the average of the four nearby points along the perpendicular axes is greater than the
+         function's value at the center.
+      3.~$\nabla^2 C=0$. The average is the same as the value at the center.
+    },
+    {'topic'=>'quantum','width'=>'wide'}
+  )
+%>
+
+\begin{eg}{Examples of the Laplacian in two dimensions}\label{eg:laplacian-2d}
+\egquestion
+Compute the Laplacians of the following functions in two dimensions, and interpret them:
+$A=x^2+y^2$, $B=-x^2-y^2$, $C=x^2-y^2$.
+
+\eganswer
+The first derivative of function $A$ with respect to $x$ is $\partial A/\partial x=2x$. Since $y$
+is treated as a constant in the computation of the partial derivative $\partial/\partial x$, the
+second term goes away. The second derivative of $A$ with respect to $x$ is
+$\partial^2 A/\partial x^2=2$. Similarly we have $\partial^2 A/\partial y^2=2$, so
+$\nabla^2 A=4$.
+
+All derivative operators, including $\nabla^2$, have the linear property that multiplying
+the input function by a constant just multiplies the output function by the same constant.
+Since $B=-A$, and we have $\nabla^2 B=-4$.
+
+For function $C$, the $x$ term contributes a second derivative of 2, but the $y$ term
+contributes $-2$, so $\nabla^2 C=0$.
+
+The interpretation of the positive sign in $\nabla^2 A=4$ is that $A$'s graph is shaped
+like a trophy cup, and the cup is concave up. 
+$\nabla^2 B<0$ is because $B$ is concave down. Function $C$ is shaped like a saddle.
+Since its curvature along one axis is concave up, but the curvature along the other is
+down and equal in magnitude, the function is considered to have zero concavity over all.
+\end{eg}
+
+<% end_sec('laplacian') %>
 
 
 <% begin_hw_sec(vfill:true) %>
@@ -1311,6 +1439,14 @@ its own sake, because of the change in timbre.
 <% begin_hw('harp-string') %>__incl(hw/harp-string)<% end_hw() %>
 
 <% begin_hw('symmetric-standing-wave') %>__incl(hw/symmetric-standing-wave)<% end_hw() %>
+
+<% begin_hw('phase-vel-units') %>__incl(hw/phase-vel-units)<% end_hw() %>
+
+<% begin_hw('easy-laplacian') %>m4_include(../share/quantum/hw/easy-laplacian.tex)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('bogus-laplacian-mod') %>m4_include(../share/quantum/hw/bogus-laplacian-mod.tex)<% end_hw() %>
 
 <% begin_hw('relativity-max-tension') %>m4_include(../share/relativity/hw/relativity-max-tension.tex)<% end_hw() %>
 
