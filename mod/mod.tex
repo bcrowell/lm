@@ -111,12 +111,12 @@
     \renewcommand{\chapdir}{thermo}\include{thermo/atemp}
     \renewcommand{\chapdir}{thermo}\include{thermo/btemp}
     \renewcommand{\chapdir}{thermo}\include{thermo/ctemp}
-    \renewcommand{\chapdir}{thermo}\include{thermo/dtemp}
-    \renewcommand{\chapdir}{thermo}\include{thermo/etemp}
     \renewcommand{\chapdir}{optics}\include{optics/atemp}
     \renewcommand{\chapdir}{optics}\include{optics/btemp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
     \renewcommand{\chapdir}{optics}\include{optics/ctemp}
+    \renewcommand{\chapdir}{quantum}\include{quantum/atemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+    \renewcommand{\chapdir}{quantum}\include{quantum/btemp}
         \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
 %
     \widelayout
