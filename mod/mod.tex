@@ -71,7 +71,11 @@
 \brieftocentry[\hfill]{ch:wave-optics}{Wave optics} \\
 & \textit{\brieftocpartstyle The microscopic description of matter and quantum physics}\\
 \brieftocentry[\hfill]{ch:atom}{The atom and the nucleus} \\
-\brieftocentry[\hfill]{ch:decay}{Probability distributions, variance, and radioactive decay curves} \\
+\brieftocentry[\hfill]{ch:decay}{Probability distributions and a first glimpse of quantum physics} \\
+\brieftocentry[\hfill]{ch:light-as-a-particle}{Light as a particle} \\
+\brieftocentry[\hfill]{ch:matter-as-a-wave}{Matter as a wave} \\
+\brieftocentry[\hfill]{ch:schrodinger}{The Schr\"odinger equation} \\
+\brieftocentry[\hfill]{ch:quantum-ang-mom}{Quantization of angular momentum} \\
 \end{tabular}
 
 
@@ -97,7 +101,7 @@
 \mainmatter
 %-- I want the whole book numbered sequentially, arabic:
   \pagenumbering{arabic} 
-  \addtocounter{page}{8}
+  \addtocounter{page}{10}
 \parafmt
 \myeqnspacing % Do this early and often, since it gets reset by \normalsize
 %========================= chapters =========================
@@ -115,8 +119,12 @@
     \renewcommand{\chapdir}{optics}\include{optics/btemp}
     \renewcommand{\chapdir}{optics}\include{optics/ctemp}
     \renewcommand{\chapdir}{quantum}\include{quantum/atemp}
-	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
     \renewcommand{\chapdir}{quantum}\include{quantum/btemp}
+    \renewcommand{\chapdir}{quantum}\include{quantum/ctemp}
+    \renewcommand{\chapdir}{quantum}\include{quantum/dtemp}
+    \renewcommand{\chapdir}{quantum}\include{quantum/etemp}
+	\formatchtoc{\large}{\quad\contentspage}{4mm} % This has to go before the last chapter.
+    \renewcommand{\chapdir}{quantum}\include{quantum/ftemp}
         \addtocontents{toc}{\vspace{5mm}}% For reasons I don't understand, this actually comes *after* the final chapter.
 %
     \widelayout

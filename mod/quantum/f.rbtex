@@ -1,0 +1,354 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '18',
+    %q{Quantization of angular momentum},
+    'ch:quantum-ang-mom'
+  )
+%>
+
+<% begin_sec("Quantization of angular momentum",nil,'quantization-of-ang-mom') %>
+<% marg(0) %>
+<%
+  fig(
+    'moat-rainbow',
+    %q{1.~Eight wavelengths fit around this circle ($\ell=8$). This is a standing wave.
+       2.~A traveling wave with $\ell=8$, depicted according to the color conventions
+          defined in figure \figref{rainbow}, p.~\pageref{fig:rainbow}.
+      }
+  )
+%>
+<% end_marg %>
+
+Like energy, angular momentum is quantized in quantum
+physics. As an example, consider a quantum wave-particle
+confined to a circle, like a wave in a circular moat
+surrounding a castle. A sine wave in such a ``\index{angular
+momentum!quantization of}\index{quantum moat}quantum moat''
+cannot have any old wavelength, because an integer number of
+wavelengths must fit around the circumference, $C$, of the
+moat. The larger this integer is, the shorter the wavelength,
+and a shorter wavelength relates to greater momentum and
+angular momentum. Since this integer is related to angular
+momentum, we use the symbol $\ell$ for it:
+\begin{equation*}
+                \lambda          =    C /   \ell
+\end{equation*}
+The angular momentum is 
+\begin{equation*}
+                L         =    rp\eqquad.  
+\end{equation*}
+Here, $r=C/2\pi $, and $p=h/\lambda=h\ell/C$, so
+\begin{align*}
+        L         &=    \frac{C}{2\pi}\cdot\frac{h\ell}{C}  \\
+                         &=     \frac{h}{2\pi}\ell 
+\end{align*}
+In the example of the quantum moat, angular momentum is
+quantized in units of $h/2\pi $. This makes $h/2\pi $ a
+pretty important number, so we define the abbreviation
+$\hbar=h/2\pi $. This symbol is read ``h-bar.''
+
+In fact, this is a completely general fact in quantum
+physics, not just a fact about the quantum moat:
+
+\begin{important}[Quantization of angular momentum]
+The angular momentum of a particle due to its motion through
+space is quantized in units of $\hbar$.
+\end{important}
+
+<% self_check('angmompicture',<<-'SELF_CHECK'
+
+What is the angular momentum of the wavefunction shown at
+the beginning of the section?
+  SELF_CHECK
+  ) %>
+
+<% end_sec('quantization-of-ang-mom') %>
+
+<% begin_sec("Three dimensions",nil,'quantum-ang-mom-three-d') %>
+
+\index{angular momentum!and the uncertainty principle}\index{angular
+momentum!in three dimensions}
+
+Our discussion of quantum-mechanical angular momentum has so far been limited to
+rotation in a plane, for which we can simply
+use positive and negative signs to indicate clockwise and
+counterclockwise directions of rotation. A hydrogen atom,
+however, is unavoidably three-dimensional.
+The classical treatment of angular momentum in three-dimensions
+has been presented in section
+\ref{sec:amthreed}; in general, the angular momentum of a particle
+is defined as the vector cross product $\vc{r}\times\vc{p}$.
+
+There
+is a basic problem here: the angular momentum of the electron in
+a hydrogen atom depends on both its distance $\vc{r}$ from the proton
+and its momentum $\vc{p}$, so in order to know its angular momentum
+precisely it would seem we would need to know both its
+position and its momentum simultaneously with good accuracy.
+This, however,  seems forbidden by the Heisenberg
+uncertainty principle.
+
+Actually the uncertainty principle does place limits on what
+can be known about a particle's angular momentum vector, but
+it does not prevent us from knowing its magnitude as an
+exact integer multiple of $\hbar$. The reason is that in three
+dimensions, there are really three separate \index{Heisenberg
+uncertainty principle!in three dimensions}\index{uncertainty
+principle!in three dimensions}uncertainty principles:
+\begin{align*}
+        \Delta p_x \Delta x &\gtrsim h \\
+        \Delta p_y \Delta y &\gtrsim h \\
+        \Delta p_z \Delta z &\gtrsim h
+\end{align*}
+Now consider a particle, \figref{particle-a-m-examples}/1, that is moving along the $x$
+axis at position $x$ and with momentum $p_x$. We may not be
+able to know both $x$ and $p_x$ with unlimited accurately,
+but we can still know the particle's angular momentum about
+the origin exactly: it is zero, because the particle is
+moving directly away from the origin.
+
+<% marg(100) %>
+<%
+  fig(
+    'particle-a-m-examples',
+    %q{%
+      Reconciling the uncertainty principle
+      with the definition of angular momentum.
+    }
+  )
+%>
+<% end_marg %>
+
+Suppose, on the other hand, a particle finds itself, \figref{particle-a-m-examples}/2, at
+a position $x$ along the $x$ axis, and it is moving parallel
+to the $y$ axis with momentum $p_y$. It has angular momentum
+$xp_y$ about the $z$ axis, and again we can know its angular
+momentum with unlimited accuracy, because the uncertainty
+principle only relates $x$ to $p_x$ and $y$ to $p_y$. It does
+not relate $x$ to $p_y$.
+
+As shown by these examples, the uncertainty principle does
+not restrict the accuracy of our knowledge of angular
+momenta as severely as might be imagined. However, it does
+prevent us from knowing all three components of an angular
+momentum vector simultaneously. The most general statement
+about this is the following theorem:
+
+\begin{important}[The angular momentum vector in quantum physics]
+The most that can be known about a (nonzero) orbital angular momentum vector
+is its magnitude and one of its three vector components.
+Both are quantized in units of $\hbar$.
+\end{important}
+
+<% marg() %>
+
+<%
+  fig(
+    'spherical-harmonic',
+    %q{%
+      A wavefunction on the sphere with $|\vc{L}|=11\hbar$ and $L_z=8\hbar$, shown using the color conventions
+          defined in figure \figref{rainbow}, p.~\pageref{fig:rainbow}.
+    }
+  )
+%>
+<% end_marg %>
+
+To see why this is true, consider the example wavefunction shown in figure \figref{spherical-harmonic}.
+This is the like the quantum moat of figure \figref{moat-rainbow}, p.~\pageref{fig:moat-rainbow},
+but extended to one more dimension.
+If we slice the sphere in any plane perpendicular to the $z$ axis, we get an 8-cycle circular rainbow exactly
+like figure \figref{moat-rainbow}. This is required because $L_z=8\hbar$. But if we take a slice perpendicular
+to some other axis, such as the $y$ axis, we don't get a circular rainbow as we would for a state with a
+definite value of $L_y$. It is obviously not possible to get circular rainbows for slices perpendicular to more
+than one axis.
+
+For those with a taste for rigor, here is a
+complete argument:\label{proof-lx-and-lz-incompatible}
+
+\noindent Theorem: On the sphere, if a wavefunction has
+definite values of both $L_z$ and $L_x$, then it is a wavefunction
+that is constant everywhere, so $\vc{L}=0$.
+
+\noindent Lemma 1: If the component of $\ell_A$ 
+along a certain axis A has a definite value and is nonzero, then (a)
+$\Psi=0$ at the poles, and (b) $\Psi$ is of the form $Ae^{i\ell_A\phi}$ on any circle in
+a plane perpendicular to the axis. Part a holds because $\vc{L}=0$ if $r_\perp=0$.
+For b, see p.~\pageref{fig:moat-rainbow}.
+
+\noindent Lemma 2: If the component of $\vc{L}$ along a certain axis has a
+definite value and is zero, then $\Psi$ is constant in any plane perpendicular to that axis.
+This follows from lemma 1 in the case where $\ell_A=0$.
+
+\noindent \emph{Case I: $\ell_z$ and $\ell_x$ are both nonzero.}
+We have $\Psi=0$ at the poles along both the $x$ axis and
+the $z$ axis. The $z$-axis pole is a point on the great circle
+perpendicular to the $x$ axis, and vice versa, so applying 1b, $A=0$ and $\Psi$
+vanishes on both of these great circles. But now if we apply 1b along
+any slice perpendicular to either axis, we get $\Psi=0$ everywhere on
+that slice, so $\Psi=0$ everywhere.
+
+\noindent \emph{Case II: $\ell_z$ and $\ell_x$ are both zero.}
+By lemma 2, $\Psi$ is a constant everywhere.
+
+\noindent \emph{Case III: One component is zero and the other nonzero.}
+Let $\ell_z$ be the one that is zero.
+By 1a, $\Psi=0$ at the $x$-axis pole, so by 2, $\Psi=0$ on the great circle perpendicular to $z$.
+But then 1b tells us that $\Psi=0$ everywhere.
+
+<% end_sec('quantum-ang-mom-three-d') %>
+
+<% begin_sec("The Stern-Gerlach experiment",nil,'stern-gerlach') %>
+
+In 1921, Otto Stern proposed an experiment about angular momentum, shown in figure \figref{stern-gerlach}
+on p.~\pageref{fig:stern-gerlach}, that his
+boss at the University of Frankfurt
+and many of his colleagues were certain wouldn't work. At this time, quantization of
+angular momentum had been proposed by Niels Bohr, but most physicists, if they had heard of
+it at all, thought of the idea as a philosophical metaphor or a mathematical trick that
+just happened to give correct results. World War I was over, hyperinflation was getting
+under way in Germany (a paper mark was worth a few percent of its prewar value), and
+the Nazi coup was still in the future, so that Stern, a Jew, had not yet been forced to flee to America.
+Because of the difficult economic situation, Stern and his colleague Walther Gerlach scraped
+up some of the funds to carry out the experiment from US banker Henry Goldman, cofounder of the
+investment house Goldman-Sachs.
+
+\pagebreak
+
+<% marg(300) %>
+<%
+  fig(
+    'stern-gerlach',
+    %q{%
+      Bottom: A schematic diagram of the Stern-Gerlach experiment. The $z$ direction is out of the page.
+      The entire apparatus is about 10 cm long.
+      Top: A portion of Gerlach's celebratory 1922 postcard to Niels Bohr, with a photo showing the results.
+      A coordinate system is superimposed. The orientation is flipped downward by 90 degrees compared to the
+      schematic. The photo was taken through a microscope, and Gerlach drew the 1.0 mm scale on after the 
+      magnified photo had been printed.
+    }
+  )
+%>
+<% end_marg %>
+
+The entire apparatus was sealed inside a vacuum chamber with the best vacuum obtainable
+at the time. A sample of silver was heated to $1000\degcunit$, evaporating it.
+The atoms leaving the oven encountered two narrow slits, so that what emerged was a beam with
+a width of only $0.03\ \zu{mm}$, or about a third of the width of a human hair. The atoms then
+encountered a magnetic field. Because the atoms were electrically neutral, we would normally
+expect them to be unaffected by a magnetic field. But in the planetary model of the atom, we
+imagine the electrons as orbiting in circles like little current loops, which would give
+the atom a magnetic dipole moment $\vc{m}$. Even if we are sophisticated enough about quantum mechanics not to
+believe in the circular orbits, it is reasonable to imagine that such a dipole moment would exist.
+When a dipole encounters a \emph{nonuniform}
+field, it experiences a force
+(example \ref{eg:dipole-in-nonuniform-field-fancy}, p.~\pageref{eg:dipole-in-nonuniform-field-fancy}).
+In this example, the forces in the $x$ and $z$ directions would be
+$F_x=\vc{m}\cdot(\partial\vc{B}/\partial x)$
+and $F_z=\vc{m}\cdot(\partial\vc{B}/\partial z)$. (Because of Gauss's law for magnetism,
+these two derivatives are not independent --- 
+we have $\partial B_x/\partial x+\partial B_z/\partial z=0$.) 
+The rapidly varying magnetic field for this experiment
+was provided by a pair of specially shaped magnet poles, described in
+example \ref{eg:sharp-magnet-poles}, p.~\pageref{eg:sharp-magnet-poles}.
+
+Because electrons have charge, we expect the motion of an electron to give it a magnetic dipole moment $\vc{m}$.
+But they also have mass, so for exactly the same reasons, we expect there to be some angular momentum $\vc{L}$ as well.
+The analogy is in fact mathematically exact, as discussed in sec.~\ref{subsec:g-factor}, p.~\pageref{subsec:g-factor}.
+Therefore this experiment with dipoles and magnetic fields is actually
+a probe of the behavior of angular momentum at the atomic level.
+
+Luckily for Stern and Gerlach, who had no modern knowledge of atomic structure, the silver atoms that
+they chose to use do happen
+to have nonzero total $\vc{L}$, and therefore nonzero $\vc{m}$.
+The atoms come out of the oven with random orientations. 
+
+Classically, we would expect the following.
+Each atom has an energy $\vc{m}\cdot\vc{B}$ due to its interaction with the magnetic field, and
+this energy is conserved, so that the component $m_x$ stays constant. However, there is a
+torque $\vc{m}\times\vc{B}$, and this causes the direction of the atom's angular momentum to
+precess, i.e., wobble like a top, with its angular momentum forming a cone centered on the $x$ axis
+(example \ref{eg:precession}, p.~\pageref{eg:precession}). This precession is extremely fast, carrying
+out about $10^{10}$ wobbles per second, so that the atom precesses about $10^6$ times while traveling the
+3.5 cm length of the spectrometer. So even though the forces $F_x$ and $F_z$ are typically about
+the same size, the rapid precession causes $F_z$ to average out to nearly zero, and only a deflection
+in the $x$ direction is expected. Because the orientations of the atoms are random as they enter the
+magnetic field, they will have every possible value of $L_x$ ranging from $-|\vc{L}|$
+to $+|\vc{L}|$, and therefore we expect that when the magnetic field is turned on, the effect should
+be to smear out the image on the glass plate from a vertical line to a somewhat wider oval. The atoms
+are dispersed from left to right along a certain scale of measurement according to their random
+value of $L_x$. The spectrometer is a device for determining $L_x$,
+a continuously varying number.
+
+But that's all the classical theory. Quantum mechanically, $L_x$ is
+quantized, so that only certain very specific values of $F_x$ can
+occur. Although the discussion of precession above is really classical
+rather than quantum-mechanical, the result of $F_z$ averaging out to
+zero turns out to be approximately right if the field is strong.
+Therefore we expect to see well separated vertical bands on the glass
+plate corresponding to the quantized values of $L_x$.  This is
+approximately what is seen in figure \figref{stern-gerlach},
+although the field rapidly weakens outside the $x$-$y$ plane, so we get the slightly
+more complicated pattern like a sideways lipstick kiss. The spin of the silver
+atom is clearly quantized, and it apparently has two possible values.
+
+\startdqs
+
+\begin{dq}
+Could the Stern-Gerlach experiment be carried out with a beam of electrons?
+\end{dq}
+
+\begin{dq}
+A few weeks after the Stern-Gerlach experiment's results became
+public, Einstein and Ehrenfest carried out the following reasoning,
+which seemed to them to make the results inexplicable.
+Before a particular silver atom enters the magnetic
+field, its magnetic moment $\vc{m}$ is randomly oriented. Once it
+enters the magnetic field, it has an energy $\vc{m}\cdot\vc{B}$.
+Unless there is a mechanism for the transfer of energy in or out of
+the atom, this energy can't change, and therefore the magnetic moment
+can only precess about the $\vc{B}$ vector, but the angle between
+$\vc{m}$ and $\vc{B}$ must remain the same. Therefore the atom cannot
+align itself with the field. (They considered various mechanisms of
+energy loss, such as collisions and radiation, and concluded that all
+of them were too slow by orders of magnitude to have an effect during
+the atom's time of flight.) It seemed to them that as soon as the atom left
+the oven, it was somehow required
+to have anticipated the direction of the field and picked one of two orientations
+with respect to it. How can this paradox be resolved?
+\end{dq}
+
+\begin{dq}\label{dq:stern-gerlach-twice-qualitative}
+Suppose we send a beam of oxygen molecules, with $L=\hbar$, through a Stern-Gerlach spectrometer,
+throwing away the emerging parts with $\ell_x=-1$ and $+1$ to make a beam of the pure $\ell_x=0$ state.
+Now we let this beam pass through a second spectrometer that is identical
+but oriented along the $z$ axis. Can we produce a beam in which
+every molecule has both $\ell_x=0$ and $\ell_z=+1$? 
+Hint: See the example in fig.~\figref{completeness-ylm}, p.~\pageref{fig:completeness-ylm}.
+\end{dq}
+
+<% end_sec('stern-gerlach') %>
+
+<% begin_sec("Intrinsic spin",nil,'intrinsic-spin') %>
+We observe two values of $L_x$ (the two ``lips'') in the Stern-Gerlach experiment. Why two?
+
+, we conclude from these
+results that a silver atom has spin $1/2$, so that $L_x$ takes on the
+values $-\hbar/2$ and $+\hbar/2$. Although it took about five years for
+the experiment to be interpreted completely correctly, we now understand
+the Stern-Gerlach experiment to be not just a confirmation of the quantization
+of angular momentum along any given axis but also the first experimental
+evidence that the electron has an intrinsic spin of 1/2.
+<% end_sec('intrinsic-spin') %>
+
+
+<% begin_hw_sec(vfill:true) %>
+
+
+<% end_hw_sec %>
+
+
+<% end_chapter() %>

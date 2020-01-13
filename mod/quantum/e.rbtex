@@ -1,0 +1,869 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '17',
+    %q{The Schr\\"odinger equation},
+    'ch:schrodinger'
+  )
+%>
+
+<% begin_sec("Electrons in electric fields",nil,'electrons-in-fields') %>
+
+So far the only electron wave patterns we've considered have
+been simple sine waves, but whenever an electron finds
+itself in an electric field, it must have a more complicated
+wave pattern. Let's consider the example of an electron
+being accelerated by the electron gun at the back of a TV
+tube. Newton's laws are not useful, because they implicitly
+assume that the path taken by the particle is a meaningful
+concept. Conservation of energy is still valid in quantum
+physics, however. In terms of energy, the electron is moving
+from a region of low voltage into a region of higher
+voltage. Since its charge is negative, it loses electrical energy by moving
+to a higher voltage, so its kinetic energy increases. As its electrical
+energy goes down, its kinetic energy goes up by an equal
+amount, keeping the total energy constant. Increasing
+kinetic energy implies a growing momentum, and therefore a
+shortening wavelength, \figref{accelerating-electron}.
+
+The wavefunction as a whole does not have a single
+well-defined wavelength, but the wave changes so gradually
+that if you only look at a small part of it you can still
+pick out a wavelength and relate it to the momentum and
+energy. (The picture actually exaggerates by many orders of
+magnitude the rate at which the wavelength changes.)
+
+<% marg(100) %>
+<%
+  fig(
+    'accelerating-electron',
+    %q{%
+      An electron in a gentle electric 
+      field gradually shortens its wavelength as it gains energy.
+      (As discussed on p.~\pageref{cheat-with-real-psi}, it is actually not quite correct to
+      graph the wavefunction of an electron as a real number unless it is a standing wave, which
+      isn't the case here.)
+    }
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'kinks',
+    %q{%
+      The wavefunction's tails go where classical
+      physics says they shouldn't.
+    }
+  )
+%>
+<% end_marg %>
+
+But what if the electric field was stronger? The electric
+field in an old-fashioned vacuum tube TV screen is only $\sim10^5$  N/C, but the electric field
+within an atom is more like $10^{12}$  N/C. In figure \figref{osculating},
+the wavelength changes so rapidly that there is nothing that
+looks like a sine wave at all. We could get a rough idea of
+the wavelength in a given region by measuring the distance
+between two peaks, but that would only be a rough approximation.
+Suppose we want to know the wavelength at point $P$. The
+trick is to construct a sine wave, like the one shown with
+the dashed line, which matches the curvature of the actual
+wavefunction as closely as possible near $P$. The sine wave
+that matches as well as possible is called the ``osculating''
+curve, from a Latin word meaning ``to kiss.'' The wavelength
+of the osculating curve is the wavelength that will relate
+correctly to conservation of energy.
+
+<%
+  fig(
+    'osculating',
+    %q{%
+      A typical wavefunction of
+       an electron in an atom (heavy curve) and the
+       osculating sine wave (dashed curve) that matches its curvature at point P.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\index{tunneling}
+<% begin_sec("Tunneling") %>
+
+We implicitly assumed that the particle-in-a-box wavefunction
+would cut off abruptly at the sides of the box, \figref{kinks}/1, but
+that would be unphysical. A kink has infinite curvature, and
+curvature is related to energy, so it can't be infinite. A
+physically realistic wavefunction must always ``tail off''
+gradually, \figref{kinks}/2. In classical physics, a particle can never
+enter a region in which its interaction energy $U$ would be
+greater than the amount of energy it has available. But in
+quantum physics the wavefunction will always have a tail
+that reaches into the classically forbidden region. If it
+was not for this effect, called tunneling, the fusion
+reactions that power the sun would not occur due to the high
+electrical energy nuclei need in order to get close together!
+Tunneling is discussed in more detail on p.~\pageref{quantitativetunneling}.
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("The Schr\\\"odinger equation",nil,'schrodinger') %>
+
+\index{Schr\"odinger equation}
+In subsection \ref{subsec:electrons-in-fields} we were able to apply conservation
+of energy to an electron's wavefunction, but only by using
+the clumsy graphical technique of osculating sine waves as a
+measure of the wave's curvature. You have learned a more
+convenient measure of curvature in calculus: the second
+derivative. To relate the two approaches, we take the second
+derivative of a sine wave:
+\begin{align*}
+ \frac{\der^2}{\der x^2}\sin(2\pi x/\lambda)
+ &= \frac{\der}{\der x}\left(\frac{2\pi}{\lambda}\cos\frac{2\pi x}{\lambda}\right)     \\
+         &= -\left(\frac{2\pi}{\lambda}\right)^2 \sin\frac{2\pi x}{\lambda}
+\end{align*}
+
+Taking the second derivative gives us back the same
+function, but with a minus sign and a constant out in front
+that is related to the wavelength. We can thus relate the
+second derivative to the osculating wavelength:
+
+\begin{equation}\label{eq:schreqna}
+        \frac{\der^2\Psi}{\der x^2} = -\left(\frac{2\pi}{\lambda}\right)^2\Psi
+\end{equation}
+
+This could be solved for $\lambda $ in terms of $\Psi $, but
+it will turn out below to be more convenient to leave it in this form.
+
+Applying this to conservation of energy, we have
+\begin{align}\label{eq:schreqnb}
+\begin{split}
+           E         &=    K  +  U  \\
+                 &=   \frac{p^2}{2m}  + U  \\
+                 &=   \frac{(h/\lambda)^2}{2m}  + U        
+\end{split}
+\end{align}
+
+\noindent Note that both equation \eqref{eq:schreqna} and equation \eqref{eq:schreqnb} have $\lambda^2$
+in the denominator. We can simplify our algebra by
+multiplying both sides of equation \eqref{eq:schreqnb} by $\Psi $ to make it
+look more like equation \eqref{eq:schreqna}:
+
+\begin{align*}
+        E \cdot \Psi          &=    \frac{(h/\lambda)^2}{2m}\Psi    +   U \cdot \Psi   \\
+ &=   \frac{1}{2m}\left(\frac{h}{2\pi}\right)^2\left(\frac{2\pi}{\lambda}\right)^2\Psi
+                                 +   U \cdot \Psi  \\
+ &=  -\frac{1}{2m}\left(\frac{h}{2\pi}\right)^2 \frac{\der^2\Psi}{\der x^2} 
+                                 +   U \cdot \Psi
+\end{align*}
+
+\noindent Further simplification is achieved by using the symbol $\hbar$ ($h$
+with a slash through it, read ``h-bar'') as an abbreviation
+for $h/2\pi $. We then have the important result known as
+the \labelimportantintext{Schr\"odinger equation}:
+
+\begin{important}\label{s-eqn-simplest-initial-statement}
+\begin{equation*}
+        E \cdot \Psi = -\frac{\hbar^2}{2m}\frac{\der^2\Psi}{\der x^2}  +   U \cdot \Psi
+\end{equation*}
+\end{important}
+\noindent (Actually this is a simplified version of the Schr\"odinger
+equation, applying only to standing waves in one dimension.)
+Physically it is a statement of conservation of energy. The
+total energy $E$ must be constant, so the equation tells us
+that a change in interaction energy $U$ must be accompanied by a
+change in the curvature of the wavefunction. This change in
+curvature relates to a change in wavelength, which
+corresponds to a change in momentum and kinetic energy.
+
+<% self_check('schrodingerassumptions',<<-'SELF_CHECK'
+Considering the assumptions that were made in deriving the
+Schr\"odinger equation, would it be correct to apply it to a
+photon? To an electron moving at relativistic speeds?
+  SELF_CHECK
+  ) %>
+
+Usually we know right off the bat how $U$ depends on
+$x$, so the basic mathematical problem of quantum physics is
+to find a function $\Psi (x$) that satisfies the Schr\"odinger
+equation for a given interaction-energy function $U(x)$.
+An equation, such as the Schr\"odinger equation, that
+specifies a relationship between a function and its
+derivatives is known as a differential equation.
+
+The detailed study of the solution of the Schr\"odinger equation is
+beyond the scope of this book,
+but we can gain some
+important insights by considering the easiest version of the
+Schr\"odinger equation, in which the interaction energy $U$ is
+constant. We can then rearrange the Schr\"odinger equation as follows:
+\begin{align*}
+   \frac{\der^2\Psi}{\der x^2} &= \frac{2m(U-E)}{\hbar^2} \Psi\eqquad,
+\intertext{which boils down to}
+   \frac{\der^2\Psi}{\der x^2} &= a\Psi\eqquad,
+\end{align*}
+where, according to our assumptions, $a$ is independent of
+$x$. We need to find a function whose second derivative is
+the same as the original function except for a multiplicative
+constant. The only functions with this property are sine
+waves and exponentials:
+
+\begin{align*}
+ \frac{\der^2}{\der x^2}\left[\:q\sin(rx+s)\:\right] &= -qr^2\sin(rx+s)     \\
+ \frac{\der^2}{\der x^2}\left[qe^{rx+s}\right] &= qr^2e^{rx+s}
+\end{align*}
+
+The sine wave gives negative values of $a$, $a=-r^2$, and the
+exponential gives positive ones, $a=r^2$. The former applies
+to the classically allowed region with $U<E$.
+
+\label{quantitativetunneling}
+
+<% marg(60) %>
+<%
+  fig(
+    'barrier-with-u-notation',
+    %q{Tunneling through a barrier.
+      (As discussed on p.~\pageref{cheat-with-real-psi}, it is actually not quite correct to
+      graph the wavefunction of an electron as a real number unless it is a standing wave, which
+      isn't the case here.)
+    }
+  )
+%>
+<% end_marg %>
+
+This leads us to a quantitative calculation of the tunneling
+effect discussed briefly in the preceding subsection. The
+wavefunction evidently tails off exponentially in the
+classically forbidden region. Suppose, as shown in
+figure \figref{barrier-with-u-notation},
+a wave-particle traveling to the right encounters a
+barrier that it is classically forbidden to enter. Although
+the form of the Schr\"odinger equation we're using technically
+does not apply to traveling waves (because it makes no
+reference to time), it turns out that we can still use it to
+make a reasonable calculation of the probability that the
+particle will make it through the barrier. If we let the
+barrier's width be $w$, then the ratio of the wavefunction
+on the left side of the barrier to the wavefunction on the right is
+\begin{equation*}
+        \frac{qe^{rx+s}}{qe^{r(x+w)+s}}  = e^{-rw}\eqquad.  
+\end{equation*}
+\pagebreak
+Probabilities are proportional to the squares of wavefunctions,
+so the probability of making it through the barrier is\label{tunneling-probability}
+\begin{align*}
+   P         &=  e^{-2rw}    \\
+         &= \exp\left(-\frac{2w}{\hbar}\sqrt{2m(U-E)}\right) .
+\end{align*}
+
+<% self_check('walkthroughwall',<<-'SELF_CHECK'
+If we were to apply this equation to find the probability
+that a person can walk through a wall, what would the small
+value of Planck's constant imply?
+  SELF_CHECK
+  ) %>
+
+\begin{eg}{Tunneling in alpha decay}\label{eg:alpha-tunneling}
+Naively, we would expect alpha decay to be a very fast process. The typical speeds of neutrons and
+protons inside a nucleus are extremely high (see problem \ref{hw:lead}). If we imagine an alpha
+particle coalescing out of neutrons and protons inside the nucleus, then at the typical speeds we're
+talking about, it takes a ridiculously small amount of time for them to reach the surface and try
+to escape. Clattering back and forth inside the nucleus, we could imagine them making a vast number of
+these ``escape attempts'' every second.
+
+Consider 
+figure \figref{alpha-potential}, however, which shows the interaction energy for an alpha particle escaping from a nucleus.
+The electrical energy is $kq_1q_2/r$ when the alpha is outside the nucleus, while its variation inside
+the nucleus has the shape of a parabola, as a consequence of the shell theorem.
+The nuclear energy is constant when the alpha is inside the nucleus, because the forces from all the
+neighboring neutrons and protons cancel out; it rises sharply near the surface, and flattens out
+to zero over a distance of $\sim 1$ fm, which is the maximum distance scale at which the strong force
+can operate.
+There is a classically forbidden region immediately outside the nucleus, so the alpha particle can only
+escape by quantum mechanical tunneling. (It's true, but somewhat counterintuitive, that a \emph{repulsive}
+electrical force can make it more difficult for the alpha to get \emph{out}.) 
+
+In reality, alpha-decay half-lives are often extremely long --- sometimes billions of years --- because
+the tunneling probability is so small. Although the shape of the barrier is not a rectangle, the equation
+for the tunneling probability on page \pageref{tunneling-probability}
+can still be used as a rough guide to our thinking. Essentially the tunneling probability is so small
+because $U-E$ is fairly big, typically about 30 MeV at the peak of the barrier.
+\end{eg}
+
+\begin{eg}{A marble tunneling out of a box}\label{eg:marble-tunneling}
+On p.~\pageref{totalitarian}, I introduced Gell-Mann's whimsically named totalitarian principle, that
+any process not forbidden by a conservation law will happen with some nonzero probability or rate.
+One of the examples I used there was a marble locked in a box. As a silly example, let's make
+a crude numerical estimate of the marble's probability of tunneling out through the box. As in self-check
+\ref{sc:walkthroughwall} on p.~\pageref{sc:walkthroughwall}, we expect based on the correspondence
+principle that this probability will be very small.
+
+A typical marble has a radius on the order of a centimeter, and let's say the box has about
+that thickness. We'll say that the marble has a mass of 5 g and contains something like $n=10^{23}$ atoms. The atomic
+energy scale is roughly 1 eV, so that
+if the marble is to be \emph{inside} the wall of the box, its electrical energy $U$ probably has to be something
+on the order of $n$ multiplied by 1 eV, giving $U\sim10^4\ \junit$, or about an order of magnitude
+greater than the kinetic energy of a bullet. We could of course give the marble that much energy,
+and then it would blast through the box easily, but the point here is to estimate its probability of
+just tunneling out, so we'll say that the kinetic energy is negligible, and therefore $U-E$ is basically
+the same as $U$. Plugging in numbers, we find $P\sim e^{-10^{33}}$. When you have to express a small number
+using a stack of exponents like this, you know that it's very small. For example, this number is many, many
+orders of magnitude smaller than $10^{-1000}$.
+\end{eg}
+
+<% marg(150) %>
+<%
+  fig(
+    'alpha-potential',
+    %q{The electrical, nuclear, and total interaction energies for an alpha particle escaping from a nucleus.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{The correspondence principle for $E>U$}\label{eg:step-correspondence}
+The correspondence principle demands that in the classical limit $h\rightarrow0$,
+we recover the correct result for a particle encountering a barrier $U$,
+for both $E<U$ and $E>U$.
+The $E<U$ case was analyzed in self-check \ref{sc:walkthroughwall}
+on p.~\pageref{sc:walkthroughwall}.
+In the remainder of this example, we analyze $E>U$, which
+turns out to be a little trickier. 
+
+The particle has enough energy to
+get over the barrier, and the classical result is that it continues forward
+at a different speed (a reduced speed if $U>0$, or an increased one if $U<0$), then
+regains its original speed as it emerges from the other side.
+What happens quantum-mechanically in this case? We would like to get a ``tunneling''
+probability of 1 in the classical limit. The expression derived on p.~\pageref{tunneling-probability}, however,
+doesn't apply here, because it was derived under the assumption that the wavefunction
+inside the barrier was an exponential; in the classically allowed case, the barrier
+isn't classically forbidden, and the wavefunction inside it is a sine wave.
+
+<% marg(10) %>
+<%
+  fig(
+    'step-potential',
+    %q{A particle encounters a step of height $U<E$ in the interaction energy. Both sides are
+       classically allowed. A reflected wave exists, but is not shown in the figure.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'marble-no-reflection',
+    %q{The marble has zero probability of being reflected from the edge of the table.
+       (This example has $U<0$, not $U>0$ as in figures \figref{step-potential} and \figref{step-potential-smoother}).}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'step-potential-smoother',
+    %q{Making the step more gradual reduces the probability of reflection.}
+  )
+%>
+<% end_marg %>
+
+We can simplify things a little by letting the width $w$ of the
+barrier go to infinity.  Classically, after all, there is no
+possibility that the particle will turn around, no matter how wide the
+barrier. We then have the situation shown in figure
+\figref{step-potential}.\footnote{As in several previous examples, we
+cheat by representing a traveling wave as a real-valued function. See
+pp.~\pageref{cheat-with-real-psi} and \pageref{subsubsec:s-eqn-partial-refl}.}
+
+The analysis is similar to that for any other wave being partially
+reflected at the boundary between two regions where its velocity
+differs, and the result is the same as the one found on
+p.~\pageref{reflected-wave-amplitude}. (There are some technical
+differences, which don't turn out to matter. This is discussed in more
+detail on p.~\pageref{subsubsec:s-eqn-partial-refl}.) The ratio of the amplitude of the reflected
+wave to that of the incident wave is $R = (v_2-v_1)/(v_2+v_1)$. The
+probability of reflection is $R^2$. (Counterintuitively, $R^2$ is
+nonzero even if $U<0$, i.e., $v_2>v_1$.) 
+
+This seems to violate the correspondence principle. There is
+no $m$ or $h$ anywhere in the result, so we seem to have the result that, even classically,
+the marble in figure \figref{marble-no-reflection} can be reflected!
+
+The solution to this paradox is that the step in figure \figref{step-potential} was taken to
+be completely abrupt --- an idealized mathematical discontinuity. Suppose we make the
+transition a little more gradual, as in figure \figref{step-potential-smoother}.
+As shown in problem \ref{hw:maxtransmission} on p.~\pageref{hw:maxtransmission},
+this reduces the amplitude with which a wave is reflected.
+By smoothing out the step more and
+more, we continue to reduce the probability of reflection, until finally we arrive at
+a barrier shaped like a smooth ramp. More detailed calculations show that this
+results in zero reflection in the limit where the width of the ramp is large
+compared to the wavelength.
+\end{eg}
+
+\begin{eg}{Beta decay: a push or pull on the way out the door}
+The nucleus ${}^{64}\text{Cu}$ undergoes $\beta^+$ and $\beta^-$ decay with similar probabilities
+and energies. Each of these decays releases a fixed amount of energy $Q$ due to 
+the difference in mass between the parent nucleus and the decay products.
+This energy is shared randomly between the beta and the neutrino. In experiments,
+the beta's energy is easily measured, while the neutrino flies off without interacting.
+Figure \figref{cu64-betas}
+shows the energy spectrum of the $\beta^+$ and $\beta^-$ in these decays.\footnote{Redrawn
+from Cook and Langer, 1948.} There is a relatively
+high probability for the beta and neutrino each to carry off roughly half the kinetic energy,
+the reason being identical to the kind of phase-space argument discussed in sec.~\ref{subsec:phase-space},
+p.~\pageref{subsec:phase-space}. Therefore in each case we get a bell-shaped curve stretching from
+0 up to the energy $Q$, with $Q$ being slightly different in the two cases.
+
+<% marg(10) %>
+<%
+  fig(
+    'cu64-betas',
+    %q{$\beta^+$ and $\beta^-$ spectra of ${}^{64}\text{Cu}$.}
+  )
+%>
+<% end_marg %>
+
+So we expect the two bell curves to
+look almost the same except for a slight rescaling of the horizontal
+axis. Yes --- but we also see markedly
+different behavior at low energies. At very low energies, there is almost
+no chance to see a $\beta^+$ with very low energy, but
+quite a high probability for a $\beta^-$.
+
+We could try to explain this difference in terms of the release of
+electrical energy.  The $\beta^+$ is repelled by the
+nucleus, so it gets an extra push on the way out the door.  A
+$\beta^-$ should be held back as it exits, and so should lose some
+energy. The bell curves should be shifted up
+and down in energy relative to one another, as observed.
+
+But if we try to estimate this energy shift using classical
+physics, we come out with a wildly incorrect answer. This would be
+a process in which the beta and neutrino are
+released in a pointlike event inside the nucleus. 
+The radius $r$ of the ${}^{64}\text{Cu}$ nucleus is on the order of 4 fm 
+($1\ \zu{fm}=10^{-15}\ \munit$). Therefore the  energy lost or gained by the
+$\beta^+$ or $\beta^-$ on the way out would be $U\sim kZe^2/r\sim10\
+\text{MeV}$. The actual shift is much smaller.
+
+To understand what's really going on, we need quantum mechanics. A beta in
+the observed energy range has a
+wavelength of about 2000 fm, which is hundreds of times
+greater than the size of the nucleus. Therefore the beta cannot be
+much better localized than that when it is emitted.  This means that
+we should really use something more like $r\sim 500\ \text{fm}$ (a
+quarter of a wavelength) in our calculation of the electrical energy.
+This gives $U\sim0.08\ \text{MeV}$, which is about the right order of
+magnitude compared to observation. 
+
+A byproduct of this analysis is that a $\beta^+$ is always emitted
+within the classically forbidden region, and then has to tunnel out
+through the barrier. As in example \ref{eg:alpha-tunneling}, we have
+the counterintuitive fact about quantum
+mechanics that a repulsive force can \emph{hinder} the escape of a
+particle.
+\end{eg}
+
+\pagebreak
+
+<% begin_sec("Three dimensions",4) %>
+
+For simplicity, we've been considering the Schr\"odinger equation in one dimension,
+so that $\Psi$ is only a function of $x$, and has units of $\munit^{-1/2}$ rather
+than  $\munit^{-3/2}$.
+Since the Schr\"odinger equation is a statement of conservation of energy, and
+energy is a scalar, the generalization to three dimensions isn't particularly
+complicated. The total energy term $E\cdot\Psi$ and the interaction energy term
+$U\cdot\Psi$ involve nothing but scalars, and don't need to be changed at all.
+In the kinetic energy term, however, we're essentially basing our computation of
+the kinetic energy on the squared magnitude of the momentum, $p_x^2$,
+and in three dimensions this would clearly have to be generalized to
+$p_x^2+p_y^2+p_z^2$. The obvious way to achieve this is to replace
+the second derivative $\der^2\Psi/\der x^2$ with the sum
+ $\partial^2\Psi/\partial x^2+ \partial^2\Psi/\partial y^2+ \partial^2\Psi/\partial z^2$. 
+In other words, we replace the second derivative with the Laplacian (sec.~\ref{sec:laplacian}, p.~\pageref{sec:laplacian}),
+\begin{equation*}
+  \nabla^2 = \frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2},
+\end{equation*}
+just as we did for waves such as sound.
+We recall from sec.~\ref{sec:laplacian} that:
+\begin{itemize}
+\item The partial derivative symbol $\partial$, introduced on page \pageref{partial-der}, indicates that
+  when differentiating with respect to a particular variable, the other variables are to be considered
+  as constants. 
+\item Like the second derivative, the Laplacian is essentially a measure of curvature.
+\item As shown in figure \figref{laplacian-geometrical-mod}, p.~\pageref{fig:laplacian-geometrical-mod}, we can also
+   think of the Laplacian as a measure of how much the value
+   of a function at a certain point differs from the average of its value on nearby points.
+\end{itemize}
+
+\begin{eg}{A classically allowed region with constant $U$}
+In a classically allowed region with constant $U$, we expect the solutions
+to the Schr\"odinger equation to be sine waves. A sine wave in three dimensions
+has the form
+\begin{equation*}
+  \Psi = \sin\left( k_x x + k_y y + k_z z  \right)\eqquad.
+\end{equation*}
+When we compute $\partial^2\Psi/\partial x^2$, double differentiation of
+$\sin$ gives $-\sin$, and the chain rule brings out a factor of $k_x^2$.
+Applying all three second derivative operators, we get
+\begin{align*}
+  \nabla^2\Psi &= \left(-k_x^2-k_y^2-k_z^2\right)\sin\left( k_x x + k_y y + k_z z  \right) \\
+               &=  -\left(k_x^2+k_y^2+k_z^2\right)\Psi\eqquad.
+\end{align*}
+The Schr\"odinger equation gives
+\begin{align*}
+  E\cdot\Psi &= -\frac{\hbar^2}{2m}\nabla^2\Psi + U\cdot\Psi \\
+             &= -\frac{\hbar^2}{2m}\cdot -\left(k_x^2+k_y^2+k_z^2\right)\Psi + U\cdot\Psi \\
+  E-U        &= \frac{\hbar^2}{2m}\left(k_x^2+k_y^2+k_z^2\right)\eqquad,
+\end{align*}
+which can be satisfied since we're in a classically allowed region with $E-U>0$, and the right-hand
+side is manifestly positive.
+\end{eg}
+
+<% end_sec %>
+
+<%
+  fig(
+    'complex-wavefunction',
+    %q{%
+      1. Oscillations can go back and forth, but it's also possible for them to move along a path that bites its
+      own tail, like a circle. Photons act like one, electrons like the other.\\\\
+      2. Back-and-forth oscillations can naturally be described by a segment taken from the real number line, and
+      we visualize the corresponding type of wave as a sine wave. Oscillations around a closed path relate more
+      naturally to the complex number system. The complex number system has rotation built into its
+      structure, e.g., the sequence 1, $i$, $i^2$, $i^3$, \ldots rotates around the unit circle in 90-degree increments.\\\\
+      3. The double slit experiment embodies the one and only mystery of quantum physics. Either type of wave
+      can undergo double-slit interference.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+<% begin_sec("Use of complex numbers",nil,'complex-wavefunction') %>
+
+\index{wavefunction!complex numbers in}\index{complex numbers!in quantum physics}
+In a classically forbidden region, a particle's total
+energy, $U+K$, is less than its $U$, so
+its $K$ must be negative. If we want to keep believing
+in the equation $K=p^2/2m$, then apparently the
+momentum of the particle is the square root of a negative
+number. This is a symptom of the fact that the Schr\"odinger
+equation fails to describe all of nature unless the
+wavefunction and various other quantities are allowed to be
+complex numbers. In particular it is not possible to
+describe traveling waves correctly without using complex wavefunctions.
+Complex numbers were reviewed in subsection \ref{subsec:complex-numbers}, p.~\pageref{subsec:complex-numbers}.
+
+This may seem like nonsense, since real numbers are the only
+ones that are, well, real! Quantum mechanics can always be
+related to the real world, however, because its structure is
+such that the results of measurements always come out to be
+real numbers. For example, we may describe an electron as
+having non-real momentum in classically forbidden regions,
+but its average momentum will always come out to be real
+(the imaginary parts average out to zero), and it can never
+transfer a non-real quantity of momentum to another particle.
+
+A complete investigation of these issues is beyond the scope
+of this book, and this is why we have normally limited
+ourselves to standing waves, which can be described with
+real-valued wavefunctions. Figure \figref{complex-wavefunction}
+gives a visual depiction of the difference between real and
+complex wavefunctions. The following remarks may also be helpful.
+
+Neither of the graphs in \subfigref{complex-wavefunction}{2} should be
+interpreted as a path traveled by something. This isn't anything mystical about
+quantum physics. It's just an ordinary fact about waves, which we first encountered
+in sec.~\ref{sec:wave-motion}, p.~\pageref{sec:wave-motion},
+where we saw the distinction between the motion
+of a wave and the motion of a wave pattern. In \emph{both} examples in \subfigref{complex-wavefunction}{2},
+the wave pattern is moving in a straight line to the right.
+
+The helical graph in \subfigref{complex-wavefunction}{2}
+shows a complex wavefunction whose value rotates around a circle in the
+complex plane with a frequency $f$ related to its energy by $E=hf$. As it does
+so, its squared magnitude $|\Psi|^2$ stays the same, so the corresponding probability stays
+constant. Which direction does it rotate? This direction is purely a matter of convention,
+since the distinction between the symbols $i$ and $-i$ is arbitrary --- both are equally valid
+as square roots of $-1$. We can, for example, arbitrarily say that electrons with positive energies
+have wavefunctions whose phases rotate counterclockwise, and as long as we follow that rule
+consistently within a given calculation, everything will work. Note that it is not possible
+to define anything like a right-hand rule here, because the complex plane shown in
+the right-hand side of \subfigref{complex-wavefunction}{2} doesn't represent two dimensions of
+physical space; unlike a screw going into a piece of wood, an electron doesn't have a direction
+of rotation that depends on its direction of travel.
+
+\begin{eg}{Superposition of complex wavefunctions}
+\egquestion
+The right side of figure \subfigref{complex-wavefunction}{3} is a cartoonish representation of
+double-slit interference; it depicts the situation at the center, where symmetry guarantees that
+the interference is constructive. Suppose that at some off-center point, the two wavefunctions
+being superposed are $\Psi_1=b$ and $\Psi_2=bi$, where $b$ is a real number with units.
+Compare the probability of finding the electron at this position with what it would have been
+if the superposition had been purely constructive, $b+b=2b$.
+
+\eganswer
+The probability per unit volume is proportional to the square of the magnitude of the total
+wavefunction, so we have
+\begin{equation*}
+  \frac{P_{\text{off center}}}{P_{\text{center}}} 
+         = \frac{|b+bi|^2}{|b+b|^2} = \frac{1^2+1^2}{2^2+0^2} = \frac{1}{2}\eqquad.
+\end{equation*}
+\end{eg}
+
+Figure \figref{rainbow} shows a method for visualizing complex wavefunctions. The idea
+is to use colors to represent complex numbers, according to the arbitrary convention
+defined in figure \subfigref{rainbow}{1}. Brightness indicates magnitude, and the rainbow
+hue shows the argument. Because this representation can't be understood in a black and white
+printed book, the figure is also reproduced on the back cover of printed copies.
+To avoid any confusion, note that the use of rainbow colors does
+not mean that we are representing actual visible light. In fact, we will be using these
+visual conventions to represent the wavefunctions of a material particle such as an electron.
+It is arbitrary that we use red for positive real numbers and blue-green for negative numbers,
+and that we pick a handedness for the diagram such that going from red toward yellow means
+going counterclockwise. Although physically the rainbow is a linear spectrum, we are not
+representing physical colors here, and we are exploiting the fact that the human brain
+tends to perceive color as a circle rather than a line, with violet and red being perceptually
+similar. One of the limitations of this representation is that brightness is limited, so we
+can't represent complex numbers with arbitrarily large magnitudes.
+%
+
+<%
+  fig(
+    'rainbow',
+    %q{%
+      1.~A representation of complex numbers using color and brightness.
+      2.~A wave traveling toward the right.
+      3.~A wave traveling toward the left.
+      4.~A standing wave formed by superposition of waves 2 and 3.
+      5.~A two-dimensional standing wave.
+      6.~A double-slit diffraction pattern.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+Figure \subfigref{rainbow}{2} shows a traveling wave as it propagates to the right.
+The standard convention in physics is that for a wave moving in a certain direction,
+the phase in the forward direction is farther counterclockwise in the complex plane, and
+you can verify for yourself that this is the case by comparing with the convention
+defined by \subfigref{rainbow}{1}. The function being plotted here is $\Psi=e^{ikx}$,
+where $k=2\pi/\lambda$ is the spatial analog of frequency, with an extra factor of $2\pi$ for
+convenience. For the use of the complex exponential, see sec.~\ref{subsec:euler-formula},
+p~.\pageref{subsec:euler-formula}; it simply represents a point on the unit circle in the
+complex plane. The wavelength $\lambda$
+is a constant and can be measured, for example, from one yellow point to the next. The wavelength
+is \emph{not} different at different points on the figure, because we are using the colors merely
+as a visual encoding of the complex numbers --- so, for example, a red point on the figure is
+not a point where the wave has a longer wavelength than it does at a blue point.
+
+Figure \subfigref{rainbow}{3} represents a wave traveling to the left.
+
+Figure \subfigref{rainbow}{4} shows a standing wave created by superimposing the traveling
+waves from \subfigref{rainbow}{2} and \subfigref{rainbow}{3}, $\Psi_4=(\Psi_2+\Psi_3)/2$. (The reason
+for the factor of 2 is simply that otherwise some portions of $\Psi_4$ would have magnitudes too great to be
+represented using the available range of brightness.) All points on this wave have real values,
+represented by red and blue-green. We made the superposition real by an appropriate choice of
+the phases of $\Psi_2$ and $\Psi_3$. This is always possible to do when we have a standing wave,
+but it is \emph{only} possible for a standing wave, and this is the reason for all of the disclaimers
+in the captions of previous figures in which I took the liberty of representing a traveling wave as
+a sine-wave graph.
+
+Figure \subfigref{rainbow}{5} shows a two-dimensional standing wave of a particle in a box,
+and \subfigref{rainbow}{6} shows a double-slit interference pattern. (In the latter, I've cheated
+by making the amplitude of the wave on the right-hand half of the picture much greater than it
+would actually be.)
+
+\begin{eg}{A paradox resolved}
+Consider the following paradox. Suppose we have an electron that is traveling wave, and
+its wavefunction looks like a wave-train consisting of 5 cycles of a sine wave. Call the distance
+between the leading and trailing edges of the wave-train $L$, so that $\lambda=L/5$.
+By sketching the wave, you can easily check that
+there are 11 points where its value equals zero. Therefore at a particular moment in time, there are 11 points
+where a detector has zero probability of detecting the electron.
+
+But now consider how this would look in a frame of reference where the electron is moving
+more slowly, at one fifth of the speed we saw in the original frame. In this frame, $L$ is
+the same, but $\lambda$ is five times greater, because $\lambda=h/p$. Therefore in this frame
+we see only one cycle in the wave-train. Now there are only 3 points where the probability
+of detection is zero. But how can this be? All observers, regardless of their frames of reference, should agree
+on whether a particular detector detects the electron.
+
+The resolution to this paradox is that it starts from the assumption that we can depict
+a traveling wave as a real-valued sine wave, which is zero in certain places. Actually, we can't.
+It has to be a complex number with a rotating phase angle in the complex plane, as in figure
+\subfigref{rainbow}{2}, and a
+\emph{constant} magnitude.
+\end{eg}
+
+<% end_sec('complex-wavefunction') %>
+
+<% begin_sec("Linearity of the Schr\\\"odinger equation",nil,'linearity-of-schrodinger') %>
+
+Some mathematical relationships and operations are \emph{linear}, and some are not.
+For example, $2\times(3+2)$ is the same as $2\times3+2\times2$, but $\sqrt{1+1}\ne\sqrt{1}+\sqrt{1}$.
+Differentiation is a linear operation, $(f+g)'=f'+g'$. The Schr\"odinger equation is
+built out of derivatives, so it is linear as well. That is, if $\Psi_1$ and $\Psi_2$ are
+both solutions of the Schr\"odinger equation, then so is $\Psi_1+\Psi_2$. Linearity
+normally implies linearity with respect both to addition and to multiplication by a scalar.
+For example, if $\Psi$ is a solution, then so is $\Psi+\Psi+\Psi$, which is the same as $3\Psi$.
+
+Linearity guarantees that the phase of a wavefunction makes no difference as to its validity
+as a solution to the Schr\"odinger equation. If $\sin kx$ is a solution, then so is the sine wave
+$-\sin kx$ with the opposite phase. This fact is logically interdependent with the fact that,
+as discussed on p.~\pageref{phase-unobservable-basic}, the phase
+of a wavefunction is unobservable.\index{phase in quantum mechanics!not observable}
+For measuring devices and humans are material objects
+that can be described by wavefunctions. So suppose, for example, that we flip the phase of
+all the particles inside the entire laboratory. By linearity,
+the evolution of this measurement process is still a valid  solution of the Schr\"odinger equation.
+
+The Schr\"odinger equation is a wave equation, and its
+linearity implies that the waves obey the principle of superposition.
+In most cases in nature, we find that the principle of superposition for waves is at best an
+approximation. For example, if the amplitude of
+a tsunami is so huge that the trough of the wave reaches all the way down to the ocean floor,
+exposing the rocks and sand as it passes overhead, then clearly there is no way to double the
+amplitude of the wave and still get something that obeys the laws of physics. Even at less extreme
+amplitudes, superposition is only an approximation for water waves, and so for example it is only
+approximately true that when two sets of ripples intersect on the surface of a pond, they pass
+through without ``seeing'' each other.
+
+It is therefore natural to ask whether the apparent linearity of the Schr\"odinger equation is only
+an approximation to some more precise, nonlinear theory. This is not currently believed to be the
+case. If we are to make sense of Schr\"odinger's cat
+(sec.~\ref{subsec:nonlocality-and-entanglement}, p.~\pageref{schrodingers-cat}),
+then the experimenter who sees a live cat and the one
+who sees a dead cat must remain oblivious to their other selves, like the ripples on the pond
+that intersect without ``seeing'' each other. Attempts to create slightly nonlinear versions
+of standard quantum mechanics have been shown to have implausible physical properties, such as
+allowing the propagation of signals faster than $c$. (This is known as Gisin's theorem.\label{gisin-theorem}
+The original paper, ``Weinberg's non-linear quantum mechanics and supraluminal communications,''
+is surprisingly readable and nonmathematical.)\index{Gisin's theorem}
+
+If you have had a course in linear algebra, then it is worth noting that the
+linearity of the Schr\"odinger equation allows us to talk about its solutions as vectors in a vector
+space. For example, if $\Psi_1$ represents an unstable nucleus that has not yet gamma decayed, and
+$\Psi_2$ is its state after the decay, then any superposition $\alpha\Psi_1+\beta\Psi_2$, with real or complex
+coefficients $\alpha$ and $\beta$, is
+a possible wavefunction, and we can notate this as a vector, $\langle\alpha,\beta\rangle$, in a two-dimensional
+vector space.
+
+<% end_sec('linearity-of-schrodinger') %>
+
+\vfill
+
+\startdqs
+
+\begin{dq}
+The zero level of interaction energy $U$ is arbitrary, e.g., it's equally valid to pick the zero of
+gravitational energy to be on the floor of your lab or at the ceiling. Suppose we're doing the double-slit
+experiment, \subfigref{complex-wavefunction}{3}, with electrons. We define the zero-level of $U$ so that
+the total energy $E=U+K$ of each electron is positive. and we observe a certain interference
+pattern like the one in figure \figref{ccd-diffraction} on p.~\pageref{fig:ccd-diffraction}. What happens
+if we then redefine the zero-level of $U$ so that the electrons have $E<0$?
+\end{dq}
+
+\pagebreak
+
+\begin{dq}\label{dq:qm-cons-of-prob}
+The top panel of the
+figure shows a series of snapshots in the motion of two pulses on a coil spring, one negative and one positive,
+as they move toward one another and superpose. The final image is very close to the moment at which
+the two pulses cancel completely. 
+The following discussion is simpler if we consider infinite sine waves rather than pulses.
+How can the cancellation of two such mechanical waves be reconciled with conservation of energy?
+What about the case of colliding electromagnetic waves? 
+
+Quantum-mechanically, the issue isn't conservation of energy, it's conservation of probability,
+i.e., if there's initially a 100\%
+probability that a particle exists somewhere, we don't want the probability to be more than or
+less than 100\%
+at some later time. What happens when the colliding waves have
+real-valued wavefunctions $\Psi$? Now consider the sketches of complex-valued wave pulses
+shown in the bottom panel of the figure as they are getting ready to collide.
+\end{dq}
+
+<% marg(30) %>
+<%
+  fig(
+    'superposition-cancellation',
+    ''
+  )
+%>
+<% end_marg %>
+
+\begin{dq}
+The figure shows a skateboarder tipping over into a swimming pool with zero
+initial kinetic energy. There is no friction, the corners are smooth enough to allow the
+skater to pass over the smoothly, and the vertical distances are small
+enough so that negligible time is required for the vertical parts of the motion.
+The pool is divided into a deep end and a shallow end. Their widths are equal.
+The deep end is four times deeper. (1) Classically, compare the skater's velocity in
+the left and right regions, and infer the probability of finding the skater in either of the
+two halves if an observer peeks at a random moment.
+(2) Quantum-mechanically, this could be a one-dimensional model of an electron shared between two atoms
+in a diatomic molecule. Compare the electron's kinetic energies, momenta, and wavelengths in the
+two sides. For simplicity, let's assume that there is no tunneling into the classically forbidden
+regions. What is the simplest standing-wave pattern that you can draw, and what are the probabilities
+of finding the electron in one side or the other? Does this obey the correspondence principle?
+\end{dq}
+
+<%
+  fig(
+    'quantum-pool-skater',
+    '',
+    {                                 
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+ % --------------------------------------------------------------------- 
+ % --------------------------------------------------------------------- 
+ % --------------------------------------------------------------------- 
+ % \fullpagewidthfignocaption{hwavefnlowres} 
+\vfill\pagebreak[4]
+
+<%
+  fig(
+    'hwavefnlowres',
+    '',
+    {
+      'width'=>'wide',
+      'anonymous'=>true,
+      'float'=>false
+    }
+  )
+%>
+
+<% end_sec() %>
+
+
+
+
+<% begin_hw_sec(vfill:true) %>
+
+
+<% end_hw_sec %>
+
+
+<% end_chapter() %>

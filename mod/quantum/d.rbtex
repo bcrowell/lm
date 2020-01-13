@@ -1,0 +1,871 @@
+<%
+  require "../eruby_util.rb"
+%>
+
+<%
+  chapter(
+    '16',
+    %q{Matter as a wave},
+    'ch:matter-as-a-wave',
+    %q{Dorothy melts the Wicked Witch of the West.},
+    {'opener'=>'melting-witch','sidecaption'=>true,'anonymous'=>true}
+  )
+%>
+
+
+\epigraphlong{[In] a few minutes I shall be all melted... I have been
+wicked in my day, but I never thought a little girl like you
+would ever be able to melt me and end my wicked deeds.
+Look out --- here I go!}{The \index{Wicked Witch of the West}Wicked Witch
+ of the West}
+
+As the Wicked Witch learned the hard way, losing molecular
+cohesion can be unpleasant. That's why we should be very
+grateful that the concepts of quantum physics apply to
+matter as well as light. If matter obeyed the laws of
+classical physics, \index{molecules!nonexistence in
+classical physics}molecules wouldn't exist.
+
+Consider, for example, the simplest atom, hydrogen. Why does
+one hydrogen atom form a chemical bond with another hydrogen
+atom? Roughly speaking, we'd expect a neighboring pair of
+hydrogen atoms, A and B, to exert no force on each other
+at all, attractive or repulsive: there are two repulsive
+interactions (proton A with proton B and electron A with
+electron B) and two attractive interactions (proton A with
+electron B and electron A with proton B). Thinking a
+little more precisely, we should even expect that once the
+two atoms got close enough, the interaction would be
+repulsive. For instance, if you squeezed them so close
+together that the two protons were almost on top of each
+other, there would be a tremendously strong repulsion
+between them due to the $1/r^2$ nature of the electrical
+force. The repulsion between the electrons would not be as
+strong, because each electron ranges over a large area, and
+is not likely to be found right on top of the other
+electron. Thus hydrogen molecules should not exist according
+to classical physics.
+
+Quantum physics to the rescue! As we'll see shortly, the
+whole problem is solved by applying the same quantum
+concepts to electrons that we have already used for photons.
+
+<% begin_sec("Electrons as waves") %>
+
+\index{electron!as a wave}
+We started our journey into quantum physics by studying the
+random behavior of \emph{matter} in radioactive decay, and
+then asked how randomness could be linked to the basic laws
+of nature governing \emph{light}. The probability interpretation
+of wave-particle duality was strange and hard to accept, but
+it provided such a link. It is now natural to ask whether
+the same explanation could be applied to matter. If the
+fundamental building block of light, the photon, is a
+particle as well as a wave, is it possible that the basic
+units of matter, such as electrons, are waves as well as particles?
+
+A young French aristocrat studying physics, Louis \index{de
+Broglie!Louis}de Broglie (pronounced ``broylee''), made
+exactly this suggestion in his 1923 Ph.D. thesis. His idea
+had seemed so farfetched that there was serious doubt about
+whether to grant him the degree. Einstein was asked for his
+opinion, and with his strong support, de Broglie got his degree.
+
+Only two years later, American physicists C.J. \index{Davisson!C.J.}Davisson
+and L. \index{Germer, L.}Germer confirmed de Broglie's idea
+by accident. They had been studying the scattering of
+electrons from the surface of a sample of nickel, made of
+many small crystals. (One can often see such a crystalline
+pattern on a brass doorknob that has been polished by
+repeated handling.) An accidental explosion occurred, and
+when they put their apparatus back together they observed
+something entirely different: the scattered electrons were
+now creating an interference pattern! This dramatic proof of
+the wave nature of matter came about because the nickel
+sample had been melted by the explosion and then resolidified
+as a single crystal. The nickel atoms, now nicely arranged
+in the regular rows and columns of a crystalline lattice,
+were acting as the lines of a diffraction grating. The new
+crystal was analogous to the type of ordinary diffraction
+grating in which the lines are etched on the surface of a
+mirror (a reflection grating) rather than the kind in which
+the light passes through the transparent gaps between the
+lines (a transmission grating).
+
+<%
+  fig(
+    'neutron-interference',
+    %q{%
+      A double-slit interference pattern
+       made with neutrons. (A. Zeilinger, R. G\"{a}hler, C.G. Shull,
+       W. Treimer, and W. Mampe, \emph{Reviews of Modern Physics}, Vol. 60, 1988.)
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+Although we will concentrate on the wave-particle duality of
+electrons because it is important in chemistry and the
+physics of atoms, all the other ``particles'' of matter
+you've learned about show wave properties as well.
+Figure \figref{neutron-interference}, for instance, shows a wave interference
+pattern of neutrons.  
+
+It might seem as though all our work was already done for
+us, and there would be nothing new to understand about
+electrons: they have the same kind of funny wave-particle
+duality as photons. That's almost true, but not quite. There
+are some important ways in which electrons differ significantly from photons:
+\begin{enumerate}
+\item Electrons have mass, and photons don't. 
+\item Photons always move at the speed of light, but electrons
+can move at any speed less than $c$. 
+\item Photons don't have electric charge, but electrons do, so
+electric forces can act on them. The most important example
+is the atom, in which the electrons are held by the electric
+force of the nucleus.
+\item Electrons cannot be absorbed or emitted as photons are.
+Destroying an electron or creating one out of nothing would
+violate conservation of charge.
+\end{enumerate}
+(In section \ref{sec:atom} we will learn of one more fundamental way in
+which electrons differ from photons, for a total of five.)
+
+Because electrons are different from photons, it is not
+immediately obvious which of the photon equations from
+chapter \ref{ch:em} can be applied to electrons as well. A
+particle property, the energy of one photon, is related to
+its wave properties via $E=hf$ or, equivalently,
+$E=hc/\lambda $. The momentum of a photon was given
+by $p=hf/c$ or $p=h/\lambda $. Ultimately it was a
+matter of experiment to determine which of these equations,
+if any, would work for electrons, but we can make a quick
+and dirty guess simply by noting that some of the equations
+involve $c$, the speed of light, and some do not. Since $c$
+is irrelevant in the case of an electron, we might guess
+that the equations of general validity are those that do
+not have $c$ in them:
+\begin{align*}
+                E  &=  hf  \\
+                p  &=  h/\lambda   
+\end{align*}
+
+This is essentially the reasoning that de Broglie went
+through, and experiments have confirmed these two equations
+for all the fundamental building blocks of light and matter,
+not just for photons and electrons.
+
+The second equation, which I soft-pedaled in the previous
+chapter, takes on a greater importance for electrons. This is
+first of all because the momentum of matter is more likely
+to be significant than the momentum of light under ordinary
+conditions, and also because force is the transfer of
+momentum, and electrons are affected by electrical forces.
+
+\begin{eg}{The wavelength of an elephant}
+\egquestion What is the wavelength of a trotting elephant?
+
+\eganswer One may doubt whether the equation should be
+applied to an elephant, which is not just a single particle
+but a rather large collection of them. Throwing caution to
+the wind, however, we estimate the elephant's mass at $10^3$
+ kg and its trotting speed at 10 m/s. Its wavelength
+is therefore roughly
+\begin{align*}
+        \lambda         &=    \frac{h}{p}  \\
+          &=    \frac{h}{mv}  \\
+  &= \frac{6.63\times10^{-34}\ \zu{J}\unitdot\sunit}{(10^3\ \kgunit)(10\ \munit/\sunit)} \\
+  &\sim 10^{-37}\ \frac{\left(\kgunit\unitdot\munit^2/\sunit^2\right)\unitdot\sunit}{\kgunit\unitdot\munit/\sunit} \\
+        &= 10^{-37}\ \munit
+\end{align*}
+\end{eg}
+
+The wavelength found in this example is so fantastically
+small that we can be sure we will never observe any
+measurable wave phenomena with elephants or any other
+human-scale objects. The result is numerically small because
+Planck's constant is so small, and as in some examples
+encountered previously, this smallness is in accord with the
+correspondence principle.
+
+Although a smaller mass in the equation $\lambda =h/mv$
+does result in a longer wavelength, the wavelength is still
+quite short even for individual electrons under typical
+conditions, as shown in the following example.
+
+\begin{eg}{The typical wavelength of an electron}
+\egquestion Electrons in circuits and in atoms are typically
+moving through voltage differences on the order of 1 V,
+so that a typical energy is $(e)(1\ \zu{V})$, which is on the
+order of $10^{-19}\ \junit$. What is the wavelength of an electron
+with this amount of kinetic energy?
+
+\eganswer This energy is nonrelativistic, since it is much
+less than $mc^2$. Momentum and energy are therefore related
+by the nonrelativistic equation $K=p^2/2m$. Solving
+for $p$ and substituting in to the equation for the wavelength, we find
+\begin{align*}
+                \lambda          &=  \frac{h}{\sqrt{2mK}}    \\
+                         &=    1.6\times10^{-9}\ \zu{m}\eqquad.
+\end{align*}
+This is on the same order of magnitude as the size of an
+atom, which is no accident: as we will discuss in the next
+chapter in more detail, an electron in an atom can be
+interpreted as a standing wave. The smallness of the
+wavelength of a typical electron also helps to explain why
+the wave nature of electrons wasn't discovered until a
+hundred years after the wave nature of light. To scale the
+usual wave-optics devices such as diffraction gratings down
+to the size needed to work with electrons at ordinary
+energies, we need to make them so small that their parts are
+comparable in size to individual atoms. This is essentially
+what Davisson and Germer did with their nickel crystal.
+\end{eg}
+
+<% self_check('longwavelengthelectron',<<-'SELF_CHECK'
+
+These remarks about the inconvenient smallness of electron
+wavelengths apply only under the assumption that the
+electrons have typical energies. What kind of energy would
+an electron have to have in order to have a longer
+wavelength that might be more convenient to work with?
+  SELF_CHECK
+  ) %>
+
+<% begin_sec("What kind of wave is it?") %>
+
+\index{wavefunction!of the electron}\index{electron!wavefunction}
+If a sound wave is a vibration of matter, and a photon is a
+vibration of electric and magnetic fields, what kind of a
+wave is an electron made of? The disconcerting answer is
+that there is no experimental ``observable,'' i.e., directly
+measurable quantity, to correspond to the electron wave
+itself. In other words, there are devices like microphones
+that detect the oscillations of air pressure in a sound
+wave, and devices such as radio receivers that measure the
+oscillation of the electric and magnetic fields in a light
+wave, but nobody has ever found any way to measure the
+electron wave directly.
+
+<% marg(30) %>
+<%
+  fig(
+    'electron-wave-phase',
+    %q{%
+      These two electron
+       waves are not distinguishable by any measuring device.
+    }
+  )
+%>
+<% end_marg %>
+
+We can of course detect the energy (or momentum) possessed
+by an electron just as we could detect the energy of a
+photon using a digital camera. (In fact I'd imagine that an
+unmodified digital camera chip placed in a vacuum chamber
+would detect electrons just as handily as photons.) But this
+only allows us to determine where the wave carries high
+probability and where it carries low probability. Probability
+is proportional to the square of the wave's amplitude, but
+measuring its square is not the same as measuring the wave
+itself. In particular, we get the same result by squaring
+either a positive number or its negative, so there is no way
+to determine the positive or negative sign of an electron wave.
+This unobservability of the phase of the wavefunction is discussed
+in more detail on p.~\pageref{subsubsec:linearity-of-schrodinger}.\label{phase-unobservable-basic}\index{phase in quantum mechanics!not observable}
+
+Most physicists tend toward the school of philosophy known
+as operationalism, which says that a concept is only
+meaningful if we can define some set of operations for
+observing, measuring, or testing it. According to a strict
+operationalist, then, the electron wave itself is a
+meaningless concept. Nevertheless, it turns out to be one of
+those concepts like love or humor that is impossible to
+measure and yet very useful to have around. We therefore
+give it a symbol, $\Psi $ (the capital Greek letter psi),
+and a special name, the electron \emph{wavefunction}
+(because it is a function of the coordinates $x$, $y$, and $z$
+that specify where you are in space). It would be impossible,
+for example, to calculate the shape of the electron wave in
+a hydrogen atom without having some symbol for the wave. But
+when the calculation produces a result that can be compared
+directly to experiment, the final algebraic result will turn
+out to involve only $\Psi^2$, which is what is observable, not $\Psi $ itself.
+
+Since $\Psi $, unlike $E$ and $B$, is not directly
+measurable, we are free to make the probability equations
+have a simple form: instead of having the probability
+density equal to some funny constant multiplied by $\Psi^2$,
+we simply define $\Psi $ so that the constant of
+proportionality is one:
+\begin{equation*}
+  (\text{probability distribution})  =  |\Psi| ^2\eqquad.  
+\end{equation*}
+Since the probability distribution has units of $\zu{m}^{-3}$, the units
+of $\Psi $ must be $\zu{m}^{-3/2}$. The square of a negative
+number is still positive, so the absolute value signs may seem unnecessary,
+but as we'll see on p.~\pageref{subsubsec:complex-wavefunction} in sec.~\ref{subsec:schrodinger},
+the wavefunction may in general be a complex number. In fact, only standing waves, not traveling waves,
+can really be represented by real numbers, although we will often cheat and draw
+pictures of traveling waves as if they were real-valued functions.\label{cheat-with-real-psi}
+
+\startdq
+
+\begin{dq}
+Frequency is oscillations per second, whereas wavelength is
+meters per oscillation. How could the equations $E=hf$
+and $p=h/\lambda$  be made to look more alike by
+using quantities that were more closely analogous?
+(This more symmetric treatment makes it easier to
+incorporate relativity into quantum mechanics, since
+relativity says that space and time are not entirely
+separate.)
+\end{dq}
+
+<% end_sec() %>
+
+<% end_sec() %>
+
+<% begin_sec("Dispersive waves",nil,'dispersive-waves') %>
+
+\index{wave!dispersive}\index{dispersion}
+A colleague of mine who teaches chemistry loves to tell the
+story about an exceptionally bright student who, when told
+of the equation $p=h/\lambda $, protested, ``But when I
+derived it, it had a factor of 2!'' The issue that's
+involved is a real one, albeit one that could be glossed
+over (and is, in most textbooks) without raising any alarms
+in the mind of the average student. The present optional
+section addresses this point; it is intended for the student
+who wishes to delve a little deeper.
+
+Here's how the now-legendary student was presumably
+reasoning. We start with the equation $v=f\lambda $, which
+is valid for any sine wave, whether it's quantum or
+classical. Let's assume we already know $E=hf$, and
+are trying to derive the relationship between wavelength and momentum:
+\begin{align*}
+        \lambda         &=    \frac{v}{f}  \\
+                 &=    \frac{vh}{E}  \\
+                 &=    \frac{vh}{\frac{1}{2}mv^2}  \\
+                 &=    \frac{2h}{mv}  \\
+                 &=    \frac{2h}{p}\eqquad.  
+\end{align*}
+
+The reasoning seems valid, but the result does contradict
+the accepted one, which is after all solidly based on experiment.
+
+<% marg(0) %>
+<%
+  fig(
+    'sine-wave',
+    %q{Part of an infinite sine wave.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'sine-wave-pulse',
+    %q{A finite-length sine wave.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'beats',
+    %q{A beat pattern created by superimposing two sine waves with slightly different wavelengths.}
+  )
+%>
+<% end_marg %>
+
+The mistaken assumption is that we can figure everything out
+in terms of pure sine waves. Mathematically, the only wave
+that has a perfectly well defined wavelength and frequency
+is a sine wave, and not just any sine wave but an infinitely
+long sine wave, \figref{sine-wave}.
+ The unphysical thing about such a wave
+is that it has no leading or trailing edge, so it can never
+be said to enter or leave any particular region of space.
+Our derivation made use of the velocity, $v$, and if
+velocity is to be a meaningful concept, it must tell us how
+quickly stuff (mass, energy, momentum, \ldots) is transported
+from one region of space to another. Since an infinitely
+long sine wave doesn't remove any stuff from one region and
+take it to another, the ``velocity of its stuff'' is not a
+well defined concept.
+
+Of course the individual wave peaks do travel through space,
+and one might think that it would make sense to associate
+their speed with the ``speed of stuff,'' but as we will see,
+the two velocities are in general unequal when a wave's
+velocity depends on wavelength. Such a wave is called a
+\emph{dispersive} wave, because a wave pulse consisting of a
+superposition of waves of different wavelengths will
+separate (disperse) into its separate wavelengths as the
+waves move through space at different speeds.  Nearly all
+the waves we have encountered have been nondispersive. For
+instance, sound waves and light waves (in a vacuum) have
+speeds independent of wavelength. A water wave is one good
+example of a dispersive wave. Long-wavelength water waves
+travel faster, so a ship at sea that encounters a storm
+typically sees the long-wavelength parts of the wave first.
+When dealing with dispersive waves, we need symbols and
+words to distinguish the two \index{velocity!group}\index{velocity!phase}\index{group
+velocity}\index{phase velocity}speeds. The speed at which
+wave peaks move is called the phase velocity, $v_p$, and the
+speed at which ``stuff'' moves is called the group velocity, $v_g$.
+
+An infinite sine wave can only tell us about the phase
+velocity, not the group velocity, which is really what we
+would be talking about when we refer to the speed of an
+electron. If an infinite sine wave is the simplest possible
+wave, what's the next best thing? We might think the runner
+up in simplicity would be a wave train consisting of a
+chopped-off segment of a sine wave, \figref{sine-wave-pulse}. However, this kind
+of wave has kinks in it at the end. A simple wave should be
+one that we can build by superposing a small number of
+infinite sine waves, but a kink can never be produced by
+superposing any number of infinitely long sine waves.
+
+Actually the simplest wave that transports stuff from place
+to place is the pattern shown in figure 
+\figref{beats}. Called a beat
+pattern, it is formed by superposing two sine waves whose
+wavelengths are similar but not quite the same. If you have
+ever heard the pulsating howling sound of musicians in the
+process of tuning their instruments to each other, you have
+heard a beat pattern. The beat pattern gets stronger and
+weaker as the two sine waves go in and out of phase with
+each other. The beat pattern has more ``stuff'' (energy, for
+example) in the areas where constructive interference
+occurs, and less in the regions of cancellation. As the
+whole pattern moves through space, stuff is transported from
+some regions and into other ones.
+
+If the frequency of the two sine waves differs by 10\%, for
+instance, then ten periods will be occur between times when
+they are in phase. Another way of saying it is that the
+sinusoidal ``envelope'' (the dashed lines in figure \figref{beats}) has
+a frequency equal to the difference in frequency between the
+two waves. For instance, if the waves had frequencies of 100
+Hz and 110 Hz, the frequency of the envelope would be 10 Hz.
+
+To apply similar reasoning to the wavelength, we must define
+a quantity $z=1/\lambda $ that relates to wavelength in the
+same way that frequency relates to period. In terms of this
+new variable, the $z$ of the envelope equals the difference
+between the $z's$ of the two sine waves.
+
+The group velocity is the speed at which the envelope moves
+through space. Let $\Delta f$ and $\Delta z$ be the
+differences between the frequencies and $z's$ of the two
+sine waves, which means that they equal the frequency and
+$z$ of the envelope. The group velocity is $v_g=f_{envelope}\lambda_{envelope}=\Delta
+f/\Delta $z. If $\Delta f$  and $\Delta z$ are sufficiently
+small, we can approximate this expression as a derivative,
+\begin{equation*}
+                v_g         =    \frac{\der f}{\der z}\eqquad.  
+\end{equation*}
+This expression is usually taken as the definition of the
+group velocity for wave patterns that consist of a
+superposition of sine waves having a narrow range of
+frequencies and wavelengths. In quantum mechanics, with
+$f=E/h$ and $z=p/h$, we have $v_g=\der E/\der p$. In the case of a
+nonrelativistic electron the relationship between energy and
+momentum is $E=p^2/2m$, so the group velocity is $\der E/\der p=p/m=v$,
+exactly what it should be. It is only the phase velocity
+that differs by a factor of two from what we would have expected,
+but the phase velocity is not the physically important thing.
+
+<% end_sec() %>
+
+<% begin_sec("Bound states",nil,'qm-bound-states') %>
+
+\index{states!bound}\index{bound states}
+Electrons are at their most interesting when they're in
+atoms, that is, when they are bound within a small region of
+space. We can understand a great deal about atoms and
+molecules based on simple arguments about such bound states,
+without going into any of the realistic details of atom. The
+simplest model of a bound state is known as the particle in
+a box: like a ball on a pool table, the electron feels zero
+force while in the interior, but when it reaches an edge it
+encounters a wall that pushes back inward on it with a large
+force. In particle language, we would describe the electron
+as bouncing off of the wall, but this incorrectly assumes
+that the electron has a certain path through space. It is
+more correct to describe the electron as a wave that
+undergoes 100\% reflection at the boundaries of the box.
+
+<% marg(0) %>
+<%
+  fig(
+    'particle-in-a-box',
+    %q{Three possible standing-wave patterns for a particle in a box.}
+  )
+%>
+<% end_marg %>
+
+Like generations of physics students before me, I rolled my
+eyes when initially introduced to the unrealistic idea of
+putting a particle in a box. It seemed completely impractical,
+an artificial textbook invention. Today, however, it has
+become routine to study electrons in rectangular boxes in
+actual laboratory experiments. The ``box'' is actually just
+an empty cavity within a solid piece of silicon, amounting
+in volume to a few hundred atoms. The methods for creating
+these \index{box!particle in a}\index{particle in a
+box}electron-in-a-box setups (known as ``\index{quantum
+dot}quantum dots'') were a by-product of the development of
+technologies for fabricating computer chips.
+
+For simplicity let's imagine a one-dimensional electron in a
+box, i.e., we assume that the electron is only free to move
+along a line. The resulting standing wave patterns, of which
+the first three are shown in the figure, are just like some
+of the patterns we encountered with sound waves in musical
+instruments. The wave patterns must be zero at the ends of
+the box, because we are assuming the walls are impenetrable,
+and there should therefore be zero probability of finding
+the electron outside the box. Each wave pattern is labeled
+according to $n$, the number of peaks and valleys it has. In
+quantum physics, these wave patterns are referred to as
+``states'' of the particle-in-the-box system.
+
+The following seemingly innocuous observations about the
+particle in the box lead us directly to the solutions to
+some of the most vexing failures of classical physics:
+
+\noindent\emph{The particle's \index{energy!quantization of for bound
+states}energy is quantized (can only have certain values).}
+Each wavelength corresponds to a certain momentum, and a
+given momentum implies  a definite kinetic energy,
+$E=p^2/2m$. (This is the second type of energy quantization
+we have encountered. The type we studied previously had to
+do with restricting the number of particles to a whole
+number, while assuming some specific wavelength and energy
+for each particle. This type of quantization refers to the
+energies that a single particle can have. Both photons and
+matter particles demonstrate both types of quantization
+under the appropriate circumstances.)
+
+\noindent\emph{The particle has a minimum kinetic energy.} Long wavelengths
+correspond to low momenta and low energies. There can be no
+state with an energy lower than that of the $n=1$ state, 
+called the ground state.
+
+\noindent\emph{The smaller the space in which the particle is confined, the
+higher its kinetic energy must be.} Again, this is because
+long wavelengths give lower energies.
+
+<% marg(0) %>
+<%
+  fig(
+    'sirius-spectrum',
+    %q{The spectrum of the light from the star Sirius.}
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Spectra of thin gases}\label{eg:spectra-of-thin-gases}
+\index{spectrum!absorption}\index{spectrum!emission}\index{absorption}
+\index{emission spectrum}\index{gas!spectrum of}
+A fact that was inexplicable by classical physics was
+that thin gases absorb and emit light only at certain
+wavelengths. This was observed both in earthbound laboratories
+and in the spectra of stars. The figure on the left shows
+the example of the spectrum of the star \index{Sirius}Sirius,
+in which there are ``gap teeth'' at certain wavelengths.
+Taking this spectrum as an example, we can give a straightforward
+explanation using quantum physics.
+
+   Energy is released in the dense interior of the star, but
+the outer layers of the star are thin, so the atoms are far
+apart and electrons are confined within individual atoms.
+Although their standing-wave patterns are not as simple as
+those of the particle in the box, their energies are quantized.
+
+   When a photon is on its way out through the outer layers,
+it can be absorbed by an electron in an atom, but only if
+the amount of energy it carries happens to be the right
+amount to kick the electron from one of the allowed energy
+levels to one of the higher levels. The photon energies that
+are missing from the spectrum are the ones that equal the
+difference in energy between two electron energy levels.
+(The most prominent of the absorption lines in Sirius's
+spectrum are absorption lines of the hydrogen atom.)
+\end{eg}
+
+\begin{eg}{The stability of atoms}
+   In many \index{Star Trek}Star Trek episodes the
+Enterprise, in orbit around a planet, suddenly lost engine
+power and began spiraling down toward the planet's surface.
+This was utter nonsense, of course, due to conservation of
+energy: the ship had no way of getting rid of energy, so it
+did not need the engines to replenish it.
+
+   Consider, however, the electron in an atom as it orbits
+the nucleus. The electron \emph{does} have a way to release
+energy:  it has an acceleration due to its continuously
+changing direction of motion, and according to classical
+physics, any accelerating charged particle emits electromagnetic
+waves. According to classical physics, atoms should collapse!
+
+   The solution lies in the observation that a bound state
+has a minimum energy. An electron in one of the higher-energy
+atomic states can and does emit photons and hop down step by
+step in energy. But once it is in the ground state, it
+cannot emit a photon because there is no lower-energy
+state for it to go to.
+\end{eg}
+
+<% marg(0) %>
+<%
+  fig(
+    'h-molecule',
+    %q{%
+      Two hydrogen atoms bond to form
+       an $\zu{H}_2$ molecule. In the molecule, the two electrons' wave patterns overlap
+      , and are about twice as wide.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Chemical bonds}\label{h2-bond}\index{chemical bonds!quantum explanation for hydrogen}
+I began this section with a classical argument that chemical
+bonds, as in an $\zu{H}_2$ molecule, should not exist. Quantum
+physics explains why this type of bonding does in fact
+occur. When the atoms are next to each other, the electrons
+are shared between them. The ``box'' is about twice as wide,
+and a larger box allows a smaller energy. Energy is required
+in order to separate the atoms. (A qualitatively different
+type of bonding is discussed on page
+\pageref{ionicbonds}.m4_ifelse(__sn,1,[: Example \ref{eg:h2-details} on page 
+\pageref{eg:h2-details} revisits the $\zu{H}_2$ bond in more detail.:],[::]))
+\end{eg}
+
+\startdqs
+
+__incl(dq/dineutron)
+
+\begin{dq}
+The following table shows the energy gap between the
+ground state and the first excited state for four nuclei, in
+units of picojoules. (The nuclei were chosen to be ones
+that have similar structures, e.g., they are all spherical in shape.)
+
+\begin{tabular}{ll}
+    nucleus    &  energy gap (picojoules)\\
+    $^4\zu{He}$       & 3.234\\
+    $^{16}\zu{O}$     & 0.968\\
+    $^{40}\zu{Ca}$    & 0.536\\
+    $^{208}\zu{Pb}$   & 0.418\\
+\end{tabular}
+
+\noindent Explain the trend in the data.
+\end{dq}
+
+<% end_sec('qm-bound-states') %>
+
+<% begin_sec('The uncertainty principle',nil,'uncertainty-principle') %>
+
+\index{Heisenberg!Werner}\index{Heisenberg uncertainty
+principle}\index{uncertainty principle}
+
+<% begin_sec("Eliminating randomness through measurement?") %>
+
+A common reaction to quantum physics, among both early-twentieth-century
+physicists and modern students, is that we should be able to
+get rid of randomness through accurate measurement. If I
+say, for example, that it is meaningless to discuss the path
+of a photon or an electron, one might suggest that we simply
+measure the particle's position and velocity many times in a
+row. This series of snapshots would amount to a description of its path.
+
+A practical objection to this plan is that the process of
+measurement will have an effect on the thing we are trying
+to measure. This may not be of much concern, for example,
+when a traffic cop measure's your car's motion with a radar
+gun, because the energy and momentum of the radar pulses are
+insufficient to change the car's motion significantly. But
+on the subatomic scale it is a very real problem. Making a
+videotape through a microscope of an electron orbiting a
+nucleus is not just difficult, it is theoretically
+impossible. The video camera makes pictures of things using
+light that has bounced off them and come into the camera. If
+even a single photon of visible light was to bounce off of
+the electron we were trying to study, the electron's recoil
+would be enough to change its behavior significantly.  
+
+<% end_sec() %>
+
+<% marg(100) %>
+<%
+  fig(
+    'heisenberg',
+    %q{Werner Heisenberg (1901-1976). Heisenberg helped to develop the foundations of quantum mechanics,
+       including the Heisenberg uncertainty principle. He was the scientific leader of
+       the Nazi atomic-bomb program up until its cancellation in 1942, when the
+       military decided that it was too ambitious a project
+       to undertake in wartime, and too unlikely to produce results.}
+  )
+%>
+<% end_marg %>
+
+<% begin_sec("The Heisenberg uncertainty principle") %>
+
+This insight, that measurement changes the thing being
+measured, is the kind of idea that clove-cigarette-smoking
+intellectuals outside of the physical sciences like to claim
+they knew all along. If only, they say, the physicists had
+made more of a habit of reading literary journals, they
+could have saved a lot of work. The anthropologist Margaret
+Mead has recently been accused of inadvertently encouraging
+her teenaged Samoan informants to exaggerate the freedom of
+youthful sexual experimentation in their society. If this is
+considered a damning critique of her work, it is because she
+could have done better: other anthropologists claim to have
+been able to eliminate the observer-as-participant problem
+and collect untainted data.
+
+The German physicist Werner Heisenberg, however, showed that
+in quantum physics, \emph{any} measuring technique runs into
+a brick wall when we try to improve its accuracy beyond a
+certain point. Heisenberg showed that the limitation is a
+question of \emph{what there is to be known}, even in
+principle, about the system itself, not of the ability or
+inability of a specific measuring device to ferret out
+information that is knowable but not previously hidden.
+
+Suppose, for example, that we have constructed an electron
+in a box (quantum dot) setup in our laboratory, and we are
+able to adjust the length $L$ of the box as desired. All the
+standing wave patterns pretty much fill the box, so our
+knowledge of the electron's position is of limited accuracy.
+If we write $\Delta x$ for the range of uncertainty in our
+knowledge of its position, then $\Delta x$ is roughly the
+same as the length of the box:\label{heisenberg-argument}
+\begin{equation*}
+        \Delta x \approx L
+\end{equation*}
+If we wish to know its position more accurately, we can
+certainly squeeze it into a smaller space by reducing $L$,
+but this has an unintended side-effect. A standing wave is
+really a superposition of two traveling waves going in
+opposite directions. The equation $p=h/\lambda $ really only
+gives the magnitude of the momentum vector, not its
+direction, so we should really interpret the wave as a 50/50
+mixture of a right-going wave with momentum $p=h/\lambda $
+and a left-going one with momentum $p=-h/\lambda $. The
+uncertainty in our knowledge of the electron's momentum is
+$\Delta p=2h/\lambda$, covering the range between these two
+values. Even if we make sure the electron is in the ground
+state, whose wavelength $\lambda =2L$ is the longest
+possible, we have an uncertainty in momentum of 
+$\Delta p=h/L$. In general, we find
+\begin{equation*}
+        \Delta p \gtrsim h/L\eqquad,
+\end{equation*}
+with equality for the ground state and inequality for the
+higher-energy states. Thus if we reduce $L$ to improve our
+knowledge of the electron's position, we do so at the cost
+of knowing less about its momentum. This trade-off is neatly
+summarized by multiplying the two equations to give
+\begin{equation*}
+        \Delta p\Delta x \gtrsim h\eqquad.
+\end{equation*}
+Although we have derived this in the special case of a
+particle in a box, it is an example of a principle of
+more general validity:
+\begin{important}[The Heisenberg uncertainty principle]
+It is not possible, even in principle, to know the momentum
+and the position of a particle simultaneously and with
+perfect accuracy. The uncertainties in these two quantities
+are always such that $\Delta p\Delta x \gtrsim h$.
+\end{important}
+\noindent (This approximation can be made into a strict inequality,
+$\Delta p\Delta x>h/4\pi$, but only with more careful
+definitions, which we will not bother with.)
+
+Note that although I encouraged you to think of this
+derivation in terms of a specific real-world system, the
+quantum dot, no reference was ever made to any specific
+laboratory equipment or procedures. The argument is simply
+that we cannot \emph{know} the particle's position very
+accurately unless it \emph{has} a very well defined
+position, it cannot have a very well defined position unless
+its wave-pattern covers only a very small amount of space,
+and its wave-pattern cannot be thus compressed without
+giving it a short wavelength and a correspondingly uncertain
+momentum. The uncertainty principle is therefore a
+restriction on how much there is to know about a particle,
+not just on what we can know about it with a certain technique.
+
+\begin{eg}{An estimate for electrons in atoms}
+\egquestion A typical energy for an electron in an atom is on
+the order of $(\text{1 volt})\cdot e$, which corresponds to a speed of
+about 1\% of the speed of light. If a typical atom has a
+size on the order of 0.1 nm, how close are the electrons to
+the limit imposed by the uncertainty principle?
+
+\eganswer If we assume the electron moves in all directions
+with equal probability, the uncertainty in its momentum is
+roughly twice its typical momentum. This is only an order-of-magnitude
+estimate, so we take $\Delta p$ to be the same as a typical momentum:
+\begin{align*}
+ \Delta p \Delta x         &=    p_{typical} \Delta x   \\
+                         &=    (m_{electron}) (0.01c) (0.1\times10^{-9}\ \munit)  \\
+                         &=    3\times 10^{-34}\ \zu{J}\unitdot\zu{s}  
+\end{align*}
+This is on the same order of magnitude as Planck's constant,
+so evidently the electron is ``right up against the wall.''
+(The fact that it is somewhat less than $h$ is of no concern
+since this was only an estimate, and we have not stated the
+uncertainty principle in its most exact form.)
+\end{eg}
+
+<% self_check('smallh',<<-'SELF_CHECK'
+
+If we were to apply the uncertainty principle to human-scale
+objects, what would be the significance of the small
+numerical value of Planck's constant?
+  SELF_CHECK
+  ) %>
+
+<% end_sec() %>
+
+\startdqs
+
+\begin{dq}
+Compare $\Delta p$  and $\Delta x$ for the two lowest
+energy levels of the one-dimensional particle in a box, and
+discuss how this relates to the uncertainty principle.
+\end{dq}
+
+\begin{dq}
+On a graph of $\Delta p$ versus $\Delta $x, sketch the
+regions that are allowed and forbidden by the Heisenberg
+uncertainty principle. Interpret the graph: Where does an
+atom lie on it? An elephant? Can either $p$ or $x$ be
+measured with perfect accuracy if we don't care about the other?
+\end{dq}
+
+<% end_sec() %>
+
+
+
+
+<% begin_hw_sec(vfill:true) %>
+
+
+<% end_hw_sec %>
+
+
+<% end_chapter() %>

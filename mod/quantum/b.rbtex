@@ -5,7 +5,7 @@
 <%
   chapter(
     '14',
-    %q{Probability distributions, variance, and radioactive decay curves},
+    %q{Probability distributions and a first glimpse of quantum physics},
     'ch:decay'
   )
 %>
@@ -345,56 +345,6 @@ half-life, written $t_{1/2}$. The general rule is then the exponential decay equ
 \end{equation*}
 <% end_sec('half-life') %>
 
-<% begin_sec("A first glimpse of quantum physics",nil,'glimpse-quantum') %>
-Let's step back and think for a moment about the physics underlying this derivation.
-Back around 1900, when the nucleus and radioactivity were first discovered, there
-were no clear principles underlying this sort of thing. In observations, it
-\emph{seemed} like nuclear decay was random, and observations \emph{seemed} to
-show that a nucleus's probability of decaying during a certain time interval
-was statistically independent of its previous history. Nobody had any idea \emph{why}
-these things were true. One might expect that any answers to questions like these
-would be very technical, and would have to await a deeper understanding of the nucleus.
-
-Actually these facts about nuclear decay require even less detailed technical
-knowledge of nuclear physics than you have from sec.~\ref{sec:nucleus}.
-They arise from basic facts about quantum physics.
-Let's preview these facts.
-
-\begin{enumerate}
-\item \emph{Totalitarian principle:} Everything not forbidden is compulsory. That is, if a process \emph{can} take place
-         without violating a conservation law, it \emph{will} take place, with some probability.
-\item \emph{Ground state:} Every system has a lower bound on its energy. This is some number such that no state has any energy lower than that number.
-In many cases, there is exactly one state, called the ground state, that has the lowest energy.
-\item \emph{State fundamentalism:} There is nothing more that can be known about a system than its state.
-\end{enumerate}
-
-The first principle is \emph{the} fundemental difference between quantum physics and
-classical physics (i.e., all the physical theories that came before). In classical physics,
-pigs can't fly, particles can't transmute themselves into other particles, and a marble locked
-inside a box can't get out unless we open the lid. In quantum physics, we have to ask ourselves
-whether there is some conservation law that prevents these things from happening, and if there isn't
-such a law, we expect that the process will happen, albeit possibly at a rate that is too low to measure.
-I suspect that flying pigs probably do violate conservation of energy (sorry, pigs), but particles do
-transmute themselves in various ways, and the marble definitely can get out of the box through a process
-called quantum tunneling, although we can estimate the rate, and it is very low.
-
-The second principle, a lower bound on energies, seems to be true because we see forms of matter in our
-universe that seem to be either relatively stable or even (apparently) completely stable. Examples include
-the proton (if isolated rather than inside a
-nucleus) and black holes. If there was always some lower-energy state to decay to, then based on the
-totalitarian principle, every system would have something that it could decay to without violating
-conservation of energy, and therefore no system would be stable.
-
-The third principle says that, whatever these ``states'' are, that's all there is. There is nothing
-else to know, no higher reality, no deeper insight to be gained, nothing else that can be measured
-or observed about the system. This principle is what allows us to assert that a nucleus's probability
-of decay is independent of its history, as assumed in our derivation of the exponential decay
-equation. When we see a nucleus that's been sitting around for a while, it's normally in its ground state.
-Therefore there is nothing else to know about it besides the fact that it's in its ground state.
-It can't have cracks and strain that show it's about to decay, nor can we see that it must be a really
-tough little nucleus because it's survived for such a long time.
-<% end_sec('glimpse-quantum') %>
-
 <% begin_sec("Calculations for exponential decay",nil,'decay-calc') %>
 We'll see that all our formulas come out simpler if we state them in terms of the average
 lifetime $\tau$ rather than the half-life $t_{1/2}$. These are related by $\tau=t_{1/2}/\ln 2$.
@@ -519,6 +469,113 @@ completely depend on how much of the substance you have?
 
 <% end_sec('exp-decay') %>
 
+
+<% begin_sec("A first glimpse of quantum physics",nil,'glimpse-quantum') %>
+Let's step back and think for a moment about the physics underlying all of our derivations about radioactive decay curves.
+Back around 1900, when the nucleus and radioactivity were first discovered, there
+were no clear principles underlying this sort of thing. In observations, it
+\emph{seemed} like nuclear decay was random, and observations \emph{seemed} to
+show that a nucleus's probability of decaying during a certain time interval
+was statistically independent of its previous history. Nobody had any idea \emph{why}
+these things were true. One might expect that any answers to questions like these
+would be very technical, and would have to await a deeper understanding of the nucleus.
+
+Actually these facts about nuclear decay require even less detailed
+technical knowledge of nuclear physics than you have from
+sec.~\ref{sec:nucleus}.  They arise from certain more basic facts of life concerning quantum
+physics.  Let's preview these facts. I've stated these below in
+nonmathematical and sometimes somewhat facetious language, but the
+phrases, or variations on them, are the ones actually used by
+physicists. In pop culture, there is a tendency to over-sell quantum
+physics as if it were even more mysterious than it really is, or as if
+it had more implications than it really does for philosophy, religion,
+consciousness, and so on. Because of these issues, I've added footnotes below each statement to try to
+clarify where they really come from, what physicists mean by them, and which ones have
+more rigorous mathematical formulations.
+
+\pagebreak
+
+\begin{enumerate}
+\item \emph{Totalitarian principle:} Everything not forbidden is compulsory. That is, if a process \emph{can} take place
+         without violating a conservation law, it \emph{will} take place, with some probability.\footnote{The
+         facetious wording's first published application to the description of quantum physics was in a footnote in a
+         1956 paper by Murray Gell-Mann. There is no rigorous version of this principle that forms a foundational
+         principle of quantum physics, but ever since the birth of quantum mechanics, physicists have found it to be an excellent
+         informal guide to reasoning.}\label{totalitarian}
+\item \emph{Ground state:} Every system has a lower bound on its energy. This is some number such that no state has any energy 
+         lower than that number.\footnote{This is a mathematically rigorous statement. Although it is not typically included
+         in formal axiomatizations of quantum physics, any theory that violates this principle is normally discarded as
+         unrealistic.}
+         In many cases, there is exactly one state, called the ground state, that has the lowest energy.
+\item \emph{State fundamentalism:} There is nothing more that can be known about a system than its state.\footnote{This is a more
+         vaguely defined philosophical statement that does not have a complete and rigorous mathematical formulation. People working
+         on the philosophy and foundations of quantum mechanics use a variety of related phrases, such as ``wavefunction fundamentalism''
+         and ``state monism.''}
+\end{enumerate}
+
+The first principle is arguably \emph{the} fundemental difference between quantum physics and
+classical physics (i.e., all the physical theories that came before). In classical physics,
+pigs can't fly, particles can't transmute themselves into other particles, and a marble locked
+inside a box can't get out unless we open the lid. In quantum physics, we have to ask ourselves
+whether there is some conservation law that prevents these things from happening, and if there isn't
+such a law, we expect that the process will happen, albeit possibly at a rate that is too low to measure.
+I suspect that flying pigs probably do violate conservation of energy (sorry, pigs), but particles do
+transmute themselves in various ways, and the marble definitely can get out of the box through a process
+called quantum tunneling, although we can estimate the rate, and it is very low. (See example
+\ref{eg:marble-tunneling}, p.~\pageref{eg:marble-tunneling}, for a crude estimate for the marble's
+chances of escape.)
+
+The second principle, a lower bound on energies, seems to be true because we see forms of matter in our
+universe that seem to be either relatively stable or even (apparently) completely stable. Examples include
+the proton (if isolated rather than inside a
+nucleus) and black holes. If there was always some lower-energy state to decay to, then based on the
+totalitarian principle, every system would have something that it could decay to without violating
+conservation of energy, and therefore no system would be stable.
+
+The third principle says that, whatever these ``states'' are, that's all there is. There is nothing
+else to know, no higher reality, no deeper insight to be gained, nothing else that can be measured
+or observed about the system. This principle is what allows us to assert that a nucleus's probability
+of decay is independent of its history, as assumed in our derivation of the exponential decay
+equation. When we see a nucleus that's been sitting around for a while, it's normally in its ground state.
+Therefore there is nothing else to know about it besides the fact that it's in its ground state.
+It can't have cracks and strain that show it's about to decay, nor can we see that it must be a really
+tough little nucleus because it's survived for such a long time.
+
+\begin{eg}{Two processes involving positrons}
+Around 1930, Paul Dirac proposed that each of the following processes might occur:
+\begin{align*}
+  & \text{p}+\text{e}^- \rightarrow \gamma+\gamma \qquad (1)\\
+  & \gamma+\gamma \rightarrow \text{e}^+ + \text{e}^- \qquad (2).
+\end{align*}
+In process (1), a proton and an electron annihilate, creating two gamma rays.
+This would seem to imply that the hydrogen atom would be unstable with respect to radioactive
+decay, which seems like a daring prediction, although perhaps Dirac thought the rate at which
+the annihilation would occur would be so low that it would not yet have been noticed in
+laboratory experiments. He wrote, ``There appears to be no reason why such processes should not actually occur somewhere in the world. They would be consistent with all the general laws of Nature.''
+This sounds like a use of the totalitarian principle.
+
+But in fact,  process (1) has never been observed.
+Because physicists tend to believe in the totalitarian principle, they need a conservation law
+to explain why it doesn't occur. The process is consistent, however, with both conservation of
+energy-momentum (p.~\pageref{sec:e-p-vector}) and conservation of charge. Therefore, we invent a new conservation law. In fact,
+we have \emph{two} conservation laws at this point that forbid this decay, of which I'll discuss only one. This one is called
+conservation of lepton number. ``Lepton'' is a general term that refers to particles like electrons and positrons,
+as well as some other, similar particles that are unstable.
+The electron has a lepton number of $+1$, while the lepton numbers of the other particles in this
+process are zero.\index{lepton number}\index{lepton}
+
+Process (2) actually does occur --- it is the time-reversed version of the process of
+electron-positron annihilation (p.~\pageref{eg:eplus-eminus}). It was in fact this process that
+allowed the original experimental discovery of the positron in 1932. This process obeys conservation
+of energy-momentum, conservation of charge, and conservation of lepton number, because the
+antielectron has lepton number $-1$.
+\end{eg}
+
+<% end_sec('glimpse-quantum') %>
+
+
+
+
 <% begin_notes %>
 
 \notetext{sd-one-atom}{Standard deviation of $r$ with one atom}
@@ -546,7 +603,8 @@ The standard deviation of $r$ is then $\sqrt{1/4}=1/2$, as expected.
 Questions 1-3 involve the useful concept of the \emph{cumulative distribution} (not introduced in the text).
 Let $P(x)=\int_{-\infty}^x D(x') dx'$ be the probability of finding a value
 for the random number that is less than or equal to $x$. The function $P$ is referred to as
-the cumulative distribution. 
+the cumulative distribution. (In the context of radioactive decay, the survival probability
+referred to in the text is actually $1-P$ for this definition of $P$.)
 
 1. Using the fundamental theorem of calculus, express $D$ in terms of $P$
 
