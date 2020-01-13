@@ -364,7 +364,7 @@ Let's preview these facts.
 \item \emph{Totalitarian principle:} Everything not forbidden is compulsory. That is, if a process \emph{can} take place
          without violating a conservation law, it \emph{will} take place, with some probability.
 \item \emph{Ground state:} Every system has a lower bound on its energy. This is some number such that no state has any energy lower than that number.
-In many cases, there is exactly one state, called the ground state, that has this energy.
+In many cases, there is exactly one state, called the ground state, that has the lowest energy.
 \item \emph{State fundamentalism:} There is nothing more that can be known about a system than its state.
 \end{enumerate}
 
@@ -416,7 +416,7 @@ $D(t)=-\der P/\der t$, or
   D(t)  =    \frac{1}{\tau}e^{-t/\tau}. \qquad \text{[prob.~dist.~of the time of decay $t$]}
 \end{equation*}
 We can see that the units of this equation make sense, since the probability distribution for a random
-variable withunits of seconds must itself have units of inverse seconds.
+variable with units of seconds must itself have units of inverse seconds.
 
 If you're fiddling around with a hunk of plutonium and want to know how badly your chromosomes are
 getting nuked, then you're interested in the rate of decay, i.e., the number of decays per second,
@@ -431,32 +431,31 @@ different constant factors out in front. This is because they're integrals and d
 of each other, and integrating or differentiating $e^{bx}$ gives back the same function with
 a factor of $b$ or $1/b$.
 
-\begin{eg}{Radioactive contamination at Chernobyl}
-\egquestion One of the most dangerous radioactive isotopes
-released by the Chernobyl disaster in 1986 was $^{90}\zu{Sr}$,
-whose half-life is 28 years. (a) How long will it be before
-the contamination is reduced to one tenth of its original
-level? (b) If a total of $10^{27}$  atoms was released,
-about how long would it be before not a single atom was left?
+<% marg(-8) %>
+<%
+  fig(
+    'technetium-injection',
+    %q{A patient being injected with a radiological marker containing an excited state of ${}^{99}\zu{Tc}$.
+       The syringe is surrounded with a thin layer of shielding in order to reduce the radiation exposure to the
+       technician's hands. The gamma rays are relatively low in energy, so not much shielding is needed in order
+       to stop almost all of them.}
+  )
+%>
+<% end_marg %>
+\begin{eg}{A heart test}
+\egquestion
+In a common heart test, the patient is injected with a molecule containing ${}^{99}\zu{Tc}$ (technetium-99)
+molecules in an excited state. This state decays by emitting a gamma ray, with a half-life of
+6.01 hours. The molecules bind to red blood cells, so a gamma-ray video camera can see the flow of blood
+through the chambers of the heart. Once the chemical for the injection has been prepared, it has to be
+used fairly promptly. Suppose that usable medical results require that at least 40\% of the ${}^{99}\zu{Tc}$
+nuclei remain in their excited state. What is the shelf life of the chemical?
 
-\eganswer (a) We want to know the amount of time that a
-$^{90}\zu{Sr}$ nucleus has a probability of 0.1 of surviving.
-Starting with the exponential decay formula,
-\begin{equation*}
-                P  =    0.5^{t/t_{1/2}} ,  
-\end{equation*}
-we want to solve for $t$. Taking natural logarithms of both sides,
-\begin{equation*}
-                \ln  P  = \frac{t}{t_{1/2}}\ln 0.5 ,  
-\end{equation*}
-so
-\begin{equation*}
-                t  =    \frac{t_{1/2}}{\ln 0.5}\ln P
-\end{equation*}
-Plugging in $P=0.1$ and $t_{1/2}=28$ years, we get $t=93$ years.
-
-(b) This is just like the first part, but $P=10^{-27}$ . The
-result is about 2500 years.
+\eganswer
+Once we start doing math, it's easier to work with the mean lifetime, which in this case is $\tau=t_{1/2}/\ln 2=8.67\ \zu{hr}$.
+We have $P(t)  =    e^{-t/\tau}$, so taking logs of both sides gives $\ln P=-t/\tau$, and
+$t=-\tau(\ln 0.40)=7.9\ \zu{hr}$. This is a little more than the half-life, which makes sense, because 0.4 is a little
+less than 0.5.
 \end{eg}
 
 <%
@@ -494,24 +493,6 @@ the earth was billions of years old, not a few thousand as
 some had claimed on religious grounds.
 \end{eg}
 
-\begin{eg}{The hot potato}
-\egquestion A nuclear physicist with a demented sense of humor
-tosses you a cigar box, yelling ``hot potato.'' The label on
-the box says ``contains $10^{20}$  atoms of $^{17}\zu{F}$,
-half-life of 66 s, produced today in our reactor at 1
-p.m.'' It takes you two seconds to read the label, after
-which you toss it behind some lead bricks and run away. The
-time is 1:40 p.m. Will you die?
-
-\eganswer The time elapsed since the radioactive fluorine
-was produced in the reactor was 40 minutes, or 2400 s. The
-number of elapsed half-lives is therefore $t/t_{1/2}=  36$. The
-initial number of atoms was $N(0)=10^{20}$ . The number of
-decays per second is now about $10^7\ \zu{s}^{-1}$, so it produced
-about $2\times10^7$  high-energy electrons while you held it
-in your hands. Although twenty million electrons sounds like
-a lot, it is not really enough to be dangerous.
-\end{eg}
 
 \startdqs
 
@@ -526,11 +507,6 @@ For 1 s, Fred holds in his hands 1 kg of radioactive
 stuff with a half-life of 1000 years. Ginger holds 1 kg of a
 different substance, with a half-life of 1 min, for the same
 amount of time. Did they place themselves in equal danger, or not?
-\end{dq}
-
-\begin{dq}
-How would you interpret it if you calculated $N(t)$, and
-found it was less than one?
 \end{dq}
 
 \begin{dq}
