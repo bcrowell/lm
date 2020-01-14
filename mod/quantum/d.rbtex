@@ -135,30 +135,41 @@ which electrons differ from photons, for a total of five.)
 
 Because electrons are different from photons, it is not
 immediately obvious which of the photon equations from
-chapter \ref{ch:em} can be applied to electrons as well. A
-particle property, the energy of one photon, is related to
-its wave properties via $E=hf$ or, equivalently,
-$E=hc/\lambda $. The momentum of a photon was given
-by $p=hf/c$ or $p=h/\lambda $. Ultimately it was a
-matter of experiment to determine which of these equations,
-if any, would work for electrons, but we can make a quick
-and dirty guess simply by noting that some of the equations
-involve $c$, the speed of light, and some do not. Since $c$
-is irrelevant in the case of an electron, we might guess
-that the equations of general validity are those that do
-not have $c$ in them:
+chapter \ref{ch:light-as-a-particle} can be applied to electrons as well. 
+With hindsight, we know that there is a simple and consistent way of
+putting this all together. As a preliminary in order to make the
+notation simpler, we define a version of Planck's constant
+$\hbar=h/2\pi$, read as ``h-bar.'' We also recall from sec.~\ref{subsec:wavenumber}, p.~\pageref{subsec:wavenumber},
+the definition of the wavenumber $k=2\pi/\lambda$ along with a few of its properties, table \figref{k-review}.
+With these definitions, our two fundamental quantum-mechanical relations are
 \begin{align*}
-                E  &=  hf  \\
-                p  &=  h/\lambda   
+                E  &=  \hbar \omega \qquad \text{[the same as $E=hf$]}  \\
+                p  &=  \hbar k      \qquad \text{[the same as $p=h/\lambda$]}
 \end{align*}
+It's only a slight exaggeration to say that these two equations summarize
+all of quantum mechanics. They are true for all the ordinary building blocks of light and matter
+in everyday life, and also for every weird creature in the particle-physics zoo.
+Each of these equations has a \emph{particle} thing on the left and a \emph{wave} thing
+on the right.
 
-This is essentially the reasoning that de Broglie went
-through, and experiments have confirmed these two equations
-for all the fundamental building blocks of light and matter,
-not just for photons and electrons.
+<% marg() %>
+<% fig('k-review','Review of the wavenumber $k$',
+  {
+    'text'=>%q{
+      \\begin{itemize}
+        \\item The wavenumber $k=2\\pi/\\lambda$ is inversely related to the wavelength $\\lambda$.
+        \\item It has units of radians per meter.
+        \\item In three dimensions, $k$ is the magnitude of a the wave-vector $\\vc{k}$ (p.~\\pageref{wave-vector}).
+        \\item The wavevector $k$ is to the wavelength as the frequency $\\omega$ is to the period.
+      \\end{itemize}
+    }
+  })
+%>
 
-The second equation, which I soft-pedaled in the previous
-chapter, takes on a greater importance for electrons. This is
+<% end_marg %>
+
+The second equation, although true for photons,
+takes on a greater importance for electrons. This is
 first of all because the momentum of matter is more likely
 to be significant than the momentum of light under ordinary
 conditions, and also because force is the transfer of
@@ -167,7 +178,7 @@ momentum, and electrons are affected by electrical forces.
 \begin{eg}{The wavelength of an elephant}
 \egquestion What is the wavelength of a trotting elephant?
 
-\eganswer One may doubt whether the equation should be
+\eganswer One may doubt whether the equation $p=\hbar k=h/\lambda$should be
 applied to an elephant, which is not just a single particle
 but a rather large collection of them. Throwing caution to
 the wind, however, we estimate the elephant's mass at $10^3$

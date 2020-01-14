@@ -126,21 +126,20 @@ convenient measure of curvature in calculus: the second
 derivative. To relate the two approaches, we take the second
 derivative of a sine wave:
 \begin{align*}
- \frac{\der^2}{\der x^2}\sin(2\pi x/\lambda)
- &= \frac{\der}{\der x}\left(\frac{2\pi}{\lambda}\cos\frac{2\pi x}{\lambda}\right)     \\
-         &= -\left(\frac{2\pi}{\lambda}\right)^2 \sin\frac{2\pi x}{\lambda}
+ \frac{\der^2}{\der x^2}\sin kx
+ &= \frac{\der}{\der x}\left(k\cos kx\right)     \\
+         &= -k^2 \sin kx.
 \end{align*}
 
 Taking the second derivative gives us back the same
 function, but with a minus sign and a constant out in front
 that is related to the wavelength. We can thus relate the
 second derivative to the osculating wavelength:
-
 \begin{equation}\label{eq:schreqna}
-        \frac{\der^2\Psi}{\der x^2} = -\left(\frac{2\pi}{\lambda}\right)^2\Psi
+        \frac{\der^2\Psi}{\der x^2} = -k^2\Psi,
 \end{equation}
-
-This could be solved for $\lambda $ in terms of $\Psi $, but
+where $k=2\pi/\lambda$.
+This could be solved for $k$ or $\lambda $ in terms of $\Psi $, but
 it will turn out below to be more convenient to leave it in this form.
 
 Applying this to conservation of energy, we have
@@ -148,26 +147,17 @@ Applying this to conservation of energy, we have
 \begin{split}
            E         &=    K  +  U  \\
                  &=   \frac{p^2}{2m}  + U  \\
-                 &=   \frac{(h/\lambda)^2}{2m}  + U        
+                 &=   \frac{(\hbar k)^2}{2m}  + U        
 \end{split}
 \end{align}
 
-\noindent Note that both equation \eqref{eq:schreqna} and equation \eqref{eq:schreqnb} have $\lambda^2$
-in the denominator. We can simplify our algebra by
+\noindent We can simplify our algebra by
 multiplying both sides of equation \eqref{eq:schreqnb} by $\Psi $ to make it
 look more like equation \eqref{eq:schreqna}:
-
-\begin{align*}
-        E \cdot \Psi          &=    \frac{(h/\lambda)^2}{2m}\Psi    +   U \cdot \Psi   \\
- &=   \frac{1}{2m}\left(\frac{h}{2\pi}\right)^2\left(\frac{2\pi}{\lambda}\right)^2\Psi
-                                 +   U \cdot \Psi  \\
- &=  -\frac{1}{2m}\left(\frac{h}{2\pi}\right)^2 \frac{\der^2\Psi}{\der x^2} 
-                                 +   U \cdot \Psi
-\end{align*}
-
-\noindent Further simplification is achieved by using the symbol $\hbar$ ($h$
-with a slash through it, read ``h-bar'') as an abbreviation
-for $h/2\pi $. We then have the important result known as
+\begin{equation*}
+        E \cdot \Psi          =    \frac{(\hbar k)^2}{2m}\Psi    +   U \cdot \Psi  ,
+\end{equation*}
+which leads to the important result known as
 the \labelimportantintext{Schr\"odinger equation}:
 
 \begin{important}\label{s-eqn-simplest-initial-statement}
@@ -329,87 +319,6 @@ orders of magnitude smaller than $10^{-1000}$.
 %>
 <% end_marg %>
 
-\begin{eg}{The correspondence principle for $E>U$}\label{eg:step-correspondence}
-The correspondence principle demands that in the classical limit $h\rightarrow0$,
-we recover the correct result for a particle encountering a barrier $U$,
-for both $E<U$ and $E>U$.
-The $E<U$ case was analyzed in self-check \ref{sc:walkthroughwall}
-on p.~\pageref{sc:walkthroughwall}.
-In the remainder of this example, we analyze $E>U$, which
-turns out to be a little trickier. 
-
-The particle has enough energy to
-get over the barrier, and the classical result is that it continues forward
-at a different speed (a reduced speed if $U>0$, or an increased one if $U<0$), then
-regains its original speed as it emerges from the other side.
-What happens quantum-mechanically in this case? We would like to get a ``tunneling''
-probability of 1 in the classical limit. The expression derived on p.~\pageref{tunneling-probability}, however,
-doesn't apply here, because it was derived under the assumption that the wavefunction
-inside the barrier was an exponential; in the classically allowed case, the barrier
-isn't classically forbidden, and the wavefunction inside it is a sine wave.
-
-<% marg(10) %>
-<%
-  fig(
-    'step-potential',
-    %q{A particle encounters a step of height $U<E$ in the interaction energy. Both sides are
-       classically allowed. A reflected wave exists, but is not shown in the figure.}
-  )
-%>
-
-\spacebetweenfigs
-
-<%
-  fig(
-    'marble-no-reflection',
-    %q{The marble has zero probability of being reflected from the edge of the table.
-       (This example has $U<0$, not $U>0$ as in figures \figref{step-potential} and \figref{step-potential-smoother}).}
-  )
-%>
-
-\spacebetweenfigs
-
-<%
-  fig(
-    'step-potential-smoother',
-    %q{Making the step more gradual reduces the probability of reflection.}
-  )
-%>
-<% end_marg %>
-
-We can simplify things a little by letting the width $w$ of the
-barrier go to infinity.  Classically, after all, there is no
-possibility that the particle will turn around, no matter how wide the
-barrier. We then have the situation shown in figure
-\figref{step-potential}.\footnote{As in several previous examples, we
-cheat by representing a traveling wave as a real-valued function. See
-pp.~\pageref{cheat-with-real-psi} and \pageref{subsubsec:s-eqn-partial-refl}.}
-
-The analysis is similar to that for any other wave being partially
-reflected at the boundary between two regions where its velocity
-differs, and the result is the same as the one found on
-p.~\pageref{reflected-wave-amplitude}. (There are some technical
-differences, which don't turn out to matter. This is discussed in more
-detail on p.~\pageref{subsubsec:s-eqn-partial-refl}.) The ratio of the amplitude of the reflected
-wave to that of the incident wave is $R = (v_2-v_1)/(v_2+v_1)$. The
-probability of reflection is $R^2$. (Counterintuitively, $R^2$ is
-nonzero even if $U<0$, i.e., $v_2>v_1$.) 
-
-This seems to violate the correspondence principle. There is
-no $m$ or $h$ anywhere in the result, so we seem to have the result that, even classically,
-the marble in figure \figref{marble-no-reflection} can be reflected!
-
-The solution to this paradox is that the step in figure \figref{step-potential} was taken to
-be completely abrupt --- an idealized mathematical discontinuity. Suppose we make the
-transition a little more gradual, as in figure \figref{step-potential-smoother}.
-As shown in problem \ref{hw:maxtransmission} on p.~\pageref{hw:maxtransmission},
-this reduces the amplitude with which a wave is reflected.
-By smoothing out the step more and
-more, we continue to reduce the probability of reflection, until finally we arrive at
-a barrier shaped like a smooth ramp. More detailed calculations show that this
-results in zero reflection in the limit where the width of the ramp is large
-compared to the wavelength.
-\end{eg}
 
 \begin{eg}{Beta decay: a push or pull on the way out the door}
 The nucleus ${}^{64}\text{Cu}$ undergoes $\beta^+$ and $\beta^-$ decay with similar probabilities
@@ -477,7 +386,7 @@ particle.
 
 \pagebreak
 
-<% begin_sec("Three dimensions",4) %>
+<% begin_sec("Three dimensions") %>
 
 For simplicity, we've been considering the Schr\"odinger equation in one dimension,
 so that $\Psi$ is only a function of $x$, and has units of $\munit^{-1/2}$ rather
@@ -533,7 +442,6 @@ side is manifestly positive.
 \end{eg}
 
 <% end_sec %>
-
 <%
   fig(
     'complex-wavefunction',
