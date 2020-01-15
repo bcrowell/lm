@@ -118,7 +118,7 @@ Tunneling is discussed in more detail on p.~\pageref{quantitativetunneling}.
 <% begin_sec("The Schr\\\"odinger equation",nil,'schrodinger') %>
 
 \index{Schr\"odinger equation}
-In subsection \ref{subsec:electrons-in-fields} we were able to apply conservation
+In section \ref{sec:electrons-in-fields} we were able to apply conservation
 of energy to an electron's wavefunction, but only by using
 the clumsy graphical technique of osculating sine waves as a
 measure of the wave's curvature. You have learned a more
@@ -383,8 +383,6 @@ the counterintuitive fact about quantum
 mechanics that a repulsive force can \emph{hinder} the escape of a
 particle.
 \end{eg}
-
-\pagebreak
 
 <% begin_sec("Three dimensions") %>
 
@@ -658,7 +656,7 @@ through without ``seeing'' each other.
 It is therefore natural to ask whether the apparent linearity of the Schr\"odinger equation is only
 an approximation to some more precise, nonlinear theory. This is not currently believed to be the
 case. If we are to make sense of Schr\"odinger's cat
-(sec.~\ref{subsec:nonlocality-and-entanglement}, p.~\pageref{schrodingers-cat}),
+(sec.~\ref{sec:nonlocality-and-entanglement}, p.~\pageref{schrodingers-cat}),
 then the experimenter who sees a live cat and the one
 who sees a dead cat must remain oblivious to their other selves, like the ripples on the pond
 that intersect without ``seeing'' each other. Attempts to create slightly nonlinear versions
@@ -667,13 +665,25 @@ allowing the propagation of signals faster than $c$. (This is known as Gisin's t
 The original paper, ``Weinberg's non-linear quantum mechanics and supraluminal communications,''
 is surprisingly readable and nonmathematical.)\index{Gisin's theorem}
 
-If you have had a course in linear algebra, then it is worth noting that the
-linearity of the Schr\"odinger equation allows us to talk about its solutions as vectors in a vector
-space. For example, if $\Psi_1$ represents an unstable nucleus that has not yet gamma decayed, and
-$\Psi_2$ is its state after the decay, then any superposition $\alpha\Psi_1+\beta\Psi_2$, with real or complex
-coefficients $\alpha$ and $\beta$, is
-a possible wavefunction, and we can notate this as a vector, $\langle\alpha,\beta\rangle$, in a two-dimensional
-vector space.
+The linearity of the Schr\"odinger equation is what allows us to talk
+about its solutions as vectors in a vector space
+(p.~\pageref{lin-alg-vector-space}). For example, if $\Psi_1$
+represents an unstable nucleus that has not yet gamma decayed, and
+$\Psi_2$ is its state after the decay, then any superposition
+$\alpha\Psi_1+\beta\Psi_2$, with real or complex coefficients $\alpha$
+and $\beta$, is a possible wavefunction, and we can notate this as a
+vector, $\begin{pmatrix}\alpha\\\beta\end{pmatrix}$, in a
+two-dimensional vector space.
+
+People wrestling with the weirdness of Schr\"odinger's cat sometimes say that
+it's impossible to have a superposition of the live cat and the dead cat.
+Not true. The linearity of the Schr\"odinger equation guarantees that we
+can take any wavefunctions $\Psi_1$ and $\Psi_2$ and superpose them, and this
+is exactly what happens, according to quantum physics, when we do the experiment.
+What \emph{is} impossible, for all practical purposes, is to observe any type of
+interaction between the live and dead cats, such as wave interference,
+which we estimated on p.~\pageref{cat-fringes} and found to be undetectable, due to the
+extremely small wavelength.
 
 <% end_sec('linearity-of-schrodinger') %>
 
@@ -745,26 +755,95 @@ of finding the electron in one side or the other? Does this obey the corresponde
   )
 %>
 
- % --------------------------------------------------------------------- 
- % --------------------------------------------------------------------- 
- % --------------------------------------------------------------------- 
- % \fullpagewidthfignocaption{hwavefnlowres} 
-\vfill\pagebreak[4]
+<% end_sec() %>
+
+<% begin_sec("The inner product",nil,'quantum-inner-product') %>\index{inner product!quantum mechanics}
+In sec.~\ref{sec:linear-algebra}, p.~\pageref{inner-product}, we discussed the idea of an inner product, which is
+an operation on a vector space that acts like the dot product, i.e., it takes two vectors as inputs and gives
+back a scalar as an output. We also saw that any time we had a way of measuring magnitudes, we automatically
+got an inner product for free. In quantum mechanics, we do have a way of measuring magnitudes, which is the total
+probability of a given wavefunction. We even have a convenient notation for this, the bra-ket notation
+introduced in sec.~\ref{subsec:bra-ket}, p.~\pageref{subsec:bra-ket}. In example \ref{eg:particle-in-box-norm-and-phase},
+we had a wavefunction $| <% eqn_image("eqn-wave2") %> \rangle$, and the fact of its being normalized was written as
+$\langle <% eqn_image("eqn-wave2") %> | <% eqn_image("eqn-wave2") %> \rangle = 1$. This is a statement that the
+total probability for \emph{something} to happen must be 1, but we can also think of it as a statement
+that the ``magnitude'' of <% eqn_image("eqn-wave2") %> has a certain value. Because we have a way of defining magnitudes
+of wavefunctions, we automatically get an inner product.
+
+If we're dealing with wavefunctions that are expressed as functions of position, then it's pretty clear
+how to define an appropriate inner product: $\langle u | v \rangle = \int u^*v \der x$. We need to use the
+complex conjugate $u^*$ rather than just $u$, for the following reason. When we take the inner product
+of a wavefunction with itself, it has a probability interpretation. Probabilities are always real and positive.
+So we need to set things up in such a way that $\langle u | u \rangle$ is always real and positive.
+When we take $\langle u | u \rangle$,
+the thing inside the integral is $u^*u$, which is the same as $|u|^2$, and this is indeed real and positive,
+so when we integrate it we get an answer that is real and positive.
+
+Note the similarity between the expression $\int u^*v \der x$ and the expression
+$u_xv_x+u_yv_y+u_zv_z$ for a dot product: the integral is a continuous sum, and the dot product is
+a discrete sum.
+
+We recall from our previous discussion (p.~\pageref{inner-product}) that
+an inner product can generally be described as a measure of how similar two vectors are.
+For example, in the Euclidean plane, vectors that are perpendicular to each other have
+a dot product of zero, which tells you that they lie along lines that are completely different.
+When two vectors have an inner product of zero, we say that they are \emph{orthogonal}.
+
+Physically, two wavefunctions have a zero inner product if and only if they are completely distinguishable from each other
+by the measurement of some observable. By analogy with vectors in Euclidean space, we say that
+the two wavefunctions are orthogonal.\label{orthogonal-wavefunctions}
+For example, $\langle <% eqn_image("eqn-wave1") %> | <% eqn_image("eqn-wave2") %> \rangle=0$, as can be verified
+from the integral $\int_0^\pi \sin x \sin 2x \der x=0$. These states are also distinguishable by measuring
+either their momentum or their energy.
 
 <%
   fig(
-    'hwavefnlowres',
-    '',
+    'inner-product-interpretation',
+    %q{%
+      Some examples of interpretation of the inner product. The first three examples
+      are explained immediately below. The fourth, about averages, is justified on
+      p.~\pageref{subsubsec:qm-inner-product-averages}.
+    },
     {
       'width'=>'wide',
-      'anonymous'=>true,
-      'float'=>false
+      'sidecaption'=>true
     }
   )
 %>
 
-<% end_sec() %>
+% The 0.81 is 8/pi^2, because a triangle wave is \Sum (1/n^2)\cos(nx), for n odd.
 
+Suppose that $u$ and $v$ are both properly normalized wavefunctions. If $|\langle u|v \rangle|=1$, then the
+states are identical.\footnote{If the inner product is, for example, $-1$, then the wavefunctions differ only by
+an unobservable difference in phase, so they really describe the same state.}
+If $\langle u|v \rangle=0$, then $u$ and $v$ are completely distinguishable from one another. There is
+also the intermediate case where $\langle u|v \rangle$ has a magnitude greater than 0 but less than 1.
+In this case, we could say that $u$ is a mixture of $v$ plus some other state $w$ that is distinguishable
+from $v$, i.e., that
+\begin{equation*}
+  |u \rangle = \alpha |v \rangle + \beta |w \rangle.
+\end{equation*}
+where $\langle v|w \rangle=0$. We then have
+\begin{equation*}
+  \langle u|v \rangle = (\alpha \langle v | + \beta \langle w |)|v \rangle = \alpha.
+\end{equation*}
+Now suppose that we make measurements capable of determining whether or not the system
+is in the state $v$. If the system is prepared in state $u$, and we make these measurements on it, then
+by the linearity of the Schr\"odinger equation, the result is that the measuring apparatus or observer ends up in
+a Schr\"odinger's-cat state that looks like
+\begin{equation*}
+  \alpha |\text{observed $v$} \rangle + \beta |\text{observed $w$} \rangle.
+\end{equation*}
+We interpret squares of amplitudes as probabilities, so
+\begin{equation*}
+  P=|\alpha|^2=|\langle u|v \rangle|^2
+\end{equation*}
+gives us the probability that we will have observed the state to be $v$. This final leap in the logic,
+to a probability interpretation, has felt mysterious to several generations of physicists, but recent
+work has clarified the situation somewhat.
+
+
+<% end_sec('quantum-inner-product') %>
 
 
 

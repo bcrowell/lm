@@ -1,4 +1,4 @@
-<% begin_sec("Adds and evens, and how they add up",nil,'odds-and-evens') %>
+<% begin_sec("Odds and evens, and how they add up",nil,'odds-and-evens') %>
 From grade-school arithmetic, we have the rules
 \begin{align*}
   \text{even}+\text{even} &= \text{even} \\
@@ -25,6 +25,18 @@ A proton, a neutron, and an electron each have spin 1/2. Since the atom is
 a composite of six particles, each of which has half-integer spin, the atom as
 a whole has an integer angular momentum.
 \end{eg}
+
+m4_ifelse(__mod,1,[:\begin{eg}{Silver atoms in the Stern-Gerlach experiment}\label{eg:stern-gerlach-total-spin}
+The silver atoms used in the Stern-Gerlach experiment had an odd number of protons (47),
+an even number of neutrons (two isotopes), and an odd number of electrons (47).
+The result is that the atom as a whole has an integer spin. However,
+only the electrons contribute significantly to the magnetic dipole moment of an atom (\notewithoutbackref{stern-gerlach-details}),
+so the experiment only probed their angular momentum, which was a half-integer value because 47 is odd.
+In principle this could be as high as $47/2$, but in the ground state it turns out to be only $1/2$, which
+can be interpreted as the intrinsic spin of one of the electrons. The other 46 electrons' orbital and
+intrinsic angular momentum end up canceling out.
+\end{eg}
+:])
 
 \begin{eg}{Emission of a photon from an atom}
 An atom can emit light,

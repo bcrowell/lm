@@ -52,7 +52,7 @@ pretty important number, so we define the abbreviation
 $\hbar=h/2\pi $. This symbol is read ``h-bar.''
 
 In fact, this is a completely general fact in quantum
-physics, not just a fact about the quantum moat:
+physics, not just a fact about the quantum moat:\label{quantum-moat}
 
 \begin{important}[Quantization of angular momentum]
 The angular momentum of a particle due to its motion through
@@ -164,44 +164,17 @@ If we slice the sphere in any plane perpendicular to the $z$ axis, we get an 8-c
 like figure \figref{moat-rainbow}. This is required because $L_z=8\hbar$. But if we take a slice perpendicular
 to some other axis, such as the $y$ axis, we don't get a circular rainbow as we would for a state with a
 definite value of $L_y$. It is obviously not possible to get circular rainbows for slices perpendicular to more
-than one axis.
+than one axis. For those with a taste for rigor, a more careful mathematical argument is given in note \note{proof-lx-and-lz-incompatible}.
 
-For those with a taste for rigor, here is a
-complete argument:\label{proof-lx-and-lz-incompatible}
-
-\noindent Theorem: On the sphere, if a wavefunction has
-definite values of both $L_z$ and $L_x$, then it is a wavefunction
-that is constant everywhere, so $\vc{L}=0$.
-
-\noindent Lemma 1: If the component of $\ell_A$ 
-along a certain axis A has a definite value and is nonzero, then (a)
-$\Psi=0$ at the poles, and (b) $\Psi$ is of the form $Ae^{i\ell_A\phi}$ on any circle in
-a plane perpendicular to the axis. Part a holds because $\vc{L}=0$ if $r_\perp=0$.
-For b, see p.~\pageref{fig:moat-rainbow}.
-
-\noindent Lemma 2: If the component of $\vc{L}$ along a certain axis has a
-definite value and is zero, then $\Psi$ is constant in any plane perpendicular to that axis.
-This follows from lemma 1 in the case where $\ell_A=0$.
-
-\noindent \emph{Case I: $\ell_z$ and $\ell_x$ are both nonzero.}
-We have $\Psi=0$ at the poles along both the $x$ axis and
-the $z$ axis. The $z$-axis pole is a point on the great circle
-perpendicular to the $x$ axis, and vice versa, so applying 1b, $A=0$ and $\Psi$
-vanishes on both of these great circles. But now if we apply 1b along
-any slice perpendicular to either axis, we get $\Psi=0$ everywhere on
-that slice, so $\Psi=0$ everywhere.
-
-\noindent \emph{Case II: $\ell_z$ and $\ell_x$ are both zero.}
-By lemma 2, $\Psi$ is a constant everywhere.
-
-\noindent \emph{Case III: One component is zero and the other nonzero.}
-Let $\ell_z$ be the one that is zero.
-By 1a, $\Psi=0$ at the $x$-axis pole, so by 2, $\Psi=0$ on the great circle perpendicular to $z$.
-But then 1b tells us that $\Psi=0$ everywhere.
+As a consequence of this fact, we find that when the magnitude of the angular momentum is $L=\ell\hbar$, the total number of states
+with that value of $L$ is $2\ell+1$. For example, when $L=2\hbar$, we have 5 possible values of $L_z$:
+$-2$, $-1$, 0, 1, and 2. In the language of linear algebra (p.~\pageref{lin-alg-basis}), these five states could
+be used as a basis for the five-dimensional space of states with $L=2\hbar$. We could just as easily have chosen
+some other axis besides $z$. This would have just been a different choice of basis, which is arbitrary.
 
 <% end_sec('quantum-ang-mom-three-d') %>
 
-<% begin_sec("The Stern-Gerlach experiment",nil,'stern-gerlach') %>
+<% begin_sec("The Stern-Gerlach experiment",4,'stern-gerlach') %>
 
 In 1921, Otto Stern proposed an experiment about angular momentum, shown in figure \figref{stern-gerlach}
 on p.~\pageref{fig:stern-gerlach}, that his
@@ -215,8 +188,6 @@ the Nazi coup was still in the future, so that Stern, a Jew, had not yet been fo
 Because of the difficult economic situation, Stern and his colleague Walther Gerlach scraped
 up some of the funds to carry out the experiment from US banker Henry Goldman, cofounder of the
 investment house Goldman-Sachs.
-
-\pagebreak
 
 <% marg(300) %>
 <%
@@ -244,38 +215,27 @@ imagine the electrons as orbiting in circles like little current loops, which wo
 the atom a magnetic dipole moment $\vc{m}$. Even if we are sophisticated enough about quantum mechanics not to
 believe in the circular orbits, it is reasonable to imagine that such a dipole moment would exist.
 When a dipole encounters a \emph{nonuniform}
-field, it experiences a force
-(example \ref{eg:dipole-in-nonuniform-field-fancy}, p.~\pageref{eg:dipole-in-nonuniform-field-fancy}).
-In this example, the forces in the $x$ and $z$ directions would be
-$F_x=\vc{m}\cdot(\partial\vc{B}/\partial x)$
-and $F_z=\vc{m}\cdot(\partial\vc{B}/\partial z)$. (Because of Gauss's law for magnetism,
-these two derivatives are not independent --- 
-we have $\partial B_x/\partial x+\partial B_z/\partial z=0$.) 
+field, it experiences a force.\footnote{This is easier to see in the case of an \emph{electric} dipole in
+a nonuniform \emph{electric} field. If the dipole consists of charges $+q$ and $-q$ at opposite ends of
+a stick, then the nonuniform field will make unequal forces on them, and the total force will be nonzero.}
 The rapidly varying magnetic field for this experiment
-was provided by a pair of specially shaped magnet poles, described in
-example \ref{eg:sharp-magnet-poles}, p.~\pageref{eg:sharp-magnet-poles}.
+was provided by a pair of specially shaped magnet poles.
 
 Because electrons have charge, we expect the motion of an electron to give it a magnetic dipole moment $\vc{m}$.
 But they also have mass, so for exactly the same reasons, we expect there to be some angular momentum $\vc{L}$ as well.
-The analogy is in fact mathematically exact, as discussed in sec.~\ref{subsec:g-factor}, p.~\pageref{subsec:g-factor}.
+The analogy is in fact mathematically exact, so that $\vc{m}\propto\vc{L}$.
 Therefore this experiment with dipoles and magnetic fields is actually
 a probe of the behavior of angular momentum at the atomic level.
-
 Luckily for Stern and Gerlach, who had no modern knowledge of atomic structure, the silver atoms that
 they chose to use do happen
 to have nonzero total $\vc{L}$, and therefore nonzero $\vc{m}$.
 The atoms come out of the oven with random orientations. 
 
+The details of the electromagnetism are a little complicated (\note{stern-gerlach-details}), but 
+the result is that the beam should be deflected in the $x$ direction by an amount proportional
+to $L_x$, the $x$ component of its angular momentum.
 Classically, we would expect the following.
-Each atom has an energy $\vc{m}\cdot\vc{B}$ due to its interaction with the magnetic field, and
-this energy is conserved, so that the component $m_x$ stays constant. However, there is a
-torque $\vc{m}\times\vc{B}$, and this causes the direction of the atom's angular momentum to
-precess, i.e., wobble like a top, with its angular momentum forming a cone centered on the $x$ axis
-(example \ref{eg:precession}, p.~\pageref{eg:precession}). This precession is extremely fast, carrying
-out about $10^{10}$ wobbles per second, so that the atom precesses about $10^6$ times while traveling the
-3.5 cm length of the spectrometer. So even though the forces $F_x$ and $F_z$ are typically about
-the same size, the rapid precession causes $F_z$ to average out to nearly zero, and only a deflection
-in the $x$ direction is expected. Because the orientations of the atoms are random as they enter the
+Because the orientations of the atoms are random as they enter the
 magnetic field, they will have every possible value of $L_x$ ranging from $-|\vc{L}|$
 to $+|\vc{L}|$, and therefore we expect that when the magnetic field is turned on, the effect should
 be to smear out the image on the glass plate from a vertical line to a somewhat wider oval. The atoms
@@ -284,10 +244,8 @@ value of $L_x$. The spectrometer is a device for determining $L_x$,
 a continuously varying number.
 
 But that's all the classical theory. Quantum mechanically, $L_x$ is
-quantized, so that only certain very specific values of $F_x$ can
-occur. Although the discussion of precession above is really classical
-rather than quantum-mechanical, the result of $F_z$ averaging out to
-zero turns out to be approximately right if the field is strong.
+quantized, so that only certain very specific values of the deflection
+occur. 
 Therefore we expect to see well separated vertical bands on the glass
 plate corresponding to the quantized values of $L_x$.  This is
 approximately what is seen in figure \figref{stern-gerlach},
@@ -333,16 +291,133 @@ Hint: See the example in fig.~\figref{completeness-ylm}, p.~\pageref{fig:complet
 <% end_sec('stern-gerlach') %>
 
 <% begin_sec("Intrinsic spin",nil,'intrinsic-spin') %>
-We observe two values of $L_x$ (the two ``lips'') in the Stern-Gerlach experiment. Why two?
-
-, we conclude from these
-results that a silver atom has spin $1/2$, so that $L_x$ takes on the
+We observe two values of $\ell_x$ (the two ``lips'') in the Stern-Gerlach experiment. Why two?
+For a fixed value of $\ell$, we have seen that the number of values of $\ell_x$ is $2\ell+1$.
+If we set $2\ell+1$ equal to 2, we get $\ell=1/2$.
+If so, then we would have to conclude from these
+results that a silver atom has spin $1/2$, so that $L_x$ takes on the two
 values $-\hbar/2$ and $+\hbar/2$. Although it took about five years for
-the experiment to be interpreted completely correctly, we now understand
-the Stern-Gerlach experiment to be not just a confirmation of the quantization
-of angular momentum along any given axis but also the first experimental
-evidence that the electron has an intrinsic spin of 1/2.
+the experiment to be interpreted completely correctly, we now think of this
+``spin one half'' as being the angular momentum of one of the electrons in the silver atom ---
+we can think of it as the outermost electron (see example \ref{eg:stern-gerlach-total-spin}, p.~\pageref{eg:stern-gerlach-total-spin}).
+
+This may seem paradoxical because the quantum moat (p.~\pageref{quantum-moat}), for
+instance, gave only angular momenta that were integer
+multiples of $\hbar$, not half-units, and I claimed that angular
+momentum was always quantized in units of $\hbar$, not just in the
+case of the quantum moat. That whole discussion, however,
+assumed that the angular momentum would come from the motion
+of a particle through space. The  $\hbar/2$ angular momentum of the
+electron is simply a property of the particle, like its
+charge or its mass. It has nothing to do with whether the
+electron is moving or not, and it does not come from any
+internal motion within the electron. Nobody has ever
+succeeded in finding any internal structure inside the
+electron, and even if there was internal structure, it would
+be mathematically impossible for it to result in a half-unit
+of angular momentum.
+
+We simply have to accept this $\hbar/2$ angular momentum, called the
+``spin'' of the electron --- Mother Nature rubs our noses in it as
+an observed fact.
+\index{spin!proton's}\index{proton!spin of}
+\index{spin!neutron's}\index{neutron!spin of}
+\index{spin!photon's}\index{photon!spin of}
+Protons and neutrons have
+the same $\hbar/2$ spin, while photons have an intrinsic spin of $\hbar$.
+In general, half-integer spins are typical of material particles.
+Integral values are found for the particles that carry forces: photons,
+which embody the electric and magnetic fields of force, as well as the
+more exotic messengers of the nuclear and gravitational forces.
+The photon is particularly important: it has spin 1.
+
+As was the case with ordinary angular momentum, we can
+describe spin angular momentum in terms of its magnitude,
+and its component along a given axis.
+We write $s$ and $s_z$ for these quantities, expressed in
+units of $\hbar$, so an
+electron has $s=1/2$ and $s_z=+1/2$ or $-1/2$.
+
+__incl(text/spin-examples)
+
+
 <% end_sec('intrinsic-spin') %>
+
+
+<% begin_notes %>
+
+
+
+\notetext{proof-lx-and-lz-incompatible}{$L_x$ incompatible with $L_z$}
+\notesummary{Theorem: On the sphere, if a wavefunction has
+definite values of both $L_z$ and $L_x$, then it is a wavefunction
+that is constant everywhere, so $\vc{L}=0$.}
+
+\noindent Lemma 1: If the component of $\ell_A$ 
+along a certain axis A has a definite value and is nonzero, then (a)
+$\Psi=0$ at the poles, and (b) $\Psi$ is of the form $Ae^{i\ell_A\phi}$ on any circle in
+a plane perpendicular to the axis. Part a holds because $\vc{L}=0$ if $r_\perp=0$.
+For b, see p.~\pageref{fig:moat-rainbow}.
+
+\noindent Lemma 2: If the component of $\vc{L}$ along a certain axis has a
+definite value and is zero, then $\Psi$ is constant in any plane perpendicular to that axis.
+This follows from lemma 1 in the case where $\ell_A=0$.
+
+\noindent \emph{Case I: $\ell_z$ and $\ell_x$ are both nonzero.}
+We have $\Psi=0$ at the poles along both the $x$ axis and
+the $z$ axis. The $z$-axis pole is a point on the great circle
+perpendicular to the $x$ axis, and vice versa, so applying 1b, $A=0$ and $\Psi$
+vanishes on both of these great circles. But now if we apply 1b along
+any slice perpendicular to either axis, we get $\Psi=0$ everywhere on
+that slice, so $\Psi=0$ everywhere.
+
+\noindent \emph{Case II: $\ell_z$ and $\ell_x$ are both zero.}
+By lemma 2, $\Psi$ is a constant everywhere.
+
+\noindent \emph{Case III: One component is zero and the other nonzero.}
+Let $\ell_z$ be the one that is zero.
+By 1a, $\Psi=0$ at the $x$-axis pole, so by 2, $\Psi=0$ on the great circle perpendicular to $z$.
+But then 1b tells us that $\Psi=0$ everywhere.
+
+\notetext{stern-gerlach-details}{Details of the electromagnetism involved in the Stern-Gerlach experiment}
+In this example, the forces in the $x$ and $z$ directions would be
+$F_x=\vc{m}\cdot(\partial\vc{B}/\partial x)$
+and $F_z=\vc{m}\cdot(\partial\vc{B}/\partial z)$. (Because of Gauss's law for magnetism,
+these two derivatives are not independent --- 
+we have $\partial B_x/\partial x+\partial B_z/\partial z=0$.) 
+
+Classically, we would expect the following.
+Each atom has an energy $\vc{m}\cdot\vc{B}$ due to its interaction with the magnetic field, and
+this energy is conserved, so that the component $m_x$ stays constant. However, there is a
+torque $\vc{m}\times\vc{B}$, and this causes the direction of the atom's angular momentum to
+precess, i.e., wobble like a top, with its angular momentum forming a cone centered on the $x$ axis.
+This precession is extremely fast, carrying
+out about $10^{10}$ wobbles per second, so that the atom precesses about $10^6$ times while traveling the
+3.5 cm length of the spectrometer. So even though the forces $F_x$ and $F_z$ are typically about
+the same size, the rapid precession causes $F_z$ to average out to nearly zero, and only a deflection
+in the $x$ direction is expected.
+
+Although the discussion of precession above is really classical
+rather than quantum-mechanical, the result of $F_z$ averaging out to
+zero turns out to be approximately right if the field is strong.
+
+As a side issue (example \ref{eg:stern-gerlach-total-spin},
+p.~\pageref{eg:stern-gerlach-total-spin}), there is the question of
+whether the Stern-Gerlach experiment should also be sensitive to the
+angular momentum of the nucleus. It isn't very sensitive to this,
+because we have the analogy that mass is to angular momentum as charge
+is to the magnetic dipole moment, so that at a crude level of
+analysis, ignoring things like factors of two, we expect that for a
+fixed angular momentum, the dipole moment is proportional to the
+charge-to-mass ratio of the particle. For this reason, the magnetic
+dipole moment contributed by one of the protons is thousands of times
+smaller than that created by one of the electrons. The neutrons are
+electrically neutral, so we would not expect them to contribute at
+all. They actually contain electrically charged particles --- quarks
+--- but their contributions to the magnetic dipole moment are still
+small, for the same reason as in the case of the protons.
+
+<% end_notes %>
 
 
 <% begin_hw_sec(vfill:true) %>

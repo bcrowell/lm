@@ -51,6 +51,7 @@ whole problem is solved by applying the same quantum
 concepts to electrons that we have already used for photons.
 
 <% begin_sec("Electrons as waves") %>
+<% begin_sec("Wavelength related to momentum",nil,'de-broglie') %>
 
 \index{electron!as a wave}
 We started our journey into quantum physics by studying the
@@ -152,7 +153,7 @@ in everyday life, and also for every weird creature in the particle-physics zoo.
 Each of these equations has a \emph{particle} thing on the left and a \emph{wave} thing
 on the right.
 
-<% marg() %>
+<% marg(100) %>
 <% fig('k-review','Review of the wavenumber $k$',
   {
     'text'=>%q{
@@ -175,31 +176,31 @@ to be significant than the momentum of light under ordinary
 conditions, and also because force is the transfer of
 momentum, and electrons are affected by electrical forces.
 
-\begin{eg}{The wavelength of an elephant}
-\egquestion What is the wavelength of a trotting elephant?
+\begin{eg}{The wavelength of a cat}
+\egquestion What is the wavelength of a trotting cat?
 
 \eganswer One may doubt whether the equation $p=\hbar k=h/\lambda$should be
-applied to an elephant, which is not just a single particle
+applied to a cat, which is not just a single particle
 but a rather large collection of them. Throwing caution to
-the wind, however, we estimate the elephant's mass at $10^3$
- kg and its trotting speed at 10 m/s. Its wavelength
+the wind, however, we estimate the cat's mass at 1 kg
+and its trotting speed at 1 m/s. Its wavelength
 is therefore roughly
 \begin{align*}
         \lambda         &=    \frac{h}{p}  \\
           &=    \frac{h}{mv}  \\
-  &= \frac{6.63\times10^{-34}\ \zu{J}\unitdot\sunit}{(10^3\ \kgunit)(10\ \munit/\sunit)} \\
-  &\sim 10^{-37}\ \frac{\left(\kgunit\unitdot\munit^2/\sunit^2\right)\unitdot\sunit}{\kgunit\unitdot\munit/\sunit} \\
-        &= 10^{-37}\ \munit
+  &= \frac{6.63\times10^{-34}\ \zu{J}\unitdot\sunit}{(1\ \kgunit)(1\ \munit/\sunit)} \\
+  &\sim 10^{-33}\ \frac{\left(\kgunit\unitdot\munit^2/\sunit^2\right)\unitdot\sunit}{\kgunit\unitdot\munit/\sunit} \\
+        &= 10^{-33}\ \munit
 \end{align*}
 \end{eg}
 
 The wavelength found in this example is so fantastically
 small that we can be sure we will never observe any
-measurable wave phenomena with elephants or any other
-human-scale objects. The result is numerically small because
-Planck's constant is so small, and as in some examples
-encountered previously, this smallness is in accord with the
-correspondence principle.
+measurable wave phenomena with cats or any other
+human-scale objects. For example, if we sent the cat through a pair of double
+slits separated by 10 cm, then the angular spacing of the diffraction pattern would be
+$10^{-32}$ radians, which would make the fringes too close together to be distinguished. This is in agreement with the
+correspondence principle.\label{cat-fringes}
 
 Although a smaller mass in the equation $\lambda =h/mv$
 does result in a longer wavelength, the wavelength is still
@@ -245,7 +246,9 @@ wavelength that might be more convenient to work with?
   SELF_CHECK
   ) %>
 
-<% begin_sec("What kind of wave is it?") %>
+<% end_sec('de-broglie') %>
+
+<% begin_sec("What kind of wave is it?",nil,'what-kind-of-wave') %>
 
 \index{wavefunction!of the electron}\index{electron!wavefunction}
 If a sound wave is a vibration of matter, and a photon is a
@@ -272,27 +275,37 @@ electron wave directly.
 %>
 <% end_marg %>
 
-We can of course detect the energy (or momentum) possessed
-by an electron just as we could detect the energy of a
-photon using a digital camera. (In fact I'd imagine that an
-unmodified digital camera chip placed in a vacuum chamber
-would detect electrons just as handily as photons.) But this
-only allows us to determine where the wave carries high
-probability and where it carries low probability. Probability
-is proportional to the square of the wave's amplitude, but
-measuring its square is not the same as measuring the wave
-itself. In particular, we get the same result by squaring
-either a positive number or its negative, so there is no way
-to determine the positive or negative sign of an electron wave.
-This unobservability of the phase of the wavefunction is discussed
-in more detail on p.~\pageref{subsubsec:linearity-of-schrodinger}.\label{phase-unobservable-basic}\index{phase in quantum mechanics!not observable}
+We can of course detect the energy (or momentum) possessed by an
+electron just as we could detect the energy of a photon using a
+digital camera. (In fact I'd imagine that an unmodified digital camera
+chip placed in a vacuum chamber would detect electrons just as handily
+as photons.) But this only allows us to determine where the wave
+carries high probability and where it carries low probability.
+Probability is proportional to the square of the wave's amplitude, but
+measuring its square is not the same as measuring the wave itself. In
+particular, we get the same result by squaring either a positive
+number or its negative, so there is no way to determine the positive
+or negative sign of an electron wave.  In general, the phase of the
+wavefunction is not an observable
+thing.\label{phase-unobservable-basic}\index{phase in quantum mechanics!not observable}
+
+This meaninglessness of phase only applies to \emph{absolute} phases.
+\emph{Relative} phases do have real-world consequences. For example, figure
+\figref{neutron-interference} on p.~\pageref{fig:neutron-interference} shows
+a double-slit interference pattern made by neutrons. There are places where we
+observe a lot of neutrons, and places where we don't. The places where we don't
+see many neutrons are the ones where waves are (at least partially) canceling,
+which means that they're out of phase --- \emph{relative} to each other.
+As a political metaphor, my wife and I would sometimes, before 2016, cancel
+each other out at the polls by voting for different political parties. It was
+a matter of opinion who was right, but it was an objective fact that we canceled.
 
 Most physicists tend toward the school of philosophy known
 as operationalism, which says that a concept is only
 meaningful if we can define some set of operations for
 observing, measuring, or testing it. According to a strict
 operationalist, then, the electron wave itself is a
-meaningless concept. Nevertheless, it turns out to be one of
+meaningless concept, because we can't measure its absolute phase. Nevertheless, it turns out to be one of
 those concepts like love or humor that is impossible to
 measure and yet very useful to have around. We therefore
 give it a symbol, $\Psi $ (the capital Greek letter psi),
@@ -317,25 +330,96 @@ proportionality is one:
 Since the probability distribution has units of $\zu{m}^{-3}$, the units
 of $\Psi $ must be $\zu{m}^{-3/2}$. The square of a negative
 number is still positive, so the absolute value signs may seem unnecessary,
-but as we'll see on p.~\pageref{subsubsec:complex-wavefunction} in sec.~\ref{subsec:schrodinger},
+but as we'll in sec.~\ref{subsec:complex-wavefunction}, p.~\pageref{subsec:complex-wavefunction},
 the wavefunction may in general be a complex number. In fact, only standing waves, not traveling waves,
 can really be represented by real numbers, although we will often cheat and draw
 pictures of traveling waves as if they were real-valued functions.\label{cheat-with-real-psi}
 
-\startdq
+We have defined a wave as something that can superpose, and a particle as something that you can't
+have a fraction of (p.~\pageref{define-particle-and-wave}). Since you can't have a fraction of
+an electron, we conclude that if $\Psi$ is a valid wavefunction
+for an electron, then $\Psi/2$ should be somehow illegal. We can see this from the requirement
+that the probability distribution be normalized (p.~\pageref{normalization-continuous}).
 
-\begin{dq}
-Frequency is oscillations per second, whereas wavelength is
-meters per oscillation. How could the equations $E=hf$
-and $p=h/\lambda$  be made to look more alike by
-using quantities that were more closely analogous?
-(This more symmetric treatment makes it easier to
-incorporate relativity into quantum mechanics, since
-relativity says that space and time are not entirely
-separate.)
-\end{dq}
+\begin{eg}{Normalization and phase of a particle in a box}\label{eg:particle-in-box-norm-and-phase}
+A certain electron confined to a box of length $L$ has a wavefunction
+\begin{equation*}
+\Psi(x) = \begin{cases}
+A \sin (2\pi x/L) & \text{if} \ 0 \le x \le L \\
+0             & \text{elsewhere.}
+\end{cases}
+\end{equation*}
+This quantity inside the sine function varies from 0 to $2\pi$, so this is a standing wave with one
+wavelength fitting inside the box, <% eqn_image("eqn-wave2") %>. If we pick positive or negative values of $A$ we can have the two
+functions in figure \figref{electron-wave-phase}, p.~\pageref{fig:electron-wave-phase}, but this is
+a difference in phase, which we don't expect to be physically observable. Normalization requires
+that
+\begin{align*}
+  & \int_0^L |\Psi| ^2 \der x = 1 \\
+\intertext{or}
+  & |A|^2 \int_0^L  \sin^2(2\pi x/L) \der x = 1.
+\end{align*}
+This integral can be done using straightforward calculus, but a shortcut is to recognize that the sine
+oscillates symmetrically between 0 and 1, and therefore
+over any whole number of half-cycles its average value is 1/2. We can therefore find the same result for
+the definite integral by replacing the sine with 1/2, and this results in
+\begin{equation*}
+  |A|^2 = \frac{2}{L}.
+\end{equation*}
+Two possible values of $A$ are $\sqrt{2/L}$ and $-\sqrt{2/L}$, but these represent physically indistinguishable
+states. We could also have a complex value of $A$, as long as $|A|^2$ had the correct value.
+\end{eg}
 
-<% end_sec() %>
+Summarizing the physical moral of example
+\ref{eg:particle-in-box-norm-and-phase}, we see that when two
+wavefunctions differ by only a constant factor, they actually
+represent the same state. The constant factor can indicate nothing
+more than a phase difference, which is unobservable, or failure of
+normalization, or both. We don't actually want to stop talking completely
+about unnormalized wavefunctions, like someone from the 1950's who's afraid
+to use the word ``toilet'' in polite company. Waves are things that superpose,
+and this means that they inhabit a vector space (p.~\pageref{lin-alg-vector-space}). One
+of the axioms defining a vector space is that we have well-defined operations of
+addition and multiplication by a scalar. If we ruled out unnormalized wavefunctions, we would
+be violating this requirement. And physically, it is sometimes OK to talk about an unnormalized
+state as representing more than one particle, or, in the case of a traveling wave, a steady
+flux of particles like the beam of a cathode ray tube.
+
+<% end_sec('what-kind-of-wave') %>
+
+<% begin_sec("Quantum numbers and bra-ket notation",nil,'bra-ket') %>
+When we want to describe a wavefunction, it can be cumbersome to write out its equation as in example
+\ref{eg:particle-in-box-norm-and-phase}. In that particular example, it's much easier just to
+draw a picture or <% eqn_image("eqn-wave2") %> to define some simple numerical label like $N=2$
+as we did in problem \ref{hw:symmetric-standing-wave} on p.~\pageref{hw:symmetric-standing-wave}.
+A number like this is called a \emph{quantum number},\index{quantum number}
+and in this particular example the $N$ quantum number is a wavelength or energy label. (It isn't
+a momentum label, because the standing wave is a superposition of traveling waves going in
+both directions.)
+
+When we want to refer specifically to the wavefunction that is labeled in these ways, there is
+a handy notation involving angle brackets, called the ``bra-ket'' notation.\index{bra-ket notation}
+In our example, we
+could write something like
+\begin{equation*}
+  | <% eqn_image("eqn-wave2") %> \rangle
+\end{equation*}
+or
+\begin{equation*}
+  |  N=2 \rangle.
+\end{equation*}
+These are called kets. We can also have notation where the bar and angle bracket are flipped
+the other way, like $\langle <% eqn_image("eqn-wave2") %> |$ or $\langle N=2|$. These are called bras. For real-valued
+wavefunctions, which are good enough for standing waves, there is no important distinction to be made between
+bras and kets. When we sandwich together a bra and a ket, both of which represent the same state, this is a
+shorthand way of notating the type of integral that we did in example \ref{eg:particle-in-box-norm-and-phase} for
+normalization. That is, if we want to express the requirement that the state be normalized, we can write something like
+\begin{equation*}
+  \langle <% eqn_image("eqn-wave2") %> | <% eqn_image("eqn-wave2") %> \rangle = 1,
+\end{equation*}
+which is a lot easier than writing out the whole integral as \\
+$\int_0^L |A|^2  \sin^2(2\pi x/L) \der x = 1$.
+<% end_sec('bra-ket') %>
 
 <% end_sec() %>
 
