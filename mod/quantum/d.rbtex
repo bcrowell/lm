@@ -954,6 +954,129 @@ measured with perfect accuracy if we don't care about the other?
 
 <% end_sec() %>
 
+<% begin_sec("A really, really crude model of the hydrogen atom",nil,'crude-hydrogen') %>
+
+Probably the most important reason for wanting to understand quantum physics is in order
+to understand the atom. As tiny as they may be, atoms can be pretty complicated. Let's think
+about ways to simplify them --- even at the risk of oversimplifying.
+Start with hydrogen, because it's the simplest of all atoms, consisting of only one electron and one proton. Because
+the proton is 1800 times more massive than the electron, it's a decent approximation
+to imagine that it stays at rest while the electron moves around, influenced by the proton's static
+electric field. This is good: we've reduced our problem to the discussion of just one particle.
+
+Classically, the electron moves around in the proton's electric field, speeding up, slowing down,
+and never straying farther than a certain distance $r$ because it doesn't have enough energy.
+As it does all these things, its momentum changes, so if we mix in a little quantum mechanics,
+$p=\hbar k$ then tells us that its wavenumber
+and wavelength change. So its wavefunction can't be a nice, simple sine wave with a single well-defined wavelength. We expect it to look
+more like this: <% eqn_image("eqn-hydrogen") %>. When the electron is close to the proton, its electrical
+energy is low, so its kinetic energy is high, and its wavelength is short. When it's farther out, its
+wavelength is longer. In chapter \ref{ch:schrodinger} we'll talk in more detail about how to handle
+this sort of thing.
+
+But for now we're going to do something much more crude, which is to \emph{approximate} the electron's
+wavefunction as a sine wave like this one <% eqn_image("eqn-hydrogen-sine") %>. We take the nodes and
+antinodes and make them nice and regular: all evenly spaced and equal in amplitude, and filling the
+whole space available to the electron based on the amount of energy it has.
+
+Also, by drawing the wavefunctions on a piece of paper in this way, I've snuck yet another crude
+approximation past you. We're treating the hydrogen atom as one-dimensional, $\Psi(x)$ rather
+than $\Psi(x,y,z)$. The wave fills in the line segment $-r\le x\le r$, where $r$ is the maximum
+distance. The drawings also implicitly imply that $\Psi$ is a function whose outputs are real
+rather than complex, but we can get away with this because this is a standing wave.
+
+Let $n$ be the same quantum number defined in \ref{hw:symmetric-standing-wave}, p.~\pageref{hw:symmetric-standing-wave},
+and in sec.~\ref{subsec:bra-ket}, p.~\pageref{subsec:bra-ket}, i.e., it's the number of antinodes or the
+number of half-wavelengths. In the examples drawn above, $n=9$. The ground state has $n=1$.
+Because $n$ is the number of half-wavelengths, the wavelength is $4r/n$, but because this
+whole calculation is so crude, we're going to throw away factors like the 4, and just say that
+\begin{equation*}
+  \lambda\sim r/n.
+\end{equation*}
+
+If $r$ had the same value for every standing-wave pattern, then we'd
+essentially be solving the particle-in-a-box problem, but there is a fundamental difference here,
+which is that we don't have a box of a fixed size with impenetrable walls. If we did, then
+it would be impossible to separate the electron from the proton, whereas in real life we know
+that this can be done by putting in a certain amount of energy to ionize the atom.
+The force keeping
+the electron bound isn't an infinite force encountered when it bounces off of a wall, it's
+the attractive electrical force from the nucleus. If we put more energy into the electron,
+it's like throwing a ball upward with a higher energy --- it will get farther out before
+coming back down.
+
+<% marg(80) %>
+<%
+  fig(
+    'hydrogen-versus-box',
+    %q{%
+      The energy levels of a particle in a box, contrasted with those of the hydrogen atom.
+    }
+  )
+%>
+<% end_marg %>
+Figure \figref{hydrogen-versus-box} shows how we expect this to turn out. 
+In the hydrogen atom, we expect $r$ to increase as we
+go to states of higher energy. This tends to keep the wavelengths of the high energy
+states from getting too short, reducing their kinetic energy. The closer and closer
+crowding of the energy levels in hydrogen also makes sense because we know that there
+is a certain energy that would be enough to make the electron escape completely, and
+therefore the sequence of bound states cannot extend above that energy.
+
+Now let's crunch some numbers. When the electron is at the maximum classically allowed distance $r$ from the proton, it
+has zero kinetic energy.
+Thus when the
+electron is at distance $r$, its energy is purely electrical,
+\begin{equation}\label{eqn:h-atom-energy}
+  E    = -\frac{ke^2}{r},
+\end{equation}
+where $k$ is the Coulomb constant (not the wavenumber).
+
+Finally we assume that the typical kinetic energy of the
+electron is on the same order of magnitude as the absolute
+value of its total energy. (This is true to within a factor
+of two for a typical classical system like a planet in a
+circular orbit around the sun.) We then have
+\begin{subequations}
+\renewcommand{\theequation}{\theparentequation}
+\begin{align}
+        \text{absolute}&\text{ value of total energy} \\
+        &= \frac{ke^2}{r} \notag \\
+        &\sim K \notag \\ 
+        &= p^2/2m \notag \\
+        &= (h/\lambda)^2/2m \notag \\
+        &\sim h^2n^2/2mr^2 \notag
+\end{align}
+\end{subequations}
+We now solve the equation $ke^2/r \sim h^2n^2 / 2mr^2$ for $r$
+and throw away numerical factors we can't hope to have
+gotten right, yielding
+\begin{equation}\label{eqn:h-atom-r-eqn}
+        r \sim \frac{h^2n^2}{mke^2}\eqquad.
+\end{equation}
+
+Plugging $n=1$ into this equation gives $r=2$ nm, which is
+indeed on the right order of magnitude compared to the observed sizes of atoms. Finally we combine
+equations [\ref{eqn:h-atom-r-eqn}] and [\ref{eqn:h-atom-energy}] to find
+\begin{equation*}
+        E \sim -\frac{mk^2e^4}{h^2n^2}\eqquad,
+\end{equation*}
+which is correct except for the numerical factors we
+never aimed to find.\label{end-approx-hydrogen-energies}
+
+\startdqs
+
+\begin{dq}
+States of hydrogen with $n$ greater than about 10 are
+never observed in the sun. Why might this be?
+\end{dq}
+
+\begin{dq}
+Sketch graphs of $r$ and $E$ versus $n$ for the hydrogen,
+and compare with analogous graphs for the one-dimensional particle in a box.
+\end{dq}
+
+<% end_sec('crude-hydrogen') %>
 
 
 

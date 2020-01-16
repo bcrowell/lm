@@ -11,6 +11,7 @@
 %>
 
 <% begin_sec("Electrons in electric fields",nil,'electrons-in-fields') %>
+<% begin_sec("Defining a wavelength when the wavelength is varying",nil,'varying-lambda') %>
 
 So far the only electron wave patterns we've considered have
 been simple sine waves, but whenever an electron finds
@@ -49,19 +50,9 @@ magnitude the rate at which the wavelength changes.)
     }
   )
 %>
-
-\spacebetweenfigs
-
-<%
-  fig(
-    'kinks',
-    %q{%
-      The wavefunction's tails go where classical
-      physics says they shouldn't.
-    }
-  )
-%>
 <% end_marg %>
+
+
 
 But what if the electric field was stronger? The electric
 field in an old-fashioned vacuum tube TV screen is only $\sim10^5$  N/C, but the electric field
@@ -94,7 +85,20 @@ correctly to conservation of energy.
 %>
 
 \index{tunneling}
+<% end_sec('varying-lambda') %>
 <% begin_sec("Tunneling") %>
+
+<% marg() %>
+<%
+  fig(
+    'kinks',
+    %q{%
+      The wavefunction's tails go where classical
+      physics says they shouldn't.
+    }
+  )
+%>
+<% end_marg %>
 
 We implicitly assumed that the particle-in-a-box wavefunction
 would cut off abruptly at the sides of the box, \figref{kinks}/1, but
