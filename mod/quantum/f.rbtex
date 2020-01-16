@@ -59,10 +59,23 @@ The angular momentum of a particle due to its motion through
 space is quantized in units of $\hbar$.
 \end{important}
 
-<% self_check('angmompicture',<<-'SELF_CHECK'
+<%
+  fig(
+    'hwavefnlowres',
+    'A depiction of the wavefunction of a certain state in the hydrogen atom. The square is
+     a plane slicing through the center of the atom, so that only two of the three dimensions are shown, say $x$ and $y$, but not $z$.
+     The up-down direction in the picture doesn't represent $z$, it represents $\Psi$.',
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
 
-What is the angular momentum of the wavefunction shown at
-the beginning of the section?
+\pagebreak
+
+<% self_check('angmompicture',<<-'SELF_CHECK'
+What is the angular momentum of the wavefunction shown in figure \figref{hwavefnlowres}?
   SELF_CHECK
   ) %>
 
@@ -174,8 +187,119 @@ be used as a basis for the five-dimensional space of states with $L=2\hbar$. We 
 some other axis besides $z$. This would have just been a different choice of basis, which is arbitrary.
 
 <% end_sec('quantum-ang-mom-three-d') %>
+<% begin_sec("Quantum numbers",nil,'quantum-numbers') %>
 
-<% begin_sec("The Stern-Gerlach experiment",4,'stern-gerlach') %>
+<% begin_sec("Completeness",nil) %>
+
+<%
+  fig(
+    'completeness-ylm',
+    %q{%
+      The three states inside the box are a complete set of quantum numbers for $\ell=1$.
+      Other states with $\ell=1$, such as the one on the right, are not really new: they can
+      be expressed as superpositions of the original three we chose.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+For a given $\ell$, consider the set of states with all the
+possible values of the angular momentum's component along some fixed axis.
+This set of states is \emph{complete}, meaning that they encompass all the possible states with this
+$\ell$.
+
+For example, figure \figref{completeness-ylm} shows wavefunctions with $\ell=1$ that are solutions of
+the Schr\"odinger equation for a particle that is confined to the surface of a sphere. Although the
+formulae for these wavefunctions are not particularly complicated,\footnote{They are 
+$\Psi_{1,-1}=\sin\theta e^{-i\phi}$, $\Psi_{10}=\sqrt{2}\cos\theta$,
+and $\Psi_{11}=\sin\theta e^{i\phi}$, where $\theta$ is the angle measured down from the $z$
+axis, and $\phi$ is the angle running counterclockwise around the $z$ axis. These functions are
+called spherical harmonics.\index{spherical harmonics}} they are not our main
+focus here, so to help with getting a feel for the idea of completeness, I have simply
+selected three points on the sphere at which to give numerical samples of the value of the wavefunction.
+These are the top (where the sphere is intersected by the positive $z$ axis),
+left ($x$), and front ($y$). (Although the wavefunctions are shown using the
+color conventions defined in figure \figref{rainbow}, p.~\pageref{fig:rainbow},
+these numerical samples should make the example understandable if you're looking at a black and white
+copy of the book.)
+
+Suppose we arbitrarily choose the $z$ axis as the one along which to quantize the component
+of the angular momentum. With this choice, we have three possible values for $\ell_z$: $-1$, $0$,
+and $1$. These three states are shown in the three boxes surrounded by the black rectangle.
+This set of three states is complete. 
+
+Consider, for example, the fourth state, shown on the
+right outside the box. This state is clearly identifiable as a copy of the $\ell_z=0$ state,
+rotated by 90 degrees counterclockwise, so it is the $\ell_x=0$ state. We might imagine that
+this would be an entirely new prize to be added to our stamp collection. But it is actually
+not a state that we didn't possess before. We can obtain it as the sum of the
+$\ell_z=-1$ and $\ell_z=1$ states, divided by an appropriate normalization factor. Although
+I'm avoiding making this example an exercise in manipulating formulae, it is easy to check
+that the sum does work out properly at the three sample points.
+
+<% end_sec() %>
+
+<% begin_sec("Sets of compatible quantum numbers",nil) %>
+
+In sec.~\ref{subsec:bra-ket}, p.~\pageref{subsec:bra-ket}, we discussed the idea of a quantum
+number, which is simply a label for a state.\index{quantum number}
+For example, a particle in a box with a wavefunction like <% eqn_image("eqn-wave2") %> can be
+labeled with the quantum number $N=2$, which is an energy label. Sometimes a single quantum
+number isn't enough to give a complete label for a state. For example, if our state was
+an infinite plane wave in free space, rather than a standing wave in a box, then giving its energy
+wouldn't be enough information to completely describe the state. Different states could have
+the same energy but be propagating in different directions. For this reason, we will often
+want to use \emph{sets} of quantum numbers.
+
+Figure \figref{compatible-quantum-numbers} shows some examples in which we can completely describe
+a wavefunction by giving a set of quantum numbers. It is important
+that the quantum numbers we use in describing a state be compatible. By analogy, ``Bond, James, 007''
+would be a clear and consistent definition of the famous fictional spy, but in general this identification
+scheme would not work, because although almost everyone has a first and last name, most people do not have
+a license to kill with a corresponding double-oh number.
+
+<%
+  fig(
+    'compatible-quantum-numbers',
+    %q{Three examples of sets of compatible quantum numbers.},
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The laser beam in the figure is a state described
+according to its definite values $p_x$ and $y$, so we have the vanishing uncertainties $\Delta p_x=0$ and $\Delta y=0$.
+Since the Heisenberg uncertainty principle doesn't talk about an $x$ momentum in relation to a $y$ position, this is OK.
+If we had been in doubt about whether this violated the uncertainty principle, we would have been
+reassured by our ability to draw the picture.
+
+It is also possible to have \emph{incompatible} quantum numbers. The combination of $p_x$ with $x$ would be
+an incompatible set of quantum numbers, because a state can't have a definite $p_x$ and also a definite $x$.
+If we try to draw such a wave, we fail. $L_x$ and $L_z$ would also be an incompatible set. 
+
+<% end_sec() %>
+
+<% begin_sec("Complete and compatible sets of quantum numbers") %>
+
+Let's summarize. Just as we expect everyone to have a first and last name,
+we expect there to be a complete and compatible set of quantum numbers for any
+given quantum-mechanical system. Completeness means that we have enough quantum
+numbers to uniquely describe every possible state of the system, although we may
+need to describe a state as a superposition, as with the state $\ell_x=0$ in
+figure \figref{completeness-ylm} on p.~\pageref{fig:completeness-ylm}. Compatibility
+means that when we specify a set of quantum numbers, we aren't making a set of
+demands that can't be met.\index{completeness (quantum physics)}
+
+<% end_sec() %>
+
+<% end_sec('quantum-numbers') %>
+
+<% begin_sec("The Stern-Gerlach experiment",nil,'stern-gerlach') %>
 
 In 1921, Otto Stern proposed an experiment about angular momentum, shown in figure \figref{stern-gerlach}
 on p.~\pageref{fig:stern-gerlach}, that his
@@ -292,6 +416,7 @@ Hint: See the example in fig.~\figref{completeness-ylm}, p.~\pageref{fig:complet
 <% end_sec('stern-gerlach') %>
 
 <% begin_sec("Intrinsic spin",nil,'intrinsic-spin') %>
+<% begin_sec("Experimental evidence",nil,'intrinsic-spin-exp') %>
 We observe two values of $\ell_x$ (the two ``lips'') in the Stern-Gerlach experiment. Why two?
 For a fixed value of $\ell$, we have seen that the number of values of $\ell_x$ is $2\ell+1$.
 If we set $2\ell+1$ equal to 2, we get $\ell=1/2$.
@@ -338,6 +463,7 @@ and its component along a given axis.
 We write $s$ and $s_z$ for these quantities, expressed in
 units of $\hbar$, so an
 electron has $s=1/2$ and $s_z=+1/2$ or $-1/2$.
+<% end_sec('intrinsic-spin-exp') %>
 
 __incl(text/spin-examples)
 
@@ -428,7 +554,7 @@ cloud in of the $n=2$, $\ell=1$ state is split into two parts.
 
 <% end_sec('hydrogen-classification') %>
 
-<% begin_sec("Atoms with more than one electron") %>
+<% begin_sec("Atoms with more than one electron",nil,'pauli') %>
 
 \index{atoms!with many electrons}
 What about other atoms besides hydrogen? It would seem that
@@ -467,7 +593,8 @@ go into $n=1$ states, but the third stays up in an $n=2$
 state. This is a consequence of a new principle of physics:
 \begin{important}[The Pauli Exclusion Principle]
 \index{exclusion principle}\index{Pauli exclusion principle}\label{exclusion-principle-nonrigorous}
-Two electrons can never occupy the same state.
+Two electrons can never occupy the same state. If one electron has
+wavefunction $u$, and another electron $v$, then $\langle u|v \rangle = 0$.
 \end{important}
 
 There are two $n=1$ states, one with $s_z=+1/2$ and one with
@@ -479,6 +606,8 @@ principle applies to any type of particle that has
 half-integer spin. Thus two neutrons can never occupy the
 same state, and likewise for two protons. Photons, however,
 are immune to the exclusion principle because their spin is an integer.
+
+<% end_sec('pauli') %>
 
 <% begin_sec("Deriving the periodic table",nil,'deriving-periodic-table') %>
 \index{periodic table}
@@ -574,7 +703,6 @@ forces exerted on an electron by the other electrons are in
 many different directions and cancel out partially.
 
 <% end_sec('deriving-periodic-table') %>
-<% end_sec() %>
 
 <% begin_notes %>
 
