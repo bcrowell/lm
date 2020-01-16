@@ -983,7 +983,7 @@ m4_ifelse(__sn,1,[::],[:\pagebreak:])
         nuclear bomb. The smallness of this effect makes the
         separation process a slow and difficult one, which is what
         we have to thank for the fact that nuclear weapons have not
-        been built by every terrorist cabal on the planet.m4_ifelse(__calc,1,[: See also example \ref{eg:deuterium-chemistry}, 
+        been built by every terrorist cabal on the planet.m4_ifelse(__sn,1,[: See also example \ref{eg:deuterium-chemistry}, 
         p.~\pageref{eg:deuterium-chemistry}.:]))
 
     <% end_sec('isotopes') %>
@@ -1167,8 +1167,10 @@ m4_ifelse(__sn,1,[::],[:\pagebreak:])
         rebuilt in the 20th century to incorporate the fundamental
         randomness of physics, and this modern revolution is the
         topic of %
-        m4_ifelse(__lm_series,1,[:chapters \ref{ch:randomness}-\ref{ch:atom}.:],
-        [:chapter \ref{ch:quantum}.:]) In particular, we will delay
+        m4_ifelse(__lm_series,1,[:chapters \ref{ch:randomness}-\ref{ch:atom}. In:])
+        m4_ifelse(__sn,1,[:chapter \ref{ch:quantum}. In:])
+        m4_ifelse(__mod,1,[:chapters \ref{ch:light-as-a-particle}-\ref{ch:quantum-ang-mom}. In:])
+        particular, we will delay
         the mathematical development of the half-life concept until then.
 
     <% end_sec('randomness') %>
@@ -1182,9 +1184,10 @@ m4_ifelse(__sn,1,[::],[:\pagebreak:])
         protons in your body and in the planet earth: neutrons and
         protons are roughly equally numerous in your body's carbon
         and oxygen nuclei, and also in the nickel and iron that make
-        up most of the earth. The proportions are about 50-50. But, as discussed in more
-        detail on p.~\pageref{subsec:nucleosynthesis},
-        the only chemical elements produced in any significant
+        up most of the earth. The proportions are about 50-50. 
+        m4_ifelse(__mod,1,[:But the:],[:But, as discussed in more
+        detail on p.~\pageref{subsec:nucleosynthesis}, the:])
+        only chemical elements produced in any significant
         quantities by the big m4_ifelse(__mod,0,[:bang\footnote{The evidence for
         the big bang theory of the origin of the universe was discussed
         on p.~\pageref{bigbang}.}:],[:bang:]) were hydrogen (about 90\%) and
