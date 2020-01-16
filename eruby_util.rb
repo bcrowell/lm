@@ -557,6 +557,7 @@ end
 def eqn_image(name,hardcoded_dir=nil)
   # Embed an image inside an equation. This also works outside of equations.
   # Used in SN 14 and FAC ac/b.
+  # Typical usage with hardcoded_dir: <% eqn_image("eqn-wave2-flipped","../share/quantum/figs") %>
   dir = hardcoded_dir
   if hardcoded_dir.nil? then
     dir = find_directory_where_figure_is(name,nil)

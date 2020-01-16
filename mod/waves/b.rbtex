@@ -1286,7 +1286,8 @@ corresponds to raising the pitch by an octave.
 <% end_sec('standing-waves') %>
 <% end_sec('refl-and-standing-waves-basic') %>
 
-<% begin_sec("Waves in two or three dimensions",nil,'laplacian') %>
+<% begin_sec("Waves in two or three dimensions",nil,'waves-three-dim') %>
+<% begin_sec("The wave-vector",nil,'wave-vector') %>
 Up until now we've concentrated on waves in one dimension, a category that is elastic
 enough to include examples like a plane wave or a transverse wave on a string, since they propagate in a single
 direction. As a simple example of a wave that really does have to be treated as fully two-dimensional,
@@ -1364,6 +1365,44 @@ The result is
 \end{equation*}
 The calculation of $\omega_3/\omega_1$ is problem \ref{hw:square-membrane-frequency-ratio}.
 \end{eg}
+<% end_sec('wave-vector') %>
+<% begin_sec("Degeneracy",nil,'wave-degeneracy') %>
+
+On the square membrane we had the standing-wave pattern <% eqn_image("square-membrane-pattern1-inline-size") %>,
+but we could equally well have drawn <% eqn_image("square-membrane-degen-inline-size") %>, which is the same
+pattern turned 90 degrees. Because of the square's symmetrical shape, these will have the same frequency.
+When the frequencies of two wave patterns coincide like this, we call them \emph{degenerate}.\index{degeneracy}
+Not coincidentally, we say in geometry that all squares are rectangles, but a square is a \emph{degenerate}
+rectangle. A ``generic'' or ``general'' rectangle has unequal sides. You have probably had some exposure in
+a chemistry class to the idea that an electron is a wave. Because of the perfect symmetry of an atom, we
+frequently get perfectly degenerate electron-wave patterns. In the language used there, <% eqn_image("square-membrane-pattern1-inline-size") %>
+would be analogous to a p orbital oriented along the $x$ axis, while
+<% eqn_image("square-membrane-degen-inline-size") %> would be oriented along $y$.
+<% end_sec('wave-degeneracy') %>
+
+<% begin_sec("Separability",nil,'separability') %>
+The wave patterns that we have been discussing on the square membrane are special because they can be
+written as the product of two functions, a function of $x$ and a function of $y$. Such a wave is called
+\emph{separable}.\index{separability}\label{separability-classical} For a pattern like
+<% eqn_image("square-membrane-pattern1-inline-size") %>, we can draw any horizontal line across the square,
+and the behavior of the function along that line is always the same regardless of which section we choose.
+It will be a two-hump wave like <% eqn_image("eqn-wave2-flipped","../share/quantum/figs") %>, multiplied by some constant.
+Similarly, the vertical sections all look like a one-hump wave.
+
+<%
+  fig(
+    'separable',
+    %q{%
+      Patterns 1 and 2 are separable. Pattern 3, a superposition of 1 and 2, is not.
+    },
+    {'topic'=>'quantum','width'=>'wide','sidecaption'=>true}
+  )
+%>
+
+Figure \figref{separable} shows that the superposition of two separable waves does not have to be separable.
+
+<% end_sec('separability') %>
+<% begin_sec("The Laplacian",nil,'laplacian') %>
 
 <%
   fig(
@@ -1377,6 +1416,15 @@ The calculation of $\omega_3/\omega_1$ is problem \ref{hw:square-membrane-freque
     }
   )
 %>
+
+<% marg(-20) %>
+<%
+  fig(
+    'car-crash-fem',
+    %q{A car crashes into the corner of a building. Waves from the impact propagate toward the back of the car through the sheet metal.}
+  )
+%>
+<% end_marg %>
 
 Sometimes we get waves that simply aren't sine waves. 
 An example is figure \figref{chladni-guitar}, where the shape of the guitar's body prevents simple patterns like the ones
@@ -1408,14 +1456,6 @@ Like the second derivative, the Laplacian is essentially a measure of curvature.
 Or, as shown in figure \figref{laplacian-geometrical-mod}, we can think of it as a measure of how much the value
 of a function at a certain point differs from the average of its value on nearby points (which amounts ot the same thing).
 
-<% marg(300) %>
-<%
-  fig(
-    'car-crash-fem',
-    %q{A car crashes into the corner of a building. Waves from the impact propagate toward the back of the car through the sheet metal.}
-  )
-%>
-<% end_marg %>
 
 In a simulation like the one in figure \figref{car-crash-fem}, a computer breaks down a continuous body such as 
 a piece of sheet metal into a grid of squares or triangles. It can find a numerical approximation to the Laplacian
@@ -1492,6 +1532,7 @@ $x$ term
 \vfill
 
 <% end_sec('laplacian') %>
+<% end_sec('waves-three-dim') %>
 
 
 <% begin_hw_sec(vfill:true) %>

@@ -344,6 +344,237 @@ __incl(text/spin-examples)
 <% end_sec('intrinsic-spin') %>
 
 
+
+<% begin_sec("Classification of states in hydrogen",nil,'hydrogen-classification') %>
+
+In sec.~\ref{subsec:wave-degeneracy}, p.~\pageref{subsec:wave-degeneracy}, we discussed the idea
+of degeneracy in the context of a classical wave.\index{degeneracy} For standing waves on a square membrane,
+we have patterns like <% eqn_image("square-membrane-pattern1-inline-size","../share/waves/figs") %> and
+<% eqn_image("square-membrane-degen-inline-size","../share/waves/figs") %>, which have the same
+frequency $f$. We say that these patterns are two-fold degenerate, because two patterns have the
+same frequency. In a quantum-mechanical context, $E=hf$, so degeneracy also implies that two states
+have the same \emph{energy}.
+
+Because the energy of states in the hydrogen atom only depends on $n$, we have degeneracies.
+For example, the $n=2$ energy level is 8-fold degenerate.
+The degeneracy of the different $\ell_z$ and $s_z$ states follows from symmetry, as in our
+original example of degeneracy on p.~\pageref{subsec:wave-degeneracy}, and is therefore
+exact. The degeneracy with respect to different values of $\ell$ for the same $n$
+is not at all obvious, and is in fact not exact when effects such as relativity
+are taken into account. We refer to this as an ``accidental'' degeneracy.\label{accidental-degeneracy}
+The very high level of degeneracy in the hydrogen atom means that when you observe it the hydrogen spectrum
+in your lab course, there is a great deal of structure that is effectively
+hidden from you. Historically, physicists were fooled by the apparent simplicity of the
+spectrum, and more than 70 years passed between the measurement of the
+spectrum and the time when the degeneracies were fully recognized and understood.
+
+% Angstron 1853, Uhlenbeck-Goudsmit 1925
+
+Figure \figref{hydrogen-three-states} on page \pageref{fig:hydrogen-three-states}
+shows the lowest-energy states
+of the hydrogen atom. The left-hand column of graphs
+displays the wavefunctions in the $x-y$ plane, and the
+right-hand column shows the probability distribution in a
+three-dimensional representation.
+
+<%
+  fig(
+    'hydrogen-three-states',
+    %q{%
+      The three states of the hydrogen atom having
+      the lowest energies. Taking into account electron spin, the number of states is actually doubled.
+    },
+    {
+      'width'=>'wide'
+    }
+  )
+%>
+
+\startdqs
+
+\begin{dq}
+The quantum number $n$ is defined as the number of radii
+at which the wavefunction is zero, including $r=\infty$.
+Relate this to the features of figure \figref{hydrogen-three-states}.
+\end{dq}
+
+\begin{dq}
+Based on the definition of $n$, why can't there be any
+such thing as an $n=0$ state?
+\end{dq}
+
+\begin{dq}
+Relate the features of the wavefunction plots in figure \figref{hydrogen-three-states}
+to the corresponding features of the probability distribution pictures.
+\end{dq}
+
+\begin{dq}
+How can you tell from the wavefunction plots in figure \figref{hydrogen-three-states}
+which ones have which angular momenta?
+\end{dq}
+
+\begin{dq}
+Criticize the following incorrect statement: ``The $\ell=8$
+wavefunction in figure \figref{hwavefnlowres} has a shorter wavelength
+in the center because in the center the electron is in a
+higher energy level.''
+\end{dq}
+
+\begin{dq}
+Discuss the implications of the fact that the probability
+cloud in of the $n=2$, $\ell=1$ state is split into two parts.
+\end{dq}
+
+<% end_sec('hydrogen-classification') %>
+
+<% begin_sec("Atoms with more than one electron") %>
+
+\index{atoms!with many electrons}
+What about other atoms besides hydrogen? It would seem that
+things would get much more complex with the addition of a
+second electron. A hydrogen atom only has one particle that
+moves around much, since the nucleus is so heavy and nearly
+immobile. \index{atoms!helium}\index{helium}Helium, with
+two, would be a mess. Instead of a wavefunction whose square
+tells us the probability of finding a single electron at any
+given location in space, a helium atom would need to have a
+wavefunction whose square would tell us the probability of
+finding two electrons at any given combination of points.
+Ouch! In addition, we would have the extra complication of
+the electrical interaction between the two electrons, rather
+than being able to imagine everything in terms of an
+electron moving in a static field of force created
+by the nucleus alone.
+
+Despite all this, it turns out that we can get a surprisingly
+good description of many-electron atoms simply by assuming
+the electrons can occupy the same standing-wave patterns
+that exist in a hydrogen atom. The ground state of helium,
+for example, would have both electrons in states that are
+very similar to the $n=1$ states of hydrogen.  The
+second-lowest-energy state of helium would have one electron
+in an $n=1$ state, and the other in an $n=2$ states. The
+relatively complex spectra of elements heavier than hydrogen
+can be understood as arising from the great number of
+possible combinations of states for the electrons.
+
+A surprising thing happens, however, with \index{atoms!lithium}lithium,
+the three-electron atom. We would expect the ground state of
+this atom to be one in which all three electrons settle down
+into $n=1$ states. What really happens is that two electrons
+go into $n=1$ states, but the third stays up in an $n=2$
+state. This is a consequence of a new principle of physics:
+\begin{important}[The Pauli Exclusion Principle]
+\index{exclusion principle}\index{Pauli exclusion principle}\label{exclusion-principle-nonrigorous}
+Two electrons can never occupy the same state.\footnote{This principle is stated with more mathematical precision on p.~\pageref{exclusion-principle-rigorous}.}
+\end{important}
+
+There are two $n=1$ states, one with $s_z=+1/2$ and one with
+$s_z=-1/2$, but there is no third $n=1$ state for lithium's
+third electron to occupy, so it is forced to go into an $n=2$ state.
+
+It can be proved mathematically that the Pauli exclusion
+principle applies to any type of particle that has
+half-integer spin. Thus two neutrons can never occupy the
+same state, and likewise for two protons. Photons, however,
+are immune to the exclusion principle because their spin is an integer.
+
+<% begin_sec("Deriving the periodic table",nil,'deriving-periodic-table') %>
+\index{periodic table}
+We can now account for the structure of the periodic table,
+which seemed so mysterious even to its inventor Mendeleev.
+The first row consists of atoms with electrons only
+in the $n=1$ states:
+
+\noindent\begin{tabular}{rp{98mm}}
+                H &        1 electron in an $n = 1$ state  \\
+                He &        2 electrons in the two $n = 1$ states  
+\end{tabular}
+
+The next row is built by filling the $n=2$ energy levels:
+
+\noindent\begin{tabular}{rp{98mm}}
+        Li &        2 electrons in $n=1$ states, 1 electron in an $n=2$ state\\
+        Be &        2 electrons in $n=1$ states, 2 electrons in $n=2$ states\\
+        \ldots\\
+        O &        2 electrons in $n=1$ states, 6 electrons in $n=2$ states\\
+        F &        2 electrons in $n=1$ states, 7 electrons in $n=2$ states\\
+        Ne &        2 electrons in $n=1$ states, 8 electrons in $n=2$ states
+\end{tabular}
+
+In the third row we start in on the $n=3$ levels:
+
+\noindent\begin{tabular}{rp{98mm}}
+        Na        & 2 electrons in $n=1$ states, 8 electrons in $n=2$ 
+                        states, 1 electron in an $n=3$ state \\
+        ...
+\end{tabular}
+
+<% marg(0) %>
+<%
+  fig(
+    'small-periodic-table',
+    %q{The beginning of the periodic table.}
+  )
+%>
+
+\spacebetweenfigs
+
+<%
+  fig(
+    'hindenburg',
+    %q{Hydrogen is highly reactive.}
+  )
+%>
+<% end_marg %>
+
+We can now see a logical link between the filling of the
+energy levels and the structure of the periodic table.
+Column 0, for example, consists of atoms with the right
+number of electrons to fill all the available states up to a
+certain value of $n$. Column I contains atoms like lithium
+that have just one electron more than that.
+
+\label{ionicbonds}
+This shows that the columns relate to the filling of energy
+levels, but why does that have anything to do with
+chemistry? Why, for example, are the elements in columns I
+and VII dangerously reactive? Consider, for example, the
+element \index{atoms!sodium}\index{sodium}sodium (Na), which
+is so reactive that it may burst into flames when exposed to
+air. The electron in the $n=3$ state has an unusually high
+energy. If we let a sodium atom come in contact with an
+oxygen atom, energy can be released by transferring the
+$n=3$ electron from the sodium to one of the vacant
+lower-energy $n=2$ states in the oxygen. This energy is
+transformed into heat. Any atom in column I is highly
+reactive for the same reason: it can release energy by
+giving away the electron that has an unusually high energy.
+
+Column VII is spectacularly reactive for the opposite
+reason: these atoms have a single vacancy in a low-energy
+state, so energy is released when these atoms steal an
+electron from another atom.
+
+It might seem as though these arguments would only explain
+reactions of atoms that are in different rows of the
+periodic table, because only in these reactions can a
+transferred electron move from a higher-$n$ state to a
+lower-$n$ state. This is incorrect. An $n=2$ electron in
+fluorine (F), for example, would have a different energy
+than an $n=2$ electron in lithium (Li), due to the different
+number of protons and electrons with which it is interacting.
+Roughly speaking, the $n=2$ electron in fluorine is more
+tightly bound (lower in energy) because of the larger number
+of protons attracting it. The effect of the increased number
+of attracting protons is only partly counteracted by the
+increase in the number of repelling electrons, because the
+forces exerted on an electron by the other electrons are in
+many different directions and cancel out partially.
+
+<% end_sec('deriving-periodic-table') %>
+<% end_sec() %>
+
 <% begin_notes %>
 
 
@@ -418,7 +649,6 @@ all. They actually contain electrically charged particles --- quarks
 small, for the same reason as in the case of the protons.
 
 <% end_notes %>
-
 
 <% begin_hw_sec(vfill:true) %>
 
