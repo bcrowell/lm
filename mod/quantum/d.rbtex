@@ -176,7 +176,7 @@ to be significant than the momentum of light under ordinary
 conditions, and also because force is the transfer of
 momentum, and electrons are affected by electrical forces.
 
-\begin{eg}{The wavelength of a cat}
+\begin{eg}{The wavelength of a cat}\label{eg:cat-wavelength}
 \egquestion What is the wavelength of a trotting cat?
 
 \eganswer One may doubt whether the equation $p=\hbar k=h/\lambda$should be
@@ -954,13 +954,81 @@ measured with perfect accuracy if we don't care about the other?
 
 <% end_sec() %>
 
-<% begin_sec("A really, really crude model of the hydrogen atom",nil,'crude-hydrogen') %>
+<% begin_sec("Decoherence",nil,'decoherence') %>
+\index{decoherence}
+Starting around 1970, physicists began to realize that ideas involving a loss of coherence,
+or ``decoherence,'' could help to explain some things about quantum mechanics that
+had previously seemed mysterious.  The classical notions of coherence and coherence length
+were described in sec.~\ref{sec:coherence}, p.~\pageref{sec:coherence}, and quantum-mechanical
+decoherence was briefly introduced on p.~\pageref{decoherence-brief}.
 
+One mystery was the fact that it is difficult to
+demonstrate wave interference effects with large objects. This is partly because
+the wavelength $\lambda=h/p=h/mv$ tends to be small for an object with a large mass (example \ref{eg:cat-wavelength}, p.~\pageref{eg:cat-wavelength}).
+But even taking this into account, we do not seem to have much luck observing,
+for example, double-slit diffraction of very large molecules, even
+when we use slits with appropriate dimensions and a detector with a good enough angular
+resolution.
+
+In the early days of quantum mechanics, people like Bohr and Heisenberg imagined that
+there was simply a clear division between the macroscopic and microscopic worlds.
+Big things and small things just had different rules: Newton's laws in one case, quantum
+mechanics in the other. But this is no longer a tenable position,
+because we now know that there is no limit on the distance scales over which quantum-mechanical
+behavior can occur. For example, a communication satellite carried out a demonstration
+in 2017 in which a coherence length of 1200 km was demonstrated using 
+photons.\footnote{Yin \emph{et al.}, \url{arxiv.org/abs/1707.01339}}
+
+<%
+  fig(
+    'decohering-wave-packet',
+    %q{%
+      A large molecule such as the one in the Eibenberger experiment is represented by its
+      wavepacket. 
+      As the molecule starts out, its coherence length, shown by the arrows, is quite long.
+      As it flies to the right, it is bombarded by infrared photons, which
+      randomize its phase, causing its coherence length to shorten exponentially: by a factor
+      of two in the second panel, and by a further factor of two in the final one. When the
+      packet enters the double slit, its coherence length is on the same order of magnitude
+      as the slits' spacing $d$, which will worsen but not entirely eliminate the observability
+      of interference fringes.
+      (This is only a schematic representation, with the wavepacket shown as being
+      many orders of magnitude bigger than its actual size in relation to the vacuum chamber.
+      Also, the real experiment used a reflecting grating, not a transmitting double slit.)
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+The insight about decoherence was the following. Consider the most massive material
+object that has so far been successfully dif\-fracted through a grating,
+which was a molecule consisting of about 810 atoms in an experiment by
+Eibenberger \emph{et al.} in 2013.\footnote{\url{arxiv.org/abs/1310.8343}}
+While this molecule was propagating through the apparatus as a wave, the experimenters
+needed to keep it from simply being stopped by a collision with an air molecule.
+For this reason, they had to do the experiment inside a vacuum chamber, with an extremely
+good vacuum. But even then, the molecule was being bombarded by photons of infrared light
+emitted from the walls of the chamber. The effect of this bombardment is to disrupt the
+molecule's wavefunction and reduce its coherence length (p.~\pageref{fig:coherence}).
+
+This decoherence effect was the reason
+that the experiment was limited to molecules of the size they used. Even though the molecules
+took only about 400 nanoseconds to fly through the apparatus, there was a significant amount of
+decoherence. A larger molecule would have been a bigger target for photons and would have undergone
+decoherence more quickly, making interference unobservable.
+
+<% end_sec('decoherence') %>
+
+<% begin_sec("A crude model of the hydrogen atom",nil,'crude-hydrogen') %>\index{hydrogen atom!energies of states in}
+<% begin_sec("Modeling",nil,'crude-hydrogen-model') %>
 Probably the most important reason for wanting to understand quantum physics is in order
 to understand the atom. As tiny as they may be, atoms can be pretty complicated. Let's think
 about ways to simplify them --- even at the risk of oversimplifying.
 Start with hydrogen, because it's the simplest of all atoms, consisting of only one electron and one proton. Because
-the proton is 1800 times more massive than the electron, it's a decent approximation
+the proton is 1800 times more massive than the electron, it's a good approximation
 to imagine that it stays at rest while the electron moves around, influenced by the proton's static
 electric field. This is good: we've reduced our problem to the discussion of just one particle.
 
@@ -984,8 +1052,10 @@ approximation past you. We're treating the hydrogen atom as one-dimensional, $\P
 than $\Psi(x,y,z)$. The wave fills in the line segment $-r\le x\le r$, where $r$ is the maximum
 distance. The drawings also implicitly imply that $\Psi$ is a function whose outputs are real
 rather than complex, but we can get away with this because this is a standing wave.
+<% end_sec('crude-hydrogen-model') %>
 
-Let $n$ be the same quantum number defined in \ref{hw:symmetric-standing-wave}, p.~\pageref{hw:symmetric-standing-wave},
+<% begin_sec("Estimation of the energy levels",nil,'crude-hydrogen-est') %>
+Let $n$ be the same quantum number defined in problem \ref{hw:symmetric-standing-wave}, p.~\pageref{hw:symmetric-standing-wave},
 and in sec.~\ref{subsec:bra-ket}, p.~\pageref{subsec:bra-ket}, i.e., it's the number of antinodes or the
 number of half-wavelengths. In the examples drawn above, $n=9$. The ground state has $n=1$.
 Because $n$ is the number of half-wavelengths, the wavelength is $4r/n$, but because this
@@ -1030,7 +1100,10 @@ electron is at distance $r$, its energy is purely electrical,
 \begin{equation}\label{eqn:h-atom-energy}
   E    = -\frac{ke^2}{r},
 \end{equation}
-where $k$ is the Coulomb constant (not the wavenumber).
+where $k$ is the Coulomb constant (not the wavenumber).  The zero-level of the electrical energy
+scale is chosen to be the energy of an electron and a proton
+that are infinitely far apart. With this choice, negative
+energies correspond to bound states and positive energies to unbound ones.
 
 Finally we assume that the typical kinetic energy of the
 electron is on the same order of magnitude as the absolute
@@ -1059,10 +1132,45 @@ Plugging $n=1$ into this equation gives $r=2$ nm, which is
 indeed on the right order of magnitude compared to the observed sizes of atoms. Finally we combine
 equations [\ref{eqn:h-atom-r-eqn}] and [\ref{eqn:h-atom-energy}] to find
 \begin{equation*}
-        E \sim -\frac{mk^2e^4}{h^2n^2}\eqquad,
+        E \sim -\frac{mk^2e^4}{h^2}\cdot\frac{1}{n^2} \qquad \text{[result of crude treatment]}
 \end{equation*}
-which is correct except for the numerical factors we
-never aimed to find.\label{end-approx-hydrogen-energies}
+which turns out to be correct except for the numerical factors we
+never aimed to find.\label{end-approx-hydrogen-energies} The exact result is
+\begin{equation*}
+ E = -\frac{mk^2e^4}{2\hbar^2}\cdot\frac{1}{n^2}, \qquad \text{[exact result]}
+\end{equation*}
+which is different by a factor of $2\pi^2$. It might seem incredible that such a crude approximation
+would provide a result so close to the correct one. However, the factor in front is constrained
+by the requirement that the result have units of energy. All of the exponents in this factor have
+to be as they are just based on units. For the ground state, $n=1$, we will show in example
+\ref{eg:h-ground-exact}, p.~\pageref{eg:h-ground-exact}, that the exact result is correct.
+
+<% end_sec('crude-hydrogen-est') %>
+
+<% begin_sec("Comparison with experiment",nil,'hydrogen-exp') %>
+The experimental technique for measuring the energy levels
+of an atom accurately is spectroscopy: the study of the
+spectrum of light emitted (or absorbed) by the atom. Only
+photons with certain energies can be emitted or absorbed by
+a hydrogen atom, for example, since the amount of energy
+gained or lost by the atom must equal the difference in
+energy between the atom's initial and final states.
+Spectroscopy had become a highly developed art
+several decades before Einstein even proposed the photon,
+and the Swiss spectroscopist Johann \index{Balmer, Johann}Balmer
+determined in 1885 that there was a simple equation that
+gave all the wavelengths emitted by hydrogen. In modern
+terms, we think of the photon wavelengths merely as indirect
+evidence about the underlying energy levels of the atom, and
+we rework Balmer's result into an equation for these
+atomic energy levels:
+\begin{equation*}
+                E_n    =  -\frac{A}{n^2}\eqquad,  
+\end{equation*}
+where $A=2.2\times10^{-18}\ \zu{J}$.
+About 30 years later, the constant $A$ was explained to be the constant factor in the
+equation at the end of the previous section.
+<% end_sec('hydrogen-exp') %>
 
 \startdqs
 
@@ -1075,6 +1183,7 @@ never observed in the sun. Why might this be?
 Sketch graphs of $r$ and $E$ versus $n$ for the hydrogen,
 and compare with analogous graphs for the one-dimensional particle in a box.
 \end{dq}
+
 
 <% end_sec('crude-hydrogen') %>
 

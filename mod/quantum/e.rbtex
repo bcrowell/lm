@@ -86,7 +86,7 @@ correctly to conservation of energy.
 
 \index{tunneling}
 <% end_sec('varying-lambda') %>
-<% begin_sec("Tunneling") %>
+<% begin_sec("Tunneling",nil,'tunneling-simple') %>
 
 <% marg() %>
 <%
@@ -115,9 +115,9 @@ reactions that power the sun would not occur due to the high
 electrical energy nuclei need in order to get close together!
 Tunneling is discussed in more detail on p.~\pageref{quantitativetunneling}.
 
-<% end_sec() %>
+<% end_sec('tunneling-simple') %>
 
-<% end_sec() %>
+<% end_sec('electrons-in-fields') %>
 
 <% begin_sec("The Schr\\\"odinger equation",nil,'schrodinger') %>
 
@@ -193,6 +193,38 @@ An equation, such as the Schr\"odinger equation, that
 specifies a relationship between a function and its
 derivatives is known as a differential equation.
 
+\startdq
+
+\begin{dq}
+The figure shows a skateboarder tipping over into a swimming pool with zero
+initial kinetic energy. There is no friction, the corners are smooth enough to allow the
+skater to pass over the smoothly, and the vertical distances are small
+enough so that negligible time is required for the vertical parts of the motion.
+The pool is divided into a deep end and a shallow end. Their widths are equal.
+The deep end is four times deeper. (1) Classically, compare the skater's velocity in
+the left and right regions, and infer the probability of finding the skater in either of the
+two halves if an observer peeks at a random moment.
+(2) Quantum-mechanically, this could be a one-dimensional model of an electron shared between two atoms
+in a diatomic molecule. Compare the electron's kinetic energies, momenta, and wavelengths in the
+two sides. For simplicity, let's assume that there is no tunneling into the classically forbidden
+regions. What is the simplest standing-wave pattern that you can draw, and what are the probabilities
+of finding the electron in one side or the other? Does this obey the correspondence principle?
+\end{dq}
+
+<%
+  fig(
+    'quantum-pool-skater',
+    '',
+    {                                 
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+<% end_sec('schrodinger') %>
+
+<% begin_sec("Solutions when $U$ is constant; tunneling",nil,'sch-const-u-solutions') %>
+
 The detailed study of the solution of the Schr\"odinger equation is
 beyond the scope of this book,
 but we can gain some
@@ -235,7 +267,7 @@ to the classically allowed region with $U<E$.
 <% end_marg %>
 
 This leads us to a quantitative calculation of the tunneling
-effect discussed briefly in the preceding subsection. The
+effect discussed briefly in sec.~\ref{tunneling-simple}, p.~\pageref{tunneling-simple}. The
 wavefunction evidently tails off exponentially in the
 classically forbidden region. Suppose, as shown in
 figure \figref{barrier-with-u-notation},
@@ -387,8 +419,9 @@ the counterintuitive fact about quantum
 mechanics that a repulsive force can \emph{hinder} the escape of a
 particle.
 \end{eg}
+<% end_sec('sch-const-u-solutions') %>
 
-<% begin_sec("Three dimensions") %>
+<% begin_sec("Three dimensions",nil,'sch-three-d') %>
 
 For simplicity, we've been considering the Schr\"odinger equation in one dimension,
 so that $\Psi$ is only a function of $x$, and has units of $\munit^{-1/2}$ rather
@@ -443,7 +476,123 @@ which can be satisfied since we're in a classically allowed region with $E-U>0$,
 side is manifestly positive.
 \end{eg}
 
-<% end_sec %>
+\begin{eg}{Exact treatment of the ground state of hydrogen}\label{eg:h-ground-exact}
+The general treatment of the hydrogen atom for all values of $n$ is beyond the mathematical
+scope of this book, but it's fairly straightforward to verify it for a particular $n$,
+especially given a lucky guess as to what functional form to try for the wavefunction.
+The form that works for the ground state is
+\begin{equation*}
+  \Psi = ue^{-r/a}\eqquad,
+\end{equation*}
+where $r=\sqrt{x^2+y^2+z^2}$ is the electron's distance from the proton, and $u$ provides for normalization.
+We showed in example \ref{eg:laplacian-h-ground}, p.~\pageref{eg:laplacian-h-ground} that the Laplacian of
+this function is
+\begin{equation*}
+  \nabla^2\Psi = \left( -\frac{2}{ar} + \frac{1}{a^2} \right) \Psi\eqquad.
+\end{equation*}
+The Schr\"odinger equation gives
+\begin{align*}
+  E\cdot\Psi &= -\frac{\hbar^2}{2m}\nabla^2\Psi + U\cdot\Psi \\
+             &= \frac{\hbar^2}{2m}\left( \frac{2}{ar} - \frac{1}{a^2} \right)\Psi -\frac{ke^2}{r}\cdot\Psi
+\end{align*}
+If we require this equation to hold for all $r$, then we must have equality for both the terms of the form
+$(\text{constant})\times\Psi$ and for those of the form $(\text{constant}/r)\times\Psi$. That means
+\begin{align*}
+  E &= -\frac{\hbar^2}{2ma^2} \\
+\intertext{and}
+  0 &=  \frac{\hbar^2}{mar} -\frac{ke^2}{r}\eqquad.
+\end{align*}
+These two equations can be solved for the unknowns $a$ and $E$, giving
+\begin{align*}
+  a &= \frac{\hbar^2}{mke^2} \\
+\intertext{and}
+  E &= -\frac{mk^2e^4}{2\hbar^2}\eqquad,
+\end{align*}
+where the result for the energy agrees with the equation given on p.~\pageref{end-approx-hydrogen-energies}.
+The calculation of the normalization constant $u$ is relegated to homework problem \ref{hw:h-atom-normalization}.
+\end{eg}
+
+\begin{eg}{Wave phases in the hydrogen molecule}\label{eg:h2-details}
+In example \ref{h2-bond} on page \pageref{h2-bond}, I argued that the existence of the $\zu{H}_2$ molecule
+could essentially be explained by a particle-in-a-box argument: the molecule is a bigger box than an
+individual atom, so each electron's wavelength can be longer, its kinetic energy lower.
+Now that we're in possession of a mathematical expression for the wavefunction of the hydrogen
+atom in its ground state, we can make this argument a little more rigorous and detailed.
+Suppose that two hydrogen atoms are in a relatively cool sample of monoatomic hydrogen gas.
+Because the gas is cool, we can assume that the atoms are in their ground states. Now suppose
+that the two atoms approach one another. Making use again of the assumption that the gas is cool, it
+is reasonable to imagine that the atoms approach one another slowly. Now the atoms come a little
+closer, but still far enough apart that the region between them is classically forbidden. Each
+electron can tunnel through this classically forbidden region, but the tunneling probability is
+small. Each one is now found with, say, 99\% probability in its original home, but with 1\%
+probability in the other nucleus. Each electron is now in a state consisting of a superposition
+of the ground state of its own atom with the ground state of the other atom. There are two peaks
+in the superposed wavefunction, but one is a much bigger peak than the other.
+
+An interesting question now arises. What are the relative phases of the two electrons?
+As discussed on page \pageref{fig:electron-wave-phase}, the \emph{absolute} phase of an electron's
+wavefunction is not really a meaningful concept. Suppose atom A contains electron Alice, and
+B electron Bob. Just before the collision, Alice may have wondered, ``Is my phase
+positive right now, or is it negative? But of course I shouldn't ask myself such silly questions,''
+she adds sheepishly.
+
+<%
+  fig(
+    'h2-phase',
+    %q{%
+      Example \ref{eg:h2-details}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>true
+    }
+  )
+%>
+
+But \emph{relative} phases \emph{are} well defined. As the two atoms draw closer and closer together,
+the tunneling probability rises, and eventually gets so high that each electron is spending essentially
+50\% of its time in each atom. It's now reasonable to imagine that either one of two possibilities could
+obtain. Alice's wavefunction could either look like \subfigref{h2-phase}{1}, with the two peaks in
+phase with one another, or it could look like \subfigref{h2-phase}{2}, with opposite phases. Because
+\emph{relative} phases of wavefunctions are well defined, states 1 and 2 are physically 
+distinguishable.\footnote{The reader who has studied chemistry may find it helpful to make contact
+with the terminology and notation used by chemists. The state represented by
+pictures 1 and 4 is known as a
+$\sigma$ orbital, which is a type of ``bonding orbital.'' The state in 2 and 3 is a $\sigma^*$, a kind of
+``antibonding orbital.'' Note that although we will not discuss electron spin or the Pauli exclusion
+principle until sec.~\ref{subsec:electron-spin}, p.~\pageref{subsec:electron-spin}, those considerations
+have no effect on this example, since the two electrons can have opposite spins.}
+In particular, the kinetic energy of state 2 is much higher; roughly speaking, it is like the two-hump
+wave pattern of the particle in a box, as opposed to 1, which looks roughly like the one-hump pattern
+with a much longer wavelength. Not only that, but an electron in state 1 has a large probability of being found in the
+central region, where it has a large negative electrical energy due to its interaction with both protons.
+State 2, on the other hand, has a low probability of existing in that region. Thus state 1 represents the
+true ground-state wavefunction of the $\zu{H}_2$ molecule, and putting both Alice and Bob in that state
+results in a lower energy than their total energy when separated, so the molecule is bound, and will not
+fly apart spontaneously.
+
+State \subfigref{h2-phase}{3}, on the other hand, is not physically distinguishable from \subfigref{h2-phase}{2},
+nor is \subfigref{h2-phase}{4} from \subfigref{h2-phase}{1}. Alice may say to Bob, ``Isn't it wonderful that
+we're in state 1 or 4? I love being stable like this.'' But she knows it's not meaningful to ask herself
+at a given moment which state she's in, 1 or 4.
+\end{eg}
+
+<% end_sec('sch-three-d') %>
+<% begin_sec("Use of complex numbers",nil,'complex-wavefunction') %>
+
+\index{wavefunction!complex numbers in}\index{complex numbers!in quantum physics}
+In a classically forbidden region, a particle's total
+energy, $U+K$, is less than its $U$, so
+its $K$ must be negative. If we want to keep believing
+in the equation $K=p^2/2m$, then apparently the
+momentum of the particle is the square root of a negative
+number. This is a symptom of the fact that the Schr\"odinger
+equation fails to describe all of nature unless the
+wavefunction and various other quantities are allowed to be
+complex numbers. In particular it is not possible to
+describe traveling waves correctly without using complex wavefunctions.
+Complex numbers were reviewed in subsection \ref{subsec:complex-numbers}, p.~\pageref{subsec:complex-numbers}.
+
 <%
   fig(
     'complex-wavefunction',
@@ -463,21 +612,6 @@ side is manifestly positive.
     }
   )
 %>
-
-<% begin_sec("Use of complex numbers",nil,'complex-wavefunction') %>
-
-\index{wavefunction!complex numbers in}\index{complex numbers!in quantum physics}
-In a classically forbidden region, a particle's total
-energy, $U+K$, is less than its $U$, so
-its $K$ must be negative. If we want to keep believing
-in the equation $K=p^2/2m$, then apparently the
-momentum of the particle is the square root of a negative
-number. This is a symptom of the fact that the Schr\"odinger
-equation fails to describe all of nature unless the
-wavefunction and various other quantities are allowed to be
-complex numbers. In particular it is not possible to
-describe traveling waves correctly without using complex wavefunctions.
-Complex numbers were reviewed in subsection \ref{subsec:complex-numbers}, p.~\pageref{subsec:complex-numbers}.
 
 This may seem like nonsense, since real numbers are the only
 ones that are, well, real! Quantum mechanics can always be
@@ -624,6 +758,46 @@ It has to be a complex number with a rotating phase angle in the complex plane, 
 \emph{constant} magnitude.
 \end{eg}
 
+\startdq
+
+\begin{dq}
+The zero level of interaction energy $U$ is arbitrary, e.g., it's equally valid to pick the zero of
+gravitational energy to be on the floor of your lab or at the ceiling. Suppose we're doing the double-slit
+experiment, \subfigref{complex-wavefunction}{3}, with electrons. We define the zero-level of $U$ so that
+the total energy $E=U+K$ of each electron is positive. and we observe a certain interference
+pattern like the one in figure \figref{ccd-diffraction} on p.~\pageref{fig:ccd-diffraction}. What happens
+if we then redefine the zero-level of $U$ so that the electrons have $E<0$?
+\end{dq}
+
+\startdq
+
+\begin{dq}\label{dq:qm-cons-of-prob}
+The top panel of the
+figure shows a series of snapshots in the motion of two pulses on a coil spring, one negative and one positive,
+as they move toward one another and superpose. The final image is very close to the moment at which
+the two pulses cancel completely. 
+The following discussion is simpler if we consider infinite sine waves rather than pulses.
+How can the cancellation of two such mechanical waves be reconciled with conservation of energy?
+What about the case of colliding electromagnetic waves? 
+
+Quantum-mechanically, the issue isn't conservation of energy, it's conservation of probability,
+i.e., if there's initially a 100\%
+probability that a particle exists somewhere, we don't want the probability to be more than or
+less than 100\%
+at some later time. What happens when the colliding waves have
+real-valued wavefunctions $\Psi$? Now consider the sketches of complex-valued wave pulses
+shown in the bottom panel of the figure as they are getting ready to collide.
+\end{dq}
+
+<% marg(30) %>
+<%
+  fig(
+    'superposition-cancellation',
+    ''
+  )
+%>
+<% end_marg %>
+
 <% end_sec('complex-wavefunction') %>
 
 <% begin_sec("Linearity of the Schr\\\"odinger equation",nil,'linearity-of-schrodinger') %>
@@ -691,76 +865,6 @@ extremely small wavelength.
 
 <% end_sec('linearity-of-schrodinger') %>
 
-\vfill
-
-\startdqs
-
-\begin{dq}
-The zero level of interaction energy $U$ is arbitrary, e.g., it's equally valid to pick the zero of
-gravitational energy to be on the floor of your lab or at the ceiling. Suppose we're doing the double-slit
-experiment, \subfigref{complex-wavefunction}{3}, with electrons. We define the zero-level of $U$ so that
-the total energy $E=U+K$ of each electron is positive. and we observe a certain interference
-pattern like the one in figure \figref{ccd-diffraction} on p.~\pageref{fig:ccd-diffraction}. What happens
-if we then redefine the zero-level of $U$ so that the electrons have $E<0$?
-\end{dq}
-
-\pagebreak
-
-\begin{dq}\label{dq:qm-cons-of-prob}
-The top panel of the
-figure shows a series of snapshots in the motion of two pulses on a coil spring, one negative and one positive,
-as they move toward one another and superpose. The final image is very close to the moment at which
-the two pulses cancel completely. 
-The following discussion is simpler if we consider infinite sine waves rather than pulses.
-How can the cancellation of two such mechanical waves be reconciled with conservation of energy?
-What about the case of colliding electromagnetic waves? 
-
-Quantum-mechanically, the issue isn't conservation of energy, it's conservation of probability,
-i.e., if there's initially a 100\%
-probability that a particle exists somewhere, we don't want the probability to be more than or
-less than 100\%
-at some later time. What happens when the colliding waves have
-real-valued wavefunctions $\Psi$? Now consider the sketches of complex-valued wave pulses
-shown in the bottom panel of the figure as they are getting ready to collide.
-\end{dq}
-
-<% marg(30) %>
-<%
-  fig(
-    'superposition-cancellation',
-    ''
-  )
-%>
-<% end_marg %>
-
-\begin{dq}
-The figure shows a skateboarder tipping over into a swimming pool with zero
-initial kinetic energy. There is no friction, the corners are smooth enough to allow the
-skater to pass over the smoothly, and the vertical distances are small
-enough so that negligible time is required for the vertical parts of the motion.
-The pool is divided into a deep end and a shallow end. Their widths are equal.
-The deep end is four times deeper. (1) Classically, compare the skater's velocity in
-the left and right regions, and infer the probability of finding the skater in either of the
-two halves if an observer peeks at a random moment.
-(2) Quantum-mechanically, this could be a one-dimensional model of an electron shared between two atoms
-in a diatomic molecule. Compare the electron's kinetic energies, momenta, and wavelengths in the
-two sides. For simplicity, let's assume that there is no tunneling into the classically forbidden
-regions. What is the simplest standing-wave pattern that you can draw, and what are the probabilities
-of finding the electron in one side or the other? Does this obey the correspondence principle?
-\end{dq}
-
-<%
-  fig(
-    'quantum-pool-skater',
-    '',
-    {                                 
-      'width'=>'fullpage'
-    }
-  )
-%>
-
-<% end_sec() %>
-
 <% begin_sec("The inner product",nil,'quantum-inner-product') %>\index{inner product!quantum mechanics}
 In sec.~\ref{sec:linear-algebra}, p.~\pageref{inner-product}, we discussed the idea of an inner product, which is
 an operation on a vector space that acts like the dot product, i.e., it takes two vectors as inputs and gives
@@ -802,11 +906,9 @@ either their momentum or their energy.
 
 <%
   fig(
-    'inner-product-interpretation',
+    'inner-product-interpretation-simple',
     %q{%
-      Some examples of interpretation of the inner product. The first three examples
-      are explained immediately below. The fourth, about averages, is justified on
-      p.~\pageref{subsubsec:qm-inner-product-averages}.
+      Some examples of interpretation of the inner product.
     },
     {
       'width'=>'wide',
@@ -848,6 +950,67 @@ work has clarified the situation somewhat.
 
 
 <% end_sec('quantum-inner-product') %>
+
+<% begin_sec("Unitarity",nil,'unitarity') %>
+In discussion question \ref{dq:qm-cons-of-prob} on p.~\pageref{dq:qm-cons-of-prob}, we considered
+two traveling waves that collided head-on and superposed, and we convinced ourselves that
+probability would be conserved. It's possible to prove that the Schr\"odinger equation always
+results in conservation of probability.
+
+To put this in real-world terms, suppose that your
+history teacher calls on you in class and asks you what happened on December 7, 1941. With
+a straight face, you answer, ``Professor, I can guarantee that \emph{something} happened on that day.''
+``That's correct. And what about August 6, 1945?'' ``Yes, something also happened on that day.''
+In other words, if we have a properly normalized wavefunction at a certain time, then we expect it
+to remain properly normalized at all later times.
+
+The Schr\"odinger equation is also completely deterministic, so that if we know
+$\Psi$ initially, we can always predict it in the future. We can also ``predict'' backward in time,
+so that the system's history can always be recovered
+from knowledge of its present state. Thus there is never any loss of information over time.
+
+Summarizing, we have the following important principle:
+
+\begin{important}[Unitary
+         evolution of the wavefunction]\index{unitary evolution of the wavefunction}\label{unitarity-postulate}
+The wavefunction evolves over time, according to the Schr\"odinger equation, in a deterministic
+and \emph{unitary} manner,
+meaning that probability is conserved and information is never lost.
+\end{important}
+
+\noindent The word ``unitary'' comes from linear algebra, which gives us the following more crisp mathematical
+way of formulating this principle.
+A unitary transformation\index{unitary operator}
+is one that preserves inner products. That is,
+$\langle\mathcal{O}u|\mathcal{O}v\rangle=\langle u|v\rangle$. This is similar to the way in which
+rotations preserve dot products in Euclidean geometry. The linearity of the Schr\"odinger equation
+guarantees that the evolution of the wavefunction from one time to another time can be represented
+by a linear operator $\mathcal{O}$. We require this to be unitary, and it is unitary for the
+Schr\"odinger equation.
+
+Since we think of quantum mechanics as being all about randomness, this determinism may seem surprising.
+But determinism in the time-evolution of the wavefunction isn't the same as determinism in the results
+of experiments as perceived and recorded by a human brain. Suppose that you prepare a uranium atom in
+its ground state, then wait one half-life and observe whether or not it has decayed, as in the thought
+experiment of Schr\"odinger's cat (p.~\pageref{schrodingers-cat}). There is no uncertainty or randomness about the wavefunction of the
+whole system (atom plus you) at the end. We know for sure what it looks like.
+It consists of an equal superposition of two states,
+one in which the atom has decayed and your brain has observed that fact, and one in which the atom has
+not yet decayed and that fact is instead recorded in your brain. 
+
+As a possible example of a violation of unitarity, in an exotic context, consider
+the disappearance of matter into a black hole.
+If I throw my secret teenage diary into a black hole, then it contributes a little bit to the black
+hole's mass, but the embarrassing information on the pages is lost forever. This loss of information
+seems to imply nonunitarity. This is one of several arguments suggesting that quantum mechanics cannot
+fully handle the gravitational force. Thus although physicists currently seem to possess a completely successful
+theory of gravity (Einstein's theory of general relativity) and a completely successful theory of
+the microscopic world (quantum mechanics), the two theories are irreconcilable, and
+we can only make educated guesses, for example, about the behavior of a hypothetical microscopic black hole.
+
+
+<% end_sec('unitarity') %>
+
 
 
 

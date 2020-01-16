@@ -1466,6 +1466,30 @@ Since its curvature along one axis is concave up, but the curvature along the ot
 down and equal in magnitude, the function is considered to have zero concavity over all.
 \end{eg}
 
+\begin{eg}{A three-dimensional example: the probability cloud in hydrogen}\label{eg:laplacian-h-ground}
+You have probably been exposed in a chemistry class to the idea that electrons are waves, and
+that the waves form probability clouds in atoms.
+These are ideas that we will take up in detail at the end of this course. In this connection, it
+is natural to consider the Laplacian of the function
+\begin{equation*}
+  \Psi = ue^{-r/a}\eqquad,
+\end{equation*}
+where $r=\sqrt{x^2+y^2+z^2}$ is the distance from the origin. For a hydrogen atom in its ground
+state, this turns out to be the form of the electron's wave (example \ref{eg:h-ground-exact}, p.~\pageref{eg:h-ground-exact}).
+In the following, the result $\partial r/\partial x=x/r$ comes in handy.
+Computing the partial derivatives that occur in the Laplacian, we obtain for the
+$x$ term
+\begin{align*}
+  \frac{\partial\Psi}{\partial x}     &= \frac{\partial \Psi}{\partial r} \frac{\partial r}{\partial x} \\
+                                      &= -\frac{x}{ar} \Psi \\
+  \frac{\partial^2\Psi}{\partial x^2} &= -\frac{1}{ar} \Psi -\frac{x}{a}\left(\frac{\partial}{\der x}\frac{1}{r}\right)\Psi+ \left( \frac{x}{ar}\right)^2 \Psi\\
+                                      &= -\frac{1}{ar} \Psi +\frac{x^2}{ar^3}\Psi+ \left( \frac{x}{ar}\right)^2 \Psi\eqquad,
+\intertext{so}
+  \nabla^2\Psi &= \left( -\frac{2}{ar} + \frac{1}{a^2} \right) \Psi\eqquad.
+\end{align*}
+\end{eg}
+
+\vfill
 
 <% end_sec('laplacian') %>
 
