@@ -599,11 +599,26 @@ There are two $n=1$ states, one with $s_z=+1/2$ and one with
 $s_z=-1/2$, but there is no third $n=1$ state for lithium's
 third electron to occupy, so it is forced to go into an $n=2$ state.
 
+<% marg(0) %>
+<%
+  fig(
+    'fermi-and-bose',
+    %q{Top: Enrico Fermi (1901-1954). Bottom: Satyendra Nath Bose (1894-1974).
+      }
+  )
+%>
+<% end_marg %>
+
 It can be proved mathematically that the Pauli exclusion
 principle applies to any type of particle that has
 half-integer spin. Thus two neutrons can never occupy the
-same state, and likewise for two protons. Photons, however,
+same state, and likewise for two protons. Such particles are
+referred to as fermions,\index{fermion} after Enrico Fermi,\index{Fermi, Enrico} and, broadly speaking,
+fundamental fermions are the particles that matter is made of.
+
+Photons, however,
 are immune to the exclusion principle because their spin is an integer.
+Particles with integer spins are called bosons, after Satyendra Nath Bose.\index{boson}\index{Bose, Satyendra Nath}
 
 <% end_sec('pauli') %>
 
@@ -776,6 +791,10 @@ small, for the same reason as in the case of the protons.
 <% end_notes %>
 
 <% begin_hw_sec(vfill:true) %>
+
+<% begin_hw('boron-10') %>__incl(hw/boron-10)<% end_hw() %>
+
+<% begin_hw('deuterium-statistics') %>__incl(hw/deuterium-statistics)<% end_hw() %>
 
 <% begin_hw('electrons-in-a-box') %>__incl(hw/electrons-in-a-box)<% end_hw() %>
 
