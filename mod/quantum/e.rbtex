@@ -285,7 +285,6 @@ on the left side of the barrier to the wavefunction on the right is
 \begin{equation*}
         \frac{qe^{rx+s}}{qe^{r(x+w)+s}}  = e^{-rw}\eqquad.  
 \end{equation*}
-\pagebreak
 Probabilities are proportional to the squares of wavefunctions,
 so the probability of making it through the barrier is\label{tunneling-probability}
 \begin{align*}
@@ -320,6 +319,15 @@ There is a classically forbidden region immediately outside the nucleus, so the 
 escape by quantum mechanical tunneling. (It's true, but somewhat counterintuitive, that a \emph{repulsive}
 electrical force can make it more difficult for the alpha to get \emph{out}.) 
 
+<% marg() %>
+<%
+  fig(
+    'alpha-potential',
+    %q{The electrical, nuclear, and total interaction energies for an alpha particle escaping from a nucleus.}
+  )
+%>
+<% end_marg %>
+
 In reality, alpha-decay half-lives are often extremely long --- sometimes billions of years --- because
 the tunneling probability is so small. Although the shape of the barrier is not a rectangle, the equation
 for the tunneling probability on page \pageref{tunneling-probability}
@@ -348,14 +356,6 @@ using a stack of exponents like this, you know that it's very small. For example
 orders of magnitude smaller than $10^{-1000}$.
 \end{eg}
 
-<% marg(150) %>
-<%
-  fig(
-    'alpha-potential',
-    %q{The electrical, nuclear, and total interaction energies for an alpha particle escaping from a nucleus.}
-  )
-%>
-<% end_marg %>
 
 
 \begin{eg}{Beta decay: a push or pull on the way out the door}
@@ -771,7 +771,7 @@ pattern like the one in figure \figref{ccd-diffraction} on p.~\pageref{fig:ccd-d
 if we then redefine the zero-level of $U$ so that the electrons have $E<0$?
 \end{dq}
 
-\startdq
+\pagebreak
 
 \begin{dq}\label{dq:qm-cons-of-prob}
 The top panel of the
@@ -791,7 +791,7 @@ real-valued wavefunctions $\Psi$? Now consider the sketches of complex-valued wa
 shown in the bottom panel of the figure as they are getting ready to collide.
 \end{dq}
 
-<% marg(30) %>
+<% marg(300) %>
 <%
   fig(
     'superposition-cancellation',
@@ -1024,7 +1024,6 @@ we can only make educated guesses, for example, about the behavior of a hypothet
 %       https://tex.stackexchange.com/questions/301494/how-to-use-includegraphics
 
 
-<% begin_hw('quantumho') %>__incl(hw/quantumho)<% end_hw() %>
 
 
 <% begin_hw('hydrogen-scale') %>__incl(hw/hydrogen-scale)<% end_hw() %>
@@ -1038,6 +1037,8 @@ we can only make educated guesses, for example, about the behavior of a hypothet
 <% begin_hw('energysum') %>__incl(hw/energysum)<% end_hw() %>
 
 <% begin_hw('electroninproton') %>__incl(hw/electroninproton)<% end_hw() %>
+
+<% begin_hw('quantumho') %>__incl(hw/quantumho)<% end_hw() %>
 
 <% begin_hw('h-atom-normalization') %>__incl(hw/h-atom-normalization)<% end_hw() %>
 

@@ -1377,7 +1377,7 @@ m4_ifelse(__lm,1,[:\pagebreak:],[::])
 
  %%----------------------------------------------
 <% end_sec('fusion') %>
-<% begin_sec("Nuclear energy and binding energies",4,'nuclearenergy') %>
+<% begin_sec("Nuclear energy and binding energies",m4_ifelse(__mod,1,nil,4),'nuclearenergy') %>
         In the same way that chemical reactions can be classified as
         exothermic (releasing energy) or endothermic (requiring
         energy to react), so nuclear reactions may either release or

@@ -45,6 +45,7 @@
         ionize thousands of atoms, but it is possible for an alpha
         particle to be moving so slowly that it would not have
         enough kinetic energy to ionize even one atom.
+m4_ifelse(__mod,0,[:
 <% marg(-100) %>
 <%
   fig(
@@ -65,6 +66,7 @@
   )
 %>
 <% end_marg %>
+:])
 
       Unfortunately, most people don't know much about radiation and tend to react to it based on 
       unscientific cultural notions. These may, as in figure \figref{zombies}, be based on
@@ -93,6 +95,29 @@
         cell in the body of a sunbather. If that cell becomes
         cancerous and begins reproducing uncontrollably, she will
         end up with a tumor twenty years later.
+
+m4_ifelse(__mod,1,[:
+<% marg() %>
+<%
+  fig(
+    'zombies',
+    %q{%
+      In this classic zombie flick, a newscaster speculates that the dead have been reanimated
+      due to radiation brought back to earth by a space probe.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'fifty-foot-woman',
+    %q{%
+      Radiation doesn't mutate entire multicellular organisms.
+    }
+  )
+%>
+<% end_marg %>
+:])
 
         Other than cancer, the only other dramatic effect that can
         result from altering a single cell's DNA is if that cell
