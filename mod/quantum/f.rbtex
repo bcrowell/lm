@@ -135,6 +135,16 @@ moving directly away from the origin.
     }
   )
 %>
+\spacebetweenfigs
+<%
+  fig(
+    'spherical-harmonic',
+    %q{%
+      A wavefunction on the sphere with $|\vc{L}|=11\hbar$ and $L_z=8\hbar$, shown using the color conventions
+          defined in figure \figref{rainbow}, p.~\pageref{fig:rainbow}.
+    }
+  )
+%>
 <% end_marg %>
 
 Suppose, on the other hand, a particle finds itself, \figref{particle-a-m-examples}/2, at
@@ -158,18 +168,6 @@ is its magnitude and one of its three vector components.
 Both are quantized in units of $\hbar$.
 \end{important}
 
-<% marg() %>
-
-<%
-  fig(
-    'spherical-harmonic',
-    %q{%
-      A wavefunction on the sphere with $|\vc{L}|=11\hbar$ and $L_z=8\hbar$, shown using the color conventions
-          defined in figure \figref{rainbow}, p.~\pageref{fig:rainbow}.
-    }
-  )
-%>
-<% end_marg %>
 
 To see why this is true, consider the example wavefunction shown in figure \figref{spherical-harmonic}.
 This is the like the quantum moat of figure \figref{moat-rainbow}, p.~\pageref{fig:moat-rainbow},
@@ -187,7 +185,7 @@ be used as a basis for the five-dimensional space of states with $L=2\hbar$. We 
 some other axis besides $z$. This would have just been a different choice of basis, which is arbitrary.
 
 <% end_sec('quantum-ang-mom-three-d') %>
-<% begin_sec("Quantum numbers",nil,'quantum-numbers') %>
+<% begin_sec("Quantum numbers",4,'quantum-numbers') %>
 
 <% begin_sec("Completeness",nil) %>
 
