@@ -995,11 +995,15 @@ types of aberrations.
 
 <% begin_hw('range-of-magnifications') %>__incl(hw/range-of-magnifications)<% end_hw() %>
 
+\pagebreak
+
 <% begin_hw('best-precision-n') %>__incl(hw/best-precision-n)<% end_hw() %>
 
 <% begin_hw('underwaterlens') %>__incl(hw/underwaterlens)<% end_hw() %>
 
 <% begin_hw('refractorvsreflector') %>__incl(hw/refractorvsreflector)<% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('explainlens') %>__incl(hw/explainlens)<% end_hw() %>
 
@@ -1008,6 +1012,8 @@ types of aberrations.
 <% begin_hw('goggles') %>__incl(hw/goggles)<% end_hw() %>
 
 <% begin_hw('imagelocation1') %>__incl(hw/imagelocation1)<% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('real-image-conditions') %>__incl(hw/real-image-conditions)<% end_hw() %>
 
@@ -1020,11 +1026,7 @@ types of aberrations.
     %q{Problem \ref{hw:constant-thickness}.}
   )
 %>
-<% end_marg %>
-
-<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
-
-<% marg(80) %>
+\spacebetweenfigs
 <%
   fig(
     'hw-funkylenses',
@@ -1033,11 +1035,21 @@ types of aberrations.
 %>
 <% end_marg %>
 
+<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
+
 <% begin_hw('imagelocation2') %>__incl(hw/imagelocation2)<% end_hw() %>
+
+
+\pagebreak
+
 
 <% begin_hw('imagelocation3') %>__incl(hw/imagelocation3)<% end_hw() %>
 
 <% begin_hw('field-of-view') %>__incl(hw/field-of-view)<% end_hw() %>
+
+
+\pagebreak
+
 
 <% begin_hw('nearsighted') %>__incl(hw/nearsighted)<% end_hw() %>
 
@@ -1048,6 +1060,10 @@ types of aberrations.
 <% begin_hw('very-weak-refraction') %>__incl(hw/very-weak-refraction)<% end_hw() %>
 
 <% begin_hw('close-to-focal-length') %>__incl(hw/close-to-focal-length)<% end_hw() %>
+
+
+\pagebreak
+
 
 <% begin_hw('image-of-dropping-object',nil,{'calc'=>true}) %>__incl(hw/image-of-dropping-object)<% end_hw() %>
 
@@ -1064,7 +1080,12 @@ types of aberrations.
 
 <% begin_hw('illuminable',2) %>__incl(hw/illuminable)<% end_hw() %>
 
-<% marg(0) %>
+
+<% begin_hw('max-intensifying-of-transmitted-ray',2) %>__incl(hw/max-intensifying-of-transmitted-ray)<% end_hw() %>
+
+<% begin_hw('peaucellier',2) %>__incl(hw/peaucellier)<% end_hw() %>
+
+<% marg(300) %>
 <%
   fig(
     'peaucellier',
@@ -1072,10 +1093,6 @@ types of aberrations.
   )
 %>
 <% end_marg %>
-
-<% begin_hw('max-intensifying-of-transmitted-ray',2) %>__incl(hw/max-intensifying-of-transmitted-ray)<% end_hw() %>
-
-<% begin_hw('peaucellier',2) %>__incl(hw/peaucellier)<% end_hw() %>
 
 
 <% end_hw_sec %>
