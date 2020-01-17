@@ -247,19 +247,14 @@ to be about $-0.58$ in this example. B says that A's velocity is $+0.58$.
     %q{Example \ref{eg:lorentz-negative-v}.}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'lorentz-more-quadrants',
-    %q{Example \ref{eg:lorentz-more-quadrants}.}
-  )
-%>
 <% end_marg %>
 
 \begin{eg}{Motion in the opposite direction}\label{eg:lorentz-negative-v}
 Figure \figref{lorentz-negative-v} shows the case where the observer whose frame is represented by the grid is moving to
 the left relative to the one whose frame is represented by the gray square.
 \end{eg}
+
+\pagebreak
 
 \begin{eg}{Other quadrants}\label{eg:lorentz-more-quadrants}
 So far I've been arbitrarily choosing to draw only the first quadrant of each coordinate system.
@@ -275,7 +270,14 @@ given by $d^2=x^2+y^2$, and this distance stays the same even if we rotate our $
 $x$-$t$ plane of spacetime, we have $\interval^2=t^2-d^2$, and this stays the same even if we change our frame
 of reference. Example \ref{eg:interval-graphs} shows that this works out correctly with some sample numbers.
 
-<% marg() %>
+<% marg(300) %>
+<%
+  fig(
+    'lorentz-more-quadrants',
+    %q{Example \ref{eg:lorentz-more-quadrants}.}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'eg-interval-graphs-trimmed',
@@ -300,6 +302,8 @@ two events lie at coordinates
 Calculating the interval using these values, the result is \linebreak[4]
 $\interval^2 = 8^2-4^2=48$, which comes out the same as in the other frame.
 \end{eg}
+
+\pagebreak
 
 \startdq
 
@@ -404,6 +408,8 @@ and we have the paradoxical situation in which the rescue mission
 causes the distress call. (This is stronger conclusion than our
 earlier one about $c$ as a speed limit on cause and effect,
 \note{cf-ftl-causality-argument}.)\label{ftl-causality-argument}\index{c@$c$!as speed limit for cause and effect}
+
+\pagebreak
 
 <%
   fig(
@@ -747,7 +753,7 @@ events on the diagram. Compare the results as described in the two frames of ref
 
 <% end_sec('length-contraction') %>
 
-<% begin_sec("Magnetism as a relativistic effect",nil,'rel-magnetism') %>
+<% begin_sec("Magnetism as a relativistic effect",4,'rel-magnetism') %>
 Magnetism is an interaction between moving charges and moving charges. But how
 can that be?
 Relativity tells us that

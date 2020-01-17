@@ -121,6 +121,8 @@ pounds per square inch, or p.s.i. (Note that the pound is
 not a unit of mass.)
 \end{eg}
 
+\pagebreak
+
 \begin{eg}{Atmospheric pressure in U.S. and metric units}
 \egquestion
 A figure that many people in the U.S. remember is
@@ -343,8 +345,6 @@ atmosphere, but the exponential factor gets extremely small by the time you're
 ten or a hundred miles up.
 \end{eg}
 
- % 
-
 <% end_sec() %>
 
 <% end_sec('pressure') %>
@@ -552,6 +552,8 @@ used.
 
 <% end_sec('temperature') %>
 
+\enlargethispage{\baselineskip}
+
 <% begin_sec("Heat",0,'heat') %>
 \index{heat}
 ``Heat,'' notated $Q$, is used in thermodynamics as a term for an
@@ -597,6 +599,8 @@ No universally consistent convention is possible, since, e.g., if objects A, B,
 and C all interact, we will always have opposite signs for A's work on B and B's
 work on A, etc.\label{thermo-sign-conventions}
 
+\enlargethispage{\baselineskip}
+
 \startdqs
 
 \begin{dq}\label{dq:heat-cond-propto}
@@ -619,6 +623,13 @@ proposed for the ``\ldots'' in $\der E_1/\der t=k(\ldots)$.
 Give physical reasons why five of these are not possible.
 \end{dq}
 
+\pagebreak
+
+\begin{dq}
+How should the rate of heat conduction in \subfigref{dq-heat-cond-propto}{2} compare with
+the rate in \subfigref{dq-heat-cond-propto}{1}?
+\end{dq}
+
 <% marg(100) %>
 <%
   fig(
@@ -629,11 +640,6 @@ Give physical reasons why five of these are not possible.
   )
 %>
 <% end_marg %>
-
-\begin{dq}
-How should the rate of heat conduction in \subfigref{dq-heat-cond-propto}{2} compare with
-the rate in \subfigref{dq-heat-cond-propto}{1}?
-\end{dq}
 
 \begin{dq}\label{dq:heat-cond-series}
 The example in \subfigref{dq-heat-cond-propto}{3} is different from the preceding ones
@@ -706,7 +712,7 @@ and $\der P/\der V=-\gamma P/V$. Thus,
 \end{align*}
 \end{eg}
 
-<% marg(50) %>
+<% marg(-50) %>
 <%
   fig(
     'gamma-spring-of-air',
