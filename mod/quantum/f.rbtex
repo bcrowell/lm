@@ -62,9 +62,9 @@ space is quantized in units of $\hbar$.
 <%
   fig(
     'hwavefnlowres',
-    'A depiction of the wavefunction of a certain state in the hydrogen atom. The square is
+    %q{A depiction of the wavefunction of a certain state in the hydrogen atom. The square is
      a plane slicing through the center of the atom, so that only two of the three dimensions are shown, say $x$ and $y$, but not $z$.
-     The up-down direction in the picture doesn't represent $z$, it represents $\Psi$.',
+     The up-down direction in the picture doesn't represent $z$, it represents $\Psi$.},
     {
       'width'=>'wide',
       'sidecaption'=>true
@@ -640,6 +640,13 @@ In the third row we start in on the $n=3$ levels:
         ...
 \end{tabular}
 
+We can now see a logical link between the filling of the
+energy levels and the structure of the periodic table.
+Column 0, for example, consists of atoms with the right
+number of electrons to fill all the available states up to a
+certain value of $n$. Column I contains atoms like lithium
+that have just one electron more than that.
+
 <% marg(0) %>
 <%
   fig(
@@ -647,9 +654,7 @@ In the third row we start in on the $n=3$ levels:
     %q{The beginning of the periodic table.}
   )
 %>
-
 \spacebetweenfigs
-
 <%
   fig(
     'hindenburg',
@@ -657,13 +662,6 @@ In the third row we start in on the $n=3$ levels:
   )
 %>
 <% end_marg %>
-
-We can now see a logical link between the filling of the
-energy levels and the structure of the periodic table.
-Column 0, for example, consists of atoms with the right
-number of electrons to fill all the available states up to a
-certain value of $n$. Column I contains atoms like lithium
-that have just one electron more than that.
 
 \label{ionicbonds}
 This shows that the columns relate to the filling of energy
@@ -781,6 +779,9 @@ small, for the same reason as in the case of the protons.
 
 <% begin_hw_sec(vfill:true) %>
 
+<% begin_hw('electrons-in-a-box') %>__incl(hw/electrons-in-a-box)<% end_hw() %>
+
+<% begin_hw('ic-time-dependent-s-eqn') %>__incl(hw/ic-time-dependent-s-eqn)<% end_hw() %>
 
 <% end_hw_sec %>
 
