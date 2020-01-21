@@ -520,7 +520,7 @@ temperature for all gases: $-273\degcunit$. Real gases will all
 condense into liquids at some temperature above this, but an
 ideal gas would achieve zero volume at this temperature,
 known as absolute zero. At the macroscopic level, this is
-the justification for constructing the kelvin scale, introduced on p.~\pageref{kelvin}
+the justification for constructing the kelvin scale, introduced on p.~\pageref{kelvin}.
 \index{temperature!macroscopic definition}
 \index{thermometer}
 
@@ -671,7 +671,7 @@ As an idealization of this type of process, we consider the expansion of a seale
 a cylinder, as it pushes a piston out. We assume that there is no heat conduction through the walls of
 the cylinder, either because the cylinder is well insulated or because the process is too fast for
 much heat conduction to occur. Classic examples of this is the expansion stroke of a steam engine,
-or the compression stroke of a gasoline engine.
+or, in the opposite direction, the compression stroke of a gasoline engine.
 When this kind of process occurs, with no possibility of heat conduction, we refer to it as an \emph{adiabatic} process.\index{adiabatic}
 
 As the volume of the cylinder increases by an infinitesimal amount $\der V$, we have from the result
@@ -687,7 +687,9 @@ the product rule, $nk\der T=P\der V+V\der P$, and separation of variables gives
 \begin{equation*}
   \frac{\der P}{P} = -\mygamma\frac{\der V}{V},
 \end{equation*}
-where $\mygamma=1+2/\alpha$. Integrating both sides gives $\ln P=-\mygamma\ln V+\text{const}$, or
+where $\mygamma=1+2/\alpha$ is referred to as the adiabatic gas
+constant or adiabatic index.\index{adiabatic index|see {adiabatic gas constant}}\index{adiabatic gas constant}\index{g@$\mygamma$|see {adiamatic gas constant}}
+Integrating both sides gives $\ln P=-\mygamma\ln V+\text{const}$, or
 \begin{equation*}
   P \propto V^{-\mygamma}.
 \end{equation*}
@@ -773,7 +775,36 @@ Newton attempted the same calculation, but didn't understand the thermodynamic e
 and therefore got a result that didn't have the correct factor of $\sqrt{\gamma}$.
 \end{eg}
 
+\pagebreak
+
+\startdq
+
+<% marg(30) %>
+<%
+  fig(
+    'co2-gamma-trend',
+    %q{%
+      Discussion question \ref{dq:co2-gamma-trend}.
+    }
+  )
+%>
+<% end_marg %>
+\begin{dq}\label{dq:co2-gamma-trend}
+The figure shows a graph of the adiabatic index $\mygamma$ of carbon dioxide gas as a function of temperature.
+The graph goes down to the lowest temperature at which carbon dioxide is a gas.
+Solve the following two mysteries:
+\begin{enumerate}
+\item According to the presentation in this section, the value of $\mygamma$ seems like it should be a fixed
+property of the molecule. How can it vary with temperature? Hint: apply $\mygamma=1+2/\alpha$, and infer what
+is happening to $\alpha$.
+\item At low temperatures, $\gamma$ is closer to the diatomic value than the polyatomic one. Why should
+this be? After all, ``di-'' means ``two,'' and ``poly-'' means many. Carbon dioxide has three atoms in it, not two.
+\end{enumerate}
+\end{dq}
+
 <% end_sec('adiabatic-processes') %>
+
+\vfill
 
 <% begin_hw_sec(vfill:true) %>
 
