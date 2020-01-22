@@ -1529,6 +1529,9 @@ m4_define(__hw_mod_15_pe,6)m4_dnl
 m4_define(__hw_mod_15_photon-mass,7)m4_dnl
 m4_define(__hw_mod_15_compare-photons,8)m4_dnl
 m4_define(__hw_mod_15_am-radio-photon-density,9)m4_dnl
+m4_define(__hw_mod_15_compare-diffraction,10)m4_dnl
+m4_define(__hw_mod_15_photons-normalization,11)m4_dnl
+m4_define(__hw_mod_15_directional-antenna-photon,12)m4_dnl
 m4_define(__hw_mod_16_tv,1)m4_dnl
 m4_define(__hw_mod_16_wavespeedingup,2)m4_dnl
 m4_define(__hw_mod_16_lead,3)m4_dnl
