@@ -48,7 +48,9 @@ def get_chapter_titles(file)
 end
 
 def get_chapter_title(ch)
-  return $titles[ch]['title']
+  t = $titles[ch]['title']
+  t.gsub!(/\\"o/,"o") # Schr\"odinger in LaTeX
+  return t
 end
 
 def do_problems(problems_csv,book_to_do)
