@@ -13,42 +13,7 @@
 %>
 
 
-\epigraphlong{[In] a few minutes I shall be all melted... I have been
-wicked in my day, but I never thought a little girl like you
-would ever be able to melt me and end my wicked deeds.
-Look out --- here I go!}{The \index{Wicked Witch of the West}Wicked Witch
- of the West}
-
-As the Wicked Witch learned the hard way, losing molecular
-cohesion can be unpleasant. That's why we should be very
-grateful that the concepts of quantum physics apply to
-matter as well as light. If matter obeyed the laws of
-classical physics, \index{molecules!nonexistence in
-classical physics}molecules wouldn't exist.
-
-Consider, for example, the simplest atom, hydrogen. Why does
-one hydrogen atom form a chemical bond with another hydrogen
-atom? Roughly speaking, we'd expect a neighboring pair of
-hydrogen atoms, A and B, to exert no force on each other
-at all, attractive or repulsive: there are two repulsive
-interactions (proton A with proton B and electron A with
-electron B) and two attractive interactions (proton A with
-electron B and electron A with proton B). Thinking a
-little more precisely, we should even expect that once the
-two atoms got close enough, the interaction would be
-repulsive. For instance, if you squeezed them so close
-together that the two protons were almost on top of each
-other, there would be a tremendously strong repulsion
-between them due to the $1/r^2$ nature of the electrical
-force. The repulsion between the electrons would not be as
-strong, because each electron ranges over a large area, and
-is not likely to be found right on top of the other
-electron. Thus hydrogen molecules should not exist according
-to classical physics.
-
-Quantum physics to the rescue! As we'll see shortly, the
-whole problem is solved by applying the same quantum
-concepts to electrons that we have already used for photons.
+m4_include(../share/quantum/text/wicked-witch.tex)
 
 <% begin_sec("Electrons as waves") %>
 <% begin_sec("Wavelength related to momentum",nil,'de-broglie') %>
@@ -726,29 +691,20 @@ state for it to go to.
     'h-molecule',
     %q{%
       Two hydrogen atoms bond to form
-       an $\zu{H}_2$ molecule. In the molecule, the two electrons' wave patterns overlap
-      , and are about twice as wide.
+       an $\zu{H}_2$ molecule. In the molecule, the two electrons' wave patterns overlap,
+      and are about twice as wide.
     }
   )
 %>
 <% end_marg %>
 
-\begin{eg}{Chemical bonds}\label{h2-bond}\index{chemical bonds!quantum explanation for hydrogen}
-I began this section with a classical argument that chemical
-bonds, as in an $\zu{H}_2$ molecule, should not exist. Quantum
-physics explains why this type of bonding does in fact
-occur. When the atoms are next to each other, the electrons
-are shared between them. The ``box'' is about twice as wide,
-and a larger box allows a smaller energy. Energy is required
-in order to separate the atoms. (A qualitatively different
-type of bonding is discussed on page
-\pageref{ionicbonds}.m4_ifelse(__sn,1,[: Example \ref{eg:h2-details} on page 
-\pageref{eg:h2-details} revisits the $\zu{H}_2$ bond in more detail.:],[::]))
-\end{eg}
+m4_include(../share/quantum/eg/h2-bond.tex)
 
 \startdqs
 
 __incl(dq/dineutron)
+
+\pagebreak
 
 \begin{dq}
 The following table shows the energy gap between the
@@ -1188,6 +1144,35 @@ and compare with analogous graphs for the one-dimensional particle in a box.
 <% end_sec('crude-hydrogen') %>
 
 \vfill
+
+<% begin_notes %>
+
+% The text that refers to this note is in wicked-witch.tex.
+\notetext{h2-classical}{Failure of the classical $\zu{H}_2$ molecule}
+\notesummary{We use classical physics to make an estimate of the electrical binding energy of the $\zu{H}_2$ molecule. It is much
+too small compared to reality, and much to small to make the molecule hold together.}
+To give classical physics a fair chance, we should not use any classical model with moving parts, such as
+the planetary model, because such models are always unstable due to their ability to radiate away energy
+as electromagnetic waves. We also want a model that is fairly easy to calculate with. Let's use
+a model in which the proton is a point charge fixed at the center of a rigid electron cloud whose density of
+charge is $e^{-r}$, where $r$ is in units of some basic distance scale (about 0.05 nm in SI units), and
+the charge is in units of the fundamental charge.
+This is actually somewhat realistic as a time-averaged picture of the charge of a hydrogen atom, and
+it turns out that the electrical potential energy we need has been calculated by A.~Mukherji, \url{arxiv.org/abs/0903.3304}.
+We assume that the two clouds simply interpenetrate one another. The resulting electrical energy, including
+electron-electron, proton-proton, and electron-proton interactions, turns out to be
+\begin{equation*}
+  U=e^{-r}\left(\frac{1}{r}+\frac{5}{16}-\frac{3}{16}r-\frac{1}{48}r^2\right).
+\end{equation*}
+This function has a very shallow minimum at $r\approx 3.8$ (which is about triple the real-world value for the bond
+length), attaining a minimum value of about $-0.01$ in our energy units, which converts to $-0.3$ eV.
+The negative sign does indicate an equilibrium, but the binding energy is far too small compared to the real-world
+value of $-4.7$ eV. Not only is the calculated binding energy an order of magnitude too small compared to experiment,
+but it is of a size that would probably cause the molecule to break apart spontaneously due to the Heisenberg
+uncertainty principle.
+% omega0 for H2's vibration is 0.019 Hartree units, or 0.5 eV.
+
+<% end_notes %>
 
 <% begin_hw_sec(vfill:true) %>
 
