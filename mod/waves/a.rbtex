@@ -63,7 +63,7 @@ mirror-image it.\index{time!symmetry of the laws of physics under reversal}
 This time-reversal symmetry also holds for electromagnetism. As a
 simple example, Gauss's law tells us, in the special case of an
 electric field in a vacuum, that the field lines can't begin or end at
-a point.  (They can only begin or end on charges, whch don't exist in
+a point.  (They can only begin or end on charges, which don't exist in
 a vacuum.) This law doesn't even refer to time explicitly, so clearly
 nothing goes wrong if we reverse time. Some of the other
 electromagnetic quantities, such as currents, reverse themselves in a
@@ -133,7 +133,7 @@ It would be natural to try to explain this effect of motion as
 arising from the clocks' sensitivity to noise, cabin pressure, or
 vibration. But exactly the same effect is observed with other,
 completely different types of clocks under completely different
-circumstances, and even with processes such as the decay of elementary
+circumstances, even with processes such as the decay of elementary
 particles moving at high speeds --- the radioactive half-life is
 prolonged if the particles are in motion. 
 
@@ -366,7 +366,7 @@ Does this make sense? What about $d<0$?
 
 <% begin_sec("The correspondence principle",nil,'correspondence-principle') %>
 
-Now what is this mysterious constant in our equation for $\interval$? One thing we can tell is that it must be very small when
+What is this mysterious constant in our equation for $\interval$? One thing we can tell is that it must be very small when
 written in everyday units, because
 we don't notice these relativistic effects on time in everyday life.
 Furthermore, the units of the variables occurring in the equation show that the constant
@@ -429,9 +429,7 @@ between any two points on its world-line.
 Experiments confirm this. As with the Hafele-Keating airplane experiment, the best educational example
 is neither the first historically nor the latest and most recent one. The clearest example I know of was
 done by Bertozzi in 1964.\footnote{Bertozzi, "Speed and kinetic energy of relativistic electrons," Am.~J.~Phys. 32 (1964) 551}
-Figure \figref{electrons-limiting-speed} shows his data, supplemented by some
-data at lower speeds from a later, similar experiment.\footnote{Marvel and Jolivette, open access
-at \url{arxiv.org/abs/1108.5977}} If you find this kind of thing mind-blowing or hard to believe, you
+If you find this kind of thing mind-blowing or hard to believe, you
 may find it interesting to watch the half-hour educational video made by Bertozzi, in which every part of the
 experimental setup is demonstrated and explained.\footnote{\url{https://tinyurl.com/bertozziexperiment}}
 
@@ -462,7 +460,9 @@ velocity $v=\ell_2/t_2$ to which they had actually been accelerated.
 %>
 <% end_marg %>
 
-Figure \figref{electrons-limiting-speed} shows the results.\footnote{To make the
+Figure \figref{electrons-limiting-speed} shows Bertozzi's data, supplemented by some
+data at lower speeds from a later, similar experiment.\footnote{Marvel and Jolivette, open access
+at \url{arxiv.org/abs/1108.5977}. To make the
 low-energy portion of the graph legible, Bertozzi's highest-energy
 data point is omitted.}
 According to Newton, an acceleration $a_N$ acting for a time $t_N$ should produce a final velocity
@@ -723,15 +723,6 @@ really be made out of waves (or particles that also have wave
 properties, as we'll see when we take up our study of quantum physics
 at the end of this book).
 
-\startdq
-
-\begin{dq}
-Mechanical clocks can be affected by motion. For example, it was
-a significant technological achievement to build a clock that could sail
-aboard a ship and still keep accurate time, allowing longitude to be deter-
-mined. How is this similar to or different from relativistic time dilation?
-\end{dq}
-
 <% end_sec('speed-limit-causality') %>
 
 <% begin_hw_sec(vfill:true) %>
@@ -781,9 +772,47 @@ criteria. A material object travels from A to B. An object traveled
 from C to A. A ray of light emitted at A is received at D. A ray of
 light emitted at E is received at A. F can have no possible
 cause-and-effect relationship with A.
+<% end_lab %>
 
 
 \anonymousinlinefig{ex-spacetime-mod-2}
+
+<% begin_lab("Signals and time",columns:1,type:'ex',suffix:'B') %>\label{lab:signals-and-time}
+
+Relativity says we can never directly know what's happening ``now'' at some distant place.
+At best we can receive signals from a distance and get indirect information.
+
+1. Alice stays on earth while Betty flies away at 3/5 of the speed of
+light.
+On the graph paper, draw a spacetime diagram in the frame of the earth
+showing their world-lines, starting with Betty's departure.
+
+2. After a certain amount of time $\interval_A$ on Alice's clock (say 10 units,
+if that's convenient on the graph paper you're using), she sends a
+radio beep toward Betty. Draw the world-line of this signal and find
+the event at which Betty receives it.
+
+3. Find the time $\interval_B$ on Betty's clock between her departure and the
+time when she gets the signal. Compare with the time Alice waited before
+transmitting, using the ratio $D=\interval_B/\interval_A$.
+
+\enlargethispage{2\baselineskip}
+
+Interpretation: This ratio is the factor by
+which Alice's signals seem slowed down to Betty. A similar effect
+would occur without relativity, e.g., for sound waves and race cars,
+simply because the distance is widening, but the size of
+the effect would be different.
+
+<%
+  fig(
+    'ex-signals-and-time',
+    '',
+    {
+      'width'=>'fullpage','anonymous'=>true
+    }
+  )
+%>
 
 <% end_lab %>
 
