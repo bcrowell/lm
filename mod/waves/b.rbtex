@@ -14,13 +14,13 @@ to vibrations of our eardrums.},
   )
 %>
 
-At the end of ch.~\ref{ch:time}, we saw that because of the way time works in our
+At the end of chapter \ref{ch:time}, we saw that because of the way time works in our
 universe, it is not possible for light and matter to be made out of particles,
 as envisioned by Isaac Newton. Instead, our universe must be made out of waves
-(or, as we'll see when we study quantum physics at the end of this course,
+(or, as we'll see when we study quantum physics in ch.~\ref{ch:atom}-\ref{ch:quantum-ang-mom},
 things that have both particle and wave characteristics). In this chapter we
 will study mechanical waves, which are made out of vibrations of physical objects.
-These are concrete and easy to conceptualize. Then in ch.~\ref{ch:em-waves} we will
+These are concrete and easy to conceptualize. Then in chapter~\ref{ch:em-waves} we will
 turn to electromagnetic waves, such as visible light, which will be our first
 example of the \emph{fundamental} kinds of waves that the universe is ultimately
 composed of.
@@ -647,6 +647,28 @@ by
 
 <% end_sec() %>
 
+<% begin_sec("Significance of the result") %>\label{wave-on-string-significance}
+This specific result for the speed of waves on a string, $v=\sqrt{T/\mu}$, is utterly unimportant.
+Don't memorize it. Don't take notes on it. Try to erase it from your memory.
+
+What \emph{is} important about this result is that it is an example of two 
+things that are usually true, at least approximately, for mechanical waves in general:
+\begin{enumerate}
+\item  The speed at which a wave moves does not depend on the size or shape of the wave.
+\item  The speed of a mechanical wave depends on a combination of two properties of the medium: some measure of its \emph{inertia}
+       and some measure of its \emph{tightness}, i.e., the strength of the force trying to bring the medium back toward equilibrium.
+\end{enumerate}
+
+<% self_check('interpret-waves-on-string',<<-'SELF_CHECK'
+(a) What is it about the equation $v=\\sqrt{T/\\mu}$ that relates to fact 1 above?
+(b) In the equation $v=\\sqrt{T/\\mu}$, which variable is a measure of inertia, and which is a measure of tightness?
+(c) Now suppose that we produce compressional wave pulses in a metal rod by tapping the end of the rod with a hammer.
+What physical properties of the rod would play the roles of inertia and tightness? How would you expect the speed of compressional waves
+in lead to compare with their speed in aluminum?
+  SELF_CHECK
+  ) %>
+<% end_sec() %>
+
 <% end_sec('waves-on-a-string') %>
 
 <% begin_sec("Sound waves") %>
@@ -964,27 +986,6 @@ periodic but not sinusoidal. Our eyes, on the other hand,
 judge a color as pure (belonging to the rainbow set of
 colors) only if it is a sine wave.
 
-\startdqs
-
-         \begin{dq}\label{dq:beats}
-        Suppose we superimpose two sine waves with equal amplitudes
-        but slightly different frequencies, as shown in the figure.
-        What will the superposition look like? What would this sound
-        like if they were sound waves?
-        \end{dq}
-
-        %
-
-<%
-  fig(
-    'dq-beats',
-    %q{Discussion question \ref{dq:beats}.},
-    {
-      'width'=>'wide','anonymous'=>true
-    }
-  )
-%>
-
 <% end_sec() %>
 
 <% begin_sec("The wavenumber",nil,'wavenumber') %>\index{wavenumber}\label{wavenumber}
@@ -1020,10 +1021,31 @@ is
 
 <% end_sec('wavenumber') %>
 
+\startdq
+
+         \begin{dq}\label{dq:beats}
+        Suppose we superimpose two sine waves with equal amplitudes
+        but slightly different frequencies, as shown in the figure.
+        What will the superposition look like? What would this sound
+        like if they were sound waves?
+        \end{dq}
+
+        %
+
+<%
+  fig(
+    'dq-beats',
+    %q{Discussion question \ref{dq:beats}.},
+    {
+      'width'=>'wide','anonymous'=>true
+    }
+  )
+%>
+
 <% end_sec('periodic-waves') %>
 
 
-<% begin_sec("The Doppler effect",nil,'doppler') %>
+<% begin_sec("The Doppler effect",4,'doppler') %>
 \index{Doppler shift}
 Figure \figref{doppler} shows the wave pattern made by the tip of a
 vibrating rod which is moving across the water. If the rod
@@ -1088,6 +1110,8 @@ wavelength $\lambda'$ of the Doppler-shifted wave the equation
 \end{equation*}
 A similar equation can be used for the backward-emitted
 waves, but with a plus sign rather than a a minus.
+
+\pagebreak
 
 \begin{eg}{Doppler-shifted sound from a race car}
 \egquestion
