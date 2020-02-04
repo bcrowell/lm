@@ -486,7 +486,7 @@ be counted toward the enclosed charge, or not? If charges can be
 perfect, infinitesimal points, then this could be a physically
 meaningful question. Suppose we approach this question by way of a
 limit: start with charge $q$ spread out over a sphere of finite size,
-and then make the size of the sphere approach zero.  Figure \subfigref{dq-gauss-examples-fac}{A} shows
+and then make the size of the sphere approach zero.  Figure \subfigref{dq-gauss-examples-fac}{B} shows
 a uniformly charged sphere that's exactly half-way in and half-way out
 of the cubical Gaussian surface.  What is the flux through the cube,
 compared to what it would be if the charge was entirely enclosed?
@@ -497,7 +497,7 @@ integration, by Gauss's law, or by the additivity of flux by region.)
 \vfill
 
 \begin{dq}\label{dq:gauss-example2}
-The dipole in figure \subfigref{dq-gauss-examples-fac}{B} is completely enclosed in the cube. What does Gauss's law
+The dipole in figure \subfigref{dq-gauss-examples-fac}{C} is completely enclosed in the cube. What does Gauss's law
 say about the flux through the cube? If you imagine the dipole's field
 pattern, can you verify that this makes sense? 
 \end{dq}
@@ -719,7 +719,7 @@ Explain how the signs work, and sketch graphs for the various cases.
 <% begin_sec("Charge",4,'charge') %>
 
 <% begin_sec("Gauss's law, not in vacuum",nil,'gauss-charge') %>
-The vacuum form of Gauss's law can be generalized to handle the case where charges are present.
+The vacuum form of Gauss's law for electric fields can be generalized to handle the case where charges are present.
 In terms of field lines, Gauss's law states that field lines begin and end only on charges, and
 the number of field lines that begin or end on a charge is proportional to the charge.
 
@@ -1307,9 +1307,13 @@ point is proportional to the squared magnitude
 of this field, $(\vc{E}+\vc{E}_q)\cdot(\vc{E}+\vc{E}_q)$. Multiplying this expression
 out, we get terms $\vc{E}\cdot\vc{E}$ and $\vc{E}_q\cdot\vc{E}_q$, which are constants
 and therefore don't have any effect on our analysis, but in addition we get a term
-$2\vc{E}\cdot\vc{E}_q$. It is only this latter term than can change if we move $q$ around,
-so the force $\vc{F}$ on $q$ is proportional to it. Since $\vc{E}_q$ is proportional to $q$
-(as we can easily prove by Gauss's law), it follows that $\vc{F}$ is proportional both to
+$2\vc{E}\cdot\vc{E}_q$. It is only this latter term that can change if we move $q$ around.
+When we move the charge by some small amount, the field $\vc{E}_q$ only changes
+significantly in the space near the charge, where the ambient field $\vc{E}$ has
+essentially a constant value, equal to its value at the position of the charge. From now on,
+we write $\vc{E}$ to mean this field, and the work done on the charge is proportional to it.
+Since $\vc{E}_q$ is proportional to $q$
+(as we can easily prove by Gauss's law), it follows that the work done in this small displacement is proportional both to
 $\vc{E}$ and to $q$. We conclude that $\vc{F}\propto q\vc{E}$. The remainder of the calculation
 is only required in order to show that the proportionality constant is 1.
 
