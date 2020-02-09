@@ -310,7 +310,7 @@ hull speeds will be high.
 
 <% end_sec() %>
 
-<% begin_sec("Wave patterns") %>
+<% begin_sec("Wave patterns and energy transport") %>
 \index{waves!patterns}
 If the magnitude of a wave's velocity vector is preordained,
 what about its direction? Waves spread out in all directions
@@ -351,6 +351,31 @@ one-dimensional. Throughout this chapter and the next, we
 will restrict ourselves mainly to wave motion in one
 dimension, while not hesitating to broaden our horizons when
 it can be done without too much complication.
+
+In figures \figref{wave-patterns} and \figref{wave-patterns-three-d},
+energy is being transported in the direction of the black arrows.
+How do we tell how much energy a wave has? We already know that
+for an oscillating mass such as a pendulum, the energy depends on
+the amplitude as $E\propto A^2$ when $A$ is small. This follows simply because when a
+smooth function has a minimum, it generically looks like a parabola
+close to that minimum. It also makes sense that the energy doesn't
+change when we flip the sign of $A$, which is just a change of phase.
+The same logic applies to waves. As we will see in more detail ch.~\ref{ch:media},
+the constant of proportionality depends on the medium. In the case
+of an electromagnetic wave (ch.~\ref{ch:em-waves}), you already know that
+the energy densities of the electric and magnetic fields are proportional to
+the square of the fields.
+
+This is a good time at which to vaccinate you against a common ``gotcha'' involving waves.
+The speed at which a wave transports energy and information is called
+the group velocity, $v_g$. The speed at which the peaks of the wave pattern move
+is called the phase velocity, $v_p$.\index{group velocity}\index{phase velocity}
+The simplest kinds of waves, which we've been implicitly assuming so far, are those
+for which $v_p=v_g$. Their wave patterns glide through space without changing shape.
+In sec.~\ref{sec:dispersive-waves}, p.~\pageref{sec:dispersive-waves}, we will take
+a closer look at \emph{dispersive} waves, which have $v_p\ne v_g$, change their shape
+as they propagate, and have a velocity that depends not just on the medium but also on
+the wavelength.
 
 \vfill\pagebreak[4]
 
@@ -1012,9 +1037,7 @@ If we surf the wave while it moves forward one wavelength,\label{phase-vel-omega
 then the $kx$ term in the equation above increases by $2\pi$. Since the input to the sine function (the phase
 of the wave) stays constant for the surfer, $\omega t$ must also change by $2\pi$ during this time.
 With some simple algebra (problem \ref{hw:wavenumber-algebra}, p.~\pageref{hw:wavenumber-algebra}), we find
-that the speed of the wave\footnote{We will see later in this course that for waves whose velocity depends on wavelength, it is necessary to
-distinguish this velocity, called the phase velocity, from a different velocity called the group velocity.}
-is
+that the speed of the wave (phase velocity, not group velocity) is
 \begin{equation*}
   v = \frac{\omega}{k}.
 \end{equation*}
