@@ -13,6 +13,7 @@ books_all:
 
 setup:
 	chmod +x scripts/* eruby_util.rb fruby mv_silent process_geom_file.pl ./*.rb ./*.pl problems/*.rb
+	chmod -x scripts/*.pm scripts/*.xml scripts/*.json
 	@echo "If the following command doesn't give a compiler error, you have a sufficiently up to date version of ruby (1.9.2 or later)."
 	ruby -e 'x=("ab" =~ /(?<!a)b/); require "psych"; require "yaml"'
 	@echo "If the following command doesn't give a compiler error, you have a sufficiently up to date version of libjson-perl."

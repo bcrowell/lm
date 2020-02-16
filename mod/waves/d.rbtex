@@ -342,12 +342,6 @@ make 45-degree angles.
 These lines form a geometrical figure, which is called the \emph{light cone}, for reasons that may be more
 clear from figure \subfigref{light-cone}{2}, which attempts to represent two dimensions of space as well as the time dimension.
 
-We can draw a light cone centered on any event, such as the one
-labeled $\star$ in figure \figref{light-cone-conical}. If $\star$ is the Russian Revolution, then events inside
-$\star$'s future light cone can be described as all the ones that we could reach, starting from the
-Russian Revolution, by traveling at less than the speed of light. A signal could be sent from $\star$ to any of these
-events, and $\star$ could be the \emph{cause} of any of these events.
-
 <%
  fig(
    'light-cone',
@@ -361,12 +355,28 @@ events, and $\star$ could be the \emph{cause} of any of these events.
  )
 %>
 
+\pagebreak
+
+We can draw a light cone centered on any event, such as the one
+labeled $\star$ in figure \figref{light-cone-conical}. If $\star$ is the Russian Revolution, then events inside
+$\star$'s future light cone can be described as all the ones that we could reach, starting from the
+Russian Revolution, by traveling at less than the speed of light. A signal could be sent from $\star$ to any of these
+events, and $\star$ could be the \emph{cause} of any of these events.
+
+
 <% marg() %>
 <%
   fig(
     'light-cone-conical',
     %q{The light cone divides up spacetime into three categories in terms of possible cause-and-effect relationships
        with the event $\star$.}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'ftl-causality',
+    %q{In the original frame, B's time is greater than A's. In the new frame, it's the other way around.}
   )
 %>
 <% end_marg %>
@@ -386,14 +396,6 @@ reference. The light cone looks the same regardless of our state of motion.
 We can see that all observers will agree on the light cone, because it can be defined in terms of
 the interval, which is invariant.
 
-<% marg() %>
-<%
-  fig(
-    'ftl-causality',
-    %q{In the original frame, B's time is greater than A's. In the new frame, it's the other way around.}
-  )
-%>
-<% end_marg %>
 
 The light cone is fundamentally important because it tells us about
 the cause-and-effect structure of spacetime.  Bad things happen if we
@@ -405,7 +407,7 @@ Kirk sending a subspace radio distress call, and B is Starfleet
 receiving it and initiating a rescue mission. In the second frame of
 reference, represented by the parallelogram grid, B comes before A,
 and we have the paradoxical situation in which the rescue mission
-causes the distress call. (This is stronger conclusion than our
+causes the distress call. (This is a stronger conclusion than our
 earlier one about $c$ as a speed limit on cause and effect,
 \note{cf-ftl-causality-argument}.)\label{ftl-causality-argument}\index{c@$c$!as speed limit for cause and effect}
 
