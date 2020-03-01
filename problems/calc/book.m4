@@ -6,3 +6,4 @@ m4_define([:__widmann:],Problem by P.~Widmann.)m4_dnl
 m4_define([:__sn:],1)m4_dnl
 % ... some problems are special-cased for __lm_series and __sn (and possibly __cp); make sure
 %     something sane happens for this book
+m4_define([:__mod:],0)m4_dnl

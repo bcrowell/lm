@@ -2367,7 +2367,7 @@ m4_define(__hw_problems_24_maxwellian,g5)m4_dnl
 m4_define(__hw_problems_24_pelightsensor,j1)m4_dnl
 m4_define(__hw_problems_24_cancer,j2)m4_dnl
 m4_define(__hw_problems_24_mirrorphotons,j3)m4_dnl
-m4_define(__hw_problems_24_comparephotons,j4)m4_dnl
+m4_define(__hw_problems_24_compare-photons,j4)m4_dnl
 m4_define(__hw_problems_24_projector,j5)m4_dnl
 m4_define(__hw_problems_24_pe,j6)m4_dnl
 m4_define(__hw_problems_24_am-radio-photon-density,j7)m4_dnl
