@@ -617,4 +617,61 @@ the following effects:
 - deflection of light rays by gravity
 <% end_lab %>
 
+<% begin_lab("Four-vectors and inner products",columns:1,type:'ex',suffix:'B') %>\label{lab:four-vectors}
+
+<%
+  fig(
+    'ex-inner-product',
+    '',
+    {
+      'width'=>'fullpage','anonymous'=>true
+    }
+  )
+%>
+
+The figure shows four-vectors $\vc{A}$ through $\vc{D}$. To avoid cluttering the diagram, only
+one vector has its tail extended all the way to the origin, but conceptually all four do. As described at the side of the figure,
+the axes can be interpreted as either spacetime axes or energy-momentum axes. All components are
+integers in both frames of reference. When reading off components in the primed coordinates, which don't have grid-lines,
+you will want to use a ruler or a credit card, because otherwise some of the results are optical illusions that look
+like the wrong value.
+
+1. If the graph is of spacetime, which vector could be be a segment of the world-line of a light ray?\\
+If the graph is reinterpreted an energy-momentum graph, what does this tell us about the ray's energy compared to its momentum?
+
+2. If the graph is of spacetime, which vector could be a segment of the world-line of someone who is at rest in the $(t,x)$ frame?\\
+If it's energy-momentum, what can we say about this person's momentum?\\
+How does this person describe the events at the tip and tail of vector $\vc{C}$?
+
+\vfill\hfill\emph{Turn the page.}\vfill
+
+\pagebreak
+
+3. The inner product of two four-vectors can be evaluated as $(p,q)\cdot(r,s)=pr-qs$.
+Consider the graph as an energy-momentum graph. In each of the following, calculate the inner product two different ways
+and give an interpretation:
+
+$\vc{A}\cdot\vc{A}$, evaluated in the $(E,p)$ frame\\
+$\vc{A}\cdot\vc{A}$, evaluated in the $(E',p')$ frame\\
+Why does this make sense?
+
+$\vc{D}\cdot\vc{D}$, evaluated in the $(E,p)$ frame\\
+$\vc{D}\cdot\vc{D}$, evaluated in the $(E',p')$ frame\\
+What does this represent physically?
+
+$\vc{C}\cdot\vc{D}$, evaluated in the $(E,p)$ frame\\
+$\vc{C}\cdot\vc{D}$, evaluated in the $(E',p')$ frame\\
+What does an observer at rest in the unprimed frame say is happening?
+
+$\vc{B}\cdot\vc{D}$, evaluated in the $(E,p)$ frame\\
+$\vc{B}\cdot\vc{D}$, evaluated in the $(E',p')$ frame
+
+
+
+
+
+
+
+<% end_lab %>
+
 <% end_chapter() %>
