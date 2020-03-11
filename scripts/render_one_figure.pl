@@ -50,8 +50,7 @@ unless (-e $pdf && -M $svg > -M $pdf) { #
   #   https://bugs.launchpad.net/inkscape/+bug/382394
   # Create dir for temporary prefs file. Other files will be created there.
   my $temp_dir = tempdir( CLEANUP => 1 );
-  #my $c="INKSCAPE_PORTABLE_PROFILE_DIR=$temp_dir inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
-  my $c="INKSCAPE_PROFILE_DIR=$temp_dir inkscape --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
+  my $c="INKSCAPE_PROFILE_DIR=$temp_dir inkscape  --g-fatal-warnings --export-text-to-path --export-pdf=$pdf $svg  --export-area-drawing 1>/dev/null"; 
   print "  $c\n"; 
   unless ($not_for_real) {
     my $good_prefs = "$FindBin::RealBin/inkscape_rendering_preferences.xml";

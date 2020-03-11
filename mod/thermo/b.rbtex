@@ -461,6 +461,8 @@ each other than gases in general. Continuing to search for
 consistency, we find that noble gases are more consistent
 with each other when their pressure is very low.
 
+\pagebreak
+
 As an idealization, we imagine a gas in which the atoms interact only
 with the sides of the container, not with each other. Such a gas is perfectly
 nonreactive (as the noble gases very nearly are), and never
@@ -552,10 +554,7 @@ used.
 
 <% end_sec('temperature') %>
 
-\enlargethispage{\baselineskip}
-
-<% begin_sec("Heat",0,'heat') %>
-\index{heat}
+<% begin_sec("Heat",4,'heat') %>\index{heat}
 ``Heat,'' notated $Q$, is used in thermodynamics as a term for an
 amount of thermal energy that is transferred. When you put a bite of food in your mouth that is too hot,
 the pain is caused by the heat transferred from the food to your
@@ -599,7 +598,7 @@ No universally consistent convention is possible, since, e.g., if objects A, B,
 and C all interact, we will always have opposite signs for A's work on B and B's
 work on A, etc.\label{thermo-sign-conventions}
 
-\enlargethispage{\baselineskip}
+\pagebreak
 
 \startdqs
 
@@ -623,14 +622,12 @@ proposed for the ``\ldots'' in $\der E_1/\der t=k(\ldots)$.
 Give physical reasons why five of these are not possible.
 \end{dq}
 
-\pagebreak
-
 \begin{dq}
 How should the rate of heat conduction in \subfigref{dq-heat-cond-propto}{2} compare with
 the rate in \subfigref{dq-heat-cond-propto}{1}?
 \end{dq}
 
-<% marg(100) %>
+<% marg(300) %>
 <%
   fig(
     'dq-heat-cond-propto',
@@ -694,6 +691,14 @@ Integrating both sides gives $\ln P=-\mygamma\ln V+\text{const}$, or
   P \propto V^{-\mygamma}.
 \end{equation*}
 
+<% marg %>
+<%
+  fig(
+    'gamma-spring-of-air',
+    %q{Example \ref{eg:gamma-spring-of-air}.}
+  )
+%>
+<% end_marg %>
 \begin{eg}{Measuring $\gamma$ using the ``spring of air''}\label{eg:gamma-spring-of-air}
 Figure \figref{gamma-spring-of-air} shows an experiment that can be used to measure the $\gamma$ of a gas.
 When the mass $m$ is inserted into bottle's neck, which has cross-sectional area $A$, the mass
@@ -714,14 +719,6 @@ and $\der P/\der V=-\gamma P/V$. Thus,
 \end{align*}
 \end{eg}
 
-<% marg(-50) %>
-<%
-  fig(
-    'gamma-spring-of-air',
-    %q{Example \ref{eg:gamma-spring-of-air}.}
-  )
-%>
-<% end_marg %>
 
 
 \begin{eg}{The Helmholtz resonator}\label{eg:helmholtz-resonator}\index{Helmholtz resonator}
