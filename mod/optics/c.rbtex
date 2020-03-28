@@ -589,18 +589,8 @@ enlarged or reduced on a photocopying machine!
     %q{Cutting $d$ in half doubles the angles of the diffraction fringes.}
   )
 %>
-\spacebetweenfigs
-<%
-  fig(
-    'double-slit-wavelength',
-    %q{%
-      Double-slit diffraction patterns of long-wavelength red light (top)
-      and short-wavelength blue light (bottom).
-    }
-  )
-%>
-
 <% end_marg %>
+
 
 \vspace{2mm plus 3mm}
 
@@ -615,7 +605,8 @@ with smaller dimensions produces a bigger diffraction pattern, \figref{double-sl
 Blue light has a shorter wavelength than red. For a given
 double-slit spacing $d$, the smaller value of $\lambda /d$
 for leads to smaller values of $\sin \theta $, and
-therefore to a more closely spaced set of diffraction fringes, (g)
+therefore to a more closely spaced set of diffraction fringes,
+shown in figure \figref{double-slit-wavelength}.
 \end{eg}
 
 \vspace{2mm plus 3mm}
@@ -640,6 +631,19 @@ was all in terms of angles, so we should not expect it to
 address the issue of whether there is structure within a set
 of rays that are all traveling in the $\theta =0$ direction.)
 \end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'double-slit-wavelength',
+    %q{%
+      Double-slit diffraction patterns of long-wavelength red light (top)
+      and short-wavelength blue light (bottom).
+    }
+  )
+%>
+<% end_marg %>
+
 <% marg(-20) %>
 <%
   fig(
