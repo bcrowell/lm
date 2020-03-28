@@ -126,20 +126,8 @@ through a colored filter before diffracting it.
     }
   )
 %>
-\vspace{15mm}
-<%
-  fig(
-    'scaling',
-    %q{%
-      The bottom figure is simply a copy of the
-      middle portion of the top one, scaled up by a factor of two. All the angles
-      are the same. Physically, the angular pattern of the diffraction fringes
-      can't be any different if we scale both $\lambda$ and $d$ by the same
-      factor, leaving $\lambda/d$ unchanged.
-    }
-  )
-%>
 <% end_marg %>
+
 
 A second issue is that light from sources such as the sun or
 a lightbulb does not consist of a nice neat plane wave,
@@ -167,17 +155,41 @@ diffraction \index{diffraction!fringe}\index{fringe!diffraction}fringes.
 The center of each fringe is a point of maximum brightness,
 and halfway between two fringes is a minimum.
 
-\startdq
-
-\begin{dq}
-Why would x-rays rather than visible light be used to find
-the structure of a crystal? Sound waves are used to make
-images of fetuses in the womb. What would influence the
-choice of wavelength?
-\end{dq}
+Because the diffraction spreads out in all directions, the fringes do
+not have a spacing or locations that we can define in units of meters
+--- such dimensions would get bigger if we moved the screen farther
+away. But a diffraction does have definable \emph{angular}
+dimensions. An example would be the angle between lines X and Z in
+figure \figref{double-slit-water-waves}. A common problem in diffraction
+is to find some angular dimension or position $\theta$, given one or more
+linear dimensions, such as the distance $d$ between a pair of double slits.
+Conversely, one can observe a $\theta$ and determine an unknown $d$. In an
+example such as figure \figref{lysozyme-diffraction}, there could actually
+be many $\theta$'s and many $d$'s.
 
 <% end_sec() %>
-<% begin_sec("Scaling of diffraction",0) %>\index{diffraction!scaling of}
+
+<%
+  fig(
+    'lysozyme-diffraction',
+    %q{%
+      1.~Dorothy Hodgkin was awarded the Nobel Prize in chemistry in 1964 for her work in determining the structures of organic molecules using
+      x-ray diffraction. The following figures sketch the technique.
+      2.~The unknown molecule, in this case a natural antibacterial enzyme called
+      lysozyme, is crystallized. Without crystallization, the random orientations of all the molecules
+      would make the diffraction pattern a blurred average over orientations.
+      3.~The x-ray diffraction pattern is observed.
+      4.~The three-dimensional structure of the molecule is determined. As a much simpler example of the determination of an unknown structure
+      from its diffraction pattern, see problem \ref{hw:compare-double-slits}, p.~\pageref{hw:compare-double-slits}. The more general technique
+      is called Fourier analysis.
+    },
+    {
+      'width'=>'fullpage'
+    }
+  )
+%>
+
+<% begin_sec("Scaling of diffraction",4) %>\index{diffraction!scaling of}
 
 This chapter has ``optics'' in its title, so it is nominally
 about light, but we started out with an example involving
@@ -190,6 +202,21 @@ or reduce the whole diffraction situation by the same
 factor, including both the wavelengths and the sizes of the
 obstacles the wave encounters, the result is still a valid solution.
 
+<% marg() %>
+<%
+  fig(
+    'scaling',
+    %q{%
+      The bottom figure is simply a copy of the
+      middle portion of the top one, scaled up by a factor of two. All the angles
+      are the same. Physically, the angular pattern of the diffraction fringes
+      can't be any different if we scale both $\lambda$ and $d$ by the same
+      factor, leaving $\lambda/d$ unchanged.
+    }
+  )
+%>
+<% end_marg %>
+
 This is unusually simple behavior! Most physical phenomena do not
 scale in any simple way. For example, we can't have spiders the size
 of horses, because weight scales like the cube of the dimensions, while
@@ -201,20 +228,21 @@ about diffraction are applicable to all waves.
 
 Another way of stating the simple scaling behavior of
 diffraction is that the diffraction angles we get depend
-only on the unitless ratio $\lambda $/d, where $\lambda$ is
+only on the unitless ratio $\lambda /d$, where $\lambda$ is
 the wavelength of the wave and $d$ is some dimension of the
 diffracting objects, e.g., the center-to-center spacing
 between the slits in figure \figref{double-slit-water-waves}. If, for instance, we scale
 up both $\lambda $ and $d$ by a factor of 37, the ratio
 $\lambda /d$ will be unchanged.
-<% marg() %>
-<%
-  fig(
-    'huygens',
-    %q{Christiaan Huygens (1629-1695).}
-  )
-%>
-<% end_marg %>
+
+\startdq
+
+\begin{dq}
+Why would x-rays rather than visible light be used to find
+the structure of a crystal, as in figure \figref{lysozyme-diffraction}? Sound waves are used to make
+images of fetuses in the womb. What would influence the
+choice of wavelength?
+\end{dq}
 
 <% end_sec() %>
 <% begin_sec("The correspondence principle",0) %>
