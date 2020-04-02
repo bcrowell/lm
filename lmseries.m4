@@ -3,6 +3,9 @@ m4_define([:__lm_series:],1)m4_dnl
 m4_define([:__sn:],0)m4_dnl
 m4_define([:__cp:],0)m4_dnl
 m4_define([:__me:],0)m4_dnl
+m4_define([:__problems:],0)m4_dnl
+m4_define([:__fac:],0)m4_dnl
+m4_define([:__mod:],0)m4_dnl
 m4_define([:__pe:],PE)m4_dnl
 m4_define([:__pageref_section_or_chapter:],[:\pageref{ch:$1}:])m4_dnl
 m4_define([:__bare_section_or_chapter:],[:\ref{ch:$1}:])m4_dnl

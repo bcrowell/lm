@@ -41,7 +41,7 @@ foreach my $f(@prepend_m4_files) {if (-e $f) {push @p,$f}}
 my $prepend_m4_files = join(' ',@p);
 
 my $cmd = "m4 -P $prepend_m4_files $file";
-#print STDERR "========in run_m4.pl, book=$book command = $cmd\n"; 
+# print STDERR "========in run_m4.pl, book=$book command = $cmd\n";
 do_system($cmd,$file,'m4');
 
 sub do_system {
