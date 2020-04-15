@@ -80,7 +80,7 @@ angle that satisfies Snell's law.
 
 \end{summary}
 
-<% begin_hw_sec %>
+<% begin_hw_sec(vfill:true) %>
 
 <% begin_hw('underwaterlens') %>__incl(hw/underwaterlens)<% end_hw() %>
 
@@ -100,30 +100,35 @@ angle that satisfies Snell's law.
     {'suffix'=>'2'}
   )
 %>
-\spacebetweenfigs
+<% end_marg %>
+
+
+<% begin_hw('eyefocallength',2) %>__incl(hw/eyefocallength)<% end_hw() %>
+
+<% begin_hw('goggles') %>__incl(hw/goggles)<% end_hw() %>
+
+
+<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
+
+<% marg(300) %>
 <%
   fig(
     'hw-funkylenses',
     %q{Problem \ref{hw:funkylenses}.}
   )
 %>
-
 <% end_marg %>
-<% begin_hw('eyefocallength',2) %>__incl(hw/eyefocallength)<% end_hw() %>
-
-<% begin_hw('goggles') %>__incl(hw/goggles)<% end_hw() %>
-
-<% begin_hw('funkylenses') %>__incl(hw/funkylenses)<% end_hw() %>
 
 <% begin_hw('least-time-refraction',2) %>__incl(hw/least-time-refraction)<% end_hw() %>
 
-\pagebreak[4]
 
 <% begin_hw('imagelocation1') %>__incl(hw/imagelocation1)<% end_hw() %>
 
 <% begin_hw('imagelocation2') %>__incl(hw/imagelocation2)<% end_hw() %>
 
 <% begin_hw('imagelocation3') %>__incl(hw/imagelocation3)<% end_hw() %>
+
+\pagebreak
 
 <% marg(0) %>
 <%
@@ -137,19 +142,19 @@ angle that satisfies Snell's law.
 
 <% begin_hw('nearsighted') %>__incl(hw/nearsighted)<% end_hw() %>
 
+\pagebreak
+
 <% begin_hw('diamond') %>__incl(hw/diamond)<% end_hw() %>
 
 <% begin_hw('flatworm') %>__incl(hw/flatworm)<% end_hw() %>
 
-\pagebreak
 
 <% begin_hw('deleted') %>__incl(hw/deleted)<% end_hw() %>
 
-\vfill
+
 
 <% begin_hw('eyeglasses-no-mag') %>__incl(hw/eyeglasses-no-mag)<% end_hw() %>
 
-\pagebreak
 
 <% begin_hw('back-silvered') %>
 A typical mirror consists of a pane of glass of thickness $t$ and index of refraction $n$,
@@ -170,6 +175,8 @@ values of $n$ and $t$ that would recover the case without any glass.
 <% begin_hw('constant-thickness') %>__incl(hw/constant-thickness)<% end_hw() %>
 
 <% begin_hw('spider-focal-length') %>__incl(hw/spider-focal-length)<% end_hw() %>
+
+\pagebreak
 
 <% begin_hw('real-image-conditions') %>__incl(hw/real-image-conditions)<% end_hw() %>
 
