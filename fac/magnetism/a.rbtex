@@ -659,9 +659,7 @@ have the identity
 is called the $g$ factor.\index{g factor} We expect $g=2$
 for a single orbiting particle.
 
-Now suppose that we have a collection of particles with identical values of $q/m$ (or
-a continuous distribution of charge and mass in which the ratio of the charge and mass
-densities is constant). Then vector addition of the $\vc{L}$ and $\vc{m}$ values
+Now suppose that we have a collection of particles with identical values of $q/m$. Then vector addition of the $\vc{L}$ and $\vc{m}$ values
 gives the same $g=2$ for the system as a whole. On the other hand, if the different
 members of the system do \emph{not} all have the same $q/m$, then the $g$ of the system
 as a whole need not be 2. For example, a collection of positive and negative charges
@@ -675,14 +673,24 @@ to their motion through space. But we also find that electrons, neutrons, and pr
 with a built-in angular momentum, present even when they are at rest.
 This intrinsic angular momentum, called spin,\index{spin}
 is fixed in magnitude but can vary in direction, like that of a gyroscope.
-Thus if we measure the $\vc{L}$ and $\vc{m}$ of these particles when they
-are \emph{at rest}, they have fixed $g$ factors, which are as follows:
+Thus if we measure the $\vc{L}$ and $\vc{m}$ of these particles 
+\emph{at rest}, they have fixed $g$ factors, figure \figref{g-factors}.
 
+<% marg(0) %>
+<%
+  fig(
+    'g-factors',
+    %q{$g$ factors of several particles.},
+    {'text'=>%q{
 \begin{tabular}{ll}
-electron & 2.002319304361 \\
-neutron & 0 \\
+electron & 2.002319304361 \\\\
+neutron & 0 \\\\
 proton & 5.58569471 
 \end{tabular}
+    }}
+  )
+%>
+<% end_marg %>
 
 The electron's intrinsic $g$ factor is extremely close to 2, and if we ignore the small discrepancy for
 now, we are led to imagine that the electron is either a pointlike particle or a composite
@@ -749,6 +757,15 @@ the same form. With the correct constant of proportionality, it turns out to be
         B_z        &= \frac{km}{c^2}\left(3\cos^2\theta-1\right)r^{-3}\\
         B_R        &= \frac{km}{c^2}\left(3\sin\theta\:\cos\theta\right)r^{-3}\eqquad.
 \end{align*}
+
+\startdqs
+
+\begin{dq}
+Find the regions of three-dimensional space in which the magnetic field of a dipole is
+(1) in the same direction as the dipole vector (parallel), (2)
+in the opposite direction (antiparallel), and (3) perpendicular to it.
+\end{dq}
+
 <% end_sec('dipole-field') %>
 <% end_sec('b-dipole') %>
 
@@ -757,6 +774,16 @@ Many real-world electromagnets are built out of multiple circular loops of wire.
 we use a trick to calculate the useful result for the field at the center of
 a single circular loop. Usually I'm not a big fan of tricks, but we'll see later
 that this trick can be generalized in a useful way.
+
+<% marg(0) %>
+<%
+  fig(
+    'counterrotating',
+    %q{Two counterrotating rings of current. The inset photo 2 shows a twin lead cable with the insulation
+       stripped off of its ends.}
+  )
+%>
+<% end_marg %>
 
 We start by considering a problem, figure \subfigref{counterrotating}{1},
 that looks harder but is actually easier. We have not one but two loops of wire, with
@@ -770,15 +797,6 @@ Of course in the real circuit we would have to have a battery and connections to
 and we would probably hook up the two loops in series so that their currents were guaranteed to be
 exactly equal in absolute value. These complications are not shown in the diagram.
 
-<% marg(0) %>
-<%
-  fig(
-    'counterrotating',
-    %q{Two counterrotating rings of current. The inset photo 2 shows a twin lead cable with the insulation
-       stripped off of its ends.}
-  )
-%>
-<% end_marg %>
 
 The trick, as shown in \subfigref{counterrotating}{3}, is to take the circular strip between the
 rings and break it up into imaginary squares, then place a square current loop with current $I$ on each one.
@@ -1431,7 +1449,7 @@ loop's dipole moment. The second one labels the currents along the four sides of
 (a) Find the orientation that would minimize the energy $U=-\vc{m}\cdot\vc{B}$.\\
 (b) Use the right-hand rule to find the force on each of the four edges.\\
 (c) Verify that the total force is zero.\\
-(d) Verify that the direction of the total torque is such that it would tend to align the loop's dipole moment with the field.
+(d) Find the four torques, and verify that the direction of the total torque is such that it would tend to align the loop's dipole moment with the field.
 
 \vfill
 
