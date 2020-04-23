@@ -144,7 +144,7 @@ momentum, and electrons are affected by electrical forces.
 \begin{eg}{The wavelength of a cat}\label{eg:cat-wavelength}
 \egquestion What is the wavelength of a trotting cat?
 
-\eganswer One may doubt whether the equation $p=\hbar k=h/\lambda$should be
+\eganswer One may doubt whether the equation $p=\hbar k=h/\lambda$ should be
 applied to a cat, which is not just a single particle
 but a rather large collection of them. Throwing caution to
 the wind, however, we estimate the cat's mass at 1 kg
@@ -155,7 +155,7 @@ is therefore roughly
           &=    \frac{h}{mv}  \\
   &= \frac{6.63\times10^{-34}\ \zu{J}\unitdot\sunit}{(1\ \kgunit)(1\ \munit/\sunit)} \\
   &\sim 10^{-33}\ \frac{\left(\kgunit\unitdot\munit^2/\sunit^2\right)\unitdot\sunit}{\kgunit\unitdot\munit/\sunit} \\
-        &= 10^{-33}\ \munit
+        &= 10^{-33}\ \munit .
 \end{align*}
 \end{eg}
 
@@ -516,27 +516,25 @@ a frequency equal to the difference in frequency between the
 two waves. For instance, if the waves had frequencies of 100
 Hz and 110 Hz, the frequency of the envelope would be 10 Hz.
 
-To apply similar reasoning to the wavelength, we must define
-a quantity $z=1/\lambda $ that relates to wavelength in the
-same way that frequency relates to period. In terms of this
-new variable, the $z$ of the envelope equals the difference
-between the $z's$ of the two sine waves.
+Applying similar reasoning to the wavelength,
+the wavenumber $k$ of the envelope equals the difference
+between the wavenumbers of the two sine waves.
 
 The group velocity is the speed at which the envelope moves
-through space. Let $\Delta f$ and $\Delta z$ be the
-differences between the frequencies and $z's$ of the two
+through space. Let $\Delta \omega$ and $\Delta k$ be the
+differences between the frequencies and wavenumbers of the two
 sine waves, which means that they equal the frequency and
-$z$ of the envelope. The group velocity is $v_g=f_{envelope}\lambda_{envelope}=\Delta
-f/\Delta $z. If $\Delta f$  and $\Delta z$ are sufficiently
-small, we can approximate this expression as a derivative,
+wavenumber of the envelope. The group velocity is $v_g=\omega_{envelope}/k_{envelope}=\Delta\omega/\Delta k$.
+If $\Delta\omega$  and $\Delta k$ are small,
+we can approximate this expression as a derivative,
 \begin{equation*}
-                v_g         =    \frac{\der f}{\der z}\eqquad.  
+                v_g         =    \frac{\der \omega}{\der k}\eqquad.  
 \end{equation*}
 This expression is usually taken as the definition of the
 group velocity for wave patterns that consist of a
 superposition of sine waves having a narrow range of
 frequencies and wavelengths. In quantum mechanics, with
-$f=E/h$ and $z=p/h$, we have $v_g=\der E/\der p$. In the case of a
+$\omega=E/\hbar$ and $k=p/\hbar$, we have $v_g=\der E/\der p$. In the case of a
 nonrelativistic electron the relationship between energy and
 momentum is $E=p^2/2m$, so the group velocity is $\der E/\der p=p/m=v$,
 exactly what it should be. It is only the phase velocity
@@ -841,9 +839,11 @@ and the position of a particle simultaneously and with
 perfect accuracy. The uncertainties in these two quantities
 are always such that $\Delta p\Delta x \gtrsim h$.
 \end{important}
-\noindent (This approximation can be made into a strict inequality,
-$\Delta p\Delta x>h/4\pi$, but only with more careful
-definitions, which we will not bother with.)
+\noindent (To make this approximate inequality into an exact one,
+we would need to pick a mathematical definition
+of our measure of uncertainty. If we use the standard deviation, p.~\pageref{sec:variance},
+then it can be shown that 
+$\Delta p\Delta x\ge h/4\pi$.)
 
 Note that although I encouraged you to think of this
 derivation in terms of a specific real-world system, the
