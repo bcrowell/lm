@@ -1514,12 +1514,14 @@ m4_define(__hw_mod_13_leadbound,2)m4_dnl
 m4_define(__hw_mod_13_electroncapture,3)m4_dnl
 m4_define(__hw_mod_13_molecule-in-beta-decay,4)m4_dnl
 m4_define(__hw_mod_14_wholelife,1)m4_dnl
-m4_define(__hw_mod_14_unknownisotopes,2)m4_dnl
+m4_define(__hw_mod_14_unknownisotopes-mod,2)m4_dnl
 m4_define(__hw_mod_14_heightdistribution,3)m4_dnl
 m4_define(__hw_mod_14_blindfold-target,4)m4_dnl
 m4_define(__hw_mod_14_truncated-half-life,5)m4_dnl
 m4_define(__hw_mod_14_maxwellian,6)m4_dnl
 m4_define(__hw_mod_14_lava,7)m4_dnl
+m4_define(__hw_mod_14_car-thefts,8)m4_dnl
+m4_define(__hw_mod_14_accelerator-with-poisson,9)m4_dnl
 m4_define(__hw_mod_15_mirrorphotons,1)m4_dnl
 m4_define(__hw_mod_15_pelightsensor,2)m4_dnl
 m4_define(__hw_mod_15_cancer,3)m4_dnl

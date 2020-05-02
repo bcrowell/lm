@@ -13,7 +13,7 @@ CLS_FILES = "lmseries.cls","lmcommon.sty","lmfigs.sty","lmlayout.sty","lmmath.st
 #     copy into the working dir when building the book; "CLS_" is really a misnomer
 GET_CLS = perl -e 'foreach $$f($(CLS_FILES)) {$$cmd="cp $(FILE_PREFIX)../$$f ."; system $$cmd}'
 RM_CLS = perl -e 'foreach $$f($(CLS_FILES)) {system "rm -f $$f"}'
-RM_TEMP = rm -f *.pos */*temp.* */*.bak eruby_complaints
+RM_TEMP = rm -f *.pos */*temp.* */*.bak eruby_complaints temp.tex temp.idx
 RUN_ERUBY = $(NICE) perl -I../scripts ../scripts/run_eruby.pl
 HARVEST_AUX_FILES = ../scripts/harvest_aux_files.rb
 SPLIT_BOOK = ../scripts/split_book.pl
@@ -29,9 +29,11 @@ MAKEINDEX = makeindex $(BOOK).idx >/dev/null
 TEX_INTERPRETER = pdflatex
 #TEX_INTERPRETER = lualatex
 # ... lualatex sometimes segfaults on Mechanics, but not always reproducible
-DO_PDFLATEX_RAW = $(NICE) $(TEX_INTERPRETER) -shell-escape -interaction=$(MODE) $(BOOK) >$(TERMINAL_OUTPUT)
+DO_PDFLATEX_RAW = cp $(BOOK).tex temp.tex && $(NICE) $(TEX_INTERPRETER) -shell-escape -interaction=$(MODE) temp >$(TERMINAL_OUTPUT) && mv temp.pdf $(BOOK).pdf && cp temp.idx $(BOOK).idx
 # -shell-escape is so that write18 will be allowed
 # environment variable  openout_any=a is so that we can write to ../share/end
+# The purpose of working with scratch files temp.tex and temp.pdf is that I'm currently using okular as my viewer, and it
+# has annoying behavior when its file gets disturbed.
 SHOW_ERRORS = \
         system("../scripts/filter_latex_messages.rb <$(TERMINAL_OUTPUT) >a.a && mv a.a $(TERMINAL_OUTPUT)"); \
         print "========error========\n"; \
@@ -166,7 +168,7 @@ prepress:
 	# See meki:computer:apps:ghostscript, scripts/create_fullembed_file, and http://tex.stackexchange.com/questions/24002/turning-off-font-subsetting-in-pdftex
 	../scripts/preflight_pdf.pl $(BOOK).pdf
 	perl -e 'if ("$(BOOK)" eq 'cp' || "$(BOOK)" eq 'me' || "$(BOOK)" eq 'fac' || "$(BOOK)" eq 'mod') {system("make prepress_single_vol")} else {system("make prepress_splits")}'
-	
+
 prepress_single_vol:
 	# Don't use this directly; just do a 'make prepress'.
 	pdftk $(BOOK).pdf cat 3-end output lulu_$(BOOK).pdf
