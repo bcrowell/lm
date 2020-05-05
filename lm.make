@@ -13,7 +13,7 @@ CLS_FILES = "lmseries.cls","lmcommon.sty","lmfigs.sty","lmlayout.sty","lmmath.st
 #     copy into the working dir when building the book; "CLS_" is really a misnomer
 GET_CLS = perl -e 'foreach $$f($(CLS_FILES)) {$$cmd="cp $(FILE_PREFIX)../$$f ."; system $$cmd}'
 RM_CLS = perl -e 'foreach $$f($(CLS_FILES)) {system "rm -f $$f"}'
-RM_TEMP = rm -f *.pos */*temp.* */*.bak eruby_complaints temp.tex temp.idx
+RM_TEMP = rm -f *.pos */*temp.* */*.bak eruby_complaints temp.tex temp.idx temp.ind
 RUN_ERUBY = $(NICE) perl -I../scripts ../scripts/run_eruby.pl
 HARVEST_AUX_FILES = ../scripts/harvest_aux_files.rb
 SPLIT_BOOK = ../scripts/split_book.pl
@@ -24,7 +24,7 @@ PROBLEMS_CSV = ../data/problems.csv
 SPOTTER_ANSWERS = /home/bcrowell/Documents/programming/spotter/answers
 SPOTTER_M4_FILE = $(SPOTTER_ANSWERS)/$(BOOK).m4
 
-MAKEINDEX = makeindex $(BOOK).idx >/dev/null
+MAKEINDEX = makeindex $(BOOK).idx >/dev/null && cp $(BOOK).ind temp.ind
 
 TEX_INTERPRETER = pdflatex
 #TEX_INTERPRETER = lualatex

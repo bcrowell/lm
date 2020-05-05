@@ -478,6 +478,18 @@ which can be satisfied since we're in a classically allowed region with $E-U>0$,
 side is manifestly positive.
 \end{eg}
 
+<% marg(-300) %>
+<%
+  fig(
+    'hydrogen-ground-state-with-scale',
+    %q{%
+      The ground-state wavefunction of the hydrogen atom, example \ref{eg:h-ground-exact}, is graphed
+      in the $x$-$y$ plane as $\Psi(x,y,0)$, omitting the third spatial dimension.
+    }
+  )
+%>
+<% end_marg %>
+
 \begin{eg}{Exact treatment of the ground state of hydrogen}\label{eg:h-ground-exact}
 The general treatment of the hydrogen atom for all values of $n$ is beyond the mathematical
 scope of this book, but it's fairly straightforward to verify it for a particular $n$,
@@ -713,8 +725,7 @@ The standard convention in physics is that for a wave moving in a certain direct
 the phase in the forward direction is farther counterclockwise in the complex plane, and
 you can verify for yourself that this is the case by comparing with the convention
 defined by \subfigref{rainbow}{1}. The function being plotted here is $\Psi=e^{ikx}$,
-where $k=2\pi/\lambda$ is the spatial analog of frequency, with an extra factor of $2\pi$ for
-convenience. For the use of the complex exponential, see sec.~\ref{subsec:euler-formula},
+where $k=2\pi/\lambda$ is the wavenumber. For the use of the complex exponential, see sec.~\ref{subsec:euler-formula},
 p~.\pageref{subsec:euler-formula}; it simply represents a point on the unit circle in the
 complex plane. The wavelength $\lambda$
 is a constant and can be measured, for example, from one yellow point to the next. The wavelength
@@ -954,10 +965,81 @@ work has clarified the situation somewhat.
 
 <% end_sec('quantum-inner-product') %>
 
-<% begin_sec("Unitarity",nil,'unitarity') %>
+<% begin_sec("Time evolution and unitarity",nil,'unitarity') %>
+<% begin_sec("The simplest cases of time evolution",nil,'simple-time-evolution') %>
+So far we have not said too much about how a wavefunction changes with time, except that a state of definite energy $E$ has some
+frequency given by $E=\hbar\omega$. As a simple example, consider a particle in a box. Let's say that it's initially in the ground state,
+which is a standing wave like <% eqn_image("eqn-wave1","../share/quantum/figs") %>. It has some energy, so we can determine its
+frequency and period. Based on experience with standing waves on a string, we expect that after
+half a period it will look like <% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %>. The problem is how it gets from
+the frown to the smile. If it behaved like a wave on a string, it would go from <% eqn_image("eqn-wave1","../share/quantum/figs") %>
+to <% eqn_image("eqn-wave1-flat","../share/quantum/figs") %> to <% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %>.
+But passing through the flat intermediate state won't work, because of the fundamental structure of quantum mechanics,
+which includes the principle of state fundamentalism (p.~\pageref{state-fundamentalism}). The state, represented by our
+picture of the wavefunction, is supposed to be all there is to know about the system. But if someone presented us with
+the zero wavefunction <% eqn_image("eqn-wave1-flat","../share/quantum/figs") %>, we would have \emph{no} information at all
+about the state.
+
+So the wavefunction's amplitude can't oscillate  back and forth along the real number line between positive and negative values,
+as it would for a wave on a string. What it actually does is to spin around in a circle in the complex plane. That is, instead
+of going like
+\begin{equation*}
+1\times<% eqn_image("eqn-wave1","../share/quantum/figs") %> \qquad
+0\times<% eqn_image("eqn-wave1","../share/quantum/figs") %> \qquad
+-1\times<% eqn_image("eqn-wave1","../share/quantum/figs") %>, \qquad \text{[wrong]}
+\end{equation*}
+it goes like
+\begin{equation*}
+1\times<% eqn_image("eqn-wave1","../share/quantum/figs") %> \qquad
+-i\times<% eqn_image("eqn-wave1","../share/quantum/figs") %> \qquad
+-1\times<% eqn_image("eqn-wave1","../share/quantum/figs") %>. \qquad \text{[right]}
+\end{equation*}
+(We have $-i$ here rather than $i$ because the convention is to have it spin clockwise.)
+This is enough to define the time-dependence of any state that has a definite energy: the energy tells us
+a frequency $\omega$, and then we know that the time-evolution of the state is simply that it spins its
+phase like $e^{-i\omega t}$, as in Euler's formula (sec.~\ref{subsec:euler-formula}, p.~\pageref{subsec:euler-formula}).
+
+<% marg() %>
+<%
+  fig(
+    'rainbow-traveling',
+    %q{%
+      A quantum-mechanical traveling wave with a definite energy, and therefore a definite frequency.
+      Complex values are represented as colors, according to the conventions introduced in figure \figref{rainbow},
+      p.~\pageref{fig:rainbow}. The wave should actually be thought of as extending infinitely far in both directions,
+      but I've drawn a finite piece of it in order to make it more visually obvious that it's traveling to the right.
+    }
+  )
+%>
+<% end_marg %>
+
+
+A particularly nice example is a traveling wave with a definite
+energy, figure \figref{rainbow-traveling}. Frozen at one moment in
+time, such a wave looks like $e^{ikx}$, which we visualize as
+a repeating rainbow. If we let this wave travel, then as we saw in ch.~\ref{ch:waves},
+its rigidly gliding motion should be described by a function whose input is of the form
+$kx-\omega t$. In other words, we have $\Psi=e^{i(kx-\omega t)}$. An observer who is
+watching the wave go by will say that a certain point with a fixed phase, say $\Psi=1$,
+which is red in the figure,
+is moving to the right at a certain speed. But an observer who just stays in one plays
+as the wave washes over her will say that $\Psi$ is spinning around in a circle in the
+complex plane. To see this more explicitly, we can break up the exponential into separate
+factors, $\Psi=e^{ikx}e^{-i\omega t}$. The time-dependent factor of $e^{-i\omega t}$ is
+just what we described a moment ago: a phase spinning clockwise in the complex plane.
+
+For states that are not states of definite energy, the time-evolution is a little more
+complicated and is given by an equation known as the time-dependent Schr\"odinger equation,
+which we will not write down explicitly here --- but for states of definite energy all the equation describes
+is the kind of phase-spinning described above.
+<% end_sec('simple-time-evolution') %>
+
+<% begin_sec("Unitarity",nil,'unitarity-subsec') %>
+
 In discussion question \ref{dq:qm-cons-of-prob} on p.~\pageref{dq:qm-cons-of-prob}, we considered
 two traveling waves that collided head-on and superposed, and we convinced ourselves that
-probability would be conserved. It's possible to prove that the Schr\"odinger equation always
+probability would be conserved. 
+It's possible to prove that the time-evolution of the wavefunction always
 results in conservation of probability.
 
 To put this in real-world terms, suppose that your
@@ -967,7 +1049,7 @@ a straight face, you answer, ``Professor, I can guarantee that \emph{something} 
 In other words, if we have a properly normalized wavefunction at a certain time, then we expect it
 to remain properly normalized at all later times.
 
-The Schr\"odinger equation is also completely deterministic, so that if we know
+The time evolution is also completely deterministic, so that if we know
 $\Psi$ initially, we can always predict it in the future. We can also ``predict'' backward in time,
 so that the system's history can always be recovered
 from knowledge of its present state. Thus there is never any loss of information over time.
@@ -976,7 +1058,7 @@ Summarizing, we have the following important principle:
 
 \begin{important}[Unitary
          evolution of the wavefunction]\index{unitary evolution of the wavefunction}\label{unitarity-postulate}
-The wavefunction evolves over time, according to the Schr\"odinger equation, in a deterministic
+The wavefunction evolves over time in a deterministic
 and \emph{unitary} manner,
 meaning that probability is conserved and information is never lost.
 \end{important}
@@ -984,7 +1066,7 @@ meaning that probability is conserved and information is never lost.
 \noindent The word ``unitary'' comes from linear algebra, which gives us the following more crisp mathematical
 way of formulating this principle.
 A unitary transformation\index{unitary operator}
-is one that preserves inner products. That is,
+is one that preserves inner products. That is, $\mathcal{O}$ is unitary if
 $\langle\mathcal{O}u|\mathcal{O}v\rangle=\langle u|v\rangle$. This is similar to the way in which
 rotations preserve dot products in Euclidean geometry. The linearity of the Schr\"odinger equation
 guarantees that the evolution of the wavefunction from one time to another time can be represented
@@ -1011,6 +1093,7 @@ theory of gravity (Einstein's theory of general relativity) and a completely suc
 the microscopic world (quantum mechanics), the two theories are irreconcilable, and
 we can only make educated guesses, for example, about the behavior of a hypothetical microscopic black hole.
 
+<% end_sec('unitarity-subsec') %>
 
 <% end_sec('unitarity') %>
 
