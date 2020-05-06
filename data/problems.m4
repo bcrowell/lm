@@ -1559,8 +1559,6 @@ m4_define(__hw_mod_17_tritium-decay,7)m4_dnl
 m4_define(__hw_mod_17_square-wavefunction,8)m4_dnl
 m4_define(__hw_mod_17_ho-orthogonal,9)m4_dnl
 m4_define(__hw_mod_17_particle-in-a-box-superpos,10)m4_dnl
-m4_define(__hw_mod_17_nonunitary,11)m4_dnl
-m4_define(__hw_mod_17_ic-time-dependent-s-eqn,12)m4_dnl
 m4_define(__hw_mod_18_basketball,1)m4_dnl
 m4_define(__hw_mod_18_boron-10,2)m4_dnl
 m4_define(__hw_mod_18_deuterium-statistics,3)m4_dnl
