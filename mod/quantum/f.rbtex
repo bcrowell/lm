@@ -806,5 +806,52 @@ small, for the same reason as in the case of the protons.
 
 <% end_hw_sec %>
 
+<% begin_lab("The quantum moat",columns:1,type:'ex') %>\label{lab:quantum-moat}
+
+Consider the following three states for a particle confined to a circle, like
+a wave in the moat surrounding a castle.
+
+<%
+  fig(
+    'ex-moat',
+    '',
+    {
+      'width'=>'fullpage','anonymous'=>true
+    }
+  )
+%>
+
+We show each wavefunction first using the color conventions introduced on p.~\pageref{fig:rainbow},
+and then using numbers. The numerical description is discretized, i.e., we only consider the
+values of the wavefunction at found points, evenly spaced around the circle. In this discretized
+representation, we define the inner product using a sum rather than an integral. We can refer
+to the wavefunctions by notations such as $|\Psi_0\rangle$ or simply $|0\rangle$. The $A$'s are
+normalization constants.
+
+1.~In this representation, how would a wavefunction like $\langle \Psi_1|$ differ from
+$|\Psi_1\rangle$?
+
+2.~Which of these are states of definite angular momentum?
+
+3.~The instructor will demonstrate the determination of the magnitude $|A_0|$ of the normalization
+constant for $|0\rangle$.
+
+4.~The students determine the magnitudes of $A_1$ and $A_2$.
+
+5.~Suppose that we first prepare the particle in state 2, and then we measure its angular
+momentum. The instructor will use the discretized wavefunction to approximate $|\langle 0|2\rangle|^2$, which can be interpreted
+as the probability that the measurement results in $\ell=0$.
+
+6.~The students compute $|\langle 1|2\rangle|^2$ and give a similar interpretation.\footnote{This is the first
+of our results in which the discretization actually introduces a nonzero error. For comparison, you should
+find that your result is reasonably close to the exact $|A_1A_2\int_0^2 \exp(-i\pi x/2)\der x|^2=2/\pi^2\approx0.20$.}
+
+% maxima -q --batch-string="abs((1/(2*sqrt(2)))*integrate(exp(-%i*%pi*x/2),x,0,2))^2;"
+
+7.~How would $\langle 1|2\rangle$ compare with $\langle 2|1\rangle$?
+
+8.~Compute $|\langle 0|1\rangle|^2$ and interpret the result.
+
+<% end_lab %>
 
 <% end_chapter() %>

@@ -33,7 +33,7 @@ $color_lut = [
 def main
   w = $default_width
   h = 100
-  type = 'moat'
+  type = 'flat_moat'
   if type=='traveling' then
     image = ChunkyPNG::Image.new(w,h,$bg_color)
     freq = 4.0 # spatial frequency
@@ -122,6 +122,22 @@ def main
         if r<=1.0 then
           arg = Math::atan2(yy,xx)
           image[x,y] = color([r,arg])
+        end
+      }
+    }
+  end
+  if type=='flat_moat' then
+    h = w
+    image = ChunkyPNG::Image.new(w,h,$bg_color)
+    0.upto(w-1) { |x|
+      0.upto(h-1) { |y|
+        xx = (x.to_f-h/2.0)/(h/2.0)
+        yy = -(y.to_f-h/2.0)/(h/2.0)
+        r = Math::sqrt(xx*xx+yy*yy)
+        # if true then 
+        if r<=1.0 && r>0.6 then
+          arg = Math::atan2(yy,xx)
+          image[x,y] = color([1.0,arg-0.3])
         end
       }
     }
