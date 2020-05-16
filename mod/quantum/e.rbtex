@@ -911,6 +911,24 @@ For example, in the Euclidean plane, vectors that are perpendicular to each othe
 a dot product of zero, which tells you that they lie along lines that are completely different.
 When two vectors have an inner product of zero, we say that they are \emph{orthogonal}.
 
+<% marg(300) %>
+<%
+fig('qm-inner-product-properties',%q{
+  Properties of the inner product. Except for the complex conjugates, these are the same as the properties of
+  the dot product from Euclidean geometry.
+},{'anonymous'=>true,'text'=>
+%q{
+    \begin{align*}
+      & \langle u | v \rangle = \langle v | u \rangle^* \\\\
+      & \langle u | \alpha v+\beta w \rangle = \alpha\langle u | v \rangle + \beta\langle u | w \rangle \\\\
+      & \langle \alpha u+\beta v | w \rangle = \alpha^*\langle u | w \rangle + \beta^*\langle v | w \rangle .
+    \end{align*}
+  }
+}
+)
+%>
+<% end_marg %>
+
 Physically, two wavefunctions have a zero inner product if and only if they are completely distinguishable from each other
 by the measurement of some observable. By analogy with vectors in Euclidean space, we say that
 the two wavefunctions are orthogonal.\label{orthogonal-wavefunctions}
@@ -961,7 +979,6 @@ We interpret squares of amplitudes as probabilities, so
 gives us the probability that we will have observed the state to be $v$. This final leap in the logic,
 to a probability interpretation, has felt mysterious to several generations of physicists, but recent
 work has clarified the situation somewhat.
-
 
 <% end_sec('quantum-inner-product') %>
 

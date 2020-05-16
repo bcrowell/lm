@@ -1124,7 +1124,7 @@ energy twirls clockwise in the complex plane. (See also example \ref{eg:non-herm
   'vec-app-lin-observables','',{'anonymous'=>true,'title'=>"Linear algebra application",
   'text'=>
     %q{%
-      Observables are represented a linear operators (p.~\pageref{lin-alg-linear-operator}).
+      Observables are represented as linear operators (p.~\pageref{lin-alg-linear-operator}).
       We also require that this operator have real eigenvalues.
     }
   })
@@ -1918,32 +1918,7 @@ magnetic field.
 \newcommand{\emat}{\varepsilon}
 \newcommand{\fmat}{\mathcal{f}} % lowercase script, requires package dutchcal, see simple.cls
 
-From our previous study of angular momentum in quantum mechanics, we
-know that a full description of our proton's angular momentum can be given by
-specifying the magnitude of the angular momentum, which is a fixed $\hbar/2$,
-and its component along some arbitrarily chosen axis, say $z$. We have a state
-$|\uparrow\rangle$ which has eigenvalue $s_z=+\hbar/2$, and
-a $|\downarrow\rangle$ with $-\hbar/2$. If the magnetic field
-is parallel to the $z$ axis, then the action of the Hamiltonian is easy to define
-in terms of these two states,
-\begin{align*}
-  \hat{H} |\uparrow\rangle = \quad &\emat|\uparrow\rangle \qquad \text{and} \\
-  \hat{H} |\downarrow\rangle = -&\emat|\downarrow\rangle,
-\end{align*}
-where to keep the notation compact we write $\emat=k\hbar/2$, which is an energy.
-The interpretation is that if there is no external magnetic field ($k=0$), then
-the energies of these two states are the same (and set to zero because we choose that
-as an arbitrary definition), while in the presence of a $B_z$ the two energies
-become unequal. The pair of states is ``split'' in energy by the field. Note that
-the above two equations are sufficient to define
-the Hamiltonian for \emph{all} states, not just for states in which $s_z$ has a definite
-value. This follows from the completeness principle --- a state having a definite
-value of, say, $s_x$ can be written as some kind of linear combination of the form
-$\alpha|\uparrow\rangle+\beta|\downarrow\rangle$, and we then have
-$\hat{H}=\alpha\emat |\uparrow\rangle-\beta\emat|\downarrow\rangle$.
-
 <% marg() %>
-
 <% fig(
   'nmr-applications','',{'anonymous'=>true,'title'=>"Application to MRI scans",
   'text'=>
@@ -1970,6 +1945,30 @@ $\hat{H}=\alpha\emat |\uparrow\rangle-\beta\emat|\downarrow\rangle$.
   })
 %>
 <% end_marg %>
+
+From our previous study of angular momentum in quantum mechanics, we
+know that a full description of our proton's angular momentum can be given by
+specifying the magnitude of the angular momentum, which is a fixed $\hbar/2$,
+and its component along some arbitrarily chosen axis, say $z$. We have a state
+$|\uparrow\rangle$ which has eigenvalue $s_z=+\hbar/2$, and
+a $|\downarrow\rangle$ with $-\hbar/2$. If the magnetic field
+is parallel to the $z$ axis, then the action of the Hamiltonian is easy to define
+in terms of these two states,
+\begin{align*}
+  \hat{H} |\uparrow\rangle = \quad &\emat|\uparrow\rangle \qquad \text{and} \\
+  \hat{H} |\downarrow\rangle = -&\emat|\downarrow\rangle,
+\end{align*}
+where to keep the notation compact we write $\emat=k\hbar/2$, which is an energy.
+The interpretation is that if there is no external magnetic field ($k=0$), then
+the energies of these two states are the same (and set to zero because we choose that
+as an arbitrary definition), while in the presence of a $B_z$ the two energies
+become unequal. The pair of states is ``split'' in energy by the field. Note that
+the above two equations are sufficient to define
+the Hamiltonian for \emph{all} states, not just for states in which $s_z$ has a definite
+value. This follows from the completeness principle --- a state having a definite
+value of, say, $s_x$ can be written as some kind of linear combination of the form
+$\alpha|\uparrow\rangle+\beta|\downarrow\rangle$, and we then have
+$\hat{H}=\alpha\emat |\uparrow\rangle-\beta\emat|\downarrow\rangle$.
 
 Now suppose that the magnetic field is not parallel to the $z$ axis. One way to handle
 this situation would be simply to redefine the coordinate system so that the $z$ axis
