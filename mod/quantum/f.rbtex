@@ -351,7 +351,7 @@ field, it experiences a force.\footnote{This is easier to see in the case of an 
 a nonuniform \emph{electric} field. If the dipole consists of charges $+q$ and $-q$ at opposite ends of
 a stick, then the nonuniform field will make unequal forces on them, and the total force will be nonzero.}
 The rapidly varying magnetic field for this experiment
-was provided by a pair of specially shaped magnet poles.
+was provided by a pair of specially shaped magnet poles (not shown in the figure).
 
 Because electrons have charge, we expect the motion of an electron to give it a magnetic dipole moment $\vc{m}$.
 But they also have mass, so for exactly the same reasons, we expect there to be some angular momentum $\vc{L}$ as well.
@@ -475,8 +475,21 @@ electron has $s=1/2$ and $s_z=+1/2$ or $-1/2$.
 __incl(text/spin-examples)
 
 
-<% end_sec('intrinsic-spin') %>
 
+<% begin_sec("Inner product",nil,'spin-inner-product') %>
+We've been thinking of an inner product like $\langle \Psi_1|\Psi_2\rangle$ as a measure
+of the overlap or similarity between two wave patterns,  calculated using an integral like
+$\int\ldots\der x$. This is fine for integer angular momenta that particles
+have because they're moving through space,
+so that, e.g., for states in the ``quantum moat,'' $\langle \ell=0|\ell=1 \rangle=0$
+(ex.~\ref{lab:quantum-moat}, p.~\pageref{lab:quantum-moat}).
+This makes sense because states are supposed to have an inner product of zero if
+they are perfectly distinguishable by measuring some observable like $\ell$.
+We expect the same familiar behavior for a spin 1/2 that can exist in states $\uparrow$ and $\downarrow$,
+so that $\langle\uparrow|\downarrow\rangle=0$. 
+Inner products for half-integer spins just won't be interpretable visually as overlaps of wave patterns,
+and that we won't need to calculate them as integrals.
+<% end_sec('spin-inner-product') %>
 
 
 <% begin_sec("Classification of states in hydrogen",nil,'hydrogen-classification') %>
@@ -485,12 +498,31 @@ In sec.~\ref{subsec:wave-degeneracy}, p.~\pageref{subsec:wave-degeneracy}, we di
 of degeneracy in the context of a classical wave.\label{quantum-degeneracy}\index{degeneracy} For standing waves on a square membrane,
 we have patterns like <% eqn_image("square-membrane-pattern1-inline-size","../share/waves/figs") %> and
 <% eqn_image("square-membrane-degen-inline-size","../share/waves/figs") %>, which have the same
-frequency $f$. We say that these patterns are two-fold degenerate, because two patterns have the
-same frequency. In a quantum-mechanical context, $E=hf$, so degeneracy also implies that two states
+frequency $f$. We say that these patterns are two-fold degenerate.
+In a quantum-mechanical context, $E=hf$, so degeneracy also implies that states
 have the same \emph{energy}.
 
-Because the energy of states in the hydrogen atom only depends on $n$, we have degeneracies.
-For example, the $n=2$ energy level is 8-fold degenerate.
+<% marg() %>
+<% fig('eightfold-degeneracy','Counting up a degeneracy.',
+  {
+    'text'=>%q{
+     \\emph{Example: the degeneracy of the $n=2$ state in hydrogen.}\\\\
+     The $n=2$ energy level would be 4-fold degenerate if we didn't know about
+     spin (one $\ell=0$ state plus three $\ell=1$ states), but the electron's spin makes
+     it 8-fold degenerate. 
+      
+    }
+  })
+%>
+
+<% end_marg %>
+
+
+Because the energy of states in the hydrogen atom only depends on $n$, we have degeneracies, and
+these degeneracies get doubled because the electron's spin can have two values (example, fig.~\figref{eightfold-degeneracy}).
+Getting the count right has big implications: in our example,
+the 8-fold degeneracy is the reason that the second row of the period table has eight chemical elements.
+
 The degeneracy of the different $\ell_z$ and $s_z$ states follows from symmetry, as in our
 original example of degeneracy on p.~\pageref{subsec:wave-degeneracy}, and is therefore
 exact. The degeneracy with respect to different values of $\ell$ for the same $n$
@@ -520,7 +552,8 @@ was calculated in example \ref{eg:h-ground-exact}, p.~\pageref{eg:h-ground-exact
       the lowest energies. Taking into account electron spin, the number of states is actually doubled.
     },
     {
-      'width'=>'wide'
+      'width'=>'wide',
+      'sidecaption'=>true
     }
   )
 %>
@@ -531,11 +564,7 @@ was calculated in example \ref{eg:h-ground-exact}, p.~\pageref{eg:h-ground-exact
 The quantum number $n$ is defined as the number of radii
 at which the wavefunction is zero, including $r=\infty$.
 Relate this to the features of figure \figref{hydrogen-three-states}.
-\end{dq}
-
-\begin{dq}
-Based on the definition of $n$, why can't there be any
-such thing as an $n=0$ state?
+Based on the definition, why can't there be an $n=0$ state?
 \end{dq}
 
 \begin{dq}
@@ -562,7 +591,9 @@ cloud in of the $n=2$, $\ell=1$ state is split into two parts.
 
 <% end_sec('hydrogen-classification') %>
 
-<% begin_sec("Atoms with more than one electron",nil,'pauli') %>
+<% end_sec('intrinsic-spin') %>
+
+<% begin_sec("The Pauli exclusion principle",nil,'pauli') %>
 
 \index{atoms!with many electrons}
 What about other atoms besides hydrogen? It would seem that
@@ -629,101 +660,31 @@ fundamental fermions are the particles that matter is made of.
 Photons, however,
 are immune to the exclusion principle because their spin is an integer.
 Particles with integer spins are called bosons, after Satyendra Nath Bose.\index{boson}\index{Bose, Satyendra Nath}
+Bosons are generally the force-carriers in physics. Classically, we can say that radio signals work
+because electrical and magnetic forces propagate from the transmitter to the receiver, but quantum-mechanically,
+we would say that photons are what is being transmitted. Similarly, the strong nuclear force
+is transmitted by a type of bosons known as gluons, and the weak nuclear force by particles
+called the W and Z bosons.
+
+This is a brief and incomplete sketch of what is known as the
+standard model of particle physics, which describes 17 types of fundamental particles, their
+properties and interactions.
+
+To make the picture neat and tidy, we would like gravity to be like the other forces.
+Gravitational forces should be carried by
+some boson, which we would call the graviton. We can even tell some properties of the
+graviton: it should be massless, electrically neutral, and have spin $2\hbar$.
+However, there are fundamental reasons why our theories of quantum mechanics break
+down when we try to apply them to gravity. It is almost certainly true that gravitons
+exist, but we can't calculate much of anything about their detailed behavior. It is probably impractical as well to detect
+them directly using any foreseeable human technology --- people designing hypothetical
+detectors end up talking about devices the size of an entire solar system.
+It is possible, however, that very sensitive and clever experiments could detect
+some effects that would give us a clue about how to reconcile gravity with quantum
+mechanics.
 
 <% end_sec('pauli') %>
 
-<% begin_sec("Deriving the periodic table",nil,'deriving-periodic-table') %>
-\index{periodic table}
-We can now account for the structure of the periodic table,
-which seemed so mysterious even to its inventor Mendeleev.
-The first row consists of atoms with electrons only
-in the $n=1$ states:
-
-\noindent\begin{tabular}{rp{98mm}}
-                H &        1 electron in an $n = 1$ state  \\
-                He &        2 electrons in the two $n = 1$ states  
-\end{tabular}
-
-The next row is built by filling the $n=2$ energy levels:
-
-\noindent\begin{tabular}{rp{98mm}}
-        Li &        2 electrons in $n=1$ states, 1 electron in an $n=2$ state\\
-        Be &        2 electrons in $n=1$ states, 2 electrons in $n=2$ states\\
-        \ldots\\
-        O &        2 electrons in $n=1$ states, 6 electrons in $n=2$ states\\
-        F &        2 electrons in $n=1$ states, 7 electrons in $n=2$ states\\
-        Ne &        2 electrons in $n=1$ states, 8 electrons in $n=2$ states
-\end{tabular}
-
-In the third row we start in on the $n=3$ levels:
-
-\noindent\begin{tabular}{rp{98mm}}
-        Na        & 2 electrons in $n=1$ states, 8 electrons in $n=2$ 
-                        states, 1 electron in an $n=3$ state \\
-        ...
-\end{tabular}
-
-We can now see a logical link between the filling of the
-energy levels and the structure of the periodic table.
-Column 0, for example, consists of atoms with the right
-number of electrons to fill all the available states up to a
-certain value of $n$. Column I contains atoms like lithium
-that have just one electron more than that.
-
-<% marg(0) %>
-<%
-  fig(
-    'small-periodic-table',
-    %q{The beginning of the periodic table.}
-  )
-%>
-\spacebetweenfigs
-<%
-  fig(
-    'hindenburg',
-    %q{Hydrogen is highly reactive.}
-  )
-%>
-<% end_marg %>
-
-\label{ionicbonds}
-This shows that the columns relate to the filling of energy
-levels, but why does that have anything to do with
-chemistry? Why, for example, are the elements in columns I
-and VII dangerously reactive? Consider, for example, the
-element \index{atoms!sodium}\index{sodium}sodium (Na), which
-is so reactive that it may burst into flames when exposed to
-air. The electron in the $n=3$ state has an unusually high
-energy. If we let a sodium atom come in contact with an
-oxygen atom, energy can be released by transferring the
-$n=3$ electron from the sodium to one of the vacant
-lower-energy $n=2$ states in the oxygen. This energy is
-transformed into heat. Any atom in column I is highly
-reactive for the same reason: it can release energy by
-giving away the electron that has an unusually high energy.
-
-Column VII is spectacularly reactive for the opposite
-reason: these atoms have a single vacancy in a low-energy
-state, so energy is released when these atoms steal an
-electron from another atom.
-
-It might seem as though these arguments would only explain
-reactions of atoms that are in different rows of the
-periodic table, because only in these reactions can a
-transferred electron move from a higher-$n$ state to a
-lower-$n$ state. This is incorrect. An $n=2$ electron in
-fluorine (F), for example, would have a different energy
-than an $n=2$ electron in lithium (Li), due to the different
-number of protons and electrons with which it is interacting.
-Roughly speaking, the $n=2$ electron in fluorine is more
-tightly bound (lower in energy) because of the larger number
-of protons attracting it. The effect of the increased number
-of attracting protons is only partly counteracted by the
-increase in the number of repelling electrons, because the
-forces exerted on an electron by the other electrons are in
-many different directions and cancel out partially.
-
-<% end_sec('deriving-periodic-table') %>
 
 <% begin_notes %>
 
