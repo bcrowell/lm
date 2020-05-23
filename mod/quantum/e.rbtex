@@ -1022,10 +1022,18 @@ The fact that position is an observable but time is not is one of the things tha
 to reconcile quantum mechanics with relativity, which considers time to be just another dimension.
 This difficulty has been reconciled for special relativity, but not for general relativity.
 
+For those with some background in linear algebra, it may be helpful to connect this to the idea
+of eigenvalues and eigenvectors. In quantum mechanics, we associate with an observable such as
+momentum $p$ some linear operator $\mathcal{O}_p$. In this example, $\mathcal{O}_p$ is basically
+the derivative operator (multiplied by some constant factors). If a particle is in a state of definite
+momentum, then it is an eigenvector of $\mathcal{O}_p$ with eigenvalue $p$. The basic motivation
+for using this style of definition is that if $\Psi$ is an eigenvector, then $c\Psi$ is also
+an eigenvector, with the same eigenvalue; therefore this mathematical setup automatically
+keeps phase and normalization from being observables.
 <% end_sec('quantum-observables') %>
 <% end_sec('quantum-inner-product-and-observables') %>
 
-<% begin_sec("Time evolution and unitarity",nil,'unitarity') %>
+<% begin_sec("Time evolution and unitarity",4,'unitarity') %>
 <% begin_sec("The simplest cases of time evolution",nil,'simple-time-evolution') %>
 So far we have not said too much about how a wavefunction changes with time, except that a state of definite energy $E$ has some
 frequency given by $E=\hbar\omega$. As a simple example, consider a particle in a box. Let's say that it's initially in the ground state,
