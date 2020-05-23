@@ -879,6 +879,7 @@ extremely small wavelength.
 
 <% end_sec('linearity-of-schrodinger') %>
 
+<% begin_sec("The inner product and observables",nil,'quantum-inner-product-and-observables') %>
 <% begin_sec("The inner product",nil,'quantum-inner-product') %>\index{inner product!quantum mechanics}
 In sec.~\ref{sec:linear-algebra}, p.~\pageref{inner-product}, we discussed the idea of an inner product, which is
 an operation on a vector space that acts like the dot product, i.e., it takes two vectors as inputs and gives
@@ -981,6 +982,48 @@ to a probability interpretation, has felt mysterious to several generations of p
 work has clarified the situation somewhat.
 
 <% end_sec('quantum-inner-product') %>
+<% begin_sec("Observables",nil,'quantum-observables') %>
+When I was in college, my stepmother attempted to make me more hip, more artistic, and less uncool.
+I would go over for a visit sometimes on the weekend, and she would sit me down, pour us each a glass
+of wine, and draw me out. In one of these conversations, I insisted that love didn't exist, because
+there was no way to measure it. The physicist's way of thinking, which by that time I had already
+started to adopt, is that we should distinguish carefully between things that are \emph{observables}
+and things that aren't. One of the basic principles of quantum mechanics is that $\langle u|v\rangle=0$
+if and only if there is some observable that perfectly distinguishes state $u$ from state $v$.
+(We may actually need more than one observable.)
+
+This makes it important to be clear on what really is an observable and what isn't. Informally,
+what we mean by an observable is that:
+\begin{enumerate}
+  \item we can tell by looking at the state what value it has, or at least assign probabilities to values;
+  \item it has a single value; and
+  \item (optionally) it has some counterpart in classical physics.
+\end{enumerate}
+The following are all observables:
+\begin{itemize}
+  \item position
+  \item momentum
+  \item energy
+  \item angular momentum (ch.~\ref{ch:quantum-ang-mom}).
+\end{itemize}
+The following are not:
+\begin{itemize}
+  \item phase and normalization (sec.~\ref{subsec:same-state})
+  \item time (because many systems, such as an atom, are too simple to act as clocks).
+\end{itemize}
+A couple of interesting borderline cases are wavelength and angle. Classically, an electron
+doesn't have a wavelength, so we would usually choose to talk about its momentum as an observable,
+not its wavelength (although they relate via $p=h/\lambda$, so it really doesn't make much
+difference). For an electron in an atom, thinking in a simplified picture in two dimensions, we could talk
+about its angle in the plane, but this causes problems because angles are not really single-valued, e.g.,
+0 is the same as $360\degunit$.
+
+The fact that position is an observable but time is not is one of the things that makes it difficult
+to reconcile quantum mechanics with relativity, which considers time to be just another dimension.
+This difficulty has been reconciled for special relativity, but not for general relativity.
+
+<% end_sec('quantum-observables') %>
+<% end_sec('quantum-inner-product-and-observables') %>
 
 <% begin_sec("Time evolution and unitarity",nil,'unitarity') %>
 <% begin_sec("The simplest cases of time evolution",nil,'simple-time-evolution') %>
