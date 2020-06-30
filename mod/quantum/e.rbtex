@@ -982,7 +982,7 @@ to a probability interpretation, has felt mysterious to several generations of p
 work has clarified the situation somewhat.
 
 <% end_sec('quantum-inner-product') %>
-<% begin_sec("Observables",nil,'quantum-observables') %>
+<% begin_sec("Observables",nil,'quantum-observables') %>\label{observable!quantum}
 When I was in college, my stepmother attempted to make me more hip, more artistic, and less uncool.
 I would go over for a visit sometimes on the weekend, and she would sit me down, pour us each a glass
 of wine, and draw me out. In one of these conversations, I insisted that love didn't exist, because
@@ -1024,7 +1024,8 @@ This difficulty has been reconciled for special relativity, but not for general 
 
 For those with some background in linear algebra, it may be helpful to connect this to the idea
 of eigenvalues and eigenvectors. In quantum mechanics, we associate with an observable such as
-momentum $p$ some linear operator $\mathcal{O}_p$. In this example, $\mathcal{O}_p$ is basically
+momentum $p$ some linear operator $\mathcal{O}_p$.\index{operator!for a quantum observable}\index{observable!quantum!operator}
+In this example, $\mathcal{O}_p$ is basically
 the derivative operator (multiplied by some constant factors). If a particle is in a state of definite
 momentum, then it is an eigenvector of $\mathcal{O}_p$ with eigenvalue $p$. The basic motivation
 for using this style of definition is that if $\Psi$ is an eigenvector, then $c\Psi$ is also
@@ -1050,7 +1051,7 @@ about the state.
 
 So the wavefunction's amplitude can't oscillate  back and forth along the real number line between positive and negative values,
 as it would for a wave on a string. What it actually does is to spin around in a circle in the complex plane. That is, instead
-of going like
+of going like\label{smile}
 \begin{equation*}
 1\times<% eqn_image("eqn-wave1","../share/quantum/figs") %> \qquad
 0\times<% eqn_image("eqn-wave1","../share/quantum/figs") %> \qquad
@@ -1082,7 +1083,7 @@ phase like $e^{-i\omega t}$, as in Euler's formula (sec.~\ref{subsec:euler-formu
 <% end_marg %>
 
 
-A particularly nice example is a traveling wave with a definite
+Another simple example is a traveling wave with a definite
 energy, figure \figref{rainbow-traveling}. Frozen at one moment in
 time, such a wave looks like $e^{ikx}$, which we visualize as
 a repeating rainbow. If we let this wave travel, then as we saw in ch.~\ref{ch:waves},
@@ -1131,15 +1132,7 @@ and \emph{unitary} manner,
 meaning that probability is conserved and information is never lost.
 \end{important}
 
-\noindent The word ``unitary'' comes from linear algebra, which gives us the following more crisp mathematical
-way of formulating this principle.
-A unitary transformation\index{unitary operator}
-is one that preserves inner products. That is, $\mathcal{O}$ is unitary if
-$\langle\mathcal{O}u|\mathcal{O}v\rangle=\langle u|v\rangle$. This is similar to the way in which
-rotations preserve dot products in Euclidean geometry. The linearity of the Schr\"odinger equation
-guarantees that the evolution of the wavefunction from one time to another time can be represented
-by a linear operator $\mathcal{O}$. We require this to be unitary, and it is unitary for the
-Schr\"odinger equation.
+\noindent The word ``unitary'' is defined more precisely in linear algebra \note{unitarity-rigorous}.
 
 Since we think of quantum mechanics as being all about randomness, this determinism may seem surprising.
 But determinism in the time-evolution of the wavefunction isn't the same as determinism in the results
@@ -1161,11 +1154,105 @@ theory of gravity (Einstein's theory of general relativity) and a completely suc
 the microscopic world (quantum mechanics), the two theories are irreconcilable, and
 we can only make educated guesses, for example, about the behavior of a hypothetical microscopic black hole.
 
+\begin{eg}{A standing wave}\label{eg:smile-unitarity}
+As discussed on p.~\pageref{smile}, a standing wave $<% eqn_image("eqn-wave1","../share/quantum/figs") %>$
+will evolve, after a quarter of a period, into $-i\times<% eqn_image("eqn-wave1","../share/quantum/figs") %>$.
+The probability density depends only on the squared \emph{magnitude} of the wavefunction, and is therefore
+unchanged over this evolution. Thus if the initial wave was normalized, then so is the final one,
+since multiplying a complex number by $-i$ doesn't change its magnitude, only its argument (phase). This is consistent with unitarity.
+
+Unitarity also requires that information is never lost, and we can verify this.
+Suppose that we see the wavefunction $-i\times<% eqn_image("eqn-wave1","../share/quantum/figs") %>$
+at the later time. We can then infer what the wavefunction must have been a quarter-period earlier:
+it must have been $<% eqn_image("eqn-wave1","../share/quantum/figs") %>$.
+\end{eg}
+
+\begin{eg}{Any state of definite energy}
+The reasoning of example \ref{eg:smile-unitarity} immediately carries over to any state of definite energy and
+any time interval, since the time evolution just amounts to spinning the phase in the complex plane at frequency
+$\omega$, but this has no effect on any probabilities.
+\end{eg}
+
+\begin{eg}{A mixture of energies}\label{eg:unitarity-mixture-of-energies}
+Suppose we have a particle in a box with the initial wavefunction
+\begin{equation*}
+<% eqn_image("eqn-wave1","../share/quantum/figs") %> + <% eqn_image("eqn-wave2","../share/quantum/figs") %> .
+\end{equation*}
+The momentum of the short-wavelength part is twice the momentum of the long-wavelength one, so
+assuming the motion is nonrelativistic, the two energies differ by a factor of four.
+Therefore this is not a state of definite energy.
+
+The energies of the two parts differ by a factor of four, so by $E=\hbar\omega$ so do their frequencies.
+As an example, let's consider the evolution of this state over a time equal to half the period of the
+low-energy part, which is two full periods of the high-energy part. After this time, we have
+\begin{equation*}
+<% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %> + <% eqn_image("eqn-wave2","../share/quantum/figs") %> .
+\end{equation*}
+
+A brute-force verification of the conservation of probability is possible, but involves a somewhat
+messy and tedious calculation that $\int_0^\pi [A\sin x+\sin 2x]^2\der x$ is the same as
+$\int_0^\pi [-A\sin x+\sin 2x]^2\der x$. (If you graph the two functions in a utility such as the
+online app desmos, you should be able to see easily that this holds visually.)
+
+A much quicker and easier method is to use the linearity of the inner product. For the total
+initial probability, we have
+\begin{align*}
+  \langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> + <% eqn_image("eqn-wave2","../share/quantum/figs") %>
+      |   <% eqn_image("eqn-wave1","../share/quantum/figs") %> + <% eqn_image("eqn-wave2","../share/quantum/figs") %> \rangle
+      &= \langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> | <% eqn_image("eqn-wave1","../share/quantum/figs") %> \rangle
+       + \langle <% eqn_image("eqn-wave2","../share/quantum/figs") %> | <% eqn_image("eqn-wave2","../share/quantum/figs") %> \rangle
+       + \langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> | <% eqn_image("eqn-wave2","../share/quantum/figs") %> \rangle
+       + \langle <% eqn_image("eqn-wave2","../share/quantum/figs") %> | <% eqn_image("eqn-wave1","../share/quantum/figs") %> \rangle.
+\end{align*}
+But since the states $<% eqn_image("eqn-wave1","../share/quantum/figs") %>$
+and $<% eqn_image("eqn-wave2","../share/quantum/figs") %>$ are perfectly distinguishable by measurement of an observable
+(energy), it follows that $\langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> | <% eqn_image("eqn-wave2","../share/quantum/figs") %> \rangle=0$
+and $\langle <% eqn_image("eqn-wave2","../share/quantum/figs") %> | <% eqn_image("eqn-wave1","../share/quantum/figs") %> \rangle=0$.
+Therefore the total initial probability simplifies to the expression
+\begin{align*}
+  \langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> | <% eqn_image("eqn-wave1","../share/quantum/figs") %> \rangle
+       + \langle <% eqn_image("eqn-wave2","../share/quantum/figs") %> | <% eqn_image("eqn-wave2","../share/quantum/figs") %> \rangle.
+\end{align*}
+This has a simple interpretation: if we measure the energy, then the first term is the probability that we'll find the lower
+energy, and the second one is the probability of the higher energy. If we assume that the state initially had the right
+normalization, then the two terms in the expression add up to 1.
+
+If we now go through similar reasoning for the wavefunction at the later time, we get
+\begin{align*}
+  \langle <% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %> | <% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %> \rangle
+       + \langle <% eqn_image("eqn-wave2","../share/quantum/figs") %> | <% eqn_image("eqn-wave2","../share/quantum/figs") %> \rangle.
+\end{align*}
+But by linearity the first term can be massaged into the form
+$\langle -<% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %> | -<% eqn_image("eqn-wave1-flipped","../share/quantum/figs") %> \rangle
+= (-1)^2\langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> | <% eqn_image("eqn-wave1","../share/quantum/figs") %> \rangle
+= \langle <% eqn_image("eqn-wave1","../share/quantum/figs") %> | <% eqn_image("eqn-wave1","../share/quantum/figs") %> \rangle$, as before.
+Probability has been conserved, as required by unitarity.
+\end{eg}
+
+Because example \ref{eg:unitarity-mixture-of-energies} didn't appeal to any specific properties of the
+states $<% eqn_image("eqn-wave1","../share/quantum/figs") %>$
+and $<% eqn_image("eqn-wave2","../share/quantum/figs") %>$, it can easily be extended to a proof of unitarity for a very
+large class of states: anything that we can form by mixing a bunch of states of definite energy.
+
 <% end_sec('unitarity-subsec') %>
 
 <% end_sec('unitarity') %>
 
 
+<% begin_notes %>
+\notetext{unitarity-rigorous}{Precise mathematical definition of unitarity}
+Linear algebra defines unitarity as follows.
+A unitary transformation\index{unitary operator}
+is one that preserves inner products. That is, $\mathcal{O}$ is unitary if
+$\langle\mathcal{O}u|\mathcal{O}v\rangle=\langle u|v\rangle$. This is similar to the way in which
+rotations preserve dot products in Euclidean geometry. You may have heard about the idea of an orthogonal matrix
+in a math course, with the classic example being a rotation matrix in two or three dimensions. A unitary matrix is the same
+concept, but generalized to linear algebra over the complex numbers.
+The linearity of the Schr\"odinger equation
+guarantees that the evolution of the wavefunction from one time to another time can be represented
+by a linear operator $\mathcal{O}$. We require this to be unitary, and it is unitary for the
+Schr\"odinger equation.
+<% end_notes %>
 
 
 <% begin_hw_sec(vfill:true) %>
