@@ -1096,12 +1096,66 @@ as the wave washes over her will say that $\Psi$ is spinning around in a circle 
 complex plane. To see this more explicitly, we can break up the exponential into separate
 factors, $\Psi=e^{ikx}e^{-i\omega t}$. The time-dependent factor of $e^{-i\omega t}$ is
 just what we described a moment ago: a phase spinning clockwise in the complex plane.
-
-For states that are not states of definite energy, the time-evolution is a little more
-complicated and is given by an equation known as the time-dependent Schr\"odinger equation,
-which we will not write down explicitly here --- but for states of definite energy all the equation describes
-is the kind of phase-spinning described above.
 <% end_sec('simple-time-evolution') %>
+
+<% begin_sec("The two-state system",nil,'quantum-two-state-system') %>
+As the next step up in sophistication we could consider a system that has two possible
+states. A simple example is the ammonia molecule in figure \figref{ammonia}. If the molecule is
+isolated and has no angular momentum, then it can never get from one orientation to the other
+by rotating. It can, however, flip from one to the other by turning itself inside out like
+an umbrella in a strong wind. Classically, if we initially put the molecule in one orientation, then
+it wouldn't have enough energy to get through the intermediate flat configuration. But quantum-mechanically
+it can get through by tunneling. Therefore if we prepare the system in a pure $|1\rangle$ state at some
+time, we expect that in the future it will be in some mixture $a_1|1\rangle+a_2|2\rangle$, and if we
+check it there will be some probability $|a_2|^2$ of finding that it's switched.
+
+<% marg(40) %>
+<%
+  fig(
+    'ammonia',
+    %q{%
+      The ammonia molecule, in states that are inverted relative to one another.
+    }
+  )
+%>
+<% end_marg %>
+
+Now this implies that $|1\rangle$ and $|2\rangle$ cannot be states of definite energy, because
+if they were, then after we prepared the system in an initial state with $|a_1|=1$ and $|a_2|=0$,
+all that would happen would be that the complex number $a_1$ would spin its phase clockwise
+around the unit circle at some frequency given by $E=\hbar \omega$. The probability $|a_1|^2$ would stay the same, and indeed every observable
+of the system would stay the same, because absolute phases don't mean anything. This is not the case ---
+we expect by the totalitarian principle (p.~\pageref{totalitarian})
+that the system \emph{can} tunnel from 1 to 2. Therefore $|1\rangle$ and $|2\rangle$ must \emph{not}
+be states of definite energy. The actual states of definite energy are standing wave patterns
+that look like $<% eqn_image("eqn-ammonia-1","../share/quantum/figs") %>$ (the ground state) and
+$<% eqn_image("eqn-ammonia-2","../share/quantum/figs") %>$ (the excited state). Because these states
+have slightly different energies, they oscillate at slightly different frequencies. If we initially
+put the system in the state
+$|<% eqn_image("eqn-ammonia-1","../share/quantum/figs") %>\rangle + |<% eqn_image("eqn-ammonia-2","../share/quantum/figs") %>\rangle$,
+then there is constructive interference on the left and destructive interference on the right. This is what it
+would mean to prepare the molecule in the state $|1\rangle$. State $|1\rangle$ \emph{is} this superposition
+of the two energy states. Because the frequencies are unequal, eventually the two waves will flip their
+relative phases, and we will have state $|2\rangle$. This is in fact the most general possible behavior
+for \emph{any} quantum-mechanical system with two states: it can at most just oscillate between them. The oscillation
+can be complete (like the ammonia's $1\leftrightarrow 2$), nonexistent (if the system is in a state of definite energy), or partial
+(if the system is in an unequal mixture of two energy states).
+<% end_sec('quantum-two-state-system') %>
+
+<% begin_sec('The time-dependent Schr\\"odinger equation',nil,'time-dep-seqn') %>
+When a system has not just one or two but many possible states,  the time-evolution is
+is given by an equation known as the time-dependent Schr\"odinger equation,
+which we will not write down explicitly here. For example, a nonrelativistic electron in free space has
+infinitely many possible states, since there are no boundary conditions constraining its
+wave pattern. In this example the time-dependent Schr\"odinger equation becomes a certain wave equation,
+which is dispersive (sec.~\ref{sec:dispersive-waves}, p.~\pageref{sec:dispersive-waves}), i.e.,
+different wavelengths move at different speeds. It's not hard to see why this is, since
+$p=h/\lambda$, and $p=mv$ for nonrelativistic motion.\footnote{But as discussed in sec.~\ref{sec:dispersive-waves},
+it is necessary to distinguish phase velocity from group velocity.}
+
+For standing waves, the time-dependent Schr\"odinger equation is equivalent to the simpler 
+time-independent version. Both versions are perfectly linear (sec.~\ref{sec:linearity-of-schrodinger}, p.~\pageref{sec:linearity-of-schrodinger}).
+<% end_sec('time-dep-seqn') %>
 
 <% begin_sec("Unitarity",nil,'unitarity-subsec') %>
 
@@ -1233,6 +1287,92 @@ Because example \ref{eg:unitarity-mixture-of-energies} didn't appeal to any spec
 states $<% eqn_image("eqn-wave1","../share/quantum/figs") %>$
 and $<% eqn_image("eqn-wave2","../share/quantum/figs") %>$, it can easily be extended to a proof of unitarity for a very
 large class of states: anything that we can form by mixing a bunch of states of definite energy.
+
+\begin{eg}{Radioactive decay}\label{eg:decay-from-well}
+In sec.~\ref{sec:glimpse-quantum}, p.~\pageref{sec:glimpse-quantum}, I argued 
+that the exponential decay law for radioactivity followed from
+very general ideas about quantum mechanics. The argument was that an unstable nucleus would
+be likely to be found in its ground state, and since the ground state is a single state,
+it has no way of retaining any memory. Therefore, if it's survived up until a certain time $t$,
+then its probability of surviving for some additional time interval $\der t$ can't depend on $t$.
+We now have enough of a picture of quantum mechanics to allow a more detailed understanding of this
+point.
+
+An initial stab at the problem shows that there is more subtlety to it than might have been imagined.
+It seems natural to describe the system in terms of two states: an undecayed state and a decayed
+one. But as we saw in sec.~\ref{subsec:quantum-two-state-system}, p.~\pageref{subsec:quantum-two-state-system},
+exponential decay is not even a possibility for a two-state system in quantum mechanics: the most general
+possible behavior for such a system is an oscillation back and forth between the two states.
+
+Of course when an atom emits a photon or a nucleus undergoes radioactive decay, there are not just two
+states but infinitely many. For example, if a nucleus alpha decays, the energy of the alpha is fixed by
+conservation of energy, but its momentum vector $\vc{p}$ can point in any one of an infinite number of directions.
+
+Let's assume that we can describe the initial, undecayed nucleus as a \emph{single state} $|0\rangle$, its ground state.
+We label each possible final state, which describes both the state of the daughter nucleus and the state
+of the alpha, by the alpha particle's momentum, $|\vc{p}\rangle$. If the nucleus is initially in the state
+\begin{equation*}
+  |0\rangle,
+\end{equation*}
+then because alpha decay \emph{is} possible (the totalitarian principle again), after some time interval $\Delta t$
+the system will be in a mixture of decayed and undecayed states,
+\begin{equation*}
+  a|0\rangle+\ldots,
+\end{equation*}
+where $a$ is some number and \ldots denotes an infinite sum over the various $|\vc{p}\rangle$ states.
+The probability of decay after this amount of time is $|a|^2$, and unitarity requires that $|a|<1$.
+What will happen after a second time interval $\Delta t$? Quantum mechanics is
+perfectly linear, so the rule for carrying the state forward in time by $\Delta t$ must be a linear function.
+Let's call this function $L$, so that $L(|0\rangle)=a|0\rangle+\ldots$
+Now suppose as well that alpha decay is \emph{irreversible}. After all, it seems
+unlikely that the alpha would bounce off of something, come back, and rejoin the daughter
+nucleus to rebuild the original parent. Let's see what happens when we do a second time step by computing
+$L(L(|0\rangle))$. By linearity, we get $L(a|0\rangle+\ldots)=aL(a|0\rangle)+L(\ldots)$, or
+\begin{equation*}
+  a^2|0\rangle+\ldots
+\end{equation*}
+Here the new \ldots is different from the old one, and we've made use of the assumption of irreversibility by
+assuming that $L(\ldots)$ doesn't contribute to the amplitude of $|0\rangle$. We have exponential decay, with the decay probability
+going like 1, $|a|^2$, $|a|^4$, \ldots This result depended on two assumptions: (1) that it was valid to measure the undecayed
+state as a single state, and (2) that the decay was irreversible.
+
+There is a further interesting application of unitarity here, which is that exponential decay \emph{cannot} be exact
+at all times. For if it were, then we could extrapolate \emph{back} in time to before the start, and we would
+find that the decay probability at $t=-\Delta t$, one clock tick before the start, was $|a|^{-2}$. This would be greater
+than 1, which would violate unitarity. What's going on here? In reality, the original nucleus had to be formed
+somehow, probably in nuclear reactions inside a supernova billions of years ago. That process of formation was
+not clean and tidy, and the nucleus only later settled down into the behavior described above.
+
+Figure \figref{eg-decay-from-well} shows an example of what happens when we start off with this kind of messy state.
+This is a computer simulation of the time-dependent Schr\"odinger equation for a particle in one dimension, which we take
+as a toy model. The particle is like the alpha particle, and the potential $U$ shown in the graph represents the effect
+of the attractive and repulsive forces of the rest of the nucleus.
+
+<% marg(100) %>
+<%
+  fig(
+    'eg-decay-from-well',
+    %q{%
+      A numerical simulation giving the escape of a particle out of a well surrounded by a barrier.
+    }
+  )
+%>
+<% end_marg %>
+
+The initial state at $t=0$ is not a state of definite energy --- a state of definite energy is one that doesn't
+actually physically evolve, it just spins its phase. We can see that this state looks like a noisy mixture of a bunch
+of different wavelengths. The shorter wavelengths have higher energies. As soon as we start the simulation,
+a bunch of these waves fly off in both directions. We see them escaping at $t=1$. But the lower-energy waves are too low in energy to
+be classically allowed to escape over the barriers. They can only escape by tunneling, which is a slower
+process. By $t=1$, the shape of the part of the wave remaining inside the well has turned into a
+bell shape. This bell shape is what we were talking about before when we wrote $|0\rangle$. At $t=2$ the
+rate of decay sensed by a detector near the edge of the graph is still fluctuating a lot. But by $t=3$
+the system has settled down to a steady process of decay in which the system acts as we assumed in our
+simplified model: the undecayed part is well modeled by a single state, and the decay is irreversible.
+(Beyond this time, the outgoing waves get too small to see easily on the graphs, but they still exist.)
+
+
+\end{eg}
 
 <% end_sec('unitarity-subsec') %>
 
