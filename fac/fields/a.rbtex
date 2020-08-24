@@ -444,6 +444,8 @@ can define it using tip-to-tail graphical addition, and this definition doesn't 
 system. This rotational invariance would still have held, but might not have been so obvious,
 if we had defined addition in terms of addition of components.
 
+\enlargethispage{\baselineskip}
+
 \begin{eg}{Calibrating an electronic compass}
 Some smart phones and GPS units contain electronic compasses that can
 sense the direction of the earth's magnetic field vector, notated
@@ -540,7 +542,43 @@ $|\vc{A}||\vc{B}|\sin\theta_{AB}$. In terms of the components, we have
 
 <% end_sec('dot-and-cross-product') %>
 
+\enlargethispage{\baselineskip}
+
+\startdqs
+
+\begin{dq}
+Suppose one magnetic field has a magnitude of 1 unit, another one 2 units. (We won't worry about what these
+units are called or how they fit into the SI until sec.~\ref{subsec:units-of-the-fields}, p.~\pageref{subsec:units-of-the-fields}.)
+If you can superimpose these two fields in any orientation, what possible magnitudes can you get?
+\end{dq}
+
+\begin{dq}
+In certain kinds of wave disturbances in the electric and magnetic
+fields, it's possible for a field at a fixed point in space to rotate
+over time, exactly like the hand of a clock. For definiteness, let's
+say we're talking about the electric field, and that it's rotating in
+the $x$-$y$ plane. (1) What can you say about the average values of the
+field's $x$ and $y$ components? (2) The energy density of the field is
+proportional to the square of its magnitude. What can you say about
+its average value?
+\end{dq}
+
+\begin{dq}
+Electric field $\vc{E}_1$ has components $\langle 1,1,1\rangle$ (in
+the appropriate units), and $\vc{E}_2$ has components $\langle 1,0,0
+\rangle$. Let $\theta$ be the angle between them. Compare $\theta$
+with 45 degrees and with 55 degrees.
+\end{dq}
+
 <% end_sec('vectors') %>
+
+<%
+  fig(
+    'bar-magnet-field-lines',
+    %q{Three representations of the magnetic field in and around a bar magnet.},
+    {'width'=>'fullpage','floatpos'=>'h'}
+  )
+%>
 
 <% begin_sec("Field lines",nil,'field-lines') %>\index{field!field-line representation}
 
@@ -549,16 +587,21 @@ visually compelling image of the magnetic field of a bar magnet. The magnet
 itself is underneath a thin piece of white cardboard. What we see, on top,
 are iron filings, which become magnetized by the bar magnet, orient themselves
 along the field, and join up in chains. This type of visualization made a deep
-impression on the British physicist Michael Faraday, who was the mathematically
+impression on the British physicist Michael Faraday (1791-1867), who was the mathematically
 untrained son of a poor blacksmith.\label{faraday-intro-bio}\index{Faraday, Michael}
 
+<% marg(-300) %>
 <%
   fig(
-    'bar-magnet-field-lines',
-    %q{Three representations of the magnetic field in and around a bar magnet.},
-    {'width'=>'fullpage'}
+    'faraday-portrait-oil-painting',
+    %q{%
+      Michael Faraday. When Queen Victoria asked him what the
+        electrical devices in his lab were good for, he replied,
+        ``Madam, what good is a baby?''
+    }
   )
 %>
+<% end_marg %>
 
 In general, we have two equally valid ways of conceptualizing an
 electric or magnetic field --- not just visually, but mathematically.
@@ -582,19 +625,6 @@ field is very strong there. Near the top of
 \subfigref{bar-magnet-field-lines}{3}, the field lines are far apart,
 and indeed if we check back in \subfigref{bar-magnet-field-lines}{2},
 the field vectors are very weak there. 
-
-<% marg() %>
-<%
-  fig(
-    'faraday-portrait-oil-painting',
-    %q{%
-      Michael Faraday (1791-1867). When Queen Victoria asked him what the
-        electrical devices in his lab were good for, he famously replied,
-        ``Madam, what good is a baby?''
-    }
-  )
-%>
-<% end_marg %>
 
 Ch.~\ref{ch:gauss-law} says more about how to define the density of
 field lines numerically. Because space has three dimensions and paper
