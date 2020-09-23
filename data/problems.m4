@@ -108,6 +108,7 @@ m4_define(__hw_fac_2_solidchargedcylinder,13)m4_dnl
 m4_define(__hw_fac_2_croquet,14)m4_dnl
 m4_define(__hw_fac_2_escaping-charge,15)m4_dnl
 m4_define(__hw_fac_2_charge-swings-up,16)m4_dnl
+m4_define(__hw_fac_2_add-e-vectors-symm-5-7,17)m4_dnl
 m4_define(__hw_fac_3_energy-scale,1)m4_dnl
 m4_define(__hw_fac_3_co2-equilibrium,2)m4_dnl
 m4_define(__hw_fac_3_muonic,3)m4_dnl
