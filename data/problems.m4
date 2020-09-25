@@ -109,6 +109,7 @@ m4_define(__hw_fac_2_croquet,14)m4_dnl
 m4_define(__hw_fac_2_escaping-charge,15)m4_dnl
 m4_define(__hw_fac_2_charge-swings-up,16)m4_dnl
 m4_define(__hw_fac_2_add-e-vectors-symm-5-7,17)m4_dnl
+m4_define(__hw_fac_2_add-e-vectors-direction-and-limits,18)m4_dnl
 m4_define(__hw_fac_3_energy-scale,1)m4_dnl
 m4_define(__hw_fac_3_co2-equilibrium,2)m4_dnl
 m4_define(__hw_fac_3_muonic,3)m4_dnl
@@ -140,6 +141,7 @@ m4_define(__hw_fac_4_coax-field,21)m4_dnl
 m4_define(__hw_fac_4_vnacl,22)m4_dnl
 m4_define(__hw_fac_4_image-charge-unstable,23)m4_dnl
 m4_define(__hw_fac_4_image-charge-corner,24)m4_dnl
+m4_define(__hw_fac_4_terrier-conservative,25)m4_dnl
 m4_define(__hw_fac_5_sample-radiation,1)m4_dnl
 m4_define(__hw_fac_5_spherical-magnets,2)m4_dnl
 m4_define(__hw_fac_5_spherical-magnets-tilted,3)m4_dnl

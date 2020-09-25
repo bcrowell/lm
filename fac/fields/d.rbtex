@@ -1014,6 +1014,7 @@ than that on the larger sphere in the ratio $a/b$.
 
 <% begin_hw('coax-field') %>__incl(hw/coax-field)<% end_hw() %>
 
+\vfill
 
 <% marg() %>
 <%
@@ -1027,8 +1028,12 @@ than that on the larger sphere in the ratio $a/b$.
 
 <% begin_hw('vnacl',2) %>m4_include(../share/em-dc/hw/vnacl.tex)<% end_hw() %>
 
+\vfill
+
 
 <% begin_hw('image-charge-unstable') %>__incl(hw/image-charge-unstable)<% end_hw() %>
+
+\vfill
 
 <% marg() %>
 <%
@@ -1040,7 +1045,21 @@ than that on the larger sphere in the ratio $a/b$.
 %>
 <% end_marg %>
 
+\vfill
+
 <% begin_hw('image-charge-corner',2) %>__incl(hw/image-charge-corner)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('terrier-conservative') %>__incl(hw/terrier-conservative)<% end_hw() %>
+
+<%
+  fig(
+    'hw-terrier-conservative',
+    %q{Problem \ref{hw:terrier-conservative}.},
+    {'width'=>'wide'}
+  )
+%>
 
 <% end_hw_sec() %>
 
