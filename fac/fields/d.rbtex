@@ -294,6 +294,62 @@ a piece of exposed wire in the rat's nest of wiring, and a point on the chassis.
 The reading on the meter will be the difference in electric potential between these
 two points.
 
+\pagebreak
+
+The earth's gravitational field has a well-defined potential because the work it does
+on a mass is path-independent, \subfigref{gravity-loop}{1}. An equivalent way of stating
+this criterion is that the work done around any closed loop is zero, \subfigref{gravity-loop}{2}.
+This is often a natural way to think about electric circuits, since a diagram of a circuit
+breaks down visually into loops of wire.
+
+<% marg(300) %>
+<%
+  fig(
+    'gravity-loop',
+    %q{%
+      If the work done by gravity along the two paths in panel 1 is the same,
+      then the work done around the closed loop in panel 2 is zero.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'conservative-europe',
+    %q{%
+      1.~Any hike around the complete boundary of a country results in zero net elevation gain,
+      since we come back to our starting point at the same elevation.
+    }
+  )
+%>
+<% end_marg %>
+
+Figure \subfigref{conservative-europe}{1}
+shows a map of part of Europe. Suppose you decide to walk all the way around the border of France,
+eventually returning to your starting point. 
+The work done on you by the gravitational field is zero. In other words, any climbing you do on this hike will be canceled
+out by the elevation losses from going downhill. If we break the route up into pieces, then for example the segment
+from A and B will have a significant change in elevation, because B is near the crest of the Alps. Hiking from A to B
+will be an elevation gain, whereas if you went the opposite way and hiked from B to A, the elevation gain would be
+negative. Thus if you wanted to check that the total elevation gain on this loop was zero, you would need to decide
+on a clockwise or counterclockwise orientation for your hike, and you would also need to make sure that when you
+measured elevation differences, you defined their signs in a way that was consistent with this orientation.
+
+In  figure \subfigref{conservative-europe}{2}, we make the map into a circuit containing a bunch of circuit 
+elements.\footnote{These symbols represent capacitors and batteries, but
+that doesn't really matter very much --- all that matters is that any
+electric fields in this circuit are static, and therefore not curly.}
+There are various national borders we can trace in this circuit. There is one around France, containing six circuit
+elements, one around Switzerland that has three, and so on. There are also other loops we could draw.
+For instance, we could start from the west coast of France and ``hike'' clockwise around the outer perimeter of the whole
+figure, which would take us through nine components. Regardless of which loop we choose,
+we expect that the sum of the voltage differences measured around any such closed loop will be 
+zero.\footnote{If we want to check this in an actual experiment, then it turns out that if we check only the \emph{inner} loops, i.e., the border of every country,
+then no more information is obtained by checking other loops such as the big outer loop. If we write down the four equations
+asserting that each inner loop adds up to zero, then it is possible to prove that every loop in the circuit adds up to
+zero.}
+
+
 <% end_sec('potential') %>
 
 <% begin_sec("Constant potential throughout a conductor",nil,'const-v-in-conductor') %>
@@ -1063,7 +1119,7 @@ than that on the larger sphere in the ratio $a/b$.
 
 <% end_hw_sec() %>
 
-<% begin_lab("Mapping electric fields") %>\label{lab:e-field}
+<% begin_lab("Mapping electric fields",suffix:'A') %>\label{lab:e-field}
 \begin{labapparatus}
 board and U-shaped probe\\
 DC power supply\\
@@ -1174,7 +1230,7 @@ equations have a unique solution, which has certain properties.
 
 <% end_lab %>
 
-<% begin_lab("A preview of the electric potential and measurement of voltages",type:'ex',suffix:'A') %>
+<% begin_lab("A preview of the electric potential and measurement of voltages",type:'ex',suffix:'B') %>
 
 This exercise is meant to be done before reading ch.~\ref{ch:potential}.
 
@@ -1232,7 +1288,7 @@ Can you find any pattern or relationship in the five numbers?
 
 <% end_lab %>
 
-<% begin_lab("Charge density, field, and potential",type:'ex',suffix:'B') %>
+<% begin_lab("Charge density, field, and potential",type:'ex',suffix:'C') %>
 
 (1) A charge distribution is given by
 \begin{equation*}
@@ -1282,4 +1338,69 @@ requiring that $\phi$ be a continuous function.
 
 <% end_lab %>
 
+<% begin_lab("Testing the curliness of the electric field",suffix:'D') %>\label{lab:curly-e-field}
+\begin{labapparatus}
+1.5 V battery\\
+battery holder\\
+multimeter\\
+replacement fuses for multimeter\\
+banana-plug cables\\
+capacitors (bipolar electrolytic, 50-330 $\mu\zu{F}$)\\
+\end{labapparatus}
+
+\begin{labgoal}
+Test whether the electric field in a static electric circuit is curly.
+\end{labgoal}
+
+In this lab you will act out the concept presented on p.~\pageref{fig:conservative-europe} of
+testing whether the sum of the voltage differences around a closed loop in a circuit is equal to
+zero.
+
+As a practical matter, we use capacitors for this experiment that have plates with large surface
+areas, and with a very small distance between the plates. Such a capacitor is said to have a large
+\emph{capacitance}. The detailed definition of capacitance and its units of measurement are presented
+later in this course. These definitions don't matter very much here --- in fact, this lab doesn't even need to
+be done using capacitors. It could be done with other electrical components such as resistors. All that
+matters is whether the fields are static. The only practical reason for using large capacitance values
+is that if we had used small capacitances, connecting the voltmeter to the circuit would have tended to
+allow the charge on the capacitor plates to leak off rapidly through the meter, ruining the measurements.
+For the capacitance values used here, this process of leaking is quite slow; when I tested it, I found
+that it took about half an hour for the readings to change by only 15\%. So as long as you don't leave
+the meter connected to the circuit for long periods of time, there won't be a problem.
+
+Another practical issue is that most high-value capacitors are \emph{polar}, meaning that you can apply
+a voltage difference across them only in one direction. If you do it the wrong way, smoke may start
+coming out! The capacitors we will use here are not polar (``bipolar''). High-value, bipolar capacitors
+are somewhat expensive. The ones we're using cost about \$4 each.
+
+Use  your four capacitors, plus the battery, to build a circuit.
+To make this fun, don't make your circuit all series (like a single chain of a necklace) or all parallel
+(with no islands of wire between two capacitors). Make it some
+combination of series and parallel parts. Make sure that all of your capacitors are
+connected at both ends --- if they have one end dangling in the air, then that branch
+is an open circuit, which might as well have not come to the party.
+
+If you draw the schematic for this circuit, you should find that it's possible to lay it
+out in such a way that no wires cross over other wires.\footnote{See \url{https://en.wikipedia.org/wiki/Planar_graph}.}
+We can then single out loops that are the innermost loops, as in the example on p.~\pageref{fig:conservative-europe}.
+For each inner loop, use the meter to check whether the sum of voltage
+drops around the loop is zero as predicted by theory.
+
+This circuit can exist in more than one state of equilibrium.
+There is a possible state in which every ``island'' of metal between capacitors
+has zero total charge, as well as other possible states in which this is not true. In theory, this makes
+no difference as to whether the field is conservative. However, it would be nicer to get the circuit into
+a known state so that, for example, if you need to rebuild it later to get a missing piece of data, you can
+do so. To do this, use the following procedure. (1) Build the circuit. 
+(2) Take the battery out of the holder. (3) Use a wire to connect one side of one of the capacitors to the other.
+(You can just touch it to the wires, you don't have to shove in the banana plugs.)
+This is called shorting across the capacitor.
+This allows charge to flow freely  between the capacitor's two plates, so that it isn't blocked by the existence
+of the gap between the plates.
+Do this for each capacitor in turn, and then go back and repeat the process a few more times (or short all the
+capacitors simultaneously, if you have enough hands and wires).
+(4) Put the battery back in.
+
+
+<% end_lab %>
 <% end_chapter() %>
