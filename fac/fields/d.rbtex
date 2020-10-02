@@ -296,23 +296,7 @@ two points.
 
 \pagebreak
 
-The earth's gravitational field has a well-defined potential because the work it does
-on a mass is path-independent, \subfigref{gravity-loop}{1}. An equivalent way of stating
-this criterion is that the work done around any closed loop is zero, \subfigref{gravity-loop}{2}.
-This is often a natural way to think about electric circuits, since a diagram of a circuit
-breaks down visually into loops of wire.
-
 <% marg(300) %>
-<%
-  fig(
-    'gravity-loop',
-    %q{%
-      If the work done by gravity along the two paths in panel 1 is the same,
-      then the work done around the closed loop in panel 2 is zero.
-    }
-  )
-%>
-\spacebetweenfigs
 <%
   fig(
     'conservative-europe',
@@ -340,7 +324,7 @@ elements.\footnote{These symbols represent capacitors and batteries, but
 that doesn't really matter very much --- all that matters is that any
 electric fields in this circuit are static, and therefore not curly.}
 There are various national borders we can trace in this circuit. There is one around France, containing six circuit
-elements, one around Switzerland that has three, and so on. There are also other loops we could draw.
+elements, one around Switzerland that has three, and so on. There are also larger loops we could draw.
 For instance, we could start from the west coast of France and ``hike'' clockwise around the outer perimeter of the whole
 figure, which would take us through nine components. Regardless of which loop we choose,
 we expect that the sum of the voltage differences measured around any such closed loop will be 
@@ -418,6 +402,8 @@ conductor.
         surface, not on the interior (proof \note{no-charge-on-interior}). This should be intuitively reasonable
         in figure \figref{doorknob}, for example, since the charges are all
         repelling each other. 
+
+\pagebreak
 
 \begin{eg}{The lightning rod}\label{eg:lightning-rod}
  Suppose you have a pear-shaped conductor like the one
@@ -752,11 +738,9 @@ $\operatorname{curl}\vc{E}=0$.
 By the end of this book, we will have fleshed out our picture of vector calculus a little more, and
 this more complete picture is summarized in sec.~\ref{sec:vector-calc-roundup}, p.~\pageref{sec:vector-calc-roundup}.
 
-\vfill
-
 <% end_sec('derivative-roundup') %>
 
-<% begin_sec("Boundary conditions on a conductor",4,'bc-conductor') %>
+<% begin_sec("Boundary conditions on a conductor",nil,'bc-conductor') %>
 
 <% begin_sec("No component of the electric field parallel to the surface",nil,'no-e-parallel-to-surface') %>
 If a charge is located at the surface of a conductor, then moving it by an infinitesimal distance
