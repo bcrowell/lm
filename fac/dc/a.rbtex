@@ -361,7 +361,7 @@ If an object inserted in a circuit displays a current flow
 proportional to the voltage difference across it, then we define
 its resistance as the constant ratio
         \begin{equation*}
-                R = \Delta V / I
+                R = \Delta V / I.
         \end{equation*}
 \end{lessimportant}
 
@@ -687,27 +687,27 @@ fraction of $c$.
   )
 %>
 
-Figure \figref{circuit-poynting} shows the results of a fairly realistic simulation of
-how the energy flows in an actual electric circuit shaped like a rectangle, with most of
-the resistance being supplied by the resistor on the right, but a smaller amount also
-present in the wires. This is a simulation of the steady state of the circuit, when the
-current has been flowing for a long time and has had time to settle down. The equipotentials
-were found by solving Laplace's equation on a computer. We see that the flow of energy,
-measured by the Poynting vector, is through the empty space surrounding the wires, not
-the wires themselves. Energy flows out of the battery and into the resistor, and we can
-also see that some flows into the wires, since the Poynting vectors near the wires are
-angled slightly inward. This flow of energy causes the wires and the resistor to heat up.
-Note that the current is sometimes in the same direction as the energy flow and sometimes
-in the opposite direction.
+Figure \figref{circuit-poynting} shows the results of a fairly
+realistic simulation of how the energy flows in an actual electric
+circuit shaped like a rectangle, with most of the resistance being
+supplied by the resistor on the right, but a smaller amount also
+present in the wires. This is a simulation of the steady state of the
+circuit, when the current has been flowing for a long time and has had
+time to settle down. The equipotentials were found by solving
+Laplace's equation on a computer. The flow of energy,
+measured by the Poynting vector $\vc{S}$, is almost entirely through the empty
+space surrounding the wires, not the wires themselves --- because the wires are good conductors, $\vc{E}\approx 0$
+inside them, and therefore the Poynting vector $\vc{S}\propto\vc{E}\times\vc{B}$ inside the wires themselves
+is not enough to transmit any significant amount of energy.  Energy
+flows out of the battery and into the resistor, causing the resistor
+to heat up.\footnote{A little energy also flows into the wires, since
+the Poynting vectors near the wires are angled slightly inward. This
+causes a little bit of heating in the wires, which have nonzero
+resistance.}
 
-<%
-  fig(
-    'circuit-poynting',
-    %q{The flow of energy in a DC circuit. The flow of energy (white arrows) is from the
-       battery, through empty space, and into the resistive elements.},
-    {'width'=>'wide','sidecaption'=>true}
-  )
-%>
+Note that the current is sometimes in the same direction
+as the energy flow and sometimes in the opposite direction. The energy is
+\emph{not} transported by the electrons inside the wires. 
 
 <% marg(-300) %>
 <%
@@ -729,20 +729,26 @@ be guided around the circuit by the wires. That is, the wires act not so much li
 pipes through which the energy flows, and more like railroad tracks that tell the cars
 where to go --- the term ``switch'' originated in railroads, where it means the mechanism
 that allows cars to be directed onto one set of tracks or another when the train comes
-to a ``Y'' (figure \figref{railroad-switches}).
+to a ``Y'' (figure \figref{railroad-switches}). 
 
-\pagebreak
-\startdq
+<%
+  fig(
+    'circuit-poynting',
+    %q{The flow of energy in a DC circuit. The flow of energy (white arrows) is from the
+       battery, through empty space, and into the resistive elements.},
+    {'width'=>'wide','sidecaption'=>true}
+  )
+%>
 
-\begin{dq}\label{dq:fat-and-skinny-circuits}
-Figure \figref{dq-fat-and-skinny-circuits} shows two variations on figure \figref{circuit-poynting}.
-Because the batteries and resistors are identical in cases 1 and 2, the currents, voltage drops,
-and therefore the power are all identical as well. But this is not so obvious in terms of the
-flow of energy as determined by the Poynting vector. We would expect that the magnetic fields
-of the two opposite currents would cancel rather well in the skinny version, and that would
-tend to make the Poynting vector small. What compensates for this?
+\startdqs
+
+\begin{dq}
+Suppose that we take a pair of wire cutters to the circuit in figure \figref{circuit-poynting}
+and make it into an open circuit. Electrons will soon stop flowing, but the energy is not
+transmitted by the electrons, so why does that matter?
 \end{dq}
-<% marg() %>
+
+<% marg(13) %>
 <%
   fig(
     'dq-fat-and-skinny-circuits',
@@ -752,6 +758,15 @@ tend to make the Poynting vector small. What compensates for this?
   )
 %>
 <% end_marg %>
+
+\begin{dq}\label{dq:fat-and-skinny-circuits}
+Figure \figref{dq-fat-and-skinny-circuits} shows two variations on figure \figref{circuit-poynting}.
+Because the batteries and resistors are identical in cases 1 and 2, the currents, voltage drops,
+and therefore the power are all identical as well. But this is not so obvious in terms of the
+flow of energy as determined by the Poynting vector. In the skinny version, we would expect that the magnetic fields
+of the two opposite currents would cancel rather well, and that would
+tend to make the Poynting vector small. What compensates for this?
+\end{dq}
 
 
 <% end_sec('flow-of-energy') %>
