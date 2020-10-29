@@ -103,9 +103,17 @@ and therefore cannot get rid of its heat as quickly.
 
 \pagebreak
 
-\startdq
+\startdqs
 
-<% marg(-15) %>
+<% marg(300) %>
+<%
+  fig(
+    'dq-compare-currents',
+    %q{Discussion question \ref{dq:compare-currents}.\\\\ The arrows are velocity vectors. The charges are $\pm e$.},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'dq-square-wire',
@@ -114,6 +122,10 @@ and therefore cannot get rid of its heat as quickly.
   )
 %>
 <% end_marg %>
+
+\begin{dq}\label{dq:compare-currents}
+Compare the currents in the bars. Compare the current densities.
+\end{dq}
 
 \begin{dq}\label{dq:square-wire}
 Each of the four figures shows a short section of a long current-carrying copper bar, whose cross-section is a square with sides of
@@ -126,7 +138,7 @@ both sides of $\der I=\vc{j}\cdot\der\vc{A}$, we obtain $I=jb^2$.
   \item Suppose we flip the orientation of the $\vc{A}$ vector. What would this mean in terms of actual measurements?
   \item We now tilt the surface by 45 degrees. Recalculate  $I$.
   \item Suppose the surface is now a sphere of diameter $b$. Find the error in the following calculation:
-          $I=4\pi (b/2)^2j=\pi b^2$.
+          $I=4\pi (b/2)^2j=\pi b^2 j$.
 \end{enumerate}
 \end{dq}
 
@@ -149,7 +161,7 @@ physical cases such as the flow of water, and is known more generally as an equa
 of continuity.
 
 
-<% marg(-5) %>
+<% marg(-300) %>
 <%
   fig(
     'skin-depth',
@@ -274,25 +286,22 @@ right in the figure, which shows a cross-sectional view. The two dark
 lines on the left are the top and bottom of the left-hand cylinder,
 and similarly in the middle and right.
 The left and right cylinders
-are kept at the ground potential, while the one in the middle
-is at a different potential $\phi>0$.
+at ground, the middle at $\phi>0$.
 
 As the electrons enter from the left side, they first
 encounter strong electric fields when they reach the gap between the
 left and middle cylinders. If we consider an electron at the top edge
-of the beam, the field initially decelerates it and moves it away
-from the axis, to point A. Continuing from A to B, the electron is reaccelerated
+of the beam, the field initially accelerates it and moves it away
+from the axis, to point A. Continuing from A to B, the electron is slowed back down
 and deflected toward a point on the right at which the beam reaches a
 focus on the axis. 
 
-It's no accident that the electron speeds up as it travels from
-A to B.
-The physics is identical to that of the faucet in figure \figref{faucet}, and
-to figure \subfigref{div-focusing}{3}.
-The speeding-up and the coming-together are logically related. If we
-had a coming together without a speeding up, we would violate the equation of
-continuity. Note that it only matters that the flow is \emph{steady}, not
-whether it's compressible or incompressible (as for the water).
+If the electrons had constant velocity as they went from A to B and then to the
+focus, then the beam would form a perfect cone, and its density would vary as $1/r^2$, where $r$ is the
+distance from the focus. This is a current density $\vc{j}$ that would be identical in
+mathematical form to the electric field of a point charge, and since we know that that
+field has zero divergence, so does this $\vc{j}$. The physics is different from that of the faucet in figure \figref{faucet}, and
+to figure \subfigref{div-focusing}{3}, since the water is incompressible.
 \end{eg}
 
 
