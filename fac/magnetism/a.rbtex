@@ -467,7 +467,30 @@ even if we try to make up for it somewhere else.
 
 <% end_sec('maxwell-round-up') %>
 
+\startdq
+
+\begin{dq}\label{dq:exploding-shell}
+The figure shows a cross-sectional view of a spherical shell of positive charge
+that is exploding outward, accelerating under the influence of its own repulsion.
+Describe $\vc{E}$, $\vc{B}$, and $\vc{j}$ at points A, B, C, and D,
+and qualitatively verify the Maxwell's equation
+$\operatorname{curl}\vc{B} =  (1/c^2)\partial\vc{E}/\partial t+(4\pi k/c^2)\vc{j}$.
+\end{dq}
+
+<% marg(20) %>
+<%
+  fig(
+    'dq-exploding-shell',
+    %q{Discussion question \ref{dq:exploding-shell}},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+
 <% end_sec('maxwell-full') %>
+
+\vfill
 
 <% begin_sec("Ohm's law in local form",nil,'ohms-law-local') %>
 If we could look inside a resistor with a DC current flowing through it, and zoom in to a very small scale,
@@ -485,6 +508,8 @@ becomes the indeterminate form $\infty\cdot 0$.
 The units of conductivity can be expressed as $1/(\Omega\unitdot\munit)$. An example of a good conductor is
 copper, which has $\sigma\approx 6\times10^7\ \Omega^{-1}\unitdot\munit^{-1}$. 
 
+\pagebreak
+
 \begin{eg}{Conductivity of flesh}
 \egquestion The DC resistance of a human arm, measured from end to end, is about $300\ \Omega$.
 Estimate the conductivity of human flesh.
@@ -498,7 +523,6 @@ of magnitude less than the conductivity of copper. Cf.~problem \ref{hw:whole-bod
 % calc -e "d=7 cm; r=d/2; A=pir^2; L=60 cm; R=300 ohm; L/(AR)->m-1ohm-1"
 %    0.519689610095985 ohm-1m-1
 
-\pagebreak
 
 \begin{eg}{Skin depth's dependence on frequency}\label{eg:skin-depth-maxwell}
 Figure \figref{skin-depth2} is a copy of the one from example \ref{eg:skin-depth}, p.~\pageref{eg:skin-depth},
