@@ -467,7 +467,7 @@ even if we try to make up for it somewhere else.
 
 <% end_sec('maxwell-round-up') %>
 
-\startdq
+\startdqs
 
 \begin{dq}\label{dq:exploding-shell}
 The figure shows a cross-sectional view of a spherical shell of positive charge
@@ -477,11 +477,27 @@ and qualitatively verify the Maxwell's equation
 $\operatorname{curl}\vc{B} =  (1/c^2)\partial\vc{E}/\partial t+(4\pi k/c^2)\vc{j}$.
 \end{dq}
 
+\begin{dq}\label{dq:curly-but-no-curl}
+The figure shows two magnetic field patterns.
+How do they differ from the field of a current-carrying wire?
+Because of this, there must be a nonzero current density away from the axis.
+Infer the directions of these current densities.
+\end{dq}
+
+
 <% marg(20) %>
 <%
   fig(
     'dq-exploding-shell',
     %q{Discussion question \ref{dq:exploding-shell}},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'dq-curly-but-no-curl',
+    %q{Discussion question \ref{dq:curly-but-no-curl}.},
     {'anonymous'=>true}
   )
 %>
