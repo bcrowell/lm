@@ -369,9 +369,42 @@ right-hand relationship between the direction of the current and the curliness o
 it creates, which was proved in \notewithoutbackref{slope-is-v}. (If aliens on another planet define
 their magnetic field to be the opposite direction compared to ours, then they can flip all the signs
 of terms involving $\vc{B}$, but they have to do so in a consistent way.)
+The only thing left to justify is the factor of $4\pi$, which we'll come back to after example \ref{eg:wire-field-checkerboard}.
 
-The only thing left to justify is the factor of $4\pi$. A nice way to do this, which is
-fundamentally of more physical interest than the $4\pi$, is to show that Maxwell's equations
+<% marg(-12) %>
+<%
+  fig(
+    'eg-wire-field-checkerboard',
+    %q{Example \ref{eg:wire-field-checkerboard}.},
+    {'anonymous'=>true}
+  )
+%>
+<% end_marg %>
+
+
+\begin{eg}{The field surrounding a wire}\label{eg:wire-field-checkerboard}
+The figure shows the magnetic field in a region of space near a long, straight, current-carrying wire.
+A checkerboard grid is superimposed. The wire is three squares to the left of the figure, and its current
+is coming out of the page. We found the form of this field in example \ref{eg:field-of-wire}, p.~\pageref{eg:field-of-wire}:
+its magnitude falls off like $1/r$, and the field lines are circles.
+
+Many people looking casually at this diagram would say that it has a nonzero curl that is out of the page
+(meaning, by the right-hand rule, counterclockwise as seen from the front). But this has to be wrong, because according to Maxwell's equations,
+$\operatorname{curl}\vc{B}$ is proportional to the current density $\vc{j}$ that exists \emph{here}, in this
+region of space. The wire isn't here, it's over to the left, so here $\vc{j}=0$, and according to Maxwell, the curl of the field
+should be zero here.
+
+A closer inspection shows that it is indeed plausible that the curl is zero. Suppose we put a curl-meter (p.~\pageref{curl-meter}) on
+top of the diagram. For simplicity, let's approximate the effect on the curl-meter by concentrating on four of the squares:
+top-middle, bottom-middle, right-center, and left-center. The fields in the top-middle and bottom-middle squares
+create counterclockwise torques, i.e., a torque vector in the direction out of the page.
+However, the upward field in the center-left square is stronger than the one in the
+center-right square, and this imbalance creates a countervailing torque that is clockwise, i.e., into the page.
+It's not visually obvious that these torques exactly cancel, but it's plausible.
+\end{eg}
+
+Returning to the factor of $4\pi$, a nice way to verify this, which is
+fundamentally of more physical interest than the $4\pi$ itself, is to show that Maxwell's equations
 imply conservation of charge. The $4\pi$ then arises as the correct factor to put
 in so that charge conservation comes out correctly. 
 This can be done in the following vector calculus
@@ -465,7 +498,7 @@ are true, then the continuity equation is true as well, and the continuity equat
 even if we try to make up for it somewhere else.
 \end{eg}
 
-<% end_sec('maxwell-round-up') %>
+\pagebreak
 
 \startdqs
 
@@ -485,7 +518,7 @@ Infer the directions of these current densities.
 \end{dq}
 
 
-<% marg(20) %>
+<% marg(300) %>
 <%
   fig(
     'dq-exploding-shell',
@@ -502,6 +535,8 @@ Infer the directions of these current densities.
   )
 %>
 <% end_marg %>
+
+<% end_sec('maxwell-round-up') %>
 
 
 <% end_sec('maxwell-full') %>
@@ -524,7 +559,7 @@ becomes the indeterminate form $\infty\cdot 0$.
 The units of conductivity can be expressed as $1/(\Omega\unitdot\munit)$. An example of a good conductor is
 copper, which has $\sigma\approx 6\times10^7\ \Omega^{-1}\unitdot\munit^{-1}$. 
 
-\pagebreak
+\vfill
 
 \begin{eg}{Conductivity of flesh}
 \egquestion The DC resistance of a human arm, measured from end to end, is about $300\ \Omega$.
@@ -539,6 +574,7 @@ of magnitude less than the conductivity of copper. Cf.~problem \ref{hw:whole-bod
 % calc -e "d=7 cm; r=d/2; A=pir^2; L=60 cm; R=300 ohm; L/(AR)->m-1ohm-1"
 %    0.519689610095985 ohm-1m-1
 
+\pagebreak
 
 \begin{eg}{Skin depth's dependence on frequency}\label{eg:skin-depth-maxwell}
 Figure \figref{skin-depth2} is a copy of the one from example \ref{eg:skin-depth}, p.~\pageref{eg:skin-depth},
