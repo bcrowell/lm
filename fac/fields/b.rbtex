@@ -746,7 +746,7 @@ The global form of Gauss's law for electric fields says that the flux through a 
 \begin{equation*}
   \Phi_E = 4\pi k q_\text{in},
 \end{equation*}
-where $q_\text{in}$ is the total charge inside the surface.
+where $q_\text{in}$ is the total charge inside the surface. The surface is called a Gaussian surface.
 
 \begin{eg}{A point charge}\label{eg:gauss-law-point-charge}
 If we enclose a point charge $q$ with a spherical Gaussian surface of radius
@@ -764,8 +764,13 @@ The two sides of the equation are equal, so we have verified Gauss's law and
 proved that the proportionality constant of $4\pi k$ in Gauss's law is the
 correct one.
 \end{eg}
+<% end_sec('gauss-charge') %>
 
-\pagebreak
+<% begin_sec("Finding an unknown field using Gauss's law",4,'gauss-find-field') %>
+
+In example \ref{eg:gauss-law-point-charge}, we already knew the field of a point charge,
+so all we were doing was checking the validity of Gauss's law. The following example shows that it is also possible to use
+Gauss's law to find an \emph{unknown} field.
 
 \begin{eg}{A uniform sphere of charge}\label{eg:gauss-law-uniform-sphere}
 Consider a sphere of radius $b$ containing electric charge with a uniform density $\rho$,
@@ -830,7 +835,47 @@ matches that of the problem, so that the field anywhere on the surface is of the
 and perpendicular to the surface.
 \end{eg}
 
-<% end_sec('gauss-charge') %>
+Example \ref{eg:gauss-law-uniform-sphere} was an example of the following more general technique:
+
+\begin{important}[Finding an unknown field using Gauss's law]\label{summary-unknown-field-gauss}
+To find an unknown electric field at a given point P in space:
+\begin{enumerate}
+\item Choose a Gaussian surface. The surface (a) must pass through point P, so that the field at P
+appears in Gauss's law, and (b) must be chosen in such a way that the integral defining the flux is
+actually the integral of a constant.
+\item Write down Gauss's law, $\Phi_E=4\pi k q_\text{in}$ and apply it to the chosen surface.
+In the integral $\int \vc{E}\cdot\der\vc{A}$ that defines the flux, rewrite $\vc{E}\cdot\der\vc{A}$
+as $E \der A \cos\theta$, and take the constant $E$ outside, which makes the integral trivial to evaluate. Solve Gauss's law for this $E$.
+\end{enumerate}
+\end{important}
+
+Let's consider how this problem-solving recipe applies to the determination of the
+field outside the sphere of charge in \ref{eg:gauss-law-uniform-sphere}. We wanted to find
+the field at a point P defined by its distance $r$ from the center. For this reason, we chose
+a Gaussian surface passing through P. Specifically, we chose it to be a sphere of radius $r$.
+Because we chose the Gaussian surface to have the same spherical symmetry as the charge
+distribution, we knew that the field would have a constant magnitude on this surface, and would
+always be perpendicular to the surface. Planning ahead, this was our way of ensuring that we would
+be able to carry out step 2 successfully. In step 2, the angle $\theta$ between the $\vc{E}$
+and $\der\vc{A}$ vectors was always zero, so the $\cos\theta$ factor was a constant, 1. This
+meant that the integral could be written as an integral of a scalar, $\int E\der A$, and we
+were able to take $E$ outside, giving $E\int\der A$.
+
+If the given charge distribution has no special symmetry, then it is normally impossible
+to find a Gaussian surface that satisfies criteria 1a and 1b, so the technique cannot be
+used. For example, we cannot use this technique to find the field of a uniformly charged
+banana.
+
+The three most common types of symmetry that do allow us to succeed with this technique
+are spherical symmetry, cylindrical symmetry, and translational symmetry. When an object
+such as a charge distribution has spherical symmetry, it looks the same no matter how we
+rotate it about its center. Cylindrical symmetry occurs when the object is the same
+regardless of rotation about a certain line (the axis of symmetry). Translational symmetry
+occurs for a shape such as an infinite ribbon, which can be moved along its length without
+changing it. Examples of these symmetries occur in examples \ref{eg:e-line-of-charge} and
+\ref{eg:pillbox}, pp.~\pageref{eg:e-line-of-charge}-\pageref{eg:pillbox}.
+
+<% end_sec('gauss-find-field') %>
 
 <% begin_sec("Invariance of charge",nil,'charge-invariant') %>\index{charge!invariance}
 Ever since Galileo we have known that different observers could have frames of reference
@@ -1281,6 +1326,18 @@ So can't we guarantee that Gauss's law will be violated when $r$ is small?
 \end{dq}
 
 <% end_sec('gauss-div') %>
+
+<% begin_sec("Summary of Gauss's law",nil,'gauss-law-summary') %>
+Gauss's law in words: electric field lines only begin and end on charges. The number of field lines
+that terminate on a charge defines how much charge it has.
+
+Gauss's law in global form: the flux through a closed surface is
+$\Phi_E = 4\pi k q_\text{in}$, where $q_\text{in}$ is the total charge inside the surface.
+
+Gauss's law in local form: $\operatorname{div}\vc{E} = 4\pi k\rho$, where $\rho$ is the density of charge
+per unit volume.
+
+<% end_sec('gauss-law-summary') %>
 
 
 <% begin_notes %>
