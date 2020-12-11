@@ -620,7 +620,7 @@ $\sigma$, $f$, and the fundamental constants $k$ and $c$, units then require $\d
 <% end_sec('ohms-law-local') %>
 
 
-<% begin_sec("The magnetic dipole",nil,'b-dipole') %>\index{dipole!magnetic!further properties}
+<% begin_sec("The magnetic dipole",4,'b-dipole') %>\index{dipole!magnetic!further properties}
 
 Example \ref{eg:out-of-nowhere}, p.~\pageref{eg:out-of-nowhere}, shows that if we want to
 find the field made by a current distribution like the one in the doorbell ringer, we can't
@@ -684,6 +684,36 @@ that tends to align the dipole vector with the magnetic field. A calculation
   \vc{m}=I\vc{A},
 \end{equation*}
 where $I$ is the current and $\vc{A}$ is the area vector.
+
+\pagebreak
+
+
+\begin{eg}{Twisted pair cable}\label{eg:twisted-pair}
+Figure \subfigref{twisted-pair}{1} shows a pair of wires that could be used as part of
+a complete DC circuit. Let's say that current is flowing to the right through the black
+wire and then later on comes back to the left through the white one. Each wire will
+to create a magnetic field, and this can cause interference in other circuitry. Although
+there will be a tendency for the two fields to cancel, the cancellation will not be
+perfect, because at a given point in space, the two fields will not be exactly the same
+strength or exactly opposite in direction.
+
+Figure \subfigref{twisted-pair}{2} shows a way to reduce the interference. The two
+wires are twisted around one another. An idealized version of this setup is shown
+in \subfigref{twisted-pair}{3}, where we have a chain of circular current loops.
+The direction of the current alternates between clockwise and counterclockwise.
+Therefore, \subfigref{twisted-pair}{4}, the magnetic dipole moments of the loops
+tend to cancel out. Mathematically, we have $\vc{m}=I\vc{A}$, and by the right-hand
+rule, successive $\vc{A}$ vectors are up and then down.
+\end{eg}
+
+<% marg(300) %>
+<%
+  fig(
+    'twisted-pair',
+    %q{Example \ref{eg:twisted-pair}.}
+  )
+%>
+<% end_marg %>
 
 \begin{eg}{The magnetic dipole moment of an atom}\label{eg:estimate-atomic-dipole}
 Let's make an order-of-magnitude estimate of the magnetic dipole moment of an atom.
