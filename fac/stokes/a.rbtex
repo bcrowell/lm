@@ -353,16 +353,19 @@ law, and we don't have to appeal to the ``cutting'' interpretation to explain it
 want to. Figure \figref{bear-paws} shows the transformation of a single loop to a double one.
 During this process, the surface is like a soap
 bubble suspended across the wire that forms the boundary. The surface is never torn or glued together.
-Although I find it a little difficult to visualize the final ``soap bubble'' surface, it is clearly
-true that each field line perpendicular to the page will now pass through the surface twice, producing twice the flux compared to
+The final ``soap bubble'' surface is like a corkscrew or a spiral staircase with two levels.
+Each field line perpendicular to the page will now pass through the surface twice, producing twice the flux compared to
 a single circular loop with the same circumference.
 
-When we obtained Faraday's law from Maxwell's equations and Stokes's theorem, we assumed
-implicitly that once we picked a surface, it stayed the same. The only change over time
-was the change in the magnetic field. But clearly if we viewed the situation in another frame
-of reference, the surface would be moving, and we expect our laws of physics to be valid
-regardless of the frame of reference. It is OK for the surface to move, and it can even
-change size or shape. This is intuitively appealing if we think of the ``cutting'' interpretation.
+\begin{eg}{Twisted pairs to minimize pickup of interference}\label{eg:twisted-pair-pickup}\index{twisted pair cable!minimizing pickup}
+In example \ref{eg:twisted-pair}, p.~\pageref{eg:twisted-pair}, we saw how twisted pair cable, \subfigref{twisted-pair-pickup}{1}, can be used
+to minimize the production of stray magnetic fields by currents in the cable. It also works
+the other way around: twisted pair cable is less susceptible to \emph{picking up} interference
+from \emph{other} sources. As in the earlier example, we idealize the cable, \subfigref{twisted-pair-pickup}{2}.
+If the cable is bathed in a changing magnetic field $\vc{B}$, then Faraday's law tells us that an unwanted voltage will be induced in it.
+But the area vectors of the circular loops have directions that alternate up and down, so that the fluxes $\vc{B}\cdot\vc{A}$
+tend to cancel.
+\end{eg}
 
 Faraday arrived at what we now call Faraday's law completely empirically in 1831. It's
 fascinating to read about the original trail of evidence that he followed.
@@ -381,6 +384,15 @@ although the active power of the battery was proved to be great, by its heating
 the whole of its own coil [through ordinary resistive heating] \ldots''
 
 <% marg(-300) %>
+<%
+  fig(
+    'twisted-pair-pickup',
+    %q{%
+      Example \ref{eg:twisted-pair-pickup}.
+    }
+  )
+%>
+\spacebetweenfigs
 <%
   fig(
     'faraday',
@@ -461,6 +473,14 @@ that the field is in the direction that tends to resist the change in the magnet
 %>
 <% end_marg %>
 
+When we obtained Faraday's law from Maxwell's equations and Stokes's theorem, we assumed
+implicitly that once we picked a surface, it stayed the same. The only change over time
+was the change in the magnetic field. But clearly if we viewed the situation in another frame
+of reference, the surface would be moving, and we expect our laws of physics to be valid
+regardless of the frame of reference. It is OK for the surface to move, and it can even
+change size or shape. This is intuitively appealing if we think of the ``cutting'' interpretation.
+
+
 \begin{eg}{Frames of reference}\label{eg:inductionrel}
 In figure \figref{inductionrel}, flea 1 doesn't believe in this
 modern foolishness about induction. She's sitting on the bar magnet, which to her is
@@ -521,8 +541,6 @@ all frames of reference are created equal,
 and there is no way to determine which one is really at rest. 
 \end{eg}
 
-\pagebreak
-
 \startdq
 
 <% marg() %>
@@ -547,7 +565,7 @@ find the field $B$ at point P.\\
 
 
 
-<% begin_hw_sec %>
+<% begin_hw_sec(vfill:true) %>
 
 <% begin_hw('b-wire-ampere-fac') %>__incl(hw/b-wire-ampere-fac)<% end_hw() %>
 
@@ -618,6 +636,44 @@ evaluate line and surface integrals with integrands that aren't constant.}
 <% begin_hw('b-coaxial-pipes') %>__incl(hw/b-coaxial-pipes)<% end_hw() %>
 
 <% begin_hw('nonuniform-wire') %>__incl(hw/nonuniform-wire)<% end_hw() %>
+
+\pagebreak
+
+<% marg %>
+<%
+  fig(
+    'hw-coils-toroidal-and-cylindrical',
+    %q{Problem \ref{hw:coils-toroidal-and-cylindrical}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('coils-toroidal-and-cylindrical') %>__incl(hw/coils-toroidal-and-cylindrical)<% end_hw() %>
+
+<% marg(-5) %>
+<%
+  fig(
+    'hw-straight-transformer',
+    %q{Problem \ref{hw:straight-transformer}.}
+  )
+%>
+<% end_marg %>
+
+<% begin_hw('straight-transformer') %>__incl(hw/straight-transformer)<% end_hw() %>
+
+<% marg(-5) %>
+<%
+  fig(
+    'hw-verify-trivial-ampere',
+    %q{Problem \ref{hw:verify-trivial-ampere}.}
+  )
+%>
+<% end_marg %>
+
+
+<% begin_hw('verify-trivial-ampere') %>__incl(hw/verify-trivial-ampere)<% end_hw() %>
+
+
 
 <% end_hw_sec %>
 
