@@ -143,6 +143,7 @@ m4_define(__hw_fac_4_image-charge-unstable,23)m4_dnl
 m4_define(__hw_fac_4_image-charge-corner,24)m4_dnl
 m4_define(__hw_fac_4_terrier-conservative,25)m4_dnl
 m4_define(__hw_fac_4_zero-curl-positive-div,26)m4_dnl
+m4_define(__hw_fac_4_curl-rotated-and-flipped,27)m4_dnl
 m4_define(__hw_fac_5_sample-radiation,1)m4_dnl
 m4_define(__hw_fac_5_spherical-magnets,2)m4_dnl
 m4_define(__hw_fac_5_spherical-magnets-tilted,3)m4_dnl
