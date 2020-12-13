@@ -1275,7 +1275,7 @@ is the same as $U=-\vc{m}\cdot\vc{B}$.
 
 
 
-<% begin_hw_sec %>
+<% begin_hw_sec(vfill:true) %>
 
 <% marg(-10) %>
 <%
@@ -1399,6 +1399,23 @@ is the same as $U=-\vc{m}\cdot\vc{B}$.
 <% begin_hw('finite-solenoid',2) %>__incl(hw/finite-solenoid)<% end_hw() %>
 
 <% begin_hw('zero-curl-positive-div-interpret') %>__incl(hw/zero-curl-positive-div-interpret)<% end_hw() %>
+
+\pagebreak
+
+<% begin_hw('naughty-solenoid') %>__incl(hw/naughty-solenoid)<% end_hw() %>
+
+<%
+  fig(
+    'hw-naughty-solenoid',
+    %q{%
+      Problem \ref{hw:naughty-solenoid}.
+    },
+    {
+      'width'=>'wide',
+      'sidecaption'=>false
+    }
+  )
+%>
 
 <% end_hw_sec %>
 
