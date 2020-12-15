@@ -405,6 +405,36 @@ in the application to Faraday's law. Cup your hands together as if you're trappi
 inside. The hands are two possible surfaces enclosed by the same boundary. The fluxes through
 the hands are equal, since the magnetic field through any closed surface is zero (Gauss's law
 for magnetism).
+
+\startdq
+
+<% marg() %>
+<%
+  fig(
+    'dq-gap-in-wire',
+    %q{Discussion question \ref{dq:dq-gap-in-wire}.},
+    {'anonymous'=>true}
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'flux-linkage',
+    %q{%
+      The bar magnet makes some magnetic flux through an imaginary disk (white).
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{dq}\label{dq:dq-gap-in-wire}
+1. The figure shows a line of charges moving to the right, creating a current $I$. An Amp\`{e}rian
+surface in the form of a disk has been superimposed. Use Maxwell's equations to
+find the field $B$ at point P.\\
+2. A tiny gap is chopped out of the line of charge. What happens when this gap is directly underneath the point P?
+\end{dq}
+
+
 <% end_sec('faraday-choice-of-surface') %>
 
 <% begin_sec("Interpretation using flux linkage",nil,'faraday-flux-linkage') %>
@@ -415,16 +445,6 @@ other known ingredients to create Maxwell's equations. Faraday never learned cal
 or any math beyond the most basic algebra, so he probably visualized what we now call Faraday's
 law as shown in figure \figref{flux-linkage}. 
 
-<% marg() %>
-<%
-  fig(
-    'flux-linkage',
-    %q{%
-      The bar magnet makes some magnetic flux through an imaginary disk (white).
-    }
-  )
-%>
-<% end_marg %>
 
 As the magnet moves from 1 to 2, the flux through the imaginary disk increases. Faraday's law predicts that
 a curly electric field will be produced, and it predicts its circulation
@@ -444,6 +464,12 @@ passes one steel ring through another, linking them like a chain. For this reaso
 passing through the disk can be referred to as the \emph{flux linkage}. The induction effect
 predicted by Faraday's law is proportional to the rate at which the field lines are cutting through
 the loop.
+
+<% self_check('faraday-em-wave-flux-linkage',<<-'SELF_CHECK'
+Interpret figure \figref{faraday-em-wave}, p.~\pageref{fig:faraday-em-wave}, in terms of flux
+linkage.
+  SELF_CHECK
+  ) %>
 
 <% end_sec('faraday-flux-linkage') %>
 
@@ -553,14 +579,15 @@ is changing, and it appears to be proportional to the
 the corkscrew-shaped surface formed by the white wire), which has
 one sign when the field is
 being established, and in the opposite direction when it collapses.
+<% end_sec('faraday-experiment') %>
+
+<% begin_sec("Logical connections",nil,'faraday-links') %>
+
 
 Although Faraday's discovery was empirical, Faraday's law has close logical
 interrelationships with other principles of physics. In example \ref{eg:short-inductor}
 we see that induction is necessary based on conservation of energy, and in example
 \ref{eg:inductionrel} that it is necessary based on the fact that motion is relative.
-<% end_sec('faraday-experiment') %>
-
-\pagebreak
 
 \begin{eg}{Conservation of energy}\label{eg:short-inductor}
 Figure \subfigref{short-inductor}{1} shows a solenoid with a current being driven through it
@@ -677,25 +704,8 @@ all frames of reference are created equal,
 and there is no way to determine which one is really at rest. 
 \end{eg}
 
-\startdq
 
-<% marg() %>
-<%
-  fig(
-    'dq-gap-in-wire',
-    %q{Discussion question \ref{dq:dq-gap-in-wire}.},
-    {'anonymous'=>true}
-  )
-%>
-<% end_marg %>
-
-\begin{dq}\label{dq:dq-gap-in-wire}
-1. The figure shows a line of charges moving to the right, creating a current $I$. An Amp\`{e}rian
-surface in the form of a disk has been superimposed. Use Maxwell's equations to
-find the field $B$ at point P.\\
-2. A tiny gap is chopped out of the line of charge. What happens when this gap is directly underneath the point P?
-\end{dq}
-
+<% end_sec('faraday-links') %>
 
 <% end_sec('faradays-law') %>
 
