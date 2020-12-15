@@ -598,6 +598,7 @@ def fig(name,caption=nil,options={})
     'narrowfigwidecaption'=>false, # currently only supported with float and !anonymous
     'suffix'=>'',          # for use when a figure is used in more than one place, and we need to make the label unique;
                            #   typically 'suffix'=>'2'; don't need this option on the first fig, only the second; label is 'foo2', not 'foo-2'
+                           #   Bug: figure positioning for marg() is messed up if the margin group has foo2 as its first figure.
     'text'=>nil,           # if it exists, puts the text in the figure rather than a graphic (name is still required for labeling)
                            #      see macros \starttextfig and \finishtextfig
                            # For an example of how to do this, Mod 7. Tables do work (as in that example). Adjust spacing using textgap.

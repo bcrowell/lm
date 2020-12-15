@@ -243,11 +243,12 @@ pull the field outside and solve for it.
 <% end_sec('amperes-law') %>
 
 <% begin_sec("Faraday's law",4,'faradays-law') %>\index{Faraday's law}
+<% begin_sec("Derivation",nil,'faraday-derivation') %>
 One of Maxwell's equations is $\operatorname{curl}\vc{E} =  -\partial\vc{B}/\partial t$.
 This states that a time-varying magnetic field induces a curly electric field (sec.~\ref{sec:maxwell-vacuum},
 p.~\pageref{sec:maxwell-vacuum}), and we've used it in the analysis of electromagnetic waves
 as well as in the qualitative description of an electric generator.
-Application of Stokes's theorem to this equation gives
+Application of Stokes's theorem to this equation gives,
 \begin{equation*}
   - \int \frac{\partial\vc{B}}{\partial t}\cdot\der\vc{A} = \int\vc{E}\cdot\der\bell.
 \end{equation*}
@@ -260,12 +261,153 @@ This makes the left-hand side into $-\frac{\partial}{\partial t}\int \vc{B}\cdot
 but $\int \vc{B}\cdot\der\vc{A}$ is just the magnetic flux $\Phi_B$ through the surface. We therefore
 have
 \begin{equation*}
-  - \frac{\partial\Phi_B}{\partial t} = \int\vc{E}\cdot\der\bell.
+  - \frac{\partial\Phi_B}{\partial t} = \underbrace{\int\vc{E}\cdot\der\bell .}_\text{units of volts}
 \end{equation*}
 That is, when a changing magnetic field induces a curly electric field, the circulation
 of the electric field around a closed loop equals minus the rate at which the
 magnetic flux through the loop is changing. This is called Faraday's law.
+<% end_sec('faraday-derivation') %>
 
+<% begin_sec("Interpretation and application",nil,'faraday-interp') %>
+The right-hand side of Faraday's law has units of $(\text{electric field})\times(\text{distance})$.
+In the SI, these are equivalent to the units of voltage. Faraday's law predicts  that when there is a varying magnetic field, we
+will get an effect that can be measured with a voltmeter (if it has an AC mode) or an oscilloscope, and can be used for
+practical purposes as a source of electric power. This is how  generators and transformers work.\index{generator}\index{transformer}
+
+Figure \figref{generator-one-loop} recaps the description of a generator from example \ref{eg:generator-basic},
+p.~\pageref{eg:generator-basic}). In that earlier discussion, we could only appeal to the local law
+$\operatorname{curl}\vc{E} =  -\partial\vc{B}/\partial t$ rather than to its
+global version, which is Faraday's law. We knew that the setup in figure \figref{generator-one-loop}
+would create some kind of curly electric field pattern in the space in and around the coil,
+and we could imagine that the output, measured as a voltage, would depend on some kind of average value
+of $\partial\vc{B}/\partial t$ in this region. Faraday's law tells us exactly what kind of
+average this should be: it should be an average over the \emph{area} of the circular disk contained within the coils.
+The flux $\Phi_B$ is a measure of this area-weighted average.
+
+<% marg(-300) %>
+<%
+  fig(
+    'generator-one-loop',
+    %q{%
+      A simplified generator. A permanent magnet
+      rotates inside a coil. The magnet is turned by a motor or crank (not shown).
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'hydroelectric-generator',
+    %q{%
+      A set of electric generators generating hydroelectric power in the Himalayas.
+    }
+  )
+%>
+<% end_marg %>
+
+\pagebreak
+
+<% marg(300) %>
+<%
+  fig(
+    'twisted-pair-pickup',
+    %q{%
+      Example \ref{eg:twisted-pair-pickup}.
+    }
+  )
+%>
+<% end_marg %>
+
+\begin{eg}{Twisted pairs to minimize pickup of interference}\label{eg:twisted-pair-pickup}\index{twisted pair cable!minimizing pickup}
+In example \ref{eg:twisted-pair}, p.~\pageref{eg:twisted-pair}, we saw how twisted pair cable, \subfigref{twisted-pair-pickup}{1}, can be used
+to minimize the production of stray magnetic fields by currents in the cable. It also works
+the other way around: twisted pair cable is less susceptible to \emph{picking up} interference
+from \emph{other} sources. As in the earlier example, we idealize the cable, \subfigref{twisted-pair-pickup}{2}.
+If the cable is bathed in a changing magnetic field $\vc{B}$, then Faraday's law tells us that an unwanted voltage will be induced in it.
+But the area vectors of the circular loops have directions that alternate up and down, so that the fluxes $\vc{B}\cdot\vc{A}$
+tend to cancel.
+\end{eg}
+<% end_sec('faraday-interp') %>
+
+<% begin_sec("Notation and terminology",nil,'faraday-notation') %>
+
+
+The notation $\int\vc{E}\cdot\der\bell$ is lengthy and a little clumsy, so we would like some more
+convenient way to write it and talk about it. ``Circulation of the electric field'' is also long,
+and is not universally understood. If we take ``voltage'' to be defined operationally\index{operational definition!of voltage or emf}
+as ``what a voltmeter measures,'' then it makes sense to apply this word here and use the symbol $V$.
+However, many careful writers prefer to reserve these for potential differences.
+Because the electric field induced by a changing magnetic field is
+curly, it cannot be derived from the gradient of a potential. Therefore some people use the notation
+$\mathcal{E}$, which is a symbol for voltage that is more general, so that there is no connotation of
+a potential difference. The letter stands for emf, which is in turn an acronym for ``electromotive force'' ---
+a horrifically bad piece of terminology, since it doesn't even have units of force.\index{emf, $\mathcal{E}$!in Faraday's law}
+
+<% marg(-300) %>
+<%
+  fig(
+    'faraday-em-wave',
+    %q{%
+      Faraday's law applies to an electromagnetic wave.
+    }
+  )
+%>
+\spacebetweenfigs
+<%
+  fig(
+    'loop-antenna',
+    %q{%
+      A loop antenna used for receiving TV signals. The orientation is flipped upward by 90 degrees compared to figure \figref{faraday-em-wave}.
+    }
+  )
+%>
+<% end_marg %>
+
+<% end_sec('faraday-notation') %>
+
+
+<% begin_sec("Application to electromagnetic waves",nil,'faraday-em-waves') %>
+
+Faraday's law holds regardless of whether there is any physical object defining the surface.
+For example, figure \figref{faraday-em-wave} shows an electromagnetic wave propagating
+to the right. The magnetic field  is shown as field lines in black, with, as usual, denser
+lines indicating a stronger field. To avoid cluttering the
+figure, only one sample of an electric field vector is shown. The white rectangle, shown in
+perspective, is not a physical object, just an imaginary construct that we pick. We arbitrarily
+take its area vector to be oriented upward, which by the right-hand rule is equivalent to
+saying that counterclockwise is the positive direction around its edge. At the instant
+shown in this snapshot, a region of intense magnetic fields is just starting to pass into
+the rectangle. Because of our choice of orientation for the surface, this means that the
+magnetic flux is becoming rapidly more positive, i.e., $\partial\Phi_B/\partial t$ is large and positive.
+By Faraday's law, we expect that this will be associated with a value of the
+the electric circulation $\int \vc{E}\cdot\der\bell$ that is large and negative, i.e.,
+large in the clockwise direction. This clockwise direction is easy to verify. We know from our previous
+study of electromagnetic waves that there is a fixed proportion between the electric
+and magnetic fields. On the left side of the loop, the electric field is therefore strong,
+and its direction is into the page because the Poynting vector, which goes like $\vc{E}\times\vc{B}$, has
+to be to the right. On the right side of the loop, the electric field is nearly zero.
+
+On the other hand, figure \figref{loop-antenna} shows it is possible to connect the mathematical abstraction of figure
+\figref{faraday-em-wave} to reality. If the boundary of the surface is embodied in a loop of wire, then that
+wire acts as an antenna. Problem \ref{hw:loop-antenna}, p.~\pageref{hw:loop-antenna}, considers other possibilities for the direction of
+propagation of the wave and its polarization.
+<% end_sec('faraday-em-waves') %>
+
+<% begin_sec("Choice of surface for a given boundary",nil,'faraday-choice-of-surface') %>
+In the examples discussed so far, we have drawn a boundary such as a circle or a rectangle
+and taken that to be a definition as well for the surface enclosed by it. This is visually
+compelling for these flat shapes, but becomes less obvious if we imagine a boundary
+with some non-planar shape like the edge of a potato chip. In general
+there are many surfaces that we could stretch like a piece of cloth across a given frame.
+The surface could bulge like a diaphragm or drumhead. Stokes's theorem turns out to be
+valid regardless of how we deform the surface, and this is particularly easy to see
+in the application to Faraday's law. Cup your hands together as if you're trapping a grasshopper
+inside. The hands are two possible surfaces enclosed by the same boundary. The fluxes through
+the hands are equal, since the magnetic field through any closed surface is zero (Gauss's law
+for magnetism).
+<% end_sec('faraday-choice-of-surface') %>
+
+<% begin_sec("Interpretation using flux linkage",nil,'faraday-flux-linkage') %>
 Michael Faraday, whom we met on p.~\pageref{faraday-intro-bio},\index{Faraday, Michael}
 worked before Maxwell, so he didn't derive his result from Maxwell's equations --- it
 was the other way around, with Maxwell putting together Faraday's work on induction along with some
@@ -273,7 +415,7 @@ other known ingredients to create Maxwell's equations. Faraday never learned cal
 or any math beyond the most basic algebra, so he probably visualized what we now call Faraday's
 law as shown in figure \figref{flux-linkage}. 
 
-<% marg(20) %>
+<% marg() %>
 <%
   fig(
     'flux-linkage',
@@ -303,6 +445,9 @@ passing through the disk can be referred to as the \emph{flux linkage}. The indu
 predicted by Faraday's law is proportional to the rate at which the field lines are cutting through
 the loop.
 
+<% end_sec('faraday-flux-linkage') %>
+
+<% begin_sec("Application to multiple loops",nil,'faraday-multiple-loops') %>
 For ease of visualization, I drew the surface in figure \figref{flux-linkage} as
 a simple disk, whose boundary is a circle. If we were to form this circle from a loop
 of wire and connect it to an oscilloscope, as in figure \figref{practical-faraday},
@@ -323,7 +468,9 @@ It is obvious that if the finger (magnetic field line) is to pass through the co
 have to make twice as many cuts through in the case where the cord is wrapped in two loops.
 Since the induction effect is proportional to the number of cuts, it is doubled.
 
+
 <% marg(300) %>
+
 <%
   fig(
     'practical-faraday',
@@ -351,6 +498,7 @@ Since the induction effect is proportional to the number of cuts, it is doubled.
   )
 %>
 
+
 The proportionality to the number of loops is not an exception or modification to Faraday's
 law, and we don't have to appeal to the ``cutting'' interpretation to explain it if we don't
 want to. Figure \figref{bear-paws} shows the transformation of a single loop to a double one.
@@ -359,16 +507,9 @@ bubble suspended across the wire that forms the boundary. The surface is never t
 The final ``soap bubble'' surface is like a corkscrew or a spiral staircase with two levels.
 Each field line perpendicular to the page will now pass through the surface twice, producing twice the flux compared to
 a single circular loop with the same circumference.
+<% end_sec('faraday-multiple-loops') %>
 
-\begin{eg}{Twisted pairs to minimize pickup of interference}\label{eg:twisted-pair-pickup}\index{twisted pair cable!minimizing pickup}
-In example \ref{eg:twisted-pair}, p.~\pageref{eg:twisted-pair}, we saw how twisted pair cable, \subfigref{twisted-pair-pickup}{1}, can be used
-to minimize the production of stray magnetic fields by currents in the cable. It also works
-the other way around: twisted pair cable is less susceptible to \emph{picking up} interference
-from \emph{other} sources. As in the earlier example, we idealize the cable, \subfigref{twisted-pair-pickup}{2}.
-If the cable is bathed in a changing magnetic field $\vc{B}$, then Faraday's law tells us that an unwanted voltage will be induced in it.
-But the area vectors of the circular loops have directions that alternate up and down, so that the fluxes $\vc{B}\cdot\vc{A}$
-tend to cancel.
-\end{eg}
+<% begin_sec("Faraday's original experiment",nil,'faraday-experiment') %>
 
 Faraday arrived at what we now call Faraday's law completely empirically in 1831. It's
 fascinating to read about the original trail of evidence that he followed.
@@ -387,15 +528,6 @@ although the active power of the battery was proved to be great, by its heating
 the whole of its own coil [through ordinary resistive heating] \ldots''
 
 <% marg(-300) %>
-<%
-  fig(
-    'twisted-pair-pickup',
-    %q{%
-      Example \ref{eg:twisted-pair-pickup}.
-    }
-  )
-%>
-\spacebetweenfigs
 <%
   fig(
     'faraday',
@@ -426,6 +558,7 @@ Although Faraday's discovery was empirical, Faraday's law has close logical
 interrelationships with other principles of physics. In example \ref{eg:short-inductor}
 we see that induction is necessary based on conservation of energy, and in example
 \ref{eg:inductionrel} that it is necessary based on the fact that motion is relative.
+<% end_sec('faraday-experiment') %>
 
 \pagebreak
 
@@ -676,6 +809,7 @@ evaluate line and surface integrals with integrands that aren't constant.}
 
 <% begin_hw('verify-trivial-ampere') %>__incl(hw/verify-trivial-ampere)<% end_hw() %>
 
+<% begin_hw('loop-antenna') %>__incl(hw/loop-antenna)<% end_hw() %>
 
 
 <% end_hw_sec %>

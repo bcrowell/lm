@@ -285,6 +285,7 @@ m4_define(__hw_fac_15_nonuniform-wire,8)m4_dnl
 m4_define(__hw_fac_15_coils-toroidal-and-cylindrical,9)m4_dnl
 m4_define(__hw_fac_15_straight-transformer,10)m4_dnl
 m4_define(__hw_fac_15_verify-trivial-ampere,11)m4_dnl
+m4_define(__hw_fac_15_loop-antenna,12)m4_dnl
 m4_define(__hw_fac_17_six-tenths-c-twice,1)m4_dnl
 m4_define(__hw_fac_17_enterprise-ke,2)m4_dnl
 m4_define(__hw_fac_17_gamma-derivation,3)m4_dnl
