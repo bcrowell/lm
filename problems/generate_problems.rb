@@ -769,8 +769,8 @@ def do_solutions_manual_main(title)
   print slurp_or_die($original_dir+"/front_matter.tex").gsub!(/__title__/) {title}
   print "\\timetravelenable\n\n"
 
-  ['lm','sn','me','cp'].each { |book|
-      title = {'lm'=>'Light and Matter','sn'=>'Simple Nature','me'=>'Mechanics','cp'=>'Conceptual Physics'}[book]
+  ['lm','sn','me','cp','fac'].each { |book|
+      title = {'lm'=>'Light and Matter','sn'=>'Simple Nature','me'=>'Mechanics','cp'=>'Conceptual Physics','fac'=>'Fields and Circuits'}[book]
       n_good_lines = 0
       print "\\chapter{#{title}}" # using chapter* to avoid numbers messes up header; try this: http://tex.stackexchange.com/a/89928/6853
       File.readlines($problems_csv).each { |line|
