@@ -841,10 +841,7 @@ plates, there would be no reason for current to flow. Since
 amperes, the unit of current, are the same as coulombs per
 second, it appears that the quantity $RC$ must have
 units of seconds, and you can check for yourself that this
-is correct. $RC$ is therefore referred to as the time
-constant of the circuit.\index{RC time constant}\index{time constant!RC}
-
-
+is correct. 
 
 How exactly do $I$ and $q$ vary with time? Rewriting $I$ as
 $\der q/\der t$, we have
@@ -860,6 +857,14 @@ our solution is
 \begin{equation*}
                 q = q_\zu{o}\exp\left(-\frac{t}{RC}\right)\eqquad.
 \end{equation*}
+We see that the time $RC$ is how long it takes for the initial charge
+to decay to decay to $1/e$ of its initial value. This is referred to
+as the \emph{time constant} of the exponential decay.\index{RC time constant}\index{time constant!RC}
+
+This notion of $1/e$ time constant in exponential decay is more generally useful.
+For example, as I write this in April 2021, the COVID epidemic in my area of
+Southern California seems to be tapering off like a decaying exponential
+with a time constant of about 3 weeks.
 
 <% marg(30) %>
 <%
